@@ -31,6 +31,12 @@ namespace :deploy do
   task :stop do end
   task :restart do end
   task :migrate do end
+  
+  # Don't really want these files accessible at the web
+  task :remove_repo_files do
+    run "cd #{latest_release} && rm -rf README.md Capfile config"
+  end
 end
 
+after "deploy:update", "deploy:remove_repo_files"
 after "deploy:restart", "deploy:cleanup"
