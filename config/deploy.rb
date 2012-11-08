@@ -27,9 +27,9 @@ end
 
 # Noop restart things
 namespace :deploy do
-  task :start {}
-  task :stop {}
-  task :restart {}
+  task :start do end
+  task :stop do end
+  task :restart do end
 end
 
 after "deploy:restart", "deploy:cleanup"
