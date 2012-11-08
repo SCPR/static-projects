@@ -1,14 +1,17 @@
 ## Static Projects
 
-Static projects for KPCC for use around the website. Deploys to <http://projects.scpr.org/static>.
+Static projects for KPCC for use around the website. 
+Deploys to <http://projects.scpr.org/static>.
 
 ### Deployment
 
 Make sure you have the `capistrano` rubygem installed. 
 For more information, see <https://rubygems.org/gems/capistrano>.
 
-Deploy with `cap deploy`. Files will be available publically at the same paths as are setup
-in this project.
+Deploy to production (media) with `cap deploy`. Files will be 
+available publicly at the same paths as are setup in this project.
+
+Deploying to staging (dev2) is just as easy: `cap staging deploy`
 
 ### Fresh Prince Lyrics
 ```
