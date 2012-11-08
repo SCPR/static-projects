@@ -3,7 +3,7 @@ set :scm, :git
 set :repository,  "git@github.com:SCPR/static-projects.git"
 set :scm_verbose, true
 set :deploy_via, :remote_cache
-set :deploy_to, "/web/projects/static"
+set :deploy_to, "/web/archive/static"
 
 set :user, "archive"
 set :use_sudo, false
