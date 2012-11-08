@@ -25,11 +25,12 @@ task :staging do
   role :web, "scprdev.org"
 end
 
-# Noop restart things
+# Noop some tasks
 namespace :deploy do
   task :start do end
   task :stop do end
   task :restart do end
+  task :migrate do end
 end
 
 after "deploy:restart", "deploy:cleanup"
