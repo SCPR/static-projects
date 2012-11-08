@@ -34,7 +34,8 @@ namespace :deploy do
   
   # Don't really want these files accessible at the web
   task :remove_repo_files do
-    run "cd #{latest_release} && rm -rf README.md Capfile config"
+    run "cd #{latest_release} && rm -rf Capfile config"
+    run "cd #{latest_release} && find . -name 'README.*' -print0 | xargs -0 rm"
   end
 end
 
