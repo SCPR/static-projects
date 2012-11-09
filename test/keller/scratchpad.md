@@ -1,3 +1,5 @@
+####To Use the static-projects repo
+
 **create directory for project and add files**
 
 **commit to github repo and sync branch**
