@@ -15,14 +15,16 @@ set :branch, "master"
 
 # --------------
 # Roles
-role :app, "media.scpr.org"
-role :web, "media.scpr.org"
+media   = "66.226.4.228"
+scprdev = "66.226.4.241"
+role :app, media
+role :web, media
 
 # Setup staging
 task :staging do
   roles.clear
-  role :app, "scprdev.org"
-  role :web, "scprdev.org"
+  role :app, scprdev
+  role :web, scprdev
 end
 
 # Noop some tasks
