@@ -49,7 +49,7 @@ For example:
       |  - index.html
       |  - graph.html
 
-Will results in the following URIs, immediately when deployed:
+Will result in the following URIs, immediately when deployed:
 
     - /static/
 
