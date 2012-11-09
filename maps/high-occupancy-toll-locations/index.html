@@ -1,0 +1,85 @@
+<!-- begin css  -->
+<style type="text/css">
+#map_container {width: 540px; height: 1100px;}
+#map_data {width: 100%; height: auto; margin: 0 0 30px 0;}
+#map_canvas {width: 90%; height: 950px; margin: 0 5% 50px 5%;}
+.explainer-type {font-size: 12px;}
+</style>
+<!-- end css -->
+
+<!-- begin scripts -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&region=us"></script>
+<script type="text/javascript">
+
+    var jqueryNoConflict = jQuery;
+    var expressLanesLocations = '12eDuTxSiDqTc-B-Lc2xWEPfWDa8DX-9hSNy2I_E';
+    var map;
+    var layer;
+    var locationColumn =  'Latitude';
+
+    //begin main function
+    jqueryNoConflict(document).ready(function(){
+        createMap();
+    });
+
+    // begin function
+    function createMap() {
+
+        // encrypted table id
+
+        var centerLosAngeles = new google.maps.LatLng(33.97582766523908, -118.21907043457031);
+
+        map = new google.maps.Map(document.getElementById('map_canvas'), {
+            center: centerLosAngeles,
+            zoom: 12,
+            scrollwheel: false,
+            draggable: true,
+            mapTypeControl: false,
+            navigationControl: true,
+            streetViewControl: false,
+            panControl: false,
+            scaleControl: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            navigationControlOptions: {
+                style: google.maps.NavigationControlStyle.SMALL,
+                position: google.maps.ControlPosition.LEFT_TOP}
+        });
+
+
+        // Initialize ft layer
+        layer = new google.maps.FusionTablesLayer({
+            query: {
+                select: locationColumn,
+                from: expressLanesLocations
+            },
+            map: map,
+            suppressInfoWindows: false
+        });
+    };
+    // end function
+
+</script>
+<!-- end scripts -->
+
+<!-- begin map container -->
+<div id="map_container">
+
+<!-- begin map data -->
+<div id="map_data">
+<h4>Metro ExpressLanes on the 110 and 10 freeways</h4>
+<p><em>Starting Nov. 10 motorists traveling the 110 freeway between the Artesia Transit Center to Adams Boulevard, and the 110 freeway from the 605 to Alameda Street, will have the option of paying congestion pricing to travel in High Occupancy Toll lanes.</em></p>
+
+<p><em>The map below shows the approximate locations of entrance, exit and entrance/exit ramps that motorists can use to enter the High Occupancy Toll lanes. The locations are based an <a href="http://www.metro.net/projects_studies/expresslanes/images/ExpressLanes_Map_Toll_Entry.pdf" target="_blank">illustration</a> provided by Metro.</em></p>
+<!-- end map data -->
+
+<p><img src="http://labs.google.com/ridefinder/images/mm_20_green.png" /> - Entrance Only</p>
+<p><img src="http://labs.google.com/ridefinder/images/mm_20_yellow.png" /> - Entrance &amp; Exit</p>
+<p><img src="http://labs.google.com/ridefinder/images/mm_20_red.png" /> - Exit Only</p>
+
+<!-- begin map -->
+<div id="map_canvas"></div>
+<!-- end map -->
+
+</div>
+<!-- end map container -->
