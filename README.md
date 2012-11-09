@@ -11,6 +11,9 @@ Deploys to <http://projects.scpr.org/static>.
 * Make sure you have the `capistrano` rubygem installed. 
 For more information, see <https://rubygems.org/gems/capistrano>.
 
+From the root of this repository, run the follow commands to 
+deploy to:
+
 **Production** (media):
 
     cap deploy
