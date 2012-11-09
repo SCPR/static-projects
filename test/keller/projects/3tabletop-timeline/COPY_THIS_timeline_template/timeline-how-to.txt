@@ -1,0 +1,51 @@
+####[Set up your data using Tabletop.js](https://github.com/balancemedia/Timeline#1-set-up-your-data-using-tabletopjs)####
+
+- Create a Google Spreadsheet with the following columns:
+
+-- title
+
+-- date
+
+-- display date
+
+-- photo url
+
+-- caption
+
+-- body
+
+-- read more url
+
+- Please note that the the display date column must be in the format Month day, Year (April 25, 2012) for proper javascript parsing. Also, all columns must be plain text format, including the two date columns.
+
+- In Google Docs, go up to the ‘File’ menu and pick ‘Publish to the web.’
+
+- Click ‘Start publishing.’ A URL will appear. We're interested in the part between ‘key=’ and ‘&’ 
+https://docs.google.com/spreadsheet/ccc?key=0AsmHVq28GtVJdG1fX3dsQlZrY18zTVA2ZG8wTXdtNHc
+
+- Make a copy of the "COPY_THIS_timeline_template" directory in /app/interactive/timeline.
+
+- Open the JavaScript file titled 'timeline-script.js' This should be the only file you need to edit.
+
+- Adjust the variables at the top of the file to add the Timeline Title, the spreadsheet key and the name of the sheet your timeline data is stored in.
+
+		// title to write to the #timeline-title div
+		var timelineTitle = 'Events and archived stories detailing the murder';
+	
+		var timelineConfig = {
+			// add the key of your spreadsheet after publishing it to the web
+			key: '0AjNKqIiL5YTUdEpUbEZzNV8yNmN2eTVoc0JoR1FTS3c',
+			
+			// add the name of the spreadsheet  'sheet'
+			sheetName: 'Sheet1'
+		}
+		
+- Rename your directory to match the topic of the timeline.
+
+- Create an iframe using the /app URL of your timeline.
+
+		<iframe src="http://host.madison.com/app/interactive/timeline/nolan/index.html" width="620" height="2300" frameBorder="0"></iframe>
+		
+- Add that iframe to a CMS html asset and voila. You have created a timeline.
+
+- To update your timeline, simply add more information to the Google Spreadsheet.
