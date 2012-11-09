@@ -5,13 +5,58 @@ Deploys to <http://projects.scpr.org/static>.
 
 ### Deployment
 
-Make sure you have the `capistrano` rubygem installed. 
+* You'll need your SSH key installed in authorized_keys for user
+`archive` on media, and on dev2 if you want to deploy to staging.
+
+* Make sure you have the `capistrano` rubygem installed. 
 For more information, see <https://rubygems.org/gems/capistrano>.
 
-Deploy to production (media) with `cap deploy`. Files will be 
-available publicly at the same paths as are setup in this project.
+**Production** (media):
 
-Deploying to staging (dev2) is just as easy: `cap staging deploy`
+    cap deploy
+
+**Staging** (dev2):
+
+    cap staging deploy
+
+Once deployed, files will be immediately available to the public 
+at the same paths as are setup in this project. Note that *EVERY*
+file will be available for viewing/download.
+
+### Paths
+
+nginx passes off any requests to `/static` to this repository, so
+the directory/file structure is taken literally. nginx's `autoindex`
+module is turned ON, so requests to directories will be automatically 
+resolved to the `index.html` inside. 
+
+For example:
+
+    + static-projects/
+      |
+      - index.html
+      |
+      + maps-project/
+      |  - index.html
+      |  - map.html
+      |
+      + graph-project/
+      |  - graphs.js
+      |  - graphs.css
+      |  - index.html
+      |  - graph.html
+
+Will results in the following URIs, immediately when deployed:
+
+    - /static/
+
+    - /static/maps-project/
+    - /static/maps-project/map.html
+
+    - /static/graph-project/graphs.js
+    - /static/graph-project/graphs.css
+    - /static/graph-project/
+    - /static/graph-project/graph.html
 
 ### Fresh Prince Lyrics
 ```
