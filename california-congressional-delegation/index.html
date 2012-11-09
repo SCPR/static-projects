@@ -1,0 +1,348 @@
+<!-- begin css  -->
+<link rel="stylesheet" href="http://view.jqueryui.com/master/themes/base/jquery.ui.all.css">
+
+<style type="text/css">
+#map_container {width: 620px; height: 1100px;}
+#map_data {width: 30%; height: auto; margin: 0 5% 50px 5%;}
+#map_canvas {width: 80%; height: 600px; margin: 0 5% 50px 5%;}
+
+/*based on WaPo styles found here:
+http://www.washingtonpost.com/wp-srv/special/world/india-leads-push-to-7-billion/ */
+#map-slider {width: 500px; margin: 20px auto 0 auto;}
+#map-slider #slider {width: 200px; margin: 0 auto 0 auto;}
+#map-slider #markerContainer {width: 100%; height: auto; margin: 15px; auto 0 auto;}
+#map-slider .markerScatter2010 {font-size: 10px; font-weight: bold; float:left; width:1px; height:12px; margin: -5px 0 0 125;}
+#map-slider .markerScatter2012 {font-size: 10px; font-weight: bold; float:right; width:1px; height:12px; margin: -5px 185px 0 0}
+
+/*
+created using Kevin Schaul's Box Chart Maker
+http://www.kevinschaul.com/projects/box-chart-maker/
+*/
+
+#congressional-breakdown {width: 100%; height: 240px; margin: 0 5% 5px 5%;}
+#congressional-breakdown a {font-size: 10px; font-weight: bold; text-align: center; color: #ffffff; line-height: 3em; cursor: pointer;}
+#too-close a {font-size: 10px; font-weight: bold; text-align: center; color: #000000; line-height: 3em; cursor: pointer;}
+.chart-box {float: left; margin-right: 2px; margin-bottom: 2px; height: 28px; width: 28px;}
+.dem-box {background-color: #2362A6; opacity:0.6;}
+.gop-box {background-color: #9D0000; opacity:0.6;}
+.close-box {background-color: #ffff00; opacity:0.6;}
+.hide-chart {display: none;}
+.tooltip {display: none; background: #000000; font-size: 12px; height: 70px; width: 160px; padding: 25px; color:#ffffff;}
+.explainer-type {font-size: 12px;}
+</style>
+<!-- end css -->
+
+<!-- begin scripts -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://view.jqueryui.com/master/ui/jquery.ui.core.js"></script>
+<script type="text/javascript" src="http://view.jqueryui.com/master/ui/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="http://view.jqueryui.com/master/ui/jquery.ui.mouse.js"></script>
+<script type="text/javascript" src="http://view.jqueryui.com/master/ui/jquery.ui.slider.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&region=us"></script>
+<script type="text/javascript">
+
+    var jqueryNoConflict = jQuery;
+
+
+    /* url for 2012 congressional json:
+    http://project.wnyc.org/election-2012-ca-results/data/election_data.json
+    http://vote.sos.ca.gov/returns/us-rep/district/all/
+    */
+
+    var results2010Table = '188FSkJxrQD7qG6W-tLiKYL7MdQD9NmZv9lW2vEI';
+    var results2012Table = '1rk85qhtG8Qy_i_TVXD3gDkvzTHPKfLpSlhibco0';
+    var locationColumn =  'geometry_simplified';
+    var map;
+    var layer;
+
+    //begin main function
+    jqueryNoConflict(document).ready(function(){
+        createMap();
+        createSlider();
+    });
+
+    // begin function
+    function createMap() {
+
+        // encrypted table id
+
+        var centerCalif = new google.maps.LatLng(37.335194502529724, -119.366455078125);
+
+        map = new google.maps.Map(document.getElementById('map_canvas'), {
+            center: centerCalif,
+            zoom: 6,
+            scrollwheel: false,
+            draggable: false,
+            mapTypeControl: false,
+            navigationControl: true,
+            streetViewControl: false,
+            panControl: false,
+            scaleControl: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            navigationControlOptions: {
+                style: google.maps.NavigationControlStyle.SMALL,
+                position: google.maps.ControlPosition.RIGHT_TOP}
+        });
+
+        // Initialize ft layer
+        layer = new google.maps.FusionTablesLayer({
+            query: {
+                select: locationColumn,
+                from: results2010Table
+            },
+            map: map,
+            suppressInfoWindows: true
+        });
+    };
+    // end function
+
+    // begin function
+    function createSlider(){
+
+        var increment;
+
+        //creates slider
+        jqueryNoConflict("#slider").slider();
+
+        var sliderBar = jqueryNoConflict('#slider'),
+        play_btn = jqueryNoConflict('#play-btn');
+
+        // begin slider options
+        sliderBar.slider({
+            'value':0,
+            'min': 2010,
+            'max': 2012,
+            'step': 2,
+
+            // displays when user slides the controller
+            slide: function(event, ui) {
+                var increment = ui.value;
+                var handle = ui.handle;
+            },
+
+            // begin when slider change is made
+            change: function(event, ui) {
+                var increment = ui.value;
+                var handle = ui.handle;
+                var ftLayer = 'results' + increment;
+
+
+                    if(ftLayer == "results2010") {
+                        ftLayer = results2010Table;
+                        jqueryNoConflict("#2010-chart").removeClass("hide-chart");
+                        jqueryNoConflict("#2012-chart").addClass("hide-chart");
+
+                    } else if(ftLayer == "results2012") {
+                        ftLayer = results2012Table;
+                        jqueryNoConflict("#2010-chart").addClass("hide-chart");
+                        jqueryNoConflict("#2012-chart").removeClass("hide-chart");
+                    }
+
+                layer.setMap();
+
+                layer = new google.maps.FusionTablesLayer({
+                    query: {
+                        select: locationColumn,
+                        from: ftLayer
+                    },
+                    map: map,
+                    suppressInfoWindows: true
+                });
+
+            }
+            // end slider change is made
+
+      });
+        // end slider options
+
+    };
+    // end function
+
+</script>
+<!-- end scripts -->
+
+<!-- begin map container -->
+<div id="map_container">
+
+<h4>Using the map</h4>
+
+<p><em>The redistricting process helped to deliver congressional districts to Democrats around Sacramento and in the 31st and 56th in the southern part of the state for a net gain of four seats from the GOP.</em></p>
+
+<p><em>Use the toggle below to flip between the 2010 and 2012 elections to see the changes in California's Congressional delegation and districts.</em></p>
+
+<!-- begin map data -->
+<div id="map_data">
+
+<!-- begin map slider -->
+<div id="map-slider">
+
+<!--
+thanks john keefe, who learned from kat downs, for the slider model:
+http://dl.dropbox.com/u/466610/blogelements/slider-experiment.html
+-->
+
+<div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" title="Slide me to the next election"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a></div>
+
+<div id="markerContainer">
+<div class="markerScatter2010"><p class="markerYear">2010</p></div>
+<div class="markerScatter2012"><p class="markerYear">2012</p></div>
+</div>
+
+</div>
+<!-- end map slider -->
+
+</div>
+<!-- end map data -->
+
+<div id="congressional-breakdown">
+
+<!-- begin 2010 congressional breakdown -->
+<div id="2010-congressional-breakdown">
+<table id="2010-chart">
+    <tbody>
+        <tr>
+            <td valign="top">
+                <h3 class="chartTitle">Democrats (34)</h3>
+                <a class="chart-box dem-box" title="Mike Thompson" style="clear:both;">1st</a>
+                <a class="chart-box dem-box" title="Doris Matsui">5th</a>
+                <a class="chart-box dem-box" title="Lynn C. Woolsey">6th</a>
+                <a class="chart-box dem-box" title="George Miller">7th</a>
+                <a class="chart-box dem-box" title="Nancy Pelosi">8th</a>
+                <a class="chart-box dem-box" title="Barbara Lee">9th</a>
+                <a class="chart-box dem-box" title="John Garamendi">10th</a>
+                <a class="chart-box dem-box" title="Jerry McNerney">11th</a>
+                <a class="chart-box dem-box" title="Jackie Speier" style="clear:both;">12th</a>
+                <a class="chart-box dem-box" title="Pete Stark">13th</a>
+                <a class="chart-box dem-box" title="Anna G. Eshoo">14th</a>
+                <a class="chart-box dem-box" title="Mike Honda">15th</a>
+                <a class="chart-box dem-box" title="Zoe Lofgren">16th</a>
+                <a class="chart-box dem-box" title="Sam Farr">17th</a>
+                <a class="chart-box dem-box" title="Dennis Cardoza">18th</a>
+                <a class="chart-box dem-box" title="Jim Costa">20th</a>
+                <a class="chart-box dem-box" title="Lois Capps" style="clear:both;">23rd</a>
+                <a class="chart-box dem-box" title="Brad Sherman">27th</a>
+                <a class="chart-box dem-box" title="Howard L. Berman">28th</a>
+                <a class="chart-box dem-box" title="Adam Schiff">29th</a>
+                <a class="chart-box dem-box" title="Henry A. Waxman">30th</a>
+                <a class="chart-box dem-box" title="Xavier Becerra">31st</a>
+                <a class="chart-box dem-box" title="Judy Chu">32nd</a>
+                <a class="chart-box dem-box" title="Karen Bass">33rd</a>
+                <a class="chart-box dem-box" title="Lucille Roybal-Allard" style="clear:both;">34th</a>
+                <a class="chart-box dem-box" title="Maxine Waters">35th</a>
+                <a class="chart-box dem-box" title="Jane Harman">36th</a>
+                <a class="chart-box dem-box" title="Laura Richardson">37th</a>
+                <a class="chart-box dem-box" title="Grace F. Napolitano">38th</a>
+                <a class="chart-box dem-box" title="Linda T. Sanchez">39th</a>
+                <a class="chart-box dem-box" title="Joe Baca">43rd</a>
+                <a class="chart-box dem-box" title="Loretta Sanchez">47th</a>
+                <a class="chart-box dem-box" title="Bob Filner" style="clear:both;">51st</a>
+                <a class="chart-box dem-box" title="Susan Davis">53rd</a>
+            </td>
+            <td valign="top">
+                <h3 class="chartTitle">Republicans (19)</h3>
+                <a class="chart-box gop-box" title="Wally Herger" style="clear:both;">2nd</a>
+                <a class="chart-box gop-box" title="Dan Lungren">3rd</a>
+                <a class="chart-box gop-box" title="Tom McClintock">4th</a>
+                <a class="chart-box gop-box" title="Jeff Denham">19th</a>
+                <a class="chart-box gop-box" title="Devin Nunes">21st</a>
+                <a class="chart-box gop-box" title="Kevin Mc Carthy">22nd</a>
+                <a class="chart-box gop-box" title="Elton Gallegly">24th</a>
+                <a class="chart-box gop-box" title="Howard Buck McKeon">25th</a>
+                <a class="chart-box gop-box" title="David Dreier" style="clear:both;">26th</a>
+                <a class="chart-box gop-box" title="Edward R. Royce">40th</a>
+                <a class="chart-box gop-box" title="Jerry Lewis">41st</a>
+                <a class="chart-box gop-box" title="Gary G. Miller">42nd</a>
+                <a class="chart-box gop-box" title="Ken Calvert">44th</a>
+                <a class="chart-box gop-box" title="Mary Bono Mack">45th</a>
+                <a class="chart-box gop-box" title="Dana Rohrabacher">46th</a>
+                <a class="chart-box gop-box" title="John Campbell">48th</a>
+                <a class="chart-box gop-box" title="Darrell Issa" style="clear:both;">49th</a>
+                <a class="chart-box gop-box" title="Brian Bilbray">50th</a>
+                <a class="chart-box gop-box" title="Duncan Hunter">52nd</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<!-- end 2010 congressional breakdown -->
+
+<!-- begin 2012 congressional breakdown -->
+<div id="2012-congressional-breakdown">
+<table id="2012-chart" class="hide-chart">
+    <tbody>
+        <tr>
+            <td style="width: 20%;" id="dems" valign="top">
+                <h3 class="chartTitle">Democrats (35) </h3>
+                <a class="chart-box dem-box" title="Jared Huffman" style="clear:both;">2nd</a>
+                <a class="chart-box dem-box" title="John Garamendi">3rd</a>
+                <a class="chart-box dem-box" title="Mike Thompson">5th</a>
+                <a class="chart-box dem-box" title="Doris Matsui">6th</a>
+                <a class="chart-box dem-box" title="Jerry McNerney">9th</a>
+                <a class="chart-box dem-box" title="George Miller">11th</a>
+                <a class="chart-box dem-box" title="Nancy Pelosi" style="clear:both;">12th</a>
+                <a class="chart-box dem-box" title="Barbara Lee">13th</a>
+                <a class="chart-box dem-box" title="Jackie Speier">14th</a>
+                <a class="chart-box dem-box" title="Eric Swalwell">15th</a>
+                <a class="chart-box dem-box" title="Jim Costa">16th</a>
+                <a class="chart-box dem-box" title="Mike Honda">17th</a>
+                <a class="chart-box dem-box" title="Anna G. Eshoo" style="clear:both;">18th</a>
+                <a class="chart-box dem-box" title="Zoe Lofgren">19th</a>
+                <a class="chart-box dem-box" title="Sam Farr">20th</a>
+                <a class="chart-box dem-box" title="Lois Capps">24th</a>
+                <a class="chart-box dem-box" title="Julia Brownley">26th</a>
+                <a class="chart-box dem-box" title="Judy Chu">27th</a>
+                <a class="chart-box dem-box" title="Adam Schiff" style="clear:both;">28th</a>
+                <a class="chart-box dem-box" title="Tony Cardenas">29th</a>
+                <a class="chart-box dem-box" title="Brad Sherman">30th</a>
+                <a class="chart-box dem-box" title="Grace F. Napolitano">32nd</a>
+                <a class="chart-box dem-box" title="Henry A. Waxman">33rd</a>
+                <a class="chart-box dem-box" title="Xavier Becerra">34th</a>
+                <a class="chart-box dem-box" title="Gloria Negrete McLeod" style="clear:both;">35th</a>
+                <a class="chart-box dem-box" title="Karen R. Bass">37th</a>
+                <a class="chart-box dem-box" title="Linda T. S‡nchez">38th</a>
+                <a class="chart-box dem-box" title="Lucille Roybal-Allard">40th</a>
+                <a class="chart-box dem-box" title="Mark Takano">41st</a>
+                <a class="chart-box dem-box" title="Maxine Waters">43rd</a>
+                <a class="chart-box dem-box" title="Janice Hahn" style="clear:both;">44th</a>
+                <a class="chart-box dem-box" title="Loretta Sanchez">46th</a>
+                <a class="chart-box dem-box" title="Alan Lowenthal">47th</a>
+                <a class="chart-box dem-box" title="Juan Vargas">51st</a>
+                <a class="chart-box dem-box" title="Susan A. Davis">53rd</a>
+            </td>
+            <td style="width: 11%;"  id="too-close" valign="top">
+                <h3 class="chartTitle">Too Close</h3>
+                <a class="chart-box close-box" title="Ami Bera">7th</a>
+                <a class="chart-box close-box" title="Raul Ruiz">36th</a>
+                <a class="chart-box close-box" title="Scott Peters">52nd</a>
+            </td>
+            <td style="width: 31%;"  id="gop" valign="top">
+                <h3 class="chartTitle">Republicans (15)</h3>
+                <a class="chart-box gop-box" title="Doug La Malfa" style="clear:both;">1st</a>
+                <a class="chart-box gop-box" title="Tom McClintock">4th</a>
+                <a class="chart-box gop-box" title="Paul Cook">8th</a>
+                <a class="chart-box gop-box" title="Jeff Denham">10th</a>
+                <a class="chart-box gop-box" title="David G. Valadao">21st</a>
+                <a class="chart-box gop-box" title="Devin G. Nunes">22nd</a>
+                <a class="chart-box gop-box" title="Kevin Mc Carthy" style="clear:both;">23rd</a>
+                <a class="chart-box gop-box" title="Howard P. Buck McKeon">25th</a>
+                <a class="chart-box gop-box" title="Gary G. Miller">31st</a>
+                <a class="chart-box gop-box" title="Ed Royce">39th</a>
+                <a class="chart-box gop-box" title="Ken Calvert">42nd</a>
+                <a class="chart-box gop-box" title="John Campbell">45th</a>
+                <a class="chart-box gop-box" title="Dana Rohrabacher" style="clear:both;">48th</a>
+                <a class="chart-box gop-box" title="Darrell Issa">49th</a>
+                <a class="chart-box gop-box" title="Duncan D. Hunter">50th</a>
+            </td>
+        </tr>
+        <tr><td colspan=3><span class="explainer-type"><em>Delegation breakdown pending outcomes in the 7th, 36th and 52nd congressional districts.</em></span></td></tr>
+    </tbody>
+</table>
+</div>
+<!-- end 2012 congressional breakdown -->
+
+</div>
+
+<div id="map_canvas"></div>
+
+</div>
+<!-- end map container -->
