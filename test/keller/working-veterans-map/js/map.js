@@ -1,9 +1,10 @@
     var tableID = "1kgPO58I9WMKxXwgoeWK5NTBJElfRg3t3BV8bbtc";
     var map;
     var mapdrawn = false;
+    var jqueryNoConflict = jQuery;
 
     // do the following when the page is ready
-    $(document).ready(function(){
+    jqueryNoConflict(document).ready(function(){
 
     	 // run the initialize function
     	 createMap();
@@ -18,7 +19,7 @@
 
         map = new google.maps.Map(document.getElementById('map_canvas'), {
             center: centerCalif,
-            zoom: 4,
+            zoom: 5,
             scrollwheel: false,
             draggable: true,
             mapTypeControl: false,
@@ -42,7 +43,7 @@
 
         var ROUTE_COLORS = ["#E31F26", "#12C4D6", "#d6c879", "#4EAF49", "#FF5F88", "#ED0FA3", "#984EA3", "#377EB8", "#FF7F00", "#9FBD30", "#43494F", "#6D5545"];
 
-        $.get("kml/veterans-served.kml", function(data) {
+        jqueryNoConflict.get("kml/veterans-served.kml", function(data) {
             gmap.load_polygons({
                 map: map,
 
@@ -79,24 +80,27 @@
     			},
 
     			 highlightCallback: function(e) {
-    			     console.log("Highlighted from:"+this.fields.from + " to:" + this.fields.to);
-    			     topperTextChange(this.fields.from, this.fields.to, this.fields.other_means, ROUTE_COLORS[this.fields.to_code]);
+    			     console.log("Highlighted from: "+this.fields.home + " to: " + this.fields.served);
+    			     topperTextChange(this.fields.home, this.fields.served, ROUTE_COLORS[this.fields.to_code]);
     			 },
 
     			 selectCallback: function(e) {
     			     console.log("Clicked " + this.id);
-    			     topperTextChange(this.fields.from, this.fields.to, this.fields.other_means, ROUTE_COLORS[this.fields.to_code]);
+    			     topperTextChange(this.fields.home, this.fields.served, ROUTE_COLORS[this.fields.to_code]);
     			 }
 			 });
         });
     };
 
 
-    function topperTextChange (county_from, county_to, estimated_other, route_color){
-        $('#mapTopperInfo').html(
-        "<strong>" + county_from + "</strong><br>" + "to <strong style='color:" + route_color + "'>" + county_to + "</strong><br>Census surveys suggest <strong>" + estimated_other + "</strong> people<br>fly this route for work each week.");
+    function topperTextChange (county_from, county_to, route_color){
+        jqueryNoConflict('#mapTopperInfo').html(
+        "<strong>" + county_from + "</strong> to <strong style='color:" + route_color + "'>" +
+        county_to + "</strong>: Narrative here.....");
 
-    	$('#mapTopperInfo').show();
+        jqueryNoConflict('#intro-text').hide();
+
+    	jqueryNoConflict('#mapTopperInfo').show();
 
     	return false;
     }

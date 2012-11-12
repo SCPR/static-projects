@@ -149,7 +149,7 @@ var gmap = gmap || {};
             } );
 
             var line = new google.maps.Polyline(options);
-                    
+
             this.polygons.push( line );
 
             google.maps.event.addListener(this.polygons[i], "mousemove", mouseoverHandler);
@@ -164,7 +164,9 @@ var gmap = gmap || {};
             strokeColor: "#000000",
             strokeWeight: 1.0,
             strokeOpacity: 0.25,
-			geodesic: true
+
+            // switch to true for geodesic
+			geodesic: false
         },
         _selected_poly_options: {
             strokeOpacity: 1.0,
@@ -196,7 +198,7 @@ var gmap = gmap || {};
         // Redraw the polygons associated with the feature
         // Highlighted and selected states inherit from unselected state
         // NOTE: Remember to set your z-index for your highlights/selects above
-        //      your unselected polygons! 
+        //      your unselected polygons!
         redraw: function() {
             var opts = gmap._.extend({}, this.unselected_poly_options, this._responsive_unselected_poly_options());
 
@@ -218,14 +220,14 @@ var gmap = gmap || {};
         setSelected: function(value) {
             var i, len;
             if (value === true) {
-                if (this.controller.selected !== null) { 
-                    this.controller.selected.setSelected(false); 
+                if (this.controller.selected !== null) {
+                    this.controller.selected.setSelected(false);
                 }
                 this._selected = true;
                 this.controller.selected = this;
                 this.redraw();
-                if (this.selectCallback) { 
-                    this.selectCallback(); 
+                if (this.selectCallback) {
+                    this.selectCallback();
                 }
             } else if (value === false) {
                 this._selected = false;
@@ -240,8 +242,8 @@ var gmap = gmap || {};
             if ((value === true) && (this._highlighted === false)) {
                 this._highlighted = true;
                 this.redraw();
-                if (this.highlightCallback) { 
-                    this.highlightCallback(); 
+                if (this.highlightCallback) {
+                    this.highlightCallback();
                 }
             } else if ((value === false) && (this._highlighted === true)) {
                 this._highlighted = false;
@@ -364,7 +366,7 @@ var gmap = gmap || {};
           }
           return obj;
       });
-      window.kml = kmlstring; 
+      window.kml = kmlstring;
       return features;
   }
 

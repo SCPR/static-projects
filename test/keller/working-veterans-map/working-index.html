@@ -1,8 +1,8 @@
 <!-- begin css  -->
 <style type="text/css">
 #map_container {width: 700px; height: 300px;}
-#map_data {width: 100%; height: 50px; margin: 0 5% 50px 5%;}
-#map_canvas {width: 80%; height: 300px; margin: 0 5% 50px 5%;}
+#map_data {width: 100%; height: auto; margin: 0 5% 50px 5%;}
+#map_canvas {width: 80%; height: 500px; margin: 0 5% 50px 5%;}
 </style>
 <!-- end css -->
 
@@ -12,11 +12,10 @@
 <script type="text/javascript">
 
     var jqueryNoConflict = jQuery;
-    var veteransServed = '1BUKjDW0-aHQNRa2XRmO3Cd6xiLirWHPd22QTmfY';
-    var locationColumn =  'Served In';
+    var veteransServed = '1kgPO58I9WMKxXwgoeWK5NTBJElfRg3t3BV8bbtc';
+    var locationColumn =  'home';
     var map;
     var layer;
-
 
     //begin main function
     jqueryNoConflict(document).ready(function(){
@@ -26,10 +25,10 @@
     // begin function
     function createMap() {
 
-        var centerCalif = new google.maps.LatLng(48.714156730001434, 67.1484375);
+        var centerCalif = new google.maps.LatLng(37.335194502529724, -119.366455078125);
         map = new google.maps.Map(document.getElementById('map_canvas'), {
             center: centerCalif,
-            zoom: 2,
+            zoom: 6,
             scrollwheel: false,
             draggable: true,
             mapTypeControl: false,
@@ -56,15 +55,13 @@
         // click listener that writes to FT data to #my_map_data_div
         google.maps.event.addListener(layer, 'click', function(e) {
             jqueryNoConflict("#map_data").html(
-                '<p>' + e.row['Name'].value + '</p>' +
-                '<p>' + e.row['Conflict'].value + '</p>' +
-                '<p>' + e.row['Served In'].value + '</p>');
+                '<p>' + e.row['veterans_name'].value + '</p>' +
+                '<p>' + e.row['home'].value + '</p>' +
+                '<p>' + e.row['narrative'].value + '</p>');
         });
 
     };
     // end function
-
-
 
 </script>
 <!-- end scripts -->
@@ -72,15 +69,11 @@
 <!-- begin map container -->
 <div id="map_container">
 
-<h4>Using the map</h4>
+<h4>About this map</h4>
 
 <!-- begin map data -->
 <div id="map_data">
-
-
 <p>Intro Text goes here and will be hidden on click.</p>
-
-
 </div>
 <!-- end map data -->
 
