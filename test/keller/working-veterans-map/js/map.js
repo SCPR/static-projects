@@ -2,7 +2,7 @@
     var map;
     var mapdrawn = false;
 
-    // Do the following when the page is ready
+    // do the following when the page is ready
     $(document).ready(function(){
 
     	 // run the initialize function
