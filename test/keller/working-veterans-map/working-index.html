@@ -55,9 +55,8 @@
         // click listener that writes to FT data to #my_map_data_div
         google.maps.event.addListener(layer, 'click', function(e) {
             jqueryNoConflict("#map_data").html(
-                '<p>' + e.row['veterans_name'].value + '</p>' +
-                '<p>' + e.row['home'].value + '</p>' +
-                '<p>' + e.row['narrative'].value + '</p>');
+                '<p><strong>' + e.row['veterans_name'].value + ' </strong>, ' + e.row['home'].value +
+                '<br />' + '<p>' + e.row['narrative'].value + '</p>');
         });
 
     };
@@ -73,7 +72,7 @@
 
 <!-- begin map data -->
 <div id="map_data">
-<p>Intro Text goes here and will be hidden on click.</p>
+<p>In honor of Veterans Day, we sought out stories from California veterans. Click the map pins below to learn their stories.</p>
 </div>
 <!-- end map data -->
 
