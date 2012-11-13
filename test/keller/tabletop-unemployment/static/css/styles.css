@@ -1,1 +1,7 @@
-#data-dump {width: 100%; height: 20px;}
+#data-container {width: 720px; height: auto; margin: 0 auto 0 auto;}
+
+#data-dump {width: 100%; height: 20px; margin: 0 auto 0 auto;}
+
+#highcharts-ouput {width: 100%; height: auto; margin: 0 auto 0 auto;}
+
+#data-table {width: 80%; margin: 0 auto 0 auto;}

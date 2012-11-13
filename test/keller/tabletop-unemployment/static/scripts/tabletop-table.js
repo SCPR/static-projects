@@ -15,6 +15,7 @@
 
     function showInfo(data, tabletop) {
 
+        // pulls column names
         jqueryNoConflict.each( tabletop.sheets(), function(i, sheet) {
             jqueryNoConflict("#data-dump").html(
                 '<p>Returning data from ' + sheet.name +
