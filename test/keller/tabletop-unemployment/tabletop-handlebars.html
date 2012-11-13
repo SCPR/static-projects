@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="static/css/styles.css" type="text/css" />
+
+<h1>Tabletop/Handlebars example</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Store</th>
+      <th>Black Friday Opening</th>
+    </tr>
+  </thead>
+  <tbody id="content"></tbody>
+</table>
+
+<script id="cat-template" type="text/x-handlebars-template">
+    <tr>
+      <td>{{store}}</td>
+      <td>{{opening}}</td>
+    </tr>
+</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="http://projects.scpr.org/static/scripts/handlebars-1.0.rc.1.js"></script>
+<script type="text/javascript" src="http://projects.scpr.org/static/scripts/tabletop.js"></script>
+<script type="text/javascript" src="static/scripts/tabletop-handlebars.js"></script>
