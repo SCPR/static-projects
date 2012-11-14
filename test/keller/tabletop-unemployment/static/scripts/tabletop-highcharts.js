@@ -64,30 +64,9 @@
             chartData.push(queriedData);
 
             // set each array to the chart data series
-            chart.name[i].setName(year[i], chartType)
             chart.series[i].setData(chartData[i], chartType)
 
-
-/* Testing to get year in
-            holdingData = {
-                'name': year,
-                'data': queriedData
-            };
-            tempChartData.push(holdingData);
-*/
-
-
         });
-
-
-
-/*
-        chart.series.setData(tempChartData, chartType)
-        console.log(chartData);
-        console.log(tempChartData);
-*/
-
-
     };
 
 
