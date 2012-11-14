@@ -15,9 +15,6 @@
     var queriedData = [];
     var chartData = [];
 
-    //var holdingData = {};
-    //var tempChartData = [];
-
     // chart options
     var chart;
     var chartType = 'column';
