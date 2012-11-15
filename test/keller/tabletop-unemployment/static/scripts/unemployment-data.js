@@ -9,12 +9,14 @@
     var dataSpreadsheet = '0An8W63YKWOsxdHRxR2oyZXNDTnZOaWtMclZUdVM5amc';
 
     // the sheet being queried
-    var dataSheet = 'Employment Hours and Earnings';
+    var dataSheet = 'Jobs Added Per Month-2012';
 
     // chart options
     var chart;
-    var chartType = 'column';
-    //var columnHeaders = [];
+    var chartType = 'bar';
+
+    var chartCategories = ['Dec.', 'Nov.', 'Oct', 'Sept.', 'Aug.', 'July', 'June', 'May', 'April', 'March', 'Feb.', 'Jan.'];
+
 
     // begin main function
     jqueryNoConflict(document).ready(function(){
@@ -28,7 +30,6 @@
         drawHighchart();
 
     });
-
 
     function showInfo(data, tabletop){
 
@@ -84,17 +85,19 @@
                 text: 'Source: Bureau of Labor Statistics'
             },
 
-            xAxis: {
-                categories: ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'],
-
-                title: {
-                    text: null
-                }
-            },
+            xAxis: [{
+                categories: chartCategories,
+                reversed: false
+            }, {
+                opposite: true,
+                reversed: false,
+                categories: chartCategories,
+                linkedTo: 0
+            }],
 
             yAxis: {
                 title: {
-                    text: 'Number of Unemployment Claims',
+                    text: 'Number of Jobs Added Per Month',
                     align: 'high'
                 },
 
@@ -110,10 +113,9 @@
             },
 
             plotOptions: {
-                bar: {
-                    dataLabels: {
-                        enabled: true
-                    }
+                series: {
+                    //stacking: 'normal',
+                    pointWidth: 10
                 }
             },
 
