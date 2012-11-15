@@ -95,8 +95,8 @@ $(function() {
             });
         });
         // load scripts after all the html has been set
-        //$.getScript('//static.ak.fbcdn.net/connect.php/js/FB.Share');
-        //$.getScript('//platform.twitter.com/widgets.js');
+        $.getScript('//static.ak.fbcdn.net/connect.php/js/FB.Share');
+        $.getScript('//platform.twitter.com/widgets.js');
 
         // add open/close buttons to each post
         $('#timeline .item.post').each(function() {
