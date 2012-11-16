@@ -60,10 +60,6 @@
             new google.maps.LatLng(34.159261,-118.168863)
         ];
 
-
-        // Construct the polygon
-        // Note that we don't specify an array or arrays, but instead just
-        // a simple array of LatLngs in the paths property
         parsonsShuttle = new google.maps.Polygon({
             paths: parkingLotCoords,
             strokeColor: "#4680b9",
@@ -73,9 +69,17 @@
             fillOpacity: 0.35
         });
 
-        // Construct the polygon
-        // Note that we don't specify an array or arrays, but instead just
-        // a simple array of LatLngs in the paths property
+        var markerParsons = 'http://google.com/mapfiles/ms/micons/bus.png';
+
+        var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(34.14866,-118.152555),
+              map: map,
+              icon: markerParsons,
+              title:"Parson's Corporation"
+          });
+
+        parsonsShuttle.setMap(map);
+
         roseBowl = new google.maps.Polygon({
             paths: roseBowlCoords,
             strokeColor: "#FF0000",
@@ -85,8 +89,18 @@
             fillOpacity: 0.35
         });
 
-        parsonsShuttle.setMap(map);
+        var markerRoseBowl = 'http://google.com/mapfiles/ms/micons/sportvenue.png';
+
+        var marker = new google.maps.Marker({
+              position: new google.maps.LatLng(34.161339,-118.167597),
+              map: map,
+              icon: markerRoseBowl,
+              title:"Rose Bowl"
+          });
+
         roseBowl.setMap(map);
+
+
 
     };
     // end function
