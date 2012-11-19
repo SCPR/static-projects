@@ -1,0 +1,23 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+var jqueryNoConflict = jQuery;
+
+    //begin main function
+    jqueryNoConflict(document).ready(function(){
+        changer();
+    });
+    //end main function
+
+    function changer() {
+        var words = ["Growth", "Family", "Healthcare", "Good Health and Healthcare", "Tomorrows", "Love", "Election", "Health"];
+        var idx = Math.floor(words.length * Math.random());
+        $('#change').text(words[idx]);
+        var time = Math.floor(2000 * Math.random() + 2000);
+        setTimeout(changer,time);
+    };
+
+</script>
+
+<h2>This Thanksgiving I am thankful for <span id="change"></span></h2>
