@@ -1,5 +1,11 @@
-<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<style type="text/css">
+#data-container {width: 620px; height: 400px; margin: 25px auto 0 auto; background: #ffffff url('turkey-sign.jpg') no-repeat center center;}
 
+#targeted-content {position:fixed; top:255px; left: 650px;}
+
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
 <script type="text/javascript">
 
 var jqueryNoConflict = jQuery;
@@ -11,13 +17,15 @@ var jqueryNoConflict = jQuery;
     //end main function
 
     function changer() {
-        var words = ["Growth", "Family", "Healthcare", "Good Health and Healthcare", "Tomorrows", "Love", "Election", "Health"];
+        var words = ["Growth", "Family", "Healthcare", "Good Health and Healthcare", "Tomorrows", "Love", "the Election", "Health"];
         var idx = Math.floor(words.length * Math.random());
-        $('#change').text(words[idx]);
+        $('#change').text(words[idx].toLowerCase());
         var time = Math.floor(2000 * Math.random() + 2000);
         setTimeout(changer,time);
     };
 
 </script>
 
-<h2>This Thanksgiving I am thankful for <span id="change"></span></h2>
+<div id="data-container">
+<h4 id="targeted-content">This Thanksgiving I am thankful for <span id="change"></span></h4>
+</div>
