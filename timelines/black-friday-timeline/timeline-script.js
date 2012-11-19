@@ -1,7 +1,7 @@
 // below are the only variables you need to create the timeline
 
 // title to write to the #timeline-title div
-var timelineTitle = 'A look a Black Friday';
+var timelineTitle = 'A Look a Black Friday';
 
 var timelineConfig = {
 
@@ -94,9 +94,10 @@ $(function() {
                 itemPositionDataEnabled: true
             });
         });
+
         // load scripts after all the html has been set
-        $.getScript('//static.ak.fbcdn.net/connect.php/js/FB.Share');
-        $.getScript('//platform.twitter.com/widgets.js');
+        //$.getScript('//static.ak.fbcdn.net/connect.php/js/FB.Share');
+        //$.getScript('//platform.twitter.com/widgets.js');
 
         // add open/close buttons to each post
         $('#timeline .item.post').each(function() {
