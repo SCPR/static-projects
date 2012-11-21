@@ -1,3 +1,8 @@
+/*
+    docs on highcharts click events
+    http://api.highcharts.com/highcharts#plotOptions.line.events.legendItemClick
+*/
+
     var jqueryNoConflict = jQuery;
 
     // make sure the spreadsheet is published to the web
