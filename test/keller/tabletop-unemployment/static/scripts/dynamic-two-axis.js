@@ -1,7 +1,3 @@
-/* TO DO
- - Number for month; revison to previous months; quarterly basis average.
-*/
-
     var jqueryNoConflict = jQuery;
 
     // make sure the spreadsheet is published to the web
@@ -13,14 +9,11 @@
     // container arrays
     var allJobsData = [];
     var arraysOfJobsData = [];
-
     var filters = [];
 
     // chart options
     var chart;
-    var chartType = 'column';
-
-    var chartCategories = ['Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+    var chartCategories = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
 
     // pull data from spreadsheet onload
     jqueryNoConflict(document).ready(function(){
@@ -51,11 +44,9 @@
     // display data from tabletop
     function showInfo(data, tabletop){
 
-
         // handlebars variables
         var source   = $('#cat-template').html();
         var template = Handlebars.compile(source);
-
 
         // pulls data from the spreadsheet
         jqueryNoConflict.each(tabletop.sheets(dataSheet).all(), function(i, record) {
@@ -63,8 +54,7 @@
             // render to handlebars templates
             var html = template(record);
             var commaAddedHtml = addCommas(html)
-            $("#content").append(commaAddedHtml);
-
+            jqueryNoConflict('#content').append(commaAddedHtml);
 
             // set variables and convert to integers if needed
             var jan = parseInt(record.jan);
@@ -93,29 +83,28 @@
             var initialMonthlyJobs = {
                 name: 'Initial',
                 color: '#4DAF4A',
-                type: 'spline',
+                type: 'areaspline',
                 data: arraysOfJobsData[0]
             };
 
             var revisedMonthlyJobs = {
                 name: 'Revised',
                 color: '#377EB8',
-                type: 'spline',
+                type: 'areaspline',
                 data: arraysOfJobsData[1]
             };
 
-            var secondMonthlyJobs = {
+            var finalMonthlyJobs = {
                 name: 'Final',
                 color: '#E41A1C',
-                type: 'column',
-                //threshold: 2,
+                type: 'areaspline',
                 data: arraysOfJobsData[2]
             };
 
             // add respective objects to highcharts series
-            chart.addSeries(initialMonthlyJobs);
+            chart.addSeries(finalMonthlyJobs);
             chart.addSeries(revisedMonthlyJobs);
-            chart.addSeries(secondMonthlyJobs);
+            chart.addSeries(initialMonthlyJobs);
 
     };
 
@@ -124,7 +113,7 @@
 
         chart = new Highcharts.Chart({
             chart: {
-                renderTo: 'highcharts-ouput',
+                renderTo: 'data-chart',
                 zoomType: 'xy'
             },
 
@@ -161,38 +150,43 @@
             }],
 
             tooltip: {
-                formatter: function() {
+                formatter: function(){
                     return ''+ this.series.name +': '+ Highcharts.numberFormat(this.y, 0, ',');
                 }
             },
 
+            // testing various click event options
             plotOptions: {
-                events: {
+                series: {
+                    events: {
+                        mouseOver: function() {
+                            var highlightRowId = String(this.name);
+                            var highlightRowColor = String(this.color);
+                            var selectedRow = 'tr#' + highlightRowId;
+                            jqueryNoConflict(selectedRow).addClass(
+                                'chartMouseOver').css(
+                                    'color', highlightRowColor);
+                        },
 
+                        mouseOut: function() {
+                            var highlightRowId = String(this.name);
+                            var highlightRowColor = String(this.color);
+                            var selectedRow = 'tr#' + highlightRowId;
+                            jqueryNoConflict(selectedRow).removeClass(
+                                'chartMouseOver').css(
+                                    'color', 'black');
+                        },
 
+                        legendItemClick: function () {
+                            var highlightRowId = String(this.name);
+                            var selectedRow = 'tr#' + highlightRowId;
+                            jqueryNoConflict(selectedRow).toggle();
 
-                    // http://stackoverflow.com/questions/11548396/toggling-datatable-rows-based-on-highchart-legend
-                    legendItemClick: function () {
-
-                        tmp = [];
-
-                        // Series was Visible, Now Hidden
-                        if(this.visible){
-                            // Add Action Here
-                        }
-
-                        // Series was Hidden, Now Visible
-                        else{
-                            // Add Action Here
+                             //returning false cancels default action
+                            // return false;
                         }
                     }
-                },
-
-                series: {
-                    //stacking: 'normal',
-                    //pointWidth: 10
                 }
-
             },
 
             legend: {
