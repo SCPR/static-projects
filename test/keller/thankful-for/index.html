@@ -52,25 +52,28 @@
     var jqueryNoConflict = jQuery;
     var words = ['Growth', 'Family', 'Healthcare', 'Tomorrows', 'Love', 'the Election', 'Health'];
 
-    //begin main function
+    // begin main function
     jqueryNoConflict(document).ready(function(){
         changer();
     });
-    //end main function
+    // end main function
 
+    // begin function
     function changer() {
         var idx = Math.floor(words.length * Math.random());
         $('#change').text(words[idx].toLowerCase());
         var time = Math.floor(2000 * Math.random() + 2000);
         setTimeout(changer,time);
     };
+    // end function
+
 </script>
 
 
 <div id="thankful-container">
 
 <div id="thankful-leadin">
-<p>This Thanksgiving I am thankful for...</p>
+<p>This Thanksgiving, I am thankful for...</p>
 </div>
 
 <div id="thankful-background">
