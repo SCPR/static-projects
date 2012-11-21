@@ -1,0 +1,83 @@
+<link href="http://current.bootstrapcdn.com/bootstrap-v204/css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="static/css/styles.css" type="text/css" />
+
+<!--
+
+URLS for past BLS reports
+Archived: http://www.bls.gov/schedule/archives/empsit_nr.htm
+
+2012:
+http://www.bls.gov/news.release/archives/empsit_11022012.htm
+http://www.bls.gov/news.release/archives/empsit_10052012.htm
+http://www.bls.gov/news.release/archives/empsit_09072012.htm
+http://www.bls.gov/news.release/archives/empsit_08032012.htm
+http://www.bls.gov/news.release/archives/empsit_07062012.htm
+http://www.bls.gov/news.release/archives/empsit_06012012.htm
+http://www.bls.gov/news.release/archives/empsit_05042012.htm
+http://www.bls.gov/news.release/archives/empsit_04062012.htm
+http://www.bls.gov/news.release/archives/empsit_03092012.htm
+http://www.bls.gov/news.release/archives/empsit_02032012.htm
+
+-->
+
+<!-- begin container -->
+<div id="data-container">
+
+<div id="data-dump"></div>
+
+<!-- begin chart -->
+<div id="highcharts-ouput"></div>
+<!-- end chart -->
+
+<div id="data-table">
+
+<table class="table table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>Release</th>
+      <th>Jan.</th>
+      <th>Feb.</th>
+      <th>March</th>
+      <th>April</th>
+      <th>May</th>
+      <th>June</th>
+      <th>July</th>
+      <th>Aug.</th>
+      <th>Sept.</th>
+      <th>Oct.</th>
+      <th>Nov.</th>
+      <th>Dec.</th>
+    </tr>
+  </thead>
+  <tbody id="content"></tbody>
+</table>
+
+</div>
+
+</div>
+<!-- end container -->
+
+<script id="cat-template" type="text/x-handlebars-template">
+    <tr>
+      <td><tspan x="21">{{release}}</tspan></td>
+      <td>{{jan}}</td>
+      <td>{{feb}}</td>
+      <td>{{mar}}</td>
+      <td>{{apr}}</td>
+      <td>{{may}}</td>
+      <td>{{jun}}</td>
+      <td>{{jul}}</td>
+      <td>{{aug}}</td>
+      <td>{{sep}}</td>
+      <td>{{oct}}</td>
+      <td>{{nov}}</td>
+      <td>{{dec}}</td>
+    </tr>
+</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
+<script type="text/javascript" src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
+<script type="text/javascript" src="http://projects.scpr.org/static/static-files/scripts/tabletop.js"></script>
+<script type="text/javascript" src="http://projects.scpr.org/static/static-files/scripts/highcharts.js"></script>
+<script type="text/javascript" src="static/scripts/dynamic-two-axis.js"></script>
