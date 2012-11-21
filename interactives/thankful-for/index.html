@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css/jquery.alerts.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
 <style type="text/css">
 
 #thankful-container
@@ -47,6 +49,11 @@
 </style>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+<!-- Share/Embed 'alert' box generated with jquery.alerts.js.
+See http://abeautifulsite.net/blog/2008/12/jquery-alert-dialogs/ -->
+<script type="text/javascript" src="scripts/jquery.alerts.js"></script>
+
 <script type="text/javascript">
 
     var jqueryNoConflict = jQuery;
@@ -56,19 +63,25 @@
     jqueryNoConflict(document).ready(function(){
         changer();
     });
-    // end main function
+    // end
 
-    // begin function
+    // word randomizer function
     function changer() {
         var idx = Math.floor(words.length * Math.random());
         $('#change').text(words[idx].toLowerCase());
         var time = Math.floor(2000 * Math.random() + 2000);
         setTimeout(changer,time);
     };
-    // end function
+    // end
 
+    // embed function
+    function embedBox() {
+        var embed_url = 'http://projects.scpr.org/static/interactives/thankful-for';
+
+        jAlert('<strong>To embed this view on a blog or site, copy this code:<br></strong>&lt;iframe src=\"'+ embed_url +'\" width=\"420px\" height=\"440px\" scrolling=\"no\" frameborder=\"0\"&gt;&lt;/iframe>', 'Share or Embed');
+    }
+    // end
 </script>
-
 
 <div id="thankful-container">
 
@@ -88,6 +101,7 @@
 
 <div id="data-credits">
 <p><em>image by bennthewolfe via Creative Commons on Flickr</em></p>
+<!-- <p> Want Fred for your site? <span id="embed" style="cursor:pointer;" onclick="embedBox()">Click to Embed Fred</p> -->
 </div>
 
 </div>
