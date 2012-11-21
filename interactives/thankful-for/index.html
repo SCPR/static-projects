@@ -1,0 +1,93 @@
+<style type="text/css">
+
+#thankful-container
+{width: 400px; height: 400px; font-family: "proxima-nova-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;}
+
+#thankful-leadin {width: 380px; height: 30px; margin: 0 auto 0 auto; color: #2B2B2B; font-size: 18px; text-align: center;}
+
+#thankful-background {position: relative; width: 380px; height: 380px; background: #ffffff url('resized-turkey.jpg') no-repeat center center;}
+
+#thankful-display {
+    width: 165px;
+    height: 40px;
+    position:fixed;
+    top: 265px;
+    left: 116px;
+    background: #e7e7e7;
+    padding: 5px;
+
+    /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+    -webkit-border-radius: 40px;
+
+    /* Firefox 1-3.6 */
+    -moz-border-radius: 40px;
+
+    /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+    border-radius: 40px;
+
+    filter:alpha(opacity=40);
+    -moz-opacity:0.40;
+    opacity: 0.4;
+}
+
+#thankful-text{
+    width: 165px;
+    height: 75px;
+    position:fixed;
+    top: 271px;
+    left: 121px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 28px;
+    color: #000000;
+}
+
+#data-credits p {font-size: 10px;}
+
+</style>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript">
+
+    var jqueryNoConflict = jQuery;
+    var words = ['Retirement', 'Love', 'Airplanes', 'Advancement', 'Skype', 'Surviving', 'Elections', 'Buoyancy', 'Prosperity', 'Freedom', 'God', 'Giving', 'Growth', 'Family', 'Healthcare', 'Tomorrows', 'Love', 'The Election', 'Health'];
+
+    // begin main function
+    jqueryNoConflict(document).ready(function(){
+        changer();
+    });
+    // end main function
+
+    // begin function
+    function changer() {
+        var idx = Math.floor(words.length * Math.random());
+        $('#change').text(words[idx].toLowerCase());
+        var time = Math.floor(2000 * Math.random() + 2000);
+        setTimeout(changer,time);
+    };
+    // end function
+
+</script>
+
+
+<div id="thankful-container">
+
+<div id="thankful-leadin">
+<p>This Thanksgiving, I am thankful for...</p>
+</div>
+
+<div id="thankful-background">
+
+<div id="thankful-display"></div>
+
+<div id="thankful-text">
+<span id="change"></span>
+</div>
+
+</div>
+
+<div id="data-credits">
+<p><em>image by bennthewolfe via Creative Commons on Flickr</em></p>
+</div>
+
+</div>
