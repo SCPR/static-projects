@@ -1,6 +1,12 @@
 /*
     docs on highcharts click events
     http://api.highcharts.com/highcharts#plotOptions.line.events.legendItemClick
+
+TO DO
+-- The narrative could use some work, as could clear instructions to the user... For instance, click on the chart legend to filter the chart and the table, mouse over, etc.
+-- I'd like to do more to integrate the chart and the table... rather than highlight the entire row, the specific number perhaps...
+-- Above all, I wonder if there isn't a better visual representation to show the changes...
+
 */
 
     var jqueryNoConflict = jQuery;
@@ -14,7 +20,6 @@
     // container arrays
     var allJobsData = [];
     var arraysOfJobsData = [];
-    var filters = [];
 
     // chart options
     var chart;
@@ -163,13 +168,46 @@
             // testing various click event options
             plotOptions: {
                 series: {
+
+                    point: {
+                        events: {
+                            mouseOver: function() {
+                                var highlightRowColor = String(this.series.color);
+                                var highlightRowId = String(this.series.name);
+                                var highlightCellId = String(this.x);
+                                var selectedRow = 'tr#' + highlightRowId;
+                                var selectedCell = 'td#' + highlightCellId;
+
+                                jqueryNoConflict(selectedRow).css(
+                                    {'text-decoration': 'underline', 'color': highlightRowColor});
+
+                            },
+
+                            mouseOut: function() {
+                                var highlightRowColor = String(this.series.color);
+                                var highlightRowId = String(this.series.name);
+                                var highlightCellId = String(this.x);
+                                var selectedRow = 'tr#' + highlightRowId;
+                                var selectedCell = 'td#' + highlightCellId;
+
+                                jqueryNoConflict(selectedRow).css(
+                                    {'text-decoration': 'none', 'color': 'black'});
+
+                            }
+
+                        }
+                    },
+
+
+
                     events: {
+
+/*
                         mouseOver: function() {
                             var highlightRowId = String(this.name);
                             var highlightRowColor = String(this.color);
                             var selectedRow = 'tr#' + highlightRowId;
-                            jqueryNoConflict(selectedRow).addClass(
-                                'chartMouseOver').css(
+                            jqueryNoConflict(selectedRow).css(
                                     'color', highlightRowColor);
                         },
 
@@ -177,10 +215,10 @@
                             var highlightRowId = String(this.name);
                             var highlightRowColor = String(this.color);
                             var selectedRow = 'tr#' + highlightRowId;
-                            jqueryNoConflict(selectedRow).removeClass(
-                                'chartMouseOver').css(
+                            jqueryNoConflict(selectedRow).css(
                                     'color', 'black');
                         },
+*/
 
                         legendItemClick: function () {
                             var highlightRowId = String(this.name);
