@@ -1,14 +1,14 @@
 // below are the only variables you need to create the timeline
 
 // title to write to the #timeline-title div
-var timelineTitle = 'A Look a Black Friday';
+var timelineTitle = 'Timeline: Black Friday/Cyber Monday';
 
 var timelineConfig = {
 
     // add the key of your spreadsheet after publishing it to the web
     key: '0An8W63YKWOsxdDdidzJtWlZGUXQ0S0MxR3A0RmZqbGc',
 
-    // add the name of the spreadsheet  'sheet'
+    // add the name of the spreadsheet 'sheet'
 	sheetName: 'Sheet1'
 }
 // above are the only variables you need to create the timeline
