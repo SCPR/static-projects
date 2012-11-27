@@ -65,10 +65,11 @@
 
             jqueryNoConflict('#map_data_explainer').html('');
             jqueryNoConflict('#map_data_details').html(
-                '<p>' + e.row['Name'].value + '</p>' +
-                '<p><strong>Date/Time:</strong> ' + e.row['Date'].value + ' at ' + e.row['Time'].value + '</p>' +
+                '<p><a href=\"' + e.row['More_info'].value + '\" target=\"_blank\">' +
+                e.row['Name'].value + '</a></p>' + '<p><strong>Date/Time:</strong><br /> ' +
+                e.row['Date'].value + '<br /> ' + e.row['Time'].value + '</p>' +
                 '<p>' + e.row['Description'].value + '<br />' +
-                '<p><strong>Location:</strong> ' + e.row['Address'].value + ', ' +
+                '<p><strong>Location:</strong><br />' + e.row['Address'].value + ', ' +
                 e.row['City'].value + '</p>');
 
         });
