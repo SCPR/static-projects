@@ -1,45 +1,116 @@
-body {font-size:14px;}
-.serif {font-family:Georgia, serif;}
-.sans {font-family:Arial, sans-serif;}
-.rss {position: absolute; right:0; top:45%;}
-h1.index {font-size:28px;}
 #header {margin:15px 0 0 0;}
-#header div#share {float:right; position:relative;}
-#header div#share ul {margin-top:25px}
-#header div#share li {height: 22px; float: left; list-style: none; margin-right:2px;}
 h4#kicker {letter-spacing: 0.03em; font-size:12px; text-transform:uppercase; color:black; display:block; margin:0 0 5px 0;}
 h1#title {margin:0 0 5px 0; font-size:28px;}
-#table_fu {width: 950px; font-size: 14px; line-height: 20px; color: #333;}
-#table_fu div#description p {margin-left:2px; margin: 10px 0; text-align: left; line-height: 140%;}
-#table_fu div{}
-#table_fu div#similar h5 { text-transform:uppercase; font-size:13px; font-weight:normal; margin:0;}
-#table_fu div#similar {float:right; width:280px; border:1px solid #ddd; padding:10px; margin: 0 0 10px 20px;}
-#table_fu div#similar ul {margin-top:5px; margin-left:0; padding-left:3px; list-style-type:none;}
-#table_fu div#similar a {text-decoration:none;}
-#table_fu div#sources, div#credits, div#tags {margin-bottom:5px}
-#table_fu div#byline {text-align:right; margin-bottom:5px;}
-#table_fu div#legend {float:left; margin-bottom:10px; margin-top:-5px;}
-#table_fu div#ribbon {clear: both; display: block; overflow:visible;}
-#table_fu div#controls {width:50%; position:relative; height:32px;}
-#table_fu div#pager {position:absolute; right:0; top: 0; margin-bottom:2px;}
-#table_fu div#pager img {display:inline; vertical-align:text-bottom;}
-#table_fu div#pager div.pagedisplay{display: inline;}
-#table_fu div#pager .pagesize{margin-left:10px;}
-#table_fu div#filter {position:absolute;left:0;top: -2px;}
-#table_fu div#filter {font-size:14px;}
-#table_fu div#filter input {width:175px;}
-#table_fu #download {font-size:12px; margin-top:7px; margin-bottom:0px; display: inline; float: right;}
-#table_fu  #pubdate { color:#930000; font-style:italic; font-size:11px; margin-bottom:0px; display:inline;}
-#table_fu #data{border-collapse: collapse; margin:0 0 14px 0; width: 100%; font-family: Arial, sans serif;}
-#table_fu #data tbody tr:nth-child(even) td, tbody tr.even td {background-color:white;}
-#table_fu td, #table_fu th{padding: 7px; border-bottom: 1px dotted black; text-align: center;}
-#table_fu th{cursor: pointer; vertical-align: bottom; color: black; font-weight: bold; font-size: 13px !important; text-transform: none; letter-spacing: 0.5px; padding: 4px 14px 4px 7px; background: white url(../img/both.png) no-repeat 99% 50%;}
-#table_fu thead tr {border-top: 1px solid black;border-bottom: 1px solid black;}
-#table_fu th.sorted, td.sorted {background-color: #e5ecf9 !important;}
-#table_fu th.headerSortDown{background: #e5ecf9 url(../img/up.png) no-repeat 99% 50%;}
-#table_fu th.headerSortUp{background: #e5ecf9 url(../img/down.png) no-repeat 99% 50%;}
-#table_fu img.bubble {margin: auto;}
-#table_fu img.vote {margin:auto;}
+table td { background:#fff;}
+table th { font-weight: bold; }
+table td, table th { padding: 9px 10px; text-align: left; }
+
+body.minimal {
+    background:url('../img/bg-body.png') repeat 0 0;
+}
+body.minimal header {
+    background:#fff;
+    box-shadow:0 0 8px rgba(0,0,0,0.7);
+    height:auto;
+    margin:0 0 40px;
+} 
+body.minimal header h3#site-title a {
+    background-image:url('http://www.scpr.org/assets/logo-masthead.png');
+    width:181px;
+    height:42px;
+}
+body.minimal, body.minimal p, h1, h2, h3, h4, h5, h6 {
+    font-family:"proxima nova", sans-serif;
+}
+h1#title {
+    font-size:36px;
+    font-weight:800;
+}
+body.minimal hr {
+    background-color:#ccc;
+    border-bottom:1px solid #fff;
+    height:1px;
+} 
+body.minimal p {
+    font-size:15px;
+    font-weight:400;
+}
+body.minimal .header-links {
+    margin-bottom:10px;
+}
+body.minimal .header-links li {
+    border-right:1px solid #e9e9e9;
+    display:block;
+    float:left;
+    list-style:none;
+    padding:8px 18px 0;
+}
+    body.minimal .header-links li:last-child {
+        border:0;
+        padding-right:0;
+    }
+    body.minimal .header-links b, body.minimal .header-links a {
+        color:#454545;
+        font-size:12px;
+    }
+    body.minimal .header-links b {
+        display:block;
+    }
+    body.minimal .header-links a.icon {
+        display:block;
+        text-indent:-9999px;
+    }
+    body.minimal .header-links a.icon:hover {
+        opacity:0.7;
+    }
+        body.minimal .header-links a.pledge-now {
+            background:url('../img/ico-pledge.png') no-repeat 0 0;
+            margin:0 auto;
+            width:31px;
+            height:22px;
+        }
+        body.minimal .header-links .share-links {
+            width:63px;
+            margin:0 auto;
+        }
+        body.minimal .header-links a.facebook {
+            background:url('../img/ico-facebook.png') no-repeat 0 0;
+            display:block;
+            float:left;
+            margin-right:10px;
+            width:22px;
+            height:22px;
+        }
+        body.minimal .header-links a.twitter {
+            background:url('../img/ico-twitter.png') no-repeat 0 0;
+            display:block;
+            float:left;
+            width:31px;
+            height:22px;
+        }
+
+/* Responsive Table Styles */
+table.responsive thead tr {background:#2e2e2e;color:#fff;}
+
+    /* Responsive Tables Mobile Styles */
+    @media only screen and (max-width: 767px) {
+    	table.responsive { margin-bottom: 0; }
+    	table.responsive td {background:transparent;}
+    	.pinned { position: absolute; left: 0; top: 0; background: #fff; width: 35%; overflow: hidden; overflow-x: scroll; border-right: 1px solid #ccc; border-left: 1px solid #ccc; }
+    	.pinned table { border-right: none; border-left: none; width: 100%; }
+    	.pinned table th, .pinned table td { white-space: nowrap; }
+    	.pinned td:last-child { border-bottom: 0; }
+	
+    	div.table-wrapper { position: relative; margin-bottom: 20px; overflow: hidden; border-right: 1px solid #ccc; }
+    	div.table-wrapper div.scrollable table { margin-left: 35%; }
+    	div.table-wrapper div.scrollable { overflow: scroll; overflow-y: hidden; }	
+	
+    	table.responsive td, table.responsive th { position: relative; white-space: nowrap; overflow: hidden; }
+    	table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td { display: none; }
+	
+    }
+
+
 /* Bullet graphs */
 #table_fu div.bullet-graph-wrap { position: relative; width: 100%; height: 21px; top: 0; left: 0; margin: 0; padding: 0; }
 #table_fu div.bullet-graph-box1 { position: absolute; height: 20px; width: 30%; left: 0; background-color: #eeeeee; z-index: 1; font-size: 0; }

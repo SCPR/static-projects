@@ -6,10 +6,11 @@
     <meta name="keywords" content="tablstacker" >
     <meta name="description" content="Testing table-stacker and what it can do. Here is the description" >
 
-    <link href='static/css/blueprint/screen.css' rel='stylesheet' type='text/css' media='all' />
-    <link href='static/css/blueprint/typography.css' rel='stylesheet' type='text/css' media='all' />
+    <link href='http://www.scpr.org/assets/application.css' rel='stylesheet' type='text/css' media='all' />
     <link href='static/css/style.css' rel='stylesheet' type='text/css' media='all' />
 
+    <script type="text/javascript" src="http://use.typekit.com/mhc7oxs.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script type="text/javascript" src="http://www.google.com/jsapi"></script>
     <script type="text/javascript">
       google.load("jquery", "1", {uncompressed:true})
@@ -32,75 +33,63 @@
         };
     </script>
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+    <link rel="alternate" href="/feeds/latest/" type="application/rss+xml" title="Latest spreadsheets" id="latest" />
 
-
-
-        <link rel="alternate" href="/feeds/latest/" type="application/rss+xml" title="Latest spreadsheets" id="latest" />
-
-
-
-
-        <meta property="og:site_name" content="TableStacker Demonstration"/>
-        <meta property="fb:admins" content="foo, bar"/>
-
+    <meta property="og:site_name" content="TableStacker Demonstration"/>
+    <meta property="fb:admins" content="foo, bar"/>
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="Testing title location"/>
     <meta property="og:url" content="/test-keller/"/>
-
     <meta property="og:description" content="Testing table-stacker and what it can do. Here is the description"/>
 
 
 
   </head>
-  <body>
-    <div class="container">
-        <div id="header" class="span-24 last serif">
-
-    <div id="share">
-        <ul>
-            <li>
-                <a data-text="" href="http://twitter.com/share" class="twitter-share-button"
-                    data-count="horizontal">Tweet</a>
-                <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-            </li>
-            <li>
-                <g:plusone size="medium"></g:plusone>
-            </li>
-            <li>
-                <div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=161694630579757&amp;xfbml=1"></script><fb:like href="" send="false" layout="button_count" width="90" show_faces="false" font=""></fb:like>
-            </li>
-        </ul>
-    </div>
-    <h4 id="kicker">testing kicker location</h4>
-    <h1 id="title">Testing title location</h1>
-
+  <body class="minimal">
+    <header>
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span16">
+            <h3 id="site-title"><a href="/">KPCC 89.3</a></h3>
+          </div>
+          <div class="span8">
+              <ul class="header-links clearfix pull-right">
+                  <li>
+                    <a href="https://scprcontribute.publicradio.org/" class="pledge-now icon">Contribute to KPCC</a>
+                    <a href="https://scprcontribute.publicradio.org/"><b>Pledge now</b></a>
+                  </li>
+                  <li>
+                    <div class="share-links clearfix">
+                      <a href="#" class="facebook icon">Facebook</a>
+                      <a href="#" class="twitter icon">Twitter</a>
+                    </div>
+                    <b>Share this page</b>
+                  </li>
+              </ul>
+          </div>
         </div>
-        <hr style="margin:0;" />
+        
+      </div>
+    </header>
+    <div class="container-fluid">
+      <div id="main">
+        <div class="article-header last serif">
+          <h1 id="title">Testing title location</h1>
+          <h4 id="kicker">testing kicker location</h4>
+          <hr />
+        </div>
         <div id="content" class="span-24 sans">
 
     <div id="table_fu">
-    <div class="clear"></div>
+        <div id="ribbon">
+          <div id="download">
+              Published: <div id="pubdate">Nov. 17, 2012</div>&nbsp;&nbsp;
 
-
-        <div id="description"><p>Testing table-stacker and what it can do. Here is the description</p></div>
-
-
-    <div class="clear"></div>
-
-
-
-    <div id="ribbon">
-
-        <div id="download">
-            Published: <div id="pubdate">Nov. 17, 2012</div>&nbsp;&nbsp;
-
-            Download:
-            <a href="/api/test-keller.csv">CSV</a> |
-            <a href="/api/test-keller.xls">XLS</a> |
-            <a target="_blank" href="/api/test-keller.json">JSON</a>
-
-        </div>
-
+              Download:
+              <a href="/api/test-keller.csv">CSV</a> |
+              <a href="/api/test-keller.xls">XLS</a> |
+              <a target="_blank" href="/api/test-keller.json">JSON</a>
+          </div>
         <div id="controls">
             <div id="filter" >Search: <input type="text"></div>
             <div id="pager" class="pager">
@@ -111,21 +100,16 @@
                 <img src="static/img/next.png" class="next">
                 <img src="static/img/last.png" class="last">
                 <select class="pagesize">
-
                     <option selected="selected" value="5">5</option>
-
                     <option  value="10">10</option>
-
                     <option  value="15">15</option>
-
                 </select> per page
               </form>
             </div>
         </div>
-
     </div>
     <div class="clear"></div>
-    <table id="data" class="tabular">
+    <table id="data" class="table responsive">
         <thead>
             <tr>
 
@@ -540,14 +524,15 @@
                 <td style="text-align:right;">0</td>
 
           </tr>
-
         </tbody>
     <tfoot></tfoot>
     </table>
+    <hr />
     <div id="footer"><p>This is where the footer would appear.</p></div>
     <div id="sources">Sources: <p>Testing where the <a href="#" target="_blank">sources</a> appear.</p></div>
     <div id="credits">Credits: This is the credit field</div>
 
+    <script type="text/javascript" src="static/js/responsive-tables.js"></script>
     <script type='text/javascript'>
         var sortOrder = [[0, 1]];
         var perPage = 5;
@@ -574,11 +559,17 @@
     </div>
 
         </div>
-        <div id="footer" class="span-24 last" style="padding:10px 0; font-size:12px;">
-
-              <center>This is Table Stacker. It publishes spreadsheets. You can build your own in minutes. <a target="_blank" href="https://github.com/datadesk/latimes-table-stacker">Here's how</a>.</center>
-
-        </div>
+      </div>
     </div>
+    <footer>
+      <div class="container-fluid">
+        <ul>
+          <li><a href="http://scpr.org/terms/">Terms &amp; Conditions</a></li>
+          <li><a href="http://scpr.org/privacy/">Privacy</a></li>
+          <li><a href="http://scpr.org/web_site_feedback">Website Feedback</a></li>
+          <li>Copyright 2001 &copy; Southern California Public Radio</li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
