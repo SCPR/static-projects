@@ -1,0 +1,117 @@
+<!-- begin css  -->
+<link href="http://www.scpr.org/assets/application-cdd13de73fbf97236474e7a1f898f63c.css" media="all" rel="stylesheet" type="text/css">
+<link href="http://www.scpr.org/assets/base/print-923cc151bcea25e64c55c5b27cc4e286.css" media="print" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+#map_container {width: 620px; height: 600px;}
+#map_canvas {float: left; width: 75%; height: 580px; margin: 0 5px 0 5px;}
+#map_data {float: right; width: 20%; height: 580px; margin: 0 5px 0 5px;}
+#map_data_explainer {}
+#data_selector {margin: 15px 0 15px 0;}
+#map_data_details {}
+
+
+</style>
+<!-- end css  -->
+
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&region=us"></script>
+<script type="text/javascript">
+
+    var jqueryNoConflict = jQuery;
+    var shapeLayer;
+
+    //begin main function
+    jqueryNoConflict(document).ready(function(){
+        createMap();
+    });
+
+    // begin function
+    function createMap() {
+
+        // encrypted table id
+        var tableID = '1fEl0ExVvmTkwrA9isW8ZZEbj1kk2DWVFgzvIqgI';
+        var locationColumn =  'lat';
+        var centerLA = new google.maps.LatLng(34.11063450508318, -118.179931640625);
+
+        var map = new google.maps.Map(document.getElementById('map_canvas'), {
+            center: centerLA,
+            zoom: 10,
+            scrollwheel: false,
+            draggable: true,
+            mapTypeControl: false,
+            navigationControl: true,
+            streetViewControl: false,
+            panControl: false,
+            scaleControl: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            navigationControlOptions: {
+                style: google.maps.NavigationControlStyle.SMALL,
+                position: google.maps.ControlPosition.RIGHT_TOP}
+        });
+
+        // Initialize ft layer
+        shapeLayer = new google.maps.FusionTablesLayer({
+            query: {
+                select: locationColumn,
+                from: tableID
+            },
+            map: map,
+            suppressInfoWindows: true
+        });
+
+        // click listener that writes to FT data to #my_map_data_div
+        google.maps.event.addListener(shapeLayer, 'click', function(e) {
+
+            jqueryNoConflict('#map_data_explainer').html('');
+            jqueryNoConflict('#map_data_details').html(
+                '<p>' + e.row['Name'].value + '</p>' +
+                '<p><strong>Date/Time:</strong> ' + e.row['Date'].value + ' at ' + e.row['Time'].value + '</p>' +
+                '<p>' + e.row['Description'].value + '<br />' +
+                '<p><strong>Location:</strong> ' + e.row['Address'].value + ', ' +
+                e.row['City'].value + '</p>');
+
+        });
+
+    }
+    // end function
+
+    // change map on select function
+    function changeMapLayer() {
+        jqueryNoConflict('#map_data_explainer').html('');
+        jqueryNoConflict('#map_data_details').html('Click the map marker for more details');
+        var searchString = document.getElementById('search-string-l0').value.replace(/'/g, "\\'");
+            shapeLayer.setOptions({
+                query: {
+                    select: "'Lat'",
+                    from: '1fEl0ExVvmTkwrA9isW8ZZEbj1kk2DWVFgzvIqgI',
+                    where: "'City' = '" + searchString + "'"
+                }
+            });
+    };
+    // end change map on select function
+
+</script>
+
+<div id="map_container">
+    <div id="map_canvas"></div>
+    <div id="map_data"><h4>Tree lighting ceremonies</h4>
+    <p id="map_data_explainer">Click a marker to the left for tree lighting details, or use the drop down menu to select a city.</p>
+        <div id="data_selector">
+        <select id="search-string-l0" onchange="changeMapLayer(this.value);">
+        <option value="">--Select A City--</option>
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Monrovia">Monrovia</option>
+        <option value="Altadena">Altadena</option>
+        <option value="South Pasadena">South Pasadena</option>
+        <option value="San Gabriel">San Gabriel</option>
+        <option value="Burbank">Burbank</option>
+        <option value="Pasadena">Pasadena</option>
+        <option value="La Canada Flintridge">La Canada Flintridge</option>
+        </select>
+        </div>
+
+        <div id="map_data_details"></div>
+
+    </div>
+</div>
