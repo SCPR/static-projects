@@ -1,0 +1,106 @@
+<h3>Overview, Walkthrough, Deploying, Publishing &amp; Technical Specs for creating tabletop.js timelines</h3>
+
+<hr />
+
+<h6>Created 11/19/2012 by <a href="ckeller@scpr.org">Chris Keller</a></h6>
+
+<hr />
+
+<h4>Overview</h4>
+
+<p>In minutes we can create <a href="http://projects.scpr.org/static/timelines/black-friday-timeline/">vertical timelines</a> for the website using a Google Spreadsheet, an index file and a script. Roughly 95 percent of the work takes place in the Google spreadsheet.</p>
+
+<p>The template for these reside in /static-projects/timelines/timeline-templates.</p>
+
+<h4>Walkthrough</h4>
+
+<p>Create your Google spreadsheet by copying this [template}(https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdFFSZjB5VV9aVmZGblQxSFhpZ1NFd3c#gid=0). You may be prompted to request sharing from Chris Keller. Don't worry, he'll approve you.</p>
+
+<p>Please note that the date column should contain data in a Month, Day, Year format <strong>(April 25, 2012)</strong> for javascript to parse it. Also, all columns must be plain text format, including the two date columns.</p>
+
+<p>Once you have some information in the spreadsheet go to <em>File</em> --> <em>Publish to the web</em> and choose <em>Start publishing</em>.</p>
+
+<p>A URL will appear, and we're interested in the part between 'key=' and the '&amp;' symbol. Here's an example URL:</p>
+
+<pre><code>https://docs.google.com/spreadsheet/pub?key=0An8W63YKWOsxdFFSZjB5VV9aVmZGblQxSFhpZ1NFd3c&amp;output=html
+</code></pre>
+
+<p>We'd want this portion of the timeline script:</p>
+
+<pre><code>0An8W63YKWOsxdFFSZjB5VV9aVmZGblQxSFhpZ1NFd3c
+</code></pre>
+
+<p>We also want the name of the sheet you are using. In the example template, the sheet is called Posts. You may call yours anything.</p>
+
+<p>What this does though is allow one spreadsheet to be used for multiple timelines, which is really cool if you're a beat reporter like to keep things nice and neat.</p>
+
+<h4>Deploying</h4>
+
+<p>Now duplicate the timeline-template directory (option-drag on a Mac) and rename it to match your topic. I wouldn't use more than three words separated by hyphens. <strong>EXAMPLE: </strong> black-friday-timeline</p>
+
+<p>In the new directory you created open the JavaScript file titled 'timeline-script.js.' This file contains the configuration variables and should be the only file you need to edit.</p>
+
+<p>The configuration variables are at the top of the file. There are only three and they control the title, the spreadsheet key and the name of the sheet in the spreadsheet. If you don't feel comfortable doing this yourself, you can pass this information on to someone who is -- Chris K. -- and they can create these quickly.</p>
+
+<p>The configuration portion looks like this:</p>
+
+<pre><code>// below are the only variables you need to create the timeline
+// title to write to the #timeline-title div
+var timelineTitle = 'A Look a Black Friday';
+
+var timelineConfig = {
+
+    // add the key of your spreadsheet after publishing it to the web
+    key: '0An8W63YKWOsxdDdidzJtWlZGUXQ0S0MxR3A0RmZqbGc',
+
+    // add the name of the spreadsheet  'sheet'
+    sheetName: 'Sheet1'
+}
+// above are the only variables you need to create the timeline
+</code></pre>
+
+<p>Once you add a title, the key to the spreadsheet and the name of the sheet on which the data resides, you have created a timeline.</p>
+
+<h4>Publishing</h4>
+
+<p>Alert Chris K. or Eric Z. and they will be able to publish the new directory to be live on the site.</p>
+
+<p>When it comes time to add the timeline to a news story or blog post, we'll use an iframe, and we'll need the name of the directory you created the timeline in.</p>
+
+<p>Simply create a new story, click to the HTML editor, copy this code, insert the folder name and paste:</p>
+
+<pre><code>&lt;iframe src="http://projects.scpr.org/static/timelines/NAME-OF-FOLDER-HERE" width="640px" height="900px" scrolling="no" frameborder="0" /&gt;
+</code></pre>
+
+<p>You have now created a timeline. Want to update your timeline with new information...? Here's the beautiful part: Just add more information to the Google Spreadsheet and will.</p>
+
+<h4>Technical Specs</h4>
+
+<p>In addition to the timeline-script.js used for configuration, timelines rely on static css, images and script files found in the following directories:</p>
+
+<pre><code>http://projects.scpr.org/static/static-files/css/tabletop-timelines/
+http://projects.scpr.org/static/static-files/images/tabletop-timelines/
+http://projects.scpr.org/static/static-files/scripts/
+</code></pre>
+
+<p>In the scripts file, we're specifically looking at:</p>
+
+<pre><code>http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js
+http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js
+http://projects.scpr.org/static/static-files/scripts/tabletop.js
+http://projects.scpr.org/static/static-files/scripts/isotope-1.5.18.js
+</code></pre>
+
+<p><strong>Resources</strong></p>
+
+<p><a href="https://github.com/balancemedia/Timeline">GitHub repo</a> for the scripts used in the Timeline code</p>
+
+<p><a href="http://modernizr.com/">Modernizr</a></p>
+
+<p><a href="http://handlebarsjs.com/">Handlebars.js</a></p>
+
+<p><a href="https://github.com/jsoma/tabletop">Tabletop.js</a></p>
+
+<p><a href="http://isotope.metafizzy.co/">Isotope</a></p>
+
+<p><a href="http://projects.scpr.org/static/static-files/scripts/isotope_commercial_license/isotope-commercial-license.txt">License for Isotope</a> purchased by <a href="ckeller@scpr.org">Chris Keller</a></p>
