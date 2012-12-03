@@ -9,7 +9,7 @@ var timelineConfig = {
     key: '0An8W63YKWOsxdDdidzJtWlZGUXQ0S0MxR3A0RmZqbGc',
 
     // add the name of the spreadsheet  'sheet'
-	sheetName: 'Sheet1'
+	sheetName: 'Posts'
 }
 // above are the only variables you need to create the timeline
 

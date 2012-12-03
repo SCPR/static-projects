@@ -1,7 +1,7 @@
 // below are the only variables you need to create the timeline
 
 // title to write to the #timeline-title div
-var timelineTitle = 'Timeline: Black Friday/Cyber Monday';
+    var timelineTitle = 'Timeline: Black Friday/Cyber Monday';
 
 var timelineConfig = {
 
