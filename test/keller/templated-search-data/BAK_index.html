@@ -7,7 +7,7 @@
 <!-- begin header -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Season's Givings</title>
+<title>Community Causes</title>
 <meta name="keywords" content="tablstacker" >
 <meta name="description" content="Find a place near you to volunteer this holiday season." >
 <!-- nothing changed -->
@@ -16,15 +16,13 @@
 <!-- begin links to custom css here -->
 <link href='http://www.scpr.org/assets/application.css' rel='stylesheet' type='text/css' media='all' />
 <link href='http://projects.scpr.org/static/static-files/css/tablestacker-tables/styles.css' rel='stylesheet' type='text/css' media='all' />
-
-<style type="text/css">
-#project_banner {height: 70px; margin-top: -25px; background: url('imgs/ribbon.png') repeat-x; box-shadow: 0px 0px 15px #888;}
-
-
-
-</style>
-
 <!-- end links to custom css here -->
+
+<!-- extra css configured in yaml -->
+
+
+<!-- extra css configured in yaml -->
+
 
 <!-- begin custom scripts -->
 <script type="text/javascript" src="http://use.typekit.com/mhc7oxs.js"></script>
@@ -41,10 +39,10 @@ google.load("jquery", "1", {uncompressed:true})
 
 
 <!-- extra js configured in table-detail -->
-<script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.js' type='text/javascript'></script>
-<script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.pager.js' type='text/javascript'></script>
-<script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.multipagefilter.js' type='text/javascript'></script>
 
+    <script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.js' type='text/javascript'></script>
+    <script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.pager.js' type='text/javascript'></script>
+    <script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.multipagefilter.js' type='text/javascript'></script>
     <script type="text/javascript">
         /* For picking out bits from the query string */
         var getParameterByName = function(name) {
@@ -62,6 +60,26 @@ google.load("jquery", "1", {uncompressed:true})
 
 <!-- extra js configured in table-detail -->
 
+
+<!--
+
+<link rel="alternate" href="/feeds/latest/" type="application/rss+xml" title="Latest spreadsheets" id="latest" />
+
+
+
+    
+<meta property="og:site_name" content="TableStacker Demonstration"/>
+<meta property="fb:admins" content="foo, bar"/>
+
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Community Causes"/>
+    <meta property="og:url" content="/community-causes/"/>
+    
+    <meta property="og:description" content="Find a place near you to volunteer this holiday season."/>
+    
+
+-->
+
 </head>
 <!-- end header -->
 
@@ -71,76 +89,46 @@ google.load("jquery", "1", {uncompressed:true})
 <!-- begin container -->
 <div class="container">
 
-
 <!-- begin kpcc header -->
 <header>
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span16">
-                <h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
-            </div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span16">
+<h3 id="site-title"><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
+</div>
+<div class="span8">
+<ul class="header-links clearfix pull-right">
+<li>
+<a href="https://scprcontribute.publicradio.org/" class="pledge-now icon">Contribute to KPCC</a>
+<a href="https://scprcontribute.publicradio.org/"><b>Pledge now</b></a>
+</li>
+<li>
+<div class="share-links clearfix">
+<a href="#" class="facebook icon">Facebook</a>
+<a href="#" class="twitter icon">Twitter</a>
+</div>
+<b>Share this page</b>
+</li>
+</ul>
+</div>
+</div>
 
-            <div class="span8">
-                <ul class="header-links clearfix pull-right">
-                    <li>
-                    <a href="https://scprcontribute.publicradio.org/" class="pledge-now icon">Contribute to KPCC</a>
-                    <a href="https://scprcontribute.publicradio.org/"><b>Pledge now</b></a>
-                    </li>
-
-                    <li>
-                    <div class="share-links clearfix">
-                    <a href="#" class="facebook icon">Facebook</a>
-                    <a href="#" class="twitter icon">Twitter</a>
-                    </div>
-                    <b>Share this page</b>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
+</div>
 </header>
 <!-- end kpcc header -->
 
-<!-- begin project banner -->
-<div id="project_banner">
-<img style="float:left; height:200px; margin-top:-50px; margin-left:-12px;" src="imgs/bow.png" />
-<h4 id="kicker">Volunteer Opportunities in Southern California</h4>
-<h1 style="line-height:20px; color: #ffffff;" id="title">Season's Givings</h1>
-</div>
-<!-- end project banner -->
+<!-- begin kpcc -->
+<div class="container-fluid">
+<div id="main">
 
+<div class="article-header last serif">
 
-
-<!-- begin project content -->
-<div id="main" class="container-fluid">
-    <div class="article-header last serif">
-        <p style="margin: 20px 40px 0 40px;">This season, we asked KPCC listeners where they volunteer during the holidays, and what opportunities our audience should know about. The result is this, KPCC's listing of volunteer opportunities in Southern California. Hear volunteers talk about the work they do and why they do it, explore our listing of nonprofits that could use your help - from charitable organizations who could use a volunteer to help prepare meals, to those who could use toys for underprivileged children or clothes for families in need.</p>
-        <p style="margin: 20px 40px 20px 40px;">Use the database below to search for volunteer and charitable opportunities this holiday season. Search by any term you choose -- location, type of donations needed, clients served, etc. Are there organizations we missed? <a href="http://www.scpr.org/blogs/news/2012/11/20/11161/kpcc-volunteer-nonprofit-organizations-profile/">Let us know</a>! Or <a href="http://www.scpr.org/network/questions/giving">share your story of holiday giving</a>!</p>
-    <div class="clear"></div>
-</div>
-<!-- end project content -->
+    <h4 id="kicker">Season of Giving</h4>
+    <h1 id="title">Community Causes</h1>
 
 <hr />
-
-<!-- Begin Profiles -->
-<div id="content" style="margin-bottom: 25px;">
-    <div class="row-fluid">
-        <div class="span10">
-            <div class="contentasset">
-                <img src="http://a.scpr.org/i/bb8bc6076f5ab6be1565d5fb9fd9c6f7/51462-full.jpg" />
-            </div>
-        </div>
-
-        <div class="span14">
-            <h3><a href="http://www.scpr.org/blogs/politics/2012/11/05/tbd">Volunteer profile: The Pasadena Humane Society</a></h3>
-            <p>Each year the Pasadena Humane Society provides shelter and care for abandoned or homeless animals. In 2011, the PHS took in 11,929 animals.</p>
-        </div>
-    </div>
 </div>
-<!-- End Profiles -->
-
-<hr />
+<!-- end kpcc -->
 
 <!-- begin content -->
 <div id="content" class="span-24 sans">
@@ -150,19 +138,28 @@ google.load("jquery", "1", {uncompressed:true})
 <!-- orginal code left in -->
 <div class="clear"></div>
 
+
+    <div id="description"><p>Find a place near you to volunteer this holiday season.</p></div>
+
+
 <div class="clear"></div>
+
+
+
 
 <!-- begin display ribbon -->
 <div id="ribbon">
 
 <div id="download">
-<strong>Updated: </strong>
+<strong>Published: </strong>
 <div id="pubdate">Nov. 27, 2012</div>&nbsp;&nbsp;
+
+
 
 </div>
 
 <div id="controls">
-<div id="filter" >Search (ex. Pasadena, clothing, homeless): <input type="text"></div>
+<div id="filter" >Search: <input type="text"></div>
 <div id="pager" class="pager">
 <form class="form-inline" >
 <img src="http://projects.scpr.org/static/static-files/images/tablestacker-tables/first.png" class="first">
@@ -248,7 +245,7 @@ Need
 
 <td style="text-align:left; width: 15px;">Mentally Ill, Disabled</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.acof.org/" title="http://www.acof.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.acof.org/" title="http://www.acof.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -266,11 +263,11 @@ Need
 
 <td style="text-align:left; width: 15px;">323-232-7653</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:volunteer@apch.org" title="volunteer@apch.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:volunteer@apch.org" title="volunteer@apch.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="apch.org" title="apch.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="apch.org" title="apch.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -292,7 +289,7 @@ Need
 
 <td style="text-align:left; width: 15px;">Aids Victims</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.apla.org/" title="http://www.apla.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.apla.org/" title="http://www.apla.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -314,7 +311,7 @@ Need
 
 <td style="text-align:left; width: 15px;">Homeless</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.achieveglendale.org/" title="http://www.achieveglendale.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.achieveglendale.org/" title="http://www.achieveglendale.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -336,7 +333,7 @@ Need
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.allpeoplescc.org/" title="http://www.allpeoplescc.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.allpeoplescc.org/" title="http://www.allpeoplescc.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;">Christian</td>
 
@@ -358,7 +355,7 @@ Need
 
 <td style="text-align:left; width: 15px;">Asian Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.asianyouthcenter.org/" title="http://www.asianyouthcenter.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.asianyouthcenter.org/" title="http://www.asianyouthcenter.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;">Asian</td>
 
@@ -379,11 +376,11 @@ Playa Del Rey Ca 90293</td>
 <td style="text-align:left; width: 15px;">310-577-9828 (Office)
 </td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:patrick2@beanelf.org" title="patrick2@beanelf.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:patrick2@beanelf.org" title="patrick2@beanelf.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Underprivileged Children And Their Families Writing To Santa For Christmas </td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://beanelf.org/" title="http://beanelf.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://beanelf.org/" title="http://beanelf.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -405,7 +402,7 @@ Playa Del Rey Ca 90293</td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.avbgc.org/" title="http://www.avbgc.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.avbgc.org/" title="http://www.avbgc.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -427,7 +424,7 @@ Playa Del Rey Ca 90293</td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.bgcburbank.org/" title="http://www.bgcburbank.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.bgcburbank.org/" title="http://www.bgcburbank.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -449,7 +446,7 @@ Playa Del Rey Ca 90293</td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://http//www.bgcsfv.org/" title="http://http//www.bgcsfv.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://http//www.bgcsfv.org/" title="http://http//www.bgcsfv.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -471,7 +468,7 @@ Playa Del Rey Ca 90293</td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.bgcv.org/" title="http://www.bgcv.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.bgcv.org/" title="http://www.bgcv.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -489,11 +486,11 @@ Playa Del Rey Ca 90293</td>
 
 <td style="text-align:left; width: 15px;"></td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:amiranda@wsgvbgc.org" title="amiranda@wsgvbgc.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:amiranda@wsgvbgc.org" title="amiranda@wsgvbgc.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.wsgvbgc.org/" title="http://www.wsgvbgc.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.wsgvbgc.org/" title="http://www.wsgvbgc.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -515,7 +512,7 @@ Playa Del Rey Ca 90293</td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.bgcw.org/" title="http://www.bgcw.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.bgcw.org/" title="http://www.bgcw.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -537,7 +534,7 @@ Playa Del Rey Ca 90293</td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.bgccarson.org/" title="http://www.bgccarson.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.bgccarson.org/" title="http://www.bgccarson.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -559,7 +556,7 @@ Playa Del Rey Ca 90293</td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.bgclaharbor.org/" title="http://www.bgclaharbor.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.bgclaharbor.org/" title="http://www.bgclaharbor.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -581,7 +578,7 @@ Playa Del Rey Ca 90293</td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.southbayclubs.org/" title="http://www.southbayclubs.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.southbayclubs.org/" title="http://www.southbayclubs.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -599,12 +596,12 @@ Playa Del Rey Ca 90293</td>
 
 <td style="text-align:left; width: 15px;">Lisa Daggett At 310- 452-3325 X211</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:lisad@cfc-ca.org   " title="lisad@cfc-ca.org   ">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:lisad@cfc-ca.org   " title="lisad@cfc-ca.org   ">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Annual Holiday Gift Program Is For Approximately 1,000 Low-Income Families.  Connections For Children
 Collects New Age-Appropriate Toys And Books And Sets Up A "Store" On Site At Their Office.</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://cfc-ca.org/" title="http://cfc-ca.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://cfc-ca.org/" title="http://cfc-ca.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -626,7 +623,7 @@ Collects New Age-Appropriate Toys And Books And Sets Up A "Store" On Site At The
 
 <td style="text-align:left; width: 15px;">Poor</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.catholiccharitiesla.org/" title="http://www.catholiccharitiesla.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.catholiccharitiesla.org/" title="http://www.catholiccharitiesla.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;">Catholic</td>
 
@@ -649,7 +646,7 @@ Los Angeles, Ca90016</td>
 
 <td style="text-align:left; width: 15px;">Children & Youth, Homeless, Women</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.cause4celebration.org" title="http://www.cause4celebration.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.cause4celebration.org" title="http://www.cause4celebration.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -671,7 +668,7 @@ Los Angeles, Ca90016</td>
 
 <td style="text-align:left; width: 15px;">Poor Children And Families</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.childguidance.org/" title="http://www.childguidance.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.childguidance.org/" title="http://www.childguidance.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -689,11 +686,11 @@ Los Angeles, Ca90016</td>
 
 <td style="text-align:left; width: 15px;">(323) 730- 9400</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:vcord@cyfcla.org" title="vcord@cyfcla.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:vcord@cyfcla.org" title="vcord@cyfcla.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Over 4000 Foster And At-Risk Youth In Los Angeles And Compton</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://cyfcla.org/" title="http://cyfcla.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://cyfcla.org/" title="http://cyfcla.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -715,7 +712,7 @@ Los Angeles, Ca90016</td>
 
 <td style="text-align:left; width: 15px;"></td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.all4kids.org/" title="http://www.all4kids.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.all4kids.org/" title="http://www.all4kids.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -734,11 +731,11 @@ Los Angeles, Ca 90027</td>
 
 <td style="text-align:left; width: 15px;">(323) 361-2308 </td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:rgrushkin@chla.usc.edu" title="rgrushkin@chla.usc.edu">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:rgrushkin@chla.usc.edu" title="rgrushkin@chla.usc.edu">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">The Holidays From The Heart Program Serves Children's Hospital Los Angeles Families Who Are Financially Unable To Provide For Themselves And Their Children During The Holiday Season. Hospital Social Workers Identify Families Who Meet These Criteria And Invite Them To Be A Part Of This Special Program. </td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.chla.org/site/c.ipINKTOAJsG/b.6538899/k.1D30/Holidays_from_the_Heart__Gifts_for_Families__Volunteer.htm" title="http://www.chla.org/site/c.ipINKTOAJsG/b.6538899/k.1D30/Holidays_from_the_Heart__Gifts_for_Families__Volunteer.htm">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.chla.org/site/c.ipINKTOAJsG/b.6538899/k.1D30/Holidays_from_the_Heart__Gifts_for_Families__Volunteer.htm" title="http://www.chla.org/site/c.ipINKTOAJsG/b.6538899/k.1D30/Holidays_from_the_Heart__Gifts_for_Families__Volunteer.htm">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -760,7 +757,7 @@ Los Angeles, Ca 90027</td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="n/a" title="n/a">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="n/a" title="n/a">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -782,7 +779,7 @@ Los Angeles, Ca 90027</td>
 
 <td style="text-align:left; width: 15px;">South Los Angeles</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.cocosouthla.org/" title="http://www.cocosouthla.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.cocosouthla.org/" title="http://www.cocosouthla.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -800,11 +797,11 @@ Los Angeles, Ca 90027</td>
 
 <td style="text-align:left; width: 15px;"></td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:anne@doorofhope.us" title="anne@doorofhope.us">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:anne@doorofhope.us" title="anne@doorofhope.us">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Homeless</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.doorofhope.us/" title="http://www.doorofhope.us/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.doorofhope.us/" title="http://www.doorofhope.us/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -826,7 +823,7 @@ Los Angeles, Ca 90027</td>
 
 <td style="text-align:left; width: 15px;">Homeless Women</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.dwcweb.org/index.htm" title="http://www.dwcweb.org/index.htm">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.dwcweb.org/index.htm" title="http://www.dwcweb.org/index.htm">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -848,7 +845,7 @@ Los Angeles, Ca 90027</td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.familiesinschools.org/" title="http://www.familiesinschools.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.familiesinschools.org/" title="http://www.familiesinschools.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -866,11 +863,11 @@ Los Angeles, Ca 90027</td>
 
 <td style="text-align:left; width: 15px;">606) 798-6793 Ext. 2244</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:jabghari@5acres.org " title="jabghari@5acres.org ">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:jabghari@5acres.org " title="jabghari@5acres.org ">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Children And Families In Need In Los Angeles, Ventura, Orange And San Bernardino, Riverside And San Diego.</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.5acres.org/events/help-this-holiday" title="http://www.5acres.org/events/help-this-holiday">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.5acres.org/events/help-this-holiday" title="http://www.5acres.org/events/help-this-holiday">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -888,11 +885,11 @@ Los Angeles, Ca 90027</td>
 
 <td style="text-align:left; width: 15px;">323-791-5250</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:max@foodforward.org" title="max@foodforward.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:max@foodforward.org" title="max@foodforward.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Homeless, Hungry</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="www.foodforward.org" title="www.foodforward.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="www.foodforward.org" title="www.foodforward.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;">No</td>
 
@@ -910,11 +907,11 @@ Los Angeles, Ca 90027</td>
 
 <td style="text-align:left; width: 15px;"> (310)442-0088</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:  info@foodonfoot.org" title="  info@foodonfoot.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:  info@foodonfoot.org" title="  info@foodonfoot.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Homeless</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.foodonfoot.org/" title="http://www.foodonfoot.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.foodonfoot.org/" title="http://www.foodonfoot.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -936,7 +933,7 @@ Los Angeles, Ca 90027</td>
 
 <td style="text-align:left; width: 15px;">Children & Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.ffscinc.org" title="http://www.ffscinc.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.ffscinc.org" title="http://www.ffscinc.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -958,7 +955,7 @@ Los Angeles, Ca 90027</td>
 
 <td style="text-align:left; width: 15px;">Homeless</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.fjm.org/news_events/past_events/thanksgiving_day.html" title="http://www.fjm.org/news_events/past_events/thanksgiving_day.html">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.fjm.org/news_events/past_events/thanksgiving_day.html" title="http://www.fjm.org/news_events/past_events/thanksgiving_day.html">Details</a></td>
 
 <td style="text-align:left; width: 15px;">Christian</td>
 
@@ -978,11 +975,11 @@ New York City, N.Y. 10010</td>
 
 <td style="text-align:left; width: 15px;">917.746.8182</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:info@generationOn.org " title="info@generationOn.org ">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:info@generationOn.org " title="info@generationOn.org ">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Any U.S. Soldier Deployed Abroad During The Holidays</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.generationon.org/sites/default/files/flat-page/files/genon_carepackages_troops_edited.pdf" title="http://www.generationon.org/sites/default/files/flat-page/files/genon_carepackages_troops_edited.pdf">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.generationon.org/sites/default/files/flat-page/files/genon_carepackages_troops_edited.pdf" title="http://www.generationon.org/sites/default/files/flat-page/files/genon_carepackages_troops_edited.pdf">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1000,11 +997,11 @@ New York City, N.Y. 10010</td>
 
 <td style="text-align:left; width: 15px;">(714) 523-4454</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:dbryson@godaid.org" title="dbryson@godaid.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:dbryson@godaid.org" title="dbryson@godaid.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Homeless Children</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="gchope.org" title="gchope.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="gchope.org" title="gchope.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1026,7 +1023,7 @@ New York City, N.Y. 10010</td>
 
 <td style="text-align:left; width: 15px;">Homeless Families, Children</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.gobblegobblegive.org" title="http://www.gobblegobblegive.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.gobblegobblegive.org" title="http://www.gobblegobblegive.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1048,7 +1045,7 @@ New York City, N.Y. 10010</td>
 
 <td style="text-align:left; width: 15px;">Homeless</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.friendsofchoices.org/site-hope/hope_help.htm" title="http://www.friendsofchoices.org/site-hope/hope_help.htm">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.friendsofchoices.org/site-hope/hope_help.htm" title="http://www.friendsofchoices.org/site-hope/hope_help.htm">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1070,7 +1067,7 @@ New York City, N.Y. 10010</td>
 
 <td style="text-align:left; width: 15px;">Homeless</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.harborinterfaith.org/" title="http://www.harborinterfaith.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.harborinterfaith.org/" title="http://www.harborinterfaith.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;">Inter Faith</td>
 
@@ -1092,7 +1089,7 @@ New York City, N.Y. 10010</td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.heartofla.org/" title="http://www.heartofla.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.heartofla.org/" title="http://www.heartofla.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1110,11 +1107,11 @@ New York City, N.Y. 10010</td>
 
 <td style="text-align:left; width: 15px;">Robin Wiley For Press Inquiries: 202-977-3007</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:nancy_gallery@yahoo.com" title="nancy_gallery@yahoo.com">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:nancy_gallery@yahoo.com" title="nancy_gallery@yahoo.com">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Independent And Assisted Living, Hospitals, Psychiatric Institutions, Group Homes, And Even Prisons.</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.holiday-project.org/index.html" title="http://www.holiday-project.org/index.html">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.holiday-project.org/index.html" title="http://www.holiday-project.org/index.html">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1132,11 +1129,11 @@ New York City, N.Y. 10010</td>
 
 <td style="text-align:left; width: 15px;">(310) 337-7417</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:info@homesforlife.org" title="info@homesforlife.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:info@homesforlife.org" title="info@homesforlife.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Homeless</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://homesforlife.org/" title="http://homesforlife.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://homesforlife.org/" title="http://homesforlife.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1154,11 +1151,11 @@ New York City, N.Y. 10010</td>
 
 <td style="text-align:left; width: 15px;">(323) 944-0210</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:lisa@imaginela.org " title="lisa@imaginela.org ">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:lisa@imaginela.org " title="lisa@imaginela.org ">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Homeless Families</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.imaginela.org/" title="http://www.imaginela.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.imaginela.org/" title="http://www.imaginela.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;">Christian</td>
 
@@ -1181,7 +1178,7 @@ Los Angeles.</td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://inner-cityarts.org/" title="http://inner-cityarts.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://inner-cityarts.org/" title="http://inner-cityarts.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1203,7 +1200,7 @@ Los Angeles.</td>
 
 <td style="text-align:left; width: 15px;">Youth</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.innercitystruggle.org/" title="http://www.innercitystruggle.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.innercitystruggle.org/" title="http://www.innercitystruggle.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1223,11 +1220,11 @@ Inside Out’S Programs Were Developed In Response To A Need For Violence-Preven
 
 <td style="text-align:left; width: 15px;">310-397-8820</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:ldeck@insideoutca.org" title="ldeck@insideoutca.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:ldeck@insideoutca.org" title="ldeck@insideoutca.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Low Income, At-Risk Children (11-16)</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="www.insideoutca.org" title="www.insideoutca.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="www.insideoutca.org" title="www.insideoutca.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;">No</td>
 
@@ -1250,7 +1247,7 @@ Inside Out’S Programs Were Developed In Response To A Need For Violence-Preven
 
 <td style="text-align:left; width: 15px;">Koreatown Area</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.kyccla.org/" title="http://www.kyccla.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.kyccla.org/" title="http://www.kyccla.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;">Koreatown Area</td>
 
@@ -1268,11 +1265,11 @@ Inside Out’S Programs Were Developed In Response To A Need For Violence-Preven
 
 <td style="text-align:left; width: 15px;">213-680-8017</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:kquick@lajcc.org" title="kquick@lajcc.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:kquick@lajcc.org" title="kquick@lajcc.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Kids</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="www.lajcc.org" title="www.lajcc.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="www.lajcc.org" title="www.lajcc.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;">Na</td>
 
@@ -1294,7 +1291,7 @@ Inside Out’S Programs Were Developed In Response To A Need For Violence-Preven
 
 <td style="text-align:left; width: 15px;">Children And Teens</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.lakeavefoundation.org/mentoring/process-to-become-a-mentor/" title="http://www.lakeavefoundation.org/mentoring/process-to-become-a-mentor/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.lakeavefoundation.org/mentoring/process-to-become-a-mentor/" title="http://www.lakeavefoundation.org/mentoring/process-to-become-a-mentor/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1316,7 +1313,7 @@ Inside Out’S Programs Were Developed In Response To A Need For Violence-Preven
 
 <td style="text-align:left; width: 15px;"></td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.lampcommunity.org/" title="http://www.lampcommunity.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.lampcommunity.org/" title="http://www.lampcommunity.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1366,11 +1363,11 @@ Since 1995, Lachc Has Been A Source Of Hope And Healing To Thousands Of Homeless
 
 <td style="text-align:left; width: 15px;">(213) 893-1960</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:cbarnes@lachc.com" title="cbarnes@lachc.com">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:cbarnes@lachc.com" title="cbarnes@lachc.com">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Homeless</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.lachc.com/" title="http://www.lachc.com/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.lachc.com/" title="http://www.lachc.com/">Details</a></td>
 
 <td style="text-align:left; width: 15px;">General Christian Faith</td>
 
@@ -1391,11 +1388,11 @@ In 2011, Lachc Served Over 9,500 Patients Through 30,436 Clinic Visits. </td>
 
 <td style="text-align:left; width: 15px;">213-893-1960 X117</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:tantelo@lachc.com" title="tantelo@lachc.com">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:tantelo@lachc.com" title="tantelo@lachc.com">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Homeless And Public Housing Residents</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="www.lachc.com" title="www.lachc.com">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="www.lachc.com" title="www.lachc.com">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1416,11 +1413,11 @@ Los Angeles, California 90007-2608</td>
 
 <td style="text-align:left; width: 15px;">(213) 744-4344,   (213) 744-4348 </td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:dpssvolunteers@dpss.lacounty.gov" title="dpssvolunteers@dpss.lacounty.gov">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:dpssvolunteers@dpss.lacounty.gov" title="dpssvolunteers@dpss.lacounty.gov">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Children In Need</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://dpss.lacounty.gov/dpss/toyloan/default.cfm" title="http://dpss.lacounty.gov/dpss/toyloan/default.cfm">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://dpss.lacounty.gov/dpss/toyloan/default.cfm" title="http://dpss.lacounty.gov/dpss/toyloan/default.cfm">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1486,7 +1483,7 @@ Los Angeles, California 90007-2608</td>
 
 <td style="text-align:left; width: 15px;">Poor</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.laul.org/" title="http://www.laul.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.laul.org/" title="http://www.laul.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;">African American</td>
 
@@ -1504,11 +1501,11 @@ Los Angeles, California 90007-2608</td>
 
 <td style="text-align:left; width: 15px;">(323) 651 2930</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:info@ncjwla.org" title="info@ncjwla.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:info@ncjwla.org" title="info@ncjwla.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Jewish Women, Children, Families </td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://ncjwla.org" title="http://ncjwla.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://ncjwla.org" title="http://ncjwla.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;">Yes, Jewish </td>
 
@@ -1528,11 +1525,11 @@ Los Angeles, California 90007-2608</td>
 
 <td style="text-align:left; width: 15px;">(310) 313-0123 Ext. 1</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:oifhelpsla@aol.com" title="oifhelpsla@aol.com">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:oifhelpsla@aol.com" title="oifhelpsla@aol.com">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Disadvantaged Families, Individuals And Communities</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.oneincrediblefamily.org/" title="http://www.oneincrediblefamily.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.oneincrediblefamily.org/" title="http://www.oneincrediblefamily.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1554,7 +1551,7 @@ Los Angeles, California 90007-2608</td>
 
 <td style="text-align:left; width: 15px;"></td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.oneoc.org/" title="http://www.oneoc.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.oneoc.org/" title="http://www.oneoc.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1574,11 +1571,11 @@ Los Angeles, California 90007-2608</td>
 
 <td style="text-align:left; width: 15px;">(310) 458-9961</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:giftcards@onevoice-la.org" title="giftcards@onevoice-la.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:giftcards@onevoice-la.org" title="giftcards@onevoice-la.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">2,500 Families Living In Poverty In The Los Angeles Area</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://onevoice-la.org/holiday-program/" title="http://onevoice-la.org/holiday-program/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://onevoice-la.org/holiday-program/" title="http://onevoice-la.org/holiday-program/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1596,11 +1593,11 @@ Los Angeles, California 90007-2608</td>
 
 <td style="text-align:left; width: 15px;">262-674-7281</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:cazerah@aol.com" title="cazerah@aol.com">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:cazerah@aol.com" title="cazerah@aol.com">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Wounded Warriors, Veterans And Deployed Members Of All Military Branches: Army, Navy, Air Force, Marines, Coast Guard, And To Units From All States And Territories.</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.operationgratitude.com/" title="http://www.operationgratitude.com/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.operationgratitude.com/" title="http://www.operationgratitude.com/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1618,7 +1615,7 @@ Los Angeles, California 90007-2608</td>
 
 <td style="text-align:left; width: 15px;">(310) 394-6601</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:pacificbarbershop@gmail.com" title="pacificbarbershop@gmail.com">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:pacificbarbershop@gmail.com" title="pacificbarbershop@gmail.com">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Homeless</td>
 
@@ -1644,7 +1641,7 @@ Los Angeles, California 90007-2608</td>
 
 <td style="text-align:left; width: 15px;">Ex-Convict Women, Homeless Women</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.peaceoverviolence.org/" title="http://www.peaceoverviolence.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.peaceoverviolence.org/" title="http://www.peaceoverviolence.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1662,7 +1659,7 @@ Los Angeles, California 90007-2608</td>
 
 <td style="text-align:left; width: 15px;">(310) 479-7455 </td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:inforeadingtokids.org " title="inforeadingtokids.org ">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:inforeadingtokids.org " title="inforeadingtokids.org ">Contact</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1688,7 +1685,7 @@ Los Angeles, California 90007-2608</td>
 
 <td style="text-align:left; width: 15px;">Vietnam And Nepal</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="spiralfoundation.org" title="spiralfoundation.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="spiralfoundation.org" title="spiralfoundation.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1710,11 +1707,11 @@ Our Values Are Based On Respect, Compassionate Service, Simplicity And Advocacy 
 
 <td style="text-align:left; width: 15px;">(213) 484-7494</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:volunteers@stvincentmow.org" title="volunteers@stvincentmow.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:volunteers@stvincentmow.org" title="volunteers@stvincentmow.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Elderly, Homeless</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.stvincentmow.org/" title="http://www.stvincentmow.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.stvincentmow.org/" title="http://www.stvincentmow.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;">Catholic, Christian</td>
 
@@ -1735,11 +1732,11 @@ This Holiday Season, The Children’S Clinic Is Holding Its Holiday Toy And Book
 
 <td style="text-align:left; width: 15px;">1.562.264.4656</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:hpace@thechildrensclinic.org" title="hpace@thechildrensclinic.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:hpace@thechildrensclinic.org" title="hpace@thechildrensclinic.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Uninsured/Underinsured Families, Homeless Families, Children</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.thechildrensclinic.org/" title="http://www.thechildrensclinic.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.thechildrensclinic.org/" title="http://www.thechildrensclinic.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1761,7 +1758,7 @@ This Holiday Season, The Children’S Clinic Is Holding Its Holiday Toy And Book
 
 <td style="text-align:left; width: 15px;">The Clf Serves Homeless And At-Risk Youth And Their Families In La Counties.</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="www.childrenslifesaving.org" title="www.childrenslifesaving.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="www.childrenslifesaving.org" title="www.childrenslifesaving.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1783,7 +1780,7 @@ This Holiday Season, The Children’S Clinic Is Holding Its Holiday Toy And Book
 
 <td style="text-align:left; width: 15px;">Homeless</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://thanksgivingdayrun.eventbrite.com/" title="http://thanksgivingdayrun.eventbrite.com/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://thanksgivingdayrun.eventbrite.com/" title="http://thanksgivingdayrun.eventbrite.com/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1805,7 +1802,7 @@ This Holiday Season, The Children’S Clinic Is Holding Its Holiday Toy And Book
 
 <td style="text-align:left; width: 15px;">Homeless, Abused And Neglected Children And Their Mothers.</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="www.elihome.org " title="www.elihome.org ">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="www.elihome.org " title="www.elihome.org ">Details</a></td>
 
 <td style="text-align:left; width: 15px;"> Faith-Based, Christian, But Serves People Of All Faiths</td>
 
@@ -1828,7 +1825,7 @@ How To Help: Socialize Animals (Pet Pigs, Hold Chickens, Hug Cows), Become A Spo
 
 <td style="text-align:left; width: 15px;">Abused Animals</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.gentlebarn.org/index.php" title="http://www.gentlebarn.org/index.php">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.gentlebarn.org/index.php" title="http://www.gentlebarn.org/index.php">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1850,7 +1847,7 @@ How To Help: Socialize Animals (Pet Pigs, Hold Chickens, Hug Cows), Become A Spo
 
 <td style="text-align:left; width: 15px;">Underprivileged High School Kids Planning On Going To College</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://gumballfoundation.org/" title="http://gumballfoundation.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://gumballfoundation.org/" title="http://gumballfoundation.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1872,7 +1869,7 @@ How To Help: Socialize Animals (Pet Pigs, Hold Chickens, Hug Cows), Become A Spo
 
 <td style="text-align:left; width: 15px;">Children With Special Needs Related To Autism Spectrum Disorders, Learning Disabilities, Adhd, Developmental Delays, Abuse And Emotional Problems.</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.thehelpgroup.org" title="http://www.thehelpgroup.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.thehelpgroup.org" title="http://www.thehelpgroup.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1894,7 +1891,7 @@ How To Help: Socialize Animals (Pet Pigs, Hold Chickens, Hug Cows), Become A Spo
 
 <td style="text-align:left; width: 15px;">Poor Jewish People</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.jewishla.org/" title="http://www.jewishla.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.jewishla.org/" title="http://www.jewishla.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;">Jewish</td>
 
@@ -1921,7 +1918,7 @@ To Provide For The Homeless As An Independent Social Service Agency.</td>
 
 <td style="text-align:left; width: 15px;">Homeless Families, Children</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.midnightmission.org" title="http://www.midnightmission.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.midnightmission.org" title="http://www.midnightmission.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1940,11 +1937,11 @@ Los Angeles, Ca 90028</td>
 
 <td style="text-align:left; width: 15px;">323-782-7824 </td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:dfogelman@tsfc.org" title="dfogelman@tsfc.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:dfogelman@tsfc.org" title="dfogelman@tsfc.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Men, Women, And Children In Need To Health And Human Services</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.thesabanfreeclinic.org/" title="http://www.thesabanfreeclinic.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.thesabanfreeclinic.org/" title="http://www.thesabanfreeclinic.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -1963,11 +1960,11 @@ Beverly Hills, Ca 90210</td>
 
 <td style="text-align:left; width: 15px;">(818) 753-4600</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:info@treepeople.org" title="info@treepeople.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:info@treepeople.org" title="info@treepeople.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">The Environment </td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.treepeople.org/" title="http://www.treepeople.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.treepeople.org/" title="http://www.treepeople.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;">No</td>
 
@@ -1989,7 +1986,7 @@ Beverly Hills, Ca 90210</td>
 
 <td style="text-align:left; width: 15px;">Homeless</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://urm.org/get-involved/volunteer/" title="http://urm.org/get-involved/volunteer/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://urm.org/get-involved/volunteer/" title="http://urm.org/get-involved/volunteer/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -2014,11 +2011,11 @@ Pasadena, California 91104          </td>
 
 <td style="text-align:left; width: 15px;">626.240.4550</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:volunteer@unionstationhs.org" title="volunteer@unionstationhs.org">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto:volunteer@unionstationhs.org" title="volunteer@unionstationhs.org">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Homeless Families, Children</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.unionstationhs.org/" title="http://www.unionstationhs.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.unionstationhs.org/" title="http://www.unionstationhs.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -2040,7 +2037,7 @@ Pasadena, California 91104          </td>
 
 <td style="text-align:left; width: 15px;">Foster Children, Homeless</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="www.unitedfriends.org" title="www.unitedfriends.org">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="www.unitedfriends.org" title="www.unitedfriends.org">Details</a></td>
 
 <td style="text-align:left; width: 15px;">No</td>
 
@@ -2058,11 +2055,11 @@ Pasadena, California 91104          </td>
 
 <td style="text-align:left; width: 15px;">Contact Ingrid Trejo At 310.664.7532 </td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto: ITrejo@mednet.ucla.edu" title=" ITrejo@mednet.ucla.edu">Contact Email</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="mailto: ITrejo@mednet.ucla.edu" title=" ITrejo@mednet.ucla.edu">Contact</a></td>
 
 <td style="text-align:left; width: 15px;">Pediatric Patients</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.venicefamilyclinic.org/" title="http://www.venicefamilyclinic.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://www.venicefamilyclinic.org/" title="http://www.venicefamilyclinic.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -2084,7 +2081,7 @@ Pasadena, California 91104          </td>
 
 <td style="text-align:left; width: 15px;">Children, Domestic Abuse Victims, Poor, Elderly</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://westsidefoodbankca.org/" title="http://westsidefoodbankca.org/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://westsidefoodbankca.org/" title="http://westsidefoodbankca.org/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -2132,7 +2129,7 @@ Hathaway-Sycamores Child And Family Services, One Of The Largest, Nonprofit, Pri
 
 <td style="text-align:left; width: 15px;">Foster Kids</td>
 
-<td style="text-align:left; width: 15px;"><a target="_blank" href="http://acrystalstarrchristmas.webs.com/" title="http://acrystalstarrchristmas.webs.com/">Visit Online</a></td>
+<td style="text-align:left; width: 15px;"><a target="_blank" href="http://acrystalstarrchristmas.webs.com/" title="http://acrystalstarrchristmas.webs.com/">Details</a></td>
 
 <td style="text-align:left; width: 15px;"></td>
 
@@ -2145,9 +2142,9 @@ Hathaway-Sycamores Child And Family Services, One Of The Largest, Nonprofit, Pri
 </table>
 
 <div id="footer"><p></p></div>
-<div id="sources"><strong>Sources: </strong>KPCC listeners with <a href="http://www.volunteermatch.org/" target="_blank">VolunteerMatch</a> and <a href="http://www.unitedwayla.org/">United Way Los Angeles</a>.</div>
-<div id="credits"><strong>Credits: </strong><a href="http://www.scpr.org/about/people/staff/chris-keller">Chris Keller</a>, <a href="http://www.scpr.org/about/people/staff/eric-zassenhaus">Eric Zassenhaus</a>, &amp; <a href="http://www.scpr.org/about/people/staff/nick-roman">Nick Roman</a></div>
-<div class="open-source">Code courtesy of <a href="https://github.com/datadesk/latimes-table-stacker" target="_blank">Table Stacker</a>, a <a href="https://www.djangoproject.com/" target="_blank">Django</a> application that publishes spreadsheets.</div>
+<div id="sources"><strong>Sources: </strong>Testing where the <a href="#" target="_blank">sources</a> appear.</div>
+<div id="credits"><strong>Credits: </strong>This is the credit field</div>
+<div class="open-source">Foundation courtesy of <a href="https://github.com/datadesk/latimes-table-stacker" target="_blank">Table Stacker</a>, a <a href="https://www.djangoproject.com/" target="_blank">Django</a> application that publishes spreadsheets.</div>
 <!-- original code -->
 
 
@@ -2194,7 +2191,7 @@ Hathaway-Sycamores Child And Family Services, One Of The Largest, Nonprofit, Pri
 <li><a href="http://scpr.org/terms/">Terms &amp; Conditions</a></li>
 <li><a href="http://scpr.org/privacy/">Privacy</a></li>
 <li><a href="http://scpr.org/web_site_feedback">Website Feedback</a></li>
-<li>Copyright 2012 &copy; Southern California Public Radio</li>
+<li>Copyright 2001 &copy; Southern California Public Radio</li>
 </ul>
 </div>
 </footer>
