@@ -16,13 +16,15 @@
 <!-- begin links to custom css here -->
 <link href='http://www.scpr.org/assets/application.css' rel='stylesheet' type='text/css' media='all' />
 <link href='http://projects.scpr.org/static/static-files/css/tablestacker-tables/styles.css' rel='stylesheet' type='text/css' media='all' />
+
+<style type="text/css">
+#project_banner {height: 70px; margin-top: -25px; background: url('imgs/ribbon.png') repeat-x; box-shadow: 0px 0px 15px #888;}
+
+
+
+</style>
+
 <!-- end links to custom css here -->
-
-<!-- extra css configured in yaml -->
-
-
-<!-- extra css configured in yaml -->
-
 
 <!-- begin custom scripts -->
 <script type="text/javascript" src="http://use.typekit.com/mhc7oxs.js"></script>
@@ -39,10 +41,10 @@ google.load("jquery", "1", {uncompressed:true})
 
 
 <!-- extra js configured in table-detail -->
+<script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.js' type='text/javascript'></script>
+<script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.pager.js' type='text/javascript'></script>
+<script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.multipagefilter.js' type='text/javascript'></script>
 
-    <script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.js' type='text/javascript'></script>
-    <script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.pager.js' type='text/javascript'></script>
-    <script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.multipagefilter.js' type='text/javascript'></script>
     <script type="text/javascript">
         /* For picking out bits from the query string */
         var getParameterByName = function(name) {
@@ -60,26 +62,6 @@ google.load("jquery", "1", {uncompressed:true})
 
 <!-- extra js configured in table-detail -->
 
-
-<!--
-
-<link rel="alternate" href="/feeds/latest/" type="application/rss+xml" title="Latest spreadsheets" id="latest" />
-
-
-
-    
-<meta property="og:site_name" content="TableStacker Demonstration"/>
-<meta property="fb:admins" content="foo, bar"/>
-
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Community Causes"/>
-    <meta property="og:url" content="/community-causes/"/>
-    
-    <meta property="og:description" content="Find a place near you to volunteer this holiday season."/>
-    
-
--->
-
 </head>
 <!-- end header -->
 
@@ -92,75 +74,73 @@ google.load("jquery", "1", {uncompressed:true})
 
 <!-- begin kpcc header -->
 <header>
-<div class="container-fluid">
-<div class="row-fluid">
-<div class="span16">
-<h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
-</div>
-<div class="span8">
-<ul class="header-links clearfix pull-right">
-<li>
-<a href="https://scprcontribute.publicradio.org/" class="pledge-now icon">Contribute to KPCC</a>
-<a href="https://scprcontribute.publicradio.org/"><b>Pledge now</b></a>
-</li>
-<li>
-<div class="share-links clearfix">
-<a href="#" class="facebook icon">Facebook</a>
-<a href="#" class="twitter icon">Twitter</a>
-</div>
-<b>Share this page</b>
-</li>
-</ul>
-</div>
-</div>
-</div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span16">
+                <h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
+            </div>
 
+            <div class="span8">
+                <ul class="header-links clearfix pull-right">
+                    <li>
+                    <a href="https://scprcontribute.publicradio.org/" class="pledge-now icon">Contribute to KPCC</a>
+                    <a href="https://scprcontribute.publicradio.org/"><b>Pledge now</b></a>
+                    </li>
+
+                    <li>
+                    <div class="share-links clearfix">
+                    <a href="#" class="facebook icon">Facebook</a>
+                    <a href="#" class="twitter icon">Twitter</a>
+                    </div>
+                    <b>Share this page</b>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
 </header>
 <!-- end kpcc header -->
 
-<!-- begin kpcc -->
-<div style= "height:70px; margin-top:-25px; background:url('imgs/ribbon.png') repeat-x; box-shadow: 0px 0px 15px #888;"> 
-	<img style="float:left; height:200px; margin-top:-50px; margin-left:-12px;" src="file://localhost/Users/ericzassenhaus/Projects/static-projects/test/keller/templated-search-data/imgs/bow.png"; />
-		
-<div class="container-fluid">
-
-<div id="main">
-	<div class="article-header last serif">
-		
-	    	<h4 id="kicker">Volunteer Opportunities in Southern California</h4>
-	    	<h1 style="line-height:20px;" id="title">Season's Givings</h1>
-</div>		
-		<p style="font-size:15px; margin-top:20px;">This season, we asked KPCC listeners where they volunteer during the holidays, and what opportunities our audience should know about. The result is this, KPCC's listing of volunteer opportunities in Southern California. Hear volunteers talk about the work they do and why they do it, explore our listing of nonprofits that could use your help - from charitable organizations who could use a volunteer to help prepare meals, to those who could use toys for underprivileged children or clothes for families in need.</p>
-
-		<p style="font-size:15px;">Search by any term you choose - city, donations needed, clients served, etc. Are there organizations we missed? <a href="http://www.scpr.org/blogs/news/2012/11/20/11161/kpcc-volunteer-nonprofit-organizations-profile/">Let us know</a>! Or <a href="http://www.scpr.org/network/questions/giving">share your story of holiday giving</a>! </p>
-
-	<hr />
-	</div>
-	<!-- end kpcc -->
+<!-- begin project banner -->
+<div id="project_banner">
+<img style="float:left; height:200px; margin-top:-50px; margin-left:-12px;" src="imgs/bow.png" />
+<h4 id="kicker">Volunteer Opportunities in Southern California</h4>
+<h1 style="line-height:20px; color: #ffffff;" id="title">Season's Givings</h1>
+</div>
+<!-- end project banner -->
 
 
-	<!-- Begin Profiles -->
-	
-	<div id="content">
 
-	<div class="row-fluid">
-		<div class="span10">
-			<div class="contentasset">
-	<img src="http://a.scpr.org/i/bb8bc6076f5ab6be1565d5fb9fd9c6f7/51462-full.jpg" />
-			</div>
-			</div>
-	<div class="span14">
-			<h3><a href="http://www.scpr.org/blogs/politics/2012/11/05/tbd">Volunteer profile: The Pasadena Humane Society</a></h3>
-			<p>Each year the Pasadena Humane Society provides shelter and care for abandoned or homeless animals. In 2011, the PHS took in 11,929 animals.   </p>
-				</div>
-	</div>
+<!-- begin project content -->
+<div id="main" class="container-fluid">
+    <div class="article-header last serif">
+        <p style="margin: 20px 40px 0 40px;">This season, we asked KPCC listeners where they volunteer during the holidays, and what opportunities our audience should know about. The result is this, KPCC's listing of volunteer opportunities in Southern California. Hear volunteers talk about the work they do and why they do it, explore our listing of nonprofits that could use your help - from charitable organizations who could use a volunteer to help prepare meals, to those who could use toys for underprivileged children or clothes for families in need.</p>
+        <p style="margin: 20px 40px 20px 40px;">Use the database below to search for volunteer and charitable opportunities this holiday season. Search by any term you choose -- location, type of donations needed, clients served, etc. Are there organizations we missed? <a href="http://www.scpr.org/blogs/news/2012/11/20/11161/kpcc-volunteer-nonprofit-organizations-profile/">Let us know</a>! Or <a href="http://www.scpr.org/network/questions/giving">share your story of holiday giving</a>!</p>
+    <div class="clear"></div>
+</div>
+<!-- end project content -->
 
-	</div>
+<hr />
 
-	<hr />
+<!-- Begin Profiles -->
+<div id="content" style="margin-bottom: 25px;">
+    <div class="row-fluid">
+        <div class="span10">
+            <div class="contentasset">
+                <img src="http://a.scpr.org/i/bb8bc6076f5ab6be1565d5fb9fd9c6f7/51462-full.jpg" />
+            </div>
+        </div>
 
-	<!-- End Profiles -->
+        <div class="span14">
+            <h3><a href="http://www.scpr.org/blogs/politics/2012/11/05/tbd">Volunteer profile: The Pasadena Humane Society</a></h3>
+            <p>Each year the Pasadena Humane Society provides shelter and care for abandoned or homeless animals. In 2011, the PHS took in 11,929 animals.</p>
+        </div>
+    </div>
+</div>
+<!-- End Profiles -->
 
+<hr />
 
 <!-- begin content -->
 <div id="content" class="span-24 sans">
@@ -171,22 +151,15 @@ google.load("jquery", "1", {uncompressed:true})
 <div class="clear"></div>
 
 
-    <div id="description"><h4>Find a place near you to volunteer this holiday season. </h4></div>
-
 
 <div class="clear"></div>
-
-
-
 
 <!-- begin display ribbon -->
 <div id="ribbon">
 
 <div id="download">
-<strong>Published: </strong>
+<strong>Updated: </strong>
 <div id="pubdate">Nov. 27, 2012</div>&nbsp;&nbsp;
-
-
 
 </div>
 
@@ -2175,8 +2148,8 @@ Hathaway-Sycamores Child And Family Services, One Of The Largest, Nonprofit, Pri
 
 <div id="footer"><p></p></div>
 <div id="sources"><strong>Sources: </strong>KPCC listeners with <a href="http://www.volunteermatch.org/" target="_blank">VolunteerMatch</a> and <a href="http://www.unitedwayla.org/">United Way Los Angeles</a>.</div>
-<div id="credits"><strong>Credits: </strong>Chris Keller, Eric Zassenhaus, &amp; Nick Roman</div>
-<div class="open-source">Foundation courtesy of <a href="https://github.com/datadesk/latimes-table-stacker" target="_blank">Table Stacker</a>, a <a href="https://www.djangoproject.com/" target="_blank">Django</a> application that publishes spreadsheets.</div>
+<div id="credits"><strong>Credits: </strong><a href="http://www.scpr.org/about/people/staff/chris-keller">Chris Keller</a>, <a href="http://www.scpr.org/about/people/staff/eric-zassenhaus">Eric Zassenhaus</a>, &amp; <a href="http://www.scpr.org/about/people/staff/nick-roman">Nick Roman</a></div>
+<div class="open-source">Code courtesy of <a href="https://github.com/datadesk/latimes-table-stacker" target="_blank">Table Stacker</a>, a <a href="https://www.djangoproject.com/" target="_blank">Django</a> application that publishes spreadsheets.</div>
 <!-- original code -->
 
 
