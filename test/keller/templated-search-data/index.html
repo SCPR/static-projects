@@ -16,6 +16,15 @@
 
         <style type="text/css">
         #project_banner {height: 70px; margin-top: -25px; background: url('static/images/ribbon.png') repeat-x; box-shadow: 0px 0px 15px #888;}
+
+        @media screen and (min-width: 0px) and (max-width: 400px) {
+          #project_banner { display: none; }  /* show it on small screens */
+        }
+
+        @media screen and (min-width: 401px) and (max-width: 1024px) {
+          #project_banner {height: 70px; margin-top: -25px; background: url('static/images/ribbon.png') repeat-x; box-shadow: 0px 0px 15px #888;}
+        }
+
         </style>
         <!-- end css -->
 
