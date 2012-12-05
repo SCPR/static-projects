@@ -13,7 +13,7 @@ body.minimal header {
     box-shadow:0 0 8px rgba(0,0,0,0.7);
     height:auto;
     margin:0 0 40px;
-} 
+}
 body.minimal header h3#site-title a {
     background-image:url('http://www.scpr.org/assets/logo-masthead.png');
     width:181px;
@@ -30,7 +30,7 @@ body.minimal hr {
     background-color:#ccc;
     border-bottom:1px solid #fff;
     height:1px;
-} 
+}
 body.minimal p {
     font-size:15px;
     font-weight:400;
@@ -100,14 +100,14 @@ table.responsive thead tr {background:#2e2e2e;color:#fff;}
     	.pinned table { border-right: none; border-left: none; width: 100%; }
     	.pinned table th, .pinned table td { white-space: nowrap; }
     	.pinned td:last-child { border-bottom: 0; }
-	
+
     	div.table-wrapper { position: relative; margin-bottom: 20px; overflow: hidden; border-right: 1px solid #ccc; }
     	div.table-wrapper div.scrollable table { margin-left: 35%; }
-    	div.table-wrapper div.scrollable { overflow: scroll; overflow-y: hidden; }	
-	
+    	div.table-wrapper div.scrollable { overflow: scroll; overflow-y: hidden; }
+
     	table.responsive td, table.responsive th { position: relative; white-space: nowrap; overflow: hidden; }
     	table.responsive th:first-child, table.responsive td:first-child, table.responsive td:first-child, table.responsive.pinned td { display: none; }
-	
+
     }
 
 
