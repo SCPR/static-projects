@@ -120,7 +120,6 @@ table.responsive thead tr {background:#2e2e2e;color:#fff;}
 #table_fu div.bullet-graph-target { position: absolute; height: 21px; width: 2px; left: 32px; top: 0; background-color: #cc0000; z-index: 7; font-size: 0; }
 #table_fu div.bullet-graph-actual { position: absolute; height: 8px; left: 0px; top: 7px; background-color: #000000; font-size: 0; z-index: 5; font-size: 0; }
 
-/*
 #table_fu div{}
 #table_fu div#legend {float:left; margin-bottom:10px; margin-top:-5px;}
 #table_fu div#ribbon {clear: both; display: block; overflow:visible;}
@@ -132,4 +131,3 @@ table.responsive thead tr {background:#2e2e2e;color:#fff;}
 #table_fu .input-medium {width: 150px;}
 #table_fu input.search-query {padding-right: 14px; padding-right: 4px \9; padding-left: 14px; padding-left: 4px \9;
 margin-bottom: 0; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px;}
-*/
