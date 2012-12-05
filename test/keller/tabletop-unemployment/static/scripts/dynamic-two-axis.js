@@ -92,7 +92,7 @@ TO DO
             // objects for highcharts data series
             var initialMonthlyJobs = {
                 name: 'Initial',
-                color: '#4DAF4A',
+                color: '#A6611A',
                 type: 'areaspline',
                 data: arraysOfJobsData[0]
             };
@@ -106,7 +106,7 @@ TO DO
 
             var finalMonthlyJobs = {
                 name: 'Final',
-                color: '#E41A1C',
+                color: '#018571',
                 type: 'areaspline',
                 data: arraysOfJobsData[2]
             };
@@ -197,8 +197,6 @@ TO DO
 
                         }
                     },
-
-
 
                     events: {
 
