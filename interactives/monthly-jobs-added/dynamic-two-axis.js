@@ -142,8 +142,6 @@ TO DO
 
             yAxis: [{
 
-                tickPixelInterval: 25,
-
                 // primary axis
                 labels: {
                    formatter: function() {
@@ -158,7 +156,10 @@ TO DO
                     style: {
                         color: '#2B2B2B'
                     }
-                }
+                },
+
+                tickPixelInterval: 25
+
             }],
 
             tooltip: {
@@ -170,7 +171,6 @@ TO DO
             // testing various click event options
             plotOptions: {
                 series: {
-
                     point: {
                         events: {
                             mouseOver: function() {
@@ -194,9 +194,7 @@ TO DO
 
                                 jqueryNoConflict(selectedRow).css(
                                     {'text-decoration': 'none', 'color': 'black'});
-
                             }
-
                         }
                     },
 
