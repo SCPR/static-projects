@@ -5,8 +5,10 @@
 TO DO
 -- The narrative could use some work, as could clear instructions to the user... For instance, click on the chart legend to filter the chart and the table, mouse over, etc.
 -- I'd like to do more to integrate the chart and the table... rather than highlight the entire row, the specific number perhaps...
--- Above all, I wonder if there isn't a better visual representation to show the changes...
-
+-- Couple more divisions on the vertical axis so it's easier to get an at-a-glance look at the comparison in job numbers
+-- Start over with a new 2013 chart? Seems like it should track the past year or so.
+-- Clearer instructions, particularly for using the legend are needed.
+-- Slide toggle through the dates would be cool
 */
 
     var jqueryNoConflict = jQuery;
