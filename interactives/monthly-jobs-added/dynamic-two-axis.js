@@ -137,7 +137,7 @@ TO DO
             },
 
             xAxis: [{
-                categories: chartCategories,
+                categories: chartCategories
             }],
 
             yAxis: [{
