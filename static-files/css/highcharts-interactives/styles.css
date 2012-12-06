@@ -6,11 +6,13 @@ body.minimal {background-color: #ffffff}
 
 #data-table {width: 100%; height: auto; overflow: auto; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif; margin: 0 auto 0 auto;}
 
-.table {font-size: 10px;}
+.table {font-size: 12px;}
 
 .story-headline {font-family: "proxima-nova-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; margin-bottom: 0}
 
 p {font-family: "Georgia", Times New Roman, Times, serif; font-size: 14px; font-weight: normal; line-height: 21px; margin-bottom: 18px;}
+
+#data-header .data-instructions {font-size: 12px;}
 
 #data-footer .open-source {font-size: 10px;}
 
