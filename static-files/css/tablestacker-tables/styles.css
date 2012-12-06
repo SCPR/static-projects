@@ -10,7 +10,7 @@ body.minimal {
 }
 body.minimal header {
     background:#fff;
-    /*box-shadow:0 0 8px rgba(0,0,0,0.7);*/
+    box-shadow:0 0 8px rgba(0,0,0,0.7);
     height:auto;
     margin:0 0 40px;
 }
