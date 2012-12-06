@@ -14,6 +14,10 @@ p {font-family: "Georgia", Times New Roman, Times, serif; font-size: 14px; font-
 
 #data-header .data-instructions {font-size: 12px;}
 
+#data-footer {color: #303030; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-weight: bold; height: auto; line-height: 20px;}
+
 #data-footer .open-source {font-size: 10px;}
 
 .chartMouseOver {text-decoration: underline;}
+
+
