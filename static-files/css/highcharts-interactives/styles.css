@@ -12,7 +12,7 @@ body.minimal {background-color: #ffffff}
 
 p {font-family: "Georgia", Times New Roman, Times, serif; font-size: 14px; font-weight: normal; line-height: 21px; margin-bottom: 18px;}
 
-#data-header .data-instructions {font-size: 11px;}
+#data-header .data-instructions {font-size: 11px; margin: 10px 25px 15px 25px;}
 
 #data-footer {color: #303030; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; height: auto; line-height: 20px;}
 
