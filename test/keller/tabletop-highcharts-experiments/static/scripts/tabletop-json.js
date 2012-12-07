@@ -33,7 +33,5 @@
 
         });
 
-            // log the array
-            console.log(newDataSet);
 
     };

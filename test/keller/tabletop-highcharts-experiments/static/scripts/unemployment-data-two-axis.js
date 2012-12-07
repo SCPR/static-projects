@@ -97,7 +97,7 @@
             },
 
             xAxis: [{
-                categories: chartCategories,
+                categories: chartCategories
 
             }],
 
