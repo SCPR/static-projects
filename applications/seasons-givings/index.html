@@ -58,7 +58,8 @@
         </script>
         <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
         <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
-        <script type="text/javascript" src="http://static.chartbeat.com/js/chartbeat.js"></script>
+        <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+        <!-- <script type="text/javascript" src="http://static.chartbeat.com/js/chartbeat.js"></script> -->
         <!-- end scripts -->
 
     </head>
@@ -2562,7 +2563,7 @@ Los Angeles, Ca 90044</td>
 </script>
 
 <script type="text/javascript">
-var _sf_async_config={uid:2825,domain:"scpr.org"};
+var _sf_async_config={uid:2825,domain:"projects.scpr.org"};
 (function(){
   function loadChartbeat() {
     window._sf_endpt=(new Date()).getTime();
@@ -2570,9 +2571,7 @@ var _sf_async_config={uid:2825,domain:"scpr.org"};
     e.setAttribute('language', 'javascript');
     e.setAttribute('type', 'text/javascript');
     e.setAttribute('src',
-       (("https:" == document.location.protocol) ?
-"https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" :
-"http://static.chartbeat.com/") +
+       (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
        "js/chartbeat.js");
     document.body.appendChild(e);
   }
