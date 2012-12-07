@@ -6,7 +6,7 @@ body.minimal {background-color: #ffffff}
 
 #data-table {width: 100%; height: auto; overflow-y: hidden; overflow-x: auto; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif; margin: 0 auto 0 auto;}
 
-.table {font-size: 11px;}
+.table {font-size: 10px;}
 
 .story-headline {font-family: "proxima-nova-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; margin-bottom: 0}
 
