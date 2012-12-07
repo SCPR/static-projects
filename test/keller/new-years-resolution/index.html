@@ -1,0 +1,54 @@
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+
+<!-- Share/Embed 'alert' box generated with jquery.alerts.js.
+See http://abeautifulsite.net/blog/2008/12/jquery-alert-dialogs/ -->
+<script type="text/javascript" src="http://projects.scpr.org/static/static-files/scripts/jquery.alerts.js"></script>
+
+<script type="text/javascript">
+
+    var jqueryNoConflict = jQuery;
+    var words = ['Retirement', 'Love', 'Airplanes', 'Advancement', 'Skype', 'Surviving', 'Elections', 'Buoyancy', 'Prosperity', 'Freedom', 'God', 'Giving', 'Growth', 'Family', 'Healthcare', 'Tomorrows', 'Love', 'The Election', 'Health', 'Marathons', 'Family', 'Security', 'Everything!', 'Predictability'];
+
+    // begin main function
+    jqueryNoConflict(document).ready(function(){
+        changer();
+    });
+    // end
+
+    // word randomizer function
+    function changer() {
+        var idx = Math.floor(words.length * Math.random());
+        $('#change').text(words[idx].toLowerCase());
+        var time = Math.floor(2000 * Math.random() + 2000);
+        setTimeout(changer,time);
+    };
+    // end
+
+    // embed function
+    function embedBox() {
+        var embed_url = '#';
+
+        jAlert('<strong>To embed this on your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+ embed_url +'\" width=\"420px\" height=\"450px\" scrolling=\"no\" frameborder=\"0\"&gt;&lt;/iframe>', 'Share or Embed');
+    }
+    // end
+</script>
+
+<select>
+<option value="money">Money</option>
+<option value="weight">Weight</option>
+<option value="relaxation">Relaxation</option>
+<option value="vices">Vices</option>
+<option value="kindness">Kindness</option>
+<option value="volunteering">Volunteering</option>
+<option value="romance">Romance</option>
+<option value="marriage">Marriage</option>
+<option value="children">Children</option>
+<option value="career">Career</option>
+</select>
+
+<div id="resolution-display"></div>
+
+<div id="data-credits">
+<p><em>Credits</em></p>
+<p>Want Fred for your site? <span id="embed" style="cursor:pointer;" onclick="embedBox()">Click to Embed Fred</p>
+</div>
