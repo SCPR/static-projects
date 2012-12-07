@@ -2,6 +2,7 @@
 
 ----
 ###### Created 11/19/2012 by [Chris Keller](ckeller@scpr.org)
+###### Updated 12/7/2012 by [Chris Keller](ckeller@scpr.org)
 ----
 
 #### Overview
@@ -12,7 +13,7 @@ The template for these reside in /static-projects/timelines/timeline-templates.
 
 #### Walkthrough
 
-Create your Google spreadsheet by copying this [template](https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdFFSZjB5VV9aVmZGblQxSFhpZ1NFd3c#gid=0). You may be prompted to request sharing from Chris Keller. Don't worry, he'll approve you.
+Create your Google spreadsheet by copying this [template](https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE). You may be prompted to request sharing from Chris Keller. Don't worry, he'll approve you.
 
 Please note that the date column should contain data in a Month, Day, Year format **(April 25, 2012)** for javascript to parse it. Also, all columns must be plain text format, including the two date columns.
 
