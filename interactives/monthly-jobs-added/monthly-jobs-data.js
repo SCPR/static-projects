@@ -3,16 +3,17 @@
     http://api.highcharts.com/highcharts#plotOptions.line.events.legendItemClick
 
 TO DO
--- The narrative could use some work, as could clear instructions to the user... For instance, click on the chart legend to filter the chart and the table, mouse over, etc.
--- I'd like to do more to integrate the chart and the table... rather than highlight the entire row, the specific number perhaps...
--- Above all, I wonder if there isn't a better visual representation to show the changes...
-
+* The narrative could use some work, as could clear instructions to the user... For instance, click on the chart legend to filter the chart and the table, mouse over, etc.
+* I'd like to do more to integrate the chart and the table... rather than highlight the entire row, the specific number perhaps.
+* Start over with a new 2013 chart? Seems like it should track the past year or so.
+* Clearer instructions, particularly for using the legend are needed.
+* Slide toggle through the dates would be cool.
 */
 
     var jqueryNoConflict = jQuery;
 
     // make sure the spreadsheet is published to the web
-    var dataSpreadsheet = '0An8W63YKWOsxdHRxR2oyZXNDTnZOaWtMclZUdVM5amc';
+    var dataSpreadsheet = '0An8W63YKWOsxdFZ4VTJIWngtY0VJWHJKM0dRUEpndVE';
 
     // the sheet being queried
     var dataSheet = 'LIVE_Jobs_Added_Per_Month_2012';
@@ -136,8 +137,7 @@ TO DO
             },
 
             xAxis: [{
-                categories: chartCategories,
-
+                categories: chartCategories
             }],
 
             yAxis: [{
@@ -156,7 +156,10 @@ TO DO
                     style: {
                         color: '#2B2B2B'
                     }
-                }
+                },
+
+                tickPixelInterval: 25
+
             }],
 
             tooltip: {
@@ -168,7 +171,6 @@ TO DO
             // testing various click event options
             plotOptions: {
                 series: {
-
                     point: {
                         events: {
                             mouseOver: function() {
@@ -192,9 +194,7 @@ TO DO
 
                                 jqueryNoConflict(selectedRow).css(
                                     {'text-decoration': 'none', 'color': 'black'});
-
                             }
-
                         }
                     },
 
