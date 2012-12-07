@@ -1,7 +1,7 @@
 // below are the only variables you need to create the timeline
 
 // title to write to the #timeline-title div
-var timelineTitle = 'A Look a Black Friday';
+var timelineTitle = 'Timeline: Same sex marriage in California';
 
 var timelineConfig = {
 
