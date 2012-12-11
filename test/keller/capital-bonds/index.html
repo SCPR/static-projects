@@ -32,8 +32,11 @@
     <![endif]-->
 
     <style type="text/css">
-
-        #school-debt-container {width: 80%; margin: 0 10% 0 10%;}
+        #data-header h2 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 30px; color: #2B2B2B;}
+        #school-debt-chart {width: 90%; height: 300px; margin: 0 5% 0 5%;}
+        #school-debt-details {width: 90%; height: 400px; margin: 20px 5% 0 5%;}
+        .bar-container {width: 100%; height: 25px; background-color: #cacaca;}
+        .bar-container .bar {height: 25px; background-color: #2B2B2B; color: #ffffff; line-height: 22px;text-align: center;}
 
     </style>
     <!-- end css -->
@@ -102,31 +105,76 @@
     <div class="row-fluid">
 
         <!-- begin span -->
-        <div class="span8">
-
-            <div id="school-debt-container"></div>
-
-        </div>
-        <!-- end span -->
-
-        <!-- begin span -->
-        <div class="span4">
+        <div class="span6">
 
             <!-- begin data details -->
             <div id="data-details">
 
                 <!-- begin data intro -->
                 <div id="data-details-intro">
-                    <p class="show">This interactive map allows users...</p>
+                    <p>Capital appreciation bonds: Unlike typical bonds, where a school district is required to make immediate and regular payments, CABs allow districts to defer payments well into the future ? by which time lots of interest has accrued.</p>
+                    <p>Hundreds of California school and community college districts have financed construction projects with capital appreciation bonds that defer repayment for years.</p>
+                    <p>Ultimately the district will owe much more than it borrowed.</p>
+                    <p>.......</p>
+                    <p>.......</p>
+                    <p>.......</p>
+                    <p>.......</p>
+                    <a class="btn btn-large btn-success" href="#">Read More</a>
+
                 </div>
                 <!-- end data intro -->
 
-                <!-- begin data drilldown -->
-                <div id="data-details-drilldown"></div>
-                <!-- end data drilldown -->
-
             </div>
             <!-- end data details -->
+
+        </div>
+        <!-- end span -->
+
+        <!-- begin span -->
+        <div class="span6">
+
+            <!-- begin chart -->
+            <div id="school-debt-chart"></div>
+
+            <!-- begin table -->
+            <div id="school-debt-details">
+            <table class="table">
+
+                <thead>
+                <th>Bond Year</th>
+                <th>Bond Principal</th>
+                <th>Bond Payoff</th>
+                <th>Bond Maturity</th>
+                </thead>
+
+                <tbody>
+                    <tr class="bar-group">
+                        <td class="choice">2005</td>
+                        <td class="figure">$50,000,000</td>
+                        <td class="figure">$350,000,000</td>
+                        <!-- <td class="percent">5</td> -->
+                        <td class="data">
+                            <div class="bar-container">
+                                <div class="bar" style="width:55%;">14 Years</div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="bar-group">
+                        <td class="choice">2011</td>
+                        <td class="figure">$50,000,000</td>
+                        <td class="figure">$350,000,000</td>
+                        <!-- <td class="percent">5</td> -->
+                        <td class="data">
+                            <div class="bar-container">
+                                <div class="bar" style="width:35%;">4 Years</div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <!-- end table -->
 
         </div>
         <!-- end span -->
@@ -169,7 +217,7 @@
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8&sensor=false&region=us"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/tabletop.js"></script>
-    <script src="http://projects.scpr.org/static/static-files/scripts/raphael/raphael-min.js"></script>
+    <script src="http://projects.scpr.org/static/static-files/scripts/highcharts.js"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/jquery.alerts.js"></script>
     <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap.js"></script>
     <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap-transition.js"></script>

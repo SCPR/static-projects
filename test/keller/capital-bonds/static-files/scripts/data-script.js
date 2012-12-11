@@ -3,121 +3,119 @@
     // begin main function
     jqueryNoConflict(document).ready(function(){
 
-        drawCircles();
+        drawChart();
 
     });
     // end
 
-var paper;
 
-    // begin circle function
-    function drawCircles(){
+    //begin function
+    function drawChart(){
 
-        /*
-        tutorials:
-        http://net.tutsplus.com/tutorials/javascript-ajax/an-introduction-to-the-raphael-js-library/
-        http://www.irunmywebsite.com/raphael/additionalhelp.php#pagetop
-        Raphael draws in canvas using Raphael() object
-        Specify html element the canvas is drawn in, width & height of canvas
-        */
+        var chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'school-debt-chart',
+                backgroundColor: 'none',
+                //zoomType: 'xy',
+                type: 'column'
+            },
 
-        // All our drawing methods will be bound to the paper variable
-        paper = new Raphael(document.getElementById('school-debt-container'), 500, 500);
+            title: {
+                text: 'Alhambra Unified',
+                style: {
+                    fontFamily: '"proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;',
+                    fontSize: '20px',
+                    color: '#2B2B2B'
+                }
+            },
 
-        /*
-        The origin -- x = 0, y = 0 point -- is at the top-left corner.
-        Any x, y coordinates we specify in our methods are relative to this point.
-        attr() method an object with various property-value pairs as its parameter.
-        */
+            xAxis: {
+                categories: ['Total CAB Amount']
+            },
 
-        var circleTotalPrincipal = paper.circle(300, 350, 40).attr({
-            fill: '#ccc',
-            stroke: '#ddd',
-            'stroke-width': 5,
-            'stroke-linejoin': 'round'
-        });
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Bond Payoff Amount'
+                },
 
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                    }
+                }
+            },
 
-        var circleTotalPayment = paper.circle(300, 150, 100).attr({
-            fill: '#9cf',
-            stroke: '#ddd',
-            'stroke-width': 5,
-            'stroke-linejoin': 'round',
-        });
+            legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom',
+                x: 30,
+                y: 10,
+                floating: false,
+                borderColor: '#CCC',
+                borderWidth: 0,
+                shadow: true
+            },
 
+            credits: {
+                text: 'Example.com',
+                href: 'http://www.example.com'
+            },
 
-        /*
-        'M' moves cursor to bottom of circle radius
-        'l' draws vertical line from circle
-        'z' closes the path
-        */
+            tooltip: {
+                formatter: function() {
+                    return '<b>'+ this.x +'</b><br/>'+
+                        this.series.name +': '+ this.y +'<br/>'+
+                        'Total: '+ this.point.stackTotal;
+                }
+            },
 
-        var connection = paper.path("M 420 380 l 0 -330 z").attr({
-            stroke: '#000',
-            'stroke-width': 5,
-            'stroke-linejoin': 'round',
-            opacity: 1
-        });
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                    }
+                }
+            },
 
-        var schoolDistrictName = paper.text(300, 350, 'District Name').attr({
-            fill: '#000',
-            opacity: 1
-        });
-
-        var schoolDistrictDebt = paper.text(300, 150, 'Amount of Debt').attr({
-            fill: '#000',
-            opacity: 0
-        });
-
-        // creates a DOM mouseover/onclick event
-
-/*
-        circleTotalPrincipal.node.onmouseover = function() {
-            this.style.cursor = 'pointer';
-        }
-
-        circleTotalPrincipal.node.onclick = function() {
-
-            schoolDistrictDebt.animate({
-                opacity: 1
-            }, 1000);
-
-            connection.animate({
-                opacity: 1
-            }, 1000);
-
-        }
-*/
-
-        drawRectangles();
-
-
-    };
-    // end
-
-
-    // begin rectangle function
-    function drawRectangles(){
-
-        /*
-        The origin -- x = 0, y = 0 point -- is at the top-left corner.
-        Any x, y coordinates we specify in our methods are relative to this point.
-        attr() method an object with various property-value pairs as its parameter.
-        */
-
-        var rectangleSchoolBond = paper.rect(250, 450, 150, 4).attr({
-            fill: 'red',
-            stroke: 'red',
-            'stroke-width': 1
+            series: [{
+                name: 'Interest',
+                color: '#D7301F',
+                data: [500000000]
+            }, {
+                name: 'Principal',
+                color: '#FDCC8A',
+                data: [200000000]
+            }]
         });
 
     };
     // end
 
+    // function to add commas to string
+    function addCommas(nStr){
+    	nStr += '';
+    	x = nStr.split('.');
+    	x1 = x[0];
+    	x2 = x.length > 1 ? '.' + x[1] : '';
+    	var rgx = /(\d+)(\d{3})/;
+    	while (rgx.test(x1)) {
+    		x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    	}
+    	return x1 + x2;
+    };
+    // end
 
     // function to generate iframe embed code
     function embedBox() {
         var embed_url = '#';
-        jAlert('<strong>To embed this on your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+ embed_url +'\" width=\"420px\" height=\"450px\" scrolling=\"no\" frameborder=\"0\"&gt;&lt;/iframe>', 'Share or Embed');
+        jAlert('<strong>To embed this on your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+
+        embed_url +
+        '\" width=\"420px\" height=\"450px\" scrolling=\"no\" frameborder=\"0\"&gt;&lt;/iframe>', 'Share or Embed');
     };
     // end
