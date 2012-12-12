@@ -39,8 +39,8 @@
         var source = getTemplateAjax('static-files/templates/debt-table.handlebars', function(template) {
 
 
-            Handlebars.registerHelper('addCommas', function(context, options) {
-              return this + '</a>';
+            Handlebars.registerHelper('addCommas', function(object) {
+              return addCommas(object);
             });
 
             jqueryNoConflict('#school-debt-details').html(template(data));
@@ -214,19 +214,6 @@
 
     };
     // end
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // function to add commas to string
     function addCommas(nStr){
