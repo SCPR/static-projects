@@ -1,11 +1,24 @@
-    <tr id="{{sale_year}}" class="bar-group">
-        <td class="choice">{{sale_year}}</td>
-        <td class="figure">{{cab_principal}}</td>
-        <td class="figure">{{cab_debt}}</td>
-        <td class="figure">{{debt_to_principal}}</td>
-        <td class="data">
-            <div class="bar-container">
-            <div class="bar" style="width:{{maturity_length}}%;">{{maturity_length}}</div>
-            </div>
-        </td>
-    </tr>
+<table class="table">
+    <thead>
+        <th>Year Sold</th>
+        <th>Principal</th>
+        <th>Payoff</th>
+        <th>Principal to Debt</th>
+        <th>Years Until Maturity</th>
+    </thead>
+    <tbody id="debt-table-content">
+        {{#objects}}
+        <tr id="{{sale_year}}" class="bar-group">
+            <td class="choice">{{sale_year}}</td>
+            <td class="figure">{{cab_principal}}</td>
+            <td class="figure">{{cab_debt}}</td>
+            <td class="figure">{{debt_to_principal}}</td>
+            <td class="data">
+                <div class="bar-container">
+                    <div class="bar" style="width:{{maturity_length}}%;">{{maturity_length}}</div>
+                </div>
+            </td>
+        </tr>
+        {{/objects}}
+    </tbody>
+</table>

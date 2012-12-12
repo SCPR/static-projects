@@ -1,13 +1,10 @@
    var jqueryNoConflict = jQuery;
+   var chart;
 
     // begin main function
     jqueryNoConflict(document).ready(function(){
-
         retriveData();
-
-        //drawChart();
-        //renderYourTemplate();
-
+        drawChart();
     });
     // end
 
@@ -27,23 +24,36 @@
     };
     //end
 
-
-
-
     // function to grab data
     function retriveData() {
-        jqueryNoConflict.getJSON('static-files/data/cab_data.json', createObjectFrom);
+        jqueryNoConflict.getJSON('static-files/data/cab_data.json', processData);
+    };
+
+    // function to build html display
+    function buildTemplateWith(data){
+        var source = getTemplateAjax('static-files/templates/debt-table.handlebars', function(template) {
+            jqueryNoConflict('#school-debt-details').html(template(data));
+        });
     };
 
 
-
     // create objects from json data
-    function createObjectFrom(data){
+    function processData(data){
+
+        buildTemplateWith(data);
+
+
+    // container arrays
+    var allJobsData = [];
+    var arraysOfJobsData = [];
 
         // loop through data for markers
         for(var i=0; i<data.objects.length; i++){
 
-            // create object
+
+            var cab_principal = data.objects[i].cab_principal;
+            var cab_interest = data.objects[i].cab_interest;
+/*
             var myLoopObject = {
                 cab_debt: data.objects[i].cab_debt,
                 cab_interest: data.objects[i].cab_interest,
@@ -57,19 +67,27 @@
                 sale_year: data.objects[i].sale_year
 
             };
+*/
 
-            schoolBonds.push(myLoopObject);
+            var testDataPrincipal = {
+                name: 'Principal',
+                color: '#FDCC8A',
+                data: cab_principal
+            };
+
+            var testDataInterest = {
+                name: 'Interest',
+                color: '#FDCC8A',
+                data: cab_interest
+            };
+
         }
 
-        getTemplateAjax('tatic-files/templates/debt-table.handlebars', function(template) {
-            jqueryNoConflict('#debt-table-content').html(template(data));
-        });
+
+        //chart.addSeries(testDataInterest);
 
 
-
-
-
-        console.log(data);
+        console.log(testDataInterest);
 
     };
 
@@ -77,33 +95,6 @@
 
 
 
-/*
-
-    // render template
-    function renderYourTemplate(){
-
-        getTemplateAjax('static-files/templates/debt-table.handlebars', function(template) {
-
-            var testData = {
-                cab_debt: "19,000,000",
-                cab_interest: "1,558,380",
-                cab_principal: "17,441,620",
-                county: "Orange",
-                debt_to_principal: "1.09",
-                issuer: "Irvine Unified School District CFD No 06-1",
-                maturity_date: "3/1/2009",
-                maturity_length: "1.8",
-                sale_date: "5/31/2007",
-                sale_year: "2007"
-            }
-
-            jqueryNoConflict('#debt-table-content').html(template(testData));
-
-        })
-
-    };
-    // end
-*/
 
 
 
@@ -202,15 +193,8 @@
                 }
             },
 
-            series: [{
-                name: 'Interest',
-                color: '#D7301F',
-                data: [500000000]
-            }, {
-                name: 'Principal',
-                color: '#FDCC8A',
-                data: [200000000]
-            }]
+            series: []
+
         });
 
     };
@@ -238,3 +222,30 @@
         '\" width=\"420px\" height=\"450px\" scrolling=\"no\" frameborder=\"0\"&gt;&lt;/iframe>', 'Share or Embed');
     };
     // end
+
+/*
+    // render template
+    function renderYourTemplate(){
+
+        getTemplateAjax('static-files/templates/debt-table.handlebars', function(template) {
+
+            var testData = {
+                cab_debt: "19,000,000",
+                cab_interest: "1,558,380",
+                cab_principal: "17,441,620",
+                county: "Orange",
+                debt_to_principal: "1.09",
+                issuer: "Irvine Unified School District CFD No 06-1",
+                maturity_date: "3/1/2009",
+                maturity_length: "1.8",
+                sale_date: "5/31/2007",
+                sale_year: "2007"
+            }
+
+            jqueryNoConflict('#debt-table-content').html(template(testData));
+
+        })
+
+    };
+    // end
+*/
