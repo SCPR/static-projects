@@ -9,28 +9,36 @@ jqueryNoConflict(document).ready(function() {
     drawChart();
 });
 // end
-// render handlebars templates via ajax
 
+// adds commas to string
+function addCommas (nStr) {
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
+}
+// end
+
+// render handlebars templates via ajax
 function getTemplateAjax(path, callback) {
     var source, template;
     jqueryNoConflict.ajax({
         url: path,
-        success: function(data) {
+        success: function (data) {
             source = data;
             template = Handlebars.compile(source);
             if (callback) callback(template);
         }
     });
-};
+}
 //end
-// function to grab data
 
-function retriveData() {
-    jqueryNoConflict.getJSON('static-files/data/cab_data.json', processData);
-};
-// end
 // function to build html display
-
 function buildTemplateWith(data) {
     var source = getTemplateAjax('static-files/templates/debt-table.handlebars', function(template) {
         Handlebars.registerHelper('addCommas', function(object) {
@@ -38,14 +46,14 @@ function buildTemplateWith(data) {
         });
         jqueryNoConflict('#school-debt-details').html(template(data));
     });
-};
+}
 // end
-// create objects from json data
 
+// create objects from json data
 function processData(data) {
     var schoolDistrictValue;
     var bonds = data.objects;
-    $('#school-district').change(function() {
+    $('#school-district').change(function () {
         schoolDistrictValue = $('#school-district :selected').val();
         // empty's array
         var testObjects = [];
@@ -70,8 +78,10 @@ function processData(data) {
                 testObjects.push(myQueriedDataObject);
             }
             // close if statement
-        };
+
+        }
         // close for loop
+
         var testData = {
             objects: testObjects
         };
@@ -88,11 +98,17 @@ function processData(data) {
         chart.series[0].setData(testChartInterest);
         chart.series[1].setData(testChartPrincipal);
     });
-};
+}
 // end
-//begin function
 
-function drawChart() {
+// function to grab data
+function retriveData() {
+    jqueryNoConflict.getJSON('static-files/data/cab_data.json', processData);
+}
+// end
+
+// confugures the chart options
+function drawChart () {
     optionsChart = {
         chart: {
             renderTo: 'school-debt-chart',
@@ -124,7 +140,7 @@ function drawChart() {
                 },
                 formatter: function() {
                     return '<strong>Total:</strong> $' + Highcharts.numberFormat(this.total, 2, '.');
-                },
+                }
             }
         },
         legend: {
@@ -157,7 +173,7 @@ function drawChart() {
                     fontWeight: 'bold',
                     formatter: function() {
                         return '<strong>' + this.series.name + '</strong>: $' + Highcharts.numberFormat(this.y, 2, '.');
-                    },
+                    }
                 }
             }
         },
@@ -169,26 +185,12 @@ function drawChart() {
             color: '#FDCC8A'
         }]
     };
-};
+}
 // end
-// function to add commas to string
 
-function addCommas(nStr) {
-    nStr += '';
-    x = nStr.split('.');
-    x1 = x[0];
-    x2 = x.length > 1 ? '.' + x[1] : '';
-    var rgx = /(\d+)(\d{3})/;
-    while (rgx.test(x1)) {
-        x1 = x1.replace(rgx, '$1' + ',' + '$2');
-    }
-    return x1 + x2;
-};
-// end
-// function to generate iframe embed code
-
-function embedBox() {
+// generates iframe embed code
+function embedBox () {
     var embed_url = '#';
     jAlert('<strong>To embed this on your blog or site, just copy this code:<br></strong>&lt;iframe src=\"' + embed_url + '\" width=\"420px\" height=\"450px\" scrolling=\"no\" frameborder=\"0\"&gt;&lt;/iframe>', 'Share or Embed');
-};
+}
 // end
