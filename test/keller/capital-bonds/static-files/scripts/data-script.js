@@ -42,17 +42,12 @@
 
         buildTemplateWith(data);
 
-
-    // container arrays
-    var allJobsData = [];
-    var arraysOfJobsData = [];
-
         // loop through data for markers
         for(var i=0; i<data.objects.length; i++){
 
+            var cab_principal = [parseFloat(data.objects[i].cab_principal)];
+            var cab_interest = [parseFloat(data.objects[i].cab_interest)];
 
-            var cab_principal = data.objects[i].cab_principal;
-            var cab_interest = data.objects[i].cab_interest;
 /*
             var myLoopObject = {
                 cab_debt: data.objects[i].cab_debt,
@@ -77,52 +72,21 @@
 
             var testDataInterest = {
                 name: 'Interest',
-                color: '#FDCC8A',
+                color: '#D7301F',
                 data: cab_interest
             };
 
-        }
+        };
 
-
-        //chart.addSeries(testDataInterest);
-
-
-        console.log(testDataInterest);
+        chart.addSeries(testDataInterest);
+        chart.addSeries(testDataPrincipal);
 
     };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //begin function
     function drawChart(){
 
-        var chart = new Highcharts.Chart({
+        chart = new Highcharts.Chart({
             chart: {
                 renderTo: 'school-debt-chart',
                 backgroundColor: 'none',
@@ -153,8 +117,13 @@
                     enabled: true,
                     style: {
                         fontWeight: 'bold',
-                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
-                    }
+                        color: '#000000'
+                    },
+
+                    formatter: function() {
+                        return '<strong>Total:</strong> $' +
+                        Highcharts.numberFormat(this.total, 2, '.');
+                    },
                 }
             },
 
@@ -175,11 +144,12 @@
                 href: 'http://www.example.com'
             },
 
+
             tooltip: {
+                enabled: false,
                 formatter: function() {
-                    return '<b>'+ this.x +'</b><br/>'+
-                        this.series.name +': '+ this.y +'<br/>'+
-                        'Total: '+ this.point.stackTotal;
+                    return '<strong>'+ this.series.name +
+                    '</strong>: $' + Highcharts.numberFormat(this.y, 2, '.');
                 }
             },
 
@@ -188,9 +158,15 @@
                     stacking: 'normal',
                     dataLabels: {
                         enabled: true,
-                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                        color: '#000000',
+                        fontWeight: 'bold',
+                        formatter: function () {
+                            return '<strong>' + this.series.name +
+                            '</strong>: $' + Highcharts.numberFormat(this.y, 2, '.');
+                        },
                     }
                 }
+
             },
 
             series: []
@@ -222,6 +198,11 @@
         '\" width=\"420px\" height=\"450px\" scrolling=\"no\" frameborder=\"0\"&gt;&lt;/iframe>', 'Share or Embed');
     };
     // end
+
+
+
+
+
 
 /*
     // render template
