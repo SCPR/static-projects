@@ -1,10 +1,12 @@
    var jqueryNoConflict = jQuery;
    var chart;
+   var series;
+   var optionsChart;
 
     // begin main function
     jqueryNoConflict(document).ready(function(){
         retriveData();
-        //drawChart();
+        drawChart();
 
     });
     // end
@@ -53,15 +55,23 @@
         var schoolDistrictValue;
         var bonds = data.objects;
         var testObjects = [];
+        var testChartInterest0 = [];
+        var testChartPrincipal1 = [];
 
         $('#school-district').change(function(){
             schoolDistrictValue = $('#school-district :selected').val();
 
+                // empty's array
                 testObjects = [];
 
+                // begins loop
                 for(var i=0; i<bonds.length; i++){
 
+                    // comparison for select district
                     if (bonds[i].issuer === schoolDistrictValue) {
+
+                        var chartInterest = parseFloat(bonds[i].cab_interest);
+                        var chartPrincipal = parseFloat(bonds[i].cab_principal);
 
                         var myQueriedDataObject = {
                             cab_debt: bonds[i].cab_debt,
@@ -76,20 +86,182 @@
                             sale_year: bonds[i].sale_year
                         };
 
-                        console.log(myQueriedDataObject);
                         testObjects.push(myQueriedDataObject);
+                        testChartInterest0.push(chartInterest);
+                        testChartPrincipal1.push(chartPrincipal);
 
                     }
+                    // close if statement
 
                 };
+                // close for loop
 
-                var testData = {
-                    objects: testObjects
-                };
 
-                buildTemplateWith(testData);
+            var testData = {
+                objects: testObjects
+            };
+
+            buildTemplateWith(testData);
+
+            if(!chart)
+                chart = new Highcharts.Chart(optionsChart);
+                chart.series[0].setData(testChartInterest0)
+                chart.series[1].setData(testChartPrincipal1)
 
         });
 
+    };
+    // end
+
+
+
+
+
+
+
+    //begin function
+    function drawChart(){
+
+        optionsChart = {
+            chart: {
+                renderTo: 'school-debt-chart',
+                backgroundColor: 'none',
+                //zoomType: 'xy',
+                type: 'column'
+            },
+
+            title: {
+                text: 'Alhambra Unified',
+                style: {
+                    fontFamily: '"proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;',
+                    fontSize: '20px',
+                    color: '#2B2B2B'
+                }
+            },
+
+            xAxis: {
+                categories: ['Total CAB Amount']
+            },
+
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Bond Payoff Amount'
+                },
+
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: '#000000'
+                    },
+
+                    formatter: function() {
+                        return '<strong>Total:</strong> $' +
+                        Highcharts.numberFormat(this.total, 2, '.');
+                    },
+                }
+            },
+
+            legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom',
+                x: 30,
+                y: 10,
+                floating: false,
+                borderColor: '#CCC',
+                borderWidth: 0,
+                shadow: true
+            },
+
+            credits: {
+                text: 'Example.com',
+                href: 'http://www.example.com'
+            },
+
+
+            tooltip: {
+                enabled: false,
+                formatter: function() {
+                    return '<strong>'+ this.series.name +
+                    '</strong>: $' + Highcharts.numberFormat(this.y, 2, '.');
+                }
+            },
+
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        fontWeight: 'bold',
+                        formatter: function () {
+                            return '<strong>' + this.series.name +
+                            '</strong>: $' + Highcharts.numberFormat(this.y, 2, '.');
+                        },
+                    }
+                }
+
+            },
+
+            series: [{
+                name: 'Interest',
+                color: '#D7301F'
+            }, {
+                name: 'Principal',
+                color: '#FDCC8A'
+            }]
+
+/*
+            series: [{
+                name: 'Interest',
+                color: '#D7301F',
+                data: 300000
+            }, {
+                name: 'Principal',
+                color: '#FDCC8A',
+                data: 300000
+            }]
+*/
+
+        };
+
+    };
+    // end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // function to add commas to string
+    function addCommas(nStr){
+    	nStr += '';
+    	x = nStr.split('.');
+    	x1 = x[0];
+    	x2 = x.length > 1 ? '.' + x[1] : '';
+    	var rgx = /(\d+)(\d{3})/;
+    	while (rgx.test(x1)) {
+    		x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    	}
+    	return x1 + x2;
+    };
+    // end
+
+    // function to generate iframe embed code
+    function embedBox() {
+        var embed_url = '#';
+        jAlert('<strong>To embed this on your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+
+        embed_url +
+        '\" width=\"420px\" height=\"450px\" scrolling=\"no\" frameborder=\"0\"&gt;&lt;/iframe>', 'Share or Embed');
     };
     // end
