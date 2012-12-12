@@ -1,13 +1,10 @@
    var jqueryNoConflict = jQuery;
    var chart;
-   var series;
-   var optionsChart;
 
     // begin main function
     jqueryNoConflict(document).ready(function(){
         retriveData();
         drawChart();
-
     });
     // end
 
@@ -30,96 +27,66 @@
     // function to grab data
     function retriveData() {
         jqueryNoConflict.getJSON('static-files/data/cab_data.json', processData);
-
     };
-    // end
 
     // function to build html display
     function buildTemplateWith(data){
         var source = getTemplateAjax('static-files/templates/debt-table.handlebars', function(template) {
-
-
-            Handlebars.registerHelper('addCommas', function(context, options) {
-              return this + '</a>';
-            });
-
             jqueryNoConflict('#school-debt-details').html(template(data));
         });
     };
-    // end
+
 
     // create objects from json data
     function processData(data){
 
-        var schoolDistrictValue;
-        var bonds = data.objects;
+        buildTemplateWith(data);
 
-        $('#school-district').change(function(){
-            schoolDistrictValue = $('#school-district :selected').val();
+        // loop through data for markers
+        for(var i=0; i<data.objects.length; i++){
 
-                // empty's array
-                var testObjects = [];
-                var testChartPrincipal = [];
-                var testChartInterest = [];
+            var cab_principal = [parseFloat(data.objects[i].cab_principal)];
+            var cab_interest = [parseFloat(data.objects[i].cab_interest)];
 
-                // begins loop
-                for(var i=0; i<bonds.length; i++){
+/*
+            var myLoopObject = {
+                cab_debt: data.objects[i].cab_debt,
+                cab_interest: data.objects[i].cab_interest,
+                cab_principal: data.objects[i].cab_principal,
+                county: data.objects[i].county,
+                debt_to_principal: data.objects[i].debt_to_principal,
+                issuer: data.objects[i].issuer,
+                maturity_date: data.objects[i].maturity_date,
+                maturity_length: data.objects[i].maturity_length,
+                sale_date: data.objects[i].sale_date,
+                sale_year: data.objects[i].sale_year
 
-                    // comparison for select district
-                    if (bonds[i].issuer === schoolDistrictValue) {
+            };
+*/
 
-                        var myQueriedDataObject = {
-                            cab_debt: bonds[i].cab_debt,
-                            cab_interest: bonds[i].cab_interest,
-                            cab_principal: bonds[i].cab_principal,
-                            county: bonds[i].county,
-                            debt_to_principal: bonds[i].debt_to_principal,
-                            issuer: bonds[i].issuer,
-                            maturity_date: bonds[i].maturity_date,
-                            maturity_length: bonds[i].maturity_length,
-                            sale_date: bonds[i].sale_date,
-                            sale_year: bonds[i].sale_year
-                        };
-
-                        testObjects.push(myQueriedDataObject);
-
-                    }
-                    // close if statement
-
-                };
-                // close for loop
-
-            var testData = {
-                objects: testObjects
+            var testDataPrincipal = {
+                name: 'Principal',
+                color: '#FDCC8A',
+                data: cab_principal
             };
 
-            buildTemplateWith(testData);
+            var testDataInterest = {
+                name: 'Interest',
+                color: '#D7301F',
+                data: cab_interest
+            };
 
-            var testTotalInterest = 0;
-            var testTotalPrincipal = 0;
+        };
 
-            for (i = 0; i < testObjects.length; i++) {
-                testTotalInterest += parseFloat(testObjects[i].cab_interest);
-                testTotalPrincipal += parseFloat(testObjects[i].cab_principal);
-            }
-
-            testChartInterest.push(testTotalInterest);
-            testChartPrincipal.push(testTotalPrincipal);
-
-            if(!chart)
-                chart = new Highcharts.Chart(optionsChart);
-                chart.series[0].setData(testChartInterest);
-                chart.series[1].setData(testChartPrincipal);
-
-        });
+        chart.addSeries(testDataInterest);
+        chart.addSeries(testDataPrincipal);
 
     };
-    // end
 
     //begin function
     function drawChart(){
 
-        optionsChart = {
+        chart = new Highcharts.Chart({
             chart: {
                 renderTo: 'school-debt-chart',
                 backgroundColor: 'none',
@@ -128,7 +95,7 @@
             },
 
             title: {
-                text: 'Capital Appreciation Bonds',
+                text: 'Alhambra Unified',
                 style: {
                     fontFamily: '"proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;',
                     fontSize: '20px',
@@ -202,31 +169,12 @@
 
             },
 
-            series: [{
-                name: 'Interest',
-                color: '#D7301F'
-            }, {
-                name: 'Principal',
-                color: '#FDCC8A'
-            }]
+            series: []
 
-        };
+        });
 
     };
     // end
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // function to add commas to string
     function addCommas(nStr){
