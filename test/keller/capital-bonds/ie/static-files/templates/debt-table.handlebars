@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <th>Year Issued</th>
+        <th>Total Principal</th>
+        <th>Years Until Maturity</th>
+        <th>Payoff at Maturity</th>
+        <th>Principal to Debt Ratio</th>
+    </thead>
+    <tbody id="debt-table-content">
+        {{#objects}}
+        <tr id="{{sale_year}}" class="bar-group">
+            <td>{{sale_year}}</td>
+            <td>${{addCommas cab_principal}}</td>
+            <td>{{maturity_length}}</td>
+            <td>${{addCommas cab_debt}}</td>
+            <td>{{debt_to_principal}}</td>
+        </tr>
+        {{/objects}}
+    </tbody>
+</table>
