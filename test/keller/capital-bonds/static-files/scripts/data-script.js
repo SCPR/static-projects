@@ -163,6 +163,7 @@ function drawChart () {
             shadow: true
         },
         credits: {
+            enabled: false,
             text: 'California State Treasurer\'s Office',
             href: 'http://www.treasurer.ca.gov/'
         },
