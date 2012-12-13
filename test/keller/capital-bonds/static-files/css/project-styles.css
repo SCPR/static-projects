@@ -1,11 +1,4 @@
-#data-header h2 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 30px; color: #2B2B2B;}
-
+#school-district-list {width: 100%; height: 20px; margin: 0 0% 25px 0%;}
 #school-district-list select {width: 50%; height: 20px; margin: 0 25% 45px 25%;}
-
 #school-debt-chart {width: 90%; height: 300px; margin: 0 5% 0 5%;}
-
-#school-debt-details {width: 90%; height: 400px; margin: 20px 5% 0 5%;}
-
-.bar-container {width: 100%; height: 25px; background-color: #cacaca;}
-
-.bar-container .bar {height: 25px; background-color: #2B2B2B; color: #ffffff; line-height: 22px;text-align: center;}
+#school-debt-details {width: 90%; height: 70px; margin: 20px 5% 0 5%;}

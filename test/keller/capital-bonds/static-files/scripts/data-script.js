@@ -7,6 +7,7 @@ var optionsChart;
 jqueryNoConflict(document).ready(function() {
     retriveData();
     drawChart();
+    renderDataFooterTemplate();
 });
 // end
 
@@ -38,8 +39,15 @@ function getTemplateAjax(path, callback) {
 }
 //end
 
+// render location screen template
+function renderDataFooterTemplate(){
+    getTemplateAjax('static-files/templates/data-footer.handlebars', function(template) {
+        jqueryNoConflict('#data-footer').html(template());
+    })
+};
+
 // function to build html display
-function buildTemplateWith(data) {
+function renderDataTableTemplateWith(data) {
     var source = getTemplateAjax('static-files/templates/debt-table.handlebars', function(template) {
         Handlebars.registerHelper('addCommas', function(object) {
             return addCommas(object);
@@ -85,7 +93,7 @@ function processData(data) {
         var testData = {
             objects: testObjects
         };
-        buildTemplateWith(testData);
+        renderDataTableTemplateWith(testData);
         var testTotalInterest = 0;
         var testTotalPrincipal = 0;
         for (i = 0; i < testObjects.length; i++) {
@@ -125,7 +133,7 @@ function drawChart () {
             }
         },
         xAxis: {
-            categories: ['Total CAB Amount']
+            categories: ['Total Amount of Capital Appreciation Bonds']
         },
         yAxis: {
             min: 0,
@@ -155,8 +163,8 @@ function drawChart () {
             shadow: true
         },
         credits: {
-            text: 'Example.com',
-            href: 'http://www.example.com'
+            text: 'California State Treasurer\'s Office',
+            href: 'http://www.treasurer.ca.gov/'
         },
         tooltip: {
             enabled: false,

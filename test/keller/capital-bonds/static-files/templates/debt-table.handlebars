@@ -9,15 +9,11 @@
     <tbody id="debt-table-content">
         {{#objects}}
         <tr id="{{sale_year}}" class="bar-group">
-            <td class="choice">{{sale_year}}</td>
-            <td class="figure">{{addCommas cab_principal}}</td>
-            <td class="figure">{{addCommas cab_debt}}</td>
-            <td class="figure">{{debt_to_principal}}</td>
-            <td class="data">
-                <div class="bar-container">
-                    <div class="bar" style="width:{{maturity_length}}%;">{{maturity_length}}</div>
-                </div>
-            </td>
+            <td>{{sale_year}}</td>
+            <td>{{addCommas cab_principal}}</td>
+            <td>{{addCommas cab_debt}}</td>
+            <td>{{debt_to_principal}}</td>
+            <td>{{maturity_length}}</td>
         </tr>
         {{/objects}}
     </tbody>
