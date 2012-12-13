@@ -3,7 +3,6 @@ body.minimal { background:url('http://projects.scpr.org/static/static-files/imag
 body.minimal header { background: #fff; box-shadow: 0 0 8px rgba(0,0,0,0.7); height: auto; margin: 0 0 40px; }
 body.minimal header h3#site-title a { background-image:url('http://www.scpr.org/assets/logo-masthead.png'); width: 181px; height: 42px; }
 body.minimal, body.minimal p, h1, h2, h3, h4, h5, h6 { font-family: "proxima nova", sans-serif; }
-h1#title { font-size: 36px; font-weight: 800; }
 body.minimal hr { background-color: #ccc; border-bottom: 1px solid #fff; height: 1px; }
 body.minimal p { font-size: 15px; font-weight: 400; }
 body.minimal .header-links { margin-bottom: 10px; }
@@ -19,23 +18,25 @@ body.minimal .header-links a.facebook { background:url('http://projects.scpr.org
 body.minimal .header-links a.twitter { background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/ico-twitter.png') no-repeat 0 0; display: block; float: left; width: 31px; height: 22px; }
 
 /* structure for data elements */
-#data-container {width: 100%; height: 100%; margin: 25px 0% 25px 0%;}
-#data-header {width: 80%; height: 100%; margin: 10px 10% 10px 10%;}
-#data-map-canvas {width: 90%; height: 450px; margin: 10px 5% 10px 5%;}
+#data-container {width: 100%; height: 100%; margin: 35px 0% 35px 0%;}
+#data-header {width: 90%; height: 100%; margin: 10px 5% 10px 5%;}
 #data-details {width: 90%; height: 450px; margin: 10px 5% 10px 5%;}
-#data-details-intro {width: 80%; height: auto; margin: 25px 10% 25px 10%;}
-#data-details-drilldown {width: 80%; height: auto; margin: 15px 10% 15px 10%;}
-#data-chart {width: 80%; height: 250px; margin: 50px 10% 30px 10%;}
-#data-footer {width: 80%; height: 50px; margin: 25px 10% 20px 10%;}
+#data-map-canvas {width: 90%; height: 300px; margin: 10px 5% 10px 5%;}
+#data-chart {width: 90%; height: 300px; margin: 10px 5% 10px 5%;}
+#data-footer {width: 90%; height: 50px; margin: 25px 5% 20px 5%;}
 
 /* typography */
-.lowercase {text-transform: lowercase;}
-.underline {text-decoration: underline;}
-.data-instructions {font-size: 11px; margin: 10px 25px 15px 25px;}
-.story-headline {font-family: "proxima-nova-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; margin-bottom: 0}
-.story-text {}
-.normal-display {font-size: 14px;}
-.small-display {font-size: 10px;}
+#data-container h1 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 36px; font-weight: 800; line-height: 30px; color: #2B2B2B;}
+#data-container h2 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 30px; color: #2B2B2B;}
+#data-container .lowercase {text-transform: lowercase;}
+#data-container .underline {text-decoration: underline;}
+#data-container .data-instructions {font-size: 11px; margin: 10px 25px 15px 25px;}
+#data-container .story-headline {font-family: "proxima-nova-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; margin-bottom: 0}
+#data-container .normal-display {font-size: 14px;}
+#data-container .small-display {font-size: 10px;}
+#data-container .story-text {}
+#data-container .details-intro {}
+#data-container .details-drilldown {}
 
 /* media queries */
 /*
