@@ -1,0 +1,13 @@
+    body {background: #e9e9e9; font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;}
+    #kpcc-ie-header {background: #ffffff; width: 100%; height: 50px; margin: 0px auto 5px auto; padding: 15px;}
+    #kpcc-ie-header img {margin: 0px 0 5px 240px;}
+    #data-container {width: 960px; height: auto; margin: 35px auto 25px auto;}
+    #data-container #data-details {width: 900px; height: auto; margin: 10px auto 25px auto;}
+    #data-container #data-visuals {width: 900px; height: auto; margin: 10px auto 10px auto;}
+    #data-container .data-image-container {width: 80%; margin: 0 10% 15px 10%;}
+    #data-visuals #school-district-list {width: 100%; height: 20px; margin: 0 0 25px 0;}
+    #data-visuals #school-district-list select {width: 50%; margin: 0 25% 0 25%;}
+    #data-container #school-debt-chart {width: 500px; height: auto; margin: 25px auto 10px auto;}
+    #data-container #school-debt-details {width: 500px; height: auto; margin: 25px auto 10px auto;}
+    #data-footer {width: 900px; height: auto; margin: 10px auto 25px auto;}
+    #data-container .data-instructions {font-size: 11px; margin: 10px 25px 15px 25px;}

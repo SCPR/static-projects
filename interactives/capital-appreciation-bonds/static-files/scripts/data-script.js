@@ -61,8 +61,9 @@ function renderDataTableTemplateWith(data) {
 function processData(data) {
     var schoolDistrictValue;
     var bonds = data.objects;
-    $('#school-district').change(function () {
-        schoolDistrictValue = $('#school-district :selected').val();
+    jqueryNoConflict('#school-district').change(function () {
+        jqueryNoConflict('#data-intro-image').fadeOut();
+        schoolDistrictValue = jqueryNoConflict('#school-district :selected').val();
         // empty's array
         var testObjects = [];
         var testChartPrincipal = [];
