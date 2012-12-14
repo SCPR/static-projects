@@ -24,7 +24,7 @@ function getTemplateAjax(path, callback) {
 function renderStaticTemplates(){
     renderKpccHeaderTemplate();
     renderDataDetailsTemplate();
-    //renderDebtTableTermsTemplate();
+    renderDebtTableTermsTemplate();
     renderDataFooterTemplate();
     renderKpccFooterTemplate();
 };
