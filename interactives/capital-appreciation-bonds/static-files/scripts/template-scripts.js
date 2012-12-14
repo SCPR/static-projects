@@ -24,6 +24,7 @@ function getTemplateAjax(path, callback) {
 function renderStaticTemplates(){
     renderKpccHeaderTemplate();
     renderDataDetailsTemplate();
+    //renderDebtTableTermsTemplate();
     renderDataFooterTemplate();
     renderKpccFooterTemplate();
 };
@@ -39,6 +40,22 @@ function renderKpccHeaderTemplate(){
 function renderDataDetailsTemplate(){
     getTemplateAjax('static-files/templates/data-details.handlebars', function(template) {
         jqueryNoConflict('#data-details').html(template());
+    })
+};
+
+function renderDebtTableTermsTemplate(){
+    var termsToKnow = {
+        title: 'Terms to Know',
+        year_issued: 'The year a district issued a Capital Appreciation Bond.',
+        bond_principal: 'The amount of money a district borrowed by issuing a bond.',
+        bond_interest: 'The amount of interest a district will pay on the bond when payments begin.',
+        length_to_maturity: 'The number of years from the bond issue that a district has before it begins to make payments.',
+        bond_payoff: 'The sum of bond principal and bond interest, this represents the cost of the bond to the district.',
+        ratio_principal_payoff: 'The total debt service on a bond divided by the principal.'
+    }
+
+    getTemplateAjax('static-files/templates/debt-table-terms.handlebars', function(template) {
+        jqueryNoConflict('#debt-table-terms').html(template(termsToKnow));
     })
 };
 

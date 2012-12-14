@@ -38,6 +38,7 @@ function getTemplateAjax(path, callback) {
 }
 //end
 
+
 // function to build html display
 function renderDataTableTemplateWith(data) {
     var source = getTemplateAjax('static-files/templates/debt-table.handlebars', function(template) {
@@ -110,6 +111,7 @@ function retriveData() {
 
 // confugures the chart options
 function drawChart () {
+
     optionsChart = {
         chart: {
             renderTo: 'school-debt-chart',
@@ -126,7 +128,7 @@ function drawChart () {
             }
         },
         xAxis: {
-            categories: ['Total Amount of Capital Appreciation Bonds']
+            categories: ['Sum of Capital Appreciation Bonds Issued since 2007']
         },
         yAxis: {
             min: 0,
@@ -140,7 +142,7 @@ function drawChart () {
                     color: '#000000'
                 },
                 formatter: function() {
-                    return '<strong>Total:</strong> $' + Highcharts.numberFormat(this.total, 2, '.');
+                    return '<strong>Total Bond Payoff:</strong> $' + Highcharts.numberFormat(this.total, 2, '.');
                 }
             }
         },
@@ -180,10 +182,10 @@ function drawChart () {
             }
         },
         series: [{
-            name: 'Interest',
+            name: 'Total Bond Interest',
             color: '#D7301F'
         }, {
-            name: 'Principal',
+            name: 'Total Bond Principal',
             color: '#FDCC8A'
         }]
     };
