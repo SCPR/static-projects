@@ -24,7 +24,6 @@ function getTemplateAjax(path, callback) {
 function renderStaticTemplates(){
     renderKpccHeaderTemplate();
     renderDataDetailsTemplate();
-    renderDataVisualsTemplate();
     renderDataFooterTemplate();
     renderKpccFooterTemplate();
 };
@@ -40,12 +39,6 @@ function renderKpccHeaderTemplate(){
 function renderDataDetailsTemplate(){
     getTemplateAjax('static-files/templates/data-details.handlebars', function(template) {
         jqueryNoConflict('#data-details').html(template());
-    })
-};
-
-function renderDataVisualsTemplate(){
-    getTemplateAjax('static-files/templates/data-visuals.handlebars', function(template) {
-        jqueryNoConflict('#data-visuals').html(template());
     })
 };
 
