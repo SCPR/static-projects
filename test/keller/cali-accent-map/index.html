@@ -30,7 +30,6 @@
     <link href="http://current.bootstrapcdn.com/bootstrap-v204/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://www.scpr.org/assets/application.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://projects.scpr.org/static/static-files/css/interactive-project-shell/foundation-styles.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
     <link href="static-files/css/project-styles.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://current.bootstrapcdn.com/bootstrap-v204/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" media="all" />
 
@@ -40,6 +39,8 @@
     <!-- end css -->
 
     <!-- begin kpcc foundation scripts -->
+    <script type="text/javascript" src="http://use.typekit.com/mhc7oxs.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
@@ -51,114 +52,27 @@
 <!-- begin body -->
 <body class="minimal">
 
-<!-- begin kpcc header -->
-<header>
-    <div class="container-fluid">
-        <div class="row-fluid">
+<div id="kpcc-header"></div>
 
-        <!-- begin header logo -->
-        <div class="span8">
-            <h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
-        </div>
-        <!-- end header logo -->
-
-        <!-- begin share functions -->
-        <div class="span4">
-            <ul class="header-links clearfix pull-right">
-                <li>
-                <a href="https://scprcontribute.publicradio.org/" class="pledge-now icon">Contribute to KPCC</a>
-                <a href="https://scprcontribute.publicradio.org/" target="_blank"><b>Pledge now</b></a>
-                </li>
-                <li>
-                <div class="share-links clearfix">
-                <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
-
-                <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fprojects.scpr.org%2Fstatic%2Fapplications%2Fseasons-givings%2F" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
-
-                <a class="twitter icon" href="http://twitter.com/share?text=KPCC profiles of volunteers and offers a database to find volunteer and charitable opportunities this holiday season: &url=http://projects.scpr.org/static/applications/seasons-givings/"target="_blank"></a>
-                </div>
-                <b>Share this page</b>
-                </li>
-            </ul>
-        </div>
-        <!-- end share functions -->
-
-        </div>
-    </div>
-</header>
-<!-- end kpcc header -->
-
-<!-- begin data container -->
 <div id="data-container">
-
-    <!-- begin row -->
     <div class="row-fluid">
-
-        <!-- begin span -->
-        <div class="span8">
-
-            <!-- begin data visuals -->
-            <div id="data-visuals">
-            <div id="data-map-canvas"></div>
-            </div>
-            <!-- end data visuals -->
-
-        </div>
-        <!-- end span -->
-
-        <!-- begin span -->
         <div class="span4">
-
-            <!-- begin data details -->
-            <div id="data-details">
-                <p>Project explainer, etc</p>
-                <p>Click the map and hear the calif accent</p>
-            </div>
-            <!-- end data details -->
-
-            <div id="data-description"></div>
-
-            <div id="data-audio-player"></div>
-
+            <div id="data-details"></div>
         </div>
-        <!-- end span -->
-
+        <div class="span8">
+            <div id="data-visuals">
+                <div id="data-map-canvas"></div>
+            </div>
+        </div>
     </div>
-    <!-- end row -->
-
-    <!-- begin data footer -->
     <div id="data-footer"></div>
-    <!-- end data footer -->
-
 </div>
-<!-- end data container -->
 
-<!-- begin kpcc footer -->
-
-<div id="kpcc-footer">
-<footer>
-    <div class="container-fluid">
-        <div class="row-fluid">
-            <div class="span12">
-                <ul>
-                    <li><a href="http://scpr.org/terms/">Terms &amp; Conditions</a></li>
-                    <li><a href="http://scpr.org/privacy/">Privacy</a></li>
-                    <li><a href="http://scpr.org/web_site_feedback">Website Feedback</a></li>
-                    <li>Copyright 2012 &copy; Southern California Public Radio</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</footer>
-</div>
-<!-- end kpcc footer -->
+<div id="kpcc-footer"></div>
 
     <!-- begin scripts -->
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8&sensor=false&region=us"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
-    <script src="http://projects.scpr.org/static/static-files/scripts/tabletop.js"></script>
-    <script src="http://projects.scpr.org/static/static-files/scripts/highcharts.js"></script>
-    <script src="http://projects.scpr.org/static/static-files/scripts/jquery.alerts.js"></script>
     <script src="static-files/scripts/soundcloud.player.api.js"></script>
     <script src="static-files/scripts/sc-player.js"></script>
     <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap.js"></script>
@@ -168,7 +82,6 @@
     <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap-dropdown.js"></script>
     <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap-alert.js"></script>
     <script src="static-files/scripts/data-script.js"></script>
-
     <!-- end scripts -->
 
     <!-- begin analytics -->
