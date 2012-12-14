@@ -142,7 +142,7 @@ function drawChart () {
                     color: '#000000'
                 },
                 formatter: function() {
-                    return '<strong>Total Bond Payoff:</strong> $' + Highcharts.numberFormat(this.total, 2, '.');
+                    return '<strong>Total Payoff: </strong>$' + Highcharts.numberFormat(this.total, 2, '.');
                 }
             }
         },
@@ -165,7 +165,7 @@ function drawChart () {
         tooltip: {
             enabled: false,
             formatter: function() {
-                return '<strong>' + this.series.name + '</strong>: $' + Highcharts.numberFormat(this.y, 2, '.');
+                return '<strong>' + this.series.name + '</strong>: <br \> $' + Highcharts.numberFormat(this.y, 2, '.');
             }
         },
         plotOptions: {
@@ -176,7 +176,7 @@ function drawChart () {
                     color: '#000000',
                     fontWeight: 'bold',
                     formatter: function() {
-                        return '<strong>' + this.series.name + '</strong>: $' + Highcharts.numberFormat(this.y, 2, '.');
+                        return '<strong>' + this.series.name + '</strong>: <br \> $' + Highcharts.numberFormat(this.y, 2, '.');
                     }
                 }
             }
