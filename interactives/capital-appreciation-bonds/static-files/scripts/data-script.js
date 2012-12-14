@@ -7,7 +7,6 @@ var optionsChart;
 jqueryNoConflict(document).ready(function() {
     retriveData();
     drawChart();
-    renderDataFooterTemplate();
 });
 // end
 
@@ -38,13 +37,6 @@ function getTemplateAjax(path, callback) {
     });
 }
 //end
-
-// render location screen template
-function renderDataFooterTemplate(){
-    getTemplateAjax('static-files/templates/data-footer.handlebars', function(template) {
-        jqueryNoConflict('#data-footer').html(template());
-    })
-};
 
 // function to build html display
 function renderDataTableTemplateWith(data) {
