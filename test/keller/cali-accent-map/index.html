@@ -24,17 +24,15 @@
     <!-- end meta -->
 
     <!-- begin css -->
+
+    <!-- reference first to minimize style conflicts -->
+    <link href="static-files/css/sc-player-minimal.css" rel="stylesheet" type="text/css" />
     <link href="http://current.bootstrapcdn.com/bootstrap-v204/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://www.scpr.org/assets/application.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://projects.scpr.org/static/static-files/css/interactive-project-shell/foundation-styles.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
     <link href="static-files/css/project-styles.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="static-files/css/sc-player-minimal.css" rel="stylesheet" type="text/css" />
     <link href="http://current.bootstrapcdn.com/bootstrap-v204/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" media="all" />
-
-    <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     <style type="text/css">
 
@@ -42,8 +40,6 @@
     <!-- end css -->
 
     <!-- begin kpcc foundation scripts -->
-    <script type="text/javascript" src="http://use.typekit.com/mhc7oxs.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
@@ -99,27 +95,30 @@
     <div class="row-fluid">
 
         <!-- begin span -->
-        <div class="span6">
+        <div class="span8">
 
-            <!-- begin data details -->
-            <div id="data-details">
-                <p>xxxx........</p>
+            <!-- begin data visuals -->
+            <div id="data-visuals">
+            <div id="data-map-canvas"></div>
             </div>
-            <!-- end data details -->
+            <!-- end data visuals -->
 
         </div>
         <!-- end span -->
 
         <!-- begin span -->
-        <div class="span6">
+        <div class="span4">
 
-            <!-- begin data visuals -->
-            <div id="data-visuals">
-            <div id="data-description"></div>
-            <div id="data-audio-player"></div>
-            <div id="data-map-canvas"></div>
+            <!-- begin data details -->
+            <div id="data-details">
+                <p>Project explainer, etc</p>
+                <p>Click the map and hear the calif accent</p>
             </div>
-            <!-- end data visuals -->
+            <!-- end data details -->
+
+            <div id="data-description"></div>
+
+            <div id="data-audio-player"></div>
 
         </div>
         <!-- end span -->

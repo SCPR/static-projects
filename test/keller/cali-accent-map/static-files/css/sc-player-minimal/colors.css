@@ -4,7 +4,7 @@
   font-size: 1.6em;
   line-height: 1.6em;
   font-weight: bold;
-  
+
 }
 
 .sc-player.special {
@@ -73,7 +73,7 @@
 
 .sc-player.playing .sc-controls a.sc-pause:hover{
   background: url('img/pause-hover.png');
-}  
+}
 
 .sc-scrubber .sc-time-indicators{
   background: #fff;

@@ -1,2 +1,5 @@
-#data-audio-player {display: none;}
-#data-map-canvas {width: 90%; height: 400px; margin: 10px 5% 10px 5%;}
+#data-map-canvas {width: 90%; height: 450px; margin: 10px 5% 10px 5%;}
+
+.sc-player ol.sc-trackslist li.active, .sc-player ol.sc-trackslist li:hover {background-color: #e7e7e7; padding: 4px; color: #000;}
+
+.sc-player ol.sc-trackslist li.active a {color: #000; font-size: 16px;}

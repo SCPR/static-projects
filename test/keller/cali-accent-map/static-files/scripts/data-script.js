@@ -15,7 +15,7 @@ function createMap(){
     // add encrypted table id
     var accentTableId = '15uGEmPSJfMKzwU8nV0eARKgrSBAy-F3CsTiv4ic';
     var locationColumn = 'location';
-    var centerCalif = new google.maps.LatLng(37.335194502529724, -119.366455078125);
+    var centerCalif = new google.maps.LatLng(34.29461534118775, -118.26919555664062);
 
     map = new google.maps.Map(document.getElementById('data-map-canvas'), {
         center: centerCalif,
@@ -47,17 +47,16 @@ function createMap(){
     // click listener that writes to FT data to #my_map_data_div
     google.maps.event.addListener(layer, 'click', function(e) {
 
-        jqueryNoConflict('#data-audio-player').hide('fast');
+        var trackURL = e.row['player_link'].value;
 
         jqueryNoConflict('#data-description').html(
-            '<p>Name: ' + e.row['name'].value +
-            '<p>City: ' + e.row['location'].value);
+            '<p><strong>Name: </strong>' + e.row['name'].value +
+            '<p><strong>City: </strong>' + e.row['location'].value);
 
-        jqueryNoConflict('#data-audio-player').scPlayer({
-          links: [{url: e.row['player_link'].value, title: e.row['player_link'].value}]
-        });
+        jqueryNoConflict('#data-audio-player').html(
+            '<a class=\"soundcloud-player\" href=\" ' + trackURL + '\">Play</a>');
 
-        jqueryNoConflict('#data-audio-player').show('fast');
+        jqueryNoConflict("a.soundcloud-player").scPlayer();
 
     });
 
