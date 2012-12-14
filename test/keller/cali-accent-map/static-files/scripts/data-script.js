@@ -65,11 +65,11 @@ function createMap(){
     // add encrypted table id
     var accentTableId = '15uGEmPSJfMKzwU8nV0eARKgrSBAy-F3CsTiv4ic';
     var locationColumn = 'location';
-    var centerCalif = new google.maps.LatLng(34.29461534118775, -118.26919555664062);
+    var centerCalif = new google.maps.LatLng(35.77174023870981, -119.6136474609375);
 
     map = new google.maps.Map(document.getElementById('data-map-canvas'), {
         center: centerCalif,
-        zoom: 5,
+        zoom: 6,
         scrollwheel: false,
         draggable: true,
         mapTypeControl: false,
@@ -82,6 +82,87 @@ function createMap(){
             style: google.maps.NavigationControlStyle.SMALL,
             position: google.maps.ControlPosition.RIGHT_TOP}
     });
+
+    var style = [
+        {
+          featureType: 'all',
+          elementType: 'all',
+          stylers: [
+            { saturation: -39 }
+          ]
+        },
+        {
+          featureType: 'road.highway',
+          elementType: 'all',
+          stylers: [
+            { visibility: 'off' }
+          ]
+        },
+        {
+          featureType: 'road.arterial',
+          elementType: 'all',
+          stylers: [
+            { visibility: 'off' }
+          ]
+        },
+        {
+          featureType: 'road.local',
+          elementType: 'all',
+          stylers: [
+            { visibility: 'off' }
+          ]
+        },
+        {
+          featureType: 'administrative.country',
+          elementType: 'all',
+          stylers: [
+            { visibility: 'off' }
+          ]
+        },
+        {
+          featureType: 'administrative.province',
+          elementType: 'all',
+          stylers: [
+            { visibility: 'off' }
+          ]
+        },
+        {
+          featureType: 'administrative.neighborhood',
+          elementType: 'all',
+          stylers: [
+            { visibility: 'off' }
+          ]
+        },
+        {
+          featureType: 'administrative.land_parcel',
+          elementType: 'all',
+          stylers: [
+            { visibility: 'off' }
+          ]
+        },
+        {
+          featureType: 'poi',
+          elementType: 'all',
+          stylers: [
+            { visibility: 'off' }
+          ]
+        },
+        {
+          featureType: 'transit',
+          elementType: 'all',
+          stylers: [
+            { visibility: 'off' }
+          ]
+        }
+    ];
+
+    var styledMapType = new google.maps.StyledMapType(style, {
+        map: map,
+        name: 'Styled Map'
+    });
+
+    map.mapTypes.set('map-style', styledMapType);
+    map.setMapTypeId('map-style');
 
     // Initialize ft layer
 
