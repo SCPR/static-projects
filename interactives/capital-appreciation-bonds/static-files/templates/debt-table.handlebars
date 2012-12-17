@@ -13,15 +13,16 @@
             <td>{{sale_year}}</td>
             <td>${{addCommas cab_principal}}</td>
             <td>{{maturity_length}}</td>
-
-
-            {{if cab_debt}}
-            <td>${{addCommas cab_debt}}</td>
-            {{else }}
-            <td></td>
+            {{#if cab_debt}}
+                <td>${{addCommas cab_debt}}</td>
+            {{else}}
+                <td>Not Available</td>
             {{/if}}
-
-            <td>{{debt_to_principal}}%</td>
+            {{#if debt_to_principal}}
+                <td>{{debt_to_principal}}%</td>
+            {{else}}
+                <td>Not Available</td>
+            {{/if}}
         </tr>
         {{/objects}}
     </tbody>
