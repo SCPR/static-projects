@@ -48,7 +48,7 @@ function createMap(){
     // click listener that writes to FT data to #my_map_data_div
     google.maps.event.addListener(cityCrosswalkLayer, 'click', function(e) {
         jqueryNoConflict('#toBeRemoved').html(
-            '<span style="font-size: 10px; text-transform: uppercase;">SCHEDULED TO UPGRADED</span>' +
+            '<span style="font-size: 10px; text-transform: uppercase; font-weight: bold;">SCHEDULED TO UPGRADED</span>' +
             '<h4>' + e.row['Intersection'].value + '</h4>' +
             '<p>Ranked No. ' + e.row['Rank'].value + ' on the city\'s list of ' +
             '\"High Pedestrian-Related Collision Intersections,\" the intersection '+
@@ -70,7 +70,7 @@ function createMap(){
     // click listener that writes to FT data to #my_map_data_div
     google.maps.event.addListener(userContributedLayer, 'click', function(e) {
         jqueryNoConflict('#toBeRemoved').html(
-            '<span style="font-size: 10px; text-transform: uppercase;">USER-SUBMITTED TROUBLESPOT</span>' +
+            '<span style="font-size: 10px; text-transform: uppercase; font-weight: bold;">USER-SUBMITTED TROUBLESPOT</span>' +
             '<h4>' + e.row['What intersection or address is the trouble?'].value + '</h4>' +
             '<p>' + e.row['What\'s your name?'].value + ' said:</p>' +
             '<blockquote>"' + e.row['Tell us, in short, what the issue is there or your story.'].value +
