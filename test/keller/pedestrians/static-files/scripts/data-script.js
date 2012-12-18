@@ -21,7 +21,7 @@ function createMap(){
 
     map = new google.maps.Map(document.getElementById('data-map-canvas'), {
         center: centerLosAngeles,
-        zoom: 13,
+        zoom: 11,
         scrollwheel: false,
         draggable: true,
         mapTypeControl: false,
