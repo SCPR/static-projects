@@ -55,6 +55,11 @@ function createMap(){
             'of <strong>' + e.row['Intersection'].value + '</strong> has had ' +
             e.row['Collisions'].value + ' vehicle/pedestrian accidents over the last five years, ' +
             'according to Los Angeles city officials.</p>');
+
+            /*
+            '<img src=\"http://maps.googleapis.com/maps/api/streetview?size=300x300&location=' + e.row['Lat'].value + ',%20' + e.row['Long'].value + '&fov=90&heading=235&pitch=10&sensor=false\" />'
+            */
+
     });
 
     // Initialize ft layer of user contributed issues
@@ -75,6 +80,11 @@ function createMap(){
             '<p>' + e.row['What\'s your name?'].value + ' said:</p>' +
             '<blockquote>"' + e.row['Tell us, in short, what the issue is there or your story.'].value +
             '"</blockquote>');
+
+            /*
+            '<img src=\"http://maps.googleapis.com/maps/api/streetview?size=300x300&location=' +
+            e.row['Location'].value + '&fov=90&heading=235&pitch=10&sensor=false\" />');
+            */
     });
 
     google.maps.event.addDomListener(map, 'idle', function() {
