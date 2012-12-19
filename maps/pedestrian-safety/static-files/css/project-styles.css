@@ -7,3 +7,8 @@
 #data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 40px;}
 #data-legend-items li.city-makeover {height: 25px; background-image: url(../images/green.png); background-repeat: no-repeat; background-position: 0 0;}
 #data-legend-items li.user-contrib {height: 25px; background-image: url(../images/red.png); background-repeat: no-repeat; background-position: 0 0;}
+
+/* shorter map on tablet width */
+@media screen and (max-width: 768px) {
+    #data-map-canvas {width: 100%; height: 300px; margin: 10px 0 10px 0;}
+}
