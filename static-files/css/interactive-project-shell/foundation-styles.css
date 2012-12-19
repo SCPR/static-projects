@@ -26,7 +26,6 @@ body.minimal footer ul li:first-child { margin-left: 0; }
 body.minimal footer ul li:last-child { padding-right: 0; border-right: none; }
 
 /* structure for data elements */
-.container-fluid { max-width: 960px; margin: 0 auto;}
 .container-fluid { max-width: 1110px; margin: 0 auto;}
 
 /* typography */
