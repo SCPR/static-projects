@@ -24,211 +24,168 @@
     <!-- end meta -->
 
     <!-- begin css -->
-    <link href="http://current.bootstrapcdn.com/bootstrap-v204/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="http://www.scpr.org/assets/application.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="http://projects.scpr.org/static/static-files/css/interactive-project-shell/foundation-styles.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="static-files/css/foundation-styles.css" rel="stylesheet" type="text/css" media="all" />
     <link href="static-files/css/project-styles.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="http://current.bootstrapcdn.com/bootstrap-v204/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" media="all" />
-
-    <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <style type="text/css">
-
-    </style>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="all" />
     <!-- end css -->
 
-    <!-- begin kpcc foundation scripts -->
-    <script type="text/javascript" src="http://use.typekit.com/mhc7oxs.js"></script>
+    <!-- begin base scripts -->
+    <script src="http://use.typekit.com/mhc7oxs.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+    <script async="" src="http://www.google-analytics.com/ga.js"></script>
     <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <!-- end kpcc foundation scripts -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js"></script>
+    <!-- end base scripts -->
 
 </head>
 <!-- end header -->
 
 <!-- begin body -->
 <body class="minimal">
-
-<!-- begin kpcc header -->
-<div id="kpcc-header"></div>
-<!-- end kpcc header -->
-
-<!-- begin data container -->
-<div id="data-container">
-
-    <!-- begin row -->
-    <div class="row-fluid">
-
-        <!-- begin span -->
-        <div class="span6">
-
-            <!-- begin data details -->
-            <div id="data-details"></div>
-            <!-- end data details -->
-
-        </div>
-        <!-- end span -->
-
-        <!-- begin span -->
-        <div class="span6">
-
-            <!-- begin data visuals -->
-            <div id="data-visuals">
-
-                <!-- begin data image container -->
-                <div class="data-image-container">
-                <p><span class="data-instructions"><strong>Using this interactive: </strong>Use the dropdown menu below to select a school district from Los Angeles, Orange, Riverside, San Bernardino or Ventura county that has issued a Capital Appreciation Bond since 2007. A chart will show you the total amount of the CABs issued by the district, while a table will display more information about the bond, such as the year issued and the ratio of principal to the payoff amount.</span></p>
+    <div id="kpcc-header"></div>
+        <div id="data-container" class="container-fluid">
+            <div class="row-fluid">
+                <div class="span6">
+                    <div id="data-details"></div>
                 </div>
-                <!-- end data image container -->
+                <div class="span6">
+                    <div id="data-visuals">
+                        <div class="data-image-container">
+                        <p><span class="data-instructions"><strong>Using this interactive: </strong>Use the dropdown menu below to select a school district from Los Angeles, Orange, Riverside, San Bernardino or Ventura county that has issued a Capital Appreciation Bond since 2007. A chart will show you the total amount of the CABs issued by the district, while a table will display more information about the bond, such as the year issued and the ratio of principal to the payoff amount.</span></p>
+                        </div>
+                        <div id="school-district-list">
+                        <label>
+                        <select id="school-district" name="school-district-options">
+                        <option value=''>Choose a school district</option>
+                        <option value='Acton-Agua Dulce Unified School District'>Acton-Agua Dulce Unified School District</option>
+                        <option value='Alhambra Unified School District'>Alhambra Unified School District</option>
+                        <option value='Alhambra Unified School District School Improvement District'>Alhambra Unified School District School Improvement District</option>
+                        <option value='Alvord Unified School District'>Alvord Unified School District</option>
+                        <option value='Anaheim City School District'>Anaheim City School District</option>
+                        <option value='Arcadia Unified School District'>Arcadia Unified School District</option>
+                        <option value='Baldwin Park Unified School District'>Baldwin Park Unified School District</option>
+                        <option value='Banning Unified School District'>Banning Unified School District</option>
+                        <option value='Bassett Unified School District'>Bassett Unified School District</option>
+                        <option value='Beaumont Unified School District'>Beaumont Unified School District</option>
+                        <option value='Beverly Hills Unified School District'>Beverly Hills Unified School District</option>
+                        <option value='Bonita Unified School District'>Bonita Unified School District</option>
+                        <option value='Centinela Valley Union High School District'>Centinela Valley Union High School District</option>
+                        <option value='Central School District'>Central School District</option>
+                        <option value='Coachella Valley Unified School District'>Coachella Valley Unified School District</option>
+                        <option value='Colton Joint Unified School District'>Colton Joint Unified School District</option>
+                        <option value='Corona-Norco Unified School District'>Corona-Norco Unified School District</option>
+                        <option value='Covina-Valley Unified School District'>Covina-Valley Unified School District</option>
+                        <option value='Cypress Elementary School District'>Cypress Elementary School District</option>
+                        <option value='Duarte Unified School District'>Duarte Unified School District</option>
+                        <option value='East Side Union High School District'>East Side Union High School District</option>
+                        <option value='El Monte City School District'>El Monte City School District</option>
+                        <option value='El Monte Union High School District'>El Monte Union High School District</option>
+                        <option value='El Rancho Unified School District'>El Rancho Unified School District</option>
+                        <option value='El Segundo Unified School District'>El Segundo Unified School District</option>
+                        <option value='Fontana Unified School District'>Fontana Unified School District</option>
+                        <option value='Garden Grove Unified School District'>Garden Grove Unified School District</option>
+                        <option value='Garvey School District'>Garvey School District</option>
+                        <option value='Glendale Unified School District'>Glendale Unified School District</option>
+                        <option value='Glendora Unified School District'>Glendora Unified School District</option>
+                        <option value='Hawthorne School District'>Hawthorne School District</option>
+                        <option value='Helendale School District'>Helendale School District</option>
+                        <option value='Hueneme School District'>Hueneme School District</option>
+                        <option value='Huntington Beach Union High School District'>Huntington Beach Union High School District</option>
+                        <option value='Irvine Unified School District CFD No 07-1'>Irvine Unified School District CFD No 07-1</option>
+                        <!-- <option value='Lake Elsinore Unified School District CFD No 2000-1'>Lake Elsinore Unified School District CFD No 2000-1</option>
+                        <option value='Lake Elsinore Unified School District CFD No 2001-01'>Lake Elsinore Unified School District CFD No 2001-01</option>
+                        <option value='Lake Elsinore Unified School District CFD No 2001-2'>Lake Elsinore Unified School District CFD No 2001-2</option>
+                        <option value='Lake Elsinore Unified School District CFD No 2001-3'>Lake Elsinore Unified School District CFD No 2001-3</option>
+                        <option value='Lake Elsinore Unified School District CFD No 2003-1'>Lake Elsinore Unified School District CFD No 2003-1</option>
+                        <option value='Lake Elsinore Unified School District CFD No 2003-1'>Lake Elsinore Unified School District CFD No 2003-1</option> -->
+                        <option value='Las Virgenes Unified School District'>Las Virgenes Unified School District</option>
+                        <option value='Lennox School District'>Lennox School District</option>
+                        <option value='Little Lake City School District'>Little Lake City School District</option>
+                        <option value='Long Beach Unified School District'>Long Beach Unified School District</option>
+                        <option value='Los Alamitos Unified School District'>Los Alamitos Unified School District</option>
+                        <option value='Los Nietos School District'>Los Nietos School District</option>
+                        <option value='Magnolia School District'>Magnolia School District</option>
+                        <option value='Manhattan Beach Unified School District'>Manhattan Beach Unified School District</option>
+                        <option value='Menifee Union School District'>Menifee Union School District</option>
+                        <option value='Monrovia Unified School District'>Monrovia Unified School District</option>
+                        <option value='Moorpark Unified School District'>Moorpark Unified School District</option>
+                        <option value='Moreno Valley Unified School District'>Moreno Valley Unified School District</option>
+                        <option value='Morongo Unified School District'>Morongo Unified School District</option>
+                        <option value='Murrieta Valley Unified School District'>Murrieta Valley Unified School District</option>
+                        <option value='Needles Unified School District'>Needles Unified School District</option>
+                        <option value='Newhall School District'>Newhall School District</option>
+                        <option value='Newport-Mesa Unified School District'>Newport-Mesa Unified School District</option>
+                        <option value='Norwalk-La Mirada Unified School District'>Norwalk-La Mirada Unified School District</option>
+                        <option value='Oak Park Unified School District'>Oak Park Unified School District</option>
+                        <option value='Ocean View School District'>Ocean View School District</option>
+                        <option value='Ontario-Montclair School District'>Ontario-Montclair School District</option>
+                        <option value='Oxnard School District'>Oxnard School District</option>
+                        <option value='Oxnard Union High School District'>Oxnard Union High School District</option>
+                        <option value='Palo Alto Unified School District'>Palo Alto Unified School District</option>
+                        <option value='Paramount Unified School District'>Paramount Unified School District</option>
+                        <option value='Placentia-Yorba Linda Unified School District'>Placentia-Yorba Linda Unified School District</option>
+                        <option value='Redlands Unified School District'>Redlands Unified School District</option>
+                        <option value='Redondo Beach Unified School District'>Redondo Beach Unified School District</option>
+                        <option value='Rialto Unified School District'>Rialto Unified School District</option>
+                        <option value='Rim of the World Unified School District'>Rim of the World Unified School District</option>
+                        <option value='Rio Elementary School District'>Rio Elementary School District</option>
+                        <option value='Rowland Unified School District'>Rowland Unified School District</option>
+                        <option value='San Bernardino City Unified School District'>San Bernardino City Unified School District</option>
+                        <option value='San Bernardino City Unified School District'>San Bernardino City Unified School District</option>
+                        <option value='San Gabriel Unified School District'>San Gabriel Unified School District</option>
+                        <option value='Santa Ana Unified School District'>Santa Ana Unified School District</option>
+                        <option value='Santa Barbara Elementary School District'>Santa Barbara Elementary School District</option>
+                        <option value='Santa Barbara Secondary/High School District'>Santa Barbara Secondary/High School District</option>
+                        <option value='Santa Barbara Unified School District'>Santa Barbara Unified School District</option>
+                        <option value='Santa Paula Union High School District'>Santa Paula Union High School District</option>
+                        <option value='Savanna Elementary School District'>Savanna Elementary School District</option>
+                        <option value='Simi Valley Unified School District'>Simi Valley Unified School District</option>
+                        <option value='South Pasadena Unified School District'>South Pasadena Unified School District</option>
+                        <option value='Torrance Unified School District'>Torrance Unified School District</option>
+                        <option value='Tustin Unified School District CFD No 07-1'>Tustin Unified School District CFD No 07-1</option>
+                        <option value='Upland Unified School District'>Upland Unified School District</option>
+                        <option value='Val Verde Unified School District'>Val Verde Unified School District</option>
+                        <option value='Victor Elementary School District'>Victor Elementary School District</option>
+                        <option value='Victor Valley Union High School District'>Victor Valley Union High School District</option>
+                        <option value='Walnut Valley Unified School District'>Walnut Valley Unified School District</option>
+                        <option value='Westminster School District'>Westminster School District</option>
+                        <option value='Westside Union School District'>Westside Union School District</option>
+                        </select>
+                        </label>
+                        </div>
+                        <!-- end school option list -->
 
-                <!-- begin school option list -->
-                <div id="school-district-list">
-                <label>
-                <select id="school-district" name="school-district-options">
-                <option value=''>Choose a school district</option>
-                <option value='Acton-Agua Dulce Unified School District'>Acton-Agua Dulce Unified School District</option>
-                <option value='Alhambra Unified School District'>Alhambra Unified School District</option>
-                <option value='Alhambra Unified School District School Improvement District'>Alhambra Unified School District School Improvement District</option>
-                <option value='Alvord Unified School District'>Alvord Unified School District</option>
-                <option value='Anaheim City School District'>Anaheim City School District</option>
-                <option value='Arcadia Unified School District'>Arcadia Unified School District</option>
-                <option value='Baldwin Park Unified School District'>Baldwin Park Unified School District</option>
-                <option value='Banning Unified School District'>Banning Unified School District</option>
-                <option value='Bassett Unified School District'>Bassett Unified School District</option>
-                <option value='Beaumont Unified School District'>Beaumont Unified School District</option>
-                <option value='Beverly Hills Unified School District'>Beverly Hills Unified School District</option>
-                <option value='Bonita Unified School District'>Bonita Unified School District</option>
-                <option value='Centinela Valley Union High School District'>Centinela Valley Union High School District</option>
-                <option value='Central School District'>Central School District</option>
-                <option value='Coachella Valley Unified School District'>Coachella Valley Unified School District</option>
-                <option value='Colton Joint Unified School District'>Colton Joint Unified School District</option>
-                <option value='Corona-Norco Unified School District'>Corona-Norco Unified School District</option>
-                <option value='Covina-Valley Unified School District'>Covina-Valley Unified School District</option>
-                <option value='Cypress Elementary School District'>Cypress Elementary School District</option>
-                <option value='Duarte Unified School District'>Duarte Unified School District</option>
-                <option value='East Side Union High School District'>East Side Union High School District</option>
-                <option value='El Monte City School District'>El Monte City School District</option>
-                <option value='El Monte Union High School District'>El Monte Union High School District</option>
-                <option value='El Rancho Unified School District'>El Rancho Unified School District</option>
-                <option value='El Segundo Unified School District'>El Segundo Unified School District</option>
-                <option value='Fontana Unified School District'>Fontana Unified School District</option>
-                <option value='Garden Grove Unified School District'>Garden Grove Unified School District</option>
-                <option value='Garvey School District'>Garvey School District</option>
-                <option value='Glendale Unified School District'>Glendale Unified School District</option>
-                <option value='Glendora Unified School District'>Glendora Unified School District</option>
-                <option value='Hawthorne School District'>Hawthorne School District</option>
-                <option value='Helendale School District'>Helendale School District</option>
-                <option value='Hueneme School District'>Hueneme School District</option>
-                <option value='Huntington Beach Union High School District'>Huntington Beach Union High School District</option>
-                <option value='Irvine Unified School District CFD No 07-1'>Irvine Unified School District CFD No 07-1</option>
-                <!-- <option value='Lake Elsinore Unified School District CFD No 2000-1'>Lake Elsinore Unified School District CFD No 2000-1</option>
-                <option value='Lake Elsinore Unified School District CFD No 2001-01'>Lake Elsinore Unified School District CFD No 2001-01</option>
-                <option value='Lake Elsinore Unified School District CFD No 2001-2'>Lake Elsinore Unified School District CFD No 2001-2</option>
-                <option value='Lake Elsinore Unified School District CFD No 2001-3'>Lake Elsinore Unified School District CFD No 2001-3</option>
-                <option value='Lake Elsinore Unified School District CFD No 2003-1'>Lake Elsinore Unified School District CFD No 2003-1</option>
-                <option value='Lake Elsinore Unified School District CFD No 2003-1'>Lake Elsinore Unified School District CFD No 2003-1</option> -->
-                <option value='Las Virgenes Unified School District'>Las Virgenes Unified School District</option>
-                <option value='Lennox School District'>Lennox School District</option>
-                <option value='Little Lake City School District'>Little Lake City School District</option>
-                <option value='Long Beach Unified School District'>Long Beach Unified School District</option>
-                <option value='Los Alamitos Unified School District'>Los Alamitos Unified School District</option>
-                <option value='Los Nietos School District'>Los Nietos School District</option>
-                <option value='Magnolia School District'>Magnolia School District</option>
-                <option value='Manhattan Beach Unified School District'>Manhattan Beach Unified School District</option>
-                <option value='Menifee Union School District'>Menifee Union School District</option>
-                <option value='Monrovia Unified School District'>Monrovia Unified School District</option>
-                <option value='Moorpark Unified School District'>Moorpark Unified School District</option>
-                <option value='Moreno Valley Unified School District'>Moreno Valley Unified School District</option>
-                <option value='Morongo Unified School District'>Morongo Unified School District</option>
-                <option value='Murrieta Valley Unified School District'>Murrieta Valley Unified School District</option>
-                <option value='Needles Unified School District'>Needles Unified School District</option>
-                <option value='Newhall School District'>Newhall School District</option>
-                <option value='Newport-Mesa Unified School District'>Newport-Mesa Unified School District</option>
-                <option value='Norwalk-La Mirada Unified School District'>Norwalk-La Mirada Unified School District</option>
-                <option value='Oak Park Unified School District'>Oak Park Unified School District</option>
-                <option value='Ocean View School District'>Ocean View School District</option>
-                <option value='Ontario-Montclair School District'>Ontario-Montclair School District</option>
-                <option value='Oxnard School District'>Oxnard School District</option>
-                <option value='Oxnard Union High School District'>Oxnard Union High School District</option>
-                <option value='Palo Alto Unified School District'>Palo Alto Unified School District</option>
-                <option value='Paramount Unified School District'>Paramount Unified School District</option>
-                <option value='Placentia-Yorba Linda Unified School District'>Placentia-Yorba Linda Unified School District</option>
-                <option value='Redlands Unified School District'>Redlands Unified School District</option>
-                <option value='Redondo Beach Unified School District'>Redondo Beach Unified School District</option>
-                <option value='Rialto Unified School District'>Rialto Unified School District</option>
-                <option value='Rim of the World Unified School District'>Rim of the World Unified School District</option>
-                <option value='Rio Elementary School District'>Rio Elementary School District</option>
-                <option value='Rowland Unified School District'>Rowland Unified School District</option>
-                <option value='San Bernardino City Unified School District'>San Bernardino City Unified School District</option>
-                <option value='San Bernardino City Unified School District'>San Bernardino City Unified School District</option>
-                <option value='San Gabriel Unified School District'>San Gabriel Unified School District</option>
-                <option value='Santa Ana Unified School District'>Santa Ana Unified School District</option>
-                <option value='Santa Barbara Elementary School District'>Santa Barbara Elementary School District</option>
-                <option value='Santa Barbara Secondary/High School District'>Santa Barbara Secondary/High School District</option>
-                <option value='Santa Barbara Unified School District'>Santa Barbara Unified School District</option>
-                <option value='Santa Paula Union High School District'>Santa Paula Union High School District</option>
-                <option value='Savanna Elementary School District'>Savanna Elementary School District</option>
-                <option value='Simi Valley Unified School District'>Simi Valley Unified School District</option>
-                <option value='South Pasadena Unified School District'>South Pasadena Unified School District</option>
-                <option value='Torrance Unified School District'>Torrance Unified School District</option>
-                <option value='Tustin Unified School District CFD No 07-1'>Tustin Unified School District CFD No 07-1</option>
-                <option value='Upland Unified School District'>Upland Unified School District</option>
-                <option value='Val Verde Unified School District'>Val Verde Unified School District</option>
-                <option value='Victor Elementary School District'>Victor Elementary School District</option>
-                <option value='Victor Valley Union High School District'>Victor Valley Union High School District</option>
-                <option value='Walnut Valley Unified School District'>Walnut Valley Unified School District</option>
-                <option value='Westminster School District'>Westminster School District</option>
-                <option value='Westside Union School District'>Westside Union School District</option>
-                </select>
-                </label>
+                        <!-- begin data image container -->
+                        <div id="data-intro-image" class="data-image-container">
+                        <img src="static-files/images/school_bonds.jpg" />
+                        </div>
+                        <!-- end data image container -->
+
+                        <!-- begin chart -->
+                        <div id="school-debt-chart"></div>
+                        <!-- end chart -->
+
+                        <!-- begin table -->
+                        <div id="school-debt-details"></div>
+                        <!-- end table -->
                 </div>
-                <!-- end school option list -->
-
-                <!-- begin data image container -->
-                <div id="data-intro-image" class="data-image-container">
-                <img src="static-files/images/school_bonds.jpg" />
-                </div>
-                <!-- end data image container -->
-
-                <!-- begin chart -->
-                <div id="school-debt-chart"></div>
-                <!-- end chart -->
-
-                <!-- begin table -->
-                <div id="school-debt-details"></div>
-                <!-- end table -->
-
+                <!-- begin data visuals -->
             </div>
-            <!-- begin data visuals -->
+            <!-- end span -->
 
         </div>
-        <!-- end span -->
+        <!-- end  row -->
 
-    </div>
-    <!-- end  row -->
-
-    <!-- begin data footer -->
-    <div id="data-footer"></div>
-    <!-- end data footer -->
-
-</div>
-<!-- end data container -->
-
-<!-- begin kpcc footer -->
-<div id="kpcc-footer"></div>
-<!-- end kpcc footer -->
+        <div id="data-footer"></div>
+        </div>
+    <div id="kpcc-footer"></div>
 
     <!-- begin scripts -->
-    <script src="http://maps.google.com/maps/api/js?key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8&sensor=false&region=us"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/swag.js"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/highcharts.js"></script>
-    <script src="http://projects.scpr.org/static/static-files/scripts/jquery.alerts.js"></script>
     <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap.js"></script>
     <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap-transition.js"></script>
     <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap-alert.js"></script>
