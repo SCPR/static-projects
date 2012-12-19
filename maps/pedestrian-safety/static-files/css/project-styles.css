@@ -1,0 +1,9 @@
+#data-intro {width: 90%; height: 100%; margin: 10px 5% 20px 5%;}
+#data-map-info {width: 90%; height: 100%; margin: 10px 5% 20px 5%;}
+#data-user-submit {width: 90%; height: 100%; margin: 10px 5% 10px 5%; display: none;}
+#data-map-canvas {width: 100%; height: 600px; margin: 10px 0 10px 0;}
+#data-legend {height: 25px;}
+#data-legend-items {margin: 0 0 0 0; height: 25px; }
+#data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 40px;}
+#data-legend-items li.city-makeover {height: 25px; background-image: url(../images/green.png); background-repeat: no-repeat; background-position: 0 0;}
+#data-legend-items li.user-contrib {height: 25px; background-image: url(../images/red.png); background-repeat: no-repeat; background-position: 0 0;}
