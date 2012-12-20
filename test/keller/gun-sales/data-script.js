@@ -15,7 +15,7 @@ jqueryNoConflict(function () {
                 text: 'Sales of firearms in California',
             },
             subtitle: {
-                text: 'Licensed dealer transactions processed by <br /> state Dept. of Justice between 1991 and 2011',
+                text: 'Licensed dealer transactions processed by <br /> California Dept. of Justice between 1991 and 2011',
             },
             xAxis: {
                 labels: {
@@ -66,7 +66,7 @@ jqueryNoConflict(function () {
             },
             credits: {
                 enabled: true,
-                text: 'Source: California Office of the Attorney General',
+                text: 'Source: California Dept. of Justice Bureau of Firearms',
                 href: 'http://oag.ca.gov/sites/all/files/pdfs/firearms/forms/dros_chart.pdf?',
 
                 position: {
