@@ -4,22 +4,22 @@
     <!-- begin header -->
     <head>
 
-        <title>Season's Givings | Volunteer Opportunities in Southern California</title>
+        <title>Mayoral Endorsements 2013</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="keywords" content="Volunteer Opportunities in Southern California" >
-        <meta name="description" content="This season, we asked KPCC listeners where they volunteer during the holidays and what opportunities our audience should know about. Hear volunteers talk about the work they do and why they do it and explore our listing of charitable organizations to find volunteer and charitable opportunities this holiday season">
+        <meta name="keywords" content="Los Angeles Mayoral Endorsements 2013" >
+        <meta name="description" content="XXXXX">
         <meta name="viewport" id="meta-viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="Season's Givings | Volunteer Opportunities in Southern California"/>
-        <meta property="og:url" content="http://projects.scpr.org/static/applications/seasons-givings/"/>
-        <meta property="og:description" content="This season, we asked KPCC listeners where they volunteer during the holidays and what opportunities our audience should know about. Hear volunteers talk about the work they do and why they do it and explore our listing of charitable organizations to find volunteer and charitable opportunities this holiday season"/>
+        <meta property="og:title" content="Los Angeles Mayor's Race 2013 | Key endorsements"/>
+        <meta property="og:url" content="http://projects.scpr.org/static/applications/mayoral-endorsements/"/>
+        <meta property="og:description" content="xxxxxxxxxxxxxxx"/>
 
         <!-- begin css -->
         <link href='http://www.scpr.org/assets/application.css' rel='stylesheet' type='text/css' media='all' />
-        <link href='http://projects.scpr.org/static/static-files/css/tablestacker-tables/styles.css' rel='stylesheet' type='text/css' media='all' />
 
         <style type="text/css">
-        #project_banner {height: 70px; margin: -25px 0 50px 0; background: url('static/images/ribbon.png') repeat-x; box-shadow: 0px 0px 15px #888;}
+
+		#data-container {width: 960px; height auto; margin 0 auto 0 auto;}
 
         @media screen and (min-width: 0px) and (max-width: 500px) {
           #project-banner-bow {display: none; }
@@ -49,15 +49,8 @@
         <!-- end css -->
 
         <!-- begin scripts -->
-        <script type="text/javascript" src="http://use.typekit.com/mhc7oxs.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-        <script type="text/javascript">
-          google.load("jquery", "1", {uncompressed:true})
-        </script>
-        <script type="text/javascript" src="http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.js" ></script>
-        <script type="text/javascript" src="http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.pager.js"></script>
-        <script type="text/javascript" src="http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.multipagefilter.js"></script>
+  		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+		<script type="text/javascript" src="data-script.js"></script>
 
         <script type="text/javascript">
             /* For picking out bits from the query string */
@@ -76,6 +69,8 @@
         <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
         <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
         <script type="text/javascript" src="http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js"></script>
+
+
         <!-- end scripts -->
 
     </head>
@@ -124,13 +119,14 @@
 <!-- begin project banner -->
 <div id="project_banner">
 <img id="project-banner-bow" height="175px" src="static/images/bow.png" />
-<h4 id="kicker">Volunteer Opportunities in Southern California</h4>
-<h1 id="title">Season's Givings</h1>
+<h4 id="kicker">Key Endorsements</h4>
+<h1 id="title">Los Angeles 2013 Mayor's Race'</h1>
 </div>
 <!-- end project banner -->
 
 <!-- begin project content -->
 <div id="main" class="container-fluid">
+
 
     <div class="article-header last serif">
 	 	<div class="contentasset">
@@ -145,116 +141,67 @@
 <hr />
 
 <!-- begin content -->
-<div id="content" class="span-24 sans">
 
-<div id="table_fu">
 
-<!-- orginal code left in -->
-<div class="clear"></div>
+<div id="data-container"></div>
 
-<div class="clear"></div>
+<!-- Begin Google fusion script -->
 
-<!-- begin display ribbon -->
-<div id="ribbon">
+var jqueryNoConflict = jQuery;
 
-<div id="download">
-<div id="pubdate"><strong>Last Updated: </strong>Dec. 10, 2012</div>&nbsp;&nbsp;
-</div>
+// begin main function
+jqueryNoConflict(document).ready(function() {
 
-<div id="controls">
-<div id="filter" >Search (by any term): <input type="text"></div>
-<div id="pager" class="pager">
-<form class="form-inline" >
-<img src="http://projects.scpr.org/static/static-files/images/tablestacker-tables/first.png" class="first">
-<img src="http://projects.scpr.org/static/static-files/images/tablestacker-tables/prev.png" class="prev">
-<span class="pagedisplay"/>1/23</span>
-<img src="http://projects.scpr.org/static/static-files/images/tablestacker-tables/next.png" class="next">
-<img src="http://projects.scpr.org/static/static-files/images/tablestacker-tables/last.png" class="last">
-<select class="pagesize">
+    getFusionTableData();
 
-<option selected="selected" value="5">5</option>
+});
+// end
 
-<option  value="10">10</option>
+// retrieve json from Fusion Table
+function getFusionTableData() {
+    var tableID = '10BKvL7JSikZ5XLBAWmFiuCXhR04Rjq84KuQlH7g';
+    var query = 'SELECT * FROM ' + tableID;
+    var encodedQuery = encodeURIComponent(query);
+    var urlPrefix = 'https://www.googleapis.com/fusiontables/v1/query?key=';
+    var apiKey = 'AIzaSyBRs68D8JTAbrLy6R_zsYABLMgOV6zxC-4';
+    var urlSuffix = '&sql=' + encodedQuery + '&callback=?';
+    var url = urlPrefix + apiKey + urlSuffix
+    jqueryNoConflict.getJSON(url, createArrayFrom);
+};
+// end
 
-<option  value="15">15</option>
+// organize json data
+function createArrayFrom(data){
 
-<option  value="20">20</option>
+    console.log(data);
 
-</select> per page
-</form>
-</div>
-</div>
+    // begin loop
+    for (var i = 0; i < data.rows.length; i++) {
 
-</div>
-<!-- end display ribbon -->
+        // set each item of loop to variable
+        var row = data.rows[i];
 
-<div class="clear"></div>
+        // set each item of object to variable
+        var rank = row[0];
+        var address = row[1];
+        var integerOne = row[2];
+        var integerTwo = row[3];
+        var location = row[4];
+        var latitude = row[5];
+        var longitude = row[6];
+        var emptyStringVariable = row[7];
 
-<table id="data" class="tabular table responsive">
-<thead>
-<tr>
+        // write data to div
+        jqueryNoConflict('#data-container').append(
+            '<p>Location: ' + location + '</p>');
+    };
+    // end loop
 
-<th style="cursor: pointer; cursor: pointer; width: 15%;">
-Organization
-</th>
+};
+// end
 
-<th style="cursor: pointer; cursor: pointer; width: 25%;">
-Mission
-</th>
+<!-- end Fusion JSON script -->
 
-<th style="cursor: pointer; cursor: pointer; width: 15%;">
-Location
-</th>
-
-<th style="cursor: pointer; cursor: pointer; width: 15%;">
-Phone
-</th>
-
-<th style="cursor: pointer; cursor: pointer; width: 5%;">
-Email
-</th>
-
-<th style="cursor: pointer; cursor: pointer; width: 5%;">
-Serves
-</th>
-
-<th style="cursor: pointer; cursor: pointer; width: 5%;">
-Website
-</th>
-
-<th style="cursor: pointer; cursor: pointer; width: 5%;">
-Affiliation
-</th>
-
-<th style="cursor: pointer; cursor: pointer; width: 10%;">
-Need
-</th>
-
-</tr>
-</thead>
-<tbody>
-
-<tr>
-
-<td style="width: 15%;">A Community Of Friends</td>
-
-<td style="width: 25%;">A Community Of Friends Is A Provider Of Permanent Supportive Housing To Individuals And Families Who Struggle With Mental Illness, Substance Abuse, And Physical Disabilities To Help Stabilize These Households And Reintegrate Back Into Society.</td>
-
-<td style="width: 15%;">3701 Wilshire Blvd., Suite 700, Los Angeles, Ca 90010</td>
-
-<td style="width: 15%;">(213) 480-0809</td>
-
-<td style="width: 5%;"></td>
-
-<td style="width: 5%;">mentally ill, disabled</td>
-
-<td style="width: 5%;"><a target="_blank" href="http://www.acof.org/" title="http://www.acof.org/">Details</a></td>
-
-<td style="width: 5%;"></td>
-
-<td style="width: 10%;">Volunteer Time, Money</td>
-
-</tr>
 
 <!-- Begin Stories -->
 
