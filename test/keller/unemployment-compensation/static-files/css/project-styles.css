@@ -1,5 +1,7 @@
 #data-presentation {width: 100%; height: 200px; max-width: 960px; overflow: hidden; display: block; text-align: center;}
-#data-presentation .sky-writing {font-size: 90px; line-height: 100px; }
+#data-presentation .sky-writing {font-size: 90px; line-height: 100px; color: #f57834;}
+.carousel-caption {background: none;}
+.carousel-caption p {color: #303030; margin-left: 25px;}
 .carousel-control {top: 75%; left: -45px;}
 .carousel-control.right {right: -45px;}
 
