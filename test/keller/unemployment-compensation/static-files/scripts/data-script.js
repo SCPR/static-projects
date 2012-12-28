@@ -1,62 +1,59 @@
 var jqueryNoConflict = jQuery;
-var map;
+
+// make sure the spreadsheet is published to the web
+var dataSpreadsheet = '0An8W63YKWOsxdHpnenVrbU1sRE9ScDZjWFB6OUF2a2c';
+
+// the sheet being queried
+var dataSheet = 'preCliff';
 
 // begin main function
-jqueryNoConflict(document).ready(function() {
-
-    createMap();
-
+jqueryNoConflict(document).ready(function(){
+    Tabletop.init({
+        key: dataSpreadsheet,
+        callback: showInfo,
+        simpleSheet: false,
+        debug: true
+    });
 });
 // end
 
-// begin function
-function createMap(){
+// display page template
+function showInfo(data, tabletop){
 
-    // add encrypted table id
-    var cityCrosswalkTableId = '113boV0mDDfay8ngXn8REwwIplC_uEWogLf6aepw';
-    var userContributedTableId = '1RvesiAIGe14Gw3w7zjQm_2NBlZLl5EBSstdvf6E';
-    var locationColumn = 'Location';
-    var centerLosAngeles = new google.maps.LatLng(34.061841979429445, -118.26370239257812);
+    var handlebarsData = {
+        objects: data.preCliff.elements
+    };
 
-    map = new google.maps.Map(document.getElementById('data-map-canvas'), {
-        center: centerLosAngeles,
-        zoom: 13,
-        scrollwheel: false,
-        draggable: true,
-        mapTypeControl: false,
-        navigationControl: true,
-        streetViewControl: false,
-        panControl: false,
-        scaleControl: false,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        navigationControlOptions: {
-            style: google.maps.NavigationControlStyle.SMALL,
-            position: google.maps.ControlPosition.RIGHT_TOP}
-    });
-
-    // Initialize ft layer of new crosswalks
-    var cityCrosswalkLayer = new google.maps.FusionTablesLayer({
-        query: {
-            select: locationColumn,
-            from: cityCrosswalkTableId
-        },
-        map: map,
-        suppressInfoWindows: false
-    });
-
-    google.maps.event.addDomListener(map, 'idle', function() {
-      calculateCenter();
-    });
-
-    google.maps.event.addDomListener(window, 'resize', function() {
-      map.setCenter(centerLosAngeles);
-    });
+    renderDataVisualsTemplate(handlebarsData);
 
 };
 // end
 
-// function to maintain center point of map
-function calculateCenter(){
-    center = map.getCenter();
+// render handlebars templates via ajax
+function getTemplateAjax(path, callback) {
+    var source, template;
+    jqueryNoConflict.ajax({
+        url: path,
+        success: function (data) {
+            source = data;
+            template = Handlebars.compile(source);
+            if (callback) callback(template);
+        }
+    });
+}
+//end
+
+// create projects content template
+function renderDataVisualsTemplate(data){
+    getTemplateAjax('static-files/templates/data-details.handlebars', function(template) {
+        jqueryNoConflict('#data-details').html(template(data));
+    })
 };
+
+// embed function
+function embedBox() {
+    var embed_url = '#/iframe.html';
+
+    jAlert('<strong>To embed this on your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+ embed_url +'\" width=\"420px\" height=\"450px\" scrolling=\"no\" frameborder=\"0\"&gt;&lt;/iframe>', 'Share or Embed');
+}
 // end

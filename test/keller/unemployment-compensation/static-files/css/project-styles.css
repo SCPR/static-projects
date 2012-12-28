@@ -1,1 +1,12 @@
-#data-map-canvas {width: 100%; height: 600px; margin: 10px 0 10px 0;}
+#data-presentation {width: 100%; height: 200px; max-width: 960px; overflow: hidden; display: block; text-align: center;}
+#data-presentation .sky-writing {font-size: 90px; line-height: 100px; }
+.carousel-control {top: 75%; left: -45px;}
+.carousel-control.right {right: -45px;}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+    #data-presentation {width: 100%; height: 75px; max-width: 960px; overflow: hidden; display: block; text-align: center;}
+    #data-presentation .sky-writing {font-size: 75px; line-height: 60px; text-align: center;}
+    .carousel-control {top: 75%; left: -45px;}
+    .carousel-control.right {right: -45px;}
+}

@@ -1,3 +1,29 @@
-<h2>American apparel pug organic pinterest</h2>
-<p>Beard hoodie, magna tumblr chillwave. Letterpress thundercats fixie consectetur accusamus cray gastropub bicycle rights. Adipisicing narwhal magna marfa. Fap photo booth cred, excepteur organic terry richardson vegan aesthetic narwhal. Food truck viral sint vinyl cred. Mustache aute consequat salvia, synth etsy irure +1. High life etsy ullamco, officia voluptate nihil brunch cillum nostrud photo booth duis Austin hella banjo.</p>
-<a class="btn btn-large" href="#">Read More</a>
+<div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+        {{#objects}}
+            {{#is dataorder '1'}}
+                <div class="item active">
+                    <div id="data-presentation">
+                        <span class="sky-writing">{{data}}</span>
+                    </div>
+                    <div class="carousel-caption">
+                        <p>{{title}}</p>
+                        <p>Source: <a href="{{sourcelink}}">{{source}}</a></p>
+                    </div>
+                </div>
+                {{else}}
+                <div class="item">
+                    <div id="data-presentation">
+                        <span class="sky-writing">{{data}}</span>
+                    </div>
+                    <div class="carousel-caption">
+                        <p>{{title}}</p>
+                        <p>Source: <a href="{{sourcelink}}">{{source}}</a></p>
+                    </div>
+                </div>
+            {{/is}}
+        {{/objects}}
+    </div>
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
