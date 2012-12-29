@@ -19,13 +19,10 @@ jqueryNoConflict(document).ready(function(){
 
 // display page template
 function showInfo(data, tabletop){
-
     var handlebarsData = {
         objects: data.preCliff.elements
     };
-
     renderDataVisualsTemplate(handlebarsData);
-
 };
 // end
 
@@ -43,9 +40,20 @@ function getTemplateAjax(path, callback) {
 }
 //end
 
+// add handlebars debugger
+function handlebarsDebugHelper(){
+    Handlebars.registerHelper("debug", function(optionalValue) {
+        console.log("Current Context");
+        console.log("====================");
+        console.log(this);
+    });
+};
+// end
+
 // create projects content template
 function renderDataVisualsTemplate(data){
     getTemplateAjax('static-files/templates/data-details.handlebars', function(template) {
+        //handlebarsDebugHelper();
         jqueryNoConflict('#data-details').html(template(data));
     })
 };
