@@ -23,8 +23,8 @@ function getTemplateAjax(path, callback) {
 // begin
 function renderStaticTemplates(){
     renderKpccHeaderTemplate();
-    renderDataDetailsTemplate();
-    renderDataVisualsTemplate();
+    //renderDataDetailsTemplate();
+    //renderDataVisualsTemplate();
     renderDataFooterTemplate();
     renderKpccFooterTemplate();
 };

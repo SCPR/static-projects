@@ -1,28 +1,20 @@
 var jqueryNoConflict = jQuery;
 
-// make sure the spreadsheet is published to the web
-var dataSpreadsheet = '0An8W63YKWOsxdHpnenVrbU1sRE9ScDZjWFB6OUF2a2c';
-
-// the sheet being queried
-var dataSheet = 'preCliff';
-
-// begin main function
+//begin main function
 jqueryNoConflict(document).ready(function(){
-    Tabletop.init({
-        key: dataSpreadsheet,
-        callback: showInfo,
-        simpleSheet: false,
-        debug: true
-    });
+    retriveData();
 });
-// end
+//end main function
+
+// grab data
+function retriveData() {
+    var dataSource = 'static-files/data/working-data-file.json';
+    jqueryNoConflict.getJSON(dataSource, processDataFrom);
+};
 
 // display page template
-function showInfo(data, tabletop){
-    var handlebarsData = {
-        objects: data.preCliff.elements
-    };
-    renderDataVisualsTemplate(handlebarsData);
+function processDataFrom(data){
+    renderDataVisualsTemplate(data);
 };
 // end
 
@@ -53,7 +45,7 @@ function handlebarsDebugHelper(){
 // create projects content template
 function renderDataVisualsTemplate(data){
     getTemplateAjax('static-files/templates/data-details.handlebars', function(template) {
-        //handlebarsDebugHelper();
+        handlebarsDebugHelper();
         jqueryNoConflict('#data-details').html(template(data));
     })
 };
