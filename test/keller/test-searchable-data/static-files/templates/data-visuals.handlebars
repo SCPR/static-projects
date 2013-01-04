@@ -5,7 +5,7 @@
     <div id="ribbon">
         <div id="download">
             <div id="pubdate">
-            <strong>Last Updated: </strong>Dec. 10, 2012
+            <strong>Last Updated: </strong>Jan. 4, 2013
             </div>
             &nbsp;&nbsp;
         </div>
@@ -17,13 +17,13 @@
                 <form class="form-inline" >
                     <img src="http://projects.scpr.org/static/static-files/images/tablestacker-tables/first.png" class="first">
                     <img src="http://projects.scpr.org/static/static-files/images/tablestacker-tables/prev.png" class="prev">
-                    <span class="pagedisplay"/>1/3</span>
+                    <span class="pagedisplay"/></span>
                     <img src="http://projects.scpr.org/static/static-files/images/tablestacker-tables/next.png" class="next">
                     <img src="http://projects.scpr.org/static/static-files/images/tablestacker-tables/last.png" class="last">
                     <select class="pagesize">
-                        <option selected="selected" value="5">5</option>
-                        <option  value="10">10</option>
-                        <option  value="15">15</option>
+                        <option selected="selected" value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
                     </select> per page
                 </form>
             </div>
@@ -35,210 +35,1350 @@
 
     <hr />
 
-    <table id="data" class="tabular table responsive">
-        <thead>
-            <tr>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">Year</th>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">Jan</th>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">Feb</th>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">Mar</th>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">Apr</th>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">May</th>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">Jun</th>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">Jul</th>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">Aug</th>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">Sep</th>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">Oct</th>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">Nov</th>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">Dec</th>
-                <th style="cursor: pointer; cursor: pointer; text-align:right;">Annual</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="text-align:right;">2012</td>
-                <td style="text-align:right;">154,395</td>
-                <td style="text-align:right;">154,871</td>
-                <td style="text-align:right;">154,707</td>
-                <td style="text-align:right;">154,365</td>
-                <td style="text-align:right;">155,007</td>
-                <td style="text-align:right;">155,163</td>
-                <td style="text-align:right;">155,013</td>
-                <td style="text-align:right;">154,645</td>
-                <td style="text-align:right;">155,063</td>
-                <td style="text-align:right;">155,641</td>
-                <td style="text-align:right;">0</td>
-                <td style="text-align:right;">0</td>
-                <td style="text-align:right;">0</td>
-            </tr>
-            <tr>
-                <td style="text-align:right;">2011</td>
-                <td style="text-align:right;">153,250</td>
-                <td style="text-align:right;">153,302</td>
-                <td style="text-align:right;">153,392</td>
-                <td style="text-align:right;">153,420</td>
-                <td style="text-align:right;">153,700</td>
-                <td style="text-align:right;">153,409</td>
-                <td style="text-align:right;">153,358</td>
-                <td style="text-align:right;">153,674</td>
-                <td style="text-align:right;">154,004</td>
-                <td style="text-align:right;">154,057</td>
-                <td style="text-align:right;">153,937</td>
-                <td style="text-align:right;">153,887</td>
-                <td style="text-align:right;">0</td>
-            </tr>
-            <tr>
-                <td style="text-align:right;">2010</td>
-                <td style="text-align:right;">153,454</td>
-                <td style="text-align:right;">153,704</td>
-                <td style="text-align:right;">153,964</td>
-                <td style="text-align:right;">154,528</td>
-                <td style="text-align:right;">154,216</td>
-                <td style="text-align:right;">153,653</td>
-                <td style="text-align:right;">153,748</td>
-                <td style="text-align:right;">154,073</td>
-                <td style="text-align:right;">153,918</td>
-                <td style="text-align:right;">153,709</td>
-                <td style="text-align:right;">154,041</td>
-                <td style="text-align:right;">153,613</td>
-                <td style="text-align:right;">0</td>
-            </tr>
-            <tr>
-                <td style="text-align:right;">2009</td>
-                <td style="text-align:right;">154,236</td>
-                <td style="text-align:right;">154,521</td>
-                <td style="text-align:right;">154,143</td>
-                <td style="text-align:right;">154,450</td>
-                <td style="text-align:right;">154,800</td>
-                <td style="text-align:right;">154,730</td>
-                <td style="text-align:right;">154,538</td>
-                <td style="text-align:right;">154,319</td>
-                <td style="text-align:right;">153,786</td>
-                <td style="text-align:right;">153,822</td>
-                <td style="text-align:right;">153,833</td>
-                <td style="text-align:right;">153,091</td>
-                <td style="text-align:right;">0</td>
-            </tr>
-            <tr>
-                <td style="text-align:right;">2008</td>
-                <td style="text-align:right;">154,075</td>
-                <td style="text-align:right;">153,648</td>
-                <td style="text-align:right;">153,925</td>
-                <td style="text-align:right;">153,761</td>
-                <td style="text-align:right;">154,325</td>
-                <td style="text-align:right;">154,316</td>
-                <td style="text-align:right;">154,480</td>
-                <td style="text-align:right;">154,646</td>
-                <td style="text-align:right;">154,559</td>
-                <td style="text-align:right;">154,875</td>
-                <td style="text-align:right;">154,622</td>
-                <td style="text-align:right;">154,626</td>
-                <td style="text-align:right;">0</td>
-            </tr>
-            <tr>
-                <td style="text-align:right;">2007</td>
-                <td style="text-align:right;">153,144</td>
-                <td style="text-align:right;">152,983</td>
-                <td style="text-align:right;">153,051</td>
-                <td style="text-align:right;">152,435</td>
-                <td style="text-align:right;">152,670</td>
-                <td style="text-align:right;">153,041</td>
-                <td style="text-align:right;">153,054</td>
-                <td style="text-align:right;">152,749</td>
-                <td style="text-align:right;">153,414</td>
-                <td style="text-align:right;">153,183</td>
-                <td style="text-align:right;">153,835</td>
-                <td style="text-align:right;">153,918</td>
-                <td style="text-align:right;">0</td>
-            </tr>
-            <tr>
-                <td style="text-align:right;">2006</td>
-                <td style="text-align:right;">150,214</td>
-                <td style="text-align:right;">150,641</td>
-                <td style="text-align:right;">150,813</td>
-                <td style="text-align:right;">150,881</td>
-                <td style="text-align:right;">151,069</td>
-                <td style="text-align:right;">151,354</td>
-                <td style="text-align:right;">151,377</td>
-                <td style="text-align:right;">151,716</td>
-                <td style="text-align:right;">151,662</td>
-                <td style="text-align:right;">152,041</td>
-                <td style="text-align:right;">152,406</td>
-                <td style="text-align:right;">152,732</td>
-                <td style="text-align:right;">0</td>
-            </tr>
-            <tr>
-                <td style="text-align:right;">2005</td>
-                <td style="text-align:right;">148,029</td>
-                <td style="text-align:right;">148,364</td>
-                <td style="text-align:right;">148,391</td>
-                <td style="text-align:right;">148,926</td>
-                <td style="text-align:right;">149,261</td>
-                <td style="text-align:right;">149,238</td>
-                <td style="text-align:right;">149,432</td>
-                <td style="text-align:right;">149,779</td>
-                <td style="text-align:right;">149,954</td>
-                <td style="text-align:right;">150,001</td>
-                <td style="text-align:right;">150,065</td>
-                <td style="text-align:right;">150,030</td>
-                <td style="text-align:right;">0</td>
-            </tr>
-            <tr>
-                <td style="text-align:right;">2004</td>
-                <td style="text-align:right;">146,842</td>
-                <td style="text-align:right;">146,709</td>
-                <td style="text-align:right;">146,944</td>
-                <td style="text-align:right;">146,850</td>
-                <td style="text-align:right;">147,065</td>
-                <td style="text-align:right;">147,460</td>
-                <td style="text-align:right;">147,692</td>
-                <td style="text-align:right;">147,564</td>
-                <td style="text-align:right;">147,415</td>
-                <td style="text-align:right;">147,793</td>
-                <td style="text-align:right;">148,162</td>
-                <td style="text-align:right;">148,059</td>
-                <td style="text-align:right;">0</td>
-            </tr>
-            <tr>
-                <td style="text-align:right;">2003</td>
-                <td style="text-align:right;">145,937</td>
-                <td style="text-align:right;">146,100</td>
-                <td style="text-align:right;">146,022</td>
-                <td style="text-align:right;">146,474</td>
-                <td style="text-align:right;">146,500</td>
-                <td style="text-align:right;">147,056</td>
-                <td style="text-align:right;">146,485</td>
-                <td style="text-align:right;">146,445</td>
-                <td style="text-align:right;">146,530</td>
-                <td style="text-align:right;">146,716</td>
-                <td style="text-align:right;">147,000</td>
-                <td style="text-align:right;">146,729</td>
-                <td style="text-align:right;">0</td>
-            </tr>
-            <tr>
-                <td style="text-align:right;">2002</td>
-                <td style="text-align:right;">143,883</td>
-                <td style="text-align:right;">144,653</td>
-                <td style="text-align:right;">144,481</td>
-                <td style="text-align:right;">144,725</td>
-                <td style="text-align:right;">144,938</td>
-                <td style="text-align:right;">144,808</td>
-                <td style="text-align:right;">144,803</td>
-                <td style="text-align:right;">145,009</td>
-                <td style="text-align:right;">145,552</td>
-                <td style="text-align:right;">145,314</td>
-                <td style="text-align:right;">145,041</td>
-                <td style="text-align:right;">145,066</td>
-                <td style="text-align:right;">0</td>
-            </tr>
-        </tbody>
-    </table>
+<table id="data" class="tabular table responsive">
+  <thead>
+    <tr>
+      <th class="Date-cell">Date</th>
+      <th class="Amount-cell">Amount</th>
+      <th class="Candidate-cell">Candidate</th>
+      <th class="Contributor-cell">Contributor</th>
+      <th class="Occupation-cell">Occupation</th>
+      <th class="Employer-cell">Employer</th>
+      <th class="City-cell">City</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="firstRow">
+      <td class="Date-cell">4/19/2012</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Amy Aquino</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">4/17/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Evan Arnold</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Valley Village</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/18/2011</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Evan Arnold</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Valley Village</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/28/2012</td>
+      <td class="Amount-cell">$300</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Evan Arnold</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Warner Bros.</td>
+      <td class="City-cell">Valley Village</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/31/2011</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Jillian Bartels</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Jillian Bartels</td>
+      <td class="City-cell">Toluca Lake</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/30/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Jillian Bartels</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Jillian Bartels</td>
+      <td class="City-cell">Toluca Lake</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">5/3/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Edward J. Begley</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Edward J. Begley</td>
+      <td class="City-cell">Studio City</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">10/18/2011</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Ed Begley Jr.</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed</td>
+      <td class="City-cell">Studio City</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">2/8/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Blake Edward Boyd</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Blake Edward Boyd</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">3/10/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Blake Edward Boyd</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Blake Edward Boyd</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/17/2012</td>
+      <td class="Amount-cell">$300</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Blake Edward Boyd</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Blake Edward Boyd</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">4/24/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Lisa Brenner</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/8/2011</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Erica Brettler</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">None</td>
+      <td class="City-cell">Venice</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">1/19/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">William Brochtrup</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/29/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Austin Beutner</td>
+      <td class="Contributor-cell">Josh Brolin</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Brolin Productions</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/9/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Kate Capshaw</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Kate Capshaw</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/4/2012</td>
+      <td class="Amount-cell">$300</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Kate Capshaw</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Kate Capshaw</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/21/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Matthew Carmony</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Gold Exchange Usa</td>
+      <td class="City-cell">Valley Glen</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/23/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Ginna Carter</td>
+      <td class="Occupation-cell">Actor/writer</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/29/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Sarah Chalke</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/3/2011</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Jan Perry</td>
+      <td class="Contributor-cell">Elizabeth Cheap</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Elizabeth Cheap</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">7/2/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Jo Ciampafarrell</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">11/30/2011</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Lawrence Clarke</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">5/11/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Teddi Cole</td>
+      <td class="Occupation-cell">Actress/homemaker</td>
+      <td class="Employer-cell">Teddi Cole</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/30/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Teddi Cole</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Teddi Cole</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">11/16/2011</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Jamie Lee Curtis Guest</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Santa Monica</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">4/25/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Kate Danson</td>
+      <td class="Occupation-cell">Actor/photographer</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Santa Monica</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">11/3/2011</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Theresa Davis</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Davis/weyman Prod., Inc.</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">1/24/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Jonathan Del Arco</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Hollywood</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">3/21/2012</td>
+      <td class="Amount-cell">$300</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Tony Denison</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Warner Brothers/tnt</td>
+      <td class="City-cell">Sherman Oaks</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">10/31/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Tony Denison</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Tony Denison</td>
+      <td class="City-cell">Sherman Oaks</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">10/13/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">James Denton</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">James Denton</td>
+      <td class="City-cell">Glendale</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/29/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Lenore Douglas</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/20/2012</td>
+      <td class="Amount-cell">$300</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Lisa Edelstein</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">11/11/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Lisa Edelstein</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">11/17/2011</td>
+      <td class="Amount-cell">$200</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Andres Faucher</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/29/2012</td>
+      <td class="Amount-cell">$300</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Emily Foy</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Manhattan Beach</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/27/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Emily Foy</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Manhattan Beach</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">10/31/2011</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Danay Garcia</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Danay Garcia</td>
+      <td class="City-cell">Valley Vlg</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/28/2012</td>
+      <td class="Amount-cell">$50</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Ruth Ann Geoghan</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Ruth Goeghan</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/28/2012</td>
+      <td class="Amount-cell">$50</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Ruth Ann Geoghan</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Ruth Goeghan</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">5/4/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Lena Georgas</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/28/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Lena Georgas</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/30/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Lena Georgas</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">10/9/2011</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Marie Georgas</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Marie Elena Georgas</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">2/6/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Leonora Gershman</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/30/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Laura Giacomo</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/15/2011</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Austin Beutner</td>
+      <td class="Contributor-cell">Annabeth Gish</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">A&e</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">4/22/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Gabriel A. Gonzales</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Gabriel A. Gonzales</td>
+      <td class="City-cell">West Hollywood</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">3/31/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Lloyd Gordon</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/9/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Robert Gossett</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Calabasas</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/31/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Jake Gyllenhaal</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">5/1/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Martha Hackett</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/23/2012</td>
+      <td class="Amount-cell">$150</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Ann Hall</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Ann Hall</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">8/20/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Tom Hanks</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Tom Hanks</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/6/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Mariska Hargitay</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Mariska Hargitay</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">2/23/2012</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Hill Harper</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/13/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Salma Hayek</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed</td>
+      <td class="City-cell">Woodland Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">1/17/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Marg Helgenberger</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Marg Helgenberger</td>
+      <td class="City-cell">New York</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">10/21/2011</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Marg Helgenberger</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Cbs Television</td>
+      <td class="City-cell">New York</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">2/23/2012</td>
+      <td class="Amount-cell">$200</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Gregg Henry</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">8/25/2011</td>
+      <td class="Amount-cell">$200</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Clint Howard</td>
+      <td class="Occupation-cell">Actor/producer</td>
+      <td class="Employer-cell">Clint Howard Productions</td>
+      <td class="City-cell">Burbank</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/22/2012</td>
+      <td class="Amount-cell">$200</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Clint Howard</td>
+      <td class="Occupation-cell">Actor/producer</td>
+      <td class="Employer-cell">Clint Howard Productions</td>
+      <td class="City-cell">Burbank</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">4/6/2012</td>
+      <td class="Amount-cell">$400</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Sal Iacono</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Manhattan Beach</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/9/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Yasmine Johnson</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Yasmine Johnson</td>
+      <td class="City-cell">Sherman Oaks</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">1/3/2012</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Julie Kagan</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Clasette Productions</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/19/2011</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Barry Karas</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Barry Karas</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">4/29/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Vincent Kartheiser</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">New York</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/16/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Jon Kean</td>
+      <td class="Occupation-cell">Actor/director</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Santa Monica</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">1/30/2012</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Phillip Keene</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Warner Brothers</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/30/2011</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Kevin Kendrick</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Kevin Kendrick</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">4/25/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Elizabeth Kennedy</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">5/30/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Jill Kenny</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Jill Kenny</td>
+      <td class="City-cell">Studio City</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/30/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Tom Kenny</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Tom Kenny</td>
+      <td class="City-cell">Studio City</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">7/27/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Jan Perry</td>
+      <td class="Contributor-cell">T'keyahcrystal Keymah</td>
+      <td class="Occupation-cell">Performer / Writer / Director / Producer</td>
+      <td class="Employer-cell">T'keyah Crystal Keymah, Inc.</td>
+      <td class="City-cell">Toluca Lake</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/15/2011</td>
+      <td class="Amount-cell">$150</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Steven Klein</td>
+      <td class="Occupation-cell">Actor & Producer</td>
+      <td class="Employer-cell">Firefly: Theater & Films</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/7/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Austin Beutner</td>
+      <td class="Contributor-cell">Christa B. Lawrence</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Disney/abc</td>
+      <td class="City-cell">Encino</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">4/10/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Harry J. Lennix</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">10/19/2011</td>
+      <td class="Amount-cell">$180</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Aliza Lesser</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Aliza Lesser</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">8/9/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Eva Longoria</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Eva Longoria</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">11/6/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Ann Lopez</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Moving Target Productions</td>
+      <td class="City-cell">Woodland Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/28/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Tobey Maguire</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Material Pictures</td>
+      <td class="City-cell">Encino</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/30/2011</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Alan Mandell</td>
+      <td class="Occupation-cell">Actor/director</td>
+      <td class="Employer-cell">Alan Mandell</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/12/2012</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Alan Mandell</td>
+      <td class="Occupation-cell">Actor/director</td>
+      <td class="Employer-cell">Alan Mandell</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/30/2012</td>
+      <td class="Amount-cell">$200</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Alan Mandell</td>
+      <td class="Occupation-cell">Actor/director</td>
+      <td class="Employer-cell">Alan Mandell</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/9/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Holly Maples</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/29/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Leo Marks</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Pittsburgh Irish & Classical Theater</td>
+      <td class="City-cell">Glendale</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/9/2011</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Leo Marks</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Berkeley Repertory Theater</td>
+      <td class="City-cell">Glendale</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/7/2011</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Austin Beutner</td>
+      <td class="Contributor-cell">Robert Maschio</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Robert Maschio</td>
+      <td class="City-cell">Santa Monica</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">7/2/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Jennifer Massey</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Jennifer Massey</td>
+      <td class="City-cell">North Hollywood</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/15/2012</td>
+      <td class="Amount-cell">$50</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Jennifer Massey</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Jennifer Massey</td>
+      <td class="City-cell">North Hollywood</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">1/24/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Mary Mcdonnell</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Warner Brothers</td>
+      <td class="City-cell">Pacific Palisades</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">7/25/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Alexandra Mcleod</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Alexandra Mcleod</td>
+      <td class="City-cell">Rolling Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/25/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Tanya Mcqueen Forman</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Formans Productions</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/13/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Austin Beutner</td>
+      <td class="Contributor-cell">Debra Messing</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Nbc</td>
+      <td class="City-cell">New York</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">7/16/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Donna Mills</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">4/19/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Alicia Mitchell</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">West Hollywood</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">3/27/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Meera Narasimhan</td>
+      <td class="Occupation-cell">Actress/writer</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">North Hollywood</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">5/31/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Rachel Nichols</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Propinquity, Inc.</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">11/15/2011</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Leonard Nimoy</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Rumple Seat Productions</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/10/2011</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Susan Nimoy</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Susan Bay Nimoy</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/6/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Buckley Norris</td>
+      <td class="Occupation-cell">Actor/producer</td>
+      <td class="Employer-cell">Hyde Park Entertainment</td>
+      <td class="City-cell">Sherman Oaks</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">10/19/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Michael O'malley</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Michael O'malley</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/19/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Timothy Olyphant</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">New York</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">5/25/2012</td>
+      <td class="Amount-cell">$12</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Penny Peyser</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Penny Peyser</td>
+      <td class="City-cell">Woodland Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/25/2012</td>
+      <td class="Amount-cell">$12</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Penny Peyser</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Penny Peyser</td>
+      <td class="City-cell">Woodland Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">1/30/2012</td>
+      <td class="Amount-cell">$300</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Penny Peyser</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Penny Peyser</td>
+      <td class="City-cell">Woodland Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">7/25/2012</td>
+      <td class="Amount-cell">$12</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Penny Peyser</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Penny Peyser</td>
+      <td class="City-cell">Woodland Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/25/2012</td>
+      <td class="Amount-cell">$12</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Penny Peyser</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Penny Peyser</td>
+      <td class="City-cell">Woodland Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">8/25/2012</td>
+      <td class="Amount-cell">$12</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Penny Peyser</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Penny Peyser</td>
+      <td class="City-cell">Woodland Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/28/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Jan Perry</td>
+      <td class="Contributor-cell">Amy Poehler</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Amy Poehler</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/1/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Amy Poehler</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">New York</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/4/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Margaret Priest</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/3/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Jan Perry</td>
+      <td class="Contributor-cell">William Pullman</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">William Pullman</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">8/20/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Talulah Riley</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Santa Monica</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/28/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Jan Perry</td>
+      <td class="Contributor-cell">Ian Roberts</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Ian Roberts</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/1/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Ian Roberts</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Agoura Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/8/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Monica Rosenthal</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Miss Peach Productions</td>
+      <td class="City-cell">Encino</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/11/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Monica H. Rosenthal</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Miss Peach Productions</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">7/30/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Brandon Routh</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed</td>
+      <td class="City-cell">Encino</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/14/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Faith Salie</td>
+      <td class="Occupation-cell">Actor/producer</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">New York</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">2/19/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">June Sattler</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">None</td>
+      <td class="City-cell">Encino</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/29/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Donna Scott</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">None</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/14/2012</td>
+      <td class="Amount-cell">$300</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Donna Scott</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Donna Scott</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/26/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Kimberly Selby</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self Employed/same Name</td>
+      <td class="City-cell">Pacific Palisades</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/27/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">J.K. Simmons</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/28/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Gary Sinise</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Gary Sisine</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">2/6/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Amy Smart</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Encino</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/25/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Amy Smart</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Encino</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/27/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Blanca Soto</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">8/11/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Kevin James</td>
+      <td class="Contributor-cell">Michelle Stafford</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">None</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">5/1/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Russell Steinberg</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/21/2012</td>
+      <td class="Amount-cell">$100</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Hollie Stenson</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Marina Del Rey</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/28/2011</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Nancy Stephens</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Nancy Stephens</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">2/15/2012</td>
+      <td class="Amount-cell">$250</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Kristina Stonebreaker</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">12/7/2011</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Michael Sutton</td>
+      <td class="Occupation-cell">Actor/real Estate</td>
+      <td class="Employer-cell">Michael Sutton</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/23/2012</td>
+      <td class="Amount-cell">$150</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Tiffany Sweet</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">5/24/2011</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Jan Perry</td>
+      <td class="Contributor-cell">Georgeh. Takei</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Hosato Enterprises Inc.</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/8/2012</td>
+      <td class="Amount-cell">$800</td>
+      <td class="Candidate-cell">Jan Perry</td>
+      <td class="Contributor-cell">Georgeh. Takei</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Hosato Enterprises Inc.</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/27/2011</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Austin Beutner</td>
+      <td class="Contributor-cell">Heidi Tappis</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Heidi Tappis</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/19/2012</td>
+      <td class="Amount-cell">$1,050</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Heather Thomas</td>
+      <td class="Occupation-cell">Actress/writer</td>
+      <td class="Employer-cell">Shiksa Enterprises</td>
+      <td class="City-cell">Sherman Oaks</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/26/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Nancy Travis</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Nancy Travis</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">6/7/2011</td>
+      <td class="Amount-cell">$1,000</td>
+      <td class="Candidate-cell">Austin Beutner</td>
+      <td class="Contributor-cell">Kristen Vogelsong</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">None</td>
+      <td class="City-cell">Santa Monica</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/28/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Jan Perry</td>
+      <td class="Contributor-cell">Matthew Walsh</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Matthew Walsh</td>
+      <td class="City-cell">Los Angeles</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/1/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Matthew Walsh</td>
+      <td class="Occupation-cell">Actor</td>
+      <td class="Employer-cell">Mark Taper</td>
+      <td class="City-cell">Valley Village</td>
+    </tr>
+    <tr>
+      <td class="Date-cell">9/24/2012</td>
+      <td class="Amount-cell">$500</td>
+      <td class="Candidate-cell">Eric Garcetti</td>
+      <td class="Contributor-cell">Ben Weber</td>
+      <td class="Occupation-cell">Actor/writer</td>
+      <td class="Employer-cell">Self-employed/same Name</td>
+      <td class="City-cell">Venice</td>
+    </tr>
+    <tr class="lastRow">
+      <td class="Date-cell">8/20/2012</td>
+      <td class="Amount-cell">$1,300</td>
+      <td class="Candidate-cell">Wendy Greuel</td>
+      <td class="Contributor-cell">Rita Wilson</td>
+      <td class="Occupation-cell">Actress</td>
+      <td class="Employer-cell">Rita Wilson</td>
+      <td class="City-cell">Beverly Hills</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 <!-- end table fu -->
 
 <script type='text/javascript'>
     var sortOrder = [[0, 1]];
-    var perPage = 5;
+    var perPage = 25;
     $(document).ready(function(){
         var fu = $('#table_fu');
         var table = window.table = $('#data', fu)
