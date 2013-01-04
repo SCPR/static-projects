@@ -30,7 +30,10 @@ body.minimal footer ul li:last-child { padding-right: 0; border-right: none; }
 
 /* typography */
 #data-container h1 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 36px; font-weight: 800; line-height: 30px; color: #2B2B2B;}
-#data-container h2 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 30px; color: #2B2B2B;}
+#data-container h2 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 28px; font-weight: 700; line-height: 22px; color: #2B2B2B;}
+#data-container h3 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 18px; color: #2B2B2B;}
+#data-container h4 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; line-height: 12px; color: #2B2B2B;}
+#data-container .kicker {font-size: 12px; text-transform: uppercase;}
 #data-container .lowercase {text-transform: lowercase;}
 #data-container .underline {text-decoration: underline;}
 #data-container .data-instructions {font-size: 11px;}
@@ -40,6 +43,11 @@ body.minimal footer ul li:last-child { padding-right: 0; border-right: none; }
 #data-container .story-text {}
 #data-container .details-intro {}
 #data-container .details-drilldown {}
+
+
+
+
+
 
 /* media queries */
 
