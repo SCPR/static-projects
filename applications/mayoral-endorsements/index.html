@@ -18,20 +18,8 @@
         <link href='http://www.scpr.org/assets/application.css' rel='stylesheet' type='text/css' media='all' />
 
         <style type="text/css">
-
+		img {margin: 10px;}
 		#data-container {width: 960px; height auto; margin 0 auto 0 auto;}
-
-        @media screen and (min-width: 0px) and (max-width: 500px) {
-          #project-banner-bow {display: none; }
-          #project_banner h1 {line-height: 70px; color: #fff;}
-          #project_banner h4 {display: none; }
-        }
-
-        @media screen and (min-width: 501px) and (max-width: 6000px) {
-          #project-banner-bow {float: left; margin-top:-50px; margin-left:-12px;}
-          #project_banner h1 {line-height: 20px; color: #fff;}
-          #project_banner h4 {color: #EBEBEB; margin: 0 0 1px 0; padding-top: 8px;}
-        }
 
         </style>
 
@@ -51,8 +39,12 @@
         <!-- begin scripts -->
   		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 		<script type="text/javascript" src="data-script.js"></script>
-
         <script type="text/javascript">
+
+        	/* For getting info from Google Fusion table */
+
+			var jqueryNoConflict = jQuery;
+
             /* For picking out bits from the query string */
             var getParameterByName = function(name) {
               name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -69,6 +61,78 @@
         <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
         <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
         <script type="text/javascript" src="http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js"></script>
+
+		<script>
+		// begin main function
+		jqueryNoConflict(document).ready(function() {
+
+		    getFusionTableData();
+
+		});
+		// end
+
+		// retrieve json from Fusion Table
+		function getFusionTableData() {
+		    var tableID = '10BKvL7JSikZ5XLBAWmFiuCXhR04Rjq84KuQlH7g';
+		    var query = 'SELECT * FROM ' + tableID;
+		    var encodedQuery = encodeURIComponent(query);
+		    var urlPrefix = 'https://www.googleapis.com/fusiontables/v1/query?key=';
+		    var apiKey = 'AIzaSyBRs68D8JTAbrLy6R_zsYABLMgOV6zxC-4';
+		    var urlSuffix = '&sql=' + encodedQuery + '&callback=?';
+		    var url = urlPrefix + apiKey + urlSuffix
+		    jqueryNoConflict.getJSON(url, createArrayFrom);
+		};
+		// end
+
+		// organize json data
+		function createArrayFrom(data){
+
+		    console.log(data);
+
+		    // begin loop
+		    for (var i = 0; i < data.rows.length; i++) {
+
+		        // set each item of loop to variable
+		        var row = data.rows[i];
+
+		        // set each item of object to variable
+		        var Endorser = row[0];
+		        var Position = row[1];
+		        var Endorsee = row[2];
+		        var Endorsee_Image = row[3];
+		        var Story_Url = row[4];
+		
+			 					if(Endorsee == "Eric Garcetti") {
+			                        jqueryNoConflict("#data-container-garcetti").append(
+				      					' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + ' | ');
+			
+						        } else if(Endorsee == "Wendy Greuel") {
+					                    jqueryNoConflict("#data-container-greuel").append(
+								        ' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
+								
+					            } else if(Endorsee == "Jan Perry") {
+				                    jqueryNoConflict("#data-container-perry").append(
+							        ' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
+							
+				                } else if(Endorsee == "Kevin James") {
+			                    jqueryNoConflict("#data-container-james").append(
+						        ' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
+							
+								} else { 
+        						console.log("that's it, bitch");
+								}
+
+		        // write data to div
+		        //jqueryNoConflict('#data-container').append(
+		         //  '<h1> <img src="' + Endorsee_Image + ' /"> ' + Endorsee + '</h1>');
+		        //  '<p> <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '</p>');
+
+		   };
+		    // end loop
+
+		};
+		// end
+	</script>
 
 
         <!-- end scripts -->
@@ -118,92 +182,56 @@
 
 <!-- begin project banner -->
 <div id="project_banner">
-<img id="project-banner-bow" height="175px" src="static/images/bow.png" />
 <h4 id="kicker">Key Endorsements</h4>
-<h1 id="title">Los Angeles 2013 Mayor's Race'</h1>
+<h1 id="title">Los Angeles 2013 Mayoral Race</h1>
 </div>
 <!-- end project banner -->
 
-<!-- begin project content -->
+<!-- begin intro content -->
 <div id="main" class="container-fluid">
 
 
     <div class="article-header last serif">
 	 	<div class="contentasset">
-				<img style="float:right; margin:5px 5px 5px 10px;" src="http://a.scpr.org/i/c2adb65afda78b31eec3d0cff9344420/45129-lead.jpg" />
+				<img style="float:right; margin:5px 5px 5px 10px;" src="http://a.scpr.org/i/af43362af30d542f739c633bdd16a2be/53077-lead.jpg" />
 			</div>
-        <p style="margin: 20px 40px 0 40px;">This season, we asked KPCC listeners where they volunteer during the holidays, and what opportunities our audience should know about. Hear volunteers talk about the work they do and why they do it, explore our listing of charitable organizations that could use your help.</p>
-        <p style="margin: 20px 40px 20px 40px;">Use the database below to search for volunteer and charitable opportunities this holiday season. Type in any term you choose — location, type of donations needed, clients served, etc. Are there organizations we missed? <a href="http://www.scpr.org/blogs/news/2012/11/20/11161/kpcc-volunteer-nonprofit-organizations-profile/">Let us know</a>! Or <a href="http://www.scpr.org/network/questions/giving">share your story of holiday giving</a>!</p>
+        <p style="margin: 20px 40px 0 40px;">Polaroid reprehenderit intelligentsia cardigan, sartorial messenger bag direct trade tousled occupy street art narwhal skateboard. Bushwick proident tumblr photo booth aliqua. Aute cred cray whatever. Vice in nostrud scenester sed mixtape. Ad selvage pour-over pinterest mollit aliqua. Flannel raw denim trust fund skateboard. Occaecat quis bespoke dreamcatcher DIY, assumenda plaid pinterest scenester. <a href="http://www.scpr.org/blogs/news/2012/11/20/11161/kpcc-volunteer-nonprofit-organizations-profile/">Let us know</a>! Or <a href="http://www.scpr.org/network/questions/giving">share your story of holiday giving</a>!</p>
     <div class="clear"></div>
 </div>
-<!-- end project content -->
+<!-- end intro content -->
 
 <hr />
 
 <!-- begin content -->
 
 
-<div id="data-container"></div>
+<div id="data-container-garcetti">
+	<h1> <img style="float:left; width:150px;" src="http://a.scpr.org/i/73a0c249835022d4713fc14c6df44306/43770-wide.jpg" /> Eric Garcetti </h1>
+</div>
+<br clear="all">
+<hr style="margin:25px;" />
 
-<!-- Begin Google fusion script -->
+<div id="data-container-greuel">
+	<h1> <img style="float:left; width:150px;" src="http://a.scpr.org/i/3be6b8f8bc8605c125da9ee06ae7415d/51141-wide.jpg" /> Wendy Greuel </h1>
+</div>
+<br clear="all">
+<hr style="margin:25px; clear=all;" />
 
-var jqueryNoConflict = jQuery;
+<div id="data-container-perry">
+	<h1> <img style="float:left; width:150px;" src="http://a.scpr.org/i/7358253dccd25e6e3ff3cedce57532a8/41640-wide.jpg" /> Jan Perry </h1>
+</div>
+<br clear="all">
+<hr style="margin:25px;" />
 
-// begin main function
-jqueryNoConflict(document).ready(function() {
-
-    getFusionTableData();
-
-});
-// end
-
-// retrieve json from Fusion Table
-function getFusionTableData() {
-    var tableID = '10BKvL7JSikZ5XLBAWmFiuCXhR04Rjq84KuQlH7g';
-    var query = 'SELECT * FROM ' + tableID;
-    var encodedQuery = encodeURIComponent(query);
-    var urlPrefix = 'https://www.googleapis.com/fusiontables/v1/query?key=';
-    var apiKey = 'AIzaSyBRs68D8JTAbrLy6R_zsYABLMgOV6zxC-4';
-    var urlSuffix = '&sql=' + encodedQuery + '&callback=?';
-    var url = urlPrefix + apiKey + urlSuffix
-    jqueryNoConflict.getJSON(url, createArrayFrom);
-};
-// end
-
-// organize json data
-function createArrayFrom(data){
-
-    console.log(data);
-
-    // begin loop
-    for (var i = 0; i < data.rows.length; i++) {
-
-        // set each item of loop to variable
-        var row = data.rows[i];
-
-        // set each item of object to variable
-        var rank = row[0];
-        var address = row[1];
-        var integerOne = row[2];
-        var integerTwo = row[3];
-        var location = row[4];
-        var latitude = row[5];
-        var longitude = row[6];
-        var emptyStringVariable = row[7];
-
-        // write data to div
-        jqueryNoConflict('#data-container').append(
-            '<p>Location: ' + location + '</p>');
-    };
-    // end loop
-
-};
-// end
-
-<!-- end Fusion JSON script -->
+<div id="data-container-james">
+	<h1> <img style="float:left; width:150px;" src="http://a.scpr.org/i/0d16a5c909ca174ee176497433d6fcf3/52436-wide.jpg" /> Kevin James</h1>
+</div>
+<br clear="all">
+<hr style="margin:25px; clear=all;" />
 
 
-<!-- Begin Stories -->
+
+<!-- Begin Stories 
 
 <div id="content" style="margin-bottom: 25px;">
 	<h2 style="margin:5px 0 5px 0px;">The 2012 Mayoral race</h2>
@@ -217,184 +245,22 @@ function createArrayFrom(data){
 	            </div>
 	        </div>
 	        <div class="span14">
-	            <h3><a href="http://www.scpr.org/news/2012/12/19/35223/seasons-givings-jewish-home-elderly/">The Jewish Home in Reseda welcomes volunteers</a></h3>
-	            <p>Thirty elderly men and women face the cafeteria entrance, waiting. Some are in hospice care or rehab therapy; others have Alzheimer’s. Their average age is about 90. After 15 minutes, kids show up – some as young as four. They’re with their moms, and they’re carrying trays of cookies imported from Israel and blue balloons that say “Happy Hanukkah.”</p>
-	        </div>
-	    </div>
-
-		<hr />
-		
-	   <div class="row-fluid">
-	        <div class="span10">
-	            <div class="contentasset">
-	                	<img src="http://a.scpr.org/i/3574200bd8a81bcd1686b36b1f5450cd/52326-wide.jpg" />
-	            </div>
-	        </div>
-	        <div class="span14">
-	            <h3><a href="http://www.scpr.org/news/2012/12/18/35281/apprenticeship-program-spark-needs-volunteer-mento/">Volunteer to help 'SPARK' a young apprentice's focus</a></h3>
-	            <p>When kids get to middle school, they start asking their teachers: Why am I learning this? What’s the point? For  two years in the Los Angeles area, the SPARK program has responded to those questions through apprenticeships for low-income middle school students who are struggling in school.   The program needs more volunteer mentors for its young apprentices.</p>
+	            <h3><a href="http://www.scpr.org/news/2012/12/19/35223/seasons-givings-jewish-home-elderly/">Pickled organic synth jean shorts aute</a></h3>
+	            <p>Tattooed single-origin coffee ethnic chillwave occupy. Sunt helvetica tonx scenester placeat. Mixtape authentic selvage before they sold out literally, gentrify dolor +1 aliquip. Tofu godard cliche, reprehenderit anim kale chips non incididunt. Labore cupidatat tofu, fugiat PBR chambray vegan. </p>
 	        </div>
 	    </div>
 
 		<hr />
 
-	   <div class="row-fluid">
-	        <div class="span10">
-	            <div class="contentasset">
-	                	<img src="http://a.scpr.org/i/e4b3a9504b7770afad4a2453ab56904c/52168-wide.jpg" />
-	            </div>
-	        </div>
-	        <div class="span14">
-	            <h3><a href="http://www.scpr.org/blogs/news/2012/12/17/11527/project-angel-food-volunteers-become-sous-chefs-pr/">'Project Angel Food' volunteers prepare and deliver meals to the chronically ill</a></h3>
-	            <p>Every weekday, between the hours of 9 and 11:00 a.m., the kitchen at Project Angel Food is bustling. Pots clang, trays are stacked and unstacked, carts are wheeled, ovens slam shut, knives slice on cutting boards, staff cooks and volunteers alike yell, laugh, and sing their way through the morning's preparations.</p>
-	        </div>
-	    </div>
-
-		<hr />
-
-		   <div class="row-fluid">
-		        <div class="span10">
-		            <div class="contentasset">
-	                	<img src="http://a.scpr.org/i/4ff65518676099ca96a1a0793dbc3603/52132-wide.jpg" />
-		            </div>
-		        </div>
-		        <div class="span14">
-		            <h3><a href="http://www.scpr.org/news/2012/12/17/35275/seasons-givings-south-la-kids-make-pals-lapd/">South LA kids make PALs with LAPD</a></h3>
-		            <p>The makeshift training area underneath the LAPD's Newton Division isn't much. That's because it's also the police station's underground parking garage. Among the police cruisers, there's a big mat, a couple of punching bags and assorted strength-and-conditioning equipment.</p>
-		        </div>
-		    </div>
-
-	<hr />
-
-		   <div class="row-fluid">
-		        <div class="span10">
-		            <div class="contentasset">
-						<a href="http://www.scpr.org/blogs/news/2012/12/14/11541/help-group-provides-support-children-special-needs/">
-		                	<img src="http://a.scpr.org/i/db369dbf20335ff6f8cba2128c8d2d9f/52235-wide.jpg" />
-						</a>
-		            </div>
-		        </div>
-		        <div class="span14">
-		            <h3><a href="http://www.scpr.org/blogs/news/2012/12/14/11541/help-group-provides-support-children-special-needs/">Sherman Oaks nonprofit 'The Help Group' provides support for children with special needs</a></h3>
-		            <p>Based in Sherman Oaks, The Help Group operates nine day schools on seven campuses in the Los Angeles area to provide services to children with autism, learning disabilities, ADHD, developmental delays, abuse and emotional problems.</p>
-		        </div>
-		    </div>
-
-	<hr />
-
-		   <div class="row-fluid">
-		        <div class="span10">
-		            <div class="contentasset">
-		                <img src="http://a.scpr.org/i/9f0d6256bd599209a6d9e4998e4de915/52079-wide.jpg" />
-		            </div>
-		        </div>
-		        <div class="span14">
-		            <h3><a href="http://www.scpr.org/news/2012/12/13/35227/seasons-givings-santa-ana-group-seeks-volunteers-h/">Santa Ana group needs volunteers to help with 'motel children' party</a></h3>
-		            <p>On many city streets, it’s hard not to see homeless people struggling to get by, but at Grandma’s House of Hope, founder Je’net Kreitneris says the goal is to help those people we don’t see. Kreitneris founded the Santa Ana-based organization in 2004 as a way to give back to the community that lifted her and her young son out of homelessness.</p>
-		        </div>
-		    </div>
-
-	<hr />
-
-
-		   <div class="row-fluid">
-		        <div class="span10">
-		            <div class="contentasset">
-		                <img src="http://a.scpr.org/i/ba4b3b56feabb1329a64931db5421ad3/52006-wide.jpg" />
-		            </div>
-		        </div>
-		        <div class="span14">
-		            <h3><a href="http://www.scpr.org/news/2012/12/12/35206/seasons-givings-volunteers-needed-perform-los-ange/">Volunteers needed to perform Los Angeles County civil wedding ceremonies</a></h3>
-		            <p>As engaged couples pack into Los Angeles County Registrar-Recorder offices to tie the knot on the last triple date of the century -- 12-12-12 -- they might not realize that the officiant wearing the black robe and reciting the ceremony is a volunteer.</p>
-		        </div>
-		    </div>
-		</div>
-
-	<hr />
-
-
-		   <div class="row-fluid">
-		        <div class="span10">
-		            <div class="contentasset">
-		                <img src="http://a.scpr.org/i/864e60fce62bb0b45b92153ab9a80e30/51912-full.jpg" />
-		            </div>
-		        </div>
-		        <div class="span14">
-		            <h3><a href="http://www.scpr.org/news/2012/12/11/35203/torrance-memorial-medical-centers-volunteer-clowns/">Torrance Memorial Medical Center's volunteer clowns bring cheer to patients</a></h3>
-		            <p>Brandy Moss-Scott was putting up her Christmas tree, when she twisted her foot, broke her leg, tore a ligament and shattered her ankle in three places. Now, she’s stuck in a hospital bed at Torrance Memorial Medical Center. She passed the time on Monday by watching TV in her empty hospital room, when she received some unexpected visitors—volunteer clowns Joy and Lady Bug.</p>
-		        </div>
-		    </div>
-		</div>
-
-	<hr />
-
-
-	   <div class="row-fluid">
-	        <div class="span10">
-	            <div class="contentasset">
-	                <img src="http://a.scpr.org/i/61caba642564fac331b769b8a371ba37/51700-full.jpg" />
-	            </div>
-	        </div>
-	        <div class="span14">
-	            <h3><a href="http://blogdowntown.com/2012/12/7083-downtown-womens-center-serves-as-safe-haven">Downtown Women's Center serves as 'safe haven' for thousands of Skid Row homeless</a></h3>
-	            <p>The Downtown Women’s Center (DWC) has been serving homeless women on Skid Row since 1978 -- providing warm meals and hot showers, medical services, computer labs, educational opportunities and long-term housing options.</p>
-	        </div>
-	    </div>
-	</div>
-
-<hr />
-
-    <div class="row-fluid">
-        <div class="span10">
-            <div class="contentasset">
-                <img src="http://a.scpr.org/i/bb8bc6076f5ab6be1565d5fb9fd9c6f7/51462-full.jpg" />
-            </div>
-        </div>
-        <div class="span14">
-            <h3><a href="http://www.scpr.org/blogs/news/2012/12/05/11351/seasons-givings-pasadena-humane-society/">Marilyn Hoyt at The Pasadena Humane Society</a></h3>
-            <p>Each year the Pasadena Humane Society provides shelter and care for a number of abandoned or homeless animals. In 2011, the organization took in nearly 12,000 animals found in La Canada Flintridge, San Marino, Sierra Madre, Arcadia, Glendale, Pasadena and South Pasadena. In 2011, the PHS took in 11,929 animals.</p>
-        </div>
-    </div>
-
-<hr />
-
-<!-- End Profiles -->
+ End Stories -->
 
 
 
 <div id="data-footer"></div>
-<div id="sources"><strong>Sources: </strong>KPCC listeners with <a href="http://www.volunteermatch.org/" target="_blank">VolunteerMatch</a> and <a href="http://www.unitedwayla.org/">United Way Los Angeles</a>.</div>
-<div id="credits"><strong>Credits: </strong><a href="http://www.scpr.org/about/people/staff/eric-zassenhaus">Eric Zassenhaus</a>, <a href="http://www.scpr.org/about/people/staff/nick-roman">Nick Roman</a> &amp; <a href="http://www.scpr.org/about/people/staff/chris-keller">Chris Keller</a>.</div>
-<div class="open-source">Code courtesy of <a href="https://github.com/datadesk/latimes-table-stacker" target="_blank">Table Stacker</a>, a <a href="https://www.djangoproject.com/" target="_blank">Django</a> application that publishes spreadsheets.</div>
-<!-- original code -->
-
-
-<!-- added script -->
-<script type="text/javascript" src="http://projects.scpr.org/static/static-files/scripts/responsive-tables.js"></script>
-<script type='text/javascript'>
-    var sortOrder = [[0, 0]];
-    var perPage = 5;
-    $(document).ready(function(){
-        var fu = $('#table_fu');
-        var table = window.table = $('#data', fu)
-          .tablesorter({
-            widgets: ['columnHighlight'],
-            sortList: sortOrder
-           })
-          .tablesorterPager({ container: $("#pager", fu), size: perPage, positionFixed: false })
-          .tablesorterMultiPageFilter({ filterSelector: $("#filter input", fu) });
-        var urlSortColumn = getParameterByName("sortColumn");
-        var urlSortOrder = getParameterByName("sortOrder");
-        if (urlSortColumn && urlSortOrder) {
-            urlSortColumn  = parseInt(urlSortColumn);
-            urlSortOrder  = parseInt(urlSortOrder);
-            newSort = [[urlSortColumn, urlSortOrder]];
-            $("table").trigger("sorton", [newSort]);
-        };
-    });
-</script>
-
-
+<!-- 
+div id="sources"><strong>Sources: </strong>KPCC listeners with <a href="http://www.volunteermatch.org/" target="_blank">VolunteerMatch</a> and <a href="http://www.unitedwayla.org/">United Way Los Angeles</a>.</div
+-->
+<div id="credits"><strong>Credits: </strong><a href="http://www.scpr.org/about/people/staff/eric-zassenhaus">Eric Zassenhaus</a>,  <a href="http://www.scpr.org/about/people/staff/oscar-garza">Oscar Garza</a>, <a href="http://www.scpr.org/about/people/staff/alice-walton">Alice Walton</a> &amp; <a href="http://www.scpr.org/about/people/staff/chris-keller">Chris Keller</a>.</div>
 
 
 </div>
@@ -419,42 +285,6 @@ function createArrayFrom(data){
         </div>
     </footer>
 
-<!-- begin analytics -->
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-624724-5']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-<script type="text/javascript">
-var _sf_async_config={uid:2825,domain:"projects.scpr.org"};
-(function(){
-  function loadChartbeat() {
-    window._sf_endpt=(new Date()).getTime();
-    var e = document.createElement('script');
-    e.setAttribute('language', 'javascript');
-    e.setAttribute('type', 'text/javascript');
-    e.setAttribute('src',
-       (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
-       "js/chartbeat.js");
-    document.body.appendChild(e);
-  }
-  var oldonload = window.onload;
-  window.onload = (typeof window.onload != 'function') ?
-     loadChartbeat : function() { oldonload(); loadChartbeat(); };
-})();
-
-</script>
-
-<!-- end analytics -->
 
 
 </body>
