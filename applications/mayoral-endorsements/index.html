@@ -16,10 +16,23 @@
 
         <!-- begin css -->
         <link href='http://www.scpr.org/assets/application.css' rel='stylesheet' type='text/css' media='all' />
+        <link href='http://projects.scpr.org/static/static-files/css/tablestacker-tables/styles.css' rel='stylesheet' type='text/css' media='all' />
+
 
         <style type="text/css">
 		img {margin: 10px;}
 		#data-container {width: 960px; height auto; margin 0 auto 0 auto;}
+		#project_banner {height: 70px; margin: -25px 0 0px 118px; }
+		@media screen and (min-width: 0px) and (max-width: 500px) {
+          #project_banner h1 {line-height: 70px;}
+          #project_banner h4 {display: none; }
+        }
+
+        @media screen and (min-width: 501px) and (max-width: 6000px) {
+          #project_banner h1 {line-height: 20px;}
+          #project_banner h4 {margin: 0 0 1px 0; padding-top: 8px;}
+        }
+        
 
         </style>
 
@@ -104,7 +117,7 @@
 		
 			 					if(Endorsee == "Eric Garcetti") {
 			                        jqueryNoConflict("#data-container-garcetti").append(
-				      					' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + ' | ');
+								        ' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
 			
 						        } else if(Endorsee == "Wendy Greuel") {
 					                    jqueryNoConflict("#data-container-greuel").append(
@@ -195,7 +208,7 @@
 	 	<div class="contentasset">
 				<img style="float:right; margin:5px 5px 5px 10px;" src="http://a.scpr.org/i/af43362af30d542f739c633bdd16a2be/53077-lead.jpg" />
 			</div>
-        <p style="margin: 20px 40px 0 40px;">Polaroid reprehenderit intelligentsia cardigan, sartorial messenger bag direct trade tousled occupy street art narwhal skateboard. Bushwick proident tumblr photo booth aliqua. Aute cred cray whatever. Vice in nostrud scenester sed mixtape. Ad selvage pour-over pinterest mollit aliqua. Flannel raw denim trust fund skateboard. Occaecat quis bespoke dreamcatcher DIY, assumenda plaid pinterest scenester. <a href="http://www.scpr.org/blogs/news/2012/11/20/11161/kpcc-volunteer-nonprofit-organizations-profile/">Let us know</a>! Or <a href="http://www.scpr.org/network/questions/giving">share your story of holiday giving</a>!</p>
+        <p style="margin: 20px 40px 0 40px;">With the 2013 L.A. mayoral election now in full swing, politicians and organizations are now throwing their weight behind the candidates. Below is a listing of the endorsements so far. Check back for updates! </p>
     <div class="clear"></div>
 </div>
 <!-- end intro content -->
