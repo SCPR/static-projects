@@ -1,7 +1,7 @@
 // below are the only variables you need to create the timeline
 
 // title to write to the #timeline-title div
-var timelineTitle = 'Charles Drew University';
+var timelineTitle = 'Timeline: Charles Drew University';
 
 var timelineConfig = {
 
@@ -9,7 +9,7 @@ var timelineConfig = {
     key: '0An8W63YKWOsxdGVkeE9Kd091dHNqRjFwdkt5RmFrbXc',
 
     // add the name of the spreadsheet  'sheet'
-	sheetName: 'Posts'
+	sheetName: 'Charles Drew University'
 }
 // above are the only variables you need to create the timeline
 
