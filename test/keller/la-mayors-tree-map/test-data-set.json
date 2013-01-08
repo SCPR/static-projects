@@ -1,0 +1,573 @@
+var json = {
+    "children": [{
+
+        "children": [
+        {
+            "data": {
+            "playcount": "3000",
+            "$color": "#EFDECD",
+            "$area": 3000
+            },
+        "id": "CBS_candidate_Beutner",
+        "name": "Beutner"
+        }, {
+            "data": {
+            "playcount": "5950",
+            "$color": "#EFDECD",
+            "$area": 5950
+            },
+        "id": "CBS_candidate_Garcetti",
+        "name": "Garcetti"
+        }, {
+            "data": {
+            "playcount": "1850",
+            "$color": "#EFDECD",
+            "$area": 1850
+            },
+        "id": "CBS_candidate_Gruel",
+        "name": "Gruel"
+        }, {
+            "data": {
+            "playcount": "0",
+            "$color": "#EFDECD",
+            "$area": 0
+            },
+        "id": "CBS_candidate_James",
+        "name": "James"
+        }, {
+            "data": {
+            "playcount": "1250",
+            "$color": "#EFDECD",
+            "$area": 1250
+            },
+        "id": "CBS_candidate_Perry",
+        "name": "Perry"
+        }, {
+            "data": {
+            "playcount": "0",
+            "$color": "#EFDECD",
+            "$area": 0
+            },
+        "id": "CBS_candidate_Pleitez",
+        "name": "Pleitez"
+        }],
+
+        "data": {
+            "playcount": "12050",
+            "$area": 12050
+        },
+        "id": "contributor_CBS",
+        "name": "CBS"
+        }, {
+
+        "children": [
+        {
+            "data": {
+            "playcount": "6450",
+            "$color": "#ACE5EE",
+            "$area": 6450
+            },
+        "id": "CAA_candidate_Beutner",
+        "name": "Beutner"
+        }, {
+            "data": {
+            "playcount": "13750",
+            "$color": "#ACE5EE",
+            "$area": 13750
+            },
+        "id": "CAA_candidate_Garcetti",
+        "name": "Garcetti"
+        }, {
+            "data": {
+            "playcount": "7850",
+            "$color": "#ACE5EE",
+            "$area": 7850
+            },
+        "id": "CAA_candidate_Gruel",
+        "name": "Gruel"
+        }, {
+            "data": {
+            "playcount": "1000",
+            "$color": "#ACE5EE",
+            "$area": 1000
+            },
+        "id": "CAA_candidate_James",
+        "name": "James"
+        }, {
+            "data": {
+            "playcount": "1000",
+            "$color": "#ACE5EE",
+            "$area": 1000
+            },
+        "id": "CAA_candidate_Perry",
+        "name": "Perry"
+        }, {
+            "data": {
+            "playcount": "0",
+            "$color": "#ACE5EE",
+            "$area": 0
+            },
+        "id": "CAA_candidate_Pleitez",
+        "name": "Pleitez"
+        }],
+
+        "data": {
+            "playcount": "22200",
+            "$area": 22200
+        },
+        "id": "contributor_CAA",
+        "name": "Creative Artists Agency"
+        }, {
+
+        "children": [
+        {
+            "data": {
+            "playcount": "2100",
+            "$color": "#FFBCD9",
+            "$area": 2100
+            },
+        "id": "Disney_candidate_Beutner",
+        "name": "Beutner"
+        }, {
+            "data": {
+            "playcount": "154000",
+            "$color": "#FFBCD9",
+            "$area": 15400
+            },
+        "id": "Disney_candidate_Garcetti",
+        "name": "Garcetti"
+        }, {
+            "data": {
+            "playcount": "10800",
+            "$color": "#FFBCD9",
+            "$area": 10800
+            },
+        "id": "Disney_candidate_Gruel",
+        "name": "Gruel"
+        }, {
+            "data": {
+            "playcount": "300",
+            "$color": "#FFBCD9",
+            "$area": 300
+            },
+        "id": "Disney_candidate_James",
+        "name": "James"
+        }, {
+            "data": {
+            "playcount": "1550",
+            "$color": "#FFBCD9",
+            "$area": 1550
+            },
+        "id": "Disney_candidate_Perry",
+        "name": "Perry"
+        }, {
+            "data": {
+            "playcount": "0",
+            "$color": "#FFBCD9",
+            "$area": 0
+            },
+        "id": "Disney_candidate_Pleitez",
+        "name": "Pleitez"
+        }],
+
+        "data": {
+            "playcount": "30150",
+            "$area": 30150
+        },
+        "id": "contributor_Disney",
+        "name": "Disney"
+        }, {
+
+        "children": [
+        {
+            "data": {
+            "playcount": "3250",
+            "$color": "#FE4EDA",
+            "$area": 3250
+            },
+        "id": "Fox_candidate_Beutner",
+        "name": "Beutner"
+        }, {
+            "data": {
+            "playcount": "11250",
+            "$color": "#FE4EDA",
+            "$area": 11250
+            },
+        "id": "Fox_candidate_Garcetti",
+        "name": "Garcetti"
+        }, {
+            "data": {
+            "playcount": "7850",
+            "$color": "#FE4EDA",
+            "$area": 7850
+            },
+        "id": "Fox_candidate_Gruel",
+        "name": "Gruel"
+        }, {
+            "data": {
+            "playcount": "100",
+            "$color": "#FE4EDA",
+            "$area": 100
+            },
+        "id": "Fox_candidate_James",
+        "name": "James"
+        }, {
+            "data": {
+            "playcount": "0",
+            "$color": "#FE4EDA",
+            "$area": 0
+            },
+        "id": "Fox_candidate_Perry",
+        "name": "Perry"
+        }, {
+            "data": {
+            "playcount": "100",
+            "$color": "#FE4EDA",
+            "$area": 100
+            },
+        "id": "Fox_candidate_Pleitez",
+        "name": "Pleitez"
+        }],
+
+        "data": {
+            "playcount": "22550",
+            "$area": 22550
+        },
+        "id": "contributor_Fox",
+        "name": "Fox"
+        }, {
+
+        "children": [
+        {
+            "data": {
+            "playcount": "3250",
+            "$color": "#FF9BAA",
+            "$area": 3250
+            },
+        "id": "NBCU_candidate_Beutner",
+        "name": "Beutner"
+        }, {
+            "data": {
+            "playcount": "4550",
+            "$color": "#FF9BAA",
+            "$area": 4550
+            },
+        "id": "NBCU_candidate_Garcetti",
+        "name": "Garcetti"
+        }, {
+            "data": {
+            "playcount": "900",
+            "$color": "#FF9BAA",
+            "$area": 900
+            },
+        "id": "NBCU_candidate_Gruel",
+        "name": "Gruel"
+        }, {
+            "data": {
+            "playcount": "1000",
+            "$color": "#FF9BAA",
+            "$area": 1000
+            },
+        "id": "NBCU_candidate_James",
+        "name": "James"
+        }, {
+            "data": {
+            "playcount": "1000",
+            "$color": "#FF9BAA",
+            "$area": 1000
+            },
+        "id": "NBCU_candidate_Perry",
+        "name": "Perry"
+        }, {
+            "data": {
+            "playcount": "100",
+            "$color": "#FF9BAA",
+            "$area": 100
+            },
+        "id": "NBCU_candidate_Pleitez",
+        "name": "Pleitez"
+        }],
+
+        "data": {
+            "playcount": "10800",
+            "$area": 10800
+        },
+        "id": "contributor_NBCU",
+        "name": "NBC Universal"
+        } , {
+
+        "children": [
+        {
+            "data": {
+            "playcount": "5600",
+            "$color": "#45CEA2",
+            "$area": 5600
+            },
+        "id": "Sony_candidate_Beutner",
+        "name": "Beutner"
+        }, {
+            "data": {
+            "playcount": "9200",
+            "$color": "#45CEA2",
+            "$area": 9200
+            },
+        "id": "Sony_candidate_Garcetti",
+        "name": "Garcetti"
+        }, {
+            "data": {
+            "playcount": "3400",
+            "$color": "#45CEA2",
+            "$area": 3400
+            },
+        "id": "Sony_candidate_Gruel",
+        "name": "Gruel"
+        }, {
+            "data": {
+            "playcount": "750",
+            "$color": "#45CEA2",
+            "$area": 750
+            },
+        "id": "Sony_candidate_James",
+        "name": "James"
+        }, {
+            "data": {
+            "playcount": "1000",
+            "$color": "#45CEA2",
+            "$area": 1000
+            },
+        "id": "Sony_candidate_Perry",
+        "name": "Perry"
+        }, {
+            "data": {
+            "playcount": "0",
+            "$color": "#45CEA2",
+            "$area": 0
+            },
+        "id": "Sony_candidate_Pleitez",
+        "name": "Pleitez"
+        }],
+
+        "data": {
+            "playcount": "19950",
+            "$area": 19950
+        },
+        "id": "contributor_Sony",
+        "name": "Sony"
+        }, {
+
+        "children": [
+        {
+            "data": {
+            "playcount": "5150",
+            "$color": "#000",
+            "$area": 5150
+            },
+        "id": "Time_Warner_candidate_Beutner",
+        "name": "Beutner"
+        }, {
+            "data": {
+            "playcount": "23787",
+            "$color": "#000",
+            "$area": 23787
+            },
+        "id": "Time_Warner_candidate_Garcetti",
+        "name": "Garcetti"
+        }, {
+            "data": {
+            "playcount": "16605",
+            "$color": "#000",
+            "$area": 16605
+            },
+        "id": "Time_Warner_candidate_Gruel",
+        "name": "Gruel"
+        }, {
+            "data": {
+            "playcount": "500",
+            "$color": "#000",
+            "$area": 500
+            },
+        "id": "Time_Warner_candidate_James",
+        "name": "James"
+        }, {
+            "data": {
+            "playcount": "1300",
+            "$color": "#000",
+            "$area": 1300
+            },
+        "id": "Time_Warner_candidate_Perry",
+        "name": "Perry"
+        }, {
+            "data": {
+            "playcount": "0",
+            "$color": "#000",
+            "$area": 0
+            },
+        "id": "Time_Warner_candidate_Pleitez",
+        "name": "Pleitez"
+        }],
+
+        "data": {
+            "playcount": "47342",
+            "$area": 47342
+        },
+        "id": "contributor_Time_Warner",
+        "name": "Time Warner"
+        }, {
+
+        "children": [
+        {
+            "data": {
+            "playcount": "2000",
+            "$color": "#FF43A4",
+            "$area": 2000
+            },
+        "id": "Viacom_candidate_Beutner",
+        "name": "Beutner"
+        }, {
+            "data": {
+            "playcount": "7400",
+            "$color": "#FF43A4",
+            "$area": 7400
+            },
+        "id": "Viacom_candidate_Garcetti",
+        "name": "Garcetti"
+        }, {
+            "data": {
+            "playcount": "11250",
+            "$color": "#FF43A4",
+            "$area": 11250
+            },
+        "id": "Viacom_candidate_Gruel",
+        "name": "Gruel"
+        }, {
+            "data": {
+            "playcount": "400",
+            "$color": "#FF43A4",
+            "$area": 400
+            },
+        "id": "Viacom_candidate_James",
+        "name": "James"
+        }, {
+            "data": {
+            "playcount": "1000",
+            "$color": "#FF43A4",
+            "$area": 1000
+            },
+        "id": "Viacom_candidate_Perry",
+        "name": "Perry"
+        }, {
+            "data": {
+            "playcount": "0",
+            "$color": "#FF43A4",
+            "$area": 0
+            },
+        "id": "Viacom_candidate_Pleitez",
+        "name": "Pleitez"
+        }],
+
+        "data": {
+            "playcount": "22050",
+            "$area": 22050
+        },
+        "id": "contributor_Viacom",
+        "name": "Viacom"
+        }, {
+
+        "children": [
+        {
+            "data": {
+            "playcount": "0",
+            "$color": "#CDC5C2",
+            "$area": 0
+            },
+        "id": "self_employed_candidate_Beutner",
+        "name": "Beutner"
+        }, {
+            "data": {
+            "playcount": "118437.06",
+            "$color": "#CDC5C2",
+            "$area": 118437.06
+            },
+        "id": "self_employed_candidate_Garcetti",
+        "name": "Garcetti"
+        }, {
+            "data": {
+            "playcount": "3450",
+            "$color": "#CDC5C2",
+            "$area": 3450
+            },
+        "id": "self_employed_candidate_Gruel",
+        "name": "Gruel"
+        }, {
+            "data": {
+            "playcount": "0",
+            "$color": "#CDC5C2",
+            "$area": 0
+            },
+        "id": "self_employed_candidate_James",
+        "name": "James"
+        }, {
+            "data": {
+            "playcount": "0",
+            "$color": "#CDC5C2",
+            "$area": 0
+            },
+        "id": "self_employed_candidate_Perry",
+        "name": "Perry"
+        }, {
+            "data": {
+            "playcount": "0",
+            "$color": "#CDC5C2",
+            "$area": 0
+            },
+        "id": "self_employed_candidate_Pleitez",
+        "name": "Pleitez"
+        }],
+
+        "data": {
+            "playcount": "121887.06",
+            "$area": 121887.06
+        },
+        "id": "contributor_self_employed",
+        "name": "Self-employed"
+        }, {
+
+        "children": [
+        {
+            "data": {
+            "playcount": "0",
+            "$color": "#8E4585",
+            "$area": 0
+            },
+        "id": "IATSE_candidate_Beutner",
+        "name": "Beutner"
+        }, {
+            "data": {
+            "playcount": "0",
+            "$color": "#8E4585",
+            "$area": 0
+            },
+        "id": "IATSE_candidate_Garcetti",
+        "name": "Garcetti"
+        }, {
+            "data": {
+            "playcount": "7350",
+            "$color": "#8E4585",
+            "$area": 7350
+            },
+        "id": "IATSE_candidate_Gruel",
+        "name": "Gruel"
+        }],
+
+        "data": {
+            "playcount": "7350",
+            "$area": 7350
+        },
+        "id": "contributor_IATSE",
+        "name": "IATSE"
+        }],
+
+   "data": {},
+   "id": "root",
+   "name": "Contributors: Entertainment"
+};

@@ -1,0 +1,20 @@
+#infovis {position: relative; width: 800px; height: 800px; margin: auto; overflow: hidden; font-family: "Lucida Grande", Verdana; font-size: 14px; text-align: center;}
+
+.node {color:#fff; font-size: 14px; overflow:hidden; cursor:pointer;}
+
+/*TOOLTIPS*/
+.tip {color: #fff; width: 139px; background-color: black; opacity:0.9; filter:alpha(opacity=90); font-size:10px; font-family:Verdana, Geneva, Arial, Helvetica, sans-serif; padding:7px;
+}
+
+.album {width:100px; margin:3px;}
+
+#id-list {background-color:#EEEEEE; border:1px solid #CCCCCC; margin:10px 20px 0 20px; padding:5px; text-align:left; text-indent:2px;}
+
+#id-list table {margin-top:2px;}
+
+/* white */
+.white {color: #606060; border: solid 1px #b7b7b7; background: #fff; background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed)); background: -moz-linear-gradient(top,  #fff,  #ededed); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');}
+
+.white:hover {background: #ededed; background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc)); background: -moz-linear-gradient(top,  #fff,  #dcdcdc); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');}
+
+.white:active {color: #999; background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff)); background: -moz-linear-gradient(top,  #ededed,  #fff); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff');}
