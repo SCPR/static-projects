@@ -4,56 +4,41 @@ var json = {
         "children": [
         {
             "data": {
-            "playcount": "3000",
-            "$color": "#EFDECD",
+            "amount_recv": "3,000",
+            "$color": "#17806D",
             "$area": 3000
             },
         "id": "CBS_candidate_Beutner",
         "name": "Beutner"
         }, {
             "data": {
-            "playcount": "5950",
-            "$color": "#EFDECD",
+            "amount_recv": "5,950",
+            "$color": "#8F509D",
             "$area": 5950
             },
         "id": "CBS_candidate_Garcetti",
         "name": "Garcetti"
         }, {
             "data": {
-            "playcount": "1850",
-            "$color": "#EFDECD",
+            "amount_recv": "1,850",
+            "$color": "#A5694F",
             "$area": 1850
             },
         "id": "CBS_candidate_Gruel",
         "name": "Gruel"
         }, {
             "data": {
-            "playcount": "0",
-            "$color": "#EFDECD",
-            "$area": 0
-            },
-        "id": "CBS_candidate_James",
-        "name": "James"
-        }, {
-            "data": {
-            "playcount": "1250",
-            "$color": "#EFDECD",
+            "amount_recv": "1,250",
+            "$color": "#1A4876",
             "$area": 1250
             },
         "id": "CBS_candidate_Perry",
         "name": "Perry"
-        }, {
-            "data": {
-            "playcount": "0",
-            "$color": "#EFDECD",
-            "$area": 0
-            },
-        "id": "CBS_candidate_Pleitez",
-        "name": "Pleitez"
         }],
 
         "data": {
-            "playcount": "12050",
+            "amount_recv": "12,050",
+            "$color": "#3a424b",
             "$area": 12050
         },
         "id": "contributor_CBS",
@@ -63,56 +48,49 @@ var json = {
         "children": [
         {
             "data": {
-            "playcount": "6450",
-            "$color": "#ACE5EE",
+            "amount_recv": "6,450",
+            "$color": "#17806D",
             "$area": 6450
             },
         "id": "CAA_candidate_Beutner",
         "name": "Beutner"
         }, {
             "data": {
-            "playcount": "13750",
-            "$color": "#ACE5EE",
+            "amount_recv": "13,750",
+            "$color": "#8F509D",
             "$area": 13750
             },
         "id": "CAA_candidate_Garcetti",
         "name": "Garcetti"
         }, {
             "data": {
-            "playcount": "7850",
-            "$color": "#ACE5EE",
+            "amount_recv": "7,850",
+            "$color": "#A5694F",
             "$area": 7850
             },
         "id": "CAA_candidate_Gruel",
         "name": "Gruel"
         }, {
             "data": {
-            "playcount": "1000",
-            "$color": "#ACE5EE",
+            "amount_recv": "1,000",
+            "$color": "#EE204D",
             "$area": 1000
             },
         "id": "CAA_candidate_James",
         "name": "James"
         }, {
             "data": {
-            "playcount": "1000",
-            "$color": "#ACE5EE",
+            "amount_recv": "1,000",
+            "$color": "#1A4876",
             "$area": 1000
             },
         "id": "CAA_candidate_Perry",
         "name": "Perry"
-        }, {
-            "data": {
-            "playcount": "0",
-            "$color": "#ACE5EE",
-            "$area": 0
-            },
-        "id": "CAA_candidate_Pleitez",
-        "name": "Pleitez"
         }],
 
         "data": {
-            "playcount": "22200",
+            "amount_recv": "22,200",
+            "$color": "#3a424b",
             "$area": 22200
         },
         "id": "contributor_CAA",
@@ -122,56 +100,49 @@ var json = {
         "children": [
         {
             "data": {
-            "playcount": "2100",
-            "$color": "#FFBCD9",
+            "amount_recv": "2,100",
+            "$color": "#17806D",
             "$area": 2100
             },
         "id": "Disney_candidate_Beutner",
         "name": "Beutner"
         }, {
             "data": {
-            "playcount": "154000",
-            "$color": "#FFBCD9",
+            "amount_recv": "15,400",
+            "$color": "#8F509D",
             "$area": 15400
             },
         "id": "Disney_candidate_Garcetti",
         "name": "Garcetti"
         }, {
             "data": {
-            "playcount": "10800",
-            "$color": "#FFBCD9",
+            "amount_recv": "10,800",
+            "$color": "#A5694F",
             "$area": 10800
             },
         "id": "Disney_candidate_Gruel",
         "name": "Gruel"
         }, {
             "data": {
-            "playcount": "300",
-            "$color": "#FFBCD9",
+            "amount_recv": "300",
+            "$color": "#EE204D",
             "$area": 300
             },
         "id": "Disney_candidate_James",
         "name": "James"
         }, {
             "data": {
-            "playcount": "1550",
-            "$color": "#FFBCD9",
+            "amount_recv": "1,550",
+            "$color": "#1A4876",
             "$area": 1550
             },
         "id": "Disney_candidate_Perry",
         "name": "Perry"
-        }, {
-            "data": {
-            "playcount": "0",
-            "$color": "#FFBCD9",
-            "$area": 0
-            },
-        "id": "Disney_candidate_Pleitez",
-        "name": "Pleitez"
         }],
 
         "data": {
-            "playcount": "30150",
+            "amount_recv": "30,150",
+            "$color": "#3a424b",
             "$area": 30150
         },
         "id": "contributor_Disney",
@@ -181,47 +152,39 @@ var json = {
         "children": [
         {
             "data": {
-            "playcount": "3250",
-            "$color": "#FE4EDA",
+            "amount_recv": "3,250",
+            "$color": "#17806D",
             "$area": 3250
             },
         "id": "Fox_candidate_Beutner",
         "name": "Beutner"
         }, {
             "data": {
-            "playcount": "11250",
-            "$color": "#FE4EDA",
+            "amount_recv": "11,250",
+            "$color": "#8F509D",
             "$area": 11250
             },
         "id": "Fox_candidate_Garcetti",
         "name": "Garcetti"
         }, {
             "data": {
-            "playcount": "7850",
-            "$color": "#FE4EDA",
+            "amount_recv": "7,850",
+            "$color": "#A5694F",
             "$area": 7850
             },
         "id": "Fox_candidate_Gruel",
         "name": "Gruel"
         }, {
             "data": {
-            "playcount": "100",
-            "$color": "#FE4EDA",
+            "amount_recv": "100",
+            "$color": "#EE204D",
             "$area": 100
             },
         "id": "Fox_candidate_James",
         "name": "James"
         }, {
             "data": {
-            "playcount": "0",
-            "$color": "#FE4EDA",
-            "$area": 0
-            },
-        "id": "Fox_candidate_Perry",
-        "name": "Perry"
-        }, {
-            "data": {
-            "playcount": "100",
+            "amount_recv": "100",
             "$color": "#FE4EDA",
             "$area": 100
             },
@@ -230,7 +193,8 @@ var json = {
         }],
 
         "data": {
-            "playcount": "22550",
+            "amount_recv": "22,550",
+            "$color": "#3a424b",
             "$area": 22550
         },
         "id": "contributor_Fox",
@@ -240,47 +204,47 @@ var json = {
         "children": [
         {
             "data": {
-            "playcount": "3250",
-            "$color": "#FF9BAA",
+            "amount_recv": "3,250",
+            "$color": "#17806D",
             "$area": 3250
             },
         "id": "NBCU_candidate_Beutner",
         "name": "Beutner"
         }, {
             "data": {
-            "playcount": "4550",
-            "$color": "#FF9BAA",
+            "amount_recv": "4,550",
+            "$color": "#8F509D",
             "$area": 4550
             },
         "id": "NBCU_candidate_Garcetti",
         "name": "Garcetti"
         }, {
             "data": {
-            "playcount": "900",
-            "$color": "#FF9BAA",
+            "amount_recv": "900",
+            "$color": "#A5694F",
             "$area": 900
             },
         "id": "NBCU_candidate_Gruel",
         "name": "Gruel"
         }, {
             "data": {
-            "playcount": "1000",
-            "$color": "#FF9BAA",
+            "amount_recv": "1,000",
+            "$color": "#EE204D",
             "$area": 1000
             },
         "id": "NBCU_candidate_James",
         "name": "James"
         }, {
             "data": {
-            "playcount": "1000",
-            "$color": "#FF9BAA",
+            "amount_recv": "1,000",
+            "$color": "#1A4876",
             "$area": 1000
             },
         "id": "NBCU_candidate_Perry",
         "name": "Perry"
         }, {
             "data": {
-            "playcount": "100",
+            "amount_recv": "100",
             "$color": "#FF9BAA",
             "$area": 100
             },
@@ -289,7 +253,8 @@ var json = {
         }],
 
         "data": {
-            "playcount": "10800",
+            "amount_recv": "10,800",
+            "$color": "#3a424b",
             "$area": 10800
         },
         "id": "contributor_NBCU",
@@ -299,56 +264,49 @@ var json = {
         "children": [
         {
             "data": {
-            "playcount": "5600",
-            "$color": "#45CEA2",
+            "amount_recv": "5,600",
+            "$color": "#17806D",
             "$area": 5600
             },
         "id": "Sony_candidate_Beutner",
         "name": "Beutner"
         }, {
             "data": {
-            "playcount": "9200",
-            "$color": "#45CEA2",
+            "amount_recv": "9,200",
+            "$color": "#8F509D",
             "$area": 9200
             },
         "id": "Sony_candidate_Garcetti",
         "name": "Garcetti"
         }, {
             "data": {
-            "playcount": "3400",
-            "$color": "#45CEA2",
+            "amount_recv": "3,400",
+            "$color": "#A5694F",
             "$area": 3400
             },
         "id": "Sony_candidate_Gruel",
         "name": "Gruel"
         }, {
             "data": {
-            "playcount": "750",
-            "$color": "#45CEA2",
+            "amount_recv": "750",
+            "$color": "#EE204D",
             "$area": 750
             },
         "id": "Sony_candidate_James",
         "name": "James"
         }, {
             "data": {
-            "playcount": "1000",
-            "$color": "#45CEA2",
+            "amount_recv": "1,000",
+            "$color": "#1A4876",
             "$area": 1000
             },
         "id": "Sony_candidate_Perry",
         "name": "Perry"
-        }, {
-            "data": {
-            "playcount": "0",
-            "$color": "#45CEA2",
-            "$area": 0
-            },
-        "id": "Sony_candidate_Pleitez",
-        "name": "Pleitez"
         }],
 
         "data": {
-            "playcount": "19950",
+            "amount_recv": "19,950",
+            "$color": "#3a424b",
             "$area": 19950
         },
         "id": "contributor_Sony",
@@ -358,56 +316,49 @@ var json = {
         "children": [
         {
             "data": {
-            "playcount": "5150",
-            "$color": "#000",
+            "amount_recv": "5,150",
+            "$color": "#17806D",
             "$area": 5150
             },
         "id": "Time_Warner_candidate_Beutner",
         "name": "Beutner"
         }, {
             "data": {
-            "playcount": "23787",
-            "$color": "#000",
+            "amount_recv": "23,787",
+            "$color": "#8F509D",
             "$area": 23787
             },
         "id": "Time_Warner_candidate_Garcetti",
         "name": "Garcetti"
         }, {
             "data": {
-            "playcount": "16605",
-            "$color": "#000",
+            "amount_recv": "16,605",
+            "$color": "#A5694F",
             "$area": 16605
             },
         "id": "Time_Warner_candidate_Gruel",
         "name": "Gruel"
         }, {
             "data": {
-            "playcount": "500",
-            "$color": "#000",
+            "amount_recv": "500",
+            "$color": "#EE204D",
             "$area": 500
             },
         "id": "Time_Warner_candidate_James",
         "name": "James"
         }, {
             "data": {
-            "playcount": "1300",
-            "$color": "#000",
+            "amount_recv": "1,300",
+            "$color": "#1A4876",
             "$area": 1300
             },
         "id": "Time_Warner_candidate_Perry",
         "name": "Perry"
-        }, {
-            "data": {
-            "playcount": "0",
-            "$color": "#000",
-            "$area": 0
-            },
-        "id": "Time_Warner_candidate_Pleitez",
-        "name": "Pleitez"
         }],
 
         "data": {
-            "playcount": "47342",
+            "amount_recv": "47,342",
+            "$color": "#3a424b",
             "$area": 47342
         },
         "id": "contributor_Time_Warner",
@@ -417,56 +368,49 @@ var json = {
         "children": [
         {
             "data": {
-            "playcount": "2000",
-            "$color": "#FF43A4",
+            "amount_recv": "2,000",
+            "$color": "#17806D",
             "$area": 2000
             },
         "id": "Viacom_candidate_Beutner",
         "name": "Beutner"
         }, {
             "data": {
-            "playcount": "7400",
-            "$color": "#FF43A4",
+            "amount_recv": "7,400",
+            "$color": "#8F509D",
             "$area": 7400
             },
         "id": "Viacom_candidate_Garcetti",
         "name": "Garcetti"
         }, {
             "data": {
-            "playcount": "11250",
-            "$color": "#FF43A4",
+            "amount_recv": "11,250",
+            "$color": "#A5694F",
             "$area": 11250
             },
         "id": "Viacom_candidate_Gruel",
         "name": "Gruel"
         }, {
             "data": {
-            "playcount": "400",
-            "$color": "#FF43A4",
+            "amount_recv": "400",
+            "$color": "#EE204D",
             "$area": 400
             },
         "id": "Viacom_candidate_James",
         "name": "James"
         }, {
             "data": {
-            "playcount": "1000",
-            "$color": "#FF43A4",
+            "amount_recv": "1,000",
+            "$color": "#1A4876",
             "$area": 1000
             },
         "id": "Viacom_candidate_Perry",
         "name": "Perry"
-        }, {
-            "data": {
-            "playcount": "0",
-            "$color": "#FF43A4",
-            "$area": 0
-            },
-        "id": "Viacom_candidate_Pleitez",
-        "name": "Pleitez"
         }],
 
         "data": {
-            "playcount": "22050",
+            "amount_recv": "22,050",
+            "$color": "#3a424b",
             "$area": 22050
         },
         "id": "contributor_Viacom",
@@ -476,56 +420,25 @@ var json = {
         "children": [
         {
             "data": {
-            "playcount": "0",
-            "$color": "#CDC5C2",
-            "$area": 0
-            },
-        "id": "self_employed_candidate_Beutner",
-        "name": "Beutner"
-        }, {
-            "data": {
-            "playcount": "118437.06",
-            "$color": "#CDC5C2",
+            "amount_recv": "118,437.06",
+            "$color": "#8F509D",
             "$area": 118437.06
             },
         "id": "self_employed_candidate_Garcetti",
         "name": "Garcetti"
         }, {
             "data": {
-            "playcount": "3450",
-            "$color": "#CDC5C2",
+            "amount_recv": "3,450",
+            "$color": "#A5694F",
             "$area": 3450
             },
         "id": "self_employed_candidate_Gruel",
         "name": "Gruel"
-        }, {
-            "data": {
-            "playcount": "0",
-            "$color": "#CDC5C2",
-            "$area": 0
-            },
-        "id": "self_employed_candidate_James",
-        "name": "James"
-        }, {
-            "data": {
-            "playcount": "0",
-            "$color": "#CDC5C2",
-            "$area": 0
-            },
-        "id": "self_employed_candidate_Perry",
-        "name": "Perry"
-        }, {
-            "data": {
-            "playcount": "0",
-            "$color": "#CDC5C2",
-            "$area": 0
-            },
-        "id": "self_employed_candidate_Pleitez",
-        "name": "Pleitez"
         }],
 
         "data": {
-            "playcount": "121887.06",
+            "amount_recv": "121,887.06",
+            "$color": "#3a424b",
             "$area": 121887.06
         },
         "id": "contributor_self_employed",
@@ -535,24 +448,8 @@ var json = {
         "children": [
         {
             "data": {
-            "playcount": "0",
-            "$color": "#8E4585",
-            "$area": 0
-            },
-        "id": "IATSE_candidate_Beutner",
-        "name": "Beutner"
-        }, {
-            "data": {
-            "playcount": "0",
-            "$color": "#8E4585",
-            "$area": 0
-            },
-        "id": "IATSE_candidate_Garcetti",
-        "name": "Garcetti"
-        }, {
-            "data": {
-            "playcount": "7350",
-            "$color": "#8E4585",
+            "amount_recv": "7,350",
+            "$color": "#A5694F",
             "$area": 7350
             },
         "id": "IATSE_candidate_Gruel",
@@ -560,14 +457,15 @@ var json = {
         }],
 
         "data": {
-            "playcount": "7350",
+            "amount_recv": "7,350",
+            "$color": "#3a424b",
             "$area": 7350
         },
         "id": "contributor_IATSE",
         "name": "IATSE"
         }],
 
-   "data": {},
+   "data": {"$color": "#000"},
    "id": "root",
-   "name": "Contributors: Entertainment"
+   "name": "Who does Hollywood support for mayor?"
 };

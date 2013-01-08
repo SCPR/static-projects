@@ -18,7 +18,7 @@ function createVisual(){
     injectInto: 'infovis',
 
     //parent box title heights
-    titleHeight: 30,
+    titleHeight: 40,
 
     //enable animations
     animate: animate,
@@ -58,8 +58,8 @@ function createVisual(){
 
             var data = node.data;
 
-            if(data.playcount) {
-                html += "Amount: $" + data.playcount;
+            if(data.amount_recv) {
+                html += "Amount: $" + data.amount_recv;
             }
 
             if(data.image) {
@@ -76,13 +76,13 @@ function createVisual(){
         domElement.innerHTML = node.name;
         var style = domElement.style;
         style.display = '';
-        style.border = '1px solid transparent';
+        style.border = '2px solid #ffffff';
         domElement.onmouseover = function() {
-            style.border = '1px solid #9FD4FF';
+            style.border = '2px solid #000000';
         };
 
         domElement.onmouseout = function() {
-            style.border = '1px solid transparent';
+            style.border = '2px solid #ffffff';
         };
     }
 
