@@ -29,10 +29,10 @@ body.minimal footer ul li:last-child { padding-right: 0; border-right: none; }
 .container-fluid { max-width: 1110px; margin: 0 auto;}
 
 /* typography */
-#data-container h1 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 36px; font-weight: 800; line-height: 30px; color: #2B2B2B;}
-#data-container h2 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 28px; font-weight: 700; line-height: 22px; color: #2B2B2B;}
-#data-container h3 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 18px; color: #2B2B2B;}
-#data-container h4 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; line-height: 12px; color: #2B2B2B;}
+#data-container h1 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 36px; font-weight: 800; line-height: 40px; color: #2B2B2B;}
+#data-container h2 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 28px; font-weight: 700; line-height: 32px; color: #2B2B2B;}
+#data-container h3 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 28px; color: #2B2B2B;}
+#data-container h4 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; line-height: 22px; color: #2B2B2B;}
 #data-container .kicker {font-size: 12px; text-transform: uppercase;}
 #data-container .lowercase {text-transform: lowercase;}
 #data-container .underline {text-decoration: underline;}
