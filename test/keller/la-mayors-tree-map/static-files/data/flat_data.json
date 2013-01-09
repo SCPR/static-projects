@@ -5,7 +5,7 @@ var json = {
         {
             "data": {
             "amount_recv": "3,000",
-            "$color": "#17806D",
+            "$color": "#2DDEED",
             "$area": 3000
             },
         "id": "CBS_candidate_Beutner",
@@ -13,7 +13,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "5,950",
-            "$color": "#8F509D",
+            "$color": "#ED7C2D",
             "$area": 5950
             },
         "id": "CBS_candidate_Garcetti",
@@ -21,15 +21,15 @@ var json = {
         }, {
             "data": {
             "amount_recv": "1,850",
-            "$color": "#A5694F",
+            "$color": "#A14B0F",
             "$area": 1850
             },
-        "id": "CBS_candidate_Gruel",
-        "name": "Gruel"
+        "id": "CBS_candidate_Greuel",
+        "name": "Greuel"
         }, {
             "data": {
             "amount_recv": "1,250",
-            "$color": "#1A4876",
+            "$color": "#FF944A",
             "$area": 1250
             },
         "id": "CBS_candidate_Perry",
@@ -49,7 +49,7 @@ var json = {
         {
             "data": {
             "amount_recv": "6,450",
-            "$color": "#17806D",
+            "$color": "#2DDEED",
             "$area": 6450
             },
         "id": "CAA_candidate_Beutner",
@@ -57,7 +57,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "13,750",
-            "$color": "#8F509D",
+            "$color": "#ED7C2D",
             "$area": 13750
             },
         "id": "CAA_candidate_Garcetti",
@@ -65,15 +65,15 @@ var json = {
         }, {
             "data": {
             "amount_recv": "7,850",
-            "$color": "#A5694F",
+            "$color": "#A14B0F",
             "$area": 7850
             },
-        "id": "CAA_candidate_Gruel",
-        "name": "Gruel"
+        "id": "CAA_candidate_Greuel",
+        "name": "Greuel"
         }, {
             "data": {
             "amount_recv": "1,000",
-            "$color": "#EE204D",
+            "$color": "#0094A1",
             "$area": 1000
             },
         "id": "CAA_candidate_James",
@@ -81,7 +81,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "1,000",
-            "$color": "#1A4876",
+            "$color": "#FF944A",
             "$area": 1000
             },
         "id": "CAA_candidate_Perry",
@@ -101,7 +101,7 @@ var json = {
         {
             "data": {
             "amount_recv": "2,100",
-            "$color": "#17806D",
+            "$color": "#2DDEED",
             "$area": 2100
             },
         "id": "Disney_candidate_Beutner",
@@ -109,7 +109,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "15,400",
-            "$color": "#8F509D",
+            "$color": "#ED7C2D",
             "$area": 15400
             },
         "id": "Disney_candidate_Garcetti",
@@ -117,15 +117,15 @@ var json = {
         }, {
             "data": {
             "amount_recv": "10,800",
-            "$color": "#A5694F",
+            "$color": "#A14B0F",
             "$area": 10800
             },
-        "id": "Disney_candidate_Gruel",
-        "name": "Gruel"
+        "id": "Disney_candidate_Greuel",
+        "name": "Greuel"
         }, {
             "data": {
             "amount_recv": "300",
-            "$color": "#EE204D",
+            "$color": "#0094A1",
             "$area": 300
             },
         "id": "Disney_candidate_James",
@@ -133,7 +133,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "1,550",
-            "$color": "#1A4876",
+            "$color": "#FF944A",
             "$area": 1550
             },
         "id": "Disney_candidate_Perry",
@@ -153,7 +153,7 @@ var json = {
         {
             "data": {
             "amount_recv": "3,250",
-            "$color": "#17806D",
+            "$color": "#2DDEED",
             "$area": 3250
             },
         "id": "Fox_candidate_Beutner",
@@ -161,7 +161,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "11,250",
-            "$color": "#8F509D",
+            "$color": "#ED7C2D",
             "$area": 11250
             },
         "id": "Fox_candidate_Garcetti",
@@ -169,15 +169,15 @@ var json = {
         }, {
             "data": {
             "amount_recv": "7,850",
-            "$color": "#A5694F",
+            "$color": "#A14B0F",
             "$area": 7850
             },
-        "id": "Fox_candidate_Gruel",
-        "name": "Gruel"
+        "id": "Fox_candidate_Greuel",
+        "name": "Greuel"
         }, {
             "data": {
             "amount_recv": "100",
-            "$color": "#EE204D",
+            "$color": "#0094A1",
             "$area": 100
             },
         "id": "Fox_candidate_James",
@@ -185,7 +185,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "100",
-            "$color": "#FE4EDA",
+            "$color": "#542504",
             "$area": 100
             },
         "id": "Fox_candidate_Pleitez",
@@ -205,7 +205,7 @@ var json = {
         {
             "data": {
             "amount_recv": "3,250",
-            "$color": "#17806D",
+            "$color": "#2DDEED",
             "$area": 3250
             },
         "id": "NBCU_candidate_Beutner",
@@ -213,7 +213,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "4,550",
-            "$color": "#8F509D",
+            "$color": "#ED7C2D",
             "$area": 4550
             },
         "id": "NBCU_candidate_Garcetti",
@@ -221,15 +221,15 @@ var json = {
         }, {
             "data": {
             "amount_recv": "900",
-            "$color": "#A5694F",
+            "$color": "#A14B0F",
             "$area": 900
             },
-        "id": "NBCU_candidate_Gruel",
-        "name": "Gruel"
+        "id": "NBCU_candidate_Greuel",
+        "name": "Greuel"
         }, {
             "data": {
             "amount_recv": "1,000",
-            "$color": "#EE204D",
+            "$color": "#0094A1",
             "$area": 1000
             },
         "id": "NBCU_candidate_James",
@@ -237,7 +237,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "1,000",
-            "$color": "#1A4876",
+            "$color": "#FF944A",
             "$area": 1000
             },
         "id": "NBCU_candidate_Perry",
@@ -265,7 +265,7 @@ var json = {
         {
             "data": {
             "amount_recv": "5,600",
-            "$color": "#17806D",
+            "$color": "#2DDEED",
             "$area": 5600
             },
         "id": "Sony_candidate_Beutner",
@@ -273,7 +273,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "9,200",
-            "$color": "#8F509D",
+            "$color": "#ED7C2D",
             "$area": 9200
             },
         "id": "Sony_candidate_Garcetti",
@@ -281,15 +281,15 @@ var json = {
         }, {
             "data": {
             "amount_recv": "3,400",
-            "$color": "#A5694F",
+            "$color": "#A14B0F",
             "$area": 3400
             },
-        "id": "Sony_candidate_Gruel",
-        "name": "Gruel"
+        "id": "Sony_candidate_Greuel",
+        "name": "Greuel"
         }, {
             "data": {
             "amount_recv": "750",
-            "$color": "#EE204D",
+            "$color": "#0094A1",
             "$area": 750
             },
         "id": "Sony_candidate_James",
@@ -297,7 +297,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "1,000",
-            "$color": "#1A4876",
+            "$color": "#FF944A",
             "$area": 1000
             },
         "id": "Sony_candidate_Perry",
@@ -317,7 +317,7 @@ var json = {
         {
             "data": {
             "amount_recv": "5,150",
-            "$color": "#17806D",
+            "$color": "#2DDEED",
             "$area": 5150
             },
         "id": "Time_Warner_candidate_Beutner",
@@ -325,7 +325,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "23,787",
-            "$color": "#8F509D",
+            "$color": "#ED7C2D",
             "$area": 23787
             },
         "id": "Time_Warner_candidate_Garcetti",
@@ -333,15 +333,15 @@ var json = {
         }, {
             "data": {
             "amount_recv": "16,605",
-            "$color": "#A5694F",
+            "$color": "#A14B0F",
             "$area": 16605
             },
-        "id": "Time_Warner_candidate_Gruel",
-        "name": "Gruel"
+        "id": "Time_Warner_candidate_Greuel",
+        "name": "Greuel"
         }, {
             "data": {
             "amount_recv": "500",
-            "$color": "#EE204D",
+            "$color": "#0094A1",
             "$area": 500
             },
         "id": "Time_Warner_candidate_James",
@@ -349,7 +349,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "1,300",
-            "$color": "#1A4876",
+            "$color": "#FF944A",
             "$area": 1300
             },
         "id": "Time_Warner_candidate_Perry",
@@ -369,7 +369,7 @@ var json = {
         {
             "data": {
             "amount_recv": "2,000",
-            "$color": "#17806D",
+            "$color": "#2DDEED",
             "$area": 2000
             },
         "id": "Viacom_candidate_Beutner",
@@ -377,7 +377,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "7,400",
-            "$color": "#8F509D",
+            "$color": "#ED7C2D",
             "$area": 7400
             },
         "id": "Viacom_candidate_Garcetti",
@@ -385,15 +385,15 @@ var json = {
         }, {
             "data": {
             "amount_recv": "11,250",
-            "$color": "#A5694F",
+            "$color": "#A14B0F",
             "$area": 11250
             },
-        "id": "Viacom_candidate_Gruel",
-        "name": "Gruel"
+        "id": "Viacom_candidate_Greuel",
+        "name": "Greuel"
         }, {
             "data": {
             "amount_recv": "400",
-            "$color": "#EE204D",
+            "$color": "#0094A1",
             "$area": 400
             },
         "id": "Viacom_candidate_James",
@@ -401,7 +401,7 @@ var json = {
         }, {
             "data": {
             "amount_recv": "1,000",
-            "$color": "#1A4876",
+            "$color": "#FF944A",
             "$area": 1000
             },
         "id": "Viacom_candidate_Perry",
@@ -421,7 +421,7 @@ var json = {
         {
             "data": {
             "amount_recv": "118,437.06",
-            "$color": "#8F509D",
+            "$color": "#ED7C2D",
             "$area": 118437.06
             },
         "id": "self_employed_candidate_Garcetti",
@@ -429,11 +429,11 @@ var json = {
         }, {
             "data": {
             "amount_recv": "3,450",
-            "$color": "#A5694F",
+            "$color": "#A14B0F",
             "$area": 3450
             },
-        "id": "self_employed_candidate_Gruel",
-        "name": "Gruel"
+        "id": "self_employed_candidate_Greuel",
+        "name": "Greuel"
         }],
 
         "data": {
@@ -449,11 +449,11 @@ var json = {
         {
             "data": {
             "amount_recv": "7,350",
-            "$color": "#A5694F",
+            "$color": "#A14B0F",
             "$area": 7350
             },
-        "id": "IATSE_candidate_Gruel",
-        "name": "Gruel"
+        "id": "IATSE_candidate_Greuel",
+        "name": "Greuel"
         }],
 
         "data": {
