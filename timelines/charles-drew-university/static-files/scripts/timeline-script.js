@@ -9,7 +9,7 @@ var timelineConfig = {
     key: '0An8W63YKWOsxdGVkeE9Kd091dHNqRjFwdkt5RmFrbXc',
 
     // add the name of the spreadsheet  'sheet'
-	sheetName: 'Charles Drew University'
+	sheetName: 'Posts'
 }
 // above are the only variables you need to create the timeline
 
