@@ -38,7 +38,7 @@ var json = {
 
         "data": {
             "amount_recv": "12,050",
-            "$color": "#3a424b",
+            "$color": "#3d3e3d",
             "$area": 12050
         },
         "id": "contributor_CBS",
@@ -90,7 +90,7 @@ var json = {
 
         "data": {
             "amount_recv": "22,200",
-            "$color": "#3a424b",
+            "$color": "#3d3e3d",
             "$area": 22200
         },
         "id": "contributor_CAA",
@@ -142,7 +142,7 @@ var json = {
 
         "data": {
             "amount_recv": "30,150",
-            "$color": "#3a424b",
+            "$color": "#3d3e3d",
             "$area": 30150
         },
         "id": "contributor_Disney",
@@ -194,7 +194,7 @@ var json = {
 
         "data": {
             "amount_recv": "22,550",
-            "$color": "#3a424b",
+            "$color": "#3d3e3d",
             "$area": 22550
         },
         "id": "contributor_Fox",
@@ -254,7 +254,7 @@ var json = {
 
         "data": {
             "amount_recv": "10,800",
-            "$color": "#3a424b",
+            "$color": "#3d3e3d",
             "$area": 10800
         },
         "id": "contributor_NBCU",
@@ -306,7 +306,7 @@ var json = {
 
         "data": {
             "amount_recv": "19,950",
-            "$color": "#3a424b",
+            "$color": "#3d3e3d",
             "$area": 19950
         },
         "id": "contributor_Sony",
@@ -358,7 +358,7 @@ var json = {
 
         "data": {
             "amount_recv": "47,342",
-            "$color": "#3a424b",
+            "$color": "#3d3e3d",
             "$area": 47342
         },
         "id": "contributor_Time_Warner",
@@ -410,7 +410,7 @@ var json = {
 
         "data": {
             "amount_recv": "22,050",
-            "$color": "#3a424b",
+            "$color": "#3d3e3d",
             "$area": 22050
         },
         "id": "contributor_Viacom",
@@ -438,7 +438,7 @@ var json = {
 
         "data": {
             "amount_recv": "121,887.06",
-            "$color": "#3a424b",
+            "$color": "#3d3e3d",
             "$area": 121887.06
         },
         "id": "contributor_self_employed",
@@ -458,7 +458,7 @@ var json = {
 
         "data": {
             "amount_recv": "7,350",
-            "$color": "#3a424b",
+            "$color": "#3d3e3d",
             "$area": 7350
         },
         "id": "contributor_IATSE",
