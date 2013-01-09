@@ -1,1 +1,3 @@
-#data-map-canvas {width: 100%; height: 600px; margin: 10px 0 10px 0;}
+#article-header {height: auto; margin: 0 0 35px 0;}
+.candidate-container {width: 100%; height: auto; margin: 0 0 35px 0;}
+.candidate-container .image-container img {width:150px; margin: 10px 15px 0 0;}

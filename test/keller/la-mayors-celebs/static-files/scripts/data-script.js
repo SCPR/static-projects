@@ -1,69 +1,60 @@
-		// begin main function
-		jqueryNoConflict(document).ready(function() {
+// begin main function
+jqueryNoConflict(document).ready(function() {
+    getFusionTableData();
+});
+// end
 
-		    getFusionTableData();
+// retrieve json from Fusion Table
+function getFusionTableData() {
+    var tableID = '1JoBPVazF_LHrzNAKzPWW6CLLEe8S5V7hbvScbfY';
+    var query = 'SELECT * FROM ' + tableID;
+    var encodedQuery = encodeURIComponent(query);
+    var urlPrefix = 'https://www.googleapis.com/fusiontables/v1/query?key=';
+    var apiKey = 'AIzaSyBRs68D8JTAbrLy6R_zsYABLMgOV6zxC-4';
+    var urlSuffix = '&sql=' + encodedQuery + '&callback=?';
+    var url = urlPrefix + apiKey + urlSuffix
+    jqueryNoConflict.getJSON(url, createArrayFrom);
+};
+// end
 
-		});
-		// end
+// organize json data
+function createArrayFrom(data){
 
-		// retrieve json from Fusion Table
-		function getFusionTableData() {
-		    var tableID = '1JoBPVazF_LHrzNAKzPWW6CLLEe8S5V7hbvScbfY';
-		    var query = 'SELECT * FROM ' + tableID;
-		    var encodedQuery = encodeURIComponent(query);
-		    var urlPrefix = 'https://www.googleapis.com/fusiontables/v1/query?key=';
-		    var apiKey = 'AIzaSyBRs68D8JTAbrLy6R_zsYABLMgOV6zxC-4';
-		    var urlSuffix = '&sql=' + encodedQuery + '&callback=?';
-		    var url = urlPrefix + apiKey + urlSuffix
-		    jqueryNoConflict.getJSON(url, createArrayFrom);
-		};
-		// end
+    // begin loop
+    for (var i = 0; i < data.rows.length; i++) {
 
-		// organize json data
-		function createArrayFrom(data){
+        // set each item of loop to variable
+        var row = data.rows[i];
 
-		    console.log(data);
+        // set each item of object to variable
+        var Endorser = row[0];
+        var Position = row[1];
+        var Endorsee = row[2];
+        var Endorsee_Image = row[3];
+        var Story_Url = row[4];
 
-		    // begin loop
-		    for (var i = 0; i < data.rows.length; i++) {
+        if(Endorsee == "Eric Garcetti") {
+            jqueryNoConflict("#data-container-garcetti").append(
+                '<a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
 
-		        // set each item of loop to variable
-		        var row = data.rows[i];
+        } else if(Endorsee == "Wendy Greuel") {
+            jqueryNoConflict("#data-container-greuel").append(
+                '<a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
 
-		        // set each item of object to variable
-		        var Endorser = row[0];
-		        var Position = row[1];
-		        var Endorsee = row[2];
-		        var Endorsee_Image = row[3];
-		        var Story_Url = row[4];
+        } else if(Endorsee == "Jan Perry") {
+            jqueryNoConflict("#data-container-perry").append(
+                '<a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
 
-			 					if(Endorsee == "Eric Garcetti") {
-			                        jqueryNoConflict("#data-container-garcetti").append(
-								        ' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
+        } else if(Endorsee == "Kevin James") {
+            jqueryNoConflict("#data-container-james").append(
+                '<a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
 
-						        } else if(Endorsee == "Wendy Greuel") {
-					                    jqueryNoConflict("#data-container-greuel").append(
-								        ' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
+        } else {
 
-					            } else if(Endorsee == "Jan Perry") {
-				                    jqueryNoConflict("#data-container-perry").append(
-							        ' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
+        }
 
-				                } else if(Endorsee == "Kevin James") {
-			                    jqueryNoConflict("#data-container-james").append(
-						        ' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
+   };
+    // end loop
 
-								} else {
-        						console.log("that's it, bitch");
-								}
-
-		        // write data to div
-		        //jqueryNoConflict('#data-container').append(
-		         //  '<h1> <img src="' + Endorsee_Image + ' /"> ' + Endorsee + '</h1>');
-		        //  '<p> <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '</p>');
-
-		   };
-		    // end loop
-
-		};
-		// end
+};
+// end function

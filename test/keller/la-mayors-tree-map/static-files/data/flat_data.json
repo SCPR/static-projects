@@ -467,5 +467,5 @@ var json = {
 
    "data": {"$color": "#000"},
    "id": "root",
-   "name": "Who is Hollywood supporting for mayor?"
+   "name": "Whose employees are supporting mayoral candidates?"
 };
