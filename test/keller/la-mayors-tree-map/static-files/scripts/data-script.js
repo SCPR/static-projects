@@ -75,6 +75,7 @@ function createVisual(){
     onCreateLabel: function(domElement, node){
         domElement.innerHTML = node.name;
         var style = domElement.style;
+
         style.display = '';
         style.border = '1px solid #87CEFA';
 
