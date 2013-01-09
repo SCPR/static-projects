@@ -29,6 +29,7 @@ body.minimal footer ul li:last-child { padding-right: 0; border-right: none; }
 .container-fluid { max-width: 1110px; margin: 0 auto;}
 
 /* typography */
+h1, h2, h3, h4, h5, h6 {margin: 0 0;}
 #data-container h1 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 36px; font-weight: 800; line-height: 40px; color: #2B2B2B;}
 #data-container h2 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 28px; font-weight: 700; line-height: 32px; color: #2B2B2B;}
 #data-container h3 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 700; line-height: 28px; color: #2B2B2B;}
@@ -43,11 +44,6 @@ body.minimal footer ul li:last-child { padding-right: 0; border-right: none; }
 #data-container .story-text {}
 #data-container .details-intro {}
 #data-container .details-drilldown {}
-
-
-
-
-
 
 /* media queries */
 
