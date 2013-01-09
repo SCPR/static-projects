@@ -76,13 +76,14 @@ function createVisual(){
         domElement.innerHTML = node.name;
         var style = domElement.style;
         style.display = '';
-        style.border = '2px solid #ffffff';
+        style.border = '1px solid #87CEFA';
+
         domElement.onmouseover = function() {
-            style.border = '2px solid #000000';
+            style.border = '1px solid #fff';
         };
 
         domElement.onmouseout = function() {
-            style.border = '2px solid #ffffff';
+            style.border = '1px solid #87CEFA';
         };
     }
 
