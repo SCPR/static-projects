@@ -82,6 +82,7 @@ var json = {
             "data": {
             "amount_recv": "1,000",
             "$color": "#00A6D9",
+            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 1000
             },
         "id": "CAA_candidate_James",
@@ -139,6 +140,7 @@ var json = {
             "data": {
             "amount_recv": "300",
             "$color": "#00A6D9",
+            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 300
             },
         "id": "Disney_candidate_James",
@@ -196,6 +198,7 @@ var json = {
             "data": {
             "amount_recv": "100",
             "$color": "#00A6D9",
+            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 100
             },
         "id": "Fox_candidate_James",
@@ -252,6 +255,7 @@ var json = {
             "data": {
             "amount_recv": "1,000",
             "$color": "#00A6D9",
+            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 1000
             },
         "id": "NBCU_candidate_James",
@@ -317,6 +321,7 @@ var json = {
             "data": {
             "amount_recv": "750",
             "$color": "#00A6D9",
+            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 750
             },
         "id": "Sony_candidate_James",
@@ -374,6 +379,7 @@ var json = {
             "data": {
             "amount_recv": "500",
             "$color": "#00A6D9",
+            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 500
             },
         "id": "Time_Warner_candidate_James",
@@ -431,6 +437,7 @@ var json = {
             "data": {
             "amount_recv": "400",
             "$color": "#00A6D9",
+            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 400
             },
         "id": "Viacom_candidate_James",
