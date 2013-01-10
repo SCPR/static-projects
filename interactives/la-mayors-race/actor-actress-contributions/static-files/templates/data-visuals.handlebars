@@ -1,161 +1,239 @@
 <!-- begin -->
 <div class="candidate-container">
-    <div class="row-fluid">
-        <!-- begin candidate -->
-        <div class="span6">
-            <div class="span3">
-                <div class="image-container">
-                <img src="http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_eric_garcetti.jpg" alt="Eric Garcetti" />
-                </div>
-            </div>
-<!--
-            <div class="span10">
-                {{#objects}}
-                    {{#is candidate 'Eric Garcetti'}}
-                        <h3>{{candidate}}</h3>
-                            <ul>
-                            {{#donors}}
-                                {{#gte donorContribution 700}}
-                                    <li><strong>{{donorName}}</strong>: ${{addCommas donorContribution}}</li>
-                                {{else}}
-                                {{/gte}}
-                            {{/donors}}
-                            </ul>
-                        <br />
-                    {{/is}}
-                {{/objects}}
-            </div>
--->
-
-            <div class="span8">
-                <h3>Eric Garcetti ($42,580)</h3>
-            </div>
-            <div class="span4">
-                <ul>
-                    <li><strong>Alicia Mitchell</strong>: $1,300</li>
-                    <li><strong>Amy Aquino</strong>: $1,000</li>
-                    <li><strong>Amy Poehler</strong>: $1,300</li>
-                    <li><strong>Amy Smart</strong>: $750</li>
-                    <li><strong>Buckley Norris</strong>: $1,000</li>
-                    <li><strong>Emily Foy</strong>: $1,300</li>
-                    <li><strong>Evan Arnold</strong>: $1,300</li>
-                    <li><strong>Harry J. Lennix</strong>: $1,300</li>
-                    <li><strong>Heather Thomas</strong>: $1,050</li>
-                    <li><strong>Hill Harper</strong>: $1,000</li>
-                    <li><strong>Ian Roberts</strong>: $1,300</li>
-                    <li><strong>J.K. Simmons</strong>: $1,000</li>
-                    <li><strong>Jake Gyllenhaal</strong>: $1,000</li>
-                    <li><strong>James Denton</strong>: $1,000</li>
-                    <li><strong>Jon Kean</strong>: $1,000</li>
-                </ul>
-            </div>
-            <div class="span4">
-                <ul>
-                    <li><strong>Kimberly Selby</strong>: $1,300</li>
-                    <li><strong>Lisa Edelstein</strong>: $1,300</li>
-                    <li><strong>Matthew Walsh</strong>: $1,300</li>
-                    <li><strong>Michael O'Malley</strong>: $1,000</li>
-                    <li><strong>Monica H. Rosenthal</strong>: $1,300</li>
-                    <li><strong>Phillip Keene</strong>: $1,000</li>
-                    <li><strong>Robert Gossett</strong>: $1,000</li>
-                    <li><strong>Salma Hayek</strong>: $1,000</li>
-                    <li><strong>Tanya McQueen Forman</strong>: $1,300</li>
-                    <li><strong>Timothy Olyphant</strong>: $1,300</li>
-                    <li><strong>Tony Denison</strong>: $1,300</li>
-                    <li><strong>Yasmine Johnson</strong>: $1,000</li>
-                </ul>
-            </div>
-        </div>
-        <!-- end candidate -->
-
-        <!-- begin candidate -->
-        <div class="span6">
-            <div class="span3">
-                <div class="image-container">
-                <img src="http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_wendy_greuel.jpg" alt="Wendy Greuel" />
-                </div>
-            </div>
-            <div class="span8">
-                {{#objects}}
-                    {{#is candidate 'Wendy Greuel'}}
-                        <h3>{{candidate}} ($21,060)</h3>
-                            <ul>
-                            {{#donors}}
-                                {{#gte donorContribution 700}}
-                                    <li><strong>{{donorName}} </strong>: ${{addCommas donorContribution}}</li>
-                                {{else}}
-                                {{/gte}}
-                            {{/donors}}
-                            </ul>
-                        <br />
-                    {{/is}}
-                {{/objects}}
-            </div>
-        </div>
-        <!-- end candidate -->
-
-    </div>
-    <!-- end row -->
-
-<br clear="all">
 
     <!-- begin row -->
     <div class="row-fluid">
 
         <!-- begin candidate -->
-        <div class="span6">
-            <div class="span3">
-                <div class="image-container">
-                <img src="http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg" alt="Austin Beutner" />
-                </div>
+        <div class="span12">
+            <div class="span2">
+                <img src="http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_eric_garcetti.jpg" alt="Eric Garcetti" />
             </div>
-            <div class="span8">
+            <div class="span10">
                 {{#objects}}
-                    {{#is candidate 'Austin Beutner'}}
-                        <h3>{{candidate}} ($4,850)</h3>
-                            <ul>
-                            {{#donors}}
-                                {{#gte donorContribution 700}}
-                                    <li><strong>{{donorName}} </strong>: ${{addCommas donorContribution}}</li>
-                                {{else}}
-                                {{/gte}}
-                            {{/donors}}
-                            </ul>
-                        <br />
+                    {{#is candidate 'Eric Garcetti'}}
+                        <h3>{{candidate}} ($42,580)</h3>
+                        <div class="row-fluid">
+                            <div class="span3">
+                                <ul>
+                                    <li>Alicia Mitchell: $1,300</li>
+                                    <li>Amy Aquino: $1,000</li>
+                                    <li>Amy Poehler: $1,300</li>
+                                    <li>Amy Smart: $750</li>
+                                    <li>Ben Weber: $500</li>
+                                    <li>Buckley Norris: $1,000</li>
+                                    <li>Danay Garcia: $500</li>
+                                    <li>Emily Foy: $1,300</li>
+                                    <li>Evan Arnold: $1,300</li>
+                                    <li>Faith Salie: $500</li>
+                                </ul>
+                            </div>
+                            <div class="span3">
+                                <ul>
+                                    <li>Harry J. Lennix: $1,300</li>
+                                    <li>Heather Thomas: $1,050</li>
+                                    <li>Hill Harper: $1,000</li>
+                                    <li>Ian Roberts: $1,300</li>
+                                    <li>Jake Gyllenhaal: $1,000</li>
+                                    <li>James Denton: $1,000</li>
+                                    <li>Jamie Lee Curtis Guest: $500</li>
+                                    <li>Jon Kean: $1,000</li>
+                                    <li>Kate Danson: $500</li>
+                                    <li>Kimberly Selby: $1,300</li>
+                                </ul>
+                            </div>
+                            <div class="span3">
+                                <ul>
+                                    <li>Lawrence Clarke: $500</li>
+                                    <li>Lenore Douglas: $500</li>
+                                    <li>Lisa Brenner: $500</li>
+                                    <li>Lisa Edelstein: $1,300</li>
+                                    <li>Marg Helgenberger: $500</li>
+                                    <li>Martha Hackett: $500</li>
+                                    <li>Matthew Walsh: $1,300</li>
+                                    <li>Michael O'Malley: $1,000</li>
+                                    <li>Monica H. Rosenthal: $1,300</li>
+                                    <li>Phillip Keene: $1,000</li>
+                                </ul>
+                            </div>
+                            <div class="span3">
+                                <ul>
+                                    <li>Robert Gossett: $1,000</li>
+                                    <li>Russell Steinberg: $500</li>
+                                    <li>Salma Hayek: $1,000</li>
+                                    <li>Sarah Chalke: $500</li>
+                                    <li>Talulah Riley: $500</li>
+                                    <li>Tanya Mcqueen Forman: $1,300</li>
+                                    <li>Timothy Olyphant: $1,300</li>
+                                    <li>Tony Denison: $1,300</li>
+                                    <li>Yasmine Johnson: $1,000</li>
+                                </ul>
+                            </div>
+                        </div>
                     {{/is}}
                 {{/objects}}
             </div>
         </div>
         <!-- end candidate -->
+    </div>
+    <!-- end row -->
+
+    <br clear="all">
+
+    <!-- begin row -->
+    <div class="row-fluid">
 
         <!-- begin candidate -->
-        <div class="span6">
-            <div class="span3">
-                <div class="image-container">
-                <img src="http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg" alt="Kevin James" />
-                </div>
+        <div class="span12">
+            <div class="span2">
+                <img src="http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_wendy_greuel.jpg" alt="Wendy Greuel" />
             </div>
-            <div class="span8">
+            <div class="span10">
+                {{#objects}}
+                    {{#is candidate 'Wendy Greuel'}}
+                        <h3>{{candidate}} ($21,060)</h3>
+                        <div class="row-fluid">
+                            <div class="span3">
+                                <ul>
+                                    <li>Alan Mandell: $1,300</li>
+                                    <li>Alexandra McLeod: $1,300</li>
+                                    <li>Ann Lopez: $1,000</li>
+                                    <li>Brandon Routh: $500</li>
+                                    <li>Ed Begley Jr.: $500</li>
+                                    <li>Eva Longoria: $1,300</li>
+                                </ul>
+                            </div>
+                            <div class="span3">
+                                <ul>
+                                    <li>Gabriel A. Gonzales: $1,300</li>
+                                    <li>Jo Ciampafarrell: $500</li>
+                                    <li>Julie Kagan: $1,000</li>
+                                    <li>Kate Capshaw: $1,300</li>
+                                    <li>Leonard Nimoy: $500</li>
+                                </ul>
+                            </div>
+                            <div class="span3">
+                                <ul>
+                                    <li>Mariska Hargitay: $1,000</li>
+                                    <li>Michael Sutton: $500</li>
+                                    <li>Monica Rosenthal: $1,300</li>
+                                    <li>Nancy Stephens: $500</li>
+                                    <li>Nancy Travis: $500</li>
+                                </ul>
+                            </div>
+                            <div class="span3">
+                                <ul>
+                                    <li>Rita Wilson: $1,300</li>
+                                    <li>Susan Nimoy: $500</li>
+                                    <li>Theresa Davis: $500</li>
+                                    <li>Tobey Maguire: $1,300</li>
+                                    <li>Tom Hanks: $1,300</li>
+                                </ul>
+                            </div>
+                        </div>
+                    {{/is}}
+                {{/objects}}
+            </div>
+        </div>
+        <!-- end candidate -->
+    </div>
+    <!-- end row -->
+
+    <br clear="all">
+
+    <!-- begin row -->
+    <div class="row-fluid">
+
+        <!-- begin candidate -->
+        <div class="span12">
+            <div class="span2">
+                <img src="http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg" alt="Kevin James" />
+            </div>
+            <div class="span10">
                 {{#objects}}
                     {{#is candidate 'Kevin James'}}
                         <h3>{{candidate}} ($4,900)</h3>
-                            <ul>
-                            {{#donors}}
-                                {{#gte donorContribution 700}}
-                                    <li><strong>{{donorName}} </strong>: ${{addCommas donorContribution}}</li>
-                                {{else}}
-                                {{/gte}}
-                            {{/donors}}
-                            </ul>
-                        <br />
+                        <div class="row-fluid">
+                            <div class="span3">
+                                <ul>
+                                    <li>Blake Edward Boyd: $1,300</li>
+                                </ul>
+                            </div>
+
+                            <div class="span3">
+                                <ul>
+                                    <li>Donna Scott: $1,300</li>
+                                </ul>
+                            </div>
+
+                            <div class="span3">
+                                <ul>
+                                    <li>Michelle Stafford: $1,000</li>
+                                </ul>
+                            </div>
+
+                            <div class="span3">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
                     {{/is}}
                 {{/objects}}
             </div>
         </div>
         <!-- end candidate -->
-
     </div>
     <!-- end row -->
+
+    <br clear="all">
+
+    <!-- begin row -->
+    <div class="row-fluid">
+
+        <!-- begin candidate -->
+        <div class="span12">
+            <div class="span2">
+                <img src="http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg" alt="Austin Beutner" />
+            </div>
+            <div class="span10">
+                {{#objects}}
+                    {{#is candidate 'Austin Beutner'}}
+                        <h3>{{candidate}} ($4,850 - has left race)</h3>
+                        <div class="row-fluid">
+                            <div class="span3">
+                                <ul>
+                                    <li>Christa B. Lawrence: $1,000</li>
+                                    <li>Debra Messing: $1,000</li>
+                                </ul>
+                            </div>
+
+                            <div class="span3">
+                                <ul>
+                                    <li>Heidi Tappis: $500</li>
+                                    <li>Josh Brolin: $1,000</li>
+                                </ul>
+                            </div>
+
+                            <div class="span3">
+                                <ul>
+                                    <li>Kristen Vogelsong: $1,000</li>
+                                </ul>
+                            </div>
+
+                            <div class="span3">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                    {{/is}}
+                {{/objects}}
+            </div>
+        </div>
+        <!-- end candidate -->
+    </div>
+    <!-- end row -->
+
+    <br clear="all">
 
 </div>
 <!-- end -->
