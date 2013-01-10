@@ -53,22 +53,26 @@ function createVisual(){
         //is hovered
 
         onShow: function(tip, node, isLeaf, domElement) {
-            var html = "<div class=\"tip-title\">" + node.name
-            + "</div><div class=\"tip-text\">";
+            var html = "<div class=\"tip-title\">" + "</div>";
 
             var data = node.data;
 
             // use this to key on candidates
             if(data.amount_recv) {
-                html += "Amount Received: <strong>$" + data.amount_recv + "</strong><br /><img src=\""+ data.image +"\" width=\"75px\" />";
+                html += "<div class=\"tip-centered\"><strong>" + data.full_name +
+                    "</strong><br />Amount Received: $" + data.amount_recv +
+                    "</strong><br /><img src=\"" + data.image + "\" width=\"100px\" /></div>";
             }
 
             // use this to key on groups
             if(data.subgroups) {
-                html += "Includes <strong>$" + data.amount_contrib + "</strong> in contributions " + data.subgroups;
+                html += "<strong>" + node.name +
+                    "</strong> category includes <strong>$" +
+                    data.amount_contrib + "</strong> in contributions " +
+                    data.subgroups;
             }
 
-            tip.innerHTML =  html;
+            tip.innerHTML = html;
         }
     },
 
