@@ -207,6 +207,7 @@ var json = {
             "data": {
             "amount_recv": "100",
             "$color": "#009CCD",
+            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_emanuel_pleitez.jpg",
             "$area": 100
             },
         "id": "Fox_candidate_Pleitez",
@@ -272,7 +273,8 @@ var json = {
         }, {
             "data": {
             "amount_recv": "100",
-            "$color": "#FF9BAA",
+            "$color": "#009CCD",
+            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_emanuel_pleitez.jpg",
             "$area": 100
             },
         "id": "NBCU_candidate_Pleitez",
