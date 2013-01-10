@@ -42,7 +42,7 @@ var json = {
             "$area": 12050
         },
         "id": "contributor_CBS",
-        "name": "Employees of CBS"
+        "name": "CBS"
         }, {
 
         "children": [
@@ -94,7 +94,7 @@ var json = {
             "$area": 22200
         },
         "id": "contributor_CAA",
-        "name": "Employees of Creative Artists Agency"
+        "name": "Creative Artists Agency"
         }, {
 
         "children": [
@@ -146,7 +146,7 @@ var json = {
             "$area": 30150
         },
         "id": "contributor_Disney",
-        "name": "Employees of Disney Co."
+        "name": "Disney Co."
         }, {
 
         "children": [
@@ -198,7 +198,7 @@ var json = {
             "$area": 22550
         },
         "id": "contributor_Fox",
-        "name": "Employees of Fox"
+        "name": "Fox"
         }, {
 
         "children": [
@@ -258,7 +258,7 @@ var json = {
             "$area": 10800
         },
         "id": "contributor_NBCU",
-        "name": "Employees of NBC Universal"
+        "name": "NBC Universal"
         } , {
 
         "children": [
@@ -310,7 +310,7 @@ var json = {
             "$area": 19950
         },
         "id": "contributor_Sony",
-        "name": "Employees of Sony"
+        "name": "Sony"
         }, {
 
         "children": [
@@ -362,7 +362,7 @@ var json = {
             "$area": 47342
         },
         "id": "contributor_Time_Warner",
-        "name": "Employees of Time Warner"
+        "name": "Time Warner"
         }, {
 
         "children": [
@@ -414,7 +414,7 @@ var json = {
             "$area": 22050
         },
         "id": "contributor_Viacom",
-        "name": "Employees of Viacom"
+        "name": "Viacom"
         }, {
 
         "children": [
@@ -462,7 +462,7 @@ var json = {
             "$area": 7350
         },
         "id": "contributor_IATSE",
-        "name": "Members of IATSE"
+        "name": "IATSE"
         }],
 
    "data": {"$color": "#000"},
