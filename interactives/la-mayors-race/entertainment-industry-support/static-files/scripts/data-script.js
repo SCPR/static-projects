@@ -58,12 +58,14 @@ function createVisual(){
 
             var data = node.data;
 
+            // use this to key on candidates
             if(data.amount_recv) {
-                html += "Amount: $" + data.amount_recv;
+                html += "Amount: $" + data.amount_recv + "<br /><img src=\""+ data.image +"\" width=\"75px\" />";
             }
 
-            if(data.image) {
-                html += "<img src=\""+ data.image +"\" class=\"album\" />";
+            // use this to key on groups
+            if(data.subgroups) {
+                html += "Includes $" + data.amount_contrib + " in contributions " + data.subgroups;
             }
 
             tip.innerHTML =  html;
