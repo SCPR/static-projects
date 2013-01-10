@@ -82,11 +82,11 @@ var celebrityData = {
                 {donorName: "Margaret Priest", donorContribution: "100"},
                 {donorName: "Marie Georgas", donorContribution: "250"},
                 {donorName: "Martha Hackett", donorContribution: "500"},
-                {donorName: "Mary McDonnell", donorContribution: "250"},
+                {donorName: "Mary Mcdonnell", donorContribution: "250"},
                 {donorName: "Matthew Carmony", donorContribution: "250"},
                 {donorName: "Matthew Walsh", donorContribution: "1300"},
                 {donorName: "Meera Narasimhan", donorContribution: "100"},
-                {donorName: "Michael O'Malley", donorContribution: "1000"},
+                {donorName: "Michael O'malley", donorContribution: "1000"},
                 {donorName: "Monica H. Rosenthal", donorContribution: "1300"},
                 {donorName: "Phillip Keene", donorContribution: "1000"},
                 {donorName: "Rachel Nichols", donorContribution: "100"},
@@ -109,12 +109,12 @@ var celebrityData = {
         candidate: "Wendy Greuel",
             donors: [
                 {donorName: "Alan Mandell", donorContribution: "1300"},
-                {donorName: "Alexandra McLeod", donorContribution: "1300"},
+                {donorName: "Alexandra Mcleod", donorContribution: "1300"},
                 {donorName: "Ann Hall", donorContribution: "150"},
                 {donorName: "Ann Lopez", donorContribution: "1000"},
                 {donorName: "Barry Karas", donorContribution: "100"},
                 {donorName: "Brandon Routh", donorContribution: "500"},
-                {donorName: "Ed Begley Jr.", donorContribution: "500"},
+                {donorName: "Edward J. Begley", donorContribution: "500"},
                 {donorName: "Eva Longoria", donorContribution: "1300"},
                 {donorName: "Gabriel A. Gonzales", donorContribution: "1300"},
                 {donorName: "Jill Kenny", donorContribution: "250"},
@@ -150,6 +150,17 @@ var celebrityData = {
                 {donorName: "Jennifer Massey", donorContribution: "300"},
                 {donorName: "Michelle Stafford", donorContribution: "1000"},
                 {donorName: "Ruth Ann Geoghan", donorContribution: "100"}
+            ]
+        }, {
+        candidate: "Jan Perry",
+            donors: [
+                {donorName: "Amy Poehler", donorContribution: "1300"},
+                {donorName: "Elizabeth Cheap", donorContribution: "500"},
+                {donorName: "George H. Takei", donorContribution: "1300"},
+                {donorName: "Ian Roberts", donorContribution: "1300"},
+                {donorName: "Matthew Walsh", donorContribution: "1300"},
+                {donorName: "T'Keyah Crystal Keymah", donorContribution: "100"},
+                {donorName: "William Pullman", donorContribution: "1000"}
             ]
         }
     ]

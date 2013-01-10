@@ -128,6 +128,17 @@
                 {donorName: "Michelle Stafford", donorContribution: "1000"},
                 {donorName: "Ruth Ann Geoghan", donorContribution: "100"}
             ]
+        }, {
+        candidate: "Jan Perry",
+            donors: [
+                {donorName: "Amy Poehler", donorContribution: "1300"},
+                {donorName: "Elizabeth Cheap", donorContribution: "500"},
+                {donorName: "George H. Takei", donorContribution: "1300"},
+                {donorName: "Ian Roberts", donorContribution: "1300"},
+                {donorName: "Matthew Walsh", donorContribution: "1300"},
+                {donorName: "T'Keyah Crystal Keymah", donorContribution: "100"},
+                {donorName: "William Pullman", donorContribution: "1000"}
+            ]
         }
     ]
 }
