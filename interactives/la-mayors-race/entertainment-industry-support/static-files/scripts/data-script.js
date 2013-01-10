@@ -60,12 +60,12 @@ function createVisual(){
 
             // use this to key on candidates
             if(data.amount_recv) {
-                html += "Amount: $" + data.amount_recv + "<br /><img src=\""+ data.image +"\" width=\"75px\" />";
+                html += "Amount Received: <strong>$" + data.amount_recv + "</strong><br /><img src=\""+ data.image +"\" width=\"75px\" />";
             }
 
             // use this to key on groups
             if(data.subgroups) {
-                html += "Includes $" + data.amount_contrib + " in contributions " + data.subgroups;
+                html += "Includes <strong>$" + data.amount_contrib + "</strong> in contributions " + data.subgroups;
             }
 
             tip.innerHTML =  html;
