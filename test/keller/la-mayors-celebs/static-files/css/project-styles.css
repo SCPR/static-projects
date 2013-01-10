@@ -1,3 +1,4 @@
 #article-header {height: auto; margin: 0 0 35px 0;}
 .candidate-container {width: 100%; height: auto; margin: 0 0 35px 0;}
 .candidate-container .image-container img {width:150px; margin: 10px 15px 0 0;}
+.candidate-container ul li{font-size: 12px;}

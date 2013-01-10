@@ -1,5 +1,4 @@
-{
-    "objects": [{
+    {"objects": [{
         candidate: "Austin Beutner",
             donors: [
                 {donorName: "Annabeth Gish", donorContribution: "250"},

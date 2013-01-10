@@ -1,59 +1,161 @@
-<!--
-
+<!-- begin -->
 <div class="candidate-container">
     <div class="row-fluid">
+        <!-- begin candidate -->
         <div class="span6">
-            <div class="span2">
+            <div class="span3">
                 <div class="image-container">
                 <img src="http://a.scpr.org/i/73a0c249835022d4713fc14c6df44306/43770-wide.jpg" alt="Eric Garcetti" />
                 </div>
             </div>
+<!--
             <div class="span10">
-                <h3>Eric Garcetti</h3>
-                <div id="data-container-garcetti"></div>
+                {{#objects}}
+                    {{#is candidate 'Eric Garcetti'}}
+                        <h3>{{candidate}}</h3>
+                            <ul>
+                            {{#donors}}
+                                {{#gte donorContribution 700}}
+                                    <li><strong>{{donorName}}</strong>: ${{addCommas donorContribution}}</li>
+                                {{else}}
+                                {{/gte}}
+                            {{/donors}}
+                            </ul>
+                        <br />
+                    {{/is}}
+                {{/objects}}
+            </div>
+-->
+
+            <div class="span8">
+                <h3>Eric Garcetti ($42,580)</h3>
+            </div>
+            <div class="span4">
+                <ul>
+                    <li><strong>Alicia Mitchell</strong>: $1,300</li>
+                    <li><strong>Amy Aquino</strong>: $1,000</li>
+                    <li><strong>Amy Poehler</strong>: $1,300</li>
+                    <li><strong>Amy Smart</strong>: $750</li>
+                    <li><strong>Buckley Norris</strong>: $1,000</li>
+                    <li><strong>Emily Foy</strong>: $1,300</li>
+                    <li><strong>Evan Arnold</strong>: $1,300</li>
+                    <li><strong>Harry J. Lennix</strong>: $1,300</li>
+                    <li><strong>Heather Thomas</strong>: $1,050</li>
+                    <li><strong>Hill Harper</strong>: $1,000</li>
+                    <li><strong>Ian Roberts</strong>: $1,300</li>
+                    <li><strong>J.K. Simmons</strong>: $1,000</li>
+                    <li><strong>Jake Gyllenhaal</strong>: $1,000</li>
+                    <li><strong>James Denton</strong>: $1,000</li>
+                    <li><strong>Jon Kean</strong>: $1,000</li>
+                </ul>
+            </div>
+            <div class="span4">
+                <ul>
+                    <li><strong>Kimberly Selby</strong>: $1,300</li>
+                    <li><strong>Lisa Edelstein</strong>: $1,300</li>
+                    <li><strong>Matthew Walsh</strong>: $1,300</li>
+                    <li><strong>Michael O'Malley</strong>: $1,000</li>
+                    <li><strong>Monica H. Rosenthal</strong>: $1,300</li>
+                    <li><strong>Phillip Keene</strong>: $1,000</li>
+                    <li><strong>Robert Gossett</strong>: $1,000</li>
+                    <li><strong>Salma Hayek</strong>: $1,000</li>
+                    <li><strong>Tanya McQueen Forman</strong>: $1,300</li>
+                    <li><strong>Timothy Olyphant</strong>: $1,300</li>
+                    <li><strong>Tony Denison</strong>: $1,300</li>
+                    <li><strong>Yasmine Johnson</strong>: $1,000</li>
+                </ul>
             </div>
         </div>
+        <!-- end candidate -->
 
+        <!-- begin candidate -->
         <div class="span6">
-            <div class="span2">
+            <div class="span3">
                 <div class="image-container">
                 <img src="http://a.scpr.org/i/3be6b8f8bc8605c125da9ee06ae7415d/51141-wide.jpg" alt="Wendy Greuel" />
                 </div>
             </div>
-            <div class="span10">
-                <h3>Wendy Greuel</h3>
-                <div id="data-container-greuel"></div>
+            <div class="span8">
+                {{#objects}}
+                    {{#is candidate 'Wendy Greuel'}}
+                        <h3>{{candidate}} ($21,060)</h3>
+                            <ul>
+                            {{#donors}}
+                                {{#gte donorContribution 700}}
+                                    <li><strong>{{donorName}} </strong>: ${{addCommas donorContribution}}</li>
+                                {{else}}
+                                {{/gte}}
+                            {{/donors}}
+                            </ul>
+                        <br />
+                    {{/is}}
+                {{/objects}}
             </div>
         </div>
+        <!-- end candidate -->
+
     </div>
+    <!-- end row -->
 
-    <br clear="all">
+<br clear="all">
 
+    <!-- begin row -->
     <div class="row-fluid">
+
+        <!-- begin candidate -->
         <div class="span6">
-            <div class="span2">
+            <div class="span3">
                 <div class="image-container">
-                <img src="http://a.scpr.org/i/7358253dccd25e6e3ff3cedce57532a8/41640-wide.jpg" alt="Jan Perry" />
+                <img src="http://a.scpr.org/i/4e9ac711f683442044b6c289520660fe/7053-lsquare.jpg" alt="Austin Beutner" />
                 </div>
             </div>
-            <div class="span10">
-                <h3>Jan Perry</h3>
-                <div id="data-container-perry"></div>
+            <div class="span8">
+                {{#objects}}
+                    {{#is candidate 'Austin Beutner'}}
+                        <h3>{{candidate}} ($4,850)</h3>
+                            <ul>
+                            {{#donors}}
+                                {{#gte donorContribution 700}}
+                                    <li><strong>{{donorName}} </strong>: ${{addCommas donorContribution}}</li>
+                                {{else}}
+                                {{/gte}}
+                            {{/donors}}
+                            </ul>
+                        <br />
+                    {{/is}}
+                {{/objects}}
             </div>
         </div>
+        <!-- end candidate -->
 
+        <!-- begin candidate -->
         <div class="span6">
-            <div class="span2">
+            <div class="span3">
                 <div class="image-container">
                 <img src="http://a.scpr.org/i/0d16a5c909ca174ee176497433d6fcf3/52436-wide.jpg" alt="Kevin James" />
                 </div>
             </div>
-            <div class="span10">
-                <h3>Kevin James</h3>
-                <div id="data-container-james"></div>
+            <div class="span8">
+                {{#objects}}
+                    {{#is candidate 'Kevin James'}}
+                        <h3>{{candidate}} ($4,900)</h3>
+                            <ul>
+                            {{#donors}}
+                                {{#gte donorContribution 700}}
+                                    <li><strong>{{donorName}} </strong>: ${{addCommas donorContribution}}</li>
+                                {{else}}
+                                {{/gte}}
+                            {{/donors}}
+                            </ul>
+                        <br />
+                    {{/is}}
+                {{/objects}}
             </div>
         </div>
-    </div>
-</div>
+        <!-- end candidate -->
 
--->
+    </div>
+    <!-- end row -->
+
+</div>
+<!-- end -->
