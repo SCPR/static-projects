@@ -16,7 +16,7 @@ jqueryNoConflict(function () {
                 text: 'Education Funding from the state of California',
             },
             subtitle: {
-                text: 'Spending, and proposed spending, between 2011 and 2017',
+                text: 'Minimum guarantee of funding for K-14 education between 2011 and 2017',
             },
             xAxis: [{
                 categories: chartCategories
