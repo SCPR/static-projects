@@ -32,8 +32,8 @@ jqueryNoConflict(function () {
             },
             tooltip: {
                 formatter: function() {
-                    return '<strong>' + this.x + ':</strong> ' +
-                    Highcharts.numberFormat(this.y, 1, '.') + ' billion dollars';
+                    return '<strong>' + this.x + ':</strong><br/>$' +
+                    Highcharts.numberFormat(this.y, 1, '.') + ' billion';
                 }
             },
             legend: {
