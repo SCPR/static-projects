@@ -1,1 +1,7 @@
 #data-map-canvas {width: 100%; height: 400px; margin: 10px 0 10px 0;}
+#data-legend {height: 25px; margin: 15px 0 0 0;}
+#data-legend-items {margin: 0 0 0 0; height: 25px; }
+#data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 20px;}
+#data-legend-items li.la-public-health {height: 25px; background-image: url(../images/mm_20_green.png); background-repeat: no-repeat; background-position: 0 0;}
+#data-legend-items li.orange-public-health {height: 25px; background-image: url(../images/mm_20_red.png); background-repeat: no-repeat; background-position: 0 0;}
+#data-legend-items li.la-immunization-clinic {height: 25px; background-image: url(../images/mm_20_blue.png); background-repeat: no-repeat; background-position: 0 0;}
