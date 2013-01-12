@@ -7,7 +7,7 @@
 */
 (function(){
   var isIE = (/msie/i).test(navigator.userAgent) && !(/opera/i).test(navigator.userAgent);
-  
+
   var soundcloud = window.soundcloud = {
     version: "0.1",
     debug: false,
@@ -136,5 +136,5 @@
       this._redispatch('onPlayerError', flashId, data);
     }
   };
-  
+
 })();

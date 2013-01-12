@@ -135,6 +135,9 @@ function createMap(){
         jqueryNoConflict('#data-audio-player').html(
             '<a class=\"soundcloud-player\" href=\" ' + trackURL + '\">Play</a>');
 
+        jqueryNoConflict('#data-credits').html(
+            'Audio player powered by SoundCloud');
+
         jqueryNoConflict("a.soundcloud-player").scPlayer();
 
     });

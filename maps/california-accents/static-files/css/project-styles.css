@@ -1,6 +1,7 @@
 p {font-family: "Georgia",Times New Roman,Times,serif; font-size: 14px; font-weight: normal; line-height: 21px; margin-bottom: 18px;}
 #data-container {width: 540px;}
 #data-map-canvas {width: 90%; height: 450px; margin: 10px 5% 10px 5%;}
-#data-details {width: 90%; height: 120px; margin: 10px 5% 10px 5%;}
+#data-details {width: 90%; height: 150px; margin: 10px 5% 10px 5%;}
+#data-credits {width: 100%; height: 25px; margin: 0 0 10px 0; font-size: 10px;}
 .sc-player ol.sc-trackslist li.active, .sc-player ol.sc-trackslist li:hover {background-color: #fff; padding: 4px; color: #000;}
 .sc-player ol.sc-trackslist li.active a {color: #000; font-size: 16px;}
