@@ -27,6 +27,20 @@ body.minimal footer ul li:last-child { padding-right: 0; border-right: none; }
 
 /* structure for data elements */
 .container-fluid { max-width: 1110px; margin: 0 auto;}
+#article-header {margin: 0 0 25px 0;}
+
+/* for table elements */
+.table-striped thead th {background-color: #2e2e2e; color: #ffffff;}
+
+.table-striped tbody > tr:nth-child(even) > td,
+.table-striped tbody > tr:nth-child(even) > th {
+  background-color: #CACACA;
+}
+
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {
+  background-color: #fdfdfd;
+}
 
 /* typography */
 h1, h2, h3, h4, h5, h6 {margin: 0 0;}
@@ -54,8 +68,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0 0;}
     body.minimal #kpcc-header .span4 { display:none; }
 }
 
-
-/* pencil add */
+/* pencil ad */
 .broadcast-bar {display: none;}
 
 .ad.pencil {overflow: visible; margin-bottom:18px;}
