@@ -27,7 +27,12 @@ body.minimal footer ul li:last-child { padding-right: 0; border-right: none; }
 
 /* structure for data elements */
 .container-fluid { max-width: 1110px; margin: 0 auto;}
+
+#data-footer {margin: 25px 0 25px 0;}
 #article-header {margin: 0 0 25px 0;}
+
+
+
 
 /* for table elements */
 .table-striped thead th {background-color: #2e2e2e; color: #ffffff;}
