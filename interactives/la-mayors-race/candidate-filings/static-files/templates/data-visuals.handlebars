@@ -1,0 +1,48 @@
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Candidate</th>
+            <!-- <th>1st_semi_annual_2011</th>
+            <th>2nd_semi_annual_2011</th>
+            <th>1st_semi_annual_2012</th> -->
+            <th>3rd_quarter_2012</th>
+            <th>4th_quarter_2012</th>
+            <th>Contributions_to_date</th>
+            <th>Matching_funds</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#objects}}
+            <tr>
+                <td>{{Candidate_name}}</td>
+
+                <!-- <td>{{1st_semi_annual_2011}}</td>
+                <td>{{2nd_semi_annual_2011}}</td>
+                <td>{{1st_semi_annual_2012}}</td> -->
+
+                {{#if 3rd_quarter_2012}}
+                    <td>${{addCommas 3rd_quarter_2012}}</td>
+                {{else}}
+                    <td>n/a</td>
+                {{/if}}
+
+                {{#if 4th_quarter_2012}}
+                    <td>${{addCommas 4th_quarter_2012}}</td>
+                {{else}}
+                    <td>n/a</td>
+                {{/if}}
+
+                <td>${{addCommas Contributions_to_date}}</td>
+
+                {{#if Matching_funds}}
+                    <td>${{addCommas Matching_funds}}</td>
+                {{else}}
+                    <td>n/a</td>
+                {{/if}}
+
+                <td>${{addCommas Total}}</td>
+            </tr>
+        {{/objects}}
+    </tbody>
+</table>
