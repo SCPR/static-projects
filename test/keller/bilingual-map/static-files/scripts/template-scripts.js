@@ -25,6 +25,7 @@ function renderStaticTemplates(){
     renderKpccHeaderTemplate();
     renderKpccPencilAdTemplate();
     renderDataDetailsTemplate();
+    renderDataVisualsTemplate();
     renderDataFooterTemplate();
     renderKpccFooterTemplate();
 };
@@ -48,6 +49,13 @@ function renderKpccPencilAdTemplate(){
 function renderDataDetailsTemplate(){
     getTemplateAjax('static-files/templates/data-details.handlebars', function(template) {
         jqueryNoConflict('#data-details').html(template());
+    })
+};
+
+// create data details template
+function renderDataVisualsTemplate(){
+    getTemplateAjax('static-files/templates/data-visuals.handlebars', function(template) {
+        jqueryNoConflict('#data-visuals').html(template());
     })
 };
 
