@@ -1,20 +1,21 @@
 var jqueryNoConflict = jQuery;
 var map;
+var bilingualSchoolLayer;
+var bilingualSchoolTableId = '1gqAgWr7jCzf2T0xzgjyx6S6oaa4puFvdWjFyjMo';
+var locationColumn = 'location';
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
 
     google.maps.event.addDomListener(window, 'load', createMap);
+    renderHandlebarsTemplate('static-files/templates/map-action-bar.handlebars', '#map-data-action');
 
 });
-// end
 
 // begin function
 function createMap(){
 
     // add encrypted table id
-    var bilingualSchoolTableId = '1gqAgWr7jCzf2T0xzgjyx6S6oaa4puFvdWjFyjMo';
-    var locationColumn = 'location';
     var centerLosAngeles = new google.maps.LatLng(34.061841979429445, -118.26370239257812);
 
     map = new google.maps.Map(document.getElementById('data-map-canvas'), {
@@ -34,7 +35,7 @@ function createMap(){
     });
 
     // Initialize ft layer of new crosswalks
-    var bilingualSchoolLayer = new google.maps.FusionTablesLayer({
+    bilingualSchoolLayer = new google.maps.FusionTablesLayer({
         query: {
             select: locationColumn,
             from: bilingualSchoolTableId
@@ -44,6 +45,11 @@ function createMap(){
     });
 
     google.maps.event.addListener(bilingualSchoolLayer, 'click', function(e) {
+
+/*
+        jqueryNoConflict('#map-data-details').fadeOut('fast');
+        showLoading();
+*/
 
         var fusionTableObject = {
             school_name: e.row['school_name'].value,
@@ -91,7 +97,12 @@ function createMap(){
             special_recognition: e.row['special_recognition'].value
         }
 
-        renderMapDataDetailsTemplate(fusionTableObject);
+        renderHandlebarsTemplate('static-files/templates/map-data-details.handlebars', '#map-data-details', fusionTableObject);
+
+/*
+        hideLoading();
+        jqueryNoConflict('#map-data-details').fadeIn('fast');
+*/
 
     });
 
@@ -104,7 +115,38 @@ function createMap(){
     });
 
 };
-// end
+
+//search select function
+function changeSearch() {
+
+    var buildMapQuery = [];
+
+    var citier = jqueryNoConflict('#search-string-city').val();
+        if (citier !== '') {
+            buildMapQuery.push("'city' = '" +  citier + "'");
+        }
+
+    var languager = jqueryNoConflict('#search-string-language').val();
+        if (languager !== '') {
+            buildMapQuery.push("'partner_language_1' = '" +  languager + "'");
+        }
+
+        var whereClause = buildMapQuery.join(' AND ');
+
+        console.log(whereClause);
+
+        var queryOptions = {
+            query: {
+                select: locationColumn,
+                from: bilingualSchoolTableId,
+                where: whereClause
+            }
+        };
+
+        bilingualSchoolLayer.setOptions(queryOptions);
+
+};
+//end function
 
 // render handlebars templates via ajax
 function getTemplateAjax(path, callback) {
@@ -117,13 +159,12 @@ function getTemplateAjax(path, callback) {
             if (callback) callback(template);
         }
     });
-}
-//end
+};
 
 // create projects content template
-function renderMapDataDetailsTemplate(data){
-    getTemplateAjax('static-files/templates/map-data-details.handlebars', function(template) {
-        jqueryNoConflict('#map-data-details').html(template(data));
+function renderHandlebarsTemplate(withTemplate,inElement,withData){
+    getTemplateAjax(withTemplate, function(template) {
+        jqueryNoConflict(inElement).html(template(withData));
     })
 };
 
@@ -131,12 +172,19 @@ function renderMapDataDetailsTemplate(data){
 function calculateCenter(){
     center = map.getCenter();
 };
-// end
 
 // embed function
 function embedBox() {
     var embed_url = 'http://projects.scpr.org/static/maps/flu-clinics/iframe.html';
 
     jAlert('<strong>To embed this visualization your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+ embed_url +'\" width=\"540px\" height=\"600px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
-}
-// end
+};
+
+//loading screen
+function showLoading() {
+	jqueryNoConflict('#map-data-loading').fadeIn('slow');
+};
+
+function hideLoading() {
+	jqueryNoConflict('#map-data-loading').fadeOut('slow');
+};
