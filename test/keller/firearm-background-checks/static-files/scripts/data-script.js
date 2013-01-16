@@ -1,38 +1,61 @@
 var jqueryNoConflict = jQuery;
 
-    // chart options
-    var chart;
-    var chartCategories = ['2008', '2009', '2010', '2011'];
+// data containers
+var transactionData = [];
+var denialData = [];
+var percentData = [];
+var chartCategories = [];
 
 //begin main function
 jqueryNoConflict(document).ready(function(){
     retriveData();
-    drawHighchart();
+    processData();
 });
 //end main function
 
-
-
-
-
-
-
-
-
-
-
 // grab data
-function retriveData() {
+function retriveData(data) {
     var dataSource = 'static-files/data/dros_checks_denials_percent.json';
     jqueryNoConflict.getJSON(dataSource, renderDataVisualsTemplate);
 };
 
+function processData(data) {
+    var dataSource = 'static-files/data/dros_checks_denials_percent.json';
+    jqueryNoConflict.getJSON(dataSource, processDataForChart);
+}
+
 // create projects content template
 function renderDataVisualsTemplate(data){
-    getTemplateAjax('static-files/templates/data-table.handlebars', function(template) {
+    getTemplateAjax('static-files/templates/data-visuals.handlebars', function(template) {
         handlebarsDebugHelper();
-        jqueryNoConflict('#data-table').html(template(data));
+        handlebarsSetDecimalToFixed();
+        jqueryNoConflict('#data-visuals').html(template(data));
     })
+};
+
+// process data to display in chart
+function processDataForChart(data){
+    jqueryNoConflict.each(data.objects, function(i, item) {
+        chartCategories.push(item.Year);
+        transactionData.push(item.Dros_total_transactions);
+        denialData.push(item.Dros_total_denials);
+        percentData.push(item.Percent_denied * 100);
+
+    });
+
+    if (document.getElementById('data-chart')) {
+        console.log('creating chart');
+        drawHighchart();
+
+    } else {
+
+      setTimeout(function() {
+            console.log('waiting a second and will create chart');
+            drawHighchart();
+        }, 1000);
+
+    }
+
 };
 
 // render handlebars templates via ajax
@@ -49,6 +72,7 @@ function getTemplateAjax(path, callback) {
 }
 //end
 
+
 // add handlebars debugger
 function handlebarsDebugHelper(){
     Handlebars.registerHelper("debug", function(optionalValue) {
@@ -59,58 +83,47 @@ function handlebarsDebugHelper(){
 };
 // end
 
-
-
-
+// function to set decimal to fixed
+function handlebarsSetDecimalToFixed(){
+    Handlebars.registerHelper('fixedPlace', function(context, options) {
+        var out = (context * 100).toFixed(3);
+        return out + '%';
+    });
+};
 
 // draw the chart
 function drawHighchart(){
 
-    var transactionData = [10, 20, 30, 40];
-    var denialData = [21, 25, 35, 44];
-    var denialPercent = [1.09, .09, .8, .9];
-
     // objects for highcharts data series
     var drosTransactions = {
-        name: 'drosTransactions',
-        color: '#A6611A',
-        type: 'spline',
+        name: 'Dealer Transactions',
+        color: '#002734',
+        type: 'column',
         data: transactionData
     };
 
     // objects for highcharts data series
     var drosDenials = {
-        name: 'drosDenials',
-        color: '#018571',
+        name: 'Denials',
+        color: '#005873',
         type: 'spline',
         data: denialData
     };
 
     // objects for highcharts data series
     var denialPercent = {
-        name: 'denialPercent',
-        color: '#018571',
-        type: 'spline',
-        data: denialPercent
+        name: 'Percent Denied',
+        color: '#00B9F3',
+        type: 'column',
+        data: percentData
     };
 
 
-/*
-    var arraysOfTransactions = [];
-    arraysOfTransactions.push(transactionData);
-    chart.addSeries(drosTransactions);
-*/
-
-
-
-
-    chart = new Highcharts.Chart({
+    var chart = new Highcharts.Chart({
         chart: {
-            renderTo: 'data-visuals',
+            renderTo: 'data-chart',
             zoomType: 'xy',
             backgroundColor: '#eaeaea'
-
-
         },
 
         title: {
@@ -137,13 +150,13 @@ function drawHighchart(){
                 }
             },
             title: {
-                text: 'Jobs Added',
+                text: 'Dealer Transactions',
                 style: {
                     color: '#2B2B2B'
                 }
             },
 
-            tickPixelInterval: 25
+            tickPixelInterval: 100
 
         }],
 
@@ -231,7 +244,7 @@ function drawHighchart(){
             enabled: false
         },
 
-        series: [drosTransactions, drosDenials, denialPercent]
+        series: [drosTransactions]
     });
 
 };
