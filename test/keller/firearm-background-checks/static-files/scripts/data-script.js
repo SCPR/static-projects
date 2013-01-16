@@ -40,7 +40,6 @@ function processDataForChart(data){
         transactionData.push(item.Dros_total_transactions);
         denialData.push(item.Dros_total_denials);
         percentData.push(item.Percent_denied * 100);
-
     });
 
     if (document.getElementById('data-chart')) {
@@ -53,9 +52,7 @@ function processDataForChart(data){
             console.log('waiting a second and will create chart');
             drawHighchart();
         }, 1000);
-
     }
-
 };
 
 // render handlebars templates via ajax
@@ -71,7 +68,6 @@ function getTemplateAjax(path, callback) {
     });
 }
 //end
-
 
 // add handlebars debugger
 function handlebarsDebugHelper(){
@@ -98,7 +94,7 @@ function drawHighchart(){
     var drosTransactions = {
         name: 'Dealer Transactions',
         color: '#002734',
-        type: 'column',
+        type: 'area',
         data: transactionData
     };
 
@@ -106,7 +102,7 @@ function drawHighchart(){
     var drosDenials = {
         name: 'Denials',
         color: '#005873',
-        type: 'spline',
+        type: 'column',
         data: denialData
     };
 
@@ -118,20 +114,22 @@ function drawHighchart(){
         data: percentData
     };
 
-
     var chart = new Highcharts.Chart({
         chart: {
             renderTo: 'data-chart',
             zoomType: 'xy',
-            backgroundColor: '#eaeaea'
+            backgroundColor: '#eaeaea',
+            type: 'area',
+            marginTop: 50,
+            marginBottom: 50
         },
 
         title: {
-            text: 'Jobs Added To The U.S. Economy (2012)'
+            text: 'Firearm transactions processed by the California Department of Justice (1991-2011)'
         },
 
         subtitle: {
-            text: 'Data Source: Bureau of Labor Statistics'
+            text: '',
         },
 
         xAxis: [{
@@ -156,18 +154,37 @@ function drawHighchart(){
                 }
             },
 
+            //max: 650000,
             tickPixelInterval: 100
 
         }],
 
         tooltip: {
-            formatter: function(){
-                return ''+ this.series.name +': '+ Highcharts.numberFormat(this.y, 0, ',');
+            formatter: function() {
+                return '<strong>' + this.x + ':</strong> ' + Highcharts.numberFormat(this.y, 0, '.');
             }
         },
 
         // testing various click event options
+
         plotOptions: {
+
+            area: {
+                //pointStart: 1991,
+                //pointInterval: 1,
+                marker: {
+                    enabled: false,
+                    symbol: 'circle',
+                    radius: 5,
+                    states: {
+                        hover: {
+                            enabled: true
+                        }
+                    }
+                }
+            }
+
+/*
             series: {
                 point: {
                     events: {
@@ -198,7 +215,7 @@ function drawHighchart(){
 
                 events: {
 
-/*
+
                     mouseOver: function() {
                         var highlightRowId = String(this.name);
                         var highlightRowColor = String(this.color);
@@ -214,7 +231,7 @@ function drawHighchart(){
                         jqueryNoConflict(selectedRow).css(
                                 'color', 'black');
                     },
-*/
+
 
                     legendItemClick: function () {
                         var highlightRowId = String(this.name);
@@ -226,14 +243,16 @@ function drawHighchart(){
                     }
                 }
             }
+*/
         },
 
         legend: {
+            enabled: false,
             layout: 'horizontal',
             align: 'center',
             verticalAlign: 'bottom',
             //x: 0,
-            y: 0,
+            y: 15,
             floating: false,
             borderWidth: 1,
             backgroundColor: '#FFFFFF',
@@ -241,7 +260,14 @@ function drawHighchart(){
         },
 
         credits: {
-            enabled: false
+            enabled: false,
+            text: 'Source: California Dept. of Justice Bureau of Firearms',
+            href: 'http://oag.ca.gov/sites/all/files/pdfs/firearms/forms/dros_chart.pdf?',
+            position: {
+                align: 'right',
+                verticalAlign: 'bottom',
+                y: -5
+            }
         },
 
         series: [drosTransactions]
