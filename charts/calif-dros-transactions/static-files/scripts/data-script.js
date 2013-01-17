@@ -93,9 +93,9 @@ function drawHighchart(){
 
     // objects for highcharts data series
     var drosTransactions = {
-        name: 'Dealer Transactions',
+        name: 'Total Transactions',
         color: '#002734',
-        type: 'area',
+        type: 'line',
         data: transactionData
     };
 
@@ -109,7 +109,7 @@ function drawHighchart(){
 
     // objects for highcharts data series
     var drosLonggun = {
-        name: 'Longgun Transactions',
+        name: 'Rifle/shotgun Transactions',
         color: '#00B9F3',
         type: 'area',
         data: longgunData
@@ -120,7 +120,7 @@ function drawHighchart(){
             renderTo: 'data-chart',
             zoomType: 'xy',
             backgroundColor: '#eaeaea',
-            type: 'area',
+            type: 'spline',
             marginTop: 50,
             marginBottom: 50
         },
@@ -162,7 +162,9 @@ function drawHighchart(){
 
         tooltip: {
             formatter: function() {
-                return '<strong>' + this.x + ':</strong> ' + Highcharts.numberFormat(this.y, 0, '.');
+                return '<strong>' + this.x + '</strong><br />' +
+                Highcharts.numberFormat(this.y, 0, '.') +
+                ' Transactions';
             }
         },
 
