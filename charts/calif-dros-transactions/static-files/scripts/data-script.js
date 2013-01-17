@@ -1,10 +1,10 @@
 var jqueryNoConflict = jQuery;
 
 // data containers
-var transactionData = [];
-var denialData = [];
-var percentData = [];
 var chartCategories = [];
+var transactionData = [];
+var handgunData = [];
+var longgunData = [];
 
 //begin main function
 jqueryNoConflict(document).ready(function(){
@@ -35,11 +35,12 @@ function renderDataVisualsTemplate(data){
 
 // process data to display in chart
 function processDataForChart(data){
+
     jqueryNoConflict.each(data.objects, function(i, item) {
         chartCategories.push(item.Year);
         transactionData.push(item.Dros_total_transactions);
-        denialData.push(item.Dros_total_denials);
-        percentData.push(item.Percent_denied * 100);
+        handgunData.push(item.Dros_handguns);
+        longgunData.push(item.Dros_longguns);
     });
 
     if (document.getElementById('data-chart')) {
@@ -99,19 +100,19 @@ function drawHighchart(){
     };
 
     // objects for highcharts data series
-    var drosDenials = {
-        name: 'Denials',
+    var drosHandguns = {
+        name: 'Handgun Transactions',
         color: '#005873',
-        type: 'column',
-        data: denialData
+        type: 'area',
+        data: handgunData
     };
 
     // objects for highcharts data series
-    var denialPercent = {
-        name: 'Percent Denied',
+    var drosLonggun = {
+        name: 'Longgun Transactions',
         color: '#00B9F3',
-        type: 'column',
-        data: percentData
+        type: 'area',
+        data: longgunData
     };
 
     var chart = new Highcharts.Chart({
@@ -170,6 +171,7 @@ function drawHighchart(){
         plotOptions: {
 
             area: {
+                stacking: 'normal',
                 //pointStart: 1991,
                 //pointInterval: 1,
                 marker: {
@@ -247,7 +249,7 @@ function drawHighchart(){
         },
 
         legend: {
-            enabled: false,
+            enabled: true,
             layout: 'horizontal',
             align: 'center',
             verticalAlign: 'bottom',
@@ -270,7 +272,7 @@ function drawHighchart(){
             }
         },
 
-        series: [drosTransactions]
+        series: [drosTransactions, drosHandguns, drosLonggun]
     });
 
 };
