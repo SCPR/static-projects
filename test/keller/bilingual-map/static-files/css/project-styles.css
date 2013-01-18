@@ -1,9 +1,5 @@
-#data-map-canvas {width: 100%; height: 700px; margin: 10px 0 10px 0;}
-
-#map-data-action {width: 100%; height: 35px; text-align: center;}
-
-#map-data-details {width: 100%; margin: 25px auto 0 auto;}
-
-.data-shown {}
-
-.data-hidden {display: none;}
+#content-article {width: 100%; height: auto; margin: 0 auto 25px auto;}
+#content-action-bar {width: 100%; height: auto; text-align: center; margin: 25px auto 25px auto;}
+#content-explainer {width: 100%; height: auto; margin: 25px auto 25px auto;}
+#content-display {width: 100%; height: auto; margin: 25px auto 25px auto;}
+#content-map-canvas {width: 100%; height: 700px; margin: 10px 0 10px 0;}

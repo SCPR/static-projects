@@ -4,7 +4,6 @@ var jqueryNoConflict = jQuery;
 jqueryNoConflict(document).ready(function() {
     renderStaticTemplates();
 });
-// end
 
 // render handlebars templates via ajax
 function getTemplateAjax(path, callback) {
@@ -17,60 +16,23 @@ function getTemplateAjax(path, callback) {
             if (callback) callback(template);
         }
     });
-}
-//end
+};
 
-// begin
+// render handlebars template function
+function renderHandlebarsTemplate(withTemplate,inElement,withData){
+    getTemplateAjax(withTemplate, function(template) {
+        jqueryNoConflict(inElement).html(template(withData));
+    })
+};
+
+// render all the templates
 function renderStaticTemplates(){
-    renderKpccHeaderTemplate();
-    renderKpccPencilAdTemplate();
-    renderDataDetailsTemplate();
-    //renderDataVisualsTemplate();
-    renderDataFooterTemplate();
-    renderKpccFooterTemplate();
-};
-// end
-
-// create data footer template
-function renderKpccHeaderTemplate(){
-    getTemplateAjax('static-files/templates/kpcc-header.handlebars', function(template) {
-        jqueryNoConflict('#kpcc-header').html(template());
-    })
-};
-
-// create data footer template
-function renderKpccPencilAdTemplate(){
-    getTemplateAjax('static-files/templates/kpcc-pencil-ad.handlebars', function(template) {
-        jqueryNoConflict('#kpcc-pencil-ad').html(template());
-    })
-};
-
-// create data details template
-function renderDataDetailsTemplate(){
-    getTemplateAjax('static-files/templates/data-details.handlebars', function(template) {
-        jqueryNoConflict('#data-details').html(template());
-    })
-};
-
-/*
-// create data details template
-function renderDataVisualsTemplate(){
-    getTemplateAjax('static-files/templates/data-visuals.handlebars', function(template) {
-        jqueryNoConflict('#data-visuals').html(template());
-    })
-};
-*/
-
-// create data footer template
-function renderDataFooterTemplate(){
-    getTemplateAjax('static-files/templates/data-footer.handlebars', function(template) {
-        jqueryNoConflict('#data-footer').html(template());
-    })
-};
-
-// create data footer template
-function renderKpccFooterTemplate(){
-    getTemplateAjax('static-files/templates/kpcc-footer.handlebars', function(template) {
-        jqueryNoConflict('#kpcc-footer').html(template());
-    })
+    renderHandlebarsTemplate('static-files/templates/kpcc-header.handlebars', '#kpcc-header');
+    renderHandlebarsTemplate('static-files/templates/kpcc-pencil-ad.handlebars', '#kpcc-pencil-ad');
+    renderHandlebarsTemplate('static-files/templates/data-details.handlebars', '#data-details');
+    renderHandlebarsTemplate('static-files/templates/content-explainer.handlebars', '#content-explainer');
+    renderHandlebarsTemplate('static-files/templates/content-action-bar.handlebars', '#content-action-bar');
+    //renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals');
+    renderHandlebarsTemplate('static-files/templates/data-footer.handlebars', '#data-footer');
+    renderHandlebarsTemplate('static-files/templates/kpcc-footer.handlebars', '#kpcc-footer');
 };
