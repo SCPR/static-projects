@@ -28,6 +28,7 @@ $(function() {
             el['display_date'] = el['displaydate'];
             el['read_more_url'] = el['readmoreurl'];
             el['photo_url'] = el['photourl'];
+            el['best'] = el['best'];
         }
     });
     /**
