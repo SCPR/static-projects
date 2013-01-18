@@ -172,7 +172,7 @@ function focusOnSchoolDetails(){
 
 // embed function
 function embedBox() {
-    var embed_url = '#';
+    var embed_url = 'http://projects.scpr.org/static/maps/bilingual-education';
 
     jAlert('<strong>To embed this visualization your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+ embed_url +'\" width=\"540px\" height=\"600px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
 };
