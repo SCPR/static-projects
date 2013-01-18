@@ -10,6 +10,7 @@
                 <a href="{{website}}" target="_blank"><strong>Website</strong></a>
             {{/if}}
         </p>
+        <hr>
     </div>
     <!-- end row -->
 
@@ -49,151 +50,221 @@
     <!-- begin row -->
     <div class="row-fluid">
         <div class="span12">
-            <p><span><strong>Program Availability</strong></span><br/>
-            <table class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                    <th>K</th>
-                    <th>1</th>
-                    <th>2</th>
-                    <th>3</th>
-                    <th>4</th>
-                    <th>5</th>
-                    <th>6</th>
-                    <th>7</th>
-                    <th>8</th>
-                    <th>9</th>
-                    <th>10</th>
-                    <th>11</th>
-                    <th>12</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                    <td>{{grade_K}}</td>
-                    <td>{{grade_1}}</td>
-                    <td>{{grade_2}}</td>
-                    <td>{{grade_3}}</td>
-                    <td>{{grade_4}}</td>
-                    <td>{{grade_5}}</td>
-                    <td>{{grade_6}}</td>
-                    <td>{{grade_7}}</td>
-                    <td>{{grade_8}}</td>
-                    <td>{{grade_9}}</td>
-                    <td>{{grade_10}}</td>
-                    <td>{{grade_11}}</td>
-                    <td>{{grade_12}}</td>
-                </tr>
-              </tbody>
-            </table>
+            {{#is hide_from_display 'Yes'}}
+                <hr>
+            {{else}}
+                <p><span><strong>Program Availability</strong></span><br/>
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                        <th>K</th>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                        <th>9</th>
+                        <th>10</th>
+                        <th>11</th>
+                        <th>12</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        {{#is grade_K 'Yes'}}
+                            <td>&#x2713;</td>
+                        {{else}}
+                            <td>-</td>
+                        {{/is}}
+
+                        {{#is grade_1 'Yes'}}
+                            <td>&#x2713;</td>
+                        {{else}}
+                            <td>-</td>
+                        {{/is}}
+
+                        {{#is grade_2 'Yes'}}
+                            <td>&#x2713;</td>
+                        {{else}}
+                            <td>-</td>
+                        {{/is}}
+
+                        {{#is grade_3 'Yes'}}
+                            <td>&#x2713;</td>
+                        {{else}}
+                            <td>-</td>
+                        {{/is}}
+
+                        {{#is grade_4 'Yes'}}
+                            <td>&#x2713;</td>
+                        {{else}}
+                            <td>-</td>
+                        {{/is}}
+
+                        {{#is grade_5 'Yes'}}
+                            <td>&#x2713;</td>
+                        {{else}}
+                            <td>-</td>
+                        {{/is}}
+
+                        {{#is grade_6 'Yes'}}
+                            <td>&#x2713;</td>
+                        {{else}}
+                            <td>-</td>
+                        {{/is}}
+
+                        {{#is grade_7 'Yes'}}
+                            <td>&#x2713;</td>
+                        {{else}}
+                            <td>-</td>
+                        {{/is}}
+
+                        {{#is grade_8 'Yes'}}
+                            <td>&#x2713;</td>
+                        {{else}}
+                            <td>-</td>
+                        {{/is}}
+
+                        {{#is grade_9 'Yes'}}
+                            <td>&#x2713;</td>
+                        {{else}}
+                            <td>-</td>
+                        {{/is}}
+
+                        {{#is grade_10 'Yes'}}
+                            <td>&#x2713;</td>
+                        {{else}}
+                            <td>-</td>
+                        {{/is}}
+
+                        {{#is grade_11 'Yes'}}
+                            <td>&#x2713;</td>
+                        {{else}}
+                            <td>-</td>
+                        {{/is}}
+
+                        {{#is grade_12 'Yes'}}
+                            <td>&#x2713;</td>
+                        {{else}}
+                            <td>-</td>
+                        {{/is}}
+                    </tr>
+                  </tbody>
+                </table>
+                <hr>
+            {{/is}}
         </div>
     </div>
     <!-- end row -->
 
-<!-- begin row -->
-<div class="row-fluid">
-    <div class="span12">
-        <div class="span6">
-            <ul>
-                {{#if year_program_started}}
-                    <li>Program Started in {{year_program_started}}</li>
-                {{else}}
-                {{/if}}
+    <!-- begin row -->
+    <div class="row-fluid">
+        <div class="span12">
+            <div class="span6">
+                <ul>
+                    {{#if year_program_started}}
+                        <li>Program Started in {{year_program_started}}</li>
+                    {{else}}
+                    {{/if}}
 
-                {{#if EL}}
-                    <li>Has {{EL}} students classified as English Learners</li>
-                {{else}}
-                {{/if}}
+                    {{#if EL}}
+                        <li>Has {{EL}} students classified as English Learners</li>
+                    {{else}}
+                    {{/if}}
 
-                {{#if third_language}}
-                    <li>Offers {{third_language}} as a 3rd Language.</li>
-                {{else}}
-                {{/if}}
-            </ul>
+                    {{#if third_language}}
+                        <li>Offers {{third_language}} as a 3rd Language.</li>
+                    {{else}}
+                    {{/if}}
+                </ul>
+            </div>
+
+            <div class="span6">
+                <ul>
+                    {{#if since_when}}
+                        <li>Earned Biliteracy Seal in {{since_when}}</li>
+                    {{else}}
+                    {{/if}}
+
+                    {{#if IEP}}
+                        <li>Has {{IEP}} students in an Individualized Education Program.</li>
+                    {{else}}
+                    {{/if}}
+
+                    {{#if students_on_free_reduced_lunch}}
+                        <li>{{students_on_free_reduced_lunch}}% of students are on Free/Reduced Lunch</li>
+                    {{else}}
+                    {{/if}}
+                </ul>
+            </div>
+
         </div>
+    </div>
+    <!-- end row -->
 
-        <div class="span6">
-            <ul>
-                {{#if since_when}}
-                    <li>Earned Biliteracy Seal in {{since_when}}</li>
-                {{else}}
-                {{/if}}
+    <!-- begin row -->
+    <div class="row-fluid">
+        <div class="span12">
+            {{#if program_model}}
+                <p><strong>Program Model</strong>: {{program_model}}</p>
+            {{else}}
+            {{/if}}
 
-                {{#if IEP}}
-                    <li>Has {{IEP}} students in an Individualized Education Program.</li>
-                {{else}}
-                {{/if}}
-
-                {{#if students_on_free_reduced_lunch}}
-                    <li>{{students_on_free_reduced_lunch}}% of students are on Free/Reduced Lunch</li>
-                {{else}}
-                {{/if}}
-            </ul>
+            {{#if special_recognition}}
+                <p><strong>Recognition/Achievements</strong>: {{special_recognition}}</p>
+            {{else}}
+            {{/if}}
         </div>
-
     </div>
-</div>
-<!-- end row -->
+    <!-- end row -->
 
-<!-- begin row -->
-<div class="row-fluid">
-    <div class="span12">
-        {{#if program_model}}
-            <p><strong>Program Model</strong>: {{program_model}}</p>
-        {{else}}
-        {{/if}}
+    <!-- begin row -->
+    <div class="row-fluid">
+        <div class="span12">
 
-        {{#if special_recognition}}
-            <p><strong>Recognition/Achievements</strong>: {{special_recognition}}</p>
-        {{else}}
-        {{/if}}
+            {{#if resource_1}}
+                <p><span><strong>Additional Resources</strong></span><br/>
+                {{resource_1}}
+                    {{#if access/purchase_1}}
+                         - {{access/purchase_1}}<br/>
+                    {{else}}
+                        <br/>
+                    {{/if}}
+            {{else}}
+            {{/if}}
+
+            {{#if resource_2}}
+                {{resource_2}}
+                    {{#if access/purchase_2}}
+                         - {{access/purchase_2}}<br/>
+                    {{else}}
+                        <br/>
+                    {{/if}}
+            {{else}}
+            {{/if}}
+
+            {{#if resource_3}}
+                {{resource_3}}
+                    {{#if access/purchase_3}}
+                         - {{access/purchase_3}}<br/>
+                    {{else}}
+                        <br/>
+                    {{/if}}
+            {{else}}
+            {{/if}}
+
+            {{#if resource_4}}
+                {{resource_4}}
+                    {{#if access/purchase_4}}
+                         - {{access/purchase_4}}<br/>
+                    {{else}}
+                        <br/>
+                    {{/if}}
+            {{else}}
+            {{/if}}
+        </div>
     </div>
-</div>
-<!-- end row -->
-
-<!-- begin row -->
-<div class="row-fluid">
-    <div class="span12">
-
-        {{#if resource_1}}
-            <p><span><strong>Additional Resources</strong></span><br/>
-            {{resource_1}}
-                {{#if access/purchase_1}}
-                     - {{access/purchase_1}}<br/>
-                {{else}}
-                    <br/>
-                {{/if}}
-        {{else}}
-        {{/if}}
-
-        {{#if resource_2}}
-            {{resource_2}}
-                {{#if access/purchase_2}}
-                     - {{access/purchase_2}}<br/>
-                {{else}}
-                    <br/>
-                {{/if}}
-        {{else}}
-        {{/if}}
-
-        {{#if resource_3}}
-            {{resource_3}}
-                {{#if access/purchase_3}}
-                     - {{access/purchase_3}}<br/>
-                {{else}}
-                    <br/>
-                {{/if}}
-        {{else}}
-        {{/if}}
-
-        {{#if resource_4}}
-            {{resource_4}}
-                {{#if access/purchase_4}}
-                     - {{access/purchase_4}}<br/>
-                {{else}}
-                    <br/>
-                {{/if}}
-        {{else}}
-        {{/if}}
-    </div>
-</div>
+    <!-- end row -->

@@ -55,6 +55,7 @@ function createMap(){
             contact_email: e.row['contact_email'].value,
             partner_language_1: e.row['partner_language_1'].value,
             partner_language_2: e.row['partner_language_2'].value,
+            hide_from_display: e.row['hide_from_display'].value,
             grade_K: e.row['K'].value,
             grade_1: e.row['1'].value,
             grade_2: e.row['2'].value,
