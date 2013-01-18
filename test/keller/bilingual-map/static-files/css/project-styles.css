@@ -1,4 +1,9 @@
 #data-map-canvas {width: 100%; height: 700px; margin: 10px 0 10px 0;}
+
 #map-data-action {width: 100%; height: 35px; text-align: center;}
-#map-data-loading {background: #e9e9e9; width: 100%; height: 20px; margin: 15px 0 15px 0; padding: 0px; text-align: center; display: none;}
-.display {color: #e9e9e9;}
+
+#map-data-details {width: 100%; margin: 25px auto 0 auto;}
+
+.data-shown {}
+
+.data-hidden {display: none;}

@@ -25,7 +25,7 @@ function renderStaticTemplates(){
     renderKpccHeaderTemplate();
     renderKpccPencilAdTemplate();
     renderDataDetailsTemplate();
-    renderDataVisualsTemplate();
+    //renderDataVisualsTemplate();
     renderDataFooterTemplate();
     renderKpccFooterTemplate();
 };
@@ -52,12 +52,14 @@ function renderDataDetailsTemplate(){
     })
 };
 
+/*
 // create data details template
 function renderDataVisualsTemplate(){
     getTemplateAjax('static-files/templates/data-visuals.handlebars', function(template) {
         jqueryNoConflict('#data-visuals').html(template());
     })
 };
+*/
 
 // create data footer template
 function renderDataFooterTemplate(){

@@ -46,11 +46,6 @@ function createMap(){
 
     google.maps.event.addListener(bilingualSchoolLayer, 'click', function(e) {
 
-/*
-        jqueryNoConflict('#map-data-details').fadeOut('fast');
-        showLoading();
-*/
-
         var fusionTableObject = {
             school_name: e.row['school_name'].value,
             location: e.row['location'].value,
@@ -99,11 +94,6 @@ function createMap(){
 
         renderHandlebarsTemplate('static-files/templates/map-data-details.handlebars', '#map-data-details', fusionTableObject);
 
-/*
-        hideLoading();
-        jqueryNoConflict('#map-data-details').fadeIn('fast');
-*/
-
     });
 
     google.maps.event.addDomListener(map, 'idle', function() {
@@ -118,6 +108,10 @@ function createMap(){
 
 //search select function
 function changeSearch() {
+
+    jqueryNoConflict('.data-shown').removeClass("data-shown").addClass("data-hidden");
+
+    renderHandlebarsTemplate('static-files/templates/map-data-explainer.handlebars', '#map-data-details');
 
     var buildMapQuery = [];
 
@@ -178,13 +172,4 @@ function embedBox() {
     var embed_url = 'http://projects.scpr.org/static/maps/flu-clinics/iframe.html';
 
     jAlert('<strong>To embed this visualization your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+ embed_url +'\" width=\"540px\" height=\"600px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
-};
-
-//loading screen
-function showLoading() {
-	jqueryNoConflict('#map-data-loading').fadeIn('slow');
-};
-
-function hideLoading() {
-	jqueryNoConflict('#map-data-loading').fadeOut('slow');
 };
