@@ -90,7 +90,7 @@ $(function() {
                         return parseFloat($elem.find('.timestamp').text());
                     }
                 },
-                sortBy: 'timestamp',
+                sortBy: 'best',
                 sortAscending: true,
                 itemPositionDataEnabled: true
             });
