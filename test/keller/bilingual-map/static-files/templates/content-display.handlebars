@@ -1,71 +1,199 @@
-<div id="map-data-details-display">
-    <p>{{school_name}}</p>
-    <p>{{location}}</p>
-    <p>{{school_phone}}</p>
-    <p>{{website}}</p>
-    <p>{{contact_name}}</p>
-    <p>{{contact_phone}}</p>
-    <p>{{contact_email}}</p>
-    <p>{{partner_language_1}}</p>
-    <p>{{partner_language_2}}</p>
+    <!-- begin row -->
+    <div class="row-fluid">
+        <h3>{{school_name}}</h3>
+        <p>
+            {{location}}<br />
+            {{#if school_phone}}
+                {{school_phone}}<br />
+            {{/if}}
+            {{#if website}}
+                <a href="{{website}}" target="_blank"><strong>Website</strong></a>
+            {{/if}}
+        </p>
+    </div>
+    <!-- end row -->
 
-<table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-        <th>K</th>
-        <th>1</th>
-        <th>2</th>
-        <th>3</th>
-        <th>4</th>
-        <th>5</th>
-        <th>6</th>
-        <th>7</th>
-        <th>8</th>
-        <th>9</th>
-        <th>10</th>
-        <th>11</th>
-        <th>12</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-        <td>{{grade_K}}</td>
-        <td>{{grade_1}}</td>
-        <td>{{grade_2}}</td>
-        <td>{{grade_3}}</td>
-        <td>{{grade_4}}</td>
-        <td>{{grade_5}}</td>
-        <td>{{grade_6}}</td>
-        <td>{{grade_7}}</td>
-        <td>{{grade_8}}</td>
-        <td>{{grade_9}}</td>
-        <td>{{grade_10}}</td>
-        <td>{{grade_11}}</td>
-        <td>{{grade_12}}</td>
-    </tr>
-  </tbody>
-</table>
+    <!-- begin row -->
+    <div class="row-fluid">
+        <div class="span6">
+            {{#if contact_name}}
+                <p><span><strong>Contact</strong></span><br/>
+                {{contact_name}}<br />
 
+            {{#if contact_phone}}
+                {{contact_phone}}<br />
+            {{/if}}
 
-    <p>{{students_on_free_reduced_lunch}}</p>
-    <p>{{third_language}}</p>
-    <p>{{year_program_started}}</p>
-    <p>{{program_model}}</p>
-    <p>{{EL}}</p>
-    <p>{{IEP}}</p>
-    <p>{{resource_1}}</p>
-    <p>{{cost_1}}</p>
-    <p>{{access/purchase_1}}</p>
-    <p>{{resource_2}}</p>
-    <p>{{cost_2}}</p>
-    <p>{{access/purchase_2}}</p>
-    <p>{{resource_3}}</p>
-    <p>{{cost_3}}</p>
-    <p>{{access/purchase_3}}</p>
-    <p>{{resource_4}}</p>
-    <p>{{cost_4}}</p>
-    <p>{{access/purchase_4}}</p>
-    <p>{{biliteracy_seal}}</p>
-    <p>{{since_when}}</p>
-    <p>{{special_recognition}}</p>
+            {{#if contact_email}}
+                {{contact_email}}
+            {{/if}}
+                </p>
+            {{else}}
+                <p>&nbsp;</p>
+            {{/if}}
+        </div>
+
+        <div class="span6">
+            <p><span><strong>Partner Language(s)</strong></span><br/>
+            {{partner_language_1}}
+
+            {{#if partner_language_2}}
+                 | {{partner_language_2}}</p>
+            {{else}}
+                </p>
+            {{/if}}
+        </div>
+    </div>
+    <!-- end row -->
+
+    <!-- begin row -->
+    <div class="row-fluid">
+        <div class="span12">
+            <p><span><strong>Program Availability</strong></span><br/>
+            <table class="table table-bordered table-striped">
+              <thead>
+                <tr>
+                    <th>K</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>10</th>
+                    <th>11</th>
+                    <th>12</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td>{{grade_K}}</td>
+                    <td>{{grade_1}}</td>
+                    <td>{{grade_2}}</td>
+                    <td>{{grade_3}}</td>
+                    <td>{{grade_4}}</td>
+                    <td>{{grade_5}}</td>
+                    <td>{{grade_6}}</td>
+                    <td>{{grade_7}}</td>
+                    <td>{{grade_8}}</td>
+                    <td>{{grade_9}}</td>
+                    <td>{{grade_10}}</td>
+                    <td>{{grade_11}}</td>
+                    <td>{{grade_12}}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- end row -->
+
+<!-- begin row -->
+<div class="row-fluid">
+    <div class="span12">
+        <div class="span6">
+            <ul>
+                {{#if year_program_started}}
+                    <li>Program Started in {{year_program_started}}</li>
+                {{else}}
+                {{/if}}
+
+                {{#if EL}}
+                    <li>Has {{EL}} students classified as English Learners</li>
+                {{else}}
+                {{/if}}
+
+                {{#if third_language}}
+                    <li>Offers {{third_language}} as a 3rd Language.</li>
+                {{else}}
+                {{/if}}
+            </ul>
+        </div>
+
+        <div class="span6">
+            <ul>
+                {{#if since_when}}
+                    <li>Earned Biliteracy Seal in {{since_when}}</li>
+                {{else}}
+                {{/if}}
+
+                {{#if IEP}}
+                    <li>Has {{IEP}} students in an Individualized Education Program.</li>
+                {{else}}
+                {{/if}}
+
+                {{#if students_on_free_reduced_lunch}}
+                    <li>{{students_on_free_reduced_lunch}}% of students are on Free/Reduced Lunch</li>
+                {{else}}
+                {{/if}}
+            </ul>
+        </div>
+
+    </div>
+</div>
+<!-- end row -->
+
+<!-- begin row -->
+<div class="row-fluid">
+    <div class="span12">
+        {{#if program_model}}
+            <p><strong>Program Model</strong>: {{program_model}}</p>
+        {{else}}
+        {{/if}}
+
+        {{#if special_recognition}}
+            <p><strong>Recognition/Achievements</strong>: {{special_recognition}}</p>
+        {{else}}
+        {{/if}}
+    </div>
+</div>
+<!-- end row -->
+
+<!-- begin row -->
+<div class="row-fluid">
+    <div class="span12">
+
+        {{#if resource_1}}
+            <p><span><strong>Additional Resources</strong></span><br/>
+            {{resource_1}}
+                {{#if access/purchase_1}}
+                     - {{access/purchase_1}}<br/>
+                {{else}}
+                    <br/>
+                {{/if}}
+        {{else}}
+        {{/if}}
+
+        {{#if resource_2}}
+            {{resource_2}}
+                {{#if access/purchase_2}}
+                     - {{access/purchase_2}}<br/>
+                {{else}}
+                    <br/>
+                {{/if}}
+        {{else}}
+        {{/if}}
+
+        {{#if resource_3}}
+            {{resource_3}}
+                {{#if access/purchase_3}}
+                     - {{access/purchase_3}}<br/>
+                {{else}}
+                    <br/>
+                {{/if}}
+        {{else}}
+        {{/if}}
+
+        {{#if resource_4}}
+            {{resource_4}}
+                {{#if access/purchase_4}}
+                     - {{access/purchase_4}}<br/>
+                {{else}}
+                    <br/>
+                {{/if}}
+        {{else}}
+        {{/if}}
+    </div>
 </div>
