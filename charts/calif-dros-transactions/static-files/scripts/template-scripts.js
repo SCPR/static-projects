@@ -4,7 +4,6 @@ var jqueryNoConflict = jQuery;
 jqueryNoConflict(document).ready(function() {
     renderStaticTemplates();
 });
-// end
 
 // render handlebars templates via ajax
 function getTemplateAjax(path, callback) {
@@ -17,43 +16,20 @@ function getTemplateAjax(path, callback) {
             if (callback) callback(template);
         }
     });
-}
-//end
+};
 
-// begin
+// render handlebars template function
+function renderHandlebarsTemplate(withTemplate,inElement,withData){
+    getTemplateAjax(withTemplate, function(template) {
+        jqueryNoConflict(inElement).html(template(withData));
+    })
+};
+
+// render all the templates
 function renderStaticTemplates(){
-    renderKpccHeaderTemplate();
-    renderDataDetailsTemplate();
-    renderDataFooterTemplate();
-    renderKpccFooterTemplate();
+    renderHandlebarsTemplate('static-files/templates/kpcc-header.handlebars', '#kpcc-header');
+    renderHandlebarsTemplate('static-files/templates/data-details.handlebars', '#data-details');
+    renderHandlebarsTemplate('static-files/templates/data-footer.handlebars', '#data-footer');
+    renderHandlebarsTemplate('static-files/templates/kpcc-footer.handlebars', '#kpcc-footer');
 };
 // end
-
-// create data footer template
-function renderKpccHeaderTemplate(){
-    getTemplateAjax('static-files/templates/kpcc-header.handlebars', function(template) {
-        jqueryNoConflict('#kpcc-header').html(template());
-    })
-};
-
-// create data details template
-function renderDataDetailsTemplate(){
-    getTemplateAjax('static-files/templates/data-details.handlebars', function(template) {
-        jqueryNoConflict('#data-details').html(template());
-    })
-};
-
-
-// create data footer template
-function renderDataFooterTemplate(){
-    getTemplateAjax('static-files/templates/data-footer.handlebars', function(template) {
-        jqueryNoConflict('#data-footer').html(template());
-    })
-};
-
-// create data footer template
-function renderKpccFooterTemplate(){
-    getTemplateAjax('static-files/templates/kpcc-footer.handlebars', function(template) {
-        jqueryNoConflict('#kpcc-footer').html(template());
-    })
-};
