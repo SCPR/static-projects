@@ -1,0 +1,36 @@
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+
+
+<script>
+var jqueryNoConflict = jQuery;
+
+//begin main function
+jqueryNoConflict(document).ready(function(){
+
+retrieveData()
+
+});
+//end main function
+
+
+
+// begin
+function retrieveData(){
+
+    //begin json query
+    $.getJSON('http://www.scpr.org/api/content/?types=news&query=flu', function(data) {
+
+        console.log(data);
+
+    });
+    //end json query
+
+};
+// end
+</script>
+
+
+
+
+
+
