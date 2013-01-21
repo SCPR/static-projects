@@ -12,12 +12,9 @@ function retriveData() {
     jqueryNoConflict.getJSON(dataSource, renderDataVisualsTemplate);
 };
 
-// create projects content template
+// render data visuals template
 function renderDataVisualsTemplate(data){
-    getTemplateAjax('static-files/templates/data-visuals.handlebars', function(template) {
-        handlebarsDebugHelper();
-        jqueryNoConflict('#data-visuals').html(template(data));
-    })
+    renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', data);
 };
 
 // render handlebars templates via ajax
@@ -31,15 +28,11 @@ function getTemplateAjax(path, callback) {
             if (callback) callback(template);
         }
     });
-}
-//end
-
-// add handlebars debugger
-function handlebarsDebugHelper(){
-    Handlebars.registerHelper("debug", function(optionalValue) {
-        console.log("Current Context");
-        console.log("====================");
-        console.log(this);
-    });
 };
-// end
+
+// render handlebars template function
+function renderHandlebarsTemplate(withTemplate,inElement,withData){
+    getTemplateAjax(withTemplate, function(template) {
+        jqueryNoConflict(inElement).html(template(withData));
+    })
+};
