@@ -15,7 +15,6 @@ jqueryNoConflict(document).ready(function(){
         debug: true
     });
 });
-// end
 
 // display page template
 function showInfo(data, tabletop){
@@ -24,11 +23,8 @@ function showInfo(data, tabletop){
         objects: data.Presentation_inventory.elements
     };
 
-    renderDataDetailsTemplate(handlebarsData);
-    renderDataVisualsTemplate(handlebarsData);
-
+    renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', handlebarsData);
 };
-// end
 
 // render handlebars templates via ajax
 function getTemplateAjax(path, callback) {
@@ -41,31 +37,11 @@ function getTemplateAjax(path, callback) {
             if (callback) callback(template);
         }
     });
-}
-//end
-
-// add handlebars debugger
-function handlebarsDebugHelper(){
-    Handlebars.registerHelper("debug", function(optionalValue) {
-        console.log("Current Context");
-        console.log("====================");
-        console.log(this);
-    });
-};
-// end
-
-// create projects content template
-function renderDataDetailsTemplate(data){
-    getTemplateAjax('static-files/templates/data-details.handlebars', function(template) {
-        handlebarsDebugHelper();
-        jqueryNoConflict('#data-details').html(template(data));
-    })
 };
 
-// create projects content template
-function renderDataVisualsTemplate(data){
-    getTemplateAjax('static-files/templates/data-visuals.handlebars', function(template) {
-        handlebarsDebugHelper();
-        jqueryNoConflict('#data-visuals').html(template(data));
+// render handlebars template function
+function renderHandlebarsTemplate(withTemplate,inElement,withData){
+    getTemplateAjax(withTemplate, function(template) {
+        jqueryNoConflict(inElement).html(template(withData));
     })
 };
