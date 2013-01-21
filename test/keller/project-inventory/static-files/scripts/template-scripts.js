@@ -1,10 +1,10 @@
 var jqueryNoConflict = jQuery;
+var proxyPrefix = 'http://projects.scpr.org/static/static-files/templates/';
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
     renderStaticTemplates();
 });
-// end
 
 // render handlebars templates via ajax
 function getTemplateAjax(path, callback) {
@@ -17,40 +17,20 @@ function getTemplateAjax(path, callback) {
             if (callback) callback(template);
         }
     });
-}
-//end
+};
 
-// begin
+// function to compile handlebars template
+function renderHandlebarsTemplate(withTemplate,inElement,withData){
+    getTemplateAjax(withTemplate, function(template) {
+        jqueryNoConflict(inElement).html(template(withData));
+    })
+};
+
+// render all the templates
 function renderStaticTemplates(){
-    renderKpccHeaderTemplate();
-    renderKpccFooterTemplate();
-};
-// end
-
-// create data footer template
-function renderKpccHeaderTemplate(){
-    getTemplateAjax('static-files/templates/kpcc-header.handlebars', function(template) {
-        jqueryNoConflict('#kpcc-header').html(template());
-    })
-};
-
-// create data details template
-function renderDataVisualsTemplate(){
-    getTemplateAjax('static-files/templates/data-visuals.handlebars', function(template) {
-        jqueryNoConflict('#data-visuals').html(template());
-    })
-};
-
-// create data footer template
-function renderDataFooterTemplate(){
-    getTemplateAjax('static-files/templates/data-footer.handlebars', function(template) {
-        jqueryNoConflict('#data-footer').html(template());
-    })
-};
-
-// create data footer template
-function renderKpccFooterTemplate(){
-    getTemplateAjax('static-files/templates/kpcc-footer.handlebars', function(template) {
-        jqueryNoConflict('#kpcc-footer').html(template());
-    })
+    renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '#kpcc-header');
+    renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '#kpcc-footer');
+    renderHandlebarsTemplate('static-files/templates/data-share.handlebars', '#data-share');
+    renderHandlebarsTemplate('static-files/templates/data-details.handlebars', '#data-details');
+    renderHandlebarsTemplate('static-files/templates/data-footer.handlebars', '#data-footer');
 };

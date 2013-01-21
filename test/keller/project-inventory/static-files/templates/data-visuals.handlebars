@@ -1,1 +1,16 @@
-<p><span class="data-instructions"><strong>Magna letterpress: </strong> Blue bottle 8-bit tousled, 3 wolf moon exercitation vero gentrify mcsweeney's PBR. Incididunt hella dolor est, proident gentrify bushwick et. High life blue bottle mustache farm-to-table, hella bespoke gastropub delectus hoodie post-ironic dolore cliche terry richardson street art.</span></p>
+{{#objects}}
+    {{#if projectorder}}
+            <h3>{{projecttitle}}</h3>
+            <p><span class="data-instructions">{{projectbylines}} - {{projectcreated}}</span></p>
+            <!-- <p><img src="{{projectimage}}" alt="{{projecttitle}}" /></p> -->
+            <p>{{projectdescription}}</p>
+                {{#if readmoreurl}}
+                    <a class="btn btn-warning" href="{{projecturl}}" target="_blank">View Project</a>
+                    <a class="btn btn-info" href="{{readmoreurl}}" target="_blank">Read More</a>
+                {{else}}
+                    <a class="btn btn-warning" href="{{projecturl}}" target="_blank">View Project</a>
+                {{/if}}
+            <hr>
+    {{else}}
+    {{/if}}
+{{/objects}}

@@ -35,9 +35,7 @@ function getTemplateAjax(path, callback) {
             if (callback) callback(template);
         }
     });
-}
-//end
-
+};
 
 // function to build html display
 function renderDataTableTemplateWith(data) {

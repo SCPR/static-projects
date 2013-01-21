@@ -1,4 +1,5 @@
 var jqueryNoConflict = jQuery;
+var proxyPrefix = 'http://projects.scpr.org/static/static-files/templates/';
 
 var termsToKnow = {
     title: 'Terms to Know',
@@ -29,7 +30,7 @@ function getTemplateAjax(path, callback) {
     });
 };
 
-// render handlebars template function
+// function to compile handlebars template
 function renderHandlebarsTemplate(withTemplate,inElement,withData){
     getTemplateAjax(withTemplate, function(template) {
         jqueryNoConflict(inElement).html(template(withData));
@@ -38,9 +39,10 @@ function renderHandlebarsTemplate(withTemplate,inElement,withData){
 
 // render templates to page
 function renderStaticTemplates(){
-    renderHandlebarsTemplate('static-files/templates/kpcc-header.handlebars', '#kpcc-header');
+    renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '#kpcc-header');
+    renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '#kpcc-footer');
+    renderHandlebarsTemplate('static-files/templates/data-share.handlebars', '#data-share');
     renderHandlebarsTemplate('static-files/templates/data-details.handlebars', '#data-details');
     renderHandlebarsTemplate('static-files/templates/debt-table-terms.handlebars', '#debt-table-terms',termsToKnow);
     renderHandlebarsTemplate('static-files/templates/data-footer.handlebars', '#data-footer');
-    renderHandlebarsTemplate('static-files/templates/kpcc-footer.handlebars', '#kpcc-footer');
 };

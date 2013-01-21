@@ -14,9 +14,8 @@ function retriveData() {
 
 // display page template
 function processDataFrom(data){
-    renderDataVisualsTemplate(data);
+    renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', data);
 };
-// end
 
 // render handlebars templates via ajax
 function getTemplateAjax(path, callback) {
@@ -29,24 +28,12 @@ function getTemplateAjax(path, callback) {
             if (callback) callback(template);
         }
     });
-}
-//end
-
-// add handlebars debugger
-function handlebarsDebugHelper(){
-    Handlebars.registerHelper("debug", function(optionalValue) {
-        console.log("Current Context");
-        console.log("====================");
-        console.log(this);
-    });
 };
-// end
 
-// create projects content template
-function renderDataVisualsTemplate(data){
-    getTemplateAjax('static-files/templates/data-details.handlebars', function(template) {
-        handlebarsDebugHelper();
-        jqueryNoConflict('#data-details').html(template(data));
+// render handlebars template function
+function renderHandlebarsTemplate(withTemplate,inElement,withData){
+    getTemplateAjax(withTemplate, function(template) {
+        jqueryNoConflict(inElement).html(template(withData));
     })
 };
 
@@ -55,5 +42,4 @@ function embedBox() {
     var embed_url = '#/iframe.html';
 
     jAlert('<strong>To embed this on your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+ embed_url +'\" width=\"420px\" height=\"450px\" scrolling=\"no\" frameborder=\"0\"&gt;&lt;/iframe>', 'Share or Embed');
-}
-// end
+};

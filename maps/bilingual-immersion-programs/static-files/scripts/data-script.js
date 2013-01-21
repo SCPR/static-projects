@@ -153,7 +153,7 @@ function getTemplateAjax(path, callback) {
     });
 };
 
-// render handlebars template function
+// function to compile handlebars template
 function renderHandlebarsTemplate(withTemplate,inElement,withData){
     getTemplateAjax(withTemplate, function(template) {
         jqueryNoConflict(inElement).html(template(withData));

@@ -4,7 +4,6 @@ var jqueryNoConflict = jQuery;
 jqueryNoConflict(document).ready(function(){
     renderTestTemplate();
 });
-//end main function
 
 // render handlebars templates via ajax
 function getTemplateAjax(path, callback) {
@@ -17,8 +16,14 @@ function getTemplateAjax(path, callback) {
             if (callback) callback(template);
         }
     });
-}
-//end
+};
+
+// function to compile handlebars template
+function renderHandlebarsTemplate(withTemplate,inElement,withData){
+    getTemplateAjax(withTemplate, function(template) {
+        jqueryNoConflict(inElement).html(template(withData));
+    })
+};
 
 var celebrityData = {
     "objects": [{
@@ -166,9 +171,5 @@ var celebrityData = {
     ]
 };
 
-// render flat file data
-function renderTestTemplate(){
-    getTemplateAjax('static-files/templates/data-visuals.handlebars', function(template) {
-        jqueryNoConflict('#data-visuals').html(template(celebrityData));
-    })
-};
+    // render flat file data
+    renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', celebrityData);
