@@ -30,6 +30,7 @@ function renderHandlebarsTemplate(withTemplate,inElement,withData){
 function renderStaticTemplates(){
     renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '#kpcc-header');
     renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '#kpcc-footer');
+    renderHandlebarsTemplate('static-files/templates/data-share.handlebars', '#data-share');
     renderHandlebarsTemplate('static-files/templates/data-details.handlebars', '#data-details');
     renderHandlebarsTemplate('static-files/templates/data-footer.handlebars', '#data-footer');
 };
