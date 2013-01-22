@@ -2,7 +2,7 @@
     <div class="row-fluid">
         <h3>{{school_name}}</h3>
         <p>
-            {{location}}<br />
+            {{address}}, {{city}}, CA {{zip_code}}<br />
             {{#if school_phone}}
                 {{school_phone}}<br />
             {{/if}}
@@ -217,10 +217,11 @@
                 <p><strong>Recognition/Achievements</strong>: {{special_recognition}}</p>
             {{else}}
             {{/if}}
+
+            <!-- <p><a href="#" class="btn btn-success hidden-phone hidden-tablet" onclick="clickModal();">Submit Change/Update</a></p> -->
         </div>
     </div>
     <!-- end row -->
-
 
     <!-- begin row -->
 

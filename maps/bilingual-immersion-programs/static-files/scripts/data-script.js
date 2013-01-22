@@ -48,6 +48,9 @@ function createMap(){
         var fusionTableObject = {
             school_name: e.row['school_name'].value,
             location: e.row['location'].value,
+            address: e.row['address'].value,
+            city: e.row['city'].value,
+            zip_code: e.row['zip_code'].value,
             school_phone: e.row['school_phone'].value,
             website: e.row['website'].value,
             contact_name: e.row['contact_name'].value,
@@ -170,6 +173,15 @@ function focusOnSchoolDetails(){
     jqueryNoConflict('#content-article-text').fadeOut('fast');
 };
 // end
+
+// create the bootrap modal
+function clickModal(){
+    $('#popupContent').modal('show');
+};
+
+function closeDialog () {
+	$('#popupContent').modal('hide');
+};
 
 // embed function
 function embedBox() {
