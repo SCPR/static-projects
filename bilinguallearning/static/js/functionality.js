@@ -115,12 +115,12 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	VIDEO
 	############################################################################################################## */
 
-	$(".video").click(function() {	
+  $(".video").one('click', function() {
 		var videoHeight = $(this).height();
 		var videoSrc = $(this).data("href");
 		$(this).height(videoHeight).load(videoSrc);
-    $(this).attr("disabled", "disabled);
-	});
+  });
+
 
 
 
