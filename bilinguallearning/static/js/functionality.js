@@ -119,7 +119,6 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 		var videoHeight = $(this).height();
 		var videoSrc = $(this).data("href");
 		$(this).height(videoHeight).load(videoSrc);
-    $(this).attr("disabled", "disabled);
 	});
 
 
