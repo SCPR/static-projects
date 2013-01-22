@@ -23,7 +23,9 @@
     <link rel="apple-touch-icon-precomposed" href="meta/apple-touch-icon-144x144-precomposed.png" />
     <link href="http://media.scpr.org/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-    <link href="static/css/styles.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="static/css/reset.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="static/css/display.css" media="screen" rel="stylesheet" type="text/css" />
+    <!--<link href="static/css/styles.min.css" media="screen" rel="stylesheet" type="text/css" />-->
 
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <!--[if lte IE 9]><link href="static/css/ie-6-7-8-9.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -50,6 +52,7 @@
     	<div id="jquery_jplayer_6" class="cp-jplayer"></div>
     	<div id="jquery_jplayer_7" class="cp-jplayer"></div>
     	<div id="jquery_jplayer_8" class="cp-jplayer"></div>
+      <div id="jquery_jplayer_9" class="cp-jplayer"></div>
     <!-- ======================================================================================================= -->
 
 
@@ -983,13 +986,31 @@
             </div>
         </hgroup>
         
-        <!--
-        <aside class="audio">
+
+        <aside class="audio radio">
             <div class="bound">
-                <p>Listen to the Reyes and Uma&ntilde;a families talk about their journeys in bilingual education</p>
+              <div id="jp_container_9" class="jp-audio">
+                  <div class="jp-type-single">
+                      <div class="jp-gui jp-interface clearfix">
+                          <ul class="jp-controls clearfix">
+                              <li><a href="javascript:;" class="jp-play track-event" data-bar-id="#play-bar-3" data-ga-category="Audio" data-ga-action="Play" data-ga-label="Radio Segment">play<span></span></a></li>
+                              <li><a href="javascript:;" class="jp-pause">pause<span></span><span class="last"></span></a></li>
+                          </ul>
+                          <div class="jp-progress clearfix">
+                              <div class="jp-bar" id="play-bar-3">
+                                <div class="jp-seek-bar">
+                                  <div class="jp-play-bar"></div>
+                                </div>
+                              </div>
+                              <div class="jp-current-time"></div>
+                              <div class="duration">/ 01:17</div>
+                          </div>
+                          <div class="jp-title"><p>Listen to the Reyes and Uma&ntilde;a families talk about their journeys in bilingual education</p></div>
+                      </div>
+                  </div>
+              </div><!--/ #jp_container_8 -->
             </div>
         </aside>
-        -->
         
         <article class="essay essay-reyes">
             

@@ -160,9 +160,13 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	js_audioPlayer("media/audio/collage-newcity.m4a",6);
 	js_audioPlayer("media/audio/collage-leadership.m4a",7);
 	js_audioPlayer("media/audio/collage-franklin.m4a",8);
+	js_audioPlayer("media/audio/collage-franklin.m4a",9);
 
 
-
+  $(".radio .jp-play").click(function() {
+    var playBar = $(this).data("bar-id");
+    $(playBar).animate({width: '150', padding: '2px'}, 300);
+  });
 
 
 });
