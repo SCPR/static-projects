@@ -1537,7 +1537,6 @@ body {
     	position:relative;
     	width:32px;
     	height:32px;
-		outline: 3px solid orange;
     }
 		.audio .jp-play span {
 			width: 0; 
@@ -1561,7 +1560,6 @@ body {
 		}
 		.duration {
 			margin-left:3px;
-			outline: 2px solid lime;
 		}
 	    .jp-bar {
 	      background:#ccc;
@@ -1615,6 +1613,9 @@ body {
 		}
 		.school .audio .jp-title p {
 			margin:6px 0 0;
+		}
+		.essay .audio.radio .jp-title p {
+			margin: 0 0 0;
 		}
 
 
@@ -1948,7 +1949,6 @@ object, embed {
 	/* //////////////////////////////////////////////////////////////////////////////////// */
 
 	.audio.radio {
-		outline: 6px solid blue;
 		background: #303030;
 		color: #ff997a;
 		font-size: 1.25em; /* 20 / 16 */
@@ -2023,8 +2023,9 @@ object, embed {
 				margin-top:0.5em;
 			}
 			.audio.radio .jp-title {
-				margin-top:6px;
-			} 
+				margin-top: 4px;
+				line-height: 1.3;
+			}
 
 	/* //////////////////////////////////////////////////////////////////////////////////// */
 
