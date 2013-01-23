@@ -151,8 +151,9 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	return;
 	}
 
-	js_audioPlayer("http://static-projects.dev/bilinguallearning/media/audio/bilingual-taketwo-pt1.m4a",1);
-	js_audioPlayer("http://static-projects.dev/bilinguallearning/media/audio/bilingual-taketwo-pt2.m4a",2);
+	// Despite appearances, Parts 1 and 2 are intentionally "flipped." The radio pieces aired in a different order than how the site is sequenced.
+	js_audioPlayer("http://static-projects.dev/bilinguallearning/media/audio/bilingual-taketwo-pt2.m4a",1);
+	js_audioPlayer("http://static-projects.dev/bilinguallearning/media/audio/bilingual-taketwo-pt1.m4a",2);
 	js_audioPlayer("http://static-projects.dev/bilinguallearning/media/audio/collage-semillas.m4a",3);
 	js_audioPlayer("http://static-projects.dev/bilinguallearning/media/audio/collage-eastrio.m4a",4);
 	js_audioPlayer("http://static-projects.dev/bilinguallearning/media/audio/collage-elmarino.m4a",5);
