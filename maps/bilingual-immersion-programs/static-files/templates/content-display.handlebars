@@ -3,6 +3,7 @@
         <h3>{{school_name}}</h3>
         <p>
             {{address}}, {{city}}, CA {{zip_code}}<br />
+
             {{#if school_phone}}
                 {{school_phone}}<br />
             {{/if}}
@@ -16,34 +17,44 @@
 
     <!-- begin row -->
     <div class="row-fluid">
+        {{#if display_notes}}
+            According to the latest <a href="http://www.cde.ca.gov/" target="_blank">California Department of Education</a> <a href="http://www.cde.ca.gov/sp/el/ip/" target="_blank">Two-Way Bilingual Immersion Program Directory</a> this school did not submit information. A school can submit information about its program to the CDE <a href="http://www.cde.ca.gov/sp/el/ip/2wayschlprofile.asp" target="_blank">here</a>.
+        {{else}}
+
+        {{/if}}
+    </div>
+    <!-- end row -->
+
+    <!-- begin row -->
+    <div class="row-fluid">
         <div class="span6">
             {{#if contact_name}}
                 <p><span><strong>Contact</strong></span><br/>
                 {{contact_name}}<br />
 
-            {{#if contact_phone}}
-                {{contact_phone}}<br />
-            {{/if}}
+                    {{#if contact_phone}}
+                        {{contact_phone}}<br />
+                    {{else}}
+                    {{/if}}
 
-            {{#if contact_email}}
-                {{contact_email}}
-            {{/if}}
-                </p>
-            {{else}}
-                <p>&nbsp;</p>
-            {{/if}}
+                    {{#if contact_email}}
+                        {{contact_email}}
+                    {{else}}
+                    {{/if}}
+                        </p>
+                {{else}}
+                    <p>&nbsp;</p>
+                {{/if}}
         </div>
 
         <div class="span6">
-            <p><span><strong>Partner Language(s)</strong></span><br/>
-            {{partner_language_1}}
-
-            {{#if partner_language_2}}
-                 | {{partner_language_2}}</p>
+            {{#if partner_language_1}}
+                <p><span><strong>Partner Language(s)</strong></span><br/>
+                {{partner_language_1}}
             {{else}}
-                </p>
             {{/if}}
         </div>
+        <hr>
     </div>
     <!-- end row -->
 
@@ -51,7 +62,6 @@
     <div class="row-fluid">
         <div class="span12">
             {{#is hide_from_display 'Yes'}}
-                <hr>
             {{else}}
                 <p><span><strong>Program Availability</strong></span><br/>
                 <table class="table table-bordered table-striped">
@@ -154,9 +164,9 @@
                     </tr>
                   </tbody>
                 </table>
-                <hr>
             {{/is}}
         </div>
+        <hr>
     </div>
     <!-- end row -->
 
@@ -217,10 +227,10 @@
                 <p><strong>Recognition/Achievements</strong>: {{special_recognition}}</p>
             {{else}}
             {{/if}}
-
-            <p><a href="#" class="btn btn-success hidden-phone hidden-tablet" onclick="clickModal();">Change/update school information</a></p>
-
         </div>
+
+        <p><a href="#" class="btn btn-success hidden-phone hidden-tablet" onclick="clickModal();">Change/update school information</a></p>
+
     </div>
     <!-- end row -->
 

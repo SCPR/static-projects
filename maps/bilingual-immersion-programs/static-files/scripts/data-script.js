@@ -47,6 +47,7 @@ function createMap(){
 
         var fusionTableObject = {
             school_name: e.row['school_name'].value,
+            display_notes: e.row['display_notes'].value,
             location: e.row['location'].value,
             address: e.row['address'].value,
             city: e.row['city'].value,
