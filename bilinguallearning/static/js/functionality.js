@@ -152,14 +152,14 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	}
 
 
-	js_audioPlayer("media/audio/collage-semillas.m4a",1);
-	js_audioPlayer("media/audio/collage-eastrio.m4a",2);
-	js_audioPlayer("media/audio/collage-elmarino.m4a",3);
-	js_audioPlayer("media/audio/collage-belltower.m4a",4);
-	js_audioPlayer("media/audio/collage-ceci.m4a",5);
-	js_audioPlayer("media/audio/collage-newcity.m4a",6);
-	js_audioPlayer("media/audio/collage-leadership.m4a",7);
-	js_audioPlayer("media/audio/collage-franklin.m4a",8);
+	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-semillas.m4a",1);
+	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-eastrio.m4a",2);
+	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-elmarino.m4a",3);
+	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-belltower.m4a",4);
+	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-ceci.m4a",5);
+	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-newcity.m4a",6);
+	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-leadership.m4a",7);
+	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-franklin.m4a",8);
 
 
 
