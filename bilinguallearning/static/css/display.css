@@ -1537,6 +1537,7 @@ body {
     	position:relative;
     	width:32px;
     	height:32px;
+		outline: 3px solid orange;
     }
 		.audio .jp-play span {
 			width: 0; 
@@ -1560,16 +1561,18 @@ body {
 		}
 		.duration {
 			margin-left:3px;
+			outline: 2px solid lime;
 		}
-    .jp-bar {
-      background:#ccc;
-      width:200px;
-      height:6px;
-    }
-    .jp-play-bar {
-      background:#E33500;
-      height:4px;
-    }
+	    .jp-bar {
+	      background:#ccc;
+	      width:200px;
+	      height:6px;
+	    }
+	    .jp-play-bar {
+	      background:#E33500;
+	      height:4px;
+	    }
+
 		.school .audio .jp-progress {
 			color:#6d1900;
 			font-size:0.8em;
@@ -1938,79 +1941,95 @@ object, embed {
 			font: italic 700 2.75em/1.05 "adelle", Georgia, serif; /* 44 / 16 */
 		}
 		.families .audio {
-			background: #303030;
-			color: #ff997a;
-			font-size: 1.25em; /* 20 / 16 */
-			font-style: italic;
-			padding: 24px 0; /* arbitrary */
-			margin-bottom: 60px;
 		}
-    .audio.radio .jp-progress {
-      margin-top:7px;
-    }
-    .audio.radio .jp-bar {
-      background:#666;
-      float:left;
-      width:0px;
-      height:6px;
-      margin:7px 10px 0 0;
-      padding:2px 0;
-      border-radius:10px;
-    }
-    .audio.radio .jp-bar:hover {
-      cursor:pointer;
-    }
-    .audio.radio .jp-play-bar {
-      background:#E33500;
-      border-radius:3px;
-      height:6px;
-    }
-    .audio.radio .jp-play, .audio .jp-pause {
-    	background:#e33500;
-    	border-radius:32px;
-    	text-indent:-9999px;
-    	display:block;
-    	position:relative;
-    	width:40px;
-    	height:40px;
-    }
-    .audio.radio .jp-pause {
-      background:#666;
-    }
-		.audio.radio .jp-play span {
-			width: 0; 
-			height: 0; 
-			border-top: 10px solid transparent;
-			border-bottom: 10px solid transparent;
-			border-left: 12px solid #333;
-			display:block;
-			position:absolute;
-			top:10px;
-			left:15px;
-		}
-		.audio.radio .jp-play:hover, .audio .jp-pause:hover {
-			background:#aaa;
-		}
-		.audio.radio .jp-pause span {
-			background:#333;
-			width: 5px; 
-			height: 18px;
-			display:block;
-			position:absolute;
-			top:11px;
-			left:13px;
-		}
-		.audio.radio .jp-pause span.last {
-			left:22px;
-		}
-		.audio.radio .jp-progress {
-			color:#999;
-			font-size:0.8em;
-			margin-top:0.5em;
-		}
-    .audio.radio .jp-title {
-      margin-top:6px;
-    } 
+
+	/* //////////////////////////////////////////////////////////////////////////////////// */
+	/* "Radio" audio, regardless of which-of-the-three places it occurs
+	/* //////////////////////////////////////////////////////////////////////////////////// */
+
+	.audio.radio {
+		outline: 6px solid blue;
+		background: #303030;
+		color: #ff997a;
+		font-size: 1.25em; /* 20 / 16 */
+		font-style: italic;
+		padding: 24px 0; /* arbitrary */
+		margin-bottom: 60px;
+	}
+			.audio.radio .jp-progress {
+				margin-top:7px;
+			}
+			.audio.radio .jp-bar {
+				background:#666;
+				float:left;
+				width:0px;
+				height:6px;
+				margin:7px 10px 0 0;
+				padding:2px 0;
+				border-radius:10px;
+			}
+					.audio.radio .jp-bar:hover {
+						cursor:pointer;
+					}
+					.audio.radio .jp-play-bar {
+						background:#E33500;
+						border-radius:3px;
+						height:6px;
+					}
+
+			.audio.radio .jp-play,
+			.audio .jp-pause {
+				background:#e33500;
+				border-radius:32px;
+				text-indent:-9999px;
+				display:block;
+				position:relative;
+				width:40px;
+				height:40px;
+			}
+					.audio.radio .jp-pause {
+						background:#666;
+					}
+					.audio.radio .jp-play span {
+						width: 0; 
+						height: 0; 
+						border-top: 10px solid transparent;
+						border-bottom: 10px solid transparent;
+						border-left: 12px solid #333;
+						display:block;
+						position:absolute;
+						top:10px;
+						left:15px;
+					}
+					.audio.radio .jp-play:hover, .audio .jp-pause:hover {
+						background:#aaa;
+					}
+					.audio.radio .jp-pause span {
+						background:#333;
+						width: 5px; 
+						height: 18px;
+						display:block;
+						position:absolute;
+						top:11px;
+						left:13px;
+					}
+					.audio.radio .jp-pause span.last {
+						left:22px;
+					}
+
+			.audio.radio .jp-progress {
+				color:#999;
+				font-size:0.8em;
+				margin-top:0.5em;
+			}
+			.audio.radio .jp-title {
+				margin-top:6px;
+			} 
+
+	/* //////////////////////////////////////////////////////////////////////////////////// */
+
+
+
 		.families .essay {
 		}
 				.families h4 {
