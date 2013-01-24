@@ -2,40 +2,13 @@ var jqueryNoConflict = jQuery;
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
-    retriveWordCloud();
-    retriveData();
+    retriveData('static-files/data/word_frequency.json', renderWordCloudTemplate)
+    retriveData('static-files/data/word_context.json', processData)
 });
-
-
-
-
-// grab data from flat file
-function retriveWordCloud() {
-    var dataSource = 'static-files/data/word_frequency.json';
-    jqueryNoConflict.getJSON(dataSource, renderWordCloudTemplate);
-};
-
-
 
 // render compiled handlebars template
 function renderWordCloudTemplate(data){
     renderHandlebarsTemplate('static-files/templates/wordcloud-display.handlebars', '#htmltagcloud', data);
-};
-
-
-
-
-
-
-
-
-
-
-
-// grab data from flat file
-function retriveData() {
-    var dataSource = 'static-files/data/flat_data.json';
-    jqueryNoConflict.getJSON(dataSource, processData);
 };
 
 // register this as a handlebars helper!!!!
@@ -69,6 +42,11 @@ function processData(data){
     renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#content-display', dataForHandlebars);
 
     });
+};
+
+// grab data from flat file
+function retriveData(dataSource, functionToRun) {
+    jqueryNoConflict.getJSON(dataSource, functionToRun);
 };
 
 // render handlebars templates via ajax
