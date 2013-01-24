@@ -40,7 +40,7 @@ function processData(data){
         };
 
     renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#content-display', dataForHandlebars);
-    jqueryNoConflict('#topic-display').html('<h5>In his State of the State address, Gov. Jerry Brown said <br /> the following about ' + topicVariable + '</h5>');
+    jqueryNoConflict('#topic-display').html('<h4>In Thursday\'s State of the State address, Gov. Jerry Brown said <br /> the following about ' + topicVariable + '</h4>');
 
     });
 };
