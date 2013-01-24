@@ -17,6 +17,7 @@ function processData(data){
     var selected = data.objects;
 
     jqueryNoConflict('#htmltagcloud a').live('click', function() {
+        event.preventDefault();
         var topicVariable = this.name;
         var selectedObjects = [];
 
