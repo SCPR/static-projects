@@ -25,8 +25,8 @@ function processData(data){
             if (selected[i].topic === topicVariable) {
                 var queriedDataObject = {
                     topic: selected[i].topic,
-                    instance: selected[i].instance,
-                    text: selected[i].text
+                    text: selected[i].text,
+                    url: selected[i].url
                 };
                 selectedObjects.push(queriedDataObject);
             }

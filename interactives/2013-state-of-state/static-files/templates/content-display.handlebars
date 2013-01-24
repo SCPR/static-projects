@@ -1,4 +1,9 @@
 {{#objects}}
-    <!-- <li><a href="{{url}}" target="_blank">{{text}}</a></li> -->
-    <li>"{{text}}"</li><br />
+
+    {{#if url}}
+        <li><a href="{{url}}" target="_blank">"{{text}}"</a></li><br/>
+    {{else}}
+        <li>"{{text}}"</li><br/>
+    {{/if}}
+
 {{/objects}}
