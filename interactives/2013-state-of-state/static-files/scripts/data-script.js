@@ -17,7 +17,10 @@ function processData(data){
     var selected = data.objects;
 
     jqueryNoConflict('#htmltagcloud a').live('click', function() {
-        event.preventDefault();
+
+
+
+        //event.preventDefault();
         var topicVariable = this.name;
         var selectedObjects = [];
 
@@ -42,7 +45,7 @@ function processData(data){
 
     renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#content-display', dataForHandlebars);
     jqueryNoConflict('#topic-display').html('<h4>In Thursday\'s State of the State address, Gov. Jerry Brown said <br /> the following about ' + topicVariable + '</h4>');
-
+    jqueryNoConflict('#topic-target').scrollIntoView(true);
     });
 };
 
