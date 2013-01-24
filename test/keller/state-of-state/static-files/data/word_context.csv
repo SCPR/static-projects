@@ -1,71 +1,181 @@
-topic,instance,text,url
-almost,1,This is text for almost,http://tagcrowd.com/
-almost,2,This is text for almost,http://tagcrowd.com/
-almost,3,This is text for almost,http://tagcrowd.com/
-believe,6,This is text for believe,http://tagcrowd.com/
-believe,6,This is text for believe,http://tagcrowd.com/
-believe,6,This is text for believe,http://tagcrowd.com/
-believe,6,This is text for believe,http://tagcrowd.com/
-believe,6,This is text for believe,http://tagcrowd.com/
-believe,6,This is text for believe,http://tagcrowd.com/
-build,5,This is text for build,http://tagcrowd.com/
-build,5,This is text for build,http://tagcrowd.com/
-build,5,This is text for build,http://tagcrowd.com/
-build,5,This is text for build,http://tagcrowd.com/
-build,5,This is text for build,http://tagcrowd.com/
-business,9,This is text for business,http://tagcrowd.com/
-business,9,This is text for business,http://tagcrowd.com/
-business,9,This is text for business,http://tagcrowd.com/
-business,9,This is text for business,http://tagcrowd.com/
-business,9,This is text for business,http://tagcrowd.com/
-business,9,This is text for business,http://tagcrowd.com/
-business,9,This is text for business,http://tagcrowd.com/
-business,9,This is text for business,http://tagcrowd.com/
-business,9,This is text for business,http://tagcrowd.com/
-business,9,This is text for business,http://tagcrowd.com/
-capital,3,This is text for capital,http://tagcrowd.com/
-construction,3,This is text for construction,http://tagcrowd.com/
-cuts,4,This is text for cuts,http://tagcrowd.com/
-dollars,4,This is text for dollars,http://tagcrowd.com/
-dream,4,This is text for dream,http://tagcrowd.com/
-economy,5,This is text for economy,http://tagcrowd.com/
-education,4,This is text for education,http://tagcrowd.com/
-efficient,4,This is text for efficient,http://tagcrowd.com/
-energy,5,This is text for energy,http://tagcrowd.com/
-financial,4,This is text for financial,http://tagcrowd.com/
-funding,4,This is text for funding,http://tagcrowd.com/
-government,6,This is text for government,http://tagcrowd.com/
-governor,4,This is text for governor,http://tagcrowd.com/
-industry,3,This is text for industry,http://tagcrowd.com/
-investment,6,This is text for investment,http://tagcrowd.com/
-jobs,9,This is text for jobs,http://tagcrowd.com/
-level,4,This is text for level,http://tagcrowd.com/
-local,4,This is text for local,http://tagcrowd.com/
-million,6,This is text for million,http://tagcrowd.com/
-nation,6,This is text for nation,http://tagcrowd.com/
-office,4,This is text for office,http://tagcrowd.com/
-people,7,This is text for people,http://tagcrowd.com/
-plan,8,This is text for plan,http://tagcrowd.com/
-principals,4,This is text for principals,http://tagcrowd.com/
-programs,5,This is text for programs,http://tagcrowd.com/
-project,5,This is text for project,http://tagcrowd.com/
-proposal,4,This is text for proposal,http://tagcrowd.com/
-public,4,This is text for public,http://tagcrowd.com/
-real,5,This is text for real,http://tagcrowd.com/
-reduce,5,This is text for reduce,http://tagcrowd.com/
-reform,5,This is text for reform,http://tagcrowd.com/
-renewable,5,This is text for renewable,http://tagcrowd.com/
-require,3,This is text for require,http://tagcrowd.com/
-result,4,This is text for result,http://tagcrowd.com/
-schools,9,This is text for schools,http://tagcrowd.com/
-something,5,This is text for something,http://tagcrowd.com/
-students,4,This is text for students,http://tagcrowd.com/
-system,9,This is text for system,http://tagcrowd.com/
-tax,5,This is text for tax,http://tagcrowd.com/
-teachers,5,This is text for teachers,http://tagcrowd.com/
-temporary,4,This is text for temporary,http://tagcrowd.com/
-times,4,This is text for times,http://tagcrowd.com/
-together,4,This is text for together,http://tagcrowd.com/
-water,4,This is text for water,http://tagcrowd.com/
-work,9,This is text for work,http://tagcrowd.com/
-year,14,This is text for year,http://tagcrowd.com/
+topic,text,url
+action,"As the great jurist, Oliver Wendell Holmes, once said when describing what stirs people to action:",http://tagcrowd.com/
+action,"You were alarmed, you stirred yourselves to action and victory was the outcome.",http://tagcrowd.com/
+action,"Montaigne, the great French writer of the 16th Century, in his Essay on Experience, wisely wrote: “There is little relation between our actions, which are in perpetual mutation, and fixed and immutable laws. The most desirable laws are those that are the rarest, simplest, and most general; and I even think that it would be better to have none at all than to have them in such numbers as we have.”",http://tagcrowd.com/
+affordable,The ultimate costs of expanding our health care system under the Affordable Care Act are unknown.,http://tagcrowd.com/
+affordable,California was the first in the nation to pass laws to implement President Obama’s historic Affordable Care Act.,http://tagcrowd.com/
+affordable,Today I am calling for a special session to deal with those issues that must be decided quickly if California is to get the Affordable Care Act started by next January.,http://tagcrowd.com/
+authority,Subsidiarity is the idea that a central authority should only perform those tasks which cannot be performed at a more immediate or local level.,http://tagcrowd.com/
+authority,My 2013 Budget Summary lays out the case for cutting categorical programs and putting maximum authority and discretion back at the local level—with school boards.,http://tagcrowd.com/
+authority,"I signed the original high speed rail Authority in 1982—over 30 years ago. In 2013, we will finally break ground and start construction.",http://tagcrowd.com/
+budget,We have wrought in just two years a solid and enduring budget.,http://tagcrowd.com/
+budget,You cast difficult votes to cut billions from the state budget.,http://tagcrowd.com/
+budget,The budget is balanced but great risks and uncertainties lie ahead.,http://tagcrowd.com/
+budget,"The federal government, the courts or changes in the economy all could cost us billions and drive a hole in the budget.",http://tagcrowd.com/
+budget,My 2013 Budget Summary lays out the case for cutting categorical programs and putting maximum authority and discretion back at the local level—with school boards.,http://tagcrowd.com/
+budget,"California is back, its budget is balanced, and we are on the move.",http://tagcrowd.com/
+carbon,"When we think about California’s future, no long term liability presents as great a danger to our wellbeing as the buildup of carbon dioxide and other greenhouse gases in the atmosphere.",http://tagcrowd.com/
+carbon,"According to the latest report from the World Bank, carbon dioxide emissions are the highest in 15 million years.",http://tagcrowd.com/
+carbon,We are reducing emissions as required by AB 32 and we will meet our goal of getting carbon emissions to 1990 levels by 2020.,http://tagcrowd.com/
+change,"The federal government, the courts or changes in the economy all could cost us billions and drive a hole in the budget.",http://tagcrowd.com/
+change,"he key here is thoughtful change, working with the faculty and the college presidents.",http://tagcrowd.com/
+change,"This year, we should change both the Enterprise Zone Program and the Jobs Hiring Credit.",http://tagcrowd.com/
+change,"Climate Change: When we think about California’s future, no long term liability presents as great a danger to our wellbeing as the buildup of carbon dioxide and other greenhouse gases in the atmosphere.",http://tagcrowd.com/
+child,"Then there is the Congress which passes laws like “No Child Left Behind,” and finally the Federal Department of Education, whose rules, audits and fines reach into every classroom in America, where sixty million children study, not six million.",http://tagcrowd.com/
+child,"Distant authorities crack the whip, demanding quantitative measures and a stark, single number to encapsulate the precise achievement level of every child.",http://tagcrowd.com/
+child,"This formula recognizes the fact that a child in a family making $20,000 a year or speaking a language different from English or living in a foster home requires more help.",http://tagcrowd.com/
+children,"Nothing is more determinative of our future than how we teach our children. If we fail at this, we will sow growing social chaos and inequality that no law can rectify.",http://tagcrowd.com/
+children,"Then there is the Congress which passes laws like “No Child Left Behind,” and finally the Federal Department of Education, whose rules, audits and fines reach into every classroom in America, where sixty million children study, not six million.",http://tagcrowd.com/
+children,Add to this the fact that three million California school age children speak a language at home other than English and more than two million children live in poverty.,http://tagcrowd.com/
+children,Add to this the fact that three million California school age children speak a language at home other than English and more than two million children live in poverty.,http://tagcrowd.com/
+children,We seem to think that education is a thing—like a vaccine—that can be designed from afar and simply injected into our children.,http://tagcrowd.com/
+children,Equal treatment for children in unequal situations is not justice.,http://tagcrowd.com/
+china,Our ties with The People’s Republic of China in particular are deep—from the Chinese immigrants crossing the Pacific in 1848 to hosting China’s next President in Los Angeles last February.,http://tagcrowd.com/
+china,Our ties with The People’s Republic of China in particular are deep—from the Chinese immigrants crossing the Pacific in 1848 to hosting China’s next President in Los Angeles last February.,http://tagcrowd.com/
+china,"In April, I will lead a trade and investment mission to China with help from the Bay Area Council and officially open California’s new trade and investment office in Shanghai.",http://tagcrowd.com/
+china,Electrified trains are part of the future. China already has 5000 miles of high speed rail and intends to double that. Spain has 1600 miles and is building more.,http://tagcrowd.com/
+classroom,"In addition to the teacher in the classroom, we have a principal in every school, a superintendent and governing board for each school district.",http://tagcrowd.com/
+classroom,"Then there is the Congress which passes laws like “No Child Left Behind,” and finally the Federal Department of Education, whose rules, audits and fines reach into every classroom in America, where sixty million children study, not six million.",http://tagcrowd.com/
+classroom,"I would prefer to trust our teachers who are in the classroom each day, doing the real work – lighting fires in young minds.",http://tagcrowd.com/
+colleges,"Then during the Civil War under President Lincoln came the Transcontinental Railroad and Land Grant Colleges, followed by the founding of the University of California.",http://tagcrowd.com/
+colleges,A half million fewer students this year enrolled in the community colleges than in 2008.,http://tagcrowd.com/
+colleges,"The University of California, the Cal State system and the community colleges are all working on this.",http://tagcrowd.com/
+colleges,But tuition increases are not the answer. I will not let the students become the default financiers of our colleges and universities.,http://tagcrowd.com/
+community,"I salute the teachers and the students, the parents and the college presidents, the whole school community.",http://tagcrowd.com/
+community,A half million fewer students this year enrolled in the community colleges than in 2008.,http://tagcrowd.com/
+community,"The University of California, the Cal State system and the community colleges are all working on this.",http://tagcrowd.com/
+cost,"The federal government, the courts or changes in the economy all could cost us billions and drive a hole in the budget.",http://tagcrowd.com/
+cost,The ultimate costs of expanding our health care system under the Affordable Care Act are unknown.,http://tagcrowd.com/
+cost,"With respect to higher education, cost pressures are relentless and many students cannot get the classes they need.",http://tagcrowd.com/
+cost,"Given the costs involved, great prudence should guide every step of the way.",http://tagcrowd.com/
+cost,"If because of an earthquake, a hundred year storm or sea level rise, the Delta fails, the disaster would be comparable to Hurricane Katrina or Superstorm Sandy: losses of at least $100 billion and 40,000 jobs. I am going to do whatever I can to make sure that does not happen. My proposed plan is two tunnels 30 miles long and 40 feet wide, designed to improve the ecology of the Delta, with almost 100 square miles of habitat restoration. Yes, that is big but so is the problem. The London Olympics lasted a short while and cost $14 billion, about the same cost as this project. But this project will serve California for hundreds of years.",http://tagcrowd.com/
+cows,"Recall the story of Genesis and Pharaoh’s dream of seven cows, fatfleshed and well favored, which came out of the river, followed by seven other cows leanfleshed and ill favored. Then the lean cows ate up the fat cows. The Pharaoh could not interpret his dream until Joseph explained to him that the seven fat cows were seven years of great plenty and the seven lean cows were seven years of famine that would immediately follow. The Pharaoh took the advice of Joseph and stored up great quantities of grain during the years of plenty. When famine came, Egypt was ready.",http://tagcrowd.com/
+decade,That is how we plunged into a decade of deficits.,http://tagcrowd.com/
+decade,"What we have done together and what we must do in the coming years is big, but it pales in comparison to the indomitable courage of those who discovered and each decade thereafter built a more abundant California.",http://tagcrowd.com/
+decade,"Over the rest of this decade, California will steadily reduce the number of the uninsured.",http://tagcrowd.com/
+decade,It requires acting now even though the worst consequences are perhaps decades in the future.,http://tagcrowd.com/
+decade,"Over the last three decades, these pioneering efforts have saved Californians $65 billion dollars.",http://tagcrowd.com/
+delta,Central to the life of our state is water and one sixth of that water flows through the San Joaquin Delta.,http://tagcrowd.com/
+delta,"Silicon Valley, the Livermore Valley, farmers on the East side of the San Joaquin Valley between Fresno and Kern County and farmers on the West side between Tracy and Los Banos, urban Southern California and Northern Contra Costa, all are critically dependent on the Delta for Water.",http://tagcrowd.com/
+delta,"If because of an earthquake, a hundred year storm or sea level rise, the Delta fails, the disaster would be comparable to Hurricane Katrina or Superstorm Sandy: losses of at least $100 billion and 40,000 jobs.",http://tagcrowd.com/
+delta,"My proposed plan is two tunnels 30 miles long and 40 feet wide, designed to improve the ecology of the Delta, with almost 100 square miles of habitat restoration.",http://tagcrowd.com/
+destiny,"In the midst of the Great Depression, Franklin Roosevelt said: “There is a mysterious cycle in human events. To some generations much is given. Of other generations much is expected. This generation has a rendezvous with destiny.”",http://tagcrowd.com/
+destiny,We --right here in California-- have such a rendezvous with destiny.,http://tagcrowd.com/
+destiny,This special destiny never ends.,http://tagcrowd.com/
+economy,"The federal government, the courts or changes in the economy all could cost us billions and drive a hole in the budget.",http://tagcrowd.com/
+economy,California’s exports are booming and our place in the world economy has never been stronger.,http://tagcrowd.com/
+education,Lay the Ten Commandments next to the California Education code and you will see how far we have diverged in approach and in content from that which forms the basis of our legal system.,http://tagcrowd.com/
+education,"In the right order of things, education—the early fashioning of character and the formation of conscience—comes before legislation.",http://tagcrowd.com/
+education,"Then we have the State Superintendent and the State Board of Education, which makes rules and approves endless waivers—often of laws which you just passed.",http://tagcrowd.com/
+education,"Then there is the Congress which passes laws like “No Child Left Behind,” and finally the Federal Department of Education, whose rules, audits and fines reach into every classroom in America, where sixty million children study, not six million.",http://tagcrowd.com/
+education,We seem to think that education is a thing—like a vaccine—that can be designed from afar and simply injected into our children.,http://tagcrowd.com/
+education,"But as the Irish poet, William Butler Yeats said, “Education is not the filling of a pail but the lighting of a fire.”",http://tagcrowd.com/
+education,"This year, as you consider new education laws, I ask you to consider the principle of Subsidiarity.",http://tagcrowd.com/
+education,"With respect to higher education, cost pressures are relentless and many students cannot get the classes they need.",http://tagcrowd.com/
+emissions,"According to the latest report from the World Bank, carbon dioxide emissions are the highest in 15 million years.",http://tagcrowd.com/
+emissions,"At today’s emissions rate, the planet could warm by more than 7 degrees Fahrenheit by the end of the century, an event unknown in human experience.",http://tagcrowd.com/
+emissions,We are reducing emissions as required by AB 32 and we will meet our goal of getting carbon emissions to 1990 levels by 2020.,http://tagcrowd.com/
+feeling,"As the great jurist, Oliver Wendell Holmes, once said when describing what stirs people to action: “Feeling begets feeling and great feeling begets great feeling.” You were alarmed, you stirred yourselves to action and victory was the outcome.",http://tagcrowd.com/
+funding,"It is cruel to lead people on by expanding good programs, only to cut them back when the funding disappears.",http://tagcrowd.com/
+funding,"And we have a funding system that is overly complex, bureaucratically driven and deeply inequitable.",http://tagcrowd.com/
+funding,I am asking you to approve a brand new Local Control Funding Formula which would distribute supplemental funds — over an extended period of time — to school districts based on the real world problems they face.,http://tagcrowd.com/
+funding,I have directed our Transportation Agency to review thoroughly our current priorities and explore long-term funding options.,http://tagcrowd.com/
+future,All around us we see doubt and skepticism about our future and that of America’s.,http://tagcrowd.com/
+future,But what we need to do for our future will require more than producing hundreds of new laws each year.,http://tagcrowd.com/
+future, Nothing is more determinative of our future than how we teach our children.,http://tagcrowd.com/
+future,"When we think about California’s future, no long term liability presents as great a danger to our wellbeing as the buildup of carbon dioxide and other greenhouse gases in the atmosphere.",http://tagcrowd.com/
+future, It requires acting now even though the worst consequences are perhaps decades in the future.,http://tagcrowd.com/
+future,Electrified trains are part of the future.,http://tagcrowd.com/
+government,You did great things: Your 1/3 renewable energy mandate; the reform of workers compensation; the reorganization of state government; protecting our forests and strengthening our timber industry; reforming our welfare system; and launching the nation’s first high speed rail system.,http://tagcrowd.com/
+government,"The federal government, the courts or changes in the economy all could cost us billions and drive a hole in the budget.",http://tagcrowd.com/
+government,Constantly expanding the coercive power of government by adding each year so many minute prescriptions to our already detailed and turgid legal system overshadows other aspects of public service.,http://tagcrowd.com/
+government,"In other words, higher or more remote levels of government, like the state, should render assistance to local school districts, but always respect their primary jurisdiction and the dignity and freedom of teachers and students.",http://tagcrowd.com/
+highway,"In the years following World War II, California embarked on a vast program to build highway, bridges and roads.",http://tagcrowd.com/
+highway,"Today, California’s highways are asked to accommodate more vehicle traffic than any other state in the nation.",http://tagcrowd.com/
+highway,"He retraced his steps northward, along what was to become El Camino Real, the Kings Highway.",http://tagcrowd.com/
+jobs,California lost 1.3 million jobs in the great Recession but we are coming back at a faster pace than the national average.,http://tagcrowd.com/
+jobs,"The new facility in San Jose will place at least 2,500 people in high skill, high wage jobs.",http://tagcrowd.com/
+jobs,"We also leveled the field on internet sales taxes, paving the way for over 1,000 new jobs at new Amazon distribution centers in Patterson and San Bernardino and now Tracy.",http://tagcrowd.com/
+jobs,"This year, we should change both the Enterprise Zone Program and the Jobs Hiring Credit.",http://tagcrowd.com/
+jobs,"If because of an earthquake, a hundred year storm or sea level rise, the Delta fails, the disaster would be comparable to Hurricane Katrina or Superstorm Sandy: losses of at least $100 billion and 40,000 jobs.",http://tagcrowd.com/
+laws,"As Legislators, It is your duty and privilege to pass laws.",http://tagcrowd.com/
+laws,But what we need to do for our future will require more than producing hundreds of new laws each year.,http://tagcrowd.com/
+laws,"Montaigne, the great French writer of the 16th Century, in his Essay on Experience, wisely wrote: “There is little relation between our actions, which are in perpetual mutation, and fixed and immutable laws. The most desirable laws are those that are the rarest, simplest, and most general; and I even think that it would be better to have none at all than to have them in such numbers as we have.”",http://tagcrowd.com/
+laws,"In California’s public schools, there are six million students, 300,000 teachers—all subject to tens of thousands of laws and regulations.",http://tagcrowd.com/
+laws,"Then we have the State Superintendent and the State Board of Education, which makes rules and approves endless waivers—often of laws which you just passed.",http://tagcrowd.com/
+laws,"Then there is the Congress which passes laws like “No Child Left Behind,” and finally the Federal Department of Education, whose rules, audits and fines reach into every classroom in America, where sixty million children study, not six million.",http://tagcrowd.com/
+laws,The laws that are in fashion demand tightly constrained curricula and reams of accountability data.,http://tagcrowd.com/
+laws,"This year, as you consider new education laws, I ask you to consider the principle of Subsidiarity.",http://tagcrowd.com/
+laws,California was the first in the nation to pass laws to implement President Obama’s historic Affordable Care Act.,http://tagcrowd.com/
+level,"Distant authorities crack the whip, demanding quantitative measures and a stark, single number to encapsulate the precise achievement level of every child.",http://tagcrowd.com/
+level,Subsidiarity is the idea that a central authority should only perform those tasks which cannot be performed at a more immediate or local level.,http://tagcrowd.com/
+level,"In other words, higher or more remote levels of government, like the state, should render assistance to local school districts, but always respect their primary jurisdiction and the dignity and freedom of teachers and students.",http://tagcrowd.com/
+level,My 2013 Budget Summary lays out the case for cutting categorical programs and putting maximum authority and discretion back at the local level—with school boards.,http://tagcrowd.com/
+level,"We also leveled the field on internet sales taxes, paving the way for over 1,000 new jobs at new Amazon distribution centers in Patterson and San Bernardino and now Tracy.",http://tagcrowd.com/
+level,"If because of an earthquake, a hundred year storm or sea level rise, the Delta fails, the disaster would be comparable to Hurricane Katrina or Superstorm Sandy: losses of at least $100 billion and 40,000 jobs.",http://tagcrowd.com/
+level,We are reducing emissions as required by AB 32 and we will meet our goal of getting carbon emissions to 1990 levels by 2020.,http://tagcrowd.com/
+miles,"My proposed plan is two tunnels 30 miles long and 40 feet wide, designed to improve the ecology of the Delta, with almost 100 square miles of habitat restoration. Yes, that is big but so is the problem.",http://tagcrowd.com/
+miles,Electrified trains are part of the future. China already has 5000 miles of high speed rail and intends to double that. Spain has 1600 miles and is building more.,http://tagcrowd.com/
+miles,"Then we will take it through the Tehachapi Mountains to Palmdale, constructing 30 miles of tunnels and bridges. The first rail line through those mountains was built in 1874 and its top speed over the crest is still 24 miles an hour. Then we will build another 33 miles of tunnels and bridges before we get the train to its destination at Union Station in the heart of Los Angeles.",http://tagcrowd.com/
+million,"In California’s public schools, there are six million students, 300,000 teachers—all subject to tens of thousands of laws and regulations.",http://tagcrowd.com/
+million,"Then there is the Congress which passes laws like “No Child Left Behind,” and finally the Federal Department of Education, whose rules, audits and fines reach into every classroom in America, where sixty million children study, not six million.",http://tagcrowd.com/
+million,Add to this the fact that three million California school age children speak a language at home other than English and more than two million children live in poverty.,http://tagcrowd.com/
+million,A half million fewer students this year enrolled in the community colleges than in 2008.,http://tagcrowd.com/
+million,"Our health benefit exchange, called Covered California, will begin next year providing insurance to nearly one million Californians.",http://tagcrowd.com/
+million,California lost 1.3 million jobs in the great Recession but we are coming back at a faster pace than the national average.,http://tagcrowd.com/
+million,"According to the latest report from the World Bank, carbon dioxide emissions are the highest in 15 million years.",http://tagcrowd.com/
+nation,"Today, California’s highways are asked to accommodate more vehicle traffic than any other state in the nation.",http://tagcrowd.com/
+nation,You did great things: Your 1/3 renewable energy mandate; the reform of workers compensation; the reorganization of state government; protecting our forests and strengthening our timber industry; reforming our welfare system; and launching the nation’s first high speed rail system.,http://tagcrowd.com/
+nation,California was the first in the nation to pass laws to implement President Obama’s historic Affordable Care Act.,http://tagcrowd.com/
+program,My 2013 Budget Summary lays out the case for cutting categorical programs and putting maximum authority and discretion back at the local level—with school boards.,http://tagcrowd.com/
+program,"This year, we should change both the Enterprise Zone Program and the Jobs Hiring Credit.",http://tagcrowd.com/
+program,"In the years following World War II, California embarked on a vast program to build highway, bridges and roads.",http://tagcrowd.com/
+program,"It is cruel to lead people on by expanding good programs, only to cut them back when the funding disappears.",http://tagcrowd.com/
+rail,You did great things: Your 1/3 renewable energy mandate; the reform of workers compensation; the reorganization of state government; protecting our forests and strengthening our timber industry; reforming our welfare system; and launching the nation’s first high speed rail system.,http://tagcrowd.com/
+rail,"Last year, you authorized another big project: High Speed Rail.",http://tagcrowd.com/
+rail,China already has 5000 miles of high speed rail and intends to double that.,http://tagcrowd.com/
+rail,More than a dozen other countries have their own successful high speed rail systems.,http://tagcrowd.com/
+rail,The first rail line through those mountains was built in 1874 and its top speed over the crest is still 24 miles an hour.,http://tagcrowd.com/
+rail,"I signed the original high speed rail Authority in 1982—over 30 years ago. In 2013, we will finally break ground and start construction.",http://tagcrowd.com/
+renewable,You did great things: Your 1/3 renewable energy mandate; the reform of workers compensation; the reorganization of state government; protecting our forests and strengthening our timber industry; reforming our welfare system; and launching the nation’s first high speed rail system.,http://tagcrowd.com/
+renewable,"We are also meeting our renewable energy goals: more than 20% renewable energy this year. By 2020, we will get at least a third of our electricity from the sun and the wind and other renewable sources—and probably more.",http://tagcrowd.com/
+school,"I salute the teachers and the students, the parents and the college presidents, the whole school community.",http://tagcrowd.com/
+school,"In California’s public schools, there are six million students, 300,000 teachers—all subject to tens of thousands of laws and regulations.",http://tagcrowd.com/
+school,"In addition to the teacher in the classroom, we have a principal in every school, a superintendent and governing board for each school district.",http://tagcrowd.com/
+school,Add to this the fact that three million California school age children speak a language at home other than English and more than two million children live in poverty.,http://tagcrowd.com/
+school,"In other words, higher or more remote levels of government, like the state, should render assistance to local school districts, but always respect their primary jurisdiction and the dignity and freedom of teachers and students.",http://tagcrowd.com/
+school,My 2013 Budget Summary lays out the case for cutting categorical programs and putting maximum authority and discretion back at the local level—with school boards.,http://tagcrowd.com/
+school,I am asking you to approve a brand new Local Control Funding Formula which would distribute supplemental funds — over an extended period of time — to school districts based on the real world problems they face.,http://tagcrowd.com/
+seven,"Recall the story of Genesis and Pharaoh’s dream of seven cows, fatfleshed and well favored, which came out of the river, followed by seven other cows leanfleshed and ill favored. Then the lean cows ate up the fat cows. The Pharaoh could not interpret his dream until Joseph explained to him that the seven fat cows were seven years of great plenty and the seven lean cows were seven years of famine that would immediately follow. The Pharaoh took the advice of Joseph and stored up great quantities of grain during the years of plenty. When famine came, Egypt was ready. The people have given us seven years of extra taxes. Let us follow the wisdom of Joseph, pay down our debts and store up reserves against the leaner times that will surely come.",http://tagcrowd.com/
+speed,You did great things: Your 1/3 renewable energy mandate; the reform of workers compensation; the reorganization of state government; protecting our forests and strengthening our timber industry; reforming our welfare system; and launching the nation’s first high speed rail system.,http://tagcrowd.com/
+speed,"Last year, you authorized another big project: High Speed Rail. Yes, it is bold but so is everything else about California.",http://tagcrowd.com/
+speed,Electrified trains are part of the future. China already has 5000 miles of high speed rail and intends to double that. Spain has 1600 miles and is building more. More than a dozen other countries have their own successful high speed rail systems. Even Morocco is building one.,http://tagcrowd.com/
+speed, The first rail line through those mountains was built in 1874 and its top speed over the crest is still 24 miles an hour.,http://tagcrowd.com/
+speed,"It has taken great perseverance to get us this far. I signed the original high speed rail Authority in 1982—over 30 years ago. In 2013, we will finally break ground and start construction.",http://tagcrowd.com/
+students,"I salute the teachers and the students, the parents and the college presidents, the whole school community.",http://tagcrowd.com/
+students,"In California’s public schools, there are six million students, 300,000 teachers—all subject to tens of thousands of laws and regulations.",http://tagcrowd.com/
+students,"In other words, higher or more remote levels of government, like the state, should render assistance to local school districts, but always respect their primary jurisdiction and the dignity and freedom of teachers and students.",http://tagcrowd.com/
+students,"With respect to higher education, cost pressures are relentless and many students cannot get the classes they need.",http://tagcrowd.com/
+students,A half million fewer students this year enrolled in the community colleges than in 2008.,http://tagcrowd.com/
+students,I will not let the students become the default financiers of our colleges and universities.,http://tagcrowd.com/
+system,You did great things: Your 1/3 renewable energy mandate; the reform of workers compensation; the reorganization of state government; protecting our forests and strengthening our timber industry; reforming our welfare system; and launching the nation’s first high speed rail system.,http://tagcrowd.com/
+system,The ultimate costs of expanding our health care system under the Affordable Care Act are unknown.,http://tagcrowd.com/
+system,Constantly expanding the coercive power of government by adding each year so many minute prescriptions to our already detailed and turgid legal system overshadows other aspects of public service.,http://tagcrowd.com/
+system,Lay the Ten Commandments next to the California Education code and you will see how far we have diverged in approach and in content from that which forms the basis of our legal system.,http://tagcrowd.com/
+system,"And we have a funding system that is overly complex, bureaucratically driven and deeply inequitable.",http://tagcrowd.com/
+system,"Graduation in four years is the exception and transition from one segment to the other is difficult. The University of California, the Cal State system and the community colleges are all working on this.",http://tagcrowd.com/
+taxes,"Then, the citizens of California, using their inherent political power under the Constitution, finished the task. They embraced the new taxes of Proposition 30 by a healthy margin of 55% to 44%.",http://tagcrowd.com/
+taxes,"The people have given us seven years of extra taxes. Let us follow the wisdom of Joseph, pay down our debts and store up reserves against the leaner times that will surely come.",http://tagcrowd.com/
+taxes,"We also leveled the field on internet sales taxes, paving the way for over 1,000 new jobs at new Amazon distribution centers in Patterson and San Bernardino and now Tracy.",http://tagcrowd.com/
+teachers,"I salute the teachers and the students, the parents and the college presidents, the whole school community. As the great jurist, Oliver Wendell Holmes, once said when describing what stirs people to action: “Feeling begets feeling and great feeling begets great feeling.” You were alarmed, you stirred yourselves to action and victory was the outcome.",http://tagcrowd.com/
+teachers,"In California’s public schools, there are six million students, 300,000 teachers—all subject to tens of thousands of laws and regulations.",http://tagcrowd.com/
+teachers,"In addition to the teacher in the classroom, we have a principal in every school, a superintendent and governing board for each school district.",http://tagcrowd.com/
+teachers,"In other words, higher or more remote levels of government, like the state, should render assistance to local school districts, but always respect their primary jurisdiction and the dignity and freedom of teachers and students.",http://tagcrowd.com/
+teachers,"I would prefer to trust our teachers who are in the classroom each day, doing the real work – lighting fires in young minds.",http://tagcrowd.com/
+tunnels,"My proposed plan is two tunnels 30 miles long and 40 feet wide, designed to improve the ecology of the Delta, with almost 100 square miles of habitat restoration. Yes, that is big but so is the problem.",http://tagcrowd.com/
+tunnels,"Then we will take it through the Tehachapi Mountains to Palmdale, constructing 30 miles of tunnels and bridges.",http://tagcrowd.com/
+tunnels,Then we will build another 33 miles of tunnels and bridges before we get the train to its destination at Union Station in the heart of Los Angeles.,http://tagcrowd.com/
+water,"And oil production, movies, an aircraft industry, the longest suspension bridge in the world, aerospace, the first freeways, grand water projects, Jet Propulsion Laboratory, Venture Capital, Silicon Valley, Hewlett Packard, Apple, Qualcomm, Google and countless others, existing and still just imagined.",http://tagcrowd.com/
+water,Central to the life of our state is water and one sixth of that water flows through the San Joaquin Delta.,http://tagcrowd.com/
+water,"Silicon Valley, the Livermore Valley, farmers on the East side of the San Joaquin Valley between Fresno and Kern County and farmers on the West side between Tracy and Los Banos, urban Southern California and Northern Contra Costa, all are critically dependent on the Delta for Water.",http://tagcrowd.com/
+water,"California is extremely vulnerable because of our Mediterranean climate, long coastline and reliance on snowpack for so much of our water supply.",http://tagcrowd.com/

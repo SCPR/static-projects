@@ -1,53 +1,48 @@
 #htmltagcloud{
-
-    /******************************************
-    * CUSTOMIZE CLOUD CSS BELOW (optional)
-    */
     font-size: 100%;
-    width: auto;        /* auto or fixed width, e.g. 500px   */
+    width: 100%;
     font-family:'lucida grande','trebuchet ms',arial,helvetica,sans-serif;
     /*background-color:#fff;*/
-    margin:1em 1em 0 1em;
+    margin: 20px auto 20px auto;
     /*border:2px dotted #ddd;*/
-    padding:2em;
-    /******************************************
-    * END CUSTOMIZE
-    */
+}
 
-    }
+#htmltagcloud {line-height:2.4em;word-spacing:normal;letter-spacing:normal;text-transform:none;text-align:justify;text-indent:0}
 
-#htmltagcloud{line-height:2.4em;word-spacing:normal;letter-spacing:normal;text-transform:none;text-align:justify;text-indent:0}
-#htmltagcloud a:link{text-decoration:none;}
-#htmltagcloud a:visited{text-decoration:none;}
-#htmltagcloud a:hover{text-decoration: underline;}
-#htmltagcloud a:active{text-decoration:none;}
-.wrd{padding:0;position:relative}
-.wrd a{text-decoration:none}
-.tagcloud0{font-size:1.0em;color:#ACC1F3;z-index:10}
-.tagcloud0 a{color:#ACC1F3}
-.tagcloud1{font-size:1.4em;color:#ACC1F3;z-index:9}
-.tagcloud1 a{color:#ACC1F3}
-.tagcloud2{font-size:1.8em;color:#86A0DC;z-index:8}
-.tagcloud2 a{color:#86A0DC}
-.tagcloud3{font-size:2.2em;color:#86A0DC;z-index:7}
-.tagcloud3 a{color:#86A0DC}
-.tagcloud4{font-size:2.6em;color:#607EC5;z-index:6}.
-tagcloud4 a{color:#607EC5}
-.tagcloud5{font-size:3.0em;color:#607EC5;z-index:5}
-.tagcloud5 a{color:#607EC5}
-.tagcloud6{font-size:3.3em;color:#4C6DB9;z-index:4}
-.tagcloud6 a{color:#4C6DB9}
-.tagcloud7{font-size:3.6em;color:#395CAE;z-index:3}
-.tagcloud7 a{color:#395CAE}
-.tagcloud8{font-size:3.9em;color:#264CA2;z-index:2}
-.tagcloud8 a{color:#264CA2}
-.tagcloud9{font-size:4.2em;color:#133B97;z-index:1}
-.tagcloud9 a{color:#133B97}
-.tagcloud10{font-size:4.5em;color:#002A8B;z-index:0}
-.tagcloud10 a{color:#002A8B}
-.freq{font-size:10pt !important;color:#bbb}
-#credit{text-align:center;color:#333;margin-bottom:0.6em;font:0.7em 'lucida grande',trebuchet,'trebuchet ms',verdana,arial,helvetica,sans-serif}
-#credit a:link{color:#777;text-decoration:none}
-#credit a:visited{color:#777;text-decoration:none}
-#credit a:hover{color:white;background-color:#05f}
-#credit a:active{text-decoration:underline}
+
+
+
+#htmltagcloud a:link {text-decoration:none;}
+#htmltagcloud a:visited {text-decoration:none;}
+#htmltagcloud a:hover {text-decoration: underline;}
+#htmltagcloud a:active {text-decoration:none;}
+.wrd {padding:0;position:relative}
+.wrd a {text-decoration:none}
+.tagcloud0 {font-size:1.0em;color:#ACC1F3;z-index:10}
+.tagcloud0 a {color:#ACC1F3}
+.tagcloud1 {font-size:1.4em;color:#ACC1F3;z-index:9}
+.tagcloud1 a {color:#ACC1F3}
+.tagcloud2 {font-size:1.8em;color:#86A0DC;z-index:8}
+.tagcloud2 a {color:#86A0DC}
+.tagcloud3 {font-size:2.2em;color:#86A0DC;z-index:7}
+.tagcloud3 a {color:#86A0DC}
+.tagcloud4 {font-size:2.6em;color:#607EC5;z-index:6}.
+tagcloud4 a {color:#607EC5}
+.tagcloud5 {font-size:3.0em;color:#607EC5;z-index:5}
+.tagcloud5 a {color:#607EC5}
+.tagcloud6 {font-size:3.3em;color:#4C6DB9;z-index:4}
+.tagcloud6 a {color:#4C6DB9}
+.tagcloud7 {font-size:3.6em;color:#395CAE;z-index:3}
+.tagcloud7 a {color:#395CAE}
+.tagcloud8 {font-size:3.9em;color:#264CA2;z-index:2}
+.tagcloud8 a {color:#264CA2}
+.tagcloud9 {font-size:4.2em;color:#133B97;z-index:1}
+.tagcloud9 a {color:#133B97}
+.tagcloud10 {font-size:4.5em;color:#002A8B;z-index:0}
+.tagcloud10 a {color:#002A8B}
+.freq {font-size:10pt !important;color:#bbb}
+#credit {text-align:center;color:#333;margin-bottom:0.6em;font:0.7em 'lucida grande',trebuchet,'trebuchet ms',verdana,arial,helvetica,sans-serif}
+#credit a:link {color:#777;text-decoration:none}
+#credit a:visited {color:#777;text-decoration:none}
+#credit a:hover {color:white;background-color:#05f}
+#credit a:active {text-decoration:underline}
