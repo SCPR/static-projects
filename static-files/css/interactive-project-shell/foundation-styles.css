@@ -30,6 +30,8 @@ body.minimal footer ul li:last-child { padding-right: 0; border-right: none; }
 #data-details
 #data-visuals
 #content-article {width: 100%; height: auto; margin: 0 auto 25px auto;}
+#content-article-text {}
+#content-article-buttons {margin: 15px 0 10px 0;}
 #content-action-bar {width: 100%; height: auto; text-align: center; margin: 25px auto 25px auto;}
 #content-explainer {width: 100%; height: auto; margin: 25px auto 25px auto;}
 #content-display {width: 100%; height: auto; margin: 25px auto 25px auto;}
@@ -61,6 +63,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0 0;}
 #data-container .story-text {}
 #data-container .details-intro {}
 #data-container .details-drilldown {}
+#data-container .hidden {display: none;}
 
 /* media queries */
 @media screen and (max-width: 768px) {
