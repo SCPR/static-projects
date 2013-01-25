@@ -13,7 +13,6 @@ function buildMapDisplay(){
 
     MapsLib.initialize();
     jqueryNoConflict("#search_address").geocomplete();
-
     jqueryNoConflict(':checkbox').click(function(){
         MapsLib.doSearch();
     });
