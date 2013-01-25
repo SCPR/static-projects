@@ -93,6 +93,7 @@ function focusOnDisplayDetails(){
 // begin
 function showDisplayDetails(){
     jqueryNoConflict('#content-article-text').fadeIn('fast');
+    jqueryNoConflict('#content-display').empty();
     jqueryNoConflict('#about-this-project').addClass('hidden');
 };
 // end
