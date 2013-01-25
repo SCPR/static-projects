@@ -43,7 +43,7 @@ function createMap(){
 
     google.maps.event.addListener(bilingualSchoolLayer, 'click', function(e) {
 
-    focusOnSchoolDetails();
+    focusOnDisplayDetails();
 
         var fusionTableObject = {
             school_name: e.row['school_name'].value,
@@ -113,7 +113,7 @@ function createMap(){
 //search select function
 function changeSearch() {
 
-    focusOnSchoolDetails();
+    focusOnDisplayDetails();
 
     var buildMapQuery = [];
 
@@ -169,11 +169,17 @@ function calculateCenter(){
     center = map.getCenter();
 };
 
-// begin
-function focusOnSchoolDetails(){
+// begin remove article text
+function focusOnDisplayDetails(){
     jqueryNoConflict('#content-article-text').fadeOut('fast');
+    jqueryNoConflict('#about-this-project').removeClass('hidden');
 };
-// end
+
+// begin show article text
+function showDisplayDetails(){
+    jqueryNoConflict('#content-article-text').fadeIn('fast');
+    jqueryNoConflict('#about-this-project').addClass('hidden');
+};
 
 // create the bootrap modal
 function clickModal(){

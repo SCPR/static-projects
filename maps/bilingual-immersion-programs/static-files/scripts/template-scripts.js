@@ -23,7 +23,7 @@ function getTemplateAjax(path, callback) {
 // function to compile handlebars template
 function renderHandlebarsTemplate(withTemplate,inElement,withData){
     getTemplateAjax(withTemplate, function(template) {
-        jqueryNoConflict(inElement).html(template(withData));
+        jqueryNoConflict(inElement).live.html(template(withData));
     })
 };
 
