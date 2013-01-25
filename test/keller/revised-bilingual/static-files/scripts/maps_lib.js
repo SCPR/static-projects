@@ -41,7 +41,7 @@
     recordNamePlural:   "results",
 
     // in meters ~ 1/2 mile
-    searchRadius:       805,
+    searchRadius:       8047,
 
     // zoom level when map is loaded (bigger is more zoomed in)
     defaultZoom:        11,
@@ -91,7 +91,7 @@
 
             else $("#search_radius").val(MapsLib.searchRadius);
 
-        $(":checkbox").attr("checked", "checked");
+        //$(":checkbox").attr("checked", "checked");
         $("#result_count").hide();
 
         // run the default search
@@ -134,7 +134,7 @@
                             $.address.parameter('address', encodeURIComponent(address));
                             $.address.parameter('radius', encodeURIComponent(MapsLib.searchRadius));
                             map.setCenter(MapsLib.currentPinpoint);
-                            map.setZoom(14);
+                            map.setZoom(12);
 
                             MapsLib.addrMarker = new google.maps.Marker({
                                 position: MapsLib.currentPinpoint,
