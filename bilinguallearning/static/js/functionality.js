@@ -151,7 +151,7 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	return;
 	}
 
-
+	// Despite appearances, Parts 1 and 2 are intentionally "flipped." The radio pieces aired in a different order than how the site is sequenced.
 	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-semillas.m4a",1);
 	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-eastrio.m4a",2);
 	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-elmarino.m4a",3);
@@ -160,9 +160,15 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-newcity.m4a",6);
 	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-leadership.m4a",7);
 	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-franklin.m4a",8);
+	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/bilingual-taketwo-pt2.m4a",9);
+	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/bilingual-taketwo-pt1.m4a",10);
+	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/bilingual-taketwo-pt3.m4a",11);
 
 
-
+  $(".radio .jp-play").click(function() {
+    var playBar = $(this).data("bar-id");
+    $(playBar).animate({width: '150', padding: '2px'}, 300);
+  });
 
 
 });
