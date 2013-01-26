@@ -23,7 +23,9 @@
     <link rel="apple-touch-icon-precomposed" href="meta/apple-touch-icon-144x144-precomposed.png" />
     <link href="http://media.scpr.org/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
-    <link href="static/css/styles.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="static/css/reset.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="static/css/display.css" media="screen" rel="stylesheet" type="text/css" />
+    <!--<link href="static/css/styles.min.css" media="screen" rel="stylesheet" type="text/css" />-->
 
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <!--[if lte IE 9]><link href="static/css/ie-6-7-8-9.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
@@ -42,14 +44,17 @@
 
     <!-- ======================================================================================================= -->
 	<!-- The jPlayer div must not be hidden. Keep it at the root of the body element to avoid any such problems. -->
-    	<div id="jquery_jplayer_1" class="cp-jplayer"></div>
-    	<div id="jquery_jplayer_2" class="cp-jplayer"></div>
-    	<div id="jquery_jplayer_3" class="cp-jplayer"></div>
-    	<div id="jquery_jplayer_4" class="cp-jplayer"></div>
-    	<div id="jquery_jplayer_5" class="cp-jplayer"></div>
-    	<div id="jquery_jplayer_6" class="cp-jplayer"></div>
-    	<div id="jquery_jplayer_7" class="cp-jplayer"></div>
-    	<div id="jquery_jplayer_8" class="cp-jplayer"></div>
+        <div id="jquery_jplayer_1" class="cp-jplayer"></div>
+        <div id="jquery_jplayer_2" class="cp-jplayer"></div>
+        <div id="jquery_jplayer_3" class="cp-jplayer"></div>
+        <div id="jquery_jplayer_4" class="cp-jplayer"></div>
+        <div id="jquery_jplayer_5" class="cp-jplayer"></div>
+        <div id="jquery_jplayer_6" class="cp-jplayer"></div>
+        <div id="jquery_jplayer_7" class="cp-jplayer"></div>
+        <div id="jquery_jplayer_8" class="cp-jplayer"></div>
+        <div id="jquery_jplayer_9" class="cp-jplayer"></div>
+        <div id="jquery_jplayer_10" class="cp-jplayer"></div>
+        <div id="jquery_jplayer_11" class="cp-jplayer"></div>
     <!-- ======================================================================================================= -->
 
 
@@ -262,6 +267,34 @@
             </div>
         </div><!--/ row -->
 
+
+<!--    ================================================================================================================================================ -->
+        <aside class="audio radio">
+            <div id="jp_container_1" class="jp-audio bound">
+                <div class="jp-type-single">
+                    <div class="jp-gui jp-interface clearfix">
+
+                                <ul class="jp-controls clearfix">
+                                    <li><a href="javascript:;" class="jp-play track-event" data-bar-id="#play-bar-3" data-ga-category="Audio" data-ga-action="Play" data-ga-label="Radio Segment">play<span></span></a></li>
+                                    <li><a href="javascript:;" class="jp-pause">pause<span></span><span class="last"></span></a></li>
+                                </ul><!--/ .jp-controls -->
+                                <div class="jp-progress clearfix">
+                                    <div class="jp-bar" id="play-bar-3"><div class="jp-seek-bar"><div class="jp-play-bar"></div></div></div>
+                                    <div class="jp-current-time"></div>
+                                    <div class="duration">/ 07:46</div>
+                                </div><!--/ .jp-progress -->
+                                <div class="jp-title">
+                                    <p>Listen to our feature on neurology of language learning</p>
+                                </div><!--/ .jp-title -->
+
+                    </div><!--/ .jp-gui -->
+                </div><!--/ .jp-type-single -->
+            </div><!--/ #jp_container_1 -->
+        </aside><!--/ .radio -->
+<!--    ================================================================================================================================================ -->
+
+
+
     </article><!--/ .essay-pt1 -->
 
 
@@ -351,6 +384,34 @@
                 </div>
             </div>
         </div>
+
+
+<!--    ================================================================================================================================================ -->
+        <aside class="audio radio">
+            <div id="jp_container_2" class="jp-audio bound">
+                <div class="jp-type-single">
+                    <div class="jp-gui jp-interface clearfix">
+
+                                <ul class="jp-controls clearfix">
+                                    <li><a href="javascript:;" class="jp-play track-event" data-bar-id="#play-bar-3" data-ga-category="Audio" data-ga-action="Play" data-ga-label="Radio Segment">play<span></span></a></li>
+                                    <li><a href="javascript:;" class="jp-pause">pause<span></span><span class="last"></span></a></li>
+                                </ul><!--/ .jp-controls -->
+                                <div class="jp-progress clearfix">
+                                    <div class="jp-bar" id="play-bar-3"><div class="jp-seek-bar"><div class="jp-play-bar"></div></div></div>
+                                    <div class="jp-current-time"></div>
+                                    <div class="duration">/ 05:55</div>
+                                </div><!--/ .jp-progress -->
+                                <div class="jp-title">
+                                    <p>Listen to our feature on bilingual schools in Southern California</p>
+                                </div><!--/ .jp-title -->
+
+                    </div><!--/ .jp-gui -->
+                </div><!--/ .jp-type-single -->
+            </div><!--/ #jp_container_2 -->
+        </aside><!--/ .radio -->
+<!--    ================================================================================================================================================ -->
+
+
 
         <div class="row row-pt2-f">
             <aside class="bound">
@@ -982,15 +1043,32 @@
                 <h3>Bilingual schools have quietly built a fan base in Southern California, but some immigrant families don't see the point</h3>
             </div>
         </hgroup>
-        
-        <!--
-        <aside class="audio">
-            <div class="bound">
-                <p>Listen to the Reyes and Uma&ntilde;a families talk about their journeys in bilingual education</p>
-            </div>
-        </aside>
-        -->
-        
+
+
+        <aside class="audio radio">
+            <div id="jp_container_11" class="jp-audio bound">
+                <div class="jp-type-single">
+                    <div class="jp-gui jp-interface clearfix">
+
+                                <ul class="jp-controls clearfix">
+                                    <li><a href="javascript:;" class="jp-play track-event" data-bar-id="#play-bar-3" data-ga-category="Audio" data-ga-action="Play" data-ga-label="Radio Segment">play<span></span></a></li>
+                                    <li><a href="javascript:;" class="jp-pause">pause<span></span><span class="last"></span></a></li>
+                                </ul><!--/ .jp-controls -->
+                                <div class="jp-progress clearfix">
+                                    <div class="jp-bar" id="play-bar-3"><div class="jp-seek-bar"><div class="jp-play-bar"></div></div></div>
+                                    <div class="jp-current-time"></div>
+                                    <div class="duration">/ 01:17</div>
+                                </div><!--/ .jp-progress -->
+                                <div class="jp-title">
+                                    <p>Listen to our feature on the Reyes and Uma&ntilde;a families&#8217; experiences with bilingual education</p>
+                                </div><!--/ .jp-title -->
+
+                    </div><!--/ .jp-gui -->
+                </div><!--/ .jp-type-single -->
+            </div><!--/ #jp_container_11 -->
+        </aside><!--/ .radio -->
+
+
         <article class="essay essay-reyes">
             
             <h4><span class="bound">Meet the Reyes family</span></h4>
