@@ -178,7 +178,7 @@
 
     google.maps.event.addListener(MapsLib.searchrecords, 'click', function(e) {
 
-        focusOnDisplayDetails();
+        alterDisplayDetails();
 
         var fusionTableObject = {
             school_name: e.row['school_name'].value,
@@ -332,7 +332,6 @@
       });
     $( "#result_count" ).fadeIn();
   },
-
 
     getList: function(whereClause) {
       var selectColumns = "school_name, city, partner_language_1";

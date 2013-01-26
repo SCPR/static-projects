@@ -37,7 +37,7 @@ function buildMapDisplay(){
     jqueryNoConflict('#reset').click(function(){
         jqueryNoConflict.address.parameter('address','');
         MapsLib.initialize();
-        showDisplayDetails();
+        //showDisplayDetails();
         return false;
     });
 
@@ -50,19 +50,6 @@ function buildMapDisplay(){
     });
 };
 
-// begin remove article text
-function focusOnDisplayDetails(){
-    jqueryNoConflict('#content-article-text').fadeOut('fast');
-    jqueryNoConflict('#about-this-project').removeClass('hidden');
-};
-
-// begin show article text
-function showDisplayDetails(){
-    jqueryNoConflict('#content-article-text').fadeIn('fast');
-    jqueryNoConflict('#content-display').empty();
-    jqueryNoConflict('#about-this-project').addClass('hidden');
-};
-
 // create the bootrap modal
 function clickModal(){
     jqueryNoConflict('#popupContent').modal('show');
@@ -70,4 +57,24 @@ function clickModal(){
 
 function closeDialog () {
 	jqueryNoConflict('#popupContent').modal('hide');
+};
+
+// begin remove article text
+function alterDisplayDetails(){
+
+    var $togglers = $('[data-toggle="collapse"]');
+    $togglers.each(function() {
+        var $this = $(this);
+        var $collapsible = $($this.data('target'));
+        $collapsible.on('hidden', function() {
+            var text = $this.data('on-hidden');
+            text && $this.text(text);
+        }).on('shown', function() {
+            var text = $this.data('on-active');
+            text && $this.text(text);
+            $('#content-display').empty();
+        });
+    });
+
+    $('.collapse').collapse();
 };
