@@ -1,0 +1,11 @@
+<div id="topic-target">
+    {{#objects}}
+
+        {{#if url}}
+            <li><a href="{{url}}" target="_blank">"{{text}}"</a></li><br/>
+        {{else}}
+            <li>"{{text}}"</li><br/>
+        {{/if}}
+
+    {{/objects}}
+</div>
