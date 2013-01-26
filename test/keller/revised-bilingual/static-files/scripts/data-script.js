@@ -37,7 +37,7 @@ function buildMapDisplay(){
     jqueryNoConflict('#reset').click(function(){
         jqueryNoConflict.address.parameter('address','');
         MapsLib.initialize();
-        //showDisplayDetails();
+        $('#content-display').empty();
         return false;
     });
 
