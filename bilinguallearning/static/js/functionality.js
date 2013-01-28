@@ -162,7 +162,7 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/collage-franklin.m4a",8);
 	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/bilingual-taketwo-pt2.m4a",9);
 	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/bilingual-taketwo-pt1.m4a",10);
-	js_audioPlayer("http://static-projects.dev/bilinguallearning/media/audio/bilingual-taketwo-pt3.m4a",11);
+	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/bilingual-taketwo-pt3.m4a",11);
 
 
   $(".radio .jp-play").click(function() {
