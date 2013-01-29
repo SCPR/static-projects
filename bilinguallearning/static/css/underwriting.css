@@ -1,4 +1,112 @@
-.row-pt1-underwriter {
-    height: 150px;
-    background: lime;
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	UNDERWRITING
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.row-pt1-c {
+	border-bottom: 0;
+	margin-bottom: 0;
+	padding-bottom: 55px; /* had been 40 */
 }
+
+.underwriter {
+}
+		.row-pt1-underwriter {
+			margin-bottom: 80px;
+			/*
+			----------------------------------------------------------------------------------------------------------------------------------------------
+			Gradient credit to: http://www.colorzilla.com/gradient-editor/
+			---------------------------------------------------------------------------------------------------------------------------------------------- */
+			background: #1f8497; /* Old browsers */
+			background: -moz-linear-gradient(top,  #1f8497 0%, #60b7c5 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1f8497), color-stop(100%,#60b7c5)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  #1f8497 0%,#60b7c5 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  #1f8497 0%,#60b7c5 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  #1f8497 0%,#60b7c5 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  #1f8497 0%,#60b7c5 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f8497', endColorstr='#60b7c5',GradientType=0 ); /* IE6-9 */
+			/*
+			---------------------------------------------------------------------------------------------------------------------------------------------- */
+			box-shadow: inset 0 56px 0 rgba(255,255,255,0.8);
+		}
+		.row-pt1-underwriter .bound {
+			position: relative;
+			background: url(../../media/underwriting/laup-photo-headphones.png) no-repeat 81.75% bottom;
+			background-size: auto 100%;
+		}
+		.row-pt1-underwriter .primary {
+			background: rgba(255,255,255,0.5);
+			width: 63.636363636364%; /* 700 / 1100 */
+			float: left;
+		}
+		.row-pt1-underwriter .secondary {
+			background: rgba(0,0,0,0.4);
+			width: 16.909090909091%; /* 186 / 1100 */
+			float: right;
+			position: absolute;
+			right: 0;
+			bottom: 20px;
+		}
+
+
+
+
+		.underwriter .primary {
+			padding-bottom: 22px;
+		}
+				.underwriter .gratitude {
+					color: #c1c1c1;
+					font: italic 700 0.75em/1.1 "Adelle", Georgia, serif;
+					background: yellow;
+					height: 22px; /* 56 */
+					padding-top: 34px;
+				}
+				.underwriter h3 {
+					color: white;
+					font: 700 1.6875em/1.0 "Adelle", Georgia, serif;
+					text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+					margin-bottom: 30px;
+				}
+				.underwriter .brand {
+					width: 50%; /* 350 / 700 */
+					background: rgba(0,0,0,0.2);
+					color: white;
+				}
+						.underwriter .brand img {
+							display: block;
+							width: 22.285714285714%; /* 78 / 350 */
+							float: left;
+						}
+						.underwriter .brand figcaption {
+							background: green;
+							width: 72%; /* 252 / 350 */
+							float: right;
+							padding-top: 23px;
+							font-size: 0.75em; /* 12 / 16 */
+							font-style: italic;
+							font-weight: 600;
+							text-shadow: 0 0 3px rgba(0,0,0,0.3);
+						}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
