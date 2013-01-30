@@ -42,16 +42,35 @@
 			float: left;
 		}
 		.row-pt1-underwriter .secondary {
-			background: rgba(0,0,0,0.4);
-			width: 16.909090909091%; /* 186 / 1100 */
-			float: right;
+			width: 18%; /* 198 / 1100 */
+			min-width: 198px;
 			position: absolute;
-			right: 0;
+			right: -6px;
 			bottom: 20px;
 		}
 
 
 
+
+		.underwriter .secondary {
+		}
+				.underwriter .secondary h4 {
+					min-height: 70px;
+				}
+						.underwriter .secondary h4 a {
+							display: block;
+							color: #e33500;
+							font: normal 700 1.5625em/1.1 "Adelle", Georgia, serif; /* 25 / 16 */
+							text-decoration: none;
+							background: url(i/ephemera-white-dart-rightward.png) no-repeat;
+							background-size: 198px 59px;
+							width: 178px; /* 198 */
+							height: 44px; /* 59 */
+							padding: 15px 0 0 20px;
+						}
+						.underwriter .secondary h4 a:hover {
+							color: #3a9db0;
+						}
 
 		.underwriter .primary {
 			padding-bottom: 22px;
@@ -66,7 +85,8 @@
 					color: white;
 					font: 700 1.6875em/1.1 "Adelle", Georgia, serif;
 					text-shadow: 0 1px 6px rgba(0,0,0,0.2);
-					margin-bottom: 30px;
+					margin-bottom: 12px;
+					padding: 8px 0 0;
 				}
 				.underwriter .brand {
 					width: 50%; /* 350 / 700 */
@@ -88,6 +108,199 @@
 
 
 
+
+
+
+
+
+						/*	===================================================================================
+						    =================================================================================== */
+
+						    @media screen and (max-width: 1185px) {
+
+								.row-pt1-underwriter .bound {
+									background-position: 90% bottom;
+								}
+
+						    }
+
+						/*	===================================================================================
+						    =================================================================================== */
+
+						    @media screen and (max-width: 1100px) {
+
+								.row-pt1-underwriter .bound {
+									background-position: 95% bottom;
+								}
+								.underwriter .brand figcaption {
+									padding-top: 10px;
+								}
+
+						    }
+
+						/*	===================================================================================
+						    =================================================================================== */
+
+						    @media screen and (max-width: 950px) {
+
+								.row-pt1-underwriter .bound {
+									background-position: right bottom;
+								}
+
+						    }
+
+						/*	===================================================================================
+						    =================================================================================== */
+
+						    @media screen and (max-width: 910px) {
+
+								.row-pt1-underwriter .bound {
+									background-size: auto 81%;
+								}
+								.row-pt1-underwriter .primary {
+									width: 72%; /* had been ~63 */
+								}
+								.underwriter h3 {
+									padding-top: 0;
+									font-size: 1.3em; /* had been 1.6875 */
+								}
+								.underwriter .brand {
+									width: 75%;
+								}
+								.underwriter .brand figcaption {
+									padding-top: 20px;
+								}
+								.underwriter .secondary {
+									bottom: 0;
+								}
+
+						    }
+
+						/*	===================================================================================
+						    =================================================================================== */
+
+						    @media screen and (max-width: 676px) {
+
+								.row-pt1-underwriter .primary {
+									width: 65%;
+								}
+								.underwriter h3 {
+									font-size: 1.15em;
+								}
+								.row-pt1-underwriter .bound {
+									background-size: auto 74%;
+								}
+								.underwriter .brand figcaption {
+									padding-top: 10px;
+								}
+
+						    }
+
+
+						/*	===================================================================================
+						    =================================================================================== */
+
+						    @media screen and (max-width: 569px) {
+
+								.row-pt1-underwriter {
+									box-shadow:
+										inset 0 56px 0 white,
+										inset 0 -95px 0 rgba(0,0,0,0.5);
+								}
+								.row-pt1-underwriter .primary {
+									width: 100%;
+									padding-bottom: 115px;
+									background: url(../../media/underwriting/laup-photo-headphones.png) no-repeat 50% bottom;
+									background-size: 161px 126px;
+									background-position: bottom left;
+								}
+								.underwriter h3 {
+									font-size: 1.0em;
+									line-height: 1.25;
+									margin-bottom: 25px;
+									padding-top: 8px;
+								}
+								.row-pt1-underwriter .bound {
+									background: none;
+								}
+								.underwriter .secondary {
+									bottom: 6px;
+								}
+								
+								
+								.underwriter .brand {
+									width: 100%;
+									position: relative;
+									padding-bottom: 25px;
+									margin-bottom: 10px;
+									min-height: 75px;
+								}
+										.underwriter .brand img {
+											position: absolute;
+											top: 0;
+											left: 0;
+											width: 80px;
+										}
+										.underwriter .brand figcaption {
+											width: auto;
+											margin-left: 100px;
+											padding-top: 16px;
+										}
+
+						    }
+
+						/*	===================================================================================
+						    =================================================================================== */
+
+						    @media screen and (max-width: 414px) {
+
+								.row-pt1-underwriter {
+									box-shadow:
+										inset 0 20px 0 white,
+										inset 0 -80px 0 rgba(0,0,0,0.6);
+								}
+								.underwriter .gratitude {
+									height: auto;
+									padding: 0 0 10px;
+								}
+								.row-pt1-underwriter .bound {
+									background: none;
+									padding-bottom: 135px;
+									background: url(../../media/underwriting/laup-photo-headphones.png) no-repeat 50% bottom;
+									background-size: 161px 126px;
+								}
+								.row-pt1-underwriter .primary,
+								.row-pt1-underwriter .secondary {
+									width: 100%;
+									min-width: auto;
+									float: none;
+									position: static;
+									padding-bottom: 0;
+								}
+								.row-pt1-underwriter .primary {
+									background: none;
+								}
+								.underwriter h3 {
+									padding-bottom: 25px;
+									border-bottom: 1px solid rgba(255,255,255,0.5);
+									margin-bottom: 12px;
+								}
+
+								.underwriter .brand {
+									border-bottom: 1px solid rgba(255,255,255,0.5);
+								}
+								.underwriter .secondary {
+									height: 70px; /* 90 */
+									padding-top: 10px;
+								}
+								.underwriter .secondary h4 a {
+									margin: 0 auto;
+								}
+
+						    }
+
+						/*	===================================================================================
+						    =================================================================================== */
 
 
 
