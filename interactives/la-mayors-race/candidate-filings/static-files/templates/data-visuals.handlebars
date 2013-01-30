@@ -1,4 +1,4 @@
-<p><span class="data-instructions"><strong>About this chart:</strong> Shown are contributions as reported by the candidates in the Los Angeles mayor's race to the <a href="http://ethics.lacity.org/">Los Angeles City Ethics Commission</a>. <strong>Third-quarter</strong> figures represent contributions between July 1 and Sept. 30, 2012. <strong>Fourth-quarter</strong> figures  represent contributions between July 1 and Sept. 30, 2012. <strong>Contributions to date</strong> includes the sum of 3rd and 4th quarter filings, and contributions previously reported. <strong>Matching funds</strong> represents money available under L.A.'s matching fund rules, which doubles every dollar candidates raise from individuals, up to $500 from any one person. <strong>Total funds</strong> represents the total amount of money available to the candidates.</span></p>
+<p><span class="data-instructions"><strong>About this chart:</strong> Shown are contributions as reported by the candidates in the Los Angeles mayor's race to the <a href="http://ethics.lacity.org/">Los Angeles City Ethics Commission</a>. <strong>Third-quarter</strong> figures represent contributions between July 1 and Sept. 30, 2012. <strong>Fourth-quarter</strong> figures represent contributions between July 1 and Sept. 30, 2012. <strong>Contributions to date</strong> includes the sum of 3rd and 4th quarter filings, and contributions previously reported. <strong>1st Pre-election</strong> represents contributions received between Jan. 1, 2013 and Jan. 19, 2013. <strong>Matching funds</strong> represents money available under L.A.'s matching fund rules, which doubles every dollar candidates raise from individuals, up to $500 from any one person. <strong>Total funds</strong> represents the total amount of money available to the candidates.</span></p>
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -9,6 +9,7 @@
             <th>1st Semi Annual (2012)</th> -->
             <th>3rd Quarter (2012)</th>
             <th>4th Quarter (2012)</th>
+            <th>1st Pre-election</th>
             <th>Contributions to date</th>
             <th>Matching funds</th>
             <th>Total Funds</th>
@@ -31,6 +32,12 @@
 
                 {{#if 4th_quarter_2012}}
                     <td>${{addCommas 4th_quarter_2012}}</td>
+                {{else}}
+                    <td>n/a</td>
+                {{/if}}
+
+                {{#if 1st_Pre_Election}}
+                    <td>${{addCommas 1st_Pre_Election}}</td>
                 {{else}}
                     <td>n/a</td>
                 {{/if}}

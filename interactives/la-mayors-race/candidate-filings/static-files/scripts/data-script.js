@@ -8,7 +8,7 @@ jqueryNoConflict(document).ready(function(){
 
 // grab data
 function retriveData() {
-    var dataSource = 'static-files/data/la_mayors_filings_2012.json';
+    var dataSource = 'static-files/data/updated_la_mayors_filings_2012.json';
     jqueryNoConflict.getJSON(dataSource, renderDataVisualsTemplate);
 };
 
