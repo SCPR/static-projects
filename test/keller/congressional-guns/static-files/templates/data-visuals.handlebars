@@ -1,0 +1,40 @@
+<div id="content-explainer"></div>
+
+<!-- begin -->
+<div class="candidate-container">
+
+    {{#objects}}
+        <!-- begin row -->
+        <div id="{{first_name}}_{{last_name}}" class="row-fluid">
+
+            <!-- begin candidate -->
+            <div class="span12">
+                <div class="span2">
+                    <img src="{{image_url}}" alt="{{position}}_{{first_name}}_{{last_name}}" />
+                </div>
+
+                <div class="span10">
+                    <h3>{{position}}. {{first_name}} {{last_name}} <br /> ({{party}}-{{district}})</h3>
+                    <p><strong>owns_firearm</strong>: {{owns_firearm}}</p>
+
+                    {{#if comment}}
+                        <p><strong>comment</strong>: {{comment}}</p>
+                    {{else}}
+
+                    {{/if}}
+
+                    {{#if supporting_specific_proposals}}
+                        <p><strong>supporting_specific_proposals</strong>: {{supporting_specific_proposals}}</p>
+                    {{else}}
+
+                    {{/if}}
+                </div>
+            </div>
+            <!-- end candidate -->
+
+        </div>
+        <!-- end row -->
+    {{/objects}}
+
+</div>
+<!-- end -->
