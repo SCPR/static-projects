@@ -2,25 +2,18 @@ var jqueryNoConflict = jQuery;
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
-    retriveData();
+    //retriveData();
 });
 
 // grab data
 function retriveData() {
-    var dataSource = 'static-files/data/ca_congressional_delegation.json';
+    var dataSource = 'static-files/data/flat_data.json';
     jqueryNoConflict.getJSON(dataSource, renderDataVisualsTemplate);
 };
 
 // render data visuals template
 function renderDataVisualsTemplate(data){
-    renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', data);
-    renderHandlebarsTemplate('static-files/templates/content-action-bar.handlebars', '#content-action-bar', data);
-};
-
-// scroll into view function
-function scrollToRep(){
-    var congressionalMember = jqueryNoConflict('#search-congressional-delegation').val();
-    document.getElementById(congressionalMember).scrollIntoView();
+    renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#content-display', data);
 };
 
 // render handlebars templates via ajax
@@ -50,4 +43,11 @@ function handlebarsDebugHelper(){
         console.log("====================");
         console.log(this);
     });
+};
+
+// embed function
+function embedBox() {
+    var embed_url = 'http://projects.scpr.org/static/maps/flu-clinics/iframe.html';
+
+    jAlert('<strong>To embed this visualization your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+ embed_url +'\" width=\"540px\" height=\"600px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
 };

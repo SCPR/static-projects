@@ -1,2 +1,30 @@
 <h3>Find your representative</h3>
 <p>I'm wondering if there is a way to link to the individual Put some drop down menus here, or perhaps a legend?</p>
+
+<span id="top-of-screen"></span>
+
+<div class="operator">
+    <div class="clear-block">
+        <div class="r-menu-open">
+            <a class="r-menu-action" href="#">Menu</a>
+        </div>
+
+        <select id="search-congressional-delegation" onchange="scrollToRep(this.value);">
+            {{#objects}}
+                <option value="#{{first_name}}_{{last_name}}">{{first_name}} {{last_name}}</option>
+            {{/objects}}
+        </select>
+
+        <!--
+        <ul class="operator-nav">
+        {{#objects}}
+
+        <li><a href="#{{first_name}}_{{last_name}}">{{first_name}} {{last_name}}</a></li>
+
+        {{/objects}}
+
+        </ul>
+        -->
+        <a class="operator-top" href="#operator-top">Back to Top</a>
+    </div>
+</div>
