@@ -8,27 +8,39 @@ var jqueryNoConflict = jQuery;
 
 //begin main function
 jqueryNoConflict(document).ready(function(){
-    retrieveData()
+    retrieveKpccData();
+    retrieveLatimesData();
 });
 
-// begin
-function retrieveData(data){
-    $.getJSON('http://www.scpr.org/api/content/?types=segmentsORnewsORentries&query=mahony', renderTemplate);
 
+// begin
+function retrieveKpccData(data){
+    jqueryNoConflict.getJSON('http://www.scpr.org/api/content/?types=segmentsORnewsORentries&query=mahony', renderKpccTemplate);
 };
 
 // begin
-function renderTemplate(data){
-
+function renderKpccTemplate(data){
     console.log(data);
-
     var testObject = {
         'objects': data
         };
-
-    renderHandlebarsTemplate('visuals.handlebars', '#data-visuals', testObject);
-
+    renderHandlebarsTemplate('kpcc-articles.handlebars', '#kpcc-articles', testObject);
 };
+
+
+// begin
+function retrieveLatimesData(laTimesData){
+    var dataSource = 'scraped_data_file.json';
+    jqueryNoConflict.getJSON(dataSource, renderLaTimesTemplate);
+};
+
+// run data visuals template function
+function renderLaTimesTemplate(laTimesData){
+    renderHandlebarsTemplate('latimes-articles.handlebars', '#latimes-articles', laTimesData);
+};
+
+
+
 
 
 // render handlebars templates via ajax
@@ -75,4 +87,6 @@ function takeTime(dateInput) {
 
 </script>
 
-<div id="data-visuals"></div>
+<div id="kpcc-articles"></div>
+<hr>
+<div id="latimes-articles"></div>
