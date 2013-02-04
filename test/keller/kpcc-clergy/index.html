@@ -1,0 +1,78 @@
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
+<script src="http://projects.scpr.org/static/static-files/scripts/swag.js"></script>
+<script src="http://projects.scpr.org/static/static-files/scripts/moment.min.js"></script>
+
+<script>
+var jqueryNoConflict = jQuery;
+
+//begin main function
+jqueryNoConflict(document).ready(function(){
+    retrieveData()
+});
+
+// begin
+function retrieveData(data){
+    $.getJSON('http://www.scpr.org/api/content/?types=segmentsORnewsORentries&query=mahony', renderTemplate);
+
+};
+
+// begin
+function renderTemplate(data){
+
+    console.log(data);
+
+    var testObject = {
+        'objects': data
+        };
+
+    renderHandlebarsTemplate('visuals.handlebars', '#data-visuals', testObject);
+
+};
+
+
+// render handlebars templates via ajax
+function getTemplateAjax(path, callback) {
+    var source, template;
+    jqueryNoConflict.ajax({
+        url: path,
+        success: function (data) {
+            source = data;
+            template = Handlebars.compile(source);
+            if (callback) callback(template);
+        }
+    });
+};
+
+// function to compile handlebars template
+function renderHandlebarsTemplate(withTemplate,inElement,withData){
+    getTemplateAjax(withTemplate, function(template) {
+        handlebarsFormatDateForDisplay();
+        jqueryNoConflict(inElement).html(template(withData));
+    })
+};
+
+
+// begin dateFormatFunction
+function handlebarsFormatDateForDisplay(){
+    Handlebars.registerHelper('dateFormat', function(context, block) {
+        if (window.moment) {
+            return takeTime(context);
+        }else{
+            return context;
+        };
+    });
+};
+
+// format date/time
+function takeTime(dateInput) {
+    var dateFormat = 'MMMM Do, YYYY';
+    //var dateFormat = 'ddd., MMM., D, YYYY, h:mm a';
+    var dateOutput = moment(dateInput).format(dateFormat);
+    return dateOutput;
+};
+
+
+</script>
+
+<div id="data-visuals"></div>
