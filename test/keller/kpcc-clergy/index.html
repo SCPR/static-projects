@@ -13,18 +13,30 @@ jqueryNoConflict(document).ready(function(){
 });
 
 
-// begin
+/*KPCC API PARAMETERS
+
+#### Public
+types=segmentsORnewsORentries
+query=mahony
+limit=
+page=
+
+#### Private API
+order=
+sort_mode=
+conditions=
+*/
+
+
 function retrieveKpccData(data){
-    jqueryNoConflict.getJSON('http://www.scpr.org/api/content/?types=segmentsORnewsORentries&query=mahony', renderKpccTemplate);
+    jqueryNoConflict.getJSON('http://www.scpr.org/api/content/?types=segmentsORnewsORentries&query=mahony&limit=20', renderKpccTemplate);
 };
 
-// begin
 function renderKpccTemplate(data){
-    console.log(data);
-    var testObject = {
+    var kpccArticles = {
         'objects': data
         };
-    renderHandlebarsTemplate('kpcc-articles.handlebars', '#kpcc-articles', testObject);
+    renderHandlebarsTemplate('kpcc-articles.handlebars', '#kpcc-articles', kpccArticles);
 };
 
 
@@ -38,10 +50,6 @@ function retrieveLatimesData(laTimesData){
 function renderLaTimesTemplate(laTimesData){
     renderHandlebarsTemplate('latimes-articles.handlebars', '#latimes-articles', laTimesData);
 };
-
-
-
-
 
 // render handlebars templates via ajax
 function getTemplateAjax(path, callback) {
