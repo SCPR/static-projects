@@ -45,6 +45,35 @@ function handlebarsDebugHelper(){
     });
 };
 
+// create the bootrap modal
+function clickModal(){
+    jqueryNoConflict('#popupContent').modal('show');
+};
+
+function closeDialog () {
+	jqueryNoConflict('#popupContent').modal('hide');
+};
+
+// begin remove article text
+function alterDisplayDetails(){
+
+    var $togglers = $('[data-toggle="collapse"]');
+    $togglers.each(function() {
+        var $this = $(this);
+        var $collapsible = $($this.data('target'));
+        $collapsible.on('hidden', function() {
+            var text = $this.data('on-hidden');
+            text && $this.text(text);
+        }).on('shown', function() {
+            var text = $this.data('on-active');
+            text && $this.text(text);
+            $('#content-display').empty();
+        });
+    });
+
+    $('.collapse').collapse();
+};
+
 // embed function
 function embedBox() {
     var embed_url = 'http://projects.scpr.org/static/maps/flu-clinics/iframe.html';

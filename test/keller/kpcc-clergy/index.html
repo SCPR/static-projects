@@ -27,9 +27,9 @@ sort_mode=
 conditions=
 */
 
-
 function retrieveKpccData(data){
-    jqueryNoConflict.getJSON('http://www.scpr.org/api/content/?types=segmentsORnewsORentries&query=mahony&limit=20', renderKpccTemplate);
+    var dataSource = 'http://www.scpr.org/api/content/?types=segmentsORnewsORentries&query=mahony&limit=20';
+    jqueryNoConflict.getJSON(dataSource, renderKpccTemplate);
 };
 
 function renderKpccTemplate(data){
@@ -38,7 +38,6 @@ function renderKpccTemplate(data){
         };
     renderHandlebarsTemplate('kpcc-articles.handlebars', '#kpcc-articles', kpccArticles);
 };
-
 
 // begin
 function retrieveLatimesData(laTimesData){
