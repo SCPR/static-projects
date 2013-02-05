@@ -9,13 +9,21 @@
 .row-pt1-c {
 	border-bottom: 0;
 	margin-bottom: 0;
-	padding-bottom: 55px; /* had been 40 */
+	padding-bottom: 30px; /* had been 40 */
 }
+/*
+		.row-pt1-c > .bound {
+			border-bottom: 1px solid lightgray;
+			padding-bottom: 40px;
+		}
+*/
+
 
 .underwriter {
 }
 		.row-pt1-underwriter {
 			margin-bottom: 80px;
+			border-bottom: 2px solid black;
 			/*
 			----------------------------------------------------------------------------------------------------------------------------------------------
 			Gradient credit to: http://www.colorzilla.com/gradient-editor/
@@ -30,12 +38,16 @@
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f8497', endColorstr='#60b7c5',GradientType=0 ); /* IE6-9 */
 			/*
 			---------------------------------------------------------------------------------------------------------------------------------------------- */
-			box-shadow: inset 0 56px 0 white;
+			box-shadow:
+				inset 0 22px 0 white,
+				inset 0 56px 0 black;
+/*			box-shadow: inset 0 56px 0 black;*/
 		}
 		.row-pt1-underwriter .bound {
 			position: relative;
 			background: url(../../media/underwriting/laup-photo-headphones.png) no-repeat 81.75% bottom;
-			background-size: auto 100%;
+/*			background-size: auto 100%;*/
+			background-size: auto 96%;
 		}
 		.row-pt1-underwriter .primary {
 			width: 63.636363636364%; /* 700 / 1100 */
@@ -77,6 +89,8 @@
 		}
 				.underwriter .gratitude {
 					color: #c1c1c1;
+/*					color: #63aec3;*/
+					color: white;
 					font: italic 700 0.75em/1.1 "Adelle", Georgia, serif;
 					height: 22px; /* 56 */
 					padding-top: 34px;
@@ -100,8 +114,10 @@
 						.underwriter .brand figcaption {
 							width: 72%; /* 252 / 350 */
 							float: right;
-							padding-top: 23px;
-							font-size: 0.75em; /* 12 / 16 */
+/*							padding-top: 23px; */
+							padding-top: 20px;
+/*							font-size: 0.75em; /* 12 / 16 */
+							font-size: 0.9em;
 							font-style: italic;
 							text-shadow: 0 0 3px rgba(0,0,0,0.3);
 						}
