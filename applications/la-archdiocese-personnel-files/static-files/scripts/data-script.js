@@ -3,8 +3,8 @@ var jqueryNoConflict = jQuery;
 // begin main function
 jqueryNoConflict(document).ready(function() {
     loadDocViewer();
+    retrieveKpccData();
 });
-
 
 // begin
 function loadDocViewer(){
@@ -50,18 +50,20 @@ function alterDisplayDetails(){
     $('.collapse').collapse();
 };
 
-/*
+
 // grab data
-function retriveData() {
-    var dataSource = 'static-files/data/flat_data.json';
-    jqueryNoConflict.getJSON(dataSource, renderDataVisualsTemplate);
+function retrieveKpccData(data){
+    var dataSource = 'http://www.scpr.org/api/content/?types=segmentsORnewsORentries&query=mahony&limit=20';
+    jqueryNoConflict.getJSON(dataSource, renderKpccTemplate);
 };
 
 // render data visuals template
-function renderDataVisualsTemplate(data){
-    renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#content-display', data);
+function renderKpccTemplate(data){
+    var kpccArticles = {
+        'objects': data
+        };
+    renderHandlebarsTemplate('static-files/templates/kpcc-articles.handlebars', '#kpcc-articles', kpccArticles);
 };
-
 
 // render handlebars templates via ajax
 function getTemplateAjax(path, callback) {
@@ -76,22 +78,32 @@ function getTemplateAjax(path, callback) {
     });
 };
 
-// render handlebars template function
+// function to compile handlebars template
 function renderHandlebarsTemplate(withTemplate,inElement,withData){
     getTemplateAjax(withTemplate, function(template) {
+        handlebarsFormatDateForDisplay();
         jqueryNoConflict(inElement).html(template(withData));
     })
 };
 
-// add handlebars debugger
-function handlebarsDebugHelper(){
-    Handlebars.registerHelper("debug", function(optionalValue) {
-        console.log("Current Context");
-        console.log("====================");
-        console.log(this);
+// begin dateFormatFunction
+function handlebarsFormatDateForDisplay(){
+    Handlebars.registerHelper('dateFormat', function(context, block) {
+        if (window.moment) {
+            return takeTime(context);
+        }else{
+            return context;
+        };
     });
 };
-*/
+
+// format date/time
+function takeTime(dateInput) {
+    var dateFormat = 'MMMM Do, YYYY';
+    //var dateFormat = 'ddd., MMM., D, YYYY, h:mm a';
+    var dateOutput = moment(dateInput).format(dateFormat);
+    return dateOutput;
+};
 
 // embed function
 function embedBox() {
