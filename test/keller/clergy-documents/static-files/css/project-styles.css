@@ -1,3 +1,7 @@
+#popupContent {width: 45%; height: 520px;}
+
+.modal-body {margin-left: 15px; max-height: 500px;}
+
 a { color: #4B58A6; }
 
 #content-action-bar { margin: 0px; text-align: left;}
