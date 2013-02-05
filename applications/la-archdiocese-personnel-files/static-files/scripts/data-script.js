@@ -95,7 +95,7 @@ function handlebarsDebugHelper(){
 
 // embed function
 function embedBox() {
-    var embed_url = 'http://projects.scpr.org/static/maps/flu-clinics/iframe.html';
+    var embed_url = 'http://localhost:8880/2kpcc/static-projects/applications/la-archdiocese-personnel-files/iframe.html';
 
     jAlert('<strong>To embed this visualization your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+ embed_url +'\" width=\"540px\" height=\"600px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
 };
