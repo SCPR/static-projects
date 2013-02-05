@@ -17,24 +17,10 @@
 <!-- begin form -->
 <div class="ss-form">
 
-<!--
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='http://projects.scpr.org/static/test/keller/clergy-documents/'; alert('Thank you for your submission');}"></iframe>
--->
+    <script type="text/javascript">var submitted=false;</script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='http://projects.scpr.org/static/test/keller/clergy-documents/'; alert('Thank you for your submission');}"></iframe>
 
-<script>
-
-// begin
-function formSubmitClicked(){
-
-    window.location='http://projects.scpr.org/static/test/keller/clergy-documents/';
-    alert('Thank you for your submission');
-
-};
-// end
-
-</script>
-
-<form action="https://docs.google.com/forms/d/1F6yFBaxK7g1Omsj1eMLPbJ3J9acyrdCG33aGYtH4-bc/formResponse" method="POST" id="ss-form" target="_self" onsubmit="formSubmitClicked();">
+    <form action="https://docs.google.com/forms/d/1F6yFBaxK7g1Omsj1eMLPbJ3J9acyrdCG33aGYtH4-bc/formResponse" method="POST" target="hidden_iframe" id="commentForm" onsubmit="submitted=true;">
 
 <div class="controls controls-row">
     <div class="errorbox-good span6">
