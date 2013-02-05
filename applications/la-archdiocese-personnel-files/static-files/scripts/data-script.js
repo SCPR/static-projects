@@ -4,6 +4,7 @@ var jqueryNoConflict = jQuery;
 jqueryNoConflict(document).ready(function() {
     loadDocViewer();
     retrieveKpccData();
+    retrieveLatimesData();
 });
 
 // begin
@@ -18,7 +19,6 @@ function loadDocViewer(){
         search_bar: true,
         organization: 97
     });
-
 };
 
 // create the bootrap modal
@@ -50,18 +50,29 @@ function alterDisplayDetails(){
     $('.collapse').collapse();
 };
 
-// grab data
+// grab kpcc archived article data
 function retrieveKpccData(data){
     var dataSource = 'http://www.scpr.org/api/content/?types=segmentsORnewsORentries&query=mahony&limit=20';
     jqueryNoConflict.getJSON(dataSource, renderKpccTemplate);
 };
 
-// render data visuals template
+// render kpcc archived article template
 function renderKpccTemplate(data){
     var kpccArticles = {
         'objects': data
         };
     renderHandlebarsTemplate('static-files/templates/kpcc-articles.handlebars', '#kpcc-articles', kpccArticles);
+};
+
+// grab la times flat file article data
+function retrieveLatimesData(laTimesData){
+    var dataSource = 'static-files/data/latimes-articles.json';
+    jqueryNoConflict.getJSON(dataSource, renderLaTimesTemplate);
+};
+
+// render la times flat file article data
+function renderLaTimesTemplate(laTimesData){
+    renderHandlebarsTemplate('static-files/templates/latimes-articles.handlebars', '#latimes-articles', laTimesData);
 };
 
 // render handlebars templates via ajax
