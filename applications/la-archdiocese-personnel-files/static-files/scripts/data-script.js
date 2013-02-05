@@ -50,7 +50,6 @@ function alterDisplayDetails(){
     $('.collapse').collapse();
 };
 
-
 // grab data
 function retrieveKpccData(data){
     var dataSource = 'http://www.scpr.org/api/content/?types=segmentsORnewsORentries&query=mahony&limit=20';
@@ -100,7 +99,6 @@ function handlebarsFormatDateForDisplay(){
 // format date/time
 function takeTime(dateInput) {
     var dateFormat = 'MMMM Do, YYYY';
-    //var dateFormat = 'ddd., MMM., D, YYYY, h:mm a';
     var dateOutput = moment(dateInput).format(dateFormat);
     return dateOutput;
 };
