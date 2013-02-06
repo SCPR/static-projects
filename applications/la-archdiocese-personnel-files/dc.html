@@ -100,24 +100,32 @@
 </head>
 <!-- end header -->
 
-    <body onload="init();">
+    <!-- begin body -->
+    <body class="minimal" onload="init();">
 
-    <div id="header">
-      <!--
-      Next up is the logo info. Change the href to point to your site's url
-      and the src field to point to your logo image
-      It's set up to use a logo 60 pixels tall
-      -->
+        <div id="header">
+          <!--
+          Next up is the logo info. Change the href to point to your site's url
+          and the src field to point to your logo image
+          It's set up to use a logo 60 pixels tall
+          -->
 
-      <a rel="external" href="http://www.scpr.org/"><img id="banner-logo" src="http://www.scpr.org/assets/logo-masthead.png" alt="Logo"></a
-      <h1 id='title'><div id='titletext'>&nbsp;</div></h1>
-      <p id="document-source">&nbsp;</p>
-      <p id='back'></p>
-      <div id='article-link'></div>
-    </div>
+          <a rel="external" href="http://www.scpr.org/"><img id="banner-logo" src="http://www.scpr.org/assets/logo-masthead.png" alt="Logo"></a
+          <h1 id='title'><div id='titletext'>&nbsp;</div></h1>
+          <p id="document-source">&nbsp;</p>
+          <p id='back'></p>
+          <div id='article-link'></div>
+        </div>
 
-    <!-- div to where the document is loaded -->
-    <div id="document"></div>
+        <!-- div to where the document is loaded -->
+        <div id="document"></div>
 
+        <div id="kpcc-footer"></div>
+
+        <!-- begin scripts -->
+        <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/scripts/swag.js"></script>
+        <script src="static-files/scripts/template-scripts.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap.min.js"></script>
     </body>
 </html>
