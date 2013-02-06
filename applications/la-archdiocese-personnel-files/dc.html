@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!-- begin doc -->
-<html lang="en">
+<html lang="en" style="overflow:visible !important;">
 
 <!-- begin header -->
 <head>
@@ -33,99 +33,45 @@
 
     <!-- begin css -->
     <style type="text/css">
-        body { font-family:Arial,Helvetica,sans-serif; margin:0; padding:0; overflow: hidden;}
+        body {font-family:Arial,Helvetica,sans-serif; margin:0; padding:0; overflow: hidden;}
         #header {padding:5px 12px 12px;}
-        #banner-logo {float:right; border:0; margin-top:3px; margin-bottom:3px;}
-        #document { clear: both; width: 100%; }
-        #title {margin:0; font-size:1.4em;}
-        #back {margin:0; font-size:.9em; font-weight:bold;}
-        #document-source {margin:1px 0 3px; font-size:.8em;}
+        #banner-logo {float:left; border:0; margin-top:3px; margin-bottom:3px;}
+        #document-meta-data {float:right; border:0; margin-top: 3px; margin-bottom: 3px;}
+        #document-meta-data #title {margin:0; font-size:1.4em;}
+        #document-meta-data #back {margin:0; font-size:.9em; font-weight:bold;}
+        #document-meta-data #document-source {margin:1px 0 3px; font-size:.8em;}
+        #document {clear: both; width: 100%;}
     </style>
     <!-- end css -->
 
     <!-- begin base scripts -->
-	<script type="text/javascript" src="http://s3.documentcloud.org/viewer/loader.js"></script>
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-	<script type="text/javascript" src="http://projects.scpr.org/static/static-files/scripts/jquery.url.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
-
-    // function called on load
-    function init () {
-
-        // get the document id from the url, using jquery.url.min.js
-        // so from http://s3.amazonaws.com/datadesk/dc.html?doc=29933-rahm-ruling
-        // we get '29933-rahm-ruling'
-        var documentcloud_id = $.url.param("doc");
-
-        // build the documentcloud url
-        var documentcloud_url = "http://www.documentcloud.org/documents/" + documentcloud_id + ".js";
-
-        // NOTE! The page doesn't make sure the document id is valid or that the document is
-        // public. It probably should. If you have code to do that, let me know!
-
-        // assign the document loader to varible 'viewer'
-        var viewer = DV.load(documentcloud_url, {
-            container : 'div#document',
-            embedded : true,
-
-            // after the document loads ...
-            afterLoad : function(viewer) {
-
-                // ... get its title, and put it on the page and in the title bar
-                var document_title = viewer.api.getTitle();
-                $('#titletext').text(document_title);
-                $('#maintitle').text(document_title);
-
-                // ... get its source, and put it in if it exists
-                var document_source = viewer.api.getSource();
-                var document_source_html = "Source: " + document_source
-
-                if(document_source != null) {
-                    $('#document-source').html(document_source_html);
-                }
-
-                // ... show the link to the related article, if it exists
-                var related_article_url = viewer.api.getRelatedArticle();
-                var related_html = "<a id='back-link' rel='external' href='" +
-                    related_article_url + "'>&laquo; Go to the related story.</a>";
-
-                if(related_article_url != null) {
-                    $('#article-link').html(related_html);
-                }
-            }
-        });
-    }
-    </script>
+    <!-- end base scripts -->
 
 </head>
 <!-- end header -->
 
-    <!-- begin body -->
-    <body class="minimal" onload="init();">
+<!-- begin body -->
+<body class="minimal">
+    <div id="header">
+        <a rel="external" href="http://www.scpr.org/"><img id="banner-logo" src="http://www.scpr.org/assets/logo-masthead.png" alt="Logo" /></a>
 
-        <div id="header">
-          <!--
-          Next up is the logo info. Change the href to point to your site's url
-          and the src field to point to your logo image
-          It's set up to use a logo 60 pixels tall
-          -->
-
-          <a rel="external" href="http://www.scpr.org/"><img id="banner-logo" src="http://www.scpr.org/assets/logo-masthead.png" alt="Logo"></a
-          <h1 id='title'><div id='titletext'>&nbsp;</div></h1>
-          <p id="document-source">&nbsp;</p>
-          <p id='back'></p>
-          <div id='article-link'></div>
+        <div id="document-meta-data">
+            <h3 id='title'><div id='titletext'></div></h3>
+            <p id="document-source"></p>
+            <p id='back'></p>
+            <div id='article-link'></div>
         </div>
 
-        <!-- div to where the document is loaded -->
-        <div id="document"></div>
+    </div>
 
-        <div id="kpcc-footer"></div>
+    <div id="document"></div>
 
-        <!-- begin scripts -->
-        <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/scripts/swag.js"></script>
-        <script src="static-files/scripts/template-scripts.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap.min.js"></script>
-    </body>
+    <!-- begin scripts -->
+	<script src="http://s3.documentcloud.org/viewer/loader.js"></script>
+	<script src="http://projects.scpr.org/static/static-files/scripts/jquery.url.min.js"></script>
+	<script src="static-files/scripts/doc-viewer.js"></script>
+    <!-- end scripts -->
+
+</body>
 </html>
