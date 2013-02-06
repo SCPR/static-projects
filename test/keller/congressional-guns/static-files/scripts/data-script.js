@@ -20,7 +20,9 @@ function renderDataVisualsTemplate(data){
 // scroll into view function
 function scrollToRep(){
     var congressionalMember = jqueryNoConflict('#search-congressional-delegation').val();
-    document.getElementById(congressionalMember).scrollIntoView();
+
+    jqueryNoConflict.scrollTo(congressionalMember)
+
 };
 
 // render handlebars templates via ajax
