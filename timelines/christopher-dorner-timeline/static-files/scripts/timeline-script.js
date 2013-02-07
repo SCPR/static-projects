@@ -1,3 +1,10 @@
+// begin embed function
+function embedBox() {
+    var embed_url = 'http://projects.scpr.org/static/timelines/christopher-dorner-timeline/iframe.html';
+    jAlert('<h4>Embed this on your site or blog</h4>' +
+    '<span>Copy the code below and paste to source of your page: <br /> &lt;iframe src=\"'+ embed_url +'\" width=\"540px\" height=\"750px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
+};
+
 // title to write to the #timeline-title div
 var timelineTitle = 'The Search for Christopher Dorner';
 
@@ -10,7 +17,6 @@ var timelineConfig = {
 	sheetName: 'display_sheet'
 }
 // above are the only variables you need to create the timeline
-
 $(function() {
 
 	var direction = 'newest';
@@ -54,8 +60,7 @@ $(function() {
 
 		var years = [];
 
-        // write the title to the title div
-        $('#timeline-title').html('<h1>' + timelineTitle + '</h1>');
+		$('#timeline-title').html('<h1>' + timelineTitle + '</h1>');
 
 		$.each(tabletop.sheets(timelineConfig.sheetName).all(), function(i, val){
 			// save the years so we can create year markers
