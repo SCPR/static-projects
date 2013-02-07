@@ -11,7 +11,6 @@ function getTemplateAjax(path, callback) {
     var source, template;
     jqueryNoConflict.ajax({
         url: path,
-
         success: function (data) {
             source = data;
             template = Handlebars.compile(source);

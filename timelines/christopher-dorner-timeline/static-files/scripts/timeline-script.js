@@ -1,5 +1,5 @@
 // title to write to the #timeline-title div
-var timelineTitle = 'Timeline: The Search for Christopher Dorner';
+var timelineTitle = 'The Search for Christopher Dorner';
 
 var timelineConfig = {
 
