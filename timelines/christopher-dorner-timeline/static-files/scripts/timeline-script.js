@@ -1,22 +1,17 @@
-// begin embed function
-function embedBox() {
-    var embed_url = 'http://projects.scpr.org/static/timelines/christopher-dorner-timeline/iframe.html';
-    jAlert('<h4>Embed this on your site or blog</h4>' +
-    '<span>Copy the code below and paste to source of your page: <br /> &lt;iframe src=\"'+ embed_url +'\" width=\"540px\" height=\"750px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
-};
-
-// title to write to the #timeline-title div
-var timelineTitle = 'The Search for Christopher Dorner';
-
+// below are the only variables you need to create the timeline
 var timelineConfig = {
+    // give your timeline a title
+	timelineTitle: 'The Search for Christopher Dorner',
 
     // add the key of your spreadsheet after publishing it to the web
-    key: '0An8W63YKWOsxdExVR0JPcENEaUJ4cGtWNXJNYkJ3MWc',
+	key: '0An8W63YKWOsxdExVR0JPcENEaUJ4cGtWNXJNYkJ3MWc',
 
     // add the name of the spreadsheet 'sheet'
 	sheetName: 'display_sheet'
+
 }
 // above are the only variables you need to create the timeline
+
 $(function() {
 
 	var direction = 'newest';
@@ -60,7 +55,7 @@ $(function() {
 
 		var years = [];
 
-		$('#timeline-title').html('<h1>' + timelineTitle + '</h1>');
+		$('#timeline-title').html('<h1>' + timelineConfig.timelineTitle + '</h1>');
 
 		$.each(tabletop.sheets(timelineConfig.sheetName).all(), function(i, val){
 			// save the years so we can create year markers
@@ -281,3 +276,4 @@ $.Isotope.prototype._spineAlignGetContainerSize = function() {
 $.Isotope.prototype._spineAlignResizeChanged = function() {
 	return true;
 };
+
