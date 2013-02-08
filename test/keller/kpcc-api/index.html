@@ -1,7 +1,4 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-<script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
-<script src="http://projects.scpr.org/static/static-files/scripts/swag.js"></script>
-<script src="http://projects.scpr.org/static/static-files/scripts/moment.min.js"></script>
 
 <script>
 var jqueryNoConflict = jQuery;
@@ -13,66 +10,35 @@ jqueryNoConflict(document).ready(function(){
 
 // begin
 function retrieveData(data){
-    $.getJSON('http://www.scpr.org/api/content/?types=segmentsORnewsORentries&query=mahony', renderTemplate);
+    $.getJSON('http://www.scpr.org/api/content/?types=segmentsORnewsORblogsORvideo&query=Christopher+Dorner&limit=50', createArrayFrom);
 
 };
 
 // begin
-function renderTemplate(data){
+function createArrayFrom(data){
 
     console.log(data);
 
-    var testObject = {
-        'objects': data
-        };
+    // begin loop
+    for (var i = 0; i < data.length; i++) {
 
-    renderHandlebarsTemplate('visuals.handlebars', '#data-visuals', testObject);
+        var headline = data[i].headline;
+        var link_path = data[i].link_path;
+        //var asset = data[i].asset;
+        var byline = data[i].byline;
+        var teaser = data[i].teaser;
+        //var published_at = data[i].published_at;
+
+        // write data to div
+        jqueryNoConflict('#article-list-content').append(
+            '<ul>'+
+            '<li><a href=\"' + link_path + '\">' + headline +
+            '</a> (<em>' + byline + '</em>)<br />' +
+            '<span>' + teaser + '</span></li>');
+       };
+       // end loop
 
 };
-
-
-// render handlebars templates via ajax
-function getTemplateAjax(path, callback) {
-    var source, template;
-    jqueryNoConflict.ajax({
-        url: path,
-        success: function (data) {
-            source = data;
-            template = Handlebars.compile(source);
-            if (callback) callback(template);
-        }
-    });
-};
-
-// function to compile handlebars template
-function renderHandlebarsTemplate(withTemplate,inElement,withData){
-    getTemplateAjax(withTemplate, function(template) {
-        handlebarsFormatDateForDisplay();
-        jqueryNoConflict(inElement).html(template(withData));
-    })
-};
-
-
-// begin dateFormatFunction
-function handlebarsFormatDateForDisplay(){
-    Handlebars.registerHelper('dateFormat', function(context, block) {
-        if (window.moment) {
-            return takeTime(context);
-        }else{
-            return context;
-        };
-    });
-};
-
-// format date/time
-function takeTime(dateInput) {
-    var dateFormat = 'MMMM Do, YYYY';
-    //var dateFormat = 'ddd., MMM., D, YYYY, h:mm a';
-    var dateOutput = moment(dateInput).format(dateFormat);
-    return dateOutput;
-};
-
-
 </script>
 
-<div id="data-visuals"></div>
+<div id="article-list-content"></div>
