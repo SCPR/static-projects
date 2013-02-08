@@ -153,7 +153,7 @@ body{
 	line-height: 1.5;
 }
 #timeline .post a.open-close{
-	background: transparent url(../img/button-up-down-arrow.png) no-repeat;
+	background: transparent url(/static/static-files/images/tabletop-timelines/button-up-down-arrow.png) no-repeat;
 	height: 17px;
 	width: 16px;
 	position: absolute;
@@ -202,7 +202,7 @@ body{
 	width: 28px;
 	height: 28px;
 	border: 1px #87b2d3 solid;
-	background: #d6e5f0 url(../img/icon-share.png) no-repeat center center;
+	background: #d6e5f0 url(/static/static-files/images/tabletop-timelines/icon-share.png) no-repeat center center;
 	display: block;
 	-webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -223,7 +223,7 @@ body{
 }
 #timeline .post .share-popup{
 	display: none;
-	background: transparent url(../img/popup.png) no-repeat;
+	background: transparent url(/static/static-files/images/tabletop-timelines/popup.png) no-repeat;
 	width: 166px;
 	height: 50px;
 	position: absolute;
@@ -260,11 +260,11 @@ body{
 	line-height: 20px;
 }
 #timeline .post.left .date{
-	background: transparent url(../img/tab-left.png) no-repeat right;
+	background: transparent url(/static/static-files/images/tabletop-timelines/tab-left.png) no-repeat right;
 	right: -54px;
 }
 #timeline .post.right .date{
-	background: transparent url(../img/tab-right.png) no-repeat left;
+	background: transparent url(/static/static-files/images/tabletop-timelines/tab-right.png) no-repeat left;
 	left: -54px;
 }
 #timeline .year-marker {
@@ -342,12 +342,12 @@ body{
 }
 #buttons a.expand-all span,
 #buttons a.sort-newest span{
-	background-image: url(../img/up-arrows.png);
+	background-image: url(/static/static-files/images/tabletop-timelines/up-arrows.png);
 	background-repeat: no-repeat;
 }
 #buttons a.collapse-all span,
 #buttons a.sort-oldest span{
-	background-image: url(../img/down-arrows.png);
+	background-image: url(/static/static-files/images/tabletop-timelines/down-arrows.png);
 	background-repeat: no-repeat;
 }
 
@@ -423,7 +423,7 @@ body{
 
 
 @media only screen and (min-width: 35em) {
-  
+
 
 }
 
@@ -438,13 +438,13 @@ body{
 .clearfix { *zoom: 1; }
 
 @media print {
-  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
   a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } 
+  thead { display: table-header-group; }
   tr, img { page-break-inside: avoid; }
   img { max-width: 100% !important; }
   @page { margin: 0.5cm; }
