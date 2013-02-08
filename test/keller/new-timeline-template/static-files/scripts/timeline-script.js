@@ -4,10 +4,10 @@ var timelineConfig = {
 	timelineTitle: 'The Search for Christopher Dorner',
 
     // add the key of your spreadsheet after publishing it to the web
-	key: '0An8W63YKWOsxdGt4UmJhd2JCM2tLYzREbWNkZFJUOHc',
+	key: '0An8W63YKWOsxdExVR0JPcENEaUJ4cGtWNXJNYkJ3MWc',
 
     // add the name of the spreadsheet 'sheet'
-	sheetName: 'Posts'
+	sheetName: 'display_sheet'
 
 }
 // above are the only variables you need to create the timeline
