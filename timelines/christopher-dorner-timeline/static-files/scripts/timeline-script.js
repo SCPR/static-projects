@@ -1,7 +1,7 @@
 // below are the only variables you need to create the timeline
 var timelineConfig = {
     // give your timeline a title
-	timelineTitle: 'The Search for Christopher Dorner',
+	timelineTitle: 'The search for Christopher Dorner',
 
     // add the key of your spreadsheet after publishing it to the web
 	key: '0An8W63YKWOsxdExVR0JPcENEaUJ4cGtWNXJNYkJ3MWc',
@@ -56,6 +56,7 @@ $(function() {
 		var years = [];
 
 		$('#timeline-title').html('<h1>' + timelineConfig.timelineTitle + '</h1>');
+		$('#iframe-timeline-title').html('<h3>Timeline: The search for Christopher Dorner</h3>');
 
 		$.each(tabletop.sheets(timelineConfig.sheetName).all(), function(i, val){
 			// save the years so we can create year markers
