@@ -24,17 +24,26 @@ function createArrayFrom(data){
 
         var headline = data[i].headline;
         var link_path = data[i].link_path;
-        //var asset = data[i].asset;
+        var asset = data[i].asset;
         var byline = data[i].byline;
         var teaser = data[i].teaser;
-        //var published_at = data[i].published_at;
 
         // write data to div
         jqueryNoConflict('#article-list-content').append(
-            '<ul>'+
-            '<li><a href=\"' + link_path + '\">' + headline +
-            '</a> (<em>' + byline + '</em>)<br />' +
-            '<span>' + teaser + '</span></li>');
+            '<section class="cbase offlead">' +
+                '<div class="row-fluid">' +
+                    '<div class="span10">' +
+                        '<div id="article-list-image" class="contentasset">' + asset + '</div>' +
+                    '</div>' +
+                    '<div class="span14">' +
+                        '<div id="article-list-headline">' +
+                            '<a href=\"' + link_path + '\">' + headline + '</a> (<em>' + byline + '</em>)<br />' +
+                            '<p>' + teaser + '</p>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+            '</section>');
+
        };
        // end loop
 
