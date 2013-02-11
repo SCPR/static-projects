@@ -14,17 +14,17 @@
                 </div>
 
                 <div class="span10">
-                    <h4>{{position}}. {{first_name}} {{last_name}} <br /> ({{party}}-{{district}})</h4>
-                    <p><strong>owns_firearm</strong>: {{owns_firearm}}</p>
+                    <h4>{{position}}. {{first_name}} {{last_name}} ({{party}}-{{district}})</h4>
+                    <p><strong>Owns a firearm</strong>: {{owns_firearm}}</p>
 
                     {{#if comment}}
-                        <p><strong>comment</strong>: {{comment}}</p>
+                        <p><strong>Says {{last_name}}</strong>: "{{comment}}"</p>
                     {{else}}
 
                     {{/if}}
 
                     {{#if supporting_specific_proposals}}
-                        <p><strong>supporting_specific_proposals</strong>: {{supporting_specific_proposals}}</p>
+                        <p><strong>Will support the following</strong>: {{supporting_specific_proposals}}</p>
                     {{else}}
 
                     {{/if}}
