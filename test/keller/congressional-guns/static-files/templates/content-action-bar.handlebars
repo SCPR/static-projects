@@ -1,30 +1,36 @@
-<h3>Find your representative</h3>
-<p>I'm wondering if there is a way to link to the individual Put some drop down menus here, or perhaps a legend?</p>
-
-<span id="top-of-screen"></span>
-
-<div class="operator">
-    <div class="clear-block">
-        <div class="r-menu-open">
-            <a class="r-menu-action" href="#">Menu</a>
-        </div>
-
+<nav class="">
         <select id="search-congressional-delegation" onchange="scrollToRep(this.value);">
+            <option value="#return-to-top">Find your representative</option>
             {{#objects}}
                 <option value="#{{first_name}}_{{last_name}}">{{first_name}} {{last_name}}</option>
             {{/objects}}
         </select>
-
-        <!--
-        <ul class="operator-nav">
-        {{#objects}}
-
-        <li><a href="#{{first_name}}_{{last_name}}">{{first_name}} {{last_name}}</a></li>
-
-        {{/objects}}
-
-        </ul>
-        -->
+<!--
         <a class="operator-top" href="#operator-top">Back to Top</a>
-    </div>
-</div>
+-->
+</nav>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+	//Calculate the height of <header>
+	//Use outerHeight() instead of height() if have padding
+    var aboveHeight = $('header').outerHeight();
+
+	// when scroll
+    $(window).scroll(function(){
+
+		//if scrolled down more than the header's height
+        if ($(window).scrollTop() > aboveHeight){
+
+			// if yes, add "fixed" class to the <nav>
+			// add padding top to the #content (value is same as the height of the nav)
+            $('nav').addClass('fixed').css('top','100').next().css('padding-top','60px');
+        } else {
+
+			// when scroll up or less than aboveHeight, remove the "fixed" class, and the padding-top
+            $('nav').removeClass('fixed').next().css('padding-top','0');
+        }
+    });
+});
+</script>
