@@ -7,7 +7,7 @@ var timelineConfig = {
 	key: '0An8W63YKWOsxdExVR0JPcENEaUJ4cGtWNXJNYkJ3MWc',
 
     // add the name of the spreadsheet 'sheet'
-	sheetName: 'display_sheet'
+	sheetName: 'breaking_display_sheet'
 
 }
 // above are the only variables you need to create the timeline
