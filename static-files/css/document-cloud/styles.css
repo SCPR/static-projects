@@ -1,0 +1,8 @@
+body {margin:0; padding:0; overflow: hidden;}
+#header {padding:5px 12px 12px;}
+#banner-logo {float:left; border:0; margin-top:3px; margin-bottom:3px;}
+#document-meta-data {float:right; border:0; margin-top: 3px; margin-bottom: 3px;}
+#document-meta-data #title {margin:0; font-size:1.4em;}
+#document-meta-data #back {margin:0; font-size:.9em; font-weight:bold;}
+#document-meta-data #document-source {margin:1px 0 3px; font-size:.8em;}
+#document {clear: both; width: 100%;}
