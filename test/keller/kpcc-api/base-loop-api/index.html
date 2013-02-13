@@ -10,7 +10,7 @@ jqueryNoConflict(document).ready(function(){
 
 // begin
 function retrieveData(data){
-    $.getJSON('http://www.scpr.org/api/content/?types=segmentsORnewsORblogsORvideo&query=Christopher+Dorner&limit=50', createArrayFrom);
+    $.getJSON('http://www.scpr.org/api/content/?types=news,segments&query=Christopher+Dorner&limit=30', createArrayFrom);
 
 };
 
