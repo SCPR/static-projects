@@ -27,8 +27,7 @@ body.minimal footer ul li:last-child { padding-right: 0; border-right: none; }
 
 /* structure for data elements */
 .container-fluid { max-width: 1110px; margin: 0 auto;}
-#data-details
-#data-visuals
+#data-details, #data-visuals {margin: 10px auto 10px auto;}
 #content-article {width: 100%; height: auto; margin: 0 auto 25px auto;}
 #content-article-text {}
 #content-article-buttons {margin: 15px 0 10px 0;}
@@ -55,6 +54,7 @@ h1, h2, h3, h4, h5, h6 {margin: 0 0;}
 #data-container h4 {font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 700; line-height: 22px; color: #2B2B2B;}
 #data-container .kicker {font-size: 12px; text-transform: uppercase;}
 #data-container .lowercase {text-transform: lowercase;}
+#data-container .centered {text-align: center;}
 #data-container .underline {text-decoration: underline;}
 #data-container .data-instructions {font-size: 11px;}
 #data-container .story-headline {font-family: "proxima-nova-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; margin-bottom: 0}
