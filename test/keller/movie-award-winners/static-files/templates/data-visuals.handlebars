@@ -1,0 +1,24 @@
+{{debug}}
+
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Award</th>
+                <th>Best Actor</th>
+                <th>Best Actress</th>
+                <th>Best Director</th>
+                <th>Best Film</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#objects}}
+                <tr>
+                    <td><a href="{{source_link}}"><strong>{{award_agency}}</strong></a></td>
+                {{#awards}}
+                    <td>{{winner}} <br /> {{movie}}</td>
+                {{/awards}}
+                </tr>
+            {{/objects}}
+        </tbody>
+    </table>

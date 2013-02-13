@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<!-- begin doc -->
+<html lang="en" style="overflow:visible !important;">
+
+<!-- begin header -->
+<head>
+
+    <!--
+    Customized document viewer for use with DocumentCloud, at http://documentcloud.org.
+    Built on a version from the Chicago Tribune team, http://blog.apps.chicagotribune.com/
+    Made for use at WNYC, http://wnyc.org
+    A base version, without our tracking code, is at: http://s3.amazonaws.com/datadesk/dc.html
+    Use at your own risk, improve as you see fit, and let me know if you do!
+    To use, see: http://johnkeefe.net/a-customized-viewer-for-documentcloud
+    John Keefe: john at johnkeefe.net - http://johnkeefe.net
+    -->
+
+    <!-- begin meta -->
+    <title id="maintitle">Document Viewer</title>
+    <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" id="meta-viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+    <meta name="description" content="Search KPCC's database of the files released by the L.A. Archdiocese in connection with the priest abuse scandal." />
+    <meta name="keywords" content="L.A. Archdiocese, priest, Catholic Church, sex, abuse, files, Roger Mahony" />
+    <meta name="author" content="Chris Keller/KPCC">
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="http://www.scpr.org/assets/logo-masthead.png" />
+    <meta property="og:title" content="Archdiocese of Los Angeles Priest Personnel Files" />
+    <meta property="og:url" content="http://projects.scpr.org/static/applications/la-archdiocese-personnel-files" />
+    <meta property="og:description" content="Search KPCC's database of the files released by the L.A. Archdiocese in connection with the priest abuse scandal." />
+    <!-- end meta -->
+
+    <!-- begin css -->
+    <style type="text/css">
+        body {font-family:Arial,Helvetica,sans-serif; margin:0; padding:0; overflow: hidden;}
+        #header {padding:5px 12px 12px;}
+        #banner-logo {float:left; border:0; margin-top:3px; margin-bottom:3px;}
+        #document-meta-data {float:right; border:0; margin-top: 3px; margin-bottom: 3px;}
+        #document-meta-data #title {margin:0; font-size:1.4em;}
+        #document-meta-data #back {margin:0; font-size:.9em; font-weight:bold;}
+        #document-meta-data #document-source {margin:1px 0 3px; font-size:.8em;}
+        #document {clear: both; width: 100%;}
+    </style>
+    <!-- end css -->
+
+    <!-- begin base scripts -->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <!-- end base scripts -->
+
+</head>
+<!-- end header -->
+
+<!-- begin body -->
+<body class="minimal">
+    <div id="header">
+        <a rel="external" href="http://www.scpr.org/"><img id="banner-logo" src="http://www.scpr.org/assets/logo-masthead.png" alt="Logo" /></a>
+
+        <div id="document-meta-data">
+            <h3 id='title'><div id='titletext'></div></h3>
+            <p id="document-source"></p>
+            <p id='back'></p>
+            <div id='article-link'></div>
+        </div>
+
+    </div>
+
+    <div id="document"></div>
+
+    <!-- begin scripts -->
+	<script src="http://s3.documentcloud.org/viewer/loader.js"></script>
+	<script src="http://projects.scpr.org/static/static-files/scripts/jquery.url.min.js"></script>
+	<script src="http://projects.scpr.org/static/static-files/scripts/document-cloud-viewer.js"></script>
+    <!-- end scripts -->
+
+    <!-- begin analytics -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-624724-5']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <script type="text/javascript">
+        var _sf_async_config={uid:2825,domain:"projects.scpr.org"};
+        (function(){
+            function loadChartbeat() {
+                window._sf_endpt=(new Date()).getTime();
+                var e = document.createElement('script');
+                e.setAttribute('language', 'javascript');
+                e.setAttribute('type', 'text/javascript');
+                e.setAttribute('src',
+                    (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") + "js/chartbeat.js");
+                document.body.appendChild(e);
+            };
+            var oldonload = window.onload;
+            window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+        })();
+    </script>
+    <!-- end analytics -->
+
+</body>
+</html>

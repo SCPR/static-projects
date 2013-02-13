@@ -3,79 +3,139 @@
 <!-- begin doc -->
 <html lang="en">
 
-    <!-- begin header -->
-    <head>
-        <link rel="stylesheet" href="http://projects.scpr.org/static/static-files/css/tabletop-timelines/styles.css">
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    </head>
+    <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"> <![endif]-->
+    <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"> <![endif]-->
+    <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"> <![endif]-->
+    <!--[if gt IE 8]><!--> <html class="no-js" lang="en" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"> <!--<![endif]-->
 
-    <body>
+<!-- begin header -->
+<head>
 
-        <div id="page">
-            <header id="header">
-                <div id="timeline-title" class="main-header clearfix"></div>
-            </header>
-            <div role="main" class="clearfix">
-                <div id="buttons">
-                    <div id="sort-buttons">
-                        <a class="sort-newest" href="#"><span>NEWEST FIRST</span></a>
-                        <a class="sort-oldest active" href="#"><span>OLDEST FIRST</span></a>
-                    </div>
+    <!-- begin css -->
+    <link rel="stylesheet" href="http://projects.scpr.org/static/static-files/css/tabletop-timelines/styles.css">
+    <!-- end css -->
+
+    <!-- begin base scripts -->
+    <script src="http://use.typekit.com/mhc7oxs.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script async="" src="http://www.google-analytics.com/ga.js"></script>
+    <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js"></script>
+    <!-- end base scripts -->
+
+</head>
+<!-- end header -->
+
+<body>
+    <div id="page">
+        <header id="header">
+            <div id="timeline-title" class="main-header clearfix"></div>
+        </header>
+        <div role="main" class="clearfix">
+            <div id="buttons">
+                <div id="expand-collapse-buttons">
+                    <a class="expand-all active" href="#"><span>EXPAND ALL</span></a>
+                    <a class="collapse-all" href="#"><span>COLLAPSE ALL</span></a>
                 </div>
-                <div id="timeline">
-                    <div id="line-container">
-                        <div id="line"></div>
-                    </div>
+                <div id="sort-buttons">
+                    <a class="sort-newest active" href="#"><span>NEWEST FIRST</span></a>
+                    <a class="sort-oldest" href="#"><span>OLDEST FIRST</span></a>
+                </div>
+            </div>
+            <div id="timeline">
+                <div id="line-container">
+                    <div id="line"></div>
                 </div>
             </div>
         </div>
-            <script src="http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js"></script>
-            <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
-            <script src="http://projects.scpr.org/static/static-files/scripts/tabletop.js"></script>
-            <script src="http://projects.scpr.org/static/static-files/scripts/isotope-1.5.18.js"></script>
-            <script src="timeline-script.js"></script>
+    </div>
 
-        <!-- begin handlebars templates -->
-        <script id="year-marker-template" type="text/x-handlebars-template">
-            <div class="item year-marker">
-                <div class="inner">
-                    <div class="inner2">
-                        <div class="timestamp">{{timestamp}}</div>
-                        <div class="year">{{year}}</div>
-                    </div>
-                </div>
-            </div>
-        </script>
+    <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
+    <script src="http://projects.scpr.org/static/static-files/scripts/tabletop.js"></script>
+    <script src="http://projects.scpr.org/static/static-files/scripts/timeline-plugins.js"></script>
+    <script src="timeline-script.js"></script>
+    <script src="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap.min.js"></script>
 
-        <script id="post-template" type="text/x-handlebars-template">
-            <div class="item post">
-                <div class="inner">
+    <!-- begin analytics -->
+<!--
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-624724-5']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <script type="text/javascript">
+        var _sf_async_config={uid:2825,domain:"projects.scpr.org"};
+        (function(){
+            function loadChartbeat() {
+                window._sf_endpt=(new Date()).getTime();
+                var e = document.createElement('script');
+                e.setAttribute('language', 'javascript');
+                e.setAttribute('type', 'text/javascript');
+                e.setAttribute('src',
+                    (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") + "js/chartbeat.js");
+                document.body.appendChild(e);
+            };
+            var oldonload = window.onload;
+            window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+        })();
+    </script>
+-->
+    <!-- end analytics -->
+
+    <!-- begin handlebars templates -->
+    <script id="year-marker-template" type="text/x-handlebars-template">
+        <div class="item year-marker">
+            <div class="inner">
+                <div class="inner2">
                     <div class="timestamp">{{timestamp}}</div>
-                    <div class="title"><h3>{{title}}</h3></div>
-                    <div class="date">{{display_date}}</div>
-                        <div class="body">
-                            {{#if photo_url}}
-                                <img src="{{photo_url}}" alt="">
-                            {{/if}}
-
-                            {{#if caption}}
-                                <div class="caption">({{caption}})</div>
-                            {{/if}}
-
-                            {{#if body}}
-                                <div class="text">{{body}}</div>
-                            {{/if}}
-                            <div class="clearfix">
-                                {{#if read_more_url}}
-                                    <a target="_blank" class="more" href="{{read_more_url}}">READ MORE</a>
-                            </div>
-                                {{/if}}
-                        </div>
-                    </div>
+                    <div class="year">{{year}}</div>
                 </div>
             </div>
-        </script>
-        <!-- end handlebars templates -->
+        </div>
+    </script>
+
+    <script id="post-template" type="text/x-handlebars-template">
+        <div class="item post">
+            <div class="inner">
+                <div class="timestamp">{{timestamp}}</div>
+                <div class="title"><h3>{{title}}</h3></div>
+                <div class="date">{{display_date}}</div>
+
+                <div class="body">
+                    {{#if photo_url}}
+                        <img src="{{photo_url}}" alt="">
+                    {{/if}}
+                    {{#if caption}}
+                        <div class="caption">({{caption}})</div>
+                    {{/if}}
+                    {{#if body}}
+                        <div class="text">{{body}}</div>
+                    {{/if}}
+                        <div class="clearfix">
+                    {{#if read_more_url}}
+                        <a target="_blank" class="more" href="{{read_more_url}}">READ MORE</a>
+                            <div class="share">
+                                <a href="#" class="share-trigger"></a>
+                                    <div class="share-popup">
+                                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{read_more_url}}" data-text="{{title}}" data-count="none">Tweet</a>
+                                        <a class="facebook-share-button" name="fb_share" type="button" share_url="{{read_more_url}}">Share</a>
+                                    </div>
+                            </div>
+                    {{/if}}
+                        </div>
+                </div>
+            </div>
+      </div>
+    </script>
+    <!-- end handlebars templates -->
 
     </body>
 </html>

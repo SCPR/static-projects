@@ -13,14 +13,14 @@ function retriveData() {
 
 // render data visuals template
 function renderDataVisualsTemplate(data){
-    renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', data);
     renderHandlebarsTemplate('static-files/templates/content-action-bar.handlebars', '#content-action-bar', data);
+    renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', data);
 };
 
 // scroll into view function
 function scrollToRep(){
     var congressionalMember = jqueryNoConflict('#search-congressional-delegation').val();
-    document.getElementById(congressionalMember).scrollIntoView();
+    jqueryNoConflict.scrollTo(congressionalMember)
 };
 
 // render handlebars templates via ajax

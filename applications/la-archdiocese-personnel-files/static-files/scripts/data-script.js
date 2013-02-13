@@ -5,7 +5,6 @@ jqueryNoConflict(document).ready(function() {
     loadDocViewer();
 });
 
-
 // begin
 function loadDocViewer(){
 
@@ -18,7 +17,6 @@ function loadDocViewer(){
         search_bar: true,
         organization: 97
     });
-
 };
 
 // create the bootrap modal
@@ -50,52 +48,10 @@ function alterDisplayDetails(){
     $('.collapse').collapse();
 };
 
-/*
-// grab data
-function retriveData() {
-    var dataSource = 'static-files/data/flat_data.json';
-    jqueryNoConflict.getJSON(dataSource, renderDataVisualsTemplate);
-};
-
-// render data visuals template
-function renderDataVisualsTemplate(data){
-    renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#content-display', data);
-};
-
-
-// render handlebars templates via ajax
-function getTemplateAjax(path, callback) {
-    var source, template;
-    jqueryNoConflict.ajax({
-        url: path,
-        success: function (data) {
-            source = data;
-            template = Handlebars.compile(source);
-            if (callback) callback(template);
-        }
-    });
-};
-
-// render handlebars template function
-function renderHandlebarsTemplate(withTemplate,inElement,withData){
-    getTemplateAjax(withTemplate, function(template) {
-        jqueryNoConflict(inElement).html(template(withData));
-    })
-};
-
-// add handlebars debugger
-function handlebarsDebugHelper(){
-    Handlebars.registerHelper("debug", function(optionalValue) {
-        console.log("Current Context");
-        console.log("====================");
-        console.log(this);
-    });
-};
-*/
-
 // embed function
 function embedBox() {
-    var embed_url = 'http://localhost:8880/2kpcc/static-projects/applications/la-archdiocese-personnel-files/iframe.html';
+    var embed_url = 'http://projects.scpr.org/static/applications/la-archdiocese-personnel-files/iframe.html';
 
-    jAlert('<strong>To embed this visualization your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+ embed_url +'\" width=\"540px\" height=\"600px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
+    jAlert('<h4>Embed this on your site or blog</h4>' +
+    '<span>Copy the code below and paste to source of your page: <br /> &lt;iframe src=\"'+ embed_url +'\" width=\"540px\" height=\"750px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
 };
