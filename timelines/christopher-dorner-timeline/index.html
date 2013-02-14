@@ -3,11 +3,6 @@
 <!-- begin doc -->
 <html lang="en">
 
-    <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"> <![endif]-->
-    <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"> <![endif]-->
-    <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"> <![endif]-->
-    <!--[if gt IE 8]><!--> <html class="no-js" lang="en" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/"> <!--<![endif]-->
-
 <!-- begin header -->
 <head>
 
@@ -29,10 +24,15 @@
 
     <!-- begin css -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+
     <link href="http://projects.scpr.org/static/static-files/css/interactive-project-shell/foundation-styles.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="http://projects.scpr.org/static/static-files/css/tabletop-timelines/v2-styles.css" rel="stylesheet" type="text/css" media="all" />
+
+    <link href="http://projects.scpr.org/static/static-files/css/tabletop-timelines/v3-styles.css" rel="stylesheet" type="text/css" media="all" />
+
     <link href="static-files/css/project-styles.css" rel="stylesheet" type="text/css" media="all" />
+
     <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
+
     <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="all" />
     <!-- end css -->
 
@@ -46,45 +46,29 @@
     <!-- end base scripts -->
 
 </head>
-<!-- end header -->
 
 <body class="minimal">
     <div id="kpcc-header"></div>
         <div id="data-container" class="container-fluid">
             <div class="row-fluid">
-                <div class="span12">
-                    <div id="data-visuals">
-                        <div id="page">
-                            <div id="data-details"></div>
-                            <div role="main" class="clearfix">
-                                <div id="buttons">
-                                    <div id="expand-collapse-buttons">
-                                        <a class="expand-all active" href="#"><span>EXPAND ALL</span></a>
-                                        <a class="collapse-all" href="#"><span>COLLAPSE ALL</span></a>
-                                    </div>
-                                    <div id="sort-buttons">
-                                        <a class="sort-newest active" href="#"><span>NEWEST FIRST</span></a>
-                                        <a class="sort-oldest" href="#"><span>OLDEST FIRST</span></a>
-                                    </div>
-                                </div>
-                                <div id="timeline">
-                                    <div id="line-container">
-                                        <div id="line"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="span8 offset2">
+                    <div id="data-details"></div>
                 </div>
             </div>
             <div class="row-fluid">
                 <div class="span12">
+                    <div id="data-visuals"></div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span8 offset2">
                     <div id="data-footer"></div>
                 </div>
             </div>
         </div>
     <div id="kpcc-footer"></div>
 
+    <!-- begin scripts -->
     <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/tabletop.js"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/timeline-plugins.js"></script>
@@ -95,83 +79,32 @@
     <!-- Share/Embed 'alert' box generated with jquery.alerts.js.
     See http://abeautifulsite.net/blog/2008/12/jquery-alert-dialogs/ -->
     <script src="http://projects.scpr.org/static/static-files/scripts/jquery.alerts.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#data-visuals').verticalTimeline({
+
+            // spreadsheet key
+            key: 'https://docs.google.com/spreadsheet/pub?key=0An8W63YKWOsxdExVR0JPcENEaUJ4cGtWNXJNYkJ3MWc&output=html',
+
+            // name of sheet on spreadsheet
+            sheetName: 'breaking_display_sheet',
+
+            // newest or oldest
+            defaultDirection: 'newest',
+
+            // collapsed or expanded
+            defaultExpansion: 'expanded',
+
+            // groupSegmentByYear or groupSegmentByDecade
+            groupFunction: 'groupSegmentByYear',
+
+            // adjust timeline width
+            width: '65%'
+        });
+    });
+    </script>
     <!-- end scripts -->
-
-    <!-- begin analytics -->
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-624724-5']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
-
-    <script type="text/javascript">
-        var _sf_async_config={uid:2825,domain:"projects.scpr.org"};
-        (function(){
-            function loadChartbeat() {
-                window._sf_endpt=(new Date()).getTime();
-                var e = document.createElement('script');
-                e.setAttribute('language', 'javascript');
-                e.setAttribute('type', 'text/javascript');
-                e.setAttribute('src',
-                    (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") + "js/chartbeat.js");
-                document.body.appendChild(e);
-            };
-            var oldonload = window.onload;
-            window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
-        })();
-    </script>
-    <!-- end analytics -->
-
-    <script id="year-marker-template" type="text/x-handlebars-template">
-        <div class="item year-marker">
-            <div class="inner">
-                <div class="inner2">
-                    <div class="timestamp">{{timestamp}}</div>
-                    <div class="year">{{year}}</div>
-                </div>
-            </div>
-        </div>
-    </script>
-
-    <script id="post-template" type="text/x-handlebars-template">
-        <div class="item post">
-            <div class="inner">
-                <div class="timestamp">{{timestamp}}</div>
-                <div class="title"><h3>{{title}}</h3></div>
-                <div class="date">{{display_date}}</div>
-
-                <div class="body">
-                    {{#if photo_url}}
-                        <img src="{{photo_url}}" alt="">
-                    {{/if}}
-                    {{#if caption}}
-                        <div class="caption">({{caption}})</div>
-                    {{/if}}
-                    {{#if body}}
-                        <div class="text">{{body}}</div>
-                    {{/if}}
-                        <div class="clearfix">
-                    {{#if read_more_url}}
-                        <a target="_blank" class="more" href="{{read_more_url}}">READ MORE</a>
-                            <div class="share">
-                                <a href="#" class="share-trigger"></a>
-                                    <div class="share-popup">
-                                        <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{read_more_url}}" data-text="{{title}}" data-count="none">Tweet</a>
-                                        <a class="facebook-share-button" name="fb_share" type="button" share_url="{{read_more_url}}">Share</a>
-                                    </div>
-                            </div>
-                    {{/if}}
-                        </div>
-                </div>
-            </div>
-      </div>
-    </script>
 
 </body>
 </html>
