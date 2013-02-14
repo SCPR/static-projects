@@ -43,7 +43,7 @@ function processData(data){
 
     focusOnDisplayDetails();
     renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#content-display', dataForHandlebars);
-    jqueryNoConflict('#topic-display').html('<h4>In Thursday\'s State of the State address, Gov. Jerry Brown said <br /> the following about ' + topicVariable + '</h4>');
+    jqueryNoConflict('#topic-display').html('<h4>In Thursday\'s State of the State address, Gov. Jerry Brown said the following about ' + topicVariable + '</h4>');
     jqueryNoConflict('#topic-target').scrollIntoView(true);
     });
 };
@@ -94,6 +94,7 @@ function focusOnDisplayDetails(){
 function showDisplayDetails(){
     jqueryNoConflict('#content-article-text').fadeIn('fast');
     jqueryNoConflict('#content-display').empty();
+    jqueryNoConflict('#topic-display').empty();
     jqueryNoConflict('#about-this-project').addClass('hidden');
 };
 // end
