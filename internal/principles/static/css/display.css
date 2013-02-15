@@ -128,6 +128,8 @@
 
 	.manifesto {
 		background: #c0c0c0;
+		background: #0081db;
+		background: #c55800;
 		color: white;
 		font-size: 1.4375em; /* 23 / 16 */
 		padding: 67px 0 29px;
@@ -163,6 +165,10 @@
 				font-size: 1.5em; /* 24 / 16 */
 				line-height: 1;
 				font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+			}
+			.category:nth-child(7) {
+				border-bottom: none;
+				padding-bottom: 20px;
 			}
 			.dogma {
 				width: 74.0625%; /* 711 / 960 */

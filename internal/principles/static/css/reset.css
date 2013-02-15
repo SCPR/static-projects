@@ -39,9 +39,8 @@ a img { border:none } /* Gets rid of IE's blue borders */
 /* **************************************************************************************************************************************** */
 
 .bound {
-	width: 89%;
+	width: 85%;
     max-width: 1100px;
-	max-width: 960px; /* diagnosis */
 	margin: 0 auto;
 }
 
