@@ -56,6 +56,9 @@ h1, h2, h3, h4, h5, h6 {margin: 0 0;}
 #data-container .lowercase {text-transform: lowercase;}
 #data-container .centered {text-align: center;}
 #data-container .underline {text-decoration: underline;}
+#data-container .right {text-align: right;}
+#data-container .left {text-align: left;}
+#data-container .italics {font-style: italic;}
 #data-container .data-instructions {font-size: 11px;}
 #data-container .story-headline {font-family: "proxima-nova-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 700; margin-bottom: 0}
 #data-container .normal-display {font-size: 14px;}

@@ -7,7 +7,7 @@ jqueryNoConflict(document).ready(function() {
 
 // grab data
 function retriveData() {
-    var dataSource = 'static-files/data/movie-award-winners.json';
+    var dataSource = 'static-files/data/movie-award-winners-handlebars.json';
     jqueryNoConflict.getJSON(dataSource, renderDataVisualsTemplate);
 };
 

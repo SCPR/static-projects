@@ -1,103 +1,249 @@
-{{debug}}
-
-    <!-- begin row -->
-    <div class="row-fluid">
+<!-- begin row -->
+<div class="row-fluid">
+    <div class="span12">
         <div class="span12">
-            <div class="span12">
-                <h3>Best Director</h3>
-                <div class="row-fluid">
-                    <div class="span1"></div>
+            <h3>Best Picture</h3><br />
+            <div class="row-fluid">
+                {{#objects}}
+                    {{#is category 'Best Picture'}}
+                    {{#is row '1'}}
+                    <div class="span4">
+                        <div id="award-category-container">
+                            <img class="best-picture" src="{{movieimage}}" alt="{{nominee}}" />
+                            <p class="centered"><strong>{{nominee}}</strong></p>
+                                {{#if awardswon}}
+                                    <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                                {{else}}
+                                    <p>&nbsp;</p>
+                                {{/if}}
+                                {{#if prediction}}
+                                    <p>{{prediction}} - <span class="italics"><a href="{{prediction_source}}" target="_blank">Source</a></span></p>
+                                {{else}}
+                                {{/if}}
+                            <p class="centered">
+                                {{#if imdbpage}}
+                                    <a href="{{imdb_page}}" target="_blank">IMDB</a> |
+                                {{else}}
+                                {{/if}}
+                                {{#if trailer}}
+                                    <a href="{{trailer}}" target="_blank">Movie Trailer</a>
+                                {{else}}
+                                {{/if}}
+                            </p>
+                        </div>
+                    </div>
+                    {{/is}}
+                    {{/is}}
+                {{/objects}}
+            </div>
+            <hr>
+            <div class="row-fluid">
+                {{#objects}}
+                    {{#is category 'Best Picture'}}
+                    {{#is row '2'}}
+                    <div class="span4">
+                        <div id="award-category-container">
+                            <img class="best-picture" src="{{movieimage}}" alt="{{nominee}}" />
+                            <p class="centered"><strong>{{nominee}}</strong></p>
+                                {{#if awardswon}}
+                                    <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                                {{else}}
+                                    <p>&nbsp;</p>
+                                {{/if}}
+                                {{#if prediction}}
+                                    <p>{{prediction}} - <span class="italics"><a href="{{prediction_source}}" target="_blank">Source</a></span></p>
+                                {{else}}
+                                {{/if}}
+
+                            <p class="centered">
+                                {{#if imdbpage}}
+                                    <a href="{{imdb_page}}" target="_blank">IMDB</a> |
+                                {{else}}
+                                {{/if}}
+                                {{#if trailer}}
+                                    <a href="{{trailer}}" target="_blank">Movie Trailer</a>
+                                {{else}}
+                                {{/if}}
+                            </p>
+                        </div>
+                    </div>
+                    {{/is}}
+                    {{/is}}
+                {{/objects}}
+            </div>
+            <hr>
+            <div class="row-fluid">
+                {{#objects}}
+                    {{#is category 'Best Picture'}}
+                    {{#is row '3'}}
+                    <div class="span4">
+                        <div id="award-category-container">
+                            <img class="best-picture" src="{{movieimage}}" alt="{{nominee}}" />
+                            <p class="centered"><strong>{{nominee}}</strong></p>
+                                {{#if awardswon}}
+                                    <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                                {{else}}
+                                    <p>&nbsp;</p>
+                                {{/if}}
+                                {{#if prediction}}
+                                    <p>{{prediction}} - <span class="italics"><a href="{{prediction_source}}" target="_blank">Source</a></span></p>
+                                {{else}}
+                                {{/if}}
+
+                            <p class="centered">
+                                {{#if imdbpage}}
+                                    <a href="{{imdb_page}}" target="_blank">IMDB</a> |
+                                {{else}}
+                                {{/if}}
+                                {{#if trailer}}
+                                    <a href="{{trailer}}" target="_blank">Movie Trailer</a>
+                                {{else}}
+                                {{/if}}
+                            </p>
+                        </div>
+                    </div>
+                    {{/is}}
+                    {{/is}}
+                {{/objects}}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+<br clear="all">
+
+<!-- begin row -->
+<div class="row-fluid">
+    <div class="span12">
+        <div class="span12">
+            <h3>Best Actress</h3><br />
+            <div class="row-fluid">
+                <div class="span1"></div>
+            {{#objects}}
+                {{#is category 'Best Actress'}}
+                <div class="span2">
+                    <div id="award-category-container">
+                        <img src="http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg" alt="#" />
+                        <p class="centered"><strong>{{nominee}}</strong></p>
+                            {{#if awardswon}}
+                                    <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                            {{else}}
+                                <p>&nbsp;</p>
+                            {{/if}}
+                            {{#if prediction}}
+                                <p>{{prediction}} - <span class="italics"><a href="{{prediction_source}}" target="_blank">Source</a></span></p>
+                            {{else}}
+                            {{/if}}
+                        <p class="centered">
+                            {{#if imdbpage}}
+                                <a href="{{imdb_page}}" target="_blank">IMDB</a> |
+                            {{else}}
+                            {{/if}}
+                            {{#if trailer}}
+                                <a href="{{trailer}}" target="_blank">Movie Trailer</a>
+                            {{else}}
+                            {{/if}}
+                        </p>
+                    </div>
+                </div>
+                {{/is}}
+            {{/objects}}
+                <div class="span1"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+<br clear="all">
+
+<!-- begin row -->
+<div class="row-fluid">
+    <div class="span12">
+        <div class="span12">
+            <h3>Best Actor</h3><br />
+            <div class="row-fluid">
+                <div class="span1"></div>
+            {{#objects}}
+                {{#is category 'Best Actor'}}
+                <div class="span2">
+                    <div id="award-category-container">
+                        <img src="http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg" alt="#" />
+                        <p class="centered"><strong>{{nominee}}</strong></p>
+                            {{#if awardswon}}
+                                    <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                            {{else}}
+                                <p>&nbsp;</p>
+                            {{/if}}
+                            {{#if prediction}}
+                                <p>{{prediction}} - <span class="italics"><a href="{{prediction_source}}" target="_blank">Source</a></span></p>
+                            {{else}}
+                            {{/if}}
+                        <p class="centered">
+                            {{#if imdbpage}}
+                                <a href="{{imdb_page}}" target="_blank">IMDB</a> |
+                            {{else}}
+                            {{/if}}
+                            {{#if trailer}}
+                                <a href="{{trailer}}" target="_blank">Movie Trailer</a>
+                            {{else}}
+                            {{/if}}
+                        </p>
+                    </div>
+                </div>
+                {{/is}}
+            {{/objects}}
+                <div class="span1"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end row -->
+
+<br clear="all">
+
+<!-- begin row -->
+<div class="row-fluid">
+    <div class="span12">
+        <div class="span12">
+            <h3>Best Director</h3><br />
+            <div class="row-fluid">
+                <div class="span1"></div>
                 {{#objects}}
                     {{#is category 'Best Director'}}
                     <div class="span2">
                         <div id="award-category-container">
-                        <img src="http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg" alt="#" />
-                        <p class="centered"><strong>{{nominee}}</strong></p>
-                            {{#if awards_won}}
-                                <p>{{awards_won}}</p>
-                            {{else}}
-                                <p>&nbsp;</p>
-                            {{/if}}
-
-                            {{#if prediction}}
-                                <p>{{prediction}}</p>
-                            {{else}}
-                            {{/if}}
-
-                            {{#if prediction_source}}
-                                <p class="centered"><a href="{{prediction_source}}" target="_blank">Source</a></p>
-                            {{else}}
-                            {{/if}}
-
-                            {{#if imdb_page}}
-                                <p class="centered"><a href="{{imdb_page}}" target="_blank">IMDB</a></p>
-                            {{else}}
-                            {{/if}}
-
-                            {{#if trailer}}
-                                <p class="centered"><a href="{{trailer}}" target="_blank">Trailer</a></p>
-                            {{else}}
-                            {{/if}}
+                            <img src="http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg" alt="#" />
+                            <p class="centered"><strong>{{nominee}}</strong></p>
+                                {{#if awardswon}}
+                                    <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                                {{else}}
+                                    <p>&nbsp;</p>
+                                {{/if}}
+                                {{#if prediction}}
+                                    <p>{{prediction}} - <span class="italics"><a href="{{prediction_source}}" target="_blank">Source</a></span></p>
+                                {{else}}
+                                {{/if}}
+                            <p class="centered">
+                                {{#if imdbpage}}
+                                    <a href="{{imdb_page}}" target="_blank">IMDB</a> |
+                                {{else}}
+                                {{/if}}
+                                {{#if trailer}}
+                                    <a href="{{trailer}}" target="_blank">Movie Trailer</a>
+                                {{else}}
+                                {{/if}}
+                            </p>
                         </div>
                     </div>
                     {{/is}}
                 {{/objects}}
-                    <div class="span1"></div>
-                </div>
+                <div class="span1"></div>
             </div>
         </div>
     </div>
-    <!-- end row -->
+</div>
+<!-- end row -->
 
-    <br clear="all">
-
-    <!-- begin row -->
-    <div class="row-fluid">
-        <div class="span12">
-            <div class="span12">
-                <h3>Best Actor</h3>
-                <div class="row-fluid">
-                    <div class="span1"></div>
-                {{#objects}}
-                    {{#is category 'Best Actor'}}
-                    <div class="span2">
-                        <div id="award-category-container">
-                        <img src="http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg" alt="#" />
-                        <p class="centered"><strong>{{nominee}}</strong></p>
-                            {{#if awards_won}}
-                                <p>{{awards_won}}</p>
-                            {{else}}
-                                <p>&nbsp;</p>
-                            {{/if}}
-
-                            {{#if prediction}}
-                                <p>{{prediction}}</p>
-                            {{else}}
-                            {{/if}}
-
-                            {{#if prediction_source}}
-                                <p class="centered"><a href="{{prediction_source}}" target="_blank">Source</a></p>
-                            {{else}}
-                            {{/if}}
-
-                            {{#if imdb_page}}
-                                <p class="centered"><a href="{{imdb_page}}" target="_blank">IMDB</a></p>
-                            {{else}}
-                            {{/if}}
-
-                            {{#if trailer}}
-                                <p class="centered"><a href="{{trailer}}" target="_blank">Trailer</a></p>
-                            {{else}}
-                            {{/if}}
-                        </div>
-                    </div>
-                    {{/is}}
-                {{/objects}}
-                    <div class="span1"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end row -->
-
-    <br clear="all">
+<br clear="all">
