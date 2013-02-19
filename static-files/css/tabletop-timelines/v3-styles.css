@@ -129,7 +129,7 @@ td { vertical-align: top; }
 }
 
 .vertical-timeline-container .vertical-timeline-timeline .post a.open-close {
-    background: transparent url(img/button-up-down-arrow.png) no-repeat;
+    background: transparent url(http://projects.scpr.org/static/static-files/images/button-up-down-arrow.png) no-repeat;
     height: 17px;
     width: 16px;
     position: absolute;
