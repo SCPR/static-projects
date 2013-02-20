@@ -11,22 +11,26 @@
                         <div id="award-category-container">
                             <img class="best-picture" src="{{movieimage}}" alt="{{nominee}}" />
                             <p class="centered"><strong>{{nominee}}</strong></p>
-                                {{#if awardswon}}
-                                    <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
-                                {{else}}
-                                    <p>&nbsp;</p>
-                                {{/if}}
-                                {{#if prediction}}
-                                    <p>{{prediction}} - <span class="italics"><a href="{{prediction_source}}" target="_blank">Source</a></span></p>
-                                {{else}}
-                                {{/if}}
+                            {{#if awardswon}}
+                                <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                            {{else}}
+                                <p>&nbsp;</p>
+                            {{/if}}
+                            {{#if prediction}}
+                                <p><strong>Prediction</strong>: {{prediction}} - <span class="italics"><a href="{{predictionlink}}" target="_blank">{{predictionsource}}</a></span></p>
+                            {{else}}
+                            {{/if}}
                             <p class="centered">
                                 {{#if imdbpage}}
-                                    <a href="{{imdb_page}}" target="_blank">IMDB</a> |
+                                    <a href="{{imdbpage}}" target="_blank">IMDB</a> |
                                 {{else}}
                                 {{/if}}
                                 {{#if trailer}}
-                                    <a href="{{trailer}}" target="_blank">Movie Trailer</a>
+                                    <a href="{{trailer}}" target="_blank">Movie Trailer</a> |
+                                {{else}}
+                                {{/if}}
+                                {{#if officialsite}}
+                                    <a href="{{officialsite}}" target="_blank">Official Site</a>
                                 {{else}}
                                 {{/if}}
                             </p>
@@ -45,23 +49,26 @@
                         <div id="award-category-container">
                             <img class="best-picture" src="{{movieimage}}" alt="{{nominee}}" />
                             <p class="centered"><strong>{{nominee}}</strong></p>
-                                {{#if awardswon}}
-                                    <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
-                                {{else}}
-                                    <p>&nbsp;</p>
-                                {{/if}}
-                                {{#if prediction}}
-                                    <p>{{prediction}} - <span class="italics"><a href="{{prediction_source}}" target="_blank">Source</a></span></p>
-                                {{else}}
-                                {{/if}}
-
+                            {{#if awardswon}}
+                                <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                            {{else}}
+                                <p>&nbsp;</p>
+                            {{/if}}
+                            {{#if prediction}}
+                                <p><strong>Prediction</strong>: {{prediction}} - <span class="italics"><a href="{{predictionlink}}" target="_blank">{{predictionsource}}</a></span></p>
+                            {{else}}
+                            {{/if}}
                             <p class="centered">
                                 {{#if imdbpage}}
-                                    <a href="{{imdb_page}}" target="_blank">IMDB</a> |
+                                    <a href="{{imdbpage}}" target="_blank">IMDB</a> |
                                 {{else}}
                                 {{/if}}
                                 {{#if trailer}}
-                                    <a href="{{trailer}}" target="_blank">Movie Trailer</a>
+                                    <a href="{{trailer}}" target="_blank">Movie Trailer</a> |
+                                {{else}}
+                                {{/if}}
+                                {{#if officialsite}}
+                                    <a href="{{officialsite}}" target="_blank">Official Site</a>
                                 {{else}}
                                 {{/if}}
                             </p>
@@ -80,23 +87,26 @@
                         <div id="award-category-container">
                             <img class="best-picture" src="{{movieimage}}" alt="{{nominee}}" />
                             <p class="centered"><strong>{{nominee}}</strong></p>
-                                {{#if awardswon}}
-                                    <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
-                                {{else}}
-                                    <p>&nbsp;</p>
-                                {{/if}}
-                                {{#if prediction}}
-                                    <p>{{prediction}} - <span class="italics"><a href="{{prediction_source}}" target="_blank">Source</a></span></p>
-                                {{else}}
-                                {{/if}}
-
+                            {{#if awardswon}}
+                                <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                            {{else}}
+                                <p>&nbsp;</p>
+                            {{/if}}
+                            {{#if prediction}}
+                                <p><strong>Prediction</strong>: {{prediction}} - <span class="italics"><a href="{{predictionlink}}" target="_blank">{{predictionsource}}</a></span></p>
+                            {{else}}
+                            {{/if}}
                             <p class="centered">
                                 {{#if imdbpage}}
-                                    <a href="{{imdb_page}}" target="_blank">IMDB</a> |
+                                    <a href="{{imdbpage}}" target="_blank">IMDB</a> |
                                 {{else}}
                                 {{/if}}
                                 {{#if trailer}}
-                                    <a href="{{trailer}}" target="_blank">Movie Trailer</a>
+                                    <a href="{{trailer}}" target="_blank">Movie Trailer</a> |
+                                {{else}}
+                                {{/if}}
+                                {{#if officialsite}}
+                                    <a href="{{officialsite}}" target="_blank">Official Site</a>
                                 {{else}}
                                 {{/if}}
                             </p>
@@ -118,39 +128,81 @@
     <div class="span12">
         <div class="span12">
             <h3>Best Actress</h3><br />
-            <div class="row-fluid">
-                <div class="span1"></div>
-            {{#objects}}
-                {{#is category 'Best Actress'}}
-                <div class="span2">
-                    <div id="award-category-container">
-                            <img src="{{movieimage}}" alt="{{nominee}}" />
-                        <p class="centered"><strong>{{nominee}}</strong></p>
-                            {{#if awardswon}}
+                <div class="row-fluid">
+                    {{#objects}}
+                        {{#is category 'Best Actress'}}
+                        {{#is row '1'}}
+                        <div class="span4">
+                            <div id="award-category-container">
+                                <img class="best-picture" src="{{movieimage}}" alt="{{nominee}}" />
+                                <p class="centered"><strong>{{nominee}}</strong><br />({{movie}})</p>
+                                {{#if awardswon}}
                                     <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
-                            {{else}}
-                                <p>&nbsp;</p>
-                            {{/if}}
-                            {{#if prediction}}
-                                <p>{{prediction}} - <span class="italics"><a href="{{prediction_source}}" target="_blank">Source</a></span></p>
-                            {{else}}
-                            {{/if}}
-                        <p class="centered">
-                            {{#if imdbpage}}
-                                <a href="{{imdb_page}}" target="_blank">IMDB</a> |
-                            {{else}}
-                            {{/if}}
-                            {{#if trailer}}
-                                <a href="{{trailer}}" target="_blank">Movie Trailer</a>
-                            {{else}}
-                            {{/if}}
-                        </p>
-                    </div>
+                                {{else}}
+                                    <p>&nbsp;</p>
+                                {{/if}}
+                                {{#if prediction}}
+                                    <p><strong>Prediction</strong>: {{prediction}} - <span class="italics"><a href="{{predictionlink}}" target="_blank">{{predictionsource}}</a></span></p>
+                                {{else}}
+                                {{/if}}
+                                <p class="centered">
+                                    {{#if imdbpage}}
+                                        <a href="{{imdbpage}}" target="_blank">IMDB</a> |
+                                    {{else}}
+                                    {{/if}}
+                                    {{#if trailer}}
+                                        <a href="{{trailer}}" target="_blank">Movie Trailer</a> |
+                                    {{else}}
+                                    {{/if}}
+                                    {{#if officialsite}}
+                                        <a href="{{officialsite}}" target="_blank">Official Site</a>
+                                    {{else}}
+                                    {{/if}}
+                                </p>
+                            </div>
+                        </div>
+                        {{/is}}
+                        {{/is}}
+                    {{/objects}}
                 </div>
-                {{/is}}
-            {{/objects}}
-                <div class="span1"></div>
-            </div>
+                <hr>
+                <div class="row-fluid">
+                    {{#objects}}
+                        {{#is category 'Best Actress'}}
+                        {{#is row '2'}}
+                        <div class="span4">
+                            <div id="award-category-container">
+                                <img class="best-picture" src="{{movieimage}}" alt="{{nominee}}" />
+                                <p class="centered"><strong>{{nominee}}</strong><br />({{movie}})</p>
+                                {{#if awardswon}}
+                                    <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                                {{else}}
+                                    <p>&nbsp;</p>
+                                {{/if}}
+                                {{#if prediction}}
+                                    <p><strong>Prediction</strong>: {{prediction}} - <span class="italics"><a href="{{predictionlink}}" target="_blank">{{predictionsource}}</a></span></p>
+                                {{else}}
+                                {{/if}}
+                                <p class="centered">
+                                    {{#if imdbpage}}
+                                        <a href="{{imdbpage}}" target="_blank">IMDB</a> |
+                                    {{else}}
+                                    {{/if}}
+                                    {{#if trailer}}
+                                        <a href="{{trailer}}" target="_blank">Movie Trailer</a> |
+                                    {{else}}
+                                    {{/if}}
+                                    {{#if officialsite}}
+                                        <a href="{{officialsite}}" target="_blank">Official Site</a>
+                                    {{else}}
+                                    {{/if}}
+                                </p>
+                            </div>
+                        </div>
+                        {{/is}}
+                        {{/is}}
+                    {{/objects}}
+                </div>
         </div>
     </div>
 </div>
@@ -163,39 +215,81 @@
     <div class="span12">
         <div class="span12">
             <h3>Best Actor</h3><br />
-            <div class="row-fluid">
-                <div class="span1"></div>
-            {{#objects}}
-                {{#is category 'Best Actor'}}
-                <div class="span2">
-                    <div id="award-category-container">
-                            <img src="{{movieimage}}" alt="{{nominee}}" />
-                        <p class="centered"><strong>{{nominee}}</strong></p>
-                            {{#if awardswon}}
+                <div class="row-fluid">
+                    {{#objects}}
+                        {{#is category 'Best Actor'}}
+                        {{#is row '1'}}
+                        <div class="span4">
+                            <div id="award-category-container">
+                                <img class="best-picture" src="{{movieimage}}" alt="{{nominee}}" />
+                                <p class="centered"><strong>{{nominee}}</strong><br />({{movie}})</p>
+                                {{#if awardswon}}
                                     <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
-                            {{else}}
-                                <p>&nbsp;</p>
-                            {{/if}}
-                            {{#if prediction}}
-                                <p>{{prediction}} - <span class="italics"><a href="{{prediction_source}}" target="_blank">Source</a></span></p>
-                            {{else}}
-                            {{/if}}
-                        <p class="centered">
-                            {{#if imdbpage}}
-                                <a href="{{imdb_page}}" target="_blank">IMDB</a> |
-                            {{else}}
-                            {{/if}}
-                            {{#if trailer}}
-                                <a href="{{trailer}}" target="_blank">Movie Trailer</a>
-                            {{else}}
-                            {{/if}}
-                        </p>
-                    </div>
+                                {{else}}
+                                    <p>&nbsp;</p>
+                                {{/if}}
+                                {{#if prediction}}
+                                    <p><strong>Prediction</strong>: {{prediction}} - <span class="italics"><a href="{{predictionlink}}" target="_blank">{{predictionsource}}</a></span></p>
+                                {{else}}
+                                {{/if}}
+                                <p class="centered">
+                                    {{#if imdbpage}}
+                                        <a href="{{imdbpage}}" target="_blank">IMDB</a> |
+                                    {{else}}
+                                    {{/if}}
+                                    {{#if trailer}}
+                                        <a href="{{trailer}}" target="_blank">Movie Trailer</a> |
+                                    {{else}}
+                                    {{/if}}
+                                    {{#if officialsite}}
+                                        <a href="{{officialsite}}" target="_blank">Official Site</a>
+                                    {{else}}
+                                    {{/if}}
+                                </p>
+                            </div>
+                        </div>
+                        {{/is}}
+                        {{/is}}
+                    {{/objects}}
                 </div>
-                {{/is}}
-            {{/objects}}
-                <div class="span1"></div>
-            </div>
+                <hr>
+                <div class="row-fluid">
+                    {{#objects}}
+                        {{#is category 'Best Actor'}}
+                        {{#is row '2'}}
+                        <div class="span4">
+                            <div id="award-category-container">
+                                <img class="best-picture" src="{{movieimage}}" alt="{{nominee}}" />
+                                <p class="centered"><strong>{{nominee}}</strong><br />({{movie}})</p>
+                                {{#if awardswon}}
+                                    <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                                {{else}}
+                                    <p>&nbsp;</p>
+                                {{/if}}
+                                {{#if prediction}}
+                                    <p><strong>Prediction</strong>: {{prediction}} - <span class="italics"><a href="{{predictionlink}}" target="_blank">{{predictionsource}}</a></span></p>
+                                {{else}}
+                                {{/if}}
+                                <p class="centered">
+                                    {{#if imdbpage}}
+                                        <a href="{{imdbpage}}" target="_blank">IMDB</a> |
+                                    {{else}}
+                                    {{/if}}
+                                    {{#if trailer}}
+                                        <a href="{{trailer}}" target="_blank">Movie Trailer</a> |
+                                    {{else}}
+                                    {{/if}}
+                                    {{#if officialsite}}
+                                        <a href="{{officialsite}}" target="_blank">Official Site</a>
+                                    {{else}}
+                                    {{/if}}
+                                </p>
+                            </div>
+                        </div>
+                        {{/is}}
+                        {{/is}}
+                    {{/objects}}
+                </div>
         </div>
     </div>
 </div>
@@ -208,39 +302,81 @@
     <div class="span12">
         <div class="span12">
             <h3>Best Director</h3><br />
-            <div class="row-fluid">
-                <div class="span1"></div>
-                {{#objects}}
-                    {{#is category 'Best Director'}}
-                    <div class="span2">
-                        <div id="award-category-container">
-                            <img src="{{movieimage}}" alt="{{nominee}}" />
-                            <p class="centered"><strong>{{nominee}}</strong></p>
+                <div class="row-fluid">
+                    {{#objects}}
+                        {{#is category 'Best Director'}}
+                        {{#is row '1'}}
+                        <div class="span4">
+                            <div id="award-category-container">
+                                <img class="best-picture" src="{{movieimage}}" alt="{{nominee}}" />
+                                <p class="centered"><strong>{{nominee}}</strong><br />({{movie}})</p>
                                 {{#if awardswon}}
                                     <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
                                 {{else}}
                                     <p>&nbsp;</p>
                                 {{/if}}
                                 {{#if prediction}}
-                                    <p>{{prediction}} - <span class="italics"><a href="{{prediction_source}}" target="_blank">Source</a></span></p>
+                                    <p><strong>Prediction</strong>: {{prediction}} - <span class="italics"><a href="{{predictionlink}}" target="_blank">{{predictionsource}}</a></span></p>
                                 {{else}}
                                 {{/if}}
-                            <p class="centered">
-                                {{#if imdbpage}}
-                                    <a href="{{imdb_page}}" target="_blank">IMDB</a> |
-                                {{else}}
-                                {{/if}}
-                                {{#if trailer}}
-                                    <a href="{{trailer}}" target="_blank">Movie Trailer</a>
-                                {{else}}
-                                {{/if}}
-                            </p>
+                                <p class="centered">
+                                    {{#if imdbpage}}
+                                        <a href="{{imdbpage}}" target="_blank">IMDB</a> |
+                                    {{else}}
+                                    {{/if}}
+                                    {{#if trailer}}
+                                        <a href="{{trailer}}" target="_blank">Movie Trailer</a> |
+                                    {{else}}
+                                    {{/if}}
+                                    {{#if officialsite}}
+                                        <a href="{{officialsite}}" target="_blank">Official Site</a>
+                                    {{else}}
+                                    {{/if}}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    {{/is}}
-                {{/objects}}
-                <div class="span1"></div>
-            </div>
+                        {{/is}}
+                        {{/is}}
+                    {{/objects}}
+                </div>
+                <hr>
+                <div class="row-fluid">
+                    {{#objects}}
+                        {{#is category 'Best Director'}}
+                        {{#is row '2'}}
+                        <div class="span4">
+                            <div id="award-category-container">
+                                <img class="best-picture" src="{{movieimage}}" alt="{{nominee}}" />
+                                <p class="centered"><strong>{{nominee}}</strong><br />({{movie}})</p>
+                                {{#if awardswon}}
+                                    <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                                {{else}}
+                                    <p>&nbsp;</p>
+                                {{/if}}
+                                {{#if prediction}}
+                                    <p><strong>Prediction</strong>: {{prediction}} - <span class="italics"><a href="{{predictionlink}}" target="_blank">{{predictionsource}}</a></span></p>
+                                {{else}}
+                                {{/if}}
+                                <p class="centered">
+                                    {{#if imdbpage}}
+                                        <a href="{{imdbpage}}" target="_blank">IMDB</a> |
+                                    {{else}}
+                                    {{/if}}
+                                    {{#if trailer}}
+                                        <a href="{{trailer}}" target="_blank">Movie Trailer</a> |
+                                    {{else}}
+                                    {{/if}}
+                                    {{#if officialsite}}
+                                        <a href="{{officialsite}}" target="_blank">Official Site</a>
+                                    {{else}}
+                                    {{/if}}
+                                </p>
+                            </div>
+                        </div>
+                        {{/is}}
+                        {{/is}}
+                    {{/objects}}
+                </div>
         </div>
     </div>
 </div>
