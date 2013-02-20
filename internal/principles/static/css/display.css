@@ -185,6 +185,9 @@
 						width: 29.957805907173%; /* 213 / 711 */
 						float: left;
 					}
+					.tenet em {
+						font-weight: 600;
+					}
 					.tenet:last-child {
 						float: right;
 					}
