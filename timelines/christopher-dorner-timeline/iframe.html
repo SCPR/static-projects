@@ -59,35 +59,10 @@
     <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/tabletop.js"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/timeline-plugins.js"></script>
+    <script src="http://projects.scpr.org/static/static-files/scripts/timeline-main-script.js"></script>
     <script src="static-files/scripts/template-scripts.js"></script>
-    <script src="static-files/scripts/timeline-script.js"></script>
+    <script src="static-files/scripts/timeline-config.js"></script>
     <script src="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('#data-visuals').verticalTimeline({
-
-            // spreadsheet key
-            key: 'https://docs.google.com/spreadsheet/pub?key=0An8W63YKWOsxdExVR0JPcENEaUJ4cGtWNXJNYkJ3MWc&output=html',
-
-            // name of sheet on spreadsheet
-            sheetName: 'breaking_display_sheet',
-
-            // newest or oldest
-            defaultDirection: 'newest',
-
-            // collapsed or expanded
-            defaultExpansion: 'expanded',
-
-            // groupSegmentByYear or groupSegmentByDecade
-            groupFunction: 'groupSegmentByYear',
-
-            // adjust timeline width
-            width: '50%'
-        });
-    });
-    </script>
-
     <!-- end scripts -->
 
     <!-- begin analytics -->

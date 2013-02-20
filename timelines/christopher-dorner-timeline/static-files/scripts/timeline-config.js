@@ -1,10 +1,10 @@
-var jqueryNoConflict = jQuery;
-
 $(document).ready(function() {
 
-    $('#data-visuals').verticalTimeline({
 
 /*
+    $('#data-visuals').verticalTimeline({
+
+
         // spreadsheet key
         key: 'https://docs.google.com/spreadsheet/pub?key=0An8W63YKWOsxdExVR0JPcENEaUJ4cGtWNXJNYkJ3MWc&output=html',
 
@@ -25,7 +25,7 @@ $(document).ready(function() {
     });
 */
 
-    $.getJSON('static-files/data/dorner_display_sheet-timeline.json', function(data) {
+    $.getJSON('static-files/data/dorner_display_sheet_timeline.json', function(data) {
         $('#data-visuals').verticalTimeline({
 
             data: data,
