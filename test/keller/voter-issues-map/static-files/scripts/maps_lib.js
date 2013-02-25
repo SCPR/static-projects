@@ -34,7 +34,7 @@
     map_centroid:       new google.maps.LatLng(34.061841979429445, -118.26370239257812),
 
     // geographical area appended to all address searches
-    locationScope:      "los angeles",
+    locationScope:      "California",
 
     // for showing number of results
     recordName:         "result",
@@ -45,7 +45,7 @@
 
     // zoom level when map is loaded (bigger is more zoomed in)
     defaultZoom:        10,
-    addrMarkerImage: 'http://derekeder.com/images/icons/blue-pushpin.png',
+    addrMarkerImage: 'http://projects.scpr.org/static/static-files/images/maps-icons-collection/blue-pushpin.png',
     currentPinpoint: null,
 
     // begin
@@ -160,7 +160,7 @@
         select: MapsLib.locationColumn,
         where:  whereClause
       },
-      suppressInfoWindows: false,
+      suppressInfoWindows: true,
       styleId: 2,
       templateId: 2
     });
