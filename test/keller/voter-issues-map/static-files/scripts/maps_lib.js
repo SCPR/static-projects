@@ -28,7 +28,7 @@
     // name of the location column in your Fusion Table.
     // NOTE: if your location column name has spaces in it, surround it with single quotes
     // example: locationColumn:     "'my location'",
-    locationColumn:     "Where is your polling place?",
+    locationColumn:     "polling_place",
 
     // center that your map defaults to
     map_centroid:       new google.maps.LatLng(34.061841979429445, -118.26370239257812),
@@ -44,7 +44,7 @@
     searchRadius:       8047,
 
     // zoom level when map is loaded (bigger is more zoomed in)
-    defaultZoom:        11,
+    defaultZoom:        10,
     addrMarkerImage: 'http://derekeder.com/images/icons/blue-pushpin.png',
     currentPinpoint: null,
 
@@ -107,7 +107,7 @@
         var whereClause = MapsLib.locationColumn + " not equal to ''";
 
         //-----custom filters-------
-        var type_column = "How would you describe your voting experience?";
+        var type_column = "describe_voting_experience";
         var tempWhereClause = [];
         if ( $("#cbType1").is(':checked')) tempWhereClause.push("Positive");
         if ( $("#cbType2").is(':checked')) tempWhereClause.push("Negative");
@@ -160,7 +160,7 @@
         select: MapsLib.locationColumn,
         where:  whereClause
       },
-      suppressInfoWindows: true,
+      suppressInfoWindows: false,
       styleId: 2,
       templateId: 2
     });
@@ -286,7 +286,7 @@
   },
 
     getList: function(whereClause) {
-      var selectColumns = "school_name, city, How would you describe your voting experience?";
+      var selectColumns = "describe_voting_experience";
       MapsLib.query(selectColumns, whereClause, "MapsLib.displayList");
     },
 
@@ -319,7 +319,6 @@
       }
       results.fadeIn();
     },
-
 
   addCommas: function(nStr) {
     nStr += '';
