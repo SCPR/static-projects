@@ -34,7 +34,7 @@
     map_centroid:       new google.maps.LatLng(34.061841979429445, -118.26370239257812),
 
     // geographical area appended to all address searches
-    locationScope:      "California",
+    locationScope:      "Los Angeles",
 
     // for showing number of results
     recordName:         "result",
