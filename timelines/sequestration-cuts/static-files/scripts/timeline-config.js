@@ -9,7 +9,7 @@ $(document).ready(function() {
         sheetName: 'Posts',
 
         // newest or oldest
-        defaultDirection: 'newest',
+        defaultDirection: 'oldest',
 
         // collapsed or expanded
         defaultExpansion: 'expanded',
