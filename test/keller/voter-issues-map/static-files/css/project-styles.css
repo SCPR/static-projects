@@ -13,6 +13,10 @@ a { color: #4B58A6; }
 
 .filter-red { background-color: #FB6353; }
 
+
+#data-form {height: 50px;}
+
+
 #content-action-bar { margin: 0px; text-align: left;}
 
 #content-action-bar form { margin: 0px;}

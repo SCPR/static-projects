@@ -50,15 +50,6 @@ function buildMapDisplay(){
     });
 };
 
-// create the bootrap modal
-function clickModal(){
-    jqueryNoConflict('#popupContent').modal('show');
-};
-
-function closeDialog () {
-	jqueryNoConflict('#popupContent').modal('hide');
-};
-
 // begin remove article text
 function alterDisplayDetails(){
 
@@ -72,7 +63,7 @@ function alterDisplayDetails(){
         }).on('shown', function() {
             var text = $this.data('on-active');
             text && $this.text(text);
-            $('#content-display').empty();
+            //$('#content-display').empty();
         });
     });
 
