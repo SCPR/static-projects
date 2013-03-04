@@ -93,7 +93,7 @@ a { color: #4B58A6; }
 
 /* -- media queries -- */
 /* adjust headers for smaller devices */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 760px) {
     #kpcc-header { margin:0 -20px; }
     #kpcc-header header { padding:0 20px 15px; }
     #kpcc-header header h3#site-title { width:180px; margin:0 auto; }
