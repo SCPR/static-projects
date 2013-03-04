@@ -170,7 +170,7 @@
 
     google.maps.event.addListener(MapsLib.searchrecords, 'click', function(e) {
 
-        alterDisplayDetails();
+        mapIntro();
 
         var fusionTableObject = {
             timestamp: e.row['timestamp'].value,

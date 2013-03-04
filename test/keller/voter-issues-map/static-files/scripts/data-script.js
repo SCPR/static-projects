@@ -50,22 +50,42 @@ function buildMapDisplay(){
     });
 };
 
-// begin remove article text
-function alterDisplayDetails(){
 
-    var $togglers = $('[data-toggle="collapse"]');
-    $togglers.each(function() {
-        var $this = $(this);
-        var $collapsible = $($this.data('target'));
-        $collapsible.on('hidden', function() {
-            var text = $this.data('on-hidden');
-            text && $this.text(text);
-        }).on('shown', function() {
-            var text = $this.data('on-active');
-            text && $this.text(text);
-            //$('#content-display').empty();
-        });
+// render handlebars templates via ajax
+function getTemplateAjax(path, callback) {
+    var source, template;
+    jqueryNoConflict.ajax({
+        url: path,
+
+        success: function (data) {
+            source = data;
+            template = Handlebars.compile(source);
+            if (callback) callback(template);
+        }
     });
-
-    $('.collapse').collapse();
 };
+
+// function to compile handlebars template
+function renderHandlebarsTemplate(withTemplate,inElement,withData){
+    getTemplateAjax(withTemplate, function(template) {
+        jqueryNoConflict(inElement).html(template(withData));
+    })
+};
+
+// when user submit button is clicked
+function userSubmit(){
+    jqueryNoConflict('#content-article-text').hide();
+    jqueryNoConflict('#content-article-buttons').hide();
+    jqueryNoConflict('#content-display').empty();
+    jqueryNoConflict('#data-user-submit').show();
+    renderHandlebarsTemplate('static-files/templates/data-user-submit.handlebars', '#data-user-submit');
+};
+// end
+
+// return to main view
+function mapIntro(){
+    jqueryNoConflict('#content-article-text').show();
+    jqueryNoConflict('#content-article-buttons').show();
+    jqueryNoConflict('#data-user-submit').hide();
+};
+// end
