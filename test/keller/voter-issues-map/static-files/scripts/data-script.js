@@ -37,7 +37,7 @@ function buildMapDisplay(){
     jqueryNoConflict('#reset').click(function(){
         jqueryNoConflict.address.parameter('address','');
         MapsLib.initialize();
-        $('#content-display').empty();
+        jqueryNoConflict('#content-display').empty();
         return false;
     });
 
@@ -50,13 +50,11 @@ function buildMapDisplay(){
     });
 };
 
-
 // render handlebars templates via ajax
 function getTemplateAjax(path, callback) {
     var source, template;
     jqueryNoConflict.ajax({
         url: path,
-
         success: function (data) {
             source = data;
             template = Handlebars.compile(source);
@@ -86,6 +84,7 @@ function userSubmit(){
 function mapIntro(){
     jqueryNoConflict('#content-article-text').show();
     jqueryNoConflict('#content-article-buttons').show();
+    jqueryNoConflict('#content-display').empty();
     jqueryNoConflict('#data-user-submit').hide();
 };
 // end

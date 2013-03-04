@@ -28,7 +28,7 @@
     // name of the location column in your Fusion Table.
     // NOTE: if your location column name has spaces in it, surround it with single quotes
     // example: locationColumn:     "'my location'",
-    locationColumn:     "polling_place",
+    locationColumn:     "geocoded_address",
 
     // center that your map defaults to
     map_centroid:       new google.maps.LatLng(34.061841979429445, -118.26370239257812),
@@ -103,7 +103,6 @@
         MapsLib.clearSearch();
         var address = $("#search_address").val();
         MapsLib.searchRadius = $("#search_radius").val();
-
         var whereClause = MapsLib.locationColumn + " not equal to ''";
 
         //-----custom filters-------
