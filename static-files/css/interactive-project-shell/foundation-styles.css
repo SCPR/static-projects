@@ -39,10 +39,8 @@ body.minimal footer ul li:last-child { padding-right: 0; border-right: none; }
 
 /* for table elements */
 .table-striped thead th {background-color: #2e2e2e; color: #ffffff;}
-
 .table-striped tbody > tr:nth-child(even) > td,
 .table-striped tbody > tr:nth-child(even) > th {background-color: #CACACA;}
-
 .table-striped tbody > tr:nth-child(odd) > td,
 .table-striped tbody > tr:nth-child(odd) > th {background-color: #fdfdfd;}
 
@@ -69,12 +67,33 @@ h1, h2, h3, h4, h5, h6 {margin: 0 0;}
 #data-container .hidden {display: none;}
 
 /* media queries */
+
+
+/* adjust headers for smaller devices */
 @media screen and (max-width: 768px) {
     #kpcc-header { margin:0 -20px; }
     #kpcc-header header { padding:0 20px 15px; }
     #kpcc-header header h3#site-title { width:180px; margin:0 auto; }
     body.minimal #kpcc-header .span4 { display:none; }
 }
+
+
+
+/* typography for phones and down */
+@media (max-width: 480px) {
+    #data-container h1 {font-size: 24px; font-weight: 800; line-height: 28px; color: #2B2B2B;}
+    #data-container h2 {font-size: 20px; font-weight: 700; line-height: 24px; color: #2B2B2B;}
+    #data-container h3 {font-size: 16px; font-weight: 700; line-height: 20px; color: #2B2B2B;}
+    #data-container h4 {font-size: 14px; font-weight: 700; line-height: 18px; color: #2B2B2B;}
+}
+
+
+
+
+
+
+
+
 
 /* pencil ad */
 .broadcast-bar {display: none;}

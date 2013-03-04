@@ -58,23 +58,28 @@
                     <div class="span8">
                         <div id="data-visuals">
                             <div id="content-action-bar">
-                                <div class='well'>
-                                    <h4>Enter your address or <a id='find_me' href='#'>use location</a> to find submissions near you</h4>
-                                    <form class="form-inline">
-                                        <input class='input-block-level' id='search_address' placeholder='Enter an address or an intersection' type='text' />
-                                        <label>within
-                                            <select class='input-small' id='search_radius'>
-                                                <option value='3218'>2 miles</option>
-                                                <option value='8047'>5 miles</option>
-                                                <option value='16093'>10 miles</option>
-                                            </select>
-                                        </label>
-
-                                        <input class='btn btn-success' id='search' type='button' value='Search' />
-                                        <button class='btn' id='reset'>Reset</button>
+                                <h4>Enter your address or <a id='find_me' href='#'>use location</a> to find submissions near you</h4>
+                                <div class="row-fluid">
+                                    <div class="span8">
+                                        <div class='well'>
+                                            <form class="form-inline">
+                                            <input class='input-block-level' id='search_address' placeholder='Enter an address or an intersection' type='text' />
+                                                <label>within
+                                                    <select class='input-small' id='search_radius'>
+                                                        <option value='3218'>2 miles</option>
+                                                        <option value='8047'>5 miles</option>
+                                                        <option value='16093'>10 miles</option>
+                                                    </select>
+                                                </label>
+                                            <input class='btn btn-success' id='search' type='button' value='Search' />
+                                            <button class='btn' id='reset'>Reset</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="span4">
                                         <label class='checkbox inline'><input type='checkbox' id='cbType1' checked/>Positive</label>
                                         <label class='checkbox inline'><input type='checkbox' id='cbType2' checked/>Negative</label>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                             <div id="map_canvas"></div>
