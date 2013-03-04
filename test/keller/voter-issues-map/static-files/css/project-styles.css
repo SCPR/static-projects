@@ -3,41 +3,13 @@ a { color: #4B58A6; }
 #map_canvas img { max-width: none; }
 #data-user-submit { width: 100%; height: 100%; margin: 10px 0; display: none; }
 #content-action-bar { margin: 0px; text-align: left; }
-
-
 .well { padding: 0px; background: none; border: none; -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.05); -moz-box-shadow: inset 0 0 0 rgba(0,0,0,0.05); box-shadow: inset 0 0 0 rgba(0,0,0,0.05); }
-
 .well .input-block-level { width: 300px; }
-
-
-
-
 .alert { padding: 8px 35px 8px 14px; margin-bottom: 21px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); background-color: #d47500; border: 1px solid #c54c00; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
-
 .lead { font-size: 22.5px; font-weight: 200; line-height: 31.5px; }
 .alert-info { background-color: #3399f3; border-color: #11adf1; color: #ffffff;}
 
 
-
-/* Large desktop */
-@media (min-width: 1060px) {
-
-#content-action-bar form { margin: 10px 0 10px 0; }
-#content-action-bar form.form-inline label { margin-top: 20px;}
-
-}
-
-
-
-
-
-
-
-
-/* shorter map on tablet width */
-@media screen and (max-width: 768px) {
-    #data-map-canvas {width: 100%; height: 300px; margin: 10px 0 10px 0;}
-}
 
 
 /* Large desktop */
@@ -52,7 +24,7 @@ a { color: #4B58A6; }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-
+    #map_canvas {width: 100%; height: 300px; margin: 10px 0 10px 0;}
 }
 
 /* Landscape phones and down */
