@@ -1,0 +1,28 @@
+<!-- begin row -->
+<div class="row-fluid">
+    <p>
+        {{#if full_name}}
+            <strong>{{full_name}}</strong> describes their voting experience as <strong>{{describe_voting_experience}}</strong>...</p>
+        {{else}}
+            <strong>Voting experience</strong>: {{describe_voting_experience}}...</p>
+        {{/if}}
+
+        {{#if voting_experience_narrative}}
+            <blockquote>"{{voting_experience_narrative}}"</blockquote>
+        {{else}}
+            <blockquote>Nothing submitted</blockquote>
+        {{/if}}
+    </p>
+    <p class="small-display">
+        {{#if polling_place}}
+            <strong>Polling Location</strong>: {{polling_place}}<br />
+        {{else}}
+        {{/if}}
+
+        {{#if timestamp}}
+            <strong>Submitted</strong>: {{timeago timestamp}}<br />
+        {{else}}
+        {{/if}}
+    </p>
+</div>
+<!-- end row -->
