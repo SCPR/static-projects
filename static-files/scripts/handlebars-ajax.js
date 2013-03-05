@@ -20,3 +20,12 @@ function renderHandlebarsTemplate(withTemplate,inElement,withData){
         jqueryNoConflict(inElement).html(template(withData));
     })
 };
+
+// add handlebars debugger
+function handlebarsDebugHelper(){
+    Handlebars.registerHelper("debug", function(optionalValue) {
+        console.log("Current Context");
+        console.log("====================");
+        console.log(this);
+    });
+};
