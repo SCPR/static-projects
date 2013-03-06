@@ -16,6 +16,6 @@ function renderStaticTemplates(){
     renderHandlebarsTemplate('static-files/templates/data-details.handlebars', '#data-details');
     //renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals');
     renderHandlebarsTemplate('static-files/templates/data-footer.handlebars', '#data-footer');
-    renderHandlebarsTemplate('static-files/templates/content-explainer.handlebars', '#content-explainer');
+    //renderHandlebarsTemplate('static-files/templates/content-explainer.handlebars', '#content-explainer');
 };
 // end
