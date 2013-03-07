@@ -24,7 +24,7 @@ TO DO
 
     // chart options
     var chart;
-    var chartCategories = ['Jan 2012', 'Feb 2012', 'Mar 2012', 'Apr 2012', 'May 2012', 'Jun 2012', 'Jul 2012', 'Aug 2012', 'Sep 2012', 'Oct 2012', 'Nov 2012', 'Dec 2012', 'Jan 2013', 'Feb 2013'];
+    var chartCategories = ['Jan \'12', 'Feb \'12', 'Mar \'12', 'Apr \'12', 'May \'12', 'Jun \'12', 'Jul \'12', 'Aug \'12', 'Sep \'12', 'Oct \'12', 'Nov \'12', 'Dec \'12', 'Jan \'13', 'Feb \'13'];
 
     // pull data from spreadsheet onload
     jqueryNoConflict(document).ready(function(){
