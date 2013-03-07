@@ -24,7 +24,7 @@ TO DO
 
     // chart options
     var chart;
-    var chartCategories = ['Jan \'12', 'Feb \'12', 'Mar \'12', 'Apr \'12', 'May \'12', 'Jun \'12', 'Jul \'12', 'Aug \'12', 'Sep \'12', 'Oct \'12', 'Nov \'12', 'Dec \'12', 'Jan \'13', 'Feb \'13'];
+    var chartCategories = ['J \'12', 'F \'12', 'M \'12', 'A \'12', 'M \'12', 'J \'12', 'J \'12', 'A \'12', 'S \'12', 'O \'12', 'N \'12', 'D \'12', 'J \'13', 'F \'13'];
 
     // pull data from spreadsheet onload
     jqueryNoConflict(document).ready(function(){
@@ -110,7 +110,7 @@ TO DO
             },
 
             title: {
-                text: 'Jobs Added To The U.S. Economy (2012)'
+                text: 'Jobs Added To U.S. Economy'
             },
 
             subtitle: {

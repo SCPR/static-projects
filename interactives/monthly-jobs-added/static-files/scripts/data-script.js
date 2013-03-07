@@ -117,7 +117,7 @@ TO DO
             },
 
             title: {
-                text: 'Jobs Added To The U.S. Economy (2012)'
+                text: 'Jobs Added To U.S. Economy'
             },
 
             subtitle: {
