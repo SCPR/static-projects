@@ -50,33 +50,14 @@
                 <div class="span12">
                     <div id="data-details"></div>
                     <div id="data-visuals">
+
+                        <div id="test-div"></div>
+
                         <div id="content-explainer">
                             <p><span class="data-instructions"><strong>Using the interactive:</strong> Use the legend to filter through the different data points in the chart and table. You can also click-and-drag on a section of the chart to zoom in on a specific section.</span></p>
                         </div>
                         <div id="data-chart"></div>
-                        <div id="data-table">
-                            <!-- <div id="report"></div> -->
-                            <table class="table table-striped table-condensed">
-                              <thead>
-                                <tr>
-                                  <th>Release</th>
-                                  <th><a href="http://www.bls.gov/news.release/archives/empsit_02032012.htm" target="_blank">Jan.</a></th>
-                                  <th><a href="http://www.bls.gov/news.release/archives/empsit_03092012.htm" target="_blank">Feb.</a></th>
-                                  <th><a href="http://www.bls.gov/news.release/archives/empsit_04062012.htm" target="_blank">Mar.</a></th>
-                                  <th><a href="http://www.bls.gov/news.release/archives/empsit_05042012.htm" target="_blank">Apr.</a></th>
-                                  <th><a href="http://www.bls.gov/news.release/archives/empsit_06012012.htm" target="_blank">May</a></th>
-                                  <th><a href="http://www.bls.gov/news.release/archives/empsit_07062012.htm" target="_blank">Jun.</a></th>
-                                  <th><a href="http://www.bls.gov/news.release/archives/empsit_08032012.htm" target="_blank">Jul.</a></th>
-                                  <th><a href="http://www.bls.gov/news.release/archives/empsit_09072012.htm" target="_blank">Aug.</a></th>
-                                  <th><a href="http://www.bls.gov/news.release/archives/empsit_10052012.htm" target="_blank">Sep.</a></th>
-                                  <th><a href="http://www.bls.gov/news.release/archives/empsit_11022012.htm" target="_blank">Oct.</a></th>
-                                  <th><a href="http://www.bls.gov/news.release/archives/empsit_12072012.htm" target="_blank">Nov.</a></th>
-                                  <th><a href="http://www.bls.gov/news.release/archives/empsit_01042013.htm" target="_blank">Dec.</a></th>
-                                </tr>
-                              </thead>
-                              <tbody id="content"></tbody>
-                            </table>
-                        </div>
+                        <div id="data-table"></div>
                     </div>
                 </div>
             </div>
@@ -87,24 +68,6 @@
             </div>
         </div>
     <div id="kpcc-footer"></div>
-
-    <script id="cat-template" type="text/x-handlebars-template">
-        <tr id="{{release}}">
-          <td><tspan x="21">{{release}}</tspan></td>
-          <td id="0">{{jan}}</td>
-          <td id="1">{{feb}}</td>
-          <td id="2">{{mar}}</td>
-          <td id="3">{{apr}}</td>
-          <td id="4">{{may}}</td>
-          <td id="5">{{jun}}</td>
-          <td id="6">{{jul}}</td>
-          <td id="7">{{aug}}</td>
-          <td id="8">{{sep}}</td>
-          <td id="9">{{oct}}</td>
-          <td id="10">{{nov}}</td>
-          <td id="11">{{dec}}</td>
-        </tr>
-    </script>
 
     <!-- begin scripts -->
     <script src="http://projects.scpr.org/static/static-files/scripts/responsive-tables.js"></script>

@@ -16,7 +16,7 @@ TO DO
     var dataSpreadsheet = '0An8W63YKWOsxdFZ4VTJIWngtY0VJWHJKM0dRUEpndVE';
 
     // the sheet being queried
-    var dataSheet = 'LIVE_Jobs_Added_Per_Month_2012';
+    var dataSheet = 'Thursday_Jobs_Added_Per_Month_2012';
 
     // container arrays
     var allJobsData = [];
@@ -24,7 +24,7 @@ TO DO
 
     // chart options
     var chart;
-    var chartCategories = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+    var chartCategories = ['Jan 2012', 'Feb 2012', 'Mar 2012', 'Apr 2012', 'May 2012', 'Jun 2012', 'Jul 2012', 'Aug 2012', 'Sep 2012', 'Oct 2012', 'Nov 2012', 'Dec 2012', 'Jan 2013', 'Feb 2013'];
 
     // pull data from spreadsheet onload
     jqueryNoConflict(document).ready(function(){
@@ -32,58 +32,37 @@ TO DO
             key: dataSpreadsheet,
             callback: showInfo,
             simpleSheet: false,
-            debug: true
+            debug: false
         });
 
         drawHighchart();
 
     });
 
-    // function to add commas to string
-    function addCommas(nStr){
-    	nStr += '';
-    	x = nStr.split('.');
-    	x1 = x[0];
-    	x2 = x.length > 1 ? '.' + x[1] : '';
-    	var rgx = /(\d+)(\d{3})/;
-    	while (rgx.test(x1)) {
-    		x1 = x1.replace(rgx, '$1' + ',' + '$2');
-    	}
-    	return x1 + x2;
-    };
-
     // display data from tabletop
     function showInfo(data, tabletop){
-
-        // handlebars variables
-        var source   = $('#cat-template').html();
-        var template = Handlebars.compile(source);
 
         // pulls data from the spreadsheet
         jqueryNoConflict.each(tabletop.sheets(dataSheet).all(), function(i, record) {
 
-            // render to handlebars templates
-            var html = template(record);
-            var commaAddedHtml = addCommas(html)
-            jqueryNoConflict('#content').append(commaAddedHtml);
-
             // set variables and convert to integers if needed
-            var jan = parseInt(record.jan);
-            var feb = parseInt(record.feb);
-            var mar = parseInt(record.mar);
-            var apr = parseInt(record.apr);
-            var may = parseInt(record.may);
-            var jun = parseInt(record.jun);
-            var jul = parseInt(record.jul);
-            var aug = parseInt(record.aug);
-            var sep = parseInt(record.sep);
-            var oct = parseInt(record.oct);
-            var nov = parseInt(record.nov);
-            var dec = parseInt(record.dec);
-            var annual = parseInt(record.annual);
+            var jan2012 = parseInt(record.jan2012);
+            var feb2012 = parseInt(record.feb2012);
+            var mar2012 = parseInt(record.mar2012);
+            var apr2012 = parseInt(record.apr2012);
+            var may2012 = parseInt(record.may2012);
+            var jun2012 = parseInt(record.jun2012);
+            var jul2012 = parseInt(record.jul2012);
+            var aug2012 = parseInt(record.aug2012);
+            var sep2012 = parseInt(record.sep2012);
+            var oct2012 = parseInt(record.oct2012);
+            var nov2012 = parseInt(record.nov2012);
+            var dec2012 = parseInt(record.dec2012);
+            var jan2013 = parseInt(record.jan2013);
+            var feb2013 = parseInt(record.feb2013);
 
             // build array from each row of spreadsheet
-            allJobsData = [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec];
+            allJobsData = [jan2012, feb2012, mar2012, apr2012, may2012, jun2012, jul2012, aug2012, sep2012, oct2012, nov2012, dec2012, jan2013, feb2013];
 
             // push each array to an array
             arraysOfJobsData.push(allJobsData);
@@ -93,29 +72,38 @@ TO DO
             // objects for highcharts data series
             var initialMonthlyJobs = {
                 name: 'Initial',
-                color: '#A6611A',
-                type: 'areaspline',
+                color: '#002734',
+                type: 'column',
                 data: arraysOfJobsData[0]
             };
 
+/*
             var revisedMonthlyJobs = {
                 name: 'Revised',
                 color: '#377EB8',
                 type: 'areaspline',
                 data: arraysOfJobsData[1]
             };
+*/
 
             var finalMonthlyJobs = {
                 name: 'Final',
-                color: '#018571',
+                color: '#005873',
                 type: 'areaspline',
                 data: arraysOfJobsData[2]
             };
 
+            var differenceMonthlyJobs = {
+                name: 'Monthly Difference',
+                data: arraysOfJobsData[3]
+            };
+
+            renderHandlebarsTemplate('static-files/templates/data-table.handlebars', '#data-table', differenceMonthlyJobs);
+
             // add respective objects to highcharts series
-            chart.addSeries(finalMonthlyJobs);
-            chart.addSeries(revisedMonthlyJobs);
+            //chart.addSeries(revisedMonthlyJobs);
             chart.addSeries(initialMonthlyJobs);
+            chart.addSeries(finalMonthlyJobs);
 
     };
 
