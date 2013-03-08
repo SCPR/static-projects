@@ -1,0 +1,29 @@
+#data-chart {width: 100%; height: 400px; margin: 0 auto 0 auto;}
+#data-table {width: 100%; height: auto; overflow-y: hidden; overflow-x: auto; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif; margin: 0 auto 0 auto;}
+#data-table th a {color: #ffffff;}
+
+/*.table {font-size: 10px;}*/
+
+.chartMouseOver {text-decoration: underline;}
+#content-article {width: 100%; height: auto; margin: 0 auto 5px auto;}
+
+/* Landscape phones and down */
+@media (max-width: 485px) {
+    #data-container h1 {font-size: 24px; font-weight: 800; line-height: 28px; color: #2B2B2B;}
+    #data-container h2 {font-size: 20px; font-weight: 700; line-height: 24px; color: #2B2B2B;}
+    #data-container h3 {font-size: 16px; font-weight: 700; line-height: 20px; color: #2B2B2B;}
+    #data-container h4 {font-size: 14px; font-weight: 700; line-height: 18px; color: #2B2B2B;}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    #data-container h1 {font-size: 28px; font-weight: 800; line-height: 32px; color: #2B2B2B;}
+    #data-container h2 {font-size: 24px; font-weight: 700; line-height: 28px; color: #2B2B2B;}
+    #data-container h3 {font-size: 20px; font-weight: 700; line-height: 24px; color: #2B2B2B;}
+    #data-container h4 {font-size: 18px; font-weight: 700; line-height: 22px; color: #2B2B2B;}
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
