@@ -57,7 +57,7 @@ TO DO
             allCityData = [EricGarcetti, WendyGreuel, KevinJames, JanPerry, EmanuelPleitez, Other];
 
             // push each array to an array
-            arraysOfCityobsData.push(allCityData);
+            arraysOfCityData.push(allCityData);
 
         });
 
@@ -86,7 +86,7 @@ TO DO
             },
 
             subtitle: {
-                text: 'Data Source: Bureau of Labor Statistics'
+                text: 'Data Source: Loyala Marymount University'
             },
 
             xAxis: [{
