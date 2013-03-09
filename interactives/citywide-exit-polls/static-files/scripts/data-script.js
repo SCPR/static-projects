@@ -45,30 +45,42 @@ TO DO
         // pulls data from the spreadsheet
         jqueryNoConflict.each(tabletop.sheets(dataSheet).all(), function(i, record) {
 
-            // set variables and convert to integers if needed
-            var EricGarcetti = parseInt(record.EricGarcetti);
-            var WendyGreuel = parseInt(record.WendyGreuel);
-            var KevinJames = parseInt(record.KevinJames);
-            var JanPerry = parseInt(record.JanPerry);
-            var EmanuelPleitez = parseInt(record.EmanuelPleitez);
-            var Other = parseInt(record.Other);
+            var candidate = record.candidate;
+            var asian = parseInt(record.asian);
+            var black
+            var latino
+            var other
+            var percentofvote
+            var rowNumber
+            var white
+
+            // logs data type of variable
+            console.log(typeof(asian));
 
             // build array from each row of spreadsheet
-            allCityData = [EricGarcetti, WendyGreuel, KevinJames, JanPerry, EmanuelPleitez, Other];
+            allCityData = [candidate, asian];
+
+            // logs array of data each time through the loop
+            console.log(allCityData);
 
             // push each array to an array
             arraysOfCityData.push(allCityData);
 
         });
 
-            // objects for highcharts data series
-            var initialMonthlyJobs = {
-                name: 'Initial',
-                color: '#002734',
-                type: 'column',
-                data: arraysOfCityData[0]
-            };
+        // shows array of arrays after loop
+        console.log(arraysOfCityData);
 
+
+        var finalMonthlyJobs = {
+            name: 'Final',
+            color: '#005873',
+            type: 'pie',
+            data: arraysOfCityData[2]
+        };
+
+        // add respective objects to highcharts series
+        chart.addSeries(initialMonthlyJobs);
 
     };
 
@@ -120,69 +132,6 @@ TO DO
                     return ''+ this.series.name +': '+ Highcharts.numberFormat(this.y, 0, ',');
                 }
             },
-
-/*
-            // testing various click event options
-            plotOptions: {
-                series: {
-                    point: {
-                        events: {
-                            mouseOver: function() {
-                                var highlightRowColor = String(this.series.color);
-                                var highlightRowId = String(this.series.name);
-                                var highlightCellId = String(this.x);
-                                var selectedRow = 'tr#' + highlightRowId;
-                                var selectedCell = 'td#' + highlightCellId;
-
-                                jqueryNoConflict(selectedRow).css(
-                                    {'text-decoration': 'underline', 'color': highlightRowColor});
-
-                            },
-
-                            mouseOut: function() {
-                                var highlightRowColor = String(this.series.color);
-                                var highlightRowId = String(this.series.name);
-                                var highlightCellId = String(this.x);
-                                var selectedRow = 'tr#' + highlightRowId;
-                                var selectedCell = 'td#' + highlightCellId;
-
-                                jqueryNoConflict(selectedRow).css(
-                                    {'text-decoration': 'none', 'color': 'black'});
-                            }
-                        }
-                    },
-
-                    events: {
-
-/*
-                        mouseOver: function() {
-                            var highlightRowId = String(this.name);
-                            var highlightRowColor = String(this.color);
-                            var selectedRow = 'tr#' + highlightRowId;
-                            jqueryNoConflict(selectedRow).css(
-                                    'color', highlightRowColor);
-                        },
-
-                        mouseOut: function() {
-                            var highlightRowId = String(this.name);
-                            var highlightRowColor = String(this.color);
-                            var selectedRow = 'tr#' + highlightRowId;
-                            jqueryNoConflict(selectedRow).css(
-                                    'color', 'black');
-                        },
-*/
-
-                        legendItemClick: function () {
-                            var highlightRowId = String(this.name);
-                            var selectedRow = 'tr#' + highlightRowId;
-                            jqueryNoConflict(selectedRow).toggle();
-
-                             //returning false cancels default action
-                            // return false;
-                        }
-                    }
-                
-            
 
             legend: {
                 layout: 'horizontal',
