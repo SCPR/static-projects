@@ -47,18 +47,18 @@ TO DO
 
             var candidate = record.candidate;
             var asian = parseInt(record.asian);
-            var black
-            var latino
-            var other
-            var percentofvote
-            var rowNumber
-            var white
+            var black = parseInt(record.black)
+            var latino = parseInt(record.latino)
+            var other = parseInt(record.other)
+            var percentofvote = parseInt(record.percentofvote)
+            var rowNumber = record.rowNumber
+            var white = parseInt(record.white)
 
             // logs data type of variable
-            console.log(typeof(asian));
-
+           // console.log(typeof(asian));
+           
             // build array from each row of spreadsheet
-            allCityData = [candidate, asian];
+            allCityData = [candidate, asian, black, latino, other, white, percentofvote];
 
             // logs array of data each time through the loop
             console.log(allCityData);
@@ -80,7 +80,7 @@ TO DO
         };
 
         // add respective objects to highcharts series
-        chart.addSeries(initialMonthlyJobs);
+        //chart.addSeries(initialMonthlyJobs);
 
     };
 
