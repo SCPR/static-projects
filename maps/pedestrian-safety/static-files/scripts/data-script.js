@@ -14,7 +14,7 @@ function createMap(){
 
     // add encrypted table id
 
-    var cityCrosswalkTableId = '113boV0mDDfay8ngXn8REwwIplC_uEWogLf6aepw';
+    var cityCrosswalkTableId = '1vdWsizdohZnLO11PlAf1HRvcBa73EoRziHr_gi0';
     var userContributedTableId = '1RvesiAIGe14Gw3w7zjQm_2NBlZLl5EBSstdvf6E';
     var locationColumn = 'Location';
     var centerLosAngeles = new google.maps.LatLng(34.061841979429445, -118.26370239257812);
