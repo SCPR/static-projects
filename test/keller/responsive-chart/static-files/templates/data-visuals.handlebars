@@ -1,0 +1,86 @@
+    <div class="datatable">
+        <div class="row header">
+            <div class="name cell" data-name="name">
+                <div class="background">
+                    <div class="inner-cell">
+                        <div>Name</div>
+                    </div>
+                </div>
+            </div>
+            <div class="location cell" data-name="location">
+                <div class="background">
+                    <div class="inner-cell">
+                        <div>School</div>
+                    </div>
+                </div>
+            </div>
+            <div class="accusations cell" data-name="accusations">
+                <div class="background">
+                    <div class="inner-cell">
+                        <div>Born</div>
+                    </div>
+                </div>
+            </div>
+            <div class="resolution cell" data-name="resolution">
+                <div class="background">
+                    <div class="inner-cell">
+                        <div>After graduation</div>
+                    </div>
+                </div>
+            </div>
+            <div class="reason cell" data-name="reason">
+                <div class="background">
+                    <div class="inner-cell">
+                        <div>Quote</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{#objects}}
+            <div class="tablebody">
+                <div id="content">
+                    <div class="row">
+                        <div class="row-meta">
+                            <div class="name cell primary">
+                                <dl class="inner-cell">
+                                    <dt></dt>
+                                    <dd>
+                                        <div class="img"><img src="{{image}}"></div>
+                                        <div class="text">{{name}}</div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="row-body">
+                            <div class="location cell">
+                                <dl class="inner-cell">
+                                    <dt>School</dt>
+                                    <dd>{{school}}</dd>
+                                </dl>
+                            </div>
+                            <div class="accusations cell">
+                                <dl class="inner-cell">
+                                    <dt>Born</dt>
+                                    <dd>{{born}}</dd>
+                                </dl>
+                            </div>
+                            <div class="resolution cell">
+                                <dl class="inner-cell">
+                                    <dt>After graduation</dt>
+                                    <dd>{{aftergraduation}}</dd>
+                                </dl>
+                            </div>
+                            <div class="reason cell">
+                                <dl class="inner-cell">
+                                    <dt>Quote</dt>
+                                    <dd>{{quote}}</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/objects}}
+
+    </div>
