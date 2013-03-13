@@ -1,0 +1,30 @@
+#map_canvas {width: 100%; height: 300px;}
+
+#data-legend {height: 25px; margin: 10px 0 0 0;}
+#data-legend-items {margin: 0 0 0 0; height: 25px;}
+#data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 5px 10px 5px; color: #ffffff;}
+#data-legend-items li.darkblue {height: 25px; background-color:#000077; margin-right:10px;}
+#data-legend-items li.lightblue {height: 25px; background-color:#0055ff; margin-right:10px;}
+
+/* Landscape phones and down */
+@media (max-width: 485px) {
+    #data-container h1 {font-size: 24px; font-weight: 800; line-height: 28px; color: #2B2B2B;}
+    #data-container h2 {font-size: 20px; font-weight: 700; line-height: 24px; color: #2B2B2B;}
+    #data-container h3 {font-size: 16px; font-weight: 700; line-height: 20px; color: #2B2B2B;}
+    #data-container h4 {font-size: 14px; font-weight: 700; line-height: 18px; color: #2B2B2B;}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+    #data-container h1 {font-size: 28px; font-weight: 800; line-height: 32px; color: #2B2B2B;}
+    #data-container h2 {font-size: 24px; font-weight: 700; line-height: 28px; color: #2B2B2B;}
+    #data-container h3 {font-size: 20px; font-weight: 700; line-height: 24px; color: #2B2B2B;}
+    #data-container h4 {font-size: 18px; font-weight: 700; line-height: 22px; color: #2B2B2B;}
+
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
