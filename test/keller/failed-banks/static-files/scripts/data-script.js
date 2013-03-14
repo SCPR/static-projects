@@ -13,13 +13,12 @@ function buildMapDisplay(){
 
     MapsLib.initialize();
 
-
     //ranges for our slider
-    var minDate = moment("2000"); // Jan 1st 2010
+    var minDate = moment("Oct 1 2000"); // Jan 1st 2010
     var maxDate = moment(); //now
 
     //starting values
-    var startDate = moment().subtract('years', 13); //past 3 months
+    var startDate = moment().subtract('months', 150); //past 3 months
     var endDate = moment(); //now
 
     MapsLib.initializeDateSlider(minDate, maxDate, startDate, endDate, "years", 1);

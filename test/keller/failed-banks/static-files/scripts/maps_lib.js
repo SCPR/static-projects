@@ -105,15 +105,13 @@
         MapsLib.searchRadius = $("#search_radius").val();
         var whereClause = MapsLib.locationColumn + " not equal to ''";
 
-
-/*
-        var type_column = "year";
+        /* type_column set to Fusion Tables column
+        I want to sort on */
+        var type_column = "date_closed";
         var tempWhereClause = [];
-        whereClause += " AND 'year' >= '" + $('#startDate').html() + "'";
-        whereClause += " AND 'year' <= '" + $('#endDate').html() + "'";
+        whereClause += " AND 'date_closed' >= '" + $('#startDate').html() + "'";
+        whereClause += " AND 'date_closed' <= '" + $('#endDate').html() + "'";
         whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join('\',\'') + "')";
-*/
-
 
         if (address != "") {
             if (address.toLowerCase().indexOf(MapsLib.locationScope) == -1) address = address + " " + MapsLib.locationScope;
