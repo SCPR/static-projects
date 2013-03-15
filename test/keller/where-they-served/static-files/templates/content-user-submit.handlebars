@@ -1,110 +1,185 @@
+<!-- begin row -->
 <div class="row-fluid">
+    <!-- begin span -->
     <div class="span9 offset2">
 
-        <!-- begin form container -->
-        <div class="ss-form">
+        <!-- begin ss-form-container -->
+        <div class="ss-form-container">
 
-            <script type="text/javascript">var submitted=false;</script>
-            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='http://projects.scpr.org/static/test/keller/where-they-served/'; alert('Thank you for your submission. You may need to refesh the page to see it appear.');}"></iframe>
+            <!-- begin ss-form -->
+            <div class="ss-form">
 
-            <!-- begin form -->
-            <form action="https://docs.google.com/spreadsheet/formResponse?formkey=dE0tVmg0aTVweGtoTF9HSUV3UWRDOVE6MQ&amp;ifq" method="POST" target="hidden_iframe" id="ss-form" onsubmit="submitted=true;">
+                <script type="text/javascript">var submitted=false;</script>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='http://projects.scpr.org/static/test/keller/where-they-served/'; alert('Thank you for your submission. You may need to refesh the page to see it appear.');}"></iframe>
 
-                <div class="bold">* Required</div>
+                <form action="https://docs.google.com/spreadsheet/formResponse?formkey=dE0tVmg0aTVweGtoTF9HSUV3UWRDOVE6MQ&amp;ifq" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;">
 
-                <!-- begin row -->
-                <div style="margin-top: 20px;" class="controls controls-row">
-                    <div class="errorbox-good span6">
-                        <label class="bold">What is your name?*</label>
-                        <input type="text" name="entry.0.single" class="input-xlarge" id="entry_0">
-                    </div>
-                    <div class="errorbox-good span6">
-                        <label class="bold">What is their or your hometown?*</label>
-                        <input type="text" name="entry.1.single" class="input-xlarge" id="entry_1">
-                    </div>
-                </div>
-                <!-- end row -->
+                    <div class="bold">* Required</div>
 
-                <!-- begin row -->
-                <div style="margin-top: 20px;" class="controls controls-row">
-                    <div class="errorbox-good span6">
-                        <label class="bold">What is the veteran's name?*</label>
-                        <input type="text" name="entry.2.single" class="input-xlarge" id="entry_2">
-                    </div>
-                    <div class="errorbox-good span6">
-                        <label class="bold">Where did they serve?*</label>
-                        <label class="data-instructions">Please choose the place they spent the most time in, and be specific. ie: the city nearest the specific base.</label>
-                        <input type="text" name="entry.3.single" class="input-xlarge" id="entry_3">
-                    </div>
-                </div>
-                <!-- end row -->
+                    <!-- begin row -->
+                    <div style="margin-top: 20px;" class="controls controls-row">
+                        <div class="errorbox-good span6">
+                            <div class="ss-item  ss-text">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-title bold" for="entry_0">What is your name?</label>
+                                    <label class="ss-q-help data-instructions" for="entry_0"></label>
+                                    <input type="text" name="entry.0.single" value="" class="ss-q-short" id="entry_0">
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- begin row -->
-                <div style="margin-top: 20px;" class="controls controls-row">
-                    <div class="errorbox-good span6">
-                        <label class="bold">Which military branch did they serve in?*</label>
-                        <select name="entry.4.single" id="entry_4">
-                            <option>-- Select --</option>
-                            <option value="Marine Corps">Marine Corps</option>
-                            <option value="Army">Army</option>
-                            <option value="Navy">Navy</option>
-                            <option value="Air Force">Air Force</option>
-                            <option value="Coast Guard">Coast Guard</option>
-                        </select>
+                        <div class="errorbox-good span6">
+                            <div class="ss-item  ss-text">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-title bold" for="entry_1">What is their or your hometown?</label>
+                                    <label class="ss-q-help data-instructions" for="entry_1"></label>
+                                    <input type="text" name="entry.1.single" value="" class="ss-q-short" id="entry_1">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="errorbox-good span6">
-                        <label class="bold">If they served during wartime, which war?</label>
-                        <select name="entry.5.single" id="entry_5">
-                            <option>-- Select --</option>
-                            <option value="War in Iraq (Operation Iraqi Freedom)">War in Iraq (Operation Iraqi Freedom)</option>
-                            <option value="War in Afghanistan">War in Afghanistan</option>
-                            <option value="Gulf War">Gulf War</option>
-                            <option value="Vietnam War">Vietnam War</option>
-                            <option value="Korean War">Korean War</option>
-                            <option value="World War II">World War 2</option>
-                            <option value="World War I">World War 2</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                </div>
-                <!-- end row -->
+                    <!-- end row -->
 
-                <!-- begin row -->
-                <div style="margin-top: 20px;" class="controls controls-row">
-                    <div class="errorbox-good span12">
-                        <label class="bold">Tell us their story*</label>
-                        <label class="data-instructions">Tell us about who they were, or what happened to them while serving. What are your memories?</label>
-                        <textarea name="entry.6.single" rows="10" cols="75" class="input-xxlarge" id="entry_6"></textarea>
-                    </div>
-                </div>
-                <!-- end row -->
+                    <!-- begin row -->
+                    <div style="margin-top: 20px;" class="controls controls-row">
+                        <div class="errorbox-good span6">
+                            <div class="ss-item ss-item-required ss-text">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-title bold" for="entry_2">What is the veteran's name?<span class="ss-required-asterisk">*</span></label>
+                                    <label class="ss-q-help data-instructions" for="entry_2"></label>
+                                    <input type="text" name="entry.2.single" value="" class="ss-q-short" id="entry_2">
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- begin row -->
-                <div style="margin-top: 20px;" class="controls controls-row">
-                    <div class="errorbox-good span6">
-                        <label class="bold">Add a link to a photo*</label>
-                        <label class="data-instructions">Use a public service like flickr or yfrog and put the direct link to the photo here.</label>
-                        <input type="text" name="entry.7.single" class="input-xlarge" id="entry_7">
+                        <div class="errorbox-good span6">
+                            <div class="ss-item ss-item-required ss-text">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-title bold" for="entry_3">Where did they serve?<span class="ss-required-asterisk">*</span></label>
+                                    <label class="ss-q-help data-instructions" for="entry_3">Please choose the place they spent the most time in, and be specific ie the city nearest the specific base.</label>
+                                    <input type="text" name="entry.3.single" value="" class="ss-q-short" id="entry_3">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="errorbox-good span6">
-                        <label class="bold">Your e-mail address*</label>
-                        <label class="data-instructions">So we can contact you if we'd like to hear more. We'll never share this.</label>
-                        <input type="text" name="entry.8.single" class="input-xlarge" id="entry_8">
-                    </div>
-                </div>
-                <!-- end row -->
+                    <!-- end row -->
 
-            <div style="margin: 15px auto 0 auto;" class="ss-form-entry">
-                <input class="btn btn-success" type="submit" name="submit" value="Submit">
-                <a class="btn btn-danger" onclick="mapIntro();">Cancel</a>
+                    <!-- begin row -->
+                    <div style="margin-top: 20px;" class="controls controls-row">
+                        <div class="errorbox-good span6">
+                            <div class="ss-item ss-item-required ss-select">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-title bold" for="entry_4">What branch of the military did they serve in?<span class="ss-required-asterisk">*</span></label>
+                                    <label class="ss-q-help data-instructions" for="entry_4"></label>
+                                    <select name="entry.4.single" id="entry_4">
+                                        <option value="Marine Corps">Marine Corps</option>
+                                        <option value="Army">Army</option>
+                                        <option value="Navy">Navy</option>
+                                        <option value="Air Force">Air Force</option>
+                                        <option value="Coast Guard">Coast Guard</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="errorbox-good span6">
+                            <div class="ss-item  ss-select">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-title bold" for="entry_5">Which war did they serve in?</label>
+                                    <label class="ss-q-help data-instructions" for="entry_5"></label>
+                                    <select name="entry.5.single" id="entry_5">
+                                        <option>-- Select --</option>
+                                        <option value="War in Iraq (Operation Iraqi Freedom)">War in Iraq (Operation Iraqi Freedom)</option>
+                                        <option value="War in Afghanistan">War in Afghanistan</option>
+                                        <option value="Gulf War">Gulf War</option>
+                                        <option value="Vietnam War">Vietnam War</option>
+                                        <option value="Korean War">Korean War</option>
+                                        <option value="World War II">World War 2</option>
+                                        <option value="World War I">World War 2</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+                    <!-- begin row -->
+                    <div style="margin-top: 20px;" class="controls controls-row">
+                        <div class="errorbox-good span12">
+                            <div class="ss-item ss-item-required ss-paragraph-text">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-title bold" for="entry_6">Tell us their story<span class="ss-required-asterisk">*</span></label>
+                                    <label class="ss-q-help data-instructions" for="entry_6">Tell us about who they were, or what happened to them while serving. What are your memories?</label>
+                                    <textarea name="entry.6.single" rows="8" cols="75" class="input-xxlarge" id="entry_6"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+                    <!-- begin row -->
+                    <div style="margin-top: 20px;" class="controls controls-row">
+                        <div class="errorbox-good span6">
+                            <div class="ss-item  ss-text">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-title bold" for="entry_7">Add a link to a photo</label>
+                                    <label class="ss-q-help data-instructions" for="entry_7">Use a public service like flickr or yfrog and put the direct link to the photo here.</label>
+                                    <input type="text" name="entry.7.single" value="" class="ss-q-short" id="entry_7">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="errorbox-good span6">
+                            <div class="ss-item ss-item-required ss-text">
+                                <div class="ss-form-entry">
+                                    <label class="ss-q-title bold" for="entry_8">E-mail address<span class="ss-required-asterisk">*</span></label>
+                                    <label class="ss-q-help data-instructions" for="entry_8">So we can contact you if we'd like to hear more. We'll never share this.</label>
+                                    <input type="text" name="entry.8.single" value="" class="ss-q-short" id="entry_8">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+                    <input type="hidden" name="pageNumber" value="0">
+                    <input type="hidden" name="backupCache" value="">
+
+                    <div class="ss-item ss-navigate">
+                        <div class="ss-form-entry">
+                            <input class="btn btn-success" type="submit" name="submit" value="Submit">
+                            <a class="btn btn-danger" onclick="mapIntro();">Cancel</a>
+                        </div>
+                    </div>
+                </form>
+
+                <script type="text/javascript">
+                (function() {
+                    var divs = document.getElementById('ss-form').getElementsByTagName('div');
+                    var numDivs = divs.length;
+                    for (var j = 0; j < numDivs; j++) {
+                        if (divs[j].className == 'errorbox-bad') {
+                            divs[j].lastChild.firstChild.lastChild.focus();
+                            return;
+                        }
+                    }
+                    for (var i = 0; i < numDivs; i++) {
+                        var div = divs[i];
+                        if (div.className == 'ss-form-entry' && div.firstChild && div.firstChild.className == 'ss-q-title') {
+                                div.lastChild.focus();
+                                return;
+                        }
+                    }
+                })();
+                </script>
+
             </div>
-
-            </form>
-            <!-- end form -->
+            <!-- end ss-form -->
 
         </div>
-        <!-- end form container -->
-
+        <!-- end ss-form-container -->
 
     </div>
+    <!-- end span -->
 </div>
+<!-- end row -->
