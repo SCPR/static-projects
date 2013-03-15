@@ -1,0 +1,69 @@
+{{debug}}
+
+{{#objects}}
+<!-- begin row -->
+<div class="row-fluid">
+    <div class="span3">
+        {{#if addalinktoaphoto}}
+            <p><img src="{{addalinktoaphoto}}" width="300px" /></p>
+        {{else}}
+            {{#if geocodedaddress}}
+                <p><img src="http://maps.googleapis.com/maps/api/staticmap?center={{geocodedaddress}}&zoom=11&size=300x300&maptype=roadmap
+                &markers=color:blue%7C{{geocodedaddress}}&sensor=false" /></p>
+            {{else}}
+                <p></p>
+            {{/if}}
+        {{/if}}
+    </div>
+
+    <div class="span9">
+
+        {{#if whatistheveteransname}}
+            <h4>{{whatisyourname}} wrote about <strong>{{whatistheveteransname}}</strong>
+
+                {{#if whatbranchofthemilitarydidtheyservein}}
+                    who was a member of the {{whatbranchofthemilitarydidtheyservein}}
+
+                        {{#if wheredidtheyserve}}
+                            and served in {{wheredidtheyserve}}
+                        {{else}}
+                        {{/if}}
+
+                            {{#if whichwardidtheyservein}}
+                                during {{whichwardidtheyservein}}
+                            {{else}}
+                            {{/if}}
+
+                {{else}}
+
+                        {{#if wheredidtheyserve}}
+                            who served in {{wheredidtheyserve}}
+
+                                {{#if whichwardidtheyservein}}
+                                    during {{whichwardidtheyservein}}
+                                {{else}}
+                                {{/if}}
+
+                        {{else}}
+                        {{/if}}
+
+                {{/if}}
+            </h4>
+
+        {{else}}
+            <h4><strong>{{whatisyourname}}</strong> wrote</h4>
+        {{/if}}
+
+        <blockquote>
+            <p>{{tellustheirstory}}</p>
+        </blockquote>
+
+        <p class="data-instructions">Submitted {{timeago timestamp}}</p>
+
+    </div>
+</div>
+<!-- end row -->
+
+<hr></hr>
+
+{{/objects}}
