@@ -1,70 +1,119 @@
 {{#objects}}
-<div class="veteran-story">
-
-    <!-- begin row -->
-    <div class="row-fluid">
-
-        <div class="span3">
+    <div class="veteran-story">
+        <div class="row-fluid">
             {{#if addalinktoaphoto}}
-                <p><img src="{{addalinktoaphoto}}" width="300px" /></p>
+                <div class="span3">
+                    <p><img src="{{addalinktoaphoto}}" width="300px" /></p>
+                </div>
+                <div class="span9">
+                    {{#if whatistheveteransname}}
+                        <h4>{{whatisyourname}} wrote about <strong>{{whatistheveteransname}}</strong>
+                            {{#if whatbranchofthemilitarydidtheyservein}}
+                                who was a member of the {{whatbranchofthemilitarydidtheyservein}}
+                                    {{#if wheredidtheyserve}}
+                                        and served in {{wheredidtheyserve}}
+                                    {{else}}
+                                    {{/if}}
+                                        {{#if whichwardidtheyservein}}
+                                            during {{whichwardidtheyservein}}
+                                        {{else}}
+                                        {{/if}}
+                            {{else}}
+                                    {{#if wheredidtheyserve}}
+                                        who served in {{wheredidtheyserve}}
+                                            {{#if whichwardidtheyservein}}
+                                                during {{whichwardidtheyservein}}
+                                            {{else}}
+                                            {{/if}}
+
+                                    {{else}}
+                                    {{/if}}
+                            {{/if}}
+                        </h4>
+
+                    {{else}}
+                        <h4><strong>{{whatisyourname}}</strong> wrote</h4>
+                    {{/if}}
+                    <blockquote>
+                        {{tellustheirstory}}
+                    </blockquote>
+                    <p class="data-instructions">Submitted {{timeago timestamp}}</p>
+                </div>
             {{else}}
                 {{#if geocodedaddress}}
-                    <p><img src="http://maps.googleapis.com/maps/api/staticmap?center={{geocodedaddress}}&zoom=6&size=300x300&maptype=roadmap
-                    &markers=color:blue%7C{{geocodedaddress}}&sensor=false" /></p>
+                    <div class="span3">
+                        <p><img src="http://maps.googleapis.com/maps/api/staticmap?center={{geocodedaddress}}&zoom=6&size=300x300&maptype=roadmap
+                                &markers=color:blue%7C{{geocodedaddress}}&sensor=false" /></p>
+                    </div>
+                    <div class="span9">
+                        {{#if whatistheveteransname}}
+                            <h4>{{whatisyourname}} wrote about <strong>{{whatistheveteransname}}</strong>
+                                {{#if whatbranchofthemilitarydidtheyservein}}
+                                    who was a member of the {{whatbranchofthemilitarydidtheyservein}}
+                                        {{#if wheredidtheyserve}}
+                                            and served in {{wheredidtheyserve}}
+                                        {{else}}
+                                        {{/if}}
+                                            {{#if whichwardidtheyservein}}
+                                                during {{whichwardidtheyservein}}
+                                            {{else}}
+                                            {{/if}}
+                                {{else}}
+                                        {{#if wheredidtheyserve}}
+                                            who served in {{wheredidtheyserve}}
+                                                {{#if whichwardidtheyservein}}
+                                                    during {{whichwardidtheyservein}}
+                                                {{else}}
+                                                {{/if}}
+
+                                        {{else}}
+                                        {{/if}}
+                                {{/if}}
+                            </h4>
+                        {{else}}
+                            <h4><strong>{{whatisyourname}}</strong> wrote</h4>
+                        {{/if}}
+                        <blockquote>
+                            {{tellustheirstory}}
+                        </blockquote>
+                        <p class="data-instructions">Submitted {{timeago timestamp}}</p>
+                    </div>
                 {{else}}
-                    <p></p>
+                    <div class="span12">
+                        {{#if whatistheveteransname}}
+                            <h4>{{whatisyourname}} wrote about <strong>{{whatistheveteransname}}</strong>
+                                {{#if whatbranchofthemilitarydidtheyservein}}
+                                    who was a member of the {{whatbranchofthemilitarydidtheyservein}}
+                                        {{#if wheredidtheyserve}}
+                                            and served in {{wheredidtheyserve}}
+                                        {{else}}
+                                        {{/if}}
+                                            {{#if whichwardidtheyservein}}
+                                                during {{whichwardidtheyservein}}
+                                            {{else}}
+                                            {{/if}}
+                                {{else}}
+                                        {{#if wheredidtheyserve}}
+                                            who served in {{wheredidtheyserve}}
+                                                {{#if whichwardidtheyservein}}
+                                                    during {{whichwardidtheyservein}}
+                                                {{else}}
+                                                {{/if}}
+
+                                        {{else}}
+                                        {{/if}}
+                                {{/if}}
+                            </h4>
+                        {{else}}
+                            <h4><strong>{{whatisyourname}}</strong> wrote</h4>
+                        {{/if}}
+                        <blockquote>
+                            {{tellustheirstory}}
+                        </blockquote>
+                        <p class="data-instructions">Submitted {{timeago timestamp}}</p>
+                    </div>
                 {{/if}}
             {{/if}}
         </div>
-
-        <div class="span9">
-
-            {{#if whatistheveteransname}}
-                <h4>{{whatisyourname}} wrote about <strong>{{whatistheveteransname}}</strong>
-
-                    {{#if whatbranchofthemilitarydidtheyservein}}
-                        who was a member of the {{whatbranchofthemilitarydidtheyservein}}
-
-                            {{#if wheredidtheyserve}}
-                                and served in {{wheredidtheyserve}}
-                            {{else}}
-                            {{/if}}
-
-                                {{#if whichwardidtheyservein}}
-                                    during {{whichwardidtheyservein}}
-                                {{else}}
-                                {{/if}}
-
-                    {{else}}
-
-                            {{#if wheredidtheyserve}}
-                                who served in {{wheredidtheyserve}}
-
-                                    {{#if whichwardidtheyservein}}
-                                        during {{whichwardidtheyservein}}
-                                    {{else}}
-                                    {{/if}}
-
-                            {{else}}
-                            {{/if}}
-
-                    {{/if}}
-                </h4>
-
-            {{else}}
-                <h4><strong>{{whatisyourname}}</strong> wrote</h4>
-            {{/if}}
-
-            <blockquote>
-                {{tellustheirstory}}
-            </blockquote>
-
-            <p class="data-instructions">Submitted {{timeago timestamp}}</p>
-
-        </div>
     </div>
-    <!-- end row -->
-
-</div>
-
 {{/objects}}
