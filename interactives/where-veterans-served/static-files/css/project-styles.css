@@ -4,6 +4,7 @@
 #content-user-submit .ss-form-container {padding: 15px;}
 #content-user-submit .ss-form-container .ss-form {width: 100%;}
 .veteran-story {background: #fcfcfc; padding: 15px; margin: 0 0 25px 0;}
+#data-container blockquote {padding: 5px 10px 5px 35px; font-size: 14px; line-height: 24px; border-left: 0px solid #2B2B2B;}
 
 /* develop for inclusion into foundational styles */
 #data-legend {height: 25px; margin: 10px 0 0 0;}
