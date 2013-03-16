@@ -1,10 +1,9 @@
 #data-container .bold {font-weight: bold;}
-
 #content-article {width: 100%; height: auto; margin: 0 auto 5px auto;}
-#content-map-canvas {width: 100%; height: 400px;}
-#content-action-bar {margin: 0px; text-align: left;}
-#data-user-submit .ss-form {width: 100%; margin: 0 5% 0 5%;}
-#data-user-submit {width: 100%; height: 100%; margin: 10px 0; display: none;}
+#content-user-submit {width: 100%; height: 100%; margin: 10px 0; display: none; background: #fcfcfc;}
+#content-user-submit .ss-form-container {padding: 15px;}
+#content-user-submit .ss-form-container .ss-form {width: 100%;}
+.veteran-story {background: #fcfcfc; padding: 15px; margin: 0 0 25px 0;}
 
 /* develop for inclusion into foundational styles */
 #data-legend {height: 25px; margin: 10px 0 0 0;}
