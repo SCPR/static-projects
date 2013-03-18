@@ -110,26 +110,28 @@ td { vertical-align: top; }
 }
 
 .vertical-timeline-container .vertical-timeline-timeline .post .caption {
-    color: #9d9d9d;
     /*font-family: "Georgia",Times New Roman,Times,serif;*/
-    font-size: 12px;
-    margin-top: 4px;
+    color: #303030;
+    font-size: 11px;
+    line-height: 15px;
+    font-weight: normal;
+    margin: 5px 0 10px 0;
 }
 
 .vertical-timeline-container .vertical-timeline-timeline .post .body {margin-top: 10px;}
 .vertical-timeline-container .vertical-timeline-timeline .post .body img {max-width: 100%;}
 
 .vertical-timeline-container .vertical-timeline-timeline .post .text {
-    color: #393939;
-    font-family: "Georgia",Times New Roman,Times,serif;
-    font-size: 12px;
+    color: #303030;
+    font-family: "Georgia", Times New Roman, Times, serif;
+    font-size: 13px;
     font-weight: normal;
     line-height: 20px;
     margin: 10px 0;
 }
 
 .vertical-timeline-container .vertical-timeline-timeline .post a.open-close {
-    background: transparent url(http://projects.scpr.org/static/static-files/images/button-up-down-arrow.png) no-repeat;
+    background: transparent url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/button-up-down-arrow.png) no-repeat;
     height: 17px;
     width: 16px;
     position: absolute;
