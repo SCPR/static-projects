@@ -1,45 +1,62 @@
-var jqueryNoConflict = jQuery;
-
 // begin main function
 jqueryNoConflict(document).ready(function() {
-    retriveData();
+    getFusionTableData();
 });
+// end
 
-// grab data
-function retriveData() {
-    var dataSource = 'static-files/data/flat_data.json';
-    jqueryNoConflict.getJSON(dataSource, renderContentDisplayTemplate);
-};
-
-// render content display template
-function renderContentDisplayTemplate(data){
-    handlebarsDebugHelper();
-    renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#content-display', data);
-};
-
-// when user submit button is clicked
-function userSubmit(){
-    jqueryNoConflict('#content-article-text').hide();
-    jqueryNoConflict('#content-article-buttons').hide();
-    jqueryNoConflict('#content-display').empty();
-    jqueryNoConflict('#content-user-submit').show();
-    renderHandlebarsTemplate('static-files/templates/content-user-submit.handlebars', '#content-user-submit');
+// retrieve json from Fusion Table
+function getFusionTableData() {
+    var tableID = '1JoBPVazF_LHrzNAKzPWW6CLLEe8S5V7hbvScbfY';
+    var query = 'SELECT * FROM ' + tableID;
+    var encodedQuery = encodeURIComponent(query);
+    var urlPrefix = 'https://www.googleapis.com/fusiontables/v1/query?key=';
+    var apiKey = 'AIzaSyBRs68D8JTAbrLy6R_zsYABLMgOV6zxC-4';
+    var urlSuffix = '&sql=' + encodedQuery + '&callback=?';
+    var url = urlPrefix + apiKey + urlSuffix
+    jqueryNoConflict.getJSON(url, createArrayFrom);
 };
 // end
 
-// return to main view
-function mapIntro(){
-    jqueryNoConflict('#content-article-text').show();
-    jqueryNoConflict('#content-article-buttons').show();
-    jqueryNoConflict('#content-display').empty();
-    jqueryNoConflict('#content-user-submit').hide();
-};
-// end
+// organize json data
+function createArrayFrom(data){
 
-// embed function
-function embedBox() {
-    var embed_url = 'http://projects.scpr.org/static/maps/election-day-voting-issues/iframe.html';
-    jAlert('<h4>Embed this on your site or blog</h4>' +
-    '<span>Copy the code below and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"620px\" height=\"820px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
+    console.log(data);
+
+    // begin loop
+    for (var i = 0; i < data.rows.length; i++) {
+
+        // set each item of loop to variable
+        var row = data.rows[i];
+
+        // set each item of object to variable
+        var Endorser = row[0];
+        var Position = row[1];
+        var Endorsee = row[2];
+        var Endorsee_Image = row[3];
+        var Story_Url = row[4];
+
+		if(Endorsee == "Eric Garcetti") {
+		  jqueryNoConflict("#data-container-garcetti").append(
+		      ' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
+
+        } else if(Endorsee == "Wendy Greuel") {
+                jqueryNoConflict("#data-container-greuel").append(
+    	        ' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
+
+        } else if(Endorsee == "Jan Perry") {
+            jqueryNoConflict("#data-container-perry").append(
+            ' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
+
+        } else if(Endorsee == "Kevin James") {
+            jqueryNoConflict("#data-container-james").append(
+        ' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
+
+        } else {
+            console.log("that's it");
+        }
+
+   };
+    // end loop
+
 };
 // end
