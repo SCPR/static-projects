@@ -20,8 +20,6 @@ function getFusionTableData() {
 // organize json data
 function createArrayFrom(data){
 
-    console.log(data);
-
     // begin loop
     for (var i = 0; i < data.rows.length; i++) {
 
@@ -51,8 +49,6 @@ function createArrayFrom(data){
             jqueryNoConflict("#data-container-james").append(
         ' <a href="' + Story_Url + '">' + Endorser + '</a>, ' + Position + '<br />');
 
-        } else {
-            console.log("that's it");
         }
 
    };
