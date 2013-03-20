@@ -10,7 +10,7 @@ $(document).ready(function() {
     $('#data-visuals').verticalTimeline({
 
         // spreadsheet key
-        key: 'https://docs.google.com/spreadsheet/pub?key=0AjsyCVrBXivzdDg2V2JtSlFZX3dqOHFya01zVVFpS2c&output=html',
+        key: '0AjsyCVrBXivzdDg2V2JtSlFZX3dqOHFya01zVVFpS2c',
 
         // name of sheet on spreadsheet
         sheetName: 'Posts',
