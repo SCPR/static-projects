@@ -6,7 +6,7 @@ var timelineTitle = 'Timeline: Same sex marriage in California';
 var timelineConfig = {
 
     // add the key of your spreadsheet after publishing it to the web
-    key: '0An8W63YKWOsxdFFSZjB5VV9aVmZGblQxSFhpZ1NFd3c',
+    key: '0AjsyCVrBXivzdDg2V2JtSlFZX3dqOHFya01zVVFpS2c',
 
     // add the name of the spreadsheet  'sheet'
 	sheetName: 'Posts'
