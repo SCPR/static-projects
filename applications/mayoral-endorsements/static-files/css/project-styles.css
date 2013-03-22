@@ -1,5 +1,6 @@
 #content-article {width: 100%; height: auto; margin: 0 auto 5px auto;}
 
+
 /* Landscape phones and down */
 @media (max-width: 485px) {
     #data-container h1 {font-size: 24px; font-weight: 800; line-height: 28px; color: #2B2B2B;}
