@@ -39,17 +39,17 @@
             <div class="date">{{display_date}}</div> \
             <div class="body"> \
               {{#if photo_url}} \
-                <img src="{{photo_url}}" alt=""> \
+                <img class="hidden-phone" src="{{photo_url}}" alt=""> \
               {{/if}} \
               {{#if caption}} \
-                <div class="caption">({{caption}})</div> \
+                <div class="hidden-phone caption">({{caption}})</div> \
               {{/if}} \
               {{#if body}} \
                 <div class="text">{{{body}}}</div> \
               {{/if}} \
               <div class="clearfix"> \
                 {{#if read_more_url}} \
-                  <a target="_blank" class="more" href="{{read_more_url}}">READ MORE</a> \
+                  <a target="_blank" class="hidden-phone more" href="{{read_more_url}}">READ MORE</a> \
                   {{#if sharing}} \
                     <div class="share"> \
                       <a href="#" class="share-trigger"></a> \
@@ -77,7 +77,7 @@
       ',
       buttonTemplate: ' \
         <div class="vertical-timeline-buttons"> \
-          <div class="expand-collapse-buttons"> \
+          <div class="hidden-phone expand-collapse-buttons"> \
             <a class="expand-all active" href="#"><span>Expand all</span></a> \
             <a class="collapse-all" href="#"><span>Collapse all</span></a> \
           </div> \
