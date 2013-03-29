@@ -1,3 +1,4 @@
+#data-container #data-visuals {background: #ffffff;}
 #content-explainer {width: 100%; height: auto; margin: 10px auto 10px auto;}
 .chartlist {float: left; border-top: 1px solid #EEE; width: 15em;}
 .chartlist li {position: relative; display: block; border-bottom: 1px solid #2e2e2e; _zoom: 1;}
@@ -6,3 +7,23 @@
 .chartlist .count {display: block; position: absolute; top: 0; right: 0; margin: 0 0.3em; text-align: right; color: #2e2e2e; font-weight: bold; font-size: 0.875em; line-height: 2.5em;}
 .chartlist .index {display: block; position: absolute; top: 0; left: 0; height: 100%; background: #f17a31; text-indent: -9999px; overflow: hidden; line-height: 2em;}
 .chartlist li:hover {background: #ffffff;}
+
+/* base carousel */
+.item {height: auto; margin: 0 0 0px 0;}
+.item img {max-height: 900px; min-height: 300px; margin: 0 auto 0 auto;}
+.carousel-caption {height: auto; background: #ffffff; position: relative;}
+.carousel-caption p {color: #000000;}
+
+/* carousel navigation arrows */
+.carousel-control {left: -80px;}
+.carousel-control.right {right: -80px; left: auto;}
+.carousel-control.controls-arrow {height: 70px; width: 70px; background-color: #bbb; color: #2c2c2c; font-size: 30px; line-height: 65px; text-align: center; cursor: pointer; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px;}
+.carousel-control.controls-arrow:hover {background-color: #333; color: #ffffff;}
+
+/* carousel navigation blocks */
+#controls {text-align: center; padding: 20px; border-bottom: 1px solid #eee;}
+#controls-stage-indicator {display: inline-block;}
+#controls-stage-indicator .indicator {float: left; height: 30px; width: 30px; background-color: #bbb; margin: 0 5px; font-size: 30px; line-height: 30px; text-align: center; cursor: pointer; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px;}
+#controls-stage-indicator .indicator.active {background-color: #f17a31;}
+#controls-stage-indicator a {color: #bbb;}
+#controls-stage-indicator .active a {color: #f17a31;}
