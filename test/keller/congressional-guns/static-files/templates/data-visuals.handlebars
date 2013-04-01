@@ -1,40 +1,64 @@
-<div id="content-explainer"></div>
-
 <!-- begin -->
 <div class="candidate-container">
 
     {{#objects}}
         <!-- begin row -->
-        <div id="{{first_name}}_{{last_name}}" class="row-fluid" style="padding: 25px 0 15px 0;">
+        <div class="row-fluid">
 
-            <!-- begin candidate -->
+            <!-- begin main span -->
             <div class="span12">
-                <div class="span2">
-                    <img src="{{image_url}}" alt="{{position}}_{{first_name}}_{{last_name}}" width="100px" height="150px" />
+
+                <!-- begin candidate container -->
+                <div id="{{first_name}}_{{last_name}}" class="row-fluid" style="padding: 25px 0 15px 0;">
+
+                    <!-- begin span -->
+                    <div class="span2">
+                        <dl>
+                            <dd>
+                                <div class="img">
+                                    <img src="{{image_url}}" alt="{{position}}_{{first_name}}_{{last_name}}" width="120px" height="170px" />
+                                </div>
+                                <div class="text"><p class="data-instructions"><strong>{{position}}. {{last_name}}</strong></p></div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- end span -->
+
+                    <!-- begin span -->
+                    <div class="span10">
+                        <dl>
+                            <dd>
+                                <h3>{{position}}. {{first_name}} {{last_name}} ({{party}}-{{district}})</h3>
+                            </dd>
+                            <dd>
+                                <p><strong>Owns a firearm</strong>: {{owns_firearm}}</p>
+                            </dd>
+                            <dd>
+                                {{#if comment}}
+                                    <p><strong>Says {{last_name}}</strong>: "{{comment}}"</p>
+                                {{else}}
+
+                                {{/if}}
+                            </dd>
+                            <dd>
+                                {{#if supporting_specific_proposals}}
+                                    <p><strong>Will support the following</strong>: {{supporting_specific_proposals}}</p>
+                                {{else}}
+
+                                {{/if}}
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- end span -->
+
                 </div>
+                <!-- end candidate container -->
 
-                <div class="span10">
-                    <h4>{{position}}. {{first_name}} {{last_name}} ({{party}}-{{district}})</h4>
-                    <p><strong>Owns a firearm</strong>: {{owns_firearm}}</p>
-
-                    {{#if comment}}
-                        <p><strong>Says {{last_name}}</strong>: "{{comment}}"</p>
-                    {{else}}
-
-                    {{/if}}
-
-                    {{#if supporting_specific_proposals}}
-                        <p><strong>Will support the following</strong>: {{supporting_specific_proposals}}</p>
-                    {{else}}
-
-                    {{/if}}
-                </div>
             </div>
-            <!-- end candidate -->
+            <!-- end main span -->
 
         </div>
         <!-- end row -->
-    <hr>
     {{/objects}}
 
 </div>

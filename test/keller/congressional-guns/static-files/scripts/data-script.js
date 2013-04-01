@@ -23,31 +23,10 @@ function scrollToRep(){
     jqueryNoConflict.scrollTo(congressionalMember)
 };
 
-// render handlebars templates via ajax
-function getTemplateAjax(path, callback) {
-    var source, template;
-    jqueryNoConflict.ajax({
-        url: path,
-        success: function (data) {
-            source = data;
-            template = Handlebars.compile(source);
-            if (callback) callback(template);
-        }
-    });
+// embed function
+function embedBox() {
+    var embed_url = 'http://projects.scpr.org/static/maps/election-day-voting-issues/iframe.html';
+    jAlert('<h4>Embed this on your site or blog</h4>' +
+    '<span>Copy the code below and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"620px\" height=\"820px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
 };
-
-// render handlebars template function
-function renderHandlebarsTemplate(withTemplate,inElement,withData){
-    getTemplateAjax(withTemplate, function(template) {
-        jqueryNoConflict(inElement).html(template(withData));
-    })
-};
-
-// add handlebars debugger
-function handlebarsDebugHelper(){
-    Handlebars.registerHelper("debug", function(optionalValue) {
-        console.log("Current Context");
-        console.log("====================");
-        console.log(this);
-    });
-};
+// end
