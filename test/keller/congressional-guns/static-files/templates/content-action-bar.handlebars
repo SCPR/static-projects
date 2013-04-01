@@ -2,7 +2,7 @@
         <select id="search-congressional-delegation" onchange="scrollToRep(this.value);">
             <option value="#return-to-top">Find your representative</option>
             {{#objects}}
-                <option value="#{{first_name}}_{{last_name}}">{{first_name}} {{last_name}}</option>
+                <option value="#{{firstname}}_{{lastname}}">{{firstname}} {{lastname}}</option>
             {{/objects}}
         </select>
 </nav>

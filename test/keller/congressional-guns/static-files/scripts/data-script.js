@@ -7,7 +7,7 @@ jqueryNoConflict(document).ready(function() {
 
 // grab data
 function retriveData() {
-    var dataSource = 'static-files/data/ca_congressional_delegation.json';
+    var dataSource = 'static-files/data/ca_congressional_delegation-handlebars.json';
     jqueryNoConflict.getJSON(dataSource, renderDataVisualsTemplate);
 };
 

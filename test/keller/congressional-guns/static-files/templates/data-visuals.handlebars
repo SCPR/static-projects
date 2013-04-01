@@ -9,16 +9,16 @@
             <div class="span12">
 
                 <!-- begin candidate container -->
-                <div id="{{first_name}}_{{last_name}}" class="row-fluid" style="padding: 25px 0 15px 0;">
+                <div id="{{firstname}}_{{lastname}}" class="row-fluid" style="padding: 25px 0 15px 0;">
 
                     <!-- begin span -->
                     <div class="span2">
                         <dl>
                             <dd>
                                 <div class="img">
-                                    <img src="{{image_url}}" alt="{{position}}_{{first_name}}_{{last_name}}" width="120px" height="170px" />
+                                    <img src="{{imageurl}}" alt="{{position}}_{{firstname}}_{{lastname}}" width="120px" height="170px" />
                                 </div>
-                                <div class="text"><p class="data-instructions"><strong>{{position}}. {{last_name}}</strong></p></div>
+                                <div class="text"><p class="data-instructions"><strong>{{position}}. {{lastname}}</strong></p></div>
                             </dd>
                         </dl>
                     </div>
@@ -28,21 +28,21 @@
                     <div class="span10">
                         <dl>
                             <dd>
-                                <h3>{{position}}. {{first_name}} {{last_name}} ({{party}}-{{district}})</h3>
+                                <h3>{{position}}. {{firstname}} {{lastname}} ({{party}}-{{district}})</h3>
                             </dd>
                             <dd>
-                                <p><strong>Owns a firearm</strong>: {{owns_firearm}}</p>
+                                <p><strong>Owns a firearm</strong>: {{ownsfirearm}}</p>
                             </dd>
                             <dd>
                                 {{#if comment}}
-                                    <p><strong>Says {{last_name}}</strong>: "{{comment}}"</p>
+                                    <p><strong>Says {{lastname}}</strong>: "{{comment}}"</p>
                                 {{else}}
 
                                 {{/if}}
                             </dd>
                             <dd>
-                                {{#if supporting_specific_proposals}}
-                                    <p><strong>Will support the following</strong>: {{supporting_specific_proposals}}</p>
+                                {{#if supportingspecificproposals}}
+                                    <p><strong>Will support the following</strong>: {{supportingspecificproposals}}</p>
                                 {{else}}
 
                                 {{/if}}
