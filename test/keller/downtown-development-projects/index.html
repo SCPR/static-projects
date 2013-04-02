@@ -36,24 +36,7 @@
         <link href="http://projects.scpr.org/static/static-files/css/reset/reset-styles.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/css/interactive-project-shell/foundation-styles.css" rel="stylesheet" type="text/css" media="all" />
-
-        <!-- used for local testing -->
-        <!--
-        <link href="static-files/css/foundation-styles.css" rel="stylesheet" type="text/css" media="all" />
-        -->
-
         <link href="static-files/css/project-styles.css" rel="stylesheet" type="text/css" media="all" />
-
-        <!-- additional css files for projects -->
-        <!--
-        <link href="http://projects.scpr.org/static/static-files/css/tabletop-timelines/v3-styles.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://projects.scpr.org/static/static-files/css/highcharts-interactives/styles.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://projects.scpr.org/static/static-files/css/responsive-tables/responsive-tables.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://projects.scpr.org/static/static-files/css/tablestacker-tables/styles.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://projects.scpr.org/static/static-files/css/tabletop-timelines/styles.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
-        -->
-
         <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="all" />
 
@@ -70,7 +53,6 @@
         <script async="" src="http://www.google-analytics.com/ga.js"></script>
         <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js"></script>
         <!-- end base scripts -->
 
@@ -93,11 +75,91 @@
                             <div class="row-fluid">
                                 <div class="span12">
                                     <div class="span4">
-                                        <div id="content-display"></div>
+
+                                        <!-- begin content display -->
+                                        <div id="content-display">
+
+                                            <!-- begin row -->
+                                            <div class="row-fluid">
+                                                <div class="span12">
+                                                    <h4>Filter by project type (<span id="result_count"></span>) </h4>
+                                                    <div class="well">
+                                                        <form class="form-inline">
+                                                            <div id="data-legend">
+                                                                <ul id="data-legend-items">
+                                                                    <label class='checkbox inline'><input type='checkbox' id='cbType0' checked/>Development</label>
+                                                                    <label class='checkbox inline'><input type='checkbox' id='cbType1' checked/>Roads</label>
+                                                                    <label class='checkbox inline'><input type='checkbox' id='cbType2' checked/>Food</label>
+                                                                    <label class='checkbox inline'><input type='checkbox' id='cbType3' checked/>Arts</label>
+                                                                    <!-- <li class="user-contrib"></li> -->
+                                                                </ul>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                            <!--
+                                                    <h4>Filter by project status</h4>
+                                                    <div class="well">
+                                                        <form class="form-inline">
+                                                            <div id="data-legend">
+                                                                <ul id="data-legend-items">
+                                                                    <label class='checkbox inline'><input type='checkbox' id='cbType10' checked/>Proposed</label>
+                                                                    <label class='checkbox inline'><input type='checkbox' id='cbType11' checked/>Approved</label>
+                                                                    <label class='checkbox inline'><input type='checkbox' id='cbType12' checked/>Construction</label>
+                                                                    <label class='checkbox inline'><input type='checkbox' id='cbType13' checked/>Open</label>
+                                                                </ul>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                            -->
+
+                                                </div>
+                                            </div>
+                                            <!-- end row -->
+
+                                            <!-- begin row -->
+                                            <div class="row-fluid">
+                                                <div class="span12">
+                                                    <div id="content-details">
+                                                        <p>Click the markers on the map to get details about downtown development projects.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end row -->
+
+                                        </div>
+                                        <!-- end content display -->
                                     </div>
                                     <div class="span8">
-                                        <div id="content-action-bar"></div>
+
+                                        <!-- begin content action bar -->
+                                        <div id="content-action-bar">
+                                            <div class="row-fluid">
+                                                <div class="span12">
+                                                    <h4>Enter address, intersection or <a id='find_me' href='#'>use your location</a> to find nearby submissions</h4>
+                                                    <div class='well'>
+                                                        <form class="form-inline">
+                                                            <input class='input-block-level' id='search_address' placeholder='Ex: Chevy Chase Dr. at Brunswick Ave.' type='text' />
+                                                            <label>within
+                                                            <select class='input-small' id='search_radius'>
+                                                                <option value='3218'>2 miles</option>
+                                                                <option value='8047'>5 miles</option>
+                                                                <option value='16093'>10 miles</option>
+                                                            </select>
+                                                            </label>
+                                                            <input class='btn btn-success' id='search' type='button' value='Search' />
+                                                            <button class='btn' id='reset'>Reset</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end content action bar -->
+
+                                        <!-- begin map canvas -->
                                         <div id="content-map-canvas"></div>
+                                        <!-- end map canvas -->
+
                                     </div>
                                 </div>
                             </div>
@@ -115,19 +177,17 @@
         <div id="kpcc-footer"></div>
 
             <!-- begin scripts -->
+            <script src="static-files/scripts/templates-script.js"></script>
             <script src="http://maps.google.com/maps/api/js?key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8&sensor=false&amp;libraries=places"></script>
-            <script src="http://projects.scpr.org/static/static-files/scripts/underscore-min.js"></script>
             <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
             <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-ajax.js"></script>
             <script src="http://projects.scpr.org/static/static-files/scripts/swag.js"></script>
-            <script src="http://projects.scpr.org/static/static-files/scripts/tabletop.js"></script>
             <script src="http://projects.scpr.org/static/static-files/scripts/moment.min.js"></script>
             <script src="http://projects.scpr.org/static/static-files/scripts/jquery.alerts.js"></script>
             <script src="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap.min.js"></script>
             <script src="http://projects.scpr.org/static/static-files/scripts/jquery.address.min-1.4.js"></script>
             <script src="http://projects.scpr.org/static/static-files/scripts/jquery.geocomplete.min-1.4.js"></script>
             <script src="static-files/scripts/maps-lib.js"></script>
-            <script src="static-files/scripts/templates-script.js"></script>
             <script src="static-files/scripts/data-script.js"></script>
             <!-- end scripts -->
 

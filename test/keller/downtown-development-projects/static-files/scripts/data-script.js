@@ -33,7 +33,7 @@ function buildMapDisplay(){
     jqueryNoConflict('#reset').click(function(){
         jqueryNoConflict.address.parameter('address','');
         MapsLib.initialize();
-        jqueryNoConflict('#content-display').empty();
+        jqueryNoConflict('#content-details').empty();
         return false;
     });
 
