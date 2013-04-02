@@ -1,42 +1,36 @@
-<div>
+<div id="details-about-projects">
     <h4>{{project_name}}</h4>
+    <p>{{project_address}}</p>
     <p><strong>About this project</strong>:<br />
     {{project_description}}</p>
     <ul>
-        <li><strong>Status</strong>: {{project_status}}</li>
-        <li><strong>Estimated Completion Date</strong>: {{estimated_completion}}</li>
+        {{#if project_status}}
+            <li><strong>Project Status</strong>: {{project_status}}</li>
+        {{else}}
+            <li>&nbsp;</li>
+        {{/if}}
+
+        {{#if estimated_completion}}
+            <li><strong>Estimated Completion Date</strong>: {{estimated_completion}}</li>
+        {{else}}
+            <li>&nbsp;</li>
+        {{/if}}
+
+        {{#if project_cost}}
+            <li><strong>Project Cost</strong>: {{project_cost}}</li>
+        {{else}}
+            <li>&nbsp;</li>
+        {{/if}}
+
+        {{#if operating_hours}}
+            <li><strong>Hours</strong>: {{operating_hours}}</li>
+        {{else}}
+            <li>&nbsp;</li>
+        {{/if}}
     </ul>
     {{#if read_more}}
-        <p><a class="btn btn-success" href="{{read_more}}" target="_blank">Read More</a></p>
+        <p><a class="btn btn-success" href="{{read_more}}" target="_blank">Read about this project</a></p>
     {{else}}
         <p>&nbsp;</p>
     {{/if}}
-
-
-
-
-
-
-
-
-
-
-
-    <p>{{project_type}}</p>
-    <p>{{project_identifier}}</p>
-    <p>{{project_type_marker}}</p>
-    <p>{{status_type}}</p>
-    <p>{{status_identifier}}</p>
-
-
-
-    <p>{{project_address}}</p>
-    <p>{{latitude}}</p>
-    <p>{{longitude}}</p>
-    <p>{{geocoded_location}}</p>
-    <p>{{operating_hours}}</p>
-    <p>{{project_cost}}</p>
-    <p>{{notes}}</p>
-
-
 </div>
