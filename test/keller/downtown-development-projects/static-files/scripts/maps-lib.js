@@ -106,8 +106,13 @@
         var whereClause = MapsLib.locationColumn + " not equal to ''";
 
         /* begin custom filters */
-
-
+        var type_column = "project_type";
+        var tempWhereClause = [];
+        if ( $("#cbType0").is(':checked')) tempWhereClause.push("development");
+        if ( $("#cbType1").is(':checked')) tempWhereClause.push("roads");
+        if ( $("#cbType2").is(':checked')) tempWhereClause.push("food");
+        if ( $("#cbType3").is(':checked')) tempWhereClause.push("arts");
+        whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join('\',\'') + "')";
         /* end custom filters */
 
         if (address != "") {
