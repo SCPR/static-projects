@@ -184,6 +184,8 @@
             project_description: e.row['project_description'].value,
             read_more: e.row['read_more'].value,
             project_address: e.row['project_address'].value,
+            latitude: e.row['latitude'].value,
+            longitude: e.row['longitude'].value,
             geocoded_location: e.row['geocoded_location'].value,
             operating_hours: e.row['operating_hours'].value,
             project_cost: e.row['project_cost'].value,
@@ -301,24 +303,20 @@
       var data = json["rows"];
       var template = "";
 
-      var results = $("#results_list");
+      var results = $("#content-details-list");
       results.hide().empty(); //hide the existing list and empty it out first
 
       if (data == null) {
         //clear results list
-        results.append("<li><span class='lead'>No results found</span></li>");
+        results.append('<h4>No results found</h4>');
       }
       else {
         for (var row in data) {
           template = "\
             <div class='row-fluid item-list'>\
-              <div class='span12'>\
-                <strong>" + data[row][0] + "</strong>\
-                <br />\
-                " + data[row][1] + "\
-                <br />\
-                " + data[row][2] + "\
-              </div>\
+                <div class='span12'>\
+                    <strong>" + data[row][0] + "</strong>\
+                </div>\
             </div>"
           results.append(template);
         }
