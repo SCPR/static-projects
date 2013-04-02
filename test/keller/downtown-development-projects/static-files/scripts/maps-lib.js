@@ -44,7 +44,7 @@
     searchRadius:       8047,
 
     // zoom level when map is loaded (bigger is more zoomed in)
-    defaultZoom:        13,
+    defaultZoom:        14,
     addrMarkerImage: 'http://projects.scpr.org/static/static-files/images/maps-icons-collection/blue-pushpin.png',
     currentPinpoint: null,
 
@@ -178,13 +178,7 @@
             estimated_completion: e.row['estimated_completion'].value,
             project_description: e.row['project_description'].value,
             read_more: e.row['read_more'].value,
-            project_street: e.row['project_street'].value,
-            project_city: e.row['project_city'].value,
-            project_state: e.row['project_state'].value,
-            project_zip_code: e.row['project_zip_code'].value,
             project_address: e.row['project_address'].value,
-            latitude: e.row['latitude'].value,
-            longitude: e.row['longitude'].value,
             geocoded_location: e.row['geocoded_location'].value,
             operating_hours: e.row['operating_hours'].value,
             project_cost: e.row['project_cost'].value,
