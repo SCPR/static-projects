@@ -60,6 +60,8 @@ h1, h2, h3, h4, h5, h6 {margin: 0 0;}
 #data-container .lowercase {text-transform: lowercase;}
 #data-container .centered {text-align: center;}
 #data-container .underline {text-decoration: underline;}
+#data-container .credits {display: inline;}
+#data-container .pubdate {color: #930000; font-style: italic; display: inline;}
 #data-container .right-align {text-align: right;}
 #data-container .left-align {text-align: left;}
 #data-container .italics {font-style: italic;}
