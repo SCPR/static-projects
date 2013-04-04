@@ -1,0 +1,22 @@
+{{debug}}
+{{#objects}}
+<!-- begin row -->
+<div class="row-fluid">
+    <div class="span3">
+        <p><img src="http://maps.googleapis.com/maps/api/staticmap?center={{primary_lat}},{{primary_long}}&zoom=11&size=300x300&maptype=roadmap
+        &markers=color:blue%7C{{primary_lat}},{{primary_long}}&sensor=false" /></p>
+    </div>
+    <div class="span9">
+        <p><strong>{{src_first_name}} {{src_last_name}}</strong> from {{primary_city}}:<br />
+        <ul>
+            <li><strong>{{questions.9200af1a79cb.value}}</strong><br />
+            {{responses.9200af1a79cb}}</li>
+        </ul>
+        <p class="data-instructions">Submitted {{timeago srs_date}}</p>
+    </div>
+</div>
+<!-- end row -->
+
+<hr></hr>
+
+{{/objects}}
