@@ -1,5 +1,39 @@
+<script type="text/javascript">
+
+var jqueryNoConflict = jQuery;
+
+    //begin main function
+    jqueryNoConflict(document).ready(function(){
+
+        jqueryNoConflict('.sizeInput').bind('click', function(){
+            var initial = jqueryNoConflict(this).val();
+
+                if(typeof jqueryNoConflict(this).data('counter') == "undefined"){
+                    jqueryNoConflict(this).data('counter',1);
+
+                } else {
+                    jqueryNoConflict(this).data('counter', jqueryNoConflict(this).data('counter')+1);
+                    initial = initial.substr(0,initial.indexOf('/'));
+              }
+
+              jqueryNoConflict(this).val(jqueryNoConflict(this).data('counter'));
+
+              submitValueToForm('.live_counter', jqueryNoConflict(this).data('counter'))
+
+        });
+    });
+    //end main function
+
+    // begin
+    function submitValueToForm(element, message){
+        jqueryNoConflict(element).html(message);
+    };
+    // end
+
+</script>
+
 {{#objects}}
-    <div class="bill">
+    <div id="[[id}}" class="bill">
         <h4>{{title}}</h4>
         <p><strong>Chamber:</strong> {{chamber}}</p>
         <p><strong>Type:</strong> {{type}}</p>
@@ -9,12 +43,24 @@
     <div class="voting-module">
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
         <form action="https://script.google.com/macros/s/AKfycbwOv6r6cMgRzsHL_jBnzVlWeHQ68-S9bEz-_9NptvI9Ax2O4s-1/exec" method="POST" id="ss-form" target="hidden_iframe" class="form-inline">
-            <button class="btn btn-success" name="thumbs_up" value="{{id}}"  id="thumbs_up" type="submit">
-                <i class="icon-black icon-thumbs-up"></i>&nbsp;I Support&nbsp;<span>(9)</span>
+
+            <input type="hidden" name="bill_id" value="{{id}}" id="bill_id">
+
+            <button class="btn btn-success sizeInput" name="thumbs_up" value="thumbs_up"  id="{{id}}" type="submit">
+                <i class="icon-black icon-thumbs-up"></i>&nbsp;I Support&nbsp;<span class="live_counter"></span>
             </button>
-            <button class="btn btn-danger" name="thumbs_down" value="{{id}}" id="thumbs_down" type="submit">
-                <i class="icon-black icon-thumbs-down"></i>&nbsp;Needs Work&nbsp;<span>(9)</span>
+
+            <button class="btn btn-danger sizeInput" name="thumbs_down" value="thumbs_down" id="{{id}}" type="submit">
+                <i class="icon-black icon-thumbs-down"></i>&nbsp;Needs Work&nbsp;<span class="live_counter"></span>
             </button>
+
+
+<!--
+            <input type="button" class="btn btn-success sizeInput" name="thumbs_up" value="thumbs_up"  id="thumbs_up" type="submit" onclick="submitValueToForm();">
+            <input type="button" class="btn btn-danger sizeInput" name="thumbs_down" value="thumbs_down" id="thumbs_down" type="submit" onclick="submitValueToForm();">
+-->
+
+
         </form>
     </div>
 

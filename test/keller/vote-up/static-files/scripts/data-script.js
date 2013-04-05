@@ -14,5 +14,4 @@ function retriveData() {
 function renderContentDisplayTemplate(data){
     handlebarsDebugHelper();
     renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', data);
-    renderContentVotingTemplate();
 };
