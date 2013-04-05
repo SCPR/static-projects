@@ -24,7 +24,7 @@ TO DO
 
     // chart options
     var chart;
-    var chartCategories = ['Jan \'12', 'Feb \'12', 'Mar \'12', 'Apr \'12', 'May \'12', 'Jun \'12', 'Jul \'12', 'Aug \'12', 'Sep \'12', 'Oct \'12', 'Nov \'12', 'Dec \'12', 'Jan \'13', 'Feb \'13'];
+    var chartCategories = ['Jan \'12', 'Feb \'12', 'Mar \'12', 'Apr \'12', 'May \'12', 'Jun \'12', 'Jul \'12', 'Aug \'12', 'Sep \'12', 'Oct \'12', 'Nov \'12', 'Dec \'12', 'Jan \'13', 'Feb \'13', 'Mar \'13'];
 
     // pull data from spreadsheet onload
     jqueryNoConflict(document).ready(function(){
@@ -60,9 +60,10 @@ TO DO
             var dec2012 = parseInt(record.dec2012);
             var jan2013 = parseInt(record.jan2013);
             var feb2013 = parseInt(record.feb2013);
+            var mar2013 = parseInt(record.mar2013);
 
             // build array from each row of spreadsheet
-            allJobsData = [jan2012, feb2012, mar2012, apr2012, may2012, jun2012, jul2012, aug2012, sep2012, oct2012, nov2012, dec2012, jan2013, feb2013];
+            allJobsData = [jan2012, feb2012, mar2012, apr2012, may2012, jun2012, jul2012, aug2012, sep2012, oct2012, nov2012, dec2012, jan2013, feb2013, mar2013];
 
             // push each array to an array
             arraysOfJobsData.push(allJobsData);
