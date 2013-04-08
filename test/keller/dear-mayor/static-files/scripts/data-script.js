@@ -50,7 +50,7 @@ function createMap(){
     // empty array for markers
     var markers = [];
 
-    for (var i=0; i<100; i++) {
+    for (var i=0; i<data.results.length; i++) {
 
 
 
