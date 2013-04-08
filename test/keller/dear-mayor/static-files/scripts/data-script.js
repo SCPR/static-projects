@@ -49,21 +49,17 @@ function createMap(){
 
     // empty array for markers
     var markers = [];
-
     for (var i=0; i<data.results.length; i++) {
 
+        var dataResults = data.results[i];
+        console.log(dataResults.primary_lat);
 
-
-
-
-
-        console.log(typeof(data.results[i].primary_lat));
-
-
-
-
-        var latLng = new google.maps.LatLng(data.results[i].primary_lat, data.results[i].primary_long);
-        html = 'photo_id is ' + data.results[i].query_title + '<br />';
+        var latLng = new google.maps.LatLng(dataResults.primary_lat, dataResults.primary_long);
+        html = '<p><strong>' + dataResults.src_first_name + ' ' + dataResults.src_last_name +
+        '</strong> from ' + dataResults.primary_city + ':<br />' +
+        '<ul><li><strong>' + dataResults.questions + '</strong><br />' +
+        dataResults.responses + '</li></ul>' +
+        '<p class="data-instructions">Submitted ' + dataResults.srs_date + '</p>';
 
         marker = new google.maps.Marker({
             html: html,
