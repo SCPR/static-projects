@@ -1,7 +1,12 @@
 var jqueryNoConflict = jQuery;
+var map;
+var marker;
+var infowindow = new google.maps.InfoWindow();
+var html = '';
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
+    google.maps.event.addDomListener(window, 'load', createMap);
     retriveData();
 });
 
@@ -14,15 +19,94 @@ function retriveData() {
 // render data visuals template
 function renderDataVisualsTemplate(data){
 
-    var dataDetailsData = {
+    var handlebarsData = {
         objects: data.results
     };
 
-    renderHandlebarsTemplate('static-files/templates/data-details.handlebars', '#data-details', dataDetailsData);
-
-    var dataVisualsData = {
-        objects: data.results
-    };
-
-    renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', dataVisualsData);
+    renderHandlebarsTemplate('static-files/templates/data-details.handlebars', '#data-details', handlebarsData);
+    renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', handlebarsData);
 };
+
+// create the map
+function createMap(){
+
+    var centerLosAngeles = new google.maps.LatLng(34.036054430724114, -118.26595796365973);
+    map = new google.maps.Map(document.getElementById('content-map-canvas'), {
+        center: centerLosAngeles,
+        zoom: 4,
+        scrollwheel: false,
+        draggable: true,
+        mapTypeControl: false,
+        navigationControl: true,
+        streetViewControl: false,
+        panControl: false,
+        scaleControl: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        navigationControlOptions: {
+            style: google.maps.NavigationControlStyle.SMALL,
+            position: google.maps.ControlPosition.RIGHT_TOP}
+    });
+
+    // empty array for markers
+    var markers = [];
+
+    for (var i=0; i<100; i++) {
+        var dataPhoto = data.photos[i];
+        var latLng = new google.maps.LatLng(dataPhoto.latitude,
+              dataPhoto.longitude);
+
+        html = 'photo_id is ' + dataPhoto.photo_id + '<br />';
+
+        marker = new google.maps.Marker({
+            html: html,
+            position: latLng,
+            clickable: true
+        });
+        markers.push(marker), bindInfoWindow(marker, map, html);
+    }
+
+    // options for marker cluster
+    var markerClusterOptions = {
+        gridSize: 50,
+        zoomOnClick: false,
+        //maxZoom: 15,
+        title: 'testing title'
+    };
+
+    // adds instance of marker cluster to map
+    var markerCluster = new MarkerClusterer(map, markers, markerClusterOptions);
+
+    // click event for marker cluster
+    google.maps.event.addListener(markerCluster, 'clusterclick', function(cluster){
+        var content ='';
+
+        var clickedMarkers = cluster.getMarkers();
+
+        for (var i=0; i<clickedMarkers.length; i++) {
+
+            // log length of clustered markers
+            console.log(clickedMarkers[i].html);
+
+            if (i==0){
+                var markerPosition = clickedMarkers[i];
+            }
+
+            html = clickedMarkers[i].html;
+            content +=html;
+        }
+
+        infowindow.setContent(content);
+        infowindow.open(map, markerPosition);
+    });
+
+};
+// end
+
+// begin function to bind the infowindow to marker
+function bindInfoWindow(marker, map, html) {
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(html);
+        infowindow.open(map, marker);
+    });
+};
+// end
