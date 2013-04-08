@@ -33,7 +33,7 @@ function createMap(){
     var centerLosAngeles = new google.maps.LatLng(34.036054430724114, -118.26595796365973);
     map = new google.maps.Map(document.getElementById('content-map-canvas'), {
         center: centerLosAngeles,
-        zoom: 4,
+        zoom: 10,
         scrollwheel: false,
         draggable: true,
         mapTypeControl: false,
@@ -51,17 +51,26 @@ function createMap(){
     var markers = [];
 
     for (var i=0; i<100; i++) {
-        var dataPhoto = data.photos[i];
-        var latLng = new google.maps.LatLng(dataPhoto.latitude,
-              dataPhoto.longitude);
 
-        html = 'photo_id is ' + dataPhoto.photo_id + '<br />';
+
+
+
+
+
+        console.log(typeof(data.results[i].primary_lat));
+
+
+
+
+        var latLng = new google.maps.LatLng(data.results[i].primary_lat, data.results[i].primary_long);
+        html = 'photo_id is ' + data.results[i].query_title + '<br />';
 
         marker = new google.maps.Marker({
             html: html,
             position: latLng,
             clickable: true
         });
+
         markers.push(marker), bindInfoWindow(marker, map, html);
     }
 
@@ -83,9 +92,6 @@ function createMap(){
         var clickedMarkers = cluster.getMarkers();
 
         for (var i=0; i<clickedMarkers.length; i++) {
-
-            // log length of clustered markers
-            console.log(clickedMarkers[i].html);
 
             if (i==0){
                 var markerPosition = clickedMarkers[i];
