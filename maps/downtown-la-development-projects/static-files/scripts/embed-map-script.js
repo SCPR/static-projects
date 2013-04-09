@@ -13,7 +13,7 @@ function createMap(){
     // add encrypted table id
     var fusionTableId = '1HwblrqLu8SUckDPGVXH0lpTympVunuiXFMGtH6M';
     var locationColumn = 'col17';
-    var centerLosAngeles = new google.maps.LatLng(34.036054430724114, -118.26595796365973);
+    var centerLosAngeles = new google.maps.LatLng(34.044197,-118.246365);
     map = new google.maps.Map(document.getElementById('embedded-project-container-map-canvas'), {
         center: centerLosAngeles,
         zoom: 13,
