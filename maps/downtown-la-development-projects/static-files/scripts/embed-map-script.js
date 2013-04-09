@@ -37,7 +37,7 @@ function createMap(){
             from: fusionTableId
         },
         map: map,
-        suppressInfoWindows: true,
+        suppressInfoWindows: true
 
     });
 
