@@ -52,7 +52,6 @@ function createMap(){
     for (var i=0; i<data.results.length; i++) {
 
         var dataResults = data.results[i];
-        console.log(dataResults.primary_lat);
 
         var latLng = new google.maps.LatLng(dataResults.primary_lat, dataResults.primary_long);
         html = '<p><strong>' + dataResults.src_first_name + ' ' + dataResults.src_last_name +
@@ -62,6 +61,7 @@ function createMap(){
         '<p class="data-instructions">Submitted ' + dataResults.srs_date + '</p>';
 
         marker = new google.maps.Marker({
+            id: i,
             html: html,
             position: latLng,
             clickable: true
@@ -104,6 +104,29 @@ function createMap(){
 };
 // end
 
+
+
+
+
+
+// begin function to bind the infowindow to marker
+function bindInfoWindow(marker, map, html) {
+
+    google.maps.event.addListener(marker, 'click', function() {
+        jqueryNoConflict('#' + marker.id).removeClass('hidden');
+        //jqueryNoConflict('#' + marker.id).addClass('currIdSelected');
+        //jqueryNoConflict('#' + marker.id).addClass('hidden');
+
+
+    });
+};
+// end
+
+
+
+
+
+/*
 // begin function to bind the infowindow to marker
 function bindInfoWindow(marker, map, html) {
     google.maps.event.addListener(marker, 'click', function() {
@@ -112,3 +135,4 @@ function bindInfoWindow(marker, map, html) {
     });
 };
 // end
+*/
