@@ -3,58 +3,63 @@
 <!-- begin doc -->
 <html lang="en">
 
-<!-- begin header -->
-<head>
+    <!-- begin header -->
+    <head>
 
-    <!-- begin meta -->
-    <title>Compare dropout rates among local schools districts</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords" content="tablstacker" >
-    <meta name="description" content="A slightly smaller percentage of California students dropped out of high school last year -- 4% vs 4.2% -- than during the 2010-2011 school year, according to data released by the California Department of Education on Tuesday. School districts in Los Angeles and San Bernardino counties performed percentage points worse than the state average. Those in Orange County, Riverside and Ventura performed above the state average. Dropout rates are worse among Hispanic and African American students than their white and Asian peers. How is your child's school district performing? Find it in the chart below." >
-    <meta name="robots" content="" />
-    <meta name="author" content="#, &#169; 2011">
-    <meta name="google-site-verification" content="#" />
-    <meta content="yes" name="apple-mobile-web-app-capable" />
-    <meta name="viewport" id="meta-viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+        <!-- begin meta -->
+        <title>Compare dropout rates among local schools districts</title>
+        <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" id="meta-viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+        <meta name="keywords" content="tablstacker" >
+        <meta name="description" content="A slightly smaller percentage of California students dropped out of high school last year -- 4% vs 4.2% -- than during the 2010-2011 school year, according to data released by the California Department of Education on Tuesday. School districts in Los Angeles and San Bernardino counties performed percentage points worse than the state average. Those in Orange County, Riverside and Ventura performed above the state average. Dropout rates are worse among Hispanic and African American students than their white and Asian peers. How is your child's school district performing? Find it in the chart below." >
+
+
+
+
     <meta property="og:type" content="article"/>
+    <meta property="og:image" content="http://www.scpr.org/assets/logo-masthead.png" />
     <meta property="og:title" content="Compare dropout rates among local schools districts"/>
-    <meta property="og:url" content="http://projects.scpr.org/static/databases/school-district-dropout-rates/"/>
+    <meta property="og:url" content="/dropout_year_over_year_comparison/"/>
 
-    <meta property="og:description" content="A slightly smaller percentage of California students dropped out of high school last year -- 4% vs 4.2% -- than during the 2010-2011 school year, according to data released by the California Department of Education on Tuesday. School districts in Los Angeles and San Bernardino counties performed percentage points worse than the state average. Those in Orange County, Riverside and Ventura performed above the state average. Dropout rates are worse among Hispanic and African American students than their white and Asian peers. How is your child's school district performing? Find it in the chart below."/>
-    <!-- end meta -->
+        <meta property="og:description" content="A slightly smaller percentage of California students dropped out of high school last year -- 4% vs 4.2% -- than during the 2010-2011 school year, according to data released by the California Department of Education on Tuesday. School districts in Los Angeles and San Bernardino counties performed percentage points worse than the state average. Those in Orange County, Riverside and Ventura performed above the state average. Dropout rates are worse among Hispanic and African American students than their white and Asian peers. How is your child's school district performing? Find it in the chart below."/>
 
-    <!-- begin css -->
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="http://projects.scpr.org/static/static-files/css/interactive-project-shell/foundation-styles.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="http://projects.scpr.org/static/static-files/css/tablestacker-tables/styles.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="all" />
-    <!-- end css -->
 
-    <!-- begin base scripts -->
-    <script src="http://use.typekit.com/mhc7oxs.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    <script async="" src="http://www.google-analytics.com/ga.js"></script>
-    <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-    <script src="http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js"></script>
-    <script src="http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.js"></script>
-    <script src="http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.pager.js"></script>
-    <script src="http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.multipagefilter.js"></script>
-    <script type="text/javascript">
-        /* For picking out bits from the query string */
-        var getParameterByName = function(name) {
-          name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-          var regexS = "[\\?&]" + name + "=([^&#]*)";
-          var regex = new RegExp(regexS);
-          var results = regex.exec(window.location.href);
-          if(results == null)
-            return "";
-          else
-            return decodeURIComponent(results[1].replace(/\+/g, " "));
-        };
-    </script>
-    <!-- end base scripts -->
 
+        <!-- additional meta if needed -->
+        <!--
+        <meta name="robots" content="" />
+        <meta name="author" content="#, &#169; 2013">
+        <meta name="google-site-verification" content="#" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        -->
+        <!-- end meta -->
+
+        <!-- begin css -->
+        <link href="http://projects.scpr.org/static/static-files/css/reset/reset-styles.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://projects.scpr.org/static/static-files/css/interactive-project-shell/foundation-styles.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://projects.scpr.org/static/static-files/css/tablestacker-tables/styles.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="all" />
+
+
+        <!-- end css -->
+
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+            <!--[if lt IE 9]>
+            <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- begin base scripts -->
+        <script src="http://use.typekit.com/mhc7oxs.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script async="" src="http://www.google-analytics.com/ga.js"></script>
+        <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js"></script>
 
     <script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.js' type='text/javascript'></script>
     <script src='http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.pager.js' type='text/javascript'></script>
@@ -72,13 +77,15 @@
             return decodeURIComponent(results[1].replace(/\+/g, " "));
         };
     </script>
-    <!-- <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script> -->
 
-</head>
-<!-- end header -->
+        <!-- end base scripts -->
 
-<body class="minimal">
-<div id="kpcc-header">
+    </head>
+    <!-- end header -->
+
+    <!-- begin body -->
+    <body class="minimal">
+        <div id="kpcc-header">
 
     <header>
         <div class="container-fluid">
@@ -100,10 +107,8 @@
                     <li>
                     <div class="share-links clearfix">
                     <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
-
                     <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fprojects.scpr.org%2Fstatic%2Fdatabases%2Fschool-district-dropout-rates%2F" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
-
-                    <a class="twitter icon" href="http://twitter.com/share?text=A slightly smaller percentage of California students dropped out of high school last year than during the 2010-2011 school year, according to data released by the California Department of Education on Tuesday&url=http://projects.scpr.org/static/databases/school-district-dropout-rates/"target="_blank"></a>
+                    <a class="twitter icon" href="http://twitter.com/share?text=A slightly smaller percentage of Calif students dropped out of high school last year than during the 2010-2011&url=http://projects.scpr.org/static/databases/school-district-dropout-rates/" target="_blank"></a>
                     </div>
                     <b>Share this page</b>
                     </li>
@@ -115,11 +120,11 @@
         </div>
     </header>
 
-</div>
-    <div id="data-container" class="container-fluid">
-        <div class="row-fluid">
-            <div class="span12">
-                <div id="data-details">
+        </div>
+        <div id="data-container" class="container-fluid">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="data-details">
 
 <div id="content-article">
     <h4 class="kicker">
@@ -133,22 +138,23 @@
         </div>
 
 
+
     <div id="content-article-text">
-
         <p>A slightly smaller percentage of California students dropped out of high school last year -- 4% vs 4.2% -- than during the 2010-2011 school year, according to data released by the California Department of Education on Tuesday. School districts in Los Angeles and San Bernardino counties performed percentage points worse than the state average. Those in Orange County, Riverside and Ventura performed above the state average. Dropout rates are worse among Hispanic and African American students than their white and Asian peers. How is your child's school district performing? Find it in the chart below.</p>
-
     </div>
 
-    <div id="content-article-buttons">
-<!--
-        <a class="btn btn-info" href="#">Read More</a>
--->
-    </div>
+
+
+        <div id="content-article-buttons">
+            <a class="btn btn-info" href="http://dq.cde.ca.gov/dataquest/" target="_blank">Read More</a>
+        </div>
+
+
 </div>
 <hr />
 
-                </div>
-                <div id="data-visuals">
+                    </div>
+                    <div id="data-visuals">
 
 
 <!-- begin table fu -->
@@ -211,7 +217,7 @@
                     </th>
 
                     <th style="cursor: pointer; cursor: pointer; width: 5%;">
-                        Change from 2010-2011
+                        Change from 2010-11
                     </th>
 
                     <th style="cursor: pointer; cursor: pointer; width: 5%;">
@@ -219,7 +225,7 @@
                     </th>
 
                     <th style="cursor: pointer; cursor: pointer; width: 5%;">
-                        Change from 2010-2011
+                        Change from 2010-11
                     </th>
 
                     <th style="cursor: pointer; cursor: pointer; width: 5%;">
@@ -227,7 +233,7 @@
                     </th>
 
                     <th style="cursor: pointer; cursor: pointer; width: 5%;">
-                        Change from 2010-2011
+                        Change from 2010-11
                     </th>
 
                     <th style="cursor: pointer; cursor: pointer; width: 5%;">
@@ -235,7 +241,7 @@
                     </th>
 
                     <th style="cursor: pointer; cursor: pointer; width: 5%;">
-                        Change from 2010-2011
+                        Change from 2010-11
                     </th>
 
                     <th style="cursor: pointer; cursor: pointer; width: 5%;">
@@ -243,7 +249,7 @@
                     </th>
 
                     <th style="cursor: pointer; cursor: pointer; width: 5%;">
-                        Change from 2010-2011
+                        Change from 2010-11
                     </th>
 
             </tr>
@@ -5517,10 +5523,12 @@
     });
 </script>
 
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="data-footer">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="data-footer">
 
 
 
@@ -5536,9 +5544,11 @@
     </div>
 
 
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-<div id="kpcc-footer">
+        <div id="kpcc-footer">
 
 <footer>
     <div class="container-fluid">
@@ -5555,61 +5565,49 @@
     </div>
 </footer>
 
-</div>
+        </div>
 
-    <!-- begin scripts -->
-    <script src="http://projects.scpr.org/static/static-files/scripts/responsive-tables.js"></script>
+            <!-- begin scripts -->
+            <script src="http://projects.scpr.org/static/static-files/scripts/responsive-tables.js"></script>
+            <script src="http://projects.scpr.org/static/static-files/scripts/jquery.alerts.js"></script>
+            <script src="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap.min.js"></script>
+            <!-- end scripts -->
 
-<!--
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.3/underscore-min.js"></script>
-    <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
-    <script src="http://projects.scpr.org/static/static-files/scripts/swag.js"></script>
-    <script src="static-files/scripts/template-scripts.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/1.7.2/moment.min.js"></script>
-    <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap.js"></script>
-    <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap-transition.js"></script>
-    <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap-alert.js"></script>
-    <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap-modal.js"></script>
-    <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap-dropdown.js"></script>
-    <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap-carousel.js"></script>
-    <script src="http://current.bootstrapcdn.com/bootstrap-v204/js/bootstrap-alert.js"></script>
-    <script src="static-files/scripts/data-script.js"></script>
--->
-    <!-- end scripts -->
+            <!-- begin analytics -->
+            <!--
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-624724-5']);
+                _gaq.push(['_trackPageview']);
 
-    <!-- begin analytics -->
-<!--    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-624724-5']);
-        _gaq.push(['_trackPageview']);
+                (function() {
+                    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                })();
+            </script>
 
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
+            <script type="text/javascript">
+                var _sf_async_config={uid:2825,domain:"projects.scpr.org"};
+                (function(){
+                    function loadChartbeat() {
+                        window._sf_endpt=(new Date()).getTime();
+                        var e = document.createElement('script');
+                        e.setAttribute('language', 'javascript');
+                        e.setAttribute('type', 'text/javascript');
+                        e.setAttribute('src',
+                            (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") + "js/chartbeat.js");
+                        document.body.appendChild(e);
+                    };
+                    var oldonload = window.onload;
+                    window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+                })();
+            </script>
+            -->
+            <!-- end analytics -->
 
-    <script type="text/javascript">
-        var _sf_async_config={uid:2825,domain:"projects.scpr.org"};
-        (function(){
-            function loadChartbeat() {
-                window._sf_endpt=(new Date()).getTime();
-                var e = document.createElement('script');
-                e.setAttribute('language', 'javascript');
-                e.setAttribute('type', 'text/javascript');
-                e.setAttribute('src',
-                    (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") + "js/chartbeat.js");
-                document.body.appendChild(e);
-            };
-            var oldonload = window.onload;
-            window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
-        })();
-    </script> -->
-    <!-- end analytics -->
-
-</body>
-<!-- end body -->
+    </body>
+    <!-- end body -->
 
 </html>
 <!-- end document -->
