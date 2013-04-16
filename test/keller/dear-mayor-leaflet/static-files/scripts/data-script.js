@@ -34,10 +34,11 @@ function processDataForMap(data){
     var slide_objects = [];
     for (var i=0; i<data.objects.length; i++) {
         var data_results = data.objects[i];
+
         var marker_object = {
             icon: data_results.icon,
-            marker: [data_results.primarylat, data_results.primarylong],
-            center: [data_results.primarylat, data_results.primarylong],
+            marker: [offsetLocation(data_results.primarycity, data_results.primarylat), offsetLocation(data_results.primarycity, data_results.primarylong)],
+            center: [offsetLocation(data_results.primarycity, data_results.primarylat), offsetLocation(data_results.primarycity, data_results.primarylong)],
             html:
             '<div class="row-fluid">' +
                 '<div class="span2">' +
@@ -70,6 +71,27 @@ function takeTime(dateInput) {
     var dateFormat = 'MMM. D, h:mm a';
     var dateOutput = moment(dateInput).fromNow();
     return dateOutput;
+};
+
+// function to evaluate topic and assign icon image
+function offsetLocation(value_to_evaluate, current_location){
+    var new_location
+    var offset_choice = [
+        0.0123450,
+        0.0234560,
+        0.0345670,
+        0.0456780,
+    ]
+
+    var idx = Math.floor(offset_choice.length * Math.random());
+
+    if  (value_to_evaluate == 'Los Angeles'){
+        var new_location = current_location - offset_choice[idx];
+    } else {
+        var new_location = current_location
+    }
+
+    return new_location;
 };
 
 // function to deal with IE's console error
