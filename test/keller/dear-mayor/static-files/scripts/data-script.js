@@ -4,9 +4,12 @@ var marker;
 var infowindow = new google.maps.InfoWindow();
 var html = '';
 
+function log(obj) {
+    if (window.console && console.log) console.log(obj);
+};
+
 // begin main function
 jqueryNoConflict(document).ready(function() {
-    google.maps.event.addDomListener(window, 'load', createMap);
     retriveData();
 });
 
@@ -25,10 +28,15 @@ function renderDataVisualsTemplate(data){
 
     renderHandlebarsTemplate('static-files/templates/data-details.handlebars', '#data-details', handlebarsData);
     renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', handlebarsData);
+    google.maps.event.addDomListener(window, 'load', createMap(handlebarsData));
 };
 
 // create the map
-function createMap(){
+function createMap(data){
+
+
+    console.log(data.objects.length);
+
 
     var centerLosAngeles = new google.maps.LatLng(34.036054430724114, -118.26595796365973);
     map = new google.maps.Map(document.getElementById('content-map-canvas'), {
@@ -49,11 +57,12 @@ function createMap(){
 
     // empty array for markers
     var markers = [];
-    for (var i=0; i<data.results.length; i++) {
+    for (var i=0; i<data.objects.length; i++) {
 
-        var dataResults = data.results[i];
+        var dataResults = data.objects[i];
 
         var latLng = new google.maps.LatLng(dataResults.primary_lat, dataResults.primary_long);
+
         html = '<p><strong>' + dataResults.src_first_name + ' ' + dataResults.src_last_name +
         '</strong> from ' + dataResults.primary_city + ':<br />' +
         '<ul><li><strong>' + dataResults.questions + '</strong><br />' +
