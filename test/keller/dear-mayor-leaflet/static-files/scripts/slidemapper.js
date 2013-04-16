@@ -346,9 +346,29 @@
 
       // add marker to map
       if (cfg.marker) {
+
+        // old parameters for markers
+        //var latlng = new L.LatLng(cfg.marker[0], cfg.marker[1]);
+        //item.marker = new L.Marker(latlng);
+        //if (cfg.popup) item.marker.bindPopup(cfg.popup);
+
+        // begin ability to use custom marker
+        var LeafIcon = L.Icon.extend({
+            options: {
+                shadowUrl: '',
+                iconSize:     [40, 40],
+                shadowSize:   [0, 0],
+                iconAnchor:   [22, 94],
+                shadowAnchor: [0, 0],
+                popupAnchor:  [-3, -76]
+            }
+        });
+
+        var mapIcon = new LeafIcon({iconUrl: cfg.icon});
         var latlng = new L.LatLng(cfg.marker[0], cfg.marker[1]);
-        item.marker = new L.Marker(latlng);
+        item.marker = L.marker(latlng, {icon: mapIcon});
         if (cfg.popup) item.marker.bindPopup(cfg.popup);
+        // end ability to use custom marker
 
         item.marker.index = index;
         item.marker.on('click', function(e) {
