@@ -9,7 +9,7 @@ jqueryNoConflict(document).ready(function() {
         autoHeight: 'true',
         center: [34.036054430724114, -118.26595796365973],
         zoom: 10,
-        maxZoom: 25,
+        maxZoom: 14,
         mapHeight: 600,
         leafPile: true,
         mapType: 'stamen-terrain',
@@ -56,7 +56,7 @@ function processDataForMap(data){
                         '<li><strong>' + data_results.questionsdb10ff019c5avalue + '</strong><br />' + data_results.responsesdb10ff019c5a + '</li>' +
                     '</ul>' +
                 '</div>',
-            //popup:  '<p>' + data_results.responsesf6d5d1c2d738 + '</p>'
+            popup:  '<p>' + data_results.responsesf6d5d1c2d738 + ' in<br/> ' + data_results.primarycity + '</p>'
         };
 
         slide_objects.push(marker_object);

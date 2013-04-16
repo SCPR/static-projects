@@ -25,9 +25,9 @@ L.LeafpileGroup = L.LayerGroup.extend({
     options: {
 
         // grouping options
-        radius:        100,
+        radius:        10,
         maxZoomChange: 2,
-        maxZoomLevel:  8,
+        maxZoomLevel:  14,
         singlePiles:   false,
 
         // style definition
