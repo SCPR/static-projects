@@ -13,7 +13,7 @@ jqueryNoConflict(document).ready(function() {
         mapHeight: 600,
         leafPile: true,
         mapType: 'stamen-terrain',
-        mapPosition: 'bottom'
+        mapPosition: 'top'
     });
 
 });
@@ -35,18 +35,14 @@ function processDataForMap(data){
     for (var i=0; i<data.objects.length; i++) {
         var data_results = data.objects[i];
         var marker_object = {
-            icon: determineIconToUse(data_results.responsesf6d5d1c2d738),
+            icon: data_results.icon,
             marker: [data_results.primarylat, data_results.primarylong],
             center: [data_results.primarylat, data_results.primarylong],
             html:
             '<div class="row-fluid">' +
-                '<div class="span12">' +
-                    '<h4 class="kicker">' + data_results.responsesf6d5d1c2d738 + '</h4>' +
-                '</div>' +
-            '</div>' +
-            '<div class="row-fluid">' +
                 '<div class="span2">' +
-                    '<p><img src="' + determineIconToUse(data_results.responsesf6d5d1c2d738) + '" /></p>' +
+                    '<p class="centered"><img src="' + data_results.icon + '" /></p>'+
+                    '<h4 class="kicker centered">' + data_results.responsesf6d5d1c2d738 + '</h4>' +
                 '</div>' +
                 '<div class="span10">' +
                     '<p><strong>' + data_results.srcfirstname + ' ' + data_results.srclastname + '</strong> from ' + data_results.primarycity + ':<br />' +
@@ -55,6 +51,7 @@ function processDataForMap(data){
                         '<br />' +
                         '<li><strong>' + data_results.questionsdb10ff019c5avalue + '</strong><br />' + data_results.responsesdb10ff019c5a + '</li>' +
                     '</ul>' +
+                    '<p class="data-instructions"><strong>Submitted</strong>: ' + takeTime(data_results.srsdate) + '</p>' +
                 '</div>',
             popup:  '<p>' + data_results.responsesf6d5d1c2d738 + ' in<br/> ' + data_results.primarycity + '</p>'
         };
@@ -68,27 +65,11 @@ function map_slider_data(dataSourceToDisplay) {
     $mapper.slideMapper('add', dataSourceToDisplay);
 };
 
-// function to evaluate topic and assign icon image
-function determineIconToUse(element_to_evaluate){
-    var icon;
-    if (element_to_evaluate == 'Crime'){
-        icon = 'static-files/images/crime.png';
-    } else if (element_to_evaluate == 'Public health'){
-        icon = 'static-files/images/health.png';
-    } else if (element_to_evaluate == 'Taxes'){
-        icon = 'static-files/images/taxes.png';
-    } else if (element_to_evaluate == 'Environment'){
-        icon = 'static-files/images/environment.png';
-    } else if (element_to_evaluate == 'Education'){
-        icon = 'static-files/images/education.png';
-    } else if (element_to_evaluate == 'Transportation'){
-        icon = 'static-files/images/transportation.png';
-    } else if (element_to_evaluate == 'Politics'){
-        icon = 'static-files/images/politics.png';
-    } else {
-        icon = 'static-files/images/other.png';
-    }
-    return icon;
+// format date/time
+function takeTime(dateInput) {
+    var dateFormat = 'MMM. D, h:mm a';
+    var dateOutput = moment(dateInput).fromNow();
+    return dateOutput;
 };
 
 // function to deal with IE's console error
