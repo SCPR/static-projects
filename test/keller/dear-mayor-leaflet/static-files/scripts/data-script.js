@@ -3,6 +3,7 @@ var jqueryNoConflict = jQuery;
 // begin main function
 jqueryNoConflict(document).ready(function() {
     retriveData();
+
 });
 
 // grab data
@@ -14,7 +15,7 @@ function retriveData() {
 
     var dataSource = 'static-files/data/dear_mayor_master_data_sheet-handlebars.json';
     jqueryNoConflict.getJSON(dataSource, processDataForMap);
-};
+}
 
 // render data visuals template
 function processDataForMap(data){
@@ -41,7 +42,7 @@ function processDataForMap(data){
         slide_objects.push(marker_object);
     }
     map_slider_data(slide_objects);
-};
+}
 
 function map_slider_data(dataSourceToDisplay) {
 
@@ -58,37 +59,31 @@ function map_slider_data(dataSourceToDisplay) {
     });
 
     slide_map.slideMapper('add', dataSourceToDisplay);
-};
+}
 
 // format date/time
 function takeTime(dateInput) {
-    var dateFormat = 'MMM. D, h:mm a';
     var dateOutput = moment(dateInput).fromNow();
     return dateOutput;
-};
+}
 
 // function to evaluate topic and assign icon image
 function offsetLocation(value_to_evaluate, current_location){
-    var new_location
+    var new_location;
     var offset_choice = [
         0.0123450,
         0.0234560,
         0.0345670,
         0.0456780
-    ]
+    ];
 
     var idx = Math.floor(offset_choice.length * Math.random());
 
-    if  (value_to_evaluate == 'Los Angeles'){
-        var new_location = current_location - offset_choice[idx];
+    if  (value_to_evaluate === 'Los Angeles'){
+        new_location = current_location - offset_choice[idx];
     } else {
-        var new_location = current_location
+        new_location = current_location;
     }
 
     return new_location;
-};
-
-// function to deal with IE's console error
-function log(obj) {
-    if (window.console && console.log) console.log(obj);
-};
+}
