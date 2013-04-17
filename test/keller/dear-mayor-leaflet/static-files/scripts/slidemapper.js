@@ -149,7 +149,7 @@
   function _makeHTML(opts) {
     var map, mapStyle = 'style="height:'+opts.mapHeight+'px"';
     if (opts.mapPosition === 'top') {
-      map = '<div class="smapp-map top" '+mapStyle+'></div>';
+      map = '<div class="smapp-map top hidden-phone" '+mapStyle+'></div>';
     }
     else if (opts.mapPosition === 'bottom') {
       map = '<div class="smapp-map bottom hidden-phone" '+mapStyle+'></div>';
