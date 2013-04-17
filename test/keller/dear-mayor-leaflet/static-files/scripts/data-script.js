@@ -26,8 +26,8 @@ function processDataForMap(data){
         var marker_object = {
             icon: data_results.icon,
             map_marker: data_results.marker,
-            marker: [offsetLocation(data_results.primarycity, data_results.primarylat), offsetLocation(data_results.primarycity, data_results.primarylong)],
-            center: [offsetLocation(data_results.primarycity, data_results.primarylat), offsetLocation(data_results.primarycity, data_results.primarylong)],
+            marker: [data_results.primarylat, data_results.primarylong],
+            center: [data_results.primarylat, data_results.primarylong],
             html:
             '<div class="row-fluid">' +
                 '<div class="span12">' +
