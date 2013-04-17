@@ -4,17 +4,7 @@ var jqueryNoConflict = jQuery;
 jqueryNoConflict(document).ready(function() {
     retriveData();
 
-    jqueryNoConflictmapper = jqueryNoConflict('#mapper').slideMapper({
-        controlType: 'top',
-        autoHeight: 'true',
-        center: [34.036054430724114, -118.26595796365973],
-        zoom: 10,
-        maxZoom: 14,
-        mapHeight: 600,
-        leafPile: true,
-        mapType: 'stamen-toner',
-        mapPosition: 'top'
-    });
+
 
 });
 
@@ -57,7 +47,20 @@ function processDataForMap(data){
 };
 
 function map_slider_data(dataSourceToDisplay) {
-    jqueryNoConflictmapper.slideMapper('add', dataSourceToDisplay);
+
+    var slide_map = jqueryNoConflict('#mapper').slideMapper({
+        controlType: 'top',
+        autoHeight: 'true',
+        center: [34.036054430724114, -118.26595796365973],
+        zoom: 10,
+        maxZoom: 14,
+        mapHeight: 600,
+        leafPile: true,
+        mapType: 'stamen-toner',
+        mapPosition: 'top'
+    });
+
+    slide_map.slideMapper('add', dataSourceToDisplay);
 };
 
 // format date/time
