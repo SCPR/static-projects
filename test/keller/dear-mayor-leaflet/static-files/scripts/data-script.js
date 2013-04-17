@@ -3,9 +3,6 @@ var jqueryNoConflict = jQuery;
 // begin main function
 jqueryNoConflict(document).ready(function() {
     retriveData();
-
-
-
 });
 
 // grab data
