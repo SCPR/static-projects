@@ -1,9 +1,6 @@
-var jqueryNoConflict = jQuery;
-
 // begin main function
-jqueryNoConflict(document).ready(function() {
+$(document).ready(function() {
     retriveData();
-
 });
 
 // grab data
@@ -14,7 +11,7 @@ function retriveData() {
 */
 
     var dataSource = 'static-files/data/dear_mayor_master_data_sheet-handlebars.json';
-    jqueryNoConflict.getJSON(dataSource, processDataForMap);
+    $.getJSON(dataSource, processDataForMap);
 }
 
 // render data visuals template
@@ -46,7 +43,7 @@ function processDataForMap(data){
 
 function map_slider_data(dataSourceToDisplay) {
 
-    var slide_map = jqueryNoConflict('#mapper').slideMapper({
+    var slide_map = $('#mapper').slideMapper({
         controlType: 'top',
         autoHeight: 'true',
         center: [34.036054430724114, -118.26595796365973],

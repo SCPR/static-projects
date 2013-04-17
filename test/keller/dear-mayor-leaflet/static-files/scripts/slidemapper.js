@@ -94,8 +94,8 @@
   }
   function _onKeyPress(e) {
     if (DATA.index !== null) {
-      if (e.keyCode == 37) $THIS.slideMapper('prev');
-      if (e.keyCode == 39) $THIS.slideMapper('next');
+      if (e.keyCode === 37) $THIS.slideMapper('prev');
+      if (e.keyCode === 39) $THIS.slideMapper('next');
     }
   }
   function _setTiles(tileType) {
@@ -105,29 +105,29 @@
     }
 
     // set the new tile layer
-    if (tileType == 'cloudmade') {
+    if (tileType === 'cloudmade') {
       if (!DATA.options.apiKey) $.error('apiKey required for cloudmade tiles');
       var tileOpts = {attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'};
       DATA.tileLayer = new L.TileLayer('http://{s}.tile.cloudmade.com/'+DATA.options.apiKey+'/997/256/{z}/{x}/{y}.png', tileOpts);
     }
-    else if (tileType == 'stamen-toner') {
+    else if (tileType === 'stamen-toner') {
       if (!L.StamenTileLayer) $.error('did you forget to include tile.stamen.js?');
       DATA.tileLayer = new L.StamenTileLayer('toner');
     }
-    else if (tileType == 'stamen-terrain') {
+    else if (tileType === 'stamen-terrain') {
       if (!L.StamenTileLayer) $.error('did you forget to include tile.stamen.js?');
       DATA.tileLayer = new L.StamenTileLayer('terrain');
     }
-    else if (tileType == 'stamen-watercolor') {
+    else if (tileType === 'stamen-watercolor') {
       if (!L.StamenTileLayer) $.error('did you forget to include tile.stamen.js?');
       DATA.tileLayer = new L.StamenTileLayer('watercolor');
     }
 
-    else if (tileType == 'google-maps') {
+    else if (tileType === 'google-maps') {
       DATA.tileLayer = new L.Google('ROADMAP');
     }
 
-    else if (tileType == 'mapquest') {
+    else if (tileType === 'mapquest') {
       var tileOpts = {
         subdomains:  ['otile1', 'otile2', 'otile3', 'otile4'],
         attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">'
@@ -293,7 +293,7 @@
     keyEvents: function(turnOn) {
       $(document).unbind('keydown', _onKeyPress);
       if (turnOn) {
-        $(document).keydown(_onKeyPress)
+        $(document).keydown(_onKeyPress);
       }
     },
 
