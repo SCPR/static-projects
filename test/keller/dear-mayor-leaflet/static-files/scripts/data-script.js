@@ -74,7 +74,7 @@ function offsetLocation(value_to_evaluate, current_location){
         0.0123450,
         0.0234560,
         0.0345670,
-        0.0456780,
+        0.0456780
     ]
 
     var idx = Math.floor(offset_choice.length * Math.random());
