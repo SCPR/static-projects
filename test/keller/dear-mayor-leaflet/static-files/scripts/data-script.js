@@ -4,7 +4,7 @@ var jqueryNoConflict = jQuery;
 jqueryNoConflict(document).ready(function() {
     retriveData();
 
-    $mapper = $('#mapper').slideMapper({
+    jqueryNoConflictmapper = jqueryNoConflict('#mapper').slideMapper({
         controlType: 'top',
         autoHeight: 'true',
         center: [34.036054430724114, -118.26595796365973],
@@ -57,7 +57,7 @@ function processDataForMap(data){
 };
 
 function map_slider_data(dataSourceToDisplay) {
-    $mapper.slideMapper('add', dataSourceToDisplay);
+    jqueryNoConflictmapper.slideMapper('add', dataSourceToDisplay);
 };
 
 // format date/time
