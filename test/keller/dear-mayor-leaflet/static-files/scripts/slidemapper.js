@@ -355,7 +355,7 @@
         // begin ability to use custom marker
         var LeafIcon = L.Icon.extend({
             options: {
-                shadowUrl: '',
+                //shadowUrl: '',
                 iconSize:     [40, 40],
                 shadowSize:   [0, 0],
                 iconAnchor:   [22, 94],
