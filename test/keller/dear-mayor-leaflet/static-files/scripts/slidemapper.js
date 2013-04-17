@@ -364,7 +364,7 @@
             }
         });
 
-        var mapIcon = new LeafIcon({iconUrl: cfg.icon});
+        var mapIcon = new LeafIcon({iconUrl: cfg.map_marker});
         var latlng = new L.LatLng(cfg.marker[0], cfg.marker[1]);
         item.marker = L.marker(latlng, {icon: mapIcon});
         if (cfg.popup) item.marker.bindPopup(cfg.popup);

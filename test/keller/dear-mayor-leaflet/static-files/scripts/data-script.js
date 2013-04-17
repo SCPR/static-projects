@@ -12,7 +12,7 @@ jqueryNoConflict(document).ready(function() {
         maxZoom: 14,
         mapHeight: 600,
         leafPile: true,
-        mapType: 'stamen-terrain',
+        mapType: 'stamen-toner',
         mapPosition: 'top'
     });
 
@@ -37,21 +37,15 @@ function processDataForMap(data){
 
         var marker_object = {
             icon: data_results.icon,
+            map_marker: data_results.marker,
             marker: [offsetLocation(data_results.primarycity, data_results.primarylat), offsetLocation(data_results.primarycity, data_results.primarylong)],
             center: [offsetLocation(data_results.primarycity, data_results.primarylat), offsetLocation(data_results.primarycity, data_results.primarylong)],
             html:
             '<div class="row-fluid">' +
-                '<div class="span2">' +
-                    '<p class="centered"><img src="' + data_results.icon + '" /></p>'+
-                    '<h4 class="kicker centered">' + data_results.responsesf6d5d1c2d738 + '</h4>' +
-                '</div>' +
-                '<div class="span10">' +
+                '<div class="span12">' +
+                    '<p><img src="' + data_results.marker + '" /><span class="kicker"> ' + data_results.responsesf6d5d1c2d738 + '</p>' +
                     '<p><strong>' + data_results.srcfirstname + ' ' + data_results.srclastname + '</strong> from ' + data_results.primarycity + ':<br />' +
-                    '<ul>' +
-                        '<li><strong>' + data_results.questions9200af1a79cbvalue + '</strong><br />' + data_results.responses9200af1a79cb + '</li>' +
-                        '<br />' +
-                        '<li><strong>' + data_results.questionsdb10ff019c5avalue + '</strong><br />' + data_results.responsesdb10ff019c5a + '</li>' +
-                    '</ul>' +
+                        '<p><strong>' + data_results.questions9200af1a79cbvalue + '</strong><br />' + data_results.responses9200af1a79cb + '</p>' +
                     '<p class="data-instructions"><strong>Submitted</strong>: ' + takeTime(data_results.srsdate) + '</p>' +
                 '</div>',
             popup:  '<p>' + data_results.responsesf6d5d1c2d738 + ' in<br/> ' + data_results.primarycity + '</p>'
