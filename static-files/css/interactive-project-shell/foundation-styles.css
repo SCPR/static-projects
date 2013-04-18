@@ -96,13 +96,7 @@ a {color: #4B58A6;}
 
 /* headlines for Large desktop */
 @media (min-width: 980px) {
-    body.minimal #data-container h1 {font-size: 210%; line-height: 150%;}
-    body.minimal #data-container h2 {font-size: 180%; line-height: 150%;}
-    body.minimal #data-container h3 {font-size: 150%; line-height: 150%;}
-    body.minimal #data-container h4 {font-size: 120%; line-height: 150%;}
-    body.minimal #data-container h5 {font-size: 100%; line-height: 150%;}
-    body.minimal #data-container p {font-size: 95%;}
-    body.minimal #data-container table{font-size: 95%;}
+
 }
 
 /* headlines for Portrait tablet to landscape and desktop */
