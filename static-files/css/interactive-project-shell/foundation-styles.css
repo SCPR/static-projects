@@ -56,6 +56,7 @@ body.minimal #data-container h3 {font-size: 150%;}
 body.minimal #data-container h4 {font-size: 120%;}
 body.minimal #data-container h5 {font-size: 100%;}
 body.minimal #data-container p {font-size: 95%;}
+body.minimal #data-container table{font-size: 95%;}
 body.minimal #data-container .kicker {font-size: 75%; text-transform: uppercase;}
 body.minimal #data-container .data-instructions {font-size: 75%;}
 body.minimal #data-container .normal-display {font-size: 95%;}
@@ -100,6 +101,7 @@ a {color: #4B58A6;}
     body.minimal #data-container h4 {font-size: 120%; line-height: 150%;}
     body.minimal #data-container h5 {font-size: 100%; line-height: 150%;}
     body.minimal #data-container p {font-size: 95%;}
+    body.minimal #data-container table{font-size: 95%;}
 }
 
 /* headlines for Portrait tablet to landscape and desktop */
@@ -110,6 +112,7 @@ a {color: #4B58A6;}
     body.minimal #data-container h4 {font-size: 145%; line-height: 140%;}
     body.minimal #data-container h5 {font-size: 135%; line-height: 140%;}
     body.minimal #data-container p {font-size: 95%; line-height: 140%;}
+    body.minimal #data-container table{font-size: 95%;}
 }
 
 /* headlines for Landscape phones and down */
@@ -120,6 +123,7 @@ a {color: #4B58A6;}
     body.minimal #data-container h4 {font-size: 130%; line-height: 130%}
     body.minimal #data-container h5 {font-size: 120%; line-height: 130%}
     body.minimal #data-container p {font-size: 95%; line-height: 130%}
+    body.minimal #data-container table{font-size: 95%;}
 }
 
 /* pencil ad demo styling */
