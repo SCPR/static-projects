@@ -1,0 +1,111 @@
+<!-- begin -->
+<div class="candidate-container">
+
+    {{#objects}}
+        <!-- begin row -->
+        <div class="row-fluid">
+
+            <!-- begin main span -->
+            <div class="span12">
+
+                <!-- begin candidate container -->
+                <div id="{{firstname}}_{{lastname}}" class="row-fluid" style="padding: 25px 0 15px 0;">
+
+                    <!-- begin span -->
+                    <div class="span2">
+                        <dl>
+                            <dd>
+                                <div class="img">
+                                    <img src="{{imageurl}}" alt="{{position}}_{{firstname}}_{{lastname}}" width="120px" height="170px" />
+                                </div>
+                                <div class="text"><p class="data-instructions"><strong>{{position}}. {{lastname}}</strong></p></div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- end span -->
+
+                    <!-- begin span -->
+                    <div class="span10">
+                        <dl>
+                            <dd>
+                                <h3>{{position}}. {{firstname}} {{lastname}} ({{party}}-{{district}})</h3>
+                            </dd>
+                            <dd>
+                                {{#if citizenship}}
+                                    <p><strong>Citizenship</strong>: {{citizenship}}</p>
+                                {{else}}
+
+                                {{/if}}
+                            </dd>
+                            <dd>
+                                {{#if stemvisas}}
+                                    <p><strong>STEM visas</strong>: {{stemvisas}}</p>
+                                {{else}}
+
+                                {{/if}}
+                            </dd>
+                            <dd>
+                                {{#if family-basedvisas}}
+                                    <p><strong>Family-based visas</strong>: {{family-basedvisas}}</p>
+                                {{else}}
+
+                                {{/if}}
+                            </dd>
+                            <dd>
+                                {{#if agworkervisas}}
+                                    <p><strong>Ag worker visas</strong>: {{agworkervisas}}</p>
+                                {{else}}
+
+                                {{/if}}
+                            </dd>
+                            <dd>
+                                {{#if othervisaissues}}
+                                    <p><strong>Other visa issues</strong>: {{othervisaissues}}</p>
+                                {{else}}
+
+                                {{/if}}
+                            </dd>
+                            <dd>
+                                {{#if e-verify}}
+                                    <p><strong>Citizenship</strong>: {{e-verify}}</p>
+                                {{else}}
+
+                                {{/if}}
+                            </dd>
+                            <dd>
+                                {{#if dreamact}}
+                                    <p><strong>DREAM Act</strong>: {{dreamact}}</p>
+                                {{else}}
+
+                                {{/if}}
+                            </dd>
+                            <dd>
+                                {{#if bordersecurity}}
+                                    <p><strong>Border security</strong>: {{bordersecurity}}</p>
+                                {{else}}
+
+                                {{/if}}
+                            </dd>
+                            <dd>
+                                {{#if misc}}
+                                    <p><strong>Misc</strong>: {{misc}}</p>
+                                {{else}}
+
+                                {{/if}}
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- end span -->
+
+                </div>
+                <!-- end candidate container -->
+
+            </div>
+            <!-- end main span -->
+
+        </div>
+        <!-- end row -->
+    {{/objects}}
+
+</div>
+<!-- end -->
