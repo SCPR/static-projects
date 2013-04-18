@@ -23,10 +23,15 @@ function processDataForMap(data){
         var marker_object = {
             icon: data_results.icon,
             map_marker: data_results.marker,
-            marker: [data_results.primarylat, data_results.primarylong],
-            center: [data_results.primarylat, data_results.primarylong],
-            html:
-            '<div class="row-fluid">' +
+            marker: [
+                offsetLocation(data_results.primarycity, data_results.primarylat),
+                offsetLocation(data_results.primarycity, data_results.primarylong)
+            ],
+            center: [
+                offsetLocation(data_results.primarycity, data_results.primarylat),
+                offsetLocation(data_results.primarycity, data_results.primarylong)
+            ],
+            html: '<div class="row-fluid">' +
                 '<div class="span12">' +
                     '<p><img src="' + data_results.marker + '" /><span class="kicker"> ' + data_results.responsesf6d5d1c2d738 + '</p>' +
                     '<p><strong>' + data_results.srcfirstname + ' ' + data_results.srclastname + '</strong> from ' + data_results.primarycity + ':<br />' +
