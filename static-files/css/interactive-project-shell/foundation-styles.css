@@ -85,6 +85,11 @@ a {color: #4B58A6;}
 .alert {padding: 8px 35px 8px 14px; margin-bottom: 21px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); background-color: #d47500; border: 1px solid #c54c00; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
 .alert-info {background-color: #3399f3; border-color: #11adf1; color: #ffffff;}
 
+/* styles for pin bug */
+#data-container .content-partners {border-bottom: 0px solid #e0e0e0; border-top: 0px solid #e0e0e0; margin-bottom: 21px; padding:  10 .5px;}
+#data-container .content-partners p.pij {background: url("http://www.scpr.org/assets/icons/pij-query-56685e16f420acef267891071f085e8f.png") no-repeat 0 4px; padding-left: 30px;}
+#data-container .content-partners p {font-weight: 800;}
+
 /* -- media queries -- */
 /* adjust headers for smaller devices */
 @media screen and (max-width: 767px) {
