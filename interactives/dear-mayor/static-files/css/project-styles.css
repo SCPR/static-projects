@@ -1,4 +1,5 @@
 #content-action-bar {height: auto; margin: 5px 0 75px 0;}
+#content-action-bar h4 {text-align: left;}
 #content-action-bar #data-legend {height: 25px; margin: 10px 0 0 0;}
 #content-action-bar #data-legend #data-legend-items .checkbox {padding-left: 35px;}
 #content-action-bar #data-legend #data-legend-items {margin: 0 0 0 0; height: 25px;}
