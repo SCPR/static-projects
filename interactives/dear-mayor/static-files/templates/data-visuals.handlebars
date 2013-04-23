@@ -18,6 +18,12 @@
                 <div class="span9">
                     <p><strong>{{srcfirstname}} {{srclastname}}</strong> from <strong>{{primarycity}}</strong> responded:</p>
                     <p><strong>{{questions9200af1a79cbvalue}}</strong><br />{{responses9200af1a79cb}}</p>
+
+                    {{#if responsesdb10ff019c5a}}
+                        <p><strong>{{questionsdb10ff019c5avalue}}</strong><br />{{responsesdb10ff019c5a}}</p>
+                    {{else}}
+                    {{/if}}
+
                     <p class="data-instructions">Submitted {{timeago srsdate}}</p>
                 </div>
             {{else}}
@@ -28,6 +34,12 @@
                 <div class="span9">
                     <p><strong>{{srcfirstname}} {{srclastname}}</strong> responded:</p>
                     <p><strong>{{questions9200af1a79cbvalue}}</strong><br />{{responses9200af1a79cb}}</p>
+
+                    {{#if responsesdb10ff019c5a}}
+                        <p><strong>{{questionsdb10ff019c5avalue}}</strong><br />{{responsesdb10ff019c5a}}</p>
+                    {{else}}
+                    {{/if}}
+
                     <p class="data-instructions">Submitted {{timeago srsdate}}</p>
                 </div>
             {{/if}}
