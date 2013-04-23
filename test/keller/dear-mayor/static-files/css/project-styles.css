@@ -1,13 +1,22 @@
-#data-container #content-action-bar {height: auto; margin: 5px 0 35px 0;}
-#data-legend {height: 25px; margin: 10px 0 0 0;}
-#data-legend-items {margin: 0 0 0 0; height: 25px;}
-#data-legend .checkbox {padding-left: 35px;}
-#data-legend-items li {/*display: inline;*/ height: 25px; list-style-type: none; margin: 5px 0 0 0; padding: 10px 10px 10px 40px;}
-#data-legend-items li.crime {height: 25px; background-image: url(../images/police.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 15px;}
-#data-legend-items li.education {height: 25px; background-image: url(../images/school.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 20px;}
-#data-legend-items li.environment {height: 25px; background-image: url(../images/wetlands.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 30px;}
-#data-legend-items li.health {height: 25px; background-image: url(../images/medicine.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 35px;}
-#data-legend-items li.other {height: 25px; background-image: url(../images/comment-map-icon.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 15px;}
-#data-legend-items li.politics {height: 25px; background-image: url(../images/administration.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 15px;}
-#data-legend-items li.taxes {height: 25px; background-image: url(../images/bank.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 20px;}
-#data-legend-items li.transportation {height: 25px; background-image: url(../images/bus.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 30px;}
+#content-action-bar {height: auto; margin: 5px 0 75px 0;}
+#content-action-bar #data-legend {height: 25px; margin: 10px 0 0 0;}
+#content-action-bar #data-legend #data-legend-items .checkbox {padding-left: 35px;}
+#content-action-bar #data-legend #data-legend-items {margin: 0 0 0 0; height: 25px;}
+#content-action-bar #data-legend #data-legend-items li {height: 25px; list-style-type: none; margin: 5px 0 0 0; padding: 10px 10px 10px 40px;}
+#content-action-bar #data-legend #data-legend-items li.crime {height: 25px; background-image: url(../images/police.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 15px;}
+#content-action-bar #data-legend #data-legend-items li.education {height: 25px; background-image: url(../images/school.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 20px;}
+#content-action-bar #data-legend #data-legend-items li.environment {height: 25px; background-image: url(../images/wetlands.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 30px;}
+#content-action-bar #data-legend #data-legend-items li.health {height: 25px; background-image: url(../images/medicine.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 35px;}
+#content-action-bar #data-legend #data-legend-items li.other {height: 25px; background-image: url(../images/comment-map-icon.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 15px;}
+#content-action-bar #data-legend #data-legend-items li.politics {height: 25px; background-image: url(../images/administration.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 15px;}
+#content-action-bar #data-legend #data-legend-items li.taxes {height: 25px; background-image: url(../images/bank.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 20px;}
+#content-action-bar #data-legend #data-legend-items li.transportation {height: 25px; background-image: url(../images/bus.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 30px;}
+
+
+@media (min-width: 601px) and (max-width: 800px) {
+    #content-action-bar {height: auto; margin: 5px 0 105px 0;}
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+    #content-action-bar {height: auto; margin: 5px 0 75px 0;}
+}
