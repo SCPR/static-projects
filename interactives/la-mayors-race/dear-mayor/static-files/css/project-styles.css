@@ -5,15 +5,15 @@
     margin: 10px 0 10px 0;
     padding: 25px 5px 25px 5px;
     background: #f7f7f7;
-    -moz-box-shadow: 3px 3px 4px #f07a20;
-    -webkit-box-shadow: 3px 3px 4px #f07a20;
-    box-shadow: 3px 3px 10px #f07a20;
+    -moz-box-shadow: 3px 3px 4px #aaa;
+    -webkit-box-shadow: 3px 3px 4px #aaa;
+    box-shadow: 3px 3px 10px #aaa;
 
     /* For IE 8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#f07a20')";
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#aaa')";
 
     /* For IE 5.5 - 7 */
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#f07a20');
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#aaa');
 }
 
 #content-action-bar {height: auto; margin: 5px 0 75px 0;}
