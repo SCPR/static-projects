@@ -1,3 +1,20 @@
+#data-visuals {text-align: center;}
+#data-visuals .row-fluid {margin: 0px 0px 30px 0px;}
+
+.dear-mayor-response {
+    padding: 25px 5px 25px 5px;
+    background: #f7f7f7;
+    -moz-box-shadow: 3px 3px 4px #f07a20;
+    -webkit-box-shadow: 3px 3px 4px #f07a20;
+    box-shadow: 3px 3px 10px #f07a20;
+
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#f07a20')";
+
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#f07a20');
+}
+
 #content-action-bar {height: auto; margin: 5px 0 75px 0;}
 #content-action-bar h4 {text-align: left;}
 #content-action-bar #data-legend {height: 25px; margin: 10px 0 0 0;}
@@ -12,7 +29,6 @@
 #content-action-bar #data-legend #data-legend-items li.politics {height: 25px; background-image: url(../images/administration.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 15px;}
 #content-action-bar #data-legend #data-legend-items li.taxes {height: 25px; background-image: url(../images/bank.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 20px;}
 #content-action-bar #data-legend #data-legend-items li.transportation {height: 25px; background-image: url(../images/bus.png); background-repeat: no-repeat; background-position: 0 0; margin-left: 30px;}
-
 
 @media (min-width: 601px) and (max-width: 800px) {
     #content-action-bar {height: auto; margin: 5px 0 105px 0;}

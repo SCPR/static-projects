@@ -1,53 +1,55 @@
-{{#objects}}
-    <div class="dear-mayor-response {{lowercase responsesf6d5d1c2d738}}">
+{{debug}}
 
-        <!-- begin row -->
-        <div class="row-fluid">
-            <div class="span12">
-                <p><img src="{{marker}}" /><span class="kicker"><strong> {{responsesf6d5d1c2d738}}</strong></span></p>
+<div class="row-fluid">
+    <div class="span12">
+
+    {{#everyNth objects 3}}
+        {{#if isModZeroNotFirst}}
             </div>
-        </div>
+        {{/if}}
 
-        <div class="row-fluid">
+        {{#if isModZero}}
+            <div class="row-fluid">
+        {{/if}}
 
             {{#if primarycity}}
-                <div class="span3">
+            <!-- begin cell -->
+                <div class="span4 dear-mayor-response {{lowercase responsesf6d5d1c2d738}}">
+                    <p><img src="{{marker}}" /><span class="kicker"><strong> {{responsesf6d5d1c2d738}}</strong></span></p>
                     <p><img src="http://maps.googleapis.com/maps/api/staticmap?center={{primarylat}},{{primarylong}}&zoom=12&size=300x300&maptype=roadmap
-                    &markers=color:blue%7C{{primarylat}},{{primarylong}}&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8" /></p>
-                </div>
-                <div class="span9">
+                &markers=color:blue%7C{{primarylat}},{{primarylong}}&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8" /></p>
                     <p><strong>{{srcfirstname}} {{srclastname}}</strong> from <strong>{{primarycity}}</strong> responded:</p>
-                    <p><strong>{{questions9200af1a79cbvalue}}</strong><br />{{responses9200af1a79cb}}</p>
+                    <p>{{responses9200af1a79cb}}</p>
 
                     {{#if responsesdb10ff019c5a}}
                         <p><strong>{{questionsdb10ff019c5avalue}}</strong><br />{{responsesdb10ff019c5a}}</p>
                     {{else}}
                     {{/if}}
-
                     <p class="data-instructions">Submitted {{timeago srsdate}}</p>
                 </div>
+                <!-- end cell -->
             {{else}}
-
-                <div class="span3">
-                    <p><img src="http://projects.scpr.org/static/static-files/images/series-icons/dear_mayor.png" /></p>
-                </div>
-                <div class="span9">
-                    <p><strong>{{srcfirstname}} {{srclastname}}</strong> responded:</p>
-                    <p><strong>{{questions9200af1a79cbvalue}}</strong><br />{{responses9200af1a79cb}}</p>
+            <!-- begin cell -->
+                <div class="span4 dear-mayor-response {{lowercase responsesf6d5d1c2d738}}">
+                    <p><img src="{{marker}}" /><span class="kicker"><strong> {{responsesf6d5d1c2d738}}</strong></span></p>
+                    <p><img src="http://projects.scpr.org/static/static-files/images/series-icons/dear_mayor.png" width="300" /></p>
+                    <p><strong>{{srcfirstname}} {{srclastname}}</strong> from <strong>{{primarycity}}</strong> responded:</p>
+                    <p>{{responses9200af1a79cb}}</p>
 
                     {{#if responsesdb10ff019c5a}}
                         <p><strong>{{questionsdb10ff019c5avalue}}</strong><br />{{responsesdb10ff019c5a}}</p>
                     {{else}}
                     {{/if}}
-
                     <p class="data-instructions">Submitted {{timeago srsdate}}</p>
                 </div>
+            <!-- end cell -->
             {{/if}}
 
-        </div>
-        <!-- end row -->
+        {{#if isLast}}
+            </div>
+        {{/if}}
 
-        <hr></hr>
+    {{/everyNth}}
 
     </div>
-{{/objects}}
+</div>
