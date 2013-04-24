@@ -1,5 +1,4 @@
 {{debug}}
-
 <div class="row-fluid">
     <div class="span12">
 
@@ -21,10 +20,10 @@
                     <p><strong>{{srcfirstname}} {{srclastname}}</strong> from <strong>{{primarycity}}</strong>:</p>
                     <p>{{responses9200af1a79cb}}</p>
 
-                    {{#if responsesdb10ff019c5a}}
-                        <p><strong>{{questionsdb10ff019c5avalue}}</strong><br />{{responsesdb10ff019c5a}}</p>
-                    {{else}}
-                    {{/if}}
+                    {{!#if responsesdb10ff019c5a}}
+                        <p><strong>{{!questionsdb10ff019c5avalue}}</strong><br />{{!responsesdb10ff019c5a}}</p>
+                    {{!else}}
+                    {{!/if}}
                     <p class="data-instructions">Submitted {{timeago srsdate}}</p>
                 </div>
                 <!-- end cell -->
@@ -36,10 +35,10 @@
                     <p><strong>{{srcfirstname}} {{srclastname}}</strong>:</p>
                     <p>{{responses9200af1a79cb}}</p>
 
-                    {{#if responsesdb10ff019c5a}}
-                        <p><strong>{{questionsdb10ff019c5avalue}}</strong><br />{{responsesdb10ff019c5a}}</p>
-                    {{else}}
-                    {{/if}}
+                    {{!#if responsesdb10ff019c5a}}
+                        <p><strong>{{!questionsdb10ff019c5avalue}}</strong><br />{{!responsesdb10ff019c5a}}</p>
+                    {{!else}}
+                    {{!/if}}
                     <p class="data-instructions">Submitted {{timeago srsdate}}</p>
                 </div>
             <!-- end cell -->
