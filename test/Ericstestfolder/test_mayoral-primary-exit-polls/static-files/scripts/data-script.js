@@ -32,7 +32,6 @@
                 'Agnostic': parseFloat(record.agnostic),
                 'None': parseFloat(record.none)
                 'Other': parseFloat(record.other)
-                
             };
 
             var targetData = convertObjectKeyValuesTo(candidateObject);
