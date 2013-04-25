@@ -6,34 +6,39 @@
     {{#objects}}
         {{#if projectorder}}
             {{#is projecttopic 'Crime & Public Safety'}}
-                <div class="{{projecttopic}}">
-                    <h4 class="kicker">{{projecttype}}</h4>
-                    <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="{{projecttopic}}">
                         {{#if projectimage}}
                             <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
                                 <img src="{{projectimage}}" alt="{{projecttitle}}" />
                             </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{else}}
-                            <div class="span3"></div>
+                            <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
+                                <img src="https://si0.twimg.com/profile_images/1545969777/kpcc-twitter-logo.png" alt="{{projecttitle}}" />
+                            </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{/if}}
                     </div>
@@ -52,34 +57,39 @@
     {{#objects}}
         {{#if projectorder}}
             {{#is projecttopic 'Culture'}}
-                <div class="{{projecttopic}}">
-                    <h4 class="kicker">{{projecttype}}</h4>
-                    <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="{{projecttopic}}">
                         {{#if projectimage}}
                             <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
                                 <img src="{{projectimage}}" alt="{{projecttitle}}" />
                             </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{else}}
-                            <div class="span3"></div>
+                            <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
+                                <img src="https://si0.twimg.com/profile_images/1545969777/kpcc-twitter-logo.png" alt="{{projecttitle}}" />
+                            </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{/if}}
                     </div>
@@ -97,34 +107,39 @@
     {{#objects}}
         {{#if projectorder}}
             {{#is projecttopic 'Economy & Money'}}
-                <div class="{{projecttopic}}">
-                    <h4 class="kicker">{{projecttype}}</h4>
-                    <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="{{projecttopic}}">
                         {{#if projectimage}}
                             <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
                                 <img src="{{projectimage}}" alt="{{projecttitle}}" />
                             </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{else}}
-                            <div class="span3"></div>
+                            <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
+                                <img src="https://si0.twimg.com/profile_images/1545969777/kpcc-twitter-logo.png" alt="{{projecttitle}}" />
+                            </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{/if}}
                     </div>
@@ -142,34 +157,39 @@
     {{#objects}}
         {{#if projectorder}}
             {{#is projecttopic 'Education'}}
-                <div class="{{projecttopic}}">
-                    <h4 class="kicker">{{projecttype}}</h4>
-                    <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="{{projecttopic}}">
                         {{#if projectimage}}
                             <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
                                 <img src="{{projectimage}}" alt="{{projecttitle}}" />
                             </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{else}}
-                            <div class="span3"></div>
+                            <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
+                                <img src="https://si0.twimg.com/profile_images/1545969777/kpcc-twitter-logo.png" alt="{{projecttitle}}" />
+                            </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{/if}}
                     </div>
@@ -187,34 +207,39 @@
     {{#objects}}
         {{#if projectorder}}
             {{#is projecttopic 'Environment & Science'}}
-                <div class="{{projecttopic}}">
-                    <h4 class="kicker">{{projecttype}}</h4>
-                    <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="{{projecttopic}}">
                         {{#if projectimage}}
                             <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
                                 <img src="{{projectimage}}" alt="{{projecttitle}}" />
                             </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{else}}
-                            <div class="span3"></div>
+                            <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
+                                <img src="https://si0.twimg.com/profile_images/1545969777/kpcc-twitter-logo.png" alt="{{projecttitle}}" />
+                            </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{/if}}
                     </div>
@@ -232,34 +257,39 @@
     {{#objects}}
         {{#if projectorder}}
             {{#is projecttopic 'General'}}
-                <div class="{{projecttopic}}">
-                    <h4 class="kicker">{{projecttype}}</h4>
-                    <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="{{projecttopic}}">
                         {{#if projectimage}}
                             <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
                                 <img src="{{projectimage}}" alt="{{projecttitle}}" />
                             </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{else}}
-                            <div class="span3"></div>
+                            <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
+                                <img src="https://si0.twimg.com/profile_images/1545969777/kpcc-twitter-logo.png" alt="{{projecttitle}}" />
+                            </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{/if}}
                     </div>
@@ -277,34 +307,39 @@
     {{#objects}}
         {{#if projectorder}}
             {{#is projecttopic 'Health'}}
-                <div class="{{projecttopic}}">
-                    <h4 class="kicker">{{projecttype}}</h4>
-                    <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="{{projecttopic}}">
                         {{#if projectimage}}
                             <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
                                 <img src="{{projectimage}}" alt="{{projecttitle}}" />
                             </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{else}}
-                            <div class="span3"></div>
+                            <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
+                                <img src="https://si0.twimg.com/profile_images/1545969777/kpcc-twitter-logo.png" alt="{{projecttitle}}" />
+                            </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{/if}}
                     </div>
@@ -322,34 +357,39 @@
     {{#objects}}
         {{#if projectorder}}
             {{#is projecttopic 'Politics'}}
-                <div class="{{projecttopic}}">
-                    <h4 class="kicker">{{projecttype}}</h4>
-                    <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="{{projecttopic}}">
                         {{#if projectimage}}
                             <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
                                 <img src="{{projectimage}}" alt="{{projecttitle}}" />
                             </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{else}}
-                            <div class="span3"></div>
+                            <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
+                                <img src="https://si0.twimg.com/profile_images/1545969777/kpcc-twitter-logo.png" alt="{{projecttitle}}" />
+                            </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{/if}}
                     </div>
@@ -367,34 +407,39 @@
     {{#objects}}
         {{#if projectorder}}
             {{#is projecttopic 'Seasonal'}}
-                <div class="{{projecttopic}}">
-                    <h4 class="kicker">{{projecttype}}</h4>
-                    <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="{{projecttopic}}">
                         {{#if projectimage}}
                             <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
                                 <img src="{{projectimage}}" alt="{{projecttitle}}" />
                             </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{else}}
-                            <div class="span3"></div>
+                            <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
+                                <img src="https://si0.twimg.com/profile_images/1545969777/kpcc-twitter-logo.png" alt="{{projecttitle}}" />
+                            </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{/if}}
                     </div>
@@ -412,34 +457,39 @@
     {{#objects}}
         {{#if projectorder}}
             {{#is projecttopic 'Transportation'}}
-                <div class="{{projecttopic}}">
-                    <h4 class="kicker">{{projecttype}}</h4>
-                    <div class="row-fluid">
+                <div class="row-fluid">
+                    <div class="{{projecttopic}}">
                         {{#if projectimage}}
                             <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
                                 <img src="{{projectimage}}" alt="{{projecttitle}}" />
                             </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{else}}
-                            <div class="span3"></div>
+                            <div class="span3">
+                                <h4 class="kicker">{{projecttype}}</h4>
+                                <img src="https://si0.twimg.com/profile_images/1545969777/kpcc-twitter-logo.png" alt="{{projecttitle}}" />
+                            </div>
                             <div class="span9">
-                                <h2><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h2>
+                                <h3><a href="{{promotedurl}}" target="_blank">{{projecttitle}}</a></h3>
                                 <p><span class="data-instructions">By {{projectbylines}}</span></p>
-                                <p>{{projectdescription}}</p>
-                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
+                                <p>{{truncate projectdescription 250 " ... "}}<br />
                                 {{#if readmoreurl}}
-                                    <a class="" href="{{readmoreurl}}" target="_blank"><strong>Read More</strong></a>
+                                    <a href="{{readmoreurl}}" target="_blank"><strong>Read more</strong></a></p>
                                 {{else}}
+                                    </p>
                                 {{/if}}
+                                <p><span class="data-instructions">Created: {{projectcreated}}</span></p>
                             </div>
                         {{/if}}
                     </div>
