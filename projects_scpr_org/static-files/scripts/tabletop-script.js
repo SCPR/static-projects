@@ -24,6 +24,6 @@ function retriveData(data, tabletop) {
     var handlebarsData = {
         objects: data.Presentation_inventory.elements
     };
-    renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', handlebarsData);
+    renderHandlebarsTemplate('http://projects.scpr.org/static/projects_scpr_org/static-files/templates/data-visuals.handlebars', '#data-visuals', handlebarsData);
 };
 // end
