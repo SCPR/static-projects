@@ -16,7 +16,6 @@ jqueryNoConflict(document).ready(function() {
         simpleSheet: false,
         debug: false
     });
-
 });
 // end
 
