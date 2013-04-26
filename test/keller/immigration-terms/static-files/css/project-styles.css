@@ -1,3 +1,20 @@
 #content-article {width: 100%; height: auto; margin: 0 auto 5px auto;}
 #content-action-bar {text-align: left; margin: 5px auto 10px auto;}
 #data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 30px;}
+
+/* data legend bottom margin */
+@media (min-width: 980px) {
+    #data-legend {height: auto; margin: 10px 0 10px 0;}
+}
+
+/* data legend bottom margin for Portrait tablet to landscape and desktop */
+@media (min-width: 500px) and (max-width: 979px) {
+    #data-legend {height: auto; margin: 10px 0 60px 0;}
+}
+
+/* data legend bottom margin for Landscape phones and down */
+@media (max-width: 499px) {
+    body.minimal #data-container h4 {font-size: 110%; line-height: 130%}
+    #data-legend {height: auto; margin: 10px 0 80px 0;}
+
+}
