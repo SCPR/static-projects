@@ -1,0 +1,6 @@
+#content-action-bar {text-align: left;}
+
+/* develop for inclusion into foundational styles */
+#data-legend {height: 25px; margin: 10px 0 0 0;}
+#data-legend-items {margin: 0 0 0 0; height: 25px; }
+#data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 30px;}
