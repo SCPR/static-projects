@@ -37,8 +37,8 @@
     locationScope:      "Los Angeles",
 
     // for showing number of results
-    recordName:         "result",
-    recordNamePlural:   "results",
+    recordName:         "response",
+    recordNamePlural:   "responses",
 
     // in meters ~ 1/2 mile
     searchRadius:       8047,
