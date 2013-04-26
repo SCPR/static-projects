@@ -99,12 +99,12 @@
         return arrayOfIndividuals;
     }
 
-    function getChartConfig(renderId, titleText, subtitleText, data) {
+    function getChartConfig(divToRenderChart, titleText, subtitleText, data) {
 
         var config = {};
 
         config.chart = {
-            renderTo: renderId,
+            renderTo: divToRenderChart,
             zoomType: 'xy',
             backgroundColor: '#eaeaea',
             plotBackgroundColor: null,
