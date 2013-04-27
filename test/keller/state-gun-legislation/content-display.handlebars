@@ -2,20 +2,36 @@
 
 <h2>{{title}}</h2>
 <p>{{bill_id}}</p>
-<p>{{chamber}}</p>
-<p>{{summary}}</p>
+<p>{{chamberType chamber}}</p>
+
+<p>
+{{truncate summary 500 " ... "}}
+    {{#sources}}
+        <a href="{{url}}" target="_blank">Read More</a>
+    {{/sources}}
+</p>
 
 <h4>Sponsors</h4>
+<ul>
 {{#sponsors}}
-    <p>{{name}}-({{type}})</p>
+    <li>{{name}} - ({{capitalizeFirst type}})</li>
 {{/sponsors}}
+</ul>
 
 <h4>Legislative Actions</h4>
+<ul>
 {{#actions}}
-    <p>{{action}} - {{actor}} - {{date}}</p>
+    <li><strong>{{dateFormat date}}</strong>: {{action}} ({{chamberType actor}})</li>
 {{/actions}}
+</ul>
 
-<h4>About this bill</h4>
-{{#each type}}
-    <p>{{this}}</p>
-{{/each}}
+<h4>Process Dates</h4>
+<ul>
+<li><strong>First Action</strong>: {{dateFormat action_dates.first}}</li>
+<li><strong>Last Action</strong>: {{dateFormat action_dates.last}}</li>
+<li><strong>Passed Senate</strong>: {{dateFormat action_dates.passed_upper}}</li>
+<li><strong>Passed Assembly</strong>: {{dateFormat action_dates.passed_lower}}</li>
+<li><strong>Signed into law</strong>: {{dateFormat action_dates.signed}}</li>
+</ul>
+
+<h4>Last updated: {{dateFormat updated_at}}</h4>

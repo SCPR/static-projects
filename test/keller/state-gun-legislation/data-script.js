@@ -4,6 +4,7 @@ var jqueryNoConflict = jQuery;
     jqueryNoConflict(document).ready(function(){
         getIdOfBillContainer();
         animateContainers();
+        runHandlebarsHelpers();
     });
     //end main function
 
@@ -55,5 +56,41 @@ var jqueryNoConflict = jQuery;
         });
         jqueryNoConflict('#shuffle').click(function(){
             container.isotope('shuffle');
+        });
+    }
+
+    // format date/time
+    function takeTime(dateInput) {
+        var dateFormat = 'MMM. D, YYYY';
+        var dateOutput = moment(dateInput).format(dateFormat);
+        return dateOutput;
+    }
+
+    // begin
+    function runHandlebarsHelpers(){
+
+        // use moment to format date and time
+        Handlebars.registerHelper('dateFormat', function(context, block) {
+            if (context === null) {
+                return ('n/a');
+            } else if (window.moment) {
+                return takeTime(context);
+            } else {
+                return context;
+            };
+        });
+
+        // evaluate chamber type and convert
+        Handlebars.registerHelper('chamberType', function(context, block) {
+            if (context == "lower") {
+                return "Assembly";
+            }else{
+                return "Senate";
+            };
+        });
+
+        // parse an object for a value
+        Handlebars.registerHelper('json', function(context) {
+            return JSON.stringify(context);
         });
     }
