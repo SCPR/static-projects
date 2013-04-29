@@ -1,6 +1,6 @@
 #content-article {width: 100%; height: auto; margin: 0 auto 5px auto;}
 #content-action-bar {text-align: left; margin: 5px auto 10px auto;}
-#data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 30px;}
+#data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 10px;}
 
 /* data legend bottom margin */
 @media (min-width: 980px) {

@@ -111,7 +111,7 @@
         var tempWhereClause = [];
         if ( $("#cbType0").is(':checked')) tempWhereClause.push("Illegal Alien");
         if ( $("#cbType1").is(':checked')) tempWhereClause.push("Illegal Immigrant");
-        if ( $("#cbType2").is(':checked')) tempWhereClause.push("Immigrant");
+        if ( $("#cbType2").is(':checked')) tempWhereClause.push("Immigrant Living Here Illegally");
         if ( $("#cbType3").is(':checked')) tempWhereClause.push("Unauthorized Migrant");
         if ( $("#cbType4").is(':checked')) tempWhereClause.push("Undocumented Immigrant");
         if ( $("#cbType5").is(':checked')) tempWhereClause.push("Other");
