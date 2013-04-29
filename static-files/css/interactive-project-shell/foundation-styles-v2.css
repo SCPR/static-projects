@@ -63,33 +63,33 @@ body.minimal footer ul li:last-child {padding-right: 0; border-right: none;}
 
 /* typography */
 body.minimal {font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B;}
-body.minimal #data-container, body.embedded-wrapper #data-container h1 {font-size: 210%;}
-body.minimal #data-container, body.embedded-wrapper #data-container h2 {font-size: 180%;}
-body.minimal #data-container, body.embedded-wrapper #data-container h3 {font-size: 150%;}
-body.minimal #data-container, body.embedded-wrapper #data-container h4 {font-size: 120%;}
-body.minimal #data-container, body.embedded-wrapper #data-container h5 {font-size: 100%;}
-body.minimal #data-container, body.embedded-wrapper #data-container p {font-size: 95%;}
-body.minimal #data-container, body.embedded-wrapper #data-container li {font-size: 95%;}
-body.minimal #data-container, body.embedded-wrapper #data-container table{font-size: 95%;}
-body.minimal #data-container, body.embedded-wrapper #data-container .sky-writing {font-size: 600%; color: #f57834;}
-body.minimal #data-container, body.embedded-wrapper #data-container .kicker {font-size: 75%; text-transform: uppercase;}
-body.minimal #data-container, body.embedded-wrapper #data-container .data-instructions {font-size: 75%;}
-body.minimal #data-container, body.embedded-wrapper #data-container .normal-display {font-size: 95%;}
-body.minimal #data-container, body.embedded-wrapper #data-container .small-display {font-size: 75%;}
-body.minimal #data-container, body.embedded-wrapper #data-container .lowercase {text-transform: lowercase;}
-body.minimal #data-container, body.embedded-wrapper #data-container .centered {text-align: center;}
-body.minimal #data-container, body.embedded-wrapper #data-container .right-align {text-align: right;}
-body.minimal #data-container, body.embedded-wrapper #data-container .left-align {text-align: left;}
-body.minimal #data-container, body.embedded-wrapper #data-container .underline {text-decoration: underline;}
-body.minimal #data-container, body.embedded-wrapper #data-container .credits {display: inline;}
-body.minimal #data-container, body.embedded-wrapper #data-container .pubdate {color: #930000; font-style: italic; display: inline;}
-body.minimal #data-container, body.embedded-wrapper #data-container .italics {font-style: italic;}
-body.minimal #data-container, body.embedded-wrapper #data-container .story-headline {font-weight: 700; margin-bottom: 0}
-body.minimal #data-container, body.embedded-wrapper #data-container .story-text {}
-body.minimal #data-container, body.embedded-wrapper #data-container .details-intro {}
-body.minimal #data-container, body.embedded-wrapper #data-container .details-drilldown {}
-body.minimal #data-container, body.embedded-wrapper #data-container .hidden {display: none;}
-body.minimal #data-container, body.embedded-wrapper #data-container blockquote {padding: 0 0 0 15px; margin: 0 0 20px; border-left: 3px solid #2B2B2B;}
+body.minimal #data-container h1, body.embedded-wrapper #data-container h1 {font-size: 210%;}
+body.minimal #data-container h2, body.embedded-wrapper #data-container h2 {font-size: 180%;}
+body.minimal #data-container h3, body.embedded-wrapper #data-container h3 {font-size: 150%;}
+body.minimal #data-container h4, body.embedded-wrapper #data-container h4 {font-size: 120%;}
+body.minimal #data-container h5, body.embedded-wrapper #data-container h5 {font-size: 100%;}
+body.minimal #data-container p, body.embedded-wrapper #data-container p {font-size: 95%;}
+body.minimal #data-container li, body.embedded-wrapper #data-container li {font-size: 95%;}
+body.minimal #data-container table, body.embedded-wrapper #data-container table{font-size: 95%;}
+body.minimal #data-container .sky-writing, body.embedded-wrapper #data-container .sky-writing {font-size: 600%; color: #f57834;}
+body.minimal #data-container .kicker, body.embedded-wrapper #data-container .kicker {font-size: 75%; text-transform: uppercase;}
+body.minimal #data-container .data-instructions, body.embedded-wrapper #data-container .data-instructions {font-size: 75%;}
+body.minimal #data-container .normal-display, body.embedded-wrapper #data-container .normal-display {font-size: 95%;}
+body.minimal #data-container .small-display, body.embedded-wrapper #data-container .small-display {font-size: 75%;}
+body.minimal #data-container .lowercase, body.embedded-wrapper #data-container .lowercase {text-transform: lowercase;}
+body.minimal #data-container .centered, body.embedded-wrapper #data-container .centered {text-align: center;}
+body.minimal #data-container .right-align, body.embedded-wrapper #data-container .right-align {text-align: right;}
+body.minimal #data-container .left-align, body.embedded-wrapper #data-container .left-align {text-align: left;}
+body.minimal #data-container .underline, body.embedded-wrapper #data-container .underline {text-decoration: underline;}
+body.minimal #data-container .credits, body.embedded-wrapper #data-container .credits {display: inline;}
+body.minimal #data-container .pubdate, body.embedded-wrapper #data-container .pubdate {color: #930000; font-style: italic; display: inline;}
+body.minimal #data-container .italics, body.embedded-wrapper #data-container .italics {font-style: italic;}
+body.minimal #data-container .story-headline, body.embedded-wrapper #data-container .story-headline {font-weight: 700; margin-bottom: 0}
+body.minimal #data-container .story-text, body.embedded-wrapper #data-container .story-text {}
+body.minimal #data-container .details-intro, body.embedded-wrapper #data-container .details-intro {}
+body.minimal #data-container .details-drilldown, body.embedded-wrapper #data-container .details-drilldown {}
+body.minimal #data-container .hidden, body.embedded-wrapper #data-container .hidden {display: none;}
+body.minimal #data-container blockquote, body.embedded-wrapper #data-container blockquote {padding: 0 0 0 15px; margin: 0 0 20px; border-left: 3px solid #2B2B2B;}
 
 /* bootstrap overrides */
 a {color: #4B58A6;}
@@ -120,26 +120,26 @@ a {color: #4B58A6;}
 
 /* headlines for Portrait tablet to landscape and desktop */
 @media (min-width: 500px) and (max-width: 979px) {
-    body.minimal #data-container, body.embedded-wrapper #data-container h1 {font-size: 185%; line-height: 140%;}
-    body.minimal #data-container, body.embedded-wrapper #data-container h2 {font-size: 165%; line-height: 140%;}
-    body.minimal #data-container, body.embedded-wrapper #data-container h3 {font-size: 155%; line-height: 140%;}
-    body.minimal #data-container, body.embedded-wrapper #data-container h4 {font-size: 145%; line-height: 140%;}
-    body.minimal #data-container, body.embedded-wrapper #data-container h5 {font-size: 135%; line-height: 140%;}
-    body.minimal #data-container, body.embedded-wrapper #data-container p {font-size: 95%; line-height: 140%;}
-    body.minimal #data-container, body.embedded-wrapper #data-container li {font-size: 95%; line-height: 140%;}
-    body.minimal #data-container, body.embedded-wrapper #data-container table{font-size: 95%;}
+    body.minimal #data-container h1, body.embedded-wrapper #data-container h1 {font-size: 185%; line-height: 140%;}
+    body.minimal #data-container h2, body.embedded-wrapper #data-container h2 {font-size: 165%; line-height: 140%;}
+    body.minimal #data-container h3, body.embedded-wrapper #data-container h3 {font-size: 155%; line-height: 140%;}
+    body.minimal #data-container h4, body.embedded-wrapper #data-container h4 {font-size: 145%; line-height: 140%;}
+    body.minimal #data-container h5, body.embedded-wrapper #data-container h5 {font-size: 135%; line-height: 140%;}
+    body.minimal #data-container p, body.embedded-wrapper #data-container p {font-size: 95%; line-height: 140%;}
+    body.minimal #data-container li, body.embedded-wrapper #data-container li {font-size: 95%; line-height: 140%;}
+    body.minimal #data-container table, body.embedded-wrapper #data-container table{font-size: 95%;}
 }
 
 /* headlines for Landscape phones and down */
 @media (max-width: 499px) {
-    body.minimal #data-container, body.embedded-wrapper #data-container h1 {font-size: 170%; line-height: 130%}
-    body.minimal #data-container, body.embedded-wrapper #data-container h2 {font-size: 150%; line-height: 130%}
-    body.minimal #data-container, body.embedded-wrapper #data-container h3 {font-size: 140%; line-height: 130%}
-    body.minimal #data-container, body.embedded-wrapper #data-container h4 {font-size: 130%; line-height: 130%}
-    body.minimal #data-container, body.embedded-wrapper #data-container h5 {font-size: 120%; line-height: 130%}
-    body.minimal #data-container, body.embedded-wrapper #data-container p {font-size: 95%; line-height: 130%}
-    body.minimal #data-container, body.embedded-wrapper #data-container li {font-size: 95%; line-height: 130%}
-    body.minimal #data-container, body.embedded-wrapper #data-container table{font-size: 95%;}
+    body.minimal #data-container h1, body.embedded-wrapper #data-container h1 {font-size: 170%; line-height: 130%}
+    body.minimal #data-container h2, body.embedded-wrapper #data-container h2 {font-size: 150%; line-height: 130%}
+    body.minimal #data-container h3, body.embedded-wrapper #data-container h3 {font-size: 140%; line-height: 130%}
+    body.minimal #data-container h4, body.embedded-wrapper #data-container h4 {font-size: 130%; line-height: 130%}
+    body.minimal #data-container h5, body.embedded-wrapper #data-container h5 {font-size: 120%; line-height: 130%}
+    body.minimal #data-container p, body.embedded-wrapper #data-container p {font-size: 95%; line-height: 130%}
+    body.minimal #data-container li, body.embedded-wrapper #data-container li {font-size: 95%; line-height: 130%}
+    body.minimal #data-container table, body.embedded-wrapper #data-container table{font-size: 95%;}
 }
 
 /* pencil ad demo styling */
