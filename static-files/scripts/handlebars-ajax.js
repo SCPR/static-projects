@@ -29,3 +29,8 @@ function handlebarsDebugHelper(){
         console.log(this);
     });
 };
+
+// handlebars help function to set every nth element
+function handlebarsLooperHelper(){
+
+};
