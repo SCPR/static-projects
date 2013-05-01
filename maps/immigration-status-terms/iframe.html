@@ -62,11 +62,28 @@
                     <div id="data-visuals">
                         <p class="centered"><img src="http://www.publicinsightnetwork.org/wp-content/uploads/2013/04/immigrationcolllogo2-e1366833160530.jpg" /></p>
                         <div class="row-fluid">
-                            <div class="span12">
+                            <div class="span6">
+                                <div id="data-legend">
+                                    <h4>Filter the map (<span id="result_count"></span>) </h4>
+                                    <div class="well">
+                                        <form id="filer-map" class="form-inline">
+                                            <ul id="data-legend-items">
+                                                <li><label class='checkbox'><input type='checkbox' id='cbType0' checked/><img src="static-files/images/mm_20_blue.png" />&nbsp;Illegal Alien</label></li>
+                                                <li><label class='checkbox'><input type='checkbox' id='cbType1' checked/><img src="static-files/images/mm_20_green.png" />&nbsp;Illegal Immigrant</label></li>
+                                                <li><label class='checkbox'><input type='checkbox' id='cbType2' checked/><img src="static-files/images/mm_20_red.png" />&nbsp;Immigrant Living Here Illegally</label></li>
+                                                <li><label class='checkbox'><input type='checkbox' id='cbType3' checked/><img src="static-files/images/mm_20_white.png" />&nbsp;Unauthorized Migrant</label></li>
+                                                <li><label class='checkbox'><input type='checkbox' id='cbType4' checked/><img src="static-files/images/mm_20_purple.png" />&nbsp;Undocumented Immigrant</label></li>
+                                                <li><label class='checkbox'><input type='checkbox' id='cbType5' checked/><img src="static-files/images/mm_20_yellow.png" />&nbsp;Other/Multiple</label></li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="span6">
                                 <div id="content-action-bar">
-                                    <h4>Enter address, intersection or <a id='find_me' href='#'>use your location</a> to find responses near you</h4>
+                                    <h4>Enter address, intersection to find responses near you</h4>
                                     <div class='well'>
-                                        <form class="form-inline">
+                                        <form id="address-search" class="form-inline">
                                             <input class='input-block-level' id='search_address' placeholder='Ex: Chevy Chase Dr.' type='text' />
                                                 <label>within
                                                     <select class='input-small' id='search_radius'>
@@ -78,25 +95,6 @@
                                             <br />
                                             <input class='btn btn-success' id='search' type='button' value='Search' />
                                             <button class='btn' id='reset'>Reset</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row-fluid">
-                            <div class="span12">
-                                <div id="data-legend">
-                                    <h4>Filter the map (<span id="result_count"></span>) </h4>
-                                    <div class="well">
-                                        <form class="form-inline">
-                                            <ul id="data-legend-items">
-                                                <li><label class='checkbox'><input type='checkbox' id='cbType0' checked/><img src="static-files/images/mm_20_blue.png" />&nbsp;Illegal Alien</label></li>
-                                                <li><label class='checkbox'><input type='checkbox' id='cbType1' checked/><img src="static-files/images/mm_20_green.png" />&nbsp;Illegal Immigrant</label></li>
-                                                <li><label class='checkbox'><input type='checkbox' id='cbType2' checked/><img src="static-files/images/mm_20_red.png" />&nbsp;Immigrant Living Here Illegally</label></li>
-                                                <li><label class='checkbox'><input type='checkbox' id='cbType3' checked/><img src="static-files/images/mm_20_white.png" />&nbsp;Unauthorized Migrant</label></li>
-                                                <li><label class='checkbox'><input type='checkbox' id='cbType4' checked/><img src="static-files/images/mm_20_purple.png" />&nbsp;Undocumented Immigrant</label></li>
-                                                <li><label class='checkbox'><input type='checkbox' id='cbType5' checked/><img src="static-files/images/mm_20_yellow.png" />&nbsp;Other/Multiple</label></li>
-                                            </ul>
                                         </form>
                                     </div>
                                 </div>
