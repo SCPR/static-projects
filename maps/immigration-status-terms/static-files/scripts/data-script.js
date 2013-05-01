@@ -1,12 +1,7 @@
 var jqueryNoConflict = jQuery;
 
 jqueryNoConflict(document).ready(function() {
-    MapsLib.initialize();
-
-    setTimeout(function(){
-        buildMapDisplay();
-    },1000);
-
+    buildMapDisplay();
 });
 
 function buildMapDisplay(){
@@ -18,7 +13,7 @@ function buildMapDisplay(){
 
     MapsLib.initialize();
 
-    jqueryNoConflict("#search_address").geocomplete();
+    //jqueryNoConflict("#search_address").geocomplete();
 
     jqueryNoConflict(':checkbox').click(function(){
         MapsLib.doSearch();
