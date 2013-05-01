@@ -2,7 +2,11 @@ var jqueryNoConflict = jQuery;
 
 jqueryNoConflict(document).ready(function() {
     MapsLib.initialize();
-    buildMapDisplay();
+
+    setTimeout(function(){
+        buildMapDisplay();
+    },1000);
+
 });
 
 function buildMapDisplay(){
@@ -11,6 +15,8 @@ function buildMapDisplay(){
         map library and search filtering from Derek Eder's Searchable Map Template
         find out more here: https://github.com/derekeder/FusionTable-Map-Template
     */
+
+    MapsLib.initialize();
 
     jqueryNoConflict("#search_address").geocomplete();
 
