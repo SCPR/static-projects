@@ -12,7 +12,7 @@ function buildMapDisplay(){
         find out more here: https://github.com/derekeder/FusionTable-Map-Template
     */
 
-    //jqueryNoConflict("#search_address").geocomplete();
+    jqueryNoConflict("#search_address").geocomplete();
 
     jqueryNoConflict(':checkbox').click(function(){
         MapsLib.doSearch();
