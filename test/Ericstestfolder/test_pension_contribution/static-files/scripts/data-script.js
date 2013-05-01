@@ -19,7 +19,7 @@ TO DO
     var dataSheet = 'Contributions';
 
     // container arrays
-    var allJobsData = [];
+    var allContribsData = [];
     var arraysOfJobsData = [];
 
     // chart options
@@ -67,7 +67,8 @@ TO DO
         });
 
             // objects for highcharts data series
-            var initialMonthlyJobs = {
+           // var initialMonthlyJobs = {
+                var PensionType = {
                 name: 'Initial',
                 color: '#002734',
                 type: 'column',
@@ -100,8 +101,8 @@ TO DO
 
             // add respective objects to highcharts series
             //chart.addSeries(revisedMonthlyJobs);
-            chart.addSeries(initialMonthlyJobs);
-            chart.addSeries(finalMonthlyJobs);
+            chart.addSeries(PensionType);
+            //chart.addSeries(finalMonthlyJobs);
 
     };
 
