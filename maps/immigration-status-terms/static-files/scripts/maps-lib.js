@@ -87,11 +87,10 @@
         $("#search_address").val(MapsLib.convertToPlainString($.address.parameter('address')));
 
         var loadRadius = MapsLib.convertToPlainString($.address.parameter('radius'));
-            if (loadRadius != "") $("#search_radius").val(loadRadius);
+        if (loadRadius != "") $("#search_radius").val(loadRadius);
+        else $("#search_radius").val(MapsLib.searchRadius);
 
-            else $("#search_radius").val(MapsLib.searchRadius);
-
-        //$(":checkbox").attr("checked", "checked");
+        $(":checkbox").attr("checked", "checked");
         $("#result_count").hide();
 
         // run the default search
