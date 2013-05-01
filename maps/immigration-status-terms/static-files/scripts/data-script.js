@@ -1,45 +1,38 @@
-var jqueryNoConflict = jQuery;
+/*
+    map library and search filtering from Derek Eder's Searchable Map Template
+    find out more here: https://github.com/derekeder/FusionTable-Map-Template
+*/
 
-jqueryNoConflict(document).ready(function() {
-    google.maps.event.addDomListener(window, 'load', buildMapDisplay);
-});
-
-function buildMapDisplay(){
-
-    /*
-        map library and search filtering from Derek Eder's Searchable Map Template
-        find out more here: https://github.com/derekeder/FusionTable-Map-Template
-    */
-
+$(function() {
     MapsLib.initialize();
-    jqueryNoConflict("#search_address").geocomplete();
+    $("#search_address").geocomplete();
 
-    jqueryNoConflict(':checkbox').click(function(){
+    $(':checkbox').click(function(){
         MapsLib.doSearch();
     });
 
-    jqueryNoConflict('#search_radius').change(function(){
+    $('#search_radius').change(function(){
         MapsLib.doSearch();
     });
 
-    jqueryNoConflict('#search').click(function(){
+    $('#search').click(function(){
         MapsLib.doSearch();
     });
 
-    jqueryNoConflict('#reset').click(function(){
-        jqueryNoConflict.address.parameter('address','');
+    $('#reset').click(function(){
+        $.address.parameter('address','');
         MapsLib.initialize();
         return false;
     });
 
-    jqueryNoConflict(":text").keydown(function(e){
+    $(":text").keydown(function(e){
         var key =  e.keyCode ? e.keyCode : e.which;
-        if(key == 13) {
-            jqueryNoConflict('#search').click();
+        if (key == 13) {
+            $('#search').click();
             return false;
         }
     });
-};
+});
 
 // embed function
 function embedBox() {
