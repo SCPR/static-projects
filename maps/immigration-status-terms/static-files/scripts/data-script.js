@@ -13,11 +13,8 @@ function buildMapDisplay(){
 
     MapsLib.initialize();
     jqueryNoConflict("#search_address").geocomplete();
-    jqueryNoConflict(':checkbox').click(function(){
-        MapsLib.doSearch();
-    });
 
-    jqueryNoConflict(':radio').click(function(){
+    jqueryNoConflict(':checkbox').click(function(){
         MapsLib.doSearch();
     });
 
@@ -27,11 +24,6 @@ function buildMapDisplay(){
 
     jqueryNoConflict('#search').click(function(){
         MapsLib.doSearch();
-    });
-
-    jqueryNoConflict('#find_me').click(function(){
-        MapsLib.findMe();
-        return false;
     });
 
     jqueryNoConflict('#reset').click(function(){

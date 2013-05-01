@@ -106,7 +106,6 @@
         var whereClause = MapsLib.locationColumn + " not equal to ''";
 
         /* begin custom filters */
-
         var type_column = "term_for_filter";
         var tempWhereClause = [];
         if ( $("#cbType0").is(':checked')) tempWhereClause.push("Illegal Alien");
