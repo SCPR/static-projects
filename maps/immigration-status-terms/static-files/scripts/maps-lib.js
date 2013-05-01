@@ -34,14 +34,14 @@
     map_centroid:       new google.maps.LatLng(38.134557,-98.349609),
 
     // geographical area appended to all address searches
-    locationScope:      "United States",
+    locationScope:      "",
 
     // for showing number of results
     recordName:         "response",
     recordNamePlural:   "responses",
 
     // in meters ~ 1/2 mile
-    searchRadius:       8047,
+    searchRadius:       16093,
 
     // zoom level when map is loaded (bigger is more zoomed in)
     defaultZoom:        4,
@@ -129,7 +129,7 @@
                             $.address.parameter('address', encodeURIComponent(address));
                             $.address.parameter('radius', encodeURIComponent(MapsLib.searchRadius));
                             map.setCenter(MapsLib.currentPinpoint);
-                            map.setZoom(12);
+                            map.setZoom(10);
 
                             MapsLib.addrMarker = new google.maps.Marker({
                                 position: MapsLib.currentPinpoint,
