@@ -36,7 +36,6 @@ TO DO
         });
 
         drawHighchart();
-
     });
 
     // display data from tabletop

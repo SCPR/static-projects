@@ -189,6 +189,7 @@
             geocoded_location: e.row['geocoded_location'].value,
             operating_hours: e.row['operating_hours'].value,
             project_cost: e.row['project_cost'].value,
+            image_link: e.row['image_link'].value,
             notes: e.row['notes'].value
         }
 

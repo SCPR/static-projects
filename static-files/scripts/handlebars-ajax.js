@@ -27,6 +27,7 @@ function runRegisteredHandlebarsHelpers(){
     handlebarsreplaceSpacesHelper();
     handlebarsLooperHelper();
     handlebarsFormatDateHelper();
+    handlebarsSetDecimalToFixedHelper();
 }
 
 // add handlebars debugger
@@ -82,5 +83,13 @@ function handlebarsFormatDateHelper(){
         }else{
             return context;
         };
+    });
+}
+
+// function to set decimal to fixed
+function handlebarsSetDecimalToFixedHelper(){
+    Handlebars.registerHelper('fixedPlace', function(context, options) {
+        var out = (context * 100).toFixed(3);
+        return out + '%';
     });
 }
