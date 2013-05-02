@@ -16,7 +16,7 @@ TO DO
     var dataSpreadsheet = '0AjsyCVrBXivzdFBOeDBOMnRJMmpzc3pHLXhhQnVRQVE';
 
     // the sheet being queried
-    var dataSheet = 'Contributions';
+    var dataSheet = 'LACERS_contribs';
 
     // container arrays
     var allContribsData = [];
@@ -72,7 +72,7 @@ TO DO
                 name: 'Initial',
                 color: '#002734',
                 type: 'column',
-                data: arraysOfJobsData[0]
+                data: arraysOfContribsData[0]
             };
 
 /*
@@ -132,7 +132,7 @@ TO DO
                 // primary axis
                 labels: {
                    formatter: function() {
-                        return this.value / 1000 +'k';
+                        return this.value / 1000000 +'M';
                     },
                     style: {
                         color: '#2B2B2B'
