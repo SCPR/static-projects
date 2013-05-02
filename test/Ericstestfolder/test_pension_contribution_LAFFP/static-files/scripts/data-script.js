@@ -4,7 +4,7 @@
     var dataSpreadsheet = '0AjsyCVrBXivzdFBOeDBOMnRJMmpzc3pHLXhhQnVRQVE';
 
     // the sheet being queried
-    var dataSheet = 'LACERS_contribs';
+    var dataSheet = 'LAFFP';
 
     // container arrays
     var allContribsData = [];
@@ -33,7 +33,7 @@
         var allContribsData = [];
         var arraysOfContribsData = [];
 
-        console.log(data.LACERS_contribs.elements);
+        console.log(data.LAFFP.elements);
 
         // pulls data from the spreadsheet
         jqueryNoConflict.each(tabletop.sheets(dataSheet).all(), function(i, record) {
@@ -53,6 +53,8 @@
                     
                     allContribsData = [yr2002, yr2003, yr2004, yr2005, yr2006, yr2007, yr2008, yr2009, yr2010, yr2011, yr2012];
 
+console.log(yr2002)
+
                     // push each array to an array
                     arraysOfContribsData.push(allContribsData);
 
@@ -60,7 +62,7 @@
 
                    // objects for highcharts data series
                    // var initialMonthlyJobs = {
-                        var MemberContribLacers = {
+                        var MemberContribLAFFP = {
                         name: 'Member contributions',
                         color: '#002734',
                         type: 'spline',
@@ -68,7 +70,7 @@
                     };
 
     
-                    var CityContribLacers = {
+                    var CityContribLAFFP = {
                         name: 'City contributions',
                         color: '#377EB8',
                         type: 'spline',
@@ -77,8 +79,8 @@
             
                            // add respective objects to highcharts series
                             //chart.addSeries(revisedMonthlyJobs);
-                            chart.addSeries(MemberContribLacers);
-                            chart.addSeries(CityContribLacers);            
+                            chart.addSeries(MemberContribLAFFP);
+                            chart.addSeries(CityContribLAFFP);            
     }
     
      // draw the chart
@@ -91,7 +93,7 @@
                 },
 
                 title: {
-                    text: 'Contributions to LA city employees pension fund (LACERS) '
+                    text: 'Contributions to police officers and firemen pension (LAFFD) '
                 },
 
                 subtitle: {
