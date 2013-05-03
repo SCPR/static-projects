@@ -5,18 +5,11 @@
     jqueryNoConflict(document).ready(function(){
         configData.initializeDataSource();
 
-/*
         jqueryNoConflict('a.chart-trigger').click(function (){
-            console.log(configData.dataSheet);
-            configData['dataSheet'] = this.id;
-            console.log(configData.dataSheet);
-            configData.initializeDataSource('this');
-
+            configData.updateChart(this.id);
         });
-*/
 
     });
-
 
     // data configuration object
     var configData = {
@@ -32,12 +25,71 @@
 
         deleteKeyFromObject: function(arrayToClean){
             var cleanedContribsData = [];
-            for (var i=0;i<2;i++){
+            for (var i=0;i<3;i++){
                 delete arrayToClean[i].pensioncontributions;
                 delete arrayToClean[i].rowNumber;
                 cleanedContribsData.push(arrayToClean[i]);
             }
             return cleanedContribsData;
+        },
+
+        objectChartData: {},
+
+        showInfo: function(data, tabletop){
+            var dwpClean = configData.deleteKeyFromObject(data.dwp_contribs.elements);
+            var lacersClean = configData.deleteKeyFromObject(data.lacers_contribs.elements);
+            var laffpClean = configData.deleteKeyFromObject(data.laffp_contribs.elements);
+            configData.objectChartData['dwp_chart'] = dwpClean;
+            configData.objectChartData['lacers_chart'] = lacersClean;
+            configData.objectChartData['laffp_chart'] = laffpClean;
+            configData.writeDefaultChart();
+        },
+
+        writeDefaultChart: function(){
+            configData.blueprintChartSeries(
+                'data-chart',
+                'Contributions to DWP',
+                'Source:',
+                configData.convertObjectToArray(configData.objectChartData.dwp_chart[0]),
+                configData.convertObjectToArray(configData.objectChartData.dwp_chart[1]),
+                configData.convertObjectToArray(configData.objectChartData.dwp_chart[2])
+            );
+
+        },
+
+        updateChart: function(new_chart){
+            console.log(new_chart);
+
+            if (new_chart === 'dwp_chart'){
+                configData.blueprintChartSeries(
+                    'data-chart',
+                    'Contributions to DWP',
+                    'Source:',
+                    configData.convertObjectToArray(configData.objectChartData.dwp_chart[0]),
+                    configData.convertObjectToArray(configData.objectChartData.dwp_chart[1]),
+                    configData.convertObjectToArray(configData.objectChartData.dwp_chart[2])
+                );
+
+            } else if (new_chart === 'lacers_chart'){
+                configData.blueprintChartSeries(
+                    'data-chart',
+                    'Contributions to LACERS',
+                    'Source:',
+                    configData.convertObjectToArray(configData.objectChartData.lacers_chart[0]),
+                    configData.convertObjectToArray(configData.objectChartData.lacers_chart[1]),
+                    configData.convertObjectToArray(configData.objectChartData.lacers_chart[2])
+                );
+
+            } else {
+                configData.blueprintChartSeries(
+                    'data-chart',
+                    'Contributions to LAFFP',
+                    'Source:',
+                    configData.convertObjectToArray(configData.objectChartData.laffp_chart[0]),
+                    configData.convertObjectToArray(configData.objectChartData.laffp_chart[1]),
+                    configData.convertObjectToArray(configData.objectChartData.laffp_chart[2])
+                );
+            }
         },
 
         convertObjectToArray: function(objectLiteral){
@@ -48,49 +100,29 @@
             return arr;
         },
 
-        showInfo: function(data, tabletop){
-            var DWP = configData.deleteKeyFromObject(data.dwp_contribs.elements);
-            var LACERS = configData.deleteKeyFromObject(data.lacers_contribs.elements);
-            var LAFFP = configData.deleteKeyFromObject(data.laffp_contribs.elements);
-
-            configData.blueprintChartSeries(
-                'data-chart',
-                'Contributions to DWP',
-                'Source:',
-                configData.convertObjectToArray(DWP[0]),
-                configData.convertObjectToArray(DWP[1])
-            );
-
-            configData.blueprintChartSeries(
-                'data-chart-two',
-                'Contributions to LACERS',
-                'Source:',
-                configData.convertObjectToArray(LACERS[0]),
-                configData.convertObjectToArray(LACERS[1])
-            );
-
-            configData.blueprintChartSeries(
-                'data-chart-three',
-                'Contributions to LAFFP',
-                'Source:',
-                configData.convertObjectToArray(LAFFP[0]),
-                configData.convertObjectToArray(LAFFP[1])
-            );
-        },
-
-        blueprintChartSeries: function(containerToRenderTo, titleText, subtitleText, chartDataOne, chartDataTwo){
+        blueprintChartSeries: function(containerToRenderTo, titleText, subtitleText, chartDataOne, chartDataTwo, chartDataThree){
             var chartMemberContribsSeries = {
                 name: 'Member Contributions',
                 color: '#002734',
+                type: 'column',
                 data: chartDataOne
             };
+
             var chartCityContribsSeries = {
                 name: 'City Contributions',
                 color: '#377EB8',
+                type: 'column',
                 data: chartDataTwo
             };
 
-            var dataSeriesContainer = [chartMemberContribsSeries, chartCityContribsSeries];
+            var chartInvestmentContribsSeries = {
+                name: 'Investment Contributions',
+                color: '#000000',
+                type: 'spline',
+                data: chartDataThree
+            };
+
+            var dataSeriesContainer = [chartMemberContribsSeries, chartCityContribsSeries, chartInvestmentContribsSeries];
 
             var charts = [new Highcharts.Chart(
                 getSplineChartConfig(containerToRenderTo, titleText, subtitleText, dataSeriesContainer)
@@ -110,7 +142,6 @@
         configChart.chart = {
             renderTo: containerToRenderTo,
             backgroundColor: '#ffffff',
-            type: 'spline',
             zoomType: 'xy',
         };
 
