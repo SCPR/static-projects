@@ -79,7 +79,9 @@ var drilldownConfig = {
         /* swap out the properties of mDataProp & sTitle to reflect
         the names of columns or keys you want to display */
         var tableColumns = [
-            {'mDataProp': null, 'sClass': 'control center', 'sDefaultContent': '<i class="icon-plus icon-black"></i>'},
+            {'mDataProp': null,
+            'sClass': 'control center',
+            'sDefaultContent': '<i class="icon-plus icon-black"><a href="#"></a></i>'},
             {'mDataProp': "name", 'sTitle': 'Name'},
             {'mDataProp': "acres", 'sTitle': 'Acres'},
             {'mDataProp': "containment", 'sTitle': 'Containment'},
