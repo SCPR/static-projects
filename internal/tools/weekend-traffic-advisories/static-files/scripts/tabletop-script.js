@@ -24,16 +24,18 @@
         // first pass at pulling out data and displaying it
         processDataSource: function(data, tabletop){
 
+            console.log(data);
+
             // get unique categories and place them as key to frequency
             var trafficCategoriesObject = dataConfig.separateKeysFromValues(data);
 
             // separate the keys from the values and place into array
             var keys = Object.keys(trafficCategoriesObject);
 
-            var incidentArrayHoldingContainer = [];
-
             // begin outer loop
             for (var x=0; x<keys.length; x++){
+
+                var incidentArrayHoldingContainer = [];
 
                 // begin inner loop
                 for (var i=0; i<data.length; i++){
@@ -83,7 +85,8 @@
         displayTrafficObject: function(categoryParam, outputParam){
             var combinedOutputString = '<h6>' + categoryParam + '</h6><ul>' + outputParam + '</ul>';
             jqueryNoConflict('#formatted-output').append(combinedOutputString);
-            jqueryNoConflict('#html-output').text(combinedOutputString);
+            //jqueryNoConflict('#html-output').text(combinedOutputString);
+            document.getElementById('html-output').value += combinedOutputString;
         },
 
         /// what an incident array looks like for reference
@@ -92,6 +95,5 @@
             details: "Starting May 1, construction starts to aid wall 1921 construction at the southbound Skirball on-ramp. There will be intermittent full-ramp closures from X am to Z pm.", "url": "http://sv08data.dot.ca.gov/memos/files/comalert/042913_0.pdf?utm_source=dlvr.it&utm_medium=twitter"},{
             location: "405 S",
             details: "Starting May 1, construction starts to aid wall 1921 construction at the southbound Skirball on-ramp. There will be intermittent full-ramp closures from X am to Z pm.", "url": "http://sv08data.dot.ca.gov/memos/files/comalert/042913_0.pdf?utm_source=dlvr.it&utm_medium=twitter"}],
-
     }
     // end data configuration object
