@@ -1,0 +1,11 @@
+{{debug}}
+
+{{#objects}}
+<div class="{{replaceSpaces category}}">
+<h6>{{category}}</h6>
+<ul>
+    {{#incidents}}
+        <li><strong>{{location}}</strong>: {{details}} <a href="{{url}}">Read More</a></li>
+    {{/incidents}}
+</ul>
+{{/objects}}
