@@ -1,7 +1,4 @@
-table { font-size: 12px; float: left; }
-.table th,
-.table td { text-align: left }
-.table th { font-size: 14px }
+.table th, .table td { text-align: left }
 .table thead th { vertical-align: middle; cursor: pointer; }
 tr.odd {background-color: #e8e8e8;}
 tr.even {background-color: white;}

@@ -96,15 +96,15 @@ var drilldownConfig = {
         the names of columns or keys you want to display */
         var sOut =
             '<div class="innerDetails">' +
-                '<p>' + oData.name + '</p>' +
-                '<p>' + oData.county + '</p>' +
-                '<p>' + oData.location + '</p>' +
-                '<p>' + oData.administrativeunit + '</p>' +
-                '<p>' + oData.acres + '</p>' +
-                '<p>' + oData.containment + '</p>' +
-                '<p>' + oData.datestarted + '</p>' +
-                '<p>' + oData.lastupdate + '</p>' +
-                '<p>' + oData.moreinfo + '</p>' +
+                '<p><strong>Name: </strong>' + oData.name + '</p>' +
+                '<p><strong>County: </strong>' + oData.county + '</p>' +
+                '<p><strong>Approxmiate Location: </strong>' + oData.location + '</p>' +
+                '<p><strong>Administrative Unit: </strong>' + oData.administrativeunit + '</p>' +
+                '<p><strong>Acreage burned: </strong>' + oData.acres + '</p>' +
+                '<p><strong>Containment: </strong>' + oData.containment + '</p>' +
+                '<p><strong>Date Fire Began: </strong>' + oData.datestarted + '</p>' +
+                '<p><strong>Last Update: </strong>' + oData.lastupdate + '</p>' +
+                '<p><a href="' + oData.moreinfo + '">More info</a></p>' +
             '</div>';
 
         return sOut;
