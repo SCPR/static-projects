@@ -17,6 +17,8 @@
 
     });
 
+
+    // data configuration object
     var configData = {
         initializeDataSource: function(){
             Tabletop.init({
@@ -107,6 +109,7 @@
 
         configChart.chart = {
             renderTo: containerToRenderTo,
+            backgroundColor: '#ffffff',
             type: 'spline',
             zoomType: 'xy',
         };
