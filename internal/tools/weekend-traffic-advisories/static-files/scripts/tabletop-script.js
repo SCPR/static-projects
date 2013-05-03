@@ -40,7 +40,11 @@
                 // begin inner loop
                 for (var i=0; i<data.length; i++){
                     if (data[i].category === keys[x]){
-                        incidentArrayHoldingContainer.push({location: data[i].location, details: data[i].details});
+                        incidentArrayHoldingContainer.push({
+                            location: data[i].location,
+                            details: data[i].details,
+                            read_more: data[i].url
+                        });
                     }
                 }
                 // end inner loop
@@ -73,8 +77,9 @@
 
             jqueryNoConflict.each(trafficCategoryObject.incidents, function(i, record) {
                 var locationElement = '<li><strong>' + record.location + '</strong>:';
-                var detailsElement = record.details + '</li>';
-                holdingArrayForDisplayStrings.push(locationElement, detailsElement);
+                var detailsElement = record.details + ' ';
+                var readMoreElement = '<a href="' + record.read_more + '">Read More</a></li>';
+                holdingArrayForDisplayStrings.push(locationElement, detailsElement, readMoreElement);
             });
 
             var targetOutput = holdingArrayForDisplayStrings.join(' ');
@@ -83,7 +88,7 @@
 
         // renders the display
         displayTrafficObject: function(categoryParam, outputParam){
-            var combinedOutputString = '<h6>' + categoryParam + '</h6><ul>' + outputParam + '</ul>';
+            var combinedOutputString = '<h6>' + categoryParam + '</h6><ul>' + outputParam + '</ul><!-- weekend-traffic-impacts-post -->';
             jqueryNoConflict('#formatted-output').append(combinedOutputString);
             //jqueryNoConflict('#html-output').text(combinedOutputString);
             document.getElementById('html-output').value += combinedOutputString;
