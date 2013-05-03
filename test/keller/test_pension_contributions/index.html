@@ -25,6 +25,7 @@
         <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/css/interactive-project-shell/foundation-styles.css" rel="stylesheet" type="text/css" media="all" />
         <link href="static-files/css/project-styles.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://view.jqueryui.com/master/themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="all" />
         <!-- end css -->
 
@@ -41,6 +42,13 @@
         <script async="" src="http://www.google-analytics.com/ga.js"></script>
         <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+        <script type="text/javascript" src="http://view.jqueryui.com/master/ui/jquery.ui.core.js"></script>
+        <script type="text/javascript" src="http://view.jqueryui.com/master/ui/jquery.ui.widget.js"></script>
+        <script type="text/javascript" src="http://view.jqueryui.com/master/ui/jquery.ui.mouse.js"></script>
+        <script type="text/javascript" src="http://view.jqueryui.com/master/ui/jquery.ui.slider.js"></script>
+
+
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js"></script>
     </head>
@@ -54,16 +62,19 @@
                     <div class="span12">
                         <div id="data-details"></div>
                         <div id="data-visuals">
-                            <div class="row-fluid">
-                                <div class="span12">
-                                    <a class="btn btn-info chart-trigger" id="dwp_chart" href="#">dwp_chart</a>
-                                    <a class="btn btn-info chart-trigger" id="lacers_chart" href="#">lacers_chart</a>
-                                    <a class="btn btn-info chart-trigger" id="laffp_chart" href="#">laffp_chart</a>
-                                    <div id="data-chart"></div>
-                                    <div id="data-chart-two"></div>
-                                    <div id="data-chart-three"></div>
+
+                            <!-- begin map slider -->
+                            <div id="chart-filter">
+                                <div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" title="Slide me to the next chart"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a></div>
+                                <div id="markerContainer">
+                                    <div id="chart_1000"><p class="markerYear">wperp_chart</p></div>
+                                    <div id="chart_2000"><p class="markerYear">lacers_chart</p></div>
+                                    <div id="chart_3000"><p class="markerYear">laffp_chart</p></div>
                                 </div>
                             </div>
+                            <!-- end map slider -->
+
+                            <div id="data-chart"></div>
                         </div>
                     </div>
                 </div>

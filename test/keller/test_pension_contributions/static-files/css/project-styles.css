@@ -1,0 +1,13 @@
+/*based on WaPo styles found here:
+http://www.washingtonpost.com/wp-srv/special/world/india-leads-push-to-7-billion/ */
+#chart-filter {width: 100%; margin: 20px auto 0 auto;}
+#chart-filter #slider {width: 50%; margin: 0 auto 0 auto;}
+#chart-filter #markerContainer {width: 100%; height: auto; margin: 15px; auto 0 auto;}
+
+
+#chart-filter #dwp_chart_1000 {font-weight: bold; width:1px; height:12px;}
+#chart-filter #lacers_chart_2000 {font-weight: bold; width:1px; height:12px;}
+#chart-filter #laffp_chart_3000 {font-weight: bold; width:1px; height:12px;}
+
+
+
