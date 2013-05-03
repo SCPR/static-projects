@@ -86,6 +86,7 @@ var drilldownConfig = {
             'sTitle': 'Details',
             "sWidth": "10%"},
             {'mDataProp': "name", 'sTitle': 'Fire'},
+            {'mDataProp': "datestarted", 'sTitle': 'Date'},
             {'mDataProp': "acres", 'sTitle': 'Acres burned'},
             {'mDataProp': "containment", 'sTitle': 'Containment'}
         ];
