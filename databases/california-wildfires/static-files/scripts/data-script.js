@@ -81,11 +81,12 @@ var drilldownConfig = {
         the names of columns or keys you want to display */
         var tableColumns = [
             {'mDataProp': null,
-            'sClass': 'center',
+            'sClass': 'control center',
+            'sDefaultContent': '<img src="http://www.scpr.org/assets/footer-arrow-e9ec286850e4523c378543c458923763.png">',
             'sTitle': 'Details',
-            'sDefaultContent': '<img src="http://www.scpr.org/assets/footer-arrow-e9ec286850e4523c378543c458923763.png">'},
-            {'mDataProp': "name", 'sTitle': 'Name'},
-            {'mDataProp': "acres", 'sTitle': 'Acres Burned'},
+            "sWidth": "10%"},
+            {'mDataProp': "name", 'sTitle': 'Fire'},
+            {'mDataProp': "acres", 'sTitle': 'Acres burned'},
             {'mDataProp': "containment", 'sTitle': 'Containment'}
         ];
         return tableColumns;
