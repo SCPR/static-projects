@@ -82,11 +82,12 @@ var drilldownConfig = {
         var tableColumns = [
             {'mDataProp': null,
             'sClass': 'control center',
-            'sDefaultContent': '<img src="'+sImageUrl+'details_open.png'+'">'},
+            'sDefaultContent': '<img src="http://www.scpr.org/assets/footer-arrow-e9ec286850e4523c378543c458923763.png">',
+            'sTitle': 'Details'},
             {'mDataProp': "name", 'sTitle': 'Name'},
-            {'mDataProp': "acres", 'sTitle': 'Acres'},
-            {'mDataProp': "containment", 'sTitle': 'Containment'},
-            {'mDataProp': "datestarted", 'sTitle': 'Date Started'}
+            {'mDataProp': "acres", 'sTitle': 'Acres Burned'},
+            {'mDataProp': "containment", 'sTitle': 'Containment'}
+            //{'mDataProp': "datestarted", 'sTitle': 'Date Started'}
         ];
         return tableColumns;
     },
