@@ -47,8 +47,8 @@
             });
 
             var newTest = dataConfig.arrayOfData.join(' ');
-            jqueryNoConflict('#data-details').html('<ul>' + newTest + '</ul>');
-            jqueryNoConflict('#data-visuals').text('<ul>' + newTest + '</ul>');
+            jqueryNoConflict('#formatted-output').html('<h6>Category Here</h6><ul>' + newTest + '</ul>');
+            jqueryNoConflict('#html-output').text('<h6>Category Here</h6><ul>' + newTest + '</ul>');
 
 
             dataConfig.buildTrafficObject(categoryElement, dataConfig.incidentsTrafficArray);
