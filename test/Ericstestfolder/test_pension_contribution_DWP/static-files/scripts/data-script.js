@@ -4,7 +4,7 @@
     var dataSpreadsheet = '0AjsyCVrBXivzdFBOeDBOMnRJMmpzc3pHLXhhQnVRQVE';
 
     // the sheet being queried
-    var dataSheet = 'DWP';
+    var dataSheet = 'dwp_contribs';
 
     // container arrays
     var allContribsData = [];
@@ -33,7 +33,7 @@
         var allContribsData = [];
         var arraysOfContribsData = [];
 
-        console.log(data.DWP.elements);
+        console.log(data.dwp_contribs.elements);
 
         // pulls data from the spreadsheet
         jqueryNoConflict.each(tabletop.sheets(dataSheet).all(), function(i, record) {
@@ -50,7 +50,7 @@
                     var yr2010 = parseInt(record.yr2010);
                     var yr2011 = parseInt(record.yr2011);
                     var yr2012 = parseInt(record.yr2012);
-                    
+
                     allContribsData = [yr2002, yr2003, yr2004, yr2005, yr2006, yr2007, yr2008, yr2009, yr2010, yr2011, yr2012];
 
 console.log(yr2002)
@@ -69,20 +69,20 @@ console.log(yr2002)
                         data: arraysOfContribsData[0]
                     };
 
-    
+
                     var CityContribDWP = {
                         name: 'City contributions',
                         color: '#377EB8',
                         type: 'spline',
                         data: arraysOfContribsData[1]
                     };
-            
+
                            // add respective objects to highcharts series
                             //chart.addSeries(revisedMonthlyJobs);
                             chart.addSeries(MemberContribDWP);
-                            chart.addSeries(CityContribDWP);            
+                            chart.addSeries(CityContribDWP);
     }
-    
+
      // draw the chart
         function drawHighchart(){
 
