@@ -48,7 +48,7 @@ var drilldownConfig = {
     // create the table container and object
     writeTableWith: function (dataSource){
 
-        jqueryNoConflict('#data-table').html('<table class="display table table-bordered table-striped" id="data-table-container"></table>');
+        jqueryNoConflict('#data-table').html('<table width="100%" class="display table table-bordered table-striped" id="data-table-container"></table>');
 
         var oTable = jqueryNoConflict('#data-table-container').dataTable({
             'bProcessing': true,
@@ -84,11 +84,23 @@ var drilldownConfig = {
             'sClass': 'control center',
             'sDefaultContent': '<img src="http://www.scpr.org/assets/footer-arrow-e9ec286850e4523c378543c458923763.png">',
             'sTitle': 'Details',
-            "sWidth": "10%"},
-            {'mDataProp': "name", 'sTitle': 'Fire'},
-            {'mDataProp': "datestarted", 'sTitle': 'Date'},
-            {'mDataProp': "acres", 'sTitle': 'Acres burned'},
-            {'mDataProp': "containment", 'sTitle': 'Containment'}
+            'sWidth': '20%'},
+
+            {'mDataProp': 'name',
+            'sTitle': 'Fire',
+            'sWidth': '20%'},
+
+            {'mDataProp': 'datestarted',
+            'sTitle': 'Date',
+            'sWidth': '20%'},
+
+            {'mDataProp': 'acres',
+            'sTitle': 'Acres burned',
+            'sWidth': '20%'},
+
+            {'mDataProp': 'containment',
+            'sTitle': 'Containment',
+            'sWidth': '20%'}
         ];
         return tableColumns;
     },
