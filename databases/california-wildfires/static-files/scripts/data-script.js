@@ -1,4 +1,5 @@
 var jqueryNoConflict = jQuery;
+var sImageUrl = "http://datatables.net/release-datatables/examples/examples_support/";
 
 // begin main function
 jqueryNoConflict(document).ready(function(){
@@ -81,7 +82,7 @@ var drilldownConfig = {
         var tableColumns = [
             {'mDataProp': null,
             'sClass': 'control center',
-            'sDefaultContent': '<i class="icon-plus icon-black"><a href="#"></a></i>'},
+            'sDefaultContent': '<img src="'+sImageUrl+'details_open.png'+'">'},
             {'mDataProp': "name", 'sTitle': 'Name'},
             {'mDataProp': "acres", 'sTitle': 'Acres'},
             {'mDataProp': "containment", 'sTitle': 'Containment'},
