@@ -57,8 +57,8 @@
         writeDefaultChart: function(){
             configData.blueprintChartSeries(
                 'data-chart',
-                'Contributions to wperp',
-                'Source:',
+                'Water and Power Employees Contributions',
+                'Source: City of Los Angeles',
                 configData.convertObjectToArray(configData.objectChartData.wperp_chart[0]),
                 configData.convertObjectToArray(configData.objectChartData.wperp_chart[1])
                 //configData.convertObjectToArray(configData.objectChartData.wperp_chart[2])
@@ -176,8 +176,8 @@
                     if (valueToEvaulaute === 'chart_1000'){
                         configData.blueprintChartSeries(
                             'data-chart',
-                            'Contributions to wperp',
-                            'Source:',
+                            'Water and Power Employees Contributions',
+                            'Source: City of Los Angeles',
                             configData.convertObjectToArray(configData.objectChartData.wperp_chart[0]),
                             configData.convertObjectToArray(configData.objectChartData.wperp_chart[1])
                         );
@@ -185,8 +185,8 @@
                     } else if (valueToEvaulaute === 'chart_2000'){
                         configData.blueprintChartSeries(
                             'data-chart',
-                            'Contributions to LACERS',
-                            'Source:',
+                            'LA City Employee Retirement System Contributions',
+                            'Source: City of Los Angeles',
                             configData.convertObjectToArray(configData.objectChartData.lacers_chart[0]),
                             configData.convertObjectToArray(configData.objectChartData.lacers_chart[1])
                         );
@@ -194,8 +194,8 @@
                     } else {
                         configData.blueprintChartSeries(
                             'data-chart',
-                            'Contributions to LAFFP',
-                            'Source:',
+                            ' LA Fire and Police Pension Fund Contributions',
+                            'Source: City of Los Angeles',
                             configData.convertObjectToArray(configData.objectChartData.laffp_chart[0]),
                             configData.convertObjectToArray(configData.objectChartData.laffp_chart[1])
                         );
