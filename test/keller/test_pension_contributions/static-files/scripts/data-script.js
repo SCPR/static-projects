@@ -60,8 +60,8 @@
                 'Contributions to wperp',
                 'Source:',
                 configData.convertObjectToArray(configData.objectChartData.wperp_chart[0]),
-                configData.convertObjectToArray(configData.objectChartData.wperp_chart[1]),
-                configData.convertObjectToArray(configData.objectChartData.wperp_chart[2])
+                configData.convertObjectToArray(configData.objectChartData.wperp_chart[1])
+                //configData.convertObjectToArray(configData.objectChartData.wperp_chart[2])
             );
 
         },
@@ -113,7 +113,7 @@
         },
 
         // the blueprint for a chart data
-        blueprintChartSeries: function(containerToRenderTo, titleText, subtitleText, chartDataOne, chartDataTwo, chartDataThree){
+        blueprintChartSeries: function(containerToRenderTo, titleText, subtitleText, chartDataOne, chartDataTwo){
             var chartMemberContribsSeries = {
                 name: 'Member Contributions',
                 color: '#002734',
@@ -128,14 +128,16 @@
                 data: chartDataTwo
             };
 
+/*
             var chartInvestmentContribsSeries = {
                 name: 'Investment Contributions',
                 color: '#000000',
                 type: 'spline',
                 data: chartDataThree
             };
+*/
 
-            var dataSeriesContainer = [chartMemberContribsSeries, chartCityContribsSeries, chartInvestmentContribsSeries];
+            var dataSeriesContainer = [chartMemberContribsSeries, chartCityContribsSeries];
 
             var charts = [new Highcharts.Chart(
                 getSplineChartConfig(containerToRenderTo, titleText, subtitleText, dataSeriesContainer)
@@ -177,8 +179,7 @@
                             'Contributions to wperp',
                             'Source:',
                             configData.convertObjectToArray(configData.objectChartData.wperp_chart[0]),
-                            configData.convertObjectToArray(configData.objectChartData.wperp_chart[1]),
-                            configData.convertObjectToArray(configData.objectChartData.wperp_chart[2])
+                            configData.convertObjectToArray(configData.objectChartData.wperp_chart[1])
                         );
 
                     } else if (valueToEvaulaute === 'chart_2000'){
@@ -187,8 +188,7 @@
                             'Contributions to LACERS',
                             'Source:',
                             configData.convertObjectToArray(configData.objectChartData.lacers_chart[0]),
-                            configData.convertObjectToArray(configData.objectChartData.lacers_chart[1]),
-                            configData.convertObjectToArray(configData.objectChartData.lacers_chart[2])
+                            configData.convertObjectToArray(configData.objectChartData.lacers_chart[1])
                         );
 
                     } else {
@@ -197,8 +197,7 @@
                             'Contributions to LAFFP',
                             'Source:',
                             configData.convertObjectToArray(configData.objectChartData.laffp_chart[0]),
-                            configData.convertObjectToArray(configData.objectChartData.laffp_chart[1]),
-                            configData.convertObjectToArray(configData.objectChartData.laffp_chart[2])
+                            configData.convertObjectToArray(configData.objectChartData.laffp_chart[1])
                         );
                     }
                 }
