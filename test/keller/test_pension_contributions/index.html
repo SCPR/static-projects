@@ -25,7 +25,7 @@
         <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/css/interactive-project-shell/foundation-styles.css" rel="stylesheet" type="text/css" media="all" />
         <link href="static-files/css/project-styles.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://view.jqueryui.com/master/themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="all" />
         <!-- end css -->
 
@@ -42,13 +42,6 @@
         <script async="" src="http://www.google-analytics.com/ga.js"></script>
         <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
-        <script type="text/javascript" src="http://view.jqueryui.com/master/ui/jquery.ui.core.js"></script>
-        <script type="text/javascript" src="http://view.jqueryui.com/master/ui/jquery.ui.widget.js"></script>
-        <script type="text/javascript" src="http://view.jqueryui.com/master/ui/jquery.ui.mouse.js"></script>
-        <script type="text/javascript" src="http://view.jqueryui.com/master/ui/jquery.ui.slider.js"></script>
-
-
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js"></script>
     </head>
@@ -66,11 +59,11 @@
                             <!-- begin map slider -->
                             <div id="chart-filter">
                                 <div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" title="Slide me to the next chart"><a class="ui-slider-handle ui-state-default ui-corner-all" href="#"></a></div>
-                                <div id="markerContainer">
-                                    <div id="chart_1000"><p class="markerYear">wperp_chart</p></div>
-                                    <div id="chart_2000"><p class="markerYear">lacers_chart</p></div>
-                                    <div id="chart_3000"><p class="markerYear">laffp_chart</p></div>
-                                </div>
+                                <ul id="markerContainer">
+                                    <li class="chart_1000">wperp_chart</li>
+                                    <li class="chart_2000">lacers_chart</li>
+                                    <li class="chart_3000">laffp_chart</li>
+                                </ul>
                             </div>
                             <!-- end map slider -->
 
