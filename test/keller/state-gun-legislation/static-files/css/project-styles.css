@@ -48,6 +48,6 @@ div.ownership {background: #ffffff; background-image: url(../images/gun-ownershi
 
 /* data legend bottom margin for Landscape phones and down */
 @media (max-width: 499px) {
-    #data-legend {width: 90%; height: auto; margin: 10px 5% 80px 5%;}
+    #data-legend {width: 90%; height: auto; margin: 10px 5% 110px 5%;}
 
 }
