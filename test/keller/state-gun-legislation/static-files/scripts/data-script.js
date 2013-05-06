@@ -1,68 +1,85 @@
-var jqueryNoConflict = jQuery;
+    var jqueryNoConflict = jQuery;
+    var dataConfig = dataConfig || {};
 
-    //begin main function
+    // pull data from spreadsheet onload
     jqueryNoConflict(document).ready(function(){
-        getIdOfBillContainer();
+        dataConfig.initializeTabletopDataSource();
         animateContainers();
         runHandlebarsHelpers();
     });
-    //end main function
-
-    // get the id of a bill container on click
-    function getIdOfBillContainer(billId){
-        jqueryNoConflict('.item').click(function(){
-            billId = jqueryNoConflict(this).attr('id');
-            constructQueryUrl(billId);
-        });
-    }
-
-    // construct the url to query for data
-    function constructQueryUrl(billId){
-        var urlPrefix = 'http://openstates.org/api/v1/bills/ca/20132014/';
-        var urlSuffix = '/?apikey=b717252e9bc44d4ea57321c49e7dd5e8&callback=?';
-        var targetUrl = urlPrefix + billId + urlSuffix;
-        retriveData(targetUrl, billId);
-
-    }
-
-    // grab data
-    function retriveData(targetUrl) {
-        console.log(targetUrl);
-        jqueryNoConflict.getJSON(targetUrl, renderHandlebarsDisplayTemplate);
-    }
-
-    // render content display template
-    function renderHandlebarsDisplayTemplate(data){
-        renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#content-display', data);
-
-        compareBillIds('SB%20108');
-
-    }
 
 
+    // begin data configuration object
+    var dataConfig = {
 
-/*****/
+        targetBillId: null,
 
-
-    // begin
-    function compareBillIds(billId){
-        var targetBillId = 'SB%20108'
-        if (billId === targetBillId){
-            console.log('we have a match');
-
-            jqueryNoConflict('#reporter-summary').waitUntilExists(function(){
-                jqueryNoConflict('#reporter-summary').html('<h1>BOOM! ' + billId + '</h1>');
+        // initialize our tabletop object
+        initializeTabletopDataSource: function(){
+            Tabletop.init({
+                key: '0Aq8qwSArzKP9dGlidnhTaEJuWXRQTWNjQWtIVjdXOFE',
+                callback: dataConfig.getIdOfBillContainer,
+                parseNumbers: true,
+                simpleSheet: false,
+                debug: false
             });
+        },
 
-        } else {
-            console.log('move along now');
+        // get the id of a bill container on click
+        getIdOfBillContainer: function(data){
+            jqueryNoConflict('.item').click(function(){
+
+                dataConfig.targetBillId = jqueryNoConflict(this).attr('id');
+
+                dataConfig.constructOpenStatesQuery(dataConfig.targetBillId);
+
+                /* comparison function here? */
+                jqueryNoConflict('#reporter-summary').waitUntilExists(function(){
+                    dataConfig.compareBillIdToTabletopData(data, dataConfig.targetBillId);
+                });
+
+            });
+        },
+
+        // construct the url to query for data
+        constructOpenStatesQuery: function(billId){
+            var urlPrefix = 'http://openstates.org/api/v1/bills/ca/20132014/';
+            var urlSuffix = '/?apikey=b717252e9bc44d4ea57321c49e7dd5e8&callback=?';
+            var targetUrl = urlPrefix + billId + urlSuffix;
+            dataConfig.retriveOpenStatesData(targetUrl);
+        },
+
+        // grab data
+        retriveOpenStatesData: function(targetUrl) {
+            jqueryNoConflict.getJSON(targetUrl, dataConfig.renderHandlebarsDisplayTemplate);
+        },
+
+        // render content display template
+        renderHandlebarsDisplayTemplate: function(data){
+            renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#content-display', data);
+        },
+
+
+        // run the comparsion on actual bill and target bill
+        compareBillIdToTabletopData: function(data, TestBillId){
+
+            for(var i=0; i<data.working_data.elements.length; i++){
+
+                var formattedTableTopSummaryText = data.working_data.elements[i].juliessummary;
+                var formattedTableTopBillId = data.working_data.elements[i].billid.replace(/\s/g, "%20");
+
+                if (TestBillId === formattedTableTopBillId){
+                    console.log(TestBillId + ' = ' + formattedTableTopSummaryText);
+                    dataConfig.writeTableTopData(formattedTableTopSummaryText);
+                }
+            }
+        },
+
+        writeTableTopData: function(data){
+            jqueryNoConflict('#reporter-summary').html(data);
         }
     }
-
-/*****/
-
-
-
+    // end configuration object
 
     // isotope function to animate the containers
     function animateContainers(){
