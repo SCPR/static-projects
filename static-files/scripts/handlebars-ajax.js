@@ -23,7 +23,6 @@ function renderHandlebarsTemplate(withTemplate,inElement,withData){
 
 // handlebars help function to set every nth element
 function runRegisteredHandlebarsHelpers(){
-    handlebarsDebugHelper();
     handlebarsreplaceSpacesHelper();
     handlebarsLooperHelper();
     handlebarsFormatDateHelper();
@@ -40,7 +39,7 @@ function handlebarsDebugHelper(){
 }
 
 // build helper function
-function handlebarsreplaceSpacesHelper() {
+function handlebarsreplaceSpacesHelper(){
     Handlebars.registerHelper('replaceSpaces', function(context) {
         var replacedContext = context.split(' ').join('-');
         return replacedContext;

@@ -1,37 +1,45 @@
-{{debug}}
+<div id="{{replaceSpaces bill_id}}-details">
+    <div class="row-fluid">
+        <div class="span12">
+            <h2>{{title}}</h2>
+            <p><strong>{{chamberType chamber}} - {{bill_id}}</strong></p>
+            <p>
+            {{truncate summary 500 " ... "}}
+                {{#sources}}
+                    <a href="{{url}}" target="_blank">Read More</a>
+                {{/sources}}
+            </p>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span6">
+            <div id="reporter-summary"></div>
+        </div>
+        <div class="span6">
+            <h4>Sponsors</h4>
+            <ul>
+                {{#sponsors}}
+                    <li>{{name}} - ({{capitalizeFirst type}})</li>
+                {{/sponsors}}
+            </ul>
 
-<h2>{{title}}</h2>
-<p>{{bill_id}}</p>
-<p>{{chamberType chamber}}</p>
+            <h4>Legislative Actions</h4>
+            <ul>
+                {{#actions}}
+                    <li><strong>{{dateFormat date}}</strong>: {{action}} ({{chamberType actor}})</li>
+                {{/actions}}
+            </ul>
 
-<p>
-{{truncate summary 500 " ... "}}
-    {{#sources}}
-        <a href="{{url}}" target="_blank">Read More</a>
-    {{/sources}}
-</p>
+            <h4>Process Dates</h4>
+            <ul>
+                <li><strong>First Action</strong>: {{dateFormat action_dates.first}}</li>
+                <li><strong>Last Action</strong>: {{dateFormat action_dates.last}}</li>
+                <li><strong>Passed Senate</strong>: {{dateFormat action_dates.passed_upper}}</li>
+                <li><strong>Passed Assembly</strong>: {{dateFormat action_dates.passed_lower}}</li>
+                <li><strong>Signed into law</strong>: {{dateFormat action_dates.signed}}</li>
+            </ul>
 
-<h4>Sponsors</h4>
-<ul>
-{{#sponsors}}
-    <li>{{name}} - ({{capitalizeFirst type}})</li>
-{{/sponsors}}
-</ul>
-
-<h4>Legislative Actions</h4>
-<ul>
-{{#actions}}
-    <li><strong>{{dateFormat date}}</strong>: {{action}} ({{chamberType actor}})</li>
-{{/actions}}
-</ul>
-
-<h4>Process Dates</h4>
-<ul>
-<li><strong>First Action</strong>: {{dateFormat action_dates.first}}</li>
-<li><strong>Last Action</strong>: {{dateFormat action_dates.last}}</li>
-<li><strong>Passed Senate</strong>: {{dateFormat action_dates.passed_upper}}</li>
-<li><strong>Passed Assembly</strong>: {{dateFormat action_dates.passed_lower}}</li>
-<li><strong>Signed into law</strong>: {{dateFormat action_dates.signed}}</li>
-</ul>
-
-<h4>Last updated: {{dateFormat updated_at}}</h4>
+            <h4>Last updated: {{dateFormat updated_at}}</h4>
+        </div>
+    </div>
+</div>
