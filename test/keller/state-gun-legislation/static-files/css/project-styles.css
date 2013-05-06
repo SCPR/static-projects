@@ -1,7 +1,8 @@
 #data-legend {width: 90%; height: 50px; margin: 10px 5% 10px 5%;}
 #data-legend label, #data-legend a {font-weight: bold; font-size: 100%;}
 #data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 10px;}
-#container {height: auto; margin: 25px 0 0 0; padding: 5px;}
+
+#container {width: 90%; height: auto; margin: 25px 5% 0 5%; padding: 5px;}
 .item {width: 100px; height: 100px; margin: 3px; border: 1px solid black; float: left; cursor: pointer; background: #e8e8e8; text-align: center; font-weight: bold;}
 .item.next {width: 100px; height: 100px; border: 5px solid black; border-radius: 35px;}
 
