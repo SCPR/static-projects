@@ -177,7 +177,7 @@
                         configData.blueprintChartSeries(
                             'data-chart',
                             'Water and Power Employees Contributions',
-                            'Source: City of Los Angeles',
+                            'Source: Water and Power Employees Pension Fund annual report',
                             configData.convertObjectToArray(configData.objectChartData.wperp_chart[0]),
                             configData.convertObjectToArray(configData.objectChartData.wperp_chart[1])
                         );
@@ -186,7 +186,7 @@
                         configData.blueprintChartSeries(
                             'data-chart',
                             'LA City Employee Retirement System Contributions',
-                            'Source: City of Los Angeles',
+                            'Source: LA City Employee Retirement System annual report',
                             configData.convertObjectToArray(configData.objectChartData.lacers_chart[0]),
                             configData.convertObjectToArray(configData.objectChartData.lacers_chart[1])
                         );
@@ -194,8 +194,8 @@
                     } else {
                         configData.blueprintChartSeries(
                             'data-chart',
-                            ' LA Fire and Police Pension Fund Contributions',
-                            'Source: City of Los Angeles',
+                            'LA Fire and Police Pension Fund Contributions',
+                            'Source: LA Fire and Police Pension Fund annual report',
                             configData.convertObjectToArray(configData.objectChartData.laffp_chart[0]),
                             configData.convertObjectToArray(configData.objectChartData.laffp_chart[1])
                         );

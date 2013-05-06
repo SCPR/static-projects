@@ -78,7 +78,7 @@
             jqueryNoConflict.each(trafficCategoryObject.incidents, function(i, record) {
                 var locationElement = '<li><strong>' + record.location + '</strong>:';
                 var detailsElement = record.details + ' ';
-                var readMoreElement = '<a href="' + record.read_more + '">Read More</a></li>';
+                var readMoreElement = '<a href="' + record.read_more + '" target="_blank">Read More</a></li>';
                 holdingArrayForDisplayStrings.push(locationElement, detailsElement, readMoreElement);
             });
 
