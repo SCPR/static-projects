@@ -1,15 +1,22 @@
 #data-legend {padding: 0 0 0 0;}
 #data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 10px;}
+
 #container {padding: 5px;}
 .item {width: 100px; height: 100px; margin: 3px; border: 1px solid black; float: left; cursor: pointer; background: #e8e8e8;}
 .item.next {width: 100px; height: 100px; border: 5px solid black; border-radius: 35px;}
-.item.is-filteammo {border-style: dotted;}
 
+/* background icons */
+div.models {background: #ffffff; background-image: url(../images/gun-models.png); background-repeat: no-repeat; background-position: 0 0;}
+div.sales {background: #ffffff; background-image: url(../images/gun-sales.png); background-repeat: no-repeat; background-position: 0 0;}
+div.ammo {background: #ffffff; background-image: url(../images/gun-ammo.png); background-repeat: no-repeat; background-position: 0 0;}
+div.ownership {background: #ffffff; background-image: url(../images/gun-ownership.png); background-repeat: no-repeat; background-position: 0 0;}
 
-.ammo {background: red;}
-.sales {background: white;}
-.ownership {background: blue;}
-.models {background: yellow;}
+/*
+gun-models.png used via Creative Commons CC0 - No Rights Reserved - http://thenounproject.com/noun/gun/#icon-No3215
+gun-sales.png used via Creative Commons CC0 - No Rights Reserved - http://thenounproject.com/noun/money/#icon-No931
+gun-ammo.png used via Creative Commons - Attribution (CC BY 3.0). Design by Jeff Raines, from The Noun Project - http://thenounproject.com/noun/bullet/#icon-No933
+gun-ownership.png used via a Public Domain Mark - http://thenounproject.com/noun/man/#icon-No2
+*/
 
 /* Isotope Filtering */
 .isotope-item {z-index: 2;}
