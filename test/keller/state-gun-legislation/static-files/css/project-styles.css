@@ -1,22 +1,22 @@
-#data-legend {padding: 0 0 0 0;}
+#data-legend {width: 90%; height: 50px; margin: 10px 5% 10px 5%;}
+#data-legend label, #data-legend a {font-weight: bold; font-size: 100%;}
 #data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 10px;}
-
-#container {padding: 5px;}
-.item {width: 100px; height: 100px; margin: 3px; border: 1px solid black; float: left; cursor: pointer; background: #e8e8e8;}
+#container {height: auto; margin: 25px 0 0 0; padding: 5px;}
+.item {width: 100px; height: 100px; margin: 3px; border: 1px solid black; float: left; cursor: pointer; background: #e8e8e8; text-align: center; font-weight: bold;}
 .item.next {width: 100px; height: 100px; border: 5px solid black; border-radius: 35px;}
 
 /* background icons */
-div.models {background: #ffffff; background-image: url(../images/gun-models.png); background-repeat: no-repeat; background-position: 0 0;}
-div.sales {background: #ffffff; background-image: url(../images/gun-sales.png); background-repeat: no-repeat; background-position: 0 0;}
-div.ammo {background: #ffffff; background-image: url(../images/gun-ammo.png); background-repeat: no-repeat; background-position: 0 0;}
-div.ownership {background: #ffffff; background-image: url(../images/gun-ownership.png); background-repeat: no-repeat; background-position: 0 0;}
+div.models {background: #ffffff; background-image: url(../images/gun-models.png); background-size: 60%; background-repeat: no-repeat; background-position: center center;}
+/* gun-models.png used via Creative Commons CC0 - No Rights Reserved - http://thenounproject.com/noun/gun/#icon-No3215 */
 
-/*
-gun-models.png used via Creative Commons CC0 - No Rights Reserved - http://thenounproject.com/noun/gun/#icon-No3215
-gun-sales.png used via Creative Commons CC0 - No Rights Reserved - http://thenounproject.com/noun/money/#icon-No931
-gun-ammo.png used via Creative Commons - Attribution (CC BY 3.0). Design by Jeff Raines, from The Noun Project - http://thenounproject.com/noun/bullet/#icon-No933
-gun-ownership.png used via a Public Domain Mark - http://thenounproject.com/noun/man/#icon-No2
-*/
+div.sales {background: #ffffff; background-image: url(../images/gun-sales.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+/* gun-sales.png used via Creative Commons CC0 - No Rights Reserved - http://thenounproject.com/noun/money/#icon-No931 */
+
+div.ammo {background: #ffffff; background-image: url(../images/gun-ammo.png); background-size: 20%; background-repeat: no-repeat; background-position: center center;}
+/* gun-ammo.png used via Creative Commons - Attribution (CC BY 3.0). Design by Jeff Raines, from The Noun Project - http://thenounproject.com/noun/bullet/#icon-No933 */
+
+div.ownership {background: #ffffff; background-image: url(../images/gun-ownership.png); background-size: 20%; background-repeat: no-repeat; background-position: center center;}
+/* gun-ownership.png used via a Public Domain Mark - http://thenounproject.com/noun/man/#icon-No2 */
 
 /* Isotope Filtering */
 .isotope-item {z-index: 2;}
