@@ -1,5 +1,7 @@
-#data-legend {width: 90%; height: 50px; margin: 10px 5% 10px 5%;}
+#data-legend {width: 90%; height: auto; margin: 10px 5% 10px 5%;}
+
 #data-legend label, #data-legend a {font-weight: bold; font-size: 100%;}
+
 #data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 10px;}
 
 #container {width: 90%; height: auto; margin: 25px 5% 0 5%; padding: 5px;}
@@ -33,3 +35,19 @@ div.ownership {background: #ffffff; background-image: url(../images/gun-ownershi
 
 /* disabling Isotope CSS3 transitions */
 .isotope.no-transition, .isotope.no-transition .isotope-item, .isotope .isotope-item.no-transition {-webkit-transition-duration: 0s; -moz-transition-duration: 0s; -ms-transition-duration: 0s; -o-transition-duration: 0s; transition-duration: 0s;}
+
+/* data legend bottom margin */
+@media (min-width: 980px) {
+    #data-legend {width: 90%; height: auto; margin: 10px 5% 10px 5%;}
+}
+
+/* data legend bottom margin for Portrait tablet to landscape and desktop */
+@media (min-width: 500px) and (max-width: 979px) {
+    #data-legend {width: 90%; height: auto; margin: 10px 5% 60px 5%;}
+}
+
+/* data legend bottom margin for Landscape phones and down */
+@media (max-width: 499px) {
+    #data-legend {width: 90%; height: auto; margin: 10px 5% 80px 5%;}
+
+}
