@@ -1,108 +1,146 @@
 var jqueryNoConflict = jQuery;
-var sImageUrl = "http://datatables.net/release-datatables/examples/examples_support/";
+var defaultTableOptions = defaultTableOptions || {};
+var dataTablesConfig = dataTablesConfig || {};
 
 // begin main function
 jqueryNoConflict(document).ready(function(){
-    drilldownConfig.initialize();
+    dataTablesConfig.initialize();
 });
 // end main function
 
-var drilldownConfig = drilldownConfig || {};
-var drilldownConfig = {
+// default configuration options
+var defaultTableOptions = {
 
-    // use either tabletop or flatfile
+    // specifies source of data for the table, either 'tabletop' or 'flatfile'.
     dataSource: 'tabletop',
 
-    // add if dataSource is tabletop
+    // add the key from your Google spreadsheet if the dataSource is set to tabletop.
     spreadsheetKey: '0Aq8qwSArzKP9dG1FNjJSSnh2TV96Szc0eUF2OXN2NWc',
 
-    // add if dataSource is a flat json file
-    jsonFile: '#',
+    // add the path to a flat json file if the dataSource is set to flatfile.
+    jsonFile: '',
 
-    initialize: function (){
-        if (!drilldownConfig.dataSource) {
-            jqueryNoConflict.error('please set the dataSource to either tabletop or flatfile');
+    // the div id in which the table will be displayed.
+    tableElementContainer: '#data-table',
 
-        } else if (drilldownConfig.dataSource === 'tabletop'){
-            drilldownConfig.retrieveTabletopObject();
+    // the type of table to render, either 'standard' or 'drilldown'.
+    // drilldown adds drill-down rows that contain more information.
+    tableType: 'drilldown',
 
-        } else if (drilldownConfig.dataSource === 'flatfile'){
-            drilldownConfig.writeTableWith(drilldownConfig.jsonFile);
+    // names of the columns in your spreadsheet or keys in the json.
+    // tabletop.js strips spaces and underscores and lowercases everything.
+    dataHeaders: ['datestarted', 'name', 'acres', 'containment'],
+
+    // proper display names as you want them to appear in the table
+    columnHeaders: ['Date', 'Name', 'Acres Burned', 'Containment'],
+
+    // The table sorting method.
+    // The first value is the zero-indexed column to sort on. The second value can be 'asc' or 'desc'.
+    tableSorting: [[ 3, "desc" ]],
+
+    // needs to at least be set to a minimum of 10 needed to alter the per page select menu.
+    displayLength: 15
+};
+
+// begin main datatables object
+var dataTablesConfig = {
+
+    initialize: function(){
+
+        if (!defaultTableOptions.dataSource){
+            //jqueryNoConflict.error('please set the dataSource to either tabletop or flatfile');
+            alert('Please set the dataSource to either tabletop or flatfile');
+
+        } else if (defaultTableOptions.dataSource === 'tabletop'){
+            dataTablesConfig.retrieveTabletopObject();
+
+        } else if (defaultTableOptions.dataSource === 'flatfile'){
+            dataTablesConfig.writeTableWith(defaultTableOptions.jsonFile);
 
         } else {
-            jqueryNoConflict.error('please set the dataSource to either tabletop or flatfile');
+            //jqueryNoConflict.error('please set the dataSource to either tabletop or flatfile');
+            alert('Please set the dataSource to either tabletop or flatfile');
         }
-
     },
 
-    retrieveTabletopObject: function (){
+    retrieveTabletopObject: function(){
         Tabletop.init({
-            key: drilldownConfig.spreadsheetKey,
-            callback: drilldownConfig.writeTableWith,
-            parseNumbers: true,
+            key: defaultTableOptions.spreadsheetKey,
+            callback: dataTablesConfig.writeTableWith,
             simpleSheet: true,
+            parseNumbers: true,
             debug: true
         });
     },
 
-    // create the table container and object
-    writeTableWith: function (dataSource){
+    // function to push splice object to table column array if drilldown selected
+    createArrayOfTableColumns: function(){
 
-        jqueryNoConflict('#data-table').html('<table width="100%" class="display table table-bordered table-striped" id="data-table-container"></table>');
+        var dataHeaders = defaultTableOptions.dataHeaders;
+        var displayHeaders = defaultTableOptions.columnHeaders;
 
-        var oTable = jqueryNoConflict('#data-table-container').dataTable({
-            'bProcessing': true,
+        if (defaultTableOptions.tableType === 'drilldown'){
+            var oTableColumnsObject = {'mDataProp': null, 'sClass': 'control center', 'sTitle': 'Details', 'sDefaultContent': '<img src="http://projects.scpr.org/static/static-files/images/datatables-base/details_open_base.png">'};
+            dataTablesConfig.oTableColumns.splice(0, 0, oTableColumnsObject);
+        }
 
-            /*** NEED TO FIGURE OUT HOW TO SET THESE OPTIONS ***/
+        for (var i=0;i<dataHeaders.length;i++){
+            var oTableColumnBuild = {
+                'mDataProp': dataHeaders[i].toLowerCase().replace(/\s/g, "").replace(/_/g, ""),
+                'sTitle': displayHeaders[i]
+            };
+            dataTablesConfig.oTableColumns.push(oTableColumnBuild);
+        }
 
-            /* works with tabletop */
-            'aaData': dataSource,
-
-            /* works with flat json file */
-            //'sAjaxDataProp': 'objects',
-            //'sAjaxSource': dataSource,
-
-            'aoColumns': drilldownConfig.createTableColumns(),
-    		'sPaginationType': 'bootstrap',
-    		'iDisplayLength': 10,
-            'oLanguage': {
-                'sLengthMenu': '_MENU_ records per page'
-            }
-        });
-
-    	drilldownConfig.hideShowDiv(oTable);
-        drilldownConfig.formatNumberData();
     },
 
-    // create table headers
-    createTableColumns: function (){
+    // create table headers with array of table header objects
+    oTableColumns: [],
 
-        /* swap out the properties of mDataProp & sTitle to reflect
-        the names of columns or keys you want to display */
-        var tableColumns = [
-            {'mDataProp': null,
-            'sClass': 'control center',
-            'sDefaultContent': '<img src="http://www.scpr.org/assets/footer-arrow-e9ec286850e4523c378543c458923763.png">',
-            'sTitle': 'Details',
-            'sWidth': '20%'},
+    oTableDefaultObject: {
+        'oLanguage': {
+            'sLengthMenu': '_MENU_ records per page'
+            },
+        'bProcessing': true,
+        'sPaginationType': 'bootstrap',
+        'iDisplayLength': defaultTableOptions.displayLength,
 
-            {'mDataProp': 'name',
-            'sTitle': 'Fire',
-            'sWidth': '20%'},
+        // sets table sorting
+        'aaSorting': defaultTableOptions.tableSorting,
 
-            {'mDataProp': 'datestarted',
-            'sTitle': 'Date',
-            'sWidth': '20%'},
+        // sets column headers
+        'aoColumns': null,
 
-            {'mDataProp': 'acres',
-            'sTitle': 'Acres burned',
-            'sWidth': '20%'},
+        /* data source needed for tabletop */
+        'aaData': null,
 
-            {'mDataProp': 'containment',
-            'sTitle': 'Containment',
-            'sWidth': '20%'}
-        ];
-        return tableColumns;
+        /* data source needed for flat json file */
+        'sAjaxDataProp': null,
+        'sAjaxSource': null
+    },
+
+    // create the table container and object
+    writeTableWith: function(dataSource){
+        dataTablesConfig.createArrayOfTableColumns();
+
+        jqueryNoConflict(defaultTableOptions.tableElementContainer).html('<table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered table-striped" id="data-table-container"></table>');
+
+        // write values to oTableDefaultObject if tabletop
+        if (defaultTableOptions.dataSource === 'tabletop'){
+            dataTablesConfig.oTableDefaultObject['aaData'] = dataSource;
+            dataTablesConfig.oTableDefaultObject['aoColumns'] = dataTablesConfig.oTableColumns;
+
+        // else write values if flatfile
+        } else {
+            dataTablesConfig.oTableDefaultObject['aoColumns'] = dataTablesConfig.oTableColumns;
+            dataTablesConfig.oTableDefaultObject['sAjaxDataProp'] = 'objects';
+            dataTablesConfig.oTableDefaultObject['sAjaxSource'] = dataSource;
+        }
+
+        var oTable = jqueryNoConflict('#data-table-container').dataTable(dataTablesConfig.oTableDefaultObject);
+
+    	dataTablesConfig.hideShowDiv(oTable);
+        dataTablesConfig.formatNumberData();
     },
 
     // format details function
@@ -133,17 +171,17 @@ var drilldownConfig = {
         var anOpen = [];
 
         // animation to make opening and closing smoother
-        jqueryNoConflict('#data-table td.control').live('click', function () {
+        jqueryNoConflict(defaultTableOptions.tableElementContainer + ' td.control').live('click', function () {
             var nTr = this.parentNode;
             var i = jqueryNoConflict.inArray(nTr, anOpen);
 
             if (i === -1) {
-                jqueryNoConflict('i', this).attr('class', 'icon-minus icon-black');
-                var nDetailsRow = oTable.fnOpen(nTr, drilldownConfig.fnFormatDetails(oTable, nTr), 'details');
+                jqueryNoConflict('img', this).attr('src', 'http://projects.scpr.org/static/static-files/images/datatables-base/details_close_base.png');
+                var nDetailsRow = oTable.fnOpen(nTr, dataTablesConfig.fnFormatDetails(oTable, nTr), 'details');
                 jqueryNoConflict('div.innerDetails', nDetailsRow).slideDown();
                 anOpen.push(nTr);
             } else {
-                jqueryNoConflict('i', this).attr('class', 'icon-plus icon-black');
+                jqueryNoConflict('img', this).attr('src', 'http://projects.scpr.org/static/static-files/images/datatables-base/details_open_base.png');
                 jqueryNoConflict('div.innerDetails', jqueryNoConflict(nTr).next()[0]).slideUp( function (){
                     oTable.fnClose(nTr);
                     anOpen.splice(i, 1);
@@ -181,3 +219,4 @@ var drilldownConfig = {
         };
     }
 }
+// end main datatables object
