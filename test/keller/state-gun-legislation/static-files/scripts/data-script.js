@@ -36,6 +36,7 @@
                 /* comparison function here? */
                 jqueryNoConflict('#reporter-summary').waitUntilExists(function(){
                     dataConfig.compareBillIdToTabletopData(data, dataConfig.targetBillId);
+                    billdetails.scrollIntoView(true);
                 });
 
             });
@@ -76,7 +77,6 @@
         },
 
         writeTableTopData: function(data){
-            jqueryNoConflict.scrollTo('.bill-details', 50);
             jqueryNoConflict('#reporter-summary').html(data);
         }
     }
