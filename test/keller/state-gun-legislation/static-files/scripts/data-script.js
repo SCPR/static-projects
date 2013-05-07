@@ -36,7 +36,7 @@
                 /* comparison function here? */
                 jqueryNoConflict('#reporter-summary').waitUntilExists(function(){
                     dataConfig.compareBillIdToTabletopData(data, dataConfig.targetBillId);
-                    billdetails.scrollIntoView(true);
+                    contentDisplay.scrollIntoView(true);
                 });
 
             });
@@ -57,7 +57,7 @@
 
         // render content display template
         renderHandlebarsDisplayTemplate: function(data){
-            renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#content-display', data);
+            renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#contentDisplay', data);
         },
 
 
@@ -78,7 +78,12 @@
 
         writeTableTopData: function(data){
             jqueryNoConflict('#reporter-summary').html(data);
+        },
+
+        backToTop: function(){
+            window.scrollTo(0,0);
         }
+
     }
     // end configuration object
 
