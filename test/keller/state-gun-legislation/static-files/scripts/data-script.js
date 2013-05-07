@@ -76,6 +76,7 @@
         },
 
         writeTableTopData: function(data){
+            jqueryNoConflict.scrollTo('.bill-details', 50);
             jqueryNoConflict('#reporter-summary').html(data);
         }
     }
