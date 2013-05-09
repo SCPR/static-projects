@@ -65,8 +65,8 @@ var dataConfig = {
 
         jqueryNoConflict('#procedure-comparison').change(function () {
             dataConfig.comparisonDataObject.procedure = jqueryNoConflict('#procedure-comparison :selected').val();
-            jqueryNoConflict('#hospital-left').empty();
-            jqueryNoConflict('#hospital-right').empty();
+            jqueryNoConflict('#hospital-left').html('Choose a hospital to compare');
+            jqueryNoConflict('#hospital-right').html('Choose a hospital to compare');
             dataConfig.compareSelectWithData(data);
         });
 
