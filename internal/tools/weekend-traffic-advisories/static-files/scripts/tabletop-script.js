@@ -88,7 +88,7 @@
 
         // renders the display
         displayTrafficObject: function(categoryParam, outputParam){
-            var combinedOutputString = '<h6>' + categoryParam + '</h6><ul>' + outputParam + '</ul><!-- weekend-traffic-impacts-post -->';
+            var combinedOutputString = '<h6>' + categoryParam + '</h6><ul>' + outputParam + '</ul><!-- weekend_traffic_impacts_blog_post -->';
             jqueryNoConflict('#formatted-output').append(combinedOutputString);
             //jqueryNoConflict('#html-output').text(combinedOutputString);
             document.getElementById('html-output').value += combinedOutputString;
