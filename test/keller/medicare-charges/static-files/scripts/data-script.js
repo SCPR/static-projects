@@ -42,14 +42,13 @@ var dataConfig = {
     },
 
     // abstract function to create a select menu from an array
-    configureSelectMenuFromData: function(arrayToCreateSelect, idTargetForSelect){
+    configureSelectMenuFromData: function(optionMessage, arrayToCreateSelect, idTargetForSelect){
         var selectList;
-
+        selectList += "<option>" + optionMessage + "</option>";
         for (var i=0; i<arrayToCreateSelect.length;i++) {
             selectList += "<option value='" + arrayToCreateSelect[i] + "'>" +
                 arrayToCreateSelect[i] + "</option>";
         }
-
         jqueryNoConflict(idTargetForSelect).append(selectList);
     },
 
@@ -61,11 +60,13 @@ var dataConfig = {
         var procedureKeys = Object.keys(dataConfig.separateProcedureKeysFromValues(data));
 
         // create the procedure select menu
-        dataConfig.configureSelectMenuFromData(procedureKeys, '#procedure-comparison');
+        dataConfig.configureSelectMenuFromData('Choose a procedure', procedureKeys, '#procedure-comparison');
         console.log(dataConfig.comparisonDataObject);
 
         jqueryNoConflict('#procedure-comparison').change(function () {
             dataConfig.comparisonDataObject.procedure = jqueryNoConflict('#procedure-comparison :selected').val();
+            jqueryNoConflict('#hospital-left').empty();
+            jqueryNoConflict('#hospital-right').empty();
             dataConfig.compareSelectWithData(data);
         });
 
@@ -94,7 +95,6 @@ var dataConfig = {
         for (var i=0; i<data.objects.length; i++){
 
             if (data.objects[i].drgdefinition === procedureToQuery){
-                console.log('we have a match');
 
                 // for each of the hospital that has the procedure create a new object
                 var testTargetHospitalObject = {
@@ -118,31 +118,23 @@ var dataConfig = {
 
         console.log(testHoldingArray);
 
-        var testObjectsToUse = {
+        var hospitalsObjectToBuildSelect = {
             objects: testHoldingArray
         };
-
-        console.log(testObjectsToUse);
 
         jqueryNoConflict('#hospital-div-left').removeClass('hidden');
         jqueryNoConflict('#hospital-div-right').removeClass('hidden');
 
         // separate the procedure keys from the values and place into array
-        var hospitalKeys = Object.keys(dataConfig.separateHospitalKeysFromValues(testObjectsToUse));
+        var hospitalKeys = Object.keys(dataConfig.separateHospitalKeysFromValues(hospitalsObjectToBuildSelect));
 
         // empty the hospitals select menu
-
-        /* !!!!!!! */
-        // right now overriding everthing
-        // http://stackoverflow.com/questions/47824/how-do-you-remove-all-the-options-of-a-select-box-and-then-add-one-option-and-se
-
         jqueryNoConflict('#hospital-comparison-right').empty();
         jqueryNoConflict('#hospital-comparison-left').empty();
 
         // create the new select menu based on options
-        dataConfig.configureSelectMenuFromData(hospitalKeys, '#hospital-comparison-right');
-        dataConfig.configureSelectMenuFromData(hospitalKeys, '#hospital-comparison-left');
-
+        dataConfig.configureSelectMenuFromData('Choose a hospital', hospitalKeys, '#hospital-comparison-right');
+        dataConfig.configureSelectMenuFromData('Choose a hospital', hospitalKeys, '#hospital-comparison-left');
 
         // check each hospital in the array of objects to grab
         //those that match the left and right hospital values
