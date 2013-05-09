@@ -57,21 +57,15 @@ var dataConfig = {
 
     processDataFromFile: function(data){
 
-        // separate the keys from the values and place into array
+        // separate the procedure keys from the values and place into array
         var procedureKeys = Object.keys(dataConfig.separateProcedureKeysFromValues(data));
-        var hospitalKeys = Object.keys(dataConfig.separateHospitalKeysFromValues(data));
 
-        // create select menus
+        // create the procedure select menu
         dataConfig.configureSelectMenuFromData(procedureKeys, '#procedure-comparison');
-        dataConfig.configureSelectMenuFromData(hospitalKeys, '#hospital-comparison-left');
-        dataConfig.configureSelectMenuFromData(hospitalKeys, '#hospital-comparison-right');
-
         console.log(dataConfig.comparisonDataObject);
 
         jqueryNoConflict('#procedure-comparison').change(function () {
             dataConfig.comparisonDataObject.procedure = jqueryNoConflict('#procedure-comparison :selected').val();
-            jqueryNoConflict('#hospital-div-left').removeClass('hidden');
-            jqueryNoConflict('#hospital-div-right').removeClass('hidden');
             dataConfig.compareSelectWithData(data);
         });
 
@@ -84,76 +78,104 @@ var dataConfig = {
             dataConfig.comparisonDataObject.hospitalRight = jqueryNoConflict('#hospital-comparison-right :selected').val();
             dataConfig.compareSelectWithData(data);
         });
-
-
-
-
-
-
-
     },
 
     compareSelectWithData: function(data){
 
         console.log(data);
 
-        // retrieve dataConfig.comparisonDataObject which has the procedure and two hospital values
-        console.log(dataConfig.comparisonDataObject);
+        // array to hold our target hospitals
+        var testHoldingArray = [];
 
-        // for each of the hospital values create a new object
+        // retrieve dataConfig.comparisonDataObject which has the procedure
+        var procedureToQuery = dataConfig.comparisonDataObject.procedure
 
-        // check each new hospital object to see if it has a value that matches the procedure
-
-        // if it does, display the data
-
-        // if it doesn't, display no data found for that procedure
-
-/*
-        console.log(data);
-        console.log(dataConfig.comparisonDataObject);
-        console.log(dataConfig.comparisonDataObject.procedure);
-        console.log(dataConfig.comparisonDataObject.hospitalLeft);
-        console.log(dataConfig.comparisonDataObject.hospitalRight);
-
-
+        // check to see which hospitals have the procedure
         for (var i=0; i<data.objects.length; i++){
 
-            // how to handle if the procedure is not present?
-            // perhaps its setting the data to key on a hospital and the procdures they have
+            if (data.objects[i].drgdefinition === procedureToQuery){
+                console.log('we have a match');
 
-            if (dataConfig.comparisonDataObject.procedure === undefined ||
-                dataConfig.comparisonDataObject.procedure === null){
-                jqueryNoConflict('#hospital-left').html('Choose a procedure');
-                jqueryNoConflict('#hospital-right').html('Choose a procedure');
+                // for each of the hospital that has the procedure create a new object
+                var testTargetHospitalObject = {
+                    providername: data.objects[i].providername,
+                    drgdefinition: data.objects[i].drgdefinition,
+                    totaldischarges: data.objects[i].totaldischarges,
+                    averagecoveredcharges: data.objects[i].averagecoveredcharges,
+                    averagetotalpayments: data.objects[i].averagetotalpayments
+                };
+
+                // push to our holding array
+                testHoldingArray.push(testTargetHospitalObject);
+
+            } else {
+
+                console.log('no match');
             }
 
+        }
+        // end loop
+
+        console.log(testHoldingArray);
+
+        var testObjectsToUse = {
+            objects: testHoldingArray
+        };
+
+        console.log(testObjectsToUse);
+
+        jqueryNoConflict('#hospital-div-left').removeClass('hidden');
+        jqueryNoConflict('#hospital-div-right').removeClass('hidden');
+
+        // separate the procedure keys from the values and place into array
+        var hospitalKeys = Object.keys(dataConfig.separateHospitalKeysFromValues(testObjectsToUse));
+
+        // empty the hospitals select menu
+
+        /* !!!!!!! */
+        // right now overriding everthing
+        // http://stackoverflow.com/questions/47824/how-do-you-remove-all-the-options-of-a-select-box-and-then-add-one-option-and-se
+
+        jqueryNoConflict('#hospital-comparison-right').empty();
+        jqueryNoConflict('#hospital-comparison-left').empty();
+
+        // create the new select menu based on options
+        dataConfig.configureSelectMenuFromData(hospitalKeys, '#hospital-comparison-right');
+        dataConfig.configureSelectMenuFromData(hospitalKeys, '#hospital-comparison-left');
+
+
+        // check each hospital in the array of objects to grab
+        //those that match the left and right hospital values
+        for (var x=0; x<testHoldingArray.length; x++){
             if (dataConfig.comparisonDataObject.hospitalLeft === undefined || dataConfig.comparisonDataObject.hospitalLeft === null){
                 jqueryNoConflict('#hospital-left').html('Choose a hospital to compare');
-            }
+            };
 
             if (dataConfig.comparisonDataObject.hospitalRight === undefined || dataConfig.comparisonDataObject.hospitalRight === null){
                 jqueryNoConflict('#hospital-right').html('Choose a hospital to compare');
+            };
+
+            // display the data
+            if (dataConfig.comparisonDataObject.hospitalLeft === testHoldingArray[x].providername){
+                jqueryNoConflict('#hospital-left').html(
+                '<h4>' + testHoldingArray[x].providername + '</h4>' +
+                '<p>Procedure: ' + testHoldingArray[x].drgdefinition + '</p>' +
+                '<p>Discharges: ' + testHoldingArray[x].totaldischarges + '</p>' +
+                '<p>Covered Charges: ' + testHoldingArray[x].averagecoveredcharges + '</p>' +
+                '<p>Average Total Payments:' + testHoldingArray[x].averagetotalpayments + '</p>');
             }
 
-            if (dataConfig.comparisonDataObject.procedure === data.objects[i].drgdefinition && dataConfig.comparisonDataObject.hospitalLeft === data.objects[i].providername){
-                    jqueryNoConflict('#hospital-left').html(
-                    '<h4>' + data.objects[i].providername + '</h4>' +
-                    '<p>Procedure: ' + data.objects[i].drgdefinition + '</p>' +
-                    '<p>Discharges: ' + data.objects[i].totaldischarges + '</p>' +
-                    '<p>Covered Charges: ' + data.objects[i].averagecoveredcharges + '</p>' +
-                    '<p>Average Total Payments:' + data.objects[i].averagetotalpayments + '</p>');
+            if (dataConfig.comparisonDataObject.hospitalRight === testHoldingArray[x].providername){
+                jqueryNoConflict('#hospital-right').html(
+                '<h4>' + testHoldingArray[x].providername + '</h4>' +
+                '<p>Procedure: ' + testHoldingArray[x].drgdefinition + '</p>' +
+                '<p>Discharges: ' + testHoldingArray[x].totaldischarges + '</p>' +
+                '<p>Covered Charges: ' + testHoldingArray[x].averagecoveredcharges + '</p>' +
+                '<p>Average Total Payments:' + testHoldingArray[x].averagetotalpayments + '</p>');
             }
 
-            if (dataConfig.comparisonDataObject.procedure === data.objects[i].drgdefinition && dataConfig.comparisonDataObject.hospitalRight === data.objects[i].providername){
-                    jqueryNoConflict('#hospital-right').html(
-                    '<h4>' + data.objects[i].providername + '</h4>' +
-                    '<p>Procedure : ' + data.objects[i].drgdefinition + '</p>' +
-                    '<p>Discharges : ' + data.objects[i].totaldischarges + '</p>' +
-                    '<p>Covered Charges : ' + data.objects[i].averagecoveredcharges + '</p>' +
-                    '<p>Average Total Payments :' + data.objects[i].averagetotalpayments + '</p>');
-            }
+
         }
-*/
 
     }
 };

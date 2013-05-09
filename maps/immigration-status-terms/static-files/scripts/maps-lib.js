@@ -41,7 +41,7 @@
     recordNamePlural:   "responses",
 
     // in meters ~ 1/2 mile
-    searchRadius:       16093,
+    searchRadius:       32186,
 
     // zoom level when map is loaded (bigger is more zoomed in)
     defaultZoom:        4,
