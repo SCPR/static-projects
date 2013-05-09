@@ -1,52 +1,28 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="kpcc-v2-api-query.js"></script>
 
 <script>
-var jqueryNoConflict = jQuery;
+    var kpccApiConfig = {
 
-//begin main function
-jqueryNoConflict(document).ready(function(){
-    retrieveData()
-});
+        // comma separated string of items to query against
+        // default is blogs,news,segments
+        // options are news, blogs, segments, episodes, video
+        types: 'blogs, news, segments, episodes, video',
 
-// begin
-function retrieveData(data){
-    $.getJSON('http://www.scpr.org/api/v2/content/?types=news,segments,blogs&query=LA+Mayor+Race+2013+Wendy+Greuel+Eric+Garcetti&limit=30', createArrayFrom);
+        // string of what you want to query Outpost for
+        // the script will outmatically convert spaces to a + sign
+        query: 'LA Mayor Race 2013 Wendy Greuel Eric Garcetti',
 
-};
+        // integer showing the number of items to return
+        limit: 25,
 
-// begin
-function createArrayFrom(data){
+        // the page of results to return
+        page: 1,
 
-    console.log(data);
+        // the div on the page in which you want the content to appear
+        contentContainer: '#article-list-content'
 
-    // begin loop
-    for (var i = 0; i < data.length; i++) {
-
-        var headline = data[i].short_title;
-        var link_path = data[i].permalink;
-        var asset = data[i].thumbnail;
-        var byline = data[i].byline;
-        var teaser = data[i].teaser;
-
-        // write data to div
-        jqueryNoConflict('#article-list-content').append(
-            '<section class="cbase offlead">' +
-                '<div class="row-fluid">' +
-                    '<div class="span10">' +
-                        '<div id="article-list-image" class="contentasset">' + asset + '</div>' +
-                    '</div>' +
-                    '<div class="span14">' +
-                        '<div id="article-list-headline">' +
-                            '<a href=\"' + link_path + '\">' + headline + '</a> (<em>' + byline + '</em>)<br />' +
-                            '<p>' + teaser + '</p>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
-            '</section>');
-       };
-       // end loop
-
-};
+    };
 </script>
 
 <div id="article-list-content"></div>

@@ -156,5 +156,5 @@ var dataConfig = {
 */
 
     }
-}
+};
 // end data configuration object
