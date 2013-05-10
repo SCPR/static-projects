@@ -146,13 +146,14 @@ var fn = {
         });
     },
 
-    // array to hold our target hospitals
-    arrayFilteredHospitalObjects: [],
-
     // function to run comparisons
     compareSelectWithData: function(data){
 
         console.log(data);
+
+        // array to hold our target hospitals
+        var arrayFilteredHospitalObjects = [];
+        arrayFilteredHospitalObjects.length = 0;
 
         // holding container used to calulate averages
         var arrayProcedureCosts = [];
@@ -178,7 +179,7 @@ var fn = {
                 };
 
                 // push filteredHospitalObject to arrayFilteredHospitalObjects
-                fn.arrayFilteredHospitalObjects.push(filteredHospitalObject);
+                arrayFilteredHospitalObjects.push(filteredHospitalObject);
 
                 // push average charges to array for calculations
                 arrayProcedureCosts.push(fn.convertCurrencyToInt(data.objects[i].averagecoveredcharges));
@@ -211,7 +212,7 @@ var fn = {
 
         // set our filtered array to an object
         var hospitalsObjectToBuildSelect = {
-            objects: fn.arrayFilteredHospitalObjects
+            objects: arrayFilteredHospitalObjects
         };
 
         // separate the procedure keys from the values and place into array
@@ -221,7 +222,7 @@ var fn = {
 
         // check each hospital in the array of objects to grab
         // those that match the left and right hospital values
-        var filteredHospitals = fn.arrayFilteredHospitalObjects;
+        var filteredHospitals = arrayFilteredHospitalObjects;
 
         for (var x=0; x<filteredHospitals.length; x++){
             if (fn.comparisonDataObject.hospitalLeft === undefined || fn.comparisonDataObject.hospitalLeft === null){
