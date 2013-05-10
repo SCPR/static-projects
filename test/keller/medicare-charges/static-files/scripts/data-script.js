@@ -156,6 +156,7 @@ var fn = {
 
         // holding container used to calulate averages
         var arrayProcedureCosts = [];
+        arrayProcedureCosts.length = 0;
 
         // retrieve fn.comparisonDataObject which has the procedure
         var procedureToQuery = fn.comparisonDataObject.procedure
