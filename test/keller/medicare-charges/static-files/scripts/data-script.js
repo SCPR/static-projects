@@ -68,7 +68,7 @@ var fn = {
 
     // take int of dollar amount and convert to currency
     convertIntToCurrency: function(integer){
-        var value = '$' + fn.addCommas(integer.toFixed(0));;
+        var value = '$' + fn.addCommas(integer.toFixed(0));
         return value;
     },
 
@@ -122,6 +122,9 @@ var fn = {
     processDataFromFile: function(data){
 
         // separate the procedure keys from the values and place into array
+        // does not work on ie
+        // solution: http://whattheheadsaid.com/2010/10/a-safer-object-keys-compatibility-implementation
+
         var procedureKeys = Object.keys(fn.separateProcedureKeysFromValues(data));
 
         // create the procedure select menu
