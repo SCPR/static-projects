@@ -76,9 +76,9 @@ var fn = {
     compareHospitalToAverage: function(hospitalCost, averageCost){
         if (hospitalCost < averageCost){
             value = ' &#8595; ';
-            console.log('hospital-lower');
+            //console.log('hospital-lower');
         } else {
-            console.log('hospital-higher');
+            //console.log('hospital-higher');
             value = ' &#8593; ';
         }
         return value;
@@ -126,7 +126,7 @@ var fn = {
 
         // create the procedure select menu
         fn.configureSelectMenuFromData('Choose a procedure', procedureKeys, '#procedure-comparison');
-        console.log(fn.comparisonDataObject);
+        //console.log(fn.comparisonDataObject);
 
         jqueryNoConflict('#procedure-comparison').change(function () {
             fn.comparisonDataObject.procedure = jqueryNoConflict('#procedure-comparison :selected').val();
@@ -149,7 +149,7 @@ var fn = {
     // function to run comparisons
     compareSelectWithData: function(data){
 
-        console.log(data);
+        //console.log(data);
 
         // array to hold our target hospitals
         var arrayFilteredHospitalObjects = [];
@@ -203,12 +203,12 @@ var fn = {
 
             } else {
 
-                console.log('no match');
+                //console.log('no match');
             }
         }
         // end loop
 
-        console.log(fn.comparisonDataObject);
+        //console.log(fn.comparisonDataObject);
 
         // set our filtered array to an object
         var hospitalsObjectToBuildSelect = {
