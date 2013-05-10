@@ -4,22 +4,84 @@ without mcc = without major complications
 with cc - with complicaitons
 */
 
-
 var jqueryNoConflict = jQuery;
-var dataConfig = dataConfig || {};
+var fn = fn || {};
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
-    dataConfig.retrieveDataFromFile();
+    fn.retrieveDataFromFile();
 
 });
 
 // begin data configuration object
-var dataConfig = {
+var fn = {
 
+    // pull the data from the flat file
     retrieveDataFromFile: function(){
         var dataSource = 'static-files/data/medicare_charges_full-handlebars.json';
-        jqueryNoConflict.getJSON(dataSource, dataConfig.processDataFromFile);
+        jqueryNoConflict.getJSON(dataSource, fn.processDataFromFile);
+    },
+
+    // add commas to a string
+    addCommas: function(nStr){
+        nStr += '';
+        x = nStr.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+
+        var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1)) {
+                x1 = x1.replace(rgx, '$1' + ',' + '$2');
+            }
+        return x1 + x2;
+    },
+
+    // calculate average, add commas, round off
+    calculateAverageCost: function(arrayOfTotals){
+        var total = 0;
+        for (var z=0; z<arrayOfTotals.length; z++){
+            total = total + arrayOfTotals[z];
+        }
+
+        total = total/arrayOfTotals.length;
+        return total;
+    },
+
+    // calculate highest instance, add commas, round off
+    calcaulateHighestCost: function(array){
+        var total = Math.max.apply(Math, array);
+        return total;
+    },
+
+    // calculate lowest instance, add commas, round off
+    calcaulateLowestCost: function(array){
+        var total = Math.min.apply(Math, array);
+        return total;
+    },
+
+    // take string of dollar amount and convert to int
+    convertCurrencyToInt: function(currency){
+        var value = currency.replace('$', '').replace(',', '');
+        value = parseInt(value);
+        return value;
+    },
+
+    // take int of dollar amount and convert to currency
+    convertIntToCurrency: function(integer){
+        var value = '$' + fn.addCommas(integer.toFixed(0));;
+        return value;
+    },
+
+    // compare a hospital's average to the datasets average
+    compareHospitalToAverage: function(hospitalCost, averageCost){
+        if (hospitalCost < averageCost){
+            value = ' &#8595; ';
+            console.log('hospital-lower');
+        } else {
+            console.log('hospital-higher');
+            value = ' &#8593; ';
+        }
+        return value;
     },
 
     // count instances of procedure values and set to keys
@@ -53,97 +115,50 @@ var dataConfig = {
         jqueryNoConflict(idTargetForSelect).append(selectList);
     },
 
+    // holding container for values from the select menu
     comparisonDataObject: {},
 
+    // holding container for values from the select menu
     processDataFromFile: function(data){
 
         // separate the procedure keys from the values and place into array
-        var procedureKeys = Object.keys(dataConfig.separateProcedureKeysFromValues(data));
+        var procedureKeys = Object.keys(fn.separateProcedureKeysFromValues(data));
 
         // create the procedure select menu
-        dataConfig.configureSelectMenuFromData('Choose a procedure', procedureKeys, '#procedure-comparison');
-        console.log(dataConfig.comparisonDataObject);
+        fn.configureSelectMenuFromData('Choose a procedure', procedureKeys, '#procedure-comparison');
+        console.log(fn.comparisonDataObject);
 
         jqueryNoConflict('#procedure-comparison').change(function () {
-            dataConfig.comparisonDataObject.procedure = jqueryNoConflict('#procedure-comparison :selected').val();
+            fn.comparisonDataObject.procedure = jqueryNoConflict('#procedure-comparison :selected').val();
             jqueryNoConflict('#hospital-left').html('Choose a hospital to compare');
             jqueryNoConflict('#hospital-right').html('Choose a hospital to compare');
-            dataConfig.compareSelectWithData(data);
+            fn.compareSelectWithData(data);
         });
 
         jqueryNoConflict('#hospital-comparison-left').change(function () {
-            dataConfig.comparisonDataObject.hospitalLeft = jqueryNoConflict('#hospital-comparison-left :selected').val();
-            dataConfig.compareSelectWithData(data);
+            fn.comparisonDataObject.hospitalLeft = jqueryNoConflict('#hospital-comparison-left :selected').val();
+            fn.compareSelectWithData(data);
         });
 
         jqueryNoConflict('#hospital-comparison-right').change(function () {
-            dataConfig.comparisonDataObject.hospitalRight = jqueryNoConflict('#hospital-comparison-right :selected').val();
-            dataConfig.compareSelectWithData(data);
+            fn.comparisonDataObject.hospitalRight = jqueryNoConflict('#hospital-comparison-right :selected').val();
+            fn.compareSelectWithData(data);
         });
     },
 
+    // array to hold our target hospitals
+    arrayFilteredHospitalObjects: [],
 
-    addCommas: function(nStr){
-        nStr += '';
-        x = nStr.split('.');
-        x1 = x[0];
-        x2 = x.length > 1 ? '.' + x[1] : '';
-
-        var rgx = /(\d+)(\d{3})/;
-            while (rgx.test(x1)) {
-                x1 = x1.replace(rgx, '$1' + ',' + '$2');
-            }
-        return x1 + x2;
-    },
-
-    calculateAverageCost: function(arrayOfTotals){
-        var total = 0;
-        for (var z=0; z<arrayOfTotals.length; z++){
-            total = total + arrayOfTotals[z];
-        }
-
-        total = total/arrayOfTotals.length;
-        return '$' + dataConfig.addCommas(total.toFixed(0));
-    },
-
-    calcaulateHighestAverageCost: function(array){
-        var total = Math.max.apply(Math, array);
-        return dataConfig.addCommas(total.toFixed(0));
-    },
-
-    calcaulateLowestAverageCost: function(array){
-        var total = Math.min.apply(Math, array);
-        return dataConfig.addCommas(total.toFixed(0));
-    },
-
-
-
-
-
-    // take string of dollar amount and convert to int
-    convertCurrencyToInt: function(currency){
-        var value = currency.replace('$', '').replace(',', '');
-        value = parseInt(value);
-        return value;
-    },
-
-
-
-
-
-    arrayProcedureCosts: [],
-
-
-
+    // function to run comparisons
     compareSelectWithData: function(data){
 
         console.log(data);
 
-        // array to hold our target hospitals
-        var arrayFilteredHospitalObjects = [];
+        // holding container used to calulate averages
+        var arrayProcedureCosts = [];
 
-        // retrieve dataConfig.comparisonDataObject which has the procedure
-        var procedureToQuery = dataConfig.comparisonDataObject.procedure
+        // retrieve fn.comparisonDataObject which has the procedure
+        var procedureToQuery = fn.comparisonDataObject.procedure
 
         // check to see which hospitals have the procedure
         for (var i=0; i<data.objects.length; i++){
@@ -157,26 +172,32 @@ var dataConfig = {
                     providerstate: data.objects[i].providerstate,
                     drgdefinition: data.objects[i].drgdefinition,
                     totaldischarges: data.objects[i].totaldischarges,
-                    averagecoveredcharges: data.objects[i].averagecoveredcharges,
-                    averagetotalpayments: data.objects[i].averagetotalpayments
+                    averagecoveredcharges: fn.convertCurrencyToInt(data.objects[i].averagecoveredcharges),
+                    averagetotalpayments: fn.convertCurrencyToInt(data.objects[i].averagetotalpayments)
                 };
 
                 // push filteredHospitalObject to arrayFilteredHospitalObjects
-                arrayFilteredHospitalObjects.push(filteredHospitalObject);
+                fn.arrayFilteredHospitalObjects.push(filteredHospitalObject);
 
-                // push filteredHospitalObject to arrayFilteredHospitalObjects
-                var testCosts = dataConfig.convertCurrencyToInt(data.objects[i].averagecoveredcharges);
-                dataConfig.arrayProcedureCosts.push(testCosts);
+                // push average charges to array for calculations
+                arrayProcedureCosts.push(fn.convertCurrencyToInt(data.objects[i].averagecoveredcharges));
 
                 // calculate average costs for display
-                var costAverageToDisplay = dataConfig.calculateAverageCost(dataConfig.arrayProcedureCosts);
-                var lowestAverageCostToDisplay = dataConfig.calcaulateLowestAverageCost(dataConfig.arrayProcedureCosts);
-                var highestAverageCostToDisplay = dataConfig.calcaulateHighestAverageCost(dataConfig.arrayProcedureCosts);
+                var costAverageToDisplay = fn.calculateAverageCost(arrayProcedureCosts);
+                var lowestAverageCostToDisplay = fn.calcaulateLowestCost(arrayProcedureCosts);
+                var highestAverageCostToDisplay = fn.calcaulateHighestCost(arrayProcedureCosts);
 
+                // add key/value for average cost to comparison object
+                fn.comparisonDataObject.averageCost = costAverageToDisplay;
+
+                // display the averages we've calculated
                 jqueryNoConflict('#procedure').html(
-                    '<p>The average cost for this procedure at a California hospital is <strong>' + costAverageToDisplay + '</strong>.</p>' +
-                    '<p>The lowest average cost for this procedure at a California hospital is <strong>$' + lowestAverageCostToDisplay + '</strong>.</p>' +
-                    '<p>The highest average cost for this procedure at a California hospital is <strong>$' + highestAverageCostToDisplay + '</strong>.</p>');
+                    '<h4 class="centered">Average cost at California hospital</h4>' +
+                    '<p class="centered"><strong>' + fn.convertIntToCurrency(costAverageToDisplay) + '</strong></p>' +
+                    '<h4 class="centered">Lowest average cost</h4>' +
+                    '<p class="centered"><strong>' + fn.convertIntToCurrency(lowestAverageCostToDisplay) + '</strong></p>' +
+                    '<h4 class="centered">Highest average cost</h4>' +
+                    '<p class="centered"><strong>' + fn.convertIntToCurrency(highestAverageCostToDisplay) + '</strong></p>');
 
             } else {
 
@@ -185,57 +206,73 @@ var dataConfig = {
         }
         // end loop
 
+        console.log(fn.comparisonDataObject);
+
         // set our filtered array to an object
         var hospitalsObjectToBuildSelect = {
-            objects: arrayFilteredHospitalObjects
+            objects: fn.arrayFilteredHospitalObjects
         };
 
+        // separate the procedure keys from the values and place into array
+        var hospitalKeys = Object.keys(fn.separateHospitalKeysFromValues(hospitalsObjectToBuildSelect));
+
+        fn.displayConstructedHospitalMenus(hospitalKeys);
+
+        // check each hospital in the array of objects to grab
+        // those that match the left and right hospital values
+        var filteredHospitals = fn.arrayFilteredHospitalObjects;
+
+        for (var x=0; x<filteredHospitals.length; x++){
+            if (fn.comparisonDataObject.hospitalLeft === undefined || fn.comparisonDataObject.hospitalLeft === null){
+                jqueryNoConflict('#hospital-left').html('Choose a hospital for comparison');
+            };
+
+            if (fn.comparisonDataObject.hospitalRight === undefined || fn.comparisonDataObject.hospitalRight === null){
+                jqueryNoConflict('#hospital-right').html('Choose a hospital for comparison');
+            };
+
+            // display the data
+            if (fn.comparisonDataObject.hospitalLeft === filteredHospitals[x].providername){
+                jqueryNoConflict('#hospital-left').html(
+                    '<h4>' + filteredHospitals[x].providername + fn.compareHospitalToAverage(filteredHospitals[x].averagecoveredcharges, fn.comparisonDataObject.averageCost) + '</h4>' +
+                    '<p>' + filteredHospitals[x].providercity + ', ' +
+                    filteredHospitals[x].providerstate + '</p>' +
+                    '<p>Procedure: ' + filteredHospitals[x].drgdefinition + '</p>' +
+                    '<p>Discharges: ' + filteredHospitals[x].totaldischarges + '</p>' +
+                    '<p>Average cost for procedure: <strong>' + fn.convertIntToCurrency(filteredHospitals[x].averagecoveredcharges) + '</strong></p>' +
+                    '<p>Average reimbursment: <strong>' + fn.convertIntToCurrency(filteredHospitals[x].averagetotalpayments) + '</strong></p>');
+            }
+
+            // display the data
+            if (fn.comparisonDataObject.hospitalRight === filteredHospitals[x].providername){
+                jqueryNoConflict('#hospital-right').html(
+                    '<h4>' + filteredHospitals[x].providername + fn.compareHospitalToAverage(filteredHospitals[x].averagecoveredcharges, fn.comparisonDataObject.averageCost) + '</h4>' +
+                    '<p>' + filteredHospitals[x].providercity + ', ' +
+                    filteredHospitals[x].providerstate + '</p>' +
+                    '<p>Procedure: ' + filteredHospitals[x].drgdefinition + '</p>' +
+                    '<p>Discharges: ' + filteredHospitals[x].totaldischarges + '</p>' +
+                    '<p>Average cost for procedure: <strong>' + fn.convertIntToCurrency(filteredHospitals[x].averagecoveredcharges) + '</strong></p>' +
+                    '<p>Average reimbursment: <strong>' + fn.convertIntToCurrency(filteredHospitals[x].averagetotalpayments) + '</strong></p>');
+            }
+        }
+    },
+
+    // display calculated averages for the whole data set
+    displayConstructedHospitalMenus: function(hospitalKeys){
+
+        // show the hospitals select menu
         jqueryNoConflict('#hospital-div-left').removeClass('hidden');
         jqueryNoConflict('#hospital-div-right').removeClass('hidden');
-
-        // separate the procedure keys from the values and place into array
-        var hospitalKeys = Object.keys(dataConfig.separateHospitalKeysFromValues(hospitalsObjectToBuildSelect));
 
         // empty the hospitals select menu
         jqueryNoConflict('#hospital-comparison-right').empty();
         jqueryNoConflict('#hospital-comparison-left').empty();
 
         // create the new select menu based on options
-        dataConfig.configureSelectMenuFromData('Choose a hospital', hospitalKeys, '#hospital-comparison-right');
-        dataConfig.configureSelectMenuFromData('Choose a hospital', hospitalKeys, '#hospital-comparison-left');
+        fn.configureSelectMenuFromData('Choose a hospital', hospitalKeys, '#hospital-comparison-right');
+        fn.configureSelectMenuFromData('Choose a hospital', hospitalKeys, '#hospital-comparison-left');
 
-        // check each hospital in the array of objects to grab
-        //those that match the left and right hospital values
-        for (var x=0; x<arrayFilteredHospitalObjects.length; x++){
-            if (dataConfig.comparisonDataObject.hospitalLeft === undefined || dataConfig.comparisonDataObject.hospitalLeft === null){
-                jqueryNoConflict('#hospital-left').html('Choose a hospital for comparison');
-            };
+    },
 
-            if (dataConfig.comparisonDataObject.hospitalRight === undefined || dataConfig.comparisonDataObject.hospitalRight === null){
-                jqueryNoConflict('#hospital-right').html('Choose a hospital for comparison');
-            };
-
-            // display the data
-            if (dataConfig.comparisonDataObject.hospitalLeft === arrayFilteredHospitalObjects[x].providername){
-                jqueryNoConflict('#hospital-left').html(
-                '<h4>' + arrayFilteredHospitalObjects[x].providername + '</h4>' +
-                '<p>' + arrayFilteredHospitalObjects[x].providercity + ', ' + arrayFilteredHospitalObjects[x].providerstate + '</p>' +
-                '<p>Procedure: ' + arrayFilteredHospitalObjects[x].drgdefinition + '</p>' +
-                '<p>Discharges: ' + arrayFilteredHospitalObjects[x].totaldischarges + '</p>' +
-                '<p>Covered Charges: ' + arrayFilteredHospitalObjects[x].averagecoveredcharges + '</p>' +
-                '<p>Average Total Payments:' + arrayFilteredHospitalObjects[x].averagetotalpayments + '</p>');
-            }
-
-            if (dataConfig.comparisonDataObject.hospitalRight === arrayFilteredHospitalObjects[x].providername){
-                jqueryNoConflict('#hospital-right').html(
-                '<h4>' + arrayFilteredHospitalObjects[x].providername + '</h4>' +
-                '<p>' + arrayFilteredHospitalObjects[x].providercity + ', ' + arrayFilteredHospitalObjects[x].providerstate + '</p>' +
-                '<p>Procedure: ' + arrayFilteredHospitalObjects[x].drgdefinition + '</p>' +
-                '<p>Discharges: ' + arrayFilteredHospitalObjects[x].totaldischarges + '</p>' +
-                '<p>Covered Charges: ' + arrayFilteredHospitalObjects[x].averagecoveredcharges + '</p>' +
-                '<p>Average Total Payments:' + arrayFilteredHospitalObjects[x].averagetotalpayments + '</p>');
-            }
-        }
-    }
 };
 // end data configuration object
