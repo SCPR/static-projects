@@ -17,7 +17,7 @@ jqueryNoConflict(document).ready(function() {
 var dataConfig = {
 
     retrieveDataFromFile: function(){
-        var dataSource = 'static-files/data/medicare_charges_test-handlebars.json';
+        var dataSource = 'static-files/data/medicare_charges_full-handlebars.json';
         jqueryNoConflict.getJSON(dataSource, dataConfig.processDataFromFile);
     },
 
@@ -99,6 +99,7 @@ var dataConfig = {
                 // for each of the hospital that has the procedure create a new object
                 var testTargetHospitalObject = {
                     providername: data.objects[i].providername,
+                    providercity: data.objects[i].providercity,
                     drgdefinition: data.objects[i].drgdefinition,
                     totaldischarges: data.objects[i].totaldischarges,
                     averagecoveredcharges: data.objects[i].averagecoveredcharges,
@@ -151,6 +152,7 @@ var dataConfig = {
             if (dataConfig.comparisonDataObject.hospitalLeft === testHoldingArray[x].providername){
                 jqueryNoConflict('#hospital-left').html(
                 '<h4>' + testHoldingArray[x].providername + '</h4>' +
+                '<p>' + testHoldingArray[x].providercity + '</p>' +
                 '<p>Procedure: ' + testHoldingArray[x].drgdefinition + '</p>' +
                 '<p>Discharges: ' + testHoldingArray[x].totaldischarges + '</p>' +
                 '<p>Covered Charges: ' + testHoldingArray[x].averagecoveredcharges + '</p>' +
@@ -160,6 +162,7 @@ var dataConfig = {
             if (dataConfig.comparisonDataObject.hospitalRight === testHoldingArray[x].providername){
                 jqueryNoConflict('#hospital-right').html(
                 '<h4>' + testHoldingArray[x].providername + '</h4>' +
+                '<p>' + testHoldingArray[x].providercity + '</p>' +
                 '<p>Procedure: ' + testHoldingArray[x].drgdefinition + '</p>' +
                 '<p>Discharges: ' + testHoldingArray[x].totaldischarges + '</p>' +
                 '<p>Covered Charges: ' + testHoldingArray[x].averagecoveredcharges + '</p>' +
