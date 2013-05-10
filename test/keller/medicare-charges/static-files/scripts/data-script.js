@@ -10,40 +10,6 @@ var fn = fn || {};
 // begin main function
 jqueryNoConflict(document).ready(function() {
     fn.retrieveDataFromFile();
-
-    if (!Object.keys) {
-      Object.keys = (function () {
-        var hasOwnProperty = Object.prototype.hasOwnProperty,
-            hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
-            dontEnums = [
-              'toString',
-              'toLocaleString',
-              'valueOf',
-              'hasOwnProperty',
-              'isPrototypeOf',
-              'propertyIsEnumerable',
-              'constructor'
-            ],
-            dontEnumsLength = dontEnums.length;
-
-        return function (obj) {
-          if (typeof obj !== 'object' && typeof obj !== 'function' || obj === null) throw new TypeError('Object.keys called on non-object');
-
-          var result = [];
-
-          for (var prop in obj) {
-            if (hasOwnProperty.call(obj, prop)) result.push(prop);
-          }
-
-          if (hasDontEnumBug) {
-            for (var i=0; i < dontEnumsLength; i++) {
-              if (hasOwnProperty.call(obj, dontEnums[i])) result.push(dontEnums[i]);
-            }
-          }
-          return result;
-        }
-      })()
-    };
 });
 
 // begin data configuration object
@@ -179,6 +145,41 @@ var fn = {
         // separate the procedure keys from the values and place into array
         // does not work on ie
         // https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Object/keys
+
+        if (!Object.keys) {
+          Object.keys = (function () {
+            var hasOwnProperty = Object.prototype.hasOwnProperty,
+                hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+                dontEnums = [
+                  'toString',
+                  'toLocaleString',
+                  'valueOf',
+                  'hasOwnProperty',
+                  'isPrototypeOf',
+                  'propertyIsEnumerable',
+                  'constructor'
+                ],
+                dontEnumsLength = dontEnums.length;
+
+            return function (obj) {
+              if (typeof obj !== 'object' && typeof obj !== 'function' || obj === null) throw new TypeError('Object.keys called on non-object');
+
+              var result = [];
+
+              for (var prop in obj) {
+                if (hasOwnProperty.call(obj, prop)) result.push(prop);
+              }
+
+              if (hasDontEnumBug) {
+                for (var i=0; i < dontEnumsLength; i++) {
+                  if (hasOwnProperty.call(obj, dontEnums[i])) result.push(dontEnums[i]);
+                }
+              }
+              return result;
+            }
+          })()
+        };
+
         var procedureKeys = Object.keys(fn.separateProcedureKeysFromValues(data));
 
         // create the procedure select menu
@@ -272,6 +273,44 @@ var fn = {
         // set our filtered array to an object
         var hospitalsObjectToBuildSelect = {
             objects: arrayFilteredHospitalObjects
+        };
+
+        // separate the procedure keys from the values and place into array
+        // does not work on ie
+        // https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Object/keys
+
+        if (!Object.keys) {
+          Object.keys = (function () {
+            var hasOwnProperty = Object.prototype.hasOwnProperty,
+                hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+                dontEnums = [
+                  'toString',
+                  'toLocaleString',
+                  'valueOf',
+                  'hasOwnProperty',
+                  'isPrototypeOf',
+                  'propertyIsEnumerable',
+                  'constructor'
+                ],
+                dontEnumsLength = dontEnums.length;
+
+            return function (obj) {
+              if (typeof obj !== 'object' && typeof obj !== 'function' || obj === null) throw new TypeError('Object.keys called on non-object');
+
+              var result = [];
+
+              for (var prop in obj) {
+                if (hasOwnProperty.call(obj, prop)) result.push(prop);
+              }
+
+              if (hasDontEnumBug) {
+                for (var i=0; i < dontEnumsLength; i++) {
+                  if (hasOwnProperty.call(obj, dontEnums[i])) result.push(dontEnums[i]);
+                }
+              }
+              return result;
+            }
+          })()
         };
 
         // separate the procedure keys from the values and place into array
