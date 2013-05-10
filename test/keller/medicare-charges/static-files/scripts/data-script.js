@@ -115,7 +115,6 @@ var fn = {
         jqueryNoConflict(idTargetForSelect).append(selectList);
     },
 
-
     // holding container for values from the select menu
     comparisonDataObject: {},
 
@@ -124,8 +123,7 @@ var fn = {
 
         // separate the procedure keys from the values and place into array
         // does not work on ie
-        // solution: http://whattheheadsaid.com/2010/10/a-safer-object-keys-compatibility-implementation
-
+        // https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Object/keys
 
         if (!Object.keys) {
           Object.keys = (function () {
@@ -160,10 +158,6 @@ var fn = {
             }
           })()
         };
-
-
-
-
 
         var procedureKeys = Object.keys(fn.separateProcedureKeysFromValues(data));
 

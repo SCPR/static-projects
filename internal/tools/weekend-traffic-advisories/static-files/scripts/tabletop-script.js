@@ -24,10 +24,46 @@
         // first pass at pulling out data and displaying it
         processDataSource: function(data, tabletop){
 
-            console.log(data);
-
             // get unique categories and place them as key to frequency
             var trafficCategoriesObject = dataConfig.separateKeysFromValues(data);
+
+            // separate the procedure keys from the values and place into array
+            // does not work on ie
+            // https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Object/keys
+
+            if (!Object.keys) {
+              Object.keys = (function () {
+                var hasOwnProperty = Object.prototype.hasOwnProperty,
+                    hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+                    dontEnums = [
+                      'toString',
+                      'toLocaleString',
+                      'valueOf',
+                      'hasOwnProperty',
+                      'isPrototypeOf',
+                      'propertyIsEnumerable',
+                      'constructor'
+                    ],
+                    dontEnumsLength = dontEnums.length;
+
+                return function (obj) {
+                  if (typeof obj !== 'object' && typeof obj !== 'function' || obj === null) throw new TypeError('Object.keys called on non-object');
+
+                  var result = [];
+
+                  for (var prop in obj) {
+                    if (hasOwnProperty.call(obj, prop)) result.push(prop);
+                  }
+
+                  if (hasDontEnumBug) {
+                    for (var i=0; i < dontEnumsLength; i++) {
+                      if (hasOwnProperty.call(obj, dontEnums[i])) result.push(dontEnums[i]);
+                    }
+                  }
+                  return result;
+                }
+              })()
+            };
 
             // separate the keys from the values and place into array
             var keys = Object.keys(trafficCategoriesObject);
