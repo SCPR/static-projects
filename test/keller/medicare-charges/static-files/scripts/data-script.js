@@ -94,8 +94,24 @@ var fn = {
 
     // calculate lowest instance, add commas, round off
     calcaulateDifferenceInAverage: function(highestAverage, lowestAverage){
-        var total = highestAverage-lowestAverage;
+        var total = highestAverage - lowestAverage;
         return total;
+    },
+
+    // calculate lowest instance, add commas, round off
+    calcaulateDifferenceBetweenHospitals: function(hospitalLeft, hospitalRight){
+        var value;
+        if (hospitalLeft > hospitalRight){
+            value = hospitalLeft - hospitalRight;
+            value = '<h4 class="centered">Cheaper Bill ---><br />' +
+            '<strong>' + fn.convertIntToCurrency(value) + '</strong></h4>';
+
+        } else if (hospitalLeft < hospitalRight){
+            value = hospitalRight - hospitalLeft;
+            value = '<h4 class="centered"><--- Cheaper Bill<br />' +
+            '<strong>' + fn.convertIntToCurrency(value) + '</strong></h4>';
+        }
+        return value;
     },
 
     // take string of dollar amount and convert to int
@@ -263,15 +279,12 @@ var fn = {
 
         fn.displayConstructedHospitalMenus(hospitalKeys.sort());
 
-
-
-
-
-
-
         // check each hospital in the array of objects to grab
         // those that match the left and right hospital values
         var filteredHospitals = arrayFilteredHospitalObjects;
+
+        var hospitalLeftValueForDifference;
+        var hospitalRightValueForDifference;
 
         for (var x=0; x<filteredHospitals.length; x++){
             if (fn.comparisonDataObject.hospitalLeft === undefined || fn.comparisonDataObject.hospitalLeft === null){
@@ -284,6 +297,8 @@ var fn = {
 
             // display the data
             if (fn.comparisonDataObject.hospitalLeft === filteredHospitals[x].providername){
+                hospitalLeftValueForDifference = filteredHospitals[x].averagecoveredcharges;
+
                 jqueryNoConflict('#hospital-left').html(
                     '<h4>' + filteredHospitals[x].providername + fn.compareHospitalToAverage(filteredHospitals[x].averagecoveredcharges, fn.comparisonDataObject.averageCost) + '</h4>' +
                     '<p>' + filteredHospitals[x].providercity + ', ' +
@@ -296,6 +311,8 @@ var fn = {
 
             // display the data
             if (fn.comparisonDataObject.hospitalRight === filteredHospitals[x].providername){
+                hospitalRightValueForDifference = filteredHospitals[x].averagecoveredcharges;
+
                 jqueryNoConflict('#hospital-right').html(
                     '<h4>' + filteredHospitals[x].providername + fn.compareHospitalToAverage(filteredHospitals[x].averagecoveredcharges, fn.comparisonDataObject.averageCost) + '</h4>' +
                     '<p>' + filteredHospitals[x].providercity + ', ' +
@@ -305,6 +322,8 @@ var fn = {
                     '<p>Average cost for procedure: <strong>' + fn.convertIntToCurrency(filteredHospitals[x].averagecoveredcharges) + '</strong></p>' +
                     '<p>Average reimbursment: <strong>' + fn.convertIntToCurrency(filteredHospitals[x].averagetotalpayments) + '</strong></p>');
             }
+
+            jqueryNoConflict('#hospital-calculation').html(fn.calcaulateDifferenceBetweenHospitals(hospitalLeftValueForDifference, hospitalRightValueForDifference));
         }
     },
 
@@ -313,6 +332,7 @@ var fn = {
 
         // show the hospitals select menu
         jqueryNoConflict('#hospital-div-left').removeClass('hidden');
+        jqueryNoConflict('#hospital-div-middle').removeClass('hidden');
         jqueryNoConflict('#hospital-div-right').removeClass('hidden');
 
         // empty the hospitals select menu
@@ -322,7 +342,6 @@ var fn = {
         // create the new select menu based on options
         fn.configureSelectMenuFromData('Choose a hospital', hospitalKeys, '#hospital-comparison-right');
         fn.configureSelectMenuFromData('Choose a hospital', hospitalKeys, '#hospital-comparison-left');
-
     },
 
 };
