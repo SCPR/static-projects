@@ -11,6 +11,39 @@ var fn = fn || {};
 jqueryNoConflict(document).ready(function() {
     fn.retrieveDataFromFile();
 
+    if (!Object.keys) {
+      Object.keys = (function () {
+        var hasOwnProperty = Object.prototype.hasOwnProperty,
+            hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+            dontEnums = [
+              'toString',
+              'toLocaleString',
+              'valueOf',
+              'hasOwnProperty',
+              'isPrototypeOf',
+              'propertyIsEnumerable',
+              'constructor'
+            ],
+            dontEnumsLength = dontEnums.length;
+
+        return function (obj) {
+          if (typeof obj !== 'object' && typeof obj !== 'function' || obj === null) throw new TypeError('Object.keys called on non-object');
+
+          var result = [];
+
+          for (var prop in obj) {
+            if (hasOwnProperty.call(obj, prop)) result.push(prop);
+          }
+
+          if (hasDontEnumBug) {
+            for (var i=0; i < dontEnumsLength; i++) {
+              if (hasOwnProperty.call(obj, dontEnums[i])) result.push(dontEnums[i]);
+            }
+          }
+          return result;
+        }
+      })()
+    };
 });
 
 // begin data configuration object
@@ -56,6 +89,12 @@ var fn = {
     // calculate lowest instance, add commas, round off
     calcaulateLowestCost: function(array){
         var total = Math.min.apply(Math, array);
+        return total;
+    },
+
+    // calculate lowest instance, add commas, round off
+    calcaulateDifferenceInAverage: function(highestAverage, lowestAverage){
+        var total = highestAverage-lowestAverage;
         return total;
     },
 
@@ -124,46 +163,10 @@ var fn = {
         // separate the procedure keys from the values and place into array
         // does not work on ie
         // https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/Object/keys
-
-        if (!Object.keys) {
-          Object.keys = (function () {
-            var hasOwnProperty = Object.prototype.hasOwnProperty,
-                hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
-                dontEnums = [
-                  'toString',
-                  'toLocaleString',
-                  'valueOf',
-                  'hasOwnProperty',
-                  'isPrototypeOf',
-                  'propertyIsEnumerable',
-                  'constructor'
-                ],
-                dontEnumsLength = dontEnums.length;
-
-            return function (obj) {
-              if (typeof obj !== 'object' && typeof obj !== 'function' || obj === null) throw new TypeError('Object.keys called on non-object');
-
-              var result = [];
-
-              for (var prop in obj) {
-                if (hasOwnProperty.call(obj, prop)) result.push(prop);
-              }
-
-              if (hasDontEnumBug) {
-                for (var i=0; i < dontEnumsLength; i++) {
-                  if (hasOwnProperty.call(obj, dontEnums[i])) result.push(dontEnums[i]);
-                }
-              }
-              return result;
-            }
-          })()
-        };
-
         var procedureKeys = Object.keys(fn.separateProcedureKeysFromValues(data));
 
         // create the procedure select menu
         fn.configureSelectMenuFromData('Choose a procedure', procedureKeys, '#procedure-comparison');
-        //console.log(fn.comparisonDataObject);
 
         jqueryNoConflict('#procedure-comparison').change(function () {
             fn.comparisonDataObject.procedure = jqueryNoConflict('#procedure-comparison :selected').val();
@@ -225,6 +228,7 @@ var fn = {
                 var costAverageToDisplay = fn.calculateAverageCost(arrayProcedureCosts);
                 var lowestAverageCostToDisplay = fn.calcaulateLowestCost(arrayProcedureCosts);
                 var highestAverageCostToDisplay = fn.calcaulateHighestCost(arrayProcedureCosts);
+                var differenceInCost = fn.calcaulateDifferenceInAverage(highestAverageCostToDisplay, lowestAverageCostToDisplay)
 
                 // add key/value for average cost to comparison object
                 fn.comparisonDataObject.averageCost = costAverageToDisplay;
@@ -236,7 +240,9 @@ var fn = {
                     '<h4 class="centered">Lowest average cost</h4>' +
                     '<p class="centered"><strong>' + fn.convertIntToCurrency(lowestAverageCostToDisplay) + '</strong></p>' +
                     '<h4 class="centered">Highest average cost</h4>' +
-                    '<p class="centered"><strong>' + fn.convertIntToCurrency(highestAverageCostToDisplay) + '</strong></p>');
+                    '<p class="centered"><strong>' + fn.convertIntToCurrency(highestAverageCostToDisplay) + '</strong></p>' +
+                    '<h4 class="centered">Difference</h4>' +
+                    '<p class="centered"><strong>' + fn.convertIntToCurrency(differenceInCost) + '</strong></p>');
 
             } else {
 
@@ -245,7 +251,7 @@ var fn = {
         }
         // end loop
 
-        //console.log(fn.comparisonDataObject);
+        console.log(fn.comparisonDataObject);
 
         // set our filtered array to an object
         var hospitalsObjectToBuildSelect = {
@@ -255,7 +261,13 @@ var fn = {
         // separate the procedure keys from the values and place into array
         var hospitalKeys = Object.keys(fn.separateHospitalKeysFromValues(hospitalsObjectToBuildSelect));
 
-        fn.displayConstructedHospitalMenus(hospitalKeys);
+        fn.displayConstructedHospitalMenus(hospitalKeys.sort());
+
+
+
+
+
+
 
         // check each hospital in the array of objects to grab
         // those that match the left and right hospital values
