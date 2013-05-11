@@ -69,12 +69,12 @@ var fn = {
         var value;
         if (hospitalLeft > hospitalRight){
             value = hospitalLeft - hospitalRight;
-            value = '<h4 class="centered">Cheaper Bill ---><br />' +
+            value = '<h4 class="centered">Cheaper Bill By About ---><br />' +
             '<strong>' + fn.convertIntToCurrency(value) + '</strong></h4>';
 
         } else if (hospitalLeft < hospitalRight){
             value = hospitalRight - hospitalLeft;
-            value = '<h4 class="centered"><--- Cheaper Bill<br />' +
+            value = '<h4 class="centered"><--- Cheaper Bill By About<br />' +
             '<strong>' + fn.convertIntToCurrency(value) + '</strong></h4>';
         }
         return value;
@@ -187,8 +187,8 @@ var fn = {
 
         jqueryNoConflict('#procedure-comparison').change(function () {
             fn.comparisonDataObject.procedure = jqueryNoConflict('#procedure-comparison :selected').val();
-            jqueryNoConflict('#hospital-left').html('Choose a hospital to compare');
-            jqueryNoConflict('#hospital-right').html('Choose a hospital to compare');
+            jqueryNoConflict('#hospital-left').html('No data available for this procedure<br />Choose a new hospital');
+            jqueryNoConflict('#hospital-right').html('No data available for this procedure<br />Choose a new hospital');
             fn.compareSelectWithData(data);
         });
 
@@ -327,11 +327,11 @@ var fn = {
 
         for (var x=0; x<filteredHospitals.length; x++){
             if (fn.comparisonDataObject.hospitalLeft === undefined || fn.comparisonDataObject.hospitalLeft === null){
-                jqueryNoConflict('#hospital-left').html('Choose a hospital for comparison');
+                jqueryNoConflict('#hospital-left').html('Compare a local hospital');
             };
 
             if (fn.comparisonDataObject.hospitalRight === undefined || fn.comparisonDataObject.hospitalRight === null){
-                jqueryNoConflict('#hospital-right').html('Choose a hospital for comparison');
+                jqueryNoConflict('#hospital-right').html('Compare a local hospital');
             };
 
             // display the data
@@ -379,8 +379,8 @@ var fn = {
         jqueryNoConflict('#hospital-comparison-left').empty();
 
         // create the new select menu based on options
-        fn.configureSelectMenuFromData('Choose a hospital', hospitalKeys, '#hospital-comparison-right');
-        fn.configureSelectMenuFromData('Choose a hospital', hospitalKeys, '#hospital-comparison-left');
+        fn.configureSelectMenuFromData('Find your local hospital', hospitalKeys, '#hospital-comparison-right');
+        fn.configureSelectMenuFromData('Find your local hospital', hospitalKeys, '#hospital-comparison-left');
     },
 
 };
