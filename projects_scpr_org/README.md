@@ -1,1 +1,0 @@
-This is just here temporarily so we can version control the projects.scpr.org landing page.
