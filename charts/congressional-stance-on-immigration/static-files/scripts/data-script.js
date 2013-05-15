@@ -22,3 +22,13 @@ function scrollToRep(){
     var congressionalMember = jqueryNoConflict('#search-congressional-delegation').val();
     jqueryNoConflict.scrollTo(congressionalMember)
 };
+
+// when user submit button is clicked
+function showTerms(){
+    jqueryNoConflict('#content-article-terms').toggle(function(){
+        jqueryNoConflict('#showmodule').text(
+            jqueryNoConflict(this).is(':visible') ? "Hide This" : "Learn the Terms"
+        );
+    });
+};
+// end
