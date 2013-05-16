@@ -4,6 +4,23 @@ without mcc = without major complications
 with cc - with complicaitons
 */
 
+
+/*
+
+Thinking through...
+
+- create select menu showing category grouping
+- get value of category grouping select menu
+- filter subcategories based on value of category grouping select menu
+- create select menu of subcategories
+- for each of the hospital that matches subcategories create a new object pushed to array
+- take array and find the average costs for each and the name of the hospital
+- find the highest cost and name
+- find the lowest cost and name
+- calculate the average cost
+*/
+
+
 var jqueryNoConflict = jQuery;
 var fn = fn || {};
 

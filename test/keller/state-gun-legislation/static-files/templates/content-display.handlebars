@@ -5,20 +5,19 @@
         </div>
     </div>
     <div class="row-fluid">
-        <div class="span4">
+        <div class="span8">
             <p><strong>{{!chamberType chamber}}{{bill_id}}</strong>: <span id="reporter-summary"></span>
             {{#sources}}
                 <a href="{{url}}" target="_blank"> ... Read More</a></p>
             {{/sources}}
 
-            <!--
             <p>
             {{truncate summary 10000 " ... "}}
                 {{#sources}}
                     <a href="{{url}}" target="_blank">Read More</a>
                 {{/sources}}
             </p>
-            -->
+
         </div>
         <div class="span4">
             <p><strong>Sponsors</strong></p>
@@ -28,7 +27,7 @@
                 {{/sponsors}}
             </ul>
 
-            <p><strong>Legislative Dates</strong></p>
+            <p><strong>Legislative Milestones</strong></p>
             <ul>
                 <li><strong>{{dateFormat action_dates.first}}</strong>: First Action</li>
                 <li><strong>{{dateFormat action_dates.last}}</strong>: Last Action</li>
@@ -37,6 +36,7 @@
                 <li><strong>{{dateFormat action_dates.signed}}</strong>: Signed into law</li>
             </ul>
         </div>
+<!--
         <div class="span4">
             <p><strong>Legislative Actions</strong></p>
             <ul>
@@ -46,6 +46,7 @@
             </ul>
         </div>
     </div>
+-->
     <div class="row-fluid">
         <div class="span12">
             <a href="#" onclick="dataConfig.backToTop();"><strong>Back to legislation</strong></a>

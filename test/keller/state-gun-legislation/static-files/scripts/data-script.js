@@ -47,6 +47,9 @@
             var urlPrefix = 'http://openstates.org/api/v1/bills/ca/20132014/';
             var urlSuffix = '/?apikey=b717252e9bc44d4ea57321c49e7dd5e8&callback=?';
             var targetUrl = urlPrefix + billId + urlSuffix;
+
+            console.log(targetUrl);
+
             dataConfig.retriveOpenStatesData(targetUrl);
         },
 
