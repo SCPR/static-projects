@@ -138,11 +138,8 @@ function createMap() {
             },
 
             highlightCallback: function(e) {
-                var totalVotes = this.fields.garcetti + this.fields.greuel;
-                var styleGarcetti = this.fields.garcetti/totalVotes;
-                var styleGreuel = this.fields.greuel/totalVotes;
+                jqueryNoConflict('#map_legend').animate({height:'auto'}, 25000);
                 var percentOfVote = (this.fields.winner_percent*100).toFixed(0)
-
                 jqueryNoConflict('#map_data').html(
                     '<br /><p><strong>' + addCommas(this.fields.ballots_cast) + '</strong> ballots were cast in Los Angeles precinct <strong>' + this.id +
                     '</strong> out of <strong>' + addCommas(this.fields.registered_voters) + '</strong> registered voters for a <strong>' +
@@ -151,12 +148,11 @@ function createMap() {
             },
 
             selectCallback: function(e) {
-                var totalVotes = this.fields.city + this.fields.garcetti;
-                var styleGarcetti = this.fields.city/totalVotes;
-                var styleGreuel = this.fields.garcetti/totalVotes;
+                jqueryNoConflict('#map_legend').animate({height:'auto'}, 25000);
+                var percentOfVote = (this.fields.winner_percent*100).toFixed(0)
                 jqueryNoConflict('#map_data').html(
-                    '<br /><p><strong>' + this.fields.ballots_cast + '</strong> ballots were cast in Los Angeles precinct <strong>' + this.id +
-                    '</strong> out of <strong>' + this.fields.registered_voters + '</strong> registered voters for a <strong>' +
+                    '<br /><p><strong>' + addCommas(this.fields.ballots_cast) + '</strong> ballots were cast in Los Angeles precinct <strong>' + this.id +
+                    '</strong> out of <strong>' + addCommas(this.fields.registered_voters) + '</strong> registered voters for a <strong>' +
                     this.fields.percent_turnout + '%</strong> turnout.</p>' +
                     '<p><strong>' + this.fields.winner + '</strong> won the precinct with ' + percentOfVote + '% of the vote.</p>');
             }

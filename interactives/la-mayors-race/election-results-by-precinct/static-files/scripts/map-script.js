@@ -135,9 +135,7 @@ function createMap() {
             },
 
             highlightCallback: function(e) {
-
-                jqueryNoConflict('#map_legend').animate({height:'auto'}, 500);
-
+                jqueryNoConflict('#map_legend').animate({height:'auto'}, 25000);
                 var totalVotes = this.fields.garcetti + this.fields.greuel;
                 var styleGarcetti = this.fields.garcetti/totalVotes;
                 var styleGreuel = this.fields.greuel/totalVotes;
@@ -158,10 +156,11 @@ function createMap() {
             },
 
             selectCallback: function(e) {
-                console.log(this.fields);
-                var totalVotes = this.fields.city + this.fields.garcetti;
-                var styleGarcetti = this.fields.city/totalVotes;
-                var styleGreuel = this.fields.garcetti/totalVotes;
+                jqueryNoConflict('#map_legend').animate({height:'auto'}, 25000);
+                var totalVotes = this.fields.garcetti + this.fields.greuel;
+                var styleGarcetti = this.fields.garcetti/totalVotes;
+                var styleGreuel = this.fields.greuel/totalVotes;
+                var percentOfVote = (this.fields.winner_percent*100).toFixed(0)
                 jqueryNoConflict('#map_data').html(
                     '<br /><p><strong>' + this.fields.winner + '</strong> won Los Angeles precinct ' + this.id +
                     '<br /> with about ' + percentOfVote + '% of the vote</p>' +
