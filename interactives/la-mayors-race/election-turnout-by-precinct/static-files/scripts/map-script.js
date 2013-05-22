@@ -114,9 +114,9 @@ function createMap() {
 
                 if (data.percent_turnout <= 10) {
                     perc = 0;
-                } else if (data.percent_turnout <= 20) {
+                } else if (data.percent_turnout <= 21) {
                     perc = 1;
-                } else if (data.percent_turnout <= 30) {
+                } else if (data.percent_turnout <= 31) {
                     perc = 2;
                 } else {
                     perc = 3;
@@ -128,20 +128,21 @@ function createMap() {
             unselected_opts: {
                 "fillOpacity": .8
             },
+
             highlighted_opts: {
                 strokeWeight: 2.0,
-                strokeColor: "#c2c2c2"
+                strokeColor: "#2b2b2b"
             },
             selected_opts: {
                 strokeWeight: 2.0,
-                strokeColor: "#ffffff"
+                strokeColor: "#2b2b2b"
             },
 
             highlightCallback: function(e) {
                 jqueryNoConflict('#map_legend').animate({height:'auto'}, 25000);
                 var percentOfVote = (this.fields.winner_percent*100).toFixed(0)
                 jqueryNoConflict('#map_data').html(
-                    '<br /><p><strong>' + addCommas(this.fields.ballots_cast) + '</strong> ballots were cast in Los Angeles precinct <strong>' + this.id +
+                    '<br /><p><strong>' + addCommas(this.fields.ballots_cast) + '</strong> ballot(s) were cast in Los Angeles precinct <strong>' + this.id +
                     '</strong> out of <strong>' + addCommas(this.fields.registered_voters) + '</strong> registered voters for a <strong>' +
                     this.fields.percent_turnout + '%</strong> turnout.</p>' +
                     '<p><strong>' + this.fields.winner + '</strong> won the precinct with ' + percentOfVote + '% of the vote.</p>');
@@ -151,7 +152,7 @@ function createMap() {
                 jqueryNoConflict('#map_legend').animate({height:'auto'}, 25000);
                 var percentOfVote = (this.fields.winner_percent*100).toFixed(0)
                 jqueryNoConflict('#map_data').html(
-                    '<br /><p><strong>' + addCommas(this.fields.ballots_cast) + '</strong> ballots were cast in Los Angeles precinct <strong>' + this.id +
+                    '<br /><p><strong>' + addCommas(this.fields.ballots_cast) + '</strong> ballot(s) were cast in Los Angeles precinct <strong>' + this.id +
                     '</strong> out of <strong>' + addCommas(this.fields.registered_voters) + '</strong> registered voters for a <strong>' +
                     this.fields.percent_turnout + '%</strong> turnout.</p>' +
                     '<p><strong>' + this.fields.winner + '</strong> won the precinct with ' + percentOfVote + '% of the vote.</p>');

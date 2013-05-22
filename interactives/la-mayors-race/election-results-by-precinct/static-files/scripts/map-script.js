@@ -123,15 +123,16 @@ function createMap() {
             },
 
             unselected_opts: {
-                "fillOpacity": .7
+                "fillOpacity": .8
             },
+
             highlighted_opts: {
                 strokeWeight: 2.0,
-                strokeColor: "#c2c2c2"
+                strokeColor: "#2b2b2b"
             },
             selected_opts: {
                 strokeWeight: 2.0,
-                strokeColor: "#ffffff"
+                strokeColor: "#2b2b2b"
             },
 
             highlightCallback: function(e) {
