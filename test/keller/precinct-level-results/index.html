@@ -61,28 +61,25 @@
             <div id="data-container" class="container-fluid">
                 <div class="row-fluid">
                     <div class="span12">
-                        <div id="data-details">
-                            <h2>2013 Los Angeles Mayoral Election Results</h2>
-                        </div>
+                        <div id="data-details"></div>
                     </div>
                 </div>
                 <div class="row-fluid">
-                    <div class="span10">
+                    <div class="span12">
                         <div id="data-visuals">
                             <div id="map_canvas"></div>
-                        </div>
-                    </div>
-                    <div class="span2">
-                        <div id="data-details">
-                            <div id="map_explainer">
-                                <p>This map shows those Los Angeles voting precincts won by Wendy Greuel or Eric Garcetti during the 2013 mayoral election, based on unofficial results made available from the City Clerk's office.</p>
-                                <ul>
-                                    <li style='background: #FC8D59;'></li>
-                                    <p>Wendy Greuel</p>
-                                    <li style='background: #99D594;'></li>
-                                    <p>Eric Garcetti</p>
+                            <div id="map_data">
+                                <p>Hover over a precinct for more information</p>
+                                <ul class="chartlist">
+                                    <li>
+                                    <a href="#">Garcetti</a>
+                                    <span class="index garcetti" style="width: 50%"></span>
+                                    </li>
+                                    <li>
+                                    <a href="#">Greuel</a>
+                                    <span class="index greuel" style="width: 50%"></span>
+                                    </li>
                                 </ul>
-                                <div id="map_data"></div>
                             </div>
                         </div>
                     </div>

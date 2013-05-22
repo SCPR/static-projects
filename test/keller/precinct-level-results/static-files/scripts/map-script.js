@@ -121,7 +121,7 @@ function createMap() {
             },
 
             unselected_opts: {
-                "fillOpacity": 1.0
+                "fillOpacity": .7
             },
             highlighted_opts: {
                 strokeWeight: 2.0,
@@ -134,16 +134,19 @@ function createMap() {
 
             highlightCallback: function(e) {
                 console.log(this.fields);
+                var totalVotes = this.fields.city + this.fields.garcetti;
+                var styleGarcetti = this.fields.city/totalVotes;
+                var styleGreuel = this.fields.garcetti/totalVotes;
                 jqueryNoConflict('#map_data').html(
                     '<p><strong>' + this.fields.greuel + '</strong> won Los Angeles precinct</p>' +
                     '<ul class="chartlist">' +
                     '<li>' +
-                    '<a href="#">Garcetti votes: ' + this.fields.city + '</a>' +
-                    '<span class="index garcetti" style="width:' + this.fields.city + '%"></span>' +
+                    '<a href="#">Garcetti: ' + this.fields.city + ' votes</a>' +
+                    '<span class="index garcetti" style="width:' + styleGarcetti*100 + '%"></span>' +
                     '</li>' +
                     '<li>' +
-                    '<a href="#">Greuel votes: ' + this.fields.garcetti + '</a>' +
-                    '<span class="index greuel" style="width:' + this.fields.garcetti + '%"></span>' +
+                    '<a href="#">Greuel: ' + this.fields.garcetti + ' votes</a>' +
+                    '<span class="index greuel" style="width:' + styleGreuel*100 + '%"></span>' +
                     '</li>' +
                     '</ul>'
                 );
@@ -151,16 +154,19 @@ function createMap() {
 
             selectCallback: function(e) {
                 console.log(this.fields);
+                var totalVotes = this.fields.city + this.fields.garcetti;
+                var styleGarcetti = this.fields.city/totalVotes;
+                var styleGreuel = this.fields.garcetti/totalVotes;
                 jqueryNoConflict('#map_data').html(
                     '<p><strong>' + this.fields.greuel + '</strong> won Los Angeles precinct</p>' +
                     '<ul class="chartlist">' +
                     '<li>' +
-                    '<a href="#">Garcetti votes: ' + this.fields.city + '</a>' +
-                    '<span class="index garcetti" style="width:' + this.fields.city + '%"></span>' +
+                    '<a href="#">Garcetti: ' + this.fields.city + ' votes</a>' +
+                    '<span class="index garcetti" style="width:' + styleGarcetti*100 + '%"></span>' +
                     '</li>' +
                     '<li>' +
-                    '<a href="#">Greuel votes: ' + this.fields.garcetti + '</a>' +
-                    '<span class="index greuel" style="width:' + this.fields.garcetti + '%"></span>' +
+                    '<a href="#">Greuel: ' + this.fields.garcetti + ' votes</a>' +
+                    '<span class="index greuel" style="width:' + styleGreuel*100 + '%"></span>' +
                     '</li>' +
                     '</ul>'
                 );
