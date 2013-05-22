@@ -90,10 +90,10 @@ function createMap() {
     });
 
     google.maps.event.addDomListener(window, 'resize', function() {
-      map.setCenter(centerLosAngeles);
+      map.setCenter(center);
     });
 
-    jqueryNoConflict.get("second-test-results.kml", function(data) {
+    jqueryNoConflict.get('static-files/data/second-test-results.kml', function(data) {
 
         var BLUES = ["#99D594", "#FC8D59"];
 
