@@ -60,7 +60,7 @@
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
     -->
-    <link href="css/project-styles.css?t=1369096734" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/project-styles.css?t=1369188197" rel="stylesheet" type="text/css" media="all" />
 
 
         <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="all" />
@@ -178,15 +178,45 @@
 </div>
 
 <div class="row-fluid">
-    <div id="procedure-glance" class="hidden">
+    <div class="procedure-cost hidden">
+        <div class="span12">
+            <div id="procedure-cost-average"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="procedure-cost hidden">
         <div class="span4">
-            <div id="procedure-glance-left"></div>
+            <div id="procedure-cost-left"></div>
         </div>
         <div class="span4">
-            <div id="procedure-glance-middle"></div>
+            <div id="procedure-cost-middle"></div>
         </div>
         <div class="span4">
-            <div id="procedure-glance-right"></div>
+            <div id="procedure-cost-right"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="procedure-reimbursement hidden">
+        <div class="span12">
+            <div id="procedure-reimbursement-average"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row-fluid">
+    <div class="procedure-reimbursement hidden">
+        <div class="span4">
+            <div id="procedure-reimbursement-left"></div>
+        </div>
+        <div class="span4">
+            <div id="procedure-reimbursement-middle"></div>
+        </div>
+        <div class="span4">
+            <div id="procedure-reimbursement-right"></div>
         </div>
     </div>
 </div>
@@ -267,9 +297,9 @@
 
     <script src="http://projects.scpr.org/static/static-files/scripts/underscore-min.js"></script>
     <script>
-        var dataSource = "data/medicare_charges_full.json?t=1369096734";
+        var dataSource = "data/medicare_charges_full.json?t=1369188197";
     </script>
-    <script src="js/data-script.js?t=1369096734"></script>
+    <script src="js/data-script.js?t=1369188197"></script>
 
 
         <!-- end scripts -->
