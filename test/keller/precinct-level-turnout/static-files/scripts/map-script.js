@@ -3,8 +3,10 @@ var map;
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
-    //google.maps.event.addDomListener(window, 'load', createMap);
     createMap();
+    setTimeout(function(){
+        jqueryNoConflict('#map_legend').removeClass('hidden');
+    }, 2000);
 });
 
 // begin function
@@ -30,8 +32,7 @@ function createMap() {
       featureType: 'all',
       elementType: 'all',
       stylers: [
-        { saturation: -99 },
-        {"invert_lightness": true}
+        { saturation: -99 }
       ]
     },
     {
@@ -95,7 +96,7 @@ function createMap() {
 
     jqueryNoConflict.get('static-files/data/la_city_general_election.kml', function(data) {
 
-        var BLUES = ["#EFF3FF", "#BDD7E7", "#6BAED6", "#2171B5"];
+        var mapColorArray = ["#EFF3FF", "#BDD7E7", "#6BAED6", "#2171B5"];
 
         var features = gmap.load_polygons({
             map: map,
@@ -121,7 +122,7 @@ function createMap() {
                     perc = 3;
                 }
 
-                return BLUES[perc];
+                return mapColorArray[perc];
             },
 
             unselected_opts: {
