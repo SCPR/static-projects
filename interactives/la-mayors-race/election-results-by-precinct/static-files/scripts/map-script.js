@@ -5,8 +5,29 @@ var map;
 jqueryNoConflict(document).ready(function() {
     createMap();
     setTimeout(function(){
-        jqueryNoConflict('#map_legend').removeClass('hidden');
+        jqueryNoConflict('nav').removeClass('hidden');
     }, 2000);
+
+    //Calculate the height of <header>
+    //Use outerHeight() instead of height() if have padding
+    var aboveHeight = jqueryNoConflict('header').height();
+
+    // when scroll
+    jqueryNoConflict(window).scroll(function(){
+
+    	//if scrolled down more than the header's height
+        if (jqueryNoConflict(window).scrollTop() > aboveHeight){
+
+    		// if yes, add "fixed" class to the <nav>
+    		// add padding top to the #content (value is same as the height of the nav)
+            jqueryNoConflict('nav').addClass('fixed');
+
+        } else {
+
+    		// when scroll up or less than aboveHeight, remove the "fixed" class, and the padding-top
+            jqueryNoConflict('nav').removeClass('fixed');
+        }
+    });
 });
 
 // begin function
@@ -136,45 +157,81 @@ function createMap() {
             },
 
             highlightCallback: function(e) {
-                jqueryNoConflict('#map_legend').animate({height:'auto'}, 25000);
+                jqueryNoConflict('#map_legend').hide();
+                jqueryNoConflict('nav').animate({height:'auto'}, 25000);
+
+                var percentWinner;
                 var totalVotes = this.fields.garcetti + this.fields.greuel;
-                var styleGarcetti = this.fields.garcetti/totalVotes;
-                var styleGreuel = this.fields.greuel/totalVotes;
-                var percentOfVote = (this.fields.winner_percent*100).toFixed(0)
+                var percentGarcetti = ((this.fields.garcetti/totalVotes)*100).toFixed(2);
+                var percentGreuel = ((this.fields.greuel/totalVotes)*100).toFixed(2);
+
+                if (this.fields.winner === 'Eric Garcetti'){
+                    percentWinner = percentGarcetti;
+                } else {
+                    percentWinner = percentGreuel;
+                }
+
                 jqueryNoConflict('#map_data').html(
-                    '<br /><p><strong>' + this.fields.winner + '</strong> won Los Angeles precinct ' + this.id +
-                    '<br /> with about ' + percentOfVote + '% of the vote</p>' +
-                    '<ul class="chartlist">' +
-                    '<li>' +
-                    '<a href="#">Garcetti: ' + this.fields.garcetti + ' votes</a>' +
-                    '<span class="index garcetti" style="width:' + styleGarcetti*100 + '%"></span>' +
-                    '</li>' +
-                    '<li>' +
-                    '<a href="#">Greuel: ' + this.fields.greuel + ' votes</a>' +
-                    '<span class="index greuel" style="width:' + styleGreuel*100 + '%"></span>' +
-                    '</li>' +
-                    '</ul>');
+                    '<h4>Results for Los Angeles precinct ' + this.id + '</h4>' +
+                    '<p><strong>' + this.fields.winner + '</strong> won precinct <strong>' + this.id +
+                    '</strong> with about <strong>' + percentWinner + '%</strong> of the vote.</p>' +
+                    '<div class="row-fluid">' +
+                        '<div class="span6">' +
+                            '<ul class="chartlist">' +
+                                '<li>' +
+                                '<a href="#">Garcetti: ' + this.fields.garcetti + ' votes (' + percentGarcetti + '%)</a>' +
+                                '<span class="index garcetti" style="width:' + percentGarcetti + '%"></span>' +
+                                '</li>' +
+                            '</ul>' +
+                        '</div>' +
+                        '<div class="span6">' +
+                            '<ul class="chartlist">' +
+                                '<li>' +
+                                '<a href="#">Greuel: ' + this.fields.greuel + ' votes (' + percentGreuel + '%)</a>' +
+                                '<span class="index greuel" style="width:' + percentGreuel + '%"></span>' +
+                                '</li>' +
+                            '</ul>' +
+                        '</div>' +
+                    '</div>');
             },
 
             selectCallback: function(e) {
-                jqueryNoConflict('#map_legend').animate({height:'auto'}, 25000);
+                jqueryNoConflict('#map_legend').hide();
+                jqueryNoConflict('nav').animate({height:'auto'}, 25000);
+
+                var percentWinner;
                 var totalVotes = this.fields.garcetti + this.fields.greuel;
-                var styleGarcetti = this.fields.garcetti/totalVotes;
-                var styleGreuel = this.fields.greuel/totalVotes;
-                var percentOfVote = (this.fields.winner_percent*100).toFixed(0)
+                var percentGarcetti = ((this.fields.garcetti/totalVotes)*100).toFixed(2);
+                var percentGreuel = ((this.fields.greuel/totalVotes)*100).toFixed(2);
+
+                if (this.fields.winner === 'Eric Garcetti'){
+                    percentWinner = percentGarcetti;
+                } else {
+                    percentWinner = percentGreuel;
+                }
+
                 jqueryNoConflict('#map_data').html(
-                    '<br /><p><strong>' + this.fields.winner + '</strong> won Los Angeles precinct ' + this.id +
-                    '<br /> with about ' + percentOfVote + '% of the vote</p>' +
-                    '<ul class="chartlist">' +
-                    '<li>' +
-                    '<a href="#">Garcetti: ' + this.fields.garcetti + ' votes</a>' +
-                    '<span class="index garcetti" style="width:' + styleGarcetti*100 + '%"></span>' +
-                    '</li>' +
-                    '<li>' +
-                    '<a href="#">Greuel: ' + this.fields.greuel + ' votes</a>' +
-                    '<span class="index greuel" style="width:' + styleGreuel*100 + '%"></span>' +
-                    '</li>' +
-                    '</ul>');
+                    '<h4>Results for Los Angeles precinct ' + this.id + '</h4>' +
+                    '<p><strong>' + this.fields.winner + '</strong> won precinct <strong>' + this.id +
+                    '</strong> with about <strong>' + percentWinner + '%</strong> of the vote.</p>' +
+                    '<div class="row-fluid">' +
+                        '<div class="span6">' +
+                            '<ul class="chartlist">' +
+                                '<li>' +
+                                '<a href="#">Garcetti: ' + this.fields.garcetti + ' votes (' + percentGarcetti + '%)</a>' +
+                                '<span class="index garcetti" style="width:' + percentGarcetti + '%"></span>' +
+                                '</li>' +
+                            '</ul>' +
+                        '</div>' +
+                        '<div class="span6">' +
+                            '<ul class="chartlist">' +
+                                '<li>' +
+                                '<a href="#">Greuel: ' + this.fields.greuel + ' votes (' + percentGreuel + '%)</a>' +
+                                '<span class="index greuel" style="width:' + percentGreuel + '%"></span>' +
+                                '</li>' +
+                            '</ul>' +
+                        '</div>' +
+                    '</div>');
             }
         });
     });
@@ -182,5 +239,5 @@ function createMap() {
 
 // function to maintain center point of map
 function calculateCenter(){
-    center = map.getCenter();
+    var center = map.getCenter();
 };
