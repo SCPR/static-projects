@@ -179,7 +179,7 @@ function createMap() {
                     '<p><strong>' + addCommas(this.fields.ballots_cast) + '</strong> ballot(s) were cast in Los Angeles precinct <strong>' + this.id +
                     '</strong> out of <strong>' + addCommas(this.fields.registered_voters) + '</strong> registered voters for a <strong>' +
                     this.fields.percent_turnout + '%</strong> turnout.</p>' +
-                    '<p><strong>' + this.fields.winner + '</strong> won the precinct with <strong>' + percentWinner + '%</strong> of the vote, according to unofficial numbers.</p>');
+                    '<p><strong>' + this.fields.winner + '</strong> won the precinct with <strong>' + percentWinner + '%</strong> of the vote.</p>');
             },
 
             selectCallback: function(e) {
@@ -197,12 +197,12 @@ function createMap() {
                 }
 
                 var percentOfVote = (this.fields.winner_percent*100).toFixed(0)
-                jqueryNoConflict('#map_data').html(
-                    '<h4>Turnout for Los Angeles precinct ' + this.id + '</h4>' +
-                    '<p><strong>' + addCommas(this.fields.ballots_cast) + '</strong> ballot(s) were cast in Los Angeles precinct <strong>' + this.id +
-                    '</strong> out of <strong>' + addCommas(this.fields.registered_voters) + '</strong> registered voters for a <strong>' +
-                    this.fields.percent_turnout + '%</strong> turnout.</p>' +
-                    '<p><strong>' + this.fields.winner + '</strong> won the precinct with <strong>' + percentWinner + '%</strong> of the vote, according to unofficial numbers.</p>');
+
+                    jqueryNoConflict('#comparison_data').append(
+                        '<li class="data-instructions">&bull; <strong>Precinct ' + this.id + '</strong> turnout was <strong> ' + this.fields.percent_turnout + '%.</strong> <strong>' + this.fields.winner + '</strong> won with <strong>' + percentWinner + '%</strong> of the vote.</li>');
+
+                    jqueryNoConflict('#clear_comparison_data').html(
+                        '<a class="data-instructions" style="cursor: pointer; text-decoration: underline;" onclick="clearComparisons();">Clear precinct comparisons</a>');
             }
         });
     });
@@ -225,4 +225,11 @@ function addCommas(nStr) {
 // function to maintain center point of map
 function calculateCenter(){
     center = map.getCenter();
+};
+
+// function to maintain center point of map
+function clearComparisons(){
+    jqueryNoConflict('#comparison_data').empty();
+    jqueryNoConflict('#clear_comparison_data').empty();
+    jqueryNoConflict('nav').animate({height:'auto'}, 25000);
 };
