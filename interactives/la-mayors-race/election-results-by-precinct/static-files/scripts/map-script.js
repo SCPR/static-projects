@@ -3,12 +3,10 @@ var map;
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
-    if (screen.width >= 800) {
-        createMap();
-        setTimeout(function(){
-            jqueryNoConflict('#map_legend').removeClass('hidden');
-        }, 2000);
-    }
+    createMap();
+    setTimeout(function(){
+        jqueryNoConflict('#map_legend').removeClass('hidden');
+    }, 2000);
 });
 
 // begin function
