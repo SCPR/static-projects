@@ -188,7 +188,7 @@
                     color: '#000000',
                     connectorColor: '#000000',
                     formatter: function() {
-                        return '<strong>' + this.point.name + '</strong>: ' +
+                        return '<strong>' + this.point.name + '</strong><br />' +
                         Highcharts.numberFormat(this.y, 2, '.');
                     }
                 }
