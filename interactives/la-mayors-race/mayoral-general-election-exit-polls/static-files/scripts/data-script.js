@@ -181,7 +181,7 @@
 
         config.plotOptions = {
             pie: {
-                allowPointSelect: true,
+                allowPointSelect: false,
                 cursor: 'pointer',
                 showInLegend: true,
                 dataLabels: {
