@@ -173,9 +173,9 @@
         };
 
         config.tooltip = {
-            enabled: false,
+            enabled: true,
             formatter: function(){
-                return ''+ this.series.name +': '+ Highcharts.numberFormat(this.y, 2, '.');
+                return ''+ this.point.name +': '+ Highcharts.numberFormat(this.y, 2, '.');
             }
         };
 
@@ -183,8 +183,9 @@
             pie: {
                 allowPointSelect: true,
                 cursor: 'pointer',
+                showInLegend: true,
                 dataLabels: {
-                    enabled: true,
+                    enabled: false,
                     color: '#000000',
                     connectorColor: '#000000',
                     formatter: function() {
