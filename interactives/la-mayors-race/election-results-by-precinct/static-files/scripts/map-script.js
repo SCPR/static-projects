@@ -238,5 +238,5 @@ function createMap() {
 
 // function to maintain center point of map
 function calculateCenter(){
-    var center = map.getCenter();
+    center = map.getCenter();
 };
