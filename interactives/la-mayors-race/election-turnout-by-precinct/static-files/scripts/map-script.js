@@ -5,8 +5,29 @@ var map;
 jqueryNoConflict(document).ready(function() {
     createMap();
     setTimeout(function(){
-        jqueryNoConflict('#map_legend').removeClass('hidden');
+        jqueryNoConflict('nav').removeClass('hidden');
     }, 2000);
+
+    //Calculate the height of <header>
+    //Use outerHeight() instead of height() if have padding
+    var aboveHeight = jqueryNoConflict('header').height();
+
+    // when scroll
+    jqueryNoConflict(window).scroll(function(){
+
+    	//if scrolled down more than the header's height
+        if (jqueryNoConflict(window).scrollTop() > aboveHeight){
+
+    		// if yes, add "fixed" class to the <nav>
+    		// add padding top to the #content (value is same as the height of the nav)
+            jqueryNoConflict('nav').addClass('fixed');
+
+        } else {
+
+    		// when scroll up or less than aboveHeight, remove the "fixed" class, and the padding-top
+            jqueryNoConflict('nav').removeClass('fixed');
+        }
+    });
 });
 
 // begin function
@@ -139,23 +160,49 @@ function createMap() {
             },
 
             highlightCallback: function(e) {
-                jqueryNoConflict('#map_legend').animate({height:'auto'}, 25000);
+                jqueryNoConflict('#mouseover-hide').hide();
+                jqueryNoConflict('nav').animate({height:'auto'}, 25000);
+                var percentWinner;
+                var totalVotes = this.fields.garcetti + this.fields.greuel;
+                var percentGarcetti = ((this.fields.garcetti/totalVotes)*100).toFixed(2);
+                var percentGreuel = ((this.fields.greuel/totalVotes)*100).toFixed(2);
+
+                if (this.fields.winner === 'Eric Garcetti'){
+                    percentWinner = percentGarcetti;
+                } else {
+                    percentWinner = percentGreuel;
+                }
+
                 var percentOfVote = (this.fields.winner_percent*100).toFixed(0)
                 jqueryNoConflict('#map_data').html(
-                    '<br /><p><strong>' + addCommas(this.fields.ballots_cast) + '</strong> ballot(s) were cast in Los Angeles precinct <strong>' + this.id +
+                    '<h4>Turnout for Los Angeles precinct ' + this.id + '</h4>' +
+                    '<p><strong>' + addCommas(this.fields.ballots_cast) + '</strong> ballot(s) were cast in Los Angeles precinct <strong>' + this.id +
                     '</strong> out of <strong>' + addCommas(this.fields.registered_voters) + '</strong> registered voters for a <strong>' +
                     this.fields.percent_turnout + '%</strong> turnout.</p>' +
-                    '<p><strong>' + this.fields.winner + '</strong> won the precinct with ' + percentOfVote + '% of the vote.</p>');
+                    '<p><strong>' + this.fields.winner + '</strong> won the precinct with <strong>' + percentWinner + '%</strong> of the vote, according to unofficial numbers.</p>');
             },
 
             selectCallback: function(e) {
-                jqueryNoConflict('#map_legend').animate({height:'auto'}, 25000);
+                jqueryNoConflict('#mouseover-hide').hide();
+                jqueryNoConflict('nav').animate({height:'auto'}, 25000);
+                var percentWinner;
+                var totalVotes = this.fields.garcetti + this.fields.greuel;
+                var percentGarcetti = ((this.fields.garcetti/totalVotes)*100).toFixed(2);
+                var percentGreuel = ((this.fields.greuel/totalVotes)*100).toFixed(2);
+
+                if (this.fields.winner === 'Eric Garcetti'){
+                    percentWinner = percentGarcetti;
+                } else {
+                    percentWinner = percentGreuel;
+                }
+
                 var percentOfVote = (this.fields.winner_percent*100).toFixed(0)
                 jqueryNoConflict('#map_data').html(
-                    '<br /><p><strong>' + addCommas(this.fields.ballots_cast) + '</strong> ballot(s) were cast in Los Angeles precinct <strong>' + this.id +
+                    '<h4>Turnout for Los Angeles precinct ' + this.id + '</h4>' +
+                    '<p><strong>' + addCommas(this.fields.ballots_cast) + '</strong> ballot(s) were cast in Los Angeles precinct <strong>' + this.id +
                     '</strong> out of <strong>' + addCommas(this.fields.registered_voters) + '</strong> registered voters for a <strong>' +
                     this.fields.percent_turnout + '%</strong> turnout.</p>' +
-                    '<p><strong>' + this.fields.winner + '</strong> won the precinct with ' + percentOfVote + '% of the vote.</p>');
+                    '<p><strong>' + this.fields.winner + '</strong> won the precinct with <strong>' + percentWinner + '%</strong> of the vote, according to unofficial numbers.</p>');
             }
         });
     });

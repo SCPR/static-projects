@@ -1,11 +1,21 @@
-#data-visuals {height: auto;}
-#map-loading {width: 290px; height: 100px; margin-top: 20px; padding: 0px; text-align: center; display: none;}
+#map_container {background: #f7f7f7; width: 100%; padding: 1em 0 1em 0;}
 #map_image {z-index: 1; width: 100%; height: 850px;}
-#map_canvas {z-index: 1; width: 100%; height: 1300px;}
-#map_legend {z-index: 10; position: relative; top:-1290px; left:61%; width: 400px; height: auto; padding: 10px; background-color:#ffffff;}
-#map_data {height: auto;}
-.chartlist {float: left; width: 15em;}
+#map_canvas {z-index: 1; width: 96%; height: 1200px; margin: 0 2% 0 2%;}
+nav {z-index: 10; position: relative; width: 100%; height: auto; padding: 10px 0 10px 0; background: #f7f7f7; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px;}
+#map_legend {width: 96%; height: auto; margin: 0 2% 0 2%;}
+#map_data {width: 96%; height: auto; margin: 0 2% 0 2%;}
+.chartlist {}
 .chartlist li {position: relative; display: block; _zoom: 1;}
-.chartlist li a {color: #2b2b2b; display: block; padding: 0.4em 4.5em 0.4em 0.5em; position: relative; z-index: 2;}
-.chartlist .count {display: block; position: absolute; top: 0; right: 0; margin: 0 0.3em; text-align: right; color: #999; font-weight: bold; font-size: 0.875em; line-height: 2em;}
+.chartlist li a {color: #2b2b2b; display: block; padding: 0.4em 4.5em 0.4em 0.5em; position: relative; z-index: 2; font-weight: bold;}
 .chartlist .index {display: block; position: absolute; top: 0; left: 0; height: 100%; text-indent: -9999px; overflow: hidden; line-height: 2em;}
+.fixed {z-index: 10; position: fixed; top: 0%; width: 66%; height: auto; margin: 0px 0px 0px 0px; padding: 10px 0 10px 0; background: #f7f7f7; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px;
+    -moz-box-shadow: 3px 3px 4px #aaa;
+    -webkit-box-shadow: 3px 3px 4px #aaa;
+    box-shadow: 3px 3px 10px #aaa;
+
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#aaa')";
+
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#aaa');
+}

@@ -66,27 +66,33 @@
                 </div>
                 <div class="row-fluid">
                     <div class="span12">
-                        <div id="data-visuals">
+                        <nav class="hidden-phone hidden-tablet hidden">
+                            <div id="map_legend">
+                                <span id="mouseover-hide"><h4>2013 mayoral runoff election voter turnout</h4>
+                                <p>Cursor over a voting precinct for turnout information.</p></span>
+                                <table style="width:100%;">
+                                    <tbody>
+                                        <tr>
+                                        <td style="background: #EFF3FF; font-weight: bold; width: 25%;">&nbsp;&nbsp;0 to 10% turnout</td>
+                                        <td style="background: #BDD7E7; font-weight: bold; width: 25%;">&nbsp;&nbsp;11 to 20% turnout</td>
+                                        <td style="background: #6BAED6; font-weight: bold; width: 25%;">&nbsp;&nbsp;21 to 30% turnout</td>
+                                        <td style="background: #2171B5; font-weight: bold; width: 25%;">&nbsp;&nbsp;31 to 40% turnout</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="map_data"></div>
+                        </nav>
+
+                    </div>
+                </div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div id="map_container">
                             <div id="map_image" class="hidden-desktop">
                                 <img src="static-files/images/voting-turnout-by-precinct.png" alt="2013 L.A. Mayor voting turnout by precinct" />
                             </div>
                             <div id="map_canvas" class="hidden-phone hidden-tablet"></div>
-                            <div id="map_legend" class="hidden-phone hidden-tablet hidden">
-                                <p><strong>Turnout by precinct</strong></p>
-                                <table style="width:100%;">
-                                    <tbody>
-                                        <tr>
-                                        <td style="background: #EFF3FF; font-weight: bold; width: 25%;">&nbsp;&nbsp;0 to 10%</td>
-                                        <td style="background: #BDD7E7; font-weight: bold; width: 25%;">&nbsp;&nbsp;11 to 20%</td>
-                                        <td style="background: #6BAED6; font-weight: bold; width: 25%;">&nbsp;&nbsp;21 to 30%</td>
-                                        <td style="background: #2171B5; font-weight: bold; width: 25%;">&nbsp;&nbsp;31 to 40%</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div id="map_data">
-                                    <br /><p>Cursor over each precinct for voter turnout information.</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

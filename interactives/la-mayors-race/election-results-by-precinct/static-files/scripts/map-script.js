@@ -159,7 +159,6 @@ function createMap() {
             highlightCallback: function(e) {
                 jqueryNoConflict('#map_legend').hide();
                 jqueryNoConflict('nav').animate({height:'auto'}, 25000);
-
                 var percentWinner;
                 var totalVotes = this.fields.garcetti + this.fields.greuel;
                 var percentGarcetti = ((this.fields.garcetti/totalVotes)*100).toFixed(2);
