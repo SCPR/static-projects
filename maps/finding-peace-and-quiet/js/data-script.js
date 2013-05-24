@@ -11,7 +11,7 @@ jqueryNoConflict(document).ready(function() {
 
     retriveData();
 
-	jqueryNoConflict('#content-background').click(function(){
+    jqueryNoConflict('#content-background').click(function(){
 		jqueryNoConflict('#content-background').fadeOut('slow');
 		jqueryNoConflict('#content-display').fadeOut('slow');
 	});
@@ -22,7 +22,6 @@ jqueryNoConflict(document).ready(function() {
 			jqueryNoConflict('#content-display').fadeOut('slow');
 		}
 	});
-
 });
 
 // grab data

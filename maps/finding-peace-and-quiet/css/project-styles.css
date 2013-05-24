@@ -6,7 +6,6 @@
 
 #close {margin: 0; cursor: pointer; }
 
-
 /* -- media queries -- */
 /* adjust headers for smaller devices */
 @media screen and (max-width: 767px) {
