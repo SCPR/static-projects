@@ -4,12 +4,11 @@ var marker;
 var infowindow = new google.maps.InfoWindow();
 var html = '';
 
-function log(obj) {
-    if (window.console && console.log) console.log(obj);
-};
-
 // begin main function
 jqueryNoConflict(document).ready(function() {
+
+    if (!window.console) console = {log: function() {}};
+
     retriveData();
 
 	jqueryNoConflict('#content-background').click(function(){
@@ -45,10 +44,17 @@ function renderDataVisualsTemplate(data){
 // create the map
 function createMap(data){
 
+    var initialZoom = 9;
+
+    // set zoom for mobile devices
+    if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+        initialZoom = 7;
+    }
+
     var centerLosAngeles = new google.maps.LatLng(34.036054430724114, -118.26595796365973);
     map = new google.maps.Map(document.getElementById('content-map-canvas'), {
         center: centerLosAngeles,
-        zoom: 9,
+        zoom: initialZoom,
         scrollwheel: false,
         draggable: true,
         mapTypeControl: false,
@@ -60,6 +66,14 @@ function createMap(data){
         navigationControlOptions: {
             style: google.maps.NavigationControlStyle.SMALL,
             position: google.maps.ControlPosition.RIGHT_TOP}
+    });
+
+    google.maps.event.addDomListener(map, 'idle', function() {
+      calculateCenter();
+    });
+
+    google.maps.event.addDomListener(window, 'resize', function() {
+      map.setCenter(centerLosAngeles);
     });
 
     // empty array for markers
@@ -138,12 +152,12 @@ function createMap(data){
 function bindInfoWindow(marker, map, html) {
     google.maps.event.addListener(marker, 'click', function() {
 
-        jqueryNoConflict('#content-background').css({'opacity' : '0.7'}).fadeIn('slow');
+        jqueryNoConflict('#content-background').css({'opacity' : '0.7'}).fadeIn('fast');
         jqueryNoConflict('#content-display').html('<p style=\"float: right\" id=\"close\"><strong>[X]</strong></p>' + html).center().fadeIn('slow');
 
 		jqueryNoConflict('#close').click(function(){
-		  jqueryNoConflict('#content-background').fadeOut('slow');
-		  jqueryNoConflict('#content-display').fadeOut('slow');
+		  jqueryNoConflict('#content-display').fadeOut('fast');
+		  jqueryNoConflict('#content-background').fadeOut('fast');
 		});
 
         //infowindow.setContent(html);
@@ -158,3 +172,8 @@ jQuery.fn.center = function () {
 	this.css('left', ( jqueryNoConflict(window).width() - this.width() ) / 2+jqueryNoConflict(window).scrollLeft() + 'px');
 	return this;
 }
+
+// function to maintain center point of map
+function calculateCenter(){
+    center = map.getCenter();
+};
