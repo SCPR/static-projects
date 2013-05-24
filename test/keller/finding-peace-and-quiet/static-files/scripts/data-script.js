@@ -11,6 +11,20 @@ function log(obj) {
 // begin main function
 jqueryNoConflict(document).ready(function() {
     retriveData();
+
+
+	jqueryNoConflict('#background').click(function(){
+		jqueryNoConflict('#background').fadeOut('slow');
+		jqueryNoConflict('#large').fadeOut('slow');
+	});
+
+	jqueryNoConflict(document).keydown(function(e){
+		if(e.keyCode==27) {
+			jqueryNoConflict('#background').fadeOut('slow');
+			jqueryNoConflict('#large').fadeOut('slow');
+		}
+	});
+
 });
 
 // grab data
@@ -54,12 +68,20 @@ function createMap(data){
     for (var i=0; i<data.objects.length; i++) {
 
         var dataResults = data.objects[i];
-
         var latLng = new google.maps.LatLng(dataResults.latitude, dataResults.longitude);
 
-        html = '<p><strong>' + dataResults.firstname + ' ' + dataResults.lastname +
-        '</strong> from ' + dataResults.place + ':<br />' +
-        '<ul><li><strong>' + dataResults.narrative + '</strong><br />';
+
+        if (dataResults.image) {
+            console.log(dataResults.image);
+            html = '<p><strong>' + dataResults.firstname + ' ' + dataResults.lastname +
+            '</strong> says: ' + dataResults.place + ':<br />' +
+            '<ul><li><strong>' + dataResults.narrative + '</strong><br />' +
+            '<img src="' + dataResults.image + '" alt="' + dataResults.firstname + dataResults.lastname + ' Submission" width="400px" style="margin: 0 auto 0 auto;" />'
+        } else {
+            html = '<p><strong>' + dataResults.firstname + ' ' + dataResults.lastname +
+            '</strong> says: ' + dataResults.place + ':<br />' +
+            '<ul><li><strong>' + dataResults.narrative + '</strong>'
+        }
 
         marker = new google.maps.Marker({
             id: i,
@@ -74,8 +96,8 @@ function createMap(data){
     // options for marker cluster
     var markerClusterOptions = {
         gridSize: 50,
-        zoomOnClick: false,
-        //maxZoom: 15,
+        zoomOnClick: true,
+        maxZoom: 12,
         title: 'testing title'
     };
 
@@ -98,8 +120,8 @@ function createMap(data){
             content +=html;
         }
 
-        infowindow.setContent(content);
-        infowindow.open(map, markerPosition);
+        //infowindow.setContent(content);
+        //infowindow.open(map, markerPosition);
     });
 
 };
@@ -108,8 +130,24 @@ function createMap(data){
 // begin function to bind the infowindow to marker
 function bindInfoWindow(marker, map, html) {
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(html);
-        infowindow.open(map, marker);
+
+        jqueryNoConflict('#background').css({'opacity' : '0.7'}).fadeIn('slow');
+        jqueryNoConflict('#large').html('<p style=\"float: right\" id=\"close\"><strong>[X]</strong></p>' + html).center().fadeIn('slow');
+
+		jqueryNoConflict('#close').click(function(){
+		  jqueryNoConflict('#background').fadeOut('slow');
+		  jqueryNoConflict('#large').fadeOut('slow');
+		});
+
+        //infowindow.setContent(html);
+        //infowindow.open(map, marker);
     });
 };
 // end
+
+jQuery.fn.center = function () {
+	this.css("position","absolute");
+	this.css("top", ( $(window).height() - this.height() ) / 2+$(window).scrollTop() + "px");
+	this.css("left", ( $(window).width() - this.width() ) / 2+$(window).scrollLeft() + "px");
+	return this;
+}
