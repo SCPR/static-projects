@@ -202,7 +202,7 @@ function createMap() {
                         '<li class="data-instructions">&bull; <strong>Precinct ' + this.id + '</strong> turnout was <strong> ' + this.fields.percent_turnout + '%.</strong> <strong>' + this.fields.winner + '</strong> won with <strong>' + percentWinner + '%</strong> of the vote.</li>');
 
                     jqueryNoConflict('#clear_comparison_data').html(
-                        '<a class="data-instructions" style="cursor: pointer; text-decoration: underline;" onclick="clearComparisons();">Clear precinct comparisons</a>');
+                        '<a class="data-instructions" style="cursor: pointer; text-decoration: underline;" onclick="gmap.Feature.prototype.clearComparisons();">Clear precinct comparisons</a>');
             }
         });
     });
@@ -225,11 +225,4 @@ function addCommas(nStr) {
 // function to maintain center point of map
 function calculateCenter(){
     center = map.getCenter();
-};
-
-// function to maintain center point of map
-function clearComparisons(){
-    jqueryNoConflict('#comparison_data').empty();
-    jqueryNoConflict('#clear_comparison_data').empty();
-    jqueryNoConflict('nav').animate({height:'auto'}, 25000);
 };
