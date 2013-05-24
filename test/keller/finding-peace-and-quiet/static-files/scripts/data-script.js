@@ -12,16 +12,15 @@ function log(obj) {
 jqueryNoConflict(document).ready(function() {
     retriveData();
 
-
-	jqueryNoConflict('#background').click(function(){
-		jqueryNoConflict('#background').fadeOut('slow');
-		jqueryNoConflict('#large').fadeOut('slow');
+	jqueryNoConflict('#content-background').click(function(){
+		jqueryNoConflict('#content-background').fadeOut('slow');
+		jqueryNoConflict('#content-display').fadeOut('slow');
 	});
 
 	jqueryNoConflict(document).keydown(function(e){
 		if(e.keyCode==27) {
-			jqueryNoConflict('#background').fadeOut('slow');
-			jqueryNoConflict('#large').fadeOut('slow');
+			jqueryNoConflict('#content-background').fadeOut('slow');
+			jqueryNoConflict('#content-display').fadeOut('slow');
 		}
 	});
 
@@ -70,17 +69,25 @@ function createMap(data){
         var dataResults = data.objects[i];
         var latLng = new google.maps.LatLng(dataResults.latitude, dataResults.longitude);
 
-
-        if (dataResults.image) {
-            console.log(dataResults.image);
-            html = '<p><strong>' + dataResults.firstname + ' ' + dataResults.lastname +
-            '</strong> says: ' + dataResults.place + ':<br />' +
-            '<ul><li><strong>' + dataResults.narrative + '</strong><br />' +
-            '<img src="' + dataResults.image + '" alt="' + dataResults.firstname + dataResults.lastname + ' Submission" width="400px" style="margin: 0 auto 0 auto;" />'
+        if (dataResults.image && dataResults.narrative) {
+            html =
+                '<h4>Where do you find peace and quiet?</h4>' +
+                '<img src="' + dataResults.image + '" alt="' + dataResults.firstname + dataResults.lastname + ' Submission" width="100%" />' +
+                '<p><strong>' + dataResults.place + '</strong></p>' +
+                '<p>' + dataResults.narrative + '</p>' +
+                '<p>Submitted by <strong>' + dataResults.firstname + ' ' + dataResults.lastname + '</strong></p>'
+        } else if (dataResults.image) {
+            html =
+                '<h4>Where do you find peace and quiet?</h4>' +
+                '<img src="' + dataResults.image + '" alt="' + dataResults.firstname + dataResults.lastname + ' Submission" width="100%" />' +
+                '<p><strong>' + dataResults.place + '</strong></p>' +
+                '<p>Submitted by <strong>' + dataResults.firstname + ' ' + dataResults.lastname + '</strong></p>'
         } else {
-            html = '<p><strong>' + dataResults.firstname + ' ' + dataResults.lastname +
-            '</strong> says: ' + dataResults.place + ':<br />' +
-            '<ul><li><strong>' + dataResults.narrative + '</strong>'
+            html =
+                '<h4>Where do you find peace and quiet?</h4>' +
+                '<p><strong>' + dataResults.place + '</strong></p>' +
+                '<p>' + dataResults.narrative + '</p>' +
+                '<p>Submitted by <strong>' + dataResults.firstname + ' ' + dataResults.lastname + '</strong></p>'
         }
 
         marker = new google.maps.Marker({
@@ -131,12 +138,12 @@ function createMap(data){
 function bindInfoWindow(marker, map, html) {
     google.maps.event.addListener(marker, 'click', function() {
 
-        jqueryNoConflict('#background').css({'opacity' : '0.7'}).fadeIn('slow');
-        jqueryNoConflict('#large').html('<p style=\"float: right\" id=\"close\"><strong>[X]</strong></p>' + html).center().fadeIn('slow');
+        jqueryNoConflict('#content-background').css({'opacity' : '0.7'}).fadeIn('slow');
+        jqueryNoConflict('#content-display').html('<p style=\"float: right\" id=\"close\"><strong>[X]</strong></p>' + html).center().fadeIn('slow');
 
 		jqueryNoConflict('#close').click(function(){
-		  jqueryNoConflict('#background').fadeOut('slow');
-		  jqueryNoConflict('#large').fadeOut('slow');
+		  jqueryNoConflict('#content-background').fadeOut('slow');
+		  jqueryNoConflict('#content-display').fadeOut('slow');
 		});
 
         //infowindow.setContent(html);
@@ -146,8 +153,8 @@ function bindInfoWindow(marker, map, html) {
 // end
 
 jQuery.fn.center = function () {
-	this.css("position","absolute");
-	this.css("top", ( $(window).height() - this.height() ) / 2+$(window).scrollTop() + "px");
-	this.css("left", ( $(window).width() - this.width() ) / 2+$(window).scrollLeft() + "px");
+	this.css('position','absolute');
+	this.css('top', ( jqueryNoConflict(window).height() - this.height() ) / 2+jqueryNoConflict(window).scrollTop() + 'px');
+	this.css('left', ( jqueryNoConflict(window).width() - this.width() ) / 2+jqueryNoConflict(window).scrollLeft() + 'px');
 	return this;
 }
