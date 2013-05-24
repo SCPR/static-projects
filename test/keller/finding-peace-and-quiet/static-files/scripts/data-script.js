@@ -49,7 +49,7 @@ function createMap(data){
     var centerLosAngeles = new google.maps.LatLng(34.036054430724114, -118.26595796365973);
     map = new google.maps.Map(document.getElementById('content-map-canvas'), {
         center: centerLosAngeles,
-        zoom: 10,
+        zoom: 9,
         scrollwheel: false,
         draggable: true,
         mapTypeControl: false,
