@@ -35,6 +35,12 @@ div.ammunition {background: #ffffff; background-image: url(../images/gun-ammo.pn
 div.possession {background: #ffffff; background-image: url(../images/gun-ownership.png); background-size: 20%; background-repeat: no-repeat; background-position: center center;}
 /* gun-ownership.png used via a Public Domain Mark - http://thenounproject.com/noun/man/#icon-No2 */
 
+div.school-safety {background: #ffffff; background-image: url(../images/school-safety.png); background-size: 50%; background-repeat: no-repeat; background-position: center center;}
+/* school-safety.png used via a Public Domain Mark - http://thenounproject.com/noun/school/#icon-No4405 */
+
+div.sentence-enhancements {background: #ffffff; background-image: url(../images/prison.png); background-size: 70%; background-repeat: no-repeat; background-position: center center;}
+/* prison.png used via a Public Domain Mark - http://thenounproject.com/noun/prison/#icon-No2408 */
+
 /* Isotope Filtering */
 .isotope-item {z-index: 2;}
 

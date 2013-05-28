@@ -53,10 +53,12 @@
             for(var i=0; i<data.working_data.elements.length; i++){
                 var formattedTableTopTitle = data.working_data.elements[i].shorttitle;
                 var formattedTableTopSummaryText = data.working_data.elements[i].juliessummary;
+                var formattedTableTopLegislationStatus = data.working_data.elements[i].legislationstatus;
                 var formattedTableTopBillId = data.working_data.elements[i].billid.replace(/\s/g, "%20");
                 if (TestBillId === formattedTableTopBillId){
                     fn.writeTableTopData('#reporter-title', formattedTableTopTitle);
                     fn.writeTableTopData('#reporter-summary', formattedTableTopSummaryText);
+                    fn.writeTableTopData('#legislation-status', formattedTableTopLegislationStatus);
                 }
             }
         },
@@ -66,11 +68,8 @@
         },
 
         backToTop: function(){
-
             var position = $('#data-legend-items').position();
             scroll(0,position.top);
-
-            //window.scrollTo(0,0);
         }
 
     }
