@@ -117,7 +117,7 @@ function createMap(data){
         gridSize: 50,
         zoomOnClick: true,
         maxZoom: 12,
-        title: 'testing title'
+        title: 'Where do you find peace and quiet?'
     };
 
     // adds instance of marker cluster to map
