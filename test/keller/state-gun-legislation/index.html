@@ -35,10 +35,17 @@
         <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="all" />
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-            <!--[if lt IE 9]>
+        <!--[if lt IE 9]>
             <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
+        <!--[if lt IE 9]>
+            /* background icons */
+            div.models {background: #ffffff; background-image: url(../images/gun-models.png); background-size: 20%; background-repeat: no-repeat; background-position: center center;}
+            div.gun-sales {background: #ffffff; background-image: url(../images/gun-sales.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+            div.ammunition {background: #ffffff; background-image: url(../images/gun-ammo.png); background-size: 20%; background-repeat: no-repeat; background-position: center center;}
+            div.possession {background: #ffffff; background-image: url(../images/gun-ownership.png); background-size: 20%; background-repeat: no-repeat; background-position: center center;}
+        <![endif]-->
         <!-- end css -->
 
         <!-- begin base scripts -->
@@ -80,11 +87,9 @@
                                                         <li><label for="public-records"><input type="checkbox" name="public-records" value=".public-records" id="public-records"> Public Records</label></li>
                                                         <li><label for="background-checks"><input type="checkbox" name="background-checks" value=".background-checks" id="background-checks"> Background Checks</label></li>
                                                         <li><label for="sentence-enhancements"><input type="checkbox" name="sentence-enhancements" value=".sentence-enhancements" id="sentence-enhancements"> Sentence Enhancements</label></li>
-                                                        <!--
-                                                        <li><label for="active"><input type="checkbox" name="active" value=".active" id="active"> Legislation</label></li>
-                                                        <li><label for="killed"><input type="checkbox" name="killed" value=".killed" id="killed"> Legislation</label></li>
-                                                        -->
-                                                        <li><a href="#" id="shuffle" class="hidden-phone">Shuffle Legislation</a></li>
+                                                        <li><label for="active"><input type="checkbox" name="active" value=".active" id="active"> Active Legislation</label></li>
+                                                        <li><label for="parked"><input type="checkbox" name="parked" value=".parked" id="parked"> Parked Legislation</label></li>
+                                                        <li><a href="javascript:void(0)" id="shuffle" class="hidden-phone">Shuffle Legislation</a></li>
                                                         <!--
                                                         <li><button class="btn btn-success" id="shuffle">Randomize</button></li>
                                                         -->

@@ -27,12 +27,8 @@
         // get the id of a bill container on click
         getIdOfBillContainer: function(data){
             jqueryNoConflict('.item').click(function(){
-
                 fn.targetBillId = jqueryNoConflict(this).attr('id');
-
                 fn.constructOpenStatesQuery(fn.targetBillId);
-
-                /* comparison function here? */
                 jqueryNoConflict('#reporter-summary').waitUntilExists(function(){
                     fn.compareBillIdToTabletopData(data, fn.targetBillId);
                     contentDisplay.scrollIntoView(true);
@@ -59,27 +55,29 @@
             renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#contentDisplay', data);
         },
 
-
         // run the comparsion on actual bill and target bill
         compareBillIdToTabletopData: function(data, TestBillId){
-
             for(var i=0; i<data.working_data.elements.length; i++){
-
+                var formattedTableTopTitle = data.working_data.elements[i].shorttitle;
                 var formattedTableTopSummaryText = data.working_data.elements[i].juliessummary;
                 var formattedTableTopBillId = data.working_data.elements[i].billid.replace(/\s/g, "%20");
-
                 if (TestBillId === formattedTableTopBillId){
-                    fn.writeTableTopData(formattedTableTopSummaryText);
+                    fn.writeTableTopData('#reporter-title', formattedTableTopTitle);
+                    fn.writeTableTopData('#reporter-summary', formattedTableTopSummaryText);
                 }
             }
         },
 
-        writeTableTopData: function(data){
-            jqueryNoConflict('#reporter-summary').html(data);
+        writeTableTopData: function(elementSelector, data){
+            jqueryNoConflict(elementSelector).html(data);
         },
 
         backToTop: function(){
-            window.scrollTo(0,0);
+
+            var position = $('#data-legend-items').position();
+            scroll(0,position.top);
+
+            //window.scrollTo(0,0);
         }
 
     }
