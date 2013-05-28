@@ -1,16 +1,15 @@
     var jqueryNoConflict = jQuery;
-    var dataConfig = dataConfig || {};
+    var fn = fn || {};
 
     // pull data from spreadsheet onload
     jqueryNoConflict(document).ready(function(){
-        dataConfig.initializeTabletopDataSource();
+        fn.initializeTabletopDataSource();
         animateContainers();
         runHandlebarsHelpers();
     });
 
-
     // begin data configuration object
-    var dataConfig = {
+    var fn = {
 
         targetBillId: null,
 
@@ -18,7 +17,7 @@
         initializeTabletopDataSource: function(){
             Tabletop.init({
                 key: '0Aq8qwSArzKP9dGlidnhTaEJuWXRQTWNjQWtIVjdXOFE',
-                callback: dataConfig.getIdOfBillContainer,
+                callback: fn.getIdOfBillContainer,
                 parseNumbers: true,
                 simpleSheet: false,
                 debug: false
@@ -29,13 +28,13 @@
         getIdOfBillContainer: function(data){
             jqueryNoConflict('.item').click(function(){
 
-                dataConfig.targetBillId = jqueryNoConflict(this).attr('id');
+                fn.targetBillId = jqueryNoConflict(this).attr('id');
 
-                dataConfig.constructOpenStatesQuery(dataConfig.targetBillId);
+                fn.constructOpenStatesQuery(fn.targetBillId);
 
                 /* comparison function here? */
                 jqueryNoConflict('#reporter-summary').waitUntilExists(function(){
-                    dataConfig.compareBillIdToTabletopData(data, dataConfig.targetBillId);
+                    fn.compareBillIdToTabletopData(data, fn.targetBillId);
                     contentDisplay.scrollIntoView(true);
                 });
 
@@ -50,12 +49,12 @@
 
             console.log(targetUrl);
 
-            dataConfig.retriveOpenStatesData(targetUrl);
+            fn.retriveOpenStatesData(targetUrl);
         },
 
         // grab data
         retriveOpenStatesData: function(targetUrl) {
-            jqueryNoConflict.getJSON(targetUrl, dataConfig.renderHandlebarsDisplayTemplate);
+            jqueryNoConflict.getJSON(targetUrl, fn.renderHandlebarsDisplayTemplate);
         },
 
         // render content display template
@@ -74,7 +73,7 @@
 
                 if (TestBillId === formattedTableTopBillId){
                     console.log(TestBillId + ' = ' + formattedTableTopSummaryText);
-                    dataConfig.writeTableTopData(formattedTableTopSummaryText);
+                    fn.writeTableTopData(formattedTableTopSummaryText);
                 }
             }
         },
@@ -92,7 +91,7 @@
 
     // isotope function to animate the containers
     function animateContainers(){
-        var container = jqueryNoConflict('#container');
+        var container = jqueryNoConflict('#bill-container');
         var checkboxes = jqueryNoConflict('#data-legend-items input');
         container.isotope({
             itemSelector: '.item'
