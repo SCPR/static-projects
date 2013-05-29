@@ -68,6 +68,6 @@ div.sentence-enhancements {background: #ffffff; background-image: url(../images/
 
 /* data legend bottom margin for Landscape phones and down */
 @media (max-width: 499px) {
-    #data-legend {width: 90%; height: 105px; margin: 10px 5% 110px 5%;}
+    #data-legend {width: 90%; height: 200px; margin: 10px 5% 110px 5%;}
 
 }
