@@ -36,7 +36,7 @@ var defaultTableOptions = {
 
     // The table sorting method.
     // The first value is the zero-indexed column to sort on. The second value can be 'asc' or 'desc'.
-    tableSorting: [[ 3, "desc" ]],
+    tableSorting: [[ 1, "desc" ]],
 
     // needs to at least be set to a minimum of 10 needed to alter the per page select menu.
     displayLength: 15
@@ -146,21 +146,33 @@ var dataTablesConfig = {
     // format details function
     fnFormatDetails: function (oTable, nTr){
         var oData = oTable.fnGetData(nTr);
-
-        /* swap out the properties of oData to reflect
-        the names of columns or keys you want to display */
-        var sOut =
-            '<div class="innerDetails">' +
-                '<p><strong>Name: </strong>' + oData.name + '</p>' +
-                '<p><strong>County: </strong>' + oData.county + '</p>' +
-                '<p><strong>Approxmiate Location: </strong>' + oData.location + '</p>' +
-                '<p><strong>Administrative Unit: </strong>' + oData.administrativeunit + '</p>' +
-                '<p><strong>Acreage burned: </strong>' + oData.acres + '</p>' +
-                '<p><strong>Containment: </strong>' + oData.containment + '</p>' +
-                '<p><strong>Date Fire Began: </strong>' + oData.datestarted + '</p>' +
-                '<p><strong>Last Update: </strong>' + oData.lastupdate + '</p>' +
-                '<p><a href="' + oData.moreinfo + '">More info</a></p>' +
-            '</div>';
+        var sOut;
+        if (oData.moreinfo.length<1){
+            sOut =
+                '<div class="innerDetails">' +
+                    '<p><strong>Name: </strong>' + oData.name + '</p>' +
+                    '<p><strong>County: </strong>' + oData.county + '</p>' +
+                    '<p><strong>Approxmiate Location: </strong>' + oData.location + '</p>' +
+                    '<p><strong>Administrative Unit: </strong>' + oData.administrativeunit + '</p>' +
+                    '<p><strong>Acreage burned: </strong>' + oData.acres + '</p>' +
+                    '<p><strong>Containment: </strong>' + oData.containment + '</p>' +
+                    '<p><strong>Date Fire Began: </strong>' + oData.datestarted + '</p>' +
+                    '<p><strong>Last Update: </strong>' + oData.lastupdate + '</p>' +
+                '</div>';
+        } else {
+            sOut =
+                '<div class="innerDetails">' +
+                    '<p><strong>Name: </strong>' + oData.name + '</p>' +
+                    '<p><strong>County: </strong>' + oData.county + '</p>' +
+                    '<p><strong>Approxmiate Location: </strong>' + oData.location + '</p>' +
+                    '<p><strong>Administrative Unit: </strong>' + oData.administrativeunit + '</p>' +
+                    '<p><strong>Acreage burned: </strong>' + oData.acres + '</p>' +
+                    '<p><strong>Containment: </strong>' + oData.containment + '</p>' +
+                    '<p><strong>Date Fire Began: </strong>' + oData.datestarted + '</p>' +
+                    '<p><strong>Last Update: </strong>' + oData.lastupdate + '</p>' +
+                    '<p><a href="' + oData.moreinfo + '"target="_blank">More info</a></p>' +
+                '</div>';
+        }
 
         return sOut;
     },
