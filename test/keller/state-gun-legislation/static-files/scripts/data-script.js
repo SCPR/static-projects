@@ -46,6 +46,39 @@
         // render content display template
         renderHandlebarsDisplayTemplate: function(data){
             renderHandlebarsTemplate('static-files/templates/content-display.handlebars', '#contentDisplay', data);
+            var arrayOfLegiSponsors = data.sponsors;
+            fn.processLegislationSponsorArray(arrayOfLegiSponsors);
+        },
+
+        processLegislationSponsorArray: function(arrayOfSponsors){
+            for(var x=0; x<arrayOfSponsors.length; x++){
+
+                var displayType = toTitleCase(arrayOfSponsors[x].type);
+
+                jqueryNoConflict.getJSON('http://openstates.org/api/v1/legislators/' + arrayOfSponsors[x].leg_id + '?apikey=b717252e9bc44d4ea57321c49e7dd5e8&callback=?', function(legiData){
+
+                    var displayParty;
+
+                    if (legiData.party === 'Democratic'){
+                        displayParty = 'D';
+                    } else {
+                        displayParty = 'R';
+                    }
+
+                    var districtOfficeCheck = _.has(legiData, '+district_offices');
+                    var displayCity;
+                    if (districtOfficeCheck === true){
+                        displayCity = legiData['+district_offices'][0].city;
+                    } else {
+                        displayCity = ' ';
+                    }
+
+                    jqueryNoConflict('#legi-sponsors').append('<li><strong>' + displayType + '</strong>:<br />' + legiData.full_name + ' (' + displayParty + ' - ' + displayCity + ')</li>');
+
+                });
+
+            }
+
         },
 
         // run the comparsion on actual bill and target bill
@@ -128,6 +161,10 @@
                 return "Senate";
             };
         });
+    }
+
+    function toTitleCase(str){
+        return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     }
 
     // embed function

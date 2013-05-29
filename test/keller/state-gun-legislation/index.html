@@ -79,7 +79,6 @@
                                                         <li><label for="models"><input type="checkbox" name="models" value=".models" id="models"> Firearm Models</label></li>
                                                         <li><label for="public-records"><input type="checkbox" name="public-records" value=".public-records" id="public-records"> Public Records</label></li>
                                                         <li><label for="background-checks"><input type="checkbox" name="background-checks" value=".background-checks" id="background-checks"> Background Checks</label></li>
-                                                        <li><label for="sentence-enhancements"><input type="checkbox" name="sentence-enhancements" value=".sentence-enhancements" id="sentence-enhancements"> Sentence Enhancements</label></li>
                                                         <li><label for="school-safety"><input type="checkbox" name="school-safety" value=".school-safety" id="school-safety"> School Safety</label></li>
                                                         <li><label for="active"><input type="checkbox" name="active" value=".active" id="active"> Active</label></li>
                                                         <li><label for="parked"><input type="checkbox" name="parked" value=".parked" id="parked"> Parked</label></li>
@@ -96,8 +95,8 @@
                                     <div class="row-fluid">
                                         <div class="span12">
                                             <div class="item gun-sales possession parked" id="AB%201084">AB 1084</div>
-                                            <div class="item sentence-enhancements parked" id="AB%201148">AB 1148</div>
                                             <!--
+                                                <div class="item sentence-enhancements parked" id="AB%201148">AB 1148</div>
                                                 <div class="item models parked" id="AB%201225">AB 1225</div>
                                                 <div class="item possession parked" id="AB%201265">AB 1265</div>
                                                 <div class="item ammunition parked" id="AB%201367">AB 1367</div>
@@ -105,7 +104,7 @@
                                             <div class="item school-safety parked" id="AB%201264">AB 1264</div>
                                             <div class="item public-records possession parked" id="AB%20134">AB 134</div>
                                             <div class="item gun-sales active" id="AB%20169">AB 169</div>
-                                            <div class="item gun-sales parked" id="AB%20202">AB 202</div>
+                                            <div class="item gun-sales school-safety parked" id="AB%20202">AB 202</div>
                                             <div class="item possession active" id="AB%20231">AB 231</div>
                                             <div class="item ammunition models active" id="AB%2048">AB 48</div>
                                             <div class="item gun-sales possession active" id="AB%20500">AB 500</div>
@@ -141,6 +140,7 @@
         <div id="kpcc-footer"></div>
 
             <!-- begin scripts -->
+            <script src="http://projects.scpr.org/static/static-files/scripts/underscore-min.js"></script>
             <script src="http://projects.scpr.org/static/static-files/scripts/isotope-1.5.18.js"></script>
             <script src="http://projects.scpr.org/static/static-files/scripts/waituntilexists.js"></script>
             <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
