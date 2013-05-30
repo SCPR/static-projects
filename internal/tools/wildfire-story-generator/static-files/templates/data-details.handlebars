@@ -1,0 +1,33 @@
+{{debug}}
+
+<h2>Quick post generator for California Wildfires</h2>
+
+{{#objects}}
+    <div id ="{{name}}">
+        <h3>{{name}} - {{addCommas acres}} acres burned; {{containment}} containment</h3>
+        <p>A <a href="{{moreinfo}}" target="_blank">wildfire</a> in {{county}} has burned {{addCommas acres}} acres as of {{formatDate lastupdate "%A"}}, according to the <a href="http://www.calfire.ca.gov/">California State Department of Forestry and Fire Prevention</a>.</p>
+        <p>The {{name}} is at about {{containment}} containment, and is being managed by the {{administrativeunit}}.</p>
+        <p>The fire started on {{formatDate datestarted "%b %e"}} in the location of {{location}}.</p>
+    </div>
+
+    <a href="#fire-html-modal" role="button" class="btn btn-success" data-toggle="modal">Get HTML</a>
+    <div id="fire-html-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="fire-html-modal-label" aria-hidden="true">
+
+        <div class="modal-header">
+            <h3>HTML embed for {{name}}</h3>
+        </div>
+
+        <div id="modal-body" class="modal-body">
+            <textarea class="span12" rows="20">
+            <p>A <a href="{{moreinfo}}" target="_blank">wildfire</a> in {{county}} has burned {{acres}} acres as of {{lastupdate}}, according to the <a href="http://www.calfire.ca.gov/">California State Department of Forestry and Fire Prevention</a>.</p>
+            <p>The {{name}} is at about {{containment}} containment, and is being managed by the {{administrativeunit}}.</p>
+            <p>The fire started on {{datestarted}} in the location of {{location}}.</p></textarea>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn" data-dismiss ="modal" aria-hidden="true">Close</button>
+        </div>
+
+    </div>
+    <hr>
+{{/objects}}
