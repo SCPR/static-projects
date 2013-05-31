@@ -1,0 +1,5 @@
+.hero-unit {padding: 20px; margin-bottom: 15px;}
+#user-action.hero-unit {background: rgba(241, 122, 49, 0.3); font-size: 95%; font-weight: 400;}
+.data-display.hero-unit {background: rgba(255, 255, 255, 0.6); font-size: 95%; font-weight: 400;}
+select {z-index: 100; width: 100%; background-color: #fff; border: 1px solid #ccc;}
+.red {color: red;}url(../../../_project_template/static/images/icon.png)
