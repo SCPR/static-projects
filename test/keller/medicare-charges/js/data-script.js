@@ -44,7 +44,7 @@ var fn = {
     displayCategorySelectMenu: function(data) {
 
         // create category select menu
-        configureSelectMenuFromData('Choose a major category', fn.objectOfSelectMenuArrays.categorySelectMenu, '#category-comparison');
+        configureSelectMenuFromData('Choose from a medical specialty area, i.e., Circulatory System ', fn.objectOfSelectMenuArrays.categorySelectMenu, '#category-comparison');
 
         // get value of category grouping select menu
         jqueryNoConflict('#category-comparison').change(function () {
@@ -77,7 +77,7 @@ var fn = {
         emptyUxElement('#procedure-comparison');
 
         // create procedure select menu
-        configureSelectMenuFromData('Choose a procedure', fn.objectOfSelectMenuArrays.procedureSelectMenu, '#procedure-comparison');
+        configureSelectMenuFromData('Choose a diagnosis associated with this specialty area', fn.objectOfSelectMenuArrays.procedureSelectMenu, '#procedure-comparison');
 
         // display the procedure select menu
         jqueryNoConflict('#procedure-list-middle').removeClass('hidden');
@@ -155,30 +155,33 @@ var fn = {
 
         for (var x=0; x<fn.objectOfFilteredHospitals.objects.length; x++) {
 
-            var displayOutput = '<h4>' + fn.objectOfFilteredHospitals.objects[x].providername + compareHospitalToAverage(fn.objectOfFilteredHospitals.objects[x].averagecoveredcharges, fn.objectOfComparisonData.averageCost) +
-                '</h4>' +
+            var displayOutput = '<p><strong>' + fn.objectOfFilteredHospitals.objects[x].providername + '</strong> in ' + fn.objectOfFilteredHospitals.objects[x].providercity +
+                compareHospitalToAverage(fn.objectOfFilteredHospitals.objects[x].averagecoveredcharges, fn.objectOfComparisonData.averageCost) +
+                ' based on ' + fn.objectOfFilteredHospitals.objects[x].totaldischarges + ' discharges.</p>' +
 
-                '<p>' + fn.objectOfFilteredHospitals.objects[x].providerstreetaddress +
+                /*
+                '<p class="centered">' + fn.objectOfFilteredHospitals.objects[x].providerstreetaddress +
                 '<br />' + fn.objectOfFilteredHospitals.objects[x].providercity +
                 ', ' + fn.objectOfFilteredHospitals.objects[x].providerstate +
                 ' ' + fn.objectOfFilteredHospitals.objects[x].providerzipcode +
                 '</p>' +
                 '<p>Procedure: ' + fn.objectOfFilteredHospitals.objects[x].drgdefinition + '</p>' +
+                */
 
-                '<p>The average cost for this procedure is <strong>' +
+                '<p>The <strong>average cost</strong> for this procedure is <strong>' +
                 convertIntToCurrency(fn.objectOfFilteredHospitals.objects[x].averagecoveredcharges) +
-                '</strong>, which is <strong>' + convertIntToCurrency(calcaulateDifferenceInAverage(fn.objectOfFilteredHospitals.objects[x].averagecoveredcharges, fn.objectOfComparisonData.averageCost)) + '</strong> than the state average.</p>' +
+                '</strong>, which is <strong>' + convertIntToCurrency(calcaulateDifferenceInAverage(fn.objectOfFilteredHospitals.objects[x].averagecoveredcharges, fn.objectOfComparisonData.averageCost)) + '</strong> than the <strong>state average</strong>.</p>' +
 
-                '<p>The average reimbursment for this procedure is <strong>' +
-                convertIntToCurrency(fn.objectOfFilteredHospitals.objects[x].averagetotalpayments) + '</strong>, which is <strong>' + convertIntToCurrency(calcaulateDifferenceInAverage(fn.objectOfFilteredHospitals.objects[x].averagetotalpayments, fn.objectOfComparisonData.averageReimbursement)) + '</strong> than the state average.</p>';
+                '<p>The <strong>average reimbursment</strong> for this procedure is <strong>' +
+                convertIntToCurrency(fn.objectOfFilteredHospitals.objects[x].averagetotalpayments) + '</strong>, which is <strong>' + convertIntToCurrency(calcaulateDifferenceInAverage(fn.objectOfFilteredHospitals.objects[x].averagetotalpayments, fn.objectOfComparisonData.averageReimbursement)) + '</strong> than the <strong>state average</strong>.</p>';
 
 
             if (fn.objectOfComparisonData.hospitalLeft === undefined || fn.objectOfComparisonData.hospitalLeft === null) {
-                jqueryNoConflict('#hospital-left').html('Choose a California hospital to compare');
+                jqueryNoConflict('#hospital-left').html('');
             };
 
             if (fn.objectOfComparisonData.hospitalRight === undefined || fn.objectOfComparisonData.hospitalRight === null) {
-                jqueryNoConflict('#hospital-right').html('Choose a California hospital to compare');
+                jqueryNoConflict('#hospital-right').html('');
             };
 
             // display the data
@@ -245,68 +248,35 @@ var fn = {
         // add key/value for average reimbursement to comparison object
         fn.objectOfComparisonData.averageReimbursement = averageReimbursmentsToDisplay;
 
-        jqueryNoConflict('.procedure-cost').removeClass('hidden');
+        jqueryNoConflict('.procedure-cost').removeClass('hidden').animate({height:'auto'}, 1050000000);
 
         // average costs
         jqueryNoConflict('#procedure-cost-average').html(
-            '<h4 class="centered red">Average cost in California</h4>' +
-            '<p class="centered"><strong>' +
-            convertIntToCurrency(averageCostToDisplay) +
-            '</strong></p>');
+            '<h4>Average cost in California: ' + convertIntToCurrency(averageCostToDisplay) + '</h4>');
 
         jqueryNoConflict('#procedure-cost-left').html(
-            '<h4 class="centered red">Lowest average cost<br />at a California hospital</h4>' +
-            '<p class="centered"><strong>' +
-            convertIntToCurrency(lowestAverageCostToDisplay.averagecoveredcharges) +
-            '</strong><br />' + lowestAverageCostToDisplay.providername +
-            '<br />' + lowestAverageCostToDisplay.providercity + '<br/>' +
-            '<strong>No. of discharged patients</strong>: ' +
-            lowestAverageCostToDisplay.totaldischarges + '</p>');
-
-        jqueryNoConflict('#procedure-cost-middle').html(
-            '<h4 class="centered red">Difference in average cost</h4>' +
-            '<p class="centered"><strong>' + convertIntToCurrency(differenceInCost) + '</strong></p>');
+            '<p>The <strong>lowest average cost</strong> for this procedure is about <strong>' + convertIntToCurrency(lowestAverageCostToDisplay.averagecoveredcharges) + '</strong> at <strong>' + lowestAverageCostToDisplay.providername + '</strong> in ' + lowestAverageCostToDisplay.providercity + ' based on '+ lowestAverageCostToDisplay.totaldischarges + ' discharges.</p>');
 
         jqueryNoConflict('#procedure-cost-right').html(
-            '<h4 class="centered red">Highest average cost<br />at a California hospital</h4>' +
-            '<p class="centered"><strong>' +
-            convertIntToCurrency(highestAverageCostToDisplay.averagecoveredcharges) +
-            '</strong><br />' + highestAverageCostToDisplay.providername +
-            '<br />' + highestAverageCostToDisplay.providercity + '<br/>' +
-            '<strong>No. of discharged patients</strong>: ' +
-            highestAverageCostToDisplay.totaldischarges + '</p>');
+            '<p>The <strong>highest average cost</strong> for this procedure is about <strong>' + convertIntToCurrency(highestAverageCostToDisplay.averagecoveredcharges) + '</strong> at <strong>' + highestAverageCostToDisplay.providername + '</strong> in ' + highestAverageCostToDisplay.providercity + ' based on  '+ highestAverageCostToDisplay.totaldischarges + ' discharges.</p>');
+
+        jqueryNoConflict('#procedure-cost-middle').html(
+            '<p>The <strong>difference in average cost</strong> between these hospitals is about <strong>' + convertIntToCurrency(differenceInCost) + '</strong></p>');
 
         // average reimbursements
         jqueryNoConflict('.procedure-reimbursement').removeClass('hidden');
 
         jqueryNoConflict('#procedure-reimbursement-average').html(
-            '<h4 class="centered red">Average reimbursment in California</h4>' +
-            '<p class="centered"><strong>' +
-            convertIntToCurrency(averageReimbursmentsToDisplay) +
-            '</strong></p>');
+            '<h4>Average reimbursment in California: ' + convertIntToCurrency(averageReimbursmentsToDisplay) + '</h4>');
 
         jqueryNoConflict('#procedure-reimbursement-left').html(
-            '<h4 class="centered red">Lowest average reimbursment<br />at a California hospital</h4>' +
-            '<p class="centered"><strong>' +
-            convertIntToCurrency(lowestAverageReimbursmentToDisplay.averagetotalpayments) +
-            '</strong><br />' + lowestAverageReimbursmentToDisplay.providername +
-            '<br />' + lowestAverageReimbursmentToDisplay.providercity + '<br/>' +
-            '<strong>No. of discharged patients</strong>: ' +
-            lowestAverageReimbursmentToDisplay.totaldischarges + '</p>');
-
-        jqueryNoConflict('#procedure-reimbursement-middle').html(
-            '<h4 class="centered red">Difference in average reimbursment</h4>' +
-            '<p class="centered"><strong>' + convertIntToCurrency(differenceInReimbursment) + '</strong></p>');
+            '<p>The <strong>lowest average reimbursment</strong> for this procedure is about <strong>' + convertIntToCurrency(lowestAverageReimbursmentToDisplay.averagetotalpayments) + '</strong> at <strong>' + lowestAverageReimbursmentToDisplay.providername + '</strong> in <strong> ' + lowestAverageReimbursmentToDisplay.providercity + '</strong> based on <strong> '+ lowestAverageReimbursmentToDisplay.totaldischarges + ' discharges</strong> .</p>');
 
         jqueryNoConflict('#procedure-reimbursement-right').html(
-            '<h4 class="centered red">Highest average reimbursment<br />at a California hospital</h4>' +
-            '<p class="centered"><strong>' +
-            convertIntToCurrency(highestAverageReimbursmentToDisplay.averagetotalpayments) +
-            '</strong><br />' + highestAverageReimbursmentToDisplay.providername +
-            '<br />' + highestAverageReimbursmentToDisplay.providercity + '<br/>' +
-            '<strong>No. of discharged patients</strong>: ' +
-            highestAverageReimbursmentToDisplay.totaldischarges + '</p>');
+            '<p>The <strong>lowest average reimbursment</strong> for this procedure is about <strong>' + convertIntToCurrency(highestAverageReimbursmentToDisplay.averagetotalpayments) + '</strong> at <strong>' + highestAverageReimbursmentToDisplay.providername + '</strong> in ' + highestAverageReimbursmentToDisplay.providercity + ' based on '+ highestAverageReimbursmentToDisplay.totaldischarges + ' discharges.</p>');
 
+        jqueryNoConflict('#procedure-reimbursement-middle').html(
+            '<p>The <strong>difference in average cost</strong> between these hospitals is about <strong>' + convertIntToCurrency(differenceInReimbursment) + '</strong></p>');
     },
 
     // display calculated averages for the whole data set
@@ -322,8 +292,8 @@ var fn = {
         emptyUxElement('#hospital-comparison-right');
 
         // create the new select menu based on options
-        configureSelectMenuFromData('Find your local hospital', fn.objectOfSelectMenuArrays.hospitalSelectMenu, '#hospital-comparison-right');
-        configureSelectMenuFromData('Find your local hospital', fn.objectOfSelectMenuArrays.hospitalSelectMenu, '#hospital-comparison-left');
+        configureSelectMenuFromData('Choose a hospital', fn.objectOfSelectMenuArrays.hospitalSelectMenu, '#hospital-comparison-right');
+        configureSelectMenuFromData('Choose a hospital', fn.objectOfSelectMenuArrays.hospitalSelectMenu, '#hospital-comparison-left');
 
     }
 
@@ -395,13 +365,11 @@ function calcaulateDifferenceBetweenHospitals(hospitalLeft, hospitalRight) {
     var value;
     if (hospitalLeft > hospitalRight) {
         value = hospitalLeft - hospitalRight;
-        value = '<h4 class="centered">Cheaper Bill By About ---><br />' +
-        '<strong>' + convertIntToCurrency(value) + '</strong></h4>';
+        value = '<h4 class="centered">Lower average cost by ' + convertIntToCurrency(value) + ' &#8594; </h4>';
 
     } else if (hospitalLeft < hospitalRight) {
         value = hospitalRight - hospitalLeft;
-        value = '<h4 class="centered"><--- Cheaper Bill By About<br />' +
-        '<strong>' + convertIntToCurrency(value) + '</strong></h4>';
+        value = '<h4 class="centered">&#8592; Lower average cost by ' + convertIntToCurrency(value) + '</h4>';
     }
     return value;
 }
@@ -409,9 +377,9 @@ function calcaulateDifferenceBetweenHospitals(hospitalLeft, hospitalRight) {
 // compare a hospital's average to the datasets average
 function compareHospitalToAverage(hospitalCost, averageCost) {
     if (hospitalCost < averageCost) {
-        value = ' &#8595; ';
+        value = ' is <strong>lower</strong> than the average state cost for this procedure.';
     } else {
-        value = ' &#8593; ';
+        value = ' is <strong>higher</strong> than the average state cost for this procedure.';
     }
     return value;
 }

@@ -60,7 +60,7 @@
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
     -->
-    <link href="css/project-styles.css?t=1369188197" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/project-styles.css?t=1370030318" rel="stylesheet" type="text/css" media="all" />
 
 
         <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="all" />
@@ -120,33 +120,36 @@
 
     <div id="content-article">
         <h4 class="kicker">Health</h4>
-        <h1>Costs of care in California: Federal government releases data comparing hospital bills</h1>
+        <h1>Costs of care: Explore government data to compare Medicare costs</h1>
 
         <div id="content-article-metadata">
             <p>
 
-                <span class="credits"><a href="http://www.scpr.org/about/people/staff/stephanie-oneill">Stephanie O'Neill</a> &amp; <a href="http://www.scpr.org/about/people/staff/chris-keller">Chris Keller</a></span> |
+                <span class="credits"><a href="http://www.scpr.org/about/people/staff/chris-keller">Chris Keller</a> &amp; <a href="http://www.scpr.org/about/people/staff/stephanie-oneill">Stephanie O'Neill</a></span> |
 
-            <span class="pubdate">Published May 10, 2013</span>
+            <span class="pubdate">Published May 30, 2013</span>
             </p>
         </div>
 
+        <div class="row-fluid">
+            <div class="span6">
 
-            <div id="content-article-text">
-                <p>The federal government <a href="http://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/index.html">released 2011 data Wednesday</a> that it claims make it easier for patients to price shop for hospital services. There are wide variations in cost nationwide, and in southern California. But some experts say the information is irrelevant, as it has little bearing on actual costs.</p><p>Below, choose one of the 100 most common procedures found in the government data to see the average cost for the procedure in California, the lowest average cost and highest average cost. Then choose two hospitals to compare their costs.</p>
+                    <div id="content-article-text">
+                        <p>The federal government <a href="http://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-Reports/Medicare-Provider-Charge-Data/index.html">released 2011 data in May </a> that it claims make it easier for patients to price shop for hospital services. While the data shows there are wide variations in average costs nationwide and in southern California, <a href="http://articles.latimes.com/2013/may/17/business/la-fi-cedars-hospital-prices-20130517">some experts</a> say the information is irrelevant, as it has little bearing on actual costs.</p><p>We've tried to make it easy for you to explore and compare hospitals across the state based on a data released in May by the Centers for Medicare and Medicaid Services.</p><p>The data contained the 100 most frequently billed discharges paid under Medicare -- some 7 million discharges -- and were categorized based on their Medicare Severity Diagnosis Related Group (MS-DRG). The MS-DRG is a series of more than 700 classifications meant to organize an illness or condition and accurately reflect the severity of an illness.</p><p>To help sort these discharges further, we've grouped them by their "Major Diagnostic Category," which <a href="http://health.utah.gov/opha/IBIShelp/codes/MDC.htm">correspond to a single organ system or etiology and in general are associated with a particular medical specialty</a>.</p>
+                    </div>
+
             </div>
+            <div class="span6">
 
+                    <div id="content-image">
+                        <img src="http://a.scpr.org/i/0f6f30f30b5b5eca175ea4278eab88ba/40977-small.jpg" />
+                    </div>
 
-
-            <div id="content-article-buttons">
-                <a class="btn btn-info" href="http://www.scpr.org/news/2013/05/08/37187/federal-government-releases-data-comparing-hospita/">Read More</a>
             </div>
+        </div>
 
 
 
-            <div id="content-explainer">
-                <p><span class="data-instructions"><strong>About This: </strong>Choose one of the 100 most common procedures below to see the average cost for the procedure, the lowest average cost and highest average cost. Then choose two hospitals to compare.</span></p>
-            </div>
 
     </div>
 
@@ -157,92 +160,67 @@
                 <div class="span12">
                     <div id="data-visuals">
 
-    <div class="row-fluid">
-    <div class="span4 offset4">
-        <div>
+<div class="row-fluid">
+    <div class="span12">
+        <div id="user-action" class="hero-unit">
+            <h3>Search and compare provider charges using the Medicare data</h3>
+
+                    <div id="content-explainer">
+                        <p><strong>Using this application</strong>: If you wanted to compare the average hospital charges for kidney failure would can choose from Kidney &amp; Urinary Tract from the "Gettting Started" menu, and choose from one of the diagnosis that match. Once you choose a category and a diagnosis, we've organized the data to show you charges and reimbursements in the state based on overall average, lowest and highest average cost and difference. You can also choose between two hospitals to see how they compare.</p>
+                    </div>
+
+
             <div id="category-list-middle">
+                <h5>Getting started...</h5>
                 <select id="category-comparison" name="category-comparison"></select>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="row-fluid">
-    <div class="span4 offset4">
-        <div>
             <div id="procedure-list-middle" class="hidden">
                 <select id="procedure-comparison" name="procedure-comparison"></select>
             </div>
         </div>
     </div>
 </div>
-
 <div class="row-fluid">
-    <div class="procedure-cost hidden">
-        <div class="span12">
+    <div class="data-display hero-unit procedure-cost hidden">
+        <div class="span6">
+            <h3>Statewide comparisons</h4>
             <div id="procedure-cost-average"></div>
-        </div>
-    </div>
-</div>
-
-<div class="row-fluid">
-    <div class="procedure-cost hidden">
-        <div class="span4">
             <div id="procedure-cost-left"></div>
-        </div>
-        <div class="span4">
-            <div id="procedure-cost-middle"></div>
-        </div>
-        <div class="span4">
             <div id="procedure-cost-right"></div>
-        </div>
-    </div>
-</div>
-
-<div class="row-fluid">
-    <div class="procedure-reimbursement hidden">
-        <div class="span12">
+            <div id="procedure-cost-middle"></div>
             <div id="procedure-reimbursement-average"></div>
-        </div>
-    </div>
-</div>
-
-<div class="row-fluid">
-    <div class="procedure-reimbursement hidden">
-        <div class="span4">
             <div id="procedure-reimbursement-left"></div>
-        </div>
-        <div class="span4">
+            <div id="procedure-reimbursement-right"></div>
             <div id="procedure-reimbursement-middle"></div>
         </div>
-        <div class="span4">
-            <div id="procedure-reimbursement-right"></div>
-        </div>
-    </div>
-</div>
-
-<hr></hr>
-
-<div class="row-fluid">
-    <div class="span4">
-        <div id="hospital-div-left" class="hidden">
-            <div id="select-list-left">
-                <select id="hospital-comparison-left" name="hospital-comparison-left"></select>
+        <div class="span6">
+            <h3>Hospital by hospital comparisons</h4>
+            <p>Choose from California hospitals that have performed these procedures to cost and reimbursement amounts.</p>
+            <div class="row-fluid">
+                <div class="span12">
+                    <div id="hospital-div-middle" class="hidden hidden-phone">
+                        <div id="hospital-calculation"></div>
+                    </div>
+                </div>
             </div>
-            <div id="hospital-left"></div>
-        </div>
-    </div>
-    <div class="span4">
-        <div id="hospital-div-middle" class="hidden">
-            <div id="hospital-calculation"></div>
-        </div>
-    </div>
-    <div class="span4">
-        <div id="hospital-div-right" class="hidden">
-            <div id="select-list-right">
-                <select id="hospital-comparison-right" name="hospital-comparison-right"></select>
+            <div class="row-fluid">
+                <div class="span6">
+                    <div id="hospital-div-left" class="hidden">
+                        <div id="select-list-left">
+                            <select id="hospital-comparison-left" name="hospital-comparison-left"></select>
+                        </div>
+                        <div id="hospital-left"></div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div id="hospital-div-right" class="hidden">
+                        <div id="select-list-right">
+                            <select id="hospital-comparison-right" name="hospital-comparison-right"></select>
+                        </div>
+                        <div id="hospital-right"></div>
+                    </div>
+                </div>
             </div>
-            <div id="hospital-right"></div>
         </div>
     </div>
 </div>
@@ -297,9 +275,9 @@
 
     <script src="http://projects.scpr.org/static/static-files/scripts/underscore-min.js"></script>
     <script>
-        var dataSource = "data/medicare_charges_full.json?t=1369188197";
+        var dataSource = "data/medicare_charges_full.json?t=1370030318";
     </script>
-    <script src="js/data-script.js?t=1369188197"></script>
+    <script src="js/data-script.js?t=1370030318"></script>
 
 
         <!-- end scripts -->
