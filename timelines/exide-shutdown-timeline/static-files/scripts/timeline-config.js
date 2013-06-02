@@ -13,7 +13,7 @@ $(document).ready(function() {
         key: 'https://docs.google.com/spreadsheet/pub?key=0Aq8qwSArzKP9dEcyNW9TS3V3NVdCM3hOMFpYZHVhcmc&output=html',
 
         // name of sheet on spreadsheet
-        sheetName: 'final',
+        sheetName: 'exide',
 
         // newest or oldest
         defaultDirection: 'oldest',

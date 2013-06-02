@@ -10,7 +10,7 @@ $(document).ready(function() {
     $('#data-visuals').verticalTimeline({
 
         // spreadsheet key
-        key: 'https://docs.google.com/spreadsheet/pub?key=0ApI9xmBd0kPzdG9CcDR0eUxvV2p0Z1dFbjVpZnQ2U2c&output=html',
+        key: 'https://docs.google.com/spreadsheet/pub?key=0Aq8qwSArzKP9dEcyNW9TS3V3NVdCM3hOMFpYZHVhcmc&output=html',
 
         // name of sheet on spreadsheet
         sheetName: 'final',
