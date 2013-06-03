@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+/*
     $('#data-visuals').verticalTimeline({
 
         // spreadsheet key
@@ -20,9 +21,9 @@ $(document).ready(function() {
         // adjust timeline width
         width: '65%'
     });
+*/
 
-/*
-    $.getJSON('static-files/data/dorner_display_sheet_timeline.json', function(data) {
+    $.getJSON('static-files/data/sequestration_steps_timeline.json', function(data) {
         $('#data-visuals').verticalTimeline({
 
             data: data,
@@ -41,6 +42,4 @@ $(document).ready(function() {
 
         });
     });
-*/
-
 });
