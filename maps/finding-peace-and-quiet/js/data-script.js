@@ -11,7 +11,7 @@ jqueryNoConflict(document).ready(function() {
 
     retriveData();
 
-    jqueryNoConflict('#content-background').click(function(){
+	jqueryNoConflict('#content-background').click(function(){
 		jqueryNoConflict('#content-background').fadeOut('slow');
 		jqueryNoConflict('#content-display').fadeOut('slow');
 	});
@@ -22,6 +22,7 @@ jqueryNoConflict(document).ready(function() {
 			jqueryNoConflict('#content-display').fadeOut('slow');
 		}
 	});
+
 });
 
 // grab data
@@ -117,7 +118,7 @@ function createMap(data){
         gridSize: 50,
         zoomOnClick: true,
         maxZoom: 12,
-        title: 'Where do you find peace and quiet?'
+        title: 'testing title'
     };
 
     // adds instance of marker cluster to map
@@ -166,7 +167,7 @@ function bindInfoWindow(marker, map, html) {
 
 jQuery.fn.center = function () {
 	this.css('position','absolute');
-	this.css('top', ( jqueryNoConflict(window).height() - this.height() ) / 2+jqueryNoConflict(window).scrollTop() + 'px');
+	this.css('top', ( jqueryNoConflict(window).height() - this.height() ) / 4+jqueryNoConflict(window).scrollTop() + 'px');
 	this.css('left', ( jqueryNoConflict(window).width() - this.width() ) / 2+jqueryNoConflict(window).scrollLeft() + 'px');
 	return this;
 }

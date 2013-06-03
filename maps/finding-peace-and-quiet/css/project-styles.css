@@ -2,9 +2,11 @@
 #content-map-canvas {width: 96%; height: 700px; margin: 0 2% 0 2%;}
 #content-map-canvas img {max-width: none;}
 #content-background {display: none; position: fixed; height: 100%; width: 100%; top: 0; left: 0; background: #000000; z-index: 1; }
-#content-display {display: none; position: fixed; background: #f7f7f7; z-index: 10; height: auto; max-width: 30%; color: #2b2b2b; padding: 2%; -moz-border-radius: 2%; -webkit-border-radius: 2%; border-radius: 2%; -khtml-border-radius: 2%;}
+
+#content-display {display: none; position: fixed; top: 0; left: 0; background: #f7f7f7; z-index: 10; height: auto; max-width: 30%; color: #2b2b2b; padding: 2%; -moz-border-radius: 2%; -webkit-border-radius: 2%; border-radius: 2%; -khtml-border-radius: 2%;}
 
 #close {margin: 0; cursor: pointer; }
+
 
 /* -- media queries -- */
 /* adjust headers for smaller devices */
