@@ -47,27 +47,6 @@
             data: arrayOfCandidates[0]
         };
 
-        var greuelNumbers = {
-            name: 'Wendy Greuel',
-            color: '#005873',
-            type: 'pie',
-            data: arrayOfCandidates[1]
-        };
-
-        var jamesNumbers = {
-            name: 'Kevin James',
-            color: '#005873',
-            type: 'pie',
-            data: arrayOfCandidates[2]
-        };
-
-        var perryNumbers = {
-            name: 'Jan Perry',
-            color: '#005873',
-            type: 'pie',
-            data: arrayOfCandidates[3]
-        };
-
         var charts = [];
 
         charts.push(new Highcharts.Chart(
