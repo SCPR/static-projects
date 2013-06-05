@@ -10,13 +10,13 @@ $(document).ready(function() {
     $('#data-visuals').verticalTimeline({
 
         // spreadsheet key
-        key: 'https://docs.google.com/spreadsheet/pub?key=0Aq8qwSArzKP9dEcyNW9TS3V3NVdCM3hOMFpYZHVhcmc&output=html',
+        key: 'https://docs.google.com/spreadsheet/pub?key=0AjsyCVrBXivzdEtIckFjR25QNXZhOC1LdjI4bGJSZFE&output=html',
 
         // name of sheet on spreadsheet
-        sheetName: 'final',
+        sheetName: 'sheet',
 
         // newest or oldest
-        defaultDirection: 'oldest',
+        defaultDirection: 'newest',
 
         // collapsed or expanded
         defaultExpansion: 'expanded',
