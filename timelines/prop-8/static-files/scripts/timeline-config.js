@@ -7,7 +7,6 @@ function embedBox() {
 
 $(document).ready(function() {
 
-/*
     $('#data-visuals').verticalTimeline({
 
         // spreadsheet key
@@ -28,8 +27,8 @@ $(document).ready(function() {
         // adjust timeline width
         width: '75%'
     });
-*/
 
+/*
     $.getJSON('static-files/data/proposition_8_timeline.json', function(data) {
         $('#data-visuals').verticalTimeline({
 
@@ -49,5 +48,6 @@ $(document).ready(function() {
 
         });
     });
+*/
 
 });

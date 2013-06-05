@@ -16,7 +16,7 @@ TO DO
     var dataSpreadsheet = '0An8W63YKWOsxdFZ4VTJIWngtY0VJWHJKM0dRUEpndVE';
 
     // the sheet being queried
-    var dataSheet = 'MATTS_Jobs_Added_Per_Month_2012';
+    var dataSheet = 'WENDYS_Jobs_Added_Per_Month_2012';
 
     // container arrays
     var allJobsData = [];
@@ -24,7 +24,7 @@ TO DO
 
     // chart options
     var chart;
-    var chartCategories = ['Jan \'12', 'Feb \'12', 'Mar \'12', 'Apr \'12', 'May \'12', 'Jun \'12', 'Jul \'12', 'Aug \'12', 'Sep \'12', 'Oct \'12', 'Nov \'12', 'Dec \'12', 'Jan \'13', 'Feb \'13', 'Mar \'13', 'Apr \'13'];
+    var chartCategories = ['Ja 12', 'Fe 12', 'Ma 12', 'Ap 12', 'My 12', 'Ju 12', 'Ju 12', 'Au 12', 'Se 12', 'Oc 12', 'No 12', 'De 12', 'Ja 13', 'Fe 13', 'Ma 13', 'Ap 13', 'My 13'];
 
     // pull data from spreadsheet onload
     jqueryNoConflict(document).ready(function(){
@@ -61,9 +61,10 @@ TO DO
             var feb2013 = parseInt(record.feb2013);
             var mar2013 = parseInt(record.mar2013);
             var apr2013 = parseInt(record.apr2013);
+            var may2013 = parseInt(record.may2013);
 
             // build array from each row of spreadsheet
-            allJobsData = [jan2012, feb2012, mar2012, apr2012, may2012, jun2012, jul2012, aug2012, sep2012, oct2012, nov2012, dec2012, jan2013, feb2013, mar2013, apr2013];
+            allJobsData = [jan2012, feb2012, mar2012, apr2012, may2012, jun2012, jul2012, aug2012, sep2012, oct2012, nov2012, dec2012, jan2013, feb2013, mar2013, apr2013, may2013];
 
             // push each array to an array
             arraysOfJobsData.push(allJobsData);
@@ -98,8 +99,6 @@ TO DO
                 name: 'Monthly Difference',
                 data: arraysOfJobsData[3]
             };
-
-            console.log(arraysOfJobsData[3]);
 
             renderHandlebarsTemplate('static-files/templates/data-table.handlebars', '#data-table', differenceMonthlyJobs);
 
