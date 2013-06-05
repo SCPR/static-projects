@@ -117,8 +117,8 @@ function createMap(data){
     var markerClusterOptions = {
         gridSize: 50,
         zoomOnClick: true,
-        maxZoom: 12,
-        title: 'testing title'
+        maxZoom: 12
+        //title: 'testing title'
     };
 
     // adds instance of marker cluster to map
