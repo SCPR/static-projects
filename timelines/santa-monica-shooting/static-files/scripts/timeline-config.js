@@ -1,6 +1,6 @@
 // embed function
 function embedBox() {
-    var embed_url = 'http://projects.scpr.org/static/timelines/calderon-timeline/index.html/iframe.html';
+    var embed_url = 'http://projects.scpr.org/static/timelines/anniversary-of-war-in-iraq/iframe.html';
     jAlert('<h4>Embed this on your site or blog</h4>' +
     '<span>Copy the code below and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"700px\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
 };
@@ -10,7 +10,7 @@ $(document).ready(function() {
     $('#data-visuals').verticalTimeline({
 
         // spreadsheet key
-        key: 'https://docs.google.com/spreadsheet/pub?key=0AjsyCVrBXivzdEtIckFjR25QNXZhOC1LdjI4bGJSZFE&output=html',
+        key: 'https://docs.google.com/spreadsheet/pub?key=0AjsyCVrBXivzdHZydWVLeXVGMHZTWWxsdHJEN1RUV1E&output=html',
 
         // name of sheet on spreadsheet
         sheetName: 'sheet',
