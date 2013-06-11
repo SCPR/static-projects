@@ -85,8 +85,8 @@ var fn = {
         // get value of procedure select menu
         jqueryNoConflict('#procedure-comparison').change(function () {
             fn.objectOfComparisonData.procedure = jqueryNoConflict('#procedure-comparison :selected').val();
-            jqueryNoConflict('#hospital-left').html('No data for this procedure at this hospital.');
-            jqueryNoConflict('#hospital-right').html('No data for this procedure at this hospital.');
+            jqueryNoConflict('#hospital-left').html('Choose a new hospital to compare.');
+            jqueryNoConflict('#hospital-right').html('Choose a new hospital to compare.');
             fn.compareProcedureSelectValueAgainstHospitals(data);
         });
 
