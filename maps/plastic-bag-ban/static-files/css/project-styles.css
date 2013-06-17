@@ -1,0 +1,11 @@
+#map { z-index: 1; left: 0; top: 0; position: absolute; width: 100%; height: 100%; }
+/* ### Legend ### */
+.legend-title { text-align: left; margin-bottom: 5px; font-weight: bold; font-size: 100%; }
+.legend-scale ul { margin: 0; margin-bottom: 5px; padding: 0; float: left; list-style: none; }
+.legend-scale ul li { font-size: 95%; list-style: none; margin-left: 0; line-height: 18px; margin-bottom: 2px; }
+ul.legend-labels li span { display: block; float: left; height: 16px; width: 30px; margin-right: 5px; margin-left: 0; border: 1px solid #999; }
+.legend-source { font-size: 80%; color: #999; clear: both; }
+/* ### Tooltip ### */
+.map-tooltip-content { font-size: 140% }
+.leaflet-right .leaflet-control .map-tooltip { opacity: 0.95; box-shadow: 0 0 15px rgba(0,0,0,0.2); }
+.leaflet-bottom { position: fixed; z-index: 1000; bottom: 0; }
