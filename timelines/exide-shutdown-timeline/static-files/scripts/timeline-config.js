@@ -7,7 +7,7 @@ function embedBox() {
 
 $(document).ready(function() {
 
-/*
+
     $('#data-visuals').verticalTimeline({
 
         // spreadsheet key
@@ -28,7 +28,7 @@ $(document).ready(function() {
         // adjust timeline width
         width: '75%'
     });
-*/
+/*
 
     $.getJSON('static-files/data/exide_shutdown_timeline-timeline.json', function(data) {
         $('#data-visuals').verticalTimeline({
@@ -49,6 +49,6 @@ $(document).ready(function() {
 
         });
     });
-
+*/
 
 });
