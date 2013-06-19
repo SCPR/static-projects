@@ -1,0 +1,48 @@
+/* Styles for state-of-bridges */
+.filter-box {height: 15px; width: 15px; display: inline-block; *border-right-width: 2px; *border-bottom-width: 2px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box;}
+
+.filter-yellow {background-color: #FBF358;}
+
+.filter-green {background-color: #00E13C;}
+
+.filter-red {background-color: #FB6353;}
+
+canvas {-ms-touch-action: double-tap-zoom;}
+
+/*
+#filters {padding: 20px;}
+*/
+
+
+.slider-filter {height: auto; margin: 15px 0 35px 0;}
+
+#content-background {display: none; position: fixed; height: 100%; width: 100%; top: 0; left: 0; background: #000000; z-index: 1; }
+#content-display {display: none; position: fixed; top: 0; left: 0; background: #f7f7f7; z-index: 10; height: auto; max-width: 30%; color: #2b2b2b; padding: 2%; -moz-border-radius: 2%; -webkit-border-radius: 2%; border-radius: 2%; -khtml-border-radius: 2%;}
+#close {margin: 0; cursor: pointer; }
+
+
+/* -- media queries -- */
+/* adjust headers for smaller devices */
+@media screen and (max-width: 767px) {
+
+}
+
+/* headlines for content-display desktop */
+@media (min-width: 980px) {
+
+}
+
+/* headlines for Portrait tablet to landscape and desktop */
+@media (min-width: 500px) and (max-width: 979px) {
+    #content-map-canvas {width: 96%; height: 500px; margin: 0 2% 0 2%;}
+    #content-background {display: none; position: fixed;}
+    #content-display {max-width: 80%;}
+
+}
+
+/* headlines for Landscape phones and down */
+@media (max-width: 499px) {
+    #content-map-canvas {width: 96%; height: 500px; margin: 0 2% 0 2%;}
+    #content-background {display: none; position: fixed;}
+    #content-display {max-width: 80%;}
+}
