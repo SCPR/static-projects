@@ -7,24 +7,24 @@
     <!-- begin header -->
     <head>
 
-        <title> A look at the health of California&#39;s bridges  | scpr.org</title>
+        <title> Gauging the health of our Southern California&#39;s bridges  | scpr.org</title>
         <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico">
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <meta name="viewport" id="meta-viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
 
-
+        
 
         <meta name="description" content="" />
         <meta name="keywords" content="" />
-
+        
     <meta content="yes" name="apple-mobile-web-app-capable" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
 
-
+        
         <meta property="og:type" content="website" />
         <meta property="og:image" content="http://www.scpr.org/assets/logo-masthead.png" />
-        <meta property="og:title" content="A look at the health of California&#39;s bridges" />
+        <meta property="og:title" content="Gauging the health of our Southern California&#39;s bridges" />
         <meta property="og:url" content="" />
         <meta property="og:description" content="" />
         <meta name="twitter:card" content="summary">
@@ -32,31 +32,31 @@
         <meta name="twitter:domain" content="http://projects.scpr.org/">
         <meta name="twitter:site" content="KPCC">
         <meta name="twitter:creator:id" content="">
-        <meta name="twitter:title" content="A look at the health of California&#39;s bridges">
+        <meta name="twitter:title" content="Gauging the health of our Southern California&#39;s bridges">
         <meta name="twitter:description" content="">
         <meta name="twitter:image:src" content="http://www.scpr.org/assets/logo-masthead.png">
-
+        
 
         <!-- begin css -->
         <link href="http://projects.scpr.org/static/static-files/css/reset/reset-styles.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/css/interactive-project-shell/foundation-styles-v2.css" rel="stylesheet" type="text/css" media="all" />
 
+        
 
-
-
+        
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/project-styles.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/state-of-bridges/css/project-styles.css" rel="stylesheet" type="text/css" media="all" />
 
 
         <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="all" />
         <!-- end css -->
 
-
+        
             <!--[if lt IE 9]>
             <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
             <![endif]-->
-
+        
 
         <!-- begin base scripts -->
         <script src="http://use.typekit.com/mhc7oxs.js"></script>
@@ -103,27 +103,28 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div id="data-details">
-
+                        
     <div id="content-article">
-        <h4 class="kicker">Xxxxxxx</h4>
-        <h1>Xxxxx xxxxxx xxxxx xxxxx</h1>
+        <h4 class="kicker">Transportation</h4>
+        <h1>Gauging the health of Southern California&#39;s bridges</h1>
 
         <div id="content-article-metadata">
             <p>
-
-
-            <span class="pubdate">Updated May 13, 2013</span>
+            
+                <span class="credits"><a href="http://www.scpr.org/about/people/staff/sanden-totten">Sanden Totten</a>, Brian Frank &amp; <a href="http://www.scpr.org/about/people/staff/chris-keller">Chris Keller</a></span> |
+            
+            <span class="pubdate">Published June 21, 2013</span>
             </p>
         </div>
 
-
+        
             <div id="content-article-text">
-                <p>Beard hoodie, magna tumblr chillwave. Letterpress thundercats fixie consectetur accusamus cray gastropub bicycle rights. Adipisicing narwhal magna marfa. Fap photo booth cred, excepteur organic terry richardson vegan aesthetic narwhal. Food truck viral sint vinyl cred. Mustache aute consequat salvia, synth etsy irure +1. High life etsy ullamco, officia voluptate nihil brunch cillum nostrud photo booth duis Austin hella banjo.</p>
+                <p>California has more than XXXX bridges. Many are classified as <a href="javascript:void(0)" onclick="glossaryTerms();">"Structurally Deficient"</a>, <a href="javascript:void(0)" onclick="glossaryTerms();">"Functionally Obsolete"</a> or <a href="javascript:void(0)" onclick="glossaryTerms();">"Fracture Critical"</a>. These ominous-sounding terms are part of the <a href="http://www.fhwa.dot.gov/bridge/nbis.cfm" target="_blank">Federal Highway Administration's National Bridge Inspection Standards</a>. California Department of Transportation officials say these classifications don't accurately reflect the overall health of a bridge, and to get a more accurate reading of a bridge's health, Caltrans developed the Bridge Health Index. Use the filters below to learn more about bridges in Los Angeles, Orange, Riverside, San Bernardino and Venture counties and see how they compare based on Caltrans and FHWA rating systems.</p>
             </div>
+        
 
-
-
-
+        
+        
     </div>
 
                     </div>
@@ -132,7 +133,7 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div id="data-visuals">
-
+                        
 
 <div id="content-background"></div>
 <div id="content-display"></div>
@@ -140,8 +141,9 @@
 <div class="row-fluid">
     <div class="span3">
         <div id="filters">
+            <h4 class="alert alert-info lead" id="result_count"></h4>
             <div class="well">
-                <h4>Address <small>(<a id='find_me' href='#'>find me</a>)</small></h4>
+                <h5>Address <small>(<a id='find_me' href='#'>find me</a>)</small></h5>
                 <input class='input-block-level' id='search_address' placeholder='Enter an address or an intersection' type='text' />
                 <label>
                     within
@@ -159,30 +161,22 @@
                 <button class="btn btn-danger" id="reset">Reset</button>
             </div>
             <div class="well">
-                <h4 class="alert alert-info lead" id="result_count"></h4>
 
                 <!-- begin filter for status -->
                 <div class="slider-filter">
-                    <h4>Bridge Status or No?</h4>
+                    <h5>FHWA Status</h5>
                     <ul class="inputs-list unstyled">
-                        <li><label class="radio inline"><input type="radio" name="status" id="rbType10" /><span class="filter-box filter-red"></span> Structurally Deficient</label></li>
-                        <li><label class="radio inline"><input type="radio" name="status" id="rbType20" /><span class="filter-box filter-yellow"></span> Functionally Obsolete</label></li>
-                        <li><label class="radio inline"><input type="radio" name="status" id="rbType30" /><span class="filter-box filter-green"></span> Not Deficient</label></li>
-                    </ul>
-                </div>
-
-                <!-- begin filter for fracture critical -->
-                <div class="slider-filter">
-                    <h4>Fracture Critical Or No?</h4>
-                    <ul class="inputs-list unstyled">
-                        <li><label class="radio inline"><input type="radio" name="type" id="rbType1" /><span class="filter-box"></span> Fracture Critical</label></li>
-                        <li><label class="radio inline"><input type="radio" name="type" id="rbType2" checked /><span class="filter-box"></span> Opposite of Fracture Critical</label></li>
+                        <li><label class="radio inline"><input type="radio" name="status" id="rbTypeAll" /><span class="filter-box"></span> All Bridges</label></li>
+                        <li><label class="radio inline"><input type="radio" name="status" id="rbTypeSd" /><span class="filter-box filter-red"></span><a href="javascript:void(0)" onclick="glossaryTerms();"> Structurally Deficient</a></label></li>
+                        <li><label class="radio inline"><input type="radio" name="status" id="rbTypeFo" /><span class="filter-box filter-yellow"></span><a href="javascript:void(0)" onclick="glossaryTerms();"> Functionally Obsolete</a></label></li>
+                        <li><label class="radio inline"><input type="radio" name="status" id="rbTypeNd" /><span class="filter-box filter-green"></span> Not Deficient</label></li>
+                        <li><label class="checkbox inline"><input type="checkbox" name="fracture_critical" id="cbTypeFc" /><span class="filter-box"></span><a href="javascript:void(0)" onclick="glossaryTerms();"> Fracture Critical</a></label></li>
                     </ul>
                 </div>
 
                 <!-- begin filter for calif bhi rating -->
                 <div class="slider-filter">
-                    <h4>Calif BHI: <span id="bhi-selected-start">0</span> to <span id="bhi-selected-end">100</span></h4>
+                    <h5>Caltrans Bridge Index: <small><span id="bhi-selected-start">0</span> to <span id="bhi-selected-end">100</span></small></h5>
                     <div id="bhi-slider"></div>
                     <p class="pull-left" id="minBhi">0</p>
                     <p class="pull-right" id="maxBhi">100</p>
@@ -190,7 +184,7 @@
 
                 <!-- begin filter for year built -->
                 <div class="slider-filter">
-                    <h4>Year Built: <span id="startDate"></span> to <span id="endDate"></span></h4>
+                    <h5>Year Built: <small><span id="startDate"></span> to <span id="endDate"></span></small></h5>
                     <div id="date-range"></div>
                     <p class="pull-left" id="minDate"></p>
                     <p class="pull-right" id="maxDate"></p>
@@ -198,7 +192,7 @@
 
                 <!-- begin filter for average daily traffic rating -->
                 <div class="slider-filter">
-                    <h4>Average Daily Traffic: <span id="adt-selected-start">0</span> to <span id="adt-selected-end">100000</span></h4>
+                    <h5>Average Daily Traffic: <small><span id="adt-selected-start">0</span> to <span id="adt-selected-end">100000</span></small></h5>
                     <div id="adt-slider"></div>
                     <p class="pull-left" id="minAdt">0</p>
                     <p class="pull-right" id="maxAdt">100000</p>
@@ -228,11 +222,11 @@
         </div>
     </div>
     <div class="span9">
-
+        
             <div id="content-explainer">
-                <p><span class="data-instructions"><strong>About This Map: </strong>Beard hoodie, magna tumblr chillwave. Letterpress thundercats fixie consectetur accusamus cray gastropub bicycle rights. Adipisicing narwhal magna marfa. Fap photo booth cred, excepteur organic terry richardson vegan aesthetic narwhal. Food truck viral sint vinyl cred. Mustache aute consequat salvia, synth etsy irure +1. High life etsy ullamco, officia voluptate nihil brunch cillum nostrud photo booth duis Austin hella banjo.</span></p>
+                <p><span class="data-instructions"><strong>About This Map: </strong>This map shows bridges in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties that are owned and maintained by local agencies -- including cities and counties -- and based on data from the <a href="http://www.dot.ca.gov/hq/LocalPrograms/hbrr99/hbrr99a.htm">California Department of Transportation's Local Highway Bridge Program</a> and the <a href="http://www.fhwa.dot.gov/bridge/nbi.cfm">FHWA's National Bridge Inventory</a>. The location of bridges is based on Caltrans data and is approximate. To determine FHWA status of a particular bridge we used a structure identification number to find the same bridge in Caltrans data. Data showing state-owned bridges in Southern California could not immediately be provided, but will be added when available.</span></p>
             </div>
-
+        
         <div id="content-map-canvas"></div>
     </div>
 </div>
@@ -243,18 +237,21 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div id="data-footer">
+                        
+    
+    
 
-
-
-
-
-
-
-
-        <div id="open-source">
-            <p class="small-display">Built using <a href="https://github.com/newsapps/tarbell-template" target="blank">Tarbell</a> &amp; <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
+    
+        <div id="sources">
+            <p class="normal-display"><strong>Source(s): </strong><a href="http://www.dot.ca.gov/hq/LocalPrograms/hbrr99/hbrr99a.htm">California Department of Transportation's Local Highway Bridge Program</a> &amp; <a href="http://www.fhwa.dot.gov/bridge/nbi.cfm">FHWA's National Bridge Inventory</a></p>
         </div>
+    
 
+    
+        <div id="open-source">
+            <p class="small-display">Built using <a href="http://www.google.com/drive/apps.html#fusiontables">Fusion Tables</a>, <a href="http://derekeder.com">Derek Eder's</a> <a href="http://derekeder.com/searchable_map_template/">Searchable Map Template</a>, <a href="https://github.com/newsapps/tarbell-template" target="blank">Tarbell</a> &amp; <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
+        </div>
+    
 
 
                     </div>
@@ -263,9 +260,24 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div id="data-comments">
-
-
-
+                        
+    
+        <div class="row-fluid">
+            <div class="span12">
+            <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    var disqus_shortname = 'kpcc-projects';
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+        </div>
+    
 
                     </div>
                 </div>
@@ -289,9 +301,9 @@
         </div>
 
         <!-- begin scripts -->
+            
 
-
-
+            
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8&sensor=false&amp;libraries=places"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/underscore-min.js"></script>
@@ -303,19 +315,19 @@
     <script src="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap.min.js"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/moment.min.js"></script>
     <script>
-        var dataSource = "data/blank_data.json";
+        var dataSource = "/state-of-bridges/data/blank_data.json";
     </script>
-    <script src="js/maps_lib.js"></script>
-    <script src="js/data-script.js"></script>
+    <script src="/state-of-bridges/js/maps_lib.js"></script>
+    <script src="/state-of-bridges/js/data-script.js"></script>
 
 
         <!-- end scripts -->
 
         <!-- begin analytics -->
+            
+    
 
-
-
-
+    
 
         <!-- end analytics -->
 
