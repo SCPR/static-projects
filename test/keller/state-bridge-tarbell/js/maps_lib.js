@@ -14,7 +14,7 @@ var MapsLib = MapsLib || {};
 
 var MapsLib = {
 
-    fusionTableId: "1b5UD6JYAMxyOJ1xRTVitsgtAYFYRXdbYRSH-xSA",
+    fusionTableId: "1IHw19kbHZ7RLJmFKITdyRbhKYJk0EDsFO7ZJA3o",
 
     googleApiKey: "AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do",
 
@@ -32,7 +32,7 @@ var MapsLib = {
 
     recordNamePlural: "results",
 
-    searchRadius: 16093,
+    searchRadius: 8047,
 
     defaultZoom: 8,
 
@@ -176,29 +176,36 @@ var MapsLib = {
         MapsLib.searchRadius = $("#search_radius").val();
         var whereClause = MapsLib.locationColumn + " not equal to ''";
 
-        // begin custom filters
-        var type_column = "natl_fracture_critical_status";
-        var tempWhereClause = [];
-        if ( $("#cbType1").is(':checked')) tempWhereClause.push("grn_blank");
-        if ( $("#cbType2").is(':checked')) tempWhereClause.push("ylw_blank");
-        if ( $("#cbType3").is(':checked')) tempWhereClause.push("red_blank");
-        whereClause += " AND " + type_column + " IN ('" + tempWhereClause.join('\',\'') + "')";
+        var status_column = "status";
+        var statusWhereClause = [];
+        if ( $("#rbType10").is(':checked')) statusWhereClause.push("1");
+        if ( $("#rbType20").is(':checked')) statusWhereClause.push("2");
+        if ( $("#rbType30").is(':checked')) statusWhereClause.push("0");
+        if ( $("#rbType30").is(':checked')) statusWhereClause.push("");
+        whereClause += " AND " + status_column + " IN ('" + statusWhereClause.join('\',\'') + "')";
 
-        // date slider filter
-        whereClause += " AND 'year_built' >= '" + $('#startDate').html() + "'";
-        whereClause += " AND 'year_built' <= '" + $('#endDate').html() + "'";
+        // begin custom filters
+        var type_column = "fracture_critical_status";
+        var typeWhereClause = [];
+        if ( $("#rbType1").is(':checked')) typeWhereClause.push("1");
+        if ( $("#rbType2").is(':checked')) typeWhereClause.push("0");
+        whereClause += " AND " + type_column + " IN ('" + typeWhereClause.join('\',\'') + "')";
 
         // bhi slider filter
         whereClause += " AND 'cbhi_rating' >= '" + $("#bhi-selected-start").html() + "'";
         whereClause += " AND 'cbhi_rating' <= '" + $("#bhi-selected-end").html() + "'";
 
-        // ntl slider filter
-        //whereClause += " AND 'nbi_sufficiency_rating' >= '" + $("#ntl-selected-start").html() + "'";
-        //whereClause += " AND 'nbi_sufficiency_rating' <= '" + $("#ntl-selected-end").html() + "'";
+        // date slider filter
+        whereClause += " AND 'year_built' >= '" + $('#startDate').html() + "'";
+        whereClause += " AND 'year_built' <= '" + $('#endDate').html() + "'";
 
         // adt slider filter
         whereClause += " AND 'avg_daily_traffic' >= '" + $("#adt-selected-start").html() + "'";
         whereClause += " AND 'avg_daily_traffic' <= '" + $("#adt-selected-end").html() + "'";
+
+        // ntl slider filter
+        //whereClause += " AND 'nbi_sufficiency_rating' >= '" + $("#ntl-selected-start").html() + "'";
+        //whereClause += " AND 'nbi_sufficiency_rating' <= '" + $("#ntl-selected-end").html() + "'";
 
         // length slider filter
         //whereClause += " AND 'length' >= '" + $("#length-selected-start").html() + "'";
@@ -216,7 +223,7 @@ var MapsLib = {
                     $.address.parameter('address', encodeURIComponent(address));
                     $.address.parameter('radius', encodeURIComponent(MapsLib.searchRadius));
                     map.setCenter(MapsLib.currentPinpoint);
-                    map.setZoom(14);
+                    map.setZoom(12);
 
                     MapsLib.addrMarker = new google.maps.Marker({
                         position: MapsLib.currentPinpoint,
@@ -405,26 +412,56 @@ var MapsLib = {
                 length: e.row['length'].value
             }
 
-            _.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
+            //_.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
 
             var html = _.template(
                 '<p style="float: right" id="close"><strong>[X]</strong></p>' +
-                '<p> bridge_number: {{ bridge_number }}</p>' +
-                '<p> county: {{ county }}</p>' +
-                '<p> agency: {{ agency }}</p>' +
-                '<p> latitude: {{ latitude }}</p>' +
-                '<p> longitude: {{ longitude }}</p>' +
-                '<p> facility_carried: {{ facility_carried }}</p>' +
-                '<p> feature_intersected: {{ feature_intersected }}</p>' +
-                '<p> natl_fracture_critical: {{ natl_fracture_critical }}</p>' +
-                '<p> status: {{ status }}</p>' +
-                '<p> nbi_sufficiency_rating: {{ nbi_sufficiency_rating }}</p>' +
-                '<p> cbhi_rating: {{ cbhi_rating }}</p>' +
-                '<p> year_built: {{ year_built }}</p>' +
-                '<p> avg_daily_traffic: {{ avg_daily_traffic }}</p>' +
-                '<p> lanes: {{ lanes }}</p>' +
-                '<p> width: {{ width }}</p>' +
-                '<p> length: {{ length }}</p>', fusionTableObject);
+
+                '<h4><%= facility_carried %> bridge</h4>' +
+                '<p>The <%= facility_carried %> bridge in <%= county %> was built in <%= year_built %> and carries an average of <%= avg_daily_traffic %> motorists each day over <%= feature_intersected %>.</p>' +
+
+                '<ul class="chartlist">' +
+                    '<li>' +
+                        '<a href="#">Calif Rating: <%= cbhi_rating %></a><span class="index california-bridges" style="width:<%= cbhi_rating %>%"></span>' +
+                    '</li>' +
+                    '<li>' +
+                        '<a href="#">Natl Rating: <%= nbi_sufficiency_rating %></a><span class="index national-bridges" style="width:<%= nbi_sufficiency_rating %>%"></span>' +
+                    '</li>' +
+                '</ul>' +
+
+                '<% if (natl_fracture_critical === "N") { %>' +
+                    '<p></p>' +
+                '<% } else { %>' +
+                    '<p>This bridge is deemed fracture critical by the Federal Highway Administration.</p>' +
+                '<% } %>' +
+
+                '<% if (status === "1") { %>' +
+                    '<p>This bridge is deemed structurally deficient by the Federal Highway Administration.</p>' +
+                '<% } else if (status === "2") { %>' +
+                    '<p>This bridge is deemed functionally obsolete by the Federal Highway Administration.</p>' +
+                '<% } else if (status === "0") { %>' +
+                    '<p>This bridge is deemed not deficient by the Federal Highway Administration.</p>' +
+                '<% } else { %>' +
+                    '<p></p>' +
+                '<% } %>' +
+
+                '<table class="table table-bordered table-striped">' +
+                    '<thead>' +
+                        '<tr>' +
+                            '<th>Lanes</th>' +
+                            '<th>Width</th>' +
+                            '<th>Length</th>' +
+                        '</tr>' +
+                    '</thead>' +
+                    '<tbody>' +
+                        '<tr>' +
+                            '<td><%= lanes %></td>' +
+                            '<td><%= width %></td>' +
+                            '<td><%= length %></td>' +
+                        '</tr>' +
+                    '</tbody>' +
+                '</table>' +
+                '<p>This bridge is maintained by the <%= agency %>.</p>', fusionTableObject);
 
             jqueryNoConflict('#content-background').css({'opacity' : '0.7'}).fadeIn('fast');
             jqueryNoConflict('#content-display').html(html).center().fadeIn('slow');

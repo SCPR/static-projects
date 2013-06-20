@@ -124,9 +124,6 @@
 
 
 
-
-
-
     </div>
 
                     </div>
@@ -141,45 +138,46 @@
 <div id="content-display"></div>
 
 <div class="row-fluid">
-    <div class="span4">
-        <div id='filters'>
-            <div class='well'>
+    <div class="span3">
+        <div id="filters">
+            <div class="well">
                 <h4>Address <small>(<a id='find_me' href='#'>find me</a>)</small></h4>
                 <input class='input-block-level' id='search_address' placeholder='Enter an address or an intersection' type='text' />
                 <label>
                     within
-                    <select class='input-small' id='search_radius'>
-                        <option value='3220'>2 miles</option>
-                        <option value='8047'>5 miles</option>
-                        <option value='16093'>10 miles</option>
-                        <option value='24140'>15 miles</option>
-                        <option value='32186'>20 miles</option>
-                        <option value='80467'>50 miles</option>
-                        <option value='160934'>100 miles</option>
+                    <select class="input-small" id="search_radius">
+                        <option value="3220">2 miles</option>
+                        <option value="8047">5 miles</option>
+                        <option value="16093">10 miles</option>
+                        <option value="24140">15 miles</option>
+                        <option value="32186">20 miles</option>
+                        <option value="80467">50 miles</option>
+                        <option value="160934">100 miles</option>
                     </select>
                 </label>
-                <input class='btn btn-success' id='search' type='button' value='Search' />
-                <button class='btn' id='reset'>Reset</button>
+                <input class="btn btn-success" id="search" type="button" value="Search" />
+                <button class="btn btn-danger" id="reset">Reset</button>
             </div>
-            <div class='well'>
-                <p class='alert alert-info lead' id='result_count'></p>
+            <div class="well">
+                <h4 class="alert alert-info lead" id="result_count"></h4>
 
                 <!-- begin filter for status -->
                 <div class="slider-filter">
-                    <h4>Bridge Status</h4>
-                    <ul class='inputs-list unstyled'>
-                        <li><label class='checkbox inline'><input type='checkbox' name='types' id='cbType1' /><span class='filter-box filter-green'></span> Sufficient</label></li>
-                        <li><label class='checkbox inline'><input type='checkbox' name='types' id='cbType2' checked /><span class='filter-box filter-yellow'></span> Not Specified</label></li>
-                        <li><label class='checkbox inline'><input type='checkbox' name='types' id='cbType3' /><span class='filter-box filter-red'></span> Fracture Critical</label></li>
+                    <h4>Bridge Status or No?</h4>
+                    <ul class="inputs-list unstyled">
+                        <li><label class="radio inline"><input type="radio" name="status" id="rbType10" /><span class="filter-box filter-red"></span> Structurally Deficient</label></li>
+                        <li><label class="radio inline"><input type="radio" name="status" id="rbType20" /><span class="filter-box filter-yellow"></span> Functionally Obsolete</label></li>
+                        <li><label class="radio inline"><input type="radio" name="status" id="rbType30" /><span class="filter-box filter-green"></span> Not Deficient</label></li>
                     </ul>
                 </div>
 
-                <!-- begin filter for year built -->
+                <!-- begin filter for fracture critical -->
                 <div class="slider-filter">
-                    <h4>Year Built: <span id="startDate"></span> to <span id="endDate"></span></h4>
-                    <div id="date-range"></div>
-                    <p class="pull-left" id="minDate"></p>
-                    <p class="pull-right" id="maxDate"></p>
+                    <h4>Fracture Critical Or No?</h4>
+                    <ul class="inputs-list unstyled">
+                        <li><label class="radio inline"><input type="radio" name="type" id="rbType1" /><span class="filter-box"></span> Fracture Critical</label></li>
+                        <li><label class="radio inline"><input type="radio" name="type" id="rbType2" checked /><span class="filter-box"></span> Opposite of Fracture Critical</label></li>
+                    </ul>
                 </div>
 
                 <!-- begin filter for calif bhi rating -->
@@ -190,12 +188,12 @@
                     <p class="pull-right" id="maxBhi">100</p>
                 </div>
 
-                <!-- begin filter for national bridge rating -->
+                <!-- begin filter for year built -->
                 <div class="slider-filter">
-                    <h4>Natl BHI: <span id="ntl-selected-start">0</span> to <span id="ntl-selected-end">100</span></h4>
-                    <div id="ntl-slider"></div>
-                    <p class="pull-left" id="minNtl">0</p>
-                    <p class="pull-right" id="maxNtl">100</p>
+                    <h4>Year Built: <span id="startDate"></span> to <span id="endDate"></span></h4>
+                    <div id="date-range"></div>
+                    <p class="pull-left" id="minDate"></p>
+                    <p class="pull-right" id="maxDate"></p>
                 </div>
 
                 <!-- begin filter for average daily traffic rating -->
@@ -206,19 +204,36 @@
                     <p class="pull-right" id="maxAdt">100000</p>
                 </div>
 
+                <!-- begin filter for national bridge rating -->
+                <!--
+                <div class="slider-filter">
+                    <h4>Natl BHI: <span id="ntl-selected-start">0</span> to <span id="ntl-selected-end">100</span></h4>
+                    <div id="ntl-slider"></div>
+                    <p class="pull-left" id="minNtl">0</p>
+                    <p class="pull-right" id="maxNtl">100</p>
+                </div>
+                -->
+
                 <!-- begin filter for bridge length -->
+                <!--
                 <div class="slider-filter">
                     <h4>Bridge Length: <span id="length-selected-start">0</span> to <span id="length-selected-end">2000</span></h4>
                     <div id="length-slider"></div>
                     <p class="pull-left" id="minLength">0</p>
                     <p class="pull-right" id="maxLength">2000</p>
                 </div>
+                -->
 
             </div>
         </div>
     </div>
-    <div class="span8">
-        <div id='content-map-canvas'></div>
+    <div class="span9">
+
+            <div id="content-explainer">
+                <p><span class="data-instructions"><strong>About This Map: </strong>Beard hoodie, magna tumblr chillwave. Letterpress thundercats fixie consectetur accusamus cray gastropub bicycle rights. Adipisicing narwhal magna marfa. Fap photo booth cred, excepteur organic terry richardson vegan aesthetic narwhal. Food truck viral sint vinyl cred. Mustache aute consequat salvia, synth etsy irure +1. High life etsy ullamco, officia voluptate nihil brunch cillum nostrud photo booth duis Austin hella banjo.</span></p>
+            </div>
+
+        <div id="content-map-canvas"></div>
     </div>
 </div>
 
