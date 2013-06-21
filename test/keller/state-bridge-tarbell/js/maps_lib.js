@@ -15,10 +15,10 @@ var MapsLib = MapsLib || {};
 var MapsLib = {
 
     // five_county_bridge_new
-    //fusionTableId: "1IHw19kbHZ7RLJmFKITdyRbhKYJk0EDsFO7ZJA3o",
+    fusionTableId: "1IHw19kbHZ7RLJmFKITdyRbhKYJk0EDsFO7ZJA3o",
 
     // late night fix table
-    fusionTableId: "1TF6LDt6cD4cpdQTxMgAPRc9quGANq9mXJw5ldw8",
+    //fusionTableId: "1TF6LDt6cD4cpdQTxMgAPRc9quGANq9mXJw5ldw8",
 
     googleApiKey: "AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do",
 
