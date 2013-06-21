@@ -124,6 +124,9 @@
 
 
 
+            <div id="content-article-buttons">
+                <a class="btn btn-info" href="http://www.scpr.org/news/2013/06/21/37842/how-safe-are-california-s-bridges/">Read More</a>
+            </div>
 
     </div>
 
@@ -167,16 +170,16 @@
                     <h5>FHWA Status</h5>
                     <ul class="inputs-list unstyled">
                         <li><label class="radio inline"><input type="radio" name="status" id="rbTypeAll" /><span class="filter-box"></span> All Bridges</label></li>
-                        <li><label class="radio inline"><input type="radio" name="status" id="rbTypeSd" /><span class="filter-box filter-red"></span><a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();"> Structurally Deficient</a></label></li>
-                        <li><label class="radio inline"><input type="radio" name="status" id="rbTypeFo" /><span class="filter-box filter-yellow"></span><a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();"> Functionally Obsolete</a></label></li>
+                        <li><label class="radio inline"><input type="radio" name="status" id="rbTypeSd" /><span class="filter-box filter-red"></span> Structurally Deficient</label></li>
+                        <li><label class="radio inline"><input type="radio" name="status" id="rbTypeFo" /><span class="filter-box filter-yellow"></span> Functionally Obsolete</label></li>
                         <li><label class="radio inline"><input type="radio" name="status" id="rbTypeNd" /><span class="filter-box filter-green"></span> Not Deficient</label></li>
-                        <li><label class="checkbox inline"><input type="checkbox" name="fracture_critical" id="cbTypeFc" /><span class="filter-box"></span><a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();"> Fracture Critical</a></label></li>
+                        <li><label class="checkbox inline"><input type="checkbox" name="fracture_critical" id="cbTypeFc" /><span class="filter-box"></span> Fracture Critical</label></li>
                     </ul>
                 </div>
 
                 <!-- begin filter for calif bhi rating -->
                 <div class="slider-filter">
-                    <h5><a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();">Caltrans Bridge Health Index</a>:<br /><small><span id="bhi-selected-start">0</span> to <span id="bhi-selected-end">100</span></small></h5>
+                    <h5> Caltrans Bridge Health Index:<br /><small><span id="bhi-selected-start">0</span> to <span id="bhi-selected-end">100</span></small></h5>
                     <div id="bhi-slider"></div>
                     <p class="pull-left" id="minBhi">0</p>
                     <p class="pull-right" id="maxBhi">100</p>
@@ -243,7 +246,7 @@
 
 
         <div id="sources">
-            <p class="normal-display"><strong>Source(s): </strong><a href="http://www.dot.ca.gov/hq/LocalPrograms/hbrr99/hbrr99a.htm">California Department of Transportation's Local Highway Bridge Program</a> &amp; <a href="http://www.fhwa.dot.gov/bridge/nbi.cfm">FHWA's National Bridge Inventory</a></p>
+            <p class="normal-display"><strong>Source(s): </strong><a href="http://www.dot.ca.gov/hq/LocalPrograms/hbrr99/hbrr99a.htm">California Department of Transportation's Local Highway Bridge Program</a>, <a href="http://www.fhwa.dot.gov/bridge/nbi.cfm">FHWA's National Bridge Inventory</a> &amp; <a href="http://www.ire.org/">Investigative Reporters and Editors</a>.</p>
         </div>
 
 
@@ -262,6 +265,21 @@
                     <div id="data-comments">
 
 
+        <div class="row-fluid">
+            <div class="span12">
+            <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    var disqus_shortname = 'kpcc-projects';
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+        </div>
 
 
                     </div>

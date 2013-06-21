@@ -14,6 +14,10 @@ var MapsLib = MapsLib || {};
 
 var MapsLib = {
 
+    // five_county_bridge_new
+    //fusionTableId: "1IHw19kbHZ7RLJmFKITdyRbhKYJk0EDsFO7ZJA3o",
+
+    // late night fix table
     fusionTableId: "1TF6LDt6cD4cpdQTxMgAPRc9quGANq9mXJw5ldw8",
 
     googleApiKey: "AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do",
@@ -361,6 +365,13 @@ var MapsLib = {
         return decodeURIComponent(text);
     },
 
+    uncacheTiles: function() {
+        $("img[src*='googleapis']").each(function(){
+            $(this).attr("src",$(this).attr("src")+"&"+(new Date()).getTime());
+            //console.log($(this).attr("src"));
+        });
+    },
+
     mapClickListener: function() {
         google.maps.event.addListener(MapsLib.searchrecords, 'click', function(e) {
 
@@ -382,8 +393,6 @@ var MapsLib = {
                 width: roundDecimal(e.row['width'].value),
                 length: roundDecimal(e.row['length'].value)
             }
-
-            //console.log(fusionTableObject);
 
             var html = _.template(
                 '<p style="float: right" id="close"><strong>[X]</strong></p>' +
