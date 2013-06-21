@@ -14,7 +14,7 @@ var MapsLib = MapsLib || {};
 
 var MapsLib = {
 
-    fusionTableId: "1IHw19kbHZ7RLJmFKITdyRbhKYJk0EDsFO7ZJA3o",
+    fusionTableId: "1TF6LDt6cD4cpdQTxMgAPRc9quGANq9mXJw5ldw8",
 
     googleApiKey: "AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do",
 
@@ -171,8 +171,8 @@ var MapsLib = {
         whereClause += " AND 'year_built' <= '" + $('#endDate').html() + "'";
 
         // adt slider filter
-        //whereClause += " AND 'avg_daily_traffic' >= '" + $("#adt-selected-start").html() + "'";
-        //whereClause += " AND 'avg_daily_traffic' <= '" + $("#adt-selected-end").html() + "'";
+        whereClause += " AND 'avg_daily_traffic' >= '" + $("#adt-selected-start").html() + "'";
+        whereClause += " AND 'avg_daily_traffic' <= '" + $("#adt-selected-end").html() + "'";
 
         // ntl slider filter
         //whereClause += " AND 'nbi_sufficiency_rating' >= '" + $("#ntl-selected-start").html() + "'";
@@ -381,13 +381,9 @@ var MapsLib = {
                 lanes: e.row['lanes'].value,
                 width: roundDecimal(e.row['width'].value),
                 length: roundDecimal(e.row['length'].value)
-                //width: e.row['width'].value,
-                //length: e.row['length'].value
             }
 
-            console.log(fusionTableObject);
-
-            //_.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
+            //console.log(fusionTableObject);
 
             var html = _.template(
                 '<p style="float: right" id="close"><strong>[X]</strong></p>' +

@@ -46,7 +46,7 @@
 
 
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="/state-of-bridges/css/project-styles.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/project-styles.css" rel="stylesheet" type="text/css" media="all" />
 
 
         <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="all" />
@@ -119,7 +119,7 @@
 
 
             <div id="content-article-text">
-                <p>California has more than 24,000 bridges. Many are classified as <a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();">"Structurally Deficient"</a>, <a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();">"Functionally Obsolete"</a> or <a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();">"Fracture Critical"</a>. These ominous-sounding terms are part of the <a href="http://www.fhwa.dot.gov/bridge/nbis.cfm" target="_blank">Federal Highway Administration's National Bridge Inspection Standards</a> and help to make up a bridge's <a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();">Sufficiency Rating</a>. California Department of Transportation officials say these classifications don't accurately reflect the overall health of a bridge; to get a more accurate reading of a bridge's health, <a href="http://onlinepubs.trb.org/onlinepubs/trnews/trnews215full.pdf" target="_blank">Caltrans</a> developed the <a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();">Bridge Health Index</a>. Use the filters below to  learn more about bridges in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties that carry the above designations, and see how they compare based on Caltrans and FHWA rating systems.</p>
+                <p>California has more than 24,000 bridges. Many are classified as <a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();">"Structurally Deficient"</a>, <a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();">"Functionally Obsolete"</a> or <a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();">"Fracture Critical"</a>. These ominous-sounding terms are part of the <a href="http://www.fhwa.dot.gov/bridge/nbis.cfm" target="_blank">Federal Highway Administration's National Bridge Inspection Standards</a> and help to make up a bridge's <a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();">Sufficiency Rating</a>. California Department of Transportation officials say these classifications don't accurately reflect the overall health of a bridge; to get a more accurate reading of a bridge's health, <a href="http://onlinepubs.trb.org/onlinepubs/trnews/trnews215full.pdf" target="_blank">Caltrans</a> developed the <a title="Click for Glossary of the Terms" href="javascript:void(0)" onclick="glossaryTerms();">Bridge Health Index</a>. Use the filters below to learn more about bridges in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties that carry the above designations and see how they compare based on Caltrans and FHWA rating systems.</p>
             </div>
 
 
@@ -224,7 +224,7 @@
     <div class="span9">
 
             <div id="content-explainer">
-                <p><span class="data-instructions"><strong>About the Data and Map: </strong>This map shows 4,239 bridges in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties that are owned and maintained by local agencies -- including cities and counties -- that have been rated by both the <a href="http://www.dot.ca.gov/hq/LocalPrograms/hbrr99/hbrr99a.htm">California Department of Transportation's Local Highway Bridge Program</a> and the <a href="http://www.fhwa.dot.gov/bridge/nbi.cfm">FHWA's National Bridge Inventory</a>. The location of bridges is based on Caltrans data and is approximate. To determine FHWA status of a particular bridge we used a structure identification number to find the same bridge in Caltrans data. Data showing state-owned bridges in Southern California could not immediately be provided, but will be added when available.</span></p>
+                <p><span class="data-instructions"><strong>About the Data and Map: </strong>This map shows the more than 4,000 bridges in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties that are owned and maintained by local agencies -- including cities and counties -- that have been rated by both the <a href="http://www.dot.ca.gov/hq/LocalPrograms/hbrr99/hbrr99a.htm">California Department of Transportation's Local Highway Bridge Program</a> and the <a href="http://www.fhwa.dot.gov/bridge/nbi.cfm">FHWA's National Bridge Inventory</a>. The location of bridges is based on Caltrans data and is approximate. To determine FHWA status of a particular bridge we used a structure identification number to find the same bridge in Caltrans data. Data showing state-owned bridges in Southern California could not immediately be provided, but will be added when available.</span></p>
             </div>
 
         <div id="content-map-canvas"></div>
@@ -262,21 +262,6 @@
                     <div id="data-comments">
 
 
-        <div class="row-fluid">
-            <div class="span12">
-            <div id="disqus_thread"></div>
-                <script type="text/javascript">
-                    var disqus_shortname = 'kpcc-projects';
-                    (function() {
-                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                    })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-        </div>
 
 
                     </div>
@@ -314,11 +299,8 @@
     <script src="http://projects.scpr.org/static/static-files/scripts/jquery.geocomplete.min-1.4.js"></script>
     <script src="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap.min.js"></script>
     <script src="http://projects.scpr.org/static/static-files/scripts/moment.min.js"></script>
-    <script>
-        var dataSource = "/state-of-bridges/data/blank_data.json";
-    </script>
-    <script src="/state-of-bridges/js/maps_lib.js"></script>
-    <script src="/state-of-bridges/js/data-script.js"></script>
+    <script src="js/maps_lib.js"></script>
+    <script src="js/data-script.js"></script>
 
 
         <!-- end scripts -->
@@ -326,7 +308,34 @@
         <!-- begin analytics -->
 
 
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-624724-5']);
+            _gaq.push(['_trackPageview']);
 
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+
+        <script type="text/javascript">
+            var _sf_async_config={uid:2825,domain:"projects.scpr.org"};
+            (function(){
+                function loadChartbeat() {
+                    window._sf_endpt=(new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src',
+                        (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") + "js/chartbeat.js");
+                    document.body.appendChild(e);
+                };
+                var oldonload = window.onload;
+                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+            })();
+        </script>
 
 
         <!-- end analytics -->
