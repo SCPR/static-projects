@@ -48,6 +48,11 @@ jqueryNoConflict(document).ready(function() {
                 return false;
             }
         });
+
+        setTimeout(function() {
+            MapsLib.uncacheTiles();
+        }, 5000);
+
     });
 
 	jqueryNoConflict('#content-background').click(function(){
