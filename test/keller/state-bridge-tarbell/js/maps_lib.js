@@ -526,11 +526,17 @@ function roundDecimal(string) {
 function glossaryTerms(){
     var glossaryHtml =
         '<p style="float: right" id="close"><strong>[X]</strong></p>' +
-        '<h4>Explaining the Terms</h4>' +
-        '<p><strong>Structurally Deficient</strong>: A federal designation that means a bridge has physical flaws of some kind. These could include cracks or weakness in the bridge\'s key support elements, or frequent waterway overflows causing minor to severe traffic delays. The Federal Highway Administration uses a scoring system to determine whether to label a bridge "structurally deficient."</p>' +
-        '<p><strong>Functionally Obsolete</strong>: A federal designation that means a bridge isn\'t up to current building standards. That could mean the lanes are too narrow or there is no shoulder on the side of the bridge for stalled cars. It could also mean there are structural problems serious enough to warrant a "high priority of corrective action." The Federal Highway Administration uses a scoring system to determine whether to label a bridge "functionally obsolete."</p>' +
-        '<p><strong>Fracture Critical</strong>: A federal designation that means a bridge doesn\'t have a secondary support system to stop it from collapsing if it is seriously overloaded or experiences a significant accident that impacts a vulnerable section. Both the bridge in Washington state that collapsed last month and Interstate 35E bridge that collapsed in Minnesota in 2007 were Fracture Critical. However, a label of "Fracture Critical" does not necessarily mean it is structurally unsound.</p>' +
-        '<p><strong>Bridge Health Index</strong>: ....................</p>';
+        '<h4>Glossary of the Terms</h4>' +
+
+        '<p><strong>Structurally Deficient</strong>: A bridge has physical flaws of some kind. These could range from cracked pavement or peeling paint to weaknesses in the bridge\'s key support elements or frequent waterway overflows. The Federal Highway Administration uses a scoring system that takes into account numerous factors and aspects of a bridge\'s condition to determine whether a bridge receives this label.</p>' +
+
+        '<p><strong>Functionally Obsolete</strong>: A bridge isn\'t up to current building standards. That could mean simply that the lanes are too narrow or there is no shoulder on the side of the bridge for stalled cars, or it could mean there are serious structural problems. The Federal Highway Administration uses a scoring system that takes into account numerous factors and aspects of a bridge\'s condition to determine whether a bridge receives this label.</p>' +
+
+        '<p><strong>Fracture Critical</strong>: A bridge doesn\'t have a secondary support system to stop it from collapsing if it is seriously overloaded or experiences a significant accident that impacts a vulnerable section. Last month\'s partial collapse of the Interstate 5 bridge in Washington state and the May 2007 partial collapse of the Interstate 35E bridge in Minnesota were Fracture Critical. However, a label of "Fracture Critical" does not necessarily mean it is structurally unsound.</p>' +
+
+        '<p><strong>Sufficiency Rating</strong>: A federal rating system based on a number of factors, not all of them related directly to a bridge\'s structural integrity. On a scale of 0 to 100, a score of 80 or below makes the bridge eligible for repair with federal funds. A score of 50 or below makes the bridge eligible for replacement.</p>' +
+
+        '<p><strong>Bridge Health Index</strong>: A state rating system that takes into consideration both the condition and the economic value of hundreds of individual elements on a bridge. A newly constructed bridge starts with a perfect score of 100, but the score decreases over time. Caltrans\' own engineers have suggested the agency should aim to keep this score at 80 or above.</p>';
 
     jqueryNoConflict('#content-background').css({'opacity' : '0.7'}).fadeIn('fast');
     jqueryNoConflict('#content-display').html(glossaryHtml).center().fadeIn('slow');
