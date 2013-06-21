@@ -49,9 +49,11 @@ jqueryNoConflict(document).ready(function() {
             }
         });
 
+        /*
         setTimeout(function() {
             MapsLib.uncacheTiles();
         }, 5000);
+        */
 
     });
 
