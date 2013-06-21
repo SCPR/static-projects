@@ -11,7 +11,9 @@ jqueryNoConflict(document).ready(function() {
 
     jqueryNoConflict(function() {
         MapsLib.initialize();
+
         jqueryNoConflict("#search_address").geocomplete();
+
         jqueryNoConflict(':checkbox').click(function(){
             MapsLib.doSearch();
         });

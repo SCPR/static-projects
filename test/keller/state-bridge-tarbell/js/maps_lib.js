@@ -34,19 +34,25 @@ var MapsLib = {
 
     searchRadius: 8047,
 
-    defaultZoom: 8,
-
     addrMarkerImage: 'http://projects.scpr.org/static/static-files/images/maps-icons-collection/blue-pushpin.png',
 
     currentPinpoint: null,
 
     initialize: function() {
+
         $( "#result_count" ).html("");
 
         geocoder = new google.maps.Geocoder();
 
+        // set zoom for mobile devices
+        if (navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i)) {
+            defaultZoom = 6;
+        } else {
+            defaultZoom = 8;
+        }
+
         var myOptions = {
-            zoom: MapsLib.defaultZoom,
+            zoom: defaultZoom,
             center: MapsLib.map_centroid,
             scrollwheel: false,
             draggable: true,
@@ -79,9 +85,14 @@ var MapsLib = {
         $("#search_address").val(MapsLib.convertToPlainString($.address.parameter('address')));
         var loadRadius = MapsLib.convertToPlainString($.address.parameter('radius'));
 
-        if (loadRadius != "") $("#search_radius").val(loadRadius);
-        else $("#search_radius").val(MapsLib.searchRadius);
+        if (loadRadius != ""){
+            $("#search_radius").val(loadRadius);
+        } else {
+            $("#search_radius").val(MapsLib.searchRadius);
+        }
+
         $("#rbTypeAll").attr("checked", "checked");
+
         $("#result_count").hide();
 
         // begin custom initializers
@@ -366,7 +377,7 @@ var MapsLib = {
                 nbi_sufficiency_rating: e.row['nbi_sufficiency_rating'].value,
                 cbhi_rating: e.row['cbhi_rating'].value,
                 year_built: e.row['year_built'].value,
-                avg_daily_traffic: addCommas(e.row['avg_daily_traffic'].value),
+                avg_daily_traffic: MapsLib.addCommas(e.row['avg_daily_traffic'].value),
                 lanes: e.row['lanes'].value,
                 width: roundDecimal(e.row['width'].value),
                 length: roundDecimal(e.row['length'].value)
@@ -506,20 +517,6 @@ jQuery.fn.center = function () {
 	return this;
 }
 
-// add commas to data
-function addCommas(nStr) {
-    nStr += '';
-    x = nStr.split('.');
-    x1 = x[0];
-    x2 = x.length > 1 ? '.' + x[1] : '';
-
-    var rgx = /(\d+)(\d{3})/;
-        while (rgx.test(x1)) {
-            x1 = x1.replace(rgx, '$1' + ',' + '$2');
-        }
-    return x1 + x2;
-}
-
 function roundDecimal(string) {
     var workingData = parseFloat(string);
     workingData = workingData.toFixed(2)
@@ -530,9 +527,10 @@ function glossaryTerms(){
     var glossaryHtml =
         '<p style="float: right" id="close"><strong>[X]</strong></p>' +
         '<h4>Explaining the Terms</h4>' +
-        '<p><strong>Structurally Deficient</strong>: A bridge has a physical flaw of some kind. That could be something serious [such as?] - but in most cases it\'s just cracked pavement or peeling paint.</p>' +
-        '<p><strong>Functionally Obsolete</strong>: A bridge isn\'t up to current building standards – that could mean the lanes are too narrow or there is no shoulder on the side of the bridge for stalled cars. [Could it also mean something serious? Example?]</p>' +
-        '<p><strong>Fracture Critical</strong>: A bridge doesn\'t have a secondary support system to stop it from collapsing in case it is seriously overloaded or experiences a significant accident that impacts a vulnerable section. Both the bridge in Washington state and the one that fell in Minnesota in 2007 were Fracture Critical. Just because a bridge is Fracture Critical does not mean it is structurally unsound.</p>';
+        '<p><strong>Structurally Deficient</strong>: A federal designation that means a bridge has physical flaws of some kind. These could include cracks or weakness in the bridge\'s key support elements, or frequent waterway overflows causing minor to severe traffic delays. The Federal Highway Administration uses a scoring system to determine whether to label a bridge "structurally deficient."</p>' +
+        '<p><strong>Functionally Obsolete</strong>: A federal designation that means a bridge isn\'t up to current building standards. That could mean the lanes are too narrow or there is no shoulder on the side of the bridge for stalled cars. It could also mean there are structural problems serious enough to warrant a "high priority of corrective action." The Federal Highway Administration uses a scoring system to determine whether to label a bridge "functionally obsolete."</p>' +
+        '<p><strong>Fracture Critical</strong>: A federal designation that means a bridge doesn\'t have a secondary support system to stop it from collapsing if it is seriously overloaded or experiences a significant accident that impacts a vulnerable section. Both the bridge in Washington state that collapsed last month and Interstate 35E bridge that collapsed in Minnesota in 2007 were Fracture Critical. However, a label of "Fracture Critical" does not necessarily mean it is structurally unsound.</p>' +
+        '<p><strong>Bridge Health Index</strong>: ....................</p>';
 
     jqueryNoConflict('#content-background').css({'opacity' : '0.7'}).fadeIn('fast');
     jqueryNoConflict('#content-display').html(glossaryHtml).center().fadeIn('slow');
