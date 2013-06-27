@@ -41,6 +41,8 @@ TO DO
     // display data from tabletop
     function showInfo(data, tabletop){
 
+        console.log(data);
+
         // pulls data from the spreadsheet
         jqueryNoConflict.each(tabletop.sheets(dataSheet).all(), function(i, record) {
 
