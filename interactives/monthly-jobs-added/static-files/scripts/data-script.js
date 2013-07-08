@@ -24,7 +24,7 @@ TO DO
 
     // chart options
     var chart;
-    var chartCategories = ['Ja 12', 'Fe 12', 'Ma 12', 'Ap 12', 'My 12', 'Ju 12', 'Ju 12', 'Au 12', 'Se 12', 'Oc 12', 'No 12', 'De 12', 'Ja 13', 'Fe 13', 'Ma 13', 'Ap 13', 'My 13'];
+    var chartCategories = ['Ja 12', 'Fe 12', 'Ma 12', 'Ap 12', 'My 12', 'Ju 12', 'Ju 12', 'Au 12', 'Se 12', 'Oc 12', 'No 12', 'De 12', 'Ja 13', 'Fe 13', 'Ma 13', 'Ap 13', 'My 13', 'Ju 13'];
 
     // pull data from spreadsheet onload
     jqueryNoConflict(document).ready(function(){
@@ -40,8 +40,6 @@ TO DO
 
     // display data from tabletop
     function showInfo(data, tabletop){
-
-        console.log(data);
 
         // pulls data from the spreadsheet
         jqueryNoConflict.each(tabletop.sheets(dataSheet).all(), function(i, record) {
@@ -64,9 +62,10 @@ TO DO
             var mar2013 = parseInt(record.mar2013);
             var apr2013 = parseInt(record.apr2013);
             var may2013 = parseInt(record.may2013);
+            var june2013 = parseInt(record.june2013);
 
             // build array from each row of spreadsheet
-            allJobsData = [jan2012, feb2012, mar2012, apr2012, may2012, jun2012, jul2012, aug2012, sep2012, oct2012, nov2012, dec2012, jan2013, feb2013, mar2013, apr2013, may2013];
+            allJobsData = [jan2012, feb2012, mar2012, apr2012, may2012, jun2012, jul2012, aug2012, sep2012, oct2012, nov2012, dec2012, jan2013, feb2013, mar2013, apr2013, may2013, june2013];
 
             // push each array to an array
             arraysOfJobsData.push(allJobsData);
