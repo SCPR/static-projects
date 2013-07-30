@@ -1,0 +1,55 @@
+svg #ground {
+	fill: #fff;
+	stroke: none;
+}
+
+svg .axis line {
+	fill: none;
+	shape-rendering: crispEdges;
+}
+
+svg .axis line#zeroLine {
+		stroke: #ff4cf4;
+}
+
+svg #xAxis line {
+	stroke: #e6e6e6;
+}
+
+svg #xAxis{
+	fill: #666666;
+}
+
+svg .axis path {
+	stroke: none;
+	fill: none;
+}
+
+svg .axis text {
+	font-family: 'Cutive',Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+svg .legendItem text {
+	font-family: 'Cutive',Helvetica, sans-serif;
+	font-size:  12px;
+}
+
+svg text.metaText {
+	font-family: 'Cutive',Helvetica, sans-serif;
+	font-size:  10px;
+	text-rendering:   optimizeLegibility;
+	fill:  #999999;
+}
+
+svg text.barLabel, 
+svg text.bargridLabel {
+	font-family: 'Cutive',Helvetica, sans-serif;
+	font-size: 12px
+}
+	
+#titleLine {
+	font-family: 'Cutive',Helvetica, sans-serif;
+	font-size: 12px;
+	fill: #666666;
+}
