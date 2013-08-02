@@ -1,6 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Cutive);
 
-input[type="text"], select {
+#chartOptions input,
+input[type="text"],
+select {
 	display: block;
 	margin-bottom: 5px;
 	width: 100%;
@@ -42,8 +44,20 @@ h2 {
 h2:not(:first-child) {
 	margin-top: 20px;
 }
+
+h4 {
+	font-size: 14px;
+	margin: 0px;
+	margin-bottom: 6px;
+}
+
+
 #interactiveContent {
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
 	width: 3000px;
+	padding: 25px;
 }
 
 #interactiveContent .cbColumn{
@@ -81,8 +95,7 @@ h2:not(:first-child) {
 }
 
 #interactiveContent .interfaceCol {
-	width: 46%;
-	margin: 1%;
+	margin: 0 25px;
 	float: left;
 }
 
@@ -90,13 +103,17 @@ h2:not(:first-child) {
 	display: none;
 }
 
-#datainput {
-	margin-top: 10px;
-	margin-bottom:30px;
-	height: 100px;
+.input-box {
+	max-height: 100px;
+	overflow: scroll;
 }
 
-#datainput textarea{
+#datainput {
+	margin: 18px 0;
+}
+
+#datainput textarea,
+textarea#table-html {
 	width: 100%;
 	height: 100%;
 	font-family: Monaco, sans-serif;
@@ -105,6 +122,7 @@ h2:not(:first-child) {
 	-moz-box-sizing:border-box; /* Firefox */
 	-webkit-box-sizing:border-box; /* Safari */
 }
+
 #dataTable .otherrow {
 	background-color: #eee;
 }
@@ -114,6 +132,11 @@ h2:not(:first-child) {
 	font-family: Monaco, sans-serif;
 	font-size: 10px;
 	overflow-x: scroll;
+}
+
+#dataTable td {
+	text-align: center;
+	padding: 2px 3px;
 }
 
 #interactiveContent .hide {
@@ -126,7 +149,6 @@ h2:not(:first-child) {
 	cursor: pointer;
 	width: 200px;
 	height: 30px;
-	
 }
 
 #interactiveContent .updateButton p {
@@ -140,13 +162,6 @@ h2:not(:first-child) {
 	border-radius: 4px;
 }
 
-#interactiveContent {
-	margin-top: 5px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-
 #interactiveContent .seriesItem {
 	margin-bottom: 12px;
 }
@@ -158,6 +173,7 @@ h2:not(:first-child) {
 	font-size: 12px;
 	font-weight: bold;
 }
+
 #interactiveContent .seriesItemGroup input, 
 #interactiveContent .seriesItemGroup select,
 #interactiveContent .seriesItemGroup .colorPicker-picker {
@@ -169,12 +185,11 @@ h2:not(:first-child) {
 }
 
 #interactiveContent .seriesItem label {
-	margin-left: 6px;
-	margin-right: 3px;
-}
+	margin: 6px 3px 0 6px;
+} 
 
 #interactiveContent .seriesItem p {
-	margin:0px;
+	margin: 0px;
 	margin-left: 5px;
 }
 

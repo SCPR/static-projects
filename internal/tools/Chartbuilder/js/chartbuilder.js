@@ -120,6 +120,8 @@ ChartBuilder = {
 	createTable: function(r,d){
 		$table = $("#dataTable table")
 		$table.text("")
+
+
 		$table.append("<tr><th>"+r[0].join("</th><th>")+"</th></tr>")
 		for (var i=1; i < r.length; i++) {
 			if(r[i]) {
@@ -129,11 +131,25 @@ ChartBuilder = {
 				$("<tr><td>"+r[i].join("</td><td>")+"</td></tr>")
 					.addClass(i%2 == 0? "otherrow":"row")
 					.appendTo($table)
-			}
-			
-				
+			}				
 		};
+
+		// append to 
+		this.outputTableAsHtml($table);
 	},
+
+
+	// table_el is a jQuery element
+	outputTableAsHtml: function(table_el){
+		var html_str = table_el.parent().html();
+		// throw in some sloppy newline subbing
+		html_str = html_str.replace(/(<(?:tr|tbody|thead))/g, "\n$1");
+		html_str = $.trim(html_str)
+		$('#table-html').val(html_str);
+	},
+
+
+
 	floatAll: function(a) {
 		for (var i=0; i < a.length; i++) {
 			if(a[i] && a[i].length > 0 && (/[\d\.]+/).test(a[i])) {
@@ -158,8 +174,13 @@ ChartBuilder = {
 		var chartStyle, selector, cssText;
 		
 		for (var i = document.styleSheets.length - 1; i >= 0; i--){
-			if(document.styleSheets[i].href.indexOf("gneisschart.css") != -1) {
-				chartStyle = document.styleSheets[i].rules
+			if(document.styleSheets[i].href && document.styleSheets[i].href.indexOf("gneisschart.css") != -1) {
+        if (document.styleSheets[i].rules != undefined) {
+				  chartStyle = document.styleSheets[i].rules 
+        }
+        else {
+          chartStyle = document.styleSheets[i].cssRules
+          }
 			}
 		}
 		for (var i=0; i < chartStyle.length; i++) {
@@ -587,12 +608,7 @@ $(document).ready(function() {
 	})
 	
 	$("#csvInput").bind("paste", function(e) {
-		if($("#right_axis_max").val().length == 0 && $("#right_axis_min").val().length == 0) {
-			for (var i = chart.g.yAxis.length - 1; i >= 0; i--){
-				chart.g.yAxis[i].domain = [null,null];
-			};
-		}
-		
+		//do nothing special
 	})
 	
 	/*
@@ -608,6 +624,14 @@ $(document).ready(function() {
 			//cache the the raw textarea value
 			ChartBuilder.curRaw = $(this).val()
 			
+			if($("#right_axis_max").val().length == 0 && $("#right_axis_min").val().length == 0) {
+					chart.g.yAxis[0].domain = [null,null];
+			}
+			
+			if(chart.g.yAxis.length > 1 && $("#left_axis_max").val().length == 0 && $("#left_axis_min").val().length == 0) {
+					chart.g.yAxis[1].domain = [null,null];
+			}
+			
 			var newData = ChartBuilder.getNewData()
 			
 			chart.g.series.unshift(chart.g.xAxisRef)
@@ -615,7 +639,7 @@ $(document).ready(function() {
 			
 			if(newData.datetime) {
 				chart.g.xAxis.type = "date";
-				chart.g.xAxis.formatter = "Mdd"
+				chart.g.xAxis.formatter = chart.g.xAxis.formatter?chart.g.xAxis.formatter:"Mdd";
 			}
 			else {
 				chart.g.xAxis.type = "ordinal";

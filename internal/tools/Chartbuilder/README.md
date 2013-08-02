@@ -14,7 +14,7 @@ What Chartbuilder is not
 
 What Chartbuilder is
 --------------------
-Chartbuilder is the final step in charting. Paste data into it and export an svg or png chart.
+Chartbuilder is the final step in charting. Paste data into it and export an svg or png chart in a style that has been predefined.
 
 How to use Chartbuilder
 ------------------------
@@ -23,6 +23,8 @@ How to use Chartbuilder
 3. from the terminal navigate to the source folder (on a Mac: `cd ~/Downloads/Chartbuilder-master/`) 
 4. run `python -m SimpleHTTPServer`
 5. Open Google Chrome, Apple Safari, or Opera and navigate to [http://localhost:8000/](http://localhost:8000/)
+
+Alternatively, you can try out this hosted version: http://quartz.github.io/Chartbuilder/
 
 ####Charting time Series Data
 1. Find some time series data (may I suggest [this](https://docs.google.com/a/qz.com/spreadsheet/ccc?key=0AtrPfe-ScVhJdGg0a2hKZU1JaWZ4ZGMxY3NKbWozYUE#gid=0))
@@ -66,9 +68,9 @@ _steps 2-4 are optional_
 
 Why Chartbuilder / Gneisschart
 -----------------
-+ You're a writer, blogger, reporter who hates the way screenshotted and excel charts look in your stories
++ You're a writer, blogger, reporter who hates the way screenshotted research reports and excel charts look in your stories
 + You're a graphic designer or graphics editor spending too much time making simple charts in the same style
-+ You're a developer at an organization looking to add consitency to employee generated charts
++ You're a developer at an organization looking to add consistency to employee generated charts
 
 Chartbuilder was created to speed workflow in a newsroom and give reporters more responsibility over their content. It allows someone to create simple graphics quickly within a pre-specified style guide without needing specialized design software.
 
