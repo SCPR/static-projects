@@ -55,15 +55,16 @@
                 },
                 stackLabels: {
                     enabled: true,
-                    x: -65,
+                    align: 'left',
+                    x: 25,
                     style: {
-                        fontSize: '12px',
+                        fontSize: '14px',
                         lineHeight: '16px',
                         fontWeight: 'bold',
                         color: (Highcharts.theme && Highcharts.theme.textColor) || '#ffffff'
                     },
                     formatter: function() {
-                        return 'Total: <br />' + Highcharts.numberFormat(this.total, 0, ',');
+                        return 'Overall total: ' + Highcharts.numberFormat(this.total, 0, ',');
                     }
                 }
             },
