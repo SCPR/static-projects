@@ -37,7 +37,7 @@
                 text: 'Marriage licenses spike after demise of Prop 8',
             },
             subtitle: {
-                text: 'Number of licenses issued per county',
+                text: 'Source: Los Angeles, Orange, Riverside and San Bernardino county clerks',
             },
             xAxis: {
                 categories: [
@@ -55,9 +55,12 @@
                 },
                 stackLabels: {
                     enabled: true,
+                    x: -65,
                     style: {
+                        fontSize: '12px',
+                        lineHeight: '16px',
                         fontWeight: 'bold',
-                        color: (Highcharts.theme && Highcharts.theme.textColor) || '#000000'
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || '#ffffff'
                     },
                     formatter: function() {
                         return 'Total: <br />' + Highcharts.numberFormat(this.total, 0, ',');
@@ -83,7 +86,7 @@
                 margin: 30
             },
             credits: {
-                enabled: true,
+                enabled: false,
                 text: 'Source: Los Angeles, Orange, Riverside and San Bernardino county clerks'
             },
 
