@@ -57,7 +57,7 @@
             },
 
             title: {
-                text: 'Federal offenders per primary offense category',
+                text: 'Central California offenders per primary offense',
             },
 
             subtitle: {
