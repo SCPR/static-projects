@@ -1,0 +1,20 @@
+#content-action-bar {width: 100%; height: auto; text-align: left; margin: 0px auto 0px auto;}
+nav {width: 100%; height: 30px; position: relative; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px;}
+#content-action-bar nav select {width: 115%;}
+.fixed {position: fixed; left: 75%; top: 2%; width: 15%; height: 30px; padding: 15px;}
+.text, .img {text-align: center;}
+
+/* headlines for Large desktop */
+@media (min-width: 1200px) {
+    #data-container img {}
+}
+
+/* headlines for Portrait tablet to landscape and desktop */
+@media (min-width: 486px) and (max-width: 979px) {
+    #data-container img {}
+}
+
+/* headlines for Landscape phones and down */
+@media (max-width: 485px) {
+    #data-container img {}
+}
