@@ -1,14 +1,37 @@
 var jqueryNoConflict = jQuery;
 
+// choose either Live or Static
+// Live is pulling from spreadsheet; Static is baked to JSON
+var dataStatus = 'Live';
+
 // begin main function
 jqueryNoConflict(document).ready(function() {
-    retriveData();
+
+    if (dataStatus === 'Live') {
+        Tabletop.init({
+            key: '0Aq8qwSArzKP9dHN0WDllWENuV0pMcWZwRHhmal9zOXc',
+            callback: retriveData,
+            parseNumbers: true,
+            simpleSheet: false,
+            debug: false
+        });
+
+    } else {
+        retriveData('static-files/data/congressional_delegation_on_syria_handlebars.json');
+    }
+
 });
 
 // grab data
-function retriveData() {
-    var dataSource = 'static-files/data/congressional_delegation_on_syria_handlebars.json';
-    jqueryNoConflict.getJSON(dataSource, processDataForTemplate);
+function retriveData(dataSource) {
+    if (dataStatus === 'Live') {
+        var handlebarsData = {
+            objects: dataSource.working_sheet.elements
+        };
+        processDataForTemplate(handlebarsData)
+    } else {
+        jqueryNoConflict.getJSON(dataSource, processDataForTemplate);
+    }
 };
 
 // render data visuals template
