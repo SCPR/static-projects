@@ -1,7 +1,7 @@
 <!-- begin -->
 <div class="candidate-container">
 
-    {{#objects}}
+    {{ #objects }}
         <!-- begin row -->
         <div class="row-fluid">
 
@@ -9,16 +9,16 @@
             <div class="span12">
 
                 <!-- begin candidate container -->
-                <div id="{{firstname}}_{{lastname}}" class="row-fluid" style="padding: 25px 0 15px 0;">
+                <div id="{{ firstname }}_{{ lastname }}" class="row-fluid" style="padding: 25px 0 15px 0;">
 
                     <!-- begin span -->
                     <div class="span2">
                         <dl>
                             <dd>
                                 <div class="img">
-                                    <img src="{{imageurl}}" alt="{{position}}_{{firstname}}_{{lastname}}" width="120px" height="170px" />
+                                    <img src="{{ imageurl }}" alt="{{ position }}_{{ firstname }}_{{ lastname }}" width="120px" height="170px" />
                                 </div>
-                                <div class="text"><p class="data-instructions"><strong>{{position}} {{lastname}}</strong></p></div>
+                                <div class="text"><p class="data-instructions"><strong>{{ position }} {{ lastname }}</strong></p></div>
                             </dd>
                         </dl>
                     </div>
@@ -28,14 +28,15 @@
                     <div class="span10">
                         <dl>
                             <dd>
-                                <h3>{{position}} {{firstname}} {{lastname}} ({{party}}-{{district}})</h3>
+                                <h3>{{ position }} {{ firstname }} {{ lastname }} ({{ party }}-{{ district }})</h3>
                             </dd>
                             <dd>
-                                {{#if viewonsyria}}
-                                    <p><strong>View on Syria</strong>: {{viewonsyria}}</p>
-                                {{else}}
+                                {{ #if viewonsyria }}
+                                    <p><strong>View on Syria</strong>: {{ viewonsyria }}</p>
+                                    <p><strong>Source</strong>: {{ source }}</p>
+                                {{ else }}
                                     <p></p>
-                                {{/if}}
+                                {{ /if }}
                             </dd>
                         </dl>
                     </div>
@@ -49,7 +50,7 @@
 
         </div>
         <!-- end row -->
-    {{/objects}}
+    {{ /objects }}
 
 </div>
 <!-- end -->

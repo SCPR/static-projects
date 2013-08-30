@@ -28,6 +28,7 @@ function retriveData(dataSource) {
         var handlebarsData = {
             objects: dataSource.working_sheet.elements
         };
+
         processDataForTemplate(handlebarsData)
     } else {
         jqueryNoConflict.getJSON(dataSource, processDataForTemplate);
