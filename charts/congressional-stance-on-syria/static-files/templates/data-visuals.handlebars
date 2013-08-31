@@ -33,9 +33,17 @@
                             <dd>
                                 {{#if viewonsyria}}
                                     <p><strong>View on Syria</strong>: {{viewonsyria}}</p>
-                                    <p><strong>Source</strong>: {{source}}</p>
                                 {{else}}
                                     <p></p>
+                                {{/if}}
+                                {{#if sourceurl}}
+                                    <p><strong>Source</strong>: <a href="{{sourceurl}}" target="_blank">{{source}}</a></p>
+                                {{else}}
+                                    {{#if source}}
+                                        <p><strong>Source</strong>: {{source}}</p>
+                                    {{else}}
+                                        <p></p>
+                                    {{/if}}
                                 {{/if}}
                             </dd>
                         </dl>
