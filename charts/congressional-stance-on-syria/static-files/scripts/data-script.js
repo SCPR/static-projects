@@ -2,7 +2,7 @@ var jqueryNoConflict = jQuery;
 
 // choose either Live or Static
 // Live is pulling from spreadsheet; Static is baked to JSON
-var dataStatus = 'Static';
+var dataStatus = 'Live';
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
@@ -28,7 +28,6 @@ function retriveData(dataSource) {
         var handlebarsData = {
             objects: dataSource.working_sheet.elements
         };
-
         processDataForTemplate(handlebarsData)
     } else {
         jqueryNoConflict.getJSON(dataSource, processDataForTemplate);
