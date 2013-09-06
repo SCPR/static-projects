@@ -1,0 +1,45 @@
+/* Styles for monthly-jobs-added */
+#content-article {width: 100%; height: auto; margin: 0 auto 5px auto;}
+
+#chart_container {width: 100%; margin: 25px 0 0 0;}
+
+#chart {width: 100%; margin: 15px 0 0 0;}
+
+#slider {width: 100%; margin: 25px 0 0 0;}
+
+#y_axis {position: absolute; top: 0; bottom: 0; width: 40px; margin-top: 50px;}
+
+.rickshaw_graph .detail .x_label {display: none;}
+.rickshaw_graph .detail .item {line-height: 1.4; padding: 0.5em;}
+.detail_swatch {float: right; display: inline-block; width: 10px; height: 10px; margin: 0 4px 0 0;}
+.rickshaw_graph .detail .date {color: #a0a0a0;}
+
+
+
+.rickshaw_annotation_timeline {width: 100%; height: 15px; border-top: 20px solid #e0e0e0; margin: 15px 0 0 0; position: relative;}
+.rickshaw_annotation_timeline .annotation {position: absolute; height: 15px; width: 15px; margin-left: -1px; top: -18px; border-radius: 5px; background-color: rgba(0,0,0,.50);}
+
+
+
+
+
+/* Landscape phones and down */
+@media (max-width: 485px) {
+    #data-container h1 {font-size: 24px; font-weight: 800; line-height: 28px; color: #2B2B2B;}
+    #data-container h2 {font-size: 20px; font-weight: 700; line-height: 24px; color: #2B2B2B;}
+    #data-container h3 {font-size: 16px; font-weight: 700; line-height: 20px; color: #2B2B2B;}
+    #data-container h4 {font-size: 14px; font-weight: 700; line-height: 18px; color: #2B2B2B;}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+    #data-container h1 {font-size: 28px; font-weight: 800; line-height: 32px; color: #2B2B2B;}
+    #data-container h2 {font-size: 24px; font-weight: 700; line-height: 28px; color: #2B2B2B;}
+    #data-container h3 {font-size: 20px; font-weight: 700; line-height: 24px; color: #2B2B2B;}
+    #data-container h4 {font-size: 18px; font-weight: 700; line-height: 22px; color: #2B2B2B;}
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
