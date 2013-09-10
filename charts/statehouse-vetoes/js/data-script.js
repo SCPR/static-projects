@@ -30,11 +30,13 @@ jqueryNoConflict(document).ready(function() {
             }
         };
 
-        config.yAxis = {
-            title: {
-                text: 'Percent of bills vetoed'
-            }
-        };
+        config.yAxis = [{
+            title: {text: 'Percent of bills vetoed'},
+            opposite: true
+        }, {
+            title: {text: 'Percent of bills vetoed'},
+            linkedTo: 0,
+        }];
 
         config.tooltip = {
             formatter: function() {
