@@ -1,5 +1,7 @@
+#data-details {font-family: "proxima-nova", "helvetica neue", helvetica, arial, sans-serif; margin-top: 25px;}
+.align-right {text-align: right;}
 .kpcc-table {font-family: "proxima-nova", "helvetica neue", helvetica, arial, sans-serif; margin: 25px 0 25px 0;}
-.kpcc-table th, .kpcc-table td {width: 33%; line-height: 16px; text-align: center; vertical-align: middle; border-bottom: 1px solid #ddd; font-size: 24px; font-weight: 700; line-height: 20px; margin-top: 10px; margin-bottom: 10px;}
+.kpcc-table th, .kpcc-table td {width: 33%; line-height: 16px; text-align: center; vertical-align: middle; border-bottom: 1px solid #ddd; font-size: 30px; font-weight: 700; line-height: 20px; margin-top: 10px; margin-bottom: 10px;}
 .kpcc-table th.kpcc-name {color: #B24401; text-transform: uppercase;}
 .kpcc-table th.yes-cell {color: green; text-transform: uppercase;}
 .kpcc-table th.no-cell {color: red; text-transform: uppercase;}
