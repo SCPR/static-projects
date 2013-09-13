@@ -834,6 +834,7 @@ jqueryNoConflict(document).ready(function() {
         graph: graph,
         orientation: 'left',
         tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+        //tickFormat: function(y) {return y},
         element: document.getElementById("y_axis"),
     });
 
@@ -844,22 +845,25 @@ jqueryNoConflict(document).ready(function() {
             var dateOutput = moment(new Date(x * 1000)).format(dateFormat);
             var date = '<span class="date">' + dateOutput + '</span>';
             var swatch = '<span class="detail_swatch" style="background-color: ' + series.color + '"></span>';
-            var content = swatch + series.name + ": " + parseInt(y) + '<br>' + date;
+            var content = series.name + swatch + '<br />' + date + '<br /><span class="jobs">' + addCommas(parseInt(y)) + ' jobs</span>';
             return content;
         }
     });
 
-    var annotator = new Rickshaw.Graph.Annotate({
-        graph: graph,
-        element: document.getElementById('timeline')
-    });
+    //var annotator = new Rickshaw.Graph.Annotate({
+        //graph: graph,
+        //element: document.getElementById('timeline')
+    //});
 
-    annotator.add(construction[69].x, 'October 2008');
+    //annotator.add(construction[69].x, 'October 2008');
     //annotator.add(seriesData[45].x, 'First jobs report following the Sept. 11 terrorist attacks.');
     //annotator.add(seriesData[129].x, 'First jobs report following Lehman Bros. filing for Chapter 11 bankruptcy.');
 
-    graph.render();
 
+
+
+    graph.renderer.unstack = false;
+    graph.render();
 
     var legend = new Rickshaw.Graph.Legend({
         graph: graph,
@@ -881,6 +885,17 @@ jqueryNoConflict(document).ready(function() {
         legend: legend
     });
 
+    graph.series[0].disable()
+    graph.series[1].disable()
+    graph.series[2].disable()
+    graph.series[3].disable()
+    graph.series[4].disable()
+
+    jqueryNoConflict('.rickshaw_legend .line:nth-child(2)').addClass('disabled')
+    jqueryNoConflict('.rickshaw_legend .line:nth-child(3)').addClass('disabled')
+    jqueryNoConflict('.rickshaw_legend .line:nth-child(4)').addClass('disabled')
+    jqueryNoConflict('.rickshaw_legend .line:nth-child(5)').addClass('disabled')
+    jqueryNoConflict('.rickshaw_legend .line:nth-child(6)').addClass('disabled')
 
     /*
     var resize = function() {
@@ -897,3 +912,18 @@ jqueryNoConflict(document).ready(function() {
     */
 
 });
+
+    // function to add commas
+    function addCommas(nStr){
+        nStr += '';
+        x = nStr.split('.');
+    	x1 = x[0];
+    	x2 = x.length > 1 ? '.' + x[1] : '';
+
+    	var rgx = /(\d+)(\d{3})/;
+    	   while (rgx.test(x1)) {
+    	       x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    	   }
+
+        return x1 + x2;
+    };

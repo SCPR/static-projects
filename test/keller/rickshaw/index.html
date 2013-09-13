@@ -52,7 +52,7 @@
     <!-- additional css files for projects -->
     <link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/rickshaw/1.3.0/rickshaw.min.css">
     <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css">
-    <link href="css/project-styles.css?t=1379029013" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/project-styles.css?t=1379034510" rel="stylesheet" type="text/css" media="all" />
 
 
         <link href="http://projects.scpr.org/static/static-files/bootstrap-v222/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" media="all" />
@@ -125,7 +125,7 @@
 
 
             <div id="content-article-text">
-                <p>Five years after Lehman Brothers filed for bankruptcy protection, the state's civilian unemployment rate is at 8.7 percent -- up from 7.9 percent in September 2008 -- and California's economy continues its recovery.</p><p>Signs are pointing up however. California as a whole is adding jobs at a faster pace than most of the nation -- second only to Utah -- according to Jerry Nickelsburg, senior economist with the UCLA Anderson Forecast.</p><p>In 2007, before the recession, Los Angeles County had 4.12 million non-farm jobs, according to the Califoria Employment Development Department. Last year, the number of non-farm jobs in the county was 3.86 million.</p><p>According to Robert Kleinhenz, chief economist with the Los Angeles County Economic Development Corporation, it could take years before local job growth reaches the peak levels seen before what has now become known as the Great Recession.</p><p>"The economy is clearly making recovery happen," he said. "It has been taking a lot longer than is typically the case."</p><p>The graph below shows the last 10 years of employment data by sector from the <a href="http://www.labormarketinfo.edd.ca.gov/LMID/Employment_by_Industry_Data.html">Califoria Employment Development Department</a>. At a glance it shows which sector accounts for the largest portion of jobs in the states economy over the last 10 years. But when viewed one-by-one -- using the legend to toggle -- it becomes clear which employment sectors were hardest hit by the economic collapse (manufacturing, construction and retail), which have rebounded (arts and entertainment and food service) and which seemed to have emerged unscathed (health care and social assistance).</p>
+                <p>Five years after Lehman Brothers filed for bankruptcy protection, California's civilian unemployment rate is at 8.7 percent -- up from 7.9 percent in September 2008. According to Robert Kleinhenz, chief economist with the Los Angeles County Economic Development Corporation, it could take years before local job growth reaches the peak levels seen before what has now become known as the Great Recession.</p><p>But as a whole, the state is adding jobs at a faster pace than most of the nation -- second only to Utah -- according the UCLA Anderson Forecast.</p><p>The graph below shows the last 10 years of employment data from the <a href="http://www.labormarketinfo.edd.ca.gov/LMID/Employment_by_Industry_Data.html">Califoria Employment Development Department</a>, arranged by sector. At a glance, it reveals which sectors provided the largest portion of jobs in the state's economy. When you click on each sector one-by-one, you can clearly see which industries were hardest hit by the recession (manufacturing, construction and retail), which have rebounded (arts and entertainment and food service), and which seem to have emerged unscathed (health care and social assistance).</p>
             </div>
 
 
@@ -137,7 +137,7 @@
 
 
             <div id="content-explainer">
-                <p><span class="data-instructions"><strong>Using the interactive:</strong> The graph below shows the last 10 years of employment data by sector from the [Califoria Employment Development Department](http://www.labormarketinfo.edd.ca.gov/LMID/Employment_by_Industry_Data.html). At a glance it shows which sector accounts for the largest portion of jobs in the states economy over the last 10 years. Use the legend on the right to filter through the employment sectors one-by-one to see those hardest hit by the Great Recession (manufacturing, construction and retail), which have rebounded (arts and entertainment and food service) and which seemed to have emerged unscathed (health care and social assistance). Use the slider across the bottom to zoom in and explore the data further.</span></span></p>
+                <p><span class="data-instructions"><strong>Using the interactive:</strong> The graph below shows the last 10 years of employment data by sector from the <a href="http://www.labormarketinfo.edd.ca.gov/LMID/Employment_by_Industry_Data.html" target="_blank">California Employment Development Department</a>. At a glance it shows which sector accounts for the largest portion of jobs in the states economy over the last 10 years. Use the legend on the right to filter through the employment sectors one-by-one, to see how each was affected by the Great Recession. Use the slider across the bottom to zoom in and explore the data further.</span></span></p>
             </div>
 
     </div>
@@ -149,9 +149,15 @@
                 <div class="span12">
                     <div id="data-visuals">
 
+
+    <div id="legend"></div>
+
     <div id="chart_container">
+
+        <!--
     	<div id="timeline"></div>
-    	<div id="legend"></div>
+        -->
+
     	<div id="y_axis"></div>
     	<div id="chart"></div>
     </div>
@@ -189,21 +195,6 @@
                     <div id="data-comments">
 
 
-        <div class="row-fluid">
-            <div class="span12">
-            <div id="disqus_thread"></div>
-                <script type="text/javascript">
-                    var disqus_shortname = 'kpcc-projects';
-                    (function() {
-                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                    })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-        </div>
 
 
                     </div>
@@ -237,8 +228,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/rickshaw/1.3.0/rickshaw.min.js"></script>
-    <script src="js/Rickshaw.Graph.Annotate.js?t=1379029013"></script>
-    <script src="js/data-script.js?t=1379029013"></script>
+    <script src="js/Rickshaw.Graph.Annotate.js?t=1379034510"></script>
+    <script src="js/data-script.js?t=1379034510"></script>
 
         <!-- end scripts -->
 
