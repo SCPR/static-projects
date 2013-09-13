@@ -10,9 +10,6 @@
         var graph = new Rickshaw.Graph( {
         	element: document.getElementById("chart"),
         	renderer: 'area',
-        	//width: 1000,
-        	//height: 500,
-        	//min: auto,
 
         	series: [{
                     name: 'Trade, Transportation & Utilities',
@@ -38,15 +35,7 @@
                     name: 'Health Care',
                     data: data_health_care,
                     color: palette.color()
-                },/*{
-                    name: 'Government: State ',
-                    data: data_state_government,
-                    color: palette.color()
                 },{
-                    name: 'Government: Local ',
-                    data: data_local_government,
-                    color: palette.color()
-                },*/{
                     name: 'Food & Accommodation',
                     data: data_accommodation_food,
                     color: palette.color()
@@ -81,33 +70,11 @@
             graph: graph,
             orientation: 'right',
             tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
-            //tickFormat: function(y) {return y},
             element: document.getElementById("y_axis"),
         });
 
-        var annotator = new Rickshaw.Graph.Annotate({
-            graph: graph,
-            element: document.getElementById('timeline')
-        });
-
-        annotator.add(data_construction[69].x, 'October 2008');
-        //annotator.add(seriesData[45].x, 'First jobs report following the Sept. 11 terrorist attacks.');
-        //annotator.add(seriesData[129].x, 'First jobs report following Lehman Bros. filing for Chapter 11 bankruptcy.');
-
         graph.renderer.unstack = false;
         graph.render();
-
-        /*
-        var testLegend = new Rickshaw.Graph.Legend.Custom({
-            graph: graph,
-            element: document.getElementById('test-legend')
-        });
-
-        var testShelving = new Rickshaw.Graph.Behavior.Series.Toggle.Custom({
-            graph: graph,
-            legend: testLegend
-        });
-        */
 
         var legend = new Rickshaw.Graph.Legend({
             graph: graph,
@@ -150,10 +117,6 @@
         graph.series[6].disable();
         graph.series[7].disable();
         graph.series[8].disable();
-        //graph.series[9].disable();
-        //graph.series[10].disable();
-        //graph.series[11].disable();
-        //jqueryNoConflict('.rickshaw_legend .line:nth-child(1)').addClass('disabled');
         jqueryNoConflict('.rickshaw_legend .line:nth-child(2)').addClass('disabled');
         jqueryNoConflict('.rickshaw_legend .line:nth-child(3)').addClass('disabled');
         jqueryNoConflict('.rickshaw_legend .line:nth-child(4)').addClass('disabled');
@@ -163,8 +126,6 @@
         jqueryNoConflict('.rickshaw_legend .line:nth-child(8)').addClass('disabled');
         jqueryNoConflict('.rickshaw_legend .line:nth-child(9)').addClass('disabled');
         jqueryNoConflict('.rickshaw_legend .line:nth-child(10)').addClass('disabled');
-        //jqueryNoConflict('.rickshaw_legend .line:nth-child(11)').addClass('disabled');
-        //jqueryNoConflict('.rickshaw_legend .line:nth-child(12)').addClass('disabled');
 
         var resize = function() {
 
