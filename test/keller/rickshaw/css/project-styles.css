@@ -1,19 +1,19 @@
 /* Styles for monthly-jobs-added */
 #content-article {width: 100%; height: auto; margin: 0 auto 5px auto;}
 
+#data-visuals {margin: 5px auto 5px auto;}
+
 /*
 #chart_container {width: 100%; margin: 25px 0 0 0;}
 #chart {width: 100%; margin: 15px 0 0 0;}
 #y_axis {position: absolute; top: 0; bottom: 0; width: 40px; margin-top: 50px;}
 */
 
-#chart_container { position: relative; display: inline-block; /*font-family: Arial, Helvetica, sans-serif;*/ }
+#chart_container {width: 100%; position: relative; display: inline-block;}
 
-#chart { display: inline-block; margin-left: 40px; }
+#chart {width: 100%; display: inline-block; margin-left: 40px;}
 
-#y_axis { position: absolute; top: 10; bottom: 0; width: 40px; }
-
-#legend { display: inline-block; vertical-align: top; margin: 0 0 0 10px; float: right; }
+#y_axis {position: absolute; bottom: 10; width: 40px;}
 
 #slider {width: 100%; margin: 25px 0 0 0; position: relative; left: 40px;}
 
@@ -31,10 +31,24 @@
 
 .rickshaw_graph .detail .jobs {font-size: 12px; color: #ffffff;}
 
-.rickshaw_annotation_timeline {width: 100%; height: 15px; border-top: 20px solid #e0e0e0; margin: 15px 0 0 0; position: relative; left: 40px;}
+.rickshaw_annotation_timeline {width: 100%; height: 15px; border-top: 20px solid #e0e0e0; margin: 0 0 0 0; position: relative; left: 40px;}
 
 .rickshaw_annotation_timeline .annotation {position: relative; height: 15px; width: 15px; margin-left: -8px; top: -18px; border-radius: 5px; background-color: rgba(0,0,0,.50);}
 
+#legend {width: 100%; margin: 0 0 10px 40px;}
+.rickshaw_legend {width: 100%; font-size: 10px; color: #000; background: none; padding: 0px}
+.rickshaw_legend:hover { z-index: 10 }
+.rickshaw_legend .swatch { width: 10px; height: 10px; border: 1px solid rgba(0, 0, 0, 0.2); }
+.rickshaw_legend .line { clear: both; line-height: 140%; padding-right: 15px; }
+.rickshaw_legend .line .swatch { display: inline-block; margin-right: 3px; border-radius: 2px; }
+.rickshaw_legend .label { margin: 0; white-space: nowrap; display: inline; font-size: inherit; background-color: transparent; color: inherit; font-weight: normal; line-height: normal; padding: 0px; text-shadow: none; }
+.rickshaw_legend .action:hover { opacity: 0.7 }
+.rickshaw_legend .action {display: none; margin-right: 0.2em; font-size: 10px; opacity: 0.2; cursor: pointer; font-size: 14px; }
+.rickshaw_legend .line.disabled { opacity: 0.7 }
+.rickshaw_legend ul {width: 100%; list-style-type: none; margin: 0; padding: 0; cursor: pointer; }
+.rickshaw_legend li { display: inline; padding: 0 0 0 0; min-width: 40px;}
+.rickshaw_legend li:hover { background: rgba(255, 255, 255, 0.08); border-radius: 3px; }
+.rickshaw_legend li:active { background: rgba(255, 255, 255, 0.2); border-radius: 3px; }
 
 /* Landscape phones and down */
 @media (max-width: 485px) {
