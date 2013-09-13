@@ -10,7 +10,6 @@
         var graph = new Rickshaw.Graph( {
         	element: document.getElementById("chart"),
         	renderer: 'area',
-
         	series: [{
                     name: 'Trade, Transportation & Utilities',
                     data: data_trade_transportation_utilities,
