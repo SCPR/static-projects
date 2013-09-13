@@ -11,6 +11,8 @@
 
 #chart_container {width: 100%; position: relative; display: inline-block;}
 
+#gif_container {display: none;}
+
 #chart {width: 100%; display: inline-block; margin-left: 40px;}
 
 #y_axis {position: absolute; bottom: 10; width: 40px;}
@@ -52,18 +54,27 @@
 
 /* Landscape phones and down */
 @media (max-width: 485px) {
-    #data-container h1 {font-size: 24px; font-weight: 800; line-height: 28px; color: #2B2B2B;}
-    #data-container h2 {font-size: 20px; font-weight: 700; line-height: 24px; color: #2B2B2B;}
-    #data-container h3 {font-size: 16px; font-weight: 700; line-height: 20px; color: #2B2B2B;}
-    #data-container h4 {font-size: 14px; font-weight: 700; line-height: 18px; color: #2B2B2B;}
-}
-
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
     #data-container h1 {font-size: 28px; font-weight: 800; line-height: 32px; color: #2B2B2B;}
     #data-container h2 {font-size: 24px; font-weight: 700; line-height: 28px; color: #2B2B2B;}
     #data-container h3 {font-size: 20px; font-weight: 700; line-height: 24px; color: #2B2B2B;}
     #data-container h4 {font-size: 18px; font-weight: 700; line-height: 22px; color: #2B2B2B;}
+    #gif_container {width: 100%; position: relative; display: inline-block;}
+    #content-explainer, #chart_container {display: none;}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 486px) and (max-width: 799px) {
+    #data-container h1 {font-size: 28px; font-weight: 800; line-height: 32px; color: #2B2B2B;}
+    #data-container h2 {font-size: 24px; font-weight: 700; line-height: 28px; color: #2B2B2B;}
+    #data-container h3 {font-size: 20px; font-weight: 700; line-height: 24px; color: #2B2B2B;}
+    #data-container h4 {font-size: 18px; font-weight: 700; line-height: 22px; color: #2B2B2B;}
+    #gif_container {width: 100%; position: relative; display: inline-block;}
+    #content-explainer, #chart_container {display: none;}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 800px) and (max-width: 1199px) {
+
 }
 
 /* Large desktop */
