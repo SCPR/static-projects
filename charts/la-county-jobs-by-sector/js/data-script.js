@@ -2,10 +2,15 @@
 
     // begin main function
     jqueryNoConflict(document).ready(function() {
+
         createChartWithData();
+
     });
 
     function createChartWithData() {
+
+        jqueryNoConflict('.dropdown-toggle').dropdown();
+
         var palette = new Rickshaw.Color.Palette();
         var graph = new Rickshaw.Graph( {
         	element: document.getElementById("chart"),
@@ -102,19 +107,7 @@
         graph.renderer.unstack = false;
         graph.render();
 
-        /*
-        var testLegend = new Rickshaw.Graph.Legend.Custom({
-            graph: graph,
-            element: document.getElementById('test-legend')
-        });
-
-        var testShelving = new Rickshaw.Graph.Behavior.Series.Toggle.Custom({
-            graph: graph,
-            legend: testLegend
-        });
-        */
-
-        var legend = new Rickshaw.Graph.Legend({
+        var legend = new Rickshaw.Graph.Legend.Custom({
             graph: graph,
             element: document.getElementById('legend')
         });
@@ -158,18 +151,6 @@
         //graph.series[9].disable();
         //graph.series[10].disable();
         //graph.series[11].disable();
-        //jqueryNoConflict('.rickshaw_legend .line:nth-child(1)').addClass('disabled');
-        jqueryNoConflict('.rickshaw_legend .line:nth-child(2)').addClass('disabled');
-        jqueryNoConflict('.rickshaw_legend .line:nth-child(3)').addClass('disabled');
-        jqueryNoConflict('.rickshaw_legend .line:nth-child(4)').addClass('disabled');
-        jqueryNoConflict('.rickshaw_legend .line:nth-child(5)').addClass('disabled');
-        jqueryNoConflict('.rickshaw_legend .line:nth-child(6)').addClass('disabled');
-        jqueryNoConflict('.rickshaw_legend .line:nth-child(7)').addClass('disabled');
-        jqueryNoConflict('.rickshaw_legend .line:nth-child(8)').addClass('disabled');
-        jqueryNoConflict('.rickshaw_legend .line:nth-child(9)').addClass('disabled');
-        jqueryNoConflict('.rickshaw_legend .line:nth-child(10)').addClass('disabled');
-        //jqueryNoConflict('.rickshaw_legend .line:nth-child(11)').addClass('disabled');
-        //jqueryNoConflict('.rickshaw_legend .line:nth-child(12)').addClass('disabled');
 
         var resize = function() {
 

@@ -8,9 +8,17 @@ Rickshaw.Graph.Legend.Custom = function(args) {
 	var self = this;
 
 	element.classList.add('rickshaw_legend');
+	element.classList.add('btn-group');
 
-	var list = this.list = document.createElement('select');
+	var action_trigger = this.list = document.createElement('button');
+	element.appendChild(action_trigger);
+    action_trigger.className = 'btn-large dropdown-toggle';
+    action_trigger.setAttribute('data-toggle', 'dropdown');
+    action_trigger.innerHTML = 'Filter the chart by employment sector<span class="caret"></span>';
+
+	var list = this.list = document.createElement('ul');
 	element.appendChild(list);
+	list.className = 'dropdown-menu';
 
 	var series = graph.series
 		.map( function(s) { return s } );
@@ -22,23 +30,20 @@ Rickshaw.Graph.Legend.Custom = function(args) {
 	this.lines = [];
 
 	this.addLine = function (series) {
-		var line = document.createElement('option');
-		line.value = series.name;
-		//line.innerHTML = series.name
-		//line.className = 'line';
-		//if (series.disabled) {
-			//line.className += ' disabled';
-		//}
+		var line = document.createElement('li');
+		line.className = 'line';
+		if (series.disabled) {
+			line.className += ' disabled';
+		}
 
-        /*
 		var swatch = document.createElement('div');
 		swatch.className = 'swatch';
 		swatch.style.backgroundColor = series.color;
+
 		line.appendChild(swatch);
-        */
 
 		var label = document.createElement('span');
-		label.value = 'label';
+		label.className = 'label';
 		label.innerHTML = series.name;
 
 		line.appendChild(label);

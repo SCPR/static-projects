@@ -10,7 +10,6 @@
 */
 
 #chart_container {width: 100%; position: relative; display: inline-block;}
-
 #gif_container {display: none;}
 
 #chart {width: 100%; display: inline-block; margin-left: 40px;}
@@ -37,20 +36,19 @@
 
 .rickshaw_annotation_timeline .annotation {position: relative; height: 15px; width: 15px; margin-left: -8px; top: -18px; border-radius: 5px; background-color: rgba(0,0,0,.50);}
 
-#legend {width: 100%; margin: 0 0 10px 40px;}
-.rickshaw_legend {width: 100%; font-size: 10px; color: #000; background: none; padding: 0px}
-.rickshaw_legend:hover { z-index: 10 }
-.rickshaw_legend .swatch { width: 10px; height: 10px; border: 1px solid rgba(0, 0, 0, 0.2); }
-.rickshaw_legend .line { clear: both; line-height: 140%; padding-right: 15px; }
-.rickshaw_legend .line .swatch { display: inline-block; margin-right: 3px; border-radius: 2px; }
-.rickshaw_legend .label { margin: 0; white-space: nowrap; display: inline; font-size: inherit; background-color: transparent; color: inherit; font-weight: normal; line-height: normal; padding: 0px; text-shadow: none; }
-.rickshaw_legend .action:hover { opacity: 0.7 }
-.rickshaw_legend .action {display: none; margin-right: 0.2em; font-size: 10px; opacity: 0.2; cursor: pointer; font-size: 14px; }
-.rickshaw_legend .line.disabled { opacity: 0.7 }
-.rickshaw_legend ul {width: 100%; list-style-type: none; margin: 0; padding: 0; cursor: pointer; }
-.rickshaw_legend li { display: inline; padding: 0 0 0 0; min-width: 40px;}
-.rickshaw_legend li:hover { background: rgba(255, 255, 255, 0.08); border-radius: 3px; }
-.rickshaw_legend li:active { background: rgba(255, 255, 255, 0.2); border-radius: 3px; }
+#legend {width: 100%; margin: 0 0 50px 40px; font-size: 14px; color: #000;}
+.rickshaw_legend {background: none; padding: 0px}
+.rickshaw_legend ul {width: 100%; list-style-type: none; margin: 5px 0 5px 0; padding: 0; cursor: pointer;}
+.rickshaw_legend li {padding: 0 0 0 0;}
+.rickshaw_legend li:hover {background: rgba(255, 255, 255, 0.8); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+.rickshaw_legend li:active {background: rgba(255, 255, 255, 0.8); -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+.rickshaw_legend .action {display: none; margin-right: 0.2em; font-size: 10px; opacity: 0.8; color: #000000; cursor: pointer; font-size: 14px; }
+.rickshaw_legend .action:hover {opacity: 0.8;}
+.rickshaw_legend .line {clear: both; line-height: 150%; color: #000000; padding: 5px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+.rickshaw_legend .line:hover {background: #717171; color: #000000; text-decoration: underline;}
+.rickshaw_legend .line.disabled {background: none; color: #000000; opacity: 0.8;}
+.rickshaw_legend .line.disabled:hover {background: #717171; color: #000000; opacity: 1;}
+.rickshaw_legend .label {margin: 0; white-space: nowrap; display: inline; font-size: 18px; background-color: transparent; color: inherit; font-weight: normal; line-height: normal; padding: 0px; text-shadow: none;}
 
 /* Landscape phones and down */
 @media (max-width: 485px) {
@@ -58,8 +56,8 @@
     #data-container h2 {font-size: 24px; font-weight: 700; line-height: 28px; color: #2B2B2B;}
     #data-container h3 {font-size: 20px; font-weight: 700; line-height: 24px; color: #2B2B2B;}
     #data-container h4 {font-size: 18px; font-weight: 700; line-height: 22px; color: #2B2B2B;}
-    #gif_container {width: 100%; position: relative; display: inline-block;}
-    #content-explainer, #chart_container {display: none;}
+    /*#gif_container {width: 100%; position: relative; display: inline-block;}
+    #content-explainer, #chart_container {display: none;}*/
 }
 
 /* Portrait tablet to landscape and desktop */
@@ -68,8 +66,8 @@
     #data-container h2 {font-size: 24px; font-weight: 700; line-height: 28px; color: #2B2B2B;}
     #data-container h3 {font-size: 20px; font-weight: 700; line-height: 24px; color: #2B2B2B;}
     #data-container h4 {font-size: 18px; font-weight: 700; line-height: 22px; color: #2B2B2B;}
-    #gif_container {width: 100%; position: relative; display: inline-block;}
-    #content-explainer, #chart_container {display: none;}
+    /*#gif_container {width: 100%; position: relative; display: inline-block;}
+    #content-explainer, #chart_container {display: none;}*/
 }
 
 /* Portrait tablet to landscape and desktop */
