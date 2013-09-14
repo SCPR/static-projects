@@ -151,6 +151,18 @@
         //graph.series[9].disable();
         //graph.series[10].disable();
         //graph.series[11].disable();
+        //jqueryNoConflict('.rickshaw_legend .line:nth-child(1)').addClass('disabled');
+        jqueryNoConflict('.rickshaw_legend .line:nth-child(2)').addClass('disabled');
+        jqueryNoConflict('.rickshaw_legend .line:nth-child(3)').addClass('disabled');
+        jqueryNoConflict('.rickshaw_legend .line:nth-child(4)').addClass('disabled');
+        jqueryNoConflict('.rickshaw_legend .line:nth-child(5)').addClass('disabled');
+        jqueryNoConflict('.rickshaw_legend .line:nth-child(6)').addClass('disabled');
+        jqueryNoConflict('.rickshaw_legend .line:nth-child(7)').addClass('disabled');
+        jqueryNoConflict('.rickshaw_legend .line:nth-child(8)').addClass('disabled');
+        jqueryNoConflict('.rickshaw_legend .line:nth-child(9)').addClass('disabled');
+        jqueryNoConflict('.rickshaw_legend .line:nth-child(10)').addClass('disabled');
+        //jqueryNoConflict('.rickshaw_legend .line:nth-child(11)').addClass('disabled');
+        //jqueryNoConflict('.rickshaw_legend .line:nth-child(12)').addClass('disabled');
 
         var resize = function() {
 

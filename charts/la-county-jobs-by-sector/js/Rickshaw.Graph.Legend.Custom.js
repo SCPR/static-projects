@@ -12,7 +12,7 @@ Rickshaw.Graph.Legend.Custom = function(args) {
 
 	var action_trigger = this.list = document.createElement('button');
 	element.appendChild(action_trigger);
-    action_trigger.className = 'btn-large dropdown-toggle';
+    action_trigger.className = 'btn btn-success dropdown-toggle';
     action_trigger.setAttribute('data-toggle', 'dropdown');
     action_trigger.innerHTML = 'Filter the chart by employment sector<span class="caret"></span>';
 
