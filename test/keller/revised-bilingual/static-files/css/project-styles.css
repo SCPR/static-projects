@@ -1,4 +1,5 @@
 a { color: #4B58A6; }
+
 #map_canvas img { max-width: none; }
 
 .filter-box { height: 15px; width: 15px; display: inline-block; *border-right-width: 2px; *border-bottom-width: 2px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box; }
@@ -25,8 +26,10 @@ a { color: #4B58A6; }
 
 .lead { font-size: 22.5px; font-weight: 200; line-height: 31.5px; }
 
-.alert-info { background-color: #3399f3; border-color: #11adf1; color: #ffffff;}
+.alert-info { background-color: #2e2e2e; border-color: #2e2e2e; color: #ffffff; font-weight: normal;}
 
 .accordion-group {margin-bottom: 2px; border: none; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
 
 .accordion-inner {padding: 0px; border-top: none;}
+
+#data-container h3 {line-height: 140%}

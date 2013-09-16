@@ -11,7 +11,6 @@ function getTemplateAjax(path, callback) {
     var source, template;
     jqueryNoConflict.ajax({
         url: path,
-
         success: function (data) {
             source = data;
             template = Handlebars.compile(source);
@@ -29,12 +28,11 @@ function renderHandlebarsTemplate(withTemplate,inElement,withData){
 
 // render all the templates
 function renderStaticTemplates(){
-    renderHandlebarsTemplate('static-files/templates/kpcc-header.handlebars', '#kpcc-header');
-    renderHandlebarsTemplate('static-files/templates/kpcc-footer.handlebars', '#kpcc-footer');
+    renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '#kpcc-header');
+    renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '#kpcc-footer');
     renderHandlebarsTemplate('static-files/templates/data-share.handlebars', '#data-share');
     renderHandlebarsTemplate('static-files/templates/data-details.handlebars', '#data-details');
     renderHandlebarsTemplate('static-files/templates/content-explainer.handlebars', '#content-explainer');
-    //renderHandlebarsTemplate('static-files/templates/content-action-bar.handlebars', '#content-action-bar');
     renderHandlebarsTemplate('static-files/templates/data-modal.handlebars', '#data-modal');
     renderHandlebarsTemplate('static-files/templates/data-footer.handlebars', '#data-footer');
 };
