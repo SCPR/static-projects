@@ -1,5 +1,4 @@
 /* Styles for congressional-stance-on-syria */
-
 .candidate-container .vote-indicator {margin-top: 20px; text-align: center;}
 .candidate-container .undecided {margin-top: 40px; color: black; font-weight: bold; font-size: 64px; text-align: center;}
 .candidate-container .likely_no {margin-top: 40px; color: red; font-weight: bold; font-size: 64px; text-align: center;}
