@@ -3,9 +3,7 @@ var map;
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
-
     google.maps.event.addDomListener(window, 'load', createMap);
-
 });
 // end
 
@@ -13,7 +11,6 @@ jqueryNoConflict(document).ready(function() {
 function createMap(){
 
     // add encrypted table id
-
     var cityCrosswalkTableId = '1vdWsizdohZnLO11PlAf1HRvcBa73EoRziHr_gi0';
     var userContributedTableId = '1RvesiAIGe14Gw3w7zjQm_2NBlZLl5EBSstdvf6E';
     var locationColumn = 'Location';
@@ -56,6 +53,7 @@ function createMap(){
             e.row['Collisions'].value + ' vehicle/pedestrian accidents over the last five years, ' +
             'according to Los Angeles city officials.</p>' +
             '<img src=\"http://maps.googleapis.com/maps/api/streetview?size=300x300&location=' + e.row['Lat'].value + ',%20' + e.row['Long'].value + '&fov=90&heading=235&pitch=10&sensor=false\" />' +
+            '<p><a href="https://maps.google.com/maps?q=&layer=c&cbll=' + e.row['Lat'].value + ','+ e.row['Long'].value + '&cbp=11,0,0,0,0" target="_blank">Explore in Google StreetView</a></p>' +
             '<br /><br />');
 
     });
@@ -80,6 +78,7 @@ function createMap(){
             '"</blockquote>' +
             '<img src=\"http://maps.googleapis.com/maps/api/streetview?size=300x300&location=' +
             e.row['Location'].value + '&fov=90&heading=235&pitch=10&sensor=false\" />' +
+            '<p><a href="https://maps.google.com/maps?q=&layer=c&cbll=' + e.row['Location'].value + '&cbp=11,0,0,0,0" target="_blank">Explore in Google StreetView</a></p>' +
             '<br /><br />');
     });
 
