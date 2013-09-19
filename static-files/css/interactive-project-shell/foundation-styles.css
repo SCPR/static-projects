@@ -105,6 +105,7 @@ a {color: #4B58A6;}
     #kpcc-header header {padding:0 20px 15px;}
     #kpcc-header header h3#site-title {width:180px; margin:0 auto;}
     body.minimal #kpcc-header .span4 {display:none;}
+    body.minimal #kpcc-header .header-links-row {display:none;}
 }
 
 /* headlines for Large desktop */
