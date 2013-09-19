@@ -49,12 +49,6 @@ jqueryNoConflict(document).ready(function() {
             }
         });
 
-        /*
-        setTimeout(function() {
-            MapsLib.uncacheTiles();
-        }, 5000);
-        */
-
     });
 
 	jqueryNoConflict('#content-background').click(function(){
@@ -70,15 +64,12 @@ jqueryNoConflict(document).ready(function() {
 	});
 });
 
-
     // when user submit button is clicked
     function userSubmit(){
-        jqueryNoConflict('#data-intro').hide();
         jqueryNoConflict('#data-user-submit').show();
     };
 
     // return to main view
     function mapIntro(){
-        jqueryNoConflict('#data-intro').show();
         jqueryNoConflict('#data-user-submit').hide();
     };

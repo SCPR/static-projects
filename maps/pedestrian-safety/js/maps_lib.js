@@ -21,7 +21,6 @@ var MapsLib = {
     userContribTableId: "1RvesiAIGe14Gw3w7zjQm_2NBlZLl5EBSstdvf6E",
     userContribLocationColumn: "Location",
 
-
     //userContribTableId: "1L_k1wgUIDJFXX6-bLcCnj5eap1LT5QBNnc5qpmw",
     //userContribLocationColumn: "geocoded_location",
 
@@ -162,7 +161,7 @@ var MapsLib = {
                 where:  whereClause
             },
             suppressInfoWindows: true,
-            styleId: 2,
+            styleId: 4,
             templateId: 2
         });
 
@@ -279,7 +278,7 @@ var MapsLib = {
         if (numRows == 1)
             name = MapsLib.recordName;
         $( "#result_count" ).fadeOut(function() {
-            $( "#result_count" ).html(MapsLib.addCommas(numRows) + " " + name + " found");
+            $( "#result_count" ).html(MapsLib.addCommas(numRows) + " " + name);
         });
         $( "#result_count" ).fadeIn();
     },
