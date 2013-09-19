@@ -1,0 +1,101 @@
+/* Styles for most-dangerous-intersections-in-los-angeles */
+
+#data-intro {width: 100%; height: 100%; margin: 10px 0;}
+
+#data-map-info {width: 100%; height: 100%; margin: 10px 0;}
+
+#data-user-submit {width: 100%; height: 100%; margin: 10px 0; display: none;}
+
+#data-map-canvas {width: 100%; height: 600px; margin: 10px 0 10px 0;}
+
+#data-legend {height: 25px;}
+
+#data-legend-items {margin: 0 0 0 0; height: 25px; }
+
+#data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 40px;}
+
+#data-legend-items li.city-makeover {height: 25px; background-image: url(../images/green.png); background-repeat: no-repeat; background-position: 0 0;}
+
+#data-legend-items li.user-contrib {height: 25px; background-image: url(../images/red.png); background-repeat: no-repeat; background-position: 0 0;}
+
+.container-fluid {max-width: 1200px; margin: 0 auto;}
+
+.well .input-block-level {width: 100%;}
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {font-weight: normal; line-height: 1; color: #2b2b2b;}
+
+#content-explainer {margin: -5px auto 25px auto;}
+
+#content-map-canvas {width: 100%; height: 795px;}
+
+#filters {width: 90%; background: rgba(241, 122, 49, 0.2); padding: 2% 5% 2% 5%;}
+
+.alert-info {background: #f7f7f7; border-color: #f7f7f7; color: #2B2B2B; text-align: center; font-weight: bold;}
+
+.filter-box {height: 15px; width: 15px; display: inline-block; *border-right-width: 2px; *border-bottom-width: 2px; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -webkit-background-clip: padding-box; -moz-background-clip: padding; background-clip: padding-box;}
+
+.label-yellow, .filter-yellow {background-color: #FBF358;}
+
+.label-green, .filter-green {background-color: #00E13C;}
+
+.label-red, .filter-red {background-color: #FB6353;}
+
+.label-red, .filter-red {background-color: #FB6353;}
+
+.label-blue, .filter-blue { background-color: #5781FC; }
+
+canvas {-ms-touch-action: double-tap-zoom;}
+
+.slider-filter {height: auto; margin: 15px 0 35px 0;}
+
+#content-background {display: none; position: fixed; height: 100%; width: 100%; top: 0; left: 0; background: #000000; z-index: 1;}
+
+#content-display {display: none; position: fixed; top: 0; left: 0; background: #f7f7f7; z-index: 10; height: auto; max-width: 30%; color: #2b2b2b; padding: 2%; -moz-border-radius: 2%; -webkit-border-radius: 2%; border-radius: 2%; -khtml-border-radius: 2%;}
+
+#content-display .label {padding: 2px 20px; line-height: 20px; color: #2b2b2b; text-shadow: 0 0 0 rgba(0,0,0,0.25);}
+
+#close {margin: 0; cursor: pointer;}
+
+ul.chartlist {padding: 0; margin: 0 0 10px 0;}
+
+.chartlist {border-top: 1px solid #999;}
+
+.chartlist li {position: relative; display: block; _zoom: 1; background: #999; border-bottom: 1px solid #999;}
+
+.chartlist li a {width: 100%; color: #2b2b2b; display: block; padding: 0.4em 4.5em 0.4em 0.5em; position: relative; z-index: 2; font-weight: bold;}
+
+.chartlist li a:hover {text-decoration: none; cursor: default;}
+
+.chartlist .index {position: absolute; top: 0; left: 0; height: 100%;}
+
+.chartlist .california-bridges {background: #99D594;}
+
+.chartlist .national-bridges {background: #FC8D59;}
+
+.table-striped thead th {background: #999; color: #2b2b2b;}
+
+/* -- media queries -- */
+/* adjust headers for smaller devices */
+@media screen and (max-width: 767px) {
+
+}
+
+/* headlines for content-display desktop */
+@media (min-width: 980px) {
+
+}
+
+/* headlines for Portrait tablet to landscape and desktop */
+@media (min-width: 500px) and (max-width: 979px) {
+    #content-map-canvas {width: 96%; height: 500px; margin: 0 2% 0 2%;}
+    #content-background {display: none; position: fixed;}
+    #content-display {max-width: 80%;}
+
+}
+
+/* headlines for Landscape phones and down */
+@media (max-width: 499px) {
+    #content-map-canvas {width: 96%; height: 500px; margin: 0 2% 0 2%;}
+    #content-background {display: none; position: fixed;}
+    #content-display {max-width: 80%;}
+}
