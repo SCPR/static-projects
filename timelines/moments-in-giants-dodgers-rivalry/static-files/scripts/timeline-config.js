@@ -22,7 +22,7 @@ $(document).ready(function() {
         defaultExpansion: 'expanded',
 
         // groupSegmentByYear or groupSegmentByDecade
-        groupFunction: 'groupSegmentByYear',
+        groupFunction: 'groupSegmentByDecade',
 
         // adjust timeline width
         width: '75%'
