@@ -7,6 +7,7 @@ function embedBox() {
 
 $(document).ready(function() {
 
+/*
     $('#data-visuals').verticalTimeline({
 
         // spreadsheet key
@@ -27,27 +28,27 @@ $(document).ready(function() {
         // adjust timeline width
         width: '75%'
     });
+*/
 
-/*
-    $.getJSON('static-files/data/dorner_display_sheet_timeline.json', function(data) {
+    $.getJSON('static-files/data/moments-in-giants-godgers-rivalry_timeline.json', function(data) {
         $('#data-visuals').verticalTimeline({
 
             data: data,
 
             // newest or oldest
-            defaultDirection: 'newest',
+            defaultDirection: 'oldest',
 
             // collapsed or expanded
             defaultExpansion: 'expanded',
 
             // groupSegmentByYear or groupSegmentByDecade
-            groupFunction: 'groupSegmentByYear',
+            groupFunction: 'groupSegmentByDecade',
 
             // adjust timeline width
-            width: '65%'
+            width: '75%'
 
         });
     });
-*/
+
 
 });
