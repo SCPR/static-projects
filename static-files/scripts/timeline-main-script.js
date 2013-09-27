@@ -107,7 +107,7 @@
 
       groups[id] = {
         id: id,
-        groupDisplay: id + '0\'s',
+        groupDisplay: id + '0\s',
         timestamp: (direction == 'newest') ?
           Date.parse('December 31, ' + id + '9') :
           Date.parse('January 1, ' + id + '0'),
