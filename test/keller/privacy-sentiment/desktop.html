@@ -1,0 +1,322 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+
+<title>How Single & How Happy Are You? | WNYC</title>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery.url.min.js"></script>
+<script src="js/handlebars-1.0.0.beta.6.js"></script>
+<script src="http://project.wnyc.org/assets/js/buttons.js"></script>
+<script src="http://project.wnyc.org/assets/js/miso.ds.deps.ie.min.0.2.1.js"></script>
+<script src="http://project.wnyc.org/assets/js/highcharts.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css' />
+
+  <script type="text/javascript">var _sf_startpt=(new
+  Date()).getTime();
+  
+  </script>
+  
+<link rel="stylesheet" href="css/dropdown.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="css/jquery.alerts.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="css/smoothness/jquery-ui-1.8.23.custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="http://project.wnyc.org/assets/css/embed.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css"/>
+<link rel="stylesheet" href="css/embed.css" type="text/css"/>
+
+<!--[if IE 7]>
+<link rel="stylesheet" href="css/style-ie7.css" type="text/css"/>
+<![endif]-->
+
+<!--[if IE 8]>
+<link rel="stylesheet" href="css/style-ie8.css" type="text/css"/>
+<![endif]-->
+
+
+<meta property="og:title" content="How Single & How Happy Are You?" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://project.wnyc.org/privacy-sentiment/index.html" />
+<meta property="og:image" content="http://project.wnyc.org/privacy-sentiment/img/illo_021313.png" />
+</head>
+
+
+
+<script>
+
+var basemap_location = "TK";
+var embedmap_location = "http://project.wnyc.org/privacy-sentiment/";
+var embed_size = 750;
+
+
+</script>
+
+<!-- Start Google Analytic Code --> 
+<script type="text/javascript">
+
+ var _gaq = _gaq || [];
+ _gaq.push(['_setAccount', 'UA-283599-23']);
+ _gaq.push(['_trackPageview']);
+
+ (function() {
+   var ga = document.createElement('script'); ga.type =
+'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+ })();
+
+</script>
+<!-- End Google Analytic Code -->
+
+</head> 
+
+
+<body>
+
+<script src="js/bootstrap.min.js"></script>
+<!-- MAP TOP -->
+
+    
+<div class="container">
+<div id="map_body">
+    <div id="header">
+    <div id="titleline">
+        <div id="headerimg">
+            <a href="http://www.wnyc.org" target="_blank"><img src="http://project.wnyc.org/assets/img/header_logo.png"></a>
+        </div>
+        <div id="headertitle">
+            How Single &amp; How Happy Are You?
+        </div>
+    </div>
+<div id="social">
+    <iframe id="facebook_button" src="http://www.facebook.com/plugins/like.php?app_id=199400463461226&amp;href=http://project.wnyc.org/privacy-sentiment/&amp;send=false&amp;layout=button_count&amp;width=56&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;" scrolling="no" frameborder="0" style="border:none;margin-right: 5px; overflow:hidden; width:48px;height:21px;float: right" allowTransparency="true"></iframe>
+    <div id="twitter_button" style="float:right; width:56px; overflow:hidden; margin-right: 5px;">
+          <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://project.wnyc.org/privacy-sentiment/" data-count="none" data-text="Single or not? Happy or not? We're mapping your relationship @WNYC">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    </div>
+
+
+</div>
+
+    <div id="headertext">
+    Tell us how you feel about your relationship status. Click a dot to add yourself, or hover over one to see see what others have said.
+    
+    </div>
+
+    </div>
+    <!-- THE MAP -->
+    <div id="canvas">
+        <div id="topaxislabel" class="axislabel">Single </div>
+        <div id="bottomaxislabel" class="axislabel">Not Single </div>
+        <div id="leftaxislabel" class="axislabel"><div id="leftinnerdiv">Not enjoying it</div></div>
+        <div id="rightaxislabel" class="axislabel"><div id="rightinnerdiv">Enjoying it</div></div>
+        <div id="tooltip" style="display:none">
+            <div id="clickinstructions">
+                Click point to add yourself 
+            </div>
+
+        </div>
+
+        <div id="chart-container">
+        </div>
+    <div id="theform" style="display:none">
+        <form action="https://docs.google.com/spreadsheet/formResponse?formkey=dDh3T3NFTlNNREoycUJpRnlkS0s0MlE6MA" method="POST" id="ss-form" target="hidden_iframe" onsubmit='return validate_form();'>
+        <input type="hidden" name="entry.0.single" id="form-cell" class="forminput" />
+        <div class="row">
+        <label>First name</label>
+        <input type="text" name="entry.4.single" id="form-name" class="forminput" /> <br />
+        </div>
+        <div class="row">
+        <label>Your gender</label>
+        <input type="text" name="entry.5.single" id="form-gender" class="forminput" /> <br />
+        </div>
+        <div class="row">
+        <label>Zip code *</label>
+        <input type="text" name="entry.3.single" id="form-location" class="forminput" /> <br />
+        </div>
+        <div class="row">
+        <label>Email *</label>
+        <input type="text" name="entry.2.single" id="form-contact" class="forminput" /> <br />
+        </div>
+        <div class="formrow">
+        <label>Remarks</label>
+        <div id="charcounter">160 chars</div>
+        </div>
+
+        <textarea class="forminput" name="entry.1.single" id="form-comment" maxlength="160"></textarea> <br />
+        <div id="formexplain">
+        * Your name and remarks (max 160 characters, please) will be visible, subject to moderation. Your email address and zip code won't be displayed.
+        </div>
+        <input type="hidden" name="pageNumber" value="0">
+        <input type="hidden" name="backupCache" value>
+        <div id="cancelbutton">
+            <a href="javascript:void(0);" id="cancellink">Cancel</a>
+        </div>
+        <input type="submit" name="submit" value="Submit" alt="Submit" id="formsubmit">
+
+        </form>
+    </div>
+    </div>
+        
+
+    <div id="footerbar">
+        <div id="datalink" class="footerbutton footerbutton-left">
+            <a href="javascript:dataBox();">
+            <img src="http://project.wnyc.org/assets/img/tools_data_off.png" ></img>
+            </a>
+        </div>
+        <div id="fullscreenlink" class="footerbutton footerbutton-left">
+            <a href="http://project.wnyc.org/privacy-sentiment/index.html" target="_blank">
+            <img src="http://project.wnyc.org/assets/img/tools_fullscreen_off.png" ></img>
+            </a>
+        </div>
+        <div id="embedlink" class="footerbutton footerbutton-left">
+            <a href="javascript:embedBox();">
+            <img src="http://project.wnyc.org/assets/img/tools_embed_off.png" ></img>
+            </a>
+        </div>
+        <div id="creditlink" class="footerbutton footerbutton-right">
+            <a href="javascript:creditBox();">
+            <img src="http://project.wnyc.org/assets/img/tools_credits_off.png" ></img>
+            </a>
+        </div>
+        <!-- <div id="storylink" class="footerbutton footerbutton-right">
+            <a href="http://project.wnyc.org/privacy-sentiment/" target="_blank">
+            <img src="http://project.wnyc.org/assets/img/tools_story_off.png" ></img>
+            </a>
+        </div> -->
+    </div>
+    <div id="creditbox" class="popupbox">
+        <img src="http://project.wnyc.org/assets/img/header_credits.png"></img>
+        <div class="boxhed">Made by</div>
+        <div class="boxtext">Louise Ma, Steven Melendez, Stephen Reader and John Keefe / WNYC. Follow us @<a href="https://twitter.com/datanews" target="_blank">datanews</a> or email us <a href="mailto:jkeefe@wnyc.org?subject=Chart_Feedback">here</a>.<br /></div>
+		<div class="boxtext">
+		The WNYC Data News Team is part of a public radio station supported by audience contributions. If you like what you see, consider <a href="https://pledge3.wnyc.org/epledge/wnyc-data-news/?utm_source=wnyc&utm_medium=button&utm_campaign=pledge&utm_content=datanews" target="_blank">supporting our work</a>.</div>
+	<div class="boxhed">Built with</div>
+	<div class="boxtext"><a href="http://www.google.com/google-d-s/forms/" target="_blank">Google Forms</a> and <a href="http://www.highcharts.com" target="_blank">Highcharts.</a></div>
+        <!-- <div class="boxhed">Updated</div>
+        <div class="boxtext">Feb 13, 2012</div> -->
+        <div class="closebutton ">
+            <img src="http://project.wnyc.org/assets/img/button_close_off.png" id="closecreditbox"></img>
+        </div>
+
+    </div>
+    <div id="embedbox" class="popupbox">
+        <img src="http://project.wnyc.org/assets/img/header_embed.png"></img>
+        <div class="boxhed">Embed this project</div>
+        <div class="boxtext" id="embedcode"></div>
+        <div class="closebutton">
+            <img src="http://project.wnyc.org/assets/img/button_close_off.png" id="closeembedbox"></img>
+        </div>
+    </div>
+    <div id="feedbackbox" class="popupbox">
+        <div class="boxhed">Give us feedback</div>
+        <div class="boxtext" id="embedcode">
+        Love it? Hate it? <a href="mailto:jkeefe@wnyc.org?subject=Chart_Feedback">Email us</a> with your thoughts!
+        
+        </div>
+        <div class="closebutton">
+            <img src="http://project.wnyc.org/assets/img/button_close_off.png" id="closeembedbox"></img>
+        </div>
+    </div>
+
+    <div id="databox" class="popupbox">
+        <img src="http://project.wnyc.org/assets/img/header_data.png"></img>
+        <div class="boxhed">Data from</div>
+        <div class="boxtext">
+	 	Everyone who participates.
+        </div>
+        <div class="closebutton">
+            <img src="http://project.wnyc.org/assets/img/button_close_off.png" id="closedatabox"></img>
+        </div>
+    </div>
+    <div id="errorbox" class="popupbox">
+        <div  id="errorname">Error</div>
+        <div  id="errortext">Error</div>
+        <br />
+        <div class="errorclose button">
+            <img src="http://project.wnyc.org/assets/img/button_close_off.png" id="closeerrorbox"></img>
+        </div>
+    </div>
+
+        
+
+    </div>
+
+
+
+
+
+    </div>
+    <iframe name = "hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+</div>
+</div>
+<!-- Put legend here -->
+
+<!-- End Box (aka dropdown) -->
+
+
+<!-- BEGIN MAP FOOTER -->
+<!-- END MAP FOOTER -->
+
+<!-- Begin Chartbeat Code -->
+<script type="text/x-handlebars-template" id="hover-template">
+</script>
+<script type="text/x-handlebars-template" id="click-template">
+    <div class="commentpop">
+        <div class="commentname">{{name}}</div>
+        <div class="commentbody">{{body}}</div>
+        <div class="commentfooter">
+            <div class="commentcounter">
+            {{num}} of {{count}}
+            <a id="nextbutton" href="javascript:void(0);">next</a>
+            </div>
+        </div>
+        <div id="addfooter">
+            <div id="addbutton">
+            </div>
+        </div>
+
+    </div>
+</script>
+
+<script type="text/x-handlebars-template" id="tooltip-template">
+            <div id="clickinstructions">
+                Click point to add yourself 
+            </div>
+            <div class="commentpop">
+                <div class="commentname">{{name}}</div>
+                <div class="commentbody">{{body}}</div>
+                <div class="commentfooter">
+                    <div class="commentcounter">
+                    {{num}} of {{count}}
+                    </div>
+
+            </div>
+</script>
+<script src="js/script.js">
+</script>
+
+<script type="text/javascript">
+var _sf_async_config={uid:4030,domain:"project.wnyc.org"};
+(function(){
+ function loadChartbeat() {
+   window._sf_endpt=(new Date()).getTime();
+   var e = document.createElement('script');
+   e.setAttribute('language', 'javascript');
+   e.setAttribute('type', 'text/javascript');
+   e.setAttribute('src',
+      (("https:" == document.location.protocol) ?
+"https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" :
+"http://static.chartbeat.com/") +
+      "js/chartbeat.js");
+   document.body.appendChild(e);
+ }
+ var oldonload = window.onload;
+ window.onload = (typeof window.onload != 'function') ?
+    loadChartbeat : function() { oldonload(); loadChartbeat(); }; })();
+</script>
+<!-- End Chartbeat Code -->
+
+</body> 
+</html>

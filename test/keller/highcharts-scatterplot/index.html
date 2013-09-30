@@ -1,0 +1,120 @@
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://projects.scpr.org/static/static-files/scripts/highcharts.js"></script>
+<script>
+    var jqueryNoConflict = jQuery;
+    var configData = configData || {};
+
+    // pull data from spreadsheet onload
+    jqueryNoConflict(document).ready(function(){
+
+
+        var charts = [new Highcharts.Chart(
+            createScatterPlot('container', 'scatter', dataArray)
+        )];
+
+    });
+
+    var dataArray = [{
+        name: 'Average Cost',
+        color: '#000000',
+        data: [[17, 77641.47059], [23, 37641.47059]]
+
+    }]
+
+
+    // create an instance of the chart
+    function createScatterPlot(containerToRenderTo, chartType, chartDataArray){
+
+        var configChart = {};
+
+        configChart.chart = {
+            renderTo: containerToRenderTo,
+            backgroundColor: '#ffffff',
+            type: chartType,
+            zoomType: 'xy',
+        };
+
+        configChart.title = {
+            text: 'titleText'
+        };
+
+        configChart.subtitle = {
+            text: 'subtitleText'
+        };
+
+        configChart.xAxis = [{
+            title: {
+                enabled: true,
+                text: 'Average cost',
+            },
+            startOnTick: true,
+            endOnTick: true,
+            showLastLabel: true
+        }];
+
+        configChart.yAxis = [{
+            title: {
+                enabled: true,
+                text: 'Number of discharges',
+            },
+        }];
+
+        configChart.tooltip = {
+            formatter: function(){
+                return ''+ this.series.name +': '+ Highcharts.numberFormat(this.y, 2, '.');
+            }
+        };
+
+        configChart.legend = {
+            enabled: false,
+            layout: 'horizontal',
+            align: 'center',
+            verticalAlign: 'bottom',
+            x: 100,
+            y: 0,
+            floating: false,
+            borderWidth: 1,
+            backgroundColor: '#FFFFFF',
+            shadow: true
+        };
+
+        configChart.plotOptions = {
+            scatter: {
+                marker: {
+                    radius: 5,
+                    states: {
+                        hover: {
+                            enabled: true,
+                            lineColor: 'rgb(100,100,100)'
+                        }
+                    }
+                },
+                states: {
+                    hover: {
+                        marker: {
+                            enabled: false
+                        }
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<b>{series.name}</b><br>',
+                    pointFormat: '{point.x} cm, {point.y} kg'
+                }
+            }
+        };
+
+        configChart.credits = {
+            enabled: true,
+            text: 'KPCC'
+        };
+
+        configChart.series = chartDataArray;
+
+        return configChart;
+
+    };
+    //end function
+
+</script>
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>

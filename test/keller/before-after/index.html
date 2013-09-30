@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="utf-8">
+<title>Before/after photos: Blizzard hits eastern Iowa</title>
+
+<style>
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 15px;
+	line-height: 18px;
+}
+
+.clk-tab {
+	background: transparent;
+	color: black;
+	display: block;
+	font-weight: bold;
+	padding: 0 4px;
+	position: relative;
+	text-align: center;
+	z-index: 4;
+	margin-bottom: 9px;
+	font-size: 13px;
+}
+
+.close {
+	font-weight: bold;
+	font-size: 13px;
+}
+
+span.popup {
+	cursor:pointer !important
+}
+
+.sidebyside {
+	z-index:1000;
+	position:absolute !important;
+	left:10px !important;
+	background:white !important;
+	box-shadow:0 0 6px #000000 !important;
+	display:none;
+	border:1px solid black !important;
+}
+.sidebyside p {
+	color:black !important;
+	cursor:pointer !important;
+}
+
+.sidebyside td {
+	padding:10px 0 0 0 !important;
+	width:50% !important;
+	border:none !important;
+	text-align:center !important;
+}
+
+.trackMe img.beforeafterphotos {
+	top:0 !important;
+	left:0 !important;
+	position:absolute;
+	margin:0 0 15px 0 !important;
+}
+
+</style>
+
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script type="text/javascript" language="JavaScript">
+$(document).ready(function() {
+	$('.trackMe').each(function(){
+		$(this).children("img:last").mousemove(function(e) {
+			var offset = $(this).offset();
+			var xpos = (e.pageX - offset.left);
+   			var ypos = (e.pageY - offset.top);
+			//now to get the first child image width..
+			var thisImage = $(this);
+			var thisWidth = thisImage.width();
+			var pct = Math.round((xpos/thisWidth)*100)/100;
+			var ipct = Math.abs(Math.round(((xpos-thisWidth)/thisWidth)*100)/100);
+			thisImage.css({ 'opacity' : ipct });
+		});
+	});
+});
+
+$(document).ready(function() {
+	$(".popup").mousedown(function(){
+		var parallelID = $(this).attr('parallel');
+		$("#"+parallelID).show("fast");
+	});
+	$(".close").mousedown(function(){
+		$(".sidebyside").hide("fast");
+	});
+});
+</script>
+</head>
+
+<body>
+<script type='text/javascript' src='http://stats.townnews.com/shared-content/stats/common/tracker.js'></script>
+<script type='text/javascript'>
+<!--
+ if (typeof(TNStats_Tracker) !== 'undefined' && typeof(TNTracker) === 'undefined') { TNTracker = new TNStats_Tracker('wcfcourier.com'); TNTracker.setTrackerDomain('stats.townnews.com'); TNTracker.trackPageView(); }
+// -->
+</script>
+<div style="width:600px;">
+	<p>We asked our fans on <a href="http://www.facebook.com/wcfcourier" target="_blank">Facebook</a> to submit photos taken before Wednesday night's blizzard hit and after the storm had passed. We used their images to make the interactive below.</p>
+
+    <p><strong>Move your mouse across the photos to reveal the before and after photos.</strong></p>
+
+    <br />
+
+    <p>- Photos of Cedar Falls, Iowa courtesy of Brian Wayne Herzog.</p>
+    <div>
+    	<div class="clk-tab">
+        	<span class="popup" id="overview" parallel="overview-info05">
+            	Click for side-by-side photos
+         	</span>
+     	</div>
+	</div>
+
+    <div style="position:relative; width:600px; height:460px;" class="trackMe">
+
+        <img src="http://a.scpr.org/i/fba19b1566bffd092b4305ebf9dd7a68/56578-wide.jpg" class="beforeafterphotos" />
+		<img src="http://a.scpr.org/i/d78556471c85cd6b9fd753dcb4a4b714/56675-wide.jpg" class="beforeafterphotos" />
+
+		<div class="sidebyside" style="top:45px" id="overview-info05">
+			<table cellpadding="5">
+            	<tr><td>
+                	<img src="http://a.scpr.org/i/fba19b1566bffd092b4305ebf9dd7a68/56578-wide.jpg" width="285" />
+           		</td><td>
+					<img src="http://a.scpr.org/i/d78556471c85cd6b9fd753dcb4a4b714/56675-wide.jpg" width="285" />
+				</td></tr>
+				<tr><td colspan="2" align="center">
+            		<p class="close">close window</p>
+              	</td></tr>
+			</table>
+     	</div>
+  	</div>
+
+    <p>- Photos of Monona, Iowa courtesy of Sonja Guyer Hillman, who said she measured 10 inches of snow on the table.</p>
+    <div>
+    	<div class="clk-tab">
+        	<span class="popup" id="overview" parallel="overview-info03">
+            	Click for side-by-side photos
+         	</span>
+     	</div>
+	</div>
+
+    <div style="position:relative; width:600px; height:375px;" class="trackMe">
+
+        <img src="beforeafter03b.jpg" class="beforeafterphotos" />
+		<img src="beforeafter03a.jpg" class="beforeafterphotos" />
+
+		<div class="sidebyside" style="top:45px" id="overview-info03">
+			<table cellpadding="5">
+            	<tr><td>
+                	<img src="beforeafter03a.jpg" width="285" />
+           		</td><td>
+					<img src="beforeafter03b.jpg" width="285" />
+				</td></tr>
+				<tr><td colspan="2" align="center">
+            		<p class="close">close window</p>
+              	</td></tr>
+			</table>
+     	</div>
+  	</div>
+
+    <p>- Photos of Cedar Falls, Iowa courtesy of Georgia McBroom. Photo was taken on Lilac Lane. The before photo was taken around 2:30 p.m. on Wednesday. The after photo was taken around 10 a.m. Thursday.</p>
+    <div>
+    	<div class="clk-tab">
+        	<span class="popup" id="overview" parallel="overview-info08">
+            	Click for side-by-side photos
+         	</span>
+     	</div>
+	</div>
+
+    <div style="position:relative; width:600px; height:500px;" class="trackMe">
+
+        <img src="beforeafter08b.jpg" class="beforeafterphotos" />
+		<img src="beforeafter08a.jpg" class="beforeafterphotos" />
+
+		<div class="sidebyside" style="top:65px" id="overview-info08">
+			<table cellpadding="5">
+            	<tr><td>
+                	<img src="beforeafter08a.jpg" width="285" />
+           		</td><td>
+					<img src="beforeafter08b.jpg" width="285" />
+				</td></tr>
+				<tr><td colspan="2" align="center">
+            		<p class="close">close window</p>
+              	</td></tr>
+			</table>
+     	</div>
+  	</div>
+
+    <p>- Photos of Waterloo, Iowa courtesy of Jim Rice. Photo was taken need Greenhill Road and U.S. 218.</p>
+    <div>
+    	<div class="clk-tab">
+        	<span class="popup" id="overview" parallel="overview-info04">
+            	Click for side-by-side photos
+         	</span>
+     	</div>
+	</div>
+
+    <div style="position:relative; width:600px; height:450px;" class="trackMe">
+
+        <img src="beforeafter04b.jpg" class="beforeafterphotos" />
+		<img src="beforeafter04a.jpg" class="beforeafterphotos" />
+
+		<div class="sidebyside" style="top:45px" id="overview-info04">
+			<table cellpadding="5">
+            	<tr><td>
+                	<img src="beforeafter04a.jpg" width="285" />
+           		</td><td>
+					<img src="beforeafter04b.jpg" width="285" />
+				</td></tr>
+				<tr><td colspan="2" align="center">
+            		<p class="close">close window</p>
+              	</td></tr>
+			</table>
+     	</div>
+  	</div>
+
+    <p>- Photo of rural Iowa courtesy of Adam Ring. The location is about four miles west of the UNI-Dome. The before photo was taken Wednesday at 3:32 p.m. The after photo was taken Thursday at 4:55 p.m.</p>
+    <div>
+    	<div class="clk-tab">
+        	<span class="popup" id="overview" parallel="overview-info07">
+            	Click for side-by-side photos
+         	</span>
+     	</div>
+	</div>
+
+    <div style="position:relative; width:600px; height:490px;" class="trackMe">
+
+        <img src="beforeafter07b.jpg" class="beforeafterphotos" />
+		<img src="beforeafter07a.jpg" class="beforeafterphotos" />
+
+		<div class="sidebyside" style="top:45px" id="overview-info07">
+			<table cellpadding="5">
+            	<tr><td>
+                	<img src="beforeafter07a.jpg" width="285" />
+           		</td><td>
+					<img src="beforeafter07b.jpg" width="285" />
+				</td></tr>
+				<tr><td colspan="2" align="center">
+            		<p class="close">close window</p>
+              	</td></tr>
+			</table>
+     	</div>
+  	</div>
+
+    <p>- Photos courtesy of Adam DeLancey.</p>
+    <div>
+    	<div class="clk-tab">
+        	<span class="popup" id="overview" parallel="overview-info10">
+            	Click for side-by-side photos
+         	</span>
+     	</div>
+	</div>
+
+    <div style="position:relative; width:600px; height:475px;" class="trackMe">
+
+        <img src="beforeafter10b.jpg" class="beforeafterphotos" />
+		<img src="beforeafter10a.jpg" class="beforeafterphotos" />
+
+		<div class="sidebyside" style="top:65px" id="overview-info10">
+			<table cellpadding="5">
+            	<tr><td>
+                	<img src="beforeafter10a.jpg" width="285" />
+           		</td><td>
+					<img src="beforeafter10b.jpg" width="285" />
+				</td></tr>
+				<tr><td colspan="2" align="center">
+            		<p class="close">close window</p>
+              	</td></tr>
+			</table>
+     	</div>
+  	</div>
+
+
+    <p>- Photos of Janesville, Iowa courtesy of Bridget Primus.</p>
+    <div>
+    	<div class="clk-tab">
+        	<span class="popup" id="overview" parallel="overview-info">
+            	Click for side-by-side photos
+         	</span>
+     	</div>
+	</div>
+
+    <div style="position:relative; width:600px; height:540px;" class="trackMe">
+
+        <img src="beforeafter01b.jpg" class="beforeafterphotos" />
+		<img src="beforeafter01a.jpg" class="beforeafterphotos" />
+
+		<div class="sidebyside" style="top:85px" id="overview-info">
+			<table cellpadding="5">
+            	<tr><td>
+                	<img src="beforeafter01a.jpg" width="285" />
+           		</td><td>
+					<img src="beforeafter01b.jpg" width="285" />
+				</td></tr>
+				<tr><td colspan="2" align="center">
+            		<p class="close">close window</p>
+              	</td></tr>
+			</table>
+     	</div>
+  	</div>
+
+    <p>- Photos of Waterloo, Iowa courtesy of Shawn Schroeder. The photos were taken on Osage Road, between Skyview and Elk Run roads.</p>
+    <div>
+    	<div class="clk-tab">
+        	<span class="popup" id="overview" parallel="overview-info09">
+            	Click for side-by-side photos
+         	</span>
+     	</div>
+	</div>
+
+    <div style="position:relative; width:600px; height:532px;" class="trackMe">
+
+        <img src="beforeafter09b.jpg" class="beforeafterphotos" />
+		<img src="beforeafter09a.jpg" class="beforeafterphotos" />
+
+		<div class="sidebyside" style="top:85px" id="overview-info09">
+			<table cellpadding="5">
+            	<tr><td>
+                	<img src="beforeafter09a.jpg" width="285" />
+           		</td><td>
+					<img src="beforeafter09b.jpg" width="285" />
+				</td></tr>
+				<tr><td colspan="2" align="center">
+            		<p class="close">close window</p>
+              	</td></tr>
+			</table>
+     	</div>
+  	</div>
+
+    <p>- Photos of Waterloo, Iowa courtesy of Shannon Fleming. The before photo was taken at 3p.m. on Wednesday. The after photo was taken at 7 a.m. on Thursday.</p>
+    <div>
+    	<div class="clk-tab">
+        	<span class="popup" id="overview" parallel="overview-info02">
+            	Click for side-by-side photos
+         	</span>
+     	</div>
+	</div>
+
+    <div style="position:relative; width:600px; height:470px; margin-left: 120px;" class="trackMe">
+
+        <img src="beforeafter02b.jpg" class="beforeafterphotos" />
+		<img src="beforeafter02a.jpg" class="beforeafterphotos" />
+
+		<div class="sidebyside" style="top:75px" id="overview-info02">
+			<table cellpadding="5">
+            	<tr><td>
+                	<img src="beforeafter02a.jpg" width="165" />
+           		</td><td>
+					<img src="beforeafter02b.jpg" width="165" />
+				</td></tr>
+				<tr><td colspan="2" align="center">
+            		<p class="close">close window</p>
+              	</td></tr>
+			</table>
+     	</div>
+  	</div>
+
+    <p>- Photos of Waterloo, Iowa courtesy of Peggy Mineral Barker:</p>
+    <div>
+    	<div class="clk-tab">
+        	<span class="popup" id="overview" parallel="overview-info11">
+            	Click for side-by-side photos
+         	</span>
+     	</div>
+	</div>
+
+    <div style="position:relative; width:600px; height:470px;" class="trackMe">
+
+        <img src="beforeafter11b.jpg" class="beforeafterphotos" />
+		<img src="beforeafter11a.jpg" class="beforeafterphotos" />
+
+		<div class="sidebyside" style="top:85px" id="overview-info11">
+			<table cellpadding="5">
+            	<tr><td>
+                	<img src="beforeafter11a.jpg" width="285" />
+           		</td><td>
+					<img src="beforeafter11b.jpg" width="285" />
+				</td></tr>
+				<tr><td colspan="2" align="center">
+            		<p class="close">close window</p>
+              	</td></tr>
+			</table>
+     	</div>
+  	</div>
+
+    <p>- Photos of Dubuque, Iowa courtesy of Dave Lynn.</p>
+    <div>
+    	<div class="clk-tab">
+        	<span class="popup" id="overview" parallel="overview-info12">
+            	Click for side-by-side photos
+         	</span>
+     	</div>
+	</div>
+
+    <div style="position:relative; width:600px; height:370px; margin-left: 130px;" class="trackMe">
+
+        <img src="beforeafter12b.jpg" class="beforeafterphotos" />
+		<img src="beforeafter12a.jpg" class="beforeafterphotos" />
+
+		<div class="sidebyside" style="top:15px" id="overview-info12">
+			<table cellpadding="5">
+            	<tr><td>
+                	<img src="beforeafter12a.jpg" width="165" />
+           		</td><td>
+					<img src="beforeafter12b.jpg" width="165" />
+				</td></tr>
+				<tr><td colspan="2" align="center">
+            		<p class="close">close window</p>
+              	</td></tr>
+			</table>
+     	</div>
+  	</div>
+
+</div>
+</body>
+</html>

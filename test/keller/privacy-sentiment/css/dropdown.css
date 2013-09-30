@@ -1,0 +1,26 @@
+#dropdown {
+    position: absolute;
+    bottom:40px;
+    right:10px;
+    background-color:#FFF;
+    padding:6px;
+    font-family: Arial, sans-serif;
+    font-size:12px;
+    border: 2px outset #DFF2FF;
+    line-height:1.3em;
+}
+
+#dropdown h1 {font-size:18px; margin:0 0 4px 0;}
+#dropdown h2 {font-size:13px; margin:0 0 6px 0;}
+
+#dropdown form {margin: 6px 4px 4px 0px;}
+
+#dropdown td {clear:both; height:10px;}
+
+#dropdown .segment1 {background-color:#FFFF55; float:left; height:19px; width:20px; opacity:1.0; margin:0; border-style:solid;
+border-width:1px;}
+#dropdown .segment2 {background-color:#E67A00; float:left; height:19px; width:20px; opacity:0.75; margin:0;}
+#dropdown .segment3 {background-color:#FF6655; float:left; height:19px; width:20px; opacity:1.0; margin:0;}
+#dropdown .segment4 {height:19px; width:20px; margin:0;}
+#dropdown .segment5 {background-color:#48C8D6; float:left; height:19px; width:20px; opacity:.75; margin:0;}
+#dropdown .segment6 {background-color:#6EB0C8; float:left; height:19px; width:20px; opacity:.75; margin:0;}

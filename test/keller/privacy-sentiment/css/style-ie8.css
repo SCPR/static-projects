@@ -1,0 +1,17 @@
+#leftinnerdiv  {
+    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	position: absolute;
+	margin-top: -110px;
+	margin-left: 240px;
+} 
+
+
+    
+#rightinnerdiv {
+    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+	position: absolute;
+	margin-top: -110px;
+	margin-left: 240px;
+} 
+    
+
