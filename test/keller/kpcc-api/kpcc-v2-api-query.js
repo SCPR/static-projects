@@ -36,11 +36,16 @@ var kpccApiDisplay = {
             var full_image = data[i].assets[0]['full']['url']
             var large_image = data[i].assets[0]['large']['url']
             var small_image = data[i].assets[0]['small']['url']
-            var headline = data[i].short_title;
-            var link_path = data[i].permalink;
-            var asset = data[i].thumbnail;
+            var body = data[i].body;
             var byline = data[i].byline;
+            var id = data[i].id;
+            var permalink = data[i].permalink;
+            var public_url = data[i].public_url;
+            var published_at = data[i].published_at;
+            var short_title = data[i].short_title;
             var teaser = data[i].teaser;
+            var thumbnail = data[i].thumbnail;
+            var title = title;
 
             // write data to div
             jqueryNoConflict(kpccApiConfig.contentContainer).append(
@@ -51,7 +56,7 @@ var kpccApiDisplay = {
                         '</div>' +
                         '<div class="span17">' +
                             '<div id="article-list-headline">' +
-                                '<a href=\"' + link_path + '\">' + headline + '</a> (<em>' + byline + '</em>)<br />' +
+                                '<a href=\"' + permalink + '\">' + title + '</a> (<em>' + byline + '</em>)<br />' +
                                 '<p>' + teaser + '</p>' +
                             '</div>' +
                         '</div>' +
