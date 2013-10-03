@@ -252,7 +252,7 @@
         };
 
         configChart.title = {
-            text: 'Charting API scores for the Hispanic in local school districts'
+            text: 'Charting API scores in the Hispanic subgroup in local school districts'
         };
 
         configChart.subtitle = {
