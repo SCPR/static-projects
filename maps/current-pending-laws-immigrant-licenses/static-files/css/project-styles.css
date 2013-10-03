@@ -1,0 +1,9 @@
+#legend table, th, tr, td {border-width: 0px; border-style: solid; border-color: gray; border-collapse: collapse; background-color: white;}
+#legend table {font-size: 12px; width: 100%;}
+#legend th {color: #fff; background-color: #aaa; padding: 5px 5px; border-top: 4px solid #555; font-weight: bold}
+#legend th a {color: #fff;}
+#legend td {padding: 2px; text-align: center;}
+.enacted {background-color: #33A02C;}
+.introduced {background-color: #1F78B4;}
+.passed-one {background-color: #BCBDDC;}
+.denied {background-color: #F03B20;}
