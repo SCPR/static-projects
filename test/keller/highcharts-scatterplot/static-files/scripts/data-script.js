@@ -11,23 +11,22 @@
     var dataArray = [{
         color: '#a2a2a2',
         type: 'line',
-        name: 'API Threashold',
+        name: 'API Threshold',
         data: [[800, 0], [800, 100]],
         showInLegend: false,
         marker: {
             enabled: false
         },
-        states: {
-            hover: {
-                enabled: false
-            }
+        hover: {
+            enabled: false
         }
     }, {
         color: '#a2a2a2',
         type: 'line',
         name: 'Trend',
-        data: [[690, 100], [910, 9.50]],
-        showInLegend: false,
+        visible: false,
+        data: [[625, 100], [925, 0]],
+        showInLegend: true,
         marker: {
             enabled: false
         },
@@ -253,11 +252,11 @@
         };
 
         configChart.title = {
-            text: 'titleText'
+            text: 'Charting API scores for the Hispanic in local school districts'
         };
 
         configChart.subtitle = {
-            text: 'subtitleText'
+
         };
 
         configChart.xAxis = [{
@@ -265,7 +264,7 @@
             max: 925,
             title: {
                 enabled: true,
-                text: 'District 2013 API score',
+                text: 'District\'s 2013 API score',
             },
             startOnTick: true,
             endOnTick: true,
@@ -283,7 +282,13 @@
 
         configChart.tooltip = {
             formatter: function(){
-                return '<strong>' + Highcharts.numberFormat(this.y, 2, '.') + '%</strong> of students in the<br /><strong>' + this.point.name + '</strong><br />school district are in the <br />Hispanic subgroup, and<br />had a 2013 API score of <strong>' + Highcharts.numberFormat(this.x, 0, '.') + '</strong>.';
+                if (this.series.name === 'API Threshold') {
+                    return 'State goal of an API score of 800';
+                } else if  (this.series.name === 'trend') {
+                    return
+                } else {
+                    return 'About <strong>' + Highcharts.numberFormat(this.y, 2, '.') + '%</strong> of students in<br />the <strong>' + this.point.name + '</strong><br />school district are in the <br />Hispanic subgroup, and<br />recorded a 2013 API score<br />of <strong>' + Highcharts.numberFormat(this.x, 0, '.') + '</strong>.';
+                }
             },
             backgroundColor: '#020202',
             style: {
@@ -310,7 +315,7 @@
         configChart.plotOptions = {
             scatter: {
                 marker: {
-                    radius: 5,
+                    radius: 10,
                     symbol: 'circle',
                     states: {
                         hover: {
@@ -319,13 +324,7 @@
                         }
                     }
                 },
-                states: {
-                    hover: {
-                        marker: {
-                            enabled: true
-                        }
-                    }
-                }
+
             }
         };
 
