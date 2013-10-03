@@ -24,8 +24,8 @@
         color: '#a2a2a2',
         type: 'line',
         name: 'Trend',
-        visible: false,
-        data: [[625, 100], [925, 0]],
+        visible: true,
+        data: [[640, 90], [910, 20]],
         showInLegend: true,
         marker: {
             enabled: false
@@ -242,6 +242,8 @@
     // create an instance of the chart
     function createScatterPlot(containerToRenderTo, chartType, chartDataArray){
 
+        console.log(dataArray[1]);
+
         var configChart = {};
 
         configChart.chart = {
@@ -284,8 +286,8 @@
             formatter: function(){
                 if (this.series.name === 'API Threshold') {
                     return 'State goal of an API score of 800';
-                } else if  (this.series.name === 'trend') {
-                    return
+                } else if  (this.series.name === 'Trend') {
+                    return 'X';
                 } else {
                     return 'About <strong>' + Highcharts.numberFormat(this.y, 2, '.') + '%</strong> of students in<br />the <strong>' + this.point.name + '</strong><br />school district are in the <br />Hispanic subgroup, and<br />recorded a 2013 API score<br />of <strong>' + Highcharts.numberFormat(this.x, 0, '.') + '</strong>.';
                 }
@@ -315,7 +317,7 @@
         configChart.plotOptions = {
             scatter: {
                 marker: {
-                    radius: 10,
+                    radius: 8,
                     symbol: 'circle',
                     states: {
                         hover: {
