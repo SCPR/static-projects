@@ -287,7 +287,7 @@
                 if (this.series.name === 'API Threshold') {
                     return 'State goal of an API score of 800';
                 } else if  (this.series.name === 'Trend') {
-                    return 'X';
+                    return false;
                 } else {
                     return 'About <strong>' + Highcharts.numberFormat(this.y, 2, '.') + '%</strong> of students in<br />the <strong>' + this.point.name + '</strong><br />school district are in the <br />Hispanic subgroup, and<br />recorded a 2013 API score<br />of <strong>' + Highcharts.numberFormat(this.x, 0, '.') + '</strong>.';
                 }
