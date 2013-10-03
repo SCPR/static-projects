@@ -1,9 +1,12 @@
+// open congress url
+// http://congress.api.sunlightfoundation.com/legislators?apikey=b717252e9bc44d4ea57321c49e7dd5e8&bioguide_id=G000559&all_legislators=true
+
 var jqueryNoConflict = jQuery;
 var fn = fn || {};
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
-    fn.constructCapitolWordsQuery('&phrase=obamacare');
+    fn.constructCapitolWordsQuery('obamacare');
     fn.retrievePhraseToQuery();
 });
 
@@ -13,7 +16,7 @@ var fn = {
     retrievePhraseToQuery: function(){
         jqueryNoConflict('#phrase-list a').click(function(){
             var phrase = jqueryNoConflict(this).attr('id').replace('_', '+');
-            fn.constructCapitolWordsQuery('&phrase=' + phrase);
+            fn.constructCapitolWordsQuery(phrase);
         });
     },
 
@@ -23,10 +26,11 @@ var fn = {
         var urlStartDate = '&start_date=2013-08-01';
         var urlEndDate = '&end_date=2013-10-30';
         var urlState = '&state=CA';
-        var urlPhrase = phrase;
+        var urlPhrase = '&phrase=' + phrase;
         var urlCallback = '&callback=?';
         var targetUrl = urlPrefix + urlStartDate + urlEndDate + urlState + urlPhrase + urlCallback;
         fn.retriveCapitolWordsData(targetUrl);
+        fn.displayPhraseHeadline(phrase);
     },
 
     retriveCapitolWordsData: function(targetUrl){
@@ -50,11 +54,20 @@ var fn = {
         renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', handlebarsData);
     },
 
+    displayPhraseHeadline: function(phrase) {
+        var adjustedPhrase = phrase.replace('+', ' ');
+        jqueryNoConflict('#phrase-headline').html('<h2>What they\'re saying about ' + fn.toTitleCase(adjustedPhrase) + '</h2>');
+    },
+
     takeTime: function(dateInput) {
         var dateFormat = 'MMM. D, 2013';
         var dateOutput = moment(dateInput).format(dateFormat);
         return dateOutput;
     },
+
+    toTitleCase: function(str){
+        return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    }
 
 };
 // end data configuration object
