@@ -1,0 +1,31 @@
+<!-- begin -->
+<div class="congressional-container">
+
+    {{#objects}}
+        <!-- begin row -->
+        <div class="row-fluid">
+
+            <!-- begin main span -->
+            <div class="span12">
+
+                <div id="{{speaker_first}}_{{speaker_last}}" class="row-fluid" style="padding: 25px 0 15px 0;">
+                    <p>{{speaker_first}} {{speaker_last}} ({{speaker_party}})</p>
+                    <p>{{chamber}}</p>
+                    <p>{{dateFormat date}}</p>
+                    <p><strong>Read Source</strong>: {{origin_url}}</p>
+                    <p>{{capitolwords_url}}</p>
+                    <p>{{title}}</p>
+                    {{#each speaking}}
+                        <p>{{this}}</p>
+                    {{/each}}
+                </div>
+
+            </div>
+            <!-- end main span -->
+
+        </div>
+        <!-- end row -->
+    {{/objects}}
+
+</div>
+<!-- end -->
