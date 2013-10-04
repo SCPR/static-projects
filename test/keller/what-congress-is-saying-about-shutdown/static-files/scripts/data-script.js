@@ -7,7 +7,7 @@ var fn = fn || {};
 // begin main function
 jqueryNoConflict(document).ready(function() {
     fn.retrieveLegislatorLocalDetails();
-    fn.constructCapitolWordsQuery('obamacare');
+    fn.constructCapitolWordsQuery('government+shutdown');
     fn.retrievePhraseToQuery();
 });
 
