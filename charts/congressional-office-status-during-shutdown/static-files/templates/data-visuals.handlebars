@@ -1,0 +1,65 @@
+<!-- begin -->
+<div class="candidate-container">
+
+    {{#objects}}
+        {{# if local}}
+            {{#is local 'y'}}
+            <!-- begin row -->
+            <div class="row-fluid">
+
+                <!-- begin main span -->
+                <div class="span12">
+
+                    <!-- begin candidate container -->
+                    <div id="{{firstname}}_{{lastname}}" class="row-fluid" style="padding: 25px 0 15px 0;">
+
+                        <!-- begin span -->
+                        <div class="span2">
+                            <dl>
+                                <dd>
+                                    <div class="img">
+                                        <img src="{{imageurl}}" alt="{{position}}_{{firstname}}_{{lastname}}" width="120px" height="170px" />
+                                    </div>
+                                    <div class="text"><p class="data-instructions"><strong>{{position}} {{lastname}}</strong></p></div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <!-- end span -->
+
+                        <!-- begin span -->
+                        <div class="span10">
+                            <dl>
+                                <dd>
+                                    <h3>{{position}} {{firstname}} {{lastname}} ({{party}}-{{district}})</h3>
+                                </dd>
+                                <dd>
+                                    {{#if officestatus}}
+                                        <p><strong>Office Status</strong>: {{officestatus}}</p>
+                                    {{else}}
+                                    {{/if}}
+                                </dd>
+                                <dd>
+                                    {{#if reason}}
+                                        <p><strong>Reason</strong>: {{reason}}</p>
+                                    {{else}}
+                                    {{/if}}
+                                </dd>
+                            </dl>
+                        </div>
+                        <!-- end span -->
+
+                    </div>
+                    <!-- end candidate container -->
+
+                </div>
+                <!-- end main span -->
+
+            </div>
+            <!-- end row -->
+            {{/is}}
+        {{else}}
+        {{/if}}
+    {{/objects}}
+
+</div>
+<!-- end -->
