@@ -273,7 +273,7 @@
             tickInterval: 25,
             title: {
                 enabled: true,
-                text: 'District\'s 2013 API score',
+                text: '2013 API score in Hispanic subgroup',
             },
             startOnTick: true,
             endOnTick: true,
