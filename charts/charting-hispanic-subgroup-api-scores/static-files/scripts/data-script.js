@@ -312,7 +312,7 @@
             	fontSize: '12px',
             	padding: '8px'
             },
-            followPointer: true
+            followPointer: true,
             followTouchMove: true
         };
 
