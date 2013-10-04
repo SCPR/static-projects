@@ -7,24 +7,40 @@
 
             <!-- begin main span -->
             <div class="span12">
-
                 <div id="{{speaker_first}}_{{speaker_last}}" class="row-fluid" style="padding: 25px 0 15px 0;">
-                    <p>{{speaker_first}} {{speaker_last}} ({{speaker_party}})</p>
-                    <p>{{chamber}}</p>
-                    <p>{{dateFormat date}}</p>
-                    <p><strong>Read Source</strong>: {{origin_url}}</p>
-                    <p>{{capitolwords_url}}</p>
-                    <p>{{title}}</p>
-                    {{#each speaking}}
-                        <p>{{this}}</p>
-                    {{/each}}
+                    <div class="span2">
+                        <dl>
+                            <dd>
+                                <div class="img">
+                                    <img src="{{speaker_image_url}}" alt="{{speaker_first}}_{{speaker_last}}" width="120px" height="170px" />
+                                    <div class="text"><p class="data-instructions"><strong>{{speaker_first}} {{speaker_last}}</strong></p></div>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="span10">
+                        <dl>
+                            <dd>
+                                <h4>{{speaker_reference}}</h4>
+                            </dd>
+                            <dd>
+                                <p>{{title}}</p>
+                                {{#each speaking}}
+                                    <p>{{this}}</p>
+                                {{/each}}
+                                <p><a href="{{origin_url}}" target="_blank"><strong>Read Source</strong></a></p>
+                                <p class="data-instructions">Spoken on {{dateFormat date}} in the {{chamber}} chamber</p>
+                            </dd>
+                        </dl>
+                    </div>
                 </div>
-
             </div>
             <!-- end main span -->
 
         </div>
         <!-- end row -->
+
+        <hr>
     {{/objects}}
 
 </div>

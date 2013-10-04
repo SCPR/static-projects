@@ -6,12 +6,35 @@ var fn = fn || {};
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
+    fn.retrieveLegislatorLocalDetails();
     fn.constructCapitolWordsQuery('obamacare');
     fn.retrievePhraseToQuery();
 });
 
 // begin data configuration object
 var fn = {
+
+    objectOfLegislators: {
+        objects: []
+    },
+
+    ArrayOfLegislatorLocalDetails: [],
+
+    retrieveLegislatorLocalDetails: function() {
+        jqueryNoConflict.getJSON('static-files/data/ca_congressional_lookup_handlebars.json', function(data){
+            fn.ArrayOfLegislatorLocalDetails = data.objects;
+        });
+    },
+
+    evaluateLocalDetailsForImage: function(bioguide_id){
+        var imageUrl = _.where(fn.ArrayOfLegislatorLocalDetails, {bioguideid: bioguide_id});
+        return imageUrl[0].imageurl;
+    },
+
+    evaluateLocalDetailsForReference: function(bioguide_id){
+        var fullReference = _.where(fn.ArrayOfLegislatorLocalDetails, {bioguideid: bioguide_id});
+        return fullReference[0].fullreference;
+    },
 
     retrievePhraseToQuery: function(){
         jqueryNoConflict('#phrase-list a').click(function(){
@@ -39,8 +62,33 @@ var fn = {
 
     processCapitolWordsData: function(data){
 
+        // clear the container
+        fn.objectOfLegislators.objects = [];
+
+        // build an object
+        for(var x=0; x<data.results.length; x++){
+
+            var instanceOfLegislatorSpeaking = {
+                bioguide_id: data.results[x].bioguide_id,
+                speaker_first: data.results[x].speaker_first,
+                speaker_last: data.results[x].speaker_last,
+                speaker_party: data.results[x].speaker_party,
+                title: fn.toTitleCase(data.results[x].title),
+                origin_url: data.results[x].origin_url,
+                chamber: data.results[x].chamber,
+                speaker_image_url: fn.evaluateLocalDetailsForImage(data.results[x].bioguide_id),
+                speaker_reference: fn.evaluateLocalDetailsForReference(data.results[x].bioguide_id),
+                speaking: data.results[x].speaking
+            };
+
+            // add to container
+            fn.objectOfLegislators.objects.push(instanceOfLegislatorSpeaking);
+        }
+
+        //console.log(fn.objectOfLegislators.objects);
+
         var handlebarsData = {
-            objects: data.results
+            objects: fn.objectOfLegislators.objects
         };
 
         Handlebars.registerHelper('dateFormat', function(context, block) {
@@ -56,7 +104,7 @@ var fn = {
 
     displayPhraseHeadline: function(phrase) {
         var adjustedPhrase = phrase.replace('+', ' ');
-        jqueryNoConflict('#phrase-headline').html('<h2>What they\'re saying about ' + fn.toTitleCase(adjustedPhrase) + '</h2>');
+        jqueryNoConflict('#phrase-headline').html('<h3>What the California Congressional delegation has said about ' + fn.toTitleCase(adjustedPhrase) + '</h3>');
     },
 
     takeTime: function(dateInput) {
