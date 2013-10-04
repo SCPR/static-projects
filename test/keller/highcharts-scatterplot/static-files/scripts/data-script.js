@@ -24,9 +24,9 @@
         color: '#a2a2a2',
         type: 'line',
         name: 'Trend',
-        visible: true,
-        data: [[640, 90], [910, 20]],
-        showInLegend: true,
+        visible: false,
+        data: [[685, 84], [910, 15]],
+        showInLegend: false,
         marker: {
             enabled: false
         },
@@ -254,16 +254,23 @@
         };
 
         configChart.title = {
-            text: 'Charting API scores in the Hispanic subgroup in local school districts'
+            text: '',
+            style: {
+                display: 'none'
+            }
         };
 
         configChart.subtitle = {
-
+            text: '',
+            style: {
+                display: 'none'
+            }
         };
 
         configChart.xAxis = [{
-            min: 640,
+            min: 675,
             max: 925,
+            tickInterval: 25,
             title: {
                 enabled: true,
                 text: 'District\'s 2013 API score',
@@ -276,6 +283,7 @@
         configChart.yAxis = [{
             min: 0,
             max: 100,
+            tickInterval: 10,
             title: {
                 enabled: true,
                 text: 'Percent of district students in Hispanic subgroup',
