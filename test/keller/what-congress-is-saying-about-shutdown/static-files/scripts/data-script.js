@@ -62,6 +62,8 @@ var fn = {
 
     processCapitolWordsData: function(data){
 
+        console.log(data);
+
         // clear the container
         fn.objectOfLegislators.objects = [];
 
@@ -75,6 +77,7 @@ var fn = {
                 speaker_party: data.results[x].speaker_party,
                 title: fn.toTitleCase(data.results[x].title),
                 origin_url: data.results[x].origin_url,
+                date: data.results[x].date,
                 chamber: data.results[x].chamber,
                 speaker_image_url: fn.evaluateLocalDetailsForImage(data.results[x].bioguide_id),
                 speaker_reference: fn.evaluateLocalDetailsForReference(data.results[x].bioguide_id),
@@ -84,8 +87,6 @@ var fn = {
             // add to container
             fn.objectOfLegislators.objects.push(instanceOfLegislatorSpeaking);
         }
-
-        //console.log(fn.objectOfLegislators.objects);
 
         var handlebarsData = {
             objects: fn.objectOfLegislators.objects
