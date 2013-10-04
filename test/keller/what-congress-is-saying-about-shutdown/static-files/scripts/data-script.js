@@ -37,7 +37,7 @@ var fn = {
     },
 
     retrievePhraseToQuery: function(){
-        jqueryNoConflict('#phrase-list a').click(function(){
+        jqueryNoConflict('#data-legend a').click(function(){
             var phrase = jqueryNoConflict(this).attr('id').replace('_', '+');
             fn.constructCapitolWordsQuery(phrase);
         });
@@ -105,7 +105,7 @@ var fn = {
 
     displayPhraseHeadline: function(phrase) {
         var adjustedPhrase = phrase.replace('+', ' ');
-        jqueryNoConflict('#phrase-headline').html('<h3>What the California Congressional delegation has said about ' + fn.toTitleCase(adjustedPhrase) + '</h3>');
+        jqueryNoConflict('#phrase-headline').html('<h3>... to read what the California Congressional delegation has said about ' + fn.toTitleCase(adjustedPhrase) + '</h3>');
     },
 
     takeTime: function(dateInput) {

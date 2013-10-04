@@ -1,0 +1,5 @@
+#data-legend {width: 96%; height: 150px; margin: 10px 2% 10px 2%;}
+#data-legend-items {height: auto; margin: 10px 0 10px 0;}
+#data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 10px;}
+#data-legend .label {padding: 10px}
+#data-legend .label a {font-size: 20px; color: #ffffff;}
