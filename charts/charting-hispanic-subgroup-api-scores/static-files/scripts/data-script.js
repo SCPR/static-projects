@@ -257,6 +257,7 @@
             backgroundColor: '#ffffff',
             type: chartType,
             zoomType: 'xy',
+            pinchType: null
         };
 
         configChart.title = {
