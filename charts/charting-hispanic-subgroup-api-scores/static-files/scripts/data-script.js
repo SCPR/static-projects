@@ -245,7 +245,7 @@
         var deviceInterval;
 
         if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
-            deviceInterval = 100;
+            deviceInterval = 50;
         } else {
             deviceInterval = 25;
         }
@@ -313,6 +313,7 @@
             	padding: '8px'
             },
             followPointer: true
+            followTouchMove: true
         };
 
         configChart.legend = {
