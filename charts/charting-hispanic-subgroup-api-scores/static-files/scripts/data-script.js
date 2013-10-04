@@ -242,7 +242,13 @@
     // create an instance of the chart
     function createScatterPlot(containerToRenderTo, chartType, chartDataArray){
 
-        console.log(dataArray[1]);
+        var deviceInterval;
+
+        if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+            deviceInterval = 100;
+        } else {
+            deviceInterval = 25;
+        }
 
         var configChart = {};
 
@@ -270,7 +276,7 @@
         configChart.xAxis = [{
             min: 675,
             max: 925,
-            tickInterval: 25,
+            tickInterval: deviceInterval,
             title: {
                 enabled: true,
                 text: '2013 API score in Hispanic subgroup',
