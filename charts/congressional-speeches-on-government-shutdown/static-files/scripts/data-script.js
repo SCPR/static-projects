@@ -36,7 +36,10 @@ var fn = {
     retrievePhraseToQuery: function(){
         jqueryNoConflict('#data-legend a').click(function(){
             var phrase = jqueryNoConflict(this).attr('id').replace('_', '+');
-            jqueryNoConflict('#data-visuals').empty();
+            jqueryNoConflict('#data-visuals').html(
+                '<div id="data-loading">' +
+                    '<span><img src="static-files/images/loader.gif" width="100%" /></span>' +
+                '</div>');
             fn.constructCapitolWordsQuery(phrase);
         });
     },
@@ -123,7 +126,7 @@ var fn = {
         renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', handlebarsData);
 
         jqueryNoConflict('.speech-text').waitUntilExists(function(){
-            var phraseToHighlight = jqueryNoConflict('#display-phrase').text()
+            var phraseToHighlight = jqueryNoConflict('#display-phrase').text();
             jqueryNoConflict('.speech-text p').highlight(phraseToHighlight);
         });
 
