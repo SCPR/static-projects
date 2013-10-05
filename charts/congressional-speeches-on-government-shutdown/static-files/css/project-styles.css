@@ -3,3 +3,4 @@
 #data-legend-items li {display: inline; height: 25px; list-style-type: none;}
 #data-legend .label {padding: 2px 5px 2px 5px;}
 #data-legend .label a {font-size: 16px; color: #ffffff;}
+.highlight {background-color: #468847; color: #ffffff;}

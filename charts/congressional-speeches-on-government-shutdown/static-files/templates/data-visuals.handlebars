@@ -25,9 +25,11 @@
                             </dd>
                             <dd>
                                 <p class="data-instructions">From remarks titled <strong>{{title}}</strong>, spoken on {{dateFormat date}} in the {{chamber}}.</p>
-                                {{#each speaking}}
-                                    <p>{{this}}</p>
-                                {{/each}}
+                                <div class="speech-text">
+                                    {{#each speaking}}
+                                        <p>{{this}}</p>
+                                    {{/each}}
+                                </div>
                                 <p><a href="{{origin_url}}" target="_blank"><strong>Read Source</strong></a></p>
                             </dd>
                         </dl>

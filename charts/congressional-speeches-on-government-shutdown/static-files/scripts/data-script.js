@@ -1,6 +1,3 @@
-// open congress url
-// http://congress.api.sunlightfoundation.com/legislators?apikey=b717252e9bc44d4ea57321c49e7dd5e8&bioguide_id=G000559&all_legislators=true
-
 var jqueryNoConflict = jQuery;
 var fn = fn || {};
 
@@ -124,11 +121,17 @@ var fn = {
         });
 
         renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', handlebarsData);
+
+        jqueryNoConflict('.speech-text').waitUntilExists(function(){
+            var phraseToHighlight = jqueryNoConflict('#display-phrase').text()
+            jqueryNoConflict('.speech-text p').highlight(phraseToHighlight);
+        });
+
     },
 
     displayPhraseHeadline: function(phrase) {
         var adjustedPhrase = phrase.replace('+', ' ');
-        jqueryNoConflict('#phrase-headline').html('<h3>... to read what the California Congressional delegation has said about ' + fn.toTitleCase(adjustedPhrase) + '</h3>');
+        jqueryNoConflict('#phrase-headline').html('<h3>... to read what the California Congressional delegation has said about <span id="display-phrase">' + fn.toTitleCase(adjustedPhrase) + '</span></h3>');
     },
 
     takeTime: function(dateInput) {
