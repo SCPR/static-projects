@@ -82,6 +82,9 @@ var fn = {
 
     processCapitolPhrasesData: function(data){
 
+        console.log(data);
+
+
         // clear the container
         fn.objectOfLegislators.objects = [];
 
@@ -89,6 +92,7 @@ var fn = {
         for(var x=0; x<data.results.length; x++){
 
             var instanceOfLegislatorSpeaking = {
+                number: data.results[x].number,
                 bioguide_id: data.results[x].bioguide_id,
                 speaker_first: data.results[x].speaker_first,
                 speaker_last: data.results[x].speaker_last,
@@ -123,6 +127,7 @@ var fn = {
             };
         });
 
+        renderHandlebarsTemplate('static-files/templates/content-action-bar.handlebars', '#content-action-bar', handlebarsData);
         renderHandlebarsTemplate('static-files/templates/data-visuals.handlebars', '#data-visuals', handlebarsData);
 
         jqueryNoConflict('.speech-text').waitUntilExists(function(){
@@ -159,3 +164,9 @@ var fn = {
 
 };
 // end data configuration object
+
+// scroll into view function
+function scrollToRep(){
+    var congressionalMember = jqueryNoConflict('#search-congressional-delegation').val();
+    jqueryNoConflict.scrollTo(congressionalMember)
+};
