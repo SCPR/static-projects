@@ -1,12 +1,44 @@
-.highlight {background-color: #468847; color: #ffffff;}
+.highlight {background-color: #468847; color: #ffffff; border: #000000 solid .1em; padding: 1px 2px 1px 2px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
 #data-legend {width: 96%; height: auto; margin: 10px 2% 10px 2%;}
 #data-legend-items {height: auto; margin: 10px 0 10px 0;}
 #data-legend-items li {display: inline; height: 25px; list-style-type: none;}
-#data-legend .label {padding: 2px 5px 2px 5px;}
+#data-legend .label {padding: 2px 5px 2px 5px; background-color: #468847; border: #000000 solid .1em;}
 #data-legend .label a {font-size: 16px; color: #ffffff;}
-
-
 #data-loading {width: 40%; height: 100px; margin: 20px 30% 0 30%; padding: 0px; text-align: center;}
 #data-loading .display {color: #333333;}
-
 .hide-data-loading-icon {display: none;}
+.text, .img {text-align: center;}
+
+@media screen and (max-width: 485px) {
+    body.minimal #data-container h1 {font-size: 170%; line-height: 130%}
+    body.minimal #data-container h2 {font-size: 150%; line-height: 130%}
+    body.minimal #data-container h3 {font-size: 140%; line-height: 130%}
+    body.minimal #data-container h4 {font-size: 115%; line-height: 130%}
+    body.minimal #data-container h5 {font-size: 120%; line-height: 130%}
+    body.minimal #data-container p {font-size: 95%; line-height: 130%}
+    body.minimal #data-container li {font-size: 95%; line-height: 130%}
+    body.minimal #data-container table{font-size: 95%;}
+}
+
+@media screen and (min-width: 486px) and (max-width: 767px) {
+    body.minimal #data-container h1 {font-size: 170%; line-height: 130%}
+    body.minimal #data-container h2 {font-size: 150%; line-height: 130%}
+    body.minimal #data-container h3 {font-size: 140%; line-height: 130%}
+    body.minimal #data-container h4 {font-size: 130%; line-height: 130%}
+    body.minimal #data-container h5 {font-size: 120%; line-height: 130%}
+    body.minimal #data-container p {font-size: 95%; line-height: 130%}
+    body.minimal #data-container li {font-size: 95%; line-height: 130%}
+    body.minimal #data-container table{font-size: 95%;}
+}
+
+@media screen and (min-width: 768px) and (max-width: 979px) {
+
+}
+
+@media screen and (min-width: 980px) and (max-width: 1200px) {
+
+}
+
+@media (min-width: 1201px) {
+
+}
