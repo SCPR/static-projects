@@ -162,7 +162,7 @@ var fn = {
 
     displayPhraseHeadline: function(phrase) {
         var adjustedPhrase = phrase.replace('+', ' ');
-        jqueryNoConflict('#phrase-headline').html('<h3>... to read what the California Congressional delegation has said about <span id="display-phrase">' + fn.toTitleCase(adjustedPhrase) + '</span></h3>');
+        jqueryNoConflict('#phrase-headline').html('<h1 class="centered"><span id="display-phrase">' + fn.toTitleCase(adjustedPhrase) + '</span></h1>');
     },
 
     takeTime: function(dateInput) {

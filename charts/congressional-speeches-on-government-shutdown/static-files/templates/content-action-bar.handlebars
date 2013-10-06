@@ -1,11 +1,9 @@
-<nav>
-    <select id="search-congressional-delegation" onchange="scrollToRep(this.value);">
-        <option value="#return-to-top">Choose a representative's speech</option>
-        {{#objects}}
-            <option value="#{{speaker_first}}_{{speaker_last}}_{{number}}">{{speaker_first}} {{speaker_last}} ({{dateFormat date}})</option>
-        {{/objects}}
-    </select>
-</nav>
+<select id="search-congressional-delegation" onchange="scrollToRep(this.value);">
+    <option value="#data-details">Scroll to an instance</option>
+    {{#objects}}
+        <option value="#{{speaker_first}}_{{speaker_last}}_{{number}}">{{speaker_first}} {{speaker_last}} ({{speaker_party}}) - {{dateFormat date}}</option>
+    {{/objects}}
+</select>
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -22,11 +20,12 @@ $(document).ready(function() {
 
 			// if yes, add "fixed" class to the <nav>
 			// add padding top to the #content (value is same as the height of the nav)
-            $('nav').addClass('fixed').css('top','100').next().css('padding-top','60px');
+            $('#content-action-bar').addClass('fixed').css('margin','0');
+
         } else {
 
 			// when scroll up or less than aboveHeight, remove the "fixed" class, and the padding-top
-            $('nav').removeClass('fixed').next().css('padding-top','0');
+            $('#content-action-bar').removeClass('fixed').css('margin','0px 10% 0px 10%');
         }
     });
 });
