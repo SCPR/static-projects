@@ -61,29 +61,52 @@ var fn = {
 
     retriveCapitolWordsData: function(targetPhrasesUrl, targetInstancesUrl){
         jqueryNoConflict.getJSON(targetPhrasesUrl, fn.processCapitolPhrasesData);
-        //jqueryNoConflict.getJSON(targetInstancesUrl, fn.processCapitolInstancesData);
+        jqueryNoConflict.getJSON(targetInstancesUrl, fn.processCapitolInstancesData);
     },
 
     processCapitolInstancesData: function(data){
+        var demsTotal;
+        var gopTotal;
+        var overallInstances;
+        jqueryNoConflict('#total-overall-instances').empty();
+        jqueryNoConflict('#total-democrat-instances').empty();
+        jqueryNoConflict('#total-republican-instances').empty();
 
-        console.log(data.results[0]);
-
-        for(var y=0; y<data.results.length; y++){
-            if (data.results[y].party === 'D'){
-                var demsTotal = data.results[y].count;
-                jqueryNoConflict('#total-democrat-instances').html(data.results[y].count);
-            } else if (data.results[y].party === 'R'){
-                var gopTotal = data.results[y].count;
-                jqueryNoConflict('#total-republican-instances').html(data.results[y].count);
+        if (data.results.length === 2){
+            for(var y=0; y<data.results.length; y++){
+                if (data.results[y].party === 'D'){
+                    demsTotal = data.results[y].count;
+                    jqueryNoConflict('#total-democrat-instances').html(
+                        'Spoken ' + demsTotal + ' times by California Democrats. ');
+                } else {
+                    gopTotal = data.results[y].count;
+                    jqueryNoConflict('#total-republican-instances').html(
+                        'Spoken ' + gopTotal + ' times by California Republicans.');
+                }
             }
+            overallInstances = demsTotal + gopTotal;
+
+        } else {
+
+            for(var y=0; y<data.results.length; y++){
+                if (data.results[y].party === 'D'){
+                    demsTotal = data.results[y].count;
+                    jqueryNoConflict('#total-democrat-instances').html(
+                        'Spoken ' + demsTotal + ' times by California Democrats. ');
+                }
+            }
+
+            jqueryNoConflict('#total-republican-instances').html(
+                'Spoken 0 times by California Republicans.');
+
+            overallInstances = demsTotal + 0;
         }
 
+        jqueryNoConflict('#total-overall-instances').html(
+            'Found ' + overallInstances + ' instances. ');
     },
 
     processCapitolPhrasesData: function(data){
-
-        console.log(data);
-
 
         // clear the container
         fn.objectOfLegislators.objects = [];
