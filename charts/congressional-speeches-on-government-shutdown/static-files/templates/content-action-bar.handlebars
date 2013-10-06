@@ -7,15 +7,16 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-
-	//Calculate the height of <header>
-	//Use outerHeight() instead of height() if have padding
-    var aboveHeight = $('header').outerHeight();
-
-	// when scroll
     $(window).scroll(function(){
+        var aboveHeight;
 
-		//if scrolled down more than the header's height
+        if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)){
+            aboveHeight = $('#content-action-bar').outerHeight();
+        } else {
+            aboveHeight = $('header').outerHeight();
+        }
+
+		//if scrolled down more than the varibles's height
         if ($(window).scrollTop() > aboveHeight){
 
 			// if yes, add "fixed" class to the <nav>
