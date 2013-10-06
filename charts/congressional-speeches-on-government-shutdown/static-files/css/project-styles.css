@@ -1,5 +1,5 @@
-#data-legend {width: 96%; height: auto; margin: 10px 2% 15px 2%;}
-#data-legend.hero-unit {background: rgba(241, 122, 49, 0.3); font-size: 95%; font-weight: 400; padding: 10px;}
+#data-legend {width: 100%; height: auto; margin: 10px 0 15px 0;}
+#data-legend.hero-unit {background: rgba(241, 122, 49, 0.3); font-size: 95%; font-weight: 400; padding: 10px 0 10px;}
 #data-legend-items {height: auto; margin: 10px 0 10px 0;}
 #data-legend-items li {display: inline; height: 25px; list-style-type: none;}
 #data-legend .label {padding: 2px 5px 2px 5px; background-color: #256254; border: #e8e8e8 solid .1em;}
