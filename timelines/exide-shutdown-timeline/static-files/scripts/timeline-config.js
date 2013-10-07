@@ -26,7 +26,7 @@ $(document).ready(function() {
         groupFunction: 'groupSegmentByYear',
 
         // adjust timeline width
-        width: '75%'
+        width: '65%'
     });
 /*
 
