@@ -8,6 +8,9 @@
 <script type="text/javascript">
 $(document).ready(function() {
     $(window).scroll(function(){
+
+        var barWidth = $('#data-legend').width();
+
         var aboveHeight;
 
         if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)){
@@ -21,12 +24,12 @@ $(document).ready(function() {
 
 			// if yes, add "fixed" class to the <nav>
 			// add padding top to the #content (value is same as the height of the nav)
-            $('#content-action-bar').addClass('fixed').css('margin','0');
+            $('#content-action-bar').addClass('fixed').css('width', barWidth);
 
         } else {
 
 			// when scroll up or less than aboveHeight, remove the "fixed" class, and the padding-top
-            $('#content-action-bar').removeClass('fixed').css('margin','0px 10% 0px 10%');
+            $('#content-action-bar').removeClass('fixed').css('width', 'width: 100%;');
         }
     });
 });

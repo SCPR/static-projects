@@ -1,12 +1,12 @@
-#data-legend {width: 100%; height: auto; margin: 10px 0 15px 0;}
+#data-legend {height: auto; margin: 10px 0 15px 0;}
 #data-legend.hero-unit {background: rgba(241, 122, 49, 0.3); font-size: 95%; font-weight: 400; padding: 10px 0 10px;}
 #data-legend-items {height: auto; margin: 10px 0 10px 0;}
 #data-legend-items li {display: inline; height: 25px; list-style-type: none;}
 #data-legend .label {padding: 2px 5px 2px 5px; background-color: #256254; border: #e8e8e8 solid .1em;}
 #data-legend .label a {font-size: 16px; color: #ffffff;}
-#data-legend #content-action-bar {width: 80%; height: 30px; text-align: left; margin: 0px 10% 0px 10%; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px;}
-#data-legend #content-action-bar select {width: 100%;}
-.fixed {position: fixed; top: 2%; width: 80%; height: 30px;}
+#data-legend #content-action-bar {width: 100%; height: 30px; text-align: left; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px;}
+select {width: 80%; margin: 0 10% 0 10%;}
+.fixed {position: fixed; top: 2%; margin: 0; background: rgba(241, 122, 49, 0.6); padding: 10px 0 10px 0;}
 #data-loading {width: 40%; height: 100px; margin: 20px 30% 0 30%; padding: 0px; text-align: center;}
 #data-loading .display {color: #333333;}
 #phrase-headline h1 {font-size: 300%;}
