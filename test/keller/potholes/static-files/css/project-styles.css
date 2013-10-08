@@ -1,5 +1,6 @@
+.container-fluid {max-width: 100%; margin: 0 auto;}
 .table-container {background: #ffffff; padding: 10px 0 10px 0;}
-.indent {text-indent: 15px;}
+.indent {text-indent: 25px;}
 table.kpcc-table {width: 90%; margin: 0 5% 0 5%; font-family: "proxima-nova", "helvetica neue", helvetica, arial, sans-serif;}
 table.kpcc-table th, table.kpcc-table td {padding: 10px 10px 9px; line-height: 15.75px; text-align: center; vertical-align: middle; border-bottom: 1px solid #ddd; font-size: 15px; font-weight: 700; line-height: 20px; margin-top: 10px; margin-bottom: 10px;}
 table.kpcc-table th.kpcc-name {color: #B24401; text-transform: uppercase;}
