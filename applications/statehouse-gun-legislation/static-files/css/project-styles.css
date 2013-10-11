@@ -2,9 +2,9 @@
 #data-legend label, #data-legend a {font-weight: bold; font-size: 100%;}
 #data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 10px;}
 #bill-container {width: 90%; height: auto; margin: 25px 5% 0 5%; padding: 5px;}
-.active {color: #4DAF4A;}
-.shelved {color: #E41A1C;}
-.enacted {color: #377EB8;}
+.enacted {color: #4DAF4A;}
+.vetoed {color: #E41A1C;}
+.active {color: #377EB8;}
 
 .item {width: 110px; height: 110px; margin: 3px; float: left; cursor: pointer; background: #e8e8e8; text-align: center; font-weight: bold; z-index: 100;
 
