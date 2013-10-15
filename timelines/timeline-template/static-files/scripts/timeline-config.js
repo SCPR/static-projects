@@ -1,41 +1,74 @@
-// embed function
-function embedBox() {
-    var embed_url = 'http://projects.scpr.org/static/timelines/anniversary-of-war-in-iraq/iframe.html';
-    jAlert('<h4>Embed this on your site or blog</h4>' +
-    '<span>Copy the code below and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
-};
+var jqueryNoConflict = jQuery;
+var fn = fn || {};
 
-$(document).ready(function() {
+// choose spreadsheet or flat-file
+var timelineDataSource = 'spreadsheet';
 
-    $('#data-visuals').verticalTimeline({
+// example spreadsheet key
+var timelineDataSourceKey = '0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE';
 
-        // spreadsheet key
-        key: 'https://docs.google.com/spreadsheet/pub?key=0Aq8qwSArzKP9dEpfTG5GTnNfcFhuR0RVbkJha3BtdlE&output=html',
+// example path to file
+var timelineDataSourceFile = 'static-files/data/template-timelines_timeline.json';
 
-        // name of sheet on spreadsheet
-        sheetName: 'Posts',
+jqueryNoConflict(document).ready(function() {
+    fn.displayTimelineFromData(timelineDataSource)
+    fn.retrieveTabletopData();
 
-        // newest or oldest
-        defaultDirection: 'oldest',
+    // handlebars helper to encode a url
+    function handlebarsEncodeUrl(){
+        Handlebars.registerHelper('encode', function(context, options) {
+            var out = encodeURIComponent(context);
+            return out;
+        });
+    };
+});
 
-        // collapsed or expanded
-        defaultExpansion: 'expanded',
+// begin data configuration object
+var fn = {
 
-        // groupSegmentByYear or groupSegmentByDecade
-        groupFunction: 'groupSegmentByYear',
+    displayTimelineFromData: function(source){
+        if (source === 'spreadsheet'){
+            fn.timelineFromSpreadsheet(timelineDataSourceKey);
+        } else if (source === 'flat-file'){
+            fn.timelineFromFlatfile(timelineDataSourceFile);
+        } else {
+            fn.timelineFromSpreadsheet();
+        }
+    },
 
-        // adjust timeline width
-        width: '75%'
-    });
+    retrieveTabletopData: function(){
+        Tabletop.init({
+            key: timelineDataSourceKey,
+            callback: fn.displayData,
+            simpleSheet: false
+        });
+    },
 
-/*
-    $.getJSON('static-files/data/dorner_display_sheet_timeline.json', function(data) {
-        $('#data-visuals').verticalTimeline({
+    displayData: function(data, tabletop){
 
-            data: data,
+        var handlebarsData = {
+            objects: data.MetaData.elements
+        };
+
+        fn.embedUrl.pathToTimeline = data.MetaData.elements[0].url;
+
+        renderHandlebarsTemplate('static-files/templates/data-share.handlebars', '#data-share', handlebarsData);
+        renderHandlebarsTemplate('static-files/templates/data-details.handlebars', '#data-details', handlebarsData);
+        renderHandlebarsTemplate('static-files/templates/data-footer.handlebars', '#data-footer', handlebarsData);
+    },
+
+    timelineFromSpreadsheet: function(timelineDataSourceKey){
+
+        jqueryNoConflict('#data-visuals').verticalTimeline({
+
+            // spreadsheet key
+            key: timelineDataSourceKey,
+
+            // name of sheet on spreadsheet
+            sheetName: 'Posts',
 
             // newest or oldest
-            defaultDirection: 'newest',
+            defaultDirection: 'oldest',
 
             // collapsed or expanded
             defaultExpansion: 'expanded',
@@ -44,10 +77,39 @@ $(document).ready(function() {
             groupFunction: 'groupSegmentByYear',
 
             // adjust timeline width
-            width: '65%'
-
+            width: '75%'
         });
-    });
-*/
+    },
 
-});
+    timelineFromFlatfile: function(timelineDataSourceFile){
+
+        jqueryNoConflict.getJSON(timelineDataSourceFile, function(data) {
+            $('#data-visuals').verticalTimeline({
+
+                data: data,
+
+                // newest or oldest
+                defaultDirection: 'oldest',
+
+                // collapsed or expanded
+                defaultExpansion: 'expanded',
+
+                // groupSegmentByYear or groupSegmentByDecade
+                groupFunction: 'groupSegmentByYear',
+
+                // adjust timeline width
+                width: '75%'
+
+            });
+        });
+    },
+
+    embedUrl: {
+        pathToTimeline: null
+    },
+
+    embedBox: function(){
+        var embed_url = fn.embedUrl.pathToTimeline + 'iframe.html';
+        jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy the code below and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
+    }
+}

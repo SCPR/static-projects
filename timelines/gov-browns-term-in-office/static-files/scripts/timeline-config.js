@@ -1,16 +1,26 @@
 var jqueryNoConflict = jQuery;
 var fn = fn || {};
 
+// choose spreadsheet or flat-file
 var timelineDataSource = 'spreadsheet';
+
+// example spreadsheet key
 var timelineDataSourceKey = '0Aq8qwSArzKP9dHlsT1BsSmZ0MXhRcVBVUkJVRWpZWkE';
 
-// example is static-files/data/moments-in-giants-godgers-rivalry_timeline.json
+// example path to file
 var timelineDataSourceFile = '';
 
 jqueryNoConflict(document).ready(function() {
     fn.displayTimelineFromData(timelineDataSource)
     fn.retrieveTabletopData();
-    handlebarsEncodeUrl();
+
+    // handlebars helper to encode a url
+    function handlebarsEncodeUrl(){
+        Handlebars.registerHelper('encode', function(context, options) {
+            var out = encodeURIComponent(context);
+            return out;
+        });
+    };
 });
 
 // begin data configuration object
@@ -18,9 +28,9 @@ var fn = {
 
     displayTimelineFromData: function(source){
         if (source === 'spreadsheet'){
-            fn.timelineFromSpreadsheet();
+            fn.timelineFromSpreadsheet(timelineDataSourceKey);
         } else if (source === 'flat-file'){
-            fn.timelineFromFlatfile();
+            fn.timelineFromFlatfile(timelineDataSourceFile);
         } else {
             fn.timelineFromSpreadsheet();
         }
@@ -47,7 +57,7 @@ var fn = {
         renderHandlebarsTemplate('static-files/templates/data-footer.handlebars', '#data-footer', handlebarsData);
     },
 
-    timelineFromSpreadsheet: function(){
+    timelineFromSpreadsheet: function(timelineDataSourceKey){
 
         jqueryNoConflict('#data-visuals').verticalTimeline({
 
@@ -71,9 +81,9 @@ var fn = {
         });
     },
 
-    timelineFromFlatfile: function(){
+    timelineFromFlatfile: function(timelineDataSourceFile){
 
-        jqueryNoConflict.getJSON('static-files/data/moments-in-giants-godgers-rivalry_timeline.json', function(data) {
+        jqueryNoConflict.getJSON(timelineDataSourceFile, function(data) {
             $('#data-visuals').verticalTimeline({
 
                 data: data,
@@ -103,11 +113,3 @@ var fn = {
         jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy the code below and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
     }
 }
-
-// function to set decimal to fixed
-function handlebarsEncodeUrl(){
-    Handlebars.registerHelper('encode', function(context, options) {
-        var out = encodeURIComponent(context);
-        return out;
-    });
-};
