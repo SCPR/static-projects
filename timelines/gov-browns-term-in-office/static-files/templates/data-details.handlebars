@@ -1,0 +1,16 @@
+<div id="content-article">
+    <h4 class="kicker">{{#objects}}{{kicker}}{{/objects}}</h4>
+    <h1>{{#objects}}{{headline}}{{/objects}}</h1>
+    <div id="content-article-metadata">
+        <p><span class="credits">{{#objects}}{{credits}}{{/objects}}</span> | <span class="pubdate">{{#objects}}{{published}}{{/objects}}</span></p>
+    </div>
+
+    <div id="content-article-text">
+        <p>{{#objects}}{{{text}}}{{/objects}}</p>
+    </div>
+
+    <div id="content-article-buttons">
+        <span class="hidden-tablet hidden-phone btn btn-warning" style="cursor:pointer;" onclick="fn.embedBox()">Embed This Timeline</span>
+    </div>
+
+</div>
