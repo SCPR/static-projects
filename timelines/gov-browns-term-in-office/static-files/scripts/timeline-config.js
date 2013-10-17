@@ -68,7 +68,7 @@ var fn = {
             sheetName: 'Posts',
 
             // newest or oldest
-            defaultDirection: 'oldest',
+            defaultDirection: 'newest',
 
             // collapsed or expanded
             defaultExpansion: 'expanded',
