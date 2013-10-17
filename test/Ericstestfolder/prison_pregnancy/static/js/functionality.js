@@ -34,32 +34,6 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 
 
 
-/*	##############################################################################################################
-	BRAIN INFOGRAPHIC
-	############################################################################################################## */
-
-	var thisTab;
-	var curSlide;
-
-    $(".infographic h3").click(function(){
-
-		thisTab = $(this).index(".infographic h3");
-		curSlide = $(".infographic figure.selected").index(".infographic figure");
-
-		if(thisTab == curSlide) {
-			// calm down, you're already on the desired slide
-		} else {
-			$(".infographic figure.selected,.infographic h3.selected").removeClass("selected");
-			$(".infographic figure").eq(thisTab).addClass("selected");
-			$(".infographic h3").eq(thisTab).addClass("selected");
-		}
-
-	});
-
-
-
-
-
 
 
 /*	##############################################################################################################
@@ -88,7 +62,7 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	PHOTO SLIDESHOWS
 	############################################################################################################## */
 
-	$("#gallery-01,#gallery-02,#gallery-03,#gallery-04,#gallery-05,#gallery-06,#gallery-07,#gallery-08,#gallery-09,#gallery-10").rsfSlideshow({
+	$("#gallery-01,#gallery-02,#gallery-03").rsfSlideshow({
 		data_container: 'ol.slides',
 		slide_data_container: 'li',
 		slide_data_selectors: {
