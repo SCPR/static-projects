@@ -72,7 +72,7 @@ body {
 							text-align: right;
 							color: white;
 							z-index: 2;
-							font: normal 450 1.1875em/1.2 sans-serif; /* 19 / 16 */
+							font: normal 400 1.1875em/1.2 sans-serif; /* 19 / 16 */
 						}
 						.masthead .secondary h3 {
 							position: absolute;
@@ -419,7 +419,6 @@ body {
 		background: -o-linear-gradient(top,  #ffffff 0%,#e9e9e9 100%); /* Opera 11.10+ */
 		background: -ms-linear-gradient(top,  #ffffff 0%,#e9e9e9 100%); /* IE10+ */
 		background: linear-gradient(to bottom,  #ffffff 0%,#e9e9e9 100%); /* W3C */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e9e9e9',GradientType=0 ); /* IE6-9 */
 /*		-------------------------------------------------------------------------------------------------------------------------------------------- */
 
 
@@ -1788,36 +1787,30 @@ body {
 						    =================================================================================== */
 
                             @media screen and (min-width: 750px) {
-
                                 .row-pt1-d .secondary .audio {
-                                    float:left;
+                                  float:left;
         	                        width: 31.6%;
-        	                        margin-top: 285px;
-                                 	
-    	                        }
-    	                    
+        	                        margin-top: 285px; 
+    	                        	}
                                 .row-pt1-b .secondary .audio {
-                                    float:right;
+                                  float:right;
         	                        width: 31.6%;
         	                        margin-top: 285px;
-    	                    }
+    	                    			}
+    	                    	}
 
-
-                                @media screen and (max-width: 750px) {
-
-                                .row-pt1-d .secondary .audio {
-                                        float:right;
-                                        width: 94.5%;
-                                        margin-top: 0px;
-                                    }
-                                    .row-pt1-b .secondary .audio {
-                                        float:right;
-            	                        width: 94.5%;
-            	                        margin-top: 0px;
-        	                        }
-
-            	                        
-        	                    }
+                            @media screen and (max-width: 750px) {
+	                            .row-pt1-d .secondary .audio {
+	                              float:right;
+	                              width: 94.5%;
+	                              margin-top: 0px;
+	                            }
+	                            .row-pt1-b .secondary .audio {
+	                               float:right;
+	    	                        width: 94.5%;
+	    	                        margin-top: 0px;
+		                        	}       
+    	                    	}
 
 
 
