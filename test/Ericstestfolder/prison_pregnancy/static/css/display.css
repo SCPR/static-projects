@@ -41,10 +41,10 @@ body {
 	############################################################################################################## */
 
 .masthead {
-	/* background: #000 url(i/bilingual-masthead-photo.jpg) no-repeat top center;*/
-	background: #000 url(http://a.scpr.org/i/6083118b1546f45cadda5abdc5aaee78/67712-full.jpg) no-repeat top center;
-	background-size: 2000px 419px; /* gets fiddled width as we go ABOVE and BELOW certain critical widths (read on...) */
-	height: 419px; /* similarly, this'll get AUTOified once we hit a critical (i.e., smaller) max width. */
+	background: #000 url(http://a.scpr.org/i/e7f3cff2fff52abde4c77f6883e4001a/70389-full.jpg) no-repeat top center;
+	background-size: 100%; /* gets fiddled width as we go ABOVE and BELOW certain critical widths (read on...) */
+    height:419px;
+		box-shadow: inset 0 -75px 0 rgba(0,0,0,0.5);
 }
 		.masthead h1 {
 			font: normal 100 5.875em/1.25 "proxima-nova", Helvetica, sans-serif; /* 110 / 16 */
@@ -59,8 +59,8 @@ body {
 				}
 		
 		.masthead .secondary {
-			background: black;
-			padding: 11px 0 13px;
+			/* background: black; */
+			padding: 10px 0 20px;
 			margin-bottom: 28px;
 		}
 				.masthead .secondary .bound {
@@ -84,8 +84,8 @@ body {
 									display: block;
 									overflow: hidden;
 									text-indent: -9999px;
-									width: 90px;
-									height: 14px;
+									width: 125px;
+									height: 25px;
 									background: url(i/logo-kpcc.png) no-repeat;
 									background-size: 100%;
 								}
@@ -101,7 +101,6 @@ body {
 					line-height: 1;
 					color: #d8d8d8;
 					min-width: 165px;
-					/*text-shadow: 0 0 2px black; */
 					overflow: hidden;
 				}
 						.masthead .bylines a {
@@ -167,8 +166,18 @@ body {
 						.masthead {
 							background-size: 100%;
 						}
-
 				    }
+
+    				/*	===================================================================================
+    				    =================================================================================== */
+
+    				    @media screen and (min-width: 1170px) {
+
+    						.masthead {
+    							box-shadow: inset 0 -85px 0 rgba(0,0,0,0.5);
+    						}
+						}
+
 
 				/*	===================================================================================
 				    =================================================================================== */
@@ -187,14 +196,13 @@ body {
 				    @media screen and (max-width: 1050px) {
 
 						.masthead {
-							background-size: 1700px 356px; /* 0.85 */
 							height: 356px;
 						}
 						.masthead h1 {
 							font-size: 5.9em;
 							padding-top: 75px;
 							margin-bottom: 15px; /* had been 26 until now */
-						}
+						}                        
 
 				    }
 
@@ -280,6 +288,10 @@ body {
 						.masthead .tertiary .social {
 							padding-top: 10px;
 						}
+						
+						.masthead .secondary a {
+						    width:100px;
+						}
 
 				    }
 
@@ -316,7 +328,6 @@ body {
 
 						.masthead {
 							box-shadow: inset 0 -85px 0 rgba(0,0,0,0.5);
-							/* height: 220px; */
 						}
 						.masthead h1 {
 							font-size: 3.0em;
@@ -334,8 +345,20 @@ body {
 						}
 						
 						
-
 				    }
+
+    				/*	===================================================================================
+    				    =================================================================================== */
+
+
+                    @media screen and (min-width:533px){
+                        
+                        .masthead .secondary{
+						    background: black;
+						}
+						
+                    }
+
 
 				/*	===================================================================================
 				    =================================================================================== */
@@ -372,6 +395,10 @@ body {
 						.masthead .tertiary .social {
 							padding-top: 11px;
 						}
+						
+						.masthead .secondary a {
+						    width:70px;
+						}
 
 				    }
 
@@ -381,7 +408,7 @@ body {
 				    @media screen and (max-width: 435px) {
 
 						.masthead {
-							background-size: 800px 168px; /* 0.4 */
+							background-size: 800px 277px; /* 0.4 */
 						}
 						.masthead h1 {
 							font-size: 3.1em;
@@ -702,7 +729,7 @@ body {
 		/*	===================================================================================
 		    =================================================================================== */
 
-.character{text-transform: uppercase;
+.character {text-transform: uppercase;
     color: #F16500;
   	font-size:1.2em;}
 
@@ -721,6 +748,10 @@ body {
 .prologue {
 	color: #2f2f2f;
 	font: normal 500 1.3em/1.15 "proxima-nova", Helvetica, sans-serif; /* 30 / 16 */
+}
+
+.afterward {
+    font: italic 100 1em/1.28 georgia, sans-serif; 
 }
 
 .row {
@@ -798,6 +829,8 @@ body {
 				.row-pt1-b .prose {
 					float: left;
 				}
+				
+				
 				.row-pt1-b .experts {
 					float: right;
 					color: #e33500;
@@ -807,6 +840,9 @@ body {
 			        border-bottom: 1px solid #7ac8d4;
 			        padding-bottom: 40px;
 		        }
+
+
+
 				.row-pt1-c .prose {
 				/*	float: right;*/
 				}
@@ -824,7 +860,7 @@ body {
 									text-align: left;
 									color: #144e57;
 								}
-								
+
 				.row-pt1-c .furnishing {
 				    float:right;
 				    padding: 30px;
@@ -841,8 +877,7 @@ body {
 				.row-pt1-d .prose {
 					float: right;
 				}
-				
-
+                
 				.infographic {
 					float: right;
 				}
@@ -1493,9 +1528,9 @@ body {
 					bottom: 0;
 					color: rgba(255,255,255,0.9);
 					display: block;
-					font-size: 0.625em; /* 10 / 16 */
+					font-size: 0.8em; /* 10 / 16 */
 					font-weight: 400;
-					font-style: italic;
+					font-style: normal;
 					left: 0;
 					padding: 6px 12px 8px;
 					position: absolute;
@@ -1563,13 +1598,31 @@ body {
                     =================================================================================== */
 
                     @media screen and (max-width: 750px) {
-					    
-				
+
 				        .rs-controls {
         			        width: 100%;
-        		}
-    		}
+        		        } 		        .
+						        		        .
+    		            .slideshow-core .slide-container .slide-caption {        		
+				            font-size: 0.7em;
+				        }
 
+    		}			
+    		
+
+            /*	===================================================================================
+                =================================================================================== */
+
+
+                    @media screen and (min-width: 750px) {
+					    
+				
+        		        .rs-controls a {
+        		            padding: 25px 18px;
+        		            font-size: 15px;
+    		            }
+				
+    		}
 
 
 
@@ -1594,20 +1647,7 @@ body {
 }
  
  
- 
 
- 
- 
-
-/*.school .audio {
-	background:#e33500;
-	color:#ffe0e1;
-	font-size: 0.95em;
-	font-style:italic;
-	margin-bottom:18px;
-	padding:12px 16px;
-}
-*/
 
     .audio .jp-play, .audio .jp-pause {
     	background:#00A9F3;
