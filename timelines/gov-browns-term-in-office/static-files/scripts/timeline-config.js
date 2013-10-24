@@ -13,14 +13,6 @@ var timelineDataSourceFile = '';
 jqueryNoConflict(document).ready(function() {
     fn.displayTimelineFromData(timelineDataSource)
     fn.retrieveTabletopData();
-
-    // handlebars helper to encode a url
-    function handlebarsEncodeUrl(){
-        Handlebars.registerHelper('encode', function(context, options) {
-            var out = encodeURIComponent(context);
-            return out;
-        });
-    };
 });
 
 // begin data configuration object
@@ -46,11 +38,16 @@ var fn = {
 
     displayData: function(data, tabletop){
 
+        Handlebars.registerHelper('encode', function(context, options) {
+            var out = encodeURIComponent(context);
+            return out;
+        });
+
         var handlebarsData = {
             objects: data.MetaData.elements
         };
 
-        fn.embedUrl.pathToTimeline = data.MetaData.elements[0].url;
+        fn.embedUrl.pathToTimeline = data.MetaData.elements[0].projecturl;
 
         renderHandlebarsTemplate('static-files/templates/data-share.handlebars', '#data-share', handlebarsData);
         renderHandlebarsTemplate('static-files/templates/data-details.handlebars', '#data-details', handlebarsData);
