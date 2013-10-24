@@ -6,7 +6,7 @@
     <title>KML Layers</title>
     <style>
       html, body, #map-canvas {
-        height: 80%;
+        height: 100%;
         margin: 0px;
         padding: 0px
       }
@@ -24,7 +24,7 @@ function initialize() {
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
   var ctaLayer = new google.maps.KmlLayer({
-    url: 'cedar-fire.kml'
+    url: 'http://projects.scpr.org/static/test/keller/kml-map/cedar-fire.kml'
   });
   ctaLayer.setMap(map);
 }
