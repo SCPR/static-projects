@@ -62,7 +62,15 @@ var fn = {
 
                 layer.on('click', function (e) {
 
-                    var html = "<h4>" + feature.properties.name + "</h4><img src='" + feature.properties.URL + "' />";
+                    if (feature.properties.URL === null){
+                        var imageUrl = 'http://maps.googleapis.com/maps/api/staticmap?center=' +
+                            feature.geometry.coordinates[1] + ',' + feature.geometry.coordinates[0] +
+                            '&zoom=13&size=300x300&maptype=satellite&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8';
+                    } else {
+                        var imageUrl = feature.properties.URL;
+                    }
+
+                    var html = "<h4>" + feature.properties.name + "</h4><img src='" + imageUrl + "' />";
 
                     jqueryNoConflict('#content-background').css({'opacity' : '0.7'}).fadeIn('fast');
                     jqueryNoConflict('#content-display').html('<p style=\"float: right\" id=\"close\"><strong>[X]</strong></p>' + html).fadeIn('slow');
