@@ -10,13 +10,23 @@ jqueryNoConflict(document).ready(function() {
 // begin data configuration object
 var fn = {
     createMap: function(){
+
+        var initialZoom;
+
+        // set zoom for mobile devices
+        if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+            initialZoom = 7;
+        } else {
+            initialZoom = 8;
+        }
+
         map = new L.map('content-map-canvas', {
             scrollWheelZoom: false,
             zoomControl: true
         });
 
-        var center = new L.LatLng(35.144617,-118.172121);
-        map.setView(center, 8);
+        var center = new L.LatLng(36.388124,-118.023806);
+        map.setView(center, initialZoom);
 
         googleLayer = L.tileLayer("http://{s}.google.com/vt/?hl=en&x={x}&y={y}&z={z}&s={s}", {
              attribution: "Map data: Copyright Google, 2013",
@@ -49,7 +59,22 @@ var fn = {
             },
 
             onEachFeature: function(feature, layer) {
-                layer.bindPopup(feature.properties.name);
+
+                layer.on('click', function (e) {
+
+                    var html = "<h4>" + feature.properties.name + "</h4><img src='" + feature.properties.URL + "' />";
+
+                    jqueryNoConflict('#content-background').css({'opacity' : '0.7'}).fadeIn('fast');
+                    jqueryNoConflict('#content-display').html('<p style=\"float: right\" id=\"close\"><strong>[X]</strong></p>' + html).fadeIn('slow');
+
+                    jqueryNoConflict('#close').click(function(){
+                        jqueryNoConflict('#content-display').fadeOut('fast');
+                        jqueryNoConflict('#content-background').fadeOut('fast');
+                    });
+
+                });
+
+                //layer.bindPopup("<h4>" + feature.properties.name + "</h4><img src='" + feature.properties.URL + "' />");
             }
 
         }).addTo(map);
