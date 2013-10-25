@@ -1,0 +1,159 @@
+/* embedded styles */
+body.embedded {background: #ffffff;}
+
+/* embedded header */
+body.embedded header .navbar-default {background: #fff; box-shadow: 0 0 8px rgba(0,0,0,0.7); height: auto; margin: 0 0 25px 0;}
+body.embedded header h3#site-title a {background-image: url('http://www.scpr.org/assets/logo-masthead.png'); width: 181px; height: 42px; display: block; text-indent: -9999px; width: 180px; height: 28px; margin-top: 15px;}
+body.embedded .header-links {margin: 5px 0;}
+body.embedded .header-links li {border-right: 1px solid #e9e9e9; display: block; float: left; list-style: none; padding: 8px 18px 0;}
+body.embedded .header-links li:last-child {border: 0; padding-right: 0;}
+body.embedded .header-links a {color: #454545; padding: 0 0 0 0;}
+body.embedded .header-links b {display: block; font-size: 12px;}
+body.embedded .header-links a.icon {display: block; text-indent: -9999px;}
+body.embedded .header-links a.icon:hover {opacity: 0.7;}
+body.embedded .header-links a.pledge-now {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-pledge.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
+body.embedded .header-links .share-links {width: 63px; margin: 0 auto;}
+body.embedded .header-links a.facebook {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-facebook.png') no-repeat 0 0; display: block; float: left; margin-right: 10px; width: 22px; height: 22px;}
+body.embedded .header-links a.twitter {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-twitter.png') no-repeat 0 0; display: block; float: left; width: 31px; height: 22px;}
+body.embedded .header-links a.embed-this {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-embed.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
+body.embedded .header-links a.projects-home {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-home.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
+
+/* embed footer */
+body.embedded footer {text-align: center; padding: 10px 0;}
+body.embedded footer ul {margin: 0; list-style: none;}
+body.embedded footer ul li,
+footer ul li a {color: #999; font-size:11px;}
+body.embedded footer ul li a:hover {color: #666;}
+body.embedded footer ul li {display: inline-block; padding: 0 10px 0 0; margin: 0 0 0 10px; border-right: 1px solid #999;}
+body.embedded footer ul li:first-child {margin-left: 0;}
+body.embedded footer ul li:last-child {padding-right: 0; border-right: none;}
+
+/* structure for data elements */
+body.minimal .data-container {width: 90% margin: 0 5% 0 5%;}
+body.minimal .data-details,
+body.minimal .data-instructions,
+body.minimal .data-visuals,
+body.minimal .data-footer {margin: 15px auto 5px auto;}
+body.minimal .data-container #content-article {width: 100%; height: auto;}
+body.minimal .data-container .jumbotron {width: 96%; height: auto; background: rgba(241, 122, 49, 0.3); font-weight: 400; padding: 10px 0 10px 0;}
+body.minimal .data-container .data-instructions {width: 96%; height: auto; font-weight: 400; padding: 10px 0 10px 0;}
+body.minimal .data-container #content-action-bar {width: 100%; height: auto; text-align: center; margin: 15px auto 15px auto;}
+body.minimal .data-container #content-explainer {width: 100%; height: auto; margin: 15px auto 15px auto;}
+body.minimal .data-container #content-display {width: 100%; height: auto; margin: 15px auto 15px auto;}
+body.minimal .data-container #content-map-canvas {width: 100%; height: 700px; margin: 10px 0 10px 0;}
+body.minimal .data-container #content-map-canvas img {max-width: none;}
+body.minimal .data-container .hidden {display: none;}
+
+/* bootstrap overrides */
+a {color: #4B58A6;}
+.well {padding: 0px; background: none; border: none; -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0.05); -moz-box-shadow: inset 0 0 0 rgba(0,0,0,0.05); box-shadow: inset 0 0 0 rgba(0,0,0,0.05);}
+.well .input-block-level {width: 300px;}
+.lead {font-size: 22.5px; font-weight: 200; line-height: 31.5px;}
+.alert {padding: 8px 35px 8px 14px; margin-bottom: 21px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); background-color: #d47500; border: 1px solid #c54c00; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+.alert-info {background-color: #3399f3; border-color: #11adf1; color: #ffffff;}
+
+/* styles for public insight network bug */
+.data-container .content-partners {border-bottom: 0px solid #e0e0e0; border-top: 0px solid #e0e0e0; margin-bottom: 21px; padding:  10 .5px;}
+.data-container .content-partners p.pij {background: url("http://www.scpr.org/assets/icons/pij-query-56685e16f420acef267891071f085e8f.png") no-repeat 0 4px; padding-left: 30px;}
+.data-container .content-partners p {font-weight: 800;}
+
+/*iframe embed wrapper */
+.embedded-wrapper {width: 100%; height: auto; background: #3d3d3d; padding: 20px 0 20px 0;}
+.embedded-wrapper .header-logo {max-width: 20%; height: auto; width: auto\9; /* ie8 */ margin: 0 40% 20px 40%;}
+.embedded-container {border: solid .2em #f07a20;}
+.embedded-project {max-width: 90%; height: auto; background: #ffffff; margin: 0 5% 0 5%;}
+
+/* for legend area */
+#data-legend {height: 25px; margin: 10px 0 0 0;}
+#data-legend-items {margin: 0 0 0 0; height: 25px; }
+#data-legend-items li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 40px;}
+
+/* user submit forms */
+#data-user-submit .ss-form {width: 90%; margin: 0 5% 0 5%;}
+#data-user-submit {width: 100%; height: 100%; margin: 10px 0; display: none;}
+
+/* for table elements */
+.table-striped thead th {background-color: #2e2e2e; color: #ffffff;}
+.table-striped tbody > tr:nth-child(even) > td,
+.table-striped tbody > tr:nth-child(even) > th {background-color: #CACACA;}
+.table-striped tbody > tr:nth-child(odd) > td,
+.table-striped tbody > tr:nth-child(odd) > th {background-color: #fdfdfd;}
+
+/* typography */
+body.minimal, body.embedded {font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B;}
+.data-container h1 {font-size: 400%; margin-top: 10px;}
+.data-container h2 {font-size: 340%;}
+.data-container h3 {font-size: 280%;}
+.data-container h4 {font-size: 250%;}
+.data-container h5 {font-size: 220%;}
+.data-container h6 {font-size: 190%;}
+.data-container p {font-size: 150%;}
+.data-container .sky-writing {font-size: 600%; color: #f57834;}
+.data-container .kicker {font-size: 125%; text-transform: uppercase; font-weight: bold;}
+.data-container .normal-display {font-size: 150%;}
+.data-container table {font-size: 135%;}
+.data-container .data-instructions, .data-container .data-footer {font-size: 75%;}
+.data-container .small-display {font-size: 85%;}
+.data-container .lowercase {text-transform: lowercase;}
+.data-container .centered, {text-align: center;}
+.data-container .right-align {text-align: right;}
+.data-container .left-align {text-align: left;}
+.data-container .underline {text-decoration: underline;}
+.data-container .credits {display: inline;}
+.data-container .pubdate {color: #b94a48; font-style: italic; display: inline;}
+.data-container .italics {font-style: italic;}
+.data-container .story-text {}
+.data-container .details-intro {}
+.data-container .details-drilldown {}
+.data-container blockquote {padding: 0 0 0 15px; margin: 0 0 20px; border-left: 3px solid #2B2B2B;}
+
+/* -- media queries -- */
+@media (max-width: 480px) {
+    .data-container h1 {font-size: 360%; line-height: 130%;}
+    .data-container h2 {font-size: 330%; line-height: 130%;}
+    .data-container h3 {font-size: 300%; line-height: 130%;}
+    .data-container h4 {font-size: 240%; line-height: 130%;}
+    .data-container h5 {font-size: 210%; line-height: 130%;}
+    .data-container h6 {font-size: 180%; line-height: 130%;}
+    .data-container p {font-size: 140%; line-height: 130%;}
+}
+
+@media (min-width: 481px) {
+    .data-container h1 {font-size: 360%; line-height: 130%;}
+    .data-container h2 {font-size: 330%; line-height: 130%;}
+    .data-container h3 {font-size: 300%; line-height: 130%;}
+    .data-container h4 {font-size: 240%; line-height: 130%;}
+    .data-container h5 {font-size: 210%; line-height: 130%;}
+    .data-container h6 {font-size: 180%; line-height: 130%;}
+    .data-container p {font-size: 140%; line-height: 130%;}
+}
+
+@media (min-width: 768px) {
+    .data-container h1 {font-size: 360%; line-height: 130%;}
+    .data-container h2 {font-size: 330%; line-height: 130%;}
+    .data-container h3 {font-size: 300%; line-height: 130%;}
+    .data-container h4 {font-size: 240%; line-height: 130%;}
+    .data-container h5 {font-size: 210%; line-height: 130%;}
+    .data-container h6 {font-size: 180%; line-height: 130%;}
+    .data-container p {font-size: 140%; line-height: 130%;}
+}
+
+@media (min-width: 992px) {
+    .data-container h1 {font-size: 400%; line-height: 130%;}
+    .data-container h2 {font-size: 340%; line-height: 130%;}
+    .data-container h3 {font-size: 280%; line-height: 130%;}
+    .data-container h4 {font-size: 250%; line-height: 130%;}
+    .data-container h5 {font-size: 220%; line-height: 130%;}
+    .data-container h6 {font-size: 190%; line-height: 130%;}
+    .data-container p {font-size: 150%; line-height: 130%;}
+}
+
+@media (min-width: 1700px) {
+    .data-container h1 {font-size: 400%; line-height: 130%;}
+    .data-container h2 {font-size: 340%; line-height: 130%;}
+    .data-container h3 {font-size: 280%; line-height: 130%;}
+    .data-container h4 {font-size: 250%; line-height: 130%;}
+    .data-container h5 {font-size: 220%; line-height: 130%;}
+    .data-container h6 {font-size: 190%; line-height: 130%;}
+    .data-container p {font-size: 150%; line-height: 130%;}
+}
