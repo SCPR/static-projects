@@ -167,85 +167,79 @@ var aqueductFeatures = {
 "type": "FeatureCollection",
 
 "features": [
-{ "type": "Feature", "properties": { "OBJECTID": 1, "name": "Alabama Gates", "type_": "Spillway", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.097656256027093, 36.672837908185535 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 1, "name": "Alabama Gates", "type_": "Spillway", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.097656256027093, 36.672837908185535 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 2, "name": "Mono Lake", "type_": "Lake", "URL": "http:\/\/a.scpr.org/i/0673346a057656bce55e50c02cb5d93b/24457-lead.jpg", }, "geometry": { "type": "Point", "coordinates": [ -118.986913150705448, 38.009252388364416 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 2, "name": "Mono Lake", "type_": "Lake", "imageUrl": "http:\/\/a.scpr.org/i/0673346a057656bce55e50c02cb5d93b/24457-lead.jpg", "imageCredit": "David McNew/Getty Images",}, "geometry": { "type": "Point", "coordinates": [ -118.986913150705448, 38.009252388364416 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 3, "name": "Lee Vining Creek Diversion", "type_": "Dam", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -119.134713596815587, 37.936178884940418 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 3, "name": "Lee Vining Creek Diversion", "type_": "Dam", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -119.134713596815587, 37.936178884940418 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 4, "name": "Grant Lake", "type_": "Reservoir", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -119.108706897724801, 37.850292375123317 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 4, "name": "Grant Lake", "type_": "Reservoir", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -119.108706897724801, 37.850292375123317 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 5, "name": "Rush Creek", "type_": "Creek", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -119.118405766200624, 37.799648306940725 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 5, "name": "Rush Creek", "type_": "Creek", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -119.118405766200624, 37.799648306940725 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 6, "name": "Grant Lake Dam", "type_": "Dam", "URL": null, }, "geometry": { "type": "Point", "coordinates": [ -119.103814548719967, 37.862219519073868 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 6, "name": "Grant Lake Dam", "type_": "Dam", "imageUrl": null, }, "geometry": { "type": "Point", "coordinates": [ -119.103814548719967, 37.862219519073868 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 7, "name": "Mono Gate One", "type_": "Diversion", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -119.092227405347231, 37.86269385422159 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 7, "name": "Mono Gate One", "type_": "Diversion", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -119.092227405347231, 37.86269385422159 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 12, "name": "Hot Creek Fish Hatchery", "type_": "Fish Hatchery", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.856048931006015, 37.641416499953522 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 12, "name": "Hot Creek Fish Hatchery", "type_": "Fish Hatchery", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.856048931006015, 37.641416499953522 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 14, "name": "Crowley Lake Reservoir", "type_": "Reservoir", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.74297254958978, 37.642172900431611 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 14, "name": "Crowley Lake Reservoir", "type_": "Reservoir", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.74297254958978, 37.642172900431611 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 15, "name": "Owens Gorge", "type_": "Canyon", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.703447517911641, 37.5876796254053 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 15, "name": "Owens Gorge", "type_": "Canyon", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.703447517911641, 37.5876796254053 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 16, "name": "Upper Gorge Power Plant", "type_": "Power Plant", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.589818414779174, 37.545932819810247 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 16, "name": "Upper Gorge Power Plant", "type_": "Power Plant", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.589818414779174, 37.545932819810247 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 17, "name": "Gorge Middle Power Plant", "type_": "Power Plant", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.569047388218394, 37.509516028401713 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 17, "name": "Gorge Middle Power Plant", "type_": "Power Plant", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.569047388218394, 37.509516028401713 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 18, "name": "Control Gorge Power Plant", "type_": "Power Plant", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.556945261354528, 37.438060298023039 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 18, "name": "Control Gorge Power Plant", "type_": "Power Plant", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.556945261354528, 37.438060298023039 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 19, "name": "Pleasant Valley Reservoir", "type_": "Reservoir", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.54289048632053, 37.425144662340657 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 19, "name": "Pleasant Valley Reservoir", "type_": "Reservoir", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.54289048632053, 37.425144662340657 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 20, "name": "Owens River", "type_": "River", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.522462782386626, 37.413419834264062 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 20, "name": "Owens River", "type_": "River", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.522462782386626, 37.413419834264062 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 21, "name": "Eastern California Museum", "type_": "Museum", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.203827512433122, 36.801695002779489 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 21, "name": "Eastern California Museum", "type_": "Museum", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.203827512433122, 36.801695002779489 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 22, "name": "Inter-Agency Visitor Center", "type_": "Museum", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.055522947955225, 36.578174375521719 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 23, "name": "Aqueduct Intake - Headworks", "type_": "Diversion", "imageUrl": "http://a.scpr.org/i/67528dea6d5dc607bd25542a9f56ddf5/70776-eight.jpg", "imageCredit": "Meghan McCarty/KPCC",}, "geometry": { "type": "Point", "coordinates": [ -118.210300977186378, 36.975862342456971 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 23, "name": "Aqueduct Intake - Headworks", "type_": "Diversion", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.210300977186378, 36.975862342456971 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 24, "name": "Tinemaha Reservoir", "type_": "Reservoir", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.220772321348051, 37.059607750822643 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 24, "name": "Tinemaha Reservoir", "type_": "Reservoir", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.220772321348051, 37.059607750822643 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 25, "name": "Klondike Lake", "type_": "Reservoir", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.304049547410983, 37.207409738713736 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 25, "name": "Klondike Lake", "type_": "Reservoir", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.304049547410983, 37.207409738713736 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 26, "name": "Fish Springs Hatchery", "type_": "Fish Hatchery", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.256055307031957, 37.095535209582998 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 26, "name": "Fish Springs Hatchery", "type_": "Fish Hatchery", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.256055307031957, 37.095535209582998 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 29, "name": "Concrete-lined Canal", "type_": "Canal", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.096663676028641, 36.666470276163068 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 27, "name": "Owens Lake Pump Station", "type_": "Diversion", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -117.981908046004051, 36.549341484102008 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 30, "name": "Diaz Lake", "type_": "Lake", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.054641374573052, 36.56081342193319 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 29, "name": "Concrete-lined Canal", "type_": "Canal", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.096663676028641, 36.666470276163068 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 31, "name": "Owens Lake", "type_": "Lake (dry)", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -117.962630876438254, 36.473277317009433 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 30, "name": "Diaz Lake", "type_": "Lake", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.054641374573052, 36.56081342193319 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 33, "name": "Cottonwood Creek Power Plant", "type_": "Power Plant", "imageUrl": "http://a.scpr.org/i/69e8a72e5f6b8458d60a7f41d4d2689a/70722-full.jpg",}, "geometry": { "type": "Point", "coordinates": [ -118.043862444563104, 36.443374737548289 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 31, "name": "Owens Lake", "type_": "Lake (dry)", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -117.962630876438254, 36.473277317009433 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 34, "name": "Aqueduct Crosses Highway 395", "type_": "Bridge", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -117.984070641235874, 36.23651209835657 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 33, "name": "Cottonwood Creek Power Plant", "type_": "Power Plant", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.043862444563104, 36.443374737548289 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 35, "name": "Haiwee Reservoir", "type_": "Reservoir", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -117.964372498670059, 36.227823296208783 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 34, "name": "Aqueduct Crosses Highway 395", "type_": "Bridge", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -117.984070641235874, 36.23651209835657 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 36, "name": "Haiwee Reservoir Power Plant and Dam", "type_": "Power Plant and Dam", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -117.952463490727666, 36.137251767241708 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 35, "name": "Haiwee Reservoir", "type_": "Reservoir", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -117.964372498670059, 36.227823296208783 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 37, "name": "Second Aqueduct Headworks", "type_": "Diversion", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -117.95812831541835, 36.18357678648136 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 36, "name": "Haiwee Reservoir Power Plant and Dam", "type_": "Power Plant and Dam", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -117.952463490727666, 36.137251767241708 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 41, "name": "Jawbone Canyon", "type_": "Pipeline", "imageUrl": "http://a.scpr.org/i/94bb2fee0c5ba9a6096e7aad8870ad04/70772-full.jpg", "imageCredit": "LA Dept of Water & Power", }, "geometry": { "type": "Point", "coordinates": [ -118.020069519522536, 35.319183574210108 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 37, "name": "Second Aqueduct Headworks", "type_": "Diversion", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -117.95812831541835, 36.18357678648136 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 45, "name": "Fairmont Reservoir", "type_": "Reservoir", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.434331337209443, 34.71194578283756 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 41, "name": "Jawbone Canyon", "type_": "Pipeline", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.020069519522536, 35.319183574210108 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 46, "name": "Elizabeth Tunnel", "type_": "Tunnel", "imageUrl": "http://a.scpr.org/i/e5d8a324ac68ab9a3e9d50904fe1294e/70758-full.jpg", "imageCredit": "LA Dept of Water & Power", }, "geometry": { "type": "Point", "coordinates": [ -118.412358681005458, 34.668048931835315 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 45, "name": "Fairmont Reservoir", "type_": "Reservoir", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.434331337209443, 34.71194578283756 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 48, "name": "San Francisquito Power Plant #2", "type_": "Power Plant", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.525354782679699, 34.534389301279269 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 46, "name": "Elizabeth Tunnel", "type_": "Tunnel", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.412358681005458, 34.668048931835315 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 49, "name": "Bouquet Reservoir", "type_": "Reservoir", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.38279024445815, 34.580841026623681 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 47, "name": "Elizabeth Tunnel outlet", "type_": "Tunnel", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.453611056194006, 34.593434474399594 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 50, "name": "San Francisquito Power Plant #1", "type_": "Power Plant", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.454716361285875, 34.59024799243727 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 48, "name": "San Francisquito Power Plant #2", "type_": "Power Plant", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.525354782679699, 34.534389301279269 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 51, "name": "Site of St. Francis Dam Collapse", "type_": "ruins", "imageUrl": "http://a.scpr.org/i/15e38090509d0b1437b04180bfe31701/70661-full.jpg",}, "geometry": { "type": "Point", "coordinates": [ -118.51807013832655, 34.545615072033115 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 49, "name": "Bouquet Reservoir", "type_": "Reservoir", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.38279024445815, 34.580841026623681 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 52, "name": "Aqueduct entering Santa Clarita", "type_": "Aqueduct", "imageUrl": null,}, "geometry": { "type": "Point", "coordinates": [ -118.525022423990876, 34.47828471133608 ] } }
 ,
-{ "type": "Feature", "properties": { "OBJECTID": 50, "name": "San Francisquito Power Plant #1", "type_": "Power Plant", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.454716361285875, 34.59024799243727 ] } }
-,
-{ "type": "Feature", "properties": { "OBJECTID": 51, "name": "St Francis Dam Site", "type_": "ruins", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.51807013832655, 34.545615072033115 ] } }
-,
-{ "type": "Feature", "properties": { "OBJECTID": 52, "name": "Aqueduct passing through Canta Clarita", "type_": "Aqueduct", "URL": null,}, "geometry": { "type": "Point", "coordinates": [ -118.525022423990876, 34.47828471133608 ] } }
-,
-{ "type": "Feature", "properties": { "OBJECTID": 55, "name": "Aqueduct End", "type_": "Aqueduct", "URL": "http:\/\/a.scpr.org/i/42b67d9f3d483c4345455805eeab8108/70769-eight.jpg", }, "geometry": { "type": "Point", "coordinates": [ -118.495051420025405, 34.315722615120904 ] } }
+{ "type": "Feature", "properties": { "OBJECTID": 55, "name": "Aqueduct End", "type_": "Aqueduct", "imageUrl": "http:\/\/a.scpr.org/i/42b67d9f3d483c4345455805eeab8108/70769-eight.jpg", "imageCredit": "Meghan McCarty/KPCC", }, "geometry": { "type": "Point", "coordinates": [ -118.495051420025405, 34.315722615120904 ] } }
 
 ]
 };

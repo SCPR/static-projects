@@ -1,7 +1,5 @@
 body.minimal .data-container #content-map-canvas {width: 100%; height: 1000px; margin: 10px 0 10px 0; z-index: 10;}
 
-#content-map-container {background: #f7f7f7; width: 100%; padding: 1em 0 1em 0;}
-
 #content-map-canvas img {max-width: none;}
 
 #content-background {display: none; position: fixed; height: 100%; width: 100%; top: 0; left: 0; background: #000000; z-index: 1000; }
@@ -9,18 +7,19 @@ body.minimal .data-container #content-map-canvas {width: 100%; height: 1000px; m
 #content-display {
 display: none;
 position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: auto;
+/*top: 0;
+left: 0;*/
+width: 40%;
 max-width: 40%;
+height: auto;
+margin: 0 30% 0 30%;
 background: #f7f7f7;
 z-index: 1003;
 color: #2b2b2b;
 padding: 2%;
 -moz-border-radius: 2%; -webkit-border-radius: 2%; border-radius: 2%; -khtml-border-radius: 2%;}
 
-#content-display img {max-width: 80%;}
+#content-display img {width: 80%; margin: 0 10% 15px 10%;}
 
 #close {margin: 0; cursor: pointer; }
 
