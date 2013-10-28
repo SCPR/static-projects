@@ -39,9 +39,10 @@
         <link href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
         <link href="css/foundation-style-v3.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
-        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="css/style.css" rel="stylesheet" />
 
         <!--[if lte IE 8]>
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.ie.min.css" />
@@ -53,7 +54,6 @@
         <link href="http://projects.scpr.org/static/static-files/css/responsive-tables/responsive-tables.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/css/tablestacker-tables/styles.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/css/tabletop-timelines/styles.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
         -->
 
         <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
@@ -68,7 +68,6 @@
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <script async="" src="http://www.google-analytics.com/ga.js"></script>
         <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-        <script src="scripts/data.js"></script>
         <!-- end base scripts -->
 
     </head>
@@ -105,8 +104,8 @@
                                 <b>Share this</b>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" class="embed-this icon">Embed This</a>
-                                <a href="javascript:void(0)" target="_blank"><b>Embed This</b></a>
+                                <a href="javascript:void(0)" class="embed-this icon" onclick="fn.embedBox()">Embed This</a>
+                                <a href="javascript:void(0)" target="_blank" onclick="fn.embedBox()"><b>Embed This</b></a>
                             </li>
                             <li>
                                 <a href="http://projects.scpr.org/" class="projects-home icon">Projects Home</a>
@@ -140,13 +139,13 @@
                             <p><span class="credits italics">Produced by Meghan McCarty &amp; <a href="http://www.scpr.org/about/people/staff/chris-keller">Chris Keller</a></span> | <span class="pubdate">Published Oct. 28, 2013</span></p>
                         </div>
                         <div id="content-article-text">
-                            <p>Nov. 5, 2013, marks the 100th anniversary of the creation of the Los Angeles Aqueduct, the legendary civil engineering project that brought water south from the Eastern Sierra Nevada and created the conditions for the growth of modern Southern California. The then-small city of 100,000 shortly grew into the giant metropolis it is today.</p>
-                            <p>Depending on the levels, it can take anywhere between five days and three months for water that originates in the Owens river to make it to Los Angeles through the aqueduct.</p>
-                            <p>The 233-mile long aqueduct starts at about 4,000 feet above sea level and gravity brings the water to the San Fernando Valley, which has an elevation of about 1,500 feet.</p>
-                            <p>The map below attempts to trace the approximate route of three aqueducts that bring water to Los Angeles and highlight geographic and engineering features:</p>
-                            <p style="text-indent: 5%;"><strong><span style="color: #E41A1C">The Los Angeles Aqueduct</span></strong>: Completed in 1913 and begins about 30 miles south of Bishop.</p>
-                            <p style="text-indent: 5%;"><strong><span style="color: #000000">The Second Aqueduct</span></strong>: Completed in 1970 and begins near the Haiwee Reservoir, south of Owens Lake.</p>
-                            <p style="text-indent: 5%;"><strong><span style="color: #FF7F00">The Mono Basin Extension</span></strong>: Completed in 1940 and extends 105 miles north of the Owens Valley.</p>
+                            <p>Nov. 5, 2013, marks the 100th anniversary of the completion of the <a href="http://www.scpr.org/water/" target="blank">Los Angeles Aqueduct</a>, the legendary civil engineering project that brought water more than 200 miles south from the Eastern Sierra Nevada and created the conditions for the growth of modern Southern California. It put the city of 100,000 on course to grow into the giant metropolis it is today.</p>
+                            <p>Depending on the water level in the system, it can take between five days to three months for the water that originates in the Owens River to make it to Los Angeles through the aqueduct.</p>
+                            <p>Gravity makes the journey to Los Angeles possible. Starting at about 4,000 feet above sea level, the water travels down a steady, gradual slope to the San Fernando Valley, which has an elevation of about 1,500 feet.</p>
+                            <p>The map below traces the approximate route of three aqueducts that bring water to Los Angeles and highlights the geographic and engineering features:</p>
+                            <p style="text-indent: 5%;"><strong><span style="color: #CA0020">The Los Angeles Aqueduct</span></strong>: Completed in 1913 and begins about 30 miles south of Bishop.</p>
+                            <p style="text-indent: 5%;"><strong><span style="color: #5E3C99">The Mono Basin Extension</span></strong>: Completed in 1940 and extends 105 miles north of the Owens Valley.</p>
+                            <p style="text-indent: 5%;"><strong><span style="color: #404040">The Second Aqueduct</span></strong>: Completed in 1970 and begins near the Haiwee Reservoir, south of Owens Lake.</p>
                         </div>
                         <div id="content-article-buttons">
                             <a class="btn btn-primary" href="http://www.scpr.org/water/">Read more</a>
@@ -159,7 +158,7 @@
             <!-- begin interactive instructions -->
             <div class="row data-instructions">
                 <div class="col-md-12">
-                    <p><strong>About this: </strong>The routes shown for the Los Angeles Aqueduct, the Second Aqueduct and the Mono Basin Extension are approximate and based on available public data from the Los Angeles Department of Water and Power and ESRI's ArcGIS Online portal. <strong>Source(s): </strong><a href="http://www.laaqueduct100.com/">Los Angeles Department of Water and Power</a> and <a href="http://www.arcgis.com/home/item.html?id=8ae5dcb789944a4aabd2a3d3dc98e818" target="_blank">ESRI's ArcGIS Online portal</a>.</p>
+                    <p><strong>About this: </strong>The routes shown for the Los Angeles Aqueduct, the Second Aqueduct and the Mono Basin Extension are approximate and based on available public data, consultation with the Los Angeles Department of Water and Power and interpretation of aerial imagery. <strong>Source(s): </strong><a href="http://www.laaqueduct100.com/">Los Angeles Department of Water and Power</a> and <a href="http://www.arcgis.com/home/item.html?id=8ae5dcb789944a4aabd2a3d3dc98e818" target="_blank">the Story of the LA Aqueduct Map</a> on Esri’s ArcGIS Online.</p>
                 </div>
             </div>
             <!-- end interactive instructions -->
@@ -199,38 +198,14 @@
         <!-- end main container -->
 
         <!-- begin scripts -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="scripts/data.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/scripts/jquery.alerts.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.js"></script>
         <script src="scripts/app.js"></script>
-
-        <!-- additional js files for projects -->
-        <!--
-        <script src="http://maps.google.com/maps/api/js?key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8&sensor=false&amp;libraries=places"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-ajax.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/scripts/swag.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.1.0/tabletop.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highcharts/3.0.2/highcharts.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.2.1/moment.min.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.pager.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/scripts/jquery.tablesorter.multipagefilter.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/scripts/responsive-tables.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/scripts/timeline-plugins.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/scripts/timeline-main-script.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/scripts/jquery.geocomplete.min-1.4.js"></script>
-        <script src="static-files/scripts/maps-lib.js"></script>
-        <script src="static-files/scripts/tabletop-script.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/scripts/jquery.alerts.js"></script>
-        <script src="static-files/scripts/templates-script.js"></script>
-        <script src="static-files/scripts/map-script.js"></script>
-        -->
 
         <!-- begin analytics -->
         <!--

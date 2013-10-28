@@ -41,24 +41,24 @@ var fn = {
         var center = new L.LatLng(36.388124,-118.023806);
         map.setView(center, initialZoom);
 
-        googleLayer = L.tileLayer("http://{s}.google.com/vt/?hl=en&x={x}&y={y}&z={z}&s={s}", {
-             attribution: 'Map data: Copyright Google, 2013',
-             subdomains: ['mt0','mt1','mt2','mt3']
+        var mapquestUrl = L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
+             attribution: 'Tiles, data, imagery and map information provided by <a href="http://www.mapquest.com" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.',
+             subdomains: ['otile1','otile2','otile3','otile4']
         });
 
-        map.addLayer(googleLayer);
+        map.addLayer(mapquestUrl);
 
         L.geoJson(aqueductRoute, {
             style: function (feature) {
                 var route_color;
                 if (feature.properties.type_ === 'la_aqueduct'){
-                    route_color = '#E41A1C';
+                    route_color = '#CA0020';
                 } else if (feature.properties.type_ === 'mono_basin_extension'){
-                    route_color = '#FF7F00';
+                    route_color = '#5E3C99';
                 } else if (feature.properties.type_ === 'second_aqueduct'){
-                    route_color = '#000000';
+                    route_color = '#404040';
                 } else {
-                    route_color = '#377EB8';
+                    route_color = '#2B83BA';
                 }
                 return {
                     color: route_color,
