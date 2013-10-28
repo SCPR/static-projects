@@ -79,7 +79,7 @@ var fn = {
                         var imageUrl = 'http://maps.googleapis.com/maps/api/staticmap?center=' +
                             feature.geometry.coordinates[1] + ',' + feature.geometry.coordinates[0] +
                             '&zoom=13&size=1000x1000&maptype=satellite&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8';
-                        var imageCredit = '<strong>Copyright</strong> Google, 2013'
+                        var imageCredit = 'Satellite image via Google'
 
                     } else {
                         var imageUrl = feature.properties.imageUrl;
