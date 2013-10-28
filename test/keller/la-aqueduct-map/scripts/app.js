@@ -50,15 +50,32 @@ var fn = {
 
         L.geoJson(aqueductRoute, {
             style: function (feature) {
+                var route_color;
+                if (feature.properties.type_ === 'la_aqueduct'){
+                    route_color = '#E41A1C';
+                } else if (feature.properties.type_ === 'mono_basin_extension'){
+                    route_color = '#FF7F00';
+                } else if (feature.properties.type_ === 'second_aqueduct'){
+                    route_color = '#000000';
+                } else {
+                    route_color = '#377EB8';
+                }
                 return {
-                    color: 'red',
-                    weight: 5,
+                    color: route_color,
+                    weight: 7,
                     fillColor: '#f07a30',
-                    opacity: .6,
+                    opacity: 1,
                     fillOpacity: 1
                 }
-            },
+            }
         }).addTo(map);
+
+        var myIcon = L.Icon.extend({
+            iconUrl: 'images/camera.png',
+            iconSize: [38, 95],
+            iconAnchor: [22, 94],
+            popupAnchor: [-3, -76]
+        });
 
         L.geoJson(aqueductFeatures, {
             style: function (feature) {
@@ -69,6 +86,14 @@ var fn = {
                     opacity: .6,
                     fillOpacity: 1
                 }
+            },
+
+            pointToLayer: function(feature, latlng) {
+                return new L.marker(latlng, {
+                    icon: new myIcon({
+                        iconUrl: 'images/camera.png'
+                    })
+                })
             },
 
             onEachFeature: function(feature, layer) {
