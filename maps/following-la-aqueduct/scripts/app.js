@@ -1,6 +1,6 @@
 var jqueryNoConflict = jQuery;
 var fn = fn || {};
-var embed_url = 'http://projects.scpr.org/static/maps/election-day-voting-issues/';
+var embed_url_root = 'http://projects.scpr.org/static/maps/following-la-aqueduct';
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
@@ -126,8 +126,8 @@ var fn = {
     },
 
     embedBox: function(){
-        var embed_url = embed_url + 'iframe.html';
-        jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy the code below and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
+        var embed_url = embed_url_root + 'iframe.html';
+        jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
     }
 
 }

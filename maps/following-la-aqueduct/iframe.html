@@ -75,6 +75,21 @@
             <!-- begin interactive content -->
             <div class="row data-visuals">
                 <div class="col-md-12">
+                    <div id="legend">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="la_aqueduct"><strong>The Los Angeles Aqueduct</span></strong> (Completed in 1913)</td>
+                                </tr>
+                                <tr>
+                                    <td class="mono_basin_extension"><strong>The Mono Basin Extension</span></strong> (Completed in 1940)</td>
+                                </tr>
+                                <tr>
+                                    <td class="second_aqueduct"><strong>The Second Aqueduct</span></strong> (Completed in 1970)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <div id="content-map-canvas"></div>
                 </div>
             </div>
@@ -83,7 +98,7 @@
             <!-- begin interactive instructions -->
             <div class="row data-instructions">
                 <div class="col-md-12">
-                    <p><strong>About this: </strong>The routes shown for the Los Angeles Aqueduct, the Second Aqueduct and the Mono Basin Extension are approximate and based on available public data from the Los Angeles Department of Water and Power and ESRI's ArcGIS Online portal. <strong>Source(s): </strong><a href="http://www.laaqueduct100.com/">Los Angeles Department of Water and Power</a> and <a href="http://www.arcgis.com/home/item.html?id=8ae5dcb789944a4aabd2a3d3dc98e818" target="_blank">ESRI's ArcGIS Online portal</a>.</p>
+                    <p><strong>About the data:</strong> The routes shown for the <strong><span style="color: #CA0020">The Los Angeles Aqueduct</span></strong>, the <strong><span style="color: #5E3C99">Mono Basin Extension</span></strong> and the <strong><span style="color: #404040">Second Aqueduct</span></strong> are approximate and based on available public data, consultation with the Los Angeles Department of Water and Power and interpretation of aerial imagery. <strong>Source(s): </strong><a href="http://www.laaqueduct100.com/">Los Angeles Department of Water and Power</a> and <a href="http://www.arcgis.com/home/item.html?id=8ae5dcb789944a4aabd2a3d3dc98e818" target="_blank">the Story of the LA Aqueduct Map</a> on Esri’s ArcGIS Online. <strong>Built using</strong>: <a href="http://leafletjs.com/">leaflet.js</a> &amp; <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
                 </div>
             </div>
             <!-- end interactive instructions -->
@@ -116,7 +131,6 @@
         <script src="scripts/app.js"></script>
 
         <!-- begin analytics -->
-        <!--
         <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-624724-5']);
@@ -145,7 +159,6 @@
                 window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
             })();
         </script>
-        -->
         <!-- end analytics -->
 
     </body>
