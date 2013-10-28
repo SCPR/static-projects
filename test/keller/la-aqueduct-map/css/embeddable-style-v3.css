@@ -12,14 +12,14 @@ body.embedded footer ul li:first-child {margin-left: 0;}
 body.embedded footer ul li:last-child {padding-right: 0; border-right: none;}
 
 /* structure for data elements */
-body.embedded .data-container {width: 90% margin: 0 5% 0 5%;}
+body.embedded .data-container {max-width: 100%;}
 body.embedded .data-details,
 body.embedded .data-instructions,
 body.embedded .data-visuals,
-body.embedded .data-footer {margin: 15px auto 5px auto;}
+body.embedded .data-footer {margin: 10px auto 5px auto;}
 body.embedded .data-container #content-article {width: 100%; height: auto;}
 body.embedded .data-container .jumbotron {width: 96%; height: auto; background: rgba(241, 122, 49, 0.3); font-weight: 400; padding: 10px 0 10px 0;}
-body.embedded .data-container .data-instructions {width: 96%; height: auto; font-weight: 400; padding: 10px 0 10px 0;}
+body.embedded .data-container .data-instructions {width: 96%; height: auto; font-weight: 400;}
 body.embedded .data-container #content-action-bar {width: 100%; height: auto; text-align: center; margin: 15px auto 15px auto;}
 body.embedded .data-container #content-explainer {width: 100%; height: auto; margin: 15px auto 15px auto;}
 body.embedded .data-container #content-display {width: 100%; height: auto; margin: 15px auto 15px auto;}
@@ -63,20 +63,21 @@ a {color: #4B58A6;}
 .table-striped tbody > tr:nth-child(odd) > th {background-color: #fdfdfd;}
 
 /* typography */
-body.minimal, body.embedded {font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B;}
-.data-container h1 {font-size: 400%; margin-top: 10px;}
-.data-container h2 {font-size: 340%;}
-.data-container h3 {font-size: 280%;}
-.data-container h4 {font-size: 250%;}
-.data-container h5 {font-size: 220%;}
-.data-container h6 {font-size: 190%;}
-.data-container p {font-size: 150%;}
-.data-container .sky-writing {font-size: 600%; color: #f57834;}
-.data-container .kicker {font-size: 125%; text-transform: uppercase; font-weight: bold;}
-.data-container .normal-display {font-size: 150%;}
-.data-container table {font-size: 135%;}
-.data-container .data-instructions, .data-container .data-footer {font-size: 75%;}
-.data-container .small-display {font-size: 85%;}
+body.embedded {font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B;}
+body.embedded .data-container h1 {font-size: 400%; line-height: 130%; margin-top: 10px; font-weight: bold;}
+body.embedded .data-container h2 {font-size: 340%; line-height: 130%; margin-top: 10px;}
+body.embedded .data-container h3 {font-size: 280%; line-height: 130%; margin-top: 10px;}
+body.embedded .data-container h4 {font-size: 250%; line-height: 130%; margin-top: 10px;}
+body.embedded .data-container h5 {font-size: 220%; line-height: 130%; margin-top: 10px;}
+body.embedded .data-container h6 {font-size: 190%; line-height: 130%; margin-top: 10px;}
+body.embedded .data-container p {font-size: 150%; line-height: 130%; margin-top: 10px;}
+body.embedded .data-container .sky-writing {font-size: 600%; color: #f57834;}
+body.embedded .data-container .kicker {font-size: 125%; text-transform: uppercase; font-weight: bold;}
+body.embedded .data-container .normal-display {font-size: 150%;}
+body.embedded .data-container table {font-size: 135%;}
+body.embedded .data-container .data-instructions p,
+body.embedded .data-container .data-footer p {font-size: 125%; line-height: 140%;}
+body.embedded .data-container .small-display {font-size: 85%;}
 .data-container .lowercase {text-transform: lowercase;}
 .data-container .centered, {text-align: center;}
 .data-container .right-align {text-align: right;}
@@ -92,51 +93,51 @@ body.minimal, body.embedded {font: 100%/1.5 "proxima-nova", "Helvetica Neue", He
 
 /* -- media queries -- */
 @media (max-width: 480px) {
-    .data-container h1 {font-size: 360%; line-height: 130%;}
-    .data-container h2 {font-size: 330%; line-height: 130%;}
-    .data-container h3 {font-size: 300%; line-height: 130%;}
-    .data-container h4 {font-size: 240%; line-height: 130%;}
-    .data-container h5 {font-size: 210%; line-height: 130%;}
-    .data-container h6 {font-size: 180%; line-height: 130%;}
-    .data-container p {font-size: 140%; line-height: 130%;}
+    body.embedded .data-container h1 {font-size: 330%; line-height: 130%;}
+    body.embedded .data-container h2 {font-size: 300%; line-height: 130%;}
+    body.embedded .data-container h3 {font-size: 270%; line-height: 130%;}
+    body.embedded .data-container h4 {font-size: 210%; line-height: 130%;}
+    body.embedded .data-container h5 {font-size: 180%; line-height: 130%;}
+    body.embedded .data-container h6 {font-size: 150%; line-height: 130%;}
+    body.embedded .data-container p {font-size: 110%; line-height: 130%;}
 }
 
 @media (min-width: 481px) {
-    .data-container h1 {font-size: 360%; line-height: 130%;}
-    .data-container h2 {font-size: 330%; line-height: 130%;}
-    .data-container h3 {font-size: 300%; line-height: 130%;}
-    .data-container h4 {font-size: 240%; line-height: 130%;}
-    .data-container h5 {font-size: 210%; line-height: 130%;}
-    .data-container h6 {font-size: 180%; line-height: 130%;}
-    .data-container p {font-size: 140%; line-height: 130%;}
+    body.embedded .data-container h1 {font-size: 330%; line-height: 130%;}
+    body.embedded .data-container h2 {font-size: 300%; line-height: 130%;}
+    body.embedded .data-container h3 {font-size: 270%; line-height: 130%;}
+    body.embedded .data-container h4 {font-size: 210%; line-height: 130%;}
+    body.embedded .data-container h5 {font-size: 180%; line-height: 130%;}
+    body.embedded .data-container h6 {font-size: 150%; line-height: 130%;}
+    body.embedded .data-container p {font-size: 110%; line-height: 130%;}
 }
 
 @media (min-width: 768px) {
-    .data-container h1 {font-size: 360%; line-height: 130%;}
-    .data-container h2 {font-size: 330%; line-height: 130%;}
-    .data-container h3 {font-size: 300%; line-height: 130%;}
-    .data-container h4 {font-size: 240%; line-height: 130%;}
-    .data-container h5 {font-size: 210%; line-height: 130%;}
-    .data-container h6 {font-size: 180%; line-height: 130%;}
-    .data-container p {font-size: 140%; line-height: 130%;}
+    body.embedded .data-container h1 {font-size: 360%; line-height: 130%;}
+    body.embedded .data-container h2 {font-size: 330%; line-height: 130%;}
+    body.embedded .data-container h3 {font-size: 300%; line-height: 130%;}
+    body.embedded .data-container h4 {font-size: 240%; line-height: 130%;}
+    body.embedded .data-container h5 {font-size: 210%; line-height: 130%;}
+    body.embedded .data-container h6 {font-size: 180%; line-height: 130%;}
+    body.embedded .data-container p {font-size: 140%; line-height: 130%;}
 }
 
 @media (min-width: 992px) {
-    .data-container h1 {font-size: 400%; line-height: 130%;}
-    .data-container h2 {font-size: 340%; line-height: 130%;}
-    .data-container h3 {font-size: 280%; line-height: 130%;}
-    .data-container h4 {font-size: 250%; line-height: 130%;}
-    .data-container h5 {font-size: 220%; line-height: 130%;}
-    .data-container h6 {font-size: 190%; line-height: 130%;}
-    .data-container p {font-size: 150%; line-height: 130%;}
+    body.embedded .data-container h1 {font-size: 400%; line-height: 130%;}
+    body.embedded .data-container h2 {font-size: 340%; line-height: 130%;}
+    body.embedded .data-container h3 {font-size: 280%; line-height: 130%;}
+    body.embedded .data-container h4 {font-size: 250%; line-height: 130%;}
+    body.embedded .data-container h5 {font-size: 220%; line-height: 130%;}
+    body.embedded .data-container h6 {font-size: 190%; line-height: 130%;}
+    body.embedded .data-container p {font-size: 150%; line-height: 130%;}
 }
 
 @media (min-width: 1700px) {
-    .data-container h1 {font-size: 400%; line-height: 130%;}
-    .data-container h2 {font-size: 340%; line-height: 130%;}
-    .data-container h3 {font-size: 280%; line-height: 130%;}
-    .data-container h4 {font-size: 250%; line-height: 130%;}
-    .data-container h5 {font-size: 220%; line-height: 130%;}
-    .data-container h6 {font-size: 190%; line-height: 130%;}
-    .data-container p {font-size: 150%; line-height: 130%;}
+    body.embedded .data-container h1 {font-size: 400%; line-height: 130%;}
+    body.embedded .data-container h2 {font-size: 340%; line-height: 130%;}
+    body.embedded .data-container h3 {font-size: 280%; line-height: 130%;}
+    body.embedded .data-container h4 {font-size: 250%; line-height: 130%;}
+    body.embedded .data-container h5 {font-size: 220%; line-height: 130%;}
+    body.embedded .data-container h6 {font-size: 190%; line-height: 130%;}
+    body.embedded .data-container p {font-size: 150%; line-height: 130%;}
 }

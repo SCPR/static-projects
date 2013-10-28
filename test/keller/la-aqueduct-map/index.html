@@ -79,7 +79,7 @@
         <!-- begin page header/navigation -->
         <header>
             <nav class="navbar navbar-default" role="navigation">
-                <div class="container">
+                <div class="container data-container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
@@ -119,7 +119,7 @@
         <!-- end page header/navigation -->
 
         <!-- begin main container -->
-        <div class="data-container container">
+        <div class="container data-container">
 
             <div id="content-background"></div>
 
@@ -139,15 +139,14 @@
                             <p><span class="credits italics">Produced by Meghan McCarty &amp; <a href="http://www.scpr.org/about/people/staff/chris-keller">Chris Keller</a></span> | <span class="pubdate">Published Oct. 28, 2013</span></p>
                         </div>
                         <div id="content-article-text">
-                            <p>Nov. 5, 2013, marks the 100th anniversary of the completion of the <a href="http://www.scpr.org/water/" target="blank">Los Angeles Aqueduct</a>, the legendary civil engineering project that brought water more than 200 miles south from the Eastern Sierra Nevada and created the conditions for the growth of modern Southern California. It put the city of 100,000 on course to grow into the giant metropolis it is today.</p>
-                            <p>Depending on the water level in the system, it can take between five days to three months for the water that originates in the Owens River to make it to Los Angeles through the aqueduct.</p>
-                            <p>Gravity makes the journey to Los Angeles possible. Starting at about 4,000 feet above sea level, the water travels down a steady, gradual slope to the San Fernando Valley, which has an elevation of about 1,500 feet.</p>
-                            <p>The map below traces the approximate route of three aqueducts that bring water to Los Angeles and highlights the geographic and engineering features:</p>
-                            <p style="text-indent: 5%;"><strong><span style="color: #CA0020">The Los Angeles Aqueduct</span></strong>: Completed in 1913 and begins about 30 miles south of Bishop.</p>
-                            <p style="text-indent: 5%;"><strong><span style="color: #5E3C99">The Mono Basin Extension</span></strong>: Completed in 1940 and extends 105 miles north of the Owens Valley.</p>
-                            <p style="text-indent: 5%;"><strong><span style="color: #404040">The Second Aqueduct</span></strong>: Completed in 1970 and begins near the Haiwee Reservoir, south of Owens Lake.</p>
+                            <p>Nov. 5, 2013, marks the 100th anniversary of the completion of the <a href="http://www.scpr.org/water/" target="blank">Los Angeles Aqueduct</a>, the legendary civil engineering project that starts about 4,000 feet above sea level in the Eastern Sierra Nevada and brings water down a steady, gradual slope to the San Fernando Valley, more than 200 miles away. The map below highlights geographic and engineering features along the approximate routes of three aqueducts that bring water to Los Angeles.</p>
+                        </div>
+                        <div class="data-instructions collapse">
+                            <p><strong>About the data:</strong> The routes shown for the <strong><span style="color: #CA0020">The Los Angeles Aqueduct</span></strong>, the <strong><span style="color: #5E3C99">Mono Basin Extension</span></strong> and the <strong><span style="color: #404040">Second Aqueduct</span></strong> are approximate and based on available public data, consultation with the Los Angeles Department of Water and Power and interpretation of aerial imagery. <strong>Source(s): </strong><a href="http://www.laaqueduct100.com/">Los Angeles Department of Water and Power</a> and <a href="http://www.arcgis.com/home/item.html?id=8ae5dcb789944a4aabd2a3d3dc98e818" target="_blank">the Story of the LA Aqueduct Map</a> on Esri’s ArcGIS Online. <strong>Built using</strong>: <a href="http://leafletjs.com/">leaflet.js</a> &amp; <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
+                            </p>
                         </div>
                         <div id="content-article-buttons">
+                            <a class="btn btn-success" href="javascript:void(0)" data-toggle="collapse" data-target=".data-instructions" data-on-hidden="About This Project" data-on-active="Hide This">About This Project</a>
                             <a class="btn btn-primary" href="http://www.scpr.org/water/">Read more</a>
                         </div>
                     </div>
@@ -155,29 +154,28 @@
             </div>
             <!-- end interactive article -->
 
-            <!-- begin interactive instructions -->
-            <div class="row data-instructions">
-                <div class="col-md-12">
-                    <p><strong>About this: </strong>The routes shown for the Los Angeles Aqueduct, the Second Aqueduct and the Mono Basin Extension are approximate and based on available public data, consultation with the Los Angeles Department of Water and Power and interpretation of aerial imagery. <strong>Source(s): </strong><a href="http://www.laaqueduct100.com/">Los Angeles Department of Water and Power</a> and <a href="http://www.arcgis.com/home/item.html?id=8ae5dcb789944a4aabd2a3d3dc98e818" target="_blank">the Story of the LA Aqueduct Map</a> on Esri’s ArcGIS Online.</p>
-                </div>
-            </div>
-            <!-- end interactive instructions -->
-
             <!-- begin interactive content -->
             <div class="row data-visuals">
                 <div class="col-md-12">
+                    <div id="legend">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td class="la_aqueduct"><strong>The Los Angeles Aqueduct</span></strong> (Completed in 1913)</td>
+                                </tr>
+                                <tr>
+                                    <td class="mono_basin_extension"><strong>The Mono Basin Extension</span></strong> (Completed in 1940)</td>
+                                </tr>
+                                <tr>
+                                    <td class="second_aqueduct"><strong>The Second Aqueduct</span></strong> (Completed in 1970)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                     <div id="content-map-canvas"></div>
                 </div>
             </div>
             <!-- end interactive content -->
-
-            <!-- begin interactive footer -->
-            <div class="row data-footer">
-                <div class="col-md-12">
-                    <p>Built using <a href="http://leafletjs.com/">leaflet.js</a> &amp; <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
-                </div>
-            </div>
-            <!-- end interactive footer -->
 
             <!-- begin branded footer -->
             <div class="row">

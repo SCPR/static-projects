@@ -38,7 +38,7 @@ var fn = {
             zoomControl: true
         });
 
-        var center = new L.LatLng(36.388124,-118.023806);
+        var center = new L.LatLng(35.995785,-117.944584);
         map.setView(center, initialZoom);
 
         var mapquestUrl = L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
@@ -97,9 +97,7 @@ var fn = {
             },
 
             onEachFeature: function(feature, layer) {
-
                 layer.on('click', function (e) {
-
                     if (feature.properties.imageUrl === null){
                         var imageUrl = 'http://maps.googleapis.com/maps/api/staticmap?center=' +
                             feature.geometry.coordinates[1] + ',' + feature.geometry.coordinates[0] +
@@ -112,7 +110,6 @@ var fn = {
                     }
 
                     var html = "<h4>" + feature.properties.name + "</h4><img src='" + imageUrl + "' /><p>" + imageCredit + "</p>";
-
                     jqueryNoConflict('#content-background').css({'opacity' : '0.7'}).fadeIn('fast');
                     jqueryNoConflict('#content-display').html('<p style=\"float: right\" id=\"close\"><strong>[X]</strong></p>' + html).fadeIn('slow');
 
