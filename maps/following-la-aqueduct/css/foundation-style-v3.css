@@ -28,7 +28,7 @@ body.minimal footer ul li {display: inline-block; padding: 0 10px 0 0; margin: 0
 body.minimal footer ul li:first-child {margin-left: 0;}
 body.minimal footer ul li:last-child {padding-right: 0; border-right: none;}
 
-/* structure for data elements */
+/* structure for data and display elements */
 body.minimal .data-details,
 body.minimal .data-instructions,
 body.minimal .data-visuals,
@@ -36,12 +36,15 @@ body.minimal .data-footer {margin: 10px auto 5px auto;}
 body.minimal .data-container #content-article {width: 100%; height: auto;}
 body.minimal .data-container .jumbotron {width: 96%; height: auto; background: rgba(241, 122, 49, 0.3); padding: 10px 0 10px 0;}
 body.minimal .data-container .data-instructions {width: 100%; height: auto;}
-body.minimal .data-container #content-action-bar {width: 100%; height: auto; text-align: center; margin: 15px auto 15px auto;}
 body.minimal .data-container #content-explainer {width: 100%; height: auto; margin: 15px auto 15px auto;}
+body.minimal .data-container #content-action-bar {width: 100%; height: auto; text-align: center; margin: 15px auto 15px auto;}
+body.minimal .data-container #content-background {display: none; position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: #000000; z-index: 1000;}
 body.minimal .data-container #content-display {width: 100%; height: auto; margin: 15px auto 15px auto;}
+body.minimal .data-container #content-display img {width: 80%; margin: 0 10% 15px 10%;}
 body.minimal .data-container #content-map-canvas {width: 100%; height: 700px; margin: 10px 0 10px 0;}
 body.minimal .data-container #content-map-canvas img {max-width: none;}
 body.minimal .data-container .hidden {display: none;}
+body.minimal .data-container #content-display #close {margin: 0; cursor: pointer; }
 
 /* bootstrap overrides */
 a {color: #4B58A6;}

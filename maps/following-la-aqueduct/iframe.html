@@ -22,8 +22,10 @@
         <link href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
         <link href="css/embeddable-style-v3.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
+        <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
 
         <!--[if lte IE 8]>
             <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.ie.min.css" />
@@ -41,7 +43,6 @@
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <script async="" src="http://www.google-analytics.com/ga.js"></script>
         <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-        <script src="scripts/data.js"></script>
         <!-- end base scripts -->
 
     </head>
@@ -53,13 +54,14 @@
         <!-- begin main container -->
         <div class="data-container container">
 
+            <!-- begin content background -->
             <div id="content-background"></div>
-
             <div class="row">
                 <div class="col-md-12">
                     <div id="content-display"></div>
                 </div>
             </div>
+            <!-- end content background -->
 
             <!-- begin interactive article -->
             <div class="row data-details">
@@ -123,6 +125,7 @@
         <!-- end main container -->
 
         <!-- begin scripts -->
+        <script src="scripts/data.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
