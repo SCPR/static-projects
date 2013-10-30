@@ -1,0 +1,54 @@
+/*
+    responsive chart
+    bostonglobe.com
+    nov. 18, 2011
+    by tom giratikanon
+    modified by andy boyle for use in spj class
+    modified by chris keller for experimental production
+
+*/
+
+.datatable {width: 100%}
+.datatable .header {font-weight: bold; display: block; cursor: pointer; display: none;}
+.datatable .header .cell:hover {text-decoration: underline;}
+.datatable .row {float: left; width: 100%; border-bottom: 1px solid #eee; padding: 1em 0; }
+.datatable dt {font-weight: bold; color: #464646;}
+.datatable .cell {margin-bottom: 0.5em }
+.primary dt {display: none }
+.primary dd {font-size: 1.25em; font-weight: bold; margin-bottom: 0.5em; }
+.datatable br {display: block }
+.datatable .img {width: 100px; margin: 0 auto 0 auto;}
+.datatable .text {font-weight: bold; text-align: center;}
+.row-meta {float: left; width: 100%; margin: 0 0 1em 0; }
+.tablebody {border-top: 1px solid #eee }
+
+@media screen and (min-width:1000px) {
+    .primary dd { font-size: 1em; font-weight: normal; margin-bottom: 0; }
+    .datatable .cell { float: left; padding: 1em 0; }
+    .datatable dt { display: none }
+    .datatable .inner-cell { padding: 0 0.5em }
+    .datatable .row { padding: 0 }
+    .datatable .header .cell { padding: 0.5em 0 }
+    .datatable .cell.highlight { padding: 0 }
+    .highlight .inner-cell { padding: 0.5em }
+    .datatable-menu { display: none }
+    .datatable .header { display: block; border-top: 1px solid #eee; background-color: #000000; color: #ffffff; }
+    .datatable .cell { margin-bottom: 0em }
+}
+
+@media screen and (min-width:600px) {
+    .row-meta { width: 30%; margin-right: 5%; }
+    .row-body { width: 65%; float: left; }
+}
+
+@media screen and (min-width:1000px) {
+    .datatable .name { width: 20% }
+    .datatable .location { width: 15% }
+    .datatable .accusations { width: 25% }
+    .datatable .resolution { width: 25% }
+    .datatable .reason { width: 14% }
+    .datatable .tablebody .inner-cell { padding-right: 1.5em }
+    .datatable .tablebody .reason .inner-cell { padding-right: 0 }
+    .row-meta { width: auto; float: none; margin: 0; }
+    .row-body { width: auto; float: none; }
+}
