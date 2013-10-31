@@ -92,18 +92,18 @@ body.embedded .data-container p {font-size: 150%; line-height: 130%;}
 .data-container #content-article .pubdate {color: #b94a48; font-style: italic; display: inline;}
 
 /* inline typography */
-.data-container .jumbotron {font-size: 100%; font-weight: normal;}
-.data-container .jumbotron p {margin: 0 1em 0 1em;}
-.data-container table {font-size: 145%;}
-.data-container .small-writing {font-size: 100%;}
-.data-container .sky-writing {font-size: 600%; color: #f57834;}
-.data-container .lowercase {text-transform: lowercase;}
-.data-container .centered, {text-align: center;}
-.data-container .right-align {text-align: right;}
-.data-container .left-align {text-align: left;}
-.data-container .underline {text-decoration: underline;}
-.data-container .italics {font-style: italic;}
-.data-container blockquote {padding: 0 0 0 15px; margin: 0 0 20px; border-left: 3px solid #2B2B2B;}
+body.embedded .data-container .jumbotron {font-size: 100%; font-weight: normal;}
+body.embedded .data-container .jumbotron p {margin: 0 1em 0 1em;}
+body.embedded .data-container table {font-size: 145%;}
+body.embedded .data-container .small-writing {font-size: 100%;}
+body.embedded .data-container .sky-writing {font-size: 600%; color: #f57834;}
+body.embedded .data-container .lowercase {text-transform: lowercase;}
+body.embedded .data-container .centered, {text-align: center;}
+body.embedded .data-container .right-align {text-align: right;}
+body.embedded .data-container .left-align {text-align: left;}
+body.embedded .data-container .underline {text-decoration: underline;}
+body.embedded .data-container .italics {font-style: italic;}
+body.embedded .data-container blockquote {padding: 0 0 0 15px; margin: 0 0 20px; border-left: 3px solid #2B2B2B;}
 
 /* -- media queries -- */
 @media (max-width: 480px) {
@@ -113,7 +113,7 @@ body.embedded .data-container p {font-size: 150%; line-height: 130%;}
     body.embedded .data-container h4 {font-size: 210%; line-height: 130%;}
     body.embedded .data-container h5 {font-size: 180%; line-height: 130%;}
     body.embedded .data-container h6 {font-size: 150%; line-height: 130%;}
-    body.embedded .data-container p {font-size: 110%; line-height: 130%;}
+    body.embedded .data-container p {font-size: 140%; line-height: 130%;}
     #content-map-canvas {width: 96%; height: 500px; margin: 0 2% 0 2%;}
     #content-display {max-width: 80%; display: none; position: fixed; left: 10%; top: 20%;}
 }
@@ -125,7 +125,7 @@ body.embedded .data-container p {font-size: 150%; line-height: 130%;}
     body.embedded .data-container h4 {font-size: 210%; line-height: 130%;}
     body.embedded .data-container h5 {font-size: 180%; line-height: 130%;}
     body.embedded .data-container h6 {font-size: 150%; line-height: 130%;}
-    body.embedded .data-container p {font-size: 110%; line-height: 130%;}
+    body.embedded .data-container p {font-size: 140%; line-height: 130%;}
     #content-map-canvas {width: 96%; height: 500px; margin: 0 2% 0 2%;}
     #content-display {max-width: 80%; display: none; position: fixed; left: 10%; top: 20%;}
 }

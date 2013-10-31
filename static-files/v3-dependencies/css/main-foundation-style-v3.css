@@ -91,18 +91,18 @@ body.minimal .data-container p {font-size: 150%; line-height: 130%;}
 .data-container #content-article .pubdate {color: #b94a48; font-style: italic; display: inline;}
 
 /* inline typography */
-.data-container .jumbotron {font-size: 100%; font-weight: normal;}
-.data-container .jumbotron p {margin: 0 1em 0 1em;}
-.data-container table {font-size: 145%;}
-.data-container .small-writing {font-size: 100%;}
-.data-container .sky-writing {font-size: 600%; color: #f57834;}
-.data-container .lowercase {text-transform: lowercase;}
-.data-container .centered, {text-align: center;}
-.data-container .right-align {text-align: right;}
-.data-container .left-align {text-align: left;}
-.data-container .underline {text-decoration: underline;}
-.data-container .italics {font-style: italic;}
-.data-container blockquote {padding: 0 0 0 15px; margin: 0 0 20px; border-left: 3px solid #2B2B2B;}
+body.minimal .data-container .jumbotron {font-size: 100%; font-weight: normal;}
+body.minimal .data-container .jumbotron p {margin: 0 1em 0 1em;}
+body.minimal .data-container table {font-size: 145%;}
+body.minimal .data-container .small-writing {font-size: 120%;}
+body.minimal .data-container .sky-writing {font-size: 600%; color: #f57834;}
+body.minimal .data-container .lowercase {text-transform: lowercase;}
+body.minimal .data-container .center-text, {text-align:center;}
+body.minimal .data-container .right-align {text-align: right;}
+body.minimal .data-container .left-align {text-align: left;}
+body.minimal .data-container .underline {text-decoration: underline;}
+body.minimal .data-container .italics {font-style: italic;}
+body.minimal .data-container blockquote {padding: 0 0 0 15px; margin: 0 0 20px; border-left: 3px solid #2B2B2B;}
 
 /* -- media queries -- */
 @media (max-width: 480px) {
@@ -112,7 +112,7 @@ body.minimal .data-container p {font-size: 150%; line-height: 130%;}
     body.minimal .data-container h4 {font-size: 210%; line-height: 130%;}
     body.minimal .data-container h5 {font-size: 180%; line-height: 130%;}
     body.minimal .data-container h6 {font-size: 150%; line-height: 130%;}
-    body.minimal .data-container p {font-size: 110%; line-height: 130%;}
+    body.minimal .data-container p {font-size: 140%; line-height: 130%;}
     #content-map-canvas {width: 96%; height: 500px; margin: 0 2% 0 2%;}
     #content-display {max-width: 80%; display: none; position: fixed; left: 10%; top: 20%;}
 }
@@ -124,7 +124,7 @@ body.minimal .data-container p {font-size: 150%; line-height: 130%;}
     body.minimal .data-container h4 {font-size: 210%; line-height: 130%;}
     body.minimal .data-container h5 {font-size: 180%; line-height: 130%;}
     body.minimal .data-container h6 {font-size: 150%; line-height: 130%;}
-    body.minimal .data-container p {font-size: 110%; line-height: 130%;}
+    body.minimal .data-container p {font-size: 140%; line-height: 130%;}
     #content-map-canvas {width: 96%; height: 500px; margin: 0 2% 0 2%;}
     #content-display {max-width: 80%; display: none; position: fixed; left: 10%; top: 20%;}
 }
