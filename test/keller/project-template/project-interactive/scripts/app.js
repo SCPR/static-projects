@@ -40,8 +40,8 @@ var fn = {
         jqueryNoConflict('.data-legend a').click(function(){
             var phrase = jqueryNoConflict(this).attr('id').replace('_', '+');
             jqueryNoConflict('.data-visuals').html(
-                '<div id="data-loading">' +
-                    '<span><img src="images/loader.gif" width="100%" /></span>' +
+                '<div id="data-loading" class="progress progress-striped active">' +
+                    '<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>' +
                 '</div>');
             fn.constructCapitolWordsQuery(phrase);
         });
