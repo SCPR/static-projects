@@ -76,7 +76,7 @@ a {color: #4B58A6;}
 .table-striped tbody > tr:nth-child(odd) > th {background-color: #fdfdfd;}
 
 /* main typography */
-body.minimal {font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B;}
+body.minimal {font: 100%/1.5em "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased;}
 body.minimal .data-container h1 {font-size: 400%; line-height: 130%; font-weight: bold;}
 body.minimal .data-container h2 {font-size: 340%; line-height: 130%;}
 body.minimal .data-container h3 {font-size: 280%; line-height: 130%;}
