@@ -71,7 +71,7 @@ var fn = {
             defaultExpansion: 'expanded',
 
             // groupSegmentByYear or groupSegmentByDecade
-            groupFunction: 'groupSegmentByDecade',
+            groupFunction: 'groupSegmentByYear',
 
             // adjust timeline width
             width: '75%'
