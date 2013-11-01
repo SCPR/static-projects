@@ -1,41 +1,71 @@
-// embed function
-function embedBox() {
-    var embed_url = 'http://projects.scpr.org/static/timelines/calderon-timeline/index.html/iframe.html';
-    jAlert('<h4>Embed this on your site or blog</h4>' +
-    '<span>Copy the code below and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
-};
+var jqueryNoConflict = jQuery;
+var fn = fn || {};
 
-$(document).ready(function() {
+// choose spreadsheet or flat-file
+var timelineDataSource = 'flat-file';
 
-    $('#data-visuals').verticalTimeline({
+// example spreadsheet key
+var timelineDataSourceKey = '0AjsyCVrBXivzdEtIckFjR25QNXZhOC1LdjI4bGJSZFE';
 
-        // spreadsheet key
-        key: 'https://docs.google.com/spreadsheet/pub?key=0AjsyCVrBXivzdEtIckFjR25QNXZhOC1LdjI4bGJSZFE&output=html',
+// example path to file
+var timelineDataSourceFile = 'static-files/data/timeline_ron_calderon_timeline.json';
 
-        // name of sheet on spreadsheet
-        sheetName: 'sheet',
+jqueryNoConflict(document).ready(function() {
+    fn.displayTimelineFromData(timelineDataSource)
+    fn.retrieveTabletopData();
+});
 
-        // newest or oldest
-        defaultDirection: 'newest',
+// begin data configuration object
+var fn = {
 
-        // collapsed or expanded
-        defaultExpansion: 'expanded',
+    displayTimelineFromData: function(source){
+        if (source === 'spreadsheet'){
+            fn.timelineFromSpreadsheet(timelineDataSourceKey);
+        } else if (source === 'flat-file'){
+            fn.timelineFromFlatfile(timelineDataSourceFile);
+        } else {
+            fn.timelineFromSpreadsheet();
+        }
+    },
 
-        // groupSegmentByYear or groupSegmentByDecade
-        groupFunction: 'groupSegmentByYear',
+    retrieveTabletopData: function(){
+        Tabletop.init({
+            key: timelineDataSourceKey,
+            callback: fn.displayData,
+            simpleSheet: false
+        });
+    },
 
-        // adjust timeline width
-        width: '75%'
-    });
+    displayData: function(data, tabletop){
 
-/*
-    $.getJSON('static-files/data/dorner_display_sheet_timeline.json', function(data) {
-        $('#data-visuals').verticalTimeline({
+        Handlebars.registerHelper('encode', function(context, options) {
+            var out = encodeURIComponent(context);
+            return out;
+        });
 
-            data: data,
+        var handlebarsData = {
+            objects: data.MetaData.elements
+        };
+
+        fn.embedUrl.pathToTimeline = data.MetaData.elements[0].projecturl;
+
+        renderHandlebarsTemplate('static-files/templates/data-share.handlebars', '#data-share', handlebarsData);
+        renderHandlebarsTemplate('static-files/templates/data-details.handlebars', '#data-details', handlebarsData);
+        renderHandlebarsTemplate('static-files/templates/data-footer.handlebars', '#data-footer', handlebarsData);
+    },
+
+    timelineFromSpreadsheet: function(timelineDataSourceKey){
+
+        jqueryNoConflict('#data-visuals').verticalTimeline({
+
+            // spreadsheet key
+            key: timelineDataSourceKey,
+
+            // name of sheet on spreadsheet
+            sheetName: 'Posts',
 
             // newest or oldest
-            defaultDirection: 'newest',
+            defaultDirection: 'oldest',
 
             // collapsed or expanded
             defaultExpansion: 'expanded',
@@ -44,10 +74,39 @@ $(document).ready(function() {
             groupFunction: 'groupSegmentByYear',
 
             // adjust timeline width
-            width: '65%'
-
+            width: '75%'
         });
-    });
-*/
+    },
 
-});
+    timelineFromFlatfile: function(timelineDataSourceFile){
+
+        jqueryNoConflict.getJSON(timelineDataSourceFile, function(data) {
+            $('#data-visuals').verticalTimeline({
+
+                data: data,
+
+                // newest or oldest
+                defaultDirection: 'newest',
+
+                // collapsed or expanded
+                defaultExpansion: 'expanded',
+
+                // groupSegmentByYear or groupSegmentByDecade
+                groupFunction: 'groupSegmentByYear',
+
+                // adjust timeline width
+                width: '75%'
+
+            });
+        });
+    },
+
+    embedUrl: {
+        pathToTimeline: null
+    },
+
+    embedBox: function(){
+        var embed_url = fn.embedUrl.pathToTimeline + '/iframe.html';
+        jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy the code below and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
+    }
+}

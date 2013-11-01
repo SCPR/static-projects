@@ -1,15 +1,23 @@
 <div id="content-article">
-    <h4 class="kicker">Politics</h4>
-    <h1>Timeline: The FBI's investigation of Ron Calderon</h1>
+
+    <h4 class="kicker">{{#objects}}{{kicker}}{{/objects}}</h4>
+    <h1>{{#objects}}{{headline}}{{/objects}}</h1>
+
+    <div id="content-article-metadata">
+        <p><span class="credits">{{#objects}}{{{credits}}}{{/objects}}</span> | <span class="pubdate">{{#objects}}{{published}}{{/objects}}</span></p>
+    </div>
 
     <div id="content-article-text">
-        <p>On June 4, the FBI raided the offices of L.A. State Senator Ron Calderon. We look back at Calderon's past and his relationship with the Central Basin Water District— a public agency that is also under federal scrutiny. </p>
+        <p>{{#objects}}{{{text}}}{{/objects}}</p>
     </div>
 
     <div id="content-article-buttons">
-        <a class="btn btn-info" href="http://www.scpr.org/blogs/politics/2013/06/05/13900/fbi-raids-offices-of-california-state-sen-ron-cald/">Read More</a>
-
-        <!-- thanks for setting the standard Mr. John Keefe -->
-        <span class="hidden-tablet hidden-phone btn btn-warning" style="cursor:pointer;" onclick="embedBox()">Embed This Timeline</span>
+        {{#objects}}
+            {{#if readmoreurl}}
+                <a class="btn btn-info" href="{{readmoreurl}}" target="_blank">Read More</a>
+            {{/if}}
+        {{/objects}}
+        <span class="hidden-tablet hidden-phone btn btn-warning" style="cursor:pointer;" onclick="fn.embedBox()">Embed This Timeline</span>
     </div>
+
 </div>
