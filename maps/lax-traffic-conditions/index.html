@@ -60,8 +60,21 @@
                     var trafficLayer = new google.maps.TrafficLayer();
                     trafficLayer.setMap(map);
 
+    google.maps.event.addDomListener(map, 'idle', function() {
+      calculateCenter();
+    });
+
+    google.maps.event.addDomListener(window, 'resize', function() {
+      map.setCenter(centerLosAngeles);
+    });
+
             });
                 //end main function
+
+// function to maintain center point of map
+function calculateCenter(){
+    center = map.getCenter();
+};
 
             </script>
             <!-- end scripts -->
