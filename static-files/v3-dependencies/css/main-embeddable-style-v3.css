@@ -1,6 +1,6 @@
 /* standard styles */
 body.embedded {background: #ffffff;}
-body.embedded .data-container {max-width: 100%;}
+body.embedded .data-container {max-width: 1110px; margin: 0 auto;}
 
 /* standard header */
 body.embedded header .navbar-default {background: #fff; box-shadow: 0 0 8px rgba(0,0,0,0.7); height: auto; margin: 0 0 25px 0;}

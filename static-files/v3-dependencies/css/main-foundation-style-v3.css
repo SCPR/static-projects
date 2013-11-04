@@ -1,6 +1,6 @@
 /* standard styles */
 body.minimal {background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/bg-body.png') repeat 0 0;}
-body.minimal .data-container {max-width: 94%; margin: 0 3% 0 3%;}
+body.minimal .data-container {max-width: 1110px; margin: 0 auto;}
 
 /* standard header */
 body.minimal header .navbar-default {background: #fff; box-shadow: 0 0 8px rgba(0,0,0,0.7); height: auto; margin: 0 0 25px 0;}
