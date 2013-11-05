@@ -38,13 +38,7 @@
         <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" />
         <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" />
         <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
-        <link href="css/tabletop-timeline-v3-styles.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
-
-        <!--[if lte IE 8]>
-            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.ie.min.css" />
-        <![endif]-->
-
+        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/tabletop-timeline-v3-styles.css" rel="stylesheet" />
         <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
         <!--[if lt IE 9]>
             <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
@@ -79,52 +73,15 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/handlebars-ajax.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/handlebars-helpers.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/tabletop.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/timeline-plugins.js"></script>
-        <script src="scripts/handlebars-helpers.js"></script>
-        <script src="scripts/timeline-main-script.js"></script>
-        <script src="scripts/app.js"></script>
-
-        <script>
-            var kpccTimelineConfig = {
-                // choose spreadsheet or flat-file
-                dataSource: 'spreadsheet',
-
-                // example spreadsheet key
-                key: '0Aq8qwSArzKP9dDJlU2FoZEVYNUJQRHFXZ2plaF9zN3c',
-
-                // example path to file
-                sourceFile: 'data/moments-in-giants-godgers-rivalry_timeline.json',
-
-                // name of sheet containing timeline entries
-                sheetName: 'Posts',
-
-                // name of sheet containing timeline meta
-                sheetMeta: 'MetaData',
-
-                // url of the timeline
-                projectDirectory: 'http://projects.scpr.org/static/timelines/lax-shooting/',
-
-                // newest or oldest
-                defaultDirection: 'oldest',
-
-                // collapsed or expanded
-                defaultExpansion: 'expanded',
-
-                // display social sharing links
-                sharing: true,
-
-                // groupSegmentByYear or groupSegmentByDecade
-                groupFunction: 'groupSegmentByYear',
-
-                // adjust timeline width
-                width: '90%'
-            };
-        </script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/tabletop-timeline-v3-plugins.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/tabletop-timeline-v3-main.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/tabletop-timeline-v3-init.js"></script>
+        <script src="timeline-config.js"></script>
         <!-- end scripts -->
 
         <!-- begin analytics -->
