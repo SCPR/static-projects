@@ -1,0 +1,24 @@
+<div class="col-md-12">
+    <div id="content-article">
+        <div class="headlines">
+            <h4 class="kicker">{{#objects}}{{kicker}}{{/objects}}</h4>
+            <h1>{{#objects}}{{headline}}{{/objects}}</h1>
+        </div>
+        <div class="text collapse">
+            <p><span class="credits">{{#objects}}{{{credits}}}{{/objects}} | <span class="pubdate">{{#objects}}{{published}}{{/objects}}</span></p>
+            <p>{{#objects}}{{{text}}}{{/objects}}</p>
+        </div>
+        <div class="about collapse">
+            <p>{{#objects}}<strong>Sources: </strong>{{sources}}. {{/objects}} <strong>Built using</strong>: <a href="https://github.com/jsoma/tabletop">tabletop.js</a>, <a href="https://github.com/MinnPost/jquery-vertical-timeline" target="blank">MinnPost's jquery-vertical-timeline</a> -- a fork of <a href="https://github.com/balancemedia/Timeline" target="blank">Timeline</a> -- and <a href="http://handlebarsjs.com/">handlebars.js.</a>.</p>
+        </div>
+        <div class="buttons btn-group btn-group-justified">
+            <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".text"><span class="text glyphicon glyphicon-chevron-down"></span>  About</a>
+            <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".about"><span class="about glyphicon glyphicon-chevron-down"></span>  Sources</a>
+            {{#objects}}
+                {{#if readmoreurl}}
+                    <a class="btn btn-primary" href="{{readmoreurl}}" target="_blank"><span class="glyphicon glyphicon-link"></span> Read More</a>
+                {{/if}}
+            {{/objects}}
+        </div>
+    </div>
+</div>
