@@ -8,7 +8,7 @@
 
 /* timeline spine */
 .vertical-timeline-container .line-container { width: 4px; text-align: center; margin: 0 auto; display: block; }
-.vertical-timeline-container .isotope .line { margin: 0 auto; background-color: #b3b6b8; display: block; float: left; height: 100%; width: 14px; position: absolute; left: 0; }
+.vertical-timeline-container .isotope .line { margin: 0 auto; background-color: #b3b6b8; display: block; float: left; height: 100%; width: 14px; position: absolute; left: 0; z-index: 1000;}
 
 /* styles for individual posts */
 .vertical-timeline-container .vertical-timeline-timeline .post { width: 100%; margin: 0 0 10px 0; float: left; }
@@ -22,9 +22,12 @@
 .vertical-timeline-container .vertical-timeline-timeline .post .caption { color: #2B2B2B; line-height: 15px; font-weight: normal; margin: 5px 0 10px 0; text-align: center; font-style: italic; }
 .vertical-timeline-container .vertical-timeline-timeline .post .text { color: #2B2B2B; margin: 10px 0; }
 .vertical-timeline-container .vertical-timeline-timeline .post a.more { color: #2B2B2B; text-decoration: none; font-size: 12px; font-weight: bold; text-align: center; width: 211px; height: 22px; margin: 0 auto 0 auto; border: 1px #cccccc solid; background-color: #F0F0F0; display: block; /*float: left;*/ line-height: 23px; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; -webkit-box-shadow: 0px 1px 1px 0px #cccccc; -moz-box-shadow: 0px 1px 1px 0px #cccccc; box-shadow: 0px 1px 1px 0px #cccccc; }
-.vertical-timeline-container .vertical-timeline-timeline .post a.more:hover { background-color: #FFF }
-.vertical-timeline-container .vertical-timeline-timeline .post a.open-close { background: transparent url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/button-up-down-arrow.png) no-repeat; height: 17px; width: 16px; position: absolute; left: 5px; top: 5px; }
+.vertical-timeline-container .vertical-timeline-timeline .post a.more:hover { background-color: #ffffff;}
+
+.vertical-timeline-container .vertical-timeline-timeline .post a.open-close { background: transparent url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/button-up-down-arrow.png) no-repeat; height: 17px; width: 16px; position: absolute; right: 15px; top: 15px; }
 .vertical-timeline-container .vertical-timeline-timeline .post.closed a.open-close { background-position: left bottom }
+.vertical-timeline-container .vertical-timeline-timeline .post.closed .title {display: table; min-height: 40px;}
+.vertical-timeline-container .vertical-timeline-timeline .post.closed .title h3 {display: table-cell; vertical-align: middle;}
 
 /* post sharing */
 .vertical-timeline-container .vertical-timeline-timeline .post a.share-trigger { text-decoration: none; font-size: 12px; font-weight: bold; text-align: center; width: 20%; height: 28px; border: 1px #87b2d3 solid; background: #d6e5f0 url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/icon-share.png) no-repeat center center; display: block; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; -webkit-box-shadow: 0px 1px 1px 0px #87b2d3; -moz-box-shadow: 0px 1px 1px 0px #87b2d3; box-shadow: 0px 1px 1px 0px #87b2d3; }
@@ -38,9 +41,9 @@
 /* post groups */
 .vertical-timeline-container .vertical-timeline-timeline .group-marker { float: left; width: 80px; margin: 50px 0 15px 0; }
 .vertical-timeline-container .vertical-timeline-timeline .group-marker.top { margin-top: 0 }
-.vertical-timeline-container .vertical-timeline-timeline .group-marker .inner { width: 76px; height: 26px; padding: 2px; background-color: #ffffff; }
+.vertical-timeline-container .vertical-timeline-timeline .group-marker .inner { width: 225%; height: 25px; padding: 5px;}
 .vertical-timeline-container .vertical-timeline-timeline .group-marker .inner2 { background-color: #2B2B2B; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
-.vertical-timeline-container .vertical-timeline-timeline .group { text-align: center; color: #ffffff; font-size: 14px; font-weight: bold; height: 26px; line-height: 26px; }
+.vertical-timeline-container .vertical-timeline-timeline .group { text-align: center; color: #ffffff; font-size: 200%; font-weight: bold; height: 30px; line-height: 140%; }
 
 /* timeline buttons */
 .vertical-timeline-container .vertical-timeline-buttons { width: 100%; margin: 0 25% 0 25%; text-align: center; display: inline; }

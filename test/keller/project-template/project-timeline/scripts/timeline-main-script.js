@@ -35,65 +35,73 @@
 
         // templates for content
         postTemplate: ' \
-        <div class="row"> \
+        <div class="item post row"> \
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
-                <div class="item post"> \
-                        <div class="row inner"> \
-                            {{#if media_type}} \
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
-                                    <div class="timestamp">{{timestamp}}</div> \
-                                    <div class="date kicker"><h5>{{display_date}}</h5></div> \
-                                    <div class="title"><h4>{{title}}</h4></div> \
-                                    <div class="body"> \
-                                        {{#if body}} \
-                                            <div class="text"><p>{{{body}}}</p></div> \
-                                        {{/if}} \
-                                    </div> \
-                                </div> \
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
-                                    <div class="body"> \
-                                        {{#is media_type "image"}} \
-                                            <img src="{{media_url}}" alt="{{title}}" class="responsive"> \
-                                            {{#if caption}} \
-                                                <div class="caption"><p>{{caption}}</p></div> \
-                                            {{/if}} \
-                                        {{else}} \
-                                            <div> \
-                                            {{{media_url}}} \
-                                            </div> \
-                                        {{/is}} \
-                                    </div> \
-                                </div> \
-                                <div class="clearfix"> \
-                                    {{#if read_more_url}} \
-                                        <div class="btn-group btn-group-justified"> \
-                                            <a target="_blank" class="btn btn-success" href="{{read_more_url}}">Read More</a> \
-                                        </div> \
+                <div class="row inner"> \
+                    {{#if media_type}} \
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
+                            <div class="timestamp">{{timestamp}}</div> \
+                            <div class="date kicker"><h5>{{display_date}}</h5></div> \
+                            <div class="title"><h4>{{title}}</h4></div> \
+                        </div> \
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
+                            <div class="body"> \
+                                {{#if body}} \
+                                    <div class="text"><p>{{{body}}}</p></div> \
+                                {{/if}} \
+                            </div> \
+                        </div> \
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
+                            <div class="body"> \
+                                {{#is media_type "image"}} \
+                                    <img src="{{media_url}}" alt="{{title}}" class="responsive"> \
+                                    {{#if caption}} \
+                                        <div class="caption"><p>{{caption}}</p></div> \
+                                    {{else}} \
+                                        <div class="caption"><p></p></div> \
                                     {{/if}} \
-                                </div> \
-                            {{else}} \
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
-                                    <div class="timestamp">{{timestamp}}</div> \
-                                    <div class="date"><h4>{{display_date}}</h4></div> \
-                                    <div class="title"><h5>{{title}}</h5></div> \
-                                    <div class="body"> \
-                                        {{#if body}} \
-                                            <div class="text"><p>{{{body}}}</p></div> \
-                                        {{/if}} \
-                                    </div> \
-                                </div> \
-                                <div class="clearfix"> \
-                                    {{#if read_more_url}} \
-                                        <div class="btn-group btn-group-justified"> \
-                                            <a target="_blank" class="btn btn-success" href="{{read_more_url}}">Read More</a> \
-                                        </div> \
+                                {{else}} \
+                                    {{{media_url}}} \
+                                    {{#if caption}} \
+                                        <div class="caption"><p>{{caption}}</p></div> \
+                                    {{else}} \
+                                        <div class="caption"><p></p></div> \
                                     {{/if}} \
+                                {{/is}} \
+                            </div> \
+                        </div> \
+                        <div class="clearfix"> \
+                            {{#if read_more_url}} \
+                                <div class="btn-group btn-group-justified"> \
+                                    <a target="_blank" class="btn btn-success" href="{{read_more_url}}">Read More</a> \
                                 </div> \
                             {{/if}} \
                         </div> \
+                    {{else}} \
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
+                            <div class="timestamp">{{timestamp}}</div> \
+                            <div class="date kicker"><h5>{{display_date}}</h5></div> \
+                            <div class="title"><h4>{{title}}</h4></div> \
+                        </div> \
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
+                            <div class="body"> \
+                                {{#if body}} \
+                                    <div class="text"><p>{{{body}}}</p></div> \
+                                {{/if}} \
+                            </div> \
+                        </div> \
+                        <div class="clearfix"> \
+                            {{#if read_more_url}} \
+                                <div class="btn-group btn-group-justified"> \
+                                    <a target="_blank" class="btn btn-success" href="{{read_more_url}}">Read More</a> \
+                                </div> \
+                            {{/if}} \
+                        </div> \
+                    {{/if}} \
                 </div> \
             </div> \
         </div> \
+        <hr> \
         ',
 
         groupMarkerTemplate: ' \
@@ -107,20 +115,22 @@
         </div> \
         ',
 
-/*
         buttonTemplate: ' \
         <div class="row"> \
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
-                <div class="btn-group btn-group-justified"> \
-                    <a class="expand-all active btn btn-info" href="javascript:void(0)"><span>Expand all</span></a> \
-                    <a class="collapse-all btn btn-info" href="javascript:void(0)"><span>Collapse all</span></a> \
-                    <a class="sort-newest active btn btn-info" href="javascript:void(0)"><span>Newest first</span></a> \
-                    <a class="sort-oldest btn btn-info" href="javascript:void(0)"><span>Oldest first</span></a> \
+                <div class="vertical-timeline-buttons"> \
+                    <div class="expand-collapse-buttons btn-group btn-group-justified">\
+                        <a class="expand-all active btn btn-success" href="javascript:void(0)"><span>Expand all</span></a> \
+                        <a class="collapse-all btn btn-success" href="javascript:void(0)"><span>Collapse all</span></a> \
+                    </div> \
+                    <div class="sort-buttons btn-group btn-group-justified"> \
+                        <a class="sort-newest active btn btn-success" href="javascript:void(0)"><span>Newest first</span></a> \
+                        <a class="sort-oldest btn btn-success" href="javascript:void(0)"><span>Oldest first</span></a> \
+                    </div> \
                 </div> \
             </div> \
         </div> \
         ',
-*/
 
         timelineTemplate: ' \
         <div class="vertical-timeline-timeline"> \
@@ -224,18 +234,15 @@
             verticalTimeline.adjustWidth();
             verticalTimeline.handleResizing();
 
-
-
             // start rendering isotope goodness when images are loaded
-            /*
             $thisObj.find('.vertical-timeline-timeline').imagesLoaded(function() {
                 $thisObj.find('.vertical-timeline-timeline').isotope({
                     itemSelector : '.item',
                     transformsEnabled: true,
-                    layoutMode: 'spineAlign',
-                    spineAlign:{
-                        gutterWidth: timelineConfig.gutterWidth
-                    },
+                    layoutMode: 'straightDown',
+                    //spineAlign:{
+                        //gutterWidth: timelineConfig.gutterWidth
+                    //},
                     getSortData: {
                         timestamp: function($elem) {
                             return parseFloat($elem.find('.timestamp').text());
@@ -249,7 +256,6 @@
                     }
                 });
             });
-        */
 
         };
 
@@ -275,16 +281,16 @@
         // handle post expanding/collapsing
         verticalTimeline.handleExpanding = function() {
 
-            // Add open/close buttons to each post
-            $thisObj.find('.vertical-timeline-timeline .item.post').each(function() {
-                $(this).find('.inner').append('<a href="#" class="open-close"></a>');
-            });
+            // add open/close buttons to each post
+            //$thisObj.find('.vertical-timeline-timeline .item.post').each(function() {
+                //$(this).find('.inner').append('<a href="javascript:void(0)" class="open-close"></a>');
+            //});
 
             // handle default state
             if (timelineConfig.defaultExpansion != 'expanded') {
                 $thisObj.find('.vertical-timeline-timeline .item').each(function() {
                     var $this = $(this);
-                    $this.find('.body').hide();
+                    $this.find('.text').hide();
                     $this.find('.post').toggleClass('closed');
                 });
 
