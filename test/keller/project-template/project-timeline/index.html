@@ -35,8 +35,8 @@
         <!-- begin css -->
         <link href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" />
+        <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" />
         <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
         <link href="css/tabletop-timeline-v3-styles.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
@@ -76,6 +76,7 @@
         <!-- end main container -->
 
         <!-- begin scripts -->
+        <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -88,6 +89,42 @@
         <script src="scripts/handlebars-helpers.js"></script>
         <script src="scripts/timeline-main-script.js"></script>
         <script src="scripts/app.js"></script>
+
+        <script>
+            var kpccTimelineConfig = {
+                // choose spreadsheet or flat-file
+                dataSource: 'spreadsheet',
+
+                // example spreadsheet key
+                key: '0Aq8qwSArzKP9dDJlU2FoZEVYNUJQRHFXZ2plaF9zN3c',
+
+                // example path to file
+                sourceFile: 'data/moments-in-giants-godgers-rivalry_timeline.json',
+
+                // name of sheet containing timeline entries
+                sheetName: 'Posts',
+
+                // name of sheet containing timeline meta
+                sheetMeta: 'Meta',
+
+                // url of the timeline
+                projectDirectory: 'http://projects.scpr.org/static/timelines/lax-shooting',
+
+                // newest or oldest
+                defaultDirection: 'oldest',
+
+                // collapsed or expanded
+                defaultExpansion: 'expanded',
+
+                sharing: true,
+
+                // groupSegmentByYear or groupSegmentByDecade
+                groupFunction: 'groupSegmentByDecade',
+
+                // adjust timeline width
+                width: '90%'
+            };
+        </script>
         <!-- end scripts -->
 
         <!-- begin analytics -->

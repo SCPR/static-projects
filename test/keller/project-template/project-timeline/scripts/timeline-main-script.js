@@ -10,17 +10,18 @@
     // "newest" or "oldest".  groupFunction is a function
     // to handle grouping
 
-    var defaults = {
-        key: 'https://docs.google.com/spreadsheet/pub?key=0AsmHVq28GtVJdG1fX3dsQlZrY18zTVA2ZG8wTXdtNHc&output=html',
-        sheetName: 'Posts',
-        defaultDirection: 'newest',
-        defaultExpansion: 'expanded',
-        groupFunction: 'groupSegmentByYear',
-        sharing: false,
-        //gutterWidth: 56,
-        width: 'auto',
-        handleResize: false,
+    console.log(kpccTimelineConfig.projectDirectory);
 
+    var defaults = {
+        key: null,
+        sheetName: null,
+        defaultDirection: null,
+        defaultExpansion: null,
+        groupFunction: null,
+        sharing: null,
+        //gutterWidth: null,
+        width: 'auto',
+        handleResize: true,
         columnMapping: {
             'title': 'title',
             'date': 'date',
@@ -30,78 +31,85 @@
             'caption': 'caption',
             'body': 'body',
             'read_more_url': 'read more url',
+            'read_more_source': 'read more source',
             'title': 'title'
         },
 
         // templates for content
         postTemplate: ' \
-        <div class="item post row"> \
+        <div id="{{title}}" class="item post row"> \
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
-                <div class="row inner"> \
-                    {{#if media_type}} \
+                <div class="inner"> \
+                    <div class="row"> \
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
-                            <div class="timestamp">{{timestamp}}</div> \
-                            <div class="date kicker"><h5>{{display_date}}</h5></div> \
-                            <div class="title"><h4>{{title}}</h4></div> \
-                        </div> \
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
-                            <div class="body"> \
-                                {{#if body}} \
-                                    <div class="text"><p>{{{body}}}</p></div> \
-                                {{/if}} \
-                            </div> \
-                        </div> \
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
-                            <div class="body"> \
-                                {{#is media_type "image"}} \
-                                    <img src="{{media_url}}" alt="{{title}}" class="responsive"> \
-                                    {{#if caption}} \
-                                        <div class="caption"><p>{{caption}}</p></div> \
-                                    {{else}} \
-                                        <div class="caption"><p></p></div> \
-                                    {{/if}} \
-                                {{else}} \
-                                    {{{media_url}}} \
-                                    {{#if caption}} \
-                                        <div class="caption"><p>{{caption}}</p></div> \
-                                    {{else}} \
-                                        <div class="caption"><p></p></div> \
-                                    {{/if}} \
-                                {{/is}} \
-                            </div> \
-                        </div> \
-                        <div class="clearfix"> \
-                            {{#if read_more_url}} \
-                                <div class="btn-group btn-group-justified"> \
-                                    <a target="_blank" class="btn btn-success" href="{{read_more_url}}">Read More</a> \
-                                </div> \
+                            <ul class="pull-left"> \
+                                <li class="date kicker"><h5>{{display_date}}</h5></li> \
+                                <li class="timestamp">{{timestamp}}</li> \
+                            </ul> \
+                            {{#if sharing}} \
+                                <ul class="list-inline pull-right share-links"> \
+                                    <li><a class="link" title="Link to This" href=""></a></li> \
+                                    <li><a class="twitter" title="Share on Twitter" href=""></a></li> \
+                                    <li><a class="facebook" title="Share on Facebook" href=""></a></li> \
+                                </ul> \
                             {{/if}} \
                         </div> \
-                    {{else}} \
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
-                            <div class="timestamp">{{timestamp}}</div> \
-                            <div class="date kicker"><h5>{{display_date}}</h5></div> \
-                            <div class="title"><h4>{{title}}</h4></div> \
-                        </div> \
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
-                            <div class="body"> \
-                                {{#if body}} \
-                                    <div class="text"><p>{{{body}}}</p></div> \
-                                {{/if}} \
+                    </div> \
+                    <div class="row"> \
+                        {{#if media_type}} \
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
+                                <div class="title"><h4>{{title}}</h4></div> \
                             </div> \
-                        </div> \
-                        <div class="clearfix"> \
-                            {{#if read_more_url}} \
-                                <div class="btn-group btn-group-justified"> \
-                                    <a target="_blank" class="btn btn-success" href="{{read_more_url}}">Read More</a> \
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
+                                <div class="body"> \
+                                    {{#if body}} \
+                                        <div class="body-text"><p>{{{body}}}</p></div> \
+                                    {{/if}} \
+                                    {{#if read_more_url}} \
+                                        <p class="italics"><a href="{{read_more_url}}" target="_blank"><strong>{{#if read_more_source}}Via {{read_more_source}}{{else}}Read More{{/if}}</strong></a></p> \
+                                    {{/if}} \
                                 </div> \
-                            {{/if}} \
-                        </div> \
-                    {{/if}} \
+                            </div> \
+                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
+                                <div class="body"> \
+                                    {{#is media_type "image"}} \
+                                        <img src="{{media_url}}" alt="{{title}}" class="responsive"> \
+                                        {{#if caption}} \
+                                            <div class="caption"><p>{{caption}}</p></div> \
+                                        {{else}} \
+                                            <div class="caption"><p></p></div> \
+                                        {{/if}} \
+                                    {{else}} \
+                                        <div class="clearfix"> \
+                                        {{{media_url}}} \
+                                        </div> \
+                                        {{#if caption}} \
+                                            <div class="caption"><p>{{caption}}</p></div> \
+                                        {{else}} \
+                                            <div class="caption"><p></p></div> \
+                                        {{/if}} \
+                                    {{/is}} \
+                                </div> \
+                            </div> \
+                        {{else}} \
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
+                                <div class="title"><h4>{{title}}</h4></div> \
+                            </div> \
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
+                                <div class="body"> \
+                                    {{#if body}} \
+                                        <div class="body-text"><p>{{{body}}}</p></div> \
+                                    {{/if}} \
+                                    {{#if read_more_url}} \
+                                        <p class="italics"><a href="{{read_more_url}}" target="_blank"><strong>{{#if read_more_source}}Via {{read_more_source}}{{else}}Read More{{/if}}</strong></a></p> \
+                                    {{/if}} \
+                                </div> \
+                            </div> \
+                        {{/if}} \
+                    </div> \
                 </div> \
             </div> \
         </div> \
-        <hr> \
         ',
 
         groupMarkerTemplate: ' \
@@ -261,19 +269,13 @@
 
         // handle sharing
         verticalTimeline.handleSharing = function() {
-
-            // load scripts after all the html has been set
             if (timelineConfig.sharing) {
-                $.getScript('//static.ak.fbcdn.net/connect.php/js/FB.Share');
-                $.getScript('//platform.twitter.com/widgets.js');
-                $thisObj.find('.vertical-timeline-timeline .post .share').hover(
-                function() {
-                    $(this).find('.share-trigger').addClass('over');
-                    $(this).find('.share-popup').show();
-                },
-                function() {
-                    $(this).find('.share-trigger').removeClass('over');
-                    $(this).find('.share-popup').hide();
+                $thisObj.find('.vertical-timeline-timeline .item.post').each(function() {
+                    var postDivId = $('.item.post').attr('id');
+                    var sharingUrl = kpccTimelineConfig.projectDirectory + '/#' + postDivId;
+                    $(this).find('.link').attr('href', sharingUrl);
+                    $(this).find('.twitter').attr('href', 'http://twitter.com/share?text=' + postDivId + '%20via%20a%20KPCC%20news%20timeline:&url=' + sharingUrl);
+                    $(this).find('.facebook').attr('href', 'https://www.facebook.com/sharer.php?u=' + sharingUrl + ';t=postDivId,%20via%20a%20KPCC%20news%20timeline');
                 });
             }
         };
@@ -458,6 +460,8 @@
 
 
     // isotope custom layout mode spinealign (general)
+
+/*
     $.Isotope.prototype._spineAlignReset = function() {
         this.spineAlign = {
             colA: 0,
@@ -533,5 +537,6 @@
     $.Isotope.prototype._spineAlignResizeChanged = function() {
         return true;
     };
+*/
 
 })(jQuery, window);
