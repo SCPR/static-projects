@@ -34,9 +34,9 @@
 .vertical-timeline-container .vertical-timeline-timeline .post ul.share-links {margin-top: 5px;}
 .vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li {padding-right: 0px; padding-left: 0px;}
 .vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a {color: #2B2B2B; font-size: 150%;}
-.vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a.link {padding: 20px; text-align: left; background: url(../images/iconmonstr-link-2-icon-24.png) left center no-repeat;}
-.vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a.twitter {padding: 20px; text-align: left; background: url(../images/iconmonstr-twitter-2-icon-24.png) left center no-repeat;}
-.vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a.facebook {padding: 20px; text-align: left; background: url(../images/iconmonstr-facebook-2-icon-24.png) left center no-repeat;}
+.vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a.link {padding: 20px; text-align: left; background: url(../images/tabletop-timeline-v3/iconmonstr-link-2-icon-24.png) left center no-repeat;}
+.vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a.twitter {padding: 20px; text-align: left; background: url(../images/tabletop-timeline-v3/iconmonstr-twitter-2-icon-24.png) left center no-repeat;}
+.vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a.facebook {padding: 20px; text-align: left; background: url(../images/tabletop-timeline-v3/iconmonstr-facebook-2-icon-24.png) left center no-repeat;}
 
 /* post groups */
 .vertical-timeline-container .vertical-timeline-timeline .group-marker { float: left; width: 80px; margin: -5px 0 5px 0; }
