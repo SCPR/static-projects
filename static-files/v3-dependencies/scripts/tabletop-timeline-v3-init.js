@@ -5,9 +5,9 @@ var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
-    initializeTemplates.renderStaticTemplates();
     fn.retrieveTabletopData();
     fn.displayTimelineFromData(kpccTimelineConfig);
+    initializeTemplates.renderStaticTemplates();
 });
 
 // begin data configuration object
