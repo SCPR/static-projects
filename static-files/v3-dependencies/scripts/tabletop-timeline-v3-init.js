@@ -26,6 +26,7 @@ var fn = {
             var out = encodeURIComponent(context);
             return out;
         });
+
         var handlebarsData = {
             objects: data.MetaData.elements
         };
@@ -45,7 +46,7 @@ var fn = {
         } else {
             jqueryNoConflict('.data-visuals').verticalTimeline(kpccTimelineConfig);
         }
-    }
+    },
 }
 // end data configuration object
 

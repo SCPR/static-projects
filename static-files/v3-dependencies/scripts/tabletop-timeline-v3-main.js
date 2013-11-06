@@ -35,7 +35,7 @@
 
         // templates for content
         postTemplate: ' \
-        <div id="{{title}}" class="item post row"> \
+        <div id="{{urlparams title}}" class="item post row"> \
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
                 <div class="inner"> \
                     <div class="row"> \
@@ -208,6 +208,13 @@
 
         // handle data loaded in from tabletop or directly, then render
         verticalTimeline.setupTimeline = function(data, tabletop) {
+
+            // set helper to create linkable text
+            Handlebars.registerHelper('urlparams', function(context, block) {
+                formattedContext = context.replace(/\W/g, '');
+                return formattedContext.toLowerCase();
+            });
+
             var postTemplate  = Handlebars.compile(timelineConfig.postTemplate);
             var groupMarkerTemplate  = Handlebars.compile(timelineConfig.groupMarkerTemplate);
 
@@ -243,7 +250,6 @@
             // start rendering isotope goodness when images are loaded
             $thisObj.find('.vertical-timeline-timeline').imagesLoaded(function() {
                 $thisObj.find('.vertical-timeline-timeline').isotope({
-                    itemSelector : '.item',
                     transformsEnabled: true,
                     layoutMode: 'straightDown',
                     //spineAlign:{
@@ -257,6 +263,7 @@
                     sortBy: 'timestamp',
                     sortAscending: (timelineConfig.defaultDirection == 'newest') ? false : true,
                     itemPositionDataEnabled: true,
+                    itemSelector : '.item',
                     onLayout: function($elems, instance) {
                         verticalTimeline.adjustLine();
                     }
@@ -269,9 +276,9 @@
         verticalTimeline.handleSharing = function() {
             if (timelineConfig.sharing) {
                 $thisObj.find('.vertical-timeline-timeline .item.post').each(function(postTest) {
-                    var postTargetId = '#' + $(this).attr('id');
+                    var postTargetId = $(this).attr('id');
                     var postText = $(this).attr('id') + ', via a KPCC timeline';
-                    var sharingUrl = kpccTimelineConfig.projectDirectory + postTargetId;
+                    var sharingUrl = kpccTimelineConfig.projectDirectory + '?link=' + postTargetId;
                     $(this).find('.link').attr('href', sharingUrl);
                     $(this).find('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + postText + '&url=' + sharingUrl);
                     $(this).find('.facebook').attr('href', 'https://www.facebook.com/sharer.php?t=' + postText + '&u=' + sharingUrl);
@@ -366,12 +373,12 @@
             });
         };
 
-        // handle resize.  uses "jquery resize event" plugin
+        // handle resize with "jquery resize event" plugin
         verticalTimeline.handleResizing = function() {
             if (timelineConfig.handleResize === true) {
                 $thisObj.resize(function() {
                     verticalTimeline.adjustWidth();
-                    verticalTimeline.adjustLine();
+                    //verticalTimeline.adjustLine();
                 });
             }
         };
@@ -408,6 +415,15 @@
 
         // keep the actual line from extending beyond the last item's date tab and keep centered
         verticalTimeline.adjustLine = function() {
+            var $targetDiv = $thisObj.find('div#' + $.url.param('link'));
+            var targetPosition = $targetDiv.data('isotope-item-position');
+
+            var scrolleyTime = setTimeout(function(){
+                $.scrollTo(targetPosition.y, 3000)
+            }, 1000);
+
+            //clearTimeout(scrolleyTime);
+
             var $lastItem = $thisObj.find('.item.last');
             var itemPosition = $lastItem.data('isotope-item-position');
             var dateHeight = $lastItem.find('.date').height();
@@ -415,11 +431,25 @@
             var innerMargin = parseInt($lastItem.find('.inner').css('marginTop'));
             var top = (dateOffset == null) ? 0 : parseInt(dateOffset.top);
             var y = (itemPosition != null && itemPosition.y != null) ? parseInt(itemPosition.y) : 0;
-            var lineHeight = y + innerMargin + top + (dateHeight / 2);
+            //var lineHeight = y + innerMargin + top + (dateHeight / 2);
+
+
+
+
+
             //var $line = $thisObj.find('.line');
             //var $timeline = $thisObj.find('.vertical-timeline-timeline');
             //var xOffset = ($timeline.width() / 2) - ($line.width() / 2);
             //$line.height(lineHeight).css('left', xOffset + 'px');
+
+
+
+
+
+
+
+
+
         };
 
         // parse each row of data
@@ -456,7 +486,6 @@
         }
     });
 };
-
 
     // isotope custom layout mode spinealign (general)
 
