@@ -60,7 +60,7 @@ var initializeTemplates = {
                 clearInterval(checkExist);
                 initializeTemplates.toggleDisplayIcon();
             }
-        }, 1000);
+        }, 5000);
 
     },
 
