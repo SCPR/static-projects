@@ -15,7 +15,7 @@ var kpccTimelineConfig = {
     sheetMeta: 'MetaData',
 
     // url of the timeline
-    projectDirectory: 'http://projects.scpr.org/static/test/keller/project-template/project-timeline/',
+    projectDirectory: 'http://localhost:8880/2kpcc/project_template/project-timeline/',
 
     // newest or oldest
     defaultDirection: 'oldest',
