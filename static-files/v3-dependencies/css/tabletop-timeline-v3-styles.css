@@ -20,6 +20,7 @@
 .vertical-timeline-container .vertical-timeline-timeline .post.closed .title { display: table; min-height: 40px; display: table-cell; vertical-align: middle;}
 .vertical-timeline-container .vertical-timeline-timeline .post .body { margin-top: 10px }
 .vertical-timeline-container .vertical-timeline-timeline .post .body img { max-width: 100%;}
+.vertical-timeline-container .vertical-timeline-timeline .post .body .twitter-tweet { width: 96%; margin: 0 2% 0 2%;}
 .vertical-timeline-container .vertical-timeline-timeline .post .caption { color: #2B2B2B; line-height: 15px; font-weight: normal; margin: 5px 0 10px 0; text-align: center; font-style: italic; }
 .vertical-timeline-container .vertical-timeline-timeline .post .body-text { color: #2B2B2B; margin: 10px 0; }
 .vertical-timeline-container .vertical-timeline-timeline .post .btn-group-justified {width: 50%; margin: 0 25% 0 25%;}
