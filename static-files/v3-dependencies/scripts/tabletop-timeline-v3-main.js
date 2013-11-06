@@ -417,12 +417,16 @@
         verticalTimeline.adjustLine = function() {
             var $targetDiv = $thisObj.find('div#' + $.url.param('link'));
             var targetPosition = $targetDiv.data('isotope-item-position');
-
+            var highlightLinkedBlock = $targetDiv[0].children[0].lastElementChild;
             var scrolleyTime = setTimeout(function(){
-                $.scrollTo(targetPosition.y, 3000)
+                $.scrollTo(targetPosition.y + 100, 10, {onAfter: function(){
+                    $(highlightLinkedBlock).animate({
+                        backgroundColor: 'rgba(236, 124, 45, 0.5)',
+                    }, 1000).animate({
+                        backgroundColor: '#fff',
+                    }, 1500);
+                }});
             }, 1000);
-
-            //clearTimeout(scrolleyTime);
 
             var $lastItem = $thisObj.find('.item.last');
             var itemPosition = $lastItem.data('isotope-item-position');
@@ -432,23 +436,10 @@
             var top = (dateOffset == null) ? 0 : parseInt(dateOffset.top);
             var y = (itemPosition != null && itemPosition.y != null) ? parseInt(itemPosition.y) : 0;
             //var lineHeight = y + innerMargin + top + (dateHeight / 2);
-
-
-
-
-
             //var $line = $thisObj.find('.line');
             //var $timeline = $thisObj.find('.vertical-timeline-timeline');
             //var xOffset = ($timeline.width() / 2) - ($line.width() / 2);
             //$line.height(lineHeight).css('left', xOffset + 'px');
-
-
-
-
-
-
-
-
 
         };
 
