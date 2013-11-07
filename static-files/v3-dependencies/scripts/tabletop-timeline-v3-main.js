@@ -124,14 +124,16 @@
         buttonTemplate: ' \
         <div class="row"> \
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
-                <div class="vertical-timeline-buttons"> \
-                    <div class="expand-collapse-buttons btn-group btn-group-justified">\
-                        <a class="expand-all active btn btn-success" href="javascript:void(0)"><span>Expand all</span></a> \
-                        <a class="collapse-all btn btn-success" href="javascript:void(0)"><span>Collapse all</span></a> \
-                    </div> \
-                    <div class="sort-buttons btn-group btn-group-justified"> \
-                        <a class="sort-newest active btn btn-success" href="javascript:void(0)"><span>Newest first</span></a> \
-                        <a class="sort-oldest btn btn-success" href="javascript:void(0)"><span>Oldest first</span></a> \
+                <div class="jumbotron"> \
+                    <div class="vertical-timeline-buttons"> \
+                        <div class="expand-collapse-buttons btn-group btn-group-justified">\
+                            <a class="expand-all active btn btn-success" href="javascript:void(0)"><span>Expand all</span></a> \
+                            <a class="collapse-all btn btn-success" href="javascript:void(0)"><span>Collapse all</span></a> \
+                        </div> \
+                        <div class="sort-buttons btn-group btn-group-justified"> \
+                            <a class="sort-newest active btn btn-success" href="javascript:void(0)"><span>Sort by newest</span></a> \
+                            <a class="sort-oldest btn btn-success" href="javascript:void(0)"><span>Sort by oldest</span></a> \
+                        </div> \
                     </div> \
                 </div> \
             </div> \
@@ -415,18 +417,20 @@
 
         // keep the actual line from extending beyond the last item's date tab and keep centered
         verticalTimeline.adjustLine = function() {
-            var $targetDiv = $thisObj.find('div#' + $.url.param('link'));
-            var targetPosition = $targetDiv.data('isotope-item-position');
-            var highlightLinkedBlock = $targetDiv[0].children[0].lastElementChild;
-            var scrolleyTime = setTimeout(function(){
-                $.scrollTo(targetPosition.y + 100, 10, {onAfter: function(){
-                    $(highlightLinkedBlock).animate({
-                        backgroundColor: 'rgba(236, 124, 45, 0.5)',
-                    }, 1000).animate({
-                        backgroundColor: '#fff',
-                    }, 1500);
-                }});
-            }, 1000);
+            if ($.url.param('link')) {
+                var $targetDiv = $thisObj.find('div#' + $.url.param('link'));
+                var targetPosition = $targetDiv.data('isotope-item-position');
+                var highlightLinkedBlock = $targetDiv[0].children[0].lastElementChild;
+                var scrolleyTime = setTimeout(function(){
+                    $.scrollTo(targetPosition.y + 100, 10, {onAfter: function(){
+                        $(highlightLinkedBlock).animate({
+                            backgroundColor: 'rgba(236, 124, 45, 0.5)',
+                        }, 1000).animate({
+                            backgroundColor: '#fff',
+                        }, 1500);
+                    }});
+                }, 1000);
+            }
 
             var $lastItem = $thisObj.find('.item.last');
             var itemPosition = $lastItem.data('isotope-item-position');
