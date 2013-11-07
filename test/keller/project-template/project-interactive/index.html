@@ -36,10 +36,9 @@
         <!-- end meta -->
 
         <!-- begin css -->
-        <link href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" />
+        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" />
         <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
 
@@ -67,37 +66,7 @@
         <!-- begin main container -->
         <div class="container data-container">
             <div class="row data-details"></div>
-            <div class="row data-legend">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="jumbotron">
-                        <noscript>Please enable JavaScript to view this interactive.</noscript>
-                        <h4 class="centered">Choose a word or phrase to read what the California Congressional delegation has said about</h4>
-                        <div id="phrase-headline"></div>
-                        <div class="row data-legend-items">
-                            <div class="btn-group btn-group-justified col-md-12 col-lg-12 visible-md visible-lg">
-                                <a class="btn label" href="javascript:void(0)" id="government_shutdown">Government Shutdown</a>
-                                <a class="btn label" href="javascript:void(0)" id="obamacare">Obamacare</a>
-                                <a class="btn label" href="javascript:void(0)" id="debt_ceiling">Debt Ceiling</a>
-                                <a class="btn label" href="javascript:void(0)" id="national_parks">National Parks</a>
-                                <a class="btn label" href="javascript:void(0)" id="john_boehner">John Boehner</a>
-                                <a class="btn label" href="javascript:void(0)" id="furloughed">Furloughed</a>
-                            </div>
-                            <div class="btn-group btn-group-vertical col-xs-12 col-sm-12 visible-xs visible-sm">
-                                <a class="btn label" href="javascript:void(0)" id="government_shutdown">Government Shutdown</a>
-                                <a class="btn label" href="javascript:void(0)" id="obamacare">Obamacare</a>
-                                <a class="btn label" href="javascript:void(0)" id="debt_ceiling">Debt Ceiling</a>
-                                <a class="btn label" href="javascript:void(0)" id="national_parks">National Parks</a>
-                                <a class="btn label" href="javascript:void(0)" id="john_boehner">John Boehner</a>
-                                <a class="btn label" href="javascript:void(0)" id="furloughed">Furloughed</a>
-                            </div>
-                        </div>
-                        <div id="instances-headline">
-                            <h6 class="centered"><span id="total-overall-instances"></span><span id="total-democrat-instances"></span><span id="total-republican-instances"></span></h6>
-                        </div>
-                        <div id="content-action-bar"></div>
-                    </div>
-                </div>
-            </div>
+            <div class="row data-legend"></div>
             <div class="row data-visuals">
                 <div id="data-loading" class="progress progress-striped active">
                     <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
@@ -117,18 +86,11 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/handlebars-ajax.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/swag.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/moment.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.1.0/moment.min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.highlight.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/scrollTo-min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/waituntilexists.js"></script>
-        <script src="scripts/data.js"></script>
         <script src="scripts/app.js"></script>
-
-        <!-- additional js files for projects -->
-        <!--
-        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore-contrib/0.1.4/underscore-contrib.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
-        -->
         <!-- end scripts -->
 
         <!-- begin analytics -->

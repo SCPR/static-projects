@@ -7,12 +7,21 @@ var embed_url_root = 'http://projects.scpr.org/static/charts/congressional-speec
 jqueryNoConflict(document).ready(function() {
     initializeTemplates.renderStaticTemplates();
     fn.retrieveLegislatorLocalDetails();
-    fn.constructCapitolWordsQuery('government+shutdown');
-    fn.retrievePhraseToQuery();
+    fn.checkForDataVisuals();
 });
 
 // begin data configuration object
 var fn = {
+
+    checkForDataVisuals: function(){
+        var checkExist = setInterval(function() {
+            if (jqueryNoConflict('.jumbotron').length) {
+                clearInterval(checkExist);
+                fn.constructCapitolWordsQuery('government+shutdown');
+                fn.retrievePhraseToQuery();
+            }
+        }, 1000);
+    },
 
     objectOfLegislators: {
         objects: []
@@ -31,9 +40,19 @@ var fn = {
         return imageUrl[0].imageurl;
     },
 
-    evaluateLocalDetailsForReference: function(bioguide_id){
+    evaluateLocalDetailsForDistrict: function(bioguide_id){
         var fullReference = _.where(fn.ArrayOfLegislatorLocalDetails, {bioguideid: bioguide_id});
-        return fullReference[0].fullreference;
+        return fullReference[0].district;
+    },
+
+    evaluateChamberForPosition: function(chamber){
+        if (chamber==='House'){
+            return 'Rep.';
+        } else if (chamber==='Senate'){
+            return 'Sen.';
+        } else {
+            return null;
+        }
     },
 
     retrievePhraseToQuery: function(){
@@ -110,7 +129,6 @@ var fn = {
     },
 
     processCapitolPhrasesData: function(data){
-
         // clear the container
         fn.objectOfLegislators.objects = [];
 
@@ -123,12 +141,13 @@ var fn = {
                 speaker_first: data.results[x].speaker_first,
                 speaker_last: data.results[x].speaker_last,
                 speaker_party: data.results[x].speaker_party,
+                speaker_position: fn.evaluateChamberForPosition(data.results[x].chamber),
                 title: fn.toTitleCase(data.results[x].title),
                 origin_url: data.results[x].origin_url,
                 date: data.results[x].date,
                 chamber: data.results[x].chamber,
                 speaker_image_url: fn.evaluateLocalDetailsForImage(data.results[x].bioguide_id),
-                speaker_reference: fn.evaluateLocalDetailsForReference(data.results[x].bioguide_id),
+                speaker_district: fn.evaluateLocalDetailsForDistrict(data.results[x].bioguide_id),
                 speaking: data.results[x].speaking
             };
 
@@ -165,7 +184,7 @@ var fn = {
 
     displayPhraseHeadline: function(phrase) {
         var adjustedPhrase = phrase.replace('+', ' ');
-        jqueryNoConflict('#phrase-headline').html('<h2 class="centered"><span id="display-phrase">' + fn.toTitleCase(adjustedPhrase) + '</span></h2>');
+        jqueryNoConflict('#phrase-headline').html('<h5 class="centered"><span id="display-phrase">' + fn.toTitleCase(adjustedPhrase) + '</span></h5>');
     },
 
     takeTime: function(dateInput) {
@@ -186,18 +205,17 @@ var fn = {
 
     desc_start_time: function(o) {
         return -o.date.getTime();
+    },
+
+    scrollToRep: function(){
+        jqueryNoConflict('div').removeClass('content-scroll-to');
+        var congressionalMember = jqueryNoConflict('#search-congressional-delegation').val();
+        jqueryNoConflict(congressionalMember).addClass('content-scroll-to');
+        jqueryNoConflict.scrollTo(congressionalMember)
     }
 
 }
 // end data configuration object
-
-// scroll into view function
-function scrollToRep(){
-    jqueryNoConflict('div').removeClass('content-scroll-to');
-    var congressionalMember = jqueryNoConflict('#search-congressional-delegation').val();
-    jqueryNoConflict(congressionalMember).addClass('content-scroll-to');
-    jqueryNoConflict.scrollTo(congressionalMember)
-};
 
 // begin template rendering object
 var initializeTemplates = {
@@ -207,6 +225,7 @@ var initializeTemplates = {
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');
         renderHandlebarsTemplate('templates/data-details.handlebars', '.data-details');
+        renderHandlebarsTemplate('templates/data-legend.handlebars', '.data-legend');
 
         var checkExist = setInterval(function() {
             if (jqueryNoConflict('.buttons').length) {

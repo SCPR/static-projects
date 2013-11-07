@@ -1,5 +1,5 @@
 <div class="form-group">
-<select id="search-congressional-delegation" class="form-control" onchange="scrollToRep(this.value);">
+<select id="search-congressional-delegation" class="form-control" onchange="fn.scrollToRep(this.value);">
     <option value=".data-details">Scroll to an instance</option>
     {{#objects}}
         <option value="#{{speaker_first}}_{{speaker_last}}_{{number}}">{{speaker_first}} {{speaker_last}} ({{speaker_party}}) - {{dateFormat date}}</option>
@@ -31,7 +31,6 @@ $(document).ready(function() {
 			// when scroll up or less than aboveHeight, remove the "fixed" class, and the padding-top
             $('#content-action-bar').removeClass('fixed').css('width', 'width: 100%;');
         }
-
 
         if(!jqueryNoConflict('#content-action-bar').hasClass('fixed')){
             jqueryNoConflict('div').removeClass('content-scroll-to');

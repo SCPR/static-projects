@@ -6,21 +6,20 @@ var embed_url_root = 'http://projects.scpr.org/static/maps/following-la-aqueduct
 // begin main function
 jqueryNoConflict(document).ready(function() {
     initializeTemplates.renderStaticTemplates();
-    fn.checkForMapContainer();
+    fn.checkForDataVisuals();
     fn.dismissContentBackground();
 });
 
 // begin data configuration object
 var fn = {
 
-    checkForMapContainer: function(){
+    checkForDataVisuals: function(){
         var checkExist = setInterval(function() {
-            if (jqueryNoConflict('#content-map-canvas').length) {
+            if (jqueryNoConflict('.data-visuals').length) {
                 clearInterval(checkExist);
                 fn.createMap();
             }
         }, 1000);
-
     },
 
     createMap: function(){
@@ -145,10 +144,8 @@ var fn = {
 var initializeTemplates = {
     renderStaticTemplates: function(){
         var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/templates/';
-        //renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
-        //renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
-        renderHandlebarsTemplate('templates/kpcc-header.handlebars', '.kpcc-header');
-        renderHandlebarsTemplate('templates/kpcc-footer.handlebars', '.kpcc-footer');
+        renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
+        renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');
         renderHandlebarsTemplate('templates/data-details.handlebars', '.data-details');
         renderHandlebarsTemplate('templates/data-visuals.handlebars', '.data-visuals');
