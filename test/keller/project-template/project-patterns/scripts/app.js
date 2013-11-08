@@ -113,11 +113,12 @@ var fn = {
         	]
         });
 
+        /*
         var slider = new Rickshaw.Graph.RangeSlider({
         	graph: graph,
         	element: jqueryNoConflict('#content-action-slider')
-
         });
+        */
 
         var x_axis = new Rickshaw.Graph.Axis.Time({
             graph: graph,
