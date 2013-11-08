@@ -12,7 +12,8 @@
 .rickshaw_annotation_timeline .annotation {position: relative; height: 15px; width: 15px; margin-left: -8px; top: -18px; border-radius: 5px; background-color: rgba(0,0,0,.50);}
 #content-action-legend {width: 100%; margin: 0 0 0 0;}
 #content-action-slider {width: 50%; display: inline-block; margin: 25px 0 0 4%;}
-#content-action-legend .btn {width: 96%; margin: 0 2% 0 2%; background: #256254; color: #fdfdfd;}
+#content-action-legend .btn {width: 96%; margin: 0 2% 0 2%; background: rgba(0, 127, 166, 1.0); border-color: rgba(0, 127, 166, 1.0); color: #fdfdfd;}
+#content-action-legend .btn:hover {background: rgba(0, 127, 166, .6); border-color: rgba(0, 127, 166, .6);}
 .rickshaw_legend {background: none; padding: 0px}
 .rickshaw_legend ul {width: 100%; list-style-type: none; margin: 5px 0 5px 0; padding: 0; cursor: pointer;}
 .rickshaw_legend li {padding: 0 0 0 0;}

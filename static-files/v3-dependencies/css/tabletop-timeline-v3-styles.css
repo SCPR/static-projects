@@ -51,13 +51,16 @@
 .vertical-timeline-container .btn-group-justified {width: 90%; margin: 0 5% 0 5%;}
 .vertical-timeline-container .vertical-timeline-buttons { text-align: center; display: inline; }
 .vertical-timeline-container .vertical-timeline-buttons a {color: #fdfdfd; height: 20px;}
-.vertical-timeline-container .vertical-timeline-buttons a:hover {color: #2b2b2b; background: rgba(0, 127, 166, .6); border: rgba(0, 127, 166, .6) solid .1em;}
-.vertical-timeline-container .vertical-timeline-buttons a.active:hover, .vertical-timeline-container .vertical-timeline-buttons a.active { background: rgba(0, 127, 166, .6); /*border: rgba(0, 127, 166, .6) solid .1em;*/ color: #2B2B2B; cursor: default; }
+.vertical-timeline-container .vertical-timeline-buttons a:hover {color: #2b2b2b; background: rgba(0, 127, 166, .6); border: rgba(0, 127, 166, 1.0) solid .1em;}
+.vertical-timeline-container .vertical-timeline-buttons a.active,
+.vertical-timeline-container .vertical-timeline-buttons a.active:hover { background: rgba(0, 127, 166, .6); border: rgba(0, 127, 166, .6) solid .1em; color: #2B2B2B; cursor: default; }
+
+/*
 .data-legend-items a.label {background: rgba(0, 127, 166, 1.0); border: rgba(0, 127, 166, 1.0) solid .1em; color: #fdfdfd; padding: 5px 10px 5px 10px; font-weight: normal;}
 .data-legend-items a.label:hover {background: rgba(0, 127, 166, .6); color: #2b2b2b;}
 .vertical-timeline-container .vertical-timeline-buttons a span { padding-right: 15px; background-position: right -20px; }
 .vertical-timeline-container .vertical-timeline-buttons a.active span { background-position: right 4px }
-/*.vertical-timeline-container .vertical-timeline-buttons a.expand-all span, .vertical-timeline-container .vertical-timeline-buttons a.sort-newest span { background-image: url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/up-arrows.png); background-repeat: no-repeat; }
+.vertical-timeline-container .vertical-timeline-buttons a.expand-all span, .vertical-timeline-container .vertical-timeline-buttons a.sort-newest span { background-image: url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/up-arrows.png); background-repeat: no-repeat; }
 .vertical-timeline-container .vertical-timeline-buttons a.collapse-all span, .vertical-timeline-container .vertical-timeline-buttons a.sort-oldest span { background-image: url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/down-arrows.png); background-repeat: no-repeat; }
 */
 
