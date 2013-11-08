@@ -127,12 +127,12 @@
                 <div class="jumbotron"> \
                     <div class="vertical-timeline-buttons"> \
                         <div class="expand-collapse-buttons btn-group btn-group-justified">\
-                            <a class="expand-all active btn btn-success" href="javascript:void(0)"><span>Expand all</span></a> \
-                            <a class="collapse-all btn btn-success" href="javascript:void(0)"><span>Collapse all</span></a> \
+                            <a class="expand-all active btn btn-primary" href="javascript:void(0)"><span>Expand all</span></a> \
+                            <a class="collapse-all btn btn-primary" href="javascript:void(0)"><span>Collapse all</span></a> \
                         </div> \
                         <div class="sort-buttons btn-group btn-group-justified"> \
-                            <a class="sort-newest active btn btn-success" href="javascript:void(0)"><span>Sort by newest</span></a> \
-                            <a class="sort-oldest btn btn-success" href="javascript:void(0)"><span>Sort by oldest</span></a> \
+                            <a class="sort-newest active btn btn-primary" href="javascript:void(0)"><span>Sort by newest</span></a> \
+                            <a class="sort-oldest btn btn-primary" href="javascript:void(0)"><span>Sort by oldest</span></a> \
                         </div> \
                     </div> \
                 </div> \
