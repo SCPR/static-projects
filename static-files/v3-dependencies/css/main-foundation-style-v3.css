@@ -35,7 +35,7 @@ body.minimal .data-container .credits {font-style: italic; display: inline;}
 body.minimal .data-container .pubdate {color: #b94a48; font-style: italic; display: inline;}
 body.minimal .data-container blockquote {padding: 0 0 0 15px; margin: 0 0 20px; border-left: 3px solid #2B2B2B;}
 body.minimal .data-container .lowercase {text-transform: lowercase;}
-body.minimal .data-container .center-text, {text-align:center;}
+/*body.minimal .data-container .center-text, {text-align: center;}*/
 body.minimal .data-container .right-align {text-align: right;}
 body.minimal .data-container .left-align {text-align: left;}
 body.minimal .data-container .underline {text-decoration: underline;}
