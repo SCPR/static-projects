@@ -55,8 +55,6 @@ var fn = {
             popupAnchor: [-3, -76]
         });
 
-        console.log(earthquakes.features);
-
         var arrayOfEarthquakes = [];
 
         // loop through...
@@ -69,29 +67,13 @@ var fn = {
             }
         }
 
+        var markers = L.markerClusterGroup();
 
-        //console.log(arrayOfEarthquakes);
+        var geoJsonLayer = L.geoJson(arrayOfEarthquakes, {
 
-
-        L.geoJson(arrayOfEarthquakes, {
-
-            style: function (feature) {
-                return {
-                    color: 'black',
-                    weight: 5,
-                    fillColor: '#f07a30',
-                    opacity: .6,
-                    fillOpacity: 1
-                }
-            },
-
-            pointToLayer: function(feature, latlng) {
-                return new L.marker(latlng, {
-                    //icon: new myIcon({
-                        //iconUrl: 'images/camera.png'
-                    //})
-                })
-            },
+            //onEachFeature: function (feature, layer) {
+                //layer.bindPopup(feature.properties.address);
+            //}
 
             onEachFeature: function(feature, layer) {
                 layer.on('click', function (e) {
@@ -126,7 +108,11 @@ var fn = {
                 });
             }
 
-        }).addTo(map);
+        });
+
+        markers.addLayer(geoJsonLayer);
+        map.addLayer(markers);
+        map.fitBounds(markers.getBounds());
     },
 
     dismissContentBackground: function(){
