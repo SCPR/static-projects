@@ -7,7 +7,6 @@ var embed_url_root = 'http://projects.scpr.org/static/maps/following-la-aqueduct
 jqueryNoConflict(document).ready(function() {
     initializeTemplates.renderStaticTemplates();
     fn.checkForDataVisuals();
-    fn.dismissContentBackground();
 });
 
 // begin data configuration object
@@ -104,6 +103,8 @@ var fn = {
                         jqueryNoConflict('#content-display').fadeOut('fast');
                         jqueryNoConflict('#content-background').fadeOut('fast');
                     });
+
+                    fn.dismissContentBackground();
 
                 });
             }
