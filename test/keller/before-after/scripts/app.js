@@ -30,8 +30,8 @@ var fn = {
     	jqueryNoConflict('#slider').alterImg({
     		beforePhoto: beforeImage,
     		afterPhoto: afterImage,
-    		baWidth: baseWidth,
-    		baHeight: 414
+    		baWidth: 620,
+    		baHeight: 413
     	});
     },
 
