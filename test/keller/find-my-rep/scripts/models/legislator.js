@@ -1,4 +1,3 @@
-// describes a legislator
 App.Models.Legislator = Backbone.Model.extend({
     defaults: {
         bioguide_id: null,
@@ -19,5 +18,8 @@ App.Models.Legislator = Backbone.Model.extend({
         twitter_id: null,
         website: null,
         youtube_id: null,
-    }
+        html: "",
+        loaded: false
+    },
+    urlRoot: "/Home/Accommodation/"
 });

@@ -64,7 +64,7 @@
 
         <div class="kpcc-header"></div>
 
-        <!-- begin main container -->
+<!-- begin main container -->
         <div class="container data-container">
             <div class="row data-details">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -96,63 +96,34 @@
                     <div class="progress progress-striped active hidden">
                         <div class="progress-bar"  role="progressbar" aria-valuenow="100" style="width: 100%"></div>
                     </div>
+                    <div id="app"></div>
+                    <div id="detail"></div>
                 </div>
             </div>
             <div class="row kpcc-footer"></div>
         </div>
         <!-- end main container -->
 
-        <script id="gather-location-details" type="text/template">
-            <div class="jumbotron">
-                <noscript>Please enable JavaScript to view this interactive.</noscript>
-                <h6 class="centered">Search for your representative by address or <a class="findMe" href="javascript:void(0)">location</a></h6>
-                <div id="phrase-headline"></div>
-                <form id="submission-form" class="form-inline" role="form">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <input type="text" class="form-control" id="addressSearch" placeholder="Enter your address">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <button type="button" class="btn btn-primary btn-group btn-group-justified" id="submit">Submit</button>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                            <input type="text" class="form-control" name="lat" id="latitudeSearch">
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                            <input type="text" class="form-control" name="lng" id="longitudeSearch">
-                        </div>
-                    </div>
-
-                </form>
-            </div>
+        <script id="list-template" type="text/template">
+            <a href='#legislator/<%= id %>'><%= first_name %> <%= last_name %></a>
         </script>
 
-        <script id="legislator-results-template" type="text/template">
-            <div class="legislator col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <p><a href="javascript:void(0)" id="<%= bioguide_id %>"><%= bioguide_id %></a></p>
-                <p><%= title %>. <%= first_name %> <%= middle_name %> <%= last_name %> (<%= party %> - <%= district %>)</p>
-                <p><%= chamber %></p>
-                <p><%= state_name %></p>
-                <p><%= term_start %></p>
-                <p><%= term_end %></p>
-                <p><%= birthday %></p>
-                <p><%= office %></p>
-                <p><%= phone %></p>
-                <p><%= fax %></p>
-                <p><%= twitter_id %></p>
-                <p><%= website %></p>
-                <p><%= youtube_id %></p>
-                <hr />
-            </div>
-        </script>
-
-        <script id="legislator-details-template" type="text/template">
-            <h1>Boom</h1>
+        <script id="detail-template" type="text/template">
+            <h2><%= first_name %> <%= last_name %>'s id is <%= id %></h2>
+            <p><a href="javascript:void(0)" id="<%= bioguide_id %>"><%= bioguide_id %></a></p>
+            <p><%= title %>. <%= first_name %> <%= middle_name %> <%= last_name %> (<%= party %> - <%= district %>)</p>
+            <p><%= chamber %></p>
+            <p><%= state_name %></p>
+            <p><%= term_start %></p>
+            <p><%= term_end %></p>
+            <p><%= birthday %></p>
+            <p><%= office %></p>
+            <p><%= phone %></p>
+            <p><%= fax %></p>
+            <p><%= twitter_id %></p>
+            <p><%= website %></p>
+            <p><%= youtube_id %></p>
+            <hr />
         </script>
 
         <!-- begin scripts -->
@@ -168,15 +139,12 @@
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/handlebars-ajax.js"></script>
         <script src="http://maps.google.com/maps/api/js?key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8&sensor=false&amp;libraries=places"></script>
 
-
-
         <script src="scripts/app.js"></script>
-        <script src="scripts/models/user.js"></script>
         <script src="scripts/models/legislator.js"></script>
         <script src="scripts/collections/legislators.js"></script>
-        <script src="scripts/views/initialize.js"></script>
-        <script src="scripts/views/legislators.js"></script>
-        <script src="scripts/views/details.js"></script>
+        <script src="scripts/views/appView.js"></script>
+        <script src="scripts/views/listView.js"></script>
+        <script src="scripts/views/detailView.js"></script>
         <script src="scripts/router/router.js"></script>
         <!-- end scripts -->
 
