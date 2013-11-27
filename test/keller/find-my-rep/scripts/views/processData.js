@@ -1,7 +1,4 @@
 App.Views.ProcessData = Backbone.View.extend({
-    initialize: function(){
-        this.render();
-    },
 
     constructApiQuery: function(){
         var latitude = this.model.attributes.latitude;
@@ -15,6 +12,8 @@ App.Views.ProcessData = Backbone.View.extend({
 
     setDataToCollection: function(data){
 
+        console.log(data.results);
+
         // initialize new collection
         var legislatorsCollection = new App.Collections.Legislators();
 
@@ -27,8 +26,4 @@ App.Views.ProcessData = Backbone.View.extend({
         // add the view to the page
         $('.data-visuals').append(legislatorsView.render().el);
     },
-
-    render: function(){
-        console.log('render');
-    }
 });

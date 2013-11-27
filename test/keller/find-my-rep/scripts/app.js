@@ -17,6 +17,13 @@
         var renderPage = new App.Views.Initialize();
         $('.data-legend').append(renderPage.render().el);
 
+        new App.Router();
+        Backbone.history.start({
+            root: '2kpcc/static-projects/test/keller/find-my-rep/',
+            pushState: true,
+            //silent: true
+        });
+
         // scaffolding functions
         var embed_url_root = '#';
         var initializeTemplates = {

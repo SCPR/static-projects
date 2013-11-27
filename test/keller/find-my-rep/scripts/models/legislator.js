@@ -1,6 +1,7 @@
 // describes a legislator
 App.Models.Legislator = Backbone.Model.extend({
     defaults: {
+        bioguide_id: null,
         title: null,
         first_name: null,
         middle_name: null,

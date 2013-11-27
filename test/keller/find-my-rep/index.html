@@ -132,9 +132,9 @@
             </div>
         </script>
 
-
         <script id="legislator-results-template" type="text/template">
             <div class="legislator col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p><a href="javascript:void(0)" id="<%= bioguide_id %>"><%= bioguide_id %></a></p>
                 <p><%= title %>. <%= first_name %> <%= middle_name %> <%= last_name %> (<%= party %> - <%= district %>)</p>
                 <p><%= chamber %></p>
                 <p><%= state_name %></p>
@@ -149,6 +149,10 @@
                 <p><%= youtube_id %></p>
                 <hr />
             </div>
+        </script>
+
+        <script id="legislator-details-template" type="text/template">
+            <h1>Boom</h1>
         </script>
 
         <!-- begin scripts -->
@@ -171,8 +175,9 @@
         <script src="scripts/models/legislator.js"></script>
         <script src="scripts/collections/legislators.js"></script>
         <script src="scripts/views/initialize.js"></script>
-        <script src="scripts/views/processData.js"></script>
         <script src="scripts/views/legislators.js"></script>
+        <script src="scripts/views/details.js"></script>
+        <script src="scripts/router/router.js"></script>
         <!-- end scripts -->
 
         <!-- begin analytics -->

@@ -37,18 +37,14 @@ App.Views.Initialize = Backbone.View.extend({
 
     submitData: function(){
         $('.progress').removeClass('hidden');
-        $('.data-visuals').empty();
-
         var latitudeValue = $("input[id='latitudeSearch']").val();
         var longitudeValue = $("input[id='longitudeSearch']").val();
-
-        var user = new App.Models.User({
-            latitude: latitudeValue,
-            longitude: longitudeValue,
+        var locationParams = latitudeValue + ',' + longitudeValue;
+        var searchRouter = new App.Router();
+        searchRouter.navigate('search?location=' + locationParams, {
+            trigger: true,
+            replace: false
         });
-
-        var processData = new App.Views.ProcessData({model: user});
-        processData.constructApiQuery();
     },
 
     render: function(){
