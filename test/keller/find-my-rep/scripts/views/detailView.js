@@ -2,33 +2,25 @@ App.Views.DetailView = Backbone.View.extend({
 
     template: template('detail-template'),
 
-    initialize: function(){
+    setModel: function(model){
 
+        this.model = model;
+        var $this = this;
+
+        console.log(this.model[0].attributes);
+        //console.log($this.model[0].attributes);
+
+        if (!this.model[0].get('loaded')) {
+            $this.model[0].set('loaded', true);
+            $this.render();
+        } else {
+            $this.render();
+        }
     },
 
     render: function(){
-        //this.$el.html(this.model.get('html'));
-        this.$el.html(this.template(this.model.toJSON()));
+        this.$el.html(this.template(this.model[0].toJSON()));
         return this;
     },
 
-    setModel: function(model){
-        this.model = model;
-
-        var $this = this;
-
-        if (!this.model.get('loaded')) {
-
-            //$this.model.set('html', '<h2>id is ' + this.model.get('id') + ' and name is ' + this.model.get('first_name') + '</h2>');
-
-            $this.model.set('loaded', true);
-
-            $this.render();
-
-        } else {
-
-            $this.render();
-
-        }
-    }
 });

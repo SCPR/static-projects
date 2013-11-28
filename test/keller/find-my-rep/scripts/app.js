@@ -15,19 +15,20 @@
         window.app = new App.Router();
         window.appView = new App.Views.AppView({el:document});
         Backbone.history.start({
-            root: '1personal/3experiments/current-learning/backbone/backbone-list-details/',
+            root: '2kpcc/static-projects/test/keller/find-my-rep/',
 
             // enables hash if that's what you want in life
             pushState: false,
         });
-
     });
 
 })();
 
 // scaffolding functions
 var initializeTemplates = initializeTemplates || {};
+
 var embed_url_root = '#';
+
 var initializeTemplates = {
     renderStaticTemplates: function(){
         var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/templates/';

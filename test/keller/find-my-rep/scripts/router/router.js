@@ -1,11 +1,12 @@
 App.Router = Backbone.Router.extend({
     routes: {
         "": "index",
-        "legislator/:id": "show"
+        "legislator/:votesmart_id": "show"
     },
 
-    show: function(id){
-        var model = window.appView.legislatorCollection.get(id);
-        window.appView.detailView.setModel(model);
+    show: function(votesmart_id){
+        votesmart_id = parseInt(votesmart_id);
+        this.model = window.appView.legislatorCollection.where({'votesmart_id': votesmart_id});
+        window.appView.detailView.setModel(this.model);
     }
 });
