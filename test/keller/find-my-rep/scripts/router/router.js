@@ -1,7 +1,12 @@
 App.Router = Backbone.Router.extend({
     routes: {
         "": "index",
+        "search/:locationParams": "search",
         "legislator/:votesmart_id": "show"
+    },
+
+    search: function(locationParams){
+        window.appView.queryApiData(locationParams);
     },
 
     show: function(votesmart_id){
