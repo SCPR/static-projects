@@ -40,8 +40,8 @@
         <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
         <link href="css/stateface.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
 
         <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -148,10 +148,7 @@
                             <img src="http://projects.scpr.org/static/static-files/images/congressional-reps/<%= bioguide_id %>.jpg" class="responsive" />
                         </div>
                         <div id="representative-bio" class="col-xs-12 col-sm-12 col-md-7 col-lg-9">
-
-                            <span class="stateface stateface-replace stateface-ak">{statename}</span>
-
-                            <h4>ICON HERE<%= title %>. <%= first_name %> <%= last_name %> (<%= party %>-<%= district %>)</h4>
+                            <h4><span class="stateface stateface-replace stateface-<%= state.toLowerCase() %>"></span><%= title %>. <%= first_name %> <%= last_name %> (<%= party %>-<%= district %>)</h4>
                             <p><%= title %>. <%= first_name %> <%= last_name %> is a <%= party %> who represents <%= state_name %>'s <%= district %> congressional district. <%= last_name %>'s current term started <%= moment(term_start).format('MMMM D[th], YYYY') %> and ends <%= moment(term_end).format('MMMM D[th], YYYY') %>. <%= last_name %> is <%= moment(birthday).format('MMMM D[th], YYYY') %> years old.
                             </p>
                             <p><%= office %>, Washington, DC</p>

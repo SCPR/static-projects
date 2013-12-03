@@ -17,3 +17,15 @@
 #detail candidate-profile img,
 #detail #representative-tweets img,
 #detail #representative-articles img {width: 94%; height: auto; margin: 0 3% 0 3%;}
+
+
+@font-face {
+    font-family: 'StateFaceRegular';
+    src: url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.eot');
+    src: url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.woff') format('woff'),
+        url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.ttf') format('truetype'),
+        url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.svg#StateFaceRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
