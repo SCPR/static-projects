@@ -150,26 +150,57 @@
                     <h4><%= title %>. <%= first_name %> <%= last_name %> (<%= party %>-<%= district %>)</h4>
                     <p><%= title %>. <%= first_name %> <%= last_name %> is a <%= party %> who represents <%= state_name %>'s <%= district %> congressional district. <%= last_name %>'s current term started <%= moment(term_start).format('MMMM D[th], YYYY') %> and ends <%= moment(term_end).format('MMMM D[th], YYYY') %>. <%= last_name %> is <%= moment(birthday).format('MMMM D[th], YYYY') %> years old.
                     </p>
-                    <p><%= office %>, Washington, DC</p>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <p><strong>Phone</strong>: <%= phone %></p>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <p><strong>Fax</strong>: <%= fax %></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <p><a href="<%= website %>" target="_blank">Website</a></p>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                            <p><a href="<%= contact_form %>" target="_blank">Contact</a></p>
-                        </div>
-                    </div>
                 </div>
             </div>
             <hr>
+                <div id="representative-contact">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <h5>Contact <%= title %>. <%= first_name %> <%= last_name %></h5>
+                            <p><%= office %>, Washington, DC</p>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                    <p><strong>Phone</strong>: <%= phone %></p>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                    <p><strong>Fax</strong>: <%= fax %></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                    <p><a href="<%= website %>" target="_blank">Website</a></p>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                    <p><a href="<%= contact_form %>" target="_blank">Contact</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+            <% if (kpccApiArticles) { %>
+                <div id="representative-articles">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <h5>KPCC articles mentioning <%= title %>. <%= first_name %> <%= last_name %></h5>
+                        </div>
+                    </div>
+                    <% _.each(kpccApiArticles, function(article) { %>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                                <a href="<%= article.public_url %>" target="_blank"><%= article.thumbnail %></a>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                                <p><a href="<%= article.public_url %>" target="_blank"><%= article.title %></a></p>
+                                <p><span class="credits"><%= article.byline %></span> | <span class="pubdate"><%= moment(article.published_at).format('MMMM D[th], YYYY, h:mma') %></span></p>
+                                <p><%= article.teaser %></p>
+                            </div>
+                        </div>
+                        <hr>
+                    <% }); %>
+                </div>
+            <% } %>
             <% if (twitterApiTweets) { %>
                 <div id="representative-tweets">
                     <div class="row">
@@ -200,28 +231,6 @@
                 </div>
             <% } %>
             <hr>
-            <% if (kpccApiArticles) { %>
-                <div id="representative-articles">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <h5>KPCC articles mentioning <%= title %>. <%= first_name %> <%= last_name %></h5>
-                        </div>
-                    </div>
-                    <% _.each(kpccApiArticles, function(article) { %>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                                <a href="<%= article.public_url %>" target="_blank"><%= article.thumbnail %></a>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-                                <p><a href="<%= article.public_url %>" target="_blank"><%= article.title %></a></p>
-                                <p><span class="credits"><%= article.byline %></span> | <span class="pubdate"><%= moment(article.published_at).format('MMMM D[th], YYYY, h:mma') %></span></p>
-                                <p><%= article.teaser %></p>
-                            </div>
-                        </div>
-                        <hr>
-                    <% }); %>
-                </div>
-            <% } %>
         </script>
 
         <!-- begin scripts -->
