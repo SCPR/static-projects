@@ -39,7 +39,6 @@ App.Views.DetailView = Backbone.View.extend({
 
                 $.when(
                     getArticles(kpccApiQueryUrl)
-                    //getTweets(twitterApiQueryUrl)
                 ).done(function(articles){
                     $this.model[0].set('kpccApiArticles', articles.articles);
                     $this.render();
@@ -58,7 +57,13 @@ App.Views.DetailView = Backbone.View.extend({
 
             }
 
-            console.log($this.model[0]);
+            // trying to create null value for articles if not present
+            if ($this.model[0].attributes.kpccApiArticles === null){
+                console.log('0');
+                $this.model[0].set('kpccApiArticles', null);
+            }
+            console.log($this.model[0].attributes);
+
 
             /*
             $.ajax({

@@ -174,8 +174,6 @@
                 <div id="representative-tweets">
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-                            <p><%= twitterApiTweets %></p>
                             <h5>Tweets from <%= title %>. <%= first_name %> <%= last_name %></h5>
                         </div>
                     </div>
@@ -202,26 +200,28 @@
                 </div>
             <% } %>
             <hr>
-            <div id="representative-articles">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <h5>KPCC articles mentioning <%= title %>. <%= first_name %> <%= last_name %></h5>
-                    </div>
-                </div>
-                <% _.each(kpccApiArticles, function(article) { %>
+            <% if (kpccApiArticles) { %>
+                <div id="representative-articles">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                            <a href="<%= article.public_url %>" target="_blank"><%= article.thumbnail %></a>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-                            <p><a href="<%= article.public_url %>" target="_blank"><%= article.title %></a></p>
-                            <p><span class="credits"><%= article.byline %></span> | <span class="pubdate"><%= moment(article.published_at).format('MMMM D[th], YYYY, h:mma') %></span></p>
-                            <p><%= article.teaser %></p>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <h5>KPCC articles mentioning <%= title %>. <%= first_name %> <%= last_name %></h5>
                         </div>
                     </div>
-                    <hr>
-                <% }); %>
-            </div>
+                    <% _.each(kpccApiArticles, function(article) { %>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                                <a href="<%= article.public_url %>" target="_blank"><%= article.thumbnail %></a>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                                <p><a href="<%= article.public_url %>" target="_blank"><%= article.title %></a></p>
+                                <p><span class="credits"><%= article.byline %></span> | <span class="pubdate"><%= moment(article.published_at).format('MMMM D[th], YYYY, h:mma') %></span></p>
+                                <p><%= article.teaser %></p>
+                            </div>
+                        </div>
+                        <hr>
+                    <% }); %>
+                </div>
+            <% } %>
         </script>
 
         <!-- begin scripts -->
