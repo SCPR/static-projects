@@ -33,8 +33,8 @@ App.Models.Legislator = Backbone.Model.extend({
         website: null,
         youtube_id: null,
         html: "",
-        loaded: false
+        loaded: false,
+        kpccApiArticles: null,
+        twitterApiTweets: null,
     },
-
-    urlRoot: "/Home/Accommodation/"
 });

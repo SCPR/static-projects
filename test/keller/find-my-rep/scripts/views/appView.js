@@ -55,7 +55,6 @@ App.Views.AppView = Backbone.View.extend({
         var testValue = 'latitude=' + latitude + '&longitude=' + longitude;
         var urlSuffix = '&apikey=b717252e9bc44d4ea57321c49e7dd5e8&callback=?';
         var targetUrl = urlPrefix + testValue + urlSuffix;
-        console.log(targetUrl);
         $.getJSON(targetUrl, this.fetchYourRepresentatives);
     },
 
@@ -66,12 +65,11 @@ App.Views.AppView = Backbone.View.extend({
         for(var i=0; i<data.results.length; i++){
             var testModel = window.appView.legislatorCollection.where({'votesmart_id': data.results[i].votesmart_id});
             this.searchedCollection.add(testModel);
-        }
-        console.log(this.searchedCollection);
-        this.testLegislatorListView = new App.Views.Legislators({
+        };
+        this.searchedLegislatorListView = new App.Views.Legislators({
             collection: this.searchedCollection
         });
-        $('#app').append(this.testLegislatorListView.el);
+        $('#app').append(this.searchedLegislatorListView.el);
         this.searchedCollection.reset(data.results);
     },
 

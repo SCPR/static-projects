@@ -124,10 +124,10 @@
                         <div class="progress-bar"  role="progressbar" aria-valuenow="100" style="width: 100%"></div>
                     </div>
                     <div class="row data-visuals">
-                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
                             <div id="app"></div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
                             <div id="detail"></div>
                         </div>
                     </div>
@@ -142,41 +142,65 @@
         </script>
 
         <script id="detail-template" type="text/template">
-            <h2><%= first_name %> <%= last_name %>'s id is <%= votesmart_id %></h2>
-            <p><%= title %>. <%= first_name %> <%= middle_name %> <%= last_name %> (<%= party %> - <%= district %>)</p>
-            <p><%=bioguide_id %></p>
-            <p><%=birthday %></p>
-            <p><%=chamber %></p>
-            <p><%=contact_form %></p>
-            <p><%=crp_id %></p>
-            <p><%=district %></p>
-            <p><%=facebook_id %></p>
-            <p><%=fax %></p>
-            <p><%=fec_ids %></p>
-            <p><%=first_name %></p>
-            <p><%=gender %></p>
-            <p><%=govtrack_id %></p>
-            <p><%=icpsr_id %></p>
-            <p><%=in_office %></p>
-            <p><%=last_name %></p>
-            <p><%=middle_name %></p>
-            <p><%=name_suffix %></p>
-            <p><%=nickname %></p>
-            <p><%=ocd_id %></p>
-            <p><%=office %></p>
-            <p><%=party %></p>
-            <p><%=phone %></p>
-            <p><%=state %></p>
-            <p><%=state_name %></p>
-            <p><%=term_end %></p>
-            <p><%=term_start %></p>
-            <p><%=thomas_id %></p>
-            <p><%=title %></p>
-            <p><%=twitter_id %></p>
-            <p><%=votesmart_id %></p>
-            <p><%=website %></p>
-            <p><%=youtube_id %></p>
-            <hr />
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <img src="images/<%= bioguide_id %>.jpg" class="responsive" />
+                    <p><a href="<%= website %>" target="_blank">Website</a></p>
+                    <p><%= office %>, Washington, DC</p>
+                    <p>Phone: <%= phone %></p>
+                    <p>Fax: <%= fax %></p>
+                    <p><a href="<%= contact_form %>" target="_blank">Contact <%= title %>. <%= last_name %></a></p>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <h4><%= title %>. <%= first_name %> <%= last_name %> (<%= party %>-<%= district %>)</h4>
+                    <p><%= title %>. <%= first_name %> <%= last_name %> is a <%= party %> who represents <%= state_name %>'s <%= district %> congressional district. <%= last_name %>'s current term started <%= term_start %> and ends <%= term_end %></p>
+                    <p><%= gender %></p>
+                    <p><%= birthday %></p>
+                    <p><%= bioguide_id %></p>
+                    <p><%= chamber %></p>
+                    <p><%= facebook_id %></p>
+                    <p><%= twitter_id %></p>
+                    <p><%= youtube_id %></p>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h5>Tweets from <%= title %>. <%= first_name %> <%= last_name %></h5>
+                </div>
+                <% _.each(twitterApiTweets, function(tweet) { %>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                            <p><%= tweet.created_at %></p>
+                            <p><%= tweet.text %></p>
+                            <p><%= tweet.retweet_count %></p>
+                            <p><%= tweet.favorite_count %></p>
+                            <p><%= tweet.text %></p>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h5>KPCC articles mentioning <%= title %>. <%= first_name %> <%= last_name %></h5>
+                </div>
+                <% _.each(kpccApiArticles, function(article) { %>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                            <%= article.thumbnail %>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                            <p><a href="<%= article.public_url %>" target="_blank"><%= article.title %></a></p>
+                            <p>By <%= article.byline %> | <%= article.published_at %></p>
+                            <p><%= article.teaser %></p>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
         </script>
 
         <!-- begin scripts -->

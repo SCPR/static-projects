@@ -1,18 +1,63 @@
 App.Views.DetailView = Backbone.View.extend({
 
+    tagName: 'div',
+
+    id: 'candidate-profile',
+
     template: template('detail-template'),
 
     setModel: function(model){
-
         this.model = model;
         var $this = this;
+        var kpccApiQuery = this.model[0].attributes.first_name + '+' + this.model[0].attributes.last_name;
+        var kpccApiQueryUrl = "http://www.scpr.org/api/v3/articles?types=news,blogs&limit=5&query=" + kpccApiQuery;
 
-        console.log(this.model[0].attributes);
-        //console.log($this.model[0].attributes);
+        var twitterApiQuery = this.model[0].attributes.twitter_id;
+        var twitterApiQueryUrl = "https://socal-political-tweets.herokuapp.com/1.1/statuses/user_timeline.json?count=5&screen_name=" + twitterApiQuery + "&callback=?";
 
         if (!this.model[0].get('loaded')) {
             $this.model[0].set('loaded', true);
-            $this.render();
+
+            console.log($this.model[0])
+
+            var getArticles = function(targetUrl){
+                return $.get(targetUrl, {count: 5}, null, 'json');
+            };
+
+            var getTweets = function(targetUrl){
+                return $.get(targetUrl, {count: 5}, null, 'jsonp');
+            };
+
+            $.when(
+                getArticles(kpccApiQueryUrl),
+                getTweets(twitterApiQueryUrl)
+            ).done(function(articles, tweets){
+                $this.model[0].set('kpccApiArticles', articles[0].articles);
+                $this.model[0].set('twitterApiTweets', tweets[0]);
+                $this.render();
+            });
+
+            /*
+            $.ajax({
+                url: kpccApiQueryUrl,
+                type: 'GET',
+                dataType: 'json',
+                async: false,
+                success: function(data){
+                    $this.model[0].set('kpccApiArticles', data.articles);
+                }
+            });
+
+            $.ajax({
+                url: twitterApiQueryUrl,
+                dataType: 'jsonp',
+                async: false,
+                success: function(data){
+                    $this.model[0].set('twitterApiTweets', data);
+                }
+            });
+            */
+
         } else {
             $this.render();
         }
@@ -22,5 +67,4 @@ App.Views.DetailView = Backbone.View.extend({
         this.$el.html(this.template(this.model[0].toJSON()));
         return this;
     },
-
 });
