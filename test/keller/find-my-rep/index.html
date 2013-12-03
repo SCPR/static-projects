@@ -145,60 +145,77 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <img src="images/<%= bioguide_id %>.jpg" class="responsive" />
-                    <p><a href="<%= website %>" target="_blank">Website</a></p>
-                    <p><%= office %>, Washington, DC</p>
-                    <p>Phone: <%= phone %></p>
-                    <p>Fax: <%= fax %></p>
-                    <p><a href="<%= contact_form %>" target="_blank">Contact <%= title %>. <%= last_name %></a></p>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                     <h4><%= title %>. <%= first_name %> <%= last_name %> (<%= party %>-<%= district %>)</h4>
-                    <p><%= title %>. <%= first_name %> <%= last_name %> is a <%= party %> who represents <%= state_name %>'s <%= district %> congressional district. <%= last_name %>'s current term started <%= term_start %> and ends <%= term_end %></p>
-                    <p><%= gender %></p>
-                    <p><%= birthday %></p>
-                    <p><%= bioguide_id %></p>
-                    <p><%= chamber %></p>
-                    <p><%= facebook_id %></p>
-                    <p><%= twitter_id %></p>
-                    <p><%= youtube_id %></p>
+                    <p><%= title %>. <%= first_name %> <%= last_name %> is a <%= party %> who represents <%= state_name %>'s <%= district %> congressional district. <%= last_name %>'s current term started <%= moment(term_start).format('MMMM D[th], YYYY') %> and ends <%= moment(term_end).format('MMMM D[th], YYYY') %>. <%= last_name %> is <%= moment(birthday).format('MMMM D[th], YYYY') %> years old.
+                    </p>
+                    <p><%= office %>, Washington, DC</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <p><strong>Phone</strong>: <%= phone %></p>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <p><strong>Fax</strong>: <%= fax %></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <p><a href="<%= website %>" target="_blank">Website</a></p>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <p><a href="<%= contact_form %>" target="_blank">Contact</a></p>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <h5>Tweets from <%= title %>. <%= first_name %> <%= last_name %></h5>
+            <hr>
+            <div id="representative-tweets">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h5>Tweets from <%= title %>. <%= first_name %> <%= last_name %></h5>
+                    </div>
                 </div>
                 <% _.each(twitterApiTweets, function(tweet) { %>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-
+                            <a href="https://twitter.com/<%= twitter_id %>/status/<%= tweet.id_str %>" target="_blank"><img src="<%= tweet.user.profile_image_url %>" class="responsive" /></a>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-                            <p><%= tweet.created_at %></p>
+                            <p><a href="https://twitter.com/<%= twitter_id %>/status/<%= tweet.id_str %>" target="_blank"><%= moment(tweet.created_at).format('MMMM D[th], YYYY, h:mma') %></a> via <%= tweet.source %></p>
                             <p><%= tweet.text %></p>
-                            <p><%= tweet.retweet_count %></p>
-                            <p><%= tweet.favorite_count %></p>
-                            <p><%= tweet.text %></p>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                    <p><strong>Retweets</strong>: <%= tweet.retweet_count %></p>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                    <p><strong>Favorites</strong>: <%= tweet.favorite_count %></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <hr>
                 <% }); %>
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <h5>KPCC articles mentioning <%= title %>. <%= first_name %> <%= last_name %></h5>
+            <hr>
+            <div id="representative-articles">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h5>KPCC articles mentioning <%= title %>. <%= first_name %> <%= last_name %></h5>
+                    </div>
                 </div>
                 <% _.each(kpccApiArticles, function(article) { %>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                            <%= article.thumbnail %>
+                            <a href="<%= article.public_url %>" target="_blank"><%= article.thumbnail %></a>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
                             <p><a href="<%= article.public_url %>" target="_blank"><%= article.title %></a></p>
-                            <p>By <%= article.byline %> | <%= article.published_at %></p>
+                            <p><span class="credits"><%= article.byline %></span> | <span class="pubdate"><%= moment(article.published_at).format('MMMM D[th], YYYY, h:mma') %></span></p>
                             <p><%= article.teaser %></p>
                         </div>
                     </div>
+                    <hr>
                 <% }); %>
             </div>
         </script>
@@ -211,6 +228,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/geocomplete/1.4/jquery.geocomplete.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.2.1/moment.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/handlebars-ajax.js"></script>

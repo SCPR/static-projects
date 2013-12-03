@@ -13,3 +13,7 @@
 .hide-data-loading-icon {display: none;}
 .highlight {background-color: #256254; color: #ffffff; border: #e8e8e8 solid .1em; padding: 2px 3px 2px 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
 .legi-img {margin-top: 15px; text-align: center;}
+
+#detail candidate-profile img,
+#detail #representative-tweets img,
+#detail #representative-articles img {width: 94%; height: auto; margin: 0 3% 0 3%;}
