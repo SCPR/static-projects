@@ -34,7 +34,9 @@ App.Models.Legislator = Backbone.Model.extend({
         youtube_id: null,
         html: "",
         loaded: false,
+        kpccApiQueryUrl: null,
         kpccApiArticles: null,
+        twitterApiQueryUrl: null,
         twitterApiTweets: null,
     },
 });
