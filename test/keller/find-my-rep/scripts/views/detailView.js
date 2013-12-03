@@ -24,6 +24,15 @@ App.Views.DetailView = Backbone.View.extend({
 
         $this.model[0].set('twitterApiQueryUrl', twitterApiQueryUrl);
 
+        var birthday = moment($this.model[0].attributes.birthday).format('MM/DD/YYYY');
+        var birth = new Date(birthday);
+        var today = moment().format('MM/DD/YYYY');
+        var check = new Date(today);
+        var milliDay = 1000 * 60 * 60 * 24;
+        var ageInDays = (check-birth)/milliDay;
+        var ageInYears =  Math.floor(ageInDays / 365 );
+        $this.model[0].set('age', ageInYears);
+
         if (!this.model[0].get('loaded')) {
             $this.model[0].set('loaded', true);
 

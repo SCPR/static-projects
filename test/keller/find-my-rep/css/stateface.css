@@ -5,9 +5,11 @@
 
 .stateface-replace {
     text-indent: -999em;
+    /*display: inline-block;*/
+    margin: 0 10% 0 10%;
+    font-size: 110%;
+    line-height: 45px;
     position: relative;
-    margin: 0 50px 0 0;
-    line-height: 40px;
     min-width: 1em;
 }
 

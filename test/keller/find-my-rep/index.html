@@ -148,8 +148,25 @@
                             <img src="http://projects.scpr.org/static/static-files/images/congressional-reps/<%= bioguide_id %>.jpg" class="responsive" />
                         </div>
                         <div id="representative-bio" class="col-xs-12 col-sm-12 col-md-7 col-lg-9">
-                            <h4><span class="stateface stateface-replace stateface-<%= state.toLowerCase() %>"></span><%= title %>. <%= first_name %> <%= last_name %> (<%= party %>-<%= district %>)</h4>
-                            <p><%= title %>. <%= first_name %> <%= last_name %> is a <%= party %> who represents <%= state_name %>'s <%= district %> congressional district. <%= last_name %>'s current term started <%= moment(term_start).format('MMMM D[th], YYYY') %> and ends <%= moment(term_end).format('MMMM D[th], YYYY') %>. <%= last_name %> is <%= moment(birthday).format('MMMM D[th], YYYY') %> years old.
+                            <h4><%= title %>. <%= first_name %> <%= last_name %> <span class="stateface stateface-replace stateface-<%= state.toLowerCase() %>"></span>
+                            <% if (party=='D') { %>
+                                Democrat
+                            <% } else if (party=='R') { %>
+                                Republican
+                            <% } %>
+                            <% if (district) { %>-<%= district %><% } %></h4>
+                            <p><%= title %>. <%= first_name %> <%= last_name %>
+                            <% if (party=='D') { %>
+                                is a Democrat
+                            <% } else if (party=='R') { %>
+                                is a Republican
+                            <% } %>
+                            <% if (chamber=='house') { %>
+                                who represents <%= state_name %>'s <%= district %> congressional district.
+                            <% } else if (chamber=='senate') { %>
+                                senator from <%= state_name %>.
+                            <% } %>
+                            <%= last_name %>'s current term started <%= moment(term_start).format('MMMM D[th], YYYY') %> and ends <%= moment(term_end).format('MMMM D[th], YYYY') %>. <%= last_name %> is <%= age %> years old.
                             </p>
                             <p><%= office %>, Washington, DC</p>
                             <div class="row">
