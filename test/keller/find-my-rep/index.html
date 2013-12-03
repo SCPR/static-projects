@@ -41,6 +41,7 @@
         <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
+        <link href="css/stateface.css" rel="stylesheet" />
 
         <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -143,71 +144,90 @@
             <div id="representative-profile" class="row">
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
                     <div id="representative-container" class="row">
-                        <div id="representative-image" class="col-xs-12 col-sm-12 col-md-3 col-lg-4">
-                                    <img src="http://projects.scpr.org/static/static-files/images/congressional-reps/<%= bioguide_id %>.jpg" class="responsive" />
+                        <div id="representative-image" class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                            <img src="http://projects.scpr.org/static/static-files/images/congressional-reps/<%= bioguide_id %>.jpg" class="responsive" />
+                        </div>
+                        <div id="representative-bio" class="col-xs-12 col-sm-12 col-md-7 col-lg-9">
+
+                            <span class="stateface stateface-replace stateface-ak">{statename}</span>
+
+                            <h4>ICON HERE<%= title %>. <%= first_name %> <%= last_name %> (<%= party %>-<%= district %>)</h4>
+                            <p><%= title %>. <%= first_name %> <%= last_name %> is a <%= party %> who represents <%= state_name %>'s <%= district %> congressional district. <%= last_name %>'s current term started <%= moment(term_start).format('MMMM D[th], YYYY') %> and ends <%= moment(term_end).format('MMMM D[th], YYYY') %>. <%= last_name %> is <%= moment(birthday).format('MMMM D[th], YYYY') %> years old.
+                            </p>
+                            <p><%= office %>, Washington, DC</p>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                    <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;<%= phone %></p>
                                 </div>
-                        <div id="representative-bio" class="col-xs-12 col-sm-12 col-md-7 col-lg-8">
-                                    <h4>ICON HERE<%= title %>. <%= first_name %> <%= last_name %> (<%= party %>-<%= district %>)</h4>
-                                    <p><%= title %>. <%= first_name %> <%= last_name %> is a <%= party %> who represents <%= state_name %>'s <%= district %> congressional district. <%= last_name %>'s current term started <%= moment(term_start).format('MMMM D[th], YYYY') %> and ends <%= moment(term_end).format('MMMM D[th], YYYY') %>. <%= last_name %> is <%= moment(birthday).format('MMMM D[th], YYYY') %> years old.
-                                    </p>
-                                    <p><%= office %>, Washington, DC</p>
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                            <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;<%= phone %></p>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                            <p><span class="glyphicon glyphicon-globe"></span>&nbsp;&nbsp;<a href="<%= website %>" target="_blank">Website</a></p>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-                                            <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;<a href="<%= contact_form %>" target="_blank">Contact</a></p>
-                                        </div>
-                                    </div>
+                                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                    <p><span class="glyphicon glyphicon-link"></span>&nbsp;&nbsp;<a href="<%= website %>" target="_blank">Website</a></p>
                                 </div>
+                                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                    <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;<a href="<%= contact_form %>" target="_blank">Contact</a></p>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                    <p><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;<a href="http://twitter.com/share?text=@<%= twitter_id %>: I'd like to say..." target="_blank">Tweet message</a></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <hr>
                     <div class="row">
                         <div id="representative-articles" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <h5>KPCC articles mentioning <%= title %>. <%= first_name %> <%= last_name %></h5>
                             <% if (kpccApiArticles) { %>
+                            <h5>KPCC articles mentioning <%= title %>. <%= first_name %> <%= last_name %></h5>
                                 <% _.each(kpccApiArticles, function(article) { %>
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                                            <a href="<%= article.public_url %>" target="_blank"><%= article.thumbnail %></a>
+                                    <% if (article.thumbnail) { %>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                                <a href="<%= article.public_url %>" target="_blank"><%= article.thumbnail %></a>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                                <h5><a href="<%= article.public_url %>" target="_blank"><%= article.title %></a></h5>
+                                                <p><span class="credits"><%= article.byline %></span> | <span class="pubdate"><%= moment(article.published_at).format('MMMM D[th], YYYY, h:mma') %></span></p>
+                                                <p><%= article.teaser %></p>
+                                            </div>
                                         </div>
-                                        <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
-                                            <p><a href="<%= article.public_url %>" target="_blank"><%= article.title %></a></p>
-                                            <p><span class="credits"><%= article.byline %></span> | <span class="pubdate"><%= moment(article.published_at).format('MMMM D[th], YYYY, h:mma') %></span></p>
-                                            <p><%= article.teaser %></p>
+                                        <hr>
+                                    <% } else {%>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                                                <a href="<%= article.public_url %>" target="_blank"><img src="http://a.scpr.org/i/67eb4f212427a4c7cfcb1c266ad9862f/52905-full.jpg" class="responsive"></a>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                                <h5><a href="<%= article.public_url %>" target="_blank"><%= article.title %></a></h5>
+                                                <p><span class="credits"><%= article.byline %></span> | <span class="pubdate"><%= moment(article.published_at).format('MMMM D[th], YYYY, h:mma') %></span></p>
+                                                <p><%= article.teaser %></p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <hr>
+                                        <hr>
+                                    <% } %>
                                 <% }); %>
                             <% } %>
                         </div>
                     </div>
                 </div>
                 <div id="representative-tweets" class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                            <% if (twitterApiTweets) { %>
-                                <h6>Latest Tweets</h6>
-                                <% _.each(twitterApiTweets, function(tweet) { %>
+                    <% if (twitterApiTweets) { %>
+                        <h6>Latest Tweets</h6>
+                        <% _.each(twitterApiTweets, function(tweet) { %>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <p class="small-writing"><a href="https://twitter.com/<%= twitter_id %>/status/<%= tweet.id_str %>" target="_blank"><%= moment(tweet.created_at).format('MMMM D[th], YYYY, h:mma') %></a></p>
+                                    <p class="small-writing"><%= tweet.text %></p>
                                     <div class="row">
-                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                            <p class="small-writing"><a href="https://twitter.com/<%= twitter_id %>/status/<%= tweet.id_str %>" target="_blank"><%= moment(tweet.created_at).format('MMMM D[th], YYYY, h:mma') %></a></p>
-                                            <p class="small-writing"><%= tweet.text %></p>
-                                            <div class="row">
-                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                    <p class="small-writing"><span class="glyphicon glyphicon-retweet"></span>&nbsp;&nbsp;<%= tweet.retweet_count %></p>
-                                                </div>
-                                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                                    <p class="small-writing"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;<%= tweet.favorite_count %></p>
-                                                </div>
-                                            </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                            <p class="small-writing"><span class="glyphicon glyphicon-retweet"></span>&nbsp;&nbsp;<%= tweet.retweet_count %></p>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                            <p class="small-writing"><span class="glyphicon glyphicon-star"></span>&nbsp;&nbsp;<%= tweet.favorite_count %></p>
                                         </div>
                                     </div>
-                                    <hr>
-                                <% }); %>
-                            <% } %>
-                        </div>
+                                </div>
+                            </div>
+                        <% }); %>
+                    <% } %>
+                </div>
             </div>
         </script>
 
