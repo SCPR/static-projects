@@ -29,7 +29,7 @@ body.minimal footer ul li:first-child {margin-left: 0;}
 body.minimal footer ul li:last-child {padding-right: 0; border-right: none;}
 
 /* main typography */
-body.minimal {font: 100%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;}
+body.minimal {font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;}
 body.minimal .data-container .kicker {text-transform: uppercase; font-weight: bold;}
 body.minimal .data-container .credits {font-style: italic; display: inline;}
 body.minimal .data-container .pubdate {color: #b94a48; font-style: italic; display: inline;}
