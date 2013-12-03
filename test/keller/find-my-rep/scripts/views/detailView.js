@@ -58,6 +58,8 @@ App.Views.DetailView = Backbone.View.extend({
 
             }
 
+            console.log($this.model[0]);
+
             /*
             $.ajax({
                 url: kpccApiQueryUrl,

@@ -170,33 +170,37 @@
                 </div>
             </div>
             <hr>
-            <div id="representative-tweets">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <h5>Tweets from <%= title %>. <%= first_name %> <%= last_name %></h5>
-                    </div>
-                </div>
-                <% _.each(twitterApiTweets, function(tweet) { %>
+            <% if (twitterApiTweets) { %>
+                <div id="representative-tweets">
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
-                            <a href="https://twitter.com/<%= twitter_id %>/status/<%= tweet.id_str %>" target="_blank"><img src="<%= tweet.user.profile_image_url %>" class="responsive" /></a>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                            <p><%= twitterApiTweets %></p>
+                            <h5>Tweets from <%= title %>. <%= first_name %> <%= last_name %></h5>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
-                            <p><a href="https://twitter.com/<%= twitter_id %>/status/<%= tweet.id_str %>" target="_blank"><%= moment(tweet.created_at).format('MMMM D[th], YYYY, h:mma') %></a> via <%= tweet.source %></p>
-                            <p><%= tweet.text %></p>
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                    <p><strong>Retweets</strong>: <%= tweet.retweet_count %></p>
-                                </div>
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                    <p><strong>Favorites</strong>: <%= tweet.favorite_count %></p>
+                    </div>
+                    <% _.each(twitterApiTweets, function(tweet) { %>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                                <a href="https://twitter.com/<%= twitter_id %>/status/<%= tweet.id_str %>" target="_blank"><img src="<%= tweet.user.profile_image_url %>" class="responsive" /></a>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
+                                <p><a href="https://twitter.com/<%= twitter_id %>/status/<%= tweet.id_str %>" target="_blank"><%= moment(tweet.created_at).format('MMMM D[th], YYYY, h:mma') %></a> via <%= tweet.source %></p>
+                                <p><%= tweet.text %></p>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                        <p><strong>Retweets</strong>: <%= tweet.retweet_count %></p>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                        <p><strong>Favorites</strong>: <%= tweet.favorite_count %></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <hr>
-                <% }); %>
-            </div>
+                        <hr>
+                    <% }); %>
+                </div>
+            <% } %>
             <hr>
             <div id="representative-articles">
                 <div class="row">
