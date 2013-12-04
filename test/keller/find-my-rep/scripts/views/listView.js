@@ -1,5 +1,7 @@
 App.Views.Legislator = Backbone.View.extend({
-    tagName: "li",
+    tagName: "div",
+
+    className: "col-xs-4 col-sm-4 col-md-4 col-lg-4",
 
     template: template('list-template'),
 
@@ -22,15 +24,18 @@ App.Views.Legislator = Backbone.View.extend({
     },
 
     render: function () {
+        $('.jumbotron').css("height", "265px");
         this.$el.html(this.template(this.model.toJSON()));
         return this;
     }
 });
 
 App.Views.Legislators = Backbone.View.extend({
-    tagName: "ul",
+    tagName: "div",
 
     id: 'legislators-list',
+
+    className: "col-xs-12 col-sm-12 col-md-12 col-lg-12",
 
     initialize: function(){
         this.collection.on("reset", this.render, this);

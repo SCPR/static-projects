@@ -67,13 +67,62 @@
 
         <!-- begin main container -->
         <div class="container data-container">
-            <div class="row data-details">
+            <div class="row data-header">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div id="content-article">
                         <div class="headlines">
-                            <h4 class="kicker">Subhead here</h4>
-                            <h1>Lead Headline Here</h1>
+                            <h4 class="kicker">Politics</h4>
+                            <img class="banner" src="images/icon_politician.gif" alt="Find Your Congressional Representative"/>
+                            <h1>Find My Congressional Representative</h1>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row data-legend">
+                <div class="jumbotron">
+                    <noscript>Please enable JavaScript to view this interactive.</noscript>
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6">
+                        <img class="placemark searchMe" src="images/icon_marker.gif" /><a class="searchMe" href="javascript:void(0)">Use my address</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6">
+                        <img class="placemark findMe" src="images/icon_marker.gif" /><a class="findMe" href="javascript:void(0)">Use my current location</a>
+                    </div>
+                    <form id="submission-form" class="form-inline" role="form">
+                        <div class="row">
+                            <div id="form-controls" class="hidden">
+                                <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                    <input type="text" class="form-control" id="addressSearch" placeholder="Enter your address">
+                                </div>
+                                <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                    <button type="button" class="btn btn-primary btn-group btn-group-justified" id="submit">Go find them!</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row hidden">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <input type="text" class="form-control" name="lat" id="latitudeSearch">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <input type="text" class="form-control" name="lng" id="longitudeSearch">
+                            </div>
+                        </div>
+                    </form>
+                    <div id="app"></div>
+                </div>
+            </div>
+            <div class="row data-visuals">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="progress progress-striped active hidden">
+                        <div class="progress-bar"  role="progressbar" aria-valuenow="100" style="width: 100%"></div>
+                    </div>
+                    <div class="row data-visuals">
+                        <div id="detail"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row data-details">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="content-article">
                         <div class="text collapse">
                             <p><span class="credits">Produced by <a href="#">Xxxx Xxxxxx</a> &amp; <a href="#">Xxxx Xxxxxx</a></span> | <span class="pubdate">Published Oct. 28, 2013</span></p>
                             <p>Beard hoodie, magna tumblr chillwave. Letterpress thundercats fixie consectetur accusamus cray gastropub bicycle rights. Adipisicing narwhal magna marfa. Fap photo booth cred, excepteur organic terry richardson vegan aesthetic narwhal. Food truck viral sint vinyl cred. Mustache aute consequat salvia, synth etsy irure +1. High life etsy ullamco, officia voluptate nihil brunch cillum nostrud photo booth duis Austin hella banjo.</p>
@@ -91,53 +140,28 @@
                     </div>
                 </div>
             </div>
-            <div class="row data-legend">
-                <div class="jumbotron">
-                    <noscript>Please enable JavaScript to view this interactive.</noscript>
-                    <h6 class="centered">Search for your representative by address or <a class="findMe" href="javascript:void(0)">location</a></h6>
-                    <div id="phrase-headline"></div>
-                    <form id="submission-form" class="form-inline" role="form">
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <input type="text" class="form-control" id="addressSearch" placeholder="Enter your address">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <button type="button" class="btn btn-primary btn-group btn-group-justified" id="submit">Submit</button>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <input type="text" class="form-control" name="lat" id="latitudeSearch">
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <input type="text" class="form-control" name="lng" id="longitudeSearch">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row data-visuals">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="progress progress-striped active hidden">
-                        <div class="progress-bar"  role="progressbar" aria-valuenow="100" style="width: 100%"></div>
-                    </div>
-                    <div class="row data-visuals">
-                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                            <div id="app"></div>
-                            <div id="detail"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="row kpcc-footer"></div>
         </div>
         <!-- end main container -->
 
         <script id="list-template" type="text/template">
-            <a href='#legislators/<%= chamber %>-<%= state_name.replace(' ', '').toLowerCase() %>-<%= first_name %>-<%= last_name %>-<%= votesmart_id %>'><%= first_name %> <%= last_name %></a>
+            <hr>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <p><a href='#legislator/<%= votesmart_id %>'><%= title %>. <%= first_name %> <%= last_name %></a>
+                <br/>
+                <% if (party=='D') { %>
+                    Democrat
+                <% } else if (party=='R') { %>
+                    Republican
+                <% } %>
+                <br/>
+                <% if (chamber=='house') { %>
+                    House (District <%= district %> )
+                <% } else if (chamber=='senate') { %>
+                    Senate
+                <% } %>
+                </p>
+            </div>
         </script>
 
         <script id="detail-template" type="text/template">
@@ -148,13 +172,13 @@
                             <img src="http://projects.scpr.org/static/static-files/images/congressional-reps/<%= bioguide_id %>.jpg" class="responsive" />
                         </div>
                         <div id="representative-bio" class="col-xs-12 col-sm-12 col-md-7 col-lg-9">
-                            <h4><%= title %>. <%= first_name %> <%= last_name %><a class="findStateReps" id="<%= state_name %>" href="javascript:void(0)"><span class="stateface stateface-replace stateface-<%= state.toLowerCase() %>"></span></a>
+                            <h4><%= title %>. <%= first_name %> <%= last_name %><span class="stateface stateface-replace stateface-<%= state.toLowerCase() %>"></span>
                             <% if (party=='D') { %>
                                 Democrat
                             <% } else if (party=='R') { %>
                                 Republican
                             <% } %>
-                            <% if (district) { %>-<%= district %><% } %></h4>
+                            <% if (district) { %> District <%= district %><% } %></h4>
                             <p><%= title %>. <%= first_name %> <%= last_name %>
                             <% if (party=='D') { %>
                                 is a Democrat

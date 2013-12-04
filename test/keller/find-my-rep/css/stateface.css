@@ -13,6 +13,14 @@
     min-width: 1em;
 }
 
+.stateface-search {
+    text-indent: -999em;
+    /*display: inline-block;*/
+    margin: 0 15% 0 5%;
+    font-size: 110%;
+    line-height: 25px;
+}
+
 .stateface-replace:before {
     position: absolute;
     left: 0;

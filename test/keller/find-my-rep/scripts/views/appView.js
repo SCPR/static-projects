@@ -7,7 +7,7 @@ App.Views.AppView = Backbone.View.extend({
         this.legislatorListView = new App.Views.Legislators({
             collection: this.legislatorCollection
         });
-        $('#app').append(this.legislatorListView.el);
+        //$('#app').append(this.legislatorListView.el);
         this.resetCollections();
     },
 
@@ -15,6 +15,7 @@ App.Views.AppView = Backbone.View.extend({
         'keyup :input': 'addressSearch',
         'click button#submit': 'navigate',
         'click a.findMe': 'findMe',
+        'click a.searchMe': 'searchMe',
         'click a.findStateReps': 'findStateReps',
     },
 
@@ -25,6 +26,13 @@ App.Views.AppView = Backbone.View.extend({
     },
 
     findMe: function(){
+        $(".findMe").css("font-weight", "600");
+        $("img.findMe").css("opacity", "1.0");
+        $(".searchMe").css("font-weight", "100");
+        $("img.searchMe").css("opacity", "0.3");
+
+        $("#form-controls").addClass('hidden');
+
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
                 $("input[id='latitudeSearch']").attr('value', position.coords.latitude);
@@ -34,6 +42,14 @@ App.Views.AppView = Backbone.View.extend({
         } else {
             alert('Sorry, we could not find your location.');
         }
+    },
+
+    searchMe: function(){
+        $("#form-controls").removeClass('hidden');
+        $(".searchMe").css("font-weight", "600");
+        $("img.searchMe").css("opacity", "1.0");
+        $(".findMe").css("font-weight", "100");
+        $("img.findMe").css("opacity", "0.3");
     },
 
     navigate: function(locationParams){
@@ -47,7 +63,7 @@ App.Views.AppView = Backbone.View.extend({
     },
 
     queryApiData: function(locationParams){
-        //$('.progress').removeClass('hidden');
+        $('.progress').removeClass('hidden');
         $('#app').empty();
         locationParams = locationParams.split(',');
         var latitude = parseFloat(locationParams[0]);
