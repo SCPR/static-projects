@@ -90,8 +90,8 @@ App.Views.AppView = Backbone.View.extend({
         this.searchedLegislatorListView = new App.Views.Legislators({
             collection: this.searchedCollection
         });
+
         $("#legislator-list").append(this.searchedLegislatorListView.el);
-        $(".jumbotron").css("height", "300px");
         this.searchedCollection.reset(data.results);
     },
 
