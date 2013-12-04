@@ -12,12 +12,11 @@ App.Views.Legislator = Backbone.View.extend({
     navigate: function(e){
         e.preventDefault();
         var legiChamber = this.model.attributes.chamber.toLowerCase();
-        var legiStateName = this.model.attributes.state_name.replace(' ', '').toLowerCase();
+        var legiStateName = this.model.attributes.state_name.replace(' ', '-').toLowerCase();
         var legiFirstName = this.model.attributes.first_name.toLowerCase();
         var legiLastName = this.model.attributes.last_name.toLowerCase();
         var legiId = this.model.attributes.votesmart_id;
         var legislatorParams = legiId + '-' + legiFirstName + '-' + legiLastName;
-
         window.app.navigate('#legislators/' + legiChamber + '/' + legiStateName + '/' + legislatorParams, {
             trigger: true,
             replace: false,
@@ -25,7 +24,6 @@ App.Views.Legislator = Backbone.View.extend({
     },
 
     render: function () {
-        $('.jumbotron').css("height", "265px");
         this.$el.html(this.template(this.model.toJSON()));
         return this;
     }

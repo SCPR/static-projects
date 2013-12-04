@@ -69,29 +69,25 @@
         <div class="container data-container">
             <div class="row data-header">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div id="content-article">
-                        <div class="headlines">
-                            <h4 class="kicker">Politics</h4>
-                            <img class="banner" src="images/icon_politician.gif" alt="Find Your Congressional Representative"/>
-                            <h1>Find My Congressional Representative</h1>
-                        </div>
-                    </div>
+                    <h4 class="kicker">Politics</h4>
+                    <img class="banner-logo pull-left" src="images/icon_politician.gif" alt="Find Your Congressional Representative"/>
+                    <h1>Find My Congressional Representative</h1>
                 </div>
             </div>
             <div class="row data-legend">
                 <div class="jumbotron">
                     <noscript>Please enable JavaScript to view this interactive.</noscript>
-                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6">
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6 text-left">
                         <img class="placemark searchMe" src="images/icon_marker.gif" /><a class="searchMe" href="javascript:void(0)">Use my address</a>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6">
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-6 text-right">
                         <img class="placemark findMe" src="images/icon_marker.gif" /><a class="findMe" href="javascript:void(0)">Use my current location</a>
                     </div>
                     <form id="submission-form" class="form-inline" role="form">
                         <div class="row">
                             <div id="form-controls" class="hidden">
                                 <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                                    <input type="text" class="form-control" id="addressSearch" placeholder="Enter your address">
+                                    <input type="text" class="form-control" id="addressSearch" placeholder="Start typing your address">
                                 </div>
                                 <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
                                     <button type="button" class="btn btn-primary btn-group btn-group-justified" id="submit">Go find them!</button>
@@ -107,19 +103,13 @@
                             </div>
                         </div>
                     </form>
-                    <div id="app"></div>
+                    <div class="progress progress-striped active hidden" style="margin-top: 15px;">
+                        <div class="progress-bar"  role="progressbar" aria-valuenow="100" style="width: 100%;"></div>
+                    </div>
+                    <div id="legislator-list"></div>
                 </div>
             </div>
-            <div class="row data-visuals">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div class="progress progress-striped active hidden">
-                        <div class="progress-bar"  role="progressbar" aria-valuenow="100" style="width: 100%"></div>
-                    </div>
-                    <div class="row data-visuals">
-                        <div id="detail"></div>
-                    </div>
-                </div>
-            </div>
+            <div class="row data-visuals"></div>
             <div class="row data-details">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div id="content-article">
@@ -144,6 +134,9 @@
         </div>
         <!-- end main container -->
 
+
+
+        <!-- underscore templates -->
         <script id="list-template" type="text/template">
             <hr>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -165,7 +158,7 @@
         </script>
 
         <script id="detail-template" type="text/template">
-            <div id="representative-profile" class="row">
+            <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-10 col-lg-10">
                     <div id="representative-container" class="row">
                         <div id="representative-image" class="col-xs-12 col-sm-12 col-md-3 col-lg-3">

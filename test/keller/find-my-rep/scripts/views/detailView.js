@@ -2,14 +2,21 @@ App.Views.DetailView = Backbone.View.extend({
 
     tagName: 'div',
 
-    id: 'candidate-profile',
+    id: 'representative-profile',
 
     template: template('detail-template'),
 
     events: {
-        'click a.findStateReps': 'findStateReps',
+        "click a.findMe": "navigate",
+        "click a.searchMe": "navigate",
+        //'click a.findStateReps': 'findStateReps',
     },
 
+    navigate: function(){
+        window.app.navigate('', true);
+    },
+
+    /*
     findStateReps: function(){
         var stateParams = $('a.findStateReps').attr('id');
         console.log(stateParams);
@@ -18,12 +25,11 @@ App.Views.DetailView = Backbone.View.extend({
             replace: false,
         });
     },
+    */
 
     setModel: function(model){
         this.model = model;
         var $this = this;
-
-        console.log($this.model[0].attributes);
 
         if ($this.model[0].attributes.birthday != null){
             var age = this.calculateAge(moment($this.model[0].attributes.birthday).format('MM/DD/YYYY'));
