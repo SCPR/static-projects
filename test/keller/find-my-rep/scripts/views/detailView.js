@@ -53,10 +53,8 @@ App.Views.DetailView = Backbone.View.extend({
                     getTweets(twitterApiQueryUrl)
                 ).done(function(articles, tweets){
                     if (articles[0].articles.length === 0){
-                        console.log('no articles');
                         $this.model[0].set('kpccApiArticles', null);
                     } else {
-                        console.log('articles');
                         $this.model[0].set('kpccApiArticles', articles[0].articles);
                     };
                     $this.model[0].set('twitterApiTweets', tweets[0]);
