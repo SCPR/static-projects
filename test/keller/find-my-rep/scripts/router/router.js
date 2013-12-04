@@ -2,17 +2,24 @@ App.Router = Backbone.Router.extend({
     routes: {
         "": "index",
         "search/:locationParams": "searchLegislators",
-        "legislator/:legiParams": "displayLegislator"
+        "legislators/:legislatorParams": "displayIndividualLegislators"
+        //"legislators/:legislatorParams": "displayLegislatorsByState"
     },
 
     searchLegislators: function(locationParams){
         window.appView.queryApiData(locationParams);
     },
 
-    displayLegislator: function(legiParams){
-        legiParams = legiParams.split('-');
-        votesmart_id = parseInt(legiParams[2]);
+    displayIndividualLegislators: function(legislatorParams){
+        legislatorParams = legislatorParams.split('-');
+        votesmart_id = parseInt(legislatorParams[4]);
         this.model = window.appView.legislatorCollection.where({'votesmart_id': votesmart_id});
         window.appView.detailView.setModel(this.model);
+    },
+
+    /*
+    displayLegislatorsByState: function(legislatorParams){
+        console.log(legislatorParams);
     }
+    */
 });

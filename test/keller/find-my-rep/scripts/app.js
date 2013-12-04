@@ -16,8 +16,6 @@
         window.appView = new App.Views.AppView({el:document});
         Backbone.history.start({
             root: '2kpcc/static-projects/test/keller/find-my-rep/',
-
-            // enables hash if that's what you want in life
             pushState: false,
         });
     });

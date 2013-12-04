@@ -6,12 +6,29 @@ App.Views.DetailView = Backbone.View.extend({
 
     template: template('detail-template'),
 
+    events: {
+        'click a.findStateReps': 'findStateReps',
+    },
+
+    findStateReps: function(){
+        var stateParams = $('a.findStateReps').attr('id');
+        console.log(stateParams);
+        window.app.navigate('#legislators/' + stateParams, {
+            trigger: true,
+            replace: false,
+        });
+    },
+
     setModel: function(model){
         this.model = model;
         var $this = this;
 
-        var age = this.calculateAge(moment($this.model[0].attributes.birthday).format('MM/DD/YYYY'));
-        $this.model[0].set('age', age);
+        if ($this.model[0].attributes.birthday != null){
+            var age = this.calculateAge(moment($this.model[0].attributes.birthday).format('MM/DD/YYYY'));
+            $this.model[0].set('age', age);
+        } else {
+            $this.model[0].set('age', null);
+        };
 
         var kpccApiQuery = this.model[0].attributes.first_name + '+' + this.model[0].attributes.last_name;
         var kpccApiQueryUrl = "http://www.scpr.org/api/v3/articles?types=news,blogs&limit=5&query=" + kpccApiQuery;
@@ -81,6 +98,11 @@ App.Views.DetailView = Backbone.View.extend({
 
     render: function(){
         this.$el.html(this.template(this.model[0].toJSON()));
+
+        $('img').error(function(){
+            $(this).unbind('error').attr('src', 'images/placeholder.png');
+        });
+
         return this;
     },
 });

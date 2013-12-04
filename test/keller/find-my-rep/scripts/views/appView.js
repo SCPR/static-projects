@@ -15,6 +15,7 @@ App.Views.AppView = Backbone.View.extend({
         'keyup :input': 'addressSearch',
         'click button#submit': 'navigate',
         'click a.findMe': 'findMe',
+        'click a.findStateReps': 'findStateReps',
     },
 
     addressSearch: function(){

@@ -137,7 +137,7 @@
         <!-- end main container -->
 
         <script id="list-template" type="text/template">
-            <a href='#legislator/<%= votesmart_id %>'><%= first_name %> <%= last_name %></a>
+            <a href='#legislators/<%= chamber %>-<%= state_name.replace(' ', '').toLowerCase() %>-<%= first_name %>-<%= last_name %>-<%= votesmart_id %>'><%= first_name %> <%= last_name %></a>
         </script>
 
         <script id="detail-template" type="text/template">
@@ -148,7 +148,7 @@
                             <img src="http://projects.scpr.org/static/static-files/images/congressional-reps/<%= bioguide_id %>.jpg" class="responsive" />
                         </div>
                         <div id="representative-bio" class="col-xs-12 col-sm-12 col-md-7 col-lg-9">
-                            <h4><%= title %>. <%= first_name %> <%= last_name %> <span class="stateface stateface-replace stateface-<%= state.toLowerCase() %>"></span>
+                            <h4><%= title %>. <%= first_name %> <%= last_name %><a class="findStateReps" id="<%= state_name %>" href="javascript:void(0)"><span class="stateface stateface-replace stateface-<%= state.toLowerCase() %>"></span></a>
                             <% if (party=='D') { %>
                                 Democrat
                             <% } else if (party=='R') { %>
