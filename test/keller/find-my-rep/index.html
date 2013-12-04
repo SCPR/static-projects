@@ -171,16 +171,24 @@
                             <p><%= office %>, Washington, DC</p>
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                                    <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;<%= phone %></p>
+                                    <% if (phone) { %>
+                                        <p><span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;<%= phone %></p>
+                                    <% } %>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                                    <p><span class="glyphicon glyphicon-link"></span>&nbsp;&nbsp;<a href="<%= website %>" target="_blank">Website</a></p>
+                                    <% if (website) { %>
+                                        <p><span class="glyphicon glyphicon-link"></span>&nbsp;&nbsp;<a href="<%= website %>" target="_blank">Website</a></p>
+                                    <% } %>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                                    <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;<a href="<%= contact_form %>" target="_blank">Contact</a></p>
+                                    <% if (contact_form) { %>
+                                        <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;<a href="<%= contact_form %>" target="_blank">Contact</a></p>
+                                    <% } %>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-                                    <p><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;<a href="http://twitter.com/share?text=@<%= twitter_id %>: I'd like to say..." target="_blank">Tweet message</a></p>
+                                    <% if (twitter_id) { %>
+                                        <p><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;<a href="http://twitter.com/share?text=@<%= twitter_id %>: I'd like to say..." target="_blank">Tweet message</a></p>
+                                    <% } %>
                                 </div>
                             </div>
                         </div>
