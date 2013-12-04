@@ -31,7 +31,7 @@
 @media (min-width: 567px) {
     .data-container .data-legend .jumbotron a {font-size: 120%;}
     .data-container .data-legend .jumbotron #legislator-list a {font-size: 110%;}
-    #representative-articles img, #representative-image img {width: 50%; height: auto; margin: 0 25% 0 25%;}
+    #representative-articles img, #representative-image img {width: 80%; height: auto; margin: 0 10% 0 10%;}
 }
 
 @media (min-width: 768px) {
