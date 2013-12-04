@@ -1,7 +1,7 @@
 App.Views.Legislator = Backbone.View.extend({
     tagName: "div",
 
-    className: "col-xs-4 col-sm-4 col-md-4 col-lg-4",
+    className: "col-xs-12 col-sm-4 col-md-4 col-lg-4",
 
     template: template('list-template'),
 
@@ -31,8 +31,6 @@ App.Views.Legislator = Backbone.View.extend({
 
 App.Views.Legislators = Backbone.View.extend({
     tagName: "div",
-
-    id: 'legislators-list',
 
     className: "col-xs-12 col-sm-12 col-md-12 col-lg-12",
 

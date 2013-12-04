@@ -107,6 +107,8 @@ App.Views.DetailView = Backbone.View.extend({
     render: function(){
         this.$el.html(this.template(this.model[0].toJSON()));
 
+        $('#representative-articles img').addClass('responsive');
+
         $('img').error(function(){
             $(this).unbind('error').attr('src', 'images/placeholder.png');
         });
