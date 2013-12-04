@@ -147,7 +147,7 @@
         <script id="list-template" type="text/template">
             <hr>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <p><a href='#legislator/<%= votesmart_id %>'><%= title %>. <%= first_name %> <%= last_name %></a>
+                <p><a href='#legislators/<%= chamber %>/<%= state_name.toLowerCase() %>/<%= votesmart_id %>-<%= first_name.toLowerCase() %>-<%= last_name.toLowerCase() %>'><%= title %>. <%= first_name %> <%= last_name %></a>
                 <br/>
                 <% if (party=='D') { %>
                     Democrat

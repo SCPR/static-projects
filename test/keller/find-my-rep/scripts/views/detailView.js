@@ -23,6 +23,8 @@ App.Views.DetailView = Backbone.View.extend({
         this.model = model;
         var $this = this;
 
+        console.log($this.model[0].attributes);
+
         if ($this.model[0].attributes.birthday != null){
             var age = this.calculateAge(moment($this.model[0].attributes.birthday).format('MM/DD/YYYY'));
             $this.model[0].set('age', age);
