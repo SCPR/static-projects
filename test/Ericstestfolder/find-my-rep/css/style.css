@@ -1,0 +1,43 @@
+
+h1 {font:normal 600 6.875em/1.25 "adelle", Georgia, serif}
+
+.placemark {width:40px;}
+
+.banner {float:left; padding:10px; width:90px;}
+.data-container {background: aliceblue;}
+.data-container li {font-size:110%;}
+.data-legend {height: auto;}
+.data-legend .jumbotron {width: 92%; background: aliceblue; margin: 10px 4% 10px 4%; padding: 10px 0 10px 70px;}
+.data-legend .jumbotron .centered {text-align: center;}
+.data-legend-items {height: auto; margin: 20px 0 20px 0;}
+.data-legend-items a.label {background: rgba(0, 127, 166, 1.0); border: rgba(0, 127, 166, 1.0) solid .1em; color: #fdfdfd; padding: 5px 10px 5px 10px; font-weight: normal;}
+.data-legend-items a.label:hover {background: rgba(0, 127, 166, .6); border-color: rgba(0, 127, 166, .6); color: #2B2B2B;}
+.data-legend #content-action-bar {width: 100%; height: auto; text-align: center; margin: 15px auto 15px auto; z-index: 1000;}
+.data-legend #content-action-bar select {width: 70%; margin: 0 15% 0 15%;}
+.data-legend #content-action-bar.fixed {position: fixed; top: 2%; margin: 0; background: rgba(236, 124, 45, 0.7); padding: 10px 0 0 0;}
+#data-loading {width: 40%; height: 100px; margin: 20px 30% 0 30%; padding: 0px; text-align: center;}
+#data-loading .display {color: #333333;}
+.data-visuals .content-scroll-to {height: 135px;}
+.hide-data-loading-icon {display: none;}
+.highlight {background-color: #256254; color: #ffffff; border: #e8e8e8 solid .1em; padding: 2px 3px 2px 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;}
+.jumbotron p {font-size:25px;}
+.data-container .jumbotron{line-height:1.7; font-weight:200; font-size: 25px;}
+
+.legi-img {margin-top: 15px; text-align: center;}
+
+
+#detail candidate-profile img,
+#detail #representative-tweets img,
+#detail #representative-articles img {width: 94%; height: auto; margin: 0 3% 0 3%;}
+
+
+@font-face {
+    font-family: 'StateFaceRegular';
+    src: url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.eot');
+    src: url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.woff') format('woff'),
+        url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.ttf') format('truetype'),
+        url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.svg#StateFaceRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
