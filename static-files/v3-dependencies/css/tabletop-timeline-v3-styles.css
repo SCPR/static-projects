@@ -50,6 +50,7 @@
 /* timeline buttons */
 .vertical-timeline-container .btn-group-justified {width: 90%; margin: 0 5% 0 5%;}
 .vertical-timeline-container .vertical-timeline-buttons {font-size: 270%; text-align: center; display: inline;}
+.vertical-timeline-container .vertical-timeline-buttons a {font-weight: 100;}
 .vertical-timeline-container .vertical-timeline-buttons a.active {font-weight: 700;}
 
 /*
