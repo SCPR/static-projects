@@ -39,7 +39,7 @@ App.Views.Legislators = Backbone.View.extend({
     },
 
     render: function(){
-        $('.progress').addClass('hidden');
+        $('.progress-list').addClass('hidden');
         this.collection.each(function(item){
             var legislatorView = new App.Views.Legislator({
                 model: item

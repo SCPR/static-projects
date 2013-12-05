@@ -28,6 +28,8 @@ App.Views.DetailView = Backbone.View.extend({
     */
 
     setModel: function(model){
+        $('.progress-detail').removeClass('hidden');
+
         this.model = model;
         var $this = this;
 
@@ -105,6 +107,7 @@ App.Views.DetailView = Backbone.View.extend({
     render: function(placeholderGender){
         this.$el.html(this.template(this.model[0].toJSON()));
         $('#representative-articles img').addClass('responsive');
+        $('.progress-detail').addClass('hidden');
 
         /*
         $('img').error(function(){

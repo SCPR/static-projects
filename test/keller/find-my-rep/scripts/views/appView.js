@@ -78,7 +78,7 @@ App.Views.AppView = Backbone.View.extend({
     },
 
     queryApiData: function(locationParams){
-        $(".progress").removeClass("hidden");
+        $(".progress-list").removeClass("hidden");
         $("#legislator-list").empty();
         locationParams = locationParams.split(",");
         var latitude = parseFloat(locationParams[0]);

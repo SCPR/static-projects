@@ -5,7 +5,7 @@
 .data-container .data-legend .jumbotron a {font-weight: 700;}
 .data-container .data-legend .jumbotron #action-controls {margin: 10px 0 0 0;}
 .data-container .data-legend .jumbotron #form-controls {margin: 0 10px 0 20px;}
-.data-container .data-legend .jumbotron #legislator-list {width: 100%; height: 100px; margin: 50px 0 0 0;}
+.data-container .data-legend .jumbotron #legislator-list {width: 100%; height: auto; margin: 50px 0 0 0;}
 .data-container .data-visuals {width: 100%; height: auto; margin: 10px 0 5px 0;}
 .data-container .data-visuals #representative-articles .row {margin-top: 10px; margin-bottom: 15px;}
 .data-container .data-details {width: 100%; height: auto; margin: 10px 0 5px 0;}
