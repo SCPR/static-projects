@@ -30,13 +30,13 @@ App.Views.DetailView = Backbone.View.extend({
             $this.model[0].set('age', null);
         };
 
-        var kpccApiQuery = this.model[0].attributes.first_name + '+' + this.model[0].attributes.last_name;
+        var kpccApiQuery = $this.model[0].attributes.first_name + '+' + $this.model[0].attributes.last_name;
 
         var kpccApiQueryUrl = "http://www.scpr.org/api/v3/articles?types=news,blogs&limit=5&query=" + kpccApiQuery;
 
         $this.model[0].set('kpccApiQueryUrl', kpccApiQueryUrl);
 
-        var twitterApiQuery = this.model[0].attributes.twitter_id;
+        var twitterApiQuery = $this.model[0].attributes.twitter_id;
 
         var twitterApiQueryUrl;
 
@@ -48,7 +48,7 @@ App.Views.DetailView = Backbone.View.extend({
 
         $this.model[0].set('twitterApiQueryUrl', twitterApiQueryUrl);
 
-        if (!this.model[0].get('loaded')) {
+        if (!$this.model[0].get('loaded')) {
 
             $this.model[0].set('loaded', true);
 
@@ -60,38 +60,37 @@ App.Views.DetailView = Backbone.View.extend({
                 return $.get(targetUrl, {count: 5}, null, 'jsonp');
             };
 
-            if (twitterApiQueryUrl === null){
+            var IE8 = (navigator.userAgent.toString().toLowerCase().indexOf('trident/4.0') != -1);
+            var IE9 = navigator.userAgent.toString().toLowerCase().indexOf("trident/5")>-1;
 
-                $.when(
-                    getArticles(kpccApiQueryUrl)
-                ).done(function(articles){
-                    $this.model[0].set('kpccApiArticles', articles.articles);
-                    $this.render();
-                });
-
+            if (IE8 === true || IE9 === true){
+                $this.render();
             } else {
-
-                $.when(
-                    getArticles(kpccApiQueryUrl),
-                    getTweets(twitterApiQueryUrl)
-                ).done(function(articles, tweets){
-                    if (articles[0].articles.length === 0){
-                        $this.model[0].set('kpccApiArticles', null);
-                    } else {
-                        $this.model[0].set('kpccApiArticles', articles[0].articles);
-                    };
-                    $this.model[0].set('twitterApiTweets', tweets[0]);
-
-                    $this.render();
-                });
+                if (twitterApiQueryUrl === null){
+                    $.when(
+                        getArticles(kpccApiQueryUrl)
+                    ).done(function(articles){
+                        $this.model[0].set('kpccApiArticles', articles.articles);
+                        $this.render();
+                    });
+                } else {
+                    $.when(
+                        getArticles(kpccApiQueryUrl),
+                        getTweets(twitterApiQueryUrl)
+                    ).done(function(articles, tweets){
+                        if (articles[0].articles.length === 0){
+                            $this.model[0].set('kpccApiArticles', null);
+                        } else {
+                            $this.model[0].set('kpccApiArticles', articles[0].articles);
+                        };
+                        $this.model[0].set('twitterApiTweets', tweets[0]);
+                        $this.render();
+                    });
+                }
             }
-
         } else {
-
             $this.render();
-
         };
-
     },
 
     calculateAge: function(birthday){
