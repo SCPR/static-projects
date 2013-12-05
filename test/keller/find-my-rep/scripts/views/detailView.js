@@ -87,7 +87,7 @@ App.Views.DetailView = Backbone.View.extend({
                 });
             }
 
-            console.log($this.model[0].attributes);
+            //console.log($this.model[0].attributes);
 
         } else {
             $this.render();
