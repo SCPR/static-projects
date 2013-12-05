@@ -15,7 +15,7 @@ App.Views.AppView = Backbone.View.extend({
         "keyup :input": "addressSearch",
         "click button#submit": "navigate",
         "click a.findMe": "findMe",
-        "click a.searchMe": "searchMe",
+        "click a.searchMe": "searchMe"
     },
 
     addressSearch: function(){
@@ -62,7 +62,7 @@ App.Views.AppView = Backbone.View.extend({
         var locationParams = latitude + "," + longitude;
         window.app.navigate("#search/" + locationParams, {
             trigger: true,
-            replace: false,
+            replace: false
         });
     },
 

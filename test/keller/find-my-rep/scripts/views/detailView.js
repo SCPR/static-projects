@@ -8,7 +8,7 @@ App.Views.DetailView = Backbone.View.extend({
 
     events: {
         "click a.findMe": "navigate",
-        "click a.searchMe": "navigate",
+        "click a.searchMe": "navigate"
         //'click a.findStateReps': 'findStateReps',
     },
 
