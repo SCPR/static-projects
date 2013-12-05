@@ -18,7 +18,7 @@ var kpccTimelineConfig = {
     projectDirectory: 'http://projects.scpr.org/static/timelines/life-of-nelson-mandela',
 
     // newest or oldest
-    defaultDirection: 'oldest',
+    defaultDirection: 'newest',
 
     // collapsed or expanded
     defaultExpansion: 'expanded',
