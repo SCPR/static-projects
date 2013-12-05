@@ -18,10 +18,21 @@ App.Views.AppView = Backbone.View.extend({
         "click a.searchMe": "searchMe"
     },
 
-    addressSearch: function(){
+    addressSearch: function(e){
         $("input[id='addressSearch']").geocomplete({
             details: "form"
         });
+
+        var latitude = $("input[id='latitudeSearch']").val();
+        var longitude = $("input[id='longitudeSearch']").val();
+
+    	if(e.keyCode != 13) {
+    	    return false;
+    	} else if (e.keyCode === 13 && latitude === '' && longitude === '') {
+    	    return false;
+    	} else {
+            this.navigate();
+    	}
     },
 
     findMe: function(){
