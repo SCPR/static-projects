@@ -124,15 +124,19 @@
         buttonTemplate: ' \
         <div class="row"> \
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
-                <div class="jumbotron"> \
+                <div class="row"> \
                     <div class="vertical-timeline-buttons"> \
-                        <div class="expand-collapse-buttons btn-group btn-group-justified">\
-                            <a class="expand-all active btn btn-primary" href="javascript:void(0)"><span>Expand all</span></a> \
-                            <a class="collapse-all btn btn-primary" href="javascript:void(0)"><span>Collapse all</span></a> \
+                        <div class="expand-collapse-buttons col-xs-12 col-sm-12 col-md-6 col-lg-6">\
+                            <a class="expand-all active" href="javascript:void(0)"><span class="glyphicon glyphicon-resize-full"></span>&nbsp;Expand all</a> \
                         </div> \
-                        <div class="sort-buttons btn-group btn-group-justified"> \
-                            <a class="sort-newest active btn btn-primary" href="javascript:void(0)"><span>Sort by newest</span></a> \
-                            <a class="sort-oldest btn btn-primary" href="javascript:void(0)"><span>Sort by oldest</span></a> \
+                        <div class="sort-buttons col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
+                            <a class="sort-newest active" href="javascript:void(0)"><span class="glyphicon glyphicon-arrow-down"></span>&nbsp;Sort by newest</a> \
+                        </div> \
+                        <div class="expand-collapse-buttons col-xs-12 col-sm-12 col-md-6 col-lg-6">\
+                            <a class="collapse-all" href="javascript:void(0)"><span class="glyphicon glyphicon-resize-small"></span>&nbsp;Collapse all</a> \
+                        </div> \
+                        <div class="sort-buttons col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
+                            <a class="sort-oldest" href="javascript:void(0)"><span class="glyphicon glyphicon-arrow-up"></span>&nbsp;Sort by oldest</a> \
                         </div> \
                     </div> \
                 </div> \
@@ -357,10 +361,8 @@
                 if ($this.hasClass('active')) {
                     return false;
                 }
-
-                $thisObj.find('.sort-buttons a').removeClass('active');
-                $this.addClass('active');
-
+                $thisObj.find('.sort-buttons a').removeClass('active').css('font-weight', '100');
+                $this.addClass('active').css('font-weight', '700');
                 if ($this.hasClass('sort-newest')) {
                     verticalTimeline.updateGroupMarkers(false);
                     $thisObj.find('.vertical-timeline-timeline').isotope('reloadItems')
