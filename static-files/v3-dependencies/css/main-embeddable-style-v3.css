@@ -109,7 +109,7 @@ body.embedded .data-container .italics {font-style: italic;}
 /* structure for data and display elements */
 .data-container .data-details {margin: 10px auto 5px auto;}
 .data-container .data-visuals {margin: 10px auto 5px auto;}
-.data-container .data-visuals .jumbotron {width: 96%; height: auto; background: rgba(236, 124, 45, 0.5); margin: 10px 2% 10px 2%; padding: 10px 0 10px 0; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; -khtml-border-radius: 0;}
+.data-container .data-visuals .jumbotron {width: 96%; height: auto; background: rgba(240, 248, 255, 1.0); margin: 10px 2% 10px 2%; padding: 10px 0 10px 0; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; -khtml-border-radius: 0;}
 .data-container .data-visuals .jumbotron p {margin: 0 1em 0 1em;}
 .data-container .data-visuals #content-action-bar {width: 100%; height: auto; text-align: center; margin: 15px auto 15px auto;}
 .data-container .data-visuals #content-side-bar {width: 100%; height: auto; margin: 10px auto 15px auto;}
