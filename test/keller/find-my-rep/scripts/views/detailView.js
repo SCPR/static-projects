@@ -9,28 +9,18 @@ App.Views.DetailView = Backbone.View.extend({
     events: {
         "click a.findMe": "navigate",
         "click a.searchMe": "navigate"
-        //'click a.findStateReps': 'findStateReps',
     },
 
     navigate: function(){
         window.app.navigate('', true);
     },
 
-    /*
-    findStateReps: function(){
-        var stateParams = $('a.findStateReps').attr('id');
-        console.log(stateParams);
-        window.app.navigate('#legislators/' + stateParams, {
-            trigger: true,
-            replace: false,
-        });
-    },
-    */
-
     setModel: function(model){
+
         $('.progress-detail').removeClass('hidden');
 
         this.model = model;
+
         var $this = this;
 
         if ($this.model[0].attributes.birthday != null){
@@ -41,19 +31,25 @@ App.Views.DetailView = Backbone.View.extend({
         };
 
         var kpccApiQuery = this.model[0].attributes.first_name + '+' + this.model[0].attributes.last_name;
+
         var kpccApiQueryUrl = "http://www.scpr.org/api/v3/articles?types=news,blogs&limit=5&query=" + kpccApiQuery;
+
         $this.model[0].set('kpccApiQueryUrl', kpccApiQueryUrl);
 
         var twitterApiQuery = this.model[0].attributes.twitter_id;
+
         var twitterApiQueryUrl;
+
         if (twitterApiQuery === null){
             twitterApiQueryUrl = null
         } else {
             twitterApiQueryUrl = "https://socal-political-tweets.herokuapp.com/1.1/statuses/user_timeline.json?count=5&screen_name=" + twitterApiQuery + "&callback=?";
         };
+
         $this.model[0].set('twitterApiQueryUrl', twitterApiQueryUrl);
 
         if (!this.model[0].get('loaded')) {
+
             $this.model[0].set('loaded', true);
 
             var getArticles = function(targetUrl){
@@ -85,13 +81,17 @@ App.Views.DetailView = Backbone.View.extend({
                         $this.model[0].set('kpccApiArticles', articles[0].articles);
                     };
                     $this.model[0].set('twitterApiTweets', tweets[0]);
-                    var placeholderGender = $this.model[0].attributes.gender.toLowerCase();
-                    $this.render(placeholderGender);
+
+                    $this.render();
                 });
             }
+
         } else {
+
             $this.render();
+
         };
+
     },
 
     calculateAge: function(birthday){
@@ -104,23 +104,10 @@ App.Views.DetailView = Backbone.View.extend({
         return ageInYears;
     },
 
-    render: function(placeholderGender){
+    render: function(){
         this.$el.html(this.template(this.model[0].toJSON()));
         $('#representative-articles img').addClass('responsive');
         $('.progress-detail').addClass('hidden');
-
-        /*
-        $('img').error(function(){
-            if (placeholderGender === 'f'){
-                $(this).unbind('error').attr('src', 'images/female-placeholder.jpg');
-            } else if (placeholderGender === 'm'){
-                $(this).unbind('error').attr('src', 'images/male-placeholder.jpg');
-            } else {
-                $(this).unbind('error').attr('src', 'images/male-placeholder.jpg');
-            };
-        });
-        */
-
         return this;
     },
 });
