@@ -83,12 +83,10 @@ App.Views.DetailView = Backbone.View.extend({
                         $this.model[0].set('kpccApiArticles', articles[0].articles);
                     };
                     $this.model[0].set('twitterApiTweets', tweets[0]);
-                    $this.render();
+                    var placeholderGender = $this.model[0].attributes.gender.toLowerCase();
+                    $this.render(placeholderGender);
                 });
             }
-
-            //console.log($this.model[0].attributes);
-
         } else {
             $this.render();
         };
@@ -104,15 +102,18 @@ App.Views.DetailView = Backbone.View.extend({
         return ageInYears;
     },
 
-    render: function(){
+    render: function(placeholderGender){
         this.$el.html(this.template(this.model[0].toJSON()));
-
         $('#representative-articles img').addClass('responsive');
-
         $('img').error(function(){
-            $(this).unbind('error').attr('src', 'images/placeholder.png');
+            if (placeholderGender === 'f'){
+                $(this).unbind('error').attr('src', 'images/female-placeholder.jpg');
+            } else if (placeholderGender === 'm'){
+                $(this).unbind('error').attr('src', 'images/male-placeholder.jpg');
+            } else {
+                $(this).unbind('error').attr('src', 'images/male-placeholder.jpg');
+            };
         });
-
         return this;
     },
 });
