@@ -19,6 +19,10 @@ App.Views.AppView = Backbone.View.extend({
     },
 
     addressSearch: function(e){
+        $("input[id='addressSearch']").focus(function(){
+            $("#representative-profile").empty();
+        });
+
         $("input[id='addressSearch']").geocomplete({
             details: "form"
         });
@@ -41,7 +45,6 @@ App.Views.AppView = Backbone.View.extend({
         $("img.findMe").css("opacity", "1.0");
         $(".searchMe").css("font-weight", "100");
         $("img.searchMe").css("opacity", "0.3");
-        //$("#legislator-list").empty();
         $("#representative-profile").empty();
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {
@@ -60,7 +63,6 @@ App.Views.AppView = Backbone.View.extend({
         $("img.searchMe").css("opacity", "1.0");
         $(".findMe").css("font-weight", "100");
         $("img.findMe").css("opacity", "0.3");
-        //$("#legislator-list").empty();
         $("#representative-profile").empty();
         $("input[id='addressSearch']").val("");
         $("input[id='latitudeSearch']").val("");
