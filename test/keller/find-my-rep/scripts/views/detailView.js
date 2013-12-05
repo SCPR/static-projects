@@ -105,6 +105,8 @@ App.Views.DetailView = Backbone.View.extend({
     render: function(placeholderGender){
         this.$el.html(this.template(this.model[0].toJSON()));
         $('#representative-articles img').addClass('responsive');
+
+        /*
         $('img').error(function(){
             if (placeholderGender === 'f'){
                 $(this).unbind('error').attr('src', 'images/female-placeholder.jpg');
@@ -114,6 +116,8 @@ App.Views.DetailView = Backbone.View.extend({
                 $(this).unbind('error').attr('src', 'images/male-placeholder.jpg');
             };
         });
+        */
+
         return this;
     },
 });
