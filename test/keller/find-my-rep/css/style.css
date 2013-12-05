@@ -1,17 +1,17 @@
 /* basic structure */
 .data-container .data-header {width: 100%; height: auto; margin: 10px 0 5px 0;}
-.data-container .data-header .banner-logo {width: 90px; margin-right: 15px;}
 .data-container .data-legend {width: 100%; height: auto; margin: 10px 0 5px 0;}
 .data-container .data-legend .jumbotron {width: 100%; height: auto; background: rgba(240, 248, 255, 1.0); margin: 10px 0% 10px 0%; padding: 10px; overflow: hidden;}
 .data-container .data-legend .jumbotron a {font-weight: 700;}
+.data-container .data-legend .jumbotron #action-controls {margin: 10px 0 0 0;}
 .data-container .data-legend .jumbotron #form-controls {margin: 0 10px 0 20px;}
-
-#legislator-list {width: 100%; height: auto;}
-
+.data-container .data-legend .jumbotron #legislator-list {width: 100%; height: auto;}
 .data-container .data-visuals {width: 100%; height: auto; margin: 10px 0 5px 0;}
+.data-container .data-visuals #representative-articles .row {margin-top: 10px; margin-bottom: 15px;}
 .data-container .data-details {width: 100%; height: auto; margin: 10px 0 5px 0;}
 .btn-primary {background: rgba(0, 127, 166, 1.0); border: rgba(0, 127, 166, 1.0) solid .1em; padding: 5px 0 5px 0; margin-top: 8px;}
 #representative-articles img, #representative-image img {width: 94%; height: auto; margin: 0 3% 0 3%;}
+hr {margin-top: 15px; margin-bottom: 15px; border-top: .1em solid #2B2B2B;}
 
 @font-face {
     font-family: 'StateFaceRegular';
@@ -26,7 +26,7 @@
 
 @media (max-width: 491px) {
     .data-container .data-legend .jumbotron a {font-size: 90%;}
-    .data-container .data-legend .jumbotron .placemark {width: 20px;}
+    .data-container .data-legend .jumbotron .placemark {width: 20px; vertical-align: middle;}
     .data-container .data-legend .jumbotron #legislator-list a {font-size: 100%;}
     #representative-articles img, #representative-image img {width: 94%; height: auto; margin: 0 3% 0 3%;}
 }
@@ -37,27 +37,27 @@
 
 @media (min-width: 567px) {
     .data-container .data-legend .jumbotron a {font-size: 120%;}
-    .data-container .data-legend .jumbotron .placemark {width: 25px;}
+    .data-container .data-legend .jumbotron .placemark {width: 25px; vertical-align: text-bottom;}
     .data-container .data-legend .jumbotron #legislator-list a {font-size: 110%;}
     #representative-articles img, #representative-image img {width: 80%; height: auto; margin: 0 10% 0 10%;}
 }
 
 @media (min-width: 768px) {
     .data-container .data-legend .jumbotron a {font-size: 150%;}
-    .data-container .data-legend .jumbotron .placemark {width: 35px;}
+    .data-container .data-legend .jumbotron .placemark {width: 35px; vertical-align: text-bottom;}
     .data-container .data-legend .jumbotron #legislator-list a {font-size: 110%;}
     #representative-articles img, #representative-image img {width: 94%; height: auto; margin: 0 3% 0 3%;}
 }
 
 @media (min-width: 830px) {
-    .data-container .data-legend .jumbotron .placemark {width: 40px;}
+    .data-container .data-legend .jumbotron .placemark {width: 40px; vertical-align: text-bottom;}
     .data-container .data-legend .jumbotron #legislator-list a {font-size: 120%;}
     #representative-articles img, #representative-image img {width: 94%; height: auto; margin: 0 3% 0 3%;}
 }
 
 @media (min-width: 992px) {
     .data-container .data-legend .jumbotron a {font-size: 175%;}
-    .data-container .data-legend .jumbotron .placemark {width: 50px;}
+    .data-container .data-legend .jumbotron .placemark {width: 50px; vertical-align: text-bottom;}
     .data-container .data-legend .jumbotron #legislator-list a {font-size: 140%;}
     #representative-articles img, #representative-image img {width: 94%; height: auto; margin: 0 3% 0 3%;}
 }
