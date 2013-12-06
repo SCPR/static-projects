@@ -55,40 +55,70 @@
                     </div> \
                     <div class="row"> \
                         {{#if media_type}} \
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
-                                <div class="title"><h4>{{title}}</h4></div> \
-                            </div> \
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
-                                <div class="body"> \
-                                    {{#if body}} \
-                                        <div class="body-text"><p>{{{body}}}</p></div> \
-                                    {{/if}} \
-                                    {{#if read_more_url}} \
-                                        <p class="italics"><a href="{{read_more_url}}" target="_blank"><strong>{{#if read_more_source}}Via {{read_more_source}}{{else}}Read More{{/if}}</strong></a></p> \
-                                    {{/if}} \
+                            {{#if body}} \
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
+                                    <div class="title"><h4>{{title}}</h4></div> \
                                 </div> \
-                            </div> \
-                            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
-                                <div class="body"> \
-                                    {{#is media_type "image"}} \
-                                        <img src="{{media_url}}" alt="{{title}}" class="responsive"> \
-                                        {{#if caption}} \
-                                            <div class="caption"><p>{{caption}}</p></div> \
-                                        {{else}} \
-                                            <div class="caption"><p></p></div> \
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
+                                    <div class="body"> \
+                                        {{#if body}} \
+                                            <div class="body-text"><p>{{{body}}}</p></div> \
                                         {{/if}} \
-                                    {{else}} \
-                                        <div class="clearfix"> \
-                                        {{{media_url}}} \
-                                        </div> \
-                                        {{#if caption}} \
-                                            <div class="caption"><p>{{caption}}</p></div> \
-                                        {{else}} \
-                                            <div class="caption"><p></p></div> \
+                                        {{#if read_more_url}} \
+                                            <p class="italics"><a href="{{read_more_url}}" target="_blank"><strong>{{#if read_more_source}}Via {{read_more_source}}{{else}}Read More{{/if}}</strong></a></p> \
                                         {{/if}} \
-                                    {{/is}} \
+                                    </div> \
                                 </div> \
-                            </div> \
+                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
+                                    <div class="body"> \
+                                        {{#is media_type "image"}} \
+                                            <img src="{{media_url}}" alt="{{title}}" class="responsive"> \
+                                            {{#if caption}} \
+                                                <div class="caption"><p>{{caption}}</p></div> \
+                                            {{else}} \
+                                                <div class="caption"><p></p></div> \
+                                            {{/if}} \
+                                        {{else}} \
+                                            <div class="embed clearfix"> \
+                                            {{{media_url}}} \
+                                            </div> \
+                                            {{#if caption}} \
+                                                <div class="caption"><p>{{caption}}</p></div> \
+                                            {{else}} \
+                                                <div class="caption"><p></p></div> \
+                                            {{/if}} \
+                                        {{/is}} \
+                                    </div> \
+                                </div> \
+                            {{else}} \
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
+                                    <div class="title"><h4>{{title}}</h4></div> \
+                                </div> \
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
+                                    <div class="body"> \
+                                        {{#is media_type "image"}} \
+                                            <img src="{{media_url}}" alt="{{title}}" class="responsive"> \
+                                            {{#if caption}} \
+                                                <div class="caption"><p>{{caption}}</p></div> \
+                                            {{else}} \
+                                                <div class="caption"><p></p></div> \
+                                            {{/if}} \
+                                        {{else}} \
+                                            <div class="embed clearfix"> \
+                                            {{{media_url}}} \
+                                            </div> \
+                                            {{#if caption}} \
+                                                <div class="caption"><p>{{caption}}</p></div> \
+                                            {{else}} \
+                                                <div class="caption"><p></p></div> \
+                                            {{/if}} \
+                                        {{/is}} \
+                                        {{#if read_more_url}} \
+                                            <p class="italics"><a href="{{read_more_url}}" target="_blank"><strong>{{#if read_more_source}}Via {{read_more_source}}{{else}}Read More{{/if}}</strong></a></p> \
+                                        {{/if}} \
+                                    </div> \
+                                </div> \
+                            {{/if}} \
                         {{else}} \
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
                                 <div class="title"><h4>{{title}}</h4></div> \
@@ -246,6 +276,7 @@
                 $thisObj.find('.vertical-timeline-timeline').append(groupMarkerTemplate(group));
             });
 
+            verticalTimeline.adjustEmbeds();
             verticalTimeline.handleSharing();
             verticalTimeline.handleExpanding();
             verticalTimeline.handleSorting();
@@ -275,6 +306,13 @@
                 });
             });
 
+        };
+
+        // add social sharing links to share classes
+        verticalTimeline.adjustEmbeds = function() {
+            $(".vertical-timeline-timeline").find("iframe").each(function(index, iframe){
+                $(iframe).attr("width", "100%");
+            });
         };
 
         // add social sharing links to share classes
