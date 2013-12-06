@@ -59,7 +59,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
                                     <div class="title"><h4>{{title}}</h4></div> \
                                 </div> \
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
+                                <div class="post-body col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
                                     <div class="body"> \
                                         {{#if body}} \
                                             <div class="body-text"><p>{{{body}}}</p></div> \
@@ -69,7 +69,7 @@
                                         {{/if}} \
                                     </div> \
                                 </div> \
-                                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
+                                <div class="post-body col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
                                     <div class="body"> \
                                         {{#is media_type "image"}} \
                                             <img src="{{media_url}}" alt="{{title}}" class="responsive"> \
@@ -94,7 +94,7 @@
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
                                     <div class="title"><h4>{{title}}</h4></div> \
                                 </div> \
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
+                                <div class="post-body col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
                                     <div class="body"> \
                                         {{#is media_type "image"}} \
                                             <img src="{{media_url}}" alt="{{title}}" class="responsive"> \
@@ -123,7 +123,7 @@
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
                                 <div class="title"><h4>{{title}}</h4></div> \
                             </div> \
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
+                            <div class="post-body col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
                                 <div class="body"> \
                                     {{#if body}} \
                                         <div class="body-text"><p>{{{body}}}</p></div> \
@@ -157,16 +157,10 @@
                 <div class="row"> \
                     <div class="vertical-timeline-buttons"> \
                         <div class="expand-collapse-buttons col-xs-12 col-sm-12 col-md-6 col-lg-6">\
-                            <a class="expand-all active" href="javascript:void(0)"><span class="glyphicon glyphicon-resize-full"></span>&nbsp;Expand all</a> \
+                            <a href="javascript:void(0)"></a> \
                         </div> \
                         <div class="sort-buttons col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
-                            <a class="sort-newest active" href="javascript:void(0)"><span class="glyphicon glyphicon-arrow-down"></span>&nbsp;Sort by newest</a> \
-                        </div> \
-                        <div class="expand-collapse-buttons col-xs-12 col-sm-12 col-md-6 col-lg-6">\
-                            <a class="collapse-all" href="javascript:void(0)"><span class="glyphicon glyphicon-resize-small"></span>&nbsp;Collapse all</a> \
-                        </div> \
-                        <div class="sort-buttons col-xs-12 col-sm-12 col-md-6 col-lg-6"> \
-                            <a class="sort-oldest" href="javascript:void(0)"><span class="glyphicon glyphicon-arrow-up"></span>&nbsp;Sort by oldest</a> \
+                            <a href="javascript:void(0)"></a> \
                         </div> \
                     </div> \
                 </div> \
@@ -333,84 +327,61 @@
         // handle post expanding/collapsing
         verticalTimeline.handleExpanding = function() {
 
-            // add open/close buttons to each post
-            //$thisObj.find('.vertical-timeline-timeline .item.post').each(function() {
-                //$(this).find('.inner').append('<a href="javascript:void(0)" class="open-close"></a>');
-            //});
-
             // handle default state
-            if (timelineConfig.defaultExpansion != 'expanded') {
+            if (timelineConfig.defaultExpansion === 'collapsed') {
                 $thisObj.find('.vertical-timeline-timeline .item').each(function() {
                     var $this = $(this);
-                    $this.find('.text').hide();
-                    $this.find('.post').toggleClass('closed');
+                    $this.find('.post-body').hide().addClass('closed');
                 });
-
-                $thisObj.find('.expand-collapse-buttons a').removeClass('active');
-                $thisObj.find('.expand-collapse-buttons a.collapse-all').addClass('active');
+                $thisObj.find('.expand-collapse-buttons a').addClass('active expand-all').prepend('<span class="glyphicon glyphicon-resize-full"></span>&nbsp;Expand all');
+            } else {
+                $thisObj.find('.vertical-timeline-timeline .item').each(function() {
+                    var $this = $(this);
+                    $this.find('.post-body').addClass('open');
+                });
+                $thisObj.find('.expand-collapse-buttons a').addClass('active collapse-all').prepend('<span class="glyphicon glyphicon-resize-small"></span>&nbsp;Collapse all');
             };
 
-            // Handle click of individual buttons.
-            $thisObj.find('.vertical-timeline-timeline .item a.open-close').click(function(e) {
-                $(this).siblings('.body').slideToggle(function() {
-                    $thisObj.find('.vertical-timeline-timeline').isotope('reLayout');
-                });
-                $(this).parents('.post').toggleClass('closed');
-                $thisObj.find('.expand-collapse-buttons a').removeClass('active');
-                e.preventDefault();
-            });
-
-            $thisObj.find('.vertical-timeline-buttons a.expand-all').click(function(e) {
-                $thisObj.find('.post .body').slideDown(function() {
-                    $thisObj.find('.vertical-timeline-timeline').isotope('reLayout');
-                });
-                $thisObj.find('.post').removeClass('closed');
-                $thisObj.find('.expand-collapse-buttons a').removeClass('active');
-                $(this).addClass('active');
-                e.preventDefault();
-
-            });
-
-            $thisObj.find('.vertical-timeline-buttons a.collapse-all').click(function(e) {
-                $thisObj.find('.post .body').slideUp(function() {
-                    $thisObj.find('.vertical-timeline-timeline').isotope('reLayout');
-                });
-                $thisObj.find('.post').addClass('closed');
-                $thisObj.find('.expand-collapse-buttons a').removeClass('active');
-                $(this).addClass('active');
+            // handle click of individual buttons
+            $thisObj.find('.expand-collapse-buttons a').click(function(e) {
+                if ($(this).hasClass('collapse-all')){
+                    $thisObj.find('.post-body').slideUp(function() {
+                        $thisObj.find('.vertical-timeline-timeline').isotope('reLayout');
+                    });
+                    $thisObj.find('.post-body').removeClass('open').addClass('closed');
+                    $(this).removeClass('collapse-all').addClass('expand-all').text('').prepend('<span class="glyphicon glyphicon-resize-full"></span>&nbsp;Expand all');
+                } else {
+                    $thisObj.find('.post-body').slideDown(function() {
+                        $thisObj.find('.vertical-timeline-timeline').isotope('reLayout');
+                    });
+                    $thisObj.find('.post-body').removeClass('closed').addClass('open');
+                    $(this).removeClass('expand-all').addClass('collapse-all').text('').prepend('<span class="glyphicon glyphicon-resize-small"></span>&nbsp;Collapse all');
+                }
                 e.preventDefault();
             });
         };
 
         // handle sorting
         verticalTimeline.handleSorting = function() {
+            if (timelineConfig.defaultDirection === 'oldest') {
+                $thisObj.find('.sort-buttons a').addClass('active sort-newest').prepend('<span class="glyphicon glyphicon-sort"></span>&nbsp;Sort by newest');
+            } else {
+                $thisObj.find('.sort-buttons a').addClass('active sort-oldest').prepend('<span class="glyphicon glyphicon-sort"></span>&nbsp;Sort by oldest');
+            };
 
-            // handle default sort direction
-            if (timelineConfig.defaultDirection != 'newest') {
-                $thisObj.find('.sort-buttons a').removeClass('active');
-                $thisObj.find('.sort-buttons a.sort-oldest').addClass('active');
-            }
-
-            // handle buttons
+            // handle click of individual buttons
             $thisObj.find('.sort-buttons a').click(function(e) {
                 var $this = $(this);
-
-                // don't proceed if already selected
-                if ($this.hasClass('active')) {
-                    return false;
-                }
-                $thisObj.find('.sort-buttons a').removeClass('active').css('font-weight', '100');
-                $this.addClass('active').css('font-weight', '700');
-                if ($this.hasClass('sort-newest')) {
+                if ($this.hasClass('sort-newest')){
                     verticalTimeline.updateGroupMarkers(false);
-                    $thisObj.find('.vertical-timeline-timeline').isotope('reloadItems')
-                    .isotope({sortAscending: false});
+                    $thisObj.find('.vertical-timeline-timeline').isotope('reloadItems').isotope({sortAscending: false});
+                    $(this).removeClass('sort-newest').addClass('sort-oldest').text('').prepend('<span class="glyphicon glyphicon-sort"></span>&nbsp;Sort by oldest');
                 } else {
                     verticalTimeline.updateGroupMarkers(true);
                     $thisObj.find('.vertical-timeline-timeline').isotope('reloadItems')
                     .isotope({sortAscending: true});
+                    $(this).removeClass('sort-oldest').addClass('sort-newest').text('').prepend('<span class="glyphicon glyphicon-sort"></span>&nbsp;Sort by newest');
                 }
-
                 e.preventDefault();
             });
         };
