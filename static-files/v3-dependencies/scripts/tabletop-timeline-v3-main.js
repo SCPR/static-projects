@@ -240,7 +240,7 @@
 
             // set helper to create linkable text
             Handlebars.registerHelper('urlparams', function(context, block) {
-                formattedContext = context.replace(/\W/g, '');
+                formattedContext = context.replace(/\W/g, '-');
                 return formattedContext.toLowerCase();
             });
 
