@@ -84,6 +84,7 @@ App.Views.DetailView = Backbone.View.extend({
                             $this.model[0].set('kpccApiArticles', articles[0].articles);
                         };
                         $this.model[0].set('twitterApiTweets', tweets[0]);
+
                         $this.render();
                     });
                 }
