@@ -15,7 +15,7 @@
         window.app = new App.Router();
         window.appView = new App.Views.AppView({el:document});
         Backbone.history.start({
-            root: '2kpcc/static-projects/test/keller/find-my-rep/',
+            root: 'http://projects.scpr.org/static/applications/find-my-rep/',
             pushState: false,
         });
     });
@@ -25,7 +25,7 @@
 // scaffolding functions
 var initializeTemplates = initializeTemplates || {};
 
-var embed_url_root = '#';
+var embed_url_root = 'http://projects.scpr.org/static/applications/find-my-rep/';
 
 var initializeTemplates = {
     renderStaticTemplates: function(){
