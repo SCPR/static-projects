@@ -13,9 +13,9 @@
     var defaults = {
         key: null,
         sheetName: null,
-        defaultDirection: null,
+        defaultDirection: 'oldest',
         defaultExpansion: null,
-        groupFunction: null,
+        groupFunction: 'groupSegmentByYear',
         sharing: null,
         //gutterWidth: null,
         width: 'auto',
@@ -41,7 +41,7 @@
                     <div class="row"> \
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> \
                             <ul class="pull-left"> \
-                                <li class="date kicker"><h5>{{display_date}}</h5></li> \
+                                <li class="date kicker"><h5>{{displaydate}}</h5></li> \
                                 <li class="timestamp">{{timestamp}}</li> \
                             </ul> \
                             {{#if sharing}} \
@@ -177,7 +177,6 @@
     // grouping function by year
     var groupSegmentByYear = function(segment, groups, direction) {
         var year = new Date(segment.timestamp).getFullYear();
-
         groups[year] = {
             id: year,
             groupDisplay: year,
@@ -196,9 +195,9 @@
 
     // as a niceity, if the group function is a string referring to group function, then use that
     timelineConfig.groupFunction = (timelineConfig.groupFunction === 'groupSegmentByYear') ?
-        groupSegmentByYear : timelineConfig.groupFunction;
+        groupSegmentByYear: timelineConfig.groupFunction;
     timelineConfig.groupFunction = (timelineConfig.groupFunction === 'groupSegmentByDecade') ?
-        groupSegmentByDecade : timelineConfig.groupFunction;
+        groupSegmentByDecade: timelineConfig.groupFunction;
 
     // go through each jquery object
     return this.each(function() {
