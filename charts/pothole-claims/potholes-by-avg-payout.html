@@ -31,7 +31,6 @@
         <!-- begin base scripts -->
         <script src="http://use.typekit.com/mhc7oxs.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-        <script async="" src="http://www.google-analytics.com/ga.js"></script>
         <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js"></script>
@@ -128,6 +127,20 @@
                 </div>
             </div>
         </div>
+
+    <!-- begin analytics -->
+    <script type="text/javascript">
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = '//stream.publicbroadcasting.net/analytics/abf7.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- end analytics -->
+
     </body>
     <!-- end body -->
 
