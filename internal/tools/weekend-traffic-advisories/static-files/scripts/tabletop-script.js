@@ -79,7 +79,7 @@
                         incidentArrayHoldingContainer.push({
                             location: data[i].location,
                             details: data[i].details,
-                            read_more: data[i].url
+                            read_more: data[i].url_2
                         });
                     }
                 }
@@ -104,6 +104,7 @@
 
         // builds & processes an object for display
         buildTrafficObject: function(categoryTraffic, incidentsTrafficArray){
+
             var trafficCategoryObject = {
                 category: categoryTraffic,
                 incidents: incidentsTrafficArray
