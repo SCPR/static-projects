@@ -315,7 +315,7 @@
                 $thisObj.find('.vertical-timeline-timeline .item.post').each(function(postTest) {
                     var postTargetId = $(this).attr('id');
                     var postTitle = $(this).find('.title');
-                    var postText = 'Via a KPCC timeline: ' + postTitle[0].innerText;
+                    var postText = 'Via a @KPCC timeline: ' + postTitle[0].innerText;
                     var sharingUrl = kpccTimelineConfig.projectDirectory + '?link=' + postTargetId;
                     $(this).find('.link').attr('href', sharingUrl);
                     $(this).find('.twitter').attr('href', 'https://twitter.com/intent/tweet?text=' + postText + '&url=' + sharingUrl);
