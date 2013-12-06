@@ -35,17 +35,25 @@ var initializeTemplates = {
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');
 
-        if (embed_this === false){
-            jqueryNoConflict('li.projects-embed').addClass('hidden');
-        };
-
         var checkExist = setInterval(function() {
+
+            if (jqueryNoConflict('.header-links').length) {
+                clearInterval(checkExist);
+                initializeTemplates.hideEmbedBox();
+            }
+
             if (jqueryNoConflict('.buttons').length) {
                 clearInterval(checkExist);
                 initializeTemplates.toggleDisplayIcon();
             }
         }, 1000);
 
+    },
+
+    hideEmbedBox: function(){
+        if (embed_this === false){
+            jqueryNoConflict('li.projects-embed').addClass('hidden');
+        };
     },
 
     renderEmbedBox: function(){
