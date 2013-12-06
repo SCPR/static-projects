@@ -25,6 +25,7 @@
 // scaffolding functions
 var initializeTemplates = initializeTemplates || {};
 
+var embed_this = false;
 var embed_url_root = 'http://projects.scpr.org/static/applications/find-my-rep/';
 
 var initializeTemplates = {
@@ -33,6 +34,10 @@ var initializeTemplates = {
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');
+
+        if (embed_this === false){
+            jqueryNoConflict('li.projects-embed').addClass('hidden');
+        };
 
         var checkExist = setInterval(function() {
             if (jqueryNoConflict('.buttons').length) {
