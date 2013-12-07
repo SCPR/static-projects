@@ -75,11 +75,14 @@
 
                 // begin inner loop
                 for (var i=0; i<data.length; i++){
+
+                    console.log(data);
+
                     if (data[i].category === keys[x]){
                         incidentArrayHoldingContainer.push({
                             location: data[i].location,
                             details: data[i].details,
-                            read_more: data[i].url_2
+                            read_more: data[i].url
                         });
                     }
                 }
