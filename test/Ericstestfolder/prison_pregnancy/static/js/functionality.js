@@ -129,7 +129,7 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	js_audioPlayer("http://projects.scpr.org/static/test/Ericstestfolder/prison_pregnancy/media/audio/collage_zodiacal.mp3",1);
 	js_audioPlayer("http://projects.scpr.org/static/test/Ericstestfolder/prison_pregnancy/media/audio/collage_bray.mp3",2);
 	js_audioPlayer("http://projects.scpr.org/static/test/Ericstestfolder/prison_pregnancy/media/audio/collage_bass.mp3",3);
-	js_audioPlayer("http://projects.scpr.org/test/Ericstestfolder/prison_pregnancy/media/audio/pregnant-prisoners-full.mp3",10);
+	js_audioPlayer("http://projects.scpr.org/static/test/Ericstestfolder/prison_pregnancy/media/audio/pregnant-prisoners-full.mp3",10);
 	
 
 
