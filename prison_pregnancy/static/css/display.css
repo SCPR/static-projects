@@ -1,0 +1,2776 @@
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	--------------------------------------------------------------------------------------------------------------
+	Code, except where noted, by: Jon White ( @jonwhitebriefly ), on behalf of 89.3 KPCC.
+	--------------------------------------------------------------------------------------------------------------
+	Don't steal.
+	--------------------------------------------------------------------------------------------------------------
+	(c) 2013 Southern California Public Radio
+	--------------------------------------------------------------------------------------------------------------
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+
+
+
+body {
+	background: white;
+    -webkit-text-size-adjust: none;
+	font-family: Georgia, serif;
+	font-weight: 400;
+	font-size: 100%;
+	line-height: 1.2;
+	z-index: 1;
+	color: black;
+}
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	MASTHEAD
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.masthead {
+	background: #000 url(http://a.scpr.org/i/e7f3cff2fff52abde4c77f6883e4001a/70389-full.jpg) no-repeat top center;
+	background-size: 100%; /* gets fiddled width as we go ABOVE and BELOW certain critical widths (read on...) */
+    height:419px;
+		box-shadow: inset 0 -75px 0 rgba(0,0,0,0.5);
+}
+		.masthead h1 {
+			font: normal 200 6.875em/1.25 "proxima-nova", Helvetica, sans-serif; /* 110 / 16 */
+			text-align: center;
+			color: #F16500;
+			text-shadow: 0 0 13px rgba(0,0,0,0.3);
+			padding-top: 114px;
+			margin-bottom: 26px;
+		}
+				.masthead h1 span {
+					color: #fff;
+				}
+		
+		.masthead .secondary {
+			/* background: black; */
+			padding: 10px 0 20px;
+			margin-bottom: 28px;
+		}
+				.masthead .secondary .bound {
+					position: relative;
+					z-index: 1;
+				}
+						.masthead .secondary h2 {
+							position: relative;
+							text-align: right;
+							color: white;
+							z-index: 2;
+							font: normal 400 1.1875em/1.2 sans-serif; /* 19 / 16 */
+						}
+						.masthead .secondary h3 {
+							position: absolute;
+							z-index: 3;
+							top: 6px;
+							left: 0;
+						}
+								.masthead .secondary a {
+									display: block;
+									overflow: hidden;
+									text-indent: -9999px;
+									width: 125px;
+									height: 25px;
+									background: url(i/logo-kpcc.png) no-repeat;
+									background-size: 100%;
+								}
+		
+		.masthead .tertiary {
+		}
+				.masthead .tertiary aside {
+					width: 22.545454545455%; /* 248 / 1100 */
+				}
+				.masthead .bylines {
+					float: left;
+					font-size: 0.75em;
+					line-height: 1;
+					color: #d8d8d8;
+					min-width: 165px;
+					overflow: hidden;
+				}
+						.masthead .bylines a {
+							text-decoration: none;
+							color: #A4E4FF;
+						}
+						.masthead .bylines a:hover {
+							color: white;
+							text-decoration: underline;
+						}
+						.masthead .bylines dl {
+							margin-bottom: 7px;
+						}
+								.masthead .bylines dt {
+									width: 55%;
+									float: left;
+								}
+								.masthead .bylines dd {
+									width: 42%;
+									float: right;
+									text-transform: uppercase;
+									font-size: 0.8em;
+									padding-top: 0.3em;
+								}
+
+				.masthead .social {
+					float: right;
+					min-width: 99px;
+					overflow: hidden;
+				}
+						.masthead .social li {
+							display: inline;
+						}
+								.masthead .social a {
+									display: block;
+									float: right;
+									width: 27px;
+									height: 25px;
+									background: url(i/social-icons.png) no-repeat;
+									background-size: 81px 50px;
+									text-indent: 9999px;
+									overflow: hidden;
+									margin-right: 8px;
+								}
+								.masthead .social .fb a {
+									margin-right: 0;
+								}
+										.masthead .social .fb a			{ background-position: -54px 0;			}
+										.masthead .social .fb a:hover	{ background-position: -54px -25px;		}
+										.masthead .social .tw a			{ background-position: -27px 0;			}
+										.masthead .social .tw a:hover	{ background-position: -27px -25px;		}
+										.masthead .social .pi a			{ background-position: 0 0;				}
+										.masthead .social .pi a:hover	{ background-position: 0 -25px;			}
+
+
+
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (min-width: 2001px) {
+
+						.masthead {
+							background-size: 100%;
+						}
+				    }
+
+    				/*	===================================================================================
+    				    =================================================================================== */
+
+    				    @media screen and (min-width: 1170px) {
+
+    						.masthead {
+    							box-shadow: inset 0 -85px 0 rgba(0,0,0,0.5);
+    						}
+						}
+
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 1170px) {
+
+						.masthead h1 {
+							font-size: 6.3em; /* had been 6.875 until now */
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 1050px) {
+
+						.masthead {
+							height: 356px;
+						}
+						.masthead h1 {
+							font-size: 5.9em;
+							padding-top: 75px;
+							margin-bottom: 15px; /* had been 26 until now */
+						}                        
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 970px) {
+
+						.masthead h1 {
+							font-size: 5.5em;
+						}
+						.masthead .secondary h3 {
+							top: 10px;
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 900px) {
+
+						.masthead {
+							height: auto;
+							background-size: 200%;
+							padding-bottom: 23px;
+						}
+						.masthead h1 {
+							font-size: 4.5em;
+							padding-top: 40px;
+						}
+						.masthead .secondary {
+							margin-bottom: 18px; /* had been 28 until now */
+						}
+						.masthead .secondary h3 {
+							top: 8px;
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 800px) {
+
+						.masthead {
+							background-size: 1200px 251px; /* 0.6 */
+							height: 251px;
+							padding-bottom: 0;
+						}
+						.masthead h1 {
+							padding-top: 35px;
+						}
+						.masthead .secondary {
+							margin-bottom: 14px;
+						}
+						.masthead .secondary h2 {
+							font-size: 0.95em; /* had been 1.1875 until now */
+						}
+						.masthead .secondary h3 {
+							top: 5px;
+						}
+						.masthead .tertiary .social {
+							padding-top: 5px;
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 767px) {
+
+						.masthead {
+							box-shadow: inset 0 -65px 0 rgba(0,0,0,0.35);
+						}
+						.masthead h1 {
+							font-size: 4.0em;
+						}
+						.masthead .tertiary .bylines {
+							padding-top: 5px;
+						}
+						.masthead .tertiary .social {
+							padding-top: 10px;
+						}
+						
+						.masthead .secondary a {
+						    width:100px;
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 670px) {
+
+						.masthead {
+							box-shadow: inset 0 -75px 0 rgba(0,0,0,0.5);
+						}
+						.masthead h1 {
+							font-size: 3.5em;
+						}
+						.masthead .secondary h2 {
+							font-size: 0.85em;
+						}
+						.masthead .secondary h3 {
+							top: 3px;
+						}
+						.masthead .tertiary .bylines {
+							padding-top: 6px;
+						}
+						.masthead .tertiary .social {
+							padding-top: 13px;
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 590px) {
+
+						.masthead {
+							box-shadow: inset 0 -85px 0 rgba(0,0,0,0.5);
+						}
+						.masthead h1 {
+							font-size: 3.0em;
+							padding-top: 30px;
+						}
+						.masthead .secondary h2 {
+							font-size: 0.85em;
+							padding-bottom:10px;
+						}
+						.masthead .secondary h3 {
+							top: 2px;
+						}
+						.masthead .tertiary .social {
+							padding-top: 7px;
+						}
+						
+						
+				    }
+
+    				/*	===================================================================================
+    				    =================================================================================== */
+
+
+                    @media screen and (min-width:533px){
+                        
+                        .masthead .secondary{
+						    background: black;
+						}
+						
+                    }
+
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 533px) {
+
+						.masthead {
+							/* box-shadow: inset 0 -56px 0 #3c3c3c; */
+							background-size: 1000px 210px; /* 0.5 */
+							height: auto;
+							padding-bottom: 7px;
+						}
+						.masthead h1 {
+							font-size: 2.7em;
+							padding-top: 40px;
+						}
+						.masthead .secondary {
+							margin-bottom: 22px;
+						}
+						.masthead .secondary h2 {
+							text-align: center;
+							margin-bottom: 10px;
+						}
+						.masthead .secondary h3 {
+							position: static;
+						}
+								.masthead .secondary h3 a {
+									margin: 0 auto;
+								}
+
+						.masthead .tertiary .bylines {
+							text-shadow: none;
+						}
+						.masthead .tertiary .social {
+							padding-top: 11px;
+						}
+						
+						.masthead .secondary a {
+						    width:70px;
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 435px) {
+
+						.masthead {
+							background-size: 800px 277px; /* 0.4 */
+						}
+						.masthead h1 {
+							font-size: 3.1em;
+							padding-top: 40px;
+							width: 70%;
+							margin: 0 auto 30px;
+						}
+						.masthead .secondary {
+							padding-top: 14px;
+							margin-bottom: 9px;
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	WAYFINDER
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+	.wayfinder {
+		/* I'm not this clever. Credit to: http://www.colorzilla.com/gradient-editor/ */
+		background: #ffffff; /* Old browsers */
+		background: -moz-linear-gradient(top,  #ffffff 0%, #e9e9e9 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e9e9e9)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #ffffff 0%,#e9e9e9 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #ffffff 0%,#e9e9e9 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #ffffff 0%,#e9e9e9 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  #ffffff 0%,#e9e9e9 100%); /* W3C */
+/*		-------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+		border-bottom: 1px solid #999999;
+		box-shadow: 0 2px 4px 1px rgba(0,0,0,0.35);
+	}
+			.sticky-wrapper {           /* a dynamically-created wrapper by Waypoints */
+				margin-bottom: 60px;	/* this creates the vertical/visual space before "header one" */
+			}
+
+			.wayfinder.stuck {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 10;			/* nothing on this page should ever exceed 10, natch. */
+			}
+			.wayfinder .bound {
+				box-shadow: -1px 0 0 rgba(0,0,0,0.17);
+			}
+					.wayfinder ul {
+					}
+							.wayfinder li {
+								display: inline;
+							}
+									.wayfinder a {
+										background: url(i/wayfinder-ornamentation.png) no-repeat center 19px;
+										background-size: 487px 44px; /* half of 974 x 88 */
+										display: block;
+										float: left;
+										box-shadow: 1px 0 0 rgba(0,0,0,0.17);
+										padding-top: 34px;
+										height: 136px; /* 170 */
+										width: 33.3%;
+										text-decoration: none;
+										text-align: center;
+									}
+											.wayfinder.stuck a {
+												padding-top: 21px;
+												background-position: center 6px;
+												height: 58px;
+											}
+											.wayfinder a mark {
+												display: block;
+												background: none;
+												color: white;
+												font-size: 1.125em; /* 18 / 16 */
+												font-style: normal;
+												font-weight: 300;
+												margin-bottom: 19px;
+											}
+													.wayfinder.stuck a mark {
+														margin-bottom: 10px;
+													}
+													.wayfinder a mark span {
+														display: none;
+													}
+											
+											.wayfinder a em {
+												display: block;
+												font-style: normal;
+												color: #252525;
+												font-family: Georgia, serif;
+												font-weight: 700;
+												text-shadow: 0 1px 0 white;
+												font-size: 1.75em; /* 28 / 16 */
+												margin-bottom: 13px;
+											}
+													.wayfinder.stuck a em {
+														font-size: 1.1em;
+													}
+
+											.wayfinder a p {
+												color: #5d5d5d;
+												font-size: 0.8125em; /* 13 / 16 */
+												text-shadow: 0 1px 0 white;
+												width: 90%;
+												margin: 0 auto;
+											}
+											.wayfinder.stuck a p {
+												display: none;
+											}
+
+											.wayfinder a:hover {
+											}
+													.wayfinder a:hover em {
+														color: #e33500;
+														text-decoration: underline;
+													}
+													.wayfinder a:hover p {
+														color: #8f2100;
+													}
+
+
+											/*	===================================================================================
+											    =================================================================================== */
+
+											    @media screen and (max-width: 700px) {
+
+													.wayfinder a {
+														padding-top: 24px;
+														background-position: center 9px;
+													}
+													.wayfinder a mark {
+														margin-bottom: 13px;
+													}
+													.wayfinder a em {
+														font-size: 1.5em;
+														margin-bottom: 8px;
+													}
+													.wayfinder a p {
+														font-size: 0.7em;
+														margin-bottom: 15px;
+													}
+
+											    }
+
+											/*	===================================================================================
+											    =================================================================================== */
+
+											    @media screen and (max-width: 610px) {
+
+													.wayfinder a {
+														min-height: 110px;
+													}
+															.wayfinder.stuck a {
+																min-height: 0;
+																height: 28px;
+																padding-top: 11px;
+																background: none;
+															}
+															.wayfinder.stuck a mark {
+																display: none;
+															}
+
+													.wayfinder a em {
+														font-size: 1.0em;
+													}
+															.wayfinder.stuck a em {
+																font-size: 0.8em;
+															}
+
+													.wayfinder a p {
+														font-size: 0.6em;
+														margin-bottom: 0;
+													}
+
+											    }
+
+											/*	===================================================================================
+											    =================================================================================== */
+
+											    @media screen and (max-width: 395px) {
+
+													.wayfinder .bound {
+														width: 99.9%;
+														box-shadow: none;
+													}
+													.wayfinder li:last-child a {
+														box-shadow: none;
+													}
+													.wayfinder a {
+														height: 130px;
+													}
+															.wayfinder.stuck a {
+																min-height: 0;
+																padding-top: 11px;
+																height: 28px;
+															}
+
+													.wayfinder a em {
+														font-size: 1.0em;
+														padding: 0 10%;
+														line-height: 1;
+													}
+															.wayfinder.stuck a em {
+																font-size: 0.8em;
+																padding: 0;
+															}
+
+													.wayfinder a p {
+														width: 85%;
+														line-height: 1.1;
+													}
+
+											    }
+
+											/*	===================================================================================
+											    =================================================================================== */
+
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	CHAPTER-LEAD
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.chapter-lead {
+	background: #7ac8d4;
+	width: 100%;
+	text-align: center;
+	margin: 40px 0 83px; /* top is to clear the negative-top-positioning of the "part circle" */
+	color: white;
+	padding: 42px 0 33px;
+	position: relative;
+}
+		.chapter-lead .part {
+			color: white;
+			text-align: center;
+			top: -29px;
+			border-radius: 30px;
+			width: 54px;
+			left: 50%;
+			font-size: 1.5em; /* 24 / 16 */
+			line-height: 1;
+			padding-top: 13px;
+			height: 41px; /* 54 */
+			margin-left: -27px;
+			position: absolute;
+			display: block;
+			background: black;
+			border: 2px solid white;
+		}
+		.chapter-lead h2 {
+			font: italic 700 4.25em/1.05 Georgia, serif;
+			margin-bottom: 15px;
+		}
+		.chapter-lead h3 {
+			color: #49868f;
+			font: normal 700 1.25em/1.05 Georgia, serif; /* 20 / 16 */
+		}
+
+		/*	===================================================================================
+		    =================================================================================== */
+
+		    @media screen and (max-width: 750px) {
+
+				.chapter-lead h2 {
+					font-size: 2.8em; /* had been 4.25 */
+				}
+				.chapter-lead h3 {
+					font-size: 1em; /* had been 1.25 */
+				}
+
+		    }
+
+		/*	===================================================================================
+		    =================================================================================== */
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	PROSE ARTICLES: THE COMMON ELEMENTS
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.chapter {
+		font-family:"proxima-nova", Helvetica, sans-serif;
+    font-weight: 300; 
+    font-size: 3.5em;
+    margin: 0.5em 1.2em;}
+    
+    	/*	===================================================================================
+		    =================================================================================== */
+
+		    @media screen and (max-width: 750px) {
+
+				.chapter {
+					font-size: 2em; 
+				}
+
+		    }
+
+		/*	===================================================================================
+		    =================================================================================== */
+
+.character {text-transform: uppercase;
+    color: #F16500;
+  	font-size:1.2em;}
+
+.essay {
+	margin-bottom: 130px; /* arbitrary */
+}
+		.essay p,
+		.essay ul,
+		.essay dl,
+		.essay table,
+		.essay ol {
+			margin: 1.2em;
+			line-height: 1.28;
+		}
+
+.prologue {
+	color: #2f2f2f;
+	font: normal 500 1.3em/1.15 "proxima-nova", Helvetica, sans-serif; /* 30 / 16 */
+}
+
+.afterward {
+    font: italic 100 1em/1.28 georgia, sans-serif; 
+}
+
+.row {
+	margin-bottom: 5px;
+}
+		.row .bound {
+			position: relative;
+			z-index: 1;
+		}
+				.row .bound .prose,
+				.row .bound .experts {
+					position: relative;
+				}
+				.row .bound .prose {
+					z-index: 3;
+				}
+				.row .bound .experts {
+					z-index: 2;
+				}
+
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	PROSE ARTICLES: PART 1
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.essay-pt1 {
+}
+		.essay-pt1 .prose,
+		.essay-pt1 .experts,
+		.infographic {
+			width: 65%; /* 532 / 1100 */
+		}
+		.essay-pt1 blockquote {
+			background:
+				url(i/ephemera-quote-gray-open.png) no-repeat 0 0,
+				url(i/ephemera-quote-gray-close.png) no-repeat bottom right;
+			background-size:
+				223px 140px,
+				223px 140px; /* half of source 446 x 280 */
+			padding-top: 4%;
+			padding-left: 9%;
+			margin-top: -4%;
+			margin-left: -9%;
+		}
+				.essay-pt1 blockquote > p {
+					font: normal 700 1.875em/1.26 Georgia, serif;
+					margin-bottom: 17px;
+				}
+				.essay-pt1 blockquote cite {
+					text-transform: uppercase;
+					display: block;
+					text-align: right;
+					color: #581500;
+					font-size: 0.8125em; /* 13 / 16 */
+				}
+						.essay-pt1 blockquote cite em {
+							font-weight: 700;
+							font-style: normal;
+						}
+						.essay-pt1 blockquote cite span {
+							display: block;
+						}
+
+		.row-pt1-b {
+			background: #f2f2f2;
+			padding: 50px 0 70px;
+		}
+				.row-pt1-b .prose {
+					float: left;
+				}
+				
+				
+				.row-pt1-b .experts {
+					float: right;
+					color: #e33500;
+				}
+		
+		        .row-pt1-b {
+			        border-bottom: 1px solid #7ac8d4;
+			        padding-bottom: 40px;
+		        }
+
+
+
+				.row-pt1-c .prose {
+				/*	float: right;*/
+				}
+				.row-pt1-c .experts {
+					float: right;
+					color: #7ac8d4;
+				}
+						.row-pt1-c blockquote {
+							margin-bottom: 118px;
+							background-image:
+								url(i/ephemera-quote-blue-open.png),
+								url(i/ephemera-quote-blue-close.png);
+						}
+								.row-pt1-c blockquote cite {
+									text-align: left;
+									color: #144e57;
+								}
+
+				.row-pt1-c .furnishing {
+				    float:right;
+				    padding: 30px;
+				    width: 48.363636363636%; /* 532 / 1100 */
+				}
+		
+
+		
+		
+		.row-pt1-d {
+		    border-bottom: 1px solid #7ac8d4;
+		    border-bottom: 1px solid #7ac8d4;
+		}
+				.row-pt1-d .prose {
+					float: right;
+				}
+                
+				.infographic {
+					float: right;
+				}
+
+		.infographic {
+			background: #2a2a2a;
+			color: white;
+			overflow: hidden;
+		}
+				.infographic-core {
+					position: relative;
+					padding-top: 95px;
+				}
+						.infographic h3 {
+							width: 33.33%;
+							background: url(i/ephemera-infographic-dart.png) no-repeat bottom center;
+							background-size: 100% 22px;
+							background-color: #808080;
+							overflow: hidden;
+							text-align: center;
+							position: absolute;
+							top: 0;
+							left: 0;
+							cursor: pointer;
+							font: normal 700 1.125em/1.1 Georgia, serif; /* 18 / 16 */
+							height: 70px; /* 90 */
+							padding: 20px 0 0;
+							box-shadow: inset 0 0 0 1px #2a2a2a;
+							color: #cecece;
+						}
+								.infographic h3:hover {
+									color: white;
+									text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+								}
+								.infographic h3.selected {
+									background-color: #e33500;
+									color: white;
+								}
+								.infographic h3 span {
+									display: block;
+									margin: 0 7%;
+								}
+								.infographic h3:hover span {
+									margin-top: -1px;
+								}
+								.infographic .tab-1		{ left: 0;			}
+								.infographic .tab-2		{ left: 33.33%;		}
+								.infographic .tab-3		{ left: 66.66%;		}
+						
+						.infographic figure {
+							width: 89.473684210526%; /* 476 / 532 */
+							margin: 0 auto 30px;
+							overflow: hidden;
+							display: none;
+						}
+								.infographic figure.selected {
+									display: block;
+								}
+								.infographic figcaption {
+									float: left;
+									width: 34.033613445378%; /* 162 / 476 */
+									font-size: 0.8125em; /* 13 / 16 */
+									padding-top: 18px;
+								}
+								.infographic img {
+									display: block;
+									float: right;
+									width: 61.344537815126%; /* 292 / 476 */
+									overflow: hidden;
+								}
+
+
+								/*	===================================================================================
+								    =================================================================================== */
+
+								    @media screen and (max-width: 900px) {
+
+										.infographic h3 {
+											font-size: 1.0em; /* had been 1.25 */
+										}
+
+									}
+
+								/*	===================================================================================
+								    =================================================================================== */
+
+								    @media screen and (min-width: 751px ) and (max-width: 940px) {
+
+										.infographic figcaption {
+											font-size: 0.75em; /* had been 0.8125 */
+											float: none;
+											width: 100%;
+											text-align: center;
+										}
+										.infographic img {
+											width: 90%;
+											float: none;
+											margin: 0 auto;
+										}
+
+									}
+
+								/*	===================================================================================
+								    =================================================================================== */
+
+								    @media screen and (max-width: 750px) {
+
+										.infographic h3 {
+											height: 64px;
+											padding-top: 14px;
+										}
+
+									}
+
+								/*	===================================================================================
+								    =================================================================================== */
+
+								    @media screen and (max-width: 585px) {
+
+										.infographic figcaption {
+											font-size: 0.75em;
+										}
+										
+										blockquote {
+										    display:none;
+										}
+
+								    }
+
+								/*	===================================================================================
+								    =================================================================================== */
+
+								    @media screen and (max-width: 460px) {
+
+										.infographic h3 {
+											font-size: 0.8em;
+										}
+										.infographic img {
+											width: 85%;
+											float: none;
+											margin: 0 auto;
+										}
+										.infographic figcaption {
+											float: none;
+											width: 100%;
+											text-align: center;
+										}
+										
+
+								    }
+
+								/*	===================================================================================
+								    =================================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	PROSE ARTICLES: PART 2
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.essay-pt2 {
+}
+		.essay-pt2 .prose,
+		.essay-pt2 .furnishing {
+			width: 48.363636363636%; /* 532 / 1100 */
+		}
+
+		.row-pt2-b {
+			padding: 0 0 60px;
+			border-bottom: 1px solid #7ac8d4;
+		}
+				.row-pt2-b .prose {
+					float: left;
+				}
+				.row-pt2-b .furnishing {
+					float: right;
+					padding-top: 5px;
+				}
+						.row-pt2-b .furnishing img {
+							display: block;
+							width: 100%;
+						}
+
+		.row-pt2-c {
+			margin-bottom: 0;
+		}
+				.row-pt2-c .prose {
+					margin-left: 25.818181818182%; /* 284 / 1100 */
+				}
+		
+		.row-pt2-d {
+			margin-bottom: 0;
+		}
+				.row-pt2-d .prose{
+				    float:right;
+				}
+				.row-pt2-d .pullquote {
+					float: none;
+				}
+				.row-pt2-d .pullquote {
+					width: 22.545454545455%; /* 248 / 1100 */
+					margin-right: 3.272727272727%; /* 36 / 1100 */
+				}
+						.row-pt2-d .pullquote blockquote p {
+							font: italic 700 1.875em/1.15 Georgia, serif; /* 30 / 16 */
+							color: #adadad;
+						}
+		
+		.row-pt2-e {
+		}
+				.row-pt2-e .prose {
+					margin-left: 25.818181818182%; /* 284 / 1100 */
+				}
+				.row-pt2-e .furnishing {
+					float: right;
+					margin-bottom: 1em;
+					margin-left: 3.272727272727%; /* 36 / 1100 */
+				}
+						.row-pt2-e .furnishing img {
+							display: block;
+							width: 100%;
+						}
+		
+
+		.row-pt2-f {
+			background: #bce3e9;
+			color: #15606b;
+			padding: 43px 0 34px;
+		}
+				.row-pt2-f p {
+					width: 74.181818181818%; /* 816 / 1100 */
+					font: italic 400 1.375em/1.32 Georgia, serif; /* 22 / 16 */
+				}
+
+
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	PROSE ARTICLES: PART 3
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.essay-pt3 {
+	border-bottom: 1px solid gray;
+	margin-bottom: 0;
+}
+		.essay-pt3 .prose {
+			width: 48.363636363636%; /* 532 / 1100 */
+		}
+
+ 		.row-pt3-a {
+			margin-bottom: 40px; /* not the standard 65 */
+		}
+				.essay-pt3 .prologue {
+					color: #e33500;
+				}
+
+		.row-pt3-b {
+			background: url(i/ephemera-magnets-backdrop.jpg) no-repeat center top;
+			background-size: auto 100%;
+			background-color: black;
+			color: white;
+			padding: 2.3em 0;
+			margin-bottom: 40px; /* not the standard 65 */
+		}
+				.row-pt3-b .prose {
+					background: black;
+					padding: 1em 4%;
+					margin-left: -4%;
+				}
+
+		.row-pt3-c {
+		}
+				.row-pt3-c .prose {
+					margin-left: 25.818181818182%; /* 284 / 1100 */
+				}
+
+
+
+
+
+
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	PROSE ARTICLES: OVERALL WIDTH ADJUSTMENTS
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+/*	===================================================================================
+    =================================================================================== */
+
+    @media screen and (max-width: 900px) {
+	
+		.row-pt2-d .pullquote blockquote p {
+			font-size: 1.2em;
+		}
+
+	}
+
+/*	===================================================================================
+    =================================================================================== */
+
+    @media screen and (max-width: 750px) {
+
+
+		/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+		.prologue {
+			font-size: 1em; 
+		}
+		
+		
+
+		/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+		.essay-pt1 {
+		}
+				.essay-pt1 .prose,
+				.essay-pt1 .experts,
+				.infographic {
+					width: 100%;
+				}
+				.essay-pt1 blockquote {
+					margin-top: 25px;
+				}
+						.essay-pt1 blockquote > p {
+							font-size: 1.4em; /* had been 1.875 */
+						}
+						.essay-pt1 blockquote cite {
+							font-size: 0.7em;
+						}
+
+				.row-pt1-b {
+				}
+						.row-pt1-b .prose,
+						.row-pt1-b .experts {
+							float: none;
+						}
+
+				.row-pt1-c {
+				}
+						.row-pt1-c .prose,
+						.row-pt1-c .experts {
+							float: none;
+						}
+						.row-pt1-c blockquote {
+							margin-bottom: 50px; /* had been 118 */
+						}
+
+				.row-pt1-d {
+				}
+						.row-pt1-d .prose,
+						.infographic {
+							float: none;
+						}
+								.infographic {
+									margin-top: 50px;
+								}
+				
+		/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+		
+		.essay-pt2 {
+			margin-bottom: 70px; /* not 130 */
+		}
+				.essay-pt2 .prose,
+				.essay-pt2 .furnishing {
+					width: 100%;
+				}
+				.row-pt2-b {
+					padding: 0 0 60px;
+				}
+						.row-pt2-b .prose,
+						.row-pt2-b .furnishing {
+							float: none;
+						}
+
+				.row-pt2-c {
+				}
+						.row-pt2-c .prose {
+							margin-left: 0;
+						}
+		
+				.row-pt2-d {
+				}
+						.row-pt2-d .prose,
+						.row-pt2-d .pullquote {
+							float: none;
+						}
+						.row-pt2-d .pullquote {
+							width: 80%;
+							padding: 20px 10%;
+							border-top: 1px solid gray;
+							border-bottom: 1px solid gray;
+							margin-right: 0;
+							text-align: center;
+							margin: 0 0 20px;
+						}
+								.row-pt2-d .pullquote blockquote p {
+									font-size: 1.3em;
+									margin: 0 0 0 0;
+								}
+		
+				.row-pt2-e {
+				}
+						.row-pt2-e .prose {
+							margin: 0 0 0 0;
+						}
+						.row-pt2-e .furnishing {
+							float: none;
+							margin: 0 0 1em 0;
+						}
+								.row-pt2-e .furnishing img {
+									display: block;
+									width: 100%;
+								}
+
+				.row-pt2-f {
+					padding: 30px 0;
+					margin-bottom: 0;
+				}
+						.row-pt2-f p {
+							width: 100%;
+							font-size: 1.1em;
+						}
+
+		/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+		.essay-pt3 {
+		}
+				.essay-pt3 .prose {
+					width: 100%;
+				}
+				.row-pt3-b {
+				}
+						.row-pt3-b .prose {
+							margin: 0 0 0 0;
+							padding: 1em 5%;
+							width: 90%;
+							font-size: 0.9em;
+						}
+
+				.row-pt3-c {
+					margin-bottom: 40px; /* not the standard 65 */
+				}
+						.row-pt3-c .prose {
+							margin-left: 0;
+						}
+
+
+		/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+
+    }
+
+/*	===================================================================================
+    =================================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	SCHOOL VIGNETTES (except slideshows; read on for those...)
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.school {
+	border-bottom: 1px solid #d5d5d5;
+	padding-bottom: 75px;
+	margin-bottom: 90px;
+}
+		.school-last {
+			padding-bottom: 0;
+			border-bottom: 0;
+		}
+		.school h3 {
+			font: normal 700 2.5em/0.95 Georgia, serif; /* 40 / 16 */
+			margin: 0 auto 25px;
+			/* The next two values need to be manually synchronous with whatever .BOUND is (see: reset.css) */
+			width: 89%;
+			max-width: 1100px;
+		}
+		.school .bound {
+		}
+				.school .essay,
+				.school .secondary {
+					width: 48.363636363636%; /* 532 / 1100 */
+				}
+				.school .essay {
+					float: right;
+					margin-bottom: 0;
+				}
+				.school .secondary {
+					float: left;
+				}
+						.school-meta {
+							font-size: 0.75em;
+						}
+						.school-meta li {
+							display: block;
+							overflow: hidden;
+							border-bottom: 1px solid white;
+							background: #9ed8e1;
+						}
+								.school-meta li:nth-child(even) {
+									background: #bce3e9;
+								}
+						
+						/* ............................................ */
+						/* Granting CLEARFIX powers to each DL. */
+						/* ............................................ */
+						.school-meta dl:after {
+						    content: "."; 
+						    display: block; 
+						    height: 0; 
+						    clear: both; 
+						    visibility: hidden;
+						}
+						.school-meta dl {display: inline-block;}
+						/* ............................................ */
+						
+						.school-meta dl {
+							width: 100%;
+							overflow: hidden;
+							line-height: 0.95;
+							padding: 8px 0 7px;
+						}
+								.school-meta dt {
+									display: block;
+									float: left;
+									text-transform: uppercase;
+									font-weight: 700;
+									color: #2b727d;
+									font-size: 0.83333333333333em; /* 10 / 12 */
+									width: 27.255639097744%; /* 145 / 532 */ /* ... minus the 5% for LEFT padding */
+									padding-left: 5%;
+									text-align: right;
+									padding-top: 2px;
+								}
+								.school-meta dd {
+									display: block;
+									float: right;
+									width: 55.789473684211%; /* 350 / 532 */ /* ...minus the 5% for RIGHT padding */
+									padding-right: 5%;
+								}
+								.school-meta a {
+									font-weight: 700;
+									color: #c52e00;
+									text-decoration: none;
+								}
+								.school-meta a:hover {
+									text-decoration: underline;
+								}
+
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	--------------------------------------------------------------------------------------------------------------
+	SLIDESHOWS
+	--------------------------------------------------------------------------------------------------------------
+	Featuring SPECIAL CSS GUEST SUPERSTAR: Sean Dillingham ( @seandillingham )!
+	--------------------------------------------------------------------------------------------------------------
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.slideshow {
+}
+		.slideshow-container {
+			margin: 0 auto 25px;
+			position: relative;
+		}
+		
+		
+		.slideshow h1 {
+			font: normal 700 2.5em/0.95 Georgia, serif; /* 40 / 16 */
+			margin: 0 auto 25px;
+			/* The next two values need to be manually synchronous with whatever .BOUND is (see: reset.css) */
+			width: 89%;
+			max-width: 1100px;
+		}
+		.slideshow-core {
+			overflow: hidden;
+			position: relative;
+		}
+				.slideshow-core .slide-container {
+					background-color: #444;
+					position: relative;
+					overflow: hidden;
+					width: 100%;
+				}
+				.slideshow-core .slide-container:nth-child(even) {
+					position: absolute;
+					top: 0;
+					right: 0;
+					left: 0;
+				}
+				.slideshow-core .slide-container img {
+					position: relative;
+					max-width: 100%;
+					display: block;					
+				}
+				.slideshow-core .slide-container .slide-caption {
+					background-color: rgba(0,0,0,0.55);
+					bottom: 0;
+					color: rgba(255,255,255,0.9);
+					display: block;
+					font-size: 0.8em; /* 10 / 16 */
+					font-weight: 400;
+					font-style: normal;
+					left: 0;
+					padding: 6px 12px 8px;
+					position: absolute;
+					text-align: center;
+					right: 0;
+				}
+				.slideshow-core .slides {
+					display: none;
+				}
+				.rs-slideshow .slide-container img,
+				.rs-slideshow .slide-container .slide-caption,
+				.rs-slideshow .slide-container a {
+					filter: inherit;
+				}
+
+
+		/* Specifying styles for plugin-defined components... */
+
+		.rs-controls {
+			clear: both;
+			margin: -25px auto 0;
+			width: 100%;
+			position: absolute;
+			top: 50%;
+		}
+				.rs-prev {
+					left: 0;
+					position: absolute;
+				}
+				.rs-next {
+					right: 0;
+					position: absolute;
+				}
+				.rs-controls ul {
+					float: left;
+					list-style: none;
+					margin: 0 6px 0 0;
+					padding: 0;
+				}
+				.rs-index-list li {
+					float: left;
+					margin-right: 6px;
+				}
+				.rs-controls a {
+					background-color: rgba(0,0,0,0.7);
+					color: #fff;
+					display: block;
+					font-family: Arial, Helvetica, sans-serif;
+					font-size: 12px;
+					font-weight: bold;
+					padding: 14px 18px;
+					text-decoration: none;
+				}
+				.rs-controls a:hover {
+					background-color: rgba(0,0,0,1);
+					color: #ccc;
+				}
+				.rs-controls .rs-active {
+					background-color: #444;
+					border: 1px solid #444;
+					color: #eee;
+				}
+				
+                /*	===================================================================================
+                    =================================================================================== */
+
+                    @media screen and (max-width: 750px) {
+
+				        .rs-controls {
+        			        width: 100%;
+        		        } 		        .
+						        		        .
+    		            .slideshow-core .slide-container .slide-caption {        		
+				            font-size: 0.7em;
+				        }
+
+    		}			
+    		
+
+            /*	===================================================================================
+                =================================================================================== */
+
+
+                    @media screen and (min-width: 750px) {
+					    
+				
+        		        .rs-controls a {
+        		            padding: 25px 18px;
+        		            font-size: 15px;
+    		            }
+				
+    		}
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	--------------------------------------------------------------------------------------------------------------
+	SCHOOL AUDIO & RADIO-PIECE AUDIO
+	--------------------------------------------------------------------------------------------------------------
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.secondary .audio {
+	background:#222628;
+	color:#fff;
+	font-size: 0.95em;
+	font-style:italic;
+	margin-bottom:18px;
+	padding:10px;
+	float:left; 
+}
+ 
+ 
+
+
+    .audio .jp-play, .audio .jp-pause {
+    	background:#00A9F3;
+    	border-radius:32px;
+    	text-indent:-9999px;
+    	display:block;
+    	position:relative;
+    	width:32px;
+    	height:32px;
+    }
+		.audio .jp-play span {
+			width: 0; 
+			height: 0; 
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			border-left: 10px solid #fff;
+			display:block;
+			position:absolute;
+			top:8px;
+			left:12px;
+		}
+		ul.jp-controls, .jp-progress, .jp-title {
+			float:left;
+		}
+		ul.jp-controls, .jp-progress {
+			margin:0 10px 0 0;
+		}
+		.jp-current-time, .duration {
+			float:left;
+		}
+		.duration {
+			margin-left:3px;
+		}
+	    .jp-bar {
+	      background:#ccc;
+	      width:200px;
+	      height:6px;
+	    }
+	    .jp-play-bar {
+	      background:#E33500;
+	      height:4px;
+	    }
+
+		.school .audio .jp-progress {
+			color:#6d1900;
+			font-size:0.8em;
+			margin-top:10px;
+		}
+		.school .audio .jp-play, .school .audio .jp-pause {
+			background:#fdcdb9;
+			border-radius:32px;
+			text-indent:-9999px;
+			display:block;
+			position:relative;
+			width:32px;
+			height:32px;
+		}
+		.school .audio .jp-play:hover, .school .audio .jp-pause:hover {
+			background:#ffe0e1;
+		}
+		.school .audio .jp-play span {
+			width: 0; 
+			height: 0; 
+			border-top: 8px solid transparent;
+			border-bottom: 8px solid transparent;
+			border-left: 10px solid #e33500;
+			display:block;
+			position:absolute;
+			top:8px;
+			left:12px;
+		}
+		.school .audio .jp-pause span {
+			background:#e33500;
+			width: 4px; 
+			height: 14px;
+			display:block;
+			position:absolute;
+			top:9px;
+			left:10px;
+		}
+		.school .audio .jp-pause span.last {
+			left:17px;
+		}
+		.school .audio .jp-title p {
+			margin:6px 0 0;
+		}
+		.essay .audio.radio .jp-title p {
+			margin: 0 0 0;
+		}
+		
+		/* //////////////////////////////////////////////////////////////////////////////////// */
+    	/* "Radio" audio, regardless of which-of-the-three places it occurs
+    	/* //////////////////////////////////////////////////////////////////////////////////// */
+
+    	.audio.radio {
+    		background: #303030;
+    		color: #60C3EE;
+    		font-size: 1.25em; /* 20 / 16 */
+    		font-style: italic;
+    		padding: 24px 0; /* arbitrary */
+    		margin-bottom: 60px;
+    	}
+    			.audio.radio .jp-progress {
+    				margin-top:7px;
+    			}
+    			.audio.radio .jp-bar {
+    				background:#666;
+    				float:left;
+    				width:0px;
+    				height:6px;
+    				margin:7px 10px 0 0;
+    				padding:2px 0;
+    				border-radius:10px;
+    			}
+    					.audio.radio .jp-bar:hover {
+    						cursor:pointer;
+    					}
+    					.audio.radio .jp-play-bar {
+    						background:#E33500;
+    						border-radius:3px;
+    						height:6px;
+    					}
+
+    			.audio.radio .jp-play,
+    			.audio .jp-pause {
+    				background:#00A9F3;
+    				border-radius:32px;
+    				text-indent:-9999px;
+    				display:block;
+    				position:relative;
+    				width:40px;
+    				height:40px;
+    			}
+    					.audio.radio .jp-pause {
+    						background:#666;
+    					}
+    					.audio.radio .jp-play span {
+    						width: 0; 
+    						height: 0; 
+    						border-top: 10px solid transparent;
+    						border-bottom: 10px solid transparent;
+    						border-left: 12px solid #333;
+    						display:block;
+    						position:absolute;
+    						top:10px;
+    						left:15px;
+    					}
+    					.audio.radio .jp-play:hover, .audio .jp-pause:hover {
+    						background:#aaa;
+    					}
+    					.audio.radio .jp-pause span {
+    						background:#333;
+    						width: 5px; 
+    						height: 18px;
+    						display:block;
+    						position:absolute;
+    						top:11px;
+    						left:13px;
+    					}
+    					.audio.radio .jp-pause span.last {
+    						left:22px;
+    					}
+
+    			.audio.radio .jp-progress {
+    				color:#999;
+    				font-size:0.8em;
+    				margin-top:0.5em;
+    			}
+    			.audio.radio .jp-title {
+    				margin-top: 4px;
+    				line-height: 1.3;
+    			}
+
+    	
+        
+						/*	===================================================================================
+						    =================================================================================== */
+
+                            @media screen and (min-width: 750px) {
+                                .row-pt1-d .secondary .audio {
+                                  float:left;
+        	                        width: 31.6%;
+        	                        margin-top: 285px; 
+    	                        	}
+                                .row-pt1-b .secondary .audio {
+                                  float:right;
+        	                        width: 31.6%;
+        	                        margin-top: 285px;
+    	                    			}
+    	                    	}
+
+                            @media screen and (max-width: 750px) {
+	                            .row-pt1-d .secondary .audio {
+	                              float:right;
+	                              width: 94.5%;
+	                              margin-top: 0px;
+	                            }
+	                            .row-pt1-b .secondary .audio {
+	                               float:right;
+	    	                        width: 94.5%;
+	    	                        margin-top: 0px;
+		                        	}       
+    	                    	}
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	--------------------------------------------------------------------------------------------------------------
+	VIDEOS
+	--------------------------------------------------------------------------------------------------------------
+	Gettin' some responsiveness goin' on videos
+	--------------------------------------------------------------------------------------------------------------
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+object, embed {
+	width:100%;
+}
+	.video-container {
+	}
+	.video-container-neurologists {
+		margin-bottom: 60px;
+	}
+	.video {
+		background:#333;
+		display:block;
+		margin-bottom:22px;
+	}
+			.video figure {
+				position:relative;
+			}
+			.video figure:hover {
+				cursor:pointer;
+			}
+					.video figure img {
+						max-width:100%;
+					}
+					.video figure figcaption {
+						position:absolute;
+						bottom:0;
+						left:0;
+						right:0;
+						background:rgba(0,0,0,0.8);
+						color:#fff;
+						opacity:0.6;
+					}
+					.video:hover figure figcaption {
+						opacity:1;
+						-webkit-transition: opacity linear 0.2s;
+						-moz-transition: opacity linear 0.2s;
+						transition: opacity linear 0.2s;
+					}
+					.video figure figcaption p {
+						font-size:1.1em;
+						padding:20px;
+					}
+
+	.video-play {
+		background:#fff;
+		border-radius:20px;
+		width:40px;
+		height:40px;
+		display:inline-block;
+		margin-right:12px;
+		position:relative;
+		vertical-align:middle;
+	}
+			.video-play span {
+				width: 0; 
+				height: 0; 
+				border-top: 10px solid transparent;
+				border-bottom: 10px solid transparent;
+				border-left: 12px solid #000;
+				display:block;
+				position:absolute;
+				top:10px;
+				left:15px;
+			}
+
+
+	/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+
+		.BCLcontainingBlock {
+			width: 100%;
+			margin-left: 0px;
+			margin-bottom: 0px;
+		}
+		.BCLvideoWrapper {
+			position: relative;
+			padding-top: 1px;
+			padding-bottom: 56.25%;
+			height: 0;
+		}
+		* html .BCLvideoWrapper {
+			margin-bottom: 45px;
+			margin-top: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.BCLvideoWrapper div,
+		.BCLvideoWrapper embed,
+		.BCLvideoWrapper object,
+		.BrightcoveExperience {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+		}
+
+
+
+
+
+
+
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	SCHOOL & SLIDESHOW WIDTH ADJUSTMENTS
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+/*	===================================================================================
+    =================================================================================== */
+
+    @media screen and (max-width: 767px) {
+
+		.school {
+			padding-bottom: 50px;
+			margin-bottom: 50px;
+		}
+				.school h3 {
+					font-size: 1.7em; /* had been 2.5 */
+				}
+				.school .bound {
+				}
+						.school .essay,
+						.school .secondary {
+							width: 100%;
+						}
+						.school .essay {
+							float: none;
+							margin-bottom: 30px;
+						}
+						.school .secondary {
+							float: none;
+						}
+
+    }
+
+/*	===================================================================================
+    =================================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	PROMO: THE OFFSITE MAP
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.promo-map {
+	border-top: 20px solid #e33500;
+	padding-top: 25px;
+	margin: 0 0 170px;
+}
+		.promo-map .prose,
+		.promo-map .furnishing {
+			width: 48.363636363636%; /* 532 / 1100 */
+		}
+		.promo-map .prose {
+			float: right;
+			text-align: right;
+		}
+				.promo-map .prose span {
+					display: block;
+					font: italic 700 1.375em/1.15 Georgia, serif; /* 22 / 16 */
+					margin-bottom: 13px;
+				}
+				.promo-map .prose a {
+					display: block;
+					background-color: #e33500;
+					text-transform: uppercase;
+					text-decoration: none;
+					font-style: italic;
+					font-weight: 600;
+					font-size: 1.125em; /* 18 / 16 */
+					width: 46.616541353383%; /* 248 / 532 */
+					float: right;
+					padding: 7px 0;
+					line-height: 1;
+				}
+						.promo-map .prose a mark {
+							display: block;
+							background: url(i/ephemera-triangle-white-rightward.png) no-repeat right 4px;
+							background-size: 12px 12px;
+							width: 80%;
+							margin: 0 auto;
+							padding-right: 10%;
+							color: white;
+						}
+						.promo-map .prose a:hover {
+							background-color: #701a00;
+						}
+		
+		.promo-map .furnishing {
+			float: left;
+			display: block;
+		}
+				.promo-map .furnishing img {
+					display: block;
+					width: 100%;
+				}
+
+		
+						/*	===================================================================================
+						    =================================================================================== */
+
+						    @media screen and (max-width: 900px) {
+
+								.promo-map .prose span {
+									font-size: 1em;
+								}
+								.promo-map .prose a {
+									font-size: 0.85em;
+								}
+								.promo-map .prose a mark {
+									background-size: 9px 9px;
+									background-position: right 2px;
+								}
+
+						    }
+
+						/*	===================================================================================
+						    =================================================================================== */
+						
+						    @media screen and (max-width: 670px) {
+
+								.promo-map {
+									margin-bottom: 100px; /* had been 220 */
+								}
+										.promo-map .prose,
+										.promo-map .furnishing {
+											width: 100%;
+										}
+										.promo-map .prose {
+											float: none;
+											text-align: center;
+											margin-bottom: 25px;
+										}
+												.promo-map .prose span {
+													margin-bottom: 20px;
+												}
+												.promo-map .prose a {
+													width: 100%;
+													float: none;
+													padding: 15px 0;
+												}
+
+										.promo-map .furnishing {
+											float: none;
+										}
+
+						    }
+
+						/*	===================================================================================
+						    =================================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	"FAMILIES" FEATURE
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.families {
+	border-bottom: 45px solid black;
+	margin-bottom: 70px;
+}
+		.families .preface {
+			background: #dbdbdb;
+			padding: 50px 0;
+			margin-bottom: 70px;
+		}
+		.families h3 {
+			font: italic 700 2.75em/1.05 Georgia, serif; /* 44 / 16 */
+		}
+		.families .audio {
+		}
+
+
+
+
+		.families .essay {
+		}
+				.families h4 {
+					color: #e33500;
+					font: italic 700 3.125em/1 Georgia, serif; /* 50 / 16 */
+					border-bottom: 1px solid #7ac8d4;
+					padding-bottom: 30px;
+					margin-bottom: 40px;
+				}
+						.families h4 span {
+							display: block;
+						}
+
+				.families .essay .row {
+					margin-bottom: 0;
+				}
+				.families .essay .prose,
+				.families .essay .slideshow,
+				.families .essay .furnishing {
+					width: 48.363636363636%; /* 532 / 1100 */
+				}
+				
+				.row-reyes-a,
+				.row-umana-a {
+					border-bottom: 1px solid #7ac8d4;
+				}
+						.families .essay .row-reyes-a,
+						.families .essay .row-umana-a {
+							padding-bottom: 50px;
+							margin-bottom: 35px;
+						}
+						.row-reyes-a .prose,
+						.row-umana-a .prose {
+							float: left;
+						}
+						.row-reyes-a .slideshow,
+						.row-umana-a .slideshow {
+							float: right;
+						}
+				
+				.row-reyes-b {
+				}
+						.row-reyes-b .prose,
+						.row-umana-b .prose {
+							margin-left: 25.818181818182%; /* 284 / 1100 */
+						}
+				
+				.row-reyes-c {
+				}
+						.row-reyes-c .pullquote,
+						.row-reyes-c .prose,
+						.row-umana-c .pullquote,
+						.row-umana-c .prose {
+							float: left;
+						}
+						.row-reyes-c .pullquote,
+						.row-umana-c .pullquote {
+							width: 22.545454545455%; /* 248 / 1100 */
+							margin-right: 3.272727272727%; /* 36 / 1100 */
+							color: #adadad;
+						}
+								.essay .row-reyes-c .pullquote p,
+								.essay .row-umana-c .pullquote p {
+									font: italic 700 1.875em/1.1 "adelle", Georgia, serif; /* 30 / 16 */
+								}
+
+				.row-reyes-d {
+				}
+						.row-reyes-d .prose,
+						.row-umana-d .prose {
+							margin-left: 25.818181818182%; /* 284 / 1100 */
+						}
+						.row-reyes-d .furnishing,
+						.row-umana-d .furnishing {
+							float: right;
+							margin: 0 0 0.8em 15px;
+						}
+								.row-reyes-d .furnishing img,
+								.row-umana-d .furnishing img {
+									display: block;
+									width: 100%;
+								}
+
+
+/*	===================================================================================
+    =================================================================================== */
+
+    @media screen and (max-width: 1023px) {
+
+		.families h3						{ font-size: 2.1em;		}
+		.families .audio					{ font-size: 0.95em;	}
+		.families h4						{ font-size: 2.2em;		}
+		.essay .row-reyes-c .pullquote p,
+		.essay .row-umana-c .pullquote p	{ font-size: 1.25em;	}
+
+    }
+
+/*	===================================================================================
+    =================================================================================== */
+
+    @media screen and (max-width: 750px) {
+		
+		.families h3 {
+			font-size: 1.7em;
+		}
+		.families h4 {
+			font-size: 1.7em; /* had been 2.2 */
+		}
+
+		.families .essay .prose,
+		.families .essay .slideshow,
+		.families .essay .furnishing {
+			width: 100%;
+		}
+	
+		.row-reyes-a {
+		}
+				.families .essay .row-reyes-a {
+					padding-bottom: 50px;
+					margin-bottom: 35px;
+				}
+				.row-reyes-a .prose,
+				.row-reyes-a .slideshow {
+					float: none;
+				}
+				.row-reyes-a .prose {
+					margin-bottom: 35px;
+				}
+	
+		.row-reyes-b {
+		}
+				.row-reyes-b .prose,
+				.row-umana-b .prose {
+					margin-left: 0;
+				}
+	
+		.families .essay .row-reyes-c,
+		.families .essay .row-umana-c {
+			margin-bottom: 10px;
+		}
+				.row-reyes-c .pullquote,
+				.row-reyes-c .prose,
+				.row-umana-c .pullquote,
+				.row-umana-c .prose {
+					float: none;
+				}
+				.row-reyes-c .pullquote,
+				.row-umana-c .pullquote {
+					width: 80%;
+					padding: 1.7em 10% 0.4em;
+					text-align: center;
+					border-top: 1px solid gray;
+					border-bottom: 1px solid gray;
+					margin: 0 0 23px 0;
+				}
+	
+		.row-reyes-d {
+		}
+				.row-reyes-d .prose,
+				.row-umana-d .prose {
+					margin-left: 0;
+				}
+				.row-reyes-d .furnishing,
+				.row-umana-d .furnishing {
+					float: none;
+					margin: 0 0 25px 0;
+				}
+		
+		
+
+    }
+
+/*	===================================================================================
+    =================================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	INTERVIEW
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.interview {
+	margin-bottom: 90px;
+}
+		.interview hgroup {
+			margin-bottom: 25px;
+		}
+				.interview h3 {
+					font: italic 700 3.125em/0.9 "adelle", Georgia, serif; /* 50 / 16 */
+					margin-bottom: 0.2em;
+				}
+				.interview h4 {
+					color: #5f5f5f;
+					font-style: italic;
+					font-size: 1.375em; /* 22 / 16 */
+				}
+
+
+
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 900px) {
+
+						.interview {
+						}
+								.interview hgroup {
+								}
+										.interview h3 {
+											font-size: 2.5em; /* had been 3.125 */
+										}
+										.interview h4 {
+											font-size: 1.1em; /* had been 1.375 */
+										}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 400px) {
+
+						.interview h3 {
+							font-size: 2.1em;
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	EVENT
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.event {
+	margin-bottom: 120px;
+	background: #106377 url(i/ephemera-event-backdrop.jpg) no-repeat top center;
+	background-size: auto 100%;
+	color: #4f5253;
+	padding: 35px 0 40px;
+}
+		.event mark {
+			display: inline-block;
+			color: #6dc1d5;
+			font-style: italic;
+			font-weight: 600;
+			font-size: 0.875em; /* 14 / 16 */
+			text-transform: uppercase;
+			background: black;
+			margin: 0 0 17px -2%;
+			padding: 0.4em 2% 0.45em;
+		}
+		.event hgroup {
+			color: white;
+			font-family: "adelle", Georgia, serif;
+			font-size: 3.3125em; /* 53 / 16 */
+			line-height: 1.0;
+			margin-bottom: 37px;
+			text-shadow: 0 0 7px rgba(0,0,0,0.7);
+		}
+				.event h3 {
+					font-weight: 700;
+					margin-bottom: 0.25em;
+				}
+				.event h4 {
+					font-weight: 700;
+					font-style: italic;
+					font-size: 0.69811320754717em; /* 37 / 53 */
+				}
+		
+		.event-inner {
+			background: url(i/ephemera-event-whitestripe.png) repeat-y 48.363636363636% 0;
+			padding: 25px 0;
+		}
+
+		.event article {
+			margin-left: 51.636363636364%; /* 568 / 1100 */
+		}
+				.event article p {
+					font: normal 700 1.0625em/1.45 "adelle", Georgia, serif; /* 17 / 16 */
+					margin-bottom: 20px;
+				}
+				.event article em {
+					font-weight: 700;
+				}
+				.event article .host {
+					color: black;
+				}
+				.event article .date {
+					color: #12758d;
+				}
+				.event .rsvp {
+				}
+						.event .rsvp a {
+							display: block;
+							text-decoration: none;
+							text-transform: uppercase;
+							font-style: italic;
+							text-align: center;
+							font-weight: 600;
+							font-size: 1.25em; /* 20 / 16 */
+							line-height: 1.1;
+							color: white;
+							background: #e33500;
+							padding: 9px 0 12px;
+							margin-left: 53.383458646617%; /* 284 / 532 */
+						}
+						.event .rsvp a:hover {
+							background: #6f1a00;
+						}
+
+
+
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 1215px) {
+
+						.event hgroup {
+							font-size: 2.8em; /* had been 3.3125 */
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 1030px) {
+
+						.event hgroup {
+							font-size: 2.4em;
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 895px) {
+
+						.event hgroup {
+							font-size: 2.05em;
+						}
+						.event .rsvp a {
+							font-size: 1.1em; /* a smidge smaller than its usual 1.25 */
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 767px) {
+
+						.event h3 {
+							margin-bottom: 0.5em;
+						}
+						.event-inner {
+							background: rgba(255,255,255,0.85);
+						}
+						.event article {
+							margin-left: 0;
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+				    @media screen and (max-width: 410px) {
+
+						.event .rsvp a {
+							margin-left: 0;
+						}
+
+				    }
+
+				/*	===================================================================================
+				    =================================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*	##############################################################################################################
+	##############################################################################################################
+	##############################################################################################################
+	AFTERWORD
+	##############################################################################################################
+	##############################################################################################################
+	############################################################################################################## */
+
+.afterword {
+	background: #3b3b3b;
+	color: white;
+	font-size: 0.8125em; /* 13 / 16 */
+	padding: 62px 0 202px;
+	line-height: 1.2;
+	margin-top: 90px;
+}
+		.afterword .bound {
+			position: relative; /* this'll come in handy later (once the total width shrinks) */
+		}
+		.afterword .bound div {
+			float: left;
+			width: 22.545454545455%; /* 248 / 1100 */
+			margin-right: 3.272727272727%; /* 36 / 1100 */
+		}
+				.afterword .bound .legal {
+					float: right;
+					margin-right: 0;
+				}
+				.afterword .brand {
+					min-width: 130px;
+					padding-top: 2px;
+				}
+						.afterword .brand a {
+							display: block;
+							background: url(i/logo-kpcc.png) no-repeat;
+							background-size: 100%;
+							width: 129px;
+							height: 19px;
+							text-indent: -9999px;
+							overflow: hidden;
+						}
+				
+				.afterword .credits {		
+					min-width: 255px;
+				}
+						.afterword .credits dl {
+							margin-bottom: 11px;
+						}
+								.afterword .credits dt {
+									float: left;
+									width: 32.387096774194%; /* 120 / 248 */
+									color: #A4E4FF;
+								}
+								.afterword .credits dd {
+									float: right;
+									width: 64.790322580645%; /* 121 / 248 */
+								}
+										.afterword .credits dd a {
+											color: white;
+											text-decoration: none;
+										}
+										.afterword .credits dd a:hover {
+											text-decoration: underline;
+										}
+				
+				.afterword .legal {
+				}
+						.afterword .legal,
+						.afterword .legal a {
+							color: #9b9b9b;
+						}
+						.afterword .legal a {
+							text-decoration: none;
+						}
+								.afterword .legal a:hover {
+									color: white;
+									text-decoration: underline;
+								}
+						
+						.afterword .legal ul {
+							margin-bottom: 37px;
+						}
+								.afterword .legal li {
+									margin-bottom: 11px;
+								}
+
+						.afterword .legal p {
+							font-size: 0.84615384615385em; /* 11 / 13 */
+						}
+
+
+
+						/*	===================================================================================
+						    =================================================================================== */
+
+						    @media screen and (max-width: 750px) {
+
+								.afterword {
+									padding: 35px 0 50px;
+								}
+										.afterword .bound {
+											padding-top: 60px;
+										}
+										.afterword .bound .brand {
+											width: 100%;
+											position: absolute;
+											top: 0;
+											left: 0;
+										}
+												.afterword .brand a {
+													margin: 0 auto;
+												}
+										
+										.afterword .bound .credits,
+										.afterword .bound .legal {
+											float: none;
+											width: 100%;
+										}
+												.afterword .bound .credits {
+													margin-bottom: 23px;
+													padding: 23px 0 20px;
+													border-top: 1px solid gray;
+													border-bottom: 1px solid gray;
+												}
+														.afterword .bound .credits dl {
+															max-width: 280px;
+															margin: 0 auto 11px;
+														}
+																.afterword .bound .credits dd {
+																	text-align: right;
+																}
+
+												.afterword .bound .legal {
+													text-align: center;
+												}
+
+						    }
+
+						/*	===================================================================================
+						    =================================================================================== */
+
+
+
+
+
+
+
+
+
