@@ -121,6 +121,7 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	})
 	.bind($.jPlayer.event.play, function() { // pause other instances of player when current one play
 		$(this).jPlayer("pauseOthers");
+		console.log("works")
 	});
 	return;
 	}
