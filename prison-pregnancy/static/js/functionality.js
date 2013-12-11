@@ -115,7 +115,8 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 			});
 		},
 		cssSelectorAncestor: "#jp_container_" + location,
-		supplied: "mp3",
+		/*supplied: "mp3",*/
+		supplied: "m4a",
 		swfPath: "static/js",
 		preload: "none"
 	})
