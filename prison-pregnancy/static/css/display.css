@@ -1703,7 +1703,7 @@ body {
 			font-size:0.8em;
 			margin-top:10px;
 		}
-		..school .audio .jp-play, .school .audio .jp-pause {
+		.school .audio .jp-play, .school .audio .jp-pause {
 			background:#fdcdb9;
 			border-radius:32px;
 			text-indent:-9999px;

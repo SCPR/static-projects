@@ -58,10 +58,6 @@ body {
 /* Deliberate cosmetic sacrifices
 /* ---------------------------------------------------------------------------------------------------- */
 
-.masthead .secondary a {
-    width:85px;
-}
-
 .slideshow-core .slide-container .slide-caption {
 	background-color: black;
 	color: white;
