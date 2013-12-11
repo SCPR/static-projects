@@ -84,9 +84,6 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 
 
 
-
-
-
 /*	##############################################################################################################
 	VIDEO
 	############################################################################################################## */
@@ -110,7 +107,7 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
                 });
             },
             cssSelectorAncestor: "#jp_container_" + location,
-            solution: "flash, html",
+            solution:"flash, html",
             supplied: "mp3",
             swfPath: "static/js",
             preload: "none"
