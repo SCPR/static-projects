@@ -9,7 +9,7 @@ body {
 /* The Slideshow Image Bug: IE8's version (IE9 received its own, simpler, fix; cf. other stylesheet)
 /* ---------------------------------------------------------------------------------------------------- */
 .slideshow-core .slide-container img {
-	height: 310px; /* relative to its predictable 464px width */
+	height: 600px; /* relative to its predictable 960px width */
 	/*
 		Okay, here's the deal: Because we're forcing a fixed/known/expected total width on IE8's layout, we know what the rendered size of these images will always be.
 		And I can't engineer any other way around this problem, as far as v.8's concerned.
