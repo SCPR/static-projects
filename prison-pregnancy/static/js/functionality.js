@@ -128,8 +128,8 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	// Despite appearances, Parts 1 and 2 are intentionally "flipped." The radio pieces aired in a different order than how the site is sequenced.
 	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/collage_zodiacal.mp3",1);
 	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/collage_bray.mp3",2);
-	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/collage_bass.m4a",3);
-	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/pregnant-prisoners-full.m4a",10);
+	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/collage_bass.mp3",3);
+	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/pregnant-prisoners-full.mp3",10);
 	
 
 

@@ -1597,15 +1597,20 @@ body {
                 /*	===================================================================================
                     =================================================================================== */
 
+                    @media screen and (max-width: 500px) {
+                             .slide-container .slide-caption {        		
+        				            display: none;
+                        				}
+
                     @media screen and (max-width: 750px) {
 
 				        .rs-controls {
         			        width: 100%;
         		        } 		        .
 						        		        .
-    		            .slideshow-core .slide-container .slide-caption {        		
+    		            .slide-container .slide-caption {        		
 				            font-size: 0.7em;
-				        }
+                				}
 
     		}			
     		
@@ -1615,7 +1620,7 @@ body {
 
 
                     @media screen and (min-width: 750px) {
-					    
+					
 				
         		        .rs-controls a {
         		            padding: 25px 18px;
