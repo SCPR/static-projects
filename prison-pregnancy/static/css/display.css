@@ -1598,7 +1598,7 @@ body {
                     =================================================================================== */
 
                     @media screen and (max-width: 500px) {
-                             .slide-container .slide-caption {        		
+                         .slideshow-core .slide-container .slide-caption {        		
         				            display: none;
                         				}
 
@@ -1608,7 +1608,7 @@ body {
         			        width: 100%;
         		        } 		        .
 						        		        .
-    		            .slide-container .slide-caption {        		
+    		            .slideshow-core .slide-container .slide-caption {        		
 				            font-size: 0.7em;
                 				}
 
