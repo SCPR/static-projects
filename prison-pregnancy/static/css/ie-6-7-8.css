@@ -24,8 +24,7 @@ body {
 /* You don't understand fluidity
 /* ---------------------------------------------------------------------------------------------------- */
 .bound {
-    width:100%;
-	/*width: 960px; */
+	width: 960px; 
 }
 
 
@@ -59,7 +58,7 @@ body {
 /* ---------------------------------------------------------------------------------------------------- */
 
 .masthead .secondary a {
-    width:85px;
+    font:85px;
 }
 
 .slideshow-core .slide-container .slide-caption {
