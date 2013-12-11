@@ -111,12 +111,12 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 		jQuery("#jquery_jplayer_" + location).jPlayer( {
 			ready: function () {
 				jQuery(this).jPlayer("setMedia", {
-					m4a: file
+					mp3: file
 			});
 		},
 		cssSelectorAncestor: "#jp_container_" + location,
+		supplied: "mp3",
 		swfPath: "static/js",
-		supplied: "m4a",
 		preload: "none"
 	})
 	.bind($.jPlayer.event.play, function() { // pause other instances of player when current one play
