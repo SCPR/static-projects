@@ -111,12 +111,12 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 		jQuery("#jquery_jplayer_" + location).jPlayer( {
 			ready: function () {
 				jQuery(this).jPlayer("setMedia", {
-					m4a: file
+					mp3: file
 			});
 		},
 		cssSelectorAncestor: "#jp_container_" + location,
+		supplied: "mp3",
 		swfPath: "static/js",
-		supplied: "m4a",
 		preload: "none"
 	})
 	.bind($.jPlayer.event.play, function() { // pause other instances of player when current one play
@@ -129,7 +129,7 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/collage_zodiacal.mp3",1);
 	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/collage_bray.mp3",2);
 	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/collage_bass.m4a",3);
-	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/pregnant-prisoners-full.m4a",10);
+	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/pregnant-prisoners-full.mp3",10);
 	
 
 
