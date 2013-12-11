@@ -24,7 +24,8 @@ body {
 /* You don't understand fluidity
 /* ---------------------------------------------------------------------------------------------------- */
 .bound {
-	width: 960px;
+    width:100%;
+	/*width: 960px; */
 }
 
 
@@ -56,6 +57,11 @@ body {
 /* ---------------------------------------------------------------------------------------------------- */
 /* Deliberate cosmetic sacrifices
 /* ---------------------------------------------------------------------------------------------------- */
+
+.masthead .secondary a {
+    width:85px;
+}
+
 .slideshow-core .slide-container .slide-caption {
 	background-color: black;
 	color: white;
