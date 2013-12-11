@@ -1703,7 +1703,7 @@ body {
 			font-size:0.8em;
 			margin-top:10px;
 		}
-		.school .audio .jp-play, .school .audio .jp-pause {
+		..school .audio .jp-play, .school .audio .jp-pause {
 			background:#fdcdb9;
 			border-radius:32px;
 			text-indent:-9999px;
@@ -1726,8 +1726,8 @@ body {
 			top:8px;
 			left:12px;
 		}
-		.school .audio .jp-pause span {
-			background:#e33500;
+		.audio .jp-pause span {
+			background:#fff;
 			width: 4px; 
 			height: 14px;
 			display:block;
@@ -1735,7 +1735,7 @@ body {
 			top:9px;
 			left:10px;
 		}
-		.school .audio .jp-pause span.last {
+		.audio .jp-pause span.last {
 			left:17px;
 		}
 		.school .audio .jp-title p {
@@ -1785,8 +1785,6 @@ body {
     				text-indent:-9999px;
     				display:block;
     				position:relative;
-    				width:40px;
-    				height:40px;
     			}
     					.audio.radio .jp-pause {
     						background:#666;
