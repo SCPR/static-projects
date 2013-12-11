@@ -1599,8 +1599,9 @@ body {
 
                     @media screen and (max-width: 500px) {
                          .slideshow-core .slide-container .slide-caption {        		
-        				            display: none;
-                        				}
+        				 	display: none;
+                        }
+                    }
 
                     @media screen and (max-width: 750px) {
 
