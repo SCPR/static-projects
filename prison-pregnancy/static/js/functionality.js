@@ -1,10 +1,12 @@
-jQuery(document).ready(function($) {
+// $ = jQuery
+
+$(document).ready(function() {
 
 
 /*	##############################################################################################################
 FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	############################################################################################################## */
-   eventTracking = new EventTracking(); 
+   eventTracking = new EventTracking();
    $.scrollDepth({
      elements: ['section.event'], // Track DOM elements
      percentage: false // Don't track depth percentage
@@ -39,7 +41,7 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 /*	##############################################################################################################
 	MARKUP FIDDLING
 	############################################################################################################## */
-	
+
 	$(".school").last().addClass("school-last");
 
 
@@ -107,30 +109,31 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	AUDIO
 	############################################################################################################## */
 
-	function js_audioPlayer(file,location) {
-		jQuery("#jquery_jplayer_" + location).jPlayer( {
-			ready: function () {
-				jQuery(this).jPlayer("setMedia", {
-					mp3: file
-			});
-		},
-		cssSelectorAncestor: "#jp_container_" + location,
-		supplied: "mp3",
-		swfPath: "static/js",
-		preload: "none"
-	})
-	.bind($.jPlayer.event.play, function() { // pause other instances of player when current one play
-		$(this).jPlayer("pauseOthers");
-	});
-	return;
-	}
+    function js_audioPlayer(file, location){
+        $("#jquery_jplayer_" + location).jPlayer({
+            ready: function (){
+                $(this).jPlayer("setMedia", {
+                    mp3: file
+                });
+            },
+            cssSelectorAncestor: "#jp_container_" + location,
+            solution: "flash, html",
+            supplied: "mp3",
+            swfPath: "static/js",
+            preload: "none"
+        }).bind($.jPlayer.event.play, function() {
+        // pause other instances of player when current one play
+            $(this).jPlayer("pauseOthers");
+        });
+
+        return;
+    }
 
 	// Despite appearances, Parts 1 and 2 are intentionally "flipped." The radio pieces aired in a different order than how the site is sequenced.
-	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/collage_zodiacal.mp3",1);
-	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/collage_bray.mp3",2);
-	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/collage_bass.mp3",3);
-	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/pregnant-prisoners-full.mp3",10);
-	
+	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/collage_zodiacal.mp3", 1);
+	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/collage_bray.mp3", 2);
+	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/collage_bass.mp3", 3);
+	js_audioPlayer("http://projects.scpr.org/static/prison-pregnancy/media/audio/pregnant-prisoners-full.mp3", 10);
 
 
   $(".radio .jp-play").click(function() {

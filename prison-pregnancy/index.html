@@ -17,10 +17,7 @@
     <meta property="og:site_name" content="Childcare in California Prisons" />
     <meta property="og:title" content="Childcare in California Prisons | 89.3 KPCC" />
     <meta property="og:url" content="http://projects.scpr.org/prison-childcare" />
-
-    <!-- remove or change -->
     <meta property="og:image" content="http://projects.scpr.org/bilinguallearning/meta/kpcc-bilingual-opengraph.jpg" />
-
     <meta property="og:description" content="KPCC series on Childcare in California Prisons" />
 
     <link rel="apple-touch-icon-precomposed" href="meta/apple-touch-icon-144x144-precomposed.png" />
@@ -34,7 +31,7 @@
     <!--[if lte IE 9]><link href="static/css/ie-6-7-8-9.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if lt IE 9]><link href="static/css/ie-6-7-8.css" media="screen" rel="stylesheet" type="text/css" /><![endif]-->
 
-    <!--Load Typekit-->
+<!--Load Typekit-->
     <script type="text/javascript" src="//use.typekit.net/air8rql.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
@@ -46,17 +43,8 @@
         <div id="jquery_jplayer_1" class="cp-jplayer"></div>
         <div id="jquery_jplayer_2" class="cp-jplayer"></div>
         <div id="jquery_jplayer_3" class="cp-jplayer"></div>
-        <div id="jquery_jplayer_4" class="cp-jplayer"></div>
-        <div id="jquery_jplayer_5" class="cp-jplayer"></div>
-        <div id="jquery_jplayer_6" class="cp-jplayer"></div>
-        <div id="jquery_jplayer_7" class="cp-jplayer"></div>
-        <div id="jquery_jplayer_8" class="cp-jplayer"></div>
-        <div id="jquery_jplayer_9" class="cp-jplayer"></div>
         <div id="jquery_jplayer_10" class="cp-jplayer"></div>
-        <div id="jquery_jplayer_11" class="cp-jplayer"></div>
     <!-- ======================================================================================================= -->
-
-
 
 
     <header class="masthead">
@@ -610,23 +598,31 @@
     </footer>
 
 
+        <!--
+        <script type="text/javascript" src="static/js/jquery-1.9.0.min.js"></script>
+        -->
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="static/js/application.js"></script>
+        <script type="text/javascript" src="static/js/jquery.jplayer.2.0.min.js"></script>
+        <script type="text/javascript" src="static/js/functionality.js"></script>
 
-    <script type="text/javascript" src="static/js/jquery-1.9.0.min.js"></script>
-    <script type="text/javascript" src="static/js/application.js"></script>
-    <script type="text/javascript" src="static/js/functionality.js"></script>
+        <!-- begin analytics -->
+        <script type="text/javascript">
 
-    <!-- begin analytics -->
-    <script type="text/javascript">
-        (function() {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = '//stream.publicbroadcasting.net/analytics/abf7.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
-    <!-- end analytics -->
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-624724-5']);
+              _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = '//stream.publicbroadcasting.net/analytics/abf7.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!-- end analytics -->
 
 </body>
 </html>
