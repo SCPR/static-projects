@@ -18,17 +18,23 @@
 
 
 
-body {
-	background: white;
-    -webkit-text-size-adjust: none;
-	font-family: Georgia, serif;
-	font-weight: 400;
-	font-size: 100%;
-	line-height: 1.2;
-	z-index: 1;
-	color: black;
-}
+    body {
+    	background: white;
+        -webkit-text-size-adjust: none;
+    	font-family: Georgia, serif;
+    	font-weight: 400;
+    	font-size: 100%;
+    	line-height: 1.2;
+    	z-index: 1;
+    	color: black;
+    }
 
+    #jquery_jplayer_1.cp-jplayer, 
+    #jquery_jplayer_2.cp-jplayer, 
+    #jquery_jplayer_3.cp-jplayer,
+    #jquery_jplayer_10.cp-jplayer {
+        display:none;
+    }
 
 
 
@@ -648,16 +654,16 @@ body {
 	##############################################################################################################
 	############################################################################################################## */
 
-.chapter-lead {
-	background: #7ac8d4;
-	width: 100%;
-	text-align: center;
-	margin: 40px 0 83px; /* top is to clear the negative-top-positioning of the "part circle" */
-	color: white;
-	padding: 42px 0 33px;
-	position: relative;
-}
-		.chapter-lead .part {
+    .chapter-lead {
+    	background: #7ac8d4;
+    	width: 100%;
+    	text-align: center;
+    	margin: 40px 0 83px; /* top is to clear the negative-top-positioning of the "part circle" */
+    	color: white;
+    	padding: 42px 0 33px;
+    	position: relative;
+    }
+    		.chapter-lead .part {
 			color: white;
 			text-align: center;
 			top: -29px;
@@ -673,15 +679,15 @@ body {
 			display: block;
 			background: black;
 			border: 2px solid white;
-		}
-		.chapter-lead h2 {
-			font: italic 700 4.25em/1.05 Georgia, serif;
-			margin-bottom: 15px;
-		}
-		.chapter-lead h3 {
-			color: #49868f;
-			font: normal 700 1.25em/1.05 Georgia, serif; /* 20 / 16 */
-		}
+	        }
+        	.chapter-lead h2 {
+        		font: italic 700 4.25em/1.05 Georgia, serif;
+        		margin-bottom: 15px;
+        	}
+        	.chapter-lead h3 {
+        		color: #49868f;
+        		font: normal 700 1.25em/1.05 Georgia, serif; /* 20 / 16 */
+        	}
 
 		/*	===================================================================================
 		    =================================================================================== */
