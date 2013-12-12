@@ -33,7 +33,7 @@
     #jquery_jplayer_2.cp-jplayer, 
     #jquery_jplayer_3.cp-jplayer,
     #jquery_jplayer_10.cp-jplayer {
-        display:none;
+        height:0px;
     }
 
 
