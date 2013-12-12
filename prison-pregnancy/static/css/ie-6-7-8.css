@@ -50,8 +50,8 @@ body {
     -ms-behavior: url(backgroundsize.min.htc);
 }
 
-.masthead .secondary  h3 {
-    font-size:80%;    
+.masthead .secondary  a {
+    height:20px;    
 }
 
 
