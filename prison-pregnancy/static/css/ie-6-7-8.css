@@ -24,8 +24,7 @@ body {
 /* You don't understand fluidity
 /* ---------------------------------------------------------------------------------------------------- */
 .bound {
-	width: 1000px; 
-	/*width: 960px; */
+	width: 960px; 
 }
 
 
@@ -51,7 +50,10 @@ body {
     -ms-behavior: url(backgroundsize.min.htc);
 }
 
-
+.masthead .secondary a 
+.masthead .secondary {
+    width:50px;    
+}
 
 
 /* ---------------------------------------------------------------------------------------------------- */
