@@ -50,9 +50,9 @@ body {
     -ms-behavior: url(backgroundsize.min.htc);
 }
 
-.masthead .secondary a 
-.masthead .secondary {
-    width:50px;    
+.masthead .secondary img a, 
+.masthead .secondary img {
+    height:70%;    
 }
 
 
