@@ -18,42 +18,33 @@ var fn = {
         var checkExist = setInterval(function() {
             if (jqueryNoConflict('.data-visuals').length) {
                 clearInterval(checkExist);
-                fn.renderImages(imageData.objects[0].beforeimageurl, imageData.objects[0].afterimageurl, fn.divWidth);
                 fn.processData(imageData);
-                jqueryNoConflict('#container').beforeAfter();
+                jqueryNoConflict('#images-container').beforeAfter();
             }
         }, 1000);
     },
 
-    // add initial pair of images and add controls
-    renderImages: function(beforeImage, afterImage, baseWidth){
-    	jqueryNoConflict('#slider').alterImg({
-    		beforePhoto: beforeImage,
-    		afterPhoto: afterImage,
-    		baWidth: 620,
-    		baHeight: 413
-    	});
-    },
-
     processData: function(data){
         for(var i=0; i<data.objects.length; i++){
-            jqueryNoConflict("#controls-stage-indicator").append("<li id='" + i + "' class='indicator'><a href='javascript:void(0);'>" + i + "</a></li>");
+            jqueryNoConflict("#controls-stage-indicator").append("<li id='" + i + "' class='indicator' style='background-image: url(\"" + data.objects[i].beforethumburl + "\")'></li>");
         }
-
         jqueryNoConflict('#controls-stage-indicator li:first').addClass('active');
         jqueryNoConflict('li.indicator').click(function(){
             var targetValue = jqueryNoConflict(this).attr('id');
             jqueryNoConflict('li').removeClass('active');
             jqueryNoConflict('li#' + targetValue).addClass('active');
-
-            // original version
-            jqueryNoConflict('#slider').empty();
-            fn.renderImages(imageData.objects[targetValue].beforeimageurl, imageData.objects[targetValue].afterimageurl, fn.divWidth);
-
-            // newer version
-            jqueryNoConflict('#container #before img').attr('src', imageData.objects[targetValue].beforeimageurl);
-            jqueryNoConflict('#container #after img').attr('src', imageData.objects[targetValue].afterimageurl);
-
+            jqueryNoConflict('#images-container #before img').attr('src', imageData.objects[targetValue].beforeimageurl);
+            jqueryNoConflict('#images-container #after img').attr('src', imageData.objects[targetValue].afterimageurl);
+            jqueryNoConflict('#captions-container').html(
+                '<p>' + imageData.objects[targetValue].beforeimagedate + '</p>' +
+                '<p>' + imageData.objects[targetValue].beforeimagelocation + '</p>' +
+                '<p>' + imageData.objects[targetValue].beforeimagecaption + '</p>' +
+                '<p>' + imageData.objects[targetValue].beforeimagephotocredit + '</p>' +
+                '<p>' + imageData.objects[targetValue].afterimagedate + '</p>' +
+                '<p>' + imageData.objects[targetValue].afterimagelocation + '</p>' +
+                '<p>' + imageData.objects[targetValue].afterimagecaption + '</p>' +
+                '<p>' + imageData.objects[targetValue].afterimagephotocredit + '</p>'
+            );
         });
     },
 }
