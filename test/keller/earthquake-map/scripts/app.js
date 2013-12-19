@@ -40,12 +40,29 @@ var fn = {
         var center = new L.LatLng(36.750439,-119.77237);
         map.setView(center, initialZoom);
 
+
         var mapquestUrl = L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
              attribution: 'Tiles, data, imagery and map information provided by <a href="http://www.mapquest.com" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.',
              subdomains: ['otile1','otile2','otile3','otile4']
         });
 
-        map.addLayer(mapquestUrl);
+        var Stamen_Toner = L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+        	subdomains: 'abcd',
+        	minZoom: 0,
+        	maxZoom: 20
+        });
+
+        /*
+        var mapquestUrl = L.tileLayer('http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png', {
+             attribution: 'Tiles, data, imagery and map information provided by <a href="http://www.mapquest.com" target="_blank">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.',
+             subdomains: ['otile1','otile2','otile3','otile4']
+        });
+        */
+
+        //map.addLayer(mapquestUrl);
+
+        map.addLayer(Stamen_Toner);
 
         var myIcon = L.Icon.extend({
             iconUrl: 'images/camera.png',
