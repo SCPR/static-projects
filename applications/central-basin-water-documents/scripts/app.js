@@ -2,7 +2,7 @@ var jqueryNoConflict = jQuery;
 var initializeTemplates = initializeTemplates || {};
 var fn = fn || {};
 var embed_this = false;
-var embed_url_root = '#';
+var embed_url_root = 'http://projects.scpr.org/static/applications/find-my-rep/';
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
@@ -16,7 +16,6 @@ var fn = {
 
     checkForNewContainer: function(docDiv, docUrl, docContainer){
         jqueryNoConflict("#document-container").append("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
-
         var checkExist = setInterval(function() {
             if (jqueryNoConflict(docContainer).length) {
                 clearInterval(checkExist);
@@ -29,10 +28,20 @@ var fn = {
 
     loadInitialDoc: function(docDiv, docUrl, docContainer){
 
+        var sidebarParam;
+
+        // set zoom for mobile devices
+        if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+            sidebarParam = false;
+        } else {
+            sidebarParam = true;
+        }
+
+
         DV.load(docUrl, {
             width: fn.divWidth,
             height: 900,
-            sidebar: true,
+            sidebar: sidebarParam,
             text: false,
             container: docContainer
         });
@@ -115,7 +124,6 @@ var initializeTemplates = {
                 initializeTemplates.toggleDisplayIcon();
             }
         }, 1000);
-
     },
 
     hideEmbedBox: function(){
