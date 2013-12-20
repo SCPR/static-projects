@@ -1,13 +1,14 @@
 var jqueryNoConflict = jQuery;
 var initializeTemplates = initializeTemplates || {};
 var fn = fn || {};
-var embed_url_root = 'http://projects.scpr.org/static/charts/congressional-speeches-on-government-shutdown/';
+var embed_this = false;
+var embed_url_root = '#';
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
     initializeTemplates.renderStaticTemplates();
-    fn.checkForNewContainer("DV-viewer-900190-buchalter-january-2012-contract-with-mark-fabiani", "//www.documentcloud.org/documents/900190-buchalter-january-2012-contract-with-mark-fabiani.js", "#DV-viewer-900190-buchalter-january-2012-contract-with-mark-fabiani");
-    fn.getIdOfClickedElement();
+    fn.checkForNewContainer("DV-viewer-961055-june-28-2010-1-million-wire-transfer-to-sedgwick", "//www.documentcloud.org/documents/961055-june-28-2010-1-million-wire-transfer-to-sedgwick.js", "#DV-viewer-961055-june-28-2010-1-million-wire-transfer-to-sedgwick");
+    //fn.getIdOfClickedElement();
 });
 
 // begin data configuration object
@@ -15,7 +16,6 @@ var fn = {
 
     checkForNewContainer: function(docDiv, docUrl, docContainer){
         jqueryNoConflict("#document-container").append("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
-
         var checkExist = setInterval(function() {
             if (jqueryNoConflict(docContainer).length) {
                 clearInterval(checkExist);
@@ -26,10 +26,27 @@ var fn = {
 
     loadInitialDoc: function(docDiv, docUrl, docContainer){
 
+        var sidebarParam;
+        var docHeightParam;
+
+        // set params for mobile devices
+        if (navigator.userAgent.match(/(iPad)/i)) {
+            sidebarParam = false;
+            docHeightParam = 700;
+        } else if (navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i)) {
+            sidebarParam = false;
+            docHeightParam = 400;
+        } else {
+            sidebarParam = false;
+            docHeightParam = 820;
+        };
+
+        var initialWidth = jqueryNoConflict('#document-container').width();
+
         DV.load(docUrl, {
-            width: 600,
-            height: 800,
-            sidebar: false,
+            width: initialWidth,
+            height: docHeightParam,
+            sidebar: sidebarParam,
             text: false,
             container: docContainer
         });
@@ -46,14 +63,44 @@ var fn = {
 
     populateDocumentNotes: function(data){
         jqueryNoConflict('#note-navigation-links').html('');
+
+        console.log(data.document);
+
         if (data.document.annotations.length > 0){
+            jqueryNoConflict('#note-navigation-links').empty();
+            jqueryNoConflict('#document-meta-data').html(
+                "<h6>" + data.document.title + "</h6>" +
+                "<p><em>Source: " + data.document.source + "</em></p>" +
+                "<p><strong>Related annotations</strong></p>"
+            );
+
             for(var i=0; i<data.document.annotations.length; i++){
                 var docAnnotation = "#document/p" + data.document.annotations[i].page + "/a" + data.document.annotations[i].id;
                 jqueryNoConflict('#note-navigation-links').append("<p><a href='" + docAnnotation + "'>" + data.document.annotations[i].title + "</a></p>");
             };
+
+        } else {
+            jqueryNoConflict('#note-navigation-links').empty();
+            jqueryNoConflict('#document-meta-data').html(
+                "<h6>" + data.document.title + "</h6>" +
+                "<p><em>Source: " + data.document.source + "</em></p>" +
+                "<p><strong>This document does not have annotations</strong></p>"
+            );
         };
     },
 
+    getIdOfSelectElement: function(){
+        jqueryNoConflict('#note-navigation-links').empty();
+        jqueryNoConflict('#document-meta-data').empty();
+        var docId = jqueryNoConflict('#create-document-instance').val();
+        var docDiv = "DV-viewer-" + docId;
+        var docUrl = "//www.documentcloud.org/documents/" + docId + ".js";
+        var docContainer = "#DV-viewer-" + docId;
+        jqueryNoConflict("#document-container").html("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
+        fn.checkForNewContainer(docDiv, docUrl, docContainer);
+    },
+
+    /*
     getIdOfClickedElement: function(){
         jqueryNoConflict('#document-navigation-links a').click(function(event){
             var docId = jqueryNoConflict(this).attr('id');
@@ -64,6 +111,8 @@ var fn = {
             fn.checkForNewContainer(docDiv, docUrl, docContainer);
         });
     }
+    */
+
 }
 // end data configuration object
 
@@ -77,12 +126,23 @@ var initializeTemplates = {
         renderHandlebarsTemplate('templates/data-details.handlebars', '.data-details');
 
         var checkExist = setInterval(function() {
+
+            if (jqueryNoConflict('.header-links').length) {
+                clearInterval(checkExist);
+                initializeTemplates.hideEmbedBox();
+            }
+
             if (jqueryNoConflict('.buttons').length) {
                 clearInterval(checkExist);
                 initializeTemplates.toggleDisplayIcon();
             }
         }, 1000);
+    },
 
+    hideEmbedBox: function(){
+        if (embed_this === false){
+            jqueryNoConflict('li.projects-embed').addClass('hidden');
+        };
     },
 
     renderEmbedBox: function(){
