@@ -6,14 +6,27 @@ var embed_url_root = 'http://projects.scpr.org/static/charts/congressional-speec
 // begin main function
 jqueryNoConflict(document).ready(function() {
     initializeTemplates.renderStaticTemplates();
-    fn.loadInitialDoc("//www.documentcloud.org/documents/900190-buchalter-january-2012-contract-with-mark-fabiani.js", "#DV-viewer-900190-buchalter-january-2012-contract-with-mark-fabiani");
+    fn.checkForNewContainer("DV-viewer-900190-buchalter-january-2012-contract-with-mark-fabiani", "//www.documentcloud.org/documents/900190-buchalter-january-2012-contract-with-mark-fabiani.js", "#DV-viewer-900190-buchalter-january-2012-contract-with-mark-fabiani");
     fn.getIdOfClickedElement();
 });
 
 // begin data configuration object
 var fn = {
 
-    loadInitialDoc: function(docUrl, docContainer){
+    checkForNewContainer: function(docDiv, docUrl, docContainer){
+        jqueryNoConflict("#document-container").append("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
+        var checkExist = setInterval(function() {
+            if (jqueryNoConflict(docContainer).length) {
+                clearInterval(checkExist);
+                fn.loadInitialDoc(docDiv, docUrl, docContainer);
+            }
+        }, 1000);
+    },
+
+    loadInitialDoc: function(docDiv, docUrl, docContainer){
+
+        console.log(DV);
+
         DV.load(docUrl, {
             width: 600,
             height: 800,
@@ -21,32 +34,35 @@ var fn = {
             text: false,
             container: docContainer
         });
+        var docId = docDiv.replace("DV-viewer-", "");
+        fn.getDocumentNotes(docId);
+    },
+
+    getDocumentNotes: function(docId){
+        var apiPrefix = "https://www.documentcloud.org/api/documents/";
+        $.getJSON(apiPrefix + docId + ".json", fn.populateDocumentNotes);
+    },
+
+    populateDocumentNotes: function(data){
+        jqueryNoConflict('#note-navigation-links').html('');
+        if (data.document.annotations.length > 0){
+            for(var i=0; i<data.document.annotations.length; i++){
+                var docAnnotation = "#document/p" + data.document.annotations[i].page + "/a" + data.document.annotations[i].id;
+                jqueryNoConflict('#note-navigation-links').append("<p><a href='" + docAnnotation + "'>" + data.document.annotations[i].title + "</a></p>");
+            };
+        };
     },
 
     getIdOfClickedElement: function(){
-        jqueryNoConflict('#document-navigation-links a').click(function(){
-            var documentId = jqueryNoConflict(this).attr('id');
-            var docUrl = "//www.documentcloud.org/documents/" + documentId + ".js";
-            var docDiv = "DV-viewer-" + documentId;
-            var docContainer = "#DV-viewer-" + documentId;
-            var documentId = jqueryNoConflict(this).attr('id');
-            jqueryNoConflict('#document-container').empty();
-            jqueryNoConflict("#document-container").append("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
-            fn.loadInitialDoc(docUrl, docContainer);;
+        jqueryNoConflict('#document-navigation-links a').click(function(event){
+            var docId = jqueryNoConflict(this).attr('id');
+            var docDiv = "DV-viewer-" + docId;
+            var docUrl = "//www.documentcloud.org/documents/" + docId + ".js";
+            var docContainer = "#DV-viewer-" + docId;
+            jqueryNoConflict("#document-container").html("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
+            fn.checkForNewContainer(docDiv, docUrl, docContainer);
         });
-    },
-
-    checkForNewContainer: function(docUrl, docContainer){
-        var checkExist = setInterval(function() {
-            if (jqueryNoConflict(docContainer).length) {
-                clearInterval(checkExist);
-                console.log('exists');
-                //fn.loadInitialDoc(docUrl, docContainer);
-            }
-        }, 1000);
     }
-
-
 }
 // end data configuration object
 
