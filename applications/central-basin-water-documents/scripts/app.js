@@ -29,7 +29,7 @@ var fn = {
 
         var sidebarParam;
         var docHeightParam;
-        var initialWidth = jqueryNoConflict('#document-container').width();
+        var initialWidth = jqueryNoConflict('.data-visuals').width();
 
         // set params for mobile devices
         if (navigator.userAgent.match(/(iPad)/i)) {
