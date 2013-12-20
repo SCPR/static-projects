@@ -29,6 +29,7 @@ var fn = {
 
         var sidebarParam;
         var docHeightParam;
+        var initialWidth = jqueryNoConflict('#document-container').width();
 
         // set params for mobile devices
         if (navigator.userAgent.match(/(iPad)/i)) {
@@ -37,12 +38,12 @@ var fn = {
         } else if (navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i)) {
             sidebarParam = false;
             docHeightParam = 400;
+        } else if (initialWidth > 650) {
+            sidebarParam = false;
         } else {
             sidebarParam = true;
             docHeightParam = 820;
         };
-
-        var initialWidth = jqueryNoConflict('#document-container').width();
 
         DV.load(docUrl, {
             width: initialWidth,
