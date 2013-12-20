@@ -15,6 +15,7 @@ var fn = {
 
     checkForNewContainer: function(docDiv, docUrl, docContainer){
         jqueryNoConflict("#document-container").append("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
+
         var checkExist = setInterval(function() {
             if (jqueryNoConflict(docContainer).length) {
                 clearInterval(checkExist);
@@ -25,8 +26,6 @@ var fn = {
 
     loadInitialDoc: function(docDiv, docUrl, docContainer){
 
-        console.log(DV);
-
         DV.load(docUrl, {
             width: 600,
             height: 800,
@@ -34,7 +33,9 @@ var fn = {
             text: false,
             container: docContainer
         });
+
         var docId = docDiv.replace("DV-viewer-", "");
+
         fn.getDocumentNotes(docId);
     },
 
