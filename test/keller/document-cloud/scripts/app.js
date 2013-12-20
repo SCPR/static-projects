@@ -49,6 +49,7 @@ var fn = {
             height: docHeightParam,
             sidebar: sidebarParam,
             text: false,
+            pdf: false,
             container: docContainer
         });
 
