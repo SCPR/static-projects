@@ -24,22 +24,21 @@ var fn = {
         }, 1000);
     },
 
-    divWidth: jqueryNoConflict('.data-visuals').width(),
-
     loadInitialDoc: function(docDiv, docUrl, docContainer){
 
         var sidebarParam;
 
-        // set zoom for mobile devices
+        // set params for mobile devices
         if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
             sidebarParam = false;
         } else {
             sidebarParam = true;
-        }
+        };
 
+        var initialWidth = jqueryNoConflict('#document-container').width();
 
         DV.load(docUrl, {
-            width: fn.divWidth,
+            width: initialWidth,
             height: 900,
             sidebar: sidebarParam,
             text: false,
