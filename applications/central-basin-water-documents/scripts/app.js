@@ -33,11 +33,9 @@ var fn = {
         if (navigator.userAgent.match(/(iPad)/i)) {
             sidebarParam = false;
             docHeightParam = 700;
-
-        if (navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i)) {
+        } else if (navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i)) {
             sidebarParam = false;
             docHeightParam = 400;
-
         } else {
             sidebarParam = true;
             docHeightParam = 900;
