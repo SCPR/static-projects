@@ -7,7 +7,7 @@ var embed_url_root = 'http://projects.scpr.org/static/applications/find-my-rep/'
 // begin main function
 jqueryNoConflict(document).ready(function() {
     initializeTemplates.renderStaticTemplates();
-    fn.checkForNewContainer("DV-viewer-900190-buchalter-january-2012-contract-with-mark-fabiani", "//www.documentcloud.org/documents/900190-buchalter-january-2012-contract-with-mark-fabiani.js", "#DV-viewer-900190-buchalter-january-2012-contract-with-mark-fabiani");
+    fn.checkForNewContainer("DV-viewer-961055-june-28-2010-1-million-wire-transfer-to-sedgwick", "//www.documentcloud.org/documents/961055-june-28-2010-1-million-wire-transfer-to-sedgwick.js", "#DV-viewer-961055-june-28-2010-1-million-wire-transfer-to-sedgwick");
     //fn.getIdOfClickedElement();
 });
 
@@ -30,9 +30,14 @@ var fn = {
         var docHeightParam;
 
         // set params for mobile devices
-        if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+        if (navigator.userAgent.match(/(iPad)/i)) {
             sidebarParam = false;
-            docHeightParam = 500;
+            docHeightParam = 700;
+
+        if (navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i)) {
+            sidebarParam = false;
+            docHeightParam = 400;
+
         } else {
             sidebarParam = true;
             docHeightParam = 900;
