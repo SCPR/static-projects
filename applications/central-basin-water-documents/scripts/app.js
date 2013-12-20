@@ -53,46 +53,39 @@ var fn = {
 
         var docId = docDiv.replace("DV-viewer-", "");
 
-        //fn.getProjectData();
-        //fn.getDocumentNotes(docId);
+        fn.getDocumentNotes(docId);
     },
 
-    getProjectData: function(){
-        jqueryNoConflict.getJSON("https://www.documentcloud.org/api/search.json?q=projectid:11842-central_basin", fn.populateSelectMenu);
-    },
-
-    populateSelectMenu: function(data){
-        for(var i=0; i<data.documents.length; i++){
-            //var docAnnotation = "#document/p" + data.document.annotations[i].page + "/a" + data.document.annotations[i].id;
-            jqueryNoConflict('#create-document-instance').append("<option value=\"" + data.documents[i].id + "\">" + data.documents[i].title + "</option>");
-        };
-    },
-
-    getIdOfSelectElement: function(){
-        var docId = jqueryNoConflict('#create-document-instance').val();
-        var docDiv = "DV-viewer-" + docId;
-        var docUrl = "//www.documentcloud.org/documents/" + docId + ".js";
-        var docContainer = "#DV-viewer-" + docId;
-        jqueryNoConflict("#document-container").html("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
-        fn.checkForNewContainer(docDiv, docUrl, docContainer);
-    }
-
-    /*
     getDocumentNotes: function(docId){
         var apiPrefix = "https://www.documentcloud.org/api/documents/";
         $.getJSON(apiPrefix + docId + ".json", fn.populateDocumentNotes);
     },
 
     populateDocumentNotes: function(data){
-        jqueryNoConflict('#note-navigation-links').html('');
-        if (data.document.annotations.length > 0){
-            for(var i=0; i<data.document.annotations.length; i++){
-                var docAnnotation = "#document/p" + data.document.annotations[i].page + "/a" + data.document.annotations[i].id;
-                jqueryNoConflict('#note-navigation-links').append("<p><a href='" + docAnnotation + "'>" + data.document.annotations[i].title + "</a></p>");
-            };
-        };
+        var documentDescription;
+        if (data.document.description){
+            documentDescription = "<p>" + data.document.description + "</p>";
+        } else {
+            documentDescription = "<p></p>"
+        }
+        jqueryNoConflict('#document-meta-data').html(
+            "<h6>" + data.document.title + "</h6>" +
+            documentDescription +
+            "<p><em>Source: " + data.document.source + "</em></p>"
+        );
     },
 
+    getIdOfSelectElement: function(){
+        jqueryNoConflict('#document-meta-data').empty();
+        var docId = jqueryNoConflict('#create-document-instance').val();
+        var docDiv = "DV-viewer-" + docId;
+        var docUrl = "//www.documentcloud.org/documents/" + docId + ".js";
+        var docContainer = "#DV-viewer-" + docId;
+        jqueryNoConflict("#document-container").html("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
+        fn.checkForNewContainer(docDiv, docUrl, docContainer);
+    },
+
+    /*
     getIdOfClickedElement: function(){
         jqueryNoConflict('#document-navigation-links a').click(function(event){
             var docId = jqueryNoConflict(this).attr('id');
