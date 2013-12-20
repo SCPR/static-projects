@@ -2,7 +2,7 @@ var jqueryNoConflict = jQuery;
 var initializeTemplates = initializeTemplates || {};
 var fn = fn || {};
 var embed_this = false;
-var embed_url_root = 'http://projects.scpr.org/static/applications/find-my-rep/';
+var embed_url_root = '#';
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
