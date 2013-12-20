@@ -38,7 +38,7 @@ var fn = {
             docHeightParam = 400;
         } else {
             sidebarParam = true;
-            docHeightParam = 900;
+            docHeightParam = 820;
         };
 
         var initialWidth = jqueryNoConflict('#document-container').width();
