@@ -90,6 +90,8 @@ var fn = {
     },
 
     getIdOfSelectElement: function(){
+        jqueryNoConflict('#note-navigation-links').empty();
+        jqueryNoConflict('#document-meta-data').empty();
         var docId = jqueryNoConflict('#create-document-instance').val();
         var docDiv = "DV-viewer-" + docId;
         var docUrl = "//www.documentcloud.org/documents/" + docId + ".js";
