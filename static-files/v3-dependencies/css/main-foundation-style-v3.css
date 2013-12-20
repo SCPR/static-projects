@@ -217,7 +217,7 @@ table.responsive thead tr {background:#2e2e2e;color:#fff;}
 #table_fu div{}
 #table_fu div#legend {float: left; margin-bottom: 10px; margin-top: -5px;}
 #table_fu #pager form select {width: 20%; margin: 0 0 0 0;}
-#table_fu div#ribbon {clear: both; display: block; overflow: visible; font-size: 140%}
+#table_fu div#ribbon {clear: both; display: block; overflow: visible; margin: 10px 0 10px 0;}
 #table_fu #download {font-size:12px; margin-top:7px; margin-bottom:0px; display: inline; float: right;}
 #table_fu #pubdate { color:#930000; font-style:italic; font-size:11px; margin-bottom:0px; display:inline;}
 #table_fu #pager form{margin-top: 5px;}
@@ -226,21 +226,26 @@ table.responsive thead tr {background:#2e2e2e;color:#fff;}
 #table_fu input.search-query {padding-right: 14px; padding-right: 4px \9; padding-left: 14px; padding-left: 4px \9; margin-bottom: 0; -webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px;}
 
 @media (max-width: 491px) {
-    #table_fu #pager form {font-size: 140%; font-weight: 400;}
+	#table_fu div#ribbon {font-size: 140%;}
+    #table_fu #pager form {font-size: 110%; font-weight: 400;}
 }
 
 @media (min-width: 491px) {
-    #table_fu #pager form {font-size: 140%; font-weight: 400;}
+	#table_fu div#ribbon {font-size: 140%;}
+    #table_fu #pager form {font-size: 110%; font-weight: 400;}
 }
 
 @media (min-width: 567px) {
-    #table_fu #pager form {font-size: 140%; font-weight: 400;}
+	#table_fu div#ribbon {font-size: 140%;}
+    #table_fu #pager form {font-size: 110%; font-weight: 400;}
 }
 
 @media (min-width: 768px) {
-    #table_fu #pager form {font-size: 140%; font-weight: 400;}
+	#table_fu div#ribbon {font-size: 140%;}
+    #table_fu #pager form {font-size: 110%; font-weight: 400;}
 }
 
 @media (min-width: 992px) {
-    #table_fu #pager form {font-size: 140%; font-weight: 400;}
+	#table_fu div#ribbon {font-size: 140%;}
+    #table_fu #pager form {font-size: 110%; font-weight: 400;}
 }
