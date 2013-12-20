@@ -27,19 +27,22 @@ var fn = {
     loadInitialDoc: function(docDiv, docUrl, docContainer){
 
         var sidebarParam;
+        var docHeightParam;
 
         // set params for mobile devices
         if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
             sidebarParam = false;
+            docHeightParam = 500;
         } else {
             sidebarParam = true;
+            docHeightParam = 900;
         };
 
         var initialWidth = jqueryNoConflict('#document-container').width();
 
         DV.load(docUrl, {
             width: initialWidth,
-            height: 900,
+            height: docHeightParam,
             sidebar: sidebarParam,
             text: false,
             container: docContainer
