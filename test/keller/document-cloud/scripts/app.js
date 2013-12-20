@@ -15,6 +15,7 @@ jqueryNoConflict(document).ready(function() {
 var fn = {
 
     checkForNewContainer: function(docDiv, docUrl, docContainer){
+        jqueryNoConflict(".progress-list").removeClass("hidden");
         jqueryNoConflict("#document-container").append("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
         var checkExist = setInterval(function() {
             if (jqueryNoConflict(docContainer).length) {
@@ -66,12 +67,20 @@ var fn = {
 
         console.log(data.document);
 
+        var documentDescription;
+        if (data.document.description){
+            documentDescription = "<p><em><strong>About this</strong></em>: " + data.document.description + "</p>";
+        } else {
+            documentDescription = "<p></p>"
+        };
+
         if (data.document.annotations.length > 0){
             jqueryNoConflict('#note-navigation-links').empty();
             jqueryNoConflict('#document-meta-data').html(
                 "<h6>" + data.document.title + "</h6>" +
-                "<p><em>Source: " + data.document.source + "</em></p>" +
-                "<p><strong>Related annotations</strong></p>"
+                documentDescription +
+                "<p><em><strong>Source</strong></em>: " + data.document.source + "</p>" +
+                "<p><em><strong>Related annotations</strong></em>:</p>"
             );
 
             for(var i=0; i<data.document.annotations.length; i++){
@@ -83,10 +92,14 @@ var fn = {
             jqueryNoConflict('#note-navigation-links').empty();
             jqueryNoConflict('#document-meta-data').html(
                 "<h6>" + data.document.title + "</h6>" +
-                "<p><em>Source: " + data.document.source + "</em></p>" +
+                documentDescription +
+                "<p><em><strong>Source</strong></em>: " + data.document.source + "</p>" +
                 "<p><strong>This document does not have annotations</strong></p>"
             );
         };
+
+        jqueryNoConflict(".progress-list").addClass("hidden");
+
     },
 
     getIdOfSelectElement: function(){

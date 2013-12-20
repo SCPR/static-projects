@@ -15,6 +15,7 @@ jqueryNoConflict(document).ready(function() {
 var fn = {
 
     checkForNewContainer: function(docDiv, docUrl, docContainer){
+        jqueryNoConflict(".progress-list").removeClass("hidden");
         jqueryNoConflict("#document-container").append("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
         var checkExist = setInterval(function() {
             if (jqueryNoConflict(docContainer).length) {
@@ -64,15 +65,18 @@ var fn = {
     populateDocumentNotes: function(data){
         var documentDescription;
         if (data.document.description){
-            documentDescription = "<p>" + data.document.description + "</p>";
+            documentDescription = "<p><em><strong>About this</strong></em>: " + data.document.description + "</p>";
         } else {
             documentDescription = "<p></p>"
-        }
+        };
         jqueryNoConflict('#document-meta-data').html(
             "<h6>" + data.document.title + "</h6>" +
             documentDescription +
-            "<p><em>Source: " + data.document.source + "</em></p>"
+            "<p><em><strong>Source</strong></em>: " + data.document.source + "</p>"
         );
+
+        jqueryNoConflict(".progress-list").addClass("hidden");
+
     },
 
     getIdOfSelectElement: function(){
