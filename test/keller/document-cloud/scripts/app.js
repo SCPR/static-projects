@@ -29,7 +29,6 @@ var fn = {
 
         var sidebarParam;
         var docHeightParam;
-        var initialWidth = jqueryNoConflict('#document-container').width();
 
         // set params for mobile devices
         if (navigator.userAgent.match(/(iPad)/i)) {
@@ -42,6 +41,8 @@ var fn = {
             sidebarParam = false;
             docHeightParam = 820;
         };
+
+        var initialWidth = jqueryNoConflict('#document-container').width();
 
         DV.load(docUrl, {
             width: initialWidth,
