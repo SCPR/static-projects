@@ -112,7 +112,7 @@
                     'background': o.dividerColor,
                     'position': 'absolute',
                     'left': '3px'
-                });
+                }).draggable();
 
                 $('#beforeimage' + randID).css({
                     'position': 'absolute',
