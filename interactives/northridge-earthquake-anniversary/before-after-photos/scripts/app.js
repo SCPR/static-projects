@@ -17,7 +17,8 @@ var fn = {
             if (jqueryNoConflict('.data-visuals').length) {
                 clearInterval(checkExist);
                 fn.processData(imageData);
-                jqueryNoConflict('#images-container').beforeAfter();
+                //jqueryNoConflict('#images-container').beforeAfter();
+                jqueryNoConflict('#images-container').twentytwenty();
             }
         }, 1000);
     },
@@ -25,7 +26,7 @@ var fn = {
     processData: function(data){
 
         for(var i=0; i<data.objects.length; i++){
-            jqueryNoConflict("#controls").append("<div id='" + i + "' class='indicator' style='background-image: url(\"" + data.objects[i].beforethumburl + "\")'></div>");
+            jqueryNoConflict("#controls").append("<div id='" + i + "' class='indicator' style='background-image: url(\"" + data.objects[i].beforethumburl + "\"); background-repeat: no-repeat; background-position: center;'></div>");
         }
 
         var controlsWidth = jqueryNoConflict('#controls').width();
@@ -34,7 +35,7 @@ var fn = {
 
         jqueryNoConflict('#controls .indicator').css({
             'width': elementDimension + 'px',
-            'height': elementDimension + 'px',
+            'height': elementDimension + 'px'
         });
 
         jqueryNoConflict('#controls .indicator:first').addClass('active');
@@ -46,11 +47,11 @@ var fn = {
             jqueryNoConflict('#images-container #before img').attr('src', imageData.objects[targetValue].beforeimageurl);
             jqueryNoConflict('#images-container #after img').attr('src', imageData.objects[targetValue].afterimageurl);
             jqueryNoConflict('#captions-container').html(
+                "<p>" + imageData.objects[targetValue].imagecaption + "</p>" +
                 "<div id='photo-credits'>" +
                 "<p><span class='pull-left'><em>" + imageData.objects[targetValue].beforeimagephotocredit + "</em></span><span class='pull-right'><em>" + imageData.objects[targetValue].afterimagephotocredit + "</em></span></p>" +
-                "</div>" +
-                "<p>" + imageData.objects[targetValue].beforeimagecaption + "</p>" +
-                "<p>" + imageData.objects[targetValue].afterimagecaption + "</p>");
+                "</div>");
+
         });
     },
 }
@@ -72,7 +73,6 @@ var initializeTemplates = {
                 initializeTemplates.toggleDisplayIcon();
             }
         }, 1000);
-
     },
 
     renderEmbedBox: function(){

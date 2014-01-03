@@ -7,9 +7,10 @@
 #controls .indicator.active {border: 2px solid #007FA6; opacity: 1;}
 
 #images-container {width: 100%; margin: 0 0 0 0;}
+#images-container img {width: 100%; margin: 0 0 0 0; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
 #before-after-links {height: 40px;}
 #before-after-links .balinks a {font-size: 16px; font-weight: 700; overflow: hidden;}
-#captions-container {height: auto;}
+#captions-container {width: 94%; height: auto; margin: 15px 3% 15px 3%;}
 #captions-container #photo-credits {height: 25px; margin: 0px 0 10px 0;}
 
 /* image slider */
