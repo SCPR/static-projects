@@ -12,8 +12,6 @@ jqueryNoConflict(document).ready(function() {
 // begin data configuration object
 var fn = {
 
-    divWidth: jqueryNoConflict('.data-visuals').width(),
-
     checkForDataVisuals: function(){
         var checkExist = setInterval(function() {
             if (jqueryNoConflict('.data-visuals').length) {
@@ -25,26 +23,34 @@ var fn = {
     },
 
     processData: function(data){
+
         for(var i=0; i<data.objects.length; i++){
-            jqueryNoConflict("#controls-stage-indicator").append("<li id='" + i + "' class='indicator' style='background-image: url(\"" + data.objects[i].beforethumburl + "\")'></li>");
+            jqueryNoConflict("#controls").append("<div id='" + i + "' class='indicator' style='background-image: url(\"" + data.objects[i].beforethumburl + "\")'></div>");
         }
-        jqueryNoConflict('#controls-stage-indicator li:first').addClass('active');
-        jqueryNoConflict('li.indicator').click(function(){
+
+        var controlsWidth = jqueryNoConflict('#controls').width();
+        var numberOfElements = data.objects.length;
+        var elementDimension = (controlsWidth-5)/numberOfElements;
+
+        jqueryNoConflict('#controls .indicator').css({
+            'width': elementDimension + 'px',
+            'height': elementDimension + 'px',
+        });
+
+        jqueryNoConflict('#controls .indicator:first').addClass('active');
+
+        jqueryNoConflict('div.indicator').click(function(){
             var targetValue = jqueryNoConflict(this).attr('id');
-            jqueryNoConflict('li').removeClass('active');
-            jqueryNoConflict('li#' + targetValue).addClass('active');
+            jqueryNoConflict('div').removeClass('active');
+            jqueryNoConflict('div#' + targetValue).addClass('active');
             jqueryNoConflict('#images-container #before img').attr('src', imageData.objects[targetValue].beforeimageurl);
             jqueryNoConflict('#images-container #after img').attr('src', imageData.objects[targetValue].afterimageurl);
             jqueryNoConflict('#captions-container').html(
-                '<p>' + imageData.objects[targetValue].beforeimagedate + '</p>' +
-                '<p>' + imageData.objects[targetValue].beforeimagelocation + '</p>' +
-                '<p>' + imageData.objects[targetValue].beforeimagecaption + '</p>' +
-                '<p>' + imageData.objects[targetValue].beforeimagephotocredit + '</p>' +
-                '<p>' + imageData.objects[targetValue].afterimagedate + '</p>' +
-                '<p>' + imageData.objects[targetValue].afterimagelocation + '</p>' +
-                '<p>' + imageData.objects[targetValue].afterimagecaption + '</p>' +
-                '<p>' + imageData.objects[targetValue].afterimagephotocredit + '</p>'
-            );
+                "<div id='photo-credits'>" +
+                "<p><span class='pull-left'><em>" + imageData.objects[targetValue].beforeimagephotocredit + "</em></span><span class='pull-right'><em>" + imageData.objects[targetValue].afterimagephotocredit + "</em></span></p>" +
+                "</div>" +
+                "<p>" + imageData.objects[targetValue].beforeimagecaption + "</p>" +
+                "<p>" + imageData.objects[targetValue].afterimagecaption + "</p>");
         });
     },
 }

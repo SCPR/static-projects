@@ -16,12 +16,12 @@
                 introDuration : 1000,
                 introPosition : .5,
                 showFullLinks : true,
-                beforeLinkText: 'Show before',
-                afterLinkText: 'Show after',
+                beforeLinkText: 'Show only before image',
+                afterLinkText: 'Show only after image',
                 imagePath : './images/',
                 cursor: 'pointer',
                 clickSpeed: 600,
-                linkDisplaySpeed: 200,
+                linkDisplaySpeed: 1000,
                 dividerColor: '#888',
                 enableKeyboard: true,
                 keypressAmount: 37,
@@ -30,14 +30,13 @@
 
             var options = $.extend(defaults, options);
             var randID = Math.round(Math.random()*100000000);
+
             return this.each(function(){
     			var o=options;
                 var obj = $(this);
-    			var imgWidth = $('img:first', obj).width();
-    			var imgHeight = $('img:first', obj).height();
 
-                console.log(imgWidth);
-                console.log(imgHeight);
+    			var imgWidth;
+    			var imgHeight;
 
                 // For backwards compatability
                 // Used to require images to be wrapped in div tags
@@ -45,7 +44,31 @@
                     $('img',obj).wrap('<div>');
                 };
 
-                $(obj).width(imgWidth).height(imgHeight).css({'overflow':'hidden','position':'relative','padding':'0'});
+                var comparisonContainerWidth = $('#images-container').width();
+                var comparisonImageWidth = $('img:first', obj).width();
+
+                if (comparisonContainerWidth > comparisonImageWidth){
+                    console.log('bigger image');
+        			imgWidth = $('img:first', obj).width();
+        			imgHeight = $('img:first', obj).height();
+                    $(obj).width(imgWidth).height(imgHeight).css({
+                        'overflow': 'hidden',
+                        'position': 'relative',
+                        'padding': '0',
+                        'margin': '0 auto 0 auto'
+                    });
+
+                } else {
+                    console.log('bigger container');
+                    imgWidth = comparisonContainerWidth;
+                    imgHeight = comparisonContainerWidth;
+                    $(obj).width(imgWidth).height(imgHeight).css({
+                        'overflow': 'hidden',
+                        'position': 'relative',
+                        'padding': '0',
+                        'margin': '0 auto 0 auto'
+                    });
+                };
 
                 var bef = $('img:first', obj).attr('src');
                 var aft = $('img:last', obj).attr('src');
@@ -114,18 +137,20 @@
                 $(obj).append('<img src="' + o.imagePath + 'lt-small.png" width="7" height="15" id="lt-arrow' + randID + '"><img src="' + o.imagePath + 'rt-small.png" width="7" height="15" id="rt-arrow' + randID + '">');
 
                 if(o.showFullLinks){
-                    $(obj).before('<div class="balinks" id="links' + randID + '"><span class="balinks"><a id="showleft' + randID + '" href="javascript:void(0)">' + o.beforeLinkText + '</a></span><span class="balinks"><a id="showright' + randID + '" href="javascript:void(0)">' + o.afterLinkText + '</a></span></div>');
+                    $(obj).after('<div id="before-after-links"><span class="balinks pull-left"><a id="showleft' + randID + '" href="javascript:void(0)">' + o.beforeLinkText + '</a></span><span class="balinks pull-right"><a id="showright' + randID + '" href="javascript:void(0)">' + o.afterLinkText + '</a></span></div>');
 
-                    $('#links' + randID).width(imgWidth);
+                    $('#before-after-links').width(imgWidth).css({
+                        'margin': '0 auto 0 auto'
+                    });
 
-                    $('#showleft' + randID).css({'position':'relative','left':'0px'}).click(function(){
+                    $('#showleft' + randID).click(function(){
 
                     $('div:eq(2)', obj).animate({width: imgWidth}, o.linkDisplaySpeed);
 
                     $('#dragwrapper' + randID).animate({left: imgWidth-$('#dragwrapper' + randID).width()+'px'},o.linkDisplaySpeed);
                     });
 
-                    $('#showright' + randID).css({'position':'absolute','right':'0px'}).click(function(){
+                    $('#showright' + randID).click(function(){
 
                     $('div:eq(2)', obj).animate({width:0},o.linkDisplaySpeed);
 
