@@ -61,15 +61,8 @@ var fn = {
 var initializeTemplates = {
     renderStaticTemplates: function(){
         var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/templates/';
-
-        //renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
-        //renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/kpcc-header.handlebars', '.kpcc-header');
         renderHandlebarsTemplate('templates/kpcc-footer.handlebars', '.kpcc-footer');
-
-
-
-
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');
         renderHandlebarsTemplate('templates/data-details.handlebars', '.data-details');
         renderHandlebarsTemplate('templates/data-visuals.handlebars', '.data-visuals');
