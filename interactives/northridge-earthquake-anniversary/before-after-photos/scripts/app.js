@@ -1,7 +1,8 @@
 var jqueryNoConflict = jQuery;
 var initializeTemplates = initializeTemplates || {};
 var fn = fn || {};
-var embed_url_root = '#';
+var embed_this = true;
+var embed_url_root = 'http://projects.scpr.org/static/interactives/northridge-earthquake-anniversary/before-after-photos/iframe.html';
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
@@ -17,7 +18,6 @@ var fn = {
             if (jqueryNoConflict('.data-visuals').length) {
                 clearInterval(checkExist);
                 fn.processData(imageData);
-                //jqueryNoConflict('#images-container').beforeAfter();
                 jqueryNoConflict('#images-container').twentytwenty();
             }
         }, 1000);
@@ -61,18 +61,36 @@ var fn = {
 var initializeTemplates = {
     renderStaticTemplates: function(){
         var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/templates/';
-        renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
-        renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
+
+        //renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
+        //renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
+        renderHandlebarsTemplate('templates/kpcc-header.handlebars', '.kpcc-header');
+        renderHandlebarsTemplate('templates/kpcc-footer.handlebars', '.kpcc-footer');
+
+
+
+
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');
         renderHandlebarsTemplate('templates/data-details.handlebars', '.data-details');
         renderHandlebarsTemplate('templates/data-visuals.handlebars', '.data-visuals');
 
         var checkExist = setInterval(function() {
+            if (jqueryNoConflict('.header-links').length) {
+                clearInterval(checkExist);
+                initializeTemplates.hideEmbedBox();
+            }
+
             if (jqueryNoConflict('.buttons').length) {
                 clearInterval(checkExist);
                 initializeTemplates.toggleDisplayIcon();
             }
         }, 1000);
+    },
+
+    hideEmbedBox: function(){
+        if (embed_this === false){
+            jqueryNoConflict('li.projects-embed').addClass('hidden');
+        };
     },
 
     renderEmbedBox: function(){

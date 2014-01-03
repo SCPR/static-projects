@@ -16,30 +16,13 @@
         <link rel="apple-touch-icon" href="http://media.scpr.org/assets/images/icon.png">
         <meta name="format-detection" content="telephone=no"/>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="robots" content="#" />
-        <meta name="description" content="KPCC found some of the more iconic images of damage from the devastating Northridge earthquake of 1994 and wondered what was rebuilt and what was changed. KPCC Photographer Maya Sugarman spent weeks looking for the original sites and reproducing the shots from the days after the quake as closely as possible. You can see how much remains the same and how much has changed in 20 years with the sliders below." />
-        <meta name="keywords" content="Northridge earthquake, southern California, 1994" />
-        <meta property="og:title" content="Northridge earthquake 20 years later: Before and after photos" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png" />
-        <meta property="og:image:width" content="500" />
-        <meta property="og:image:height" content="500" />
-        <meta property="og:url" content="http://projects.scpr.org/static/interactives/northridge-earthquake-anniversary/before-after-photos/" />
-        <meta property="og:description" content="KPCC found some of the more iconic images of damage from the devastating Northridge earthquake of 1994 and wondered what was rebuilt and what was changed. KPCC Photographer Maya Sugarman spent weeks looking for the original sites and reproducing the shots from the days after the quake as closely as possible. You can see how much remains the same and how much has changed in 20 years with the sliders below." />
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:url" content="http://projects.scpr.org/static/interactives/northridge-earthquake-anniversary/before-after-photos/">
-        <meta name="twitter:domain" content="http://projects.scpr.org/">
-        <meta name="twitter:site" content="KPCC">
-        <meta name="twitter:title" content="Northridge earthquake 20 years later: Before and after photos">
-        <meta name="twitter:description" content="KPCC found some of the more iconic images of damage from the devastating Northridge earthquake of 1994 and wondered what was rebuilt and what was changed. KPCC Photographer Maya Sugarman spent weeks looking for the original sites and reproducing the shots from the days after the quake as closely as possible. You can see how much remains the same and how much has changed in 20 years with the sliders below.">
-        <meta name="twitter:image:src" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png">
         <!-- end meta -->
 
         <!-- begin css -->
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
+        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-embeddable-style-v3.css" rel="stylesheet" />
         <link href="css/twentytwenty.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
 
@@ -62,15 +45,29 @@
     <!-- end header -->
 
     <!-- begin body -->
-    <body class="minimal">
-
-        <div class="kpcc-header"></div>
+    <body class="embedded">
 
         <!-- begin main container -->
         <div class="container data-container">
             <div class="row data-details"></div>
             <div class="row data-visuals"></div>
-            <div class="row kpcc-footer"></div>
+
+            <!-- begin branded footer -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <footer>
+                        <ul>
+                            <li><h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3></li>
+                            <li><a href="http://scpr.org/terms/">Terms &amp; Conditions</a></li>
+                            <li><a href="http://scpr.org/privacy/">Privacy</a></li>
+                            <li><a href="http://scpr.org/web_site_feedback">Website Feedback</a></li>
+                            <li><a href="http://scpr.org/">Copyright 2012 &copy; Southern California Public Radio</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </div>
+            <!-- end branded footer -->
+
         </div>
         <!-- end main container -->
 
@@ -78,6 +75,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
