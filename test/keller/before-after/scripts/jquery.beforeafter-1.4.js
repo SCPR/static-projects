@@ -22,7 +22,7 @@
                 cursor: 'pointer',
                 clickSpeed: 600,
                 linkDisplaySpeed: 1000,
-                dividerColor: '#888',
+                dividerColor: '#000',
                 enableKeyboard: true,
                 keypressAmount: 37,
                 onReady: function(){}
