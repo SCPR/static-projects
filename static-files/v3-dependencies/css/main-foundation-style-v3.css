@@ -178,7 +178,7 @@ a {color: #007FA6;}
 
 /* embed box */
 body.minimal #popup_container {font-size: 120%; min-width: 300px; max-width: 400px; background: #fdfdfd; border: solid 1px #2B2B2B; color: #2B2B2B; -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;}
-body.minimal #popup_title {font-size: 170%; font-weight: bold; text-align: center; line-height: 1.75em; color: #fdfdfd; background: #EC7C04; border: solid 1px #fdfdfd; border-bottom: solid 1px #999; cursor: default; padding: 0em; margin: 0em;}
+body.minimal #popup_title {font-size: 170%; font-weight: bold; text-align: center; line-height: 1.75em; color: #fdfdfd; background: rgba(0, 127, 166, 1.0); border: solid 1px #fdfdfd; border-bottom: solid 1px #999; cursor: default; padding: 0em; margin: 0em;}
 body.minimal #popup_content {background: 20px 10px no-repeat url(images/info.gif); padding: 1em 1.75em; margin: 0em;}
 body.minimal #popup_content.alert {background-image: url(images/info.gif)}
 body.minimal #popup_content.confirm {background-image: url(images/important.gif)}
