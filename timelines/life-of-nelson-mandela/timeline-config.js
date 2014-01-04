@@ -14,6 +14,9 @@ var kpccTimelineConfig = {
     // name of sheet containing timeline meta
     sheetMeta: 'MetaData',
 
+    // make the timeline embeddable
+    embedThis = true;
+
     // url of the timeline
     projectDirectory: 'http://projects.scpr.org/static/timelines/life-of-nelson-mandela',
 
