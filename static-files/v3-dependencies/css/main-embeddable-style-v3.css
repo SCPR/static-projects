@@ -50,6 +50,7 @@ body.embedded .data-container .italics {font-style: italic;}
     body.embedded .data-container h5 {font-size: 200%;}
     body.embedded .data-container h6 {font-size: 180%;}
     body.embedded .data-container p {font-size: 130%;}
+    body.embedded .data-container a.btn-primary {font-size: 120%;}
     body.embedded .data-container .kicker {font-size: 110%;}
     body.embedded .data-container .small-writing {font-size: 120%;}
     body.embedded .data-container .sky-writing {font-size: 450%; color: #EC7C04;}
@@ -66,6 +67,7 @@ body.embedded .data-container .italics {font-style: italic;}
     body.embedded .data-container h5 {font-size: 260%;}
     body.embedded .data-container h6 {font-size: 220%;}
     body.embedded .data-container p {font-size: 130%;}
+    body.embedded .data-container a.btn-primary {font-size: 120%;}
     body.embedded .data-container .kicker {font-size: 130%;}
     body.embedded .data-container .small-writing {font-size: 120%;}
     body.embedded .data-container .sky-writing {font-size: 500%; color: #EC7C04;}
@@ -82,6 +84,7 @@ body.embedded .data-container .italics {font-style: italic;}
     body.embedded .data-container h5 {font-size: 220%;}
     body.embedded .data-container h6 {font-size: 160%;}
     body.embedded .data-container p {font-size: 150%;}
+    body.embedded .data-container a.btn-primary {font-size: 140%;}
     body.embedded .data-container .kicker {font-size: 150%;}
     body.embedded .data-container .small-writing {font-size: 130%;}
     body.embedded .data-container .sky-writing {font-size: 600%; color: #EC7C04;}
@@ -98,6 +101,7 @@ body.embedded .data-container .italics {font-style: italic;}
     body.embedded .data-container h5 {font-size: 240%;}
     body.embedded .data-container h6 {font-size: 180%;}
     body.embedded .data-container p {font-size: 150%;}
+    body.embedded .data-container a.btn-primary {font-size: 140%;}
     body.embedded .data-container .kicker {font-size: 150%;}
     body.embedded .data-container .small-writing {font-size: 130%;}
     body.embedded .data-container .sky-writing {font-size: 600%; color: #EC7C04;}
