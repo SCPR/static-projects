@@ -65,8 +65,14 @@ var initializeTemplates = {
 
     },
 
+    hideEmbedBox: function(){
+        if (kpccTimelineConfig.embedThis === false){
+            jqueryNoConflict('li.projects-embed').addClass('hidden');
+        };
+    },
+
     renderEmbedBox: function(){
-        var embed_url = kpccTimelineConfig.projectDirectory + '/iframe.html';
+        var embed_url = kpccTimelineConfig.projectDirectory;
         jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
     },
 
