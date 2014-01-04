@@ -5,8 +5,11 @@ var kpccTimelineConfig = {
     // example spreadsheet key
     key: '0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE',
 
-    // example path to file
-    sourceFile: 'template-timelines_timeline.json',
+    // example path to data file
+    sourceFile: 'timeline-data.json',
+
+    // example path to meta file
+    metaFile: 'timeline-meta.json',
 
     // name of sheet containing timeline entries
     sheetName: 'Posts',

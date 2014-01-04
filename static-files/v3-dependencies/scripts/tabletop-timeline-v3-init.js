@@ -5,48 +5,57 @@ var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
-    fn.retrieveTabletopData();
-    fn.displayTimelineFromData(kpccTimelineConfig);
+    fn.determineDataSource();
     initializeTemplates.renderStaticTemplates();
 });
 
 // begin data configuration object
 var fn = {
 
-    retrieveTabletopData: function(){
+    determineDataSource: function(){
+        if (kpccTimelineConfig.dataSource === 'spreadsheet'){
+            fn.createTimelineFromSpreadsheet();
+        } else if (kpccTimelineConfig.dataSource === 'flat-file'){
+            fn.createTimelineFromFlatfile();
+        } else {
+            fn.createTimelineFromSpreadsheet();
+        }
+    },
+
+    createTimelineFromSpreadsheet: function(){
         Tabletop.init({
             key: kpccTimelineConfig.key,
-            callback: fn.displayMetaData,
+            callback: fn.processTabletopData,
             simpleSheet: false
         });
     },
 
-    displayMetaData: function(data, tabletop){
+    processTabletopData: function(data){
+        fn.displayMetaData(data.MetaData.elements);
+        jqueryNoConflict('.data-visuals').verticalTimeline(kpccTimelineConfig);
+    },
+
+    createTimelineFromFlatfile: function(){
+        jqueryNoConflict.getJSON(kpccTimelineConfig.metaFile, fn.displayMetaData);
+        jqueryNoConflict.getJSON(kpccTimelineConfig.sourceFile, function(data) {
+            kpccTimelineConfig.data = data;
+            $('.data-visuals').verticalTimeline(kpccTimelineConfig);
+        });
+    },
+
+    displayMetaData: function(data){
         Handlebars.registerHelper('encode', function(context, options) {
             var out = encodeURIComponent(context);
             return out;
         });
 
         var handlebarsData = {
-            objects: data.MetaData.elements
+            objects: data
         };
 
         renderHandlebarsTemplate(proxyPrefix + 'timeline-data-share.handlebars', '.data-share', handlebarsData);
         renderHandlebarsTemplate(proxyPrefix + 'timeline-data-details.handlebars', '.data-details', handlebarsData);
-    },
-
-    displayTimelineFromData: function(){
-        if (kpccTimelineConfig.dataSource === 'spreadsheet'){
-            jqueryNoConflict('.data-visuals').verticalTimeline(kpccTimelineConfig);
-        } else if (kpccTimelineConfig.dataSource === 'flat-file'){
-            jqueryNoConflict.getJSON(kpccTimelineConfig.sourceFile, function(data) {
-                kpccTimelineConfig.data = data;
-                $('.data-visuals').verticalTimeline(kpccTimelineConfig);
-            });
-        } else {
-            jqueryNoConflict('.data-visuals').verticalTimeline(kpccTimelineConfig);
-        }
-    },
+    }
 }
 // end data configuration object
 
