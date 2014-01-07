@@ -15,7 +15,7 @@ var kpccTimelineConfig = {
     sheetName: 'Posts',
 
     // name of sheet containing timeline meta
-    sheetMeta: 'MetaData',
+    sheetMeta: 'timeline-meta.json',
 
     // make the timeline embeddable
     embedThis: true,
