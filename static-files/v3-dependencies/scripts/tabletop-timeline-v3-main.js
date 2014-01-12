@@ -65,7 +65,7 @@
                                             <div class="body-text"><p>{{{body}}}</p></div> \
                                         {{/if}} \
                                         {{#if read_more_url}} \
-                                            <p class="italics"><a href="{{read_more_url}}" target="_blank"><strong>{{#if read_more_source}}Via {{read_more_source}}{{else}}Read More{{/if}}</strong></a></p> \
+                                            <p class="italics"><a href="{{read_more_url}}" target="_blank"><strong>{{#if read_more_source}}Read more:  {{read_more_source}}{{else}}Read more{{/if}}</strong></a></p> \
                                         {{/if}} \
                                     </div> \
                                 </div> \
@@ -114,7 +114,7 @@
                                             {{/if}} \
                                         {{/is}} \
                                         {{#if read_more_url}} \
-                                            <p class="italics"><a href="{{read_more_url}}" target="_blank"><strong>{{#if read_more_source}}Via {{read_more_source}}{{else}}Read More{{/if}}</strong></a></p> \
+                                            <p class="italics"><a href="{{read_more_url}}" target="_blank"><strong>{{#if read_more_source}}Read more:  {{read_more_source}}{{else}}Read more{{/if}}</strong></a></p> \
                                         {{/if}} \
                                     </div> \
                                 </div> \
@@ -129,7 +129,7 @@
                                         <div class="body-text"><p>{{{body}}}</p></div> \
                                     {{/if}} \
                                     {{#if read_more_url}} \
-                                        <p class="italics"><a href="{{read_more_url}}" target="_blank"><strong>{{#if read_more_source}}Via {{read_more_source}}{{else}}Read More{{/if}}</strong></a></p> \
+                                        <p class="italics"><a href="{{read_more_url}}" target="_blank"><strong>{{#if read_more_source}}Read more: {{read_more_source}}{{else}}Read More{{/if}}</strong></a></p> \
                                     {{/if}} \
                                 </div> \
                             </div> \
