@@ -78,13 +78,13 @@
 .twentytwenty-before-label {
   opacity: 0; }
   .twentytwenty-before-label:before {
-    content: "Before";
+    content: "Then";
     left: 10px; }
 
 .twentytwenty-after-label {
   opacity: 0; }
   .twentytwenty-after-label:before {
-    content: "After";
+    content: "Now";
     right: 10px; }
 
 .twentytwenty-overlay {
