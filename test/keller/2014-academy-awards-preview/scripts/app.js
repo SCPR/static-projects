@@ -6,6 +6,7 @@ var embed_url_root = 'http://projects.scpr.org/static/interactives/2014-academy-
 
 // path to a json file or enter in 'spreadsheet' as the value
 var dataSource = 'spreadsheet';
+//var dataSource = 'data/2014_oscars_prediction_data_handlebars.json';
 var spreadsheetKey = '0Aq8qwSArzKP9dFhERWlXZVdTM1l5bzFfbzhCVlJGcGc';
 
 // begin main function
@@ -48,6 +49,12 @@ var fn = {
         });
     },
 
+    retrieveFlatData: function(){
+        jqueryNoConflict.getJSON(dataSource, function(data){
+            fn.filterAwardCategories(data.objects);
+        });
+    },
+
     filterAwardCategories: function(data){
         var nominationCategoryKeys = [];
         for(var i=0; i<data.length; i++){
@@ -78,10 +85,6 @@ var fn = {
             }
         };
         return nomineeArray;
-    },
-
-    retrieveFlatData: function(){
-        jqueryNoConflict.getJSON(dataSource, fn.renderDataVisualsTemplate);
     },
 
     renderDataVisualsTemplate: function(data){
