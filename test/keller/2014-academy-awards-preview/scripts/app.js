@@ -1,21 +1,30 @@
 var jqueryNoConflict = jQuery;
 var initializeTemplates = initializeTemplates || {};
 var fn = fn || {};
-var embed_this = true;
-var embed_url_root = 'http://projects.scpr.org/static/interactives/2014-academy-awards-preview/';
-
-// path to a json file or enter in 'spreadsheet' as the value
-var dataSource = 'spreadsheet';
-//var dataSource = 'data/2014_oscars_prediction_data_handlebars.json';
-var spreadsheetKey = '0Aq8qwSArzKP9dFhERWlXZVdTM1l5bzFfbzhCVlJGcGc';
+var appConfig = appConfig || {};
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
     initializeTemplates.renderStaticTemplates();
-    fn.determineDataSource(dataSource);
+    fn.determineDataSource(appConfig.dataSource);
 });
 
-// begin data configuration object
+// application configuration object
+var appConfig = {
+
+    // embedding settings
+    embed_this: true,
+    embed_url_root: 'http://projects.scpr.org/static/interactives/2014-academy-awards-preview/',
+
+    // use flat-file or spreadsheet
+    dataSource: 'spreadsheet',
+
+    // enter path to the data source below
+    spreadsheetKey: '0Aq8qwSArzKP9dFhERWlXZVdTM1l5bzFfbzhCVlJGcGc',
+    flatFile: 'data/2014_oscars_prediction_data_handlebars.json'
+};
+
+// begin data processing object
 var fn = {
     categoryObjectArray: [],
 
@@ -35,13 +44,13 @@ var fn = {
 
     determineDataSource: function(dataSource){
         if (dataSource === 'spreadsheet'){
-            fn.retrieveTabletopData();
+            fn.retrieveTabletopData(appConfig.spreadsheetKey);
         } else {
-            fn.retrieveFlatData();
+            fn.retrieveFlatData(appConfig.flatFile);
         };
     },
 
-    retrieveTabletopData: function(){
+    retrieveTabletopData: function(spreadsheetKey){
         Tabletop.init({
             key: spreadsheetKey,
             callback: fn.filterAwardCategories,
@@ -49,8 +58,8 @@ var fn = {
         });
     },
 
-    retrieveFlatData: function(){
-        jqueryNoConflict.getJSON(dataSource, function(data){
+    retrieveFlatData: function(flatFile){
+        jqueryNoConflict.getJSON(flatFile, function(data){
             fn.filterAwardCategories(data.objects);
         });
     },
@@ -90,8 +99,8 @@ var fn = {
     renderDataVisualsTemplate: function(data){
         renderHandlebarsTemplate('templates/data-visuals.handlebars', '.data-visuals', data);
     }
-}
-// end data configuration object
+};
+// end data processing object
 
 // begin template rendering object
 var initializeTemplates = {
@@ -117,13 +126,13 @@ var initializeTemplates = {
     },
 
     hideEmbedBox: function(){
-        if (embed_this === false){
+        if (appConfig.embed_this === false){
             jqueryNoConflict('li.projects-embed').addClass('hidden');
         };
     },
 
     renderEmbedBox: function(){
-        jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page. You may need to adjust the height parameter. <br /><br /> &lt;iframe src=\"'+ embed_url_root +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
+        jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page. You may need to adjust the height parameter. <br /><br /> &lt;iframe src=\"'+ appConfig.embed_url_root +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
     },
 
     toggleDisplayIcon: function(){
@@ -140,5 +149,5 @@ var initializeTemplates = {
             jqueryNoConflict('span.about').addClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-up');
         });
     }
-}
+};
 // end template rendering object
