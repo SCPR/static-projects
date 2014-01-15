@@ -7,15 +7,22 @@ var embed_url_root = '#';
 // begin main function
 jqueryNoConflict(document).ready(function() {
     initializeTemplates.renderStaticTemplates();
-    fn.checkForNewContainer("DV-viewer-961055-june-28-2010-1-million-wire-transfer-to-sedgwick", "//www.documentcloud.org/documents/961055-june-28-2010-1-million-wire-transfer-to-sedgwick.js", "#DV-viewer-961055-june-28-2010-1-million-wire-transfer-to-sedgwick");
+    fn.checkForNewContainer("DV-viewer-1005633-california-2013-state-of-state-address", "//www.documentcloud.org/documents/1005633-california-2013-state-of-state-address.js", "#DV-viewer-1005633-california-2013-state-of-state-address");
     //fn.getIdOfClickedElement();
+
+    String.prototype.toProperCase = function () {
+        return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    };
+
 });
 
 // begin data configuration object
 var fn = {
 
+    categoryObjectArray: [],
+
     checkForNewContainer: function(docDiv, docUrl, docContainer){
-        jqueryNoConflict(".progress-list").removeClass("hidden");
+        //jqueryNoConflict(".progress-list").removeClass("hidden");
         jqueryNoConflict("#document-container").append("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
         var checkExist = setInterval(function() {
             if (jqueryNoConflict(docContainer).length) {
@@ -39,14 +46,14 @@ var fn = {
             docHeightParam = 400;
         } else {
             sidebarParam = false;
-            docHeightParam = 820;
+            docHeightParam = 1820;
         };
 
         var initialWidth = jqueryNoConflict('#document-container').width();
 
         DV.load(docUrl, {
             width: initialWidth,
-            height: docHeightParam,
+            height: 1000,
             sidebar: sidebarParam,
             text: false,
             pdf: false,
@@ -66,9 +73,13 @@ var fn = {
     populateDocumentNotes: function(data){
         jqueryNoConflict('#note-navigation-links').html('');
 
-        console.log(data.document);
+        //console.log(data.document);
 
         var documentDescription;
+
+        var annotationCategoryKeys = [];
+
+
         if (data.document.description){
             documentDescription = "<p><em><strong>About this</strong></em>: " + data.document.description + "</p>";
         } else {
@@ -78,16 +89,28 @@ var fn = {
         if (data.document.annotations.length > 0){
             jqueryNoConflict('#note-navigation-links').empty();
             jqueryNoConflict('#document-meta-data').html(
-                "<h6>" + data.document.title + "</h6>" +
-                documentDescription +
+                "<h6>" + data.document.title + "</h6>" + documentDescription +
                 "<p><em><strong>Source</strong></em>: " + data.document.source + "</p>" +
-                "<p><em><strong>Related annotations</strong></em>:</p>"
+                "<p><em><strong>See what Brown had to say about</strong></em>:</p>"
             );
 
             for(var i=0; i<data.document.annotations.length; i++){
+                var annotationCategory = data.document.annotations[i].title.split(":");
+                annotationCategoryKeys.push(annotationCategory[0].toProperCase());
                 var docAnnotation = "#document/p" + data.document.annotations[i].page + "/a" + data.document.annotations[i].id;
-                jqueryNoConflict('#note-navigation-links').append("<p><a href='" + docAnnotation + "'>" + data.document.annotations[i].title + "</a></p>");
+
+                //jqueryNoConflict('#note-navigation-links').append("<p><a href='" + docAnnotation + "'>" + data.document.annotations[i].title + "</a></p>");
+
             };
+
+            var testannotationCategories = _.uniq(annotationCategoryKeys, true)
+            for (var t=0; t<testannotationCategories.length; t++){
+                var categoryObjectClass = {
+                    category: annotationCategoryKeys[t].replace(" ", "-"),
+                    notes: fn.createArrayOfNotes(annotationCategoryKeys[t], data)
+                };
+                fn.categoryObjectArray.push(categoryObjectClass);
+            }
 
         } else {
             jqueryNoConflict('#note-navigation-links').empty();
@@ -103,6 +126,36 @@ var fn = {
 
     },
 
+
+
+    createArrayOfNotes: function(comparison, data){
+        var notesArray = [];
+
+
+        console.log(data);
+
+        var annotationCategory = comparison.split(":");
+
+        console.log(annotationCategory);
+
+        for(var i=0; i<data.length; i++){
+
+            console.log(data[i].annotations);
+
+
+            if (annotationCategory === data[i].title){
+                notesArray.push(data[i]);
+            }
+        };
+        console.log(notesArray);
+        return notesArray;
+    },
+
+
+
+
+
+
     getIdOfSelectElement: function(){
         jqueryNoConflict('#note-navigation-links').empty();
         jqueryNoConflict('#document-meta-data').empty();
@@ -113,19 +166,6 @@ var fn = {
         jqueryNoConflict("#document-container").html("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
         fn.checkForNewContainer(docDiv, docUrl, docContainer);
     },
-
-    /*
-    getIdOfClickedElement: function(){
-        jqueryNoConflict('#document-navigation-links a').click(function(event){
-            var docId = jqueryNoConflict(this).attr('id');
-            var docDiv = "DV-viewer-" + docId;
-            var docUrl = "//www.documentcloud.org/documents/" + docId + ".js";
-            var docContainer = "#DV-viewer-" + docId;
-            jqueryNoConflict("#document-container").html("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
-            fn.checkForNewContainer(docDiv, docUrl, docContainer);
-        });
-    }
-    */
 
 }
 // end data configuration object
