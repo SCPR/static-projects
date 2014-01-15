@@ -1,8 +1,8 @@
 var jqueryNoConflict = jQuery;
 var initializeTemplates = initializeTemplates || {};
 var fn = fn || {};
-var embed_this = false;
-var embed_url_root = '#';
+var embed_this = true;
+var embed_url_root = 'http://projects.scpr.org/static/interactives/2014-academy-awards-preview/';
 
 // path to a json file or enter in 'spreadsheet' as the value
 var dataSource = 'spreadsheet';
@@ -41,7 +41,6 @@ var fn = {
     },
 
     retrieveTabletopData: function(){
-        console.log('spreadsheet');
         Tabletop.init({
             key: spreadsheetKey,
             callback: fn.filterAwardCategories,
@@ -86,7 +85,6 @@ var fn = {
     },
 
     renderDataVisualsTemplate: function(data){
-        console.log(data);
         renderHandlebarsTemplate('templates/data-visuals.handlebars', '.data-visuals', data);
     }
 }
@@ -122,8 +120,7 @@ var initializeTemplates = {
     },
 
     renderEmbedBox: function(){
-        var embed_url = embed_url_root + '/iframe.html';
-        jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
+        jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page. You may need to adjust the height parameter. <br /><br /> &lt;iframe src=\"'+ embed_url_root +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
     },
 
     toggleDisplayIcon: function(){
