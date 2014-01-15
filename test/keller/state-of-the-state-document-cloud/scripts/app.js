@@ -19,8 +19,6 @@ jqueryNoConflict(document).ready(function() {
 // begin data configuration object
 var fn = {
 
-    categoryObjectArray: [],
-
     checkForNewContainer: function(docDiv, docUrl, docContainer){
         //jqueryNoConflict(".progress-list").removeClass("hidden");
         jqueryNoConflict("#document-container").append("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
@@ -73,7 +71,7 @@ var fn = {
     populateDocumentNotes: function(data){
         jqueryNoConflict('#note-navigation-links').html('');
 
-        //console.log(data.document);
+        console.log(data.document);
 
         var documentDescription;
 
@@ -104,12 +102,11 @@ var fn = {
             };
 
             var testannotationCategories = _.uniq(annotationCategoryKeys, true)
+
             for (var t=0; t<testannotationCategories.length; t++){
-                var categoryObjectClass = {
-                    category: annotationCategoryKeys[t].replace(" ", "-"),
-                    notes: fn.createArrayOfNotes(annotationCategoryKeys[t], data)
-                };
-                fn.categoryObjectArray.push(categoryObjectClass);
+                jqueryNoConflict('#note-navigation-links').append(
+                    "<div id='" + annotationCategoryKeys[t].replace(" ", "-") + "'><h5>" + annotationCategoryKeys[t] + "</h5></div"
+                );
             }
 
         } else {
@@ -122,39 +119,19 @@ var fn = {
             );
         };
 
-        jqueryNoConflict(".progress-list").addClass("hidden");
+        //jqueryNoConflict(".progress-list").addClass("hidden");
+
+
+        jqueryNoConflict('#Health-Care').append(
+            "<p><a href='#document/p1/a140583'>The ultimate costs of expanding our health care system under the Affordable Care Act are unknown</a></p>"
+        );
+
+        jqueryNoConflict('#Education').append(
+            "<p><a href='#document/p3/a140584'>Add to this the fact that three million California school age children speak a language at home other than English and more than two million children live in poverty</a></p>" +
+            "<p><a href='#document/p3/a140585'>With respect to higher education, cost pressures are relentless and many students cannot get the classes they need. A half million fewer students this year enrolled in the community colleges than in 2008</a></p>"
+        );
 
     },
-
-
-
-    createArrayOfNotes: function(comparison, data){
-        var notesArray = [];
-
-
-        console.log(data);
-
-        var annotationCategory = comparison.split(":");
-
-        console.log(annotationCategory);
-
-        for(var i=0; i<data.length; i++){
-
-            console.log(data[i].annotations);
-
-
-            if (annotationCategory === data[i].title){
-                notesArray.push(data[i]);
-            }
-        };
-        console.log(notesArray);
-        return notesArray;
-    },
-
-
-
-
-
 
     getIdOfSelectElement: function(){
         jqueryNoConflict('#note-navigation-links').empty();
@@ -166,6 +143,19 @@ var fn = {
         jqueryNoConflict("#document-container").html("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
         fn.checkForNewContainer(docDiv, docUrl, docContainer);
     },
+
+    /*
+    getIdOfClickedElement: function(){
+        jqueryNoConflict('#document-navigation-links a').click(function(event){
+            var docId = jqueryNoConflict(this).attr('id');
+            var docDiv = "DV-viewer-" + docId;
+            var docUrl = "//www.documentcloud.org/documents/" + docId + ".js";
+            var docContainer = "#DV-viewer-" + docId;
+            jqueryNoConflict("#document-container").html("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
+            fn.checkForNewContainer(docDiv, docUrl, docContainer);
+        });
+    }
+    */
 
 }
 // end data configuration object
