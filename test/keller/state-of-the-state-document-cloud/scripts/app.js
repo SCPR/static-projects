@@ -1,36 +1,41 @@
 var jqueryNoConflict = jQuery;
 var initializeTemplates = initializeTemplates || {};
 var fn = fn || {};
-var embed_this = false;
-var embed_url_root = '#';
+var appConfig = appConfig || {};
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
     initializeTemplates.renderStaticTemplates();
-    fn.checkForNewContainer("DV-viewer-1005633-california-2013-state-of-state-address", "//www.documentcloud.org/documents/1005633-california-2013-state-of-state-address.js", "#DV-viewer-1005633-california-2013-state-of-state-address");
-    //fn.getIdOfClickedElement();
-
+    fn.checkForDataVisuals();
     String.prototype.toProperCase = function () {
         return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     };
-
 });
 
-// begin data configuration object
+// application configuration object
+var appConfig = {
+    embed_this: true,
+    embed_url_root: 'http://projects.scpr.org/static/interactives/2014-academy-awards-preview/',
+    docDiv: "DV-viewer-1005633-california-2013-state-of-state-address",
+    docUrl: "//www.documentcloud.org/documents/1005633-california-2013-state-of-state-address.js",
+    docContainer: "#DV-viewer-1005633-california-2013-state-of-state-address"
+};
+
+// begin application object
 var fn = {
 
-    checkForNewContainer: function(docDiv, docUrl, docContainer){
-        //jqueryNoConflict(".progress-list").removeClass("hidden");
-        jqueryNoConflict("#document-container").append("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
+    checkForDataVisuals: function(){
         var checkExist = setInterval(function() {
-            if (jqueryNoConflict(docContainer).length) {
+            if (jqueryNoConflict('.data-visuals').length) {
                 clearInterval(checkExist);
-                fn.loadInitialDoc(docDiv, docUrl, docContainer);
+                fn.loadInitialDoc(appConfig.docDiv, appConfig.docUrl, appConfig.docContainer);
             }
         }, 1000);
     },
 
     loadInitialDoc: function(docDiv, docUrl, docContainer){
+
+        jqueryNoConflict("#document-container").append("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
 
         var sidebarParam;
         var docHeightParam;
@@ -60,103 +65,112 @@ var fn = {
 
         var docId = docDiv.replace("DV-viewer-", "");
 
-        fn.getDocumentNotes(docId);
+        fn.retrieveDocumentMetaData(docId);
     },
 
-    getDocumentNotes: function(docId){
+    retrieveDocumentMetaData: function(docId){
         var apiPrefix = "https://www.documentcloud.org/api/documents/";
-        $.getJSON(apiPrefix + docId + ".json", fn.populateDocumentNotes);
+        $.getJSON(apiPrefix + docId + ".json", fn.processDocumentMetaData);
     },
 
-    populateDocumentNotes: function(data){
-        jqueryNoConflict('#note-navigation-links').html('');
-
-        console.log(data.document);
-
-        var documentDescription;
-
-        var annotationCategoryKeys = [];
-
-
-        if (data.document.description){
-            documentDescription = "<p><em><strong>About this</strong></em>: " + data.document.description + "</p>";
-        } else {
-            documentDescription = "<p></p>"
-        };
-
-        if (data.document.annotations.length > 0){
-            jqueryNoConflict('#note-navigation-links').empty();
-            jqueryNoConflict('#document-meta-data').html(
-                "<h6>" + data.document.title + "</h6>" + documentDescription +
-                "<p><em><strong>Source</strong></em>: " + data.document.source + "</p>" +
-                "<p><em><strong>See what Brown had to say about</strong></em>:</p>"
-            );
-
-            for(var i=0; i<data.document.annotations.length; i++){
-                var annotationCategory = data.document.annotations[i].title.split(":");
-                annotationCategoryKeys.push(annotationCategory[0].toProperCase());
-                var docAnnotation = "#document/p" + data.document.annotations[i].page + "/a" + data.document.annotations[i].id;
-
-                //jqueryNoConflict('#note-navigation-links').append("<p><a href='" + docAnnotation + "'>" + data.document.annotations[i].title + "</a></p>");
-
-            };
-
-            var testannotationCategories = _.uniq(annotationCategoryKeys, true)
-
-            for (var t=0; t<testannotationCategories.length; t++){
-                jqueryNoConflict('#note-navigation-links').append(
-                    "<div id='" + annotationCategoryKeys[t].replace(" ", "-") + "'><h5>" + annotationCategoryKeys[t] + "</h5></div"
-                );
-            }
-
-        } else {
-            jqueryNoConflict('#note-navigation-links').empty();
-            jqueryNoConflict('#document-meta-data').html(
-                "<h6>" + data.document.title + "</h6>" +
-                documentDescription +
-                "<p><em><strong>Source</strong></em>: " + data.document.source + "</p>" +
-                "<p><strong>This document does not have annotations</strong></p>"
-            );
-        };
-
-        //jqueryNoConflict(".progress-list").addClass("hidden");
-
-
-        jqueryNoConflict('#Health-Care').append(
-            "<p><a href='#document/p1/a140583'>The ultimate costs of expanding our health care system under the Affordable Care Act are unknown</a></p>"
+    processDocumentMetaData: function(data){
+        jqueryNoConflict('#document-meta-data').html(
+            "<h6>" + data.document.title + "</h6>" +
+            "<p><em><strong>About this</strong></em>: " + data.document.description + "</p>" +
+            "<p><em><strong>Source</strong></em>: " + data.document.source + "</p>" +
+            "<p><em><strong>See what Brown had to say about</strong></em>:</p>"
         );
 
-        jqueryNoConflict('#Education').append(
-            "<p><a href='#document/p3/a140584'>Add to this the fact that three million California school age children speak a language at home other than English and more than two million children live in poverty</a></p>" +
-            "<p><a href='#document/p3/a140585'>With respect to higher education, cost pressures are relentless and many students cannot get the classes they need. A half million fewer students this year enrolled in the community colleges than in 2008</a></p>"
+        // get unique note topics we will display
+        var arrayOfCategories = fn.createNoteCategoryList(data.document.annotations);
+
+        // create topic elements across the top
+        fn.createTopicControls(arrayOfCategories);
+
+        // display initial topic
+        fn.createTopicObjects(arrayOfCategories, data);
+    },
+
+    // create an array of unique notes categories
+    createNoteCategoryList: function(notesArray){
+        var notesAllCategories = [];
+        for(var n=0; n<notesArray.length; n++){
+            var noteCategory = notesArray[n].title.split(":");
+            notesAllCategories.push(noteCategory[0].toProperCase());
+        };
+        var notesUniqueCategories = _.uniq(notesAllCategories);
+        return notesUniqueCategories;
+    },
+
+    displayNoteData: function(arrayOfTopicNotes, targetValue){
+        var targetTopic = targetValue.replace('-', ' ').toProperCase();
+        var targetTopicArray = _.where(arrayOfTopicNotes, {topic: targetTopic});
+
+        jqueryNoConflict("#note-navigation-links").html(
+            "<div id='" + targetValue + "'>" +
+            "<h2>" + targetTopicArray[0].topic + "</h2>" + "</div>"
         );
 
+        var divToAppend = "#" + targetValue;
+
+        console.log();
+
+        for(var i=0; i<targetTopicArray[0].notes.length; i++){
+            jqueryNoConflict("#note-navigation-links>" + divToAppend).append(
+                "<p><a href='#document/p" + targetTopicArray[0].notes[i].page + "/a" +
+                targetTopicArray[0].notes[i].id + "'>" + targetTopicArray[0].notes[i].title + "</a></p>"
+            );
+        };
     },
 
-    getIdOfSelectElement: function(){
-        jqueryNoConflict('#note-navigation-links').empty();
-        jqueryNoConflict('#document-meta-data').empty();
-        var docId = jqueryNoConflict('#create-document-instance').val();
-        var docDiv = "DV-viewer-" + docId;
-        var docUrl = "//www.documentcloud.org/documents/" + docId + ".js";
-        var docContainer = "#DV-viewer-" + docId;
-        jqueryNoConflict("#document-container").html("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
-        fn.checkForNewContainer(docDiv, docUrl, docContainer);
-    },
-
-    /*
-    getIdOfClickedElement: function(){
-        jqueryNoConflict('#document-navigation-links a').click(function(event){
-            var docId = jqueryNoConflict(this).attr('id');
-            var docDiv = "DV-viewer-" + docId;
-            var docUrl = "//www.documentcloud.org/documents/" + docId + ".js";
-            var docContainer = "#DV-viewer-" + docId;
-            jqueryNoConflict("#document-container").html("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
-            fn.checkForNewContainer(docDiv, docUrl, docContainer);
+    // create the topical navigation across the top of the page
+    createTopicControls: function(data){
+        for(var i=0; i<data.length; i++){
+            jqueryNoConflict("#controls").append("<div id='" + data[i].replace(" ", "-").toLowerCase() + "' class='indicator' style='background-image: url(\"http://a.scpr.org/i/21bf336f0dddef9b6774d00533fbe73d/72031-lsquare.jpg\"); background-repeat: no-repeat; background-position: center;'></div>");
+        }
+        var controlsWidth = jqueryNoConflict('#controls').width();
+        var numberOfElements = data.length;
+        var elementDimension = (controlsWidth-5)/numberOfElements;
+        jqueryNoConflict('#controls .indicator').css({
+            'width': elementDimension + 'px',
+            'height': elementDimension + 'px'
         });
-    }
-    */
+        jqueryNoConflict('#controls .indicator:first').addClass('active');
 
+        // here's the click event
+        jqueryNoConflict('div.indicator').click(function(){
+            var targetValue = jqueryNoConflict(this).attr('id');
+            jqueryNoConflict('div').removeClass('active');
+            jqueryNoConflict('div#' + targetValue).addClass('active');
+            fn.displayNoteData(fn.arrayOfTopicNotes, targetValue);
+        });
+    },
+
+    arrayOfTopicNotes: [],
+
+    createTopicObjects: function(array, data){
+        for(var i=0; i<array.length; i++){
+            var topicObjectClass = {
+                topic: array[i],
+                notes: fn.createArrayOfNotes(array[i], data.document.annotations)
+            };
+            fn.arrayOfTopicNotes.push(topicObjectClass);
+        }
+    },
+
+    createArrayOfNotes: function(comparison, data){
+        var noteArray = [];
+        for(var i=0; i<data.length; i++){
+            var noteTitle = data[i].title.split(":");
+            noteTitle = noteTitle[0].toProperCase();
+            if (comparison === noteTitle){
+                noteArray.push(data[i]);
+            } else {
+                continue;
+            }
+        };
+        return noteArray;
+    },
 }
 // end data configuration object
 
@@ -168,6 +182,7 @@ var initializeTemplates = {
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');
         renderHandlebarsTemplate('templates/data-details.handlebars', '.data-details');
+        renderHandlebarsTemplate('templates/data-visuals.handlebars', '.data-visuals');
 
         var checkExist = setInterval(function() {
 
@@ -184,14 +199,13 @@ var initializeTemplates = {
     },
 
     hideEmbedBox: function(){
-        if (embed_this === false){
+        if (appConfig.embed_this === false){
             jqueryNoConflict('li.projects-embed').addClass('hidden');
         };
     },
 
     renderEmbedBox: function(){
-        var embed_url = embed_url_root + '/iframe.html';
-        jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
+        jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page. You may need to adjust the height parameter. <br /><br /> &lt;iframe src=\"'+ appConfig.embed_url_root +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
     },
 
     toggleDisplayIcon: function(){
