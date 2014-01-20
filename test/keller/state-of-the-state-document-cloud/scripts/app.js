@@ -15,7 +15,7 @@ jqueryNoConflict(document).ready(function() {
 // application configuration object
 var appConfig = {
     embed_this: true,
-    embed_url_root: 'http://projects.scpr.org/static/interactives/2014-academy-awards-preview/',
+    embed_url_root: 'http://projects.scpr.org/static/interactives/2014-state-of-state/',
     docDiv: "DV-viewer-1005633-california-2013-state-of-state-address",
     docUrl: "//www.documentcloud.org/documents/1005633-california-2013-state-of-state-address.js",
     docContainer: "#DV-viewer-1005633-california-2013-state-of-state-address"
@@ -126,7 +126,7 @@ var fn = {
     // create the topical navigation across the top of the page
     createTopicControls: function(data){
         for(var i=0; i<data.length; i++){
-            jqueryNoConflict("#controls").append("<div id='" + data[i].replace(" ", "-").toLowerCase() + "' class='indicator' style='background-image: url(\"http://a.scpr.org/i/21bf336f0dddef9b6774d00533fbe73d/72031-lsquare.jpg\"); background-repeat: no-repeat; background-position: center;'></div>");
+            jqueryNoConflict("#controls").append("<div id='" + data[i].replace(" ", "-").toLowerCase() + "' class='indicator'><p class='text-center'><small>" + data[i] + "</small></p></div>");
         }
         var controlsWidth = jqueryNoConflict('#controls').width();
         var numberOfElements = data.length;

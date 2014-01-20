@@ -1,19 +1,32 @@
+.data-visuals #document-container {width: 92%; height: 1000px; margin: 0 4% 0 4%;}
+
+#document-navigation-links {width: 100%; height: 45px; margin-bottom: 20px;}
+
 /* navigation blocks */
 #controls {width: 94%; height: auto; margin: 15px 3% 15px 3%;}
 #controls .indicator {vertical-align: top; display: inline-block; *display: inline; zoom: 1; border: 2px solid #bbbbbb; font-size: 12px; line-height: 30px; cursor: pointer; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px;}
 #controls .indicator {opacity: .5;}
 #controls .indicator.active {border: 2px solid #007FA6; opacity: 1;}
+#controls .indicator p {line-height: 300px;}
 
-#images-container {width: 100%; margin: 0 0 0 0;}
-#images-container img {width: 100%; margin: 0 0 0 0; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
-#before-after-links {height: 40px;}
-#before-after-links .balinks a {font-size: 16px; font-weight: 700; overflow: hidden;}
-#captions-container {width: 94%; height: auto; margin: 15px 3% 15px 3%;}
-#captions-container #photo-credits {height: 25px; margin: 0px 0 10px 0;}
+/* background icons */
+#controls #economy.indicator {z-index: 10; background: #ffffff; background-image: url(../images/economy.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+/* economy.png used via Creative Commons CC0 - No Rights Reserved - http://thenounproject.com/noun/money/#icon-No931 */
 
-.data-visuals #document-container {width: 92%; height: 1000px; margin: 0 4% 0 4%;}
-#document-navigation-links {width: 100%; height: 45px; margin-bottom: 20px;}
-select {width: 100%; margin: 0 0 0 0; font-weight: 700;}
+#controls #education.indicator {z-index: 10; background: #ffffff; background-image: url(../images/education.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+/* education.png used via a Public Domain Mark - http://thenounproject.com/noun/school/#icon-No4405 */
+
+#controls #transportation.indicator {z-index: 10; background: #ffffff; background-image: url(../images/transportation.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+/* transportation.png used via a Public Domain Mark - http://thenounproject.com/term/train/67/ */
+
+#controls #environment.indicator {z-index: 10; background: #ffffff; background-image: url(../images/environment.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+/* environment.png used via a Public Domain Mark - http://thenounproject.com/term/recycle/7162/ */
+
+#controls #politics.indicator {z-index: 10; background: #ffffff; background-image: url(../images/politics.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+/* politics.png used via a Public Domain Mark - http://thenounproject.com/term/state-government/15214/ */
+
+#controls #health-care.indicator {z-index: 10; background: #ffffff; background-image: url(../images/health-care.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+/* health-care.png used via a Public Domain Mark - hhttp://thenounproject.com/term/x-ray/615/ */
 
 @media (max-width: 491px) {
     select {font-size: 200%;}
