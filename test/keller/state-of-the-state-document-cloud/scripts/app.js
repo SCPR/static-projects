@@ -75,7 +75,7 @@ var fn = {
     },
 
     processDocumentMetaData: function(data){
-        jqueryNoConflict('#document-meta-data').html("<h5>Click an icon to see what Gov. Jerry Brown said about a particular topic in his State of the State address.</h5>"
+        jqueryNoConflict('#document-meta-data').html("<h6>Click an icon to see what Gov. Jerry Brown said about <span id='speech-topic'>a particular topic</span> in his State of the State address.</h6>"
         );
 
         // get unique note topics we will display
@@ -102,20 +102,20 @@ var fn = {
     displayNoteData: function(arrayOfTopicNotes, targetValue){
         var targetTopic = targetValue.replace('-', ' ').toProperCase();
         var targetTopicArray = _.where(arrayOfTopicNotes, {topic: targetTopic});
-
+        jqueryNoConflict("#speech-topic").html(
+            targetTopicArray[0].topic
+        ).css({
+            'font-weight': '900',
+        });
         jqueryNoConflict("#note-navigation-links").html(
-            "<div id='" + targetValue + "'>" +
-            "<h5>" + targetTopicArray[0].topic + "</h5>" + "<ul></ul></div>"
+            "<div id='" + targetValue + "'>" + "<ul></ul></div>"
         );
-
         var divToAppend = "#" + targetValue;
-
-        console.log();
-
         for(var i=0; i<targetTopicArray[0].notes.length; i++){
+            var topicLessDisplay = targetTopicArray[0].notes[i].title.split(":");
             jqueryNoConflict("#note-navigation-links>" + divToAppend + " ul").append(
                 "<li><a href='#document/p" + targetTopicArray[0].notes[i].page + "/a" +
-                targetTopicArray[0].notes[i].id + "'>" + targetTopicArray[0].notes[i].title + "</a></li>"
+                targetTopicArray[0].notes[i].id + "'>" + topicLessDisplay[1] + "</a></li>"
             );
         };
     },

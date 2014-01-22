@@ -42,6 +42,10 @@
     select {font-size: 200%;}
 }
 
+@media (max-width: 585px) {
+    #controls .indicator p {display: none;}
+}
+
 @media (min-width: 768px) {
     select {font-size: 200%;}
 }
