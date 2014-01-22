@@ -12,11 +12,11 @@
 #controls .indicator.active {border: 2px solid #007FA6; opacity: 1;}
 
 /* background icons */
-#controls #economy.indicator {z-index: 10; background: #ffffff; background-image: url(../images/economy.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
-/* economy.png used via Creative Commons CC0 - No Rights Reserved - http://thenounproject.com/noun/money/#icon-No931 */
+#controls #budget.indicator {z-index: 10; background: #ffffff; background-image: url(../images/economy.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
+/* economy.png used via a Public Domain Mark - http://thenounproject.com/term/money/931/ */
 
 #controls #education.indicator {z-index: 10; background: #ffffff; background-image: url(../images/education.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
-/* education.png used via a Public Domain Mark - http://thenounproject.com/noun/school/#icon-No4405 */
+/* education.png used via a Public Domain Mark - http://thenounproject.com/term/school/4405/ */
 
 #controls #transportation.indicator {z-index: 10; background: #ffffff; background-image: url(../images/transportation.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
 /* transportation.png used via a Public Domain Mark - http://thenounproject.com/term/train/67/ */
@@ -28,7 +28,10 @@
 /* politics.png used via a Public Domain Mark - http://thenounproject.com/term/state-government/15214/ */
 
 #controls #health-care.indicator {z-index: 10; background: #ffffff; background-image: url(../images/health-care.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
-/* health-care.png used via a Public Domain Mark - hhttp://thenounproject.com/term/x-ray/615/ */
+/* health-care.png used via a Public Domain Mark - http://thenounproject.com/term/x-ray/615/ */
+
+#controls #prisons.indicator {z-index: 10; background: #ffffff; background-image: url(../images/prisons.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
+/* prisons.png used via a Public Domain Mark - http://thenounproject.com/term/arrest/4259/ */
 
 @media (max-width: 491px) {
     #note-navigation-links ul li {font-size: 140%;}
