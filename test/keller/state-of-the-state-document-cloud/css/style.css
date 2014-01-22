@@ -4,28 +4,30 @@
 
 /* navigation blocks */
 #controls {width: 94%; height: auto; margin: 15px 3% 15px 3%;}
+
 #controls .indicator {vertical-align: top; display: inline-block; *display: inline; zoom: 1; border: 2px solid #bbbbbb; font-size: 12px; line-height: 30px; cursor: pointer; border-radius: 7px; -webkit-border-radius: 7px; -moz-border-radius: 7px;}
+
 #controls .indicator {opacity: .5;}
+
 #controls .indicator.active {border: 2px solid #007FA6; opacity: 1;}
-#controls .indicator p {line-height: 300px;}
 
 /* background icons */
-#controls #economy.indicator {z-index: 10; background: #ffffff; background-image: url(../images/economy.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+#controls #economy.indicator {z-index: 10; background: #ffffff; background-image: url(../images/economy.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
 /* economy.png used via Creative Commons CC0 - No Rights Reserved - http://thenounproject.com/noun/money/#icon-No931 */
 
-#controls #education.indicator {z-index: 10; background: #ffffff; background-image: url(../images/education.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+#controls #education.indicator {z-index: 10; background: #ffffff; background-image: url(../images/education.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
 /* education.png used via a Public Domain Mark - http://thenounproject.com/noun/school/#icon-No4405 */
 
-#controls #transportation.indicator {z-index: 10; background: #ffffff; background-image: url(../images/transportation.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+#controls #transportation.indicator {z-index: 10; background: #ffffff; background-image: url(../images/transportation.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
 /* transportation.png used via a Public Domain Mark - http://thenounproject.com/term/train/67/ */
 
-#controls #environment.indicator {z-index: 10; background: #ffffff; background-image: url(../images/environment.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+#controls #environment.indicator {z-index: 10; background: #ffffff; background-image: url(../images/environment.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
 /* environment.png used via a Public Domain Mark - http://thenounproject.com/term/recycle/7162/ */
 
-#controls #politics.indicator {z-index: 10; background: #ffffff; background-image: url(../images/politics.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+#controls #politics.indicator {z-index: 10; background: #ffffff; background-image: url(../images/politics.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
 /* politics.png used via a Public Domain Mark - http://thenounproject.com/term/state-government/15214/ */
 
-#controls #health-care.indicator {z-index: 10; background: #ffffff; background-image: url(../images/health-care.png); background-size: 80%; background-repeat: no-repeat; background-position: center center;}
+#controls #health-care.indicator {z-index: 10; background: #ffffff; background-image: url(../images/health-care.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
 /* health-care.png used via a Public Domain Mark - hhttp://thenounproject.com/term/x-ray/615/ */
 
 @media (max-width: 491px) {

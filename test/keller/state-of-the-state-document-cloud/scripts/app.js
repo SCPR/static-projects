@@ -14,6 +14,7 @@ jqueryNoConflict(document).ready(function() {
 
 // application configuration object
 var appConfig = {
+    openAboutThis: true,
     embed_this: true,
     embed_url_root: 'http://projects.scpr.org/static/interactives/2014-state-of-state/',
     docDiv: "DV-viewer-1005633-california-2013-state-of-state-address",
@@ -74,11 +75,7 @@ var fn = {
     },
 
     processDocumentMetaData: function(data){
-        jqueryNoConflict('#document-meta-data').html(
-            "<h6>" + data.document.title + "</h6>" +
-            "<p><em><strong>About this</strong></em>: " + data.document.description + "</p>" +
-            "<p><em><strong>Source</strong></em>: " + data.document.source + "</p>" +
-            "<p><em><strong>See what Brown had to say about</strong></em>:</p>"
+        jqueryNoConflict('#document-meta-data').html("<h5>Click an icon to see what Gov. Jerry Brown said about a particular topic in his State of the State address.</h5>"
         );
 
         // get unique note topics we will display
@@ -108,7 +105,7 @@ var fn = {
 
         jqueryNoConflict("#note-navigation-links").html(
             "<div id='" + targetValue + "'>" +
-            "<h2>" + targetTopicArray[0].topic + "</h2>" + "</div>"
+            "<h5>" + targetTopicArray[0].topic + "</h5>" + "<ul></ul></div>"
         );
 
         var divToAppend = "#" + targetValue;
@@ -116,9 +113,9 @@ var fn = {
         console.log();
 
         for(var i=0; i<targetTopicArray[0].notes.length; i++){
-            jqueryNoConflict("#note-navigation-links>" + divToAppend).append(
-                "<p><a href='#document/p" + targetTopicArray[0].notes[i].page + "/a" +
-                targetTopicArray[0].notes[i].id + "'>" + targetTopicArray[0].notes[i].title + "</a></p>"
+            jqueryNoConflict("#note-navigation-links>" + divToAppend + " ul").append(
+                "<li><a href='#document/p" + targetTopicArray[0].notes[i].page + "/a" +
+                targetTopicArray[0].notes[i].id + "'>" + targetTopicArray[0].notes[i].title + "</a></li>"
             );
         };
     },
@@ -209,6 +206,11 @@ var initializeTemplates = {
     },
 
     toggleDisplayIcon: function(){
+
+        if (appConfig.openAboutThis === true){
+            jqueryNoConflict('.text').collapse('show');
+        };
+
         jqueryNoConflict('.text').on('shown.bs.collapse', function(){
             jqueryNoConflict('span.text').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
         });
