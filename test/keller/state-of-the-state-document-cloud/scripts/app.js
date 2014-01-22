@@ -50,14 +50,14 @@ var fn = {
             docHeightParam = 400;
         } else {
             sidebarParam = false;
-            docHeightParam = 1820;
+            docHeightParam = 820;
         };
 
         var initialWidth = jqueryNoConflict('#document-container').width();
 
         DV.load(docUrl, {
             width: initialWidth,
-            height: 1000,
+            height: docHeightParam,
             sidebar: sidebarParam,
             text: false,
             pdf: false,
