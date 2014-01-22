@@ -75,7 +75,7 @@ var fn = {
     },
 
     processDocumentMetaData: function(data){
-        jqueryNoConflict('#document-meta-data').html("<h6>Click an icon to see what Gov. Jerry Brown said about <span id='speech-topic'>a particular topic</span> in his State of the State address.</h6>"
+        jqueryNoConflict('#document-meta-data').html("<h6><span id='speech-topic'>Click an icon to see what Gov. Jerry Brown said about a particular topic in his State of the State address.</span></h6>"
         );
 
         // get unique note topics we will display

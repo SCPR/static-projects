@@ -31,29 +31,30 @@
 /* health-care.png used via a Public Domain Mark - hhttp://thenounproject.com/term/x-ray/615/ */
 
 @media (max-width: 491px) {
-    select {font-size: 200%;}
+    #note-navigation-links ul li {font-size: 140%;}
 }
 
 @media (min-width: 491px) {
-    select {font-size: 200%;}
+    #note-navigation-links ul li {font-size: 140%;}
 }
 
 @media (min-width: 567px) {
-    select {font-size: 200%;}
+    #note-navigation-links ul li {font-size: 140%;}
 }
 
 @media (max-width: 585px) {
     #controls .indicator p {display: none;}
+    #note-navigation-links ul li {font-size: 150%;}
 }
 
 @media (min-width: 768px) {
-    select {font-size: 200%;}
+    #note-navigation-links ul li {font-size: 160%;}
 }
 
 @media (min-width: 830px) {
-    select {font-size: 240%;}
+    #note-navigation-links ul li {font-size: 160%;}
 }
 
 @media (min-width: 992px) {
-    select {font-size: 240%;}
+    #note-navigation-links ul li {font-size: 180%;}
 }
