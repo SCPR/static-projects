@@ -33,6 +33,9 @@
 #controls #prisons.indicator {z-index: 10; background: #ffffff; background-image: url(../images/prisons.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
 /* prisons.png used via a Public Domain Mark - http://thenounproject.com/term/arrest/4259/ */
 
+#controls #speech.indicator {z-index: 10; background: #ffffff; background-image: url(../images/speech.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
+/* prisons.png used via a Public Domain Mark - http://thenounproject.com/term/speech/16988/ */
+
 @media (max-width: 491px) {
     #note-navigation-links ul li {font-size: 140%;}
 }
