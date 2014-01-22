@@ -17,9 +17,9 @@ var appConfig = {
     openAboutThis: true,
     embed_this: true,
     embed_url_root: 'http://projects.scpr.org/static/interactives/2014-state-of-state/',
-    docDiv: "DV-viewer-1005633-california-2013-state-of-state-address",
-    docUrl: "//www.documentcloud.org/documents/1005633-california-2013-state-of-state-address.js",
-    docContainer: "#DV-viewer-1005633-california-2013-state-of-state-address"
+    docDiv: "DV-viewer-1008354-california-2014-state-of-the-state-address",
+    docUrl: "//www.documentcloud.org/documents/1008354-california-2014-state-of-the-state-address.js",
+    docContainer: "#DV-viewer-1008354-california-2014-state-of-the-state-address"
 };
 
 // begin application object
