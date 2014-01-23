@@ -7,13 +7,22 @@
                     <img id="{{category}}" src="{{movieimage}}" alt="{{nominee}}" />
                     <h5 class="text-center">{{nominee}}</h5>
                     {{#if awardswon}}
-                        <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                            </div>
+                        </div>
                     {{else}}
                         <p>&nbsp;</p>
                     {{/if}}
                     {{#if prediction}}
-                        <p><strong>Prediction</strong>: {{prediction}} - <span class="italics"><a href="{{predictionlink}}" target="_blank">{{predictionsource}}</a></span></p>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <p><strong>Prediction</strong>: {{prediction}} - <span class="italics"><a href="{{predictionlink}}" target="_blank">{{predictionsource}}</a></span></p>
+                            </div>
+                        </div>
                     {{else}}
+                        <p>&nbsp;</p>
                     {{/if}}
                     <p class="centered">
                         {{#if imdbpage}}
