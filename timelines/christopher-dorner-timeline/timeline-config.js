@@ -3,7 +3,7 @@ var kpccTimelineConfig = {
     dataSource: 'spreadsheet',
 
     // example spreadsheet key
-    key: '0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE',
+    key: '0An8W63YKWOsxdExVR0JPcENEaUJ4cGtWNXJNYkJ3MWc',
 
     // example path to data file
     sourceFile: 'timeline-data.json',
@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: 'http://projects.scpr.org/static/timelines/timeline-template/',
+    projectDirectory: 'http://projects.scpr.org/static/timelines/christopher-dorner-timeline/',
 
     // newest or oldest
     defaultDirection: 'newest',
