@@ -3,7 +3,7 @@ var kpccTimelineConfig = {
     dataSource: 'flat-file',
 
     // example spreadsheet key
-    key: '0Aq8qwSArzKP9dFlFYVN3dmI2OThDVjR1Z3QyTnl5dmc',
+    key: '0An8W63YKWOsxdDdidzJtWlZGUXQ0S0MxR3A0RmZqbGc',
 
     // example path to data file
     sourceFile: 'timeline-data.json',
@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: 'http://projects.scpr.org/static/timelines/antonio-villaraigosa-tenure/',
+    projectDirectory: 'http://projects.scpr.org/static/timelines/black-friday-timeline/',
 
     // newest or oldest
     defaultDirection: 'newest',
