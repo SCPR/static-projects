@@ -1,0 +1,30 @@
+.data-visuals #data-legend #document-navigation-links {width: 100%; height: 45px; margin-bottom: 10px;}
+.data-visuals #data-legend {width: 92%; margin: 0 4% 0 4%;}
+.data-visuals #document-meta-data {width: 92%; margin: 0 4% 0 4%;}
+.data-visuals #note-navigation-links {width: 92%; margin: 0 4% 0 4%;}
+.data-visuals #document-container {width: 92%; margin: 0 4% 0 4%;}
+select {width: 100%; margin: 0 0 0 0; font-weight: 700;}
+
+@media (max-width: 491px) {
+    select {font-size: 200%;}
+}
+
+@media (min-width: 491px) {
+    select {font-size: 200%;}
+}
+
+@media (min-width: 567px) {
+    select {font-size: 200%;}
+}
+
+@media (min-width: 768px) {
+    select {font-size: 200%;}
+}
+
+@media (min-width: 830px) {
+    select {font-size: 240%;}
+}
+
+@media (min-width: 992px) {
+    select {font-size: 240%;}
+}

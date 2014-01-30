@@ -1,0 +1,28 @@
+{{#objects}}
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="row">
+            {{#if image}}
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="img">
+                        <img src="{{image}}" alt="{{name}}" width="120px" height="170px" />
+                    </div>
+                    <div class="text">
+                        <p class="small-writing"><strong>{{name}}</strong></p>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-8 col-lg-10">
+                    <h3>{{name}}</h3>
+                    <p class="small-writing">{{affiliation}}</p>
+                    <p>{{statement}}</p>
+                </div>
+            {{else}}
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h3>{{name}}</h3>
+                    <p class="small-writing">{{affiliation}}</p>
+                    <p>{{statement}}</p>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+    <hr />
+{{/objects}}
