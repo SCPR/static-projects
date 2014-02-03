@@ -1,67 +1,457 @@
-<h3>Overview, Walkthrough, Deploying, Publishing &amp; Technical Specs for creating tabletop.js timelines</h3>
+<h1>Creating timelines for scpr.org web stories</h1>
 
 <hr />
 
-<h6>Created 11/19/2012 by <a href="ckeller@scpr.org">Chris Keller</a></h6>
+<p><strong>Created 11/19/2012 by <a href="ckeller@scpr.org">Chris Keller</a></strong></p>
 
-<h6>Updated 12/7/2012 by <a href="ckeller@scpr.org">Chris Keller</a></h6>
+<p><strong>Updated 2/3/2014 by <a href="ckeller@scpr.org">Chris Keller</a></strong></p>
 
 <hr />
+
+<h2>Table of contents</h2>
+
+<h4><a href="#overview">Overview</a></h4>
+
+<h4><a href="#quickstart">Quickstart checklist</a></h4>
+
+<h4><a href="#storing-data">Storing the data</a></h4>
+
+<h4><a href="#configuring-and-deploying">Configuring &amp; deploying to the web</a></h4>
+
+<h4><a href="#publishing">Publishing in a story</a></h4>
+
+<h4><a href="#technical-requirements">Technical Requirements</a></h4>
+
+<h4><a href="#resources">Resources</a></h4>
+
+<hr />
+
+<p><a name="overview"></a></p>
 
 <h4>Overview</h4>
 
-<p>In minutes we can create <a href="http://projects.scpr.org/static/timelines/black-friday-timeline/">vertical timelines</a> for the website using a Google Spreadsheet, an index file and a script. Roughly 95 percent of the work takes place in the Google spreadsheet.</p>
+<p>With a little practice, you can create and deploy a <a href="http://projects.scpr.org/static/timelines/life-of-nelson-mandela/">topical timeline </a> for <a href="http://www.scpr.org/">scpr.org</a> using a Google Spreadsheet, a HTML index file and a JavaScript configuration file.</p>
 
-<p>The template for these reside in /static-projects/timelines/timeline-templates.</p>
+<p>Roughly 95 percent of the work takes place in the Google spreadsheet, and we have a handy <a href="https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&amp;usp=drive_web#gid=0">template</a> to get you started.</p>
 
-<h4>Walkthrough</h4>
+<p>Follow the steps below to build, deploy and publish your very own timeline.</p>
 
-<p>Create your Google spreadsheet by copying this <a href="https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE">template</a>. You may be prompted to request sharing from Chris Keller. Don't worry, he'll approve you.</p>
+<p><a name="quickstart"></a></p>
 
-<p>Please note that the date column should contain data in a Month, Day, Year format <strong>(April 25, 2012)</strong> for javascript to parse it. Also, all columns must be plain text format, including the two date columns.</p>
+<h4>Quickstart checklist</h4>
 
-<p>Once you have some information in the spreadsheet go to <em>File</em> --> <em>Publish to the web</em> and choose <em>Start publishing</em>.</p>
+<ul>
+<li>[ ] Make a copy of the file titled <a href="https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&amp;usp=drive_web#gid=0">Template: KPCC Timeline Template</a> that is stored in the KPCC Data Desk Google Drive account.</li>
+<li>[ ] In the spreadsheet you will find two sheets. Add data for the timeline on the sheet labeled <strong>'Posts'.</strong></li>
+<li>[ ] Move on to the sheet labeled <strong>'MetaData'.</strong></li>
+<li>[ ] Publish the spreadsheet and get the spreadsheet key.</li>
+<li>[ ] Complete the timeline-config.js file and add metadata to the index.html file.</li>
+<li>[ ] Deploy a timeline so users can see it on the web.</li>
+</ul>
 
-<p>A URL will appear, and we're interested in the part between 'key=' and the '&amp;' symbol. Here's an example URL:</p>
 
-<pre><code>https://docs.google.com/spreadsheet/pub?key=0An8W63YKWOsxdFFSZjB5VV9aVmZGblQxSFhpZ1NFd3c&amp;output=html
+<p><a name="storing-data"></a></p>
+
+<h4>Storing the data</h4>
+
+<p>This assumes you've already got a topic in mind and a data source, and you're familiar with using Google spreadsheets.</p>
+
+<ol>
+<li><p>Begin by making a copy of the file titled <a href="https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&amp;usp=drive_web#gid=0">Template: KPCC Timeline Template</a> that is stored in the KPCC Data Desk Google Drive account. You may be prompted to request access. Don't worry, if you're on staff we'll approve you.</p></li>
+<li><p>In the spreadsheet you will find two sheets. One is labeled <strong>'Posts'</strong> and one is labeled <strong>'MetaData'</strong>. I begin by entering the data for the timeline, which means I start in the sheet labeled <strong>Posts.</strong> Here's an explanation of the data that should appear in each column:</p>
+
+<ul>
+<li><strong>title</strong>
+
+<ul>
+<li><strong>Type</strong>: text</li>
+<li><strong>Description</strong>: This is the headline that will appear above the item on the timeline. Keep it pithy and to the point.</li>
+</ul>
+</li>
+<li><strong>date</strong>
+
+<ul>
+<li><strong>Type</strong>: date</li>
+<li><strong>Description</strong>: This is the date the item took place and is required for sorting purposes. The end user will not see this value. Please note that the date column should contain data in a <strong>Month Day, Year</strong> format. -- <strong>April 25, 2012</strong> so the JavaScript can parse it correctly. If you don't know the date something occurred, we can fudge it for sorting purposes by just entering the first or second day of a month.</li>
+</ul>
+</li>
+<li><strong>display date</strong>
+
+<ul>
+<li><strong>Type</strong>: text</li>
+<li><strong>Description</strong>: This is the date the user will see on the timeline. You can format this however it makes sense given the item's context. Sometime we use March 2003, sometimes 2003. It's really a free form text field to explain to the user when something happened.</li>
+</ul>
+</li>
+<li><strong>media type</strong>
+
+<ul>
+<li><strong>Type</strong>: image or embed</li>
+<li><strong>Description</strong>: This field accepts two values: image or embed. It is used to tell the presentation template how to adjust to a photo or an iframe/video embed.</li>
+</ul>
+</li>
+<li><strong>media url</strong>
+
+<ul>
+<li><strong>Type</strong>: url</li>
+<li><strong>Description</strong>: This field is a link to an image -- if the media type is image -- or an iframe embed code. In most cases we should only be linking to images we have stored in assethost. Put another way: Do not hotlink to images on other sites. We have no reason to believe those images will always exist or won't be switched out for some meme.</li>
+</ul>
+</li>
+<li><strong>caption</strong>
+
+<ul>
+<li><strong>Type</strong>: text</li>
+<li><strong>Description</strong>: This field is the caption for the image.</li>
+</ul>
+</li>
+<li><strong>body</strong>
+
+<ul>
+<li><strong>Type</strong>: text</li>
+<li><strong>Description</strong>: This field contains body text for the item. Should your item not warrant body text, this field isn't necessary.</li>
+</ul>
+</li>
+<li><strong>read more source</strong>
+
+<ul>
+<li><strong>Type</strong>: text</li>
+<li><strong>Description</strong>: This field is the source of an item.</li>
+</ul>
+</li>
+<li><strong>read more url</strong>
+
+<ul>
+<li><strong>Type</strong>: url</li>
+<li><strong>Description</strong>: This field is a link to that source.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Now lets move on to the sheet labeled <strong>MetaData.</strong> Here's an explanation of the data that should appear in each column:</p>
+
+<ul>
+<li><strong>projecturl</strong>
+
+<ul>
+<li><strong>Type</strong>: url</li>
+<li><strong>Description</strong>: This is the URL where the timeline will be visible on the web. If you don't know this, Chris K., Eric Z. or Brian F. can help you.</li>
+<li><strong>Example</strong>: <code>http://projects.scpr.org/static/timelines/life-of-nelson-mandela/</code></li>
+</ul>
+</li>
+<li><strong>kicker</strong>
+
+<ul>
+<li><strong>Type</strong>: text</li>
+<li><strong>Description</strong>: Projects have a "kicker" headline element that describes the topic of the project. This will usually be something like "Politics," "Crime," "Education".</li>
+<li><strong>Example</strong>: <code>Politics</code></li>
+</ul>
+</li>
+<li><strong>headline</strong>
+
+<ul>
+<li><strong>Type</strong>: text</li>
+<li><strong>Description</strong>: This is the headline of the project that will appear as a H1 heading on the page.</li>
+<li><strong>Example</strong>: <code>Timeline: The Life of Nelson Mandela</code></li>
+</ul>
+</li>
+<li><strong>credits</strong>
+
+<ul>
+<li><strong>Type</strong>: text + HTML</li>
+<li><strong>Description</strong>: This is the byline of the project with a link to the producer's bio if applicable.</li>
+<li><strong>Example</strong>: <code>Produced by &lt;a href="http://www.scpr.org/about/people/staff/brian-frank" target="blank"&gt;Brian Frank&lt;/a&gt; and &lt;a href="http://www.scpr.org/about/people/staff/chris-keller" target="blank"&gt;Chris Keller&lt;/a&gt;</code></li>
+</ul>
+</li>
+<li><strong>published</strong>
+
+<ul>
+<li><strong>Type</strong>: text</li>
+<li><strong>Description</strong>: This is the date a project was published or updated.</li>
+<li><strong>Example</strong>: <code>Published Dec. 5, 2013</code></li>
+</ul>
+</li>
+<li><strong>text</strong>
+
+<ul>
+<li><strong>Type</strong>: html</li>
+<li><strong>Description</strong>: This is a paragraph or two to describe the timeline for the user.</li>
+<li><strong>Example</strong>: <code>&lt;p&gt;Nelson Mandela, who became one of the world's most beloved statesmen and a colossus of the 20th century when he emerged from 27 years in prison to negotiate an end to white minority rule in South Africa, has died. He was 95. South African President Jacob Zuma made the announcement at a news conference late Thursday, saying "we've lost our greatest son."&lt;/p&gt;</code></li>
+</ul>
+</li>
+<li><strong>readmoreurl</strong>
+
+<ul>
+<li><strong>Type</strong>: url</li>
+<li><strong>Description</strong>: This is a link that serves to direct the user to a post, segment or landing page.</li>
+<li><strong>Example</strong>: <code>http://www.scpr.org/news/2013/12/05/40776/nelson-mandela-has-died-according-to-south-africa/</code></li>
+</ul>
+</li>
+<li><strong>sources</strong>
+
+<ul>
+<li><strong>Type</strong>: text</li>
+<li><strong>Description</strong>: This is an umbrella listing for sources used to compile the timeline.</li>
+<li><strong>Example</strong>: <code>Associated Press</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Once the <strong>Posts</strong> and <strong>MetaData</strong> sheets are completed you have to publish the spreadsheet. To do this go to <em>File</em> --> <em>Publish to the web</em> and choose <em>Start publishing</em>. A URL will appear, and we're interested in the part between 'key=' and the '&amp;' symbol.
+
+<ul>
+<li>Here's an example URL:
+
+<ul>
+<li><code>https://docs.google.com/spreadsheet/pub?key=0Aq8qwSArzKP9dEo4Wl9VMTJXNllVaG5nWU5GMkhJclE&amp;output=html</code></li>
+</ul>
+</li>
+<li>We want this portion:
+
+<ul>
+<li><code>0An8W63YKWOsxdFFSZjB5VV9aVmZGblQxSFhpZ1NFd3c</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Congratulations. Your timeline is ready to deploy… But you'll need some help.</li>
+</ol>
+
+
+<p><a name="configuring-and-deploying"></a></p>
+
+<h4>Configuring &amp; deploying to the web</h4>
+
+<p>What do we mean when we say configuring &amp; deploying? Configuring means we fill out a pre-compiled script with information about our timeline project that will push our spreadsheet data to a template. Deploying means we push these templates to a server and make the timeline viewable by our digital audience.</p>
+
+<p>Right now, Chris K. and Eric Z. can handle this part of the processs. Brian F. has been trained. We're happy to train others, but there are some <a href="#technical-requirements">technical requirements</a> before this can happen.</p>
+
+<p>Here's an overview of the <a href="#configuration">configuration</a> and <a href="#deployment">deployment</a> process.</p>
+
+<p><a name="configuration"></a>
+<strong>Configuration</strong></p>
+
+<ol>
+<li>Clone the <a href="https://github.com/SCPR/static-projects">SCPR/static-projects repository</a> from <a href="https://github.com/about">GitHub</a> to your local machine.</li>
+<li>In the main directory there is a timelines subdirectory that contains the <strong>timeline-template</strong> folder. Duplicate this <strong>timeline-template</strong> folder (option-drag on a Mac) and rename it to match the timeline topic. I wouldn't use more than three or four words, which are separated by hyphens.
+
+<ul>
+<li><strong>Example</strong>: <code>life-of-nelson-mandela</code></li>
+</ul>
+</li>
+<li>Inside the new directory you created you will find four files and a directory titled respond-proxy. For now, we're only really interested in <strong>timeline-config.js</strong> and <strong>index.html</strong>. Both need to be filled out.
+
+<ul>
+<li><p><strong>timeline-config.js</strong> contains the configuration variables that allow the data on your spreadsheet to be displayed on a template for the user. Here's what is looks like and what each of the keys refer to:</p>
+
+<pre><code>  var kpccTimelineConfig = {
+      // choose spreadsheet or flat-file
+      dataSource: 'spreadsheet',
+
+      // example spreadsheet key
+      key: '0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE',
+
+      // example path to data file
+      sourceFile: 'timeline-data.json',
+
+      // example path to meta file
+      metaFile: 'timeline-meta.json',
+
+      // name of sheet containing timeline entries
+      sheetName: 'Posts',
+
+      // name of sheet containing timeline meta
+      sheetMeta: 'MetaData',
+
+      // make the timeline embeddable
+      embedThis: true,
+
+      // url of the timeline
+      projectDirectory: 'http://projects.scpr.org/static/timelines/timeline-template/',
+
+      // newest or oldest
+      defaultDirection: 'newest',
+
+      // collapsed or expanded
+      defaultExpansion: 'expanded',
+
+      // display social sharing links
+      sharing: true,
+
+      // groupSegmentByYear or groupSegmentByDecade
+      groupFunction: 'groupSegmentByYear',
+
+      // adjust timeline width
+      width: '90%'
+  };
 </code></pre>
 
-<p>We'd want this portion of the timeline script:</p>
+<ul>
+<li><p><strong>dataSource:</strong></p>
 
-<pre><code>0An8W63YKWOsxdFFSZjB5VV9aVmZGblQxSFhpZ1NFd3c
-</code></pre>
+<ul>
+<li><strong>Description</strong>: Tells the timeline whether the data is coming from a spreadsheet or a JSON file.</li>
+<li><strong>Default value</strong>: <code>'spreadsheet'</code></li>
+<li><strong>Options</strong>: <code>'spreadsheet'</code> or <code>'flat-file'</code></li>
+</ul>
+</li>
+<li><p><strong>key:</strong></p>
 
-<p>We also want the name of the sheet you are using. In the example template, the sheet is called Posts. You may call yours anything.</p>
+<ul>
+<li><strong>Description</strong>: This is the key to the spreadsheet where the data lives.</li>
+<li><strong>Default value</strong>: <code>'0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE'</code></li>
+<li><strong>Options</strong>: n/a</li>
+</ul>
+</li>
+<li><p><strong>sourceFile:</strong></p>
 
-<p>What this does though is allow one spreadsheet to be used for multiple timelines, which is really cool if you're a beat reporter like to keep things nice and neat.</p>
+<ul>
+<li><strong>Description</strong>: If your dataSource is flat-file, this is the path to that json file that contains the items posted on the spreadsheets <strong>Posts</strong> sheet. It should be included in the repository in the timeline's directory.</li>
+<li><strong>Default value</strong>: <code>'timeline-data.json'</code></li>
+<li><strong>Options</strong>: n/a</li>
+</ul>
+</li>
+<li><p><strong>metaFile:</strong></p>
 
-<h4>Deploying</h4>
+<ul>
+<li><strong>Description</strong>: If your dataSource is flat-file, this is the path to that json file that contains the items posted on the spreadsheets <strong>MetaData</strong> sheet. It should be included in the repository in the timeline's directory.</li>
+<li><strong>Default value</strong>: <code>'timeline-data.json'</code></li>
+<li><strong>Options</strong>: n/a</li>
+</ul>
+</li>
+<li><p><strong>sheetName:</strong></p>
 
-<p>Now duplicate the timeline-template directory (option-drag on a Mac) and rename it to match your topic. I wouldn't use more than three words separated by hyphens. <strong>EXAMPLE: </strong> black-friday-timeline</p>
+<ul>
+<li><strong>Description</strong>: Should you change the name of the sheet that stores your item data from <strong>Posts</strong>, this needs to be reflected here.</li>
+<li><strong>Default value</strong>: <code>'Posts'</code></li>
+<li><strong>Options</strong>: n/a</li>
+</ul>
+</li>
+<li><p><strong>sheetMeta:</strong></p>
 
-<p>In the new directory you created open the JavaScript file titled 'timeline-script.js.' This file contains the configuration variables and should be the only file you need to edit.</p>
+<ul>
+<li><strong>Description</strong>: Should you change the name of the sheet that stores your metadata from <strong>MetaData</strong>, this needs to be reflected here.</li>
+<li><strong>Default value</strong>: <code>'MetaData'</code></li>
+<li><strong>Options</strong>: n/a</li>
+</ul>
+</li>
+<li><p><strong>embedThis:</strong></p>
 
-<p>The configuration variables are at the top of the file. There are only three and they control the title, the spreadsheet key and the name of the sheet in the spreadsheet. If you don't feel comfortable doing this yourself, you can pass this information on to someone who is -- Chris K. -- and they can create these quickly.</p>
+<ul>
+<li><strong>Description</strong>: Do you want to allow others to embed this timeline?</li>
+<li><strong>Default value</strong>: <code>true</code></li>
+<li><strong>Options</strong>: <code>true</code> or <code>false</code></li>
+</ul>
+</li>
+<li><p><strong>projectDirectory:</strong></p>
 
-<p>The configuration portion looks like this:</p>
+<ul>
+<li><strong>Description</strong>: url of the timeline</li>
+<li><strong>Default value</strong>: <code>'http://projects.scpr.org/static/timelines/timeline-template/'</code></li>
+<li><strong>Options</strong>: n/a</li>
+</ul>
+</li>
+<li><p><strong>projectDirectory:</strong></p>
 
-<pre><code>// below are the only variables you need to create the timeline
-// title to write to the #timeline-title div
-var timelineTitle = 'A Look a Black Friday';
+<ul>
+<li><strong>Description</strong>: Direction the timeline's items will be displayed when the user loads the page.</li>
+<li><strong>Default value</strong>: <code>'newest'</code></li>
+<li><strong>Options</strong>: <code>'newest'</code> or <code>'oldest'</code></li>
+</ul>
+</li>
+<li><p><strong>defaultDirection:</strong></p>
 
-var timelineConfig = {
+<ul>
+<li><strong>Description</strong>: Direction the timeline's items will be displayed when the user loads the page.</li>
+<li><strong>Default value</strong>: <code>'newest'</code></li>
+<li><strong>Options</strong>: <code>'newest'</code> or <code>'oldest'</code></li>
+</ul>
+</li>
+<li><p><strong>defaultExpansion:</strong></p>
 
-    // add the key of your spreadsheet after publishing it to the web
-    key: '0An8W63YKWOsxdDdidzJtWlZGUXQ0S0MxR3A0RmZqbGc',
+<ul>
+<li><strong>Description</strong>: Determines if the timeline's items will be open or closed when the user loads the page.</li>
+<li><strong>Default value</strong>: <code>'expanded'</code></li>
+<li><strong>Options</strong>: <code>'expanded'</code> or <code>'collapsed'</code></li>
+</ul>
+</li>
+<li><p><strong>sharing:</strong></p>
 
-    // add the name of the spreadsheet  'sheet'
-    sheetName: 'Sheet1'
-}
-// above are the only variables you need to create the timeline
-</code></pre>
+<ul>
+<li><strong>Description</strong>: Determines if links and social links to an individual timeline item should be displayed to the user.</li>
+<li><strong>Default value</strong>: <code>true</code></li>
+<li><strong>Options</strong>: <code>true</code> or <code>false</code></li>
+</ul>
+</li>
+<li><p><strong>groupFunction:</strong></p>
 
-<p>Once you add a title, the key to the spreadsheet and the name of the sheet on which the data resides, you have created a timeline.</p>
+<ul>
+<li><strong>Description</strong>: Determines if the items should be grouped by year or by decade.</li>
+<li><strong>Default value</strong>: <code>'groupSegmentByYear'</code></li>
+<li><strong>Options</strong>: <code>'groupSegmentByYear'</code> or <code>'groupSegmentByDecade'</code></li>
+</ul>
+</li>
+<li><p><strong>width:</strong></p>
+
+<ul>
+<li><strong>Description</strong>: Sets the width of the timeline in the template container.</li>
+<li><strong>Default value</strong>: <code>'90%'</code></li>
+<li><strong>Options</strong>: n/a</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>index.html</strong> contains the markup that will be served to the user on the web. We have to enter four pieces of information in this file.</p>
+
+<ul>
+<li><p>Add the project's title to the following:</p>
+
+<pre><code>  &lt;title&gt;Timeline: Title | scpr.org&lt;/title&gt;
+  &lt;meta property="og:title" content="#" /&gt;
+  &lt;meta name="twitter:title" content="#"&gt;
+</code></pre></li>
+<li><p>Add the project's url to the following:</p>
+
+<pre><code>  &lt;meta property="og:url" content="#" /&gt;
+  &lt;meta name="twitter:url" content="#"&gt;
+</code></pre></li>
+<li><p>Complete the projects's description:</p>
+
+<pre><code>  &lt;meta name="description" content="#" /&gt;
+</code></pre></li>
+<li><p>Complete the projects's keywords:</p>
+
+<pre><code>  &lt;meta name="keywords" content="#" /&gt;
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+
+<p><a name="deployment"></a>
+<strong>Deployment</strong></p>
+
+<ol>
+<li><p>To deploy a timeline so users can see it on the web, we add the project to the GitHub repository.</p>
+
+<pre><code> ```git add &lt;project name&gt;```
+</code></pre></li>
+<li><p>We add a commit message saying what we just did</p>
+
+<pre><code> ```git commit 'adds &lt;project name&gt; to the repository'```
+</code></pre></li>
+<li><p>We deploy it to the server</p>
+
+<pre><code> ```cap deploy```
+</code></pre></li>
+</ol>
+
+
+<p>On the web team, only Chris K. and Eric Z. can do this. Bryan Ricker can do so in a pinch.</p>
+
+<p>This isn't ideal we realize, but <a href="#technical-requirements">technical requirements</a> will be required to allow others to do so.</p>
+
+<p><a name="publishing></p>
 
 <h4>Publishing</h4>
 
@@ -76,32 +466,61 @@ var timelineConfig = {
 
 <p>You have now created a timeline. Want to update your timeline with new information...? Here's the beautiful part: Just add more information to the Google Spreadsheet and will.</p>
 
-<h4>Technical Specs</h4>
+<p><a name="technical-requirements"></a></p>
 
-<p>In addition to the timeline-script.js used for configuration, timelines rely on static css, images and script files found in the following directories:</p>
+<h4>Technical Requirements</h4>
 
-<pre><code>http://projects.scpr.org/static/static-files/css/tabletop-timelines/
-http://projects.scpr.org/static/static-files/images/tabletop-timelines/
-http://projects.scpr.org/static/static-files/scripts/
-</code></pre>
+<p>To be in a position to configure and deploy timelines, some foundational elements need to be in place.</p>
 
-<p>In the scripts file, we're specifically looking at:</p>
+<p><strong>Install on your laptop (assuming you're on a Mac)</strong></p>
 
-<pre><code>http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js
-http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js
-http://projects.scpr.org/static/static-files/scripts/tabletop.js
-http://projects.scpr.org/static/static-files/scripts/isotope-1.5.18.js
-</code></pre>
+<ul>
+<li>Git</li>
+<li>Ruby</li>
+<li>Capistrano 2.14.1</li>
+<li>Development environment (MAMP or Python simple server)</li>
+</ul>
 
-<p><strong>Resources</strong></p>
 
-<p><a href="https://github.com/balancemedia/Timeline">GitHub repo</a> for the scripts used in the Timeline code</p>
+<p><strong>Misc</strong></p>
+
+<ul>
+<li>GitHub account added to SCPR data team</li>
+<li>ssh key added to the media server by Bryan Ricker</li>
+</ul>
+
+
+<p>Having a GitHub account and a development environment will get you started in at least configuring a timeline, though Chris K. or Eric Z. will need to deploy.</p>
+
+<p>The process is similar to the one outline in the <a href="#deployment">deployment</a> section.</p>
+
+<ol>
+<li>Fork the <a href="https://github.com/SCPR/static-projects">SCPR/static-projects repository</a> from <a href="https://github.com/about">GitHub</a>.</li>
+<li>Clone your fork to your local machine.</li>
+<li>Add a project, configure it and push it back to your forked repo.</li>
+<li>Open a <a href="https://github.com/SCPR/static-projects/pulls">pull request</a> to have your additions or changes reviewed by Chris K. or Eric Z.</li>
+</ol>
+
+
+<p><a name="resources"></a></p>
+
+<h4>Resources</h4>
+
+<p><a href="https://github.com/SCPR/static-projects/tree/master/timelines">scpr GitHub repo</a> that contains the timelines we have published</p>
+
+<p><a href="https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-init.js">tabletop-timeline-v3-init.js</a></p>
+
+<p><a href="https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-main.js">tabletop-timeline-v3-main.js</a></p>
+
+<p><a href="https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-plugins.js">tabletop-timeline-v3-plugins.js</a></p>
+
+<p><a href="https://github.com/MinnPost/jquery-vertical-timeline">MinnPost's jquery-vertical-timeline</a></p>
+
+<p><a href="https://github.com/jsoma/tabletop">Tabletop.js</a></p>
 
 <p><a href="http://modernizr.com/">Modernizr</a></p>
 
 <p><a href="http://handlebarsjs.com/">Handlebars.js</a></p>
-
-<p><a href="https://github.com/jsoma/tabletop">Tabletop.js</a></p>
 
 <p><a href="http://isotope.metafizzy.co/">Isotope</a></p>
 
