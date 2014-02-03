@@ -32,7 +32,7 @@ Follow the steps below to build, deploy and publish your very own timeline.
 #### Quickstart checklist
 
 * [ ] Make a copy of the file titled [Template: KPCC Timeline Template](https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&usp=drive_web#gid=0) that is stored in the KPCC Data Desk Google Drive account.
-* [ ] In the spreadsheet you will find two sheets. Add data for the timeline on the sheet labeled **'Posts'.** 
+* [ ] In the spreadsheet you will find two sheets. Add data for the timeline on the sheet labeled **'Posts'.**
 * [ ] Move on to the sheet labeled **'MetaData'.**
 * [ ] Publish the spreadsheet and get the spreadsheet key.
 * [ ] Complete the timeline-config.js file and add metadata to the index.html file.
@@ -113,7 +113,7 @@ This assumes you've already got a topic in mind and a data source, and you're fa
         * ```https://docs.google.com/spreadsheet/pub?key=0Aq8qwSArzKP9dEo4Wl9VMTJXNllVaG5nWU5GMkhJclE&output=html```
     * We want this portion:
         * ```0An8W63YKWOsxdFFSZjB5VV9aVmZGblQxSFhpZ1NFd3c```
-5. Congratulations. Your timeline is ready to deploy… But you'll need some help.
+5. Congratulations. You have now created a timeline. Want to update your timeline with new information...? Here's the beautiful part: Just add more information to the Google Spreadsheet and it will be updated. Now that your timeline is ready to deploy, you'll need some help.
 
 <a name="configuring-and-deploying"></a>
 #### Configuring & deploying to the web
@@ -122,7 +122,7 @@ What do we mean when we say configuring & deploying? Configuring means we fill o
 
 Right now, Chris K. and Eric Z. can handle this part of the processs. Brian F. has been trained. We're happy to train others, but there are some [technical requirements](#technical-requirements) before this can happen.
 
-Here's an overview of the [configuration](#configuration) and [deployment](#deployment) process.
+Here's an overview of the [configuration](#configuration) and [deployment](#deployment) process. [Flat file data configuration](#flat-file-data) coming soon.
 
 <a name="configuration"></a>
 **Configuration**
@@ -264,6 +264,11 @@ Here's an overview of the [configuration](#configuration) and [deployment](#depl
 
                 <meta name="keywords" content="#" />
 
+<a name="flat-file-data"></a>
+**Flat file data configuration**
+
+**COMING SOON**
+
 <a name="deployment"></a>
 **Deployment**
 
@@ -276,25 +281,23 @@ Here's an overview of the [configuration](#configuration) and [deployment](#depl
         ```git commit 'adds <project name> to the repository'```
 
 3. We deploy it to the server
- 
+
         ```cap deploy```
 
-On the web team, only Chris K. and Eric Z. can do this. Bryan Ricker can do so in a pinch. 
+On the web team, only Chris K. and Eric Z. can do this. Bryan Ricker can do so in a pinch.
 
 This isn't ideal we realize, but [technical requirements](#technical-requirements) will be required to allow others to do so.
- 
-<a name="publishing>
+
+<a name="publishing">
 #### Publishing
 
-Alert Chris K. or Eric Z. and they will be able to publish the new directory to be live on the site.
+When it comes time to add the timeline to a news story or blog post, and provided you made it embeddable, just visit the timeline and click the "Embed This" button in the top right corner. An alert will pop up and give you the iframe code.
 
-When it comes time to add the timeline to a news story or blog post, we'll use an iframe, and we'll need the name of the directory you created the timeline in.
+        <iframe src="http://projects.scpr.org/static/timelines/life-of-nelson-mandela" width="100%" height="850px" style="margin: 0 auto;" frameborder="no"></iframe>
 
-Simply create a new story, click to the HTML editor, copy this code, insert the folder name and paste:
+Or if you know the timeline URL, just add it to iframe html.
 
-    <iframe src="http://projects.scpr.org/static/timelines/NAME-OF-FOLDER-HERE" width="640px" height="900px" scrolling="no" frameborder="0" />
-
-You have now created a timeline. Want to update your timeline with new information...? Here's the beautiful part: Just add more information to the Google Spreadsheet and will.
+        <iframe src="http://projects.scpr.org/static/timelines/life-of-nelson-mandela" width="100%" height="850px" style="margin: 0 auto;" frameborder="no"></iframe>
 
 <a name="technical-requirements"></a>
 #### Technical Requirements
@@ -310,7 +313,7 @@ To be in a position to configure and deploy timelines, some foundational element
 
 **Misc**
 
-* GitHub account added to SCPR data team 
+* GitHub account added to SCPR data team
 * ssh key added to the media server by Bryan Ricker
 
 Having a GitHub account and a development environment will get you started in at least configuring a timeline, though Chris K. or Eric Z. will need to deploy.

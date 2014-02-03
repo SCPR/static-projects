@@ -212,7 +212,7 @@
 </li>
 </ul>
 </li>
-<li>Congratulations. Your timeline is ready to deploy… But you'll need some help.</li>
+<li>Congratulations. You have now created a timeline. Want to update your timeline with new information...? Here's the beautiful part: Just add more information to the Google Spreadsheet and it will be updated. Now that your timeline is ready to deploy, you'll need some help.</li>
 </ol>
 
 
@@ -224,7 +224,7 @@
 
 <p>Right now, Chris K. and Eric Z. can handle this part of the processs. Brian F. has been trained. We're happy to train others, but there are some <a href="#technical-requirements">technical requirements</a> before this can happen.</p>
 
-<p>Here's an overview of the <a href="#configuration">configuration</a> and <a href="#deployment">deployment</a> process.</p>
+<p>Here's an overview of the <a href="#configuration">configuration</a> and <a href="#deployment">deployment</a> process. <a href="#flat-file-data">Flat file data configuration</a> coming soon.</p>
 
 <p><a name="configuration"></a>
 <strong>Configuration</strong></p>
@@ -428,6 +428,11 @@
 </ol>
 
 
+<p><a name="flat-file-data"></a>
+<strong>Flat file data configuration</strong></p>
+
+<p><strong>COMING SOON</strong></p>
+
 <p><a name="deployment"></a>
 <strong>Deployment</strong></p>
 
@@ -451,20 +456,19 @@
 
 <p>This isn't ideal we realize, but <a href="#technical-requirements">technical requirements</a> will be required to allow others to do so.</p>
 
-<p><a name="publishing></p>
+<p><a name="publishing"></p>
 
 <h4>Publishing</h4>
 
-<p>Alert Chris K. or Eric Z. and they will be able to publish the new directory to be live on the site.</p>
+<p>When it comes time to add the timeline to a news story or blog post, and provided you made it embeddable, just visit the timeline and click the "Embed This" button in the top right corner. An alert will pop up and give you the iframe code.</p>
 
-<p>When it comes time to add the timeline to a news story or blog post, we'll use an iframe, and we'll need the name of the directory you created the timeline in.</p>
-
-<p>Simply create a new story, click to the HTML editor, copy this code, insert the folder name and paste:</p>
-
-<pre><code>&lt;iframe src="http://projects.scpr.org/static/timelines/NAME-OF-FOLDER-HERE" width="640px" height="900px" scrolling="no" frameborder="0" /&gt;
+<pre><code>    &lt;iframe src="http://projects.scpr.org/static/timelines/life-of-nelson-mandela" width="100%" height="850px" style="margin: 0 auto;" frameborder="no"&gt;&lt;/iframe&gt;
 </code></pre>
 
-<p>You have now created a timeline. Want to update your timeline with new information...? Here's the beautiful part: Just add more information to the Google Spreadsheet and will.</p>
+<p>Or if you know the timeline URL, just add it to iframe html.</p>
+
+<pre><code>    &lt;iframe src="http://projects.scpr.org/static/timelines/life-of-nelson-mandela" width="100%" height="850px" style="margin: 0 auto;" frameborder="no"&gt;&lt;/iframe&gt;
+</code></pre>
 
 <p><a name="technical-requirements"></a></p>
 
