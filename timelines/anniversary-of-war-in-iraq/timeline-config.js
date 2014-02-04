@@ -1,6 +1,6 @@
 var kpccTimelineConfig = {
     // choose spreadsheet or flat-file
-    dataSource: 'spreadsheet',
+    dataSource: 'flat-file',
 
     // example spreadsheet key
     key: '0ApI9xmBd0kPzdG9CcDR0eUxvV2p0Z1dFbjVpZnQ2U2c',
@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: 'http://projects.scpr.org/static/timelines/timeline-template/',
+    projectDirectory: 'http://projects.scpr.org/static/timelines/anniversary-of-war-in-iraq/',
 
     // newest or oldest
     defaultDirection: 'newest',
