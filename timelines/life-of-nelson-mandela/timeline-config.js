@@ -1,12 +1,15 @@
 var kpccTimelineConfig = {
     // choose spreadsheet or flat-file
-    dataSource: 'spreadsheet',
+    dataSource: 'flat-file',
 
     // example spreadsheet key
     key: '0Aq8qwSArzKP9dEo4Wl9VMTJXNllVaG5nWU5GMkhJclE',
 
-    // example path to file
-    //sourceFile: 'data/moments-in-giants-godgers-rivalry_timeline.json',
+    // example path to data file
+    sourceFile: 'timeline-data.json',
+
+    // example path to meta file
+    metaFile: 'timeline-meta.json',
 
     // name of sheet containing timeline entries
     sheetName: 'Posts',
