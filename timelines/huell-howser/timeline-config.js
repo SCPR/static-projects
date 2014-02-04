@@ -1,9 +1,9 @@
 var kpccTimelineConfig = {
     // choose spreadsheet or flat-file
-    dataSource: 'spreadsheet',
+    dataSource: 'flat-file',
 
     // example spreadsheet key
-    key: '0Aq8qwSArzKP9dEFPeEZhQXRmTl9MWmxrYl9kQXo3d1E',
+    key: '0AjsyCVrBXivzdDg0amtOS2M3MkplM1BSajBCaVJmTHc',
 
     // example path to data file
     sourceFile: 'timeline-data.json',
@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: 'http://projects.scpr.org/static/interactives/northridge-earthquake-anniversary/timeline-of-northridge-earthquake/',
+    projectDirectory: 'http://projects.scpr.org/static/timelines/huell-howser/',
 
     // newest or oldest
     defaultDirection: 'newest',

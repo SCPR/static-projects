@@ -5,77 +5,88 @@
 
     <!-- begin header -->
     <head>
-        <link rel="stylesheet" href="http://projects.scpr.org/static/static-files/css/tabletop-timelines/styles.css">
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+        <!-- begin meta -->
+        <title>Timeline: 1994 quake devastates Los Angeles | scpr.org</title>
+        <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico">
+        <meta name="viewport" id="meta-viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" content="A timeline looking back at key events connected to the 1994 Northridge Earthquake and its aftermath in the days, weeks, months and years following." />
+        <meta name="keywords" content="Northridge earthquake, southern California, 1994" />
+        <meta property="og:title" content="Timeline: 1994 quake devastates Los Angeles" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png" />
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:height" content="500" />
+        <meta property="og:url" content="http://projects.scpr.org/static/interactives/northridge-earthquake-anniversary/timeline-of-northridge-earthquake/" />
+        <meta property="og:description" content="A timeline looking back at key events connected to the 1994 Northridge Earthquake and its aftermath in the days, weeks, months and years following." />
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="http://projects.scpr.org/static/interactives/northridge-earthquake-anniversary/timeline-of-northridge-earthquake/">
+        <meta name="twitter:domain" content="http://projects.scpr.org/">
+        <meta name="twitter:site" content="KPCC">
+        <meta name="twitter:title" content="Timeline: 1994 quake devastates Los Angeles">
+        <meta name="twitter:description" content="A timeline looking back at key events connected to the 1994 Northridge Earthquake and its aftermath in the days, weeks, months and years following.">
+        <meta name="twitter:image:src" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png">
+        <!-- end meta -->
+
+        <!-- begin css -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" />
+        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" />
+        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
+        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/tabletop-timeline-v3-styles.css" rel="stylesheet" />
+
+        <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
+        <!--[if lte IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+            <link href="http://projects.scpr.org/static/static-files/v3-dependencies/respond-proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+            <link href="respond-proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+            <script src="respond-proxy/respond.proxy.js"></script>
+        <![endif]-->
+
+        <!-- begin base scripts -->
+        <script src="http://use.typekit.com/mhc7oxs.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+        <!-- end base scripts -->
+
     </head>
+    <!-- end header -->
 
-    <body>
+    <!-- begin body -->
+    <body class="minimal">
 
-        <div id="page">
-            <header id="header">
-                <div id="timeline-title" class="main-header clearfix"></div>
-            </header>
-            <div role="main" class="clearfix">
-                <div id="buttons">
-                    <div id="sort-buttons">
-                        <a class="sort-newest" href="#"><span>NEWEST FIRST</span></a>
-                        <a class="sort-oldest active" href="#"><span>OLDEST FIRST</span></a>
-                    </div>
-                </div>
-                <div id="timeline">
-                    <div id="line-container">
-                        <div id="line"></div>
-                    </div>
-                </div>
-            </div>
+        <div class="kpcc-header"></div>
+
+        <!-- begin main container -->
+        <div class="container data-container">
+            <div class="row data-details"></div>
+            <div class="row data-visuals"></div>
+            <div class="row kpcc-footer"></div>
         </div>
-            <script src="http://projects.scpr.org/static/static-files/scripts/modernizr-2.5.3.min.js"></script>
-            <script src="http://projects.scpr.org/static/static-files/scripts/handlebars-1.0.rc.1.js"></script>
-            <script src="http://projects.scpr.org/static/static-files/scripts/tabletop.js"></script>
-            <script src="http://projects.scpr.org/static/static-files/scripts/isotope-1.5.18.js"></script>
-            <script src="timeline-script.js"></script>
+        <!-- end main container -->
 
-        <!-- begin handlebars templates -->
-        <script id="year-marker-template" type="text/x-handlebars-template">
-            <div class="item year-marker">
-                <div class="inner">
-                    <div class="inner2">
-                        <div class="timestamp">{{timestamp}}</div>
-                        <div class="year">{{year}}</div>
-                    </div>
-                </div>
-            </div>
-        </script>
-
-        <script id="post-template" type="text/x-handlebars-template">
-            <div class="item post">
-                <div class="inner">
-                    <div class="timestamp">{{timestamp}}</div>
-                    <div class="title"><h3>{{title}}</h3></div>
-                    <div class="date">{{display_date}}</div>
-                        <div class="body">
-                            {{#if photo_url}}
-                                <img src="{{photo_url}}" alt="">
-                            {{/if}}
-
-                            {{#if caption}}
-                                <div class="caption">({{caption}})</div>
-                            {{/if}}
-
-                            {{#if body}}
-                                <div class="text">{{body}}</div>
-                            {{/if}}
-                            <div class="clearfix">
-                                {{#if read_more_url}}
-                                    <a target="_blank" class="more" href="{{read_more_url}}">READ MORE</a>
-                            </div>
-                                {{/if}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </script>
-        <!-- end handlebars templates -->
+        <!-- begin scripts -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.url.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/scrollTo-min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/handlebars-ajax.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/handlebars-helpers.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/tabletop.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/tabletop-timeline-v3-plugins.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/tabletop-timeline-v3-init.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/tabletop-timeline-v3-main.js"></script>
+        <script src="timeline-config.js"></script>
+        <!-- end scripts -->
 
         <!-- begin analytics -->
         <script type="text/javascript">
@@ -91,4 +102,7 @@
         <!-- end analytics -->
 
     </body>
+    <!-- end body -->
+
 </html>
+<!-- end document -->
