@@ -1,9 +1,9 @@
 var kpccTimelineConfig = {
     // choose spreadsheet or flat-file
-    dataSource: 'spreadsheet',
+    dataSource: 'flat-file',
 
     // example spreadsheet key
-    key: '0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE',
+    key: '0AjsyCVrBXivzdDg2V2JtSlFZX3dqOHFya01zVVFpS2c',
 
     // example path to data file
     sourceFile: 'timeline-data.json',
@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: 'http://projects.scpr.org/static/timelines/timeline-template/',
+    projectDirectory: 'http://projects.scpr.org/static/timelines/prop-8/',
 
     // newest or oldest
     defaultDirection: 'newest',
