@@ -1,7 +1,7 @@
 var jqueryNoConflict = jQuery;
 var initializeTemplates = initializeTemplates || {};
 var fn = fn || {};
-var embed_url_root = 'http://projects.scpr.org/static/charts/congressional-speeches-on-government-shutdown/';
+var appConfig = appConfig || {};
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
@@ -10,7 +10,25 @@ jqueryNoConflict(document).ready(function() {
     fn.checkForDataVisuals();
 });
 
-// begin data configuration object
+// application configuration object
+var appConfig = {
+
+    // project text open by default?
+    openAboutThis: true,
+
+    // embedding settings
+    embed_this: true,
+    embed_url_root: 'http://projects.scpr.org/static/test/keller/project-template/project-interactive/',
+
+    // use flat-file or spreadsheet
+    dataSource: null,
+
+    // enter path to the data source below
+    spreadsheetKey: null,
+    flatFile: null
+};
+
+// data configuration object
 var fn = {
 
     checkForDataVisuals: function(){
@@ -215,7 +233,6 @@ var fn = {
     }
 
 }
-// end data configuration object
 
 // begin template rendering object
 var initializeTemplates = {
@@ -228,20 +245,35 @@ var initializeTemplates = {
         renderHandlebarsTemplate('templates/data-legend.handlebars', '.data-legend');
 
         var checkExist = setInterval(function() {
+
+            if (jqueryNoConflict('.header-links').length) {
+                clearInterval(checkExist);
+                initializeTemplates.hideEmbedBox();
+            }
+
             if (jqueryNoConflict('.buttons').length) {
                 clearInterval(checkExist);
                 initializeTemplates.toggleDisplayIcon();
             }
         }, 1000);
+    },
 
+    hideEmbedBox: function(){
+        if (appConfig.embed_this === false){
+            jqueryNoConflict('li.projects-embed').addClass('hidden');
+        };
     },
 
     renderEmbedBox: function(){
-        var embed_url = embed_url_root + '/iframe.html';
-        jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
+        jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page. You may need to adjust the height parameter. <br /><br /> &lt;iframe src=\"'+ appConfig.embed_url_root +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
     },
 
     toggleDisplayIcon: function(){
+
+        if (appConfig.openAboutThis === true){
+            jqueryNoConflict('.text').collapse('show');
+        };
+
         jqueryNoConflict('.text').on('shown.bs.collapse', function(){
             jqueryNoConflict('span.text').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
         });
@@ -256,4 +288,3 @@ var initializeTemplates = {
         });
     }
 }
-// end template rendering object
