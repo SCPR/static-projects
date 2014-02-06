@@ -20,6 +20,23 @@ App.Views.MapView = Backbone.View.extend({
             this.initialZoom = viewConfig.initialZoom;
         }
 
+
+        console.log(gangData);
+
+        this.gangData = L.geoJson(gangData, {
+            style: function (feature) {
+                return {
+                    color: 'green',
+                    weight: 2,
+                    opacity: 1,
+                    fillColor: 'green',
+                    fillOpacity: 1
+                }
+            }
+        });
+
+
+
         this.center = new L.LatLng(34.061841979429445, -118.26370239257812);
         this.render(viewConfig);
     },
@@ -35,7 +52,7 @@ App.Views.MapView = Backbone.View.extend({
             this.center, this.initialZoom
         ).addLayer(
             this.stamenToner
-        );
+        ).addLayer(this.gangData);
 
         //this.model = markersCollection.model.attributes;
         //this.model.map = this.map;
