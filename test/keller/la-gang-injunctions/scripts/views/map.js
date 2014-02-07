@@ -1,3 +1,6 @@
+// playable controls built with info from: http://www.washingtonpost.com/wp-srv/special/world/india-leads-push-to-7-billion/js/main.js
+// which powers: http://www.washingtonpost.com/wp-srv/special/world/india-leads-push-to-7-billion/
+
 App.Views.MapView = Backbone.View.extend({
 
     tagName: "div",
@@ -33,7 +36,7 @@ App.Views.MapView = Backbone.View.extend({
         this.myLayer = L.geoJson(null, {
             style: this.injunctionLayerStyle,
             onEachFeature: function(feature, layer) {
-                layer.on('click', function(e){
+                layer.on("click", function(e){
                     $("#injunction-details").html(
                         "<h6>" + feature.properties.ZONE_NAME + "</h6>" +
                         "<p><strong>Targeted gang</strong>: " + feature.properties.NAME + "</p>" +
@@ -55,74 +58,95 @@ App.Views.MapView = Backbone.View.extend({
         this.render(viewConfig);
 
         $("#animation-slider").slider({
-    		"value":0,
+    		"value": 0,
     		"min": 1999,
-    		"max": 2014,
+    		"max": 2013,
     		"step": 1,
+
+            slide: function(event, ui) {
+                var increment = ui.value;
+                $("#slider-value").html("<h4>Year: " + increment + "</h4>");
+            },
+
+            change: function(event, ui) {
+                var increment = ui.value;
+                $("#slider-value").html("<h4>Year: " + increment + "</h4>");
+            },
+
+            start: function(event, ui) {
+                //$.doTimeout("slider_timer");
+            }
         });
 
-        $("#slider-value").html("<h4>" + $("#animation-slider").slider("value") + "</h4>");
+        $("#slider-value").html("<h4>Year: " + $("#animation-slider").slider("option", "min") + "</h4>");
 
     },
 
     events: {
-        "click div#animation-play": "createPlayableLayer",
+        "click a#animation-backward": "moveIncrementBackward",
+        "click a#animation-play": "playIncrementForward",
+        "click a#animation-forward": "moveIncrementForward",
         "slidechange #animation-slider": "createIncrementLayer",
     },
 
-    createPlayableLayer: function(){
-
-        $("div#animation-play").addClass("active");
-        //$("div#animation-play").addClass("hidden");
-
-
-        /*
-        if ($("div#animation-play").hasClass("playing")){
-
+    moveIncrementBackward: function(){
+        var comparisonValue = $("#animation-slider").slider("value");
+        if (comparisonValue == $("#animation-slider").slider("option", "min")){
+            return false;
         } else {
-            $("div#animation-play").text("Play Me");
-        };
-        */
+            var newValue = comparisonValue - 1
+            $("#animation-slider").slider("value", newValue);
+            this.loopThroughGeoJsonAddingData(newValue);
+        }
+    },
 
-
-        this.myLayer.clearLayers();
-        var counterStart = $("#animation-slider").slider("option", "min");
-        var counterEnd = $("#animation-slider").slider("option", "max");
-
-        $.doTimeout(750, function(){
-            $("#animation-slider").slider("value", ++counterStart);
-            if (counterStart < counterEnd) {
+    playIncrementForward: function(e){
+        e.preventDefault();
+        if ($("a#animation-play").hasClass("active")){
+            $("a#animation-play").removeClass("active").html("<h5><span class='glyphicon glyphicon-play'></span></h5>");
+            $.doTimeout("slider_timer");
+        } else {
+            $("a#animation-play").addClass("active").html("<h5><span class='glyphicon glyphicon-pause'></span></h5>");
+            if ($("#animation-slider").slider("option", "value") == $("#animation-slider").slider("option", "max")){
+                $("#animation-slider").slider("value", 0);
+            }
+            $.doTimeout("slider_timer", 500, function(){
+                $("#animation-slider").slider("value", parseInt($("#animation-slider").slider("option", "value")) +1);
+                if ($("#animation-slider").slider("option", "value") == $("#animation-slider").slider("option", "max")){
+                    $("a#animation-play").removeClass("active").html("<h5><span class='glyphicon glyphicon-play'></span></h5>");
+                    return false;
+                }
                 return true;
-            };
+            });
+        }
+    },
 
-            $("div#animation-play").removeClass("playing");
-            $("div#animation-play").addClass("stopped");
-            //$("div#animation-play").text("Play Again");
-            $("div#animation-play").removeClass("hidden");
-
-        });
+    moveIncrementForward: function(){
+        var comparisonValue = $("#animation-slider").slider("value");
+        if (comparisonValue == $("#animation-slider").slider("option", "max")){
+            return false;
+        } else {
+            var newValue = comparisonValue + 1
+            $("#animation-slider").slider("value", newValue);
+            this.loopThroughGeoJsonAddingData(newValue);
+        }
     },
 
     createIncrementLayer: function(){
-
         if ($("#injunction-details").length){
             $("#injunction-details").empty();
         }
-
         this.myLayer.clearLayers();
         var comparisonValue = $("#animation-slider").slider("value");
-        $("#slider-value").html("<h4>" + comparisonValue + "</h4>");
         this.loopThroughGeoJsonAddingData(comparisonValue);
     },
 
     loopThroughGeoJsonAddingData: function(comparisonValue){
-
-        //$("#injunction-details").empty();
-
         for(var i=0; i<gangData.features.length; i++){
             var gangInjunctionYear = parseInt(gangData.features[i].properties.year_of_i);
             if (gangInjunctionYear <= comparisonValue){
                 this.myLayer.addData(gangData.features[i]).addTo(this.map);
+                $("#injunction-details").html("<h6>overview of what happened in " + comparisonValue + "</h6>");
             };
         };
     },
