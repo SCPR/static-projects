@@ -66,22 +66,21 @@ App.Views.MapView = Backbone.View.extend({
     },
 
     events: {
-        "click a#playMe": "createPlayableLayer",
+        "click div#animation-play": "createPlayableLayer",
         "slidechange #animation-slider": "createIncrementLayer",
     },
 
     createPlayableLayer: function(){
 
-        $("a#playMe").removeClass("stopped");
-        $("a#playMe").addClass("playing");
-        $("a#playMe").addClass("hidden");
+        $("div#animation-play").addClass("active");
+        //$("div#animation-play").addClass("hidden");
 
 
         /*
-        if ($("a#playMe").hasClass("playing")){
+        if ($("div#animation-play").hasClass("playing")){
 
         } else {
-            $("a#playMe").text("Play Me");
+            $("div#animation-play").text("Play Me");
         };
         */
 
@@ -96,10 +95,10 @@ App.Views.MapView = Backbone.View.extend({
                 return true;
             };
 
-            $("a#playMe").removeClass("playing");
-            $("a#playMe").addClass("stopped");
-            $("a#playMe").text("Play Again");
-            $("a#playMe").removeClass("hidden");
+            $("div#animation-play").removeClass("playing");
+            $("div#animation-play").addClass("stopped");
+            //$("div#animation-play").text("Play Again");
+            $("div#animation-play").removeClass("hidden");
 
         });
     },

@@ -1,6 +1,8 @@
 /* basic structure */
 .data-container .data-visuals #content-map-canvas {height: 600px;}
 
+#animation-play {background: #d7d7d7; cursor: pointer; margin-bottom: 15px;}
+
 @media (max-width: 491px) {
 
 }
@@ -24,3 +26,4 @@
 @media (min-width: 992px) {
 
 }
+
