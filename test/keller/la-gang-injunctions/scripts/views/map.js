@@ -110,7 +110,7 @@ App.Views.MapView = Backbone.View.extend({
             if ($("#animation-slider").slider("option", "value") == $("#animation-slider").slider("option", "max")){
                 $("#animation-slider").slider("value", 0);
             }
-            $.doTimeout("slider_timer", 500, function(){
+            $.doTimeout("slider_timer", 1000, function(){
                 $("#animation-slider").slider("value", parseInt($("#animation-slider").slider("option", "value")) +1);
                 if ($("#animation-slider").slider("option", "value") == $("#animation-slider").slider("option", "max")){
                     $("a#animation-play").removeClass("active").html("<h5><span class='glyphicon glyphicon-play'></span></h5>");
