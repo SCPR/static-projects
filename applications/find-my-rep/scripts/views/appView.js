@@ -85,7 +85,7 @@ App.Views.AppView = Backbone.View.extend({
         locationParams = locationParams.split(",");
         var latitude = parseFloat(locationParams[0]);
         var longitude = parseFloat(locationParams[1]);
-        var urlPrefix = "http://congress.api.sunlightfoundation.com/legislators/locate?";
+        var urlPrefix = "https://congress.api.sunlightfoundation.com/legislators/locate?";
         var testValue = "latitude=" + latitude + "&longitude=" + longitude;
         var urlSuffix = "&apikey=1ca05f19ff1e4e6a87b32bdff29fee95&callback=?";
         var targetUrl = urlPrefix + testValue + urlSuffix;
