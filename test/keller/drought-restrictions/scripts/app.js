@@ -23,6 +23,7 @@
 
     window.appConfig = {
         openAboutThis: false,
+        comments: true,
         embed_this: true,
         embed_url_root: 'http://projects.scpr.org/static/test/keller/project-template/project-interactive/',
     };
@@ -38,6 +39,13 @@
             root: 'http://localhost:8880/2kpcc/static-projects/test/keller/la-gang-injunctions/',
             pushState: false,
         });
+
+        if (window.appConfig.comments === true){
+            var disqus_shortname = 'kpcc-projects';
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        };
 
         if (window.appConfig.embed_this === false){
             $('li.projects-embed').addClass('hidden');
