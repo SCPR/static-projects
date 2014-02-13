@@ -7,40 +7,56 @@
 
 .data-container .data-legend .jumbotron .centered {text-align: center;}
 
-.data-legend #content-action-bar select {width: 70%; margin: 0 15% 0 15%;}
+.data-legend #content-action-bar select {width: 50%; margin: 0 25% 0 25%;}
+
+.data-legend #results-display {width: 70%; margin: 25px 15% 0 15%;}
+
+.data-legend #icon-display {margin: 25px 0 0 0;}
 
 @media (max-width: 491px) {
-    .data-container .data-legend .jumbotron {font-size: 90%;}
-    .data-container .data-legend .jumbotron .placemark {width: 20px; vertical-align: middle;}
+    body.minimal .data-container h4 {font-size: 175%;}
+    body.minimal .data-container h5 {font-size: 130%;}
+    body.minimal .data-container h6 {font-size: 95%;}
+    .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
+    .data-container .data-legend #icon-display p {font-size: 65%;}
 }
 
 @media (min-width: 491px) {
-    .data-container .data-legend .jumbotron {font-size: 120%;}
-    .data-container .data-legend .jumbotron .placemark {width: 25px;}
+    body.minimal .data-container h4 {font-size: 175%;}
+    body.minimal .data-container h5 {font-size: 130%;}
+    body.minimal .data-container h6 {font-size: 95%;}
+    .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
+    .data-container .data-legend #icon-display p {font-size: 65%;}
 }
 
 @media (min-width: 567px) {
-    .data-container .data-legend .jumbotron {font-size: 150%;}
-    .data-container .data-legend .jumbotron .placemark {width: 25px; vertical-align: text-bottom;}
+    body.minimal .data-container h4 {font-size: 200%;}
+    body.minimal .data-container h5 {font-size: 150%;}
+    body.minimal .data-container h6 {font-size: 115%;}
+    .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
+    .data-container .data-legend #icon-display p {font-size: 75%;}
 }
 
 @media (min-width: 768px) {
-    .data-container .data-legend .jumbotron {font-size: 150%;}
-    .data-container .data-legend .jumbotron .placemark {width: 35px; vertical-align: text-bottom;}
+    body.minimal .data-container h4 {font-size: 200%;}
+    body.minimal .data-container h5 {font-size: 150%;}
+    body.minimal .data-container h6 {font-size: 115%;}
+    .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
+    .data-container .data-legend #icon-display p {font-size: 75%;}
 }
 
 @media (min-width: 830px) {
-    .data-container .data-legend .jumbotron {font-size: 165%;}
-    .data-container .data-legend .jumbotron .placemark {width: 40px; vertical-align: text-bottom;}
+    body.minimal .data-container h4 {font-size: 200%;}
+    body.minimal .data-container h5 {font-size: 150%;}
+    body.minimal .data-container h6 {font-size: 115%;}
+    .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
+    .data-container .data-legend #icon-display p {font-size: 75%;}
 }
 
 @media (min-width: 992px) {
-    .data-container .data-legend .jumbotron {font-size: 175%;}
-    .data-container .data-legend .jumbotron .placemark {width: 50px; vertical-align: text-bottom;}
+    body.minimal .data-container h4 {font-size: 250%;}
+    body.minimal .data-container h5 {font-size: 180%;}
+    body.minimal .data-container h6 {font-size: 145%;}
+    .data-container .data-legend #icon-display .placemark {width: 60px; vertical-align: text-bottom;}
+    .data-container .data-legend #icon-display p {font-size: 90%;}
 }
-
-/*
-showers: http://thenounproject.com/term/shower/51/
-leak: http://thenounproject.com/term/drop/17734/
-broom: http://thenounproject.com/term/broom/12962/
-*/

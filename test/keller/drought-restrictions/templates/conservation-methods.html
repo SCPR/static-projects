@@ -3,7 +3,7 @@
         <h6 class='centered'>Here are some ways you can conserve water</h6>
         <div class="row icons">
             <% _.chain(_.sample(collection, 4)).each(function(model) { %>
-                <div class='col-xs-12 col-sm-6 col-md-6 col-lg-3 text-center'>
+                <div class='col-xs-12 col-sm-12 col-md-6 col-lg-3 text-center'>
                     <img class='placemark' src='<%= model.image_path %>' />
                     <p><%= model.text %></p>
                 </div>

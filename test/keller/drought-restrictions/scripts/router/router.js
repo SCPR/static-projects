@@ -19,7 +19,6 @@ App.Router = Backbone.Router.extend({
         window.conservationCollection.fetch({
             async: false,
         });
-
     },
 
     routes: {

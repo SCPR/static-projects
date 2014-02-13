@@ -15,7 +15,6 @@ App.Views.VisualsView = Backbone.View.extend({
     },
 
     evaluateSelectedMunicipality: function(){
-
         $("#results-display").empty();
         $("#icon-display").empty();
 
@@ -60,13 +59,13 @@ App.Views.VisualsView = Backbone.View.extend({
         if (this.model.category === ""){
             if (this.model.municipality === this.model.localwateragency){
                 $("#results-display").html(
-                    "<h6 class='centered'>We couldn't find updated information from <a href='" +
+                    "<h5 class='centered'>We couldn't find updated information from <a href='" +
                     this.model.urltoinformation + "' target='_blank'>" +
                     this.model.localwateragency + "</a></h6>"
                 );
             } else {
                 $("#results-display").html(
-                    "<h6 class='centered'>We couldn't find updated information from the <a href='" +
+                    "<h5 class='centered'>We couldn't find updated information from the <a href='" +
                     this.model.urltoinformation + "' target='_blank'>" +
                     this.model.localwateragency + "</a></h6>"
                 );
@@ -81,11 +80,11 @@ App.Views.VisualsView = Backbone.View.extend({
         } else if (this.model.category === "voluntary restrictions"){
             if (this.model.municipality === this.model.localwateragency){
                 $("#results-display").html(
-                    "<h6 class='centered'><a href='" + this.model.urltoinformation + "' target='_blank'>" + this.model.localwateragency + "</a> has asked for voluntary reductions of water use by up to 20 percent</h6>"
+                    "<h5 class='centered'><a href='" + this.model.urltoinformation + "' target='_blank'>" + this.model.localwateragency + "</a> has asked for voluntary reductions of water use by up to 20 percent</h6>"
                 );
             } else {
                 $("#results-display").html(
-                    "<h6 class='centered'>The <a href='" + this.model.urltoinformation + "' target='_blank'>" + this.model.localwateragency + "</a> has asked for voluntary reductions of water use by up to 20 percent</h6>"
+                    "<h5 class='centered'>The <a href='" + this.model.urltoinformation + "' target='_blank'>" + this.model.localwateragency + "</a> has asked for voluntary reductions of water use by up to 20 percent</h6>"
                 );
             }
 
