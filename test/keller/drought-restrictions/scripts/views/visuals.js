@@ -5,7 +5,8 @@ App.Views.VisualsView = Backbone.View.extend({
     className: "col-xs-12 col-sm-12 col-md-12 col-lg-12",
 
     initialize: function(viewObject){
-        this.template = _.template(template(viewObject.template)),
+        this.dataTemplate = _.template(template(viewObject.template)),
+        this.conservationTemplate = _.template(template("templates/conservation-methods.html")),
         this.render(viewObject);
     },
 
@@ -52,22 +53,47 @@ App.Views.VisualsView = Backbone.View.extend({
 
         this.model = selectedMunicipality;
 
+        //console.log(this.model);
+
+        window.conservationCollection.models = window.conservationCollection.shuffle();
+
         if (this.model.category === ""){
-            console.log("no restrictions listed");
+            if (this.model.municipality === this.model.localwateragency){
+                $("#results-display").html(
+                    "<h6 class='centered'>We couldn't find updated information from <a href='" +
+                    this.model.urltoinformation + "' target='_blank'>" +
+                    this.model.localwateragency + "</a></h6>"
+                );
+            } else {
+                $("#results-display").html(
+                    "<h6 class='centered'>We couldn't find updated information from the <a href='" +
+                    this.model.urltoinformation + "' target='_blank'>" +
+                    this.model.localwateragency + "</a></h6>"
+                );
+            }
 
-            $("#results-display").html(
-                "<h6 class='centered'>we don't have information for your water district</h6>"
-            );
+            $("#icon-display").html(this.conservationTemplate({
+                collection: window.conservationCollection.toJSON()
+            })).css("margin", "25px 0 10px 0");
 
-            $("#icon-display").html(_.template(template("templates/conservation-methods.html")));
+            $(".icons").css("margin", "25px 0 10px 0");
 
         } else if (this.model.category === "voluntary restrictions"){
+            if (this.model.municipality === this.model.localwateragency){
+                $("#results-display").html(
+                    "<h6 class='centered'><a href='" + this.model.urltoinformation + "' target='_blank'>" + this.model.localwateragency + "</a> has asked for voluntary reductions of water use by up to 20 percent</h6>"
+                );
+            } else {
+                $("#results-display").html(
+                    "<h6 class='centered'>The <a href='" + this.model.urltoinformation + "' target='_blank'>" + this.model.localwateragency + "</a> has asked for voluntary reductions of water use by up to 20 percent</h6>"
+                );
+            }
 
-            $("#results-display").html(
-                "<h6 class='centered'>you have been asked to reduce water consumption voluntarily by up to 20 percent</h6>"
-            );
+            $("#icon-display").html(this.conservationTemplate({
+                collection: window.conservationCollection.toJSON()
+            })).css("margin", "25px 0 10px 0");
 
-            $("#icon-display").html(_.template(template("templates/conservation-methods.html")));
+            $(".icons").css("margin", "25px 0 10px 0");
 
         } else {
 
@@ -77,7 +103,7 @@ App.Views.VisualsView = Backbone.View.extend({
     },
 
     render: function(viewObject){
-        $(viewObject.container).html(this.$el.html(this.template({
+        $(viewObject.container).html(this.$el.html(this.dataTemplate({
             collection: window.municipalitiesCollection.toJSON()
         })));
     }

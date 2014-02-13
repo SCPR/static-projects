@@ -4,34 +4,38 @@
 .data-container .data-legend {width: 100%; height: auto; margin: 10px 0 5px 0;}
 
 .data-container .data-legend .jumbotron {width: 100%; height: auto; background: rgba(240, 248, 255, 1.0); margin: 10px 0% 10px 0%; padding: 10px; overflow: hidden;}
-.data-container .data-legend .jumbotron .centered {text-align: center;}
 
-.data-legend #content-action-bar {width: 100%; height: auto; text-align: center; margin: 15px auto 15px auto; z-index: 1000;}
+.data-container .data-legend .jumbotron .centered {text-align: center;}
 
 .data-legend #content-action-bar select {width: 70%; margin: 0 15% 0 15%;}
 
-
 @media (max-width: 491px) {
+    .data-container .data-legend .jumbotron {font-size: 90%;}
     .data-container .data-legend .jumbotron .placemark {width: 20px; vertical-align: middle;}
 }
 
 @media (min-width: 491px) {
+    .data-container .data-legend .jumbotron {font-size: 120%;}
     .data-container .data-legend .jumbotron .placemark {width: 25px;}
 }
 
 @media (min-width: 567px) {
+    .data-container .data-legend .jumbotron {font-size: 150%;}
     .data-container .data-legend .jumbotron .placemark {width: 25px; vertical-align: text-bottom;}
 }
 
 @media (min-width: 768px) {
+    .data-container .data-legend .jumbotron {font-size: 150%;}
     .data-container .data-legend .jumbotron .placemark {width: 35px; vertical-align: text-bottom;}
 }
 
 @media (min-width: 830px) {
+    .data-container .data-legend .jumbotron {font-size: 165%;}
     .data-container .data-legend .jumbotron .placemark {width: 40px; vertical-align: text-bottom;}
 }
 
 @media (min-width: 992px) {
+    .data-container .data-legend .jumbotron {font-size: 175%;}
     .data-container .data-legend .jumbotron .placemark {width: 50px; vertical-align: text-bottom;}
 }
 

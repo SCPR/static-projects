@@ -33,6 +33,7 @@
 
     $(function(){
         window.router = new App.Router();
+
         Backbone.history.start({
             root: 'http://localhost:8880/2kpcc/static-projects/test/keller/la-gang-injunctions/',
             pushState: false,
