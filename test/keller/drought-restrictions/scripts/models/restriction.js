@@ -1,6 +1,6 @@
 App.Models.WaterRestriction = Backbone.Model.extend({
     defaults: {
-        waterdistrict: null,
+        localwateragency: null,
         mwdmember: null,
         category: null,
         urltoinformation: null,
