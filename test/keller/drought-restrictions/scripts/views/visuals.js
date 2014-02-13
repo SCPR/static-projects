@@ -52,90 +52,28 @@ App.Views.VisualsView = Backbone.View.extend({
 
         this.model = selectedMunicipality;
 
-        console.log(this.model);
-
         if (this.model.category === ""){
-
             console.log("no restrictions listed");
 
-        } else {
+            $("#results-display").html(
+                "<h6 class='centered'>we don't have information for your water district</h6>"
+            );
 
-            console.log("restrictions listed");
+            $("#icon-display").html(_.template(template("templates/conservation-methods.html")));
+
+        } else if (this.model.category === "voluntary restrictions"){
 
             $("#results-display").html(
-                "<h6 class='centered'>you are under " + this.model.category + " to reduce water consumption by up to 20 percent</h6>"
+                "<h6 class='centered'>you have been asked to reduce water consumption voluntarily by up to 20 percent</h6>"
             );
 
-
-            $("#icon-display").html(
-                "<h6 class='centered'>You can help by...</h6>" +
-                "<div class='row'>" +
-                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-3 text-center'>" +
-                        "<img class='placemark' src='images/shower.png' />" +
-                        "<p>Taking shorter showers</p>" +
-                    "</div>" +
-                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-3 text-center'>" +
-                        "<img class='placemark' src='images/leak.png' />" +
-                        "<p>Fixing leaky faucets and hoses</p>" +
-                    "</div>" +
-                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-3 text-center'>" +
-                        "<img class='placemark' src='images/broom.png' />" +
-                        "<p>Using a broom to clean the driveway or sidewalk</p>" +
-                    "</div>" +
-                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-3 text-center'>" +
-                        "<img class='placemark' src='images/clock.png' />" +
-                        "<p>Watering before 8 a.m. or after 8 p.m.</p>" +
-                    "</div>" +
-                "</div>"
-            );
-
-
-
-
-        }
-
-
-
-
-
-
-
-        /*
-
-
-        if (this.selectedRestriction.category === "voluntary restrictions"){
-            $("#icon-display").html(
-                "<h6>You can do your part by...</h6>" +
-                "<div class='row'>" +
-                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-3 text-center'>" +
-                        "<img class='placemark' src='images/shower.png' />" +
-                        "<p>Taking shorter showers</p>" +
-                    "</div>" +
-                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-3 text-center'>" +
-                        "<img class='placemark' src='images/leak.png' />" +
-                        "<p>Fixing leaky faucets and hoses</p>" +
-                    "</div>" +
-                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-3 text-center'>" +
-                        "<img class='placemark' src='images/broom.png' />" +
-                        "<p>Using a broom to clean the driveway or sidewalk</p>" +
-                    "</div>" +
-                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-3 text-center'>" +
-                        "<img class='placemark' src='images/clock.png' />" +
-                        "<p>Watering before 8 a.m. or after 8 p.m.</p>" +
-                    "</div>" +
-                "</div>"
-            );
+            $("#icon-display").html(_.template(template("templates/conservation-methods.html")));
 
         } else {
-            $("#icon-display").html(
-                "<p>" + this.selectedRestriction.category + "</p>"
-            );
+
+            console.log("restrictions listed but not voluntary");
+
         }
-
-
-        */
-
-
     },
 
     render: function(viewObject){

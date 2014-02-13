@@ -14,6 +14,12 @@ App.Router = Backbone.Router.extend({
         window.restrictionsCollection.fetch({
             async: false,
         });
+
+        window.conservationCollection = new App.Collections.ConservationMethods();
+        window.conservationCollection.fetch({
+            async: false,
+        });
+
     },
 
     routes: {
