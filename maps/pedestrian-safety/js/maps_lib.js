@@ -18,7 +18,7 @@ var MapsLib = {
     crossWalkTableId: "1vdWsizdohZnLO11PlAf1HRvcBa73EoRziHr_gi0",
     crossWalkLocation: "Lat",
 
-    userContribTableId: "1RvesiAIGe14Gw3w7zjQm_2NBlZLl5EBSstdvf6E",
+    userContribTableId: "1dxh8eWT8AhDtOyEW45UeCj1m17krm-ymh4XMiDM",
     userContribLocationColumn: "Location",
 
     //userContribTableId: "1L_k1wgUIDJFXX6-bLcCnj5eap1LT5QBNnc5qpmw",
@@ -161,7 +161,7 @@ var MapsLib = {
                 where:  whereClause
             },
             suppressInfoWindows: true,
-            styleId: 4,
+            styleId: 2,
             templateId: 2
         });
 
