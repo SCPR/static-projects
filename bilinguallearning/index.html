@@ -847,7 +847,8 @@
                 </div><!--/ .audio -->
 
                 <p>On the door of each kindergarten classroom at LA Leadership Academy there's a note to parents: teachers only speak Spanish in the classroom, even to adults.</p>
-                <p>"The teachers are in character," says school principal, Mercedes Ibarra, for a very important pedagogical reason. "If the students believe the teacher does not speak English, they are more likely to attempt to speak Spanish."</p>
+                <p>"The teachers are in character," says school principal, Mercedes Ibarra, for a very important
+pedagogical reason. "If the students believe the teacher does not speak English, they are more likely to attempt to speak Spanish."</p>
                 <p>Ninety percent of the kindergarten day is conducted in Spanish here. A different teacher comes in for the English portion.</p>
                 <p>The charter school only hires teachers who are native Spanish speakers and have written and studied in Spanish as well as English. Ibarra, herself raised bi-literate, makes sure her teachers get trained on the latest techniques in language immersion instruction.</p>
                 <p>Located in Lincoln Heights, a poor and majority Latino area, LA Leadership Academy wants to prove that through bilingual education, low-income kids can do just as well as their wealthier peers.</p>
@@ -1338,18 +1339,47 @@
     <script type="text/javascript" src="static/js/application.js"></script>
     <script type="text/javascript" src="static/js/functionality.js"></script>
 
-    <!-- begin analytics -->
-    <script type="text/javascript">
-        (function() {
-            var ga = document.createElement('script');
-            ga.type = 'text/javascript';
-            ga.async = true;
-            ga.src = '//stream.publicbroadcasting.net/analytics/abf7.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
-    <!-- end analytics -->
+        <!-- begin chartbeat -->
+        <script type="text/javascript">
+            var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
+            (function() {
+                function loadChartbeat() {
+                    window._sf_endpt = (new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+                    document.body.appendChild(e);
+                };
+                var oldonload = window.onload;
+                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+            })();
+        </script>
+        <!-- end chartbeat -->
+
+        <!-- begin google analytics -->
+        <script type="text/javascript">
+            var hostName = 'projects.scpr.org';
+            var _gaq = _gaq || [];
+            _gaq.push(
+                ['_setAccount', 'UA-624724-1'],
+                ['_setDomainName', hostName],
+                ['_setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['_setCustomVar', 7, 'PageType', 'Story', 3],
+                ['_trackPageview'],
+                ['b._setAccount', 'UA-18188937-11'],
+                ['b._setDomainName', hostName],
+                ['b._setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['b._setCustomVar', 7, 'PageType', 'Story', 3],
+                ['b._trackPageview']
+            );
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!-- end google analytics -->
 
 
 </body>
