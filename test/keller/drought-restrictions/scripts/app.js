@@ -22,7 +22,7 @@
     };
 
     window.appConfig = {
-        openAboutThis: false,
+        openAboutThis: true,
         comments: true,
         embed_this: true,
         embed_url_root: 'http://projects.scpr.org/static/test/keller/project-template/project-interactive/',

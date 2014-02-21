@@ -37,6 +37,8 @@ App.Views.VisualsView = Backbone.View.extend({
             });
         }
 
+        var formattedRestrictionDetails = this.selectedRestriction[0].attributes.restrictiondetails.replace(/[\n\r]/g, "<br />");
+
         selectedMunicipality[0].set({
             'currentstatus': this.selectedRestriction[0].attributes.currentstatus,
             'currentstatusurl': this.selectedRestriction[0].attributes.currentstatusurl,
@@ -49,16 +51,15 @@ App.Views.VisualsView = Backbone.View.extend({
             'mwdmember': this.selectedRestriction[0].attributes.mwdmember,
             'restriction': this.selectedRestriction[0].attributes.restriction,
             'restrictioncommon': this.selectedRestriction[0].attributes.restrictioncommon,
-            'restrictiondetails': this.selectedRestriction[0].attributes.restrictiondetails,
+            'restrictiondetails': formattedRestrictionDetails,
             'restrictiontype': this.selectedRestriction[0].attributes.restrictiontype,
             'voluntaryreduction': this.selectedRestriction[0].attributes.voluntaryreduction
         });
+        this.displayConservationTips();
+        this.displayRestrictionsData(this.selectedMunicipality)
 
         console.log(this.selectedMunicipality);
 
-        this.displayConservationTips();
-
-        this.displayRestrictionsData(this.selectedMunicipality)
     },
 
     displayRestrictionsData: function(selectedMunicipality){
@@ -80,7 +81,7 @@ App.Views.VisualsView = Backbone.View.extend({
         } else if (this.model.currentstatus === "restrictions"){
             $("#details-display").html(this.detailsTemplate({
                 model: this.model,
-                message: "has the following restrictions"
+                message: "has restrictions in place"
             }));
 
         } else if (this.model.currentstatus === "both"){
@@ -92,13 +93,12 @@ App.Views.VisualsView = Backbone.View.extend({
         } else {
             console.log("outlier" + this.model);
         }
-
     },
 
     displayConservationTips: function(){
         $("#icon-display").html(this.conservationTemplate({
             collection: window.conservationCollection.toJSON()
-        })).css("margin", "25px 0 10px 0");
+        })).css("margin", "0 0 10px 0");
 
         $(".icons").css("margin", "25px 0 10px 0");
     },
