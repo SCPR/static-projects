@@ -45,7 +45,7 @@ App.Views.VisualsView = Backbone.View.extend({
             'incentivesdetails': this.selectedRestriction[0].attributes.incentivesdetails,
             'incentivesoffered': this.selectedRestriction[0].attributes.incentivesoffered,
             'incentivesurl': this.selectedRestriction[0].attributes.incentivesurl,
-            'lastupdated': this.selectedRestriction[0].attributes.lastupdated,
+            'lastupdated': moment(this.selectedRestriction[0].attributes.lastupdated).format("MMM. D, YYYY"),
             'localwateragency': this.selectedRestriction[0].attributes.localwateragency,
             'localwateragencyurl': this.selectedRestriction[0].attributes.localwateragencyurl,
             'mwdmember': this.selectedRestriction[0].attributes.mwdmember,
@@ -66,7 +66,7 @@ App.Views.VisualsView = Backbone.View.extend({
         this.model = selectedMunicipality;
         window.conservationCollection.models = window.conservationCollection.shuffle();
 
-        $("#last-updated").html("<p class='pubdate'>Last updated " + this.model.lastupdated + "</p>").css("text-align", "right");
+        $("#last-updated").html("<p class='pubdate small-writing'>Last updated " + this.model.lastupdated + "</p>").css({"text-align": "right", "font-size": "75%"});
 
         if (this.model.currentstatus === "NULL"){
             $("#details-display").html(this.detailsTemplate({
@@ -77,7 +77,7 @@ App.Views.VisualsView = Backbone.View.extend({
         } else if (this.model.currentstatus === "conservation goals"){
             $("#details-display").html(this.detailsTemplate({
                 model: this.model,
-                message: "has asked for a voluntary reduction of water use"
+                message: "has asked residents to voluntarily reduce the amount of water they use"
             }));
 
         } else if (this.model.currentstatus === "restrictions"){
