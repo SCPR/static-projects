@@ -25,7 +25,7 @@
         openAboutThis: true,
         comments: true,
         embed_this: true,
-        embed_url_root: 'http://projects.scpr.org/static/test/keller/project-template/project-interactive/',
+        embed_url_root: 'http://projects.scpr.org/static/applications/drought-restrictions-by-community',
     };
 
     window.renderEmbedBox = function(){
@@ -36,7 +36,7 @@
         window.router = new App.Router();
 
         Backbone.history.start({
-            root: 'http://localhost:8880/2kpcc/static-projects/test/keller/la-gang-injunctions/',
+            root: 'http://projects.scpr.org/static/applications/drought-restrictions-by-community',
             pushState: false,
         });
 
