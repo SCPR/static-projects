@@ -25,7 +25,7 @@
         openAboutThis: true,
         comments: true,
         embed_this: true,
-        embed_url_root: 'http://projects.scpr.org/static/applications/drought-restrictions-by-community',
+        embed_url_root: 'http://projects.scpr.org/static/applications/water-restrictions-by-community',
     };
 
     window.renderEmbedBox = function(){
@@ -36,7 +36,7 @@
         window.router = new App.Router();
 
         Backbone.history.start({
-            root: 'http://projects.scpr.org/static/applications/drought-restrictions-by-community',
+            root: 'http://projects.scpr.org/static/applications/water-restrictions-by-community',
             pushState: false,
         });
 
