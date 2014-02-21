@@ -66,6 +66,8 @@ App.Views.VisualsView = Backbone.View.extend({
         this.model = selectedMunicipality;
         window.conservationCollection.models = window.conservationCollection.shuffle();
 
+        $("#last-updated").html("<p class='pubdate'>Last updated " + this.model.lastupdated + "</p>").css("text-align", "right");
+
         if (this.model.currentstatus === "NULL"){
             $("#details-display").html(this.detailsTemplate({
                 model: this.model,
