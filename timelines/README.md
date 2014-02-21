@@ -3,7 +3,7 @@
 
 **Created 11/19/2012 by [Chris Keller](ckeller@scpr.org)**
 
-**Updated 2/3/2014 by [Chris Keller](ckeller@scpr.org)**
+**Updated 2/20/2014 by [Chris Keller](ckeller@scpr.org)**
 
 ----
 
@@ -26,7 +26,7 @@ With a little practice, you can create and deploy a [topical timeline ](http://p
 
 Roughly 95 percent of the work takes place in the Google spreadsheet, and we have a handy [template](https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&usp=drive_web#gid=0) to get you started.
 
-Follow the steps below to build, deploy and publish your very own timeline.
+Follow the steps below to build, deploy and publish your very own timeline. And you'll want to check out the [tool we made](https://github.com/SCPR/timeline-data-generator) to query KPCC's [content API](https://github.com/SCPR/api-docs) and create a csv file that can be used to kickstart a timeline.
 
 <a name="quickstart"></a>
 #### Quickstart checklist
