@@ -38,12 +38,23 @@ App.Views.VisualsView = Backbone.View.extend({
         }
 
         selectedMunicipality[0].set({
-            'category': this.selectedRestriction[0].attributes.category,
+            'currentstatus': this.selectedRestriction[0].attributes.currentstatus,
+            'currentstatusurl': this.selectedRestriction[0].attributes.currentstatusurl,
+            'incentivesdetails': this.selectedRestriction[0].attributes.incentivesdetails,
+            'incentivesoffered': this.selectedRestriction[0].attributes.incentivesoffered,
+            'incentivesurl': this.selectedRestriction[0].attributes.incentivesurl,
+            'lastupdated': this.selectedRestriction[0].attributes.lastupdated,
             'localwateragency': this.selectedRestriction[0].attributes.localwateragency,
+            'localwateragencyurl': this.selectedRestriction[0].attributes.localwateragencyurl,
             'mwdmember': this.selectedRestriction[0].attributes.mwdmember,
-            'notes': this.selectedRestriction[0].attributes.notes,
-            'urltoinformation': this.selectedRestriction[0].attributes.urltoinformation
+            'restriction': this.selectedRestriction[0].attributes.restriction,
+            'restrictioncommon': this.selectedRestriction[0].attributes.restrictioncommon,
+            'restrictiondetails': this.selectedRestriction[0].attributes.restrictiondetails,
+            'restrictiontype': this.selectedRestriction[0].attributes.restrictiontype,
+            'voluntaryreduction': this.selectedRestriction[0].attributes.voluntaryreduction
         });
+
+        console.log(this.selectedMunicipality);
 
         this.displayRestrictionsData(this.selectedMunicipality)
     },
@@ -51,54 +62,97 @@ App.Views.VisualsView = Backbone.View.extend({
     displayRestrictionsData: function(selectedMunicipality){
 
         this.model = selectedMunicipality;
-
-        //console.log(this.model);
-
         window.conservationCollection.models = window.conservationCollection.shuffle();
 
-        if (this.model.category === ""){
-            if (this.model.municipality === this.model.localwateragency){
-                $("#results-display").html(
-                    "<h5 class='centered'>We couldn't find updated information from <a href='" +
-                    this.model.urltoinformation + "' target='_blank'>" +
-                    this.model.localwateragency + "</a></h6>"
-                );
-            } else {
-                $("#results-display").html(
-                    "<h5 class='centered'>We couldn't find updated information from the <a href='" +
-                    this.model.urltoinformation + "' target='_blank'>" +
-                    this.model.localwateragency + "</a></h6>"
-                );
-            }
-
-            $("#icon-display").html(this.conservationTemplate({
-                collection: window.conservationCollection.toJSON()
-            })).css("margin", "25px 0 10px 0");
-
-            $(".icons").css("margin", "25px 0 10px 0");
-
-        } else if (this.model.category === "voluntary restrictions"){
-            if (this.model.municipality === this.model.localwateragency){
-                $("#results-display").html(
-                    "<h5 class='centered'><a href='" + this.model.urltoinformation + "' target='_blank'>" + this.model.localwateragency + "</a> has asked for voluntary reductions of water use by up to 20 percent</h6>"
-                );
-            } else {
-                $("#results-display").html(
-                    "<h5 class='centered'>The <a href='" + this.model.urltoinformation + "' target='_blank'>" + this.model.localwateragency + "</a> has asked for voluntary reductions of water use by up to 20 percent</h6>"
-                );
-            }
-
-            $("#icon-display").html(this.conservationTemplate({
-                collection: window.conservationCollection.toJSON()
-            })).css("margin", "25px 0 10px 0");
-
-            $(".icons").css("margin", "25px 0 10px 0");
-
+        if (this.model.currentstatus === "NULL"){
+            this.nullDisplay(this.model);
+            this.displayConservationTips();
+        } else if (this.model.currentstatus === "conservation goals"){
+            this.conservationGoalsDisplay(this.model);
+            this.displayConservationTips();
+        } else if (this.model.currentstatus === "restrictions"){
+            this.restrictionsDisplay(this.model);
+            this.displayConservationTips();
+        } else if (this.model.currentstatus === "both"){
+            this.bothDisplay(this.model);
+            this.displayConservationTips();
         } else {
-
-            console.log("restrictions listed but not voluntary");
-
+            console.log("outlier" + this.model);
         }
+    },
+
+    nullDisplay: function(model){
+        this.model = model;
+        if (this.model.municipality === this.model.localwateragency){
+            $("#results-display").html(
+                "<h5 class='centered'>We couldn't find updated information for <a href='" +
+                this.model.localwateragencyurl + "' target='_blank'>" +
+                this.model.localwateragency + "</a></h5>"
+            );
+        } else {
+            $("#results-display").html(
+                "<h5 class='centered'>We couldn't find updated information for <a href='" +
+                this.model.localwateragencyurl + "' target='_blank'>" +
+                this.model.localwateragency + "</a></h5>"
+            );
+        }
+    },
+
+    conservationGoalsDisplay: function(model){
+        this.model = model;
+        if (this.model.municipality === this.model.localwateragency){
+            $("#results-display").html(
+                "<h5 class='centered'><a href='" + this.model.currentstatusurl + "' target='_blank'>" +
+                this.model.localwateragency + "</a> has asked for a voluntary reduction of water use</h5>"
+            );
+        } else {
+            $("#results-display").html(
+                "<h5 class='centered'><a href='" + this.model.currentstatusurl + "' target='_blank'>" +
+                this.model.localwateragency + "</a> has asked for a voluntary reduction of water use</h5>"
+            );
+        }
+    },
+
+    restrictionsDisplay: function(model){
+        this.model = model;
+        if (this.model.municipality === this.model.localwateragency){
+            $("#results-display").html(
+                "<h5 class='centered'><a href='" + this.model.currentstatusurl + "' target='_blank'>" +
+                this.model.localwateragency + "</a> has the following restrictions in place</h5>" +
+                "<p>" + this.model.restrictiontype + "</p>" +
+                "<p>" + this.model.restrictioncommon + "</p>" +
+                "<p>" + this.model.restrictiondetails + "</p>"
+            );
+        } else {
+            $("#results-display").html(
+                "<h5 class='centered'><a href='" + this.model.currentstatusurl + "' target='_blank'>" +
+                this.model.localwateragency + "</a> has the following restrictions in place</h5>" +
+                "<p>" + this.model.restrictiontype + "</p>" +
+                "<p>" + this.model.restrictioncommon + "</p>" +
+                "<p>" + this.model.restrictiondetails + "</p>"
+            );
+        }
+    },
+
+    bothDisplay: function(model){
+        this.model = model;
+        if (this.model.municipality === this.model.localwateragency){
+            $("#results-display").html(
+                "<h5 class='centered'>both non-voluntary restrictions and voluntary restrictions listed</h5>"
+            );
+        } else {
+            $("#results-display").html(
+                "<h5 class='centered'>both non-voluntary restrictions and voluntary restrictions listed</h5>"
+            );
+        }
+    },
+
+    displayConservationTips: function(){
+        $("#icon-display").html(this.conservationTemplate({
+            collection: window.conservationCollection.toJSON()
+        })).css("margin", "25px 0 10px 0");
+
+        $(".icons").css("margin", "25px 0 10px 0");
     },
 
     render: function(viewObject){
