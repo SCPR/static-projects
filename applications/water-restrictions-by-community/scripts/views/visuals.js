@@ -76,7 +76,7 @@ App.Views.VisualsView = Backbone.View.extend({
         } else if (this.model.currentstatus === "conservation goals"){
             $("#details-display").html(this.detailsTemplate({
                 model: this.model,
-                message: "<a href='#'>has asked residents</a> to voluntarily reduce the amount of water they use"
+                message: "<a href='#'>has asked residents</a> to voluntarily reduce water use"
             }));
 
         } else if (this.model.currentstatus === "restrictions"){
