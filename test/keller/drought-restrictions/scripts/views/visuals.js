@@ -89,7 +89,7 @@ App.Views.VisualsView = Backbone.View.extend({
         } else if (this.model.currentstatus === "both"){
             $("#details-display").html(this.detailsTemplate({
                 model: this.model,
-                message: "both non-voluntary restrictions and voluntary restrictions listed"
+                message: "has restrictions in place and has asked residents to voluntarily reduce the amount of water they use"
             }));
 
         } else {
