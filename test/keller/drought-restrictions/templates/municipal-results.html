@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+        <h5 class='centered'><a href='<%= model.currentstatusurl %>' target='_blank'><%= model.localwateragency %></a> <%= message %></h5>
+
+        <% if (model.restrictiontype != "NULL") { %>
+            <p><%= model.restrictiontype %></p>
+        <% } %>
+        <% if (model.restrictioncommon != "NULL") { %>
+            <p><%= model.restrictioncommon %></p>
+        <% } %>
+        <% if (model.restrictiondetails != "NULL") { %>
+            <p><%= model.restrictiondetails %></p>
+        <% } %>
+
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <h5 class='centered'>And offers the following rebates</h5>
+        <p><%= model.incentivesdetails %></p>
+        <p><%= model.incentivesoffered %></p>
+        <p><%= model.incentivesurl %></p>
+    </div>
+</div>
