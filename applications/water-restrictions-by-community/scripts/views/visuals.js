@@ -57,16 +57,15 @@ App.Views.VisualsView = Backbone.View.extend({
         });
         this.displayConservationTips();
         this.displayRestrictionsData(this.selectedMunicipality)
-
-        console.log(this.selectedMunicipality);
-
     },
 
     displayRestrictionsData: function(selectedMunicipality){
         this.model = selectedMunicipality;
         window.conservationCollection.models = window.conservationCollection.shuffle();
 
-        $("#last-updated").html("<p class='pubdate small-writing'>Last updated " + this.model.lastupdated + "</p>").css({"text-align": "right", "font-size": "75%"});
+        $("#last-updated").html(
+            "<p class='pubdate small-writing'>Last updated " + this.model.lastupdated +
+            ". <a href='" + this.model.currentstatusurl + "' target='_blank'>Data Source</a></p>").css({"text-align": "right", "font-size": "75%"});
 
         if (this.model.currentstatus === "NULL"){
             $("#details-display").html(this.detailsTemplate({
