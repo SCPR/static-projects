@@ -40,20 +40,23 @@
             pushState: false,
         });
 
-        if (window.appConfig.comments === true){
-            var disqus_shortname = 'kpcc-projects';
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        };
+        if (!$("body").hasClass("iframe")){
 
-        if (window.appConfig.embed_this === false){
-            $('li.projects-embed').addClass('hidden');
-        };
+            if (window.appConfig.comments === true){
+                var disqus_shortname = 'kpcc-projects';
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            };
 
-        if (window.appConfig.openAboutThis === true){
-            $('.text').collapse('show');
-        };
+            if (window.appConfig.embed_this === false){
+                $('li.projects-embed').addClass('hidden');
+            };
+
+            if (window.appConfig.openAboutThis === true){
+                $('.text').collapse('show');
+            };
+        }
 
         $('.text').on('shown.bs.collapse', function(){
             $('span.text').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
