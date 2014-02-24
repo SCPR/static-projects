@@ -25,7 +25,7 @@
         openAboutThis: true,
         comments: true,
         embed_this: true,
-        embed_url_root: 'http://projects.scpr.org/static/applications/water-restrictions-by-community',
+        embed_url_root: 'http://projects.scpr.org/static/applications/water-restrictions-by-community/iframe.html',
     };
 
     window.renderEmbedBox = function(){
