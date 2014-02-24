@@ -7,13 +7,15 @@
 
 .data-container .data-legend .jumbotron .centered {text-align: center;}
 
-.data-legend #content-action-bar select {width: 30%; margin: 0 35% 0 35%; border: 1px solid #2B2B2B; border-radius: 0; -webkit-appearance: none; appearance: none; cursor: pointer; display: inline-block; margin: 0 auto;
-    padding: 10px;}
+/*.data-legend #content-action-bar select {width: 30%; margin: 0 35% 0 35%; border: 1px solid #2B2B2B; border-radius: 0; -webkit-appearance: none; appearance: none; cursor: pointer; display: inline-block; margin: 0 auto;
+    padding: 10px;}*/
+
+.data-legend #content-action-bar select {width: 60%; margin: 0 20% 0 20%; cursor: pointer; display: inline-block;}
 
 .data-legend #content-action-bar select:focus {outline: 0;}
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
-    .data-legend #content-action-bar select {background: url(../images/select-arrow.png) 95% 50% no-repeat;}
+    /*.data-legend #content-action-bar select {background: url(../images/select-arrow.png) 95% 50% no-repeat;}*/
 }
 
 .data-legend #results-display {width: 70%; margin: 25px 15% 0 15%;}
