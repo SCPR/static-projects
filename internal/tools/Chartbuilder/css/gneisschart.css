@@ -1,5 +1,20 @@
+/*
+// Make sure to change the name of the font
+// in the webfont.js loader in index.html
+*/
+@import url(http://fonts.googleapis.com/css?family=Cutive);
+
+svg {
+	font-size: 14px;
+}
+
 svg #ground {
 	fill: #fff;
+	stroke: none;
+}
+
+svg #plotArea {
+	fill: none;
 	stroke: none;
 }
 
@@ -8,8 +23,8 @@ svg .axis line {
 	shape-rendering: crispEdges;
 }
 
-svg .axis line#zeroLine {
-		stroke: #ff4cf4;
+svg .axis g.zero line {
+		stroke: #666666;
 }
 
 svg #xAxis line {
@@ -26,30 +41,41 @@ svg .axis path {
 }
 
 svg .axis text {
-	font-family: 'Cutive',Helvetica, sans-serif;
-	font-size: 12px;
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 svg .legendItem text {
-	font-family: 'Cutive',Helvetica, sans-serif;
-	font-size:  12px;
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform:capitalize;
 }
 
 svg text.metaText {
-	font-family: 'Cutive',Helvetica, sans-serif;
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:  10px;
 	text-rendering:   optimizeLegibility;
-	fill:  #999999;
+	fill: #2B2B2B;
 }
 
-svg text.barLabel, 
+svg text.barLabel,
 svg text.bargridLabel {
-	font-family: 'Cutive',Helvetica, sans-serif;
-	font-size: 12px
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-	
+
+/*Default styling of series*/
+
+svg path.seriesLine {
+	stroke-width: 3px;
+	stroke-linejoin: round;
+	stroke-linecap: round;
+	fill: none;
+}
+
+svg .seriesScatter circle {
+	stroke:#fff;
+	stroke-width:1;
+}
+
 #titleLine {
-	font-family: 'Cutive',Helvetica, sans-serif;
-	font-size: 12px;
+	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	fill: #666666;
 }
