@@ -6,7 +6,17 @@ var chart;
 var formopen;
 var submitted = false;
 
+var appConfig = {
+    openAboutThis: true,
+    embed_this: false,
+    embed_url_root: 'http://projects.scpr.org/static/test/keller/project-template/project-interactive/',
+};
+
 $(document).ready(function(){
+
+    initializeTemplates.hideEmbedBox();
+    initializeTemplates.showOpeningText();
+
     tooltip_template = Handlebars.compile($('#tooltip-template').html());
 
     var ds = new Miso.Dataset({
@@ -461,3 +471,66 @@ function drawgrid(){
          }]
     });
 };
+
+
+
+
+
+// begin template rendering object
+var initializeTemplates = {
+
+    /*
+    renderStaticTemplates: function(){
+        var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/templates/';
+        renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
+        renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
+        renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');
+        renderHandlebarsTemplate('templates/data-details.handlebars', '.data-details');
+
+        var checkExist = setInterval(function() {
+
+            if (jqueryNoConflict('.header-links').length) {
+                clearInterval(checkExist);
+                initializeTemplates.hideEmbedBox();
+            }
+
+            if (jqueryNoConflict('.buttons').length) {
+                clearInterval(checkExist);
+                initializeTemplates.toggleDisplayIcon();
+            }
+        }, 1000);
+    },
+    */
+
+    hideEmbedBox: function(){
+        if (appConfig.embed_this === false){
+            $('li.projects-embed').addClass('hidden');
+        };
+    },
+
+    showOpeningText: function(){
+        if (window.appConfig.openAboutThis === true){
+            $('.text').collapse('show');
+        };
+    },
+
+    renderEmbedBox: function(){
+        jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page. You may need to adjust the height parameter. <br /><br /> &lt;iframe src=\"'+ appConfig.embed_url_root +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
+    },
+
+    toggleDisplayIcon: function(){
+        $('.text').on('shown.bs.collapse', function(){
+            $('span.text').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+        });
+        $('.text').on('hidden.bs.collapse', function(){
+            $('span.text').addClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-up');
+        });
+        $('.about').on('shown.bs.collapse', function(){
+            $('span.about').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+        });
+        $('.about').on('hidden.bs.collapse', function(){
+            $('span.about').addClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-up');
+        });
+    }
+};
+// end template rendering object
