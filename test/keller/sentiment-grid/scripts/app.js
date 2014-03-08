@@ -5,16 +5,16 @@ var tooltip_template;
 var chart;
 var formopen;
 var submitted = false;
-var ds;
 
 $(document).ready(function(){
     tooltip_template = Handlebars.compile($('#tooltip-template').html());
-    ds = new Miso.Dataset({
-        url: "data/spreadsheet.tsv",
-        delimiter: "\t"
-    });
 
-    console.log(ds);
+    var ds = new Miso.Dataset({
+        importer : Miso.Dataset.Importers.GoogleSpreadsheet,
+        parser : Miso.Dataset.Parsers.GoogleSpreadsheet,
+        key : "0Aq8qwSArzKP9dDl4dDRyT3NQWEEwNjhrNE5DS2xGTFE",
+        worksheet : "1"
+    });
 
     ds.fetch({
         success: function(){
@@ -38,6 +38,10 @@ $(document).ready(function(){
         }
     });
 
+    $("#formsubmit").click(function(){
+        alert("Thank you for your submission");
+    });
+
     $('#form-comment').keyup(function(){
         $('#charcounter').html(160 - $(this).val().length + ' chars');
 
@@ -50,7 +54,7 @@ $(document).ready(function(){
         }
     });
 
-    $('#cancelbutton a').click(function(){
+    $('#cancelbutton').click(function(){
         $('#theform').hide();
         closeform();
     });
@@ -121,7 +125,6 @@ function showtip(pt, curcomment){
     curcomment = curcomment % ptdata.length;
     var startcomment = curcomment;
 
-
     while (_.isNull(ptdata[curcomment].Comment)){
         curcomment++;
         curcomment = curcomment % ptdata.length;
@@ -170,7 +173,11 @@ function validate_form(){
         Name: $("#form-name").val()
     });
 
-    chart.get(cell).update({marker: {fillColor : get_color(cell) }});
+    chart.get(cell).update({
+        marker: {
+            fillColor : get_color(cell)
+        }
+    });
 
     submitted = true;
 
@@ -272,14 +279,17 @@ function get_data(){
 
 
 function drawgrid(){
+
     var interval = false;
+
     formopen = false;
+
     var curcomment = null;
 
     Highcharts.setOptions({
         chart: {
             style : {
-                fontFamily : "'Arial', Arial, sans-serif;"
+                fontFamily : "'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif"
             }
 
         }
@@ -343,12 +353,14 @@ function drawgrid(){
                         },
 
                         click: function(){
-                            if(submitted || $.cookie("valentines")){
-                                // can't use form twice
+                            if(submitted || $.cookie("boom")){
+                                // can't submit form twice
+                                alert("You've already submitted your thoughts");
                                 return;
                             }
 
                             var thept = this;
+
                             if(formopen){
                                 return;
                             }
@@ -446,7 +458,6 @@ function drawgrid(){
             name: 'points',
             id: 'points',
             data: get_data()
-
          }]
     });
 };

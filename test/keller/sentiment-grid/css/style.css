@@ -1,0 +1,97 @@
+#canvas { width: 500px; height: 645px; margin: auto; position: relative; }
+
+#chart-container { width: 100%; height: 500px; position: absolute; left: 0px; top: 50px; }
+
+/* grid labels */
+.axislabel { position: absolute; text-align: center; z-index: 1; }
+
+#topaxislabel { top: 20px; margin: auto; text-align: center; width: 100%; }
+
+#bottomaxislabel { bottom: 75px; width: 100%; margin: auto; }
+
+#leftaxislabel { bottom: 355px; right: 280px; width: 100%; -moz-transform: rotate(270deg); -webkit-transform: rotate(270deg); -o-transform: rotate(270deg); -ms-transform: rotate(270deg); transform: rotate(270deg); }
+
+#rightaxislabel { bottom: 355px; left: 280px; width: 100%; text-align: center; -moz-transform: rotate(90deg); -webkit-transform: rotate(90deg); -o-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); }
+
+/* the form */
+#theform { position: absolute; right: 34%; bottom: 215px; background-color: #2B2B2B; color: white; opacity: 1; filter: alpha(opacity=80); width: 350px; padding: 30px; font-size: 12px; font-family: Arial, sans-serif; z-index: 2; -moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); -webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); display: none;}
+
+#theform .btn {padding: 6px 12px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -khtml-border-radius: 3px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#charcounter { float: right; color: red; }
+
+#theform textarea { margin-top: 7px; height: 100px; margin-bottom: 10px; }
+
+.questionlabel { padding-top: 10px; padding-bottom: 10px; padding-left: 0px; padding-right: 0px; text-align: center; width: 480px; }
+
+#formexplain { color: #fff; padding-bottom: 10px; text-align: left; }
+
+#formexplain p { font-size: 12px; }
+
+#cancelbutton { padding-top: 10px; float: left; }
+
+#cancelbutton a { color: red; }
+
+#clickinstructions { background-color: #ff3300; width: 175px; color: white; -moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); -webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); text-align: center; font-size: 12px; line-height: 30px; height: 30px; position: relative; left: 155px; top: -10px; }
+
+#tooltip { z-index: 2; font-family: Arial; }
+
+/* user comments */
+.commentpop { -moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); -webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); width: 250px; background-color: black; color: white; padding-left: 15px; padding-right: 15px; padding-top: 15px; padding-bottom: 25px; font-size: 12px; position: relative; }
+
+#ourtip { padding-left: 17px; padding-right: 9px; padding-top: 17px; }
+
+.commentname { font-weight: bold; padding-bottom: 8px; }
+
+.commentbody { height: 60px; white-space: normal; }
+
+.commentfooter { width: 100%; padding-top: 10px; vertical-align: top; line-height: 10px; font-size: 10px; color: #999; }
+
+.commentcounter { float: left; }
+
+#map_body { height: 710px; }
+
+
+
+
+
+
+
+
+
+#content-background {display: none; position: fixed; height: 100%; width: 100%; top: 0; left: 0; background: #000000; z-index: 1; }
+
+#content-display {display: none; position: fixed; top: 0; left: 0; background: #f7f7f7; z-index: 10; height: auto; max-width: 30%; color: #2b2b2b; padding: 2%; -moz-border-radius: 2%; -webkit-border-radius: 2%; border-radius: 2%; -khtml-border-radius: 2%;}
+
+#close {margin: 0; cursor: pointer; }
+
+/* headlines for Portrait tablet to landscape and desktop */
+@media (min-width: 500px) and (max-width: 979px) {
+    #content-background {display: none; position: fixed;}
+    #content-display {max-width: 80%;}
+
+}
+
+/* headlines for Landscape phones and down */
+@media (max-width: 499px) {
+    #content-background {display: none; position: fixed;}
+    #content-display {max-width: 80%;}
+}
