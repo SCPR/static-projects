@@ -7,12 +7,14 @@ var formopen;
 var submitted = false;
 
 var appConfig = {
-    openAboutThis: true,
+    openAboutThis: false,
     embed_this: false,
     embed_url_root: 'http://projects.scpr.org/static/test/keller/project-template/project-interactive/',
 };
 
 $(document).ready(function(){
+
+    var initialWidth = $('#chart-container').width();
 
     initializeTemplates.hideEmbedBox();
     initializeTemplates.showOpeningText();
@@ -40,7 +42,7 @@ $(document).ready(function(){
                 clickcount++;
             });
 
-            drawgrid();
+            drawgrid(initialWidth);
         },
 
         error: function(){
@@ -288,7 +290,13 @@ function get_data(){
 
 
 
-function drawgrid(){
+function drawgrid(initialWidth){
+
+    var chartWidth = initialWidth-150
+
+    var chartMargin = (initialWidth-chartWidth)/2
+
+    console.log(chartMargin);
 
     var interval = false;
 
@@ -309,6 +317,7 @@ function drawgrid(){
         chart: {
             renderTo: "chart-container",
             type: "scatter",
+            width: (initialWidth-150),
             marginTop : -50,
             marginBottom : -50,
             marginLeft: 0,
@@ -326,6 +335,7 @@ function drawgrid(){
         labels : {
             items: []
         },
+
         legend: "none",
 
         plotOptions : {
@@ -344,6 +354,7 @@ function drawgrid(){
                             }
 
                             var thepoint = this;
+
                             interval = setInterval(function(){
                                 curcomment = 0;
                                 curcomment = showtip(thepoint, curcomment);
@@ -354,7 +365,8 @@ function drawgrid(){
                                 }, 5000);
                             }, 300);
                         },
-                        mouseOut : function (){
+
+                        mouseOut: function (){
                             if(interval){
                                 clearInterval(interval);
                             }
@@ -470,6 +482,9 @@ function drawgrid(){
             data: get_data()
          }]
     });
+
+    $(".highcharts-container").css("margin", "0 auto 0 auto");
+
 };
 
 
