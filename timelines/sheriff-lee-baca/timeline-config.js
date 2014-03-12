@@ -1,12 +1,12 @@
 var kpccTimelineConfig = {
     // choose spreadsheet or flat-file
-    dataSource: 'spreadsheet',
+    dataSource: 'flat-file',
 
     // example spreadsheet key
     key: '0AukLBD7DEyX8dFZ2SGRfT1RPM0MtaVNGM0NyWFBzaWc',
 
     // example path to data file
-    //sourceFile: 'timeline-data.json',
+    sourceFile: 'timeline-data.json',
 
     // example path to meta file
     metaFile: 'timeline-meta.json',
