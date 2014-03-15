@@ -1,272 +1,674 @@
 <!DOCTYPE html>
-
-<!-- begin doc -->
-<html lang="en">
-
-    <!-- begin header -->
-    <head>
-
-        <!-- begin meta -->
-        <title>Xxxxxxx xxxxx xxxxxx | scpr.org</title>
-        <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <link rel="apple-touch-icon" href="http://media.scpr.org/assets/images/icon.png">
-        <meta name="format-detection" content="telephone=no"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="robots" content="#" />
-        <meta name="description" content="#" />
-        <meta name="keywords" content="#" />
-        <meta property="og:title" content="#" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png" />
-        <meta property="og:image:width" content="500" />
-        <meta property="og:image:height" content="500" />
-        <meta property="og:url" content="#" />
-        <meta property="og:description" content="#" />
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:url" content="#">
-        <meta name="twitter:domain" content="http://projects.scpr.org/">
-        <meta name="twitter:site" content="KPCC">
-        <meta name="twitter:title" content="#">
-        <meta name="twitter:description" content="#">
-        <meta name="twitter:image:src" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png">
-        <!-- end meta -->
-
-        <!-- begin css -->
-        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
-        <!-- end css -->
-
-        <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
-        <!--[if lte IE 9]>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
-            <link href="http://projects.scpr.org/static/static-files/v3-dependencies/respond-proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
-            <link href="respond-proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
-            <script src="respond-proxy/respond.proxy.js"></script>
-        <![endif]-->
-
-        <!-- begin base scripts -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script type="text/javascript" src="//use.typekit.net/air8rql.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-        <!-- end base scripts -->
-
-    </head>
-    <!-- end header -->
-
-    <!-- begin body -->
-    <body class="minimal">
-
-        <!-- begin page header/navigation -->
-        <div class="kpcc-header">
-            <header>
-                <nav class="navbar navbar-default" role="navigation">
-                    <div class="container data-container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
-                        </div>
-                        <div class="data-share navbar-collapse collapse">
-                            <ul class="nav navbar-nav navbar-right header-links clearfix">
-                                <li class="projects-pledge">
-                                    <a href="https://scprcontribute.publicradio.org/" class="pledge-now icon">Contribute to KPCC</a>
-                                    <a href="https://scprcontribute.publicradio.org/" target="_blank"><b>Pledge now</b></a>
-                                </li>
-                                <li class="projects-share">
-                                    <div class="share-links clearfix">
-                                        <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
-                                            <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fprojects.scpr.org%2Fstatic%2Fapplications%2Fwater-restrictions-by-community" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
-                                            <a class="twitter icon" href="http://twitter.com/share?text=See if your Southern California community is under water restrictions via this @KPCC interactive&url=http%3A%2F%2Fprojects.scpr.org%2Fstatic%2Fapplications%2Fwater-restrictions-by-community"></a>
-                                    </div>
-                                    <b>Share this</b>
-                                </li>
-                                <li class="projects-embed">
-                                    <a href="javascript:void(0)" class="embed-this icon" onclick="window.renderEmbedBox()">Embed This</a>
-                                    <a href="javascript:void(0)" target="_blank" onclick="window.renderEmbedBox()"><b>Embed This</b></a>
-                                </li>
-                                <li class="projects-home">
-                                    <a href="http://projects.scpr.org/" class="projects-home icon">Projects Home</a>
-                                    <a href="http://projects.scpr.org/"><b>All Projects</b></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </header>
+<html>
+  <head>
+    <title>2014 Public Radio Bracket Madness - 89.3 KPCC</title>
+    <meta charset="utf-8" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <link href="http://media.scpr.org/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script><![endif]--><link href="stylesheets/normalize.css" media="screen" rel="stylesheet" type="text/css" /><link href="stylesheets/brackets.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Merriweather:400,300,400italic,300italic" rel="stylesheet" type="text/css" />
+    <script src="//use.typekit.net/vtu6xsq.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      try{Typekit.load();}catch(e){}
+    </script>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="bound">
+        <div class="credits">
+          <h3 class="brand">
+            <a href="http://scpr.org" title="KPCC">89.3 KPCC</a>
+          </h3>
+          <p>
+            Presents the 2nd Annual
+          </p>
         </div>
-        <!-- end page header/navigation -->
-
-        <!-- begin main container -->
-        <div class="container data-container">
-            <div class="row data-details">
-                <img src="images/public-radio-bracket-2014.jpg" width="100%" />
-                <a href="images/Public-Radio-Bracket-2014.pdf">Download PDF</a>
-            </div>
-            <div class="row data-visuals">
-
-                <div id="western-region">
-                    <h1>Western Region</h1>
-                    <div id="western-7860835" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7860835.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7860835/">Marketplace or Off-Ramp?</a></noscript>
-                    </div>
-                    <div id="western-7860862" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7860862.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7860862/">Bullseye or Which Way, L.A.?</a></noscript>
-                    </div>
-                    <div id="western-7860898" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7860898.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7860898/">The Dinner Party or Take Two?</a></noscript>
-                    </div>
-                    <div id="western-7860835" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7860907.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7860907/">99% Invisible or AirTalk?</a></noscript>
-                    </div>
-                </div>
-
-                <div id="northern-northeastern-region">
-                    <h1>Northern Northeastern</h1>
-                    <div id="northern-northeastern-7862264" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7862264.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7862264/">Wait Wait... Don't Tell Me or On Being?</a></noscript>
-                    </div>
-                    <div id="northern-northeastern-7862264" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7862264.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/78622922/">BBC Newshour or Wits?</a></noscript>
-                    </div>
-                    <div id="northern-northeastern-7862264" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7862264.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7862320/">The Splendid Table or Q with Jian Ghomeshi?</a></noscript>
-                    </div>
-                    <div id="northern-northeastern-7862264" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7862264.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7862328/">A Prairie Home Companion or WireTap?</a></noscript>
-                    </div>
-                </div>
-
-                <div id="upper-northeastern-region">
-                    <h1>Upper Northeastern</h1>
-                    <div id="upper-northeastern-7862676" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7862676.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7862676/">Radiolab or Ask Me Another?</a></noscript>
-                    </div>
-                    <div id="upper-northeastern-7862682" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7862682.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7862682/">On The Media or Tell Me More?</a></noscript>
-                    </div>
-                    <div id="upper-northeastern-7862695" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7862695.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7862695/">The Moth Radio Hour or Studio 360?</a></noscript>
-                    </div>
-                    <div id="upper-northeastern-7862704" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7862704.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7862704/">Science Friday or The Takeaway?</a></noscript>
-                    </div>
-                </div>
-
-                <div id="southern-northeastern-region">
-                    <h1>Southern Northeastern</h1>
-                    <div id="southern-northeastern-7862720" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7862720.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7862720/">Morning Edition or All Things Considered?</a></noscript>
-                    </div>
-                    <div id="southern-northeastern-7862733" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7862733.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7862733/">Fresh Air or Radio Open Source?</a></noscript>
-                    </div>
-                    <div id="southern-northeastern-7862741" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7862741.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7862741/">Planet Money or Latino USA?</a></noscript>
-                    </div>
-                    <div id="southern-northeastern-7862750" class="poll-module">
-                        <script type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/7862750.js"></script>
-                        <noscript><a href="http://polldaddy.com/poll/7862750/">Snap Judgment or TED Radio Hour?</a></noscript>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row kpcc-footer">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <footer>
-                        <ul class="list-inline">
-                            <li><a href="http://scpr.org/terms/">Terms &amp; Conditions</a></li>
-                            <li><a href="http://scpr.org/privacy/">Privacy</a></li>
-                            <li><a href="http://scpr.org/web_site_feedback">Website Feedback</a></li>
-                            <li><a href="http://scpr.org/">Copyright 2013 &copy; Southern California Public Radio</a></li>
-                        </ul>
-                    </footer>
-                </div>
-            </div>
+        <div class="titling">
+          <h1>
+            Public Radio <b class="bracket"><span>Bracket</span></b><em>Madness</em>
+          </h1>
+          <p class="explainer">
+            March Madness isn’t just for basketball fans. Public radio ipsum dolor sit amet, consectetur adipiscing elit. Donec vestibulum mi vel porta pellentesque. 
+          </p>
         </div>
-        <!-- end main container -->
-
-        <!-- begin scripts -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-        <!-- end scripts -->
-
-        <!-- begin chartbeat -->
-        <!--
-        <script type="text/javascript">
-            var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
-            (function() {
-                function loadChartbeat() {
-                    window._sf_endpt = (new Date()).getTime();
-                    var e = document.createElement('script');
-                    e.setAttribute('language', 'javascript');
-                    e.setAttribute('type', 'text/javascript');
-                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
-                    document.body.appendChild(e);
-                };
-                var oldonload = window.onload;
-                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
-            })();
-        </script>
-        -->
-        <!-- end chartbeat -->
-
-        <!-- begin google analytics -->
-        <!--
-        <script type="text/javascript">
-            var hostName = 'projects.scpr.org';
-            var _gaq = _gaq || [];
-            _gaq.push(
-                ['_setAccount', 'UA-624724-1'],
-                ['_setDomainName', hostName],
-                ['_setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
-                ['_setCustomVar', 7, 'PageType', 'Story', 3],
-                ['_trackPageview'],
-                ['b._setAccount', 'UA-18188937-11'],
-                ['b._setDomainName', hostName],
-                ['b._setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
-                ['b._setCustomVar', 7, 'PageType', 'Story', 3],
-                ['b._trackPageview']
-            );
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
-        -->
-        <!-- end google analytics -->
-
-    </body>
-    <!-- end body -->
-
+      </div>
+      <figure class="hero-photo">
+        <img src="http://a.scpr.org/i/6fd86959d19feffd8d25ebb6a7d63b76/58298-eight.jpg" /><figcaption>
+          <p>
+            Ira Glass hoists the 2013 Bracket Madness trophy on behalf of This American Life.
+          </p>
+        </figcaption>
+      </figure>
+      <div class="tease">
+        <p>
+          <a href="#main">Cast your vote now!</a>
+        </p>
+      </div>
+      <div class="sharing">
+        <ul>
+          <li class="label">
+            Share this:
+          </li>
+          <li>
+            <a class="facebook" href="#">Facebook</a>
+          </li>
+          <li>
+            <a class="twitter" href="#">Twitter</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <main id="main">
+      <div class="intro">
+        <div class="bound">
+          <h4 class="current-round">
+            Current Round : <strong>Round 1</strong>
+          </h4>
+          <div class="email-signup">
+            <!--Begin MailChimp Signup Form-->
+            <form action="http://scpr.us2.list-manage.com/subscribe/post?u=5e1e4451f92ffc0fa746da7fa&amp;id=1f2131ce65" class="validate" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank">
+              <input name="EMAIL" placeholder="Sign up to get notified for each round of voting!" required="true" type="email" value="" /><input name="subscribe" type="submit" value="Submit" />
+              <div style="position: absolute; left: -5000px;">
+                <input name="b_5e1e4451f92ffc0fa746da7fa_1f2131ce65" type="text" value="" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <section class="region">
+        <header>
+          <div class="bound">
+            <h3>
+              West
+            </h3>
+          </div>
+        </header>
+        <div class="bracket">
+          <div class="round round-one current-round">
+            <h5>
+              Round 1
+            </h5>
+            <!--Matchup - Airtalk vs. 99% Invisible-->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first airtalk">
+                  <h2>
+                    AirTalk
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second ninety-nine">
+                  <h2>
+                    99% Invisible
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7860835.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7860835/">AirTalk or 99% Invisible ?</a></noscript>
+                </div>
+              </div>
+            </article>
+            <!--Matchup - Dinner Party vs. Bullseye -->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first bullseye">
+                  <h2>
+                    Bullseye
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second dinner-party">
+                  <h2>
+                    The Dinner Party
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7860907.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7860907/">The Dinner Party or Bullseye?</a></noscript>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="round round-one right current-round">
+            <h5>
+              Round 1
+            </h5>
+            <!--Matchup - Press Play vs. Live Wire-->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first press-play">
+                  <h2>
+                    Press Play
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second live-wire">
+                  <h2>
+                    Live Wire
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7860898.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7860898/">Press Play or Live Wire?</a></noscript>
+                </div>
+              </div>
+            </article>
+            <!--Matchup - Snap Judgement vs. Take Two-->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first snap-judgement">
+                  <h2>
+                    Snap Judgement
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second take-two">
+                  <h2>
+                    Take Two
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7860862.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7860862/"> Snap Judgment or Take Two?</a></noscript>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="round round-two">
+            <h5>
+              Round 2
+            </h5>
+            <article class="matchup inactive">
+              <div class="show empty"></div>
+              <div class="show empty"></div>
+            </article>
+          </div>
+          <div class="round round-two right">
+            <h5>
+              Round 2
+            </h5>
+            <article class="matchup inactive">
+              <div class="show empty"></div>
+              <div class="show empty"></div>
+            </article>
+          </div>
+          <div class="round regional-final">
+            <h5>
+              Regional Final
+            </h5>
+            <article class="matchup inactive">
+              <div class="show empty"></div>
+              <div class="show empty"></div>
+            </article>
+          </div>
+        </div>
+      </section><section class="region">
+        <header>
+          <div class="bound">
+            <h3>
+              Central
+            </h3>
+          </div>
+        </header>
+        <div class="bracket">
+          <div class="round round-one current-round">
+            <h5>
+              Round 1
+            </h5>
+            <!--Matchup - Wait Wait vs. Wits-->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first wait-wait">
+                  <h2>
+                    Wait Wait... Don't Tell Me!
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second wits">
+                  <h2>
+                    Wits
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7862264.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7862264/">Wait Wait or Wits?</a></noscript>
+                </div>
+              </div>
+            </article>
+            <!--Matchup - Daily Circuit vs. Afternoon Shift -->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first daily-circuit">
+                  <h2>
+                    The Daily Circuit
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second afternoon-shift">
+                  <h2>
+                    The Afternoon Shift
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7862292.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7862292/">Daily Circuit or Afternoon Shift?</a></noscript>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="round round-one right current-round">
+            <h5>
+              Round 1
+            </h5>
+            <!--Matchup - Q with Jian Ghomeshi vs. WireTap-->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first q">
+                  <h2>
+                    Q with Jian Ghomeshi
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second wiretap">
+                  <h2>
+                    WireTap
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7862320.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7862320/">Q with Jian Ghomeshi or WireTap?</a></noscript>
+                </div>
+              </div>
+            </article>
+            <!--Matchup - Marketplace vs. Splendid Table-->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first marketplace">
+                  <h2>
+                    Marketplace
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second splendid-table">
+                  <h2>
+                    The Splendid Table
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7862328.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7862328/"> Marketplace or Splendid Table?</a></noscript>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="round round-two">
+            <h5>
+              Round 2
+            </h5>
+            <article class="matchup inactive">
+              <div class="show empty"></div>
+              <div class="show empty"></div>
+            </article>
+          </div>
+          <div class="round round-two right">
+            <h5>
+              Round 2
+            </h5>
+            <article class="matchup inactive">
+              <div class="show empty"></div>
+              <div class="show empty"></div>
+            </article>
+          </div>
+          <div class="round regional-final">
+            <h5>
+              Regional Final
+            </h5>
+            <article class="matchup inactive">
+              <div class="show empty"></div>
+              <div class="show empty"></div>
+            </article>
+          </div>
+        </div>
+      </section><section class="region">
+        <header>
+          <div class="bound">
+            <h3>
+              Upper Northeast
+            </h3>
+          </div>
+        </header>
+        <div class="bracket">
+          <div class="round round-one current-round">
+            <h5>
+              Round 1
+            </h5>
+            <!--Matchup - Airtalk vs. 99% Invisible-->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first airtalk">
+                  <h2>
+                    AirTalk
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second ninety-nine">
+                  <h2>
+                    99% Invisible
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7860835.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7860835/">AirTalk or 99% Invisible ?</a></noscript>
+                </div>
+              </div>
+            </article>
+            <!--Matchup - Dinner Party vs. Bullseye -->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first bullseye">
+                  <h2>
+                    Bullseye
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second dinner-party">
+                  <h2>
+                    The Dinner Party
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7860907.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7860907/">The Dinner Party or Bullseye?</a></noscript>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="round round-one right current-round">
+            <h5>
+              Round 1
+            </h5>
+            <!--Matchup - Press Play vs. Live Wire-->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first press-play">
+                  <h2>
+                    Press Play
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second live-wire">
+                  <h2>
+                    Live Wire
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7860898.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7860898/">Press Play or Live Wire?</a></noscript>
+                </div>
+              </div>
+            </article>
+            <!--Matchup - Snap Judgement vs. Take Two-->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first snap-judgement">
+                  <h2>
+                    Snap Judgement
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second take-two">
+                  <h2>
+                    Take Two
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7860862.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7860862/"> Snap Judgment or Take Two?</a></noscript>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="round round-two">
+            <h5>
+              Round 2
+            </h5>
+            <article class="matchup inactive">
+              <div class="show empty"></div>
+              <div class="show empty"></div>
+            </article>
+          </div>
+          <div class="round round-two right">
+            <h5>
+              Round 2
+            </h5>
+            <article class="matchup inactive">
+              <div class="show empty"></div>
+              <div class="show empty"></div>
+            </article>
+          </div>
+          <div class="round regional-final">
+            <h5>
+              Regional Final
+            </h5>
+            <article class="matchup inactive">
+              <div class="show empty"></div>
+              <div class="show empty"></div>
+            </article>
+          </div>
+        </div>
+      </section><section class="region">
+        <header>
+          <div class="bound">
+            <h3>
+              Lower Northeast
+            </h3>
+          </div>
+        </header>
+        <div class="bracket">
+          <div class="round round-one current-round">
+            <h5>
+              Round 1
+            </h5>
+            <!--Matchup - Airtalk vs. 99% Invisible-->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first airtalk">
+                  <h2>
+                    AirTalk
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second ninety-nine">
+                  <h2>
+                    99% Invisible
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7860835.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7860835/">AirTalk or 99% Invisible ?</a></noscript>
+                </div>
+              </div>
+            </article>
+            <!--Matchup - Dinner Party vs. Bullseye -->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first bullseye">
+                  <h2>
+                    Bullseye
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second dinner-party">
+                  <h2>
+                    The Dinner Party
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7860907.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7860907/">The Dinner Party or Bullseye?</a></noscript>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="round round-one right current-round">
+            <h5>
+              Round 1
+            </h5>
+            <!--Matchup - Press Play vs. Live Wire-->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first press-play">
+                  <h2>
+                    Press Play
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second live-wire">
+                  <h2>
+                    Live Wire
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7860898.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7860898/">Press Play or Live Wire?</a></noscript>
+                </div>
+              </div>
+            </article>
+            <!--Matchup - Snap Judgement vs. Take Two-->
+            <article class="matchup active">
+              <div class="inner">
+                <div class="show first snap-judgement">
+                  <h2>
+                    Snap Judgement
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="or">
+                  or
+                </div>
+                <div class="show second take-two">
+                  <h2>
+                    Take Two
+                  </h2>
+                  <div class="overlay"></div>
+                </div>
+                <div class="poll">
+                  <script charset="utf-8" src="http://static.polldaddy.com/p/7860862.js" type="text/javascript"></script>
+                  <noscript><a href="http://polldaddy.com/poll/7860862/"> Snap Judgment or Take Two?</a></noscript>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="round round-two">
+            <h5>
+              Round 2
+            </h5>
+            <article class="matchup inactive">
+              <div class="show empty"></div>
+              <div class="show empty"></div>
+            </article>
+          </div>
+          <div class="round round-two right">
+            <h5>
+              Round 2
+            </h5>
+            <article class="matchup inactive">
+              <div class="show empty"></div>
+              <div class="show empty"></div>
+            </article>
+          </div>
+          <div class="round regional-final">
+            <h5>
+              Regional Final
+            </h5>
+            <article class="matchup inactive">
+              <div class="show empty"></div>
+              <div class="show empty"></div>
+            </article>
+          </div>
+        </div>
+      </section></main>
+    <footer id="footer">
+      <div class="bound">
+        <h3 class="brand">
+          <a href="http://www.scpr.org" title="KPCC">KPCC</a>
+        </h3>
+        <p>
+          <a href="http://www.scpr.org/terms">Terms & Conditions </a><span>| </span><a href="http://www.scpr.org/privacy">Privacy </a><span>| © 2014 Southern California Public Radio</span>
+        </p>
+      </div>
+    </footer><script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      window.jQuery || document.write('<script src="javascripts/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+    <script src="javascripts/all.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var _gaq=[['_setAccount','UA-624724-1'],['_setDomainName', 'scpr.org'],['_trackPageview']];
+      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+  </body>
 </html>
-<!-- end document -->
