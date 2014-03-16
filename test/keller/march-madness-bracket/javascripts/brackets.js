@@ -35,6 +35,20 @@ function fbs_click() {
   return false;
 }
 
+// Expose Matchup polls for touch and no-touch devices
+$(".touch .matchup").on("click", function() {
+  $(this).addClass("focus");
+});
+$(".touch .matchup.focus .close").on("click", function() {
+  $(this).closest(".matchup").removeClass("focus");
+});
+$(".no-touch .matchup").hover(
+  function() {
+    $( this ).addClass("focus");
+  }, function() {
+    $( this ).removeClass("focus");
+  });
+
 // Style Matchups that have been voted on
 $(".pds-vote-button").click(function() {
   $(this).closest(".matchup").addClass("voted");
