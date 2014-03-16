@@ -1,3 +1,16 @@
+// Homepage hero resizing
+(function () {
+var e;
+e = function () {
+  if ($(".download").css("position") != "relative" ){
+    $(".hero").css("height", $(window).height() - 90);
+  } 
+};
+$(function () {
+    return $(window).on("load resize", e)
+})
+}).call(this);
+
 // Smooth anchor scrolling
 $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
@@ -22,15 +35,7 @@ function fbs_click() {
   return false;
 }
 
-// Homepage hero resizing
-(function () {
-var e;
-e = function () {
-  if ($(".download").css("position") != "relative" ){
-    $(".hero").css("height", $(window).height() - 90);
-  } 
-};
-$(function () {
-    return $(window).on("load resize", e)
-})
-}).call(this);
+// Style Matchups that have been voted on
+$(".pds-vote-button").click(function() {
+  $(this).closest(".matchup").addClass("voted");
+});
