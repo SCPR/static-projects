@@ -42,14 +42,14 @@ function fbs_click() {
 }
 
 // Expose Matchup polls for touch and no-touch devices
-$(".touch .matchup:not(.focus)").on("click", function() {
+$(".touch .matchup:not(.focus,.final)").on("click", function() {
   $(this).addClass("focus");
 });
 $(".close").on("click", function() {
   $(this).closest(".matchup").removeClass("focus");
   return false;
 });
-$(".no-touch .matchup").hover(
+$(".no-touch .matchup:not(.final)").hover(
   function() {
     $( this ).addClass("focus");
   }, function() {
