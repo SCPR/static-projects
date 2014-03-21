@@ -1,12 +1,12 @@
 <style type="text/css" media="screen">
     #map-canvas {width: 620px; height: 600px;}
     .circleBase {
-    	-moz-border-radius: 999px; /* Firefox */
-    	-webkit-border-radius: 999px; /* Safari and Chrome */
-    	border-radius: 999px; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
-    	behavior: url(ie-css3.htc); /* This lets IE know to call the script on all elements which get the 'box' class */
-    	float: left;
-    	}
+        -moz-border-radius: 999px; /* Firefox */
+        -webkit-border-radius: 999px; /* Safari and Chrome */
+        border-radius: 999px; /* Opera 10.5+, future browsers, and now also Internet Explorer 6+ using IE-CSS3 */
+        behavior: url(ie-css3.htc); /* This lets IE know to call the script on all elements which get the 'box' class */
+        float: left;
+        }
     .barrettcircle {width: 25px; height: 25px; background: #37949b; opacity: .7}
     .falkcircle {width: 25px; height: 25px; background: #5341BF; opacity: .7}
 </style>
@@ -51,14 +51,12 @@
             var barrettVotesColumn = 8;
             var barrettPctColumn = 9;
             var cityFormulaColumn = 13;
-    		var marginColumn = 12;
+            var marginColumn = 12;
             var cityColorColumn = 16;
 
             // loop through the rows to build a circle object for each
             for (var i = 0; i < data.rows.length; i++) {
                 var row = data.rows[i];
-
-                console.log(row);
 
                 // json source has lat/lng in a single column. split it on comma
                 var cityLatLngRaw = row[cityLatLngColumn];
@@ -74,7 +72,7 @@
                     'formula': parseFloat(row[cityFormulaColumn]),
                     'name': row[cityNameColumn],
                     'fillColor': row[cityColorColumn],
-    				'precincts': row[precinctsColumn],
+                    'precincts': row[precinctsColumn],
                     'falkVotes': row[falkVotesColumn],
                     'falk': row[falkPctColumn],
                     'barrettVotes': row[barrettVotesColumn],
@@ -130,9 +128,6 @@
                     center: fn.countyMap[i].center,
                     radius: fn.countyMap[i].formula * .5
                 };
-
-
-                console.log(fn.countyMap[i]);
 
                 // create a google map circle
                 var countyCircle = new google.maps.Circle(circleOptions);
