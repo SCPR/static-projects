@@ -1,13 +1,14 @@
+var jqueryNoConflict = jQuery;
 var fn = fn || {};
 var formopen;
 
 // begin main function
-$(document).ready(function() {
+jqueryNoConflict(document).ready(function() {
     fn.createMap();
 
     /*
-    $("#cancelbutton").click(function(){
-        $("#theform").hide();
+    jqueryNoConflict("#cancelbutton").click(function(){
+        jqueryNoConflict("#theform").hide();
         fn.closeform();
     });
     */
@@ -19,16 +20,16 @@ $(document).ready(function() {
     //PIN.Form.render(fn.PIN_QUERY);
 
     /*
-    $('#content-background').click(function(){
-        $('#content-background').fadeOut('slow');
-        $('#theform').fadeOut('slow');
+    jqueryNoConflict('#content-background').click(function(){
+        jqueryNoConflict('#content-background').fadeOut('slow');
+        jqueryNoConflict('#theform').fadeOut('slow');
     });
     */
 
-    //$(document).keydown(function(e){
+    //jqueryNoConflict(document).keydown(function(e){
         //if(e.keyCode==27) {
-            //$('#content-background').fadeOut('slow');
-            //$('#theform').fadeOut('slow');
+            //jqueryNoConflict('#content-background').fadeOut('slow');
+            //jqueryNoConflict('#theform').fadeOut('slow');
         //}
     //});
 
@@ -39,7 +40,7 @@ $(document).ready(function() {
 var fn = {
     createMap: function(){
 
-        $("#content-display-canvas").html(
+        jqueryNoConflict("#content-display-canvas").html(
             "<table>" +
             "<thead>" +
             "<tr>" +
@@ -56,7 +57,7 @@ var fn = {
         );
 
         var initialZoom;
-        var center = new L.LatLng(34.061841979429445, -118.26370239257812);
+        var center = new L.LatLng(34.000304,-118.238039);
         var stamenToner = L.tileLayer("http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
             attribution: "Map tiles by <a href='http://stamen.com' target='_blank'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0' target='_blank'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://openstreetmap.org' target='_blank'>OpenStreetMap</a> contributors, <a href='http://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>",
             minZoom: 6,
@@ -140,7 +141,7 @@ var fn = {
                             opacity: 2,
                             fillOpacity: 2,
                         });
-                        $("#appendHere").append(featcherContent);
+                        jqueryNoConflict("#appendHere").append(featcherContent);
                         feature.selected = true;
                     } else {
                         this.setStyle({
@@ -148,7 +149,7 @@ var fn = {
                             opacity: .8,
                             fillOpacity: .5,
                         });
-                        $("table #appendHere #zip_" + feature.properties.name).remove();
+                        jqueryNoConflict("table #appendHere #zip_" + feature.properties.name).remove();
                         feature.selected = false;
                     }
 
@@ -186,23 +187,23 @@ var fn = {
             .setContent("</div>You clicked the map at " + e.latlng.toString())
             .openOn(map);
 
-            //$("#theform").show();
+            //jqueryNoConflict("#theform").show();
 
-            $("input[id='pin-q-15f9abb472d4']").val(e.latlng.lat);
-            $("input[id='pin-q-7defd64f7f1f']").val(e.latlng.lng);
+            jqueryNoConflict("input[id='pin-q-15f9abb472d4']").val(e.latlng.lat);
+            jqueryNoConflict("input[id='pin-q-7defd64f7f1f']").val(e.latlng.lng);
 
 
             //formopen = true;
 
-            //$("#form-name").focus();
+            //jqueryNoConflict("#form-name").focus();
 
 
-            $('#content-background').css({'opacity' : '0.7'}).fadeIn('fast');
-            $('#theform').fadeIn('slow');
+            jqueryNoConflict('#content-background').css({'opacity' : '0.7'}).fadeIn('fast');
+            jqueryNoConflict('#theform').fadeIn('slow');
 
-            $('#close').click(function(){
-                $('#content-display').fadeOut('fast');
-                $('#theform').fadeOut('fast');
+            jqueryNoConflict('#close').click(function(){
+                jqueryNoConflict('#content-display').fadeOut('fast');
+                jqueryNoConflict('#theform').fadeOut('fast');
             });
 
 
@@ -235,7 +236,7 @@ var fn = {
 
     /*
     getPinJson: function(url){
-        $.ajax({
+        jqueryNoConflict.ajax({
             url: url,
             crossDomain: true,
             dataType: "jsonp",
@@ -253,14 +254,14 @@ var fn = {
         var testTemplate = _.template(
             "<p>The <%= ques_value %> bridge in <%= ques_value %> was built in <%= ques_value %></p>", data.questions[0]);
 
-        $('#theform').html(testTemplate);
+        jqueryNoConflict('#theform').html(testTemplate);
 
     },
     */
 
     /*
     closeform: function(){
-        $("#theform").hide();
+        jqueryNoConflict("#theform").hide();
         formopen = false;
     },
     */

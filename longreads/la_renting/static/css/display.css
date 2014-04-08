@@ -29,8 +29,8 @@
     	color: black;
     }
 
-    #jquery_jplayer_1.cp-jplayer, 
-    #jquery_jplayer_2.cp-jplayer, 
+    #jquery_jplayer_1.cp-jplayer,
+    #jquery_jplayer_2.cp-jplayer,
     #jquery_jplayer_3.cp-jplayer,
     #jquery_jplayer_10.cp-jplayer {
         height:0px;
@@ -63,7 +63,7 @@
 				.masthead h1 span {
 					color: #fff;
 				}
-		
+
 		.masthead .secondary {
 			/* background: black; */
 			padding: 10px 0 20px;
@@ -95,7 +95,7 @@
 									background: url(i/logo-kpcc.png) no-repeat;
 									background-size: 100%;
 								}
-		
+
 		.masthead .tertiary {
 		}
 				.masthead .tertiary aside {
@@ -208,7 +208,7 @@
 							font-size: 5.9em;
 							padding-top: 75px;
 							margin-bottom: 15px; /* had been 26 until now */
-						}                        
+						}
 
 				    }
 
@@ -294,7 +294,7 @@
 						.masthead .tertiary .social {
 							padding-top: 10px;
 						}
-						
+
 						.masthead .secondary a {
 						    width:100px;
 						}
@@ -349,8 +349,8 @@
 						.masthead .tertiary .social {
 							padding-top: 7px;
 						}
-						
-						
+
+
 				    }
 
     				/*	===================================================================================
@@ -358,11 +358,11 @@
 
 
                     @media screen and (min-width:533px){
-                        
+
                         .masthead .secondary{
 						    background: black;
 						}
-						
+
                     }
 
 
@@ -401,7 +401,7 @@
 						.masthead .tertiary .social {
 							padding-top: 11px;
 						}
-						
+
 						.masthead .secondary a {
 						    width:70px;
 						}
@@ -509,7 +509,7 @@
 													.wayfinder a mark span {
 														display: none;
 													}
-											
+
 											.wayfinder a em {
 												display: block;
 												font-style: normal;
@@ -700,7 +700,7 @@
 				.chapter-lead h3 {
 					font-size: 1em; /* had been 1.25 */
 				}
-				
+
 
 		    }
 
@@ -718,17 +718,17 @@
 
 .chapter {
 		font-family:"proxima-nova", Helvetica, sans-serif;
-    font-weight: 300; 
+    font-weight: 300;
     font-size: 3.5em;
     margin: 0.5em 1.2em;}
-    
+
     	/*	===================================================================================
 		    =================================================================================== */
 
 		    @media screen and (max-width: 750px) {
 
 				.chapter {
-					font-size: 2em; 
+					font-size: 2em;
 				}
 
 		    }
@@ -758,7 +758,7 @@
 }
 
 .afterward {
-    font: italic 100 1em/1.28 georgia, sans-serif; 
+    font: italic 100 1em/1.28 georgia, sans-serif;
 }
 
 .row {
@@ -836,13 +836,13 @@
 				.row-pt1-b .prose {
 					margin-left: 150px; /* 100 / 50 */
 				}
-				
-				
+
+
 				.row-pt1-b .experts {
 					float: right;
 					color: #e33500;
 				}
-		
+
 		        .row-pt1-b {
 			        border-bottom: 1px solid #7ac8d4;
 			        padding-bottom: 40px;
@@ -873,10 +873,10 @@
 				    padding: 30px;
 				    width: 48.363636363636%; /* 532 / 1100 */
 				}
-		
 
-		
-		
+
+
+
 		.row-pt1-d {
 		    border-bottom: 1px solid #7ac8d4;
 		    border-bottom: 1px solid #7ac8d4;
@@ -884,7 +884,7 @@
 				.row-pt1-d .prose {
 					float: right;
 				}
-                
+
 				.infographic {
 					float: right;
 				}
@@ -933,7 +933,7 @@
 								.infographic .tab-1		{ left: 0;			}
 								.infographic .tab-2		{ left: 33.33%;		}
 								.infographic .tab-3		{ left: 66.66%;		}
-						
+
 						.infographic figure {
 							width: 89.473684210526%; /* 476 / 532 */
 							margin: 0 auto 30px;
@@ -1007,7 +1007,7 @@
 										.infographic figcaption {
 											font-size: 0.75em;
 										}
-										
+
 										blockquote {
 										    display:none;
 										}
@@ -1032,7 +1032,7 @@
 											width: 100%;
 											text-align: center;
 										}
-										
+
 
 								    }
 
@@ -1089,7 +1089,7 @@
 				.row-pt2-c .prose {
 					margin-left: 25.818181818182%; /* 284 / 1100 */
 				}
-		
+
 		.row-pt2-d {
 			margin-bottom: 0;
 		}
@@ -1107,7 +1107,7 @@
 							font: italic 700 1.875em/1.15 Georgia, serif; /* 30 / 16 */
 							color: #adadad;
 						}
-		
+
 		.row-pt2-e {
 		}
 				.row-pt2-e .prose {
@@ -1122,7 +1122,7 @@
 							display: block;
 							width: 100%;
 						}
-		
+
 
 		.row-pt2-f {
 			background: #bce3e9;
@@ -1203,7 +1203,7 @@
     =================================================================================== */
 
     @media screen and (max-width: 900px) {
-	
+
 		.row-pt2-d .pullquote blockquote p {
 			font-size: 1.2em;
 		}
@@ -1219,10 +1219,10 @@
 		/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
 		.prologue {
-			font-size: 1em; 
+			font-size: 1em;
 		}
-		
-		
+
+
 
 		/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
@@ -1269,9 +1269,9 @@
 								.infographic {
 									margin-top: 50px;
 								}
-				
+
 		/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
-		
+
 		.essay-pt2 {
 			margin-bottom: 70px; /* not 130 */
 		}
@@ -1292,7 +1292,7 @@
 						.row-pt2-c .prose {
 							margin-left: 0;
 						}
-		
+
 				.row-pt2-d {
 				}
 						.row-pt2-d .prose,
@@ -1312,7 +1312,7 @@
 									font-size: 1.3em;
 									margin: 0 0 0 0;
 								}
-		
+
 				.row-pt2-e {
 				}
 						.row-pt2-e .prose {
@@ -1397,8 +1397,8 @@
 			margin: 0 auto 25px;
 			position: relative;
 		}
-		
-		
+
+
 		.slideshow h1 {
 			font: normal 700 2.5em/0.95 Georgia, serif; /* 40 / 16 */
 			margin: 0 auto 25px;
@@ -1425,7 +1425,7 @@
 				.slideshow-core .slide-container img {
 					position: relative;
 					max-width: 100%;
-					display: block;					
+					display: block;
 				}
 				.slideshow-core .slide-container .slide-caption {
 					background-color: rgba(0,0,0,0.55);
@@ -1497,12 +1497,12 @@
 					border: 1px solid #444;
 					color: #eee;
 				}
-				
+
                 /*	===================================================================================
                     =================================================================================== */
 
                     @media screen and (max-width: 500px) {
-                         .slideshow-core .slide-container .slide-caption {        		
+                         .slideshow-core .slide-container .slide-caption {
         				 	display: none;
                         }
                     }
@@ -1513,25 +1513,25 @@
         			        width: 100%;
         		        } 		        .
 						        		        .
-    		            .slideshow-core .slide-container .slide-caption {        		
+    		            .slideshow-core .slide-container .slide-caption {
 				            font-size: 0.7em;
                 				}
 
-    		}			
-    		
+    		}
+
 
             /*	===================================================================================
                 =================================================================================== */
 
 
                     @media screen and (min-width: 750px) {
-					
-				
+
+
         		        .rs-controls a {
         		            padding: 25px 18px;
         		            font-size: 15px;
     		            }
-				
+
     		}
 
 
@@ -1553,15 +1553,15 @@
 	font-style:italic;
 	margin-bottom:18px;
 	padding:10px;
-	float:left; 
+	float:left;
 }
 
 		#jp_container_10 .jp-play, #jp_container_10 .jp-pause {
 			width:40px;
 			height:40px;
-		} 
- 
- 
+		}
+
+
 
 
     .audio .jp-play, .audio .jp-pause {
@@ -1574,8 +1574,8 @@
     	height:32px;
     }
 		.audio .jp-play span {
-			width: 0; 
-			height: 0; 
+			width: 0;
+			height: 0;
 			border-top: 8px solid transparent;
 			border-bottom: 8px solid transparent;
 			border-left: 10px solid #fff;
@@ -1624,8 +1624,8 @@
 			background:#ffe0e1;
 		}
 		.school .audio .jp-play span {
-			width: 0; 
-			height: 0; 
+			width: 0;
+			height: 0;
 			border-top: 8px solid transparent;
 			border-bottom: 8px solid transparent;
 			border-left: 10px solid #e33500;
@@ -1636,7 +1636,7 @@
 		}
 		.audio .jp-pause span {
 			background:#fff;
-			width: 4px; 
+			width: 4px;
 			height: 14px;
 			display:block;
 			position:absolute;
@@ -1652,7 +1652,7 @@
 		.essay .audio.radio .jp-title p {
 			margin: 0 0 0;
 		}
-		
+
 		/* //////////////////////////////////////////////////////////////////////////////////// */
     	/* "Radio" audio, regardless of which-of-the-three places it occurs
     	/* //////////////////////////////////////////////////////////////////////////////////// */
@@ -1698,8 +1698,8 @@
     						background:#666;
     					}
     					.audio.radio .jp-play span {
-    						width: 0; 
-    						height: 0; 
+    						width: 0;
+    						height: 0;
     						border-top: 10px solid transparent;
     						border-bottom: 10px solid transparent;
     						border-left: 12px solid #333;
@@ -1713,7 +1713,7 @@
     					}
     					.audio.radio .jp-pause span {
     						background:#333;
-    						width: 5px; 
+    						width: 5px;
     						height: 18px;
     						display:block;
     						position:absolute;
@@ -1734,8 +1734,8 @@
     				line-height: 1.3;
     			}
 
-    	
-        
+
+
 						/*	===================================================================================
 						    =================================================================================== */
 
@@ -1743,7 +1743,7 @@
                                 .row-pt1-d .secondary .audio {
                                   float:left;
         	                        width: 31.6%;
-        	                        margin-top: 285px; 
+        	                        margin-top: 285px;
     	                        	}
                                 .row-pt1-b .secondary .audio {
                                   float:right;
@@ -1762,7 +1762,7 @@
 	                               float:right;
 	    	                        width: 94.5%;
 	    	                        margin-top: 0px;
-		                        	}       
+		                        	}
     	                    	}
 
 
@@ -1832,8 +1832,8 @@ object, embed {
 		vertical-align:middle;
 	}
 			.video-play span {
-				width: 0; 
-				height: 0; 
+				width: 0;
+				height: 0;
 				border-top: 10px solid transparent;
 				border-bottom: 10px solid transparent;
 				border-left: 12px solid #000;
@@ -1992,7 +1992,7 @@ object, embed {
 						.promo-map .prose a:hover {
 							background-color: #701a00;
 						}
-		
+
 		.promo-map .furnishing {
 			float: left;
 			display: block;
@@ -2002,7 +2002,7 @@ object, embed {
 					width: 100%;
 				}
 
-		
+
 						/*	===================================================================================
 						    =================================================================================== */
 
@@ -2023,7 +2023,7 @@ object, embed {
 
 						/*	===================================================================================
 						    =================================================================================== */
-						
+
 						    @media screen and (max-width: 670px) {
 
 								.promo-map {
@@ -2114,7 +2114,7 @@ object, embed {
 				.families .essay .furnishing {
 					width: 48.363636363636%; /* 532 / 1100 */
 				}
-				
+
 				.row-reyes-a,
 				.row-umana-a {
 					border-bottom: 1px solid #7ac8d4;
@@ -2132,14 +2132,14 @@ object, embed {
 						.row-umana-a .slideshow {
 							float: right;
 						}
-				
+
 				.row-reyes-b {
 				}
 						.row-reyes-b .prose,
 						.row-umana-b .prose {
 							margin-left: 25.818181818182%; /* 284 / 1100 */
 						}
-				
+
 				.row-reyes-c {
 				}
 						.row-reyes-c .pullquote,
@@ -2194,7 +2194,7 @@ object, embed {
     =================================================================================== */
 
     @media screen and (max-width: 750px) {
-		
+
 		.families h3 {
 			font-size: 1.7em;
 		}
@@ -2207,7 +2207,7 @@ object, embed {
 		.families .essay .furnishing {
 			width: 100%;
 		}
-	
+
 		.row-reyes-a {
 		}
 				.families .essay .row-reyes-a {
@@ -2221,14 +2221,14 @@ object, embed {
 				.row-reyes-a .prose {
 					margin-bottom: 35px;
 				}
-	
+
 		.row-reyes-b {
 		}
 				.row-reyes-b .prose,
 				.row-umana-b .prose {
 					margin-left: 0;
 				}
-	
+
 		.families .essay .row-reyes-c,
 		.families .essay .row-umana-c {
 			margin-bottom: 10px;
@@ -2248,7 +2248,7 @@ object, embed {
 					border-bottom: 1px solid gray;
 					margin: 0 0 23px 0;
 				}
-	
+
 		.row-reyes-d {
 		}
 				.row-reyes-d .prose,
@@ -2260,8 +2260,8 @@ object, embed {
 					float: none;
 					margin: 0 0 25px 0;
 				}
-		
-		
+
+
 
     }
 
@@ -2396,7 +2396,7 @@ object, embed {
 					font-style: italic;
 					font-size: 0.69811320754717em; /* 37 / 53 */
 				}
-		
+
 		.event-inner {
 			background: url(i/ephemera-event-whitestripe.png) repeat-y 48.363636363636% 0;
 			padding: 25px 0;
@@ -2578,8 +2578,8 @@ object, embed {
 							text-indent: -9999px;
 							overflow: hidden;
 						}
-				
-				.afterword .credits {		
+
+				.afterword .credits {
 					min-width: 255px;
 				}
 						.afterword .credits dl {
@@ -2601,7 +2601,7 @@ object, embed {
 										.afterword .credits dd a:hover {
 											text-decoration: underline;
 										}
-				
+
 				.afterword .legal {
 				}
 						.afterword .legal,
@@ -2615,7 +2615,7 @@ object, embed {
 									color: white;
 									text-decoration: underline;
 								}
-						
+
 						.afterword .legal ul {
 							margin-bottom: 37px;
 						}
@@ -2649,7 +2649,7 @@ object, embed {
 												.afterword .brand a {
 													margin: 0 auto;
 												}
-										
+
 										.afterword .bound .credits,
 										.afterword .bound .legal {
 											float: none;
@@ -2679,7 +2679,7 @@ object, embed {
 						    =================================================================================== */
 
 
-
+body #content-map-canvas {height: 750px;}
 
 
 
