@@ -50,7 +50,7 @@
 	background: #000 url(http://a.scpr.org/i/28d4510d8084a34fd48b29ceb559f23c/81562-full.jpg) no-repeat top center;
 	background-size: 100%; /* gets fiddled width as we go ABOVE and BELOW certain critical widths (read on...) */
     height:419px;
-		box-shadow: inset 0 -75px 0 rgba(0,0,0,0.5);
+		box-shadow: inset 0 -550px 0 rgba(0,0,0,0.5);
 }
 		.masthead h1 {
 			font: normal 200 6.875em/1.25 "proxima-nova", Helvetica, sans-serif; /* 110 / 16 */
@@ -180,7 +180,7 @@
     				    @media screen and (min-width: 1170px) {
 
     						.masthead {
-    							box-shadow: inset 0 -85px 0 rgba(0,0,0,0.5);
+    							box-shadow: inset 0 -550px 0 rgba(0,0,0,0.5);
     						}
 						}
 
