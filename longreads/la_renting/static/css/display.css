@@ -48,16 +48,16 @@
 
 .masthead {
 	background: #000 url(http://a.scpr.org/i/28d4510d8084a34fd48b29ceb559f23c/81562-full.jpg) no-repeat top center;
-	background-size: 100%; /* gets fiddled width as we go ABOVE and BELOW certain critical widths (read on...) */
-    height:419px;
-		box-shadow: inset 0 -550px 0 rgba(0,0,0,0.5);
+	background-size: 125%; /* gets fiddled width as we go ABOVE and BELOW certain critical widths (read on...) */
+    height: 350px; /* formerly 419 */
+	box-shadow: inset 0 -550px 0 rgba(0,0,0,0.5);
 }
 		.masthead h1 {
 			font: normal 200 6.875em/1.25 "proxima-nova", Helvetica, sans-serif; /* 110 / 16 */
 			text-align: center;
 			color: #F16500;
 			text-shadow: 0 0 13px rgba(0,0,0,0.3);
-			padding-top: 114px;
+			padding-top: 50px; /* formerly 114 */
 			margin-bottom: 26px;
 		}
 				.masthead h1 span {
@@ -106,8 +106,8 @@
 					font-size: 0.75em;
 					line-height: 1;
 					color: #d8d8d8;
-					min-width: 165px;
-					overflow: hidden;
+					min-width: 185px;
+					/* overflow: hidden; */
 				}
 						.masthead .bylines a {
 							text-decoration: none;
@@ -307,7 +307,7 @@
 				    @media screen and (max-width: 670px) {
 
 						.masthead {
-							box-shadow: inset 0 -75px 0 rgba(0,0,0,0.5);
+						/*	box-shadow: inset 0 -75px 0 rgba(0,0,0,0.5); */
 						}
 						.masthead h1 {
 							font-size: 3.5em;
