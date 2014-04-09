@@ -1,61 +1,46 @@
 var jqueryNoConflict = jQuery;
 var fn = fn || {};
-var formopen;
+
+var selectedCount = 0;
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
     fn.createMap();
-
-    /*
-    jqueryNoConflict("#cancelbutton").click(function(){
-        jqueryNoConflict("#theform").hide();
-        fn.closeform();
-    });
-    */
-
-    //https://www.publicinsightnetwork.org/air2/api/public/search?a=6f4d503616e1115157a64bd26b51aec7&q=query_uuid:2e14f63c3352&t=JSON
-
-    //fn.getPinJson("https://www.publicinsightnetwork.org/air2/q/2e14f63c3352.json");
-
-    //PIN.Form.render(fn.PIN_QUERY);
-
-    /*
-    jqueryNoConflict('#content-background').click(function(){
-        jqueryNoConflict('#content-background').fadeOut('slow');
-        jqueryNoConflict('#theform').fadeOut('slow');
-    });
-    */
-
-    //jqueryNoConflict(document).keydown(function(e){
-        //if(e.keyCode==27) {
-            //jqueryNoConflict('#content-background').fadeOut('slow');
-            //jqueryNoConflict('#theform').fadeOut('slow');
-        //}
-    //});
-
-
 });
 
 // begin data configuration object
 var fn = {
+
+    addABunchOfNumbers: function(total_figure, lt_20000_gt_30, ab_20000_to_34999_gt_30, ab_35000_to_49999_gt_30, ab_50000_to_74999_gt_30, ab_75000_or_more_gt_30){
+        var total = lt_20000_gt_30 + ab_20000_to_34999_gt_30 + ab_35000_to_49999_gt_30 + ab_50000_to_74999_gt_30 + ab_75000_or_more_gt_30;
+        var value = (total / total_figure) * 100
+        return value.toFixed(2) + "%";
+    },
+
+    percentifyValue: function(value){
+        var value = value * 100
+        return value.toFixed(2) + "%";
+    },
+
+    testFunction: function(dividend, divisor){
+        var value = (dividend / divisor)*100
+        return value.toFixed(2) + "%";
+    },
+
+    addCommas: function(nStr){
+        nStr += '';
+        x = nStr.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+
+            var rgx = /(\d+)(\d{3})/;
+                while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                }
+            return x1 + x2;
+    },
+
     createMap: function(){
-
-        jqueryNoConflict("#content-display-canvas").html(
-            "<table>" +
-            "<thead>" +
-            "<tr>" +
-            "<th>zipcode</th>" +
-            "<th>county</th>" +
-            "<th>total housing</th>" +
-            "<th>number owned</th>" +
-            "<th>number rented</th>" +
-            "</tr>" +
-            "</thead>" +
-            "<tbody id='appendHere'>" +
-            "</tbody>" +
-            "</table>"
-        );
-
         var initialZoom;
         var center = new L.LatLng(34.000304,-118.238039);
         var stamenToner = L.tileLayer("http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
@@ -105,27 +90,6 @@ var fn = {
 
                 feature.selected = false;
 
-                //console.log(feature);
-
-
-                /*
-                layer.on('mouseover', function (e) {
-                    this.setStyle({
-                        weight: 2,
-                        opacity: 2,
-                        fillOpacity: 2,
-                    });
-                });
-
-                layer.on('mouseout', function (e) {
-                    this.setStyle({
-                        weight: .8,
-                        opacity: .8,
-                        fillOpacity: .5,
-                    });
-                });
-                */
-
                 var featcherContent = _.template(
                     "<tr id='zip_<%= name %>'>" +
                     "<td><%= name %></td>" +
@@ -134,34 +98,60 @@ var fn = {
                     "<td><%= normalized_zcta_five_county_data_own_housing_units_total %></td>" +
                     "<td><%= normalized_zcta_five_county_data_rent_housing_units_total %></td>", feature.properties);
 
+                var featcherSentence = _.template(
+                    "<p id='zip_<%= name %>'>Zip code tabulation area <%= name %> in <span class='experts'><%= normalized_zcta_five_county_data_county_proper %> County</span> has <%= fn.addCommas(normalized_zcta_five_county_data_total_housing_units) %> total housing units. <%= fn.addCommas(normalized_zcta_five_county_data_rent_housing_units_total) %> (<%= fn.percentifyValue(normalized_zcta_five_county_data_rent_housing_units_pct) %>) of those are occupied by renters. Of the <%= fn.addCommas(normalized_zcta_five_county_data_rent_housing_units_total) %> housing units occupied by renters...<br />" +
+
+                        "<br />" +
+                        "<br />" +
+
+                        "<%= fn.addABunchOfNumbers(normalized_zcta_five_county_data_rent_housing_units_total, normalized_zcta_five_county_data_rent_lt_20000_lt_20_total, normalized_zcta_five_county_data_rent_20000_to_34999_lt_20_total, normalized_zcta_five_county_data_rent_35000_to_49999_lt_20_total, normalized_zcta_five_county_data_rent_50000_to_74999_lt_20_total, normalized_zcta_five_county_data_rent_75000_or_more_lt_20_total) %> pay less than 20% of their income toward rent.<br />" +
+
+                        "<%= fn.addABunchOfNumbers(normalized_zcta_five_county_data_rent_housing_units_total, normalized_zcta_five_county_data_rent_lt_20000_20_to_29_total, normalized_zcta_five_county_data_rent_20000_to_34999_20_to_29_total, normalized_zcta_five_county_data_rent_35000_to_49999_20_to_29_total, normalized_zcta_five_county_data_rent_50000_to_74999_20_to_29_total, normalized_zcta_five_county_data_rent_75000_or_more_20_to_29_total) %> pay 20_to_29% of their income toward rent.<br />" +
+
+                        "<%= fn.addABunchOfNumbers(normalized_zcta_five_county_data_rent_housing_units_total, normalized_zcta_five_county_data_rent_lt_20000_gt_30_total, normalized_zcta_five_county_data_rent_20000_to_34999_gt_30_total, normalized_zcta_five_county_data_rent_35000_to_49999_gt_30_total, normalized_zcta_five_county_data_rent_50000_to_74999_gt_30_total, normalized_zcta_five_county_data_rent_75000_or_more_gt_30_total) %> pay more than 30% of their income toward rent.<br />" +
+
+                    "</p>", feature.properties);
+
+
+
                 layer.on('click', function (e) {
+
+                    console.log(feature);
+
+                    if (selectedCount === 9){
+                        jqueryNoConflict("#content-map-data").append("Clear the map");
+                    }
+
+                    console.log(selectedCount);
+
                     if (feature.selected === false){
                         this.setStyle({
                             weight: 2,
                             opacity: 2,
                             fillOpacity: 2,
                         });
-                        jqueryNoConflict("#appendHere").append(featcherContent);
+
+                        //jqueryNoConflict("#appendHere").append(featcherContent);
+
+                        jqueryNoConflict("#zipCodeSentence").append(featcherSentence);
+
                         feature.selected = true;
+
+                        selectedCount = selectedCount + 1;
+
                     } else {
                         this.setStyle({
                             weight: .8,
                             opacity: .8,
                             fillOpacity: .5,
                         });
+
                         jqueryNoConflict("table #appendHere #zip_" + feature.properties.name).remove();
+
+                        jqueryNoConflict("#zipCodeSentence #zip_" + feature.properties.name).remove();
+
                         feature.selected = false;
                     }
-
-
-                    //console.log(feature.properties);
-
-                    /*
-                    var popup = L.popup()
-                        .setLatLng(e.latlng)
-                        .setContent(html)
-                        .openOn(map);
-                    */
 
                 });
 
@@ -173,98 +163,7 @@ var fn = {
             .setView(center, initialZoom)
             .addLayer(stamenToner);
 
-        // let's get lat/lng of a map click
-        //map.on('click', fn.onMapClick);
-
-    },
-
-    onMapClick: function(e){
-        var popup = L.popup();
-        //console.log(e.latlng.lat, e.latlng.lng);
-
-        popup
-            .setLatLng(e.latlng)
-            .setContent("</div>You clicked the map at " + e.latlng.toString())
-            .openOn(map);
-
-            //jqueryNoConflict("#theform").show();
-
-            jqueryNoConflict("input[id='pin-q-15f9abb472d4']").val(e.latlng.lat);
-            jqueryNoConflict("input[id='pin-q-7defd64f7f1f']").val(e.latlng.lng);
-
-
-            //formopen = true;
-
-            //jqueryNoConflict("#form-name").focus();
-
-
-            jqueryNoConflict('#content-background').css({'opacity' : '0.7'}).fadeIn('fast');
-            jqueryNoConflict('#theform').fadeIn('slow');
-
-            jqueryNoConflict('#close').click(function(){
-                jqueryNoConflict('#content-display').fadeOut('fast');
-                jqueryNoConflict('#theform').fadeOut('fast');
-            });
-
-
-    },
-
-    PIN_QUERY: {
-        uuid: '2e14f63c3352',
-        divId: '2e14f63c3352',
-        opts: {
-            includeLegalFooter: true,
-
-            validationErrorMsg: 'Sorry, you have problems!',
-
-            showIntro: false,
-
-            // the thankYou callback is invoked after the Submit button is clicked
-            thankYou: function(divId, respData) {
-                var div = jQuery('#'+divId);
-                var queryMeta = PIN.Form.Registry[divId];
-                div.text('Thanks! Your submission is ' + respData.uuid);
-            },
-
-            // the onRender callback is invoked after the query HTML is built.
-            onRender: function(divId, queryData) {
-                var div = jQuery('#'+divId);
-                div.prepend('<h2>'+queryData.query.inq_ext_title+'</h2>');
-            }
-        }
-    },
-
-    /*
-    getPinJson: function(url){
-        jqueryNoConflict.ajax({
-            url: url,
-            crossDomain: true,
-            dataType: "jsonp",
-            success: fn.processPinJson
-        });
-
-
-    },
-
-    processPinJson: function(data){
-        console.log(data.questions);
-
-        console.log(data.questions[0].ques_value);
-
-        var testTemplate = _.template(
-            "<p>The <%= ques_value %> bridge in <%= ques_value %> was built in <%= ques_value %></p>", data.questions[0]);
-
-        jqueryNoConflict('#theform').html(testTemplate);
-
-    },
-    */
-
-    /*
-    closeform: function(){
-        jqueryNoConflict("#theform").hide();
-        formopen = false;
-    },
-    */
+    }
 
 }
 // end data configuration object
