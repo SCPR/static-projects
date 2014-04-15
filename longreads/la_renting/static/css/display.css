@@ -2683,4 +2683,29 @@ object, embed {
 						/*	===================================================================================
 						    =================================================================================== */
 
-body #content-map-canvas {height: 750px;}
+/* map */
+#content-map-container {width: 98%; height: 850px; margin: 0 1% 0 1%; padding: 0; background: #ffffff; color: #2f2f2f; font: normal 500 .8em/1.15 "proxima-nova", Helvetica, sans-serif;}
+#content-map-legend table, #content-map-legend th, #content-map-legend tr, #content-map-legend td {border-width: 0px; border-style: solid; border-color: gray; border-collapse: collapse; background-color: white;}
+#content-map-legend table {width: 100%; margin: 1em 0px 1em 0px; line-height: 2em;}
+#content-map-legend th {color: #fff; background-color: #aaa; padding: 5px 5px; border-top: 4px solid #555; font-weight: bold}
+#content-map-legend th a {color: #fff;}
+#content-map-legend td {padding: 2px; text-align: center; color: #2f2f2f; font-weight: bold; width: 25%;}
+#content-map-legend td.lower-tier {background-color: #fdbe85;}
+#content-map-legend td.higher-tier {background-color: #d94701;}
+#content-map-explainer {float: left; width: 25%; height: 798px; padding: 0; border: 1px solid #232020;}
+#content-map-explainer #content-map-data {width: 96%; height: 760px; margin: 15px 2% 15px 2%; position: relative;}
+#content-map-data #data-point-sentence {width: 96%; height: auto; margin: 25px 2% 15px 2%;}
+#content-map-data #data-point-display {width: 96%; height: 400px; margin: 25px 2% 25px 2%;}
+#content-map-data #data-point-caveat {width: 76%; height: auto; margin: 45px 12% 15px 12%;}
+#content-map-explainer #content-map-methodology {width: 100%; height: auto; margin: 15px 0 15px 0; font-size: 12px; line-height: 14px; position:absolute; bottom: 0;}
+#content-map-canvas {float: right; width: 74%; height: 800px;}
+
+/* typography */
+#content-map-container .lt-30pct {color: #fdbe85;}
+#content-map-container .gt-30pct {color: #d94701;}
+#content-map-explainer h1 {font-size: 30px; line-height: 28px; margin: 0 0 10px 0;}
+#content-map-explainer h2 {font-size: 24px; line-height: 24px; margin: 0 0 5px 0;}
+#content-map-explainer h3 {font-size: 20px; line-height: 20px; margin: 0 0 5px 0;}
+#content-map-explainer h4 {font-size: 16px; line-height: 20px; margin: 0 0 5px 0;}
+#content-map-explainer p {clear: both; margin: 5px 0 0 0;}
+#content-map-container .stat-point {font-size: 30px; color: #f07a30;}

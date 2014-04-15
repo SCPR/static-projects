@@ -157,35 +157,38 @@
 
         </div><!--/ .essay essay-pt1 -->
 
-
         <!-- begin map -->
         <div class="row">
-            <div id="content-map-canvas"></div>
             <div class="bound prologue">
-                <div id="content-map-data">
-                    <div class="row">
-                        <p>According to 2012 American Community Survey 5-year data...</p>
-                        <!--
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>zipcode</th>
-                                    <th>county</th>
-                                    <th>total housing</th>
-                                    <th>number owned</th>
-                                    <th>number rented</th>
-                                </tr>
-                            </thead>
-                            <tbody id='appendHere'></tbody>
-                        </table>
-                        -->
-                        <div id="zipCodeSentence"></div>
+                <p>So without knowing where the map will appear I think we should keep an option to have a larger intro the map and explain what comes after. The extra space will help adjust to the issues that could appear with tiny, teeny text.</p>
+            </div>
+            <div id="content-map-container">
+                <div id="content-map-legend">
+                    <table cellspacing="0" cellpadding="1" border="0">
+                        <tbody>
+                            <tr>
+                                <td class="lower-tier"><span class"legend-text">&nbsp; Majority pays less than 30%</span></td>
+                                <td class="higher-tier"><span class"legend-text">&nbsp; Majority pays more than 30%</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="content-map-explainer">
+                    <div id="content-map-data">
+                        <h3>Lorem ipsum dolor sit amet</h3>
+                        <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                        <div id="data-point-sentence"></div>
+                        <div id="data-point-display"></div>
+                        <div id="data-point-caveat"></div>
+                        <div id="content-map-methodology">
+                            <p><strong>About the data</strong>: consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
                     </div>
                 </div>
+                <div id="content-map-canvas"></div>
             </div>
         </div>
         <!-- end map -->
-
 
     <div class="row row-pt1-b">
             <div class="prose">
@@ -349,6 +352,7 @@
         <script type="text/javascript" src="static/js/application.js"></script>
         <script type="text/javascript" src="static/js/functionality.js"></script>
         <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.5/d3.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.2/leaflet.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
         <script type="text/javascript" src="static/js/zcta_five_county_data.js"></script>
