@@ -1,8 +1,6 @@
 var jqueryNoConflict = jQuery;
 var fn = fn || {};
 
-var selectedCount = 0;
-
 // begin main function
 jqueryNoConflict(document).ready(function() {
     fn.createMap();
@@ -11,20 +9,9 @@ jqueryNoConflict(document).ready(function() {
 // begin data configuration object
 var fn = {
 
-    addABunchOfNumbers: function(total_figure, lt_20000_gt_30, ab_20000_to_34999_gt_30, ab_35000_to_49999_gt_30, ab_50000_to_74999_gt_30, ab_75000_or_more_gt_30){
-        var total = lt_20000_gt_30 + ab_20000_to_34999_gt_30 + ab_35000_to_49999_gt_30 + ab_50000_to_74999_gt_30 + ab_75000_or_more_gt_30;
-        var value = (total / total_figure) * 100
-        return value.toFixed(2) + "%";
-    },
-
     percentifyValue: function(value){
         var value = value * 100
-        return value.toFixed(2) + "%";
-    },
-
-    testFunction: function(dividend, divisor){
-        var value = (dividend / divisor)*100
-        return value.toFixed(2) + "%";
+        return parseFloat(value.toFixed(0));
     },
 
     addCommas: function(nStr){
@@ -53,18 +40,23 @@ var fn = {
         if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
             initialZoom = 7;
         } else {
-            initialZoom = 10;
+            initialZoom = 9;
         }
 
         map = new L.map('content-map-canvas', {
             scrollWheelZoom: false,
-            zoomControl: true
+            zoomControl: false
         });
+
+        map.addControl(L.control.zoom({
+            position: 'topright'
+        }))
 
         var geojson = L.geoJson(zipCodeRent, {
 
+            // don't return features where the pct is zero
             filter: function(feature, layer) {
-                if (feature.properties.normalized_zcta_five_county_data_rent_housing_units_pct > .5){
+                if (feature.properties.la_area_rent_rent_gt30_pct != 0){
                     return feature.properties;
                 } else {
                     return false;
@@ -73,88 +65,139 @@ var fn = {
 
             style: function (feature) {
                 var layer_color;
-                if (feature.properties){
-                    layer_color = '#f07a30';
+                if (feature.properties.la_area_rent_rent_gt30_pct >= 0.50){
+                    layer_color = '#d94701';
+                } else {
+                    layer_color = '#fdbe85';
                 }
 
                 return {
                     color: '#000000',
-                    weight: .8,
-                    opacity: .8,
-                    fillOpacity: .5,
+                    weight: 0.7,
+                    opacity: 0.7,
+                    fillOpacity: 1.0,
                     fillColor: layer_color
                 }
             },
 
             onEachFeature: function(feature, layer) {
-
-                feature.selected = false;
-
-                var featcherContent = _.template(
-                    "<tr id='zip_<%= name %>'>" +
-                    "<td><%= name %></td>" +
-                    "<td><%= normalized_zcta_five_county_data_county_proper %></td>" +
-                    "<td><%= normalized_zcta_five_county_data_total_housing_units %></td>" +
-                    "<td><%= normalized_zcta_five_county_data_own_housing_units_total %></td>" +
-                    "<td><%= normalized_zcta_five_county_data_rent_housing_units_total %></td>", feature.properties);
-
+                //feature.selected = false;
                 var featcherSentence = _.template(
-                    "<p id='zip_<%= name %>'>Zip code tabulation area <%= name %> in <span class='experts'><%= normalized_zcta_five_county_data_county_proper %> County</span> has <%= fn.addCommas(normalized_zcta_five_county_data_total_housing_units) %> total housing units. <%= fn.addCommas(normalized_zcta_five_county_data_rent_housing_units_total) %> (<%= fn.percentifyValue(normalized_zcta_five_county_data_rent_housing_units_pct) %>) of those are occupied by renters. Of the <%= fn.addCommas(normalized_zcta_five_county_data_rent_housing_units_total) %> housing units occupied by renters...<br />" +
+                    "<div id='zip_<%= name %>'>" +
+                        "<h4><%= la_area_rent_county_proper %> County's <%= name %> is home to " +
+                        "<% if (la_area_rent_rent_gt30_pct >= 0.50) { %>" +
+                            "<span class='gt-30pct'><%= fn.addCommas(la_area_rent_rent_total) %> renters&nbsp;</span>" +
+                        "<% } else { %>" +
+                            "<span class='lt-30pct'><%= fn.addCommas(la_area_rent_rent_total) %> renters&nbsp;</span>" +
+                        "<% } %>" +
+                        "<% if (la_area_rent_rent_total_cv > 0.10) { %>" +
+                            "<span class='content-map-methodology'>(+/- <%= la_area_rent_rent_total_error %>)†</span>" +
+                        "<% } else { %>" +
+                            "<span class='content-map-methodology'>(+/- <%= la_area_rent_rent_total_error %>)</span></h4>" +
+                        "<% } %>" +
+                    "</div>", feature.properties);
 
-                        "<br />" +
-                        "<br />" +
-
-                        "<%= fn.addABunchOfNumbers(normalized_zcta_five_county_data_rent_housing_units_total, normalized_zcta_five_county_data_rent_lt_20000_lt_20_total, normalized_zcta_five_county_data_rent_20000_to_34999_lt_20_total, normalized_zcta_five_county_data_rent_35000_to_49999_lt_20_total, normalized_zcta_five_county_data_rent_50000_to_74999_lt_20_total, normalized_zcta_five_county_data_rent_75000_or_more_lt_20_total) %> pay less than 20% of their income toward rent.<br />" +
-
-                        "<%= fn.addABunchOfNumbers(normalized_zcta_five_county_data_rent_housing_units_total, normalized_zcta_five_county_data_rent_lt_20000_20_to_29_total, normalized_zcta_five_county_data_rent_20000_to_34999_20_to_29_total, normalized_zcta_five_county_data_rent_35000_to_49999_20_to_29_total, normalized_zcta_five_county_data_rent_50000_to_74999_20_to_29_total, normalized_zcta_five_county_data_rent_75000_or_more_20_to_29_total) %> pay 20_to_29% of their income toward rent.<br />" +
-
-                        "<%= fn.addABunchOfNumbers(normalized_zcta_five_county_data_rent_housing_units_total, normalized_zcta_five_county_data_rent_lt_20000_gt_30_total, normalized_zcta_five_county_data_rent_20000_to_34999_gt_30_total, normalized_zcta_five_county_data_rent_35000_to_49999_gt_30_total, normalized_zcta_five_county_data_rent_50000_to_74999_gt_30_total, normalized_zcta_five_county_data_rent_75000_or_more_gt_30_total) %> pay more than 30% of their income toward rent.<br />" +
-
-                    "</p>", feature.properties);
-
-
+                var featcherCaveat = _.template(
+                    "<p class='content-map-methodology'>† - Margin of error is at least 10 percent of the total value. Take care with this statistic.</p>");
 
                 layer.on('click', function (e) {
 
+                    jqueryNoConflict("#data-point-sentence").html(featcherSentence);
+                    jqueryNoConflict("#data-point-display").empty();
+                    jqueryNoConflict("#data-point-caveat").empty();
+
+                    var dataPoints = [{
+                            "val": fn.percentifyValue(feature.properties.la_area_rent_rent_high_pct),
+                            "coefficientVariable": feature.properties.la_area_rent_rent_high_cv,
+                            "moe": feature.properties.la_area_rent_rent_high_error,
+                            "name": "High"
+                        }, {
+                            "val": fn.percentifyValue(feature.properties.la_area_rent_rent_medium_pct),
+                            "coefficientVariable": feature.properties.la_area_rent_rent_medium_cv,
+                            "moe": feature.properties.la_area_rent_rent_medium_error,
+                            "name": "Medium"
+                        }, {
+                            "val": fn.percentifyValue(feature.properties.la_area_rent_rent_low_pct),
+                            "coefficientVariable": feature.properties.la_area_rent_rent_low_cv,
+                            "moe": feature.properties.la_area_rent_rent_low_error,
+                            "name": "Low"
+                        }, {
+                            "val": fn.percentifyValue(feature.properties.la_area_rent_rent_not_computed_pct),
+                            "coefficientVariable": feature.properties.la_area_rent_rent_not_computed_cv,
+                            "moe": feature.properties.la_area_rent_rent_not_computed_error,
+                            "name": "Not Computed"},
+                    ];
+
+                    var width = 420,
+                        height = 420,
+                        outerRadius = Math.min(width, height) / 2,
+                        innerRadius = outerRadius * .6,
+                        color = d3.scale.ordinal()
+                            .range(["#d94701", "#fd8d3c", "#fdbe85", "#feedde"]);
+                        donut = d3.layout.pie(),
+                        arc = d3.svg.arc().innerRadius(innerRadius).outerRadius(outerRadius);
+
+                    var vis = d3.select("#data-point-display")
+                        .append("svg")
+                        .data([dataPoints])
+                        .attr("width", width)
+                        .attr("height", height);
+
+                    var arcs = vis.selectAll("g.arc")
+                        .data(donut.value(function(d) {
+                            return d.val
+                        }))
+                        .enter().append("g")
+                        .attr("class", "arc")
+                        .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
+
+                    arcs.append("svg:path")
+                        .attr("fill", function(d, i) {
+                            return color(i);
+                        })
+                        .attr("stroke", "#000000")
+                        .attr("stroke-width", 0.5)
+                        .attr("d", arc);
+
+                        /*
+                        .on("mouseenter", function(d) {
+                            arcs.append("text")
+                                .attr("transform", arc.centroid(d))
+                                .attr("dy", ".5em")
+                                .style("text-anchor", "middle")
+                                .style("fill", "#f07a30")
+                                .attr("class", "on")
+                                .text(d.data.name);
+                        })
+                        .on("mouseout", function(d) {
+                            console.log(d);
+                        });
+                        */
+
+                    arcs.append("svg:text")
+                        .attr("transform", function(d) {
+                            return "translate(" + arc.centroid(d) + ")";
+                        })
+                        .attr("dy", ".35em")
+                        .attr("text-anchor", "middle")
+                        .attr("display", function(d) {
+                            return d.value > .15 ? null : "none";
+                        })
+                        .text(function(d, i) {
+                            var dataPoint = d.data.val + "%"
+                            var marginOfError = "(+/-" + d.data.moe + ")"
+                            if (d.data.coefficientVariable >= 0.10){
+                                return dataPoint + " † " + marginOfError;
+                            } else {
+                                return dataPoint + " " + marginOfError;
+                            }
+
+                        });
+
+                    jqueryNoConflict("#data-point-caveat").html(featcherCaveat);
+
                     console.log(feature);
-
-                    if (selectedCount === 9){
-                        jqueryNoConflict("#content-map-data").append("Clear the map");
-                    }
-
-                    console.log(selectedCount);
-
-                    if (feature.selected === false){
-                        this.setStyle({
-                            weight: 2,
-                            opacity: 2,
-                            fillOpacity: 2,
-                        });
-
-                        //jqueryNoConflict("#appendHere").append(featcherContent);
-
-                        jqueryNoConflict("#zipCodeSentence").append(featcherSentence);
-
-                        feature.selected = true;
-
-                        selectedCount = selectedCount + 1;
-
-                    } else {
-                        this.setStyle({
-                            weight: .8,
-                            opacity: .8,
-                            fillOpacity: .5,
-                        });
-
-                        jqueryNoConflict("table #appendHere #zip_" + feature.properties.name).remove();
-
-                        jqueryNoConflict("#zipCodeSentence #zip_" + feature.properties.name).remove();
-
-                        feature.selected = false;
-                    }
-
                 });
-
             }
 
         }).addTo(map);
@@ -162,8 +205,6 @@ var fn = {
         map
             .setView(center, initialZoom)
             .addLayer(stamenToner);
-
     }
-
 }
 // end data configuration object
