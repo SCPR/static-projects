@@ -755,6 +755,7 @@
 .prologue {
 	color: #2f2f2f;
 	font: normal 500 1.3em/1.15 "proxima-nova", Helvetica, sans-serif; /* 30 / 16 */
+	width:70%;
 }
 
 .afterward {
@@ -835,8 +836,9 @@
 		}
 				.row-pt1-b .prose {
 					margin-left: 150px; /* 100 / 50 */
+					font:normal 18px/40px "proxima-nova", Helvetica, sans-serif;
+					width:70%;
 				}
-
 
 				.row-pt1-b .experts {
 					float: right;
@@ -848,7 +850,10 @@
 			        padding-bottom: 40px;
 		        }
 
-
+                .row-pt1-b h3{
+                    font: normal 500 2em/1.25em "proxima-nova", Helvetica, sans-serif;
+                    margin: 1em;
+                }
 
 				.row-pt1-c .prose {
 				/*	float: right;*/
