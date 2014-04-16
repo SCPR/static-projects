@@ -11,7 +11,21 @@ var fn = {
 
     percentifyValue: function(value){
         var value = value * 100
-        return parseFloat(value.toFixed(0));
+        return parseFloat(value.toFixed(2));
+    },
+
+    averageRenter: function(value, numberOfRenters){
+        var value = value / numberOfRenters;
+        var calculatedAmount = parseFloat(value.toFixed(0));
+        return fn.addCommas(calculatedAmount);
+    },
+
+    rentToIncome: function(rent, income, numberOfRenters){
+        var avgIncome = income / numberOfRenters;
+        var avgRent = rent / numberOfRenters;
+        var rentToIncome = (avgRent / avgIncome) * 100;
+        var calculatedAmount = parseFloat(rentToIncome.toFixed(0));
+        return fn.addCommas(calculatedAmount);
     },
 
     addCommas: function(nStr){
@@ -19,7 +33,6 @@ var fn = {
         x = nStr.split('.');
         x1 = x[0];
         x2 = x.length > 1 ? '.' + x[1] : '';
-
             var rgx = /(\d+)(\d{3})/;
                 while (rgx.test(x1)) {
                     x1 = x1.replace(rgx, '$1' + ',' + '$2');
@@ -56,20 +69,34 @@ var fn = {
 
             // don't return features where the pct is zero
             filter: function(feature, layer) {
-                if (feature.properties.la_area_rent_rent_gt30_pct != 0){
-                    return feature.properties;
+                if (feature.properties.la_area_rent_rent_total != 0 || feature.properties.la_area_rent_rent_total != null){
+                    if (feature.properties.la_area_rent_rent_total_cv <= 0.10){
+                        return feature.properties;
+                    }
                 } else {
                     return false;
                 }
             },
 
+            //"#d94701", "#fd8d3c", "#fdbe85", "#feedde"
+
             style: function (feature) {
                 var layer_color;
-                if (feature.properties.la_area_rent_rent_gt30_pct >= 0.50){
+                if (feature.properties.la_area_rent_rent_gt30_pct >= 0.75){
                     layer_color = '#d94701';
-                } else {
+                } else if (feature.properties.la_area_rent_rent_gt30_pct >= 0.50){
+                    layer_color = '#fd8d3c';
+                } else if (feature.properties.la_area_rent_rent_gt30_pct >= 0.25){
                     layer_color = '#fdbe85';
+                } else {
+                    layer_color = '#feedde';
                 }
+
+                /*
+                if (feature.properties.la_area_rent_rent_total >= 10000){
+                    layer_color = 'yellow';
+                }
+                */
 
                 return {
                     color: '#000000',
@@ -81,120 +108,133 @@ var fn = {
             },
 
             onEachFeature: function(feature, layer) {
-                //feature.selected = false;
-                var featcherSentence = _.template(
-                    "<div id='zip_<%= name %>'>" +
-                        "<h4><%= la_area_rent_county_proper %> County's <%= name %> is home to " +
-                        "<% if (la_area_rent_rent_gt30_pct >= 0.50) { %>" +
-                            "<span class='gt-30pct'><%= fn.addCommas(la_area_rent_rent_total) %> renters&nbsp;</span>" +
-                        "<% } else { %>" +
-                            "<span class='lt-30pct'><%= fn.addCommas(la_area_rent_rent_total) %> renters&nbsp;</span>" +
-                        "<% } %>" +
-                        "<% if (la_area_rent_rent_total_cv > 0.10) { %>" +
-                            "<span class='content-map-methodology'>(+/- <%= la_area_rent_rent_total_error %>)†</span>" +
-                        "<% } else { %>" +
-                            "<span class='content-map-methodology'>(+/- <%= la_area_rent_rent_total_error %>)</span></h4>" +
-                        "<% } %>" +
-                    "</div>", feature.properties);
 
-                var featcherCaveat = _.template(
-                    "<p class='content-map-methodology'>† - Margin of error is at least 10 percent of the total value. Take care with this statistic.</p>");
+                feature.selected = false;
 
                 layer.on('click', function (e) {
 
+                    var featcherSentence = _.template(
+                        "<div id='zip_<%= name %>'>" +
+                            "<h4>An estimated <span class='gt-30pct'><%= fn.addCommas(la_area_rent_rent_total) %> renters</span> call <%= la_area_rent_county_proper %> County's <a href='http://censusreporter.org/profiles/86000US<%= name %>-<%= name %>/' target='_blank'><%= name %></a> zip code tabulation area (ZCTA) home, according to American Community Survey data.</h4>" +
+                            "<h4>The average renter here earns about <span class='gt-30pct'>$<%= fn.averageRenter(la_area_rent_rent_income_month_average, la_area_rent_rent_total) %></span> a month &ndash; based on aggregate data  &ndash; and spends an average of <span class='gt-30pct'>$<%= fn.averageRenter(la_area_rent_rent_aggregate_total, la_area_rent_rent_total) %></span> on rent each month <span class='gt-30pct'>(<%= fn.rentToIncome(la_area_rent_rent_aggregate_total, la_area_rent_rent_income_month_average, la_area_rent_rent_total) %>%)</span>.</h4>" +
+                            "<h4>Here's a breakdown of what percent of their income renters pay in this ZCTA:</h4>" +
+                        "</div>", feature.properties);
+
+                    var featcherGraphs = _.template(
+                    "<ul class='chartlist'>" +
+                        "<li>" +
+                            "<a href='javascript:void(0)'>More than 50%</a>" +
+                            "<% if (la_area_rent_rent_gt_50_cv > 0.10) { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_gt_50_pct) %>% †</span>" +
+                            "<% } else { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_gt_50_pct) %>% </span>" +
+                            "<% } %>" +
+                            "<span class='index' style='width: <%= fn.percentifyValue(la_area_rent_rent_gt_50_pct) %>%'>&nbsp;</span>" +
+                        "</li>" +
+                        "<li>" +
+                        "<a href='javascript:void(0)'>40 to 49.9%</a>" +
+                            "<% if (la_area_rent_rent_40_to_49_9_pct > 0.10) { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_40_to_49_9_pct) %>% †</span>" +
+                            "<% } else { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_40_to_49_9_pct) %>% </span>" +
+                            "<% } %>" +
+                            "<span class='index' style='width: <%= fn.percentifyValue(la_area_rent_rent_40_to_49_9_pct) %>%'>&nbsp;</span>" +
+                        "</li>" +
+                        "<li>" +
+                            "<a href='javascript:void(0)'>35 to 39.9%</a>" +
+                            "<% if (la_area_rent_rent_35_to_39_9_pct > 0.10) { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_35_to_39_9_pct) %>% †</span>" +
+                            "<% } else { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_35_to_39_9_pct) %>%</span>" +
+                            "<% } %>" +
+                            "<span class='index' style='width: <%= fn.percentifyValue(la_area_rent_rent_35_to_39_9_pct) %>%'>&nbsp;</span>" +
+                        "</li>" +
+                        "<li>" +
+                            "<a href='javascript:void(0)'>30 to 34.9%</a>" +
+                            "<% if (la_area_rent_rent_30_to_34_9_pct > 0.10) { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_30_to_34_9_pct) %>% †</span>" +
+                            "<% } else { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_30_to_34_9_pct) %>%</span>" +
+                            "<% } %>" +
+                            "<span class='index' style='width: <%= fn.percentifyValue(la_area_rent_rent_30_to_34_9_pct) %>%'>&nbsp;</span>" +
+                        "</li>" +
+                        "<li>" +
+                            "<a href='javascript:void(0)'>25 to 29.9%</a>" +
+                            "<% if (la_area_rent_rent_25_to_29_9_pct > 0.10) { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_25_to_29_9_pct) %>% †</span>" +
+                            "<% } else { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_25_to_29_9_pct) %>%</span>" +
+                            "<% } %>" +
+                            "<span class='index' style='width: <%= fn.percentifyValue(la_area_rent_rent_25_to_29_9_pct) %>%'>&nbsp;</span>" +
+                        "</li>" +
+                        "<li>" +
+                            "<a href='javascript:void(0)'>20 to 24.9%</a>" +
+                            "<% if (la_area_rent_rent_20_to_24_9_pct > 0.10) { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_20_to_24_9_pct) %>% †</span>" +
+                            "<% } else { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_20_to_24_9_pct) %>%</span>" +
+                            "<% } %>" +
+                            "<span class='index' style='width: <%= fn.percentifyValue(la_area_rent_rent_20_to_24_9_pct) %>%'>&nbsp;</span>" +
+                        "</li>" +
+                        "<li>" +
+                            "<a href='javascript:void(0)'>15 to 19.9%</a>" +
+                            "<% if (la_area_rent_rent_15_to_19_9_pct > 0.10) { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_15_to_19_9_pct) %>% †</span>" +
+                            "<% } else { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_15_to_19_9_pct) %>%</span>" +
+                            "<% } %>" +
+                            "<span class='index' style='width: <%= fn.percentifyValue(la_area_rent_rent_15_to_19_9_pct) %>%'>&nbsp;</span>" +
+                        "</li>" +
+                        "<li>" +
+                            "<a href='javascript:void(0)'>10 to 14.9%</a>" +
+                            "<% if (la_area_rent_rent_10_to_14_9_pct > 0.10) { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_10_to_14_9_pct) %>% †</span>" +
+                            "<% } else { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_10_to_14_9_pct) %>%</span>" +
+                            "<% } %>" +
+                            "<span class='index' style='width: <%= fn.percentifyValue(la_area_rent_rent_10_to_14_9_pct) %>%'>&nbsp;</span>" +
+                        "</li>" +
+                        "<li>" +
+                            "<a href='javascript:void(0)'>Less than 10 %</a>" +
+                            "<% if (la_area_rent_rent_lt_10_pct > 0.10) { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_lt_10_pct) %>% †</span>" +
+                            "<% } else { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_lt_10_pct) %>%</span>" +
+                            "<% } %>" +
+                            "<span class='index' style='width: <%= fn.percentifyValue(la_area_rent_rent_lt_10_pct) %>%'>&nbsp;</span>" +
+                        "</li>" +
+                        "<li>" +
+                            "<a href='javascript:void(0)'>Not calculated</a>" +
+                            "<% if (la_area_rent_rent_not_computed_pct > 0.10) { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_not_computed_pct) %>% †</span>" +
+                            "<% } else { %>" +
+                                "<span class='count'><%= fn.percentifyValue(la_area_rent_rent_not_computed_pct) %>%</span>" +
+                            "<% } %>" +
+                            "<span class='index' style='width: <%= fn.percentifyValue(la_area_rent_rent_not_computed_pct) %>%'>&nbsp;</span>" +
+                        "</li>" +
+                    "</ul>", feature.properties);
+
+                    var featcherCaveat = _.template(
+                        "<p class='content-map-methodology gt-30pct'>† - Margin of error is at least 10 percent of the total value.</p>");
+
                     jqueryNoConflict("#data-point-sentence").html(featcherSentence);
-                    jqueryNoConflict("#data-point-display").empty();
-                    jqueryNoConflict("#data-point-caveat").empty();
-
-                    var dataPoints = [{
-                            "val": fn.percentifyValue(feature.properties.la_area_rent_rent_high_pct),
-                            "coefficientVariable": feature.properties.la_area_rent_rent_high_cv,
-                            "moe": feature.properties.la_area_rent_rent_high_error,
-                            "name": "High"
-                        }, {
-                            "val": fn.percentifyValue(feature.properties.la_area_rent_rent_medium_pct),
-                            "coefficientVariable": feature.properties.la_area_rent_rent_medium_cv,
-                            "moe": feature.properties.la_area_rent_rent_medium_error,
-                            "name": "Medium"
-                        }, {
-                            "val": fn.percentifyValue(feature.properties.la_area_rent_rent_low_pct),
-                            "coefficientVariable": feature.properties.la_area_rent_rent_low_cv,
-                            "moe": feature.properties.la_area_rent_rent_low_error,
-                            "name": "Low"
-                        }, {
-                            "val": fn.percentifyValue(feature.properties.la_area_rent_rent_not_computed_pct),
-                            "coefficientVariable": feature.properties.la_area_rent_rent_not_computed_cv,
-                            "moe": feature.properties.la_area_rent_rent_not_computed_error,
-                            "name": "Not Computed"},
-                    ];
-
-                    var width = 420,
-                        height = 420,
-                        outerRadius = Math.min(width, height) / 2,
-                        innerRadius = outerRadius * .6,
-                        color = d3.scale.ordinal()
-                            .range(["#d94701", "#fd8d3c", "#fdbe85", "#feedde"]);
-                        donut = d3.layout.pie(),
-                        arc = d3.svg.arc().innerRadius(innerRadius).outerRadius(outerRadius);
-
-                    var vis = d3.select("#data-point-display")
-                        .append("svg")
-                        .data([dataPoints])
-                        .attr("width", width)
-                        .attr("height", height);
-
-                    var arcs = vis.selectAll("g.arc")
-                        .data(donut.value(function(d) {
-                            return d.val
-                        }))
-                        .enter().append("g")
-                        .attr("class", "arc")
-                        .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
-
-                    arcs.append("svg:path")
-                        .attr("fill", function(d, i) {
-                            return color(i);
-                        })
-                        .attr("stroke", "#000000")
-                        .attr("stroke-width", 0.5)
-                        .attr("d", arc);
-
-                        /*
-                        .on("mouseenter", function(d) {
-                            arcs.append("text")
-                                .attr("transform", arc.centroid(d))
-                                .attr("dy", ".5em")
-                                .style("text-anchor", "middle")
-                                .style("fill", "#f07a30")
-                                .attr("class", "on")
-                                .text(d.data.name);
-                        })
-                        .on("mouseout", function(d) {
-                            console.log(d);
-                        });
-                        */
-
-                    arcs.append("svg:text")
-                        .attr("transform", function(d) {
-                            return "translate(" + arc.centroid(d) + ")";
-                        })
-                        .attr("dy", ".35em")
-                        .attr("text-anchor", "middle")
-                        .attr("display", function(d) {
-                            return d.value > .15 ? null : "none";
-                        })
-                        .text(function(d, i) {
-                            var dataPoint = d.data.val + "%"
-                            var marginOfError = "(+/-" + d.data.moe + ")"
-                            if (d.data.coefficientVariable >= 0.10){
-                                return dataPoint + " † " + marginOfError;
-                            } else {
-                                return dataPoint + " " + marginOfError;
-                            }
-
-                        });
-
+                    jqueryNoConflict("#data-point-display").html(featcherGraphs);
                     jqueryNoConflict("#data-point-caveat").html(featcherCaveat);
+
+                    if (feature.selected === false){
+                        this.setStyle({
+                            weight: 2,
+                            opacity: 2,
+                        });
+                        feature.selected = true;
+
+                    } else {
+                        this.setStyle({
+                            weight: .8,
+                            opacity: .8,
+                        });
+                        feature.selected = false;
+                    }
 
                     console.log(feature);
                 });

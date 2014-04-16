@@ -2684,21 +2684,19 @@ object, embed {
 						    =================================================================================== */
 
 /* map */
-#content-map-container {width: 98%; height: 850px; margin: 0 1% 0 1%; padding: 0; background: #ffffff; color: #2f2f2f; font: normal 500 .8em/1.15 "proxima-nova", Helvetica, sans-serif;}
-#content-map-legend table, #content-map-legend th, #content-map-legend tr, #content-map-legend td {border-width: 0px; border-style: solid; border-color: gray; border-collapse: collapse; background-color: white;}
-#content-map-legend table {width: 100%; margin: 1em 0px 1em 0px; line-height: 2em;}
-#content-map-legend th {color: #fff; background-color: #aaa; padding: 5px 5px; border-top: 4px solid #555; font-weight: bold}
-#content-map-legend th a {color: #fff;}
-#content-map-legend td {padding: 2px; text-align: center; color: #2f2f2f; font-weight: bold; width: 25%;}
-#content-map-legend td.lower-tier {background-color: #fdbe85;}
-#content-map-legend td.higher-tier {background-color: #d94701;}
+#content-map-container {width: 98%; height: 820px; margin: 0 1% 0 1%; padding: 0; background: #ffffff; color: #2f2f2f; font: normal 500 .8em/1.15 "proxima-nova", Helvetica, sans-serif; color: #2f2f2f;}
 #content-map-explainer {float: left; width: 25%; height: 798px; padding: 0; border: 1px solid #232020;}
 #content-map-explainer #content-map-data {width: 96%; height: 760px; margin: 15px 2% 15px 2%; position: relative;}
 #content-map-data #data-point-sentence {width: 96%; height: auto; margin: 25px 2% 15px 2%;}
-#content-map-data #data-point-display {width: 96%; height: 400px; margin: 25px 2% 25px 2%;}
-#content-map-data #data-point-caveat {width: 76%; height: auto; margin: 45px 12% 15px 12%;}
-#content-map-explainer #content-map-methodology {width: 100%; height: auto; margin: 15px 0 15px 0; font-size: 12px; line-height: 14px; position:absolute; bottom: 0;}
-#content-map-canvas {float: right; width: 74%; height: 800px;}
+#content-map-data #data-point-display {width: 96%; height: 260px; margin: 25px 2% 25px 2%;}
+#content-map-data #data-point-caveat {width: 96%; height: 25px; margin: 25px 2% 25px 2%;}
+#content-map-data #content-map-methodology {width: 100%; height: auto; margin: 15px 0 15px 0; font-size: 12px; line-height: 14px; position:absolute; bottom: 0;}
+#content-map-legend {float: right; width: 74%; height: 40px;}
+#content-map-legend table {width: 100%; margin: 0px; line-height: 2em; border-width: 0px; border-style: solid; border-color: gray; border-collapse: collapse; background-color: white;}
+#content-map-legend td {padding: 2px; text-align: center; font-weight: bold; width: 25%;}
+#content-map-legend td.lower-tier {background-color: #fdbe85;}
+#content-map-legend td.higher-tier {background-color: #d94701;}
+#content-map-canvas {float: right; width: 74%; height: 760px;}
 
 /* typography */
 #content-map-container .lt-30pct {color: #fdbe85;}
@@ -2709,3 +2707,12 @@ object, embed {
 #content-map-explainer h4 {font-size: 16px; line-height: 20px; margin: 0 0 5px 0;}
 #content-map-explainer p {clear: both; margin: 5px 0 0 0;}
 #content-map-container .stat-point {font-size: 30px; color: #f07a30;}
+
+/* bar charts */
+/* http://alistapart.com/article/accessibledatavisualization */
+#content-map-data .chartlist {width: 100%; border-top: 1px solid #EEE; margin: 0px;}
+#content-map-data .chartlist li {width: 100%; height: 25px; position: relative; display: block; border-bottom: 1px solid #EEE; _zoom: 1;}
+#content-map-data .chartlist li a {display: block; padding: 0.4em 4.5em 0.4em 0.5em; position: relative; z-index: 2; text-decoration: none; font-weight: bold; color: #2f2f2f; cursor: default;}
+#content-map-data .chartlist .count {display: block; position: absolute; top: 0; right: 0; margin: 0 0.3em; text-align: right; color: #d94701; font-weight: bold; font-size: 1em; line-height: 2em;}
+#content-map-data .chartlist .index {display: block; position: absolute; top: 0; left: 0; height: 100%; background: #fdbe85; text-indent: -9999px; overflow: hidden; line-height: 2em;}
+#content-map-data .chartlist li:hover {background: #EFEFEF;}
