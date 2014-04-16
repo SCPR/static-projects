@@ -71,9 +71,6 @@ var fn = {
             filter: function(feature, layer) {
                 if (feature.properties.la_area_rent_rent_total != 0 || feature.properties.la_area_rent_rent_total != null){
                     return feature.properties;
-                    //if (feature.properties.la_area_rent_rent_total_cv <= 0.10){
-                        //return feature.properties;
-                    //}
                 } else {
                     return false;
                 }
@@ -98,15 +95,13 @@ var fn = {
 
             onEachFeature: function(feature, layer) {
 
-                feature.selected = false;
-
                 layer.on('click', function (e) {
 
                     var featcherSentence = _.template(
                         "<div id='zip_<%= name %>'>" +
-                            "<h4>An estimated <span class='gt-30pct'><%= fn.addCommas(la_area_rent_rent_total) %> </span> households <%= la_area_rent_county_proper %> County's <a href='http://censusreporter.org/profiles/86000US<%= name %>-<%= name %>/' target='_blank'><%= name %></a> Zip Code Tabulation Area (<a href='http://www.census.gov/geo/reference/zctas.html' target='_blank'>ZCTA</a>) are occupied by renters, according to American Community Survey data.</h4>" +
-                            "<h4>The average renter-occupied household here earns about <span class='gt-30pct'>$<%= fn.averageRenter(la_area_rent_rent_income_month_average, la_area_rent_rent_total) %></span> a month &ndash; based on aggregate data  &ndash; and spends an average of <span class='gt-30pct'>$<%= fn.averageRenter(la_area_rent_rent_aggregate_total, la_area_rent_rent_total) %></span> on rent each month, about <span class='gt-30pct'><%= fn.rentToIncome(la_area_rent_rent_aggregate_total, la_area_rent_rent_income_month_average, la_area_rent_rent_total) %>% </span>of their monthly income.</h4>" +
-                            "<h4>When a household's rent burden here is presented as a percentage of its income, it breaks down like this:</h4>" +
+                            "<h4>Renters occupy an estimated <span class='gt-30pct'><%= fn.addCommas(la_area_rent_rent_total) %> </span> households in <%= la_area_rent_county_proper %> County's <a href='http://censusreporter.org/profiles/86000US<%= name %>-<%= name %>/'><%= name %></a> Zip Code Tabulation Area (<a href='http://www.census.gov/geo/reference/zctas.html' target='_blank'>ZCTA</a>), according to American Community Survey data.</h4>" +
+                            "<h4>The average renter-occupied household here earns about <span class='gt-30pct'>$<%= fn.averageRenter(la_area_rent_rent_income_month_average, la_area_rent_rent_total) %></span> a month and spends an average of <span class='gt-30pct'>$<%= fn.averageRenter(la_area_rent_rent_aggregate_total, la_area_rent_rent_total) %></span> on rent each month, about <span class='gt-30pct'><%= fn.rentToIncome(la_area_rent_rent_aggregate_total, la_area_rent_rent_income_month_average, la_area_rent_rent_total) %>% </span>of their monthly income.</h4>" +
+                            "<h4>Here's the breakdown of this area's household's rent burden as a percentage of its income:</h4>" +
                         "</div>", feature.properties);
 
                     var featcherGraphs = _.template(
@@ -209,23 +204,6 @@ var fn = {
                     jqueryNoConflict("#data-point-sentence").html(featcherSentence);
                     jqueryNoConflict("#data-point-display").html(featcherGraphs);
                     jqueryNoConflict("#data-point-caveat").html(featcherCaveat);
-
-                    if (feature.selected === false){
-                        this.setStyle({
-                            weight: 2,
-                            opacity: 2,
-                        });
-                        feature.selected = true;
-
-                    } else {
-                        this.setStyle({
-                            weight: .8,
-                            opacity: .8,
-                        });
-                        feature.selected = false;
-                    }
-
-                    console.log(feature);
                 });
             }
 
