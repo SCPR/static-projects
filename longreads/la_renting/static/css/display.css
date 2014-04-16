@@ -65,7 +65,6 @@
 				}
 
 		.masthead .secondary {
-			/* background: black; */
 			padding: 10px 0 20px;
 			margin-bottom: 28px;
 		}
@@ -107,6 +106,7 @@
 					line-height: 1;
 					color: #d8d8d8;
 					min-width: 185px;
+					padding:5px 0;
 					/* overflow: hidden; */
 				}
 						.masthead .bylines a {
@@ -220,6 +220,10 @@
 						.masthead h1 {
 							font-size: 5.5em;
 						}
+						
+						.masthead .secondary h2 {
+							font-size: 1em;
+						}
 						.masthead .secondary h3 {
 							top: 10px;
 						}
@@ -282,9 +286,7 @@
 
 				    @media screen and (max-width: 767px) {
 
-						.masthead {
-							box-shadow: inset 0 -65px 0 rgba(0,0,0,0.35);
-						}
+
 						.masthead h1 {
 							font-size: 4.0em;
 						}
@@ -294,7 +296,10 @@
 						.masthead .tertiary .social {
 							padding-top: 10px;
 						}
-
+						
+						.masthead .secondary h2 {
+							font-size: 0.75em;
+                        }
 						.masthead .secondary a {
 						    width:100px;
 						}
@@ -306,16 +311,37 @@
 
 				    @media screen and (max-width: 670px) {
 
-						.masthead {
-						/*	box-shadow: inset 0 -75px 0 rgba(0,0,0,0.5); */
-						}
 						.masthead h1 {
 							font-size: 3.5em;
 						}
+						
+/*						.masthead .secondary {
+							margin-bottom: 22px;
+						}
+						*/
 						.masthead .secondary h2 {
-							font-size: 0.85em;
+							text-align: center;
+							margin-bottom: 10px;
 						}
 						.masthead .secondary h3 {
+							position: static;
+						}
+								.masthead .secondary h3 a {
+									margin: 0 auto;
+								}
+
+						.masthead .tertiary .bylines {
+							text-shadow: none;
+						}
+						.masthead .tertiary .social {
+							padding-top: 11px;
+						}
+
+						.masthead .secondary a {
+						    width:70px;
+						}
+
+/*						.masthead .secondary h3 {
 							top: 3px;
 						}
 						.masthead .tertiary .bylines {
@@ -327,14 +353,12 @@
 
 				    }
 
-				/*	===================================================================================
-				    =================================================================================== */
+					===================================================================================
+				    =================================================================================== 
 
 				    @media screen and (max-width: 590px) {
 
-						.masthead {
-							box-shadow: inset 0 -85px 0 rgba(0,0,0,0.5);
-						}
+
 						.masthead h1 {
 							font-size: 3.0em;
 							padding-top: 30px;
@@ -350,14 +374,14 @@
 							padding-top: 7px;
 						}
 
-
+*/
 				    }
 
     				/*	===================================================================================
     				    =================================================================================== */
 
 
-                    @media screen and (min-width:533px){
+                    @media screen and (min-width:635px){
 
                         .masthead .secondary{
 						    background: black;
@@ -372,7 +396,6 @@
 				    @media screen and (max-width: 533px) {
 
 						.masthead {
-							/* box-shadow: inset 0 -56px 0 #3c3c3c; */
 							background-size: 1000px 210px; /* 0.5 */
 							height: auto;
 							padding-bottom: 7px;
@@ -719,8 +742,9 @@
 .chapter {
 		font-family:"proxima-nova", Helvetica, sans-serif;
     font-weight: 300;
-    font-size: 3.5em;
-    margin: 0.5em 1.2em;}
+    color:#F16500;
+    font-size: 3em;
+    margin: 0.5em 3em;}
 
     	/*	===================================================================================
 		    =================================================================================== */
@@ -755,8 +779,34 @@
 .prologue {
 	color: #2f2f2f;
 	font: normal 500 1.3em/1.15 "proxima-nova", Helvetica, sans-serif; /* 30 / 16 */
-	width:70%;
+	width:65%;
+    border-bottom: 1px solid #7ac8d4;
+    padding-bottom: 40px;
 }
+
+        .prologue blockquote {
+        	background:
+        		url(i/ephemera-quote-gray-open.png) no-repeat 0 0,
+        		url(i/ephemera-quote-gray-close.png) no-repeat bottom right;
+        	background-size:
+        		122px 77px,
+        		122px 77px; /* one quarter of source 446 x 280 */
+        	padding: 9% 4%;
+        	margin: 0px 10px -15px;
+        	font-weight: 200px;
+        	font-size: 150%;
+        	font-weight: 200;
+        	text-transform: uppercase;
+        }
+        
+          .prologue blockquote cite {
+    			text-transform: initial;
+    			display: block;
+    			text-align: right;
+    			color: #F16500;
+    			font-size: 0.8125em; /* 13 / 16 */
+    		}
+
 
 .afterward {
     font: italic 100 1em/1.28 georgia, sans-serif;
@@ -782,8 +832,6 @@
 
 
 
-
-
 /*	##############################################################################################################
 	##############################################################################################################
 	##############################################################################################################
@@ -797,8 +845,10 @@
 		.essay-pt1 .prose,
 		.essay-pt1 .experts,
 		.infographic {
+/*		    
 			width: 75%; /* 532 / 1100 */
 		}
+/*		
 		.essay-pt1 blockquote {
 			background:
 				url(i/ephemera-quote-gray-open.png) no-repeat 0 0,
@@ -811,7 +861,7 @@
 			margin-top: -4%;
 			margin-left: -2%;
 		}
-				.essay-pt1 blockquote > p {
+/*				.essay-pt1 blockquote > p {
 					font: italic 300 1.475em/1.26 Georgia, serif;
 					margin-bottom: 17px;
 				}
@@ -822,14 +872,14 @@
 					color: #581500;
 					font-size: 0.8125em; /* 13 / 16 */
 				}
-						.essay-pt1 blockquote cite em {
+/*						.essay-pt1 blockquote cite em {
 							font-weight: 700;
 							font-style: normal;
 						}
 						.essay-pt1 blockquote cite span {
 							display: block;
 						}
-
+*/
 		.row-pt1-b {
 			background: #f2f2f2;
 			padding: 50px 0 70px;
@@ -884,15 +934,28 @@
 
 		.row-pt1-d {
 		    border-bottom: 1px solid #7ac8d4;
-		    border-bottom: 1px solid #7ac8d4;
+            background: #f2f2f2;
+            padding:10px;
 		}
 				.row-pt1-d .prose {
 					float: right;
+					width:75%;
 				}
 
 				.infographic {
 					float: right;
 				}
+
+.row .aside {
+    font:normal 500 .8em/1.15 "proxima-nova", Helvetica, sans-serif;    
+    padding: 8px 0px;
+    background:#f2f2f2;
+}
+
+.row .aside .map-intro {
+    text-transform:uppercase;    
+    font-size:125%;
+}
 
 		.infographic {
 			background: #2a2a2a;
@@ -1013,8 +1076,8 @@
 											font-size: 0.75em;
 										}
 
-										blockquote {
-										    display:none;
+										.prologue blockquote {
+										    font-size:125%;
 										}
 
 								    }
@@ -1225,6 +1288,7 @@
 
 		.prologue {
 			font-size: 1em;
+			width:80%;
 		}
 
 
@@ -1233,11 +1297,13 @@
 
 		.essay-pt1 {
 		}
+/*
 				.essay-pt1 .prose,
 				.essay-pt1 .experts,
 				.infographic {
 					width: 100%;
 				}
+*/
 				.essay-pt1 blockquote {
 					margin-top: 25px;
 				}
@@ -1267,13 +1333,9 @@
 
 				.row-pt1-d {
 				}
-						.row-pt1-d .prose,
-						.infographic {
-							float: none;
-						}
-								.infographic {
-									margin-top: 50px;
-								}
+				
+
+								
 
 		/* ------------------------------------------------------------------------------------------------------------------------------------------------ */
 
