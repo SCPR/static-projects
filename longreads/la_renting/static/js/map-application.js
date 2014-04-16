@@ -71,9 +71,6 @@ var fn = {
             filter: function(feature, layer) {
                 if (feature.properties.la_area_rent_rent_total != 0 || feature.properties.la_area_rent_rent_total != null){
                     return feature.properties;
-                    //if (feature.properties.la_area_rent_rent_total_cv <= 0.10){
-                        //return feature.properties;
-                    //}
                 } else {
                     return false;
                 }
@@ -97,8 +94,6 @@ var fn = {
             },
 
             onEachFeature: function(feature, layer) {
-
-                feature.selected = false;
 
                 layer.on('click', function (e) {
 
@@ -209,23 +204,6 @@ var fn = {
                     jqueryNoConflict("#data-point-sentence").html(featcherSentence);
                     jqueryNoConflict("#data-point-display").html(featcherGraphs);
                     jqueryNoConflict("#data-point-caveat").html(featcherCaveat);
-
-                    if (feature.selected === false){
-                        this.setStyle({
-                            weight: 2,
-                            opacity: 2,
-                        });
-                        feature.selected = true;
-
-                    } else {
-                        this.setStyle({
-                            weight: .8,
-                            opacity: .8,
-                        });
-                        feature.selected = false;
-                    }
-
-                    console.log(feature);
                 });
             }
 
