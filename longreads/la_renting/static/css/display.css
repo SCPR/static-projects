@@ -784,6 +784,10 @@
     padding-bottom: 40px;
 }
 
+        .prologue a {
+            color: #047fa6;
+        }
+
         .prologue blockquote {
         	background:
         		url(i/ephemera-quote-gray-open.png) no-repeat 0 0,
