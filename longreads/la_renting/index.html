@@ -364,41 +364,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
         <script type="text/javascript" src="static/js/zcta_five_county_data.js"></script>
         <script type="text/javascript" src="static/js/map-application.js"></script>
-        <script>$('.pin-query-container').spin();</script>
         <script type="text/javascript" src="https://www.publicinsightnetwork.org/air2/js/pinform.js"></script>
-        <!--/ PIN jquery -->
-        <script>
-        var PIN_QUERY; // The form JS needs to be aware of this variable.
-
-        (function(){
-          var pinCheck, queryId;
-
-          pinCheck = setInterval(function() {
-            // If the form has shown up, then stop the spinner
-            // and then interval.
-            if($(".pin-form").length) {
-              $('.pin-query-container').spin(false);
-              clearInterval(pinCheck);
-            }
-          }, 100);
-
-          queryId   = "7345004f6c9f";
-          PIN_QUERY = {
-              uuid: queryId,
-              divId: "pin-query-7345004f6c9f",
-              baseUrl: "https://www.publicinsightnetwork.org/air2",
-              opts: {
-                showIntro: false,
-                includeLegalFooter: false
-              }
-          };
-        }());
-
-        $(document).ready(function() {
-          PIN.Form.render(PIN_QUERY);
-        });
-        </script>
-
 
         <!-- begin chartbeat -->
         <script type="text/javascript">
