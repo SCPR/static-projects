@@ -2748,7 +2748,7 @@ object, embed {
 /* map */
 .map-row .prologue {border-bottom: 0px solid #7ac8d4;}
 #content-map-container {width: 98%; height: 1020px; margin: 0px 0 1% 0 1%; padding: 10px 0 0 0; color: #2f2f2f;}
-#content-map-explainer {float: left; width: 25%; height: 798px; padding: 0;}
+#content-map-explainer {float: left; width: 25%; height: 950px; padding: 0;}
 #content-map-explainer #content-map-data {width: 96%; height: 530px; margin: 15px 2% 15px 2%; font: normal 500 .8em/1.15 "proxima-nova", Helvetica, sans-serif;}
 #content-map-data #data-point-sentence {width: 96%; height: auto; margin: 15px 2% 15px 2%;}
 #content-map-data #data-point-display {width: 96%; height: 260px; margin: 15px 2% 25px 2%;}
