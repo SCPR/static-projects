@@ -174,6 +174,10 @@
         <!-- begin map -->
         <div class="row row-pt1-d map-row">
             <div id="content-map-container">
+                <div class="bound prologue">
+                    <h1 class="chapter">Mapping rents in Southern California</h1>
+                    <p>When plotted on a map, more than half of the renters in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties are above that <a href="http://censusreporter.org/data/table/?table=B25070&geo_ids=05000US06037,05000US06059,05000US06065,05000US06071,05000US06111">30 percent threshold</a>, according to data estimates available from the U.S. Census Bureau.</p>
+                </div>
                 <div id="content-map-legend">
                     <table cellspacing="0" cellpadding="1" border="0">
                         <tbody>
@@ -184,17 +188,15 @@
                         </tbody>
                     </table>
                 </div>
+                <div id="content-map-canvas"></div>
                 <div id="content-map-explainer">
-                    <div class="bound prologue">
-                        <p>When plotted on a map, more than half of the renters in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties are above that <a href="http://censusreporter.org/data/table/?table=B25070&geo_ids=05000US06037,05000US06059,05000US06065,05000US06071,05000US06111">30 percent threshold</a>, according to data estimates available from the U.S. Census Bureau.</p>
-                    </div>
+                    <h2>Click on the map to see rental data</h2>
                     <div id="content-map-data">
                         <div id="data-point-sentence"></div>
                         <div id="data-point-display"></div>
                         <div id="data-point-caveat"></div>
                     </div>
                 </div>
-                <div id="content-map-canvas"></div>
                 <div id="content-map-methodology">
                     <p><strong>About the data</strong>: Average renter figures for <a href="http://www.census.gov/geo/reference/zctas.html">Zip Code Tabulation Areas</a> in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties calculated from <a href="http://censusreporter.org/data/table/?table=B25120&amp;geo_ids=860|05000US06037">aggregate annual household income</a>, <a href="http://censusreporter.org/data/table/?table=B25065&amp;geo_ids=860|05000US06037">aggregate monthly gross rent paid</a> and <a href="http://censusreporter.org/data/table/?table=B25003&amp;geo_ids=860|05000US06037">number of occupied housing units by tenure</a> data via <a href="http://censusreporter.org/">CensusReporter</a> and on <a href="http://www.census.gov/acs/www/data_documentation/2012_release/">American Community Survey 2012 5-year estimates</a>. Tiered breakdown based on <a href="http://censusreporter.org/data/table/?table=B25070&amp;geo_ids=860|05000US06037">gross rent as a percentage of household income in the past 12 months</a> via <a href="http://censusreporter.org/">CensusReporter</a> and on <a href="http://www.census.gov/acs/www/data_documentation/2012_release/">American Community Survey 2012 5-year estimates</a>. GIS data for Zip Code Tabulation Areas via the L.A. Times <a href="http://boundaries.latimes.com/sets/">Mapping L.A. Boundaries API</a>.</p>
                 </div>
@@ -202,7 +204,7 @@
         </div>
         <!-- end map -->
 
-
+<article class="essay essay-pt1">
     <div class="bound prologue">
         <div class="prose">
 
@@ -273,7 +275,7 @@
         </div><!-- /prose -->
 
     </div><!--clearfix -->
-
+</article>
     <!--  ====================================================================================================================================== -->
 
 
@@ -345,10 +347,11 @@
         <script type="text/javascript" src="static/js/jquery.jplayer.2.0.min.js"></script>
         <script type="text/javascript" src="static/js/application.js"></script>
         <script type="text/javascript" src="static/js/functionality.js"></script>
+        <script type="text/javascript" src="static/js/zcta-county-data-one.js"></script>
+        <script type="text/javascript" src="static/js/zcta-county-data-two.js"></script>
         <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.2/leaflet.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-        <script type="text/javascript" src="static/js/zcta_five_county_data.js"></script>
         <script type="text/javascript" src="static/js/map-application.js"></script>
         <script type="text/javascript" src="https://www.publicinsightnetwork.org/air2/js/pinform.js"></script>
 
