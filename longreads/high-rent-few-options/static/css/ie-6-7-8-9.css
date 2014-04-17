@@ -1,0 +1,9 @@
+body {
+}
+
+.slideshow-core .slide-container img {
+	width: 100%;
+	height: auto; /* ensures that subsequently-fetched photos in the slideshow consistently retain their aspect ratios */
+}
+
+

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<!-- begin doc -->
+<html lang="en">
+
+    <!-- begin header -->
+    <head>
+
+        <!-- begin meta -->
+        <title>Renting in LA: What's your place worth? | 89.3 KPCC</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero dolor, dapibus bibendum tellus a, gravida dapibus felis. Etiam eu convallis ipsum. Donec sollicitudin vehicula lorem sed vestibulum. Proin commodo, nisi quis aliquet aliquet, dolor metus vehicula neque, nec suscipit orci eros non mauris. Pellentesque nec gravida magna, quis lacinia ligula. Sed suscipit porttitor ante, sit amet consequat dolor vehicula sed. Curabitur et lacus nec nulla dapibus malesuada." />
+        <meta name="keywords" content="rent, los angeles, la, renting, apartments, cost, responsive, longform, southern california public radio, chris keller, ben bergman, eric zassenhaus, jon white" />
+        <meta name="author" content="89.3 KPCC" />
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="apple-touch-icon-precomposed" href="meta/apple-touch-icon-144x144-precomposed.png" />
+        <link href="http://media.scpr.org/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="format-detection" content="telephone=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta property="og:site_name" content="Renting in LA: What's your place worth? | 89.3 KPCC" />
+        <meta property="og:title" content="Renting in LA: What's your place worth? | 89.3 KPCC" />
+        <meta property="og:url" content="http://projects.scpr.org/static/longreads/la_renting" />
+        <meta property="og:image" content="http://projects.scpr.org/longreads/static/la_renting/meta/kpcc-prison-og.jpg" />
+        <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed libero dolor, dapibus bibendum tellus a, gravida dapibus felis. Etiam eu convallis ipsum. Donec sollicitudin vehicula lorem sed vestibulum. Proin commodo, nisi quis aliquet aliquet, dolor metus vehicula neque, nec suscipit orci eros non mauris. Pellentesque nec gravida magna, quis lacinia ligula. Sed suscipit porttitor ante, sit amet consequat dolor vehicula sed. Curabitur et lacus nec nulla dapibus malesuada." />
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="#">
+        <meta name="twitter:domain" content="http://projects.scpr.org/">
+        <meta name="twitter:site" content="KPCC">
+        <meta name="twitter:title" content="#">
+        <meta name="twitter:description" content="#">
+        <meta name="twitter:image:src" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png">
+        <!-- end meta -->
+
+        <!-- begin css -->
+        <link href="static/css/reset.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="static/css/display.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
+        <!--<link href="static/css/styles.min.css" media="screen" rel="stylesheet" type="text/css" />-->
+
+        <!--[if lte IE 9]>
+            <link href="static/css/ie-6-7-8-9.css" media="screen" rel="stylesheet" type="text/css" />
+        <![endif]-->
+
+        <!--[if lt IE 9]>
+            <link href="static/css/ie-6-7-8.css" media="screen" rel="stylesheet" type="text/css" />
+        <![endif]-->
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.ie.min.css" />
+        <![endif]-->
+        <!-- end css -->
+
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <!-- end css -->
+
+        <!--load typekit-->
+        <script type="text/javascript" src="//use.typekit.net/vtu6xsq.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+
+    </head>
+    <!-- end header -->
+
+    <!-- begin body -->
+    <body>
+
+
+        <!-- ======================================================================================================= -->
+        <!-- The jPlayer div must not be hidden. Keep it at the root of the body element to avoid any such problems. -->
+            <div id="jquery_jplayer_1" class="cp-jplayer"></div>
+            <div id="jquery_jplayer_2" class="cp-jplayer"></div>
+            <div id="jquery_jplayer_3" class="cp-jplayer"></div>
+            <div id="jquery_jplayer_10" class="cp-jplayer"></div>
+        <!-- ======================================================================================================= -->
+
+
+        <header class="masthead">
+                <h1>high rent, <span>few options</span></h1>
+                <hgroup class="secondary">
+                    <div class="bound">
+                        <h2>Rising rents and short supply have Angelenos weighing their choices </h2>
+                        <h3><a href="http://kpcc.org" title="89.3 KPCC">89.3 KPCC</a></h3>
+                    </div>
+                </hgroup>
+                <div class="tertiary bound">
+                    <div class="clearfix">
+                        <aside class="bylines">
+                            <dl class="clearfix">
+                                <dt><a href="http://www.scpr.org/about/people/staff/ben-bergman">Ben Bergman</a> &amp; <a href="http://www.scpr.org/about/people/staff/chris-keller">Chris Keller</a></dt>
+                                <dd>Reporting</dd>
+                            </dl>
+                            <dl class="clearfix">
+                                <dt><a href="http://www.scpr.org/about/people/staff/kristen-lepore">Kristen Lepore</a> &amp; <a href="http://www.scpr.org/about/people/staff/ashley-alvarado">Ashley Alvarado</a></dt>
+                                <dd>Engagement</dd>
+                            </dl>
+                        </aside><!--/ .bylines -->
+                        <aside class="social">
+                            <ul class="clearfix">
+                                <li class="fb"><a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fprojects.scpr.org%2Fstatic%2Fprison-pregnancy%2F" class="track-event" data-ga-category="Masthead" data-ga-action="Sharing Links" data-ga-label="Facebook">Share on Facebook</a></li>
+                                <li class="tw"><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.scpr.org%2Fprison/&amp;text=Pregnant+In+Prison%3A+Should+newborns+live+with+their+incarcerated+mothers?&amp;via=kpcc" class="track-event" data-ga-category="Masthead" data-ga-action="Sharing Links" data-ga-label="Twitter">Share on Twitter</a></li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div><!--/ .tertiary -->
+        </header><!--/ .masthead -->
+
+    <!--   Lead Audio ================================================================================================================================================ -->
+                        <aside class="audio radio">
+                            <div id="jp_container_10" class="jp-audio bound">
+                                <div class="jp-type-single">
+                                    <div class="jp-gui jp-interface clearfix">
+
+                                                <ul class="jp-controls clearfix">
+                                                    <li><a href="javascript:;" class="jp-play track-event" data-bar-id="#play-bar-2" data-ga-category="Audio" data-ga-action="Play" data-ga-label="Radio Segment">play<span></span></a></li>
+                                                    <li><a href="javascript:;" class="jp-pause">pause<span></span><span class="last"></span></a></li>
+                                                </ul><!--/ .jp-controls -->
+                                                <div class="jp-progress clearfix">
+                                                    <div class="jp-bar" id="play-bar-2"><div class="jp-seek-bar"><div class="jp-play-bar"></div></div></div>
+                                                    <div class="jp-current-time"></div>
+                                                    <div class="duration">/ 04:10</div>
+                                                </div><!--/ .jp-progress -->
+                                                <div class="jp-title">
+
+                                                    <!-- if no javascript -->
+                                                     <noscript>Please enable JavaScript to view this interactive.</noscript>
+
+                                                    <p>Hear the full audio for this story</p>
+                                                </div><!--/ .jp-title -->
+
+                                    </div><!--/ .jp-gui -->
+                                </div><!--/ .jp-type-single -->
+                            </div><!--/ #jp_container_10 -->
+                        </aside><!--/ .radio -->
+
+    <!-- ======================================================================================================================================= -->
+
+        <article class="essay essay-pt1">
+                <div class="row">
+                    <div class="bound prologue">
+
+                        <p>In Southern California &ndash; a region where most residents can't afford to buy a house &ndash; there are more rents are the least affordable they've ever been, and the trend is likely to worsen.</p>
+
+                        <p>Those are two conclusions from recent studies about Southern California's housing market -- one from the California Housing Partnership Corporation, another from Harvard University.</p>
+
+                        <p>&ldquo;The rental market in Southern California is the least-affordable it&rsquo;s ever been,&rdquo; said Richard K. Green, Director of the <a href="http://lusk.usc.edu/">USC Lusk Center for Real Estate</a>. &ldquo;We have had essentially no new supply of apartments until quite recently so vacancy rates are very low, and that gives landlords a lot of pricing power so they can push rents, and they have to the point where they&rsquo;re beyond record levels.&rdquo;</p>
+
+                        <p>KPCC found an estimated <a href="http://censusreporter.org/data/table/?table=B25003&geo_ids=05000US06037,05000US06059,05000US06065,05000US06071,05000US06111">5.7 million places to live in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties</a>, according to data estimates available from the U.S. Census Bureau. About 48 percent of those housing units are occupied by renters who have few choices other than to pay higher percentages of their income for a place to live.</p>
+
+                        <p>&ldquo;We are losing ground rapidly against a chronic problem that forces households to cut essential spending,&rdquo; Eric Belsky, Managing Director of the Joint Center for Housing Studies at Harvard said in a statement.</p>
+
+                        <p>Consider:</p>
+
+                        <ul>
+                            <li>From 2000-2012, the inflation-adjusted median rent shot up by nearly 25 percent in L.A. County, according to the <a href="http://www.chpc.net/">CHPC</a>, a non-profit created by the state to advocate for affordable housing.</li>
+                            <li>During the same time, inflation-adjusted income declined by 9 percent, according to the CHPC.</li>
+                            <li>About 20 percent of California households spent more than half of their income on rent in 2011, more than triple what it was in 2000, according to the CHPC.</li>
+                            <li>California has the <a href="http://blogs.sacbee.com/capitolalertlatest/2013/02/california-home-ownership-continues-slide-now-second-lowest.html">second-lowest home ownership rate in the country</a>, just behind New York.</li>
+                            <li>More than half of Americans in rental units now spend more than 30 percent of their income on rent, which is an all-time high, according to the Harvard University study.</li>
+                        </ul>
+
+                    </div><!--/ .prologue -->
+
+                </div><!--/ .row -->
+
+        </article><!--/ .essay essay-pt1 -->
+
+        <!-- begin map -->
+        <div class="row row-pt1-d map-row">
+            <div id="content-map-container">
+                <div class="bound prologue">
+                    <h1 class="chapter">The 30 percent threshold</h1>
+                    <p>For years, financial planners' used that 30 percent threshold as a rule of thumb for renters: no more than 30 percent of your gross income should go to rent. But for many these days, with rents higher than they've ever been in Southern California, the 30 percent rule is a distant fantasy. When plotted on a map, more than half of the renters in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties are above that <a href="http://censusreporter.org/data/table/?table=B25070&geo_ids=05000US06037,05000US06059,05000US06065,05000US06071,05000US06111">30 percent threshold</a>, according to data estimates available from the U.S. Census Bureau.</p>
+                </div>
+                <div id="content-map-legend">
+                    <table cellspacing="0" cellpadding="1" border="0">
+                        <tbody>
+                            <tr>
+                                <td class="lower-tier"><span class="legend-text">&nbsp; Majority pays less than 30%</span></td>
+                                <td class="higher-tier"><span class="legend-text">&nbsp; Majority pays more than 30%</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="content-map-canvas"></div>
+                <div id="content-map-explainer">
+                    <h2>Click on the map to see rental data</h2>
+                    <div id="content-map-data">
+                        <div id="data-point-sentence"></div>
+                        <div id="data-point-display"></div>
+                        <div id="data-point-caveat"></div>
+                    </div>
+                </div>
+                <div id="content-map-methodology">
+                    <p><strong>About the data</strong>: Average renter figures for <a href="http://www.census.gov/geo/reference/zctas.html">Zip Code Tabulation Areas</a> in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties calculated from <a href="http://censusreporter.org/data/table/?table=B25120&amp;geo_ids=860|05000US06037">aggregate annual household income</a>, <a href="http://censusreporter.org/data/table/?table=B25065&amp;geo_ids=860|05000US06037">aggregate monthly gross rent paid</a> and <a href="http://censusreporter.org/data/table/?table=B25003&amp;geo_ids=860|05000US06037">number of occupied housing units by tenure</a> data via <a href="http://censusreporter.org/">CensusReporter</a> and on <a href="http://www.census.gov/acs/www/data_documentation/2012_release/">American Community Survey 2012 5-year estimates</a>. Tiered breakdown based on <a href="http://censusreporter.org/data/table/?table=B25070&amp;geo_ids=860|05000US06037">gross rent as a percentage of household income in the past 12 months</a> via <a href="http://censusreporter.org/">CensusReporter</a> and on <a href="http://www.census.gov/acs/www/data_documentation/2012_release/">American Community Survey 2012 5-year estimates</a>. GIS data for Zip Code Tabulation Areas via the L.A. Times <a href="http://boundaries.latimes.com/sets/">Mapping L.A. Boundaries API</a>.</p>
+                </div>
+            </div>
+        </div>
+        <!-- end map -->
+
+<article class="essay essay-pt1">
+    <div class="bound prologue">
+        <div class="prose">
+
+            <p>&ldquo;L.A. actually does stand out as having the highest share of people renting which in part is a reflection of the high housing costs in the area and a younger population as well,&rdquo; said Chris Herbert, Research Director at the Joint Center for Housing Studies at Harvard.</p>
+
+            <p>Paying more for rent means residents don’t have much money left to spend on other things, which hurts the overall economy.</p>
+
+            <p>From 2000-2012, the percentage of owners decreased in L.A. County by about 2 percent while the percentage of renters increased by about the same amount, according to the California Housing Partnership Corporation. That&rsquo;s partly because for many renters, saving up to buy a house has become cost prohibitive.</p>
+
+            <p>&ldquo;Saving for a down payment is nearly impossible if you’re paying half of your income in rent,&rdquo; said Green.</p>
+
+            <p>KPCC spent the last few weeks talking to renters in different parts of Los Angeles about living in a city where owning an apartment often comes with the cost of squeezing savings accounts dry.</p>
+
+            <!-- Spending almost an entire paycheck on rent -->
+
+            <p>Walk past a medal gate, through a small yard with a lemon tree, and up a flight of stairs, and you reach Chris Payne&rsquo;s rather cramped two-bedroom apartment in Hollywood. As much as he&rsquo;d like to at age 28, Payne couldn&rsquo;t even think about living here by himself so he splits the $1450 rent with a roommate, and even then, Payne has almost nothing left after he writes his rent check.<br />
+
+            <p>&ldquo;I just calculated it, and it&rsquo;s about 93 percent of my paycheck that goes to rent,&rdquo; said Payne.</p>
+
+            <p>That&rsquo;s before the tips Payne receives at the caf&eacute; where he works the counter, which can bring the percentage to a slightly more reasonable 60 or 70 percent of his net income. But either way you look at it, he has to stick to a tight budget, which means rarely eating out and limiting his purchases to the occasional music album.&nbsp;</p>
+
+            <blockquote>I guess I don&rsquo;t care a lot of about owning a lot of stuff, so that helps.&rdquo; <cite>Chris Payne, Hollywood</cite></blockquote>
+
+            <!-- A roadblock on the way to &lsquo;trying to live the American dream&rsquo;&nbsp; -->
+
+            <p>In Silver Lake, Joe Rezendes shares a 400 square-foot apartment with his boyfriend.&nbsp;</p>
+
+            <p>&ldquo;It&rsquo;s so small here,&rdquo; said Rezendes. &ldquo;Everything here has a function, and if it doesn&rsquo;t have a function it can&rsquo;t be in here.&rdquo;</p>
+
+            <p>Rezendes feels fortunate to be paying just over $1100 a month in rent &ndash; a bargain in trendy Silver Lake &ndash; but it still eats up about half what he takes home every month working as a fulfillment manager.</p>
+
+            <p>&ldquo;I don&rsquo;t feel like I&rsquo;m struggling, but I know that I&rsquo;m living paycheck to paycheck,&rdquo; said Rezendes, who at 40 would love to be living in a house by now, or at least a bigger apartment. He spends so much on rent, he knows it&rsquo;s impossible.</p>
+
+            <p>You can&rsquo;t be paying that much and trying to save for a house and trying to live the American dream&hellip;you just can&rsquo;t do that anymore," said Rezendes,<p>
+
+            <p>After a month of searching for something more affordable, Amy Ripley recently settled on an $1100 one-bedroom apartment in Echo Park, an improvement from the $1290 studio in Atwater Village where she lived before. Still, half her paycheck disappears every month.</p>
+
+            <p>&ldquo;Saying goodbye to over half your pay every month is really hard, but that&rsquo;s just the reality of it I guess,&rdquo; said Ripley. &ldquo;I have virtually no savings, which is hard to admit, but it&rsquo;s true. All my money goes to bills and rent.&rdquo;</p>
+
+            <p>Ripley, who works an office job, says saving for a down payment isn&rsquo;t something she even thinks about right now; She&rsquo;s tried to pare down her expenses as much as possible just to make rent.</p>
+
+            <blockquote>I rarely go out with friends. We usually do girls night in. Eating out at restaurants isn&rsquo;t very common. I rarely go shopping. There&rsquo;s definitely cutbacks, but to me it&rsquo;s worth it because the place you live, so much of your time is spent there. <cite>Amy Ripley, Echo Park</cite></blockquote>
+
+<!--                <p>Moving home when the rent goes up</p> -->
+
+            <p>For our last stop meeting renters in Los Angeles, we took the elevator up to Amika Sodhi&rsquo;s modern seventh floor, 1400 square foot apartment downtown.</p>
+
+            <p>Sodhi loved living in the bustling financial district for the past year and a half.</p>
+
+            <p>&ldquo;It&rsquo;s the lifestyle,&rdquo; she said. &ldquo;You can walk to the grocery store. It&rsquo;s two blocks away. It&rsquo;s exciting to be downtown when it&rsquo;s booming.&rdquo;</p>
+
+            <p>It was also expensive. Sodhi was spending close to half the monthly paycheck she earns working for a manufacturing technology company on rent, and that was before her landlord told her the rent was going up by several hundred dollars.</p>
+
+            <p>&ldquo;Even if I was making twice what I&rsquo;m making now, it wouldn&rsquo;t make sense to live here,&rdquo; said Sodhi.</p>
+
+            <p>So, the 28-year-old made the difficult decision to move back in with her parents in Covina.</p>
+
+            <p>&ldquo;This is the first time I&rsquo;m moving home as a real adult which I think is tough,&rdquo; said Sodhi. &ldquo;It almost feels like I&rsquo;m regressing, but I can&rsquo;t just pour all my hard work into a rental property.&rdquo;</p>
+
+            <p>A recent study from the National Association of Home Builders found the share of 25- to 34-year-olds living with their parents went from 12-percent in 1990-2005 to more than 19-percent in 2012.</p>
+
+            <p>Being a renter for the better part of decade has depleted Sodhi&rsquo;s savings account. By living at home, she hoped to start putting aside enough for a down payment.</p>
+
+            <p>&ldquo;Because that&rsquo;s what the next step needs to be, unless I want to be a renter for the rest of life, which I don&rsquo;t want to be,&rdquo; said Sodhi.</p>
+
+            <p>But that will have to wait. Living with her parents lasted just three weeks. Sodhi recently decided to move back downtown, to a small studio in the historic core district. It&rsquo;s eating up half her paycheck, and now she&rsquo;s trying to take on freelance copywriting gigs to help afford the rent.</p>
+
+        </div><!-- /prose -->
+
+    </div><!--clearfix -->
+</article>
+    <!--  ====================================================================================================================================== -->
+
+
+    <div class="row row-pt1-d">
+
+        <div class="bound clearfix">
+            <h1 class="chapter">What's your rent trade-off?</h1>
+            <div class="prose">
+
+                <p class="afterward">We're looking to expand our coverage and understanding of the rent crunch in Los Angeles. What do you pay for rent? What trade-offs do you find yourself weighing when considering where to rent in L.A.? Let us know in the form below. We'll include your information in our series. </p>
+
+                <div id="pin-query-7345004f6c9f" class="pin-query-container"></div>
+
+            </div><!-- /prose -->
+
+        </div><!-- /bound -->
+
+    </div><!-- row -->
+
+        <!-- Begin Disqus -->
+        <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'kpcc'; // required: replace example with your forum shortname
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+        <footer class="afterword">
+            <div class="bound clearfix">
+                <div class="brand">
+                    <a href="http://kpcc.org" title="89.3 KPCC">89.3 KPCC</a>
+                </div>
+                <div class="credits">
+                    <dl class="clearfix">
+                        <dt>Reporting</dt>
+                        <dd><a href="http://www.scpr.org/about/people/staff/Ben-Bergman" title="Ben Bergman at KPCC">Ben Bergman</a> &amp; <a href="http://www.scpr.org/about/people/staff/chris-keller" title="Chris Keller">Chris Keller</a></dd>
+                    </dl>
+                    <dl class="clearfix">
+                        <dt>Editor</dt>
+                        <dd><a href="http://www.scpr.org/about/people/staff/doug-krizner" title="Dough Krizner at KPCC">Doug Krizner</a></dd>
+                    </dl>
+                    <dl class="clearfix">
+                        <dt>Web Production</dt>
+                        <dd> <a href="http://www.scpr.org/about/people/staff/eric-zassenhaus" title="Eric Zassenhaus">Eric Zassenhaus</a></dd>
+                    </dl>
+                </div>
+                <div class="legal">
+                    <ul>
+                        <li><a href="http://kpcc.org/terms">Terms &amp; Conditions</a></li>
+                        <li><a href="http://kpcc.org/privacy">Privacy</a></li>
+                        <li><a href="http://kpcc.org/web_site_feedback">Website Feedback</a></li>
+                    </ul>
+                    <p>Copyright 2014 &copy; Southern California Public Radio</p>
+                </div><!-- brand -->
+            </div><!-- clearfix -->
+        </footer>
+
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="static/js/jquery.jplayer.2.0.min.js"></script>
+        <script type="text/javascript" src="static/js/application.js"></script>
+        <script type="text/javascript" src="static/js/functionality.js"></script>
+        <script type="text/javascript" src="static/js/zcta-county-data-one.js"></script>
+        <script type="text/javascript" src="static/js/zcta-county-data-two.js"></script>
+        <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.2/leaflet.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+        <script type="text/javascript" src="static/js/map-application.js"></script>
+        <script type="text/javascript" src="https://www.publicinsightnetwork.org/air2/js/pinform.js"></script>
+
+        <!-- begin chartbeat -->
+        <script type="text/javascript">
+            var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
+            (function() {
+                function loadChartbeat() {
+                    window._sf_endpt = (new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+                    document.body.appendChild(e);
+                };
+                var oldonload = window.onload;
+                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+            })();
+        </script>
+        <!-- end chartbeat -->
+
+        <!-- begin google analytics -->
+        <script type="text/javascript">
+            var hostName = 'projects.scpr.org';
+            var _gaq = _gaq || [];
+            _gaq.push(
+                ['_setAccount', 'UA-624724-1'],
+                ['_setDomainName', hostName],
+                ['_setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['_setCustomVar', 7, 'PageType', 'Story', 3],
+                ['_trackPageview'],
+                ['b._setAccount', 'UA-18188937-11'],
+                ['b._setDomainName', hostName],
+                ['b._setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['b._setCustomVar', 7, 'PageType', 'Story', 3],
+                ['b._trackPageview']
+            );
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!-- end google analytics -->
+
+        <!-- begin webtrends stats -->
+        <script src="http://media.scpr.org/assets/scripts/webtrends.v2.js"></script>
+        <script>
+            //<![CDATA[
+                var _tag=new WebTrends();
+                _tag.dcsGetId();
+            //]]>
+        </script>
+        <script>
+            //<![CDATA[
+                _tag.dcsCustom=function(){
+                    // Add custom parameters here.
+                    //_tag.DCSext.param_name=param_value;
+                }
+            _tag.dcsCollect();
+            //]]>
+        </script>
+        <noscript>
+            <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsyqctzwuz5bdsebpmwhwe8w_2p8d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.3.0&amp;WT.dcssip=www.scpr.org"/></div>
+        </noscript>
+        <!-- end webtrends stats -->
+
+        <!-- begin comscore stats -->
+        <script>
+            var _comscore = _comscore || [];
+            _comscore.push({ c1: "2", c2: "6035974", c3: "", c4: "" });
+            (function() {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+            })();
+        </script>
+        <noscript>
+            <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035974&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
+        </noscript>
+        <!-- end comscore stats -->
+
+    </body>
+    <!-- end body -->
+
+</html>
+<!-- end document -->
