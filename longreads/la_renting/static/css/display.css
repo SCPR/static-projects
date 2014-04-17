@@ -16,12 +16,94 @@
 	############################################################################################################## */
 
 
+/* Fonts */
+@font-face {
+    font-family: 'merriweatherbold';
+    src: font-url('../fonts/merriweather-bold-webfont.eot');
+    src: font-url('../fonts/merriweather-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('../fonts/merriweather-bold-webfont.woff') format('woff'),
+         font-url('../fonts/merriweather-bold-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'merriweatherbold_italic';
+    src: font-url('../fonts/merriweather-bolditalic-webfont.eot');
+    src: font-url('../fonts/merriweather-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('../fonts/merriweather-bolditalic-webfont.woff') format('woff'),
+         font-url('../fonts/merriweather-bolditalic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'merriweatheritalic';
+    src: font-url('../fonts/merriweather-italic-webfont.eot');
+    src: font-url('../fonts/merriweather-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('../fonts/merriweather-italic-webfont.woff') format('woff'),
+         font-url('../fonts/merriweather-italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'merriweatherlight';
+    src: font-url('../fonts/merriweather-light-webfont.eot');
+    src: font-url('../fonts/merriweather-light-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('../fonts/merriweather-light-webfont.woff') format('woff'),
+         font-url('../fonts/merriweather-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'merriweatherlight_italic';
+    src: font-url('../fonts/merriweather-lightitalic-webfont.eot');
+    src: font-url('../fonts/merriweather-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('../fonts/merriweather-lightitalic-webfont.woff') format('woff'),
+         font-url('../fonts/merriweather-lightitalic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'merriweatherregular';
+    src: font-url('../fonts/merriweather-regular-webfont.eot');
+    src: font-url('../fonts/merriweather-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('../fonts/merriweather-regular-webfont.woff') format('woff'),
+         font-url('../fonts/merriweather-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 
 
     body {
     	background: white;
         -webkit-text-size-adjust: none;
-    	font-family: Georgia, serif;
+    	font-family: "merriweatherregular", serif;
     	font-weight: 400;
     	font-size: 100%;
     	line-height: 1.2;
@@ -53,7 +135,7 @@
 	box-shadow: inset 0 -550px 0 rgba(0,0,0,0.5);
 }
 		.masthead h1 {
-			font: normal 200 6.875em/1.25 "proxima-nova", Helvetica, sans-serif; /* 110 / 16 */
+			font: normal 200 6.875em/1.25 "freight-sans-pro", Helvetica, sans-serif; /* 110 / 16 */
 			text-align: center;
 			color: #F16500;
 			text-shadow: 0 0 13px rgba(0,0,0,0.3);
@@ -65,7 +147,7 @@
 				}
 
 		.masthead .secondary {
-			padding: 10px 0 20px;
+			padding: 10px 0 15px;
 			margin-bottom: 28px;
 		}
 				.masthead .secondary .bound {
@@ -73,16 +155,18 @@
 					z-index: 1;
 				}
 						.masthead .secondary h2 {
+
 							position: relative;
 							text-align: right;
 							color: white;
 							z-index: 2;
 							font: normal 400 1.1875em/1.2 sans-serif; /* 19 / 16 */
+							font-family:"freight-sans-pro", sans-serif;
 						}
 						.masthead .secondary h3 {
 							position: absolute;
 							z-index: 3;
-							top: 6px;
+							top: 4px;
 							left: 0;
 						}
 								.masthead .secondary a {
@@ -102,7 +186,7 @@
 				}
 				.masthead .bylines {
 					float: left;
-					font-size: 0.75em;
+					font-size: 0.875em;
 					line-height: 1;
 					color: #d8d8d8;
 					min-width: 185px;
@@ -111,7 +195,7 @@
 				}
 						.masthead .bylines a {
 							text-decoration: none;
-							color: #A4E4FF;
+							color: #fff;
 						}
 						.masthead .bylines a:hover {
 							color: white;
@@ -248,7 +332,7 @@
 							margin-bottom: 18px; /* had been 28 until now */
 						}
 						.masthead .secondary h3 {
-							top: 8px;
+							top: 3px;
 						}
 
 				    }
@@ -259,8 +343,8 @@
 				    @media screen and (max-width: 800px) {
 
 						.masthead {
-							background-size: 1200px 251px; /* 0.6 */
-							height: 251px;
+							background-size: 1200px 300px; /* 0.6 */
+							height: 300px;
 							padding-bottom: 0;
 						}
 						.masthead h1 {
@@ -292,14 +376,15 @@
 						}
 						.masthead .tertiary .bylines {
 							padding-top: 5px;
+							width:45.545455%;
 						}
 						.masthead .tertiary .social {
 							padding-top: 10px;
 						}
 
 						.masthead .secondary h2 {
-							font-size: 0.75em;
-                        }
+							font-size: 1em;
+            }
 						.masthead .secondary a {
 						    width:100px;
 						}
@@ -338,7 +423,7 @@
 						}
 
 						.masthead .secondary a {
-						    width:70px;
+						    width:100px;
 						}
 
 /*						.masthead .secondary h3 {
@@ -396,7 +481,7 @@
 				    @media screen and (max-width: 533px) {
 
 						.masthead {
-							background-size: 1000px 210px; /* 0.5 */
+							background-size: 1000px 320px; /* 0.5 */
 							height: auto;
 							padding-bottom: 7px;
 						}
@@ -723,6 +808,10 @@
 				.chapter-lead h3 {
 					font-size: 1em; /* had been 1.25 */
 				}
+				.prologue blockquote {
+					margin-left:0 !important;
+					margin-right:0 !important;
+				}
 
 
 		    }
@@ -740,11 +829,13 @@
 	############################################################################################################## */
 
 .chapter {
-		font-family:"proxima-nova", Helvetica, sans-serif;
+		font-family:"freight-sans-pro", Helvetica, sans-serif;
     font-weight: 300;
     color:#F16500;
     font-size: 3em;
-    margin: 0.5em 3em;}
+    margin: 0.5em 3em;
+		text-align:center;
+  }
 
     	/*	===================================================================================
 		    =================================================================================== */
@@ -753,6 +844,10 @@
 
 				.chapter {
 					font-size: 2em;
+					margin:0.5em 0;
+				}
+				.row-pt1-d .prose {
+					width:100% !important;
 				}
 
 		    }
@@ -773,15 +868,23 @@
 		.essay table,
 		.essay ol {
 			margin: 1.2em;
-			line-height: 1.28;
+			line-height: 1.4;
+		}
+		.essay ul li {
+			list-style:disc;
+			margin-bottom:1.2em;
+		}
+
+		.essay a {
+			color:#31AAD3;
+			text-decoration:none;
 		}
 
 .prologue {
 	color: #2f2f2f;
-	font: normal 500 1.3em/1.15 "proxima-nova", Helvetica, sans-serif; /* 30 / 16 */
-	width:65%;
-    border-bottom: 1px solid #7ac8d4;
-    padding-bottom: 40px;
+	font: normal 500 1.3em/1.15 "merriweatherregular", Georgia, serif; /* 30 / 16 */
+	width:55%;
+  padding-bottom: 40px;
 }
 
         .prologue a {
@@ -789,19 +892,39 @@
         }
 
         .prologue blockquote {
-        	background:
-        		url(i/ephemera-quote-gray-open.png) no-repeat 0 0,
-        		url(i/ephemera-quote-gray-close.png) no-repeat bottom right;
-        	background-size:
-        		122px 77px,
-        		122px 77px; /* one quarter of source 446 x 280 */
+        	font-family:"freight-sans-pro", Helvetica, sans-serif;
         	padding: 9% 4%;
-        	margin: 0px 10px -15px;
+        	position:relative;
+        	margin: 0px -17% -15px;
         	font-weight: 200px;
         	font-size: 150%;
         	font-weight: 200;
         	text-transform: uppercase;
+        	z-index:1;
         }
+        	.prologue blockquote:before {
+        		color:#ebebeb;
+        		content:"“";
+        		display:block;
+        		font-family:"merriweatherregular", Georgia, serif;
+        		font-size:5em;
+        		position:absolute;
+        		left:0;
+        		top:0;
+        		z-index:-1;
+        	}
+        	.prologue blockquote:after {
+        		color:#ebebeb;
+        		content:"”";
+        		display:block;
+        		font-family:"merriweatherregular", Georgia, serif;
+        		font-size:5em;
+        		position:absolute;
+        		right:0;
+        		bottom:0;
+        		z-index:-1;
+        	}
+        	
 
           .prologue blockquote cite {
     			text-transform: initial;
@@ -813,7 +936,8 @@
 
 
 .afterward {
-    font: italic 100 1em/1.28 georgia, sans-serif;
+    font: italic 100 1em/1.4em "merriweatheritalic", Georgia, serif;
+    margin-bottom:1.5em;
 }
 
 .row {
@@ -941,9 +1065,12 @@
             background: #f2f2f2;
             padding:10px;
 		}
+			.row-pt1-d.map-row {
+        padding-right:0;
+			}
 				.row-pt1-d .prose {
-					float: right;
-					width:75%;
+					margin:0 auto;
+					width:61%;
 				}
 
 				.infographic {
@@ -1292,7 +1419,7 @@
 
 		.prologue {
 			font-size: 1em;
-			width:80%;
+			width:90% !important;
 		}
 
 
@@ -1752,7 +1879,7 @@
     						cursor:pointer;
     					}
     					.audio.radio .jp-play-bar {
-    						background:#E33500;
+    						background:#F16500;
     						border-radius:3px;
     						height:6px;
     					}
@@ -2253,6 +2380,9 @@ object, embed {
 
     @media screen and (max-width: 1023px) {
 
+		.prologue {
+			width:70%;
+		}
 		.families h3						{ font-size: 2.1em;		}
 		.families .audio					{ font-size: 0.95em;	}
 		.families h4						{ font-size: 2.2em;		}
@@ -2751,19 +2881,34 @@ object, embed {
 
 /* map */
 .map-row .prologue {border-bottom: 0px solid #7ac8d4;}
-#content-map-container {width: 98%; height: 1020px; margin: 0px 0 1% 0 1%; padding: 10px 0 0 0; color: #2f2f2f;}
-#content-map-explainer {float: left; width: 25%; height: 950px; padding: 0;}
+#content-map-container {height: 1150px; margin: 0px 0 1% 0 1%; padding: 10px 0 0 0; color: #2f2f2f;}
+#content-map-container a {color:#31AAD3;text-decoration:none;}
+#content-map-container .prologue {width:89%;}
+#content-map-container .prologue p {color:#666;font-family:"freight-sans-pro", Helvetica, sans-serif;font-size: 0.875em;}
+#content-map-container .chapter {font-size:2em;margin:0 0 0.75em;}
+#content-map-explainer {background:#fff;border:1px solid #ebebeb;float: left; width: 25%; height: 821px; padding: 0;}
+#content-map-explainer h2 {color:#F16500;font-family:"freight-sans-pro", Helvetica, sans-serif;font-size:1.25em !important; text-align:center;margin:10px !important;padding-bottom:8px;border-bottom:1px solid #ccc;}
 #content-map-explainer #content-map-data {width: 96%; height: 530px; margin: 15px 2% 15px 2%; font: normal 500 .8em/1.15 "proxima-nova", Helvetica, sans-serif;}
 #content-map-data #data-point-sentence {width: 96%; height: auto; margin: 15px 2% 15px 2%;}
 #content-map-data #data-point-display {width: 96%; height: 260px; margin: 15px 2% 25px 2%;}
 #content-map-data #data-point-caveat {width: 96%; height: 25px; margin: 15px 2% 25px 2%; text-align: center;}
 #content-map-legend {float: right; width: 74%; height: 40px;}
-#content-map-legend table {width: 100%; margin: 0px; line-height: 2em; border-width: 0px; border-style: solid; border-color: gray; border-collapse: collapse; background-color: white; font: normal 500 1em/1.15 "proxima-nova", Helvetica, sans-serif;}
-#content-map-legend td {padding: 2px; text-align: center; font-weight: bold; width: 25%;}
-#content-map-legend td.lower-tier {background-color: #fdbe85;}
-#content-map-legend td.higher-tier {background-color: #d94701;}
+#content-map-legend table {width: 100%; margin: 0px; line-height: 2em; border-width: 0px; border-style: solid; border-color: gray; border-collapse: collapse; font: normal 500 1em/1.15 "proxima-nova", Helvetica, sans-serif;}
+#content-map-legend td {padding: 2px; text-align: left; font-weight: bold; width: 25%;}
+#content-map-legend td.lower-tier {border-left:22px solid #fdbe85;}
+#content-map-legend td.higher-tier {border-left:22px solid #d94701;}
 #content-map-canvas {float: right; width: 74%; height: 820px;}
 #content-map-methodology {float: right; width: 74%; height: auto; margin: 15px 0 15px 0; font-size: 0.8125em; line-height: 1.2; font-family: Georgia, serif; font-weight: 400;}
+#content-map-methodology p {color:#666;line-height:1.4em;}
+
+@media screen and (max-width:880px) {
+	.row-pt1-d.map-row {padding:0 10px;}
+	#content-map-legend {float:none;width:100%;}
+	#content-map-container {height:auto;}
+	#content-map-explainer {float:none;height:575px;width:100%;}
+	#content-map-canvas {float:none;height:600px;width:100%;}
+	#content-map-methodology {float:none;width:100%;}
+}
 
 /* typography */
 #content-map-container .lt-30pct {color: #fdbe85;}
