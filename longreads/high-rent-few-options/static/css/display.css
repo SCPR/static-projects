@@ -2891,7 +2891,7 @@ object, embed {
 
 /* map */
 .map-row .prologue {border-bottom: 0px solid #7ac8d4;}
-#content-map-container {height: 1150px; margin: 0px 0 1% 0 1%; padding: 10px 0 0 0; color: #2f2f2f;}
+#content-map-container {height: 1175px; margin: 0px 0 1% 0 1%; padding: 10px 0 10px 0; color: #2f2f2f;}
 #content-map-container a {color:#31AAD3;text-decoration:none;}
 #content-map-container .prologue {width:89%;}
 #content-map-container .prologue p {color:#666;font-family:"freight-sans-pro", Helvetica, sans-serif;font-size: 0.875em;}
