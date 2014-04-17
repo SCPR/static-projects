@@ -82,7 +82,7 @@ $(document).ready(function() {
         return;
     }
 
-    js_audioPlayer("http://projects.scpr.org/static/longreads/la_renting/media/audio/rent.mp3", 10);
+    js_audioPlayer("http://projects.scpr.org/static/longreads/high-rent-few-options/media/audio/rent.mp3", 10);
 
     $(".radio .jp-play").click(function() {
         var playBar = $(this).data("bar-id");
