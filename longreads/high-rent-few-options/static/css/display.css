@@ -762,11 +762,6 @@
 	##############################################################################################################
 	############################################################################################################## */
 
-.essay .series-intro {
-    font: italic 200 1em/1.05 Georgia, serif;
-	margin: -2.75em 0em 2.25em 3.5em;
-	line-height: 1.25em;
-}
 
     .chapter-lead {
     	background: #7ac8d4;
@@ -868,6 +863,11 @@
 .essay {
 	margin-bottom: 55px; /* arbitrary */
 }
+        .essay .series-intro {
+            font: italic 200 1em/1.05 Georgia, serif;
+        	margin: -2.75em 2.25em 2.25em 3.5em;
+        	line-height: 1.25em;
+        }
 		.essay p,
 		.essay ul,
 		.essay dl,
@@ -890,7 +890,7 @@
 	color: #2f2f2f;
 	font: normal 500 1.3em/1.15 "merriweatherregular", Georgia, serif; /* 30 / 16 */
 	width:55%;
-  padding-bottom: 40px;
+    padding-bottom: 40px;
 }
 
         .prologue a {
