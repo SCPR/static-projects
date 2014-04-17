@@ -99,10 +99,14 @@ var fn = {
                     var featcherSentence = _.template(
                         "<div id='zip_<%= name %>'>" +
                             "<h4>Renters occupy an estimated <span class='gt-30pct'><%= fn.addCommas(la_area_rent_rent_total) %> </span> households in <%= la_area_rent_county_proper %> County's <a href='http://censusreporter.org/profiles/86000US<%= name %>-<%= name %>/'><%= name %></a> Zip Code Tabulation Area (<a href='http://www.census.gov/geo/reference/zctas.html' target='_blank'>ZCTA</a>), according to American Community Survey data.</h4>" +
+
+                            /*
                             "<% if (la_area_rent_rent_income_past_12_aggregate != null && la_area_rent_rent_aggregate_total != null) { %>" +
                                 "<h4>The average renter-occupied household here earns about <span class='gt-30pct'>$<%= fn.averageRenter(la_area_rent_rent_income_month_average, la_area_rent_rent_total) %></span> a month and spends an average of <span class='gt-30pct'>$<%= fn.averageRenter(la_area_rent_rent_aggregate_total, la_area_rent_rent_total) %></span> on rent each month, about <span class='gt-30pct'><%= fn.rentToIncome(la_area_rent_rent_aggregate_total, la_area_rent_rent_income_month_average, la_area_rent_rent_total) %>% </span>of their monthly income.</h4>" +
                             "<% } %>" +
-                            "<h4>Here's the breakdown of this area's household's rent burden as a percentage of its income:</h4>" +
+                            */
+
+                            "<h4>Here's the breakdown of this area's household rent burden as a percentage of its income:</h4>" +
                         "</div>", feature.properties);
 
                     var featcherGraphs = _.template(
@@ -244,10 +248,14 @@ var fn = {
                     var featcherSentence = _.template(
                         "<div id='zip_<%= name %>'>" +
                             "<h4>Renters occupy an estimated <span class='gt-30pct'><%= fn.addCommas(la_area_rent_rent_total) %> </span> households in <%= la_area_rent_county_proper %> County's <a href='http://censusreporter.org/profiles/86000US<%= name %>-<%= name %>/'><%= name %></a> Zip Code Tabulation Area (<a href='http://www.census.gov/geo/reference/zctas.html' target='_blank'>ZCTA</a>), according to American Community Survey data.</h4>" +
+
+                            /*
                             "<% if (la_area_rent_rent_income_past_12_aggregate != null && la_area_rent_rent_aggregate_total != null) { %>" +
                                 "<h4>The average renter-occupied household here earns about <span class='gt-30pct'>$<%= fn.averageRenter(la_area_rent_rent_income_month_average, la_area_rent_rent_total) %></span> a month and spends an average of <span class='gt-30pct'>$<%= fn.averageRenter(la_area_rent_rent_aggregate_total, la_area_rent_rent_total) %></span> on rent each month, about <span class='gt-30pct'><%= fn.rentToIncome(la_area_rent_rent_aggregate_total, la_area_rent_rent_income_month_average, la_area_rent_rent_total) %>% </span>of their monthly income.</h4>" +
                             "<% } %>" +
-                            "<h4>Here's the breakdown of this area's household's rent burden as a percentage of its income:</h4>" +
+                            */
+
+                            "<h4>Here's the breakdown of this area's household rent burden as a percentage of its income:</h4>" +
                         "</div>", feature.properties);
 
                     var featcherGraphs = _.template(
