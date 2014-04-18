@@ -2946,7 +2946,7 @@ object, embed {
 #content-map-container .lt-30pct {color: #fdbe85;}
 #content-map-container .gt-30pct {color: #d94701;}
 #content-map-explainer h1 {font-size: 30px; line-height: 28px; margin: 0 0 10px 0;}
-#content-map-explainer h2 {font-size: 24px; line-height: 24px; margin: 0 0 5px 0; color: #F16500; font-family: "freight-sans-pro", Helvetica, sans-serif; font-size: 1.25em !important; text-align: center; margin :10px !important; padding-top: 8px; border-top: 1px solid #ccc;}
+#content-map-explainer h2 {font-size: 24px; line-height: 24px; margin: 0 0 5px 0; color: #F16500; font-family: "freight-sans-pro", Helvetica, sans-serif; font-size: 1.25em !important; text-align: center; margin :10px !important; padding-top: 8px; /*border-top: 1px solid #ccc;*/}
 #content-map-explainer h3 {font-size: 20px; line-height: 20px; margin: 0 0 5px 0;}
 #content-map-explainer h4 {font-size: 16px; line-height: 20px; margin: 0 0 5px 0;}
 #content-map-container .stat-point {font-size: 30px; color: #f07a30;}
@@ -2960,218 +2960,54 @@ object, embed {
 #content-map-data .chartlist .index {display: block; position: absolute; top: 0; left: 0; height: 100%; background: #fdbe85; text-indent: -9999px; overflow: hidden; line-height: 2em;}
 #content-map-data .chartlist li:hover {background: #efefef;}
 
-#content-map-container .controls form {
-    margin: 0 6.59842519685%}
+#content-map-container .controls form { margin: 0 6.59842519685% }
+#content-map-container .controls .geography-browser { /* background: rgba(0, 0, 0, 0.06); */ padding: 0 5% 15px; width: 100%; margin: 0 0 20px -5%; /* box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.07); */ border-radius: 5px; }
+#content-map-container .controls .control { margin-bottom: 8px }
+#content-map-container .controls .control label,
+#content-map-container .controls .control input { font-weight: 700; color: #9e4100; font-size: 0.75em; font-family: "proxima-nova",  "Avenir Next",  "Avenir",  "Lucida Grande",  "Corbel",  "Tahoma",  Arial,  sans-serif; }
+#content-map-container .controls .control input { color: #d15904 }
+#content-map-container .controls .control input[type="checkbox"] { border: 1px solid blue; -webkit-appearance: checkbox; }
+#content-map-container .controls .control p { margin-bottom: 8px }
+#content-map-container .controls .control p label,
+#content-map-container .controls .control p input { display: inline-block }
+#content-map-container .controls .control.stacked { padding-top: 8px }
+#content-map-container .controls .control.stacked p input { border: none; background: none; padding: 0; width: 5em; }
+#content-map-container .controls .control.stacked label { font-size: 0.6875em; text-transform: uppercase; color: #7e7e7e; }
+#content-map-container .controls .control.toggle { background: #ecd2a2; border-radius: 5px; padding: 1px 5% 4px; margin-left: -5%; width: 100%; position: relative; }
+#content-map-container .controls .control.toggle label { line-height: 1; display: block; margin: 5px 0 3px 19px; }
+#content-map-container .controls .control.toggle input { position: absolute; top: 6px; left: 5%; }
+#content-map-container .controls .control.location { padding-top: 15px }
+#content-map-container .controls .control.location .pairing.text { margin-bottom: 8px }
+#content-map-container .controls .control.location .pairing.text label { display: block; margin-bottom: 5px; }
+#content-map-container .controls .control.location input[type="text"] { display: block; border: 1px solid gray; box-sizing: border-box; -moz-box-sizing: border-box; padding: 3px; width: 100%; font-weight: normal; }
+#content-map-container .control.submit,
+#content-map-container .control.reset { padding: 8px 0 8px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.15); margin: 10px 0 0; }
+#content-map-container .control.submit button,
+#content-map-container .control.reset button { display: block; padding: 6px 9px; cursor: pointer; width: 100%; text-align: center; border: none; background: #d94701; color: white; /*font-family: "proxima-nova",  "Avenir Next",  "Avenir",  "Lucida Grande",  "Corbel",  "Tahoma",  Arial,  sans-serif;; font-weight: 700; */ font-size: 0.9375em; text-transform: uppercase; }
+#content-map-container .control.submit button:hover,
+#content-map-container .control.reset button:hover { background: #fdbe85; color: #2f2f2f; }
+#content-map-container .controls #location-awareness-input .no-show { display: none }
+#content-map-container .no-show-this { display: none }
 
-#content-map-container .controls .geography-browser {
-    /* background: rgba(0, 0, 0, 0.06); */
-    padding: 0 5% 15px;
-    width: 100%;
-    margin: 0 0 20px -5%;
-    /* box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.07); */
-    border-radius: 5px;
-}
-
-#content-map-container .controls .control {
-    margin-bottom: 8px;
-}
-#content-map-container .controls .control label, #content-map-container .controls .control input {
-    font-weight: 700;
-    color: #9e4100;
-    font-size: 0.75em;
-    font-family: "proxima-nova",  "Avenir Next",  "Avenir",  "Lucida Grande",  "Corbel",  "Tahoma",  Arial,  sans-serif;
-}
-#content-map-container .controls .control input {
-    color: #d15904;
-}
-
-#content-map-container .controls .control input[type="checkbox"] {
-    border: 1px solid blue;
-    -webkit-appearance: checkbox;
-}
-
-#content-map-container .controls .control p {
-    margin-bottom: 8px;
-}
-
-#content-map-container .controls .control p label, #content-map-container .controls .control p input {
-    display: inline-block;
-}
-
-#content-map-container .controls .control.stacked {
-    padding-top: 8px;
-}
-
-#content-map-container .controls .control.stacked p input {
-    border: none;
-    background: none;
-    padding: 0;
-    width: 5em;
-}
-
-#content-map-container .controls .control.stacked label {
-    font-size: 0.6875em;
-    text-transform: uppercase;
-    color: #7e7e7e;
-}
-
-#content-map-container .controls .control.toggle {
-    background: #ecd2a2;
-    border-radius: 5px;
-    padding: 1px 5% 4px;
-    margin-left: -5%;
-    width: 100%;
-    position: relative;
-}
-
-#content-map-container .controls .control.toggle label {
-    line-height: 1;
-    display: block;
-    margin: 5px 0 3px 19px;
-}
-
-#content-map-container .controls .control.toggle input {
-    position: absolute;
-    top: 6px;
-    left: 5%}
-
-    #content-map-container .controls .control.location {
-    padding-top: 15px;
-}
-
-#content-map-container .controls .control.location .pairing.text {
-    margin-bottom: 8px;
-}
-
-#content-map-container .controls .control.location .pairing.text label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#content-map-container .controls .control.location input[type="text"] {
-    display: block;
-    border: 1px solid gray;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    padding: 3px;
-    width: 100%;
-    font-weight: normal;
-}
-
-#content-map-container .control.submit, #content-map-container .control.reset {
-    padding: 8px 0 8px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-    margin: 10px 0 0;
-}
-
-#content-map-container .control.submit button, #content-map-container .control.reset button {
-    display: block;
-    padding: 6px 9px;
-    cursor: pointer;
-    width: 100%;
-    text-align: center;
-    border: none;
-    background: #d94701;
-    color: white;
-    /*font-family: "proxima-nova",  "Avenir Next",  "Avenir",  "Lucida Grande",  "Corbel",  "Tahoma",  Arial,  sans-serif;
-    font-weight: 700;*/
-    font-size: 0.9375em;
-    text-transform: uppercase;
-}
-
-#content-map-container .control.submit button:hover, #content-map-container .control.reset button:hover {
-    background: #fdbe85;
-    color: #2f2f2f;
-}
-
-#content-map-container .controls #location-awareness-input .no-show {
-	display: none;
-}
-
-#content-map-container .no-show-this {
-	display: none;
-}
 
 @-moz-keyframes leaflet-usermarker-pulsate {
-    from {
-        -moz-transform: scale(0.5);
-        opacity: 1.0;
-    }
-    95% {
-        -moz-transform: scale(1.3);
-        opacity: 0;
-    }
-    to {
-        -moz-transform: scale(0.7);
-        opacity: 0;
-    }
+    from { -moz-transform: scale(0.5); opacity: 1.0; }
+    95% { -moz-transform: scale(1.3); opacity: 0; }
+    to { -moz-transform: scale(0.7); opacity: 0; }
 }
 @-webkit-keyframes leaflet-usermarker-pulsate {
-    from {
-        -webkit-transform: scale(0.5);
-        opacity: 1.0;
-    }
-    95% {
-        -webkit-transform: scale(1.3);
-        opacity: 0;
-    }
-    to {
-        -webkit-transform: scale(0.7);
-        opacity: 0;
-    }
+    from { -webkit-transform: scale(0.5); opacity: 1.0; }
+    95% { -webkit-transform: scale(1.3); opacity: 0; }
+    to { -webkit-transform: scale(0.7); opacity: 0; }
 }
 @keyframes leaflet-usermarker-pulsate {
-    from {
-        transform: scale(0.5);
-        opacity: 1.0;
-    }
-    95% {
-        transform: scale(1.3);
-        opacity: 0;
-    }
-    to {
-        transform: scale(0.7);
-        opacity: 0;
-    }
+    from { transform: scale(0.5); opacity: 1.0; }
+    95% { transform: scale(1.3); opacity: 0; }
+    to { transform: scale(0.7); opacity: 0; }
 }
-
 .leaflet-usermarker,
-.leaflet-usermarker-small {
-    width: 34px;
-    height: 34px;
-    background: url(i/bluedot.png);
-    background-size: 100%;
-}
-.leaflet-usermarker-small {
-    width: 18px;
-    height: 18px;
-}
-
+.leaflet-usermarker-small { width: 34px; height: 34px; background: url(i/bluedot.png); background-size: 100%; }
+.leaflet-usermarker-small { width: 18px; height: 18px; }
 .leaflet-usermarker i.pulse,
-.leaflet-usermarker-small i.pulse {
-    display: block;
-
-    -moz-animation: leaflet-usermarker-pulsate 1.5s ease-in-out infinite;
-    -webkit-animation: leaflet-usermarker-pulsate 1.5s ease-in-out infinite;
-    animation: leaflet-usermarker-pulsate 1.5s ease-in-out infinite;
-    border:1pt solid #fff;
-    /* make a circle */
-    -moz-border-radius:51px;
-    -webkit-border-radius:51px;
-    border-radius:51px;
-    /* multiply the shadows, inside and outside the circle */
-    -moz-box-shadow:inset 0 0 5px #06f, inset 0 0 5px #06f, inset 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f;
-    -webkit-box-shadow:inset 0 0 5px #06f, inset 0 0 5px #06f, inset 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f;
-    box-shadow:inset 0 0 5px #06f, inset 0 0 5px #06f, inset 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f;
-    /* set the ring's new dimension and re-center it */
-    height:61px!important;
-    margin:-14px 0 0 -14px;
-    width:61px!important;
-}
-
-.leaflet-usermarker-small i.pulse {
-    height: 30px !important;
-    width: 30px !important;
-    margin: -7px 0 0 -7px;
-}
-
+.leaflet-usermarker-small i.pulse { display: block; -moz-animation: leaflet-usermarker-pulsate 1.5s ease-in-out infinite; -webkit-animation: leaflet-usermarker-pulsate 1.5s ease-in-out infinite; animation: leaflet-usermarker-pulsate 1.5s ease-in-out infinite; border: 1pt solid #fff; /* make a circle */ -moz-border-radius: 51px; -webkit-border-radius: 51px; border-radius: 51px; /* multiply the shadows, inside and outside the circle */ -moz-box-shadow: inset 0 0 5px #06f, inset 0 0 5px #06f, inset 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f; -webkit-box-shadow: inset 0 0 5px #06f, inset 0 0 5px #06f, inset 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f; box-shadow: inset 0 0 5px #06f, inset 0 0 5px #06f, inset 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f; /* set the ring's new dimension and re-center it */ height: 61px!important; margin: -14px 0 0 -14px; width: 61px!important; }
+.leaflet-usermarker-small i.pulse { height: 30px !important; width: 30px !important; margin: -7px 0 0 -7px; }
