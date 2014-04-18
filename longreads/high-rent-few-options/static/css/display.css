@@ -2952,21 +2952,21 @@ object, embed {
 	@media screen and (max-width:800px) {
 		.membership .inner h1 {
 			font-size:1.35em;
-		} 
+		}
 	}
 
 	@media screen and (max-width:800px) {
 		.membership .inner {
 			text-align:center;
-		} 
+		}
 
 			.membership .inner h1 {
 				margin:0 0 27px;
-			} 
+			}
 
 			.membership .inner h2 {
 				margin:0 0 27px;
-			} 
+			}
 
 			.membership .inner .brand {
 				margin:0 auto;
