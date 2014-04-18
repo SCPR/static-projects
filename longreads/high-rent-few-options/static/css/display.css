@@ -2895,6 +2895,7 @@ object, embed {
 						/*	===================================================================================
 						    =================================================================================== */
 
+
 /* map */
 .map-row .prologue {border-bottom: 0px solid #7ac8d4;}
 #content-map-container {height: 1175px; margin: 0px 0 1% 0 1%; padding: 10px 0 10px 0; color: #2f2f2f;}
@@ -2917,12 +2918,16 @@ object, embed {
 #content-map-methodology {float: right; width: 74%; height: auto; margin: 15px 0 15px 0; font-size: 0.8125em; line-height: 1.2; font-family: Georgia, serif; font-weight: 400;}
 #content-map-methodology p {color:#666;line-height:1.4em;}
 
-@media screen and (min-width: 1030px) and (max-width: 1700px) {
-	#content-map-container {height: 1200px;}
+@media screen and (min-width: 1300px) {
+	#content-map-container {height: 1230px;}
 }
 
-@media screen and (min-width: 881px) and (max-width: 1029px) {
-	#content-map-container {height: 1230px;}
+@media screen and (min-width: 1080px) and (max-width: 1299px) {
+	#content-map-container {height: 1260px;}
+}
+
+@media screen and (min-width: 881px) and (max-width: 1079px) {
+	#content-map-container {height: 1300px;}
 }
 
 @media screen and (max-width:880px) {
