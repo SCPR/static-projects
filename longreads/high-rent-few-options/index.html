@@ -173,71 +173,7 @@
 
         <!-- begin map -->
         <div class="row row-pt1-d map-row">
-            <div id="content-map-container">
-                <div class="bound prologue">
-                    <h1 class="chapter">The 30 percent threshold</h1>
-                    <p>For years, financial planners' used that 30 percent threshold as a rule of thumb for renters: no more than 30 percent of your gross income should go to rent. But for many these days, with rents higher than they've ever been in Southern California, the 30 percent rule is a distant fantasy. When some of the higher rental areas are plotted on a map, more than half of the renters in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties are above that <a href="http://censusreporter.org/data/table/?table=B25070&geo_ids=05000US06037,05000US06059,05000US06065,05000US06071,05000US06111">30 percent threshold</a>, according to data estimates available from the U.S. Census Bureau.</p>
-                </div>
-                <div id="content-map-legend">
-                    <table cellspacing="0" cellpadding="1" border="0">
-                        <tbody>
-                            <tr>
-                                <td class="lower-tier"><span class="legend-text">&nbsp; Majority pays less than 30%</span></td>
-                                <td class="higher-tier"><span class="legend-text">&nbsp; Majority pays more than 30%</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="content-map-canvas"></div>
-                <div id="content-map-explainer">
-                    <div class="controls">
-                        <form class="filters">
-                            <div class="geography-browser">
-                                <div id="main-controls" class="control stacked location">
-                                    <div class="pairing text">
-                                        <h2>Use <a class="findMe" href="javascript:void(0)">your location</a>, enter an address or click the map to see data about renters for a given area</h2>
-                                        <input type="text" id="addressSearch" placeholder="Start typing your address...">
-                                        <div id="location-awareness-input">
-                                            <input type="text" class="no-show" name="lat" id="latitudeSearch">
-                                            <input type="text" class="no-show" name="lng" id="longitudeSearch">
-                                            <input type="text" class="no-show" name="acc" id="accuracySearch">
-                                        </div>
-                                    </div>
-                                    <div class="pairing radius">
-                                        <label for="radius">Search Radius</label>
-                                        <select name="search-radius" id="search-radius">
-                                            <option value='400'>2 blocks</option>
-                                            <option value='805'>1/2 mile</option>
-                                            <option value='1610'>1 mile</option>
-                                            <option value="3220">2 miles</option>
-                                            <option value="8047">5 miles</option>
-                                            <option value="16093">10 miles</option>
-                                        </select>
-                                    </div>
-                                    <div class="control submit clearfix">
-                                        <button type="button" id="submit">Submit</button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div>
-                    <div class="data-display clearfix"></div>
-                    <div id="content-map-data">
-                        <div id="data-point-sentence"></div>
-                        <div id="data-point-display"></div>
-                        <div id="data-point-caveat"></div>
-
-                        <div class="control reset clearfix no-show-this">
-                            <button type="button" id="reset">Reset map</button>
-                        </div>
-
-                    </div>
-                </div>
-                <div id="content-map-methodology">
-                    <p><strong>About the data</strong>: <p>Renter data for <a href="http://www.census.gov/geo/reference/zctas.html">Zip Code Tabulation Areas</a> in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties via <a href="http://censusreporter.org/">Census Reporter</a> and based on <a href="http://www.census.gov/acs/www/data_documentation/2012_release/">American Community Survey 2012 5-year estimates</a>. ZCTAs for which the coefficient variable for the estimated number of renters is more than 10 percent are not displayed. Number of renters is based on occupied housing units from <a href="http://censusreporter.org/data/table/?table=B25003&amp;geo_ids=860|05000US06037">ACS Table B25003</a>. Median monthly rent is based on renter-occupied housing units paying cash rent from <a href="http://censusreporter.org/data/table/?table=B25064&amp;geo_ids=860|05000US06037">ACS Table B25064</a>. Median annual income is based on occupied housing units from the past 12 months and displayed in 2012 inflation-adjusted dollars from <a href="http://censusreporter.org/data/table/?table=B25119&amp;geo_ids=860|05000US06037">ACS Table B25119</a>. Median rent burden is based on renter-occupied housing units paying cash rent from the past 12 months from <a href="http://censusreporter.org/data/table/?table=B25071&amp;geo_ids=860|05000US06037">ACS Table B25071</a>. Household rent burden as a percentage of its income is based on renter-occupied housing units from the past 12 months from <a href="http://censusreporter.org/data/table/?table=B25070&amp;geo_ids=860|05000US06037">ACS Table B25070</a>. GIS data for Zip Code Tabulation Areas via the L.A. Times <a href="http://boundaries.latimes.com/sets/">Mapping L.A. Boundaries API</a>.</p>
-                </div>
-            </div>
+            <div id="content-map-container"></div>
         </div>
         <!-- end map -->
 
@@ -370,11 +306,215 @@
         </div><!-- clearfix -->
     </footer>
 
+        <script id="map-application-template" type="text/template">
+            <div class="bound prologue">
+                <h1 class="chapter">The 30 percent threshold</h1>
+                <p>For years, financial planners' used that 30 percent threshold as a rule of thumb for renters: no more than 30 percent of your gross income should go to rent. But for many these days, with rents higher than they've ever been in Southern California, the 30 percent rule is a distant fantasy. When some of the higher rental areas are plotted on a map, more than half of the renters in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties are above that <a href="http://censusreporter.org/data/table/?table=B25070&geo_ids=05000US06037,05000US06059,05000US06065,05000US06071,05000US06111">30 percent threshold</a>, according to data estimates available from the U.S. Census Bureau.</p>
+            </div>
+            <div id="content-map-legend">
+                <table cellspacing="0" cellpadding="1" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="lower-tier"><span class="legend-text">&nbsp; Majority pays less than 30%</span></td>
+                            <td class="higher-tier"><span class="legend-text">&nbsp; Majority pays more than 30%</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="content-map-canvas"></div>
+            <div id="content-map-explainer">
+                <div class="controls">
+                    <form class="filters">
+                        <div class="geography-browser">
+                            <div id="main-controls" class="control stacked location">
+                                <div class="pairing text">
+                                    <h2>Use <a class="findMe" href="javascript:void(0)">your location</a>, enter an address or click the map to see data about renters for a given area</h2>
+                                    <input type="text" id="addressSearch" placeholder="Start typing your address...">
+                                    <div id="location-awareness-input">
+                                        <input type="text" class="no-show" name="lat" id="latitudeSearch">
+                                        <input type="text" class="no-show" name="lng" id="longitudeSearch">
+                                        <input type="text" class="no-show" name="acc" id="accuracySearch">
+                                    </div>
+                                </div>
+                                <div class="pairing radius">
+                                    <label for="radius">Search Radius</label>
+                                    <select name="search-radius" id="search-radius">
+                                        <option value='400'>2 blocks</option>
+                                        <option value='805'>1/2 mile</option>
+                                        <option value='1610'>1 mile</option>
+                                        <option value="3220">2 miles</option>
+                                        <option value="8047">5 miles</option>
+                                        <option value="16093">10 miles</option>
+                                    </select>
+                                </div>
+                                <div class="control submit clearfix">
+                                    <button type="button" id="submit">Submit</button>
+                                </div>
+                                <div id="data-toggles">
+                                    <div class="control toggle response_7345004f6c9f">
+                                        <input type="checkbox" id="response_7345004f6c9f" name="response_7345004f6c9f" value="hidden">
+                                        <label for="response_7345004f6c9f">Show first pin response</label>
+                                    </div>
+                                    <div class="control toggle response_5b095008373b">
+                                        <input type="checkbox" id="response_5b095008373b" name="response_5b095008373b" value="hidden">
+                                        <label for="response_5b095008373b">Show second pin response</label>
+                                    </div>
+                                    <div class="control toggle response_298a682e1a77">
+                                        <input type="checkbox" id="response_298a682e1a77" name="response_298a682e1a77" value="hidden">
+                                        <label for="response_298a682e1a77">Show third pin response</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="data-display clearfix"></div>
+                <div id="content-map-data">
+                    <div id="data-point-sentence"></div>
+                    <div id="data-point-display"></div>
+                    <div id="data-point-caveat"></div>
+
+                    <div class="control reset clearfix no-show-this">
+                        <button type="button" id="reset">Reset map</button>
+                    </div>
+
+                </div>
+            </div>
+            <div id="content-map-methodology">
+                <p><strong>About the data</strong>: <p>Renter data for <a href="http://www.census.gov/geo/reference/zctas.html">Zip Code Tabulation Areas</a> in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties via <a href="http://censusreporter.org/">Census Reporter</a> and based on <a href="http://www.census.gov/acs/www/data_documentation/2012_release/">American Community Survey 2012 5-year estimates</a>. ZCTAs for which the coefficient variable for the estimated number of renters is more than 10 percent are not displayed. Number of renters is based on occupied housing units from <a href="http://censusreporter.org/data/table/?table=B25003&amp;geo_ids=860|05000US06037">ACS Table B25003</a>. Median monthly rent is based on renter-occupied housing units paying cash rent from <a href="http://censusreporter.org/data/table/?table=B25064&amp;geo_ids=860|05000US06037">ACS Table B25064</a>. Median annual income is based on occupied housing units from the past 12 months and displayed in 2012 inflation-adjusted dollars from <a href="http://censusreporter.org/data/table/?table=B25119&amp;geo_ids=860|05000US06037">ACS Table B25119</a>. Median rent burden is based on renter-occupied housing units paying cash rent from the past 12 months from <a href="http://censusreporter.org/data/table/?table=B25071&amp;geo_ids=860|05000US06037">ACS Table B25071</a>. Household rent burden as a percentage of its income is based on renter-occupied housing units from the past 12 months from <a href="http://censusreporter.org/data/table/?table=B25070&amp;geo_ids=860|05000US06037">ACS Table B25070</a>. GIS data for Zip Code Tabulation Areas via the L.A. Times <a href="http://boundaries.latimes.com/sets/">Mapping L.A. Boundaries API</a>.</p>
+            </div>
+        </script>
+
+        <script id="featcherSentence" type="text/template">
+            <div id='zip_<%= name %>'>
+                <h2>Displaying data for ZCTA <%= name %></h2>
+                <h4>Renters occupy an estimated <span class='gt-30pct'><%= this.addCommas(la_area_rent_rent_total) %> </span> households in <%= la_area_rent_county_proper %> County's <a href='http://censusreporter.org/profiles/86000US<%= name %>-<%= name %>/'><%= name %></a> Zip Code Tabulation Area (<a href='http://www.census.gov/geo/reference/zctas.html' target='_blank'>ZCTA</a>), according to American Community Survey data.</h4>
+                <% if (la_area_rent_median_gross_rent != null ) { %>
+                    <% if (la_area_rent_median_gross_rent_cv > 0.10) { %>
+                        <h4><strong>Median monthly rent</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_gross_rent) %> †</span></h4>
+                    <% } else { %>
+                        <h4><strong>Median monthly rent</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_gross_rent) %></span></h4>
+                    <% } %>
+                <% } %>
+                <% if (la_area_rent_median_household_income_renter != null ) { %>
+                    <% if (la_area_rent_median_household_income_renter_cv > 0.10) { %>
+                        <h4><strong>Median annual income</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_household_income_renter) %> †</span></h4>
+                    <% } else { %>
+                        <h4><strong>Median annual income</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_household_income_renter) %></span></h4>
+                    <% } %>
+                <% } %>
+                <% if (la_area_rent_median_gross_rent_pct != null ) { %>
+                    <% if (la_area_rent_median_gross_rent_cv > 0.10) { %>
+                        <h4><strong>Median rent burden</strong>: <span class='gt-30pct'><%= this.toFixed(la_area_rent_median_gross_rent_pct) %>% †</span></h4>
+                    <% } else { %>
+                        <h4><strong>Median rent burden</strong>: <span class='gt-30pct'><%= this.toFixed(la_area_rent_median_gross_rent_pct) %>%</span></h4>
+                    <% } %>
+                <% } %>
+                <h4>Here's the breakdown of this area's household rent burden as a percentage of its income:</h4>
+            </div>
+        </script>
+
+        <script id="featcherGraphs" type="text/template">
+            <ul class='chartlist'>
+                <li>
+                    <a href='javascript:void(0)'>More than 50% of income</a>
+                    <% if (la_area_rent_rent_gt_50_cv > 0.10) { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_gt_50_pct) %>% †</span>
+                    <% } else { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_gt_50_pct) %>% </span>
+                    <% } %>
+                    <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_gt_50_pct) %>%'>&nbsp;</span>
+                </li>
+                <li>
+                <a href='javascript:void(0)'>40 to 49.9%</a>
+                    <% if (la_area_rent_rent_40_to_49_9_pct > 0.10) { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_40_to_49_9_pct) %>% †</span>
+                    <% } else { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_40_to_49_9_pct) %>% </span>
+                    <% } %>
+                    <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_40_to_49_9_pct) %>%'>&nbsp;</span>
+                </li>
+                <li>
+                    <a href='javascript:void(0)'>35 to 39.9%</a>
+                    <% if (la_area_rent_rent_35_to_39_9_pct > 0.10) { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_35_to_39_9_pct) %>% †</span>
+                    <% } else { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_35_to_39_9_pct) %>%</span>
+                    <% } %>
+                    <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_35_to_39_9_pct) %>%'>&nbsp;</span>
+                </li>
+                <li>
+                    <a href='javascript:void(0)'>30 to 34.9%</a>
+                    <% if (la_area_rent_rent_30_to_34_9_pct > 0.10) { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_30_to_34_9_pct) %>% †</span>
+                    <% } else { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_30_to_34_9_pct) %>%</span>
+                    <% } %>
+                    <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_30_to_34_9_pct) %>%'>&nbsp;</span>
+                </li>
+                <li>
+                    <a href='javascript:void(0)'>25 to 29.9%</a>
+                    <% if (la_area_rent_rent_25_to_29_9_pct > 0.10) { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_25_to_29_9_pct) %>% †</span>
+                    <% } else { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_25_to_29_9_pct) %>%</span>
+                    <% } %>
+                    <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_25_to_29_9_pct) %>%'>&nbsp;</span>
+                </li>
+                <li>
+                    <a href='javascript:void(0)'>20 to 24.9%</a>
+                    <% if (la_area_rent_rent_20_to_24_9_pct > 0.10) { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_20_to_24_9_pct) %>% †</span>
+                    <% } else { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_20_to_24_9_pct) %>%</span>
+                    <% } %>
+                    <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_20_to_24_9_pct) %>%'>&nbsp;</span>
+                </li>
+                <li>
+                    <a href='javascript:void(0)'>15 to 19.9%</a>
+                    <% if (la_area_rent_rent_15_to_19_9_pct > 0.10) { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_15_to_19_9_pct) %>% †</span>
+                    <% } else { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_15_to_19_9_pct) %>%</span>
+                    <% } %>
+                    <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_15_to_19_9_pct) %>%'>&nbsp;</span>
+                </li>
+                <li>
+                    <a href='javascript:void(0)'>10 to 14.9%</a>
+                    <% if (la_area_rent_rent_10_to_14_9_pct > 0.10) { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_10_to_14_9_pct) %>% †</span>
+                    <% } else { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_10_to_14_9_pct) %>%</span>
+                    <% } %>
+                    <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_10_to_14_9_pct) %>%'>&nbsp;</span>
+                </li>
+                <li>
+                    <a href='javascript:void(0)'>Less than 10 %</a>
+                    <% if (la_area_rent_rent_lt_10_pct > 0.10) { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_lt_10_pct) %>% †</span>
+                    <% } else { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_lt_10_pct) %>%</span>
+                    <% } %>
+                    <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_lt_10_pct) %>%'>&nbsp;</span>
+                </li>
+                <li>
+                    <a href='javascript:void(0)'>Not calculated</a>
+                    <% if (la_area_rent_rent_not_computed_pct > 0.10) { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_not_computed_pct) %>% †</span>
+                    <% } else { %>
+                        <span class='count'><%= this.percentifyValue(la_area_rent_rent_not_computed_pct) %>%</span>
+                    <% } %>
+                    <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_not_computed_pct) %>%'>&nbsp;</span>
+                </li>
+            </ul>
+        </script>
+
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
         <script type="text/javascript" src="static/js/jquery.jplayer.2.0.min.js"></script>
         <script type="text/javascript" src="static/js/application.js"></script>
         <script type="text/javascript" src="static/js/functionality.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
         <script src="http://maps.google.com/maps/api/js?key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8&sensor=false&amp;libraries=places"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/geocomplete/1.4/jquery.geocomplete.min.js"></script>
         <script type="text/javascript" src="static/js/zcta-county-data-one.js"></script>
