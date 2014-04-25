@@ -57,6 +57,7 @@
     App.Router = Backbone.Router.extend({
         routes: {
             "": "fetchData",
+            '*notFound': 'fetchData'
         },
         fetchData: function(){
             var rootUrl = "https://www.publicinsightnetwork.org/air2/api/public/search?a=6f4d503616e1115157a64bd26b51aec7&p=50&";
@@ -70,10 +71,6 @@
                     url: rootUrl + "q=query_uuid:7345004f6c9f&t=JSON",
                     async: true
                 }
-            ), newCollection.fetch({
-                    url: rootUrl + "q=query_uuid:5b095008373b&t=JSON",
-                    async: true
-                }
             ), secondCollection.fetch({
                     url: rootUrl + "q=query_uuid:298a682e1a77&t=JSON",
                     async: true
@@ -81,7 +78,6 @@
             ))
             .done(function(){
                 masterCollection.add(responsesCollection.models);
-                masterCollection.add(newCollection.models);
                 masterCollection.add(secondCollection.models);
                 _this.createMap(masterCollection);
             });
@@ -317,7 +313,8 @@
                 var $this = $(this);
                 if($this.is(":checked")){
                     var modelUuid = $this.attr("id").replace("response_", "");
-                    activeCheckboxes.push(modelUuid);
+                    activeCheckboxes.push("7345004f6c9f");
+                    activeCheckboxes.push("298a682e1a77");
                 }
             });
             this.findModelsForMarkers(this.mapDataObject.collection, activeCheckboxes);
@@ -339,23 +336,13 @@
             for(var i=0; i<arrayOfModels.length; i++){
                 this.marker = new L.CircleMarker([arrayOfModels[i].attributes.primary_lat, arrayOfModels[i].attributes.primary_long], {
                     radius: 5,
-                    color: null,
-                    fillColor: null,
+                    color: "#afafaf",
+                    fillColor: "#afafaf",
                     fillOpacity: 1.0,
                     opacity: 1.0,
                     weight: 5.0,
                     clickable: true
                 });
-                if (arrayOfModels[i].attributes.query_uuid === "7345004f6c9f"){
-                    this.marker.options.color = "blue";
-                    this.marker.options.fillColor = "blue";
-                } else if (arrayOfModels[i].attributes.query_uuid === "5b095008373b"){
-                    this.marker.options.color = "green";
-                    this.marker.options.fillColor = "green";
-                } else {
-                    this.marker.options.color = "yellow";
-                    this.marker.options.fillColor = "yellow";
-                }
                 this.bindEvent(this.marker, arrayOfModels[i].attributes);
                 this.markerGroup.addLayer(this.marker)
             };
@@ -363,12 +350,7 @@
         },
 
         bindEvent: function(marker, attributes){
-
-            console.log(attributes);
-
             var pinResponse = _.template(
-                //"<h4><%= query_title %></h4>" +
-
                 "<% if (query_uuid === '7345004f6c9f') { %>" +
                     "<% if ('7f387f7a9b4e' in responses) { %>" +
                         "<blockquote>\"<%= responses['7f387f7a9b4e'] %>\"</blockquote>" +
@@ -379,37 +361,6 @@
                     "<% } else { %>" +
                         "<p><em>&ndash; <%= src_first_name.toProperCase() %> <%= src_last_name.toProperCase() %> on what factored into their decision to live where they do.</em></p>" +
                     "<% } %>" +
-
-                "<% } else if (query_uuid === '5b095008373b') { %>" +
-
-                    "<% if ('63973f53c6cc' in responses) { %>" +
-                        "<p><%= questions['63973f53c6cc'].value %></p>" +
-                        "<p><%= responses['63973f53c6cc'] %></p>" +
-                    "<% } %>" +
-
-                    "<% if ('387096a64b70' in responses) { %>" +
-                        "<p><%= questions['387096a64b70'].value %></p>" +
-                        "<p><%= responses['387096a64b70'] %></p>" +
-                    "<% } %>" +
-
-                    "<% if ('2ea153f452bc' in responses) { %>" +
-                        "<p><%= questions['2ea153f452bc'].value %></p>" +
-                        "<p><%= responses['2ea153f452bc'] %></p>" +
-                    "<% } %>" +
-
-                    "<% if ('55fab8159544' in responses) { %>" +
-                        "<p><%= questions['55fab8159544'].value %></p>" +
-                        "<p><%= responses['55fab8159544'] %></p>" +
-                    "<% } %>" +
-                    "<% if ('792d693943cf' in responses) { %>" +
-                        "<p><%= questions['792d693943cf'].value %></p>" +
-                        "<p><%= responses['792d693943cf'] %></p>" +
-                    "<% } %>" +
-                    "<% if ('d9d42e42eb76' in responses) { %>" +
-                        "<p><%= questions['d9d42e42eb76'].value %></p>" +
-                        "<p><%= responses['d9d42e42eb76'] %></p>" +
-                    "<% } %>" +
-
                 "<% } else { %>" +
                     "<% if ('39bdb1593a35' in responses) { %>" +
                         "<blockquote>\"<%= responses['39bdb1593a35'] %>\"</blockquote>" +
@@ -426,35 +377,9 @@
                             " on what they like or dislike about their current home</em></p>" +
                         "<% } %>" +
                     "<% } %>" +
-
-                    /*
-                    "<% if ('3b86b8c62e43' in responses) { %>" +
-                        "<p><%= questions['3b86b8c62e43'].value %></p>" +
-                        "<p><%= responses['3b86b8c62e43'] %></p>" +
-                    "<% } %>" +
-                    "<% if ('3bd2512a25bd' in responses) { %>" +
-                        "<p><%= questions['3bd2512a25bd'].value %></p>" +
-                        "<p><%= responses['3bd2512a25bd'] %></p>" +
-                    "<% } %>" +
-                    "<% if ('39bdb1593a35' in responses) { %>" +
-                        "<p><%= questions['39bdb1593a35'].value %></p>" +
-                        "<p><%= responses['39bdb1593a35'] %></p>" +
-                    "<% } %>" +
-                    "<% if ('62c382104585' in responses) { %>" +
-                        "<p><%= questions['62c382104585'].value %></p>" +
-                        "<p><%= responses['62c382104585'] %></p>" +
-                    "<% } %>" +
-                    "<% if ('354a2b621737' in responses) { %>" +
-                        "<p><%= questions['354a2b621737'].value %></p>" +
-                        "<p><%= responses['354a2b621737'] %></p>" +
-                    "<% } %>" +
-                    "<% if ('6857315751a4' in responses) { %>" +
-                        "<p><%= questions['6857315751a4'].value %></p>" +
-                        "<p><%= responses['6857315751a4'] %></p>" +
-                    "<% } %>" +
-                    */
-
-                "<% } %>", attributes);
+                "<% } %>" +
+                "<p>&nbsp;</p>" +
+                "<p><a href='#pin-query-form'>Share your thoughts via the Public Insight Network</a></p>", attributes);
 
             marker.on('click', function(){
                 $("#data-point-sentence").empty();
