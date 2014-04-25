@@ -3015,7 +3015,7 @@ object, embed {
 
 /* location search */
 #content-map-container .controls form { margin: 0 6.59842519685% }
-#content-map-container .controls .geography-browser {padding: 0 5% 15px; width: 100%; margin: 0 0 20px -5%; }
+#content-map-container .controls .geography-browser {padding: 0 5% 0 5%; width: 100%; margin: 0 0 20px -5%; }
 #content-map-container .controls .control { margin-bottom: 8px }
 #content-map-container .controls .control label,
 #content-map-container .controls .control input { font-weight: 700; color: #9e4100; font-size: 0.75em; font-family: "proxima-nova",  "Avenir Next",  "Avenir",  "Lucida Grande",  "Corbel",  "Tahoma",  Arial,  sans-serif; }

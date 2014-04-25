@@ -33,6 +33,10 @@
             return x1 + x2;
     };
 
+    String.prototype.toProperCase = function(){
+        return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    };
+
     App.Models.Response = Backbone.Model.extend({});
 
     App.Models.Map = Backbone.Model.extend({});
@@ -359,25 +363,40 @@
         },
 
         bindEvent: function(marker, attributes){
+
+            console.log(attributes);
+
             var pinResponse = _.template(
-                "<p><%= query_title %></p>" +
-                "<p><%= src_first_name %> <%= src_last_name %></p>" +
-                "<p><%= primary_city %></p>" +
-                "<p><%= srs_date %></p>" +
+                //"<h4><%= query_title %></h4>" +
+
                 "<% if (query_uuid === '7345004f6c9f') { %>" +
-                    "<% if ('4c46b93b3726' in responses) { %>" +
-                        "<p><%= questions['4c46b93b3726'].value %></p>" +
-                        "<p><%= responses['4c46b93b3726'] %></p>" +
-                    "<% } %>" +
                     "<% if ('7f387f7a9b4e' in responses) { %>" +
-                        "<p><%= questions['7f387f7a9b4e'].value %></p>" +
-                        "<p><%= responses['7f387f7a9b4e'] %></p>" +
+                        "<blockquote>\"<%= responses['7f387f7a9b4e'] %>\"</blockquote>" +
                     "<% } %>" +
+                    "<p>&nbsp;</p>" +
+                    "<% if ('4c46b93b3726' in responses) { %>" +
+                        "<p><em>&ndash; <%= src_first_name.toProperCase() %> <%= src_last_name.toProperCase() %>, whose rent is <span class='gt-30pct'><%= responses['4c46b93b3726'] %>%</span> of their income, on what factored into their decision to live where they do.</em></p>" +
+                    "<% } else { %>" +
+                        "<p><em>&ndash; <%= src_first_name.toProperCase() %> <%= src_last_name.toProperCase() %> on what factored into their decision to live where they do.</em></p>" +
+                    "<% } %>" +
+
                 "<% } else if (query_uuid === '5b095008373b') { %>" +
+
+                    "<% if ('63973f53c6cc' in responses) { %>" +
+                        "<p><%= questions['63973f53c6cc'].value %></p>" +
+                        "<p><%= responses['63973f53c6cc'] %></p>" +
+                    "<% } %>" +
+
+                    "<% if ('387096a64b70' in responses) { %>" +
+                        "<p><%= questions['387096a64b70'].value %></p>" +
+                        "<p><%= responses['387096a64b70'] %></p>" +
+                    "<% } %>" +
+
                     "<% if ('2ea153f452bc' in responses) { %>" +
                         "<p><%= questions['2ea153f452bc'].value %></p>" +
                         "<p><%= responses['2ea153f452bc'] %></p>" +
                     "<% } %>" +
+
                     "<% if ('55fab8159544' in responses) { %>" +
                         "<p><%= questions['55fab8159544'].value %></p>" +
                         "<p><%= responses['55fab8159544'] %></p>" +
@@ -386,19 +405,29 @@
                         "<p><%= questions['792d693943cf'].value %></p>" +
                         "<p><%= responses['792d693943cf'] %></p>" +
                     "<% } %>" +
-                    "<% if ('63973f53c6cc' in responses) { %>" +
-                        "<p><%= questions['63973f53c6cc'].value %></p>" +
-                        "<p><%= responses['63973f53c6cc'] %></p>" +
-                    "<% } %>" +
-                    "<% if ('387096a64b70' in responses) { %>" +
-                        "<p><%= questions['387096a64b70'].value %></p>" +
-                        "<p><%= responses['387096a64b70'] %></p>" +
-                    "<% } %>" +
                     "<% if ('d9d42e42eb76' in responses) { %>" +
                         "<p><%= questions['d9d42e42eb76'].value %></p>" +
                         "<p><%= responses['d9d42e42eb76'] %></p>" +
                     "<% } %>" +
+
                 "<% } else { %>" +
+                    "<% if ('39bdb1593a35' in responses) { %>" +
+                        "<blockquote>\"<%= responses['39bdb1593a35'] %>\"</blockquote>" +
+                        "<p>&nbsp;</p>" +
+                        "<% if ('6e24247d32a4' in responses) { %>" +
+                            "<p><em>&ndash; <%= src_first_name.toProperCase() %> <%= src_last_name.toProperCase() %>, whose" +
+                            "<% if ('1812d821f23c' in responses) { %>" +
+                                "<% if (responses['1812d821f23c'] === 'Yes') { %>" +
+                                    " rent is <span class='gt-30pct'><%= responses['6e24247d32a4'] %>%</span> of their income," +
+                                "<% } else { %>" +
+                                    " housing is <span class='gt-30pct'><%= responses['6e24247d32a4'] %>%</span> of their income," +
+                                "<% } %>" +
+                            "<% } %>" +
+                            " on what they like or dislike about their current home</em></p>" +
+                        "<% } %>" +
+                    "<% } %>" +
+
+                    /*
                     "<% if ('3b86b8c62e43' in responses) { %>" +
                         "<p><%= questions['3b86b8c62e43'].value %></p>" +
                         "<p><%= responses['3b86b8c62e43'] %></p>" +
@@ -406,10 +435,6 @@
                     "<% if ('3bd2512a25bd' in responses) { %>" +
                         "<p><%= questions['3bd2512a25bd'].value %></p>" +
                         "<p><%= responses['3bd2512a25bd'] %></p>" +
-                    "<% } %>" +
-                    "<% if ('6e24247d32a4' in responses) { %>" +
-                        "<p><%= questions['6e24247d32a4'].value %></p>" +
-                        "<p><%= responses['6e24247d32a4'] %></p>" +
                     "<% } %>" +
                     "<% if ('39bdb1593a35' in responses) { %>" +
                         "<p><%= questions['39bdb1593a35'].value %></p>" +
@@ -423,14 +448,12 @@
                         "<p><%= questions['354a2b621737'].value %></p>" +
                         "<p><%= responses['354a2b621737'] %></p>" +
                     "<% } %>" +
-                    "<% if ('1812d821f23c' in responses) { %>" +
-                        "<p><%= questions['1812d821f23c'].value %></p>" +
-                        "<p><%= responses['1812d821f23c'] %></p>" +
-                    "<% } %>" +
                     "<% if ('6857315751a4' in responses) { %>" +
                         "<p><%= questions['6857315751a4'].value %></p>" +
                         "<p><%= responses['6857315751a4'] %></p>" +
                     "<% } %>" +
+                    */
+
                 "<% } %>", attributes);
 
             marker.on('click', function(){
