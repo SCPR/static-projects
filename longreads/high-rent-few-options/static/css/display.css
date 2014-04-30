@@ -2984,8 +2984,8 @@ object, embed {
 #content-map-explainer { background:#fff;border:1px solid #ebebeb;float: left; width: 25%; height: 821px; padding: 0; }
 #content-map-explainer #content-map-data { width: 96%; height: 530px; margin: 15px 2% 15px 2%; font: normal 500 1em/1.15 "proxima-nova", Helvetica, sans-serif; }
 #content-map-data #data-point-sentence { width: 96%; height: auto; margin: 15px 2% 15px 2%; }
-#content-map-data #data-point-display { width: 96%; height: 260px; margin: 15px 2% 25px 2%; }
-#content-map-data #data-point-caveat { width: 96%; height: 25px; margin: 15px 2% 25px 2%; text-align: center; }
+#content-map-data #data-point-display { width: 96%; height: auto; margin: 15px 2% 25px 2%; }
+#content-map-data #data-point-caveat { width: 96%; height: auto; margin: 15px 2% 25px 2%; text-align: center; }
 #content-map-legend { float: right; width: 74%; height: 40px; }
 #content-map-legend table { width: 100%; margin: 0px; line-height: 2em; border-width: 0px; border-style: solid; border-color: gray; border-collapse: collapse; font: normal 500 1em/1.15 "proxima-nova", Helvetica, sans-serif; }
 #content-map-legend td { padding: 2px; text-align: left; font-weight: bold; width: 25%; }
@@ -3014,8 +3014,9 @@ object, embed {
 #content-map-data .chartlist li:hover { background: #efefef; }
 
 /* location search */
-#content-map-container .controls form { margin: 0 6.59842519685%; border-bottom: 1px solid rgba(0, 0, 0, 0.15);}
+#content-map-container .controls form { margin: 0 6.59842519685%;}
 #content-map-container .controls .geography-browser {padding: 0 5% 0 5%; width: 100%; margin: 0 0 0px -5%; }
+#content-map-container #main-controls { border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
 #content-map-container .controls .control { margin-bottom: 8px }
 #content-map-container .controls .control label,
 #content-map-container .controls .control input { font-weight: 700; color: #9e4100; font-size: 0.75em; font-family: "proxima-nova",  "Avenir Next",  "Avenir",  "Lucida Grande",  "Corbel",  "Tahoma",  Arial,  sans-serif; }

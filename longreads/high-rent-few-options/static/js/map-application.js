@@ -33,6 +33,15 @@
             return x1 + x2;
     };
 
+    String.prototype.truncateToGraf = function(){
+        var lengthLimit = 1500;
+        if (this.length > lengthLimit){
+            return this.substring(0, lengthLimit) + " ... ";
+        } else {
+            return this;
+        }
+    };
+
     String.prototype.toProperCase = function(){
         return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     };
@@ -59,29 +68,30 @@
             "": "fetchData",
             '*notFound': 'fetchData'
         },
+
         fetchData: function(){
             var rootUrl = "https://www.publicinsightnetwork.org/air2/api/public/search?a=6f4d503616e1115157a64bd26b51aec7&p=50&";
-            var responsesCollection = new App.Collections.Responses();
-            var newCollection = new App.Collections.Responses();
-            var secondCollection = new App.Collections.Responses();
+            var responsesAprilPin = new App.Collections.Responses();
+            var responsesFebPin = new App.Collections.Responses();
             var masterCollection = new App.Collections.Responses();
             var _this = this;
             $.when(
-                responsesCollection.fetch({
+                responsesAprilPin.fetch({
                     url: rootUrl + "q=query_uuid:7345004f6c9f&t=JSON",
                     async: true
                 }
-            ), secondCollection.fetch({
+            ), responsesFebPin.fetch({
                     url: rootUrl + "q=query_uuid:298a682e1a77&t=JSON",
                     async: true
                 }
             ))
             .done(function(){
-                masterCollection.add(responsesCollection.models);
-                masterCollection.add(secondCollection.models);
+                masterCollection.add(responsesAprilPin.models);
+                masterCollection.add(responsesFebPin.models);
                 _this.createMap(masterCollection);
             });
         },
+
         createMap: function(collection){
             if (this.mapView){
                 this.mapView.remove();
@@ -243,6 +253,7 @@
             $("#data-point-sentence").empty();
             $("#data-point-display").empty();
             $("#data-point-caveat").empty();
+            $("#pin-query-response").empty();
             $("input[type='checkbox']").attr('checked', false);
             this.userLayer.clearLayers();
             this.markerGroup.clearLayers();
@@ -276,6 +287,7 @@
         onEachFeature: function(feature, layer) {
             layer.on('click', function (e) {
                 $("#main-controls").hide();
+                //$("#pin-query-response").empty();
                 $("div.reset").show();
                 $("#data-point-sentence").html(window.featcherSentence(feature.properties));
                 $("#data-point-display").html(window.featcherGraphs(feature.properties));
@@ -334,13 +346,30 @@
         createMarkers: function(arrayOfModels){
             this.markerGroup.clearLayers();
             for(var i=0; i<arrayOfModels.length; i++){
+                var markerFillColor;
+                if ("4c46b93b3726" in arrayOfModels[i].attributes.responses) {
+                    if (arrayOfModels[i].attributes.responses["4c46b93b3726"] >= 30){
+                        markerFillColor = "#d94701";
+                    } else {
+                        markerFillColor = "#fdbe85";
+                    }
+                } else if ("6e24247d32a4" in arrayOfModels[i].attributes.responses){
+                    if (arrayOfModels[i].attributes.responses["6e24247d32a4"] >= 30){
+                        markerFillColor = "#d94701";
+                    } else {
+                        markerFillColor = "#fdbe85";
+                    }
+                } else {
+                    markerFillColor = "#afafaf";
+                }
+
                 this.marker = new L.CircleMarker([arrayOfModels[i].attributes.primary_lat, arrayOfModels[i].attributes.primary_long], {
                     radius: 5,
-                    color: "#afafaf",
-                    fillColor: "#afafaf",
+                    color: "#000000",
+                    fillColor: markerFillColor,
                     fillOpacity: 1.0,
                     opacity: 1.0,
-                    weight: 5.0,
+                    weight: 3.0,
                     clickable: true
                 });
                 this.bindEvent(this.marker, arrayOfModels[i].attributes);
@@ -351,27 +380,28 @@
 
         bindEvent: function(marker, attributes){
             var pinResponse = _.template(
+                "<h2>Your thoughts via Public Insight Network</h2>" +
                 "<% if (query_uuid === '7345004f6c9f') { %>" +
                     "<% if ('7f387f7a9b4e' in responses) { %>" +
-                        "<blockquote>\"<%= responses['7f387f7a9b4e'] %>\"</blockquote>" +
+                        "<blockquote>\"<%= responses['7f387f7a9b4e'].truncateToGraf() %>\"</blockquote>" +
                     "<% } %>" +
                     "<p>&nbsp;</p>" +
                     "<% if ('4c46b93b3726' in responses) { %>" +
-                        "<p><em>&ndash; <%= src_first_name.toProperCase() %> <%= src_last_name.toProperCase() %>, whose rent is <span class='gt-30pct'><%= responses['4c46b93b3726'] %>%</span> of their income, on what factored into their decision to live where they do.</em></p>" +
+                        "<p><em>&ndash; <%= src_first_name.toProperCase() %> <%= src_last_name.toProperCase() %>, who says their rent is <span class='gt-30pct'><%= responses['4c46b93b3726'] %>%</span> of their income, on what factored into their decision to live where they do.</em></p>" +
                     "<% } else { %>" +
                         "<p><em>&ndash; <%= src_first_name.toProperCase() %> <%= src_last_name.toProperCase() %> on what factored into their decision to live where they do.</em></p>" +
                     "<% } %>" +
                 "<% } else { %>" +
                     "<% if ('39bdb1593a35' in responses) { %>" +
-                        "<blockquote>\"<%= responses['39bdb1593a35'] %>\"</blockquote>" +
+                        "<blockquote>\"<%= responses['39bdb1593a35'].truncateToGraf() %>\"</blockquote>" +
                         "<p>&nbsp;</p>" +
                         "<% if ('6e24247d32a4' in responses) { %>" +
-                            "<p><em>&ndash; <%= src_first_name.toProperCase() %> <%= src_last_name.toProperCase() %>, whose" +
+                            "<p><em>&ndash; <%= src_first_name.toProperCase() %> <%= src_last_name.toProperCase() %>, who says" +
                             "<% if ('1812d821f23c' in responses) { %>" +
                                 "<% if (responses['1812d821f23c'] === 'Yes') { %>" +
-                                    " rent is <span class='gt-30pct'><%= responses['6e24247d32a4'] %>%</span> of their income," +
+                                    " their rent is <span class='gt-30pct'><%= responses['6e24247d32a4'] %>%</span> of their income," +
                                 "<% } else { %>" +
-                                    " housing is <span class='gt-30pct'><%= responses['6e24247d32a4'] %>%</span> of their income," +
+                                    " their housing is <span class='gt-30pct'><%= responses['6e24247d32a4'] %>%</span> of their income," +
                                 "<% } %>" +
                             "<% } %>" +
                             " on what they like or dislike about their current home</em></p>" +
@@ -382,15 +412,15 @@
                 "<p><a href='#pin-query-form'>Share your thoughts via the Public Insight Network</a></p>", attributes);
 
             marker.on('click', function(){
-                $("#data-point-sentence").empty();
-                $("#data-point-display").empty();
-                $("#data-point-caveat").empty();
+                //$("#data-point-sentence").empty();
+                //$("#data-point-display").empty();
+                //$("#data-point-caveat").empty();
                 $("#pin-query-response").html(pinResponse);
             });
         }
     });
 
-    new App.Router;
+    window.app = new App.Router();
     Backbone.history.start({
         root: "http://localhost:8880/2kpcc/static-projects/longreads/high-rent-few-options",
         pushState: false,
