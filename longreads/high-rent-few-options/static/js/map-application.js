@@ -34,7 +34,7 @@
     };
 
     String.prototype.truncateToGraf = function(){
-        var lengthLimit = 1500;
+        var lengthLimit = 1000;
         if (this.length > lengthLimit){
             return this.substring(0, lengthLimit) + " ... ";
         } else {
@@ -232,7 +232,6 @@
                 }
             }
             if (value != undefined){
-                console.log(value);
                 $("#data-point-sentence").html(window.featcherSentence(value[0].feature.properties));
                 $("#data-point-display").html(window.featcherGraphs(value[0].feature.properties));
                 $("#data-point-caveat").html(
@@ -349,8 +348,42 @@
         },
 
         createMarkers: function(arrayOfModels){
+
+            var myIcon = L.Icon.extend({
+                options: {
+                    opacity: .05,
+                    //iconSize:     [38, 95],
+                    //shadowSize:   [50, 64],
+                    //iconAnchor:   [22, 94],
+                    //shadowAnchor: [4, 62],
+                    //popupAnchor:  [-3, -76]
+                }
+            });
+
             this.markerGroup.clearLayers();
+
             for(var i=0; i<arrayOfModels.length; i++){
+                var markerIcon;
+                if ("4c46b93b3726" in arrayOfModels[i].attributes.responses) {
+                    if (arrayOfModels[i].attributes.responses["4c46b93b3726"] >= 30){
+                        markerIcon = new myIcon({iconUrl: "static/images/speech-bubble-gt-30.png"});
+                    } else {
+                        markerIcon = new myIcon({iconUrl: "static/images/speech-bubble-lt-30.png"});
+                    }
+                } else if ("6e24247d32a4" in arrayOfModels[i].attributes.responses){
+                    if (arrayOfModels[i].attributes.responses["6e24247d32a4"] >= 30){
+                        markerIcon = new myIcon({iconUrl: "static/images/speech-bubble-gt-30.png"});
+                    } else {
+                        markerIcon = new myIcon({iconUrl: "static/images/speech-bubble-lt-30.png"});
+                    }
+                } else {
+                    markerIcon = new myIcon({iconUrl: "static/images/speech-bubble.png"});
+                }
+                this.marker = L.marker([arrayOfModels[i].attributes.primary_lat, arrayOfModels[i].attributes.primary_long], {
+                    icon: markerIcon
+                });
+
+                /*
                 var markerFillColor;
                 if ("4c46b93b3726" in arrayOfModels[i].attributes.responses) {
                     if (arrayOfModels[i].attributes.responses["4c46b93b3726"] >= 30){
@@ -377,6 +410,8 @@
                     weight: 3.0,
                     clickable: true
                 });
+                */
+
                 this.bindEvent(this.marker, arrayOfModels[i].attributes);
                 this.markerGroup.addLayer(this.marker);
             };
