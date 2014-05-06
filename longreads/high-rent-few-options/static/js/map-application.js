@@ -221,15 +221,20 @@
             this.userLayer.addLayer(this.userLocationMarker).addLayer(this.userRadius);
             this.userLayer.addTo(this.map);
             this.map.fitBounds(this.userRadius.getBounds());
-            var locationBasedFeature;
+            this.findFeatureForLatLng(latitude, longitude);
+        },
+
+        findFeatureForLatLng: function(latitude, longitude){
+            var value;
             for (var i=0; i<this.geoJsonLayers.length; i++){
                 if (leafletPip.pointInLayer([longitude, latitude], this.geoJsonLayers[i]).length != 0){
-                    locationBasedFeature = leafletPip.pointInLayer([longitude, latitude], this.geoJsonLayers[i]);
+                    value = leafletPip.pointInLayer([longitude, latitude], this.geoJsonLayers[i]);
                 }
             }
-            if (locationBasedFeature != undefined){
-                $("#data-point-sentence").html(window.featcherSentence(locationBasedFeature[0].feature.properties));
-                $("#data-point-display").html(window.featcherGraphs(locationBasedFeature[0].feature.properties));
+            if (value != undefined){
+                console.log(value);
+                $("#data-point-sentence").html(window.featcherSentence(value[0].feature.properties));
+                $("#data-point-display").html(window.featcherGraphs(value[0].feature.properties));
                 $("#data-point-caveat").html(
                     "<p class='content-map-methodology gt-30pct'>† - Margin of error is at least 10 percent of the total value.</p>"
                 );
@@ -287,13 +292,13 @@
         onEachFeature: function(feature, layer) {
             layer.on('click', function (e) {
                 $("#main-controls").hide();
-                //$("#pin-query-response").empty();
                 $("div.reset").show();
                 $("#data-point-sentence").html(window.featcherSentence(feature.properties));
                 $("#data-point-display").html(window.featcherGraphs(feature.properties));
                 $("#data-point-caveat").html(
                     "<p class='content-map-methodology gt-30pct'>† - Margin of error is at least 10 percent of the total value.</p>"
                 );
+                $("#pin-query-response").empty();
             });
         },
 
@@ -373,12 +378,13 @@
                     clickable: true
                 });
                 this.bindEvent(this.marker, arrayOfModels[i].attributes);
-                this.markerGroup.addLayer(this.marker)
+                this.markerGroup.addLayer(this.marker);
             };
             this.markerGroup.addTo(this.map);
         },
 
         bindEvent: function(marker, attributes){
+            var _this = this;
             var pinResponse = _.template(
                 "<h2>Your thoughts via Public Insight Network</h2>" +
                 "<% if (query_uuid === '7345004f6c9f') { %>" +
@@ -412,9 +418,9 @@
                 "<p><a href='#pin-query-form'>Share your thoughts via the Public Insight Network</a></p>", attributes);
 
             marker.on('click', function(){
-                //$("#data-point-sentence").empty();
-                //$("#data-point-display").empty();
-                //$("#data-point-caveat").empty();
+                $("#main-controls").hide();
+                $("div.reset").show();
+                _this.findFeatureForLatLng(marker._latlng.lat, marker._latlng.lng);
                 $("#pin-query-response").html(pinResponse);
             });
         }
