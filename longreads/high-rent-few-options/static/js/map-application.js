@@ -259,7 +259,11 @@
             $("#data-point-caveat").empty();
             $("#pin-query-response").empty();
             $("input[type='checkbox']").attr('checked', false);
-            this.userLayer.clearLayers();
+
+            if (this.map.hasLayer(this.userLayer)){
+                this.map.removeLayer(this.userLayer);
+            }
+
             this.markerGroup.clearLayers();
             this.map.setView(this.center, this.initialZoom);
         },
@@ -352,11 +356,6 @@
             var myIcon = L.Icon.extend({
                 options: {
                     opacity: .05,
-                    //iconSize:     [38, 95],
-                    //shadowSize:   [50, 64],
-                    //iconAnchor:   [22, 94],
-                    //shadowAnchor: [4, 62],
-                    //popupAnchor:  [-3, -76]
                 }
             });
 
@@ -421,7 +420,7 @@
         bindEvent: function(marker, attributes){
             var _this = this;
             var pinResponse = _.template(
-                "<h2>Your thoughts via Public Insight Network</h2>" +
+                "<h2><img src='static/images/speech-bubble-gt-30.png' align='middle' /> &nbsp;&nbsp;Your thoughts via <a href='http://www.scpr.org/network/faq/' target='blank'>Public Insight Network</h2></a>" +
                 "<% if (query_uuid === '7345004f6c9f') { %>" +
                     "<% if ('7f387f7a9b4e' in responses) { %>" +
                         "<blockquote>\"<%= responses['7f387f7a9b4e'].truncateToGraf() %>\"</blockquote>" +

@@ -2989,8 +2989,8 @@ object, embed {
 #content-map-legend { float: right; width: 74%; height: 40px; }
 #content-map-legend table { width: 100%; margin: 0px; line-height: 2em; border-width: 0px; border-style: solid; border-color: gray; border-collapse: collapse; font: normal 500 1em/1.15 "proxima-nova", Helvetica, sans-serif; }
 #content-map-legend td { padding: 2px; text-align: left; font-weight: bold; width: 25%; }
-#content-map-legend td.lower-tier { border-left:22px solid #fdbe85; }
-#content-map-legend td.higher-tier { border-left:22px solid #d94701; }
+#content-map-legend td.lower-tier { border-left: 22px solid #fdbe85; }
+#content-map-legend td.higher-tier { border-left: 22px solid #d94701; }
 #content-map-canvas { float: right; width: 74%; height: 820px; }
 #content-map-methodology { float: right; width: 74%; height: auto; margin: 15px 0 15px 0; font-size: 0.8125em; line-height: 1.2; font-family: Georgia, serif; font-weight: 400; }
 #content-map-methodology p { color:#666;line-height:1.4em; }
@@ -3015,8 +3015,7 @@ object, embed {
 
 /* location search */
 #content-map-container .controls form { margin: 0 6.59842519685%;}
-#content-map-container .controls .geography-browser {padding: 0 5% 0 5%; width: 100%; margin: 0 0 0px -5%; }
-#content-map-container #main-controls { border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+#content-map-container .controls .geography-browser {padding: 0 5% 0 5%; width: 100%; margin: 0 0 0px -5%; border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
 #content-map-container .controls .control { margin-bottom: 8px }
 #content-map-container .controls .control label,
 #content-map-container .controls .control input { font-weight: 700; color: #9e4100; font-size: 0.75em; font-family: "proxima-nova",  "Avenir Next",  "Avenir",  "Lucida Grande",  "Corbel",  "Tahoma",  Arial,  sans-serif; }
@@ -3029,8 +3028,9 @@ object, embed {
 #content-map-container .controls .control.stacked p input { border: none; background: none; padding: 0; width: 5em; }
 #content-map-container .controls .control.stacked label { font-size: 0.6875em; text-transform: uppercase; color: #7e7e7e; }
 #content-map-container .controls .control.toggle { background: #ecd2a2; padding: 1px 0% 4px 0%; margin-right: -10%; width: 100%; position: relative; }
-#content-map-container .controls .control.toggle label { line-height: 1em; display: block; margin: 5px 0 3px 19px; text-indent: 25px;}
-#content-map-container .controls .control.toggle input { position: absolute; top: 6px; left: 5%; text-indent: 15px;}
+#content-map-container .controls #data-toggles {margin: 15px 0 15px 0;}
+#content-map-container .controls .toggle label { font-size: 0.6875em; text-transform: uppercase; color: #7e7e7e; line-height: 1em; display: block; margin: 5px 0 3px 19px; text-indent: 25px;}
+#content-map-container .controls .toggle input { position: absolute; top: 6px; left: 5%; text-indent: 15px;}
 #content-map-container .controls .control.location { padding-top: 15px }
 #content-map-container .controls .control.location .pairing.text { margin-bottom: 8px }
 #content-map-container .controls .control.location .pairing.text label { display: block; margin-bottom: 5px; }
@@ -3043,6 +3043,7 @@ object, embed {
 #content-map-container .control.reset button:hover { background: #fdbe85; color: #2f2f2f; }
 #content-map-container .controls #location-awareness-input .no-show { display: none }
 #content-map-container .no-show-this { display: none }
+#content-map-container #pin-query-response img {vertical-align: text-bottom;}
 
 @media screen and (min-width: 1300px) {
     #content-map-container {height: 1230px;}
