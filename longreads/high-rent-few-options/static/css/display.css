@@ -3126,10 +3126,17 @@ object, embed {
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
-    #content-map-explainer { float: none; height: 750px; width: 94%; margin: 0 3% 0 3%; }
+    #content-map-container { height: auto; }
+    #content-map-explainer { float: none; height: 1120px; width: 94%; margin: 0 3% 0 3%; }
     #content-map-canvas { float: none; height: 600px; width: 94%; margin: 0 3% 0 3%; }
     #content-map-data { font-size: 0.7em; line-height: 2em; }
-    #content-map-data .chartlist .count, #content-map-data .chartlist li a { font-size: 0.7em; line-height: 2em; }
+    #content-map-container h2 { font-size: 14px; line-height: 20px; margin: 0 0 5px 0; }
+    #content-map-container h4 { font-size: 12px; line-height: 16px; margin: 0 0 5px 0; }
+    #content-map-container blockquote,
+    #content-map-explainer p,
+    #content-map-methodology p { font-size: 12px; line-height: 16px; margin: 0 0 5px 0; }
+    #content-map-container .chartlist .count, #content-map-data .chartlist li a { font-size: 0.7em; line-height: 2em; }
+    #content-map-container .controls .toggle label { font-size: 0.65em;}
 }
 
 @-moz-keyframes leaflet-usermarker-pulsate {
