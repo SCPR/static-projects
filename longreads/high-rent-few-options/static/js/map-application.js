@@ -34,7 +34,7 @@
     };
 
     String.prototype.truncateToGraf = function(){
-        var lengthLimit = 1000;
+        var lengthLimit = 900;
         if (this.length > lengthLimit){
             return this.substring(0, lengthLimit) + " ... ";
         } else {
