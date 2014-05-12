@@ -1,0 +1,5 @@
+.data-visuals a h4 {text-decoration: none; color: #2B2B2B;}
+.data-visuals a h4:hover {text-decoration: none; color: #2B2B2B;}
+
+#project-container {background: #ffffff; min-height: 300px; height: 100%; margin-bottom: 35px; padding: 5px 0 5px 0;}
+#project-container img {width: 84%; margin: 20px 8% 10px 8%; vertical-align: middle;}
