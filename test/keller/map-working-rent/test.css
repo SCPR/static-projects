@@ -1,0 +1,70 @@
+body.minimal .data-container {max-width: 100%; margin: 0 auto;}
+
+#content-map-canvas {height: 1000px;}
+
+/* the form */
+/*
+#theform { position: absolute; right: 34%; bottom: 215px; background-color: #2B2B2B; color: white; opacity: 1; filter: alpha(opacity=80); width: 350px; padding: 30px; font-size: 12px; font-family: Arial, sans-serif; z-index: 2; -moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); -webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); display: none;}
+*/
+
+#content-background {
+	display: none;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0; left: 0;
+	background: #000000;
+	z-index: 1000;
+}
+
+#theform {
+	display: none;
+	position: fixed;
+	left: 30%;
+	top: 0%;
+	width: 60%;
+	max-width: 60%;
+	height: auto;
+	z-index: 1003;
+	padding: 2%;
+	-moz-border-radius: 2%;
+	-webkit-border-radius: 2%;
+	border-radius: 2%;
+	-khtml-border-radius: 2%;
+	background: #2B2B2B;
+	color: white;
+	opacity: 1;
+	filter: alpha(opacity=80);
+	padding: 30px;
+	font-size: 12px;
+	font-family: Arial, sans-serif;
+	z-index: 2;
+	-moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3);
+	-webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3);
+	box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3);
+}
+
+
+#close {margin: 0; cursor: pointer; }
+
+
+
+#theform .btn {padding: 6px 12px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; -khtml-border-radius: 3px;}
+
+#charcounter { float: right; color: red; }
+
+#theform textarea { margin-top: 7px; height: 100px; margin-bottom: 10px; }
+
+.questionlabel { padding-top: 10px; padding-bottom: 10px; padding-left: 0px; padding-right: 0px; text-align: center; width: 480px; }
+
+#formexplain { color: #fff; padding-bottom: 10px; text-align: left; }
+
+#formexplain p { font-size: 12px; }
+
+#cancelbutton { padding-top: 10px; float: left; }
+
+#cancelbutton a { color: red; }
+
+#clickinstructions { background-color: #ff3300; width: 175px; color: white; -moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); -webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); box-shadow: 3px 3px 2px 0px rgba(0,0,0,.3); text-align: center; font-size: 12px; line-height: 30px; height: 30px; position: relative; left: 155px; top: -10px; }
+
+#tooltip { z-index: 2; font-family: Arial; }

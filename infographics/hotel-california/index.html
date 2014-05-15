@@ -1,62 +1,390 @@
-{# The default project templates assumes a _base.html template to be extended. #}
-{% extends "_base.html" %}
 
-{% block data_visuals_content %}
-    {% for item in data if item.order %}
+<!DOCTYPE html>
+
+<!-- begin doc -->
+<html lang="en">
+
+    <!-- begin header -->
+    <head>
+
+        <!-- begin meta -->
+        <title>20 things to know about Hotel California | scpr.org</title>
+        <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" id="meta-viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link rel="apple-touch-icon" href="http://media.scpr.org/assets/images/icon.png">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="robots" content="" />
+        <meta name="description" content="It&#39;s 35 seconds longer than Queen&#39;s Bohemian Rhapsody and has been covered hundreds of times, including muscians like Nancy Sinatra, Frank Ocean, Marilyn Manson… and remember William Hung? From American Idol? Hotel California is the biggest hit single by the Eagles and it&#39;s literally everywhere. Here are 20 facts and tidbits we&#39;ve been able to uncover about that place you can checkout from  but never leave." />
+        <meta name="keywords" content="The Eagles, Hotel California, Soundscan, Beverly Hills Hotel, Don Henley, Glenn Frey, Don Felder" />
+        <meta property="og:title" content="20 things to know about Hotel California" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="http://www.scpr.org/assets/kpcc-twitter-logo-20a598f08e72bbda5ff436c94399d760.png" />
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:height" content="500" />
+        <meta property="og:url" content="http://projects.scpr.org/static/infographics/hotel-california" />
+        <meta property="og:description" content="It&#39;s 35 seconds longer than Queen&#39;s Bohemian Rhapsody and has been covered hundreds of times, including muscians like Nancy Sinatra, Frank Ocean, Marilyn Manson… and remember William Hung? From American Idol? Hotel California is the biggest hit single by the Eagles and it&#39;s literally everywhere. Here are 20 facts and tidbits we&#39;ve been able to uncover about that place you can checkout from  but never leave." />
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="http://projects.scpr.org/static/infographics/hotel-california">
+        <meta name="twitter:domain" content="http://projects.scpr.org/">
+        <meta name="twitter:site" content="KPCC">
+        <meta name="twitter:title" content="20 things to know about Hotel California">
+        <meta name="twitter:description" content="It's 35 seconds longer than Queen's Bohemian Rhapsody and has been covered hundreds of times, including muscians like Nancy Sinatra, Frank Ocean, Marilyn Manson… and remember William Hung? From American Idol? Hotel California is the biggest hit single by the Eagles and it's literally everywhere. Here are 20 facts and tidbits we've been able to uncover about that place you can checkout from  but never leave.">
+        <meta name="twitter:image:src" content="http://www.scpr.org/assets/kpcc-twitter-logo-20a598f08e72bbda5ff436c94399d760.png">
+        <!-- end meta -->
+
+        <!-- begin css -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" />
+        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" type="text/css" />
+        <link href="base.css" rel="stylesheet" type="text/css" />
+        <!-- end css -->
+
+        <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
+        <!--[if lte IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+            <link href="http://projects.scpr.org/static/static-files/v3-dependencies/respond-proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+            <link href="respond-proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+            <script src="respond-proxy/respond.proxy.js"></script>
+        <![endif]-->
+
+        <!-- begin base scripts -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/air8rql.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <!-- end base scripts -->
+
+    </head>
+    <!-- end header -->
+
+    <!-- begin body -->
+    <body class="minimal page-index">
+
+        
+            <div class="kpcc-header">
+  <header>
+      <nav class="navbar navbar-default" role="navigation">
+          <div class="container data-container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
+              </div>
+              <div class="data-share navbar-collapse collapse">
+                  <ul class="nav navbar-nav navbar-right header-links clearfix">
+                      <li class="projects-pledge">
+                          <a href="https://scprcontribute.publicradio.org/" class="pledge-now icon">Contribute to KPCC</a>
+                          <a href="https://scprcontribute.publicradio.org/" target="_blank"><b>Pledge now</b></a>
+                      </li>
+                      <li class="projects-share">
+                          <div class="share-links clearfix">
+                              <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
+                                  <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=http://projects.scpr.org/static/infographics/hotel-california" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
+                                  <a class="twitter icon" href="http://twitter.com/share?text=It's 35 seconds longer than Queen's Bohemian Rhapsody and has been covered hundreds of times, including muscians like Nancy Sinatra, Frank Ocean, Marilyn Manson… and remember William Hung? From American Idol? Hotel California is the biggest hit single by the Eagles and it's literally everywhere. Here are 20 facts and tidbits we've been able to uncover about that place you can checkout from  but never leave.&url=http://projects.scpr.org/static/infographics/hotel-california"></a>
+                          </div>
+                          <b>Share this</b>
+                      </li>
+                      <li class="projects-embed">
+                          <a href="javascript:void(0)" class="embed-this icon" onclick="initializeProject.renderEmbedBox()">Embed This</a>
+                          <a href="javascript:void(0)" target="_blank" onclick="initializeProject.renderEmbedBox()"><b>Embed This</b></a>
+                      </li>
+                      <li class="projects-home">
+                          <a href="http://projects.scpr.org/" class="projects-home icon">Projects Home</a>
+                          <a href="http://projects.scpr.org/"><b>All Projects</b></a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
+</div>
+        
+
+        <div class="container data-container">
+            <div class="row data-details">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="content-article">
+                        <div class="headlines">
+                            
+                            
+                                <h1>20 things to know about Hotel California</h1>
+                            
+                        </div>
+                        <div class="text collapse">
+                            <p>
+                                
+                                    <span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/kevin-ferguson'>Kevin Ferguson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller'>Chris Keller</a></span> |
+                                
+                                
+                                    <span class="pubdate">Published May 15, 2014</span>
+                                
+                            </p>
+                            
+                                <p>It's 35 seconds longer than Queen's Bohemian Rhapsody and has been covered hundreds of times, including muscians like Nancy Sinatra, Frank Ocean, Marilyn Manson… and remember William Hung? From American Idol?</p>
+
+<p>Hotel California is the biggest hit single by the Eagles and it's literally everywhere.</p>
+
+<p>According to Nielsen Soundscan Hotel California is played on American radio once every 11 minutes — that's about 131 times a day. And the average classic rock radio listener will hear it over 1500 times in their life—assuming they were born after the song came out.</p>
+
+<p>And now yet another version has been recorded by former Eagle and one of the song's original writers Don Felder to drum up publicity for his upcoming solo tour.</p>
+
+<p>Here are 20 other facts and tidbits we've been able to uncover about that place you can "checkout" from "but never leave."</p>
+                            
+                        </div>
+                        <div class="about collapse">
+                            <p>
+                            
+                            
+                                <strong>Built using</strong>: <a href="http://tarbell.tribapps.com/" target="blank">Tarbell</a> &amp; <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.&nbsp;
+                            
+                            
+                            
+                            </p>
+                        </div>
+                        <div class="buttons btn-group btn-group-justified">
+                            <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".text"><span class="text glyphicon glyphicon-chevron-down"></span>  About</a>
+                            <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".about"><span class="about glyphicon glyphicon-chevron-down"></span>  Sources</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row data-visuals">
+                
+                
+    
         <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            {% if item.alignment == "left" %}
+            
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    {% if item.type == "skywriting" %}
-                        <h5 class="left-align">{{ item.question }}</h5>
-                        <p class="right-align"><span class="sky-writing">{{ item.answer_skywriting }}</span><br />{{ item.answer_context|safe }}</p>
-                    {% elif item.type == "iconify" %}
-                        <h5 class="left-align">{{ item.question }}</h5>
-                        <p class="right-align"><span class="sky-writing">{{ item.answer_skywriting }}</span><br />{{ item.answer_context|safe }}</p>
-                        {{ item.answer_skywriting|iconify_this|safe }}
-                    {% elif item.type == "image" %}
-                        <h5 class="left-align">{{ item.question }}</h5>
-                        <p class="right-align"><span class="sky-writing">{{ item.answer_skywriting }}</span><br />{{ item.answer_context|safe }}</p>
-                        <img src="{{ item.answer_image }}" />
-                    {% elif item.type == "narrative" %}
-                        {{ item.answer_context|safe }}
-                    {% else %}
-                        {{ item.answer_context|safe }}
-                    {% endif %}
+                    
+                        <h5 class="left-align">When was the first time &#34;Hotel California&#34; was performed live?</h5>
+                        <p class="right-align"><span class="sky-writing">July 29, 1975</span><br />... at the Mississippi River Festival in Edwardsville, Illinois, according to <a href="http://www.setlist.fm/setlist/eagles/1975/mississippi-river-festival-edwardsville-il-23df409f.html" target="_blank">setlist.fm</a></p>
+                    
                 </div>
-            {% elif item.alignment == "full" %}
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    {% if item.type == "skywriting" %}
-                        <h5>{{ item.question }}</h5>
-                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                            <p><span class="sky-writing">{{ item.answer_skywriting }}</span></p>
-                        </div>
-                        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                            <p style="margin-top: 55px;">{{ item.answer_context|safe }}</p>
-                        </div>
-                    {% elif item.type == "iconify" %}
-                        <h5 class="right-align">{{ item.question }}</h5>
-                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-                            <p class="left-align"><span class="sky-writing">{{ item.answer_skywriting }}</span><br />{{ item.answer_context|safe }}</p>
-                        </div>
-                        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                            {{ item.answer_skywriting|iconify_this|safe }}
-                        </div>
-                    {% elif item.type == "image" %}
-                        <h5 class="left-align">{{ item.question }}</h5>
-                        <p class="right-align"><span class="sky-writing">{{ item.answer_skywriting }}</span><br />{{ item.answer_context|safe }}</p>
-                        <img class="push-right" src="{{ item.answer_image }}" />
-                    {% elif item.type == "narrative" %}
-                        <h5 class="left-align">{{ item.question }}</h5>
-                        <p class="right-align"><span class="sky-writing">{{ item.answer_skywriting }}</span></p>
-                        {{ item.answer_context|safe }}
-                    {% else %}
-                        <h5 class="left-align">{{ item.question }}</h5>
-                        {{ item.answer_context|safe }}
-                    {% endif %}
-                </div>
-            {% endif %}
+            
         </div>
-    {% endfor %}
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">And about how many times have The Eagles performed live?</h5>
+                        <p class="right-align"><span class="sky-writing">717 times</span><br />... between July 29, 1975 and May, 1 2014, according to <a href="http://www.setlist.fm/stats/eagles-6bd6bede.html" target="_blank">setlist.fm</a></p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">And of those live shows, at how many did The Eagles perform &#34;Hotel California&#34;?</h5>
+                        <p class="right-align"><span class="sky-writing">463 times</span><br />... between July 29, 1975 and May, 1 2014, according to <a href="http://www.setlist.fm/stats/eagles-6bd6bede.html" target="_blank">setlist.fm</a></p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">So they&#39;ve performed it about 64.5 percent of the time?</h5>
+                        <p class="right-align"><span class="sky-writing">Correct</span><br /></p>
+                        <img class="push-right" src="http://a.scpr.org/i/b0395b18f75ee948e2f491d0d0113068/84554-full.jpg" />
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="right-align">How often have the Eagles performed &#34;Hotel California&#34; live while on tour in California?</h5>
+                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                            <p class="left-align"><span class="sky-writing">38 times</span><br />The Eagles' first live performance of the song came at The Forum in Inglewood on March 4, 1980, according to <a href="http://www.setlist.fm/stats/eagles-6bd6bede.html" target="_blank">setlist.fm</a></p>
+                        </div>
+                        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                            <div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div><div class='col-xs-1 col-sm-1 col-md-1 col-lg-1'><h1><span class='stateface stateface-ca'></span></h1></div>
+                        </div>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">Wait, didn&#39;t The Eagles &#34;checkout&#34; as a band while playing in California?</h5>
+                        <p class="right-align"><span class="sky-writing">Yes</span><br />... the band broke up following a July 31, 1980 show in Long Beach, according to <a href="http://www.setlist.fm/stats/eagles-6bd6bede.html" target="_blank">setlist.fm</a></p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">So they started in California, broke-up in California and reunited in California?</h5>
+                        <p class="right-align"><span class="sky-writing">Yes</span><br />... the Eagles formed about 1970 around a group of session musicians at The Troubadour <br /> in Los Angeles, and reunited on April 24, 1994 in Burbank on a Warner Bros. Studios Sound Stage</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">How often have the Eagles performed &#34;Hotel California&#34; live on tour since their reunion?</h5>
+                        <p class="right-align"><span class="sky-writing">437 times</span><br />... according to <a href="http://www.setlist.fm/stats/eagles-6bd6bede.html" target="_blank">setlist.fm</a></p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">So &#34;Hotel California&#34; is the name of a song and a CD?</h5>
+                        <p class="right-align"><span class="sky-writing">Yes</span><br />... single and album really. The album was released Nov. 8, 1976. The single was released in February 1977.</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">Where was the album cover shot?</h5>
+                        <p class="right-align"><span class="sky-writing">Beverly Hills</span><br />... where the Beverly Hills Hotel provided the backdrop for the iconic album</p>
+                        <img src="http://a.scpr.org/i/023b41507fd939eb7cce367484b72673/80863-full.jpg" />
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">How long is the song as it was originally released?</h5>
+                        <p class="right-align"><span class="sky-writing">6:30</span><br />... is the run-time of the original album recording</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">How many words are in the song lyrics?</h5>
+                        <p class="right-align"><span class="sky-writing">344</span><br /></p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">Did the single have a B-side?</h5>
+                        <p class="right-align"><span class="sky-writing">Yes</span><br />... the B-side was "Pretty Maids All in a Row"</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">Did the single reach No. 1?</h5>
+                        <p class="right-align"><span class="sky-writing">Yes</span><br />... "Hotel California" hit No. 1 on the Billboard charts in May 1977</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">What&#39;s the likelihood Hotel California is being played on the radio right now?</h5>
+                        <p class="right-align"><span class="sky-writing">Good question</span></p>
+                        <p class="right-align"> ... and difficult to discern, but Anna Loynes with Scoop Marketing was able to provide some data that might lend an insight:</p>
+<ul>
+<li>Looking at airplay data from April 28, 2014, "Hotel California" was played an average of once every 11 minutes or so on all of the U.S. radio stations monitored by Nielsen BDS.</li>
+<li>Over a four-week period ending April 28, 2014, Classic Rock and Classic Hits stations monitored by Nielsen BDS played "Hotel California" 2,209 times, making it the 9th most-played song on those two formats. The most-played song during that period was Boston's "More Than A Feeling" with 2,700 plays.</li>
+<li>Over a four-week period ending April 28, 2014, KRTH in Los Angeles played “Hotel California” 99 times, the most out of all of the U.S. radio stations monitored by Nielsen BDS. "Hotel California" was the 2nd most-played song over that time period (tied with America's "Sister Golden Hair").</li>
+<li>Of the 10 US stations monitored by Nielsen BDS that played "Hotel California" the most over a four-week period ending April 28, 2014, four of those stations were in California.</li>
+</ul>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">If the song runs 6 minutes and 30 seconds, how many times could Hotel California have been played uninterupted on the radio during the Eagles 13 year, 8 month and 24 day breakup?</h5>
+                        <p class="right-align"><span class="sky-writing">1,111,015.38</span><br />... roughly (7,221,600 * 60)/390 = 1,111,015.38 times</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">Can I find academic research citing &#34;Hotel California&#34;?</h5>
+                        <p class="right-align"><span class="sky-writing">Yes</span><br />... the song is mentioned in at least 73 different academic articles based on a <a href="http://www.jstor.org/action/doBasicSearch?Query=eagles&swp=on&prq=%22hotel+california%22&hp=25&acc=off&wc=on&fc=off&so=rel&racc=off" target="_blank">quick JSTOR search</a></p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">Has it been used as a metaphor for dealing with trade in China?</h5>
+                        <p class="right-align"><span class="sky-writing">Yes</span><br />... a blog post titled <a href="http://news.alibaba.com/article/detail/knowledge/100898170-1-china-joint-ventures-hotel-california.html" target="_blank">"China Joint Ventures And The Hotel California Effect"</a> used it to describe the obstacles foreign businesses have when attempting to move their money out of China</p>
+                    
+                </div>
+            
+        </div>
+    
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    
+                        <h5 class="left-align">Have you created a Spotify playlist with different versions of &#34;Hotel California&#34;?</h5>
+                        <p class="right-align"><span class="sky-writing">Of course</span><br /><div style="float: right;"><iframe src="https://embed.spotify.com/?uri=spotify:user:chrislkeller:playlist:1nMTMEdq8IZuSRxjqALfdt" width="100%" height="300" frameborder="0" allowtransparency="true"></iframe></div></p>
+                    
+                </div>
+            
+        </div>
+    
     <div class="table-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h5>Any chance there's a record of every time The Eagles performed "Hotel California" live on tour?</h5>
         <p><span class="sky-writing">Actually, yes</span> ... The folks at <a href="http://www.setlist.fm/" target="blank">setlist.fm</a> have attempted to do <a href="http://www.setlist.fm/stats/songs/eagles-6bd6bede.html?song=Hotel+California" target="blank">this</a>. Some of that data is re-displayed below.</p>
@@ -69,21 +397,2828 @@
                 </tr>
             </thead>
             <tbody>
-                {% for show in played_on_tour %}
+                
                     <tr>
-                        <td>{{ show.full_date }}</td>
-                        <td>{{ show.venue }}</td>
-                        <td>{{ show.location }}</td>
+                        <td>July 29, 1975</td>
+                        <td>Mississippi River Festival</td>
+                        <td>Edwardsville, Illinois</td>
                     </tr>
-                {% endfor %}
+                
+                    <tr>
+                        <td>November 6, 1976</td>
+                        <td>The Summit</td>
+                        <td>Houston, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 9, 1977</td>
+                        <td>Wembley Empire Pool</td>
+                        <td>London, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 18, 1977</td>
+                        <td>Madison Square Garden</td>
+                        <td>New York, New York</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 19, 1977</td>
+                        <td>Rochester Community War Memorial</td>
+                        <td>Rochester, New York</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 26, 1977</td>
+                        <td>New Haven Veterans Memorial Coliseum</td>
+                        <td>New Haven, Connecticut</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 18, 1977</td>
+                        <td>Scandinavium</td>
+                        <td>Gothenburg, Sweden</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 8, 1977</td>
+                        <td>Festhalle</td>
+                        <td>Frankfurt, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 17, 1978</td>
+                        <td>Mississippi River Festival</td>
+                        <td>Edwardsville, Illinois</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 20, 1978</td>
+                        <td>Comiskey Park</td>
+                        <td>Chicago, Illinois</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 4, 1978</td>
+                        <td>Buffalo Memorial Auditorium</td>
+                        <td>Buffalo, New York</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 6, 1978</td>
+                        <td>CNE Stadium</td>
+                        <td>Toronto, Ontario</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 9, 1979</td>
+                        <td>Boston Garden</td>
+                        <td>Boston, Massachusetts</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 25, 1979</td>
+                        <td>Nippon Budokan</td>
+                        <td>Tokyo, Japan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 30, 1979</td>
+                        <td>Aloha Stadium</td>
+                        <td>Honolulu, Hawaii</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 11, 1980</td>
+                        <td>LSU Assembly Center</td>
+                        <td>Baton Rouge, Louisana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 14, 1980</td>
+                        <td>Myriad Convention Center</td>
+                        <td>Oklahoma City, Oklahoma</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 31, 1980</td>
+                        <td>Unknown Venue</td>
+                        <td>Long Beach, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 14, 1980</td>
+                        <td>Yale Bowl</td>
+                        <td>New Haven, Connecticut</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 15, 1980</td>
+                        <td>Giants Stadium</td>
+                        <td>East Rutherford, New Jersey</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 20, 1980</td>
+                        <td>Louisiana Superdome</td>
+                        <td>New Orleans, Louisana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 21, 1980</td>
+                        <td>Cotton Bowl</td>
+                        <td>Dallas, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 23, 1980</td>
+                        <td>Kemper Arena</td>
+                        <td>Kansas City, Missouri</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 28, 1980</td>
+                        <td>Alpine Valley Music Theatre</td>
+                        <td>East Troy, Wisconsin</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 29, 1980</td>
+                        <td>Alpine Valley Music Theatre</td>
+                        <td>East Troy, Wisconsin</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 4, 1980</td>
+                        <td>The Forum</td>
+                        <td>Inglewood, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 24, 1994</td>
+                        <td>Warner Bros. Studios Sound Stage</td>
+                        <td>Burbank, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 25, 1994</td>
+                        <td>Warner Bros. Studios Sound Stage</td>
+                        <td>Burbank, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 10, 1994</td>
+                        <td>Great Woods Amphitheater</td>
+                        <td>Mansfield, Massachusetts</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 12, 1994</td>
+                        <td>Polaris Amphitheater</td>
+                        <td>Columbus, Ohio</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 13, 1994</td>
+                        <td>Polaris Amphitheater</td>
+                        <td>Columbus, Ohio</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 16, 1994</td>
+                        <td>Star Lake Amphitheater</td>
+                        <td>Burgettstown, Pennsylvania</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 18, 1994</td>
+                        <td>Hardee&#39;s Walnut Creek Amphitheatre</td>
+                        <td>Raleigh, North Carolina</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 19, 1994</td>
+                        <td>Hardee&#39;s Walnut Creek Amphitheatre</td>
+                        <td>Raleigh, North Carolina</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 21, 1994</td>
+                        <td>Saratoga Performing Arts Center</td>
+                        <td>Saratoga Springs, New York</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 23, 1994</td>
+                        <td>Giants Stadium</td>
+                        <td>East Rutherford, New Jersey</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 24, 1994</td>
+                        <td>Giants Stadium</td>
+                        <td>East Rutherford, New Jersey</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 5, 1994</td>
+                        <td>Great Woods Amphitheater</td>
+                        <td>Mansfield, Massachusetts</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 6, 1994</td>
+                        <td>Great Woods Amphitheater</td>
+                        <td>Mansfield, Massachusetts</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 7, 1994</td>
+                        <td>Great Woods Amphitheater</td>
+                        <td>Mansfield, Massachusetts</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 8, 1994</td>
+                        <td>Great Woods Amphitheater</td>
+                        <td>Mansfield, Massachusetts</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 9, 1994</td>
+                        <td>Great Woods Amphitheater</td>
+                        <td>Mansfield, Massachusetts</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 11, 1994</td>
+                        <td>CNE Stadium</td>
+                        <td>Toronto, Ontario</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 13, 1994</td>
+                        <td>Tiger Stadium</td>
+                        <td>Detroit, Michigan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 15, 1994</td>
+                        <td>Alpine Valley Music Theatre</td>
+                        <td>East Troy, Wisconsin</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 17, 1994</td>
+                        <td>The Omni</td>
+                        <td>Atlanta, Georgia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 18, 1994</td>
+                        <td>The Omni</td>
+                        <td>Atlanta, Georgia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 19, 1994</td>
+                        <td>The Omni</td>
+                        <td>Atlanta, Georgia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 2, 1994</td>
+                        <td>Rice Stadium</td>
+                        <td>Houston, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 21, 1994</td>
+                        <td>Louisiana Superdome</td>
+                        <td>New Orleans, Louisana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 23, 1994</td>
+                        <td>Citrus Bowl</td>
+                        <td>Orlando, Florida</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 24, 1994</td>
+                        <td>Orange Bowl</td>
+                        <td>Miami, Florida</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 3, 1994</td>
+                        <td>Texas Stadium</td>
+                        <td>Irving, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 5, 1994</td>
+                        <td>Riverport Amphitheatre</td>
+                        <td>Maryland Heights, Missouri</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 6, 1994</td>
+                        <td>Riverport Amphitheatre</td>
+                        <td>Maryland Heights, Missouri</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 8, 1994</td>
+                        <td>Cleveland Stadium</td>
+                        <td>Cleveland, Ohio</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 1, 1994</td>
+                        <td>Irvine Meadows</td>
+                        <td>Irvine, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 11, 1994</td>
+                        <td>Shoreline Amphitheatre</td>
+                        <td>Mountain View, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 12, 1994</td>
+                        <td>Shoreline Amphitheatre</td>
+                        <td>Mountain View, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 14, 1994</td>
+                        <td>Fiddler&#39;s Green Amphitheatre</td>
+                        <td>Greenwood Village, Colorado</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 15, 1994</td>
+                        <td>Fiddler&#39;s Green Amphitheatre</td>
+                        <td>Greenwood Village, Colorado</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 16, 1994</td>
+                        <td>Fiddler&#39;s Green Amphitheatre</td>
+                        <td>Greenwood Village, Colorado</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 18, 1994</td>
+                        <td>Sam Boyd Stadium</td>
+                        <td>Las Vegas, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 19, 1994</td>
+                        <td>Sun Devil Stadium</td>
+                        <td>Tempe, Arizona</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 3, 1994</td>
+                        <td>Blockbuster Pavilion</td>
+                        <td>San Bernardino, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 30, 1994</td>
+                        <td>Alamodome</td>
+                        <td>San Antonio, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 4, 1994</td>
+                        <td>Jack Murphy Stadium</td>
+                        <td>San Diego, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 8, 1994</td>
+                        <td>Shoreline Amphitheatre</td>
+                        <td>Mountain View, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 9, 1994</td>
+                        <td>Shoreline Amphitheatre</td>
+                        <td>Mountain View, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 27, 1994</td>
+                        <td>Irvine Meadows</td>
+                        <td>Irvine, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 28, 1994</td>
+                        <td>Irvine Meadows</td>
+                        <td>Irvine, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 29, 1994</td>
+                        <td>Irvine Meadows</td>
+                        <td>Irvine, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 30, 1994</td>
+                        <td>Irvine Meadows</td>
+                        <td>Irvine, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 31, 1994</td>
+                        <td>Irvine Meadows</td>
+                        <td>Irvine, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 28, 1994</td>
+                        <td>Edmonton Coliseum</td>
+                        <td>Edmonton, Alberta</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 4, 1994</td>
+                        <td>Myriad Convention Center</td>
+                        <td>Oklahoma City, Oklahoma</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 13, 1994</td>
+                        <td>RFK Stadium</td>
+                        <td>Washington DC</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 14, 1994</td>
+                        <td>Hersheypark Stadium</td>
+                        <td>Hershey, Pennsylvania</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 16, 1994</td>
+                        <td>The Spectrum</td>
+                        <td>Philadelphia, Pennsylvania</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 1, 1995</td>
+                        <td>Olympic Saddledome</td>
+                        <td>Calgary, Alberta</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 10, 1995</td>
+                        <td>Bradley Center</td>
+                        <td>Milwaukee, Wisconsin</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 11, 1995</td>
+                        <td>Gund Arena</td>
+                        <td>Cleveland, Ohio</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 18, 1995</td>
+                        <td>Charleston Civic Center</td>
+                        <td>Charleston, West Virginia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 19, 1995</td>
+                        <td>Starwood Amphitheatre</td>
+                        <td>Antioch, Tennessee</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 2, 1995</td>
+                        <td>Fargodome</td>
+                        <td>Fargo, North Dakota</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 21, 1995</td>
+                        <td>Starwood Amphitheatre</td>
+                        <td>Antioch, Tennessee</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 22, 1995</td>
+                        <td>Birmingham-Jefferson Civic Center Coliseum</td>
+                        <td>Birmingham, Alabama</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 24, 1995</td>
+                        <td>Riverbend Music Center</td>
+                        <td>Cincinnati, Ohio</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 25, 1995</td>
+                        <td>Riverbend Music Center</td>
+                        <td>Cincinnati, Ohio</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 27, 1995</td>
+                        <td>Deer Creek Music Center</td>
+                        <td>Noblesville, Indiana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 28, 1995</td>
+                        <td>Deer Creek Music Center</td>
+                        <td>Noblesville, Indiana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 30, 1995</td>
+                        <td>Sandstone Amphitheater</td>
+                        <td>Bonner Springs, Kansas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 5, 1995</td>
+                        <td>Kiel Center</td>
+                        <td>St. Louis, Missouri</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 2, 1995</td>
+                        <td>Centre Court</td>
+                        <td>Melbourne, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 4, 1995</td>
+                        <td>Hindmarsh Stadium</td>
+                        <td>Adelaide, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 6, 1995</td>
+                        <td>Brisbane Entertainment Centre</td>
+                        <td>Brisbane, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 7, 1995</td>
+                        <td>Brisbane Entertainment Centre</td>
+                        <td>Brisbane, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 9, 1995</td>
+                        <td>Sydney Cricket Ground</td>
+                        <td>Sydney, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 15, 1995</td>
+                        <td>The Palace of Auburn Hills</td>
+                        <td>Auburn Hills, Michigan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 16, 1995</td>
+                        <td>The Palace of Auburn Hills</td>
+                        <td>Auburn Hills, Michigan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 18, 1995</td>
+                        <td>United Center</td>
+                        <td>Chicago, Illinois</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 19, 1995</td>
+                        <td>Hilton Coliseum</td>
+                        <td>Ames, Iowa</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 21, 1995</td>
+                        <td>Target Center</td>
+                        <td>Minneapolis, Minnesota</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 22, 1995</td>
+                        <td>Target Center</td>
+                        <td>Minneapolis, Minnesota</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 24, 1995</td>
+                        <td>The Omni</td>
+                        <td>Atlanta, Georgia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 25, 1995</td>
+                        <td>Tupelo Coliseum</td>
+                        <td>Tupelo, Mississippi</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 27, 1995</td>
+                        <td>Miami Arena</td>
+                        <td>Miami, Florida</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 10, 1995</td>
+                        <td>Tacoma Dome</td>
+                        <td>Tacoma, Washington</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 12, 1995</td>
+                        <td>Portland Memorial Coliseum</td>
+                        <td>Portland, Oregon</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 14, 1995</td>
+                        <td>Delta Center</td>
+                        <td>Salt Lake City, Utah</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 15, 1995</td>
+                        <td>Boise State University Pavilion</td>
+                        <td>Boise, Idaho</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 17, 1995</td>
+                        <td>San Jose Arena</td>
+                        <td>San Jose, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 18, 1995</td>
+                        <td>ARCO Arena</td>
+                        <td>Sacramento, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 21, 1995</td>
+                        <td>Rose Bowl</td>
+                        <td>Pasadena, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 23, 1995</td>
+                        <td>America West Arena</td>
+                        <td>Phoenix, Arizona</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 25, 1995</td>
+                        <td>Myriad Convention Center</td>
+                        <td>Oklahoma City, Oklahoma</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 26, 1995</td>
+                        <td>Myriad Convention Center</td>
+                        <td>Oklahoma City, Oklahoma</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 28, 1995</td>
+                        <td>Bob Devaney Sports Center</td>
+                        <td>Lincoln, Nebraska</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 30, 1995</td>
+                        <td>The Pyramid Arena</td>
+                        <td>Memphis, Tennessee</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 31, 1995</td>
+                        <td>Thompson-Boling Arena</td>
+                        <td>Knoxville, Tennessee</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 9, 1995</td>
+                        <td>Tacoma Dome</td>
+                        <td>Tacoma, WA</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 11, 1995</td>
+                        <td>The Joint at Hard Rock Hotel</td>
+                        <td>Las Vegas, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 27, 1995</td>
+                        <td>Pacific Coliseum</td>
+                        <td>Vancouver, British Columbia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 28, 1995</td>
+                        <td>Pacific Coliseum</td>
+                        <td>Vancouver, British Columbia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 3, 1995</td>
+                        <td>Rupp Arena</td>
+                        <td>Lexington, Kentucky</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 30, 1995</td>
+                        <td>Northlands Coliseum</td>
+                        <td>Edmonton, Alberta</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 31, 1995</td>
+                        <td>Olympic Saddledome</td>
+                        <td>Calgary, Alberta</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 4, 1995</td>
+                        <td>North Charleston Coliseum</td>
+                        <td>North Charleston, South Carolina</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 6, 1995</td>
+                        <td>CoreStates Spectrum</td>
+                        <td>Philadelphia, Pennsylvania</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 7, 1995</td>
+                        <td>CoreStates Spectrum</td>
+                        <td>Philadelphia, Pennsylvania</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 9, 1995</td>
+                        <td>USAir Arena</td>
+                        <td>Landover, Maryland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 1, 1995</td>
+                        <td>Sandstone Amphitheater</td>
+                        <td>Bonner Springs, Kansas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 12, 1995</td>
+                        <td>Mobile Civic Center</td>
+                        <td>Mobile, Alabama</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 13, 1995</td>
+                        <td>War Memorial Stadium</td>
+                        <td>Little Rock, Arkansas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 14, 1995</td>
+                        <td>Cajundome</td>
+                        <td>Lafayette, Louisana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 3, 1995</td>
+                        <td>Aggie Memorial Stadium</td>
+                        <td>Las Cruces, New Mexico</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 5, 1995</td>
+                        <td>Mile High Stadium</td>
+                        <td>Denver, Colorado</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 7, 1995</td>
+                        <td>Texas Memorial Stadium</td>
+                        <td>Austin, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 11, 1995</td>
+                        <td>Yokohama Arena</td>
+                        <td>Yokohama, Japan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 12, 1995</td>
+                        <td>Yokohama Arena</td>
+                        <td>Yokohama, Japan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 14, 1995</td>
+                        <td>Tokyo Dome</td>
+                        <td>Tokyo, Japan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 15, 1995</td>
+                        <td>Tokyo Dome</td>
+                        <td>Tokyo, Japan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 18, 1995</td>
+                        <td>Fukuoka Dome</td>
+                        <td>Fukuoka, Japan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 21, 1995</td>
+                        <td>Yokohama Arena</td>
+                        <td>Yokohama, Japan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 25, 1995</td>
+                        <td>Western Springs Stadium</td>
+                        <td>Auckland, New Zealand</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 26, 1995</td>
+                        <td>Lancaster Park</td>
+                        <td>Christchurch, New Zealand</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 29, 1995</td>
+                        <td>Centre Court</td>
+                        <td>Melbourne, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 30, 1995</td>
+                        <td>Centre Court</td>
+                        <td>Melbourne, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 6, 1995</td>
+                        <td>Aloha Stadium</td>
+                        <td>Honolulu, Hawaii</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 9, 1995</td>
+                        <td>Koshien Stadium</td>
+                        <td>Osaka, Japan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 2, 1996</td>
+                        <td>Nynex Arena</td>
+                        <td>Manchester, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 3, 1996</td>
+                        <td>Wembley Stadium</td>
+                        <td>London, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 4, 1996</td>
+                        <td>Murrayfield Stadium</td>
+                        <td>Edinburgh, Scotland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 10, 1996</td>
+                        <td>McAlpine Stadium</td>
+                        <td>Huddersfield, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 13, 1996</td>
+                        <td>Wembley Stadium</td>
+                        <td>London, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 14, 1996</td>
+                        <td>Wembley Stadium</td>
+                        <td>London, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 16, 1996</td>
+                        <td>Flanders Expo</td>
+                        <td>Ghent, Belgium</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 17, 1996</td>
+                        <td>Feijenoord Stadion</td>
+                        <td>Rotterdam, Netherlands</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 19, 1996</td>
+                        <td>Trabrennbahn</td>
+                        <td>Hamburg, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 21, 1996</td>
+                        <td>Maritime Museum</td>
+                        <td>Stockholm, Sweden</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 22, 1996</td>
+                        <td>Oslo Spektrum</td>
+                        <td>Oslo, Norway</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 24, 1996</td>
+                        <td>Waldbühne</td>
+                        <td>Berlin, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 25, 1996</td>
+                        <td>Westfalenhalle</td>
+                        <td>Dortmund, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 27, 1996</td>
+                        <td>Festhalle</td>
+                        <td>Frankfurt, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 28, 1996</td>
+                        <td>Olympiahalle</td>
+                        <td>Munich, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 30, 1996</td>
+                        <td>Hallenstadion</td>
+                        <td>Zurich, Switzerland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 5, 1996</td>
+                        <td>RDS Arena</td>
+                        <td>Dublin, Ireland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 6, 1996</td>
+                        <td>RDS Arena</td>
+                        <td>Dublin, Ireland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 8, 1996</td>
+                        <td>Palais Omnisports de Paris-Bercy</td>
+                        <td>Paris, France</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 16, 1996</td>
+                        <td>Memorial Stadium</td>
+                        <td>Clemson, South Carolina</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 17, 1996</td>
+                        <td>Greensboro Coliseum</td>
+                        <td>Greensboro, North Carolina</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 19, 1996</td>
+                        <td>GTE Amphitheatre</td>
+                        <td>Virginia Beach, Virginia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 20, 1996</td>
+                        <td>Bryce Jordan Center</td>
+                        <td>University Park, Pennsylvania</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 22, 1996</td>
+                        <td>Meadows Music Theater</td>
+                        <td>Hartford, Connecticut</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 24, 1996</td>
+                        <td>Nassau Veterans Memorial Coliseum</td>
+                        <td>Uniondale, New York</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 25, 1996</td>
+                        <td>Nassau Veterans Memorial Coliseum</td>
+                        <td>Uniondale, New York</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 27, 1996</td>
+                        <td>Molson Amphitheatre</td>
+                        <td>Toronto, Ontario</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 28, 1996</td>
+                        <td>Molson Amphitheatre</td>
+                        <td>Toronto, Ontario</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 29, 1996</td>
+                        <td>Corel Centre</td>
+                        <td>Ottawa, Ontario</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 13, 1998</td>
+                        <td>Waldorf Astoria Hotel</td>
+                        <td>New York, New York</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 28, 1999</td>
+                        <td>Mandalay Bay Events Center</td>
+                        <td>Las Vegas, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 29, 1999</td>
+                        <td>Mandalay Bay Events Center</td>
+                        <td>Las Vegas, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 31, 1999</td>
+                        <td>Staples Center</td>
+                        <td>Los Angeles, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 11, 2001</td>
+                        <td>Invesco Field</td>
+                        <td>Denver, Colorado</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 14, 2001</td>
+                        <td>Piazza Napoleone</td>
+                        <td>Lucca, Italy</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 16, 2001</td>
+                        <td>Olympiahalle</td>
+                        <td>Munich, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 22, 2001</td>
+                        <td>Hampden Park</td>
+                        <td>Glasgow, Scotland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 28, 2001</td>
+                        <td>American Airlines Center</td>
+                        <td>Dallas, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 13, 2001</td>
+                        <td>Earls Court</td>
+                        <td>London, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 2, 2001</td>
+                        <td>Hartwall Areena</td>
+                        <td>Helsinki, Finland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 3, 2001</td>
+                        <td>Stockholm Globe Arena</td>
+                        <td>Stockholm, Sweden</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 7, 2001</td>
+                        <td>Kölnarena</td>
+                        <td>Cologne, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 1, 2002</td>
+                        <td>Centurytel Center</td>
+                        <td>Bossier City, Louisana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 10, 2002</td>
+                        <td>Henry Levitt Arena</td>
+                        <td>Wichita, Kansas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 11, 2002</td>
+                        <td>Kemper Arena</td>
+                        <td>Kansas City, Missouri</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 13, 2002</td>
+                        <td>Hilton Coliseum</td>
+                        <td>Ames, Iowa</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 14, 2002</td>
+                        <td>Omaha Civic Auditorium</td>
+                        <td>Omaha, Nebraska</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 16, 2002</td>
+                        <td>Bancorp South Smith</td>
+                        <td>Tupelo, Mississippi</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 17, 2002</td>
+                        <td>BJCC Arena</td>
+                        <td>Birmingham, Alabama</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 19, 2002</td>
+                        <td>Mississippi Coast Coliseum</td>
+                        <td>Biloxi, Mississippi</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 2, 2002</td>
+                        <td>Alltel Arena</td>
+                        <td>North Little Rock, Arkansas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 20, 2002</td>
+                        <td>Mississippi Coast Coliseum</td>
+                        <td>Biloxi, Mississippi</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 4, 2002</td>
+                        <td>Thompson-Boling Arena</td>
+                        <td>Knoxville, Tennessee</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 5, 2002</td>
+                        <td>Freedom Hall</td>
+                        <td>Louisville, Kentucky</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 7, 2002</td>
+                        <td>Marcus Amphitheater</td>
+                        <td>Milwaukee, Wisconsin</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 8, 2002</td>
+                        <td>Mark of the Quad Cities</td>
+                        <td>Moline, Illinois</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 1, 2002</td>
+                        <td>The Joint at Hard Rock Hotel</td>
+                        <td>Las Vegas, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 10, 2002</td>
+                        <td>Skyreach Centre</td>
+                        <td>Edmonton, Alberta</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 12, 2002</td>
+                        <td>General Motors Place</td>
+                        <td>Vancouver, British Columbia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 13, 2002</td>
+                        <td>Rose Garden Arena</td>
+                        <td>Portland, Oregon</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 15, 2002</td>
+                        <td>The Gorge Amphitheatre</td>
+                        <td>George, Washington</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 16, 2002</td>
+                        <td>Spokane Arena</td>
+                        <td>Spokane, Washington</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 18, 2002</td>
+                        <td>Fargodome</td>
+                        <td>Fargo, North Dakota</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 19, 2002</td>
+                        <td>Xcel Energy Center</td>
+                        <td>St. Paul, Minnesota</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 21, 2002</td>
+                        <td>Van Andel Arena</td>
+                        <td>Grand Rapids, Michigan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 22, 2002</td>
+                        <td>Value City Arena</td>
+                        <td>Columbus, Ohio</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 28, 2002</td>
+                        <td>United Spirit Arena</td>
+                        <td>Lubbock, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 29, 2002</td>
+                        <td>Ford Center</td>
+                        <td>Oklahoma City, Oklahoma</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 3, 2002</td>
+                        <td>Don Haskins Center</td>
+                        <td>El Paso, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 4, 2002</td>
+                        <td>University Arena - University Of New Mexico</td>
+                        <td>Albuquerque, New Mexico</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 6, 2002</td>
+                        <td>Delta Center</td>
+                        <td>Salt Lake City, Utah</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 7, 2002</td>
+                        <td>Idaho Center</td>
+                        <td>Nampa, Idaho</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 9, 2002</td>
+                        <td>Pengrowth Saddledome</td>
+                        <td>Calgary, Alberta</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 31, 2002</td>
+                        <td>Lawlor Events Center</td>
+                        <td>Reno, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 11, 2003</td>
+                        <td>MCI Center</td>
+                        <td>Washington DC</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 15, 2003</td>
+                        <td>Fleet Center</td>
+                        <td>Boston, Massachusetts</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 21, 2003</td>
+                        <td>Verizon Wireless Arena</td>
+                        <td>Manchester, New Hampshire</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 8, 2003</td>
+                        <td>First Union Center</td>
+                        <td>Philadelphia, Pennsylvania</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 19, 2003</td>
+                        <td>American Airlines Center</td>
+                        <td>Dallas, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 11, 2003</td>
+                        <td>Colonial Center</td>
+                        <td>Columbia, South Carolina</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 12, 2003</td>
+                        <td>MCI Center</td>
+                        <td>Washington DC</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 14, 2003</td>
+                        <td>The Palace of Auburn Hills</td>
+                        <td>Auburn Hills, Michigan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 26, 2003</td>
+                        <td>Allen County War Memorial Coliseum</td>
+                        <td>Fort Wayne, Indiana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 12, 2004</td>
+                        <td>Van Andel Arena</td>
+                        <td>Grand Rapids, Michigan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 15, 2004</td>
+                        <td>Qwest Center</td>
+                        <td>Omaha, Nebraska</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 15, 2004</td>
+                        <td>Rod Laver Arena</td>
+                        <td>Melbourne, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 27, 2004</td>
+                        <td>Rod Laver Arena</td>
+                        <td>Melbourne, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 1, 2005</td>
+                        <td>Continental Airlines Arena</td>
+                        <td>East Rutherford, New Jersey</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 5, 2005</td>
+                        <td>1st Mariner Arena</td>
+                        <td>Baltimore, Maryland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 10, 2005</td>
+                        <td>The Arena at Gwinnett Center</td>
+                        <td>Duluth, Georgia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 19, 2005</td>
+                        <td>Dunkin Donuts Center</td>
+                        <td>Providence, Rhode Island</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 5, 2005</td>
+                        <td>North Charleston Coliseum</td>
+                        <td>North Charleston, South Carolina</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 6, 2005</td>
+                        <td>Veterans Memorial Arena</td>
+                        <td>Jacksonville, Florida</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 16, 2005</td>
+                        <td>Cox Arena</td>
+                        <td>San Diego, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 10, 2005</td>
+                        <td>Rabobank Arena</td>
+                        <td>Bakersfield, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 13, 2006</td>
+                        <td>National Indoor Arena</td>
+                        <td>Birmingham, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 17, 2006</td>
+                        <td>Twickenham Stadium</td>
+                        <td>London, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 21, 2006</td>
+                        <td>Manchester Evening News Arena</td>
+                        <td>Manchester, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 3, 2006</td>
+                        <td>Color Line Arena</td>
+                        <td>Hamburg, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 4, 2006</td>
+                        <td>Ahoy</td>
+                        <td>Rotterdam, Netherlands</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 23, 2006</td>
+                        <td>Palau Sant Jordi</td>
+                        <td>Barcelona, Spain</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 18, 2007</td>
+                        <td>NOKIA Theatre L.A. LIVE</td>
+                        <td>Los Angeles, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 5, 2008</td>
+                        <td>O2 Arena</td>
+                        <td>London, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>August 2, 2008</td>
+                        <td>Magnetic Hill Music Festival</td>
+                        <td>Moncton, New Brunswick</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 1, 2008</td>
+                        <td>Toyota Center</td>
+                        <td>Houston, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 14, 2008</td>
+                        <td>Wachovia Center</td>
+                        <td>Philadelphia, Pennsylvania</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 17, 2008</td>
+                        <td>Borgata Events Center</td>
+                        <td>Atlantic City, New Jersey</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 28, 2008</td>
+                        <td>TD Banknorth Garden</td>
+                        <td>Boston, Massachusetts</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 20, 2008</td>
+                        <td>O2 Arena</td>
+                        <td>London, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 22, 2008</td>
+                        <td>O2 Arena</td>
+                        <td>London, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 23, 2008</td>
+                        <td>O2 Arena</td>
+                        <td>London, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 26, 2008</td>
+                        <td>O2 Arena</td>
+                        <td>London, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 14, 2008</td>
+                        <td>Verizon Wireless Amphitheatre at Encore Park</td>
+                        <td>Alpharetta, Georgia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 21, 2008</td>
+                        <td>John Paul Jones Arena</td>
+                        <td>Charlottesville, Virginia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 24, 2008</td>
+                        <td>Prudential Center</td>
+                        <td>Newark, New Jersey</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 25, 2008</td>
+                        <td>Prudential Center</td>
+                        <td>Newark, New Jersey</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 28, 2008</td>
+                        <td>Madison Square Garden</td>
+                        <td>New York, New York</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 11, 2008</td>
+                        <td>BOK Center</td>
+                        <td>Tulsa, Oklahoma</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 13, 2008</td>
+                        <td>JQH Arena</td>
+                        <td>Springfield, Missouri</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 16, 2008</td>
+                        <td>FedExForum</td>
+                        <td>Memphis, Tennessee</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 20, 2008</td>
+                        <td>Verizon Center</td>
+                        <td>Washington DC</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 23, 2008</td>
+                        <td>Giant Center</td>
+                        <td>Hershey, Pennsylvania</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 26, 2008</td>
+                        <td>DCU Center</td>
+                        <td>Worcester, Massachusetts</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 8, 2008</td>
+                        <td>Qwest Center</td>
+                        <td>Omaha, Nebraska</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 9, 2008</td>
+                        <td>Sprint Center</td>
+                        <td>Kansas City, Missouri</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 18, 2008</td>
+                        <td>Sommet Center</td>
+                        <td>Nashville, Tennessee</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 20, 2008</td>
+                        <td>Scottrade Center</td>
+                        <td>St. Louis, Missouri</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 21, 2008</td>
+                        <td>Bradley Center</td>
+                        <td>Milwaukee, Wisconsin</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 24, 2008</td>
+                        <td>United Center</td>
+                        <td>Chicago, Illinois</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 25, 2008</td>
+                        <td>United Center</td>
+                        <td>Chicago, Illinois</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 6, 2008</td>
+                        <td>BOK Center</td>
+                        <td>Tulsa, Oklahoma</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 9, 2008</td>
+                        <td>Toyota Center</td>
+                        <td>Houston, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 17, 2009</td>
+                        <td>Greensboro Coliseum</td>
+                        <td>Greensboro, North Carolina</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 23, 2009</td>
+                        <td>New Orleans Arena</td>
+                        <td>New Orleans, Louisana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 26, 2009</td>
+                        <td>BankAtlantic Center</td>
+                        <td>Sunrise, Florida</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 28, 2009</td>
+                        <td>Veterans Memorial Arena</td>
+                        <td>Jacksonville, Florida</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 29, 2009</td>
+                        <td>St. Pete Times Forum</td>
+                        <td>Tampa, Florida</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 31, 2009</td>
+                        <td>Amway Arena</td>
+                        <td>Orlando, Florida</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 11, 2009</td>
+                        <td>Manchester Evening News Arena</td>
+                        <td>Manchester, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 12, 2009</td>
+                        <td>Manchester Evening News Arena</td>
+                        <td>Manchester, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 16, 2009</td>
+                        <td>Color Line Arena</td>
+                        <td>Hamburg, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 18, 2009</td>
+                        <td>Gelredome</td>
+                        <td>Arnhem, Netherlands</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 2, 2009</td>
+                        <td>RDS Arena</td>
+                        <td>Dublin, Ireland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 21, 2009</td>
+                        <td>Palacio de Deportes de la Comunidad de Madrid</td>
+                        <td>Madrid, Spain</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 22, 2009</td>
+                        <td>Pavilhão Atlântico</td>
+                        <td>Lisbon, Portugal</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 4, 2009</td>
+                        <td>Hampden Park</td>
+                        <td>Glasgow, Scotland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 7, 2009</td>
+                        <td>National Indoor Arena</td>
+                        <td>Birmingham, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 8, 2009</td>
+                        <td>National Indoor Arena</td>
+                        <td>Birmingham, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 1, 2009</td>
+                        <td>Koengen</td>
+                        <td>Bergen, Norway</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 10, 2009</td>
+                        <td>Wiener Stadthalle</td>
+                        <td>Vienna, Austria</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 12, 2009</td>
+                        <td>Hallenstadion</td>
+                        <td>Zurich, Switzerland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 13, 2009</td>
+                        <td>Mediolanum Forum di Assago</td>
+                        <td>Assago, Italy</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 15, 2009</td>
+                        <td>Olympiahalle</td>
+                        <td>Munich, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 17, 2009</td>
+                        <td>Lanxess Arena</td>
+                        <td>Cologne, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 18, 2009</td>
+                        <td>Sportpaleis</td>
+                        <td>Antwerp, Belgium</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 28, 2009</td>
+                        <td>Pearse Stadium</td>
+                        <td>Galway, Ireland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 30, 2009</td>
+                        <td>Odyssey Arena</td>
+                        <td>Belfast, Northern Ireland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 4, 2009</td>
+                        <td>Hartwall Areena</td>
+                        <td>Helsinki, Finland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 7, 2009</td>
+                        <td>O2 World</td>
+                        <td>Berlin, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 8, 2009</td>
+                        <td>O2 Arena</td>
+                        <td>Prague, Czech Republic</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 10, 2009</td>
+                        <td>Credit Union Centre</td>
+                        <td>Saskatoon, Saskatchewan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 11, 2009</td>
+                        <td>Credit Union Centre</td>
+                        <td>Saskatoon, Saskatchewan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 13, 2009</td>
+                        <td>MTS Centre</td>
+                        <td>Winnipeg, Manitoba</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 17, 2009</td>
+                        <td>Mizzou Arena</td>
+                        <td>Columbia, Missouri</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 18, 2009</td>
+                        <td>I Wireless Center</td>
+                        <td>Moline, Illinois</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 21, 2009</td>
+                        <td>The Palace of Auburn Hills</td>
+                        <td>Auburn Hills, Michigan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 22, 2009</td>
+                        <td>Conseco Fieldhouse</td>
+                        <td>Indianapolis, Indiana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 24, 2009</td>
+                        <td>Quicken Loans Arena</td>
+                        <td>Cleveland, Ohio</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 26, 2009</td>
+                        <td>Sears Centre</td>
+                        <td>Hoffman Estates, Illinois</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 28, 2009</td>
+                        <td>Sprint Center</td>
+                        <td>Kansas City, Missouri</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 29, 2009</td>
+                        <td>Value City Arena</td>
+                        <td>Columbus, Ohio</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 8, 2009</td>
+                        <td>Credit Union Centre</td>
+                        <td>Saskatoon, Saskatchewan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 29, 2009</td>
+                        <td>Malmö Stadion</td>
+                        <td>Malmö, Sweden</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 30, 2009</td>
+                        <td>NRGI Park</td>
+                        <td>Aarhus, Denmark</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 9, 2009</td>
+                        <td>Rio Tinto Stadium</td>
+                        <td>Salt Lake City, Utah</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 17, 2010</td>
+                        <td>Hollywood Bowl</td>
+                        <td>Hollywood, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 21, 2010</td>
+                        <td>US Airways Center</td>
+                        <td>Phoenix, Arizona</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 24, 2010</td>
+                        <td>MGM Grand Hotel &amp; Casino</td>
+                        <td>Las Vegas, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 25, 2010</td>
+                        <td>Honda Center</td>
+                        <td>Anaheim, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 30, 2010</td>
+                        <td>HP Pavilion</td>
+                        <td>San Jose, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 10, 2010</td>
+                        <td>nib Stadium</td>
+                        <td>Perth, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 13, 2010</td>
+                        <td>Brisbane Entertainment Centre</td>
+                        <td>Brisbane, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 14, 2010</td>
+                        <td>Brisbane Entertainment Centre</td>
+                        <td>Brisbane, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 17, 2010</td>
+                        <td>Rod Laver Arena</td>
+                        <td>Melbourne, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 18, 2010</td>
+                        <td>Rod Laver Arena</td>
+                        <td>Melbourne, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 21, 2010</td>
+                        <td>Rod Laver Arena</td>
+                        <td>Melbourne, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 22, 2010</td>
+                        <td>Rod Laver Arena</td>
+                        <td>Melbourne, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 6, 2010</td>
+                        <td>Acer Arena</td>
+                        <td>Sydney, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 7, 2010</td>
+                        <td>Acer Arena</td>
+                        <td>Sydney, Australia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 1, 2010</td>
+                        <td>Verizon Arena</td>
+                        <td>North Little Rock, Arkansas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 10, 2010</td>
+                        <td>New Meadowlands Stadium</td>
+                        <td>East Rutherford, New Jersey</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 12, 2010</td>
+                        <td>Gillette Stadium</td>
+                        <td>Foxborough, Massachusetts</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 17, 2010</td>
+                        <td>RBC Center</td>
+                        <td>Raleigh, North Carolina</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 19, 2010</td>
+                        <td>Soldier Field</td>
+                        <td>Chicago, Illinois</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 22, 2010</td>
+                        <td>Canad Inns Stadium</td>
+                        <td>Winnipeg, Manitoba</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 24, 2010</td>
+                        <td>Busch Stadium</td>
+                        <td>St. Louis, Missouri</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 26, 2010</td>
+                        <td>American Airlines Center</td>
+                        <td>Dallas, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 27, 2010</td>
+                        <td>Toyota Center</td>
+                        <td>Houston, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 30, 2010</td>
+                        <td>INTRUST Bank Arena</td>
+                        <td>Wichita, Kansas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 8, 2010</td>
+                        <td>Rogers Centre</td>
+                        <td>Toronto, Ontario</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 1, 2010</td>
+                        <td>HP Pavilion</td>
+                        <td>San Jose, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 20, 2010</td>
+                        <td>Pepsi Center</td>
+                        <td>Denver, Colorado</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 22, 2010</td>
+                        <td>Citizens Business Bank Arena</td>
+                        <td>Ontario, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 23, 2010</td>
+                        <td>Cricket Wireless Amphitheatre</td>
+                        <td>Chula Vista, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 26, 2010</td>
+                        <td>KeyArena</td>
+                        <td>Seattle, Washington</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 29, 2010</td>
+                        <td>Rose Garden Arena</td>
+                        <td>Portland, Oregon</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 1, 2010</td>
+                        <td>Lawlor Events Center</td>
+                        <td>Reno, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 10, 2010</td>
+                        <td>Zilker Park</td>
+                        <td>Austin, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 12, 2010</td>
+                        <td>Conseco Fieldhouse</td>
+                        <td>Indianapolis, Indiana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 15, 2010</td>
+                        <td>Piedmont Park</td>
+                        <td>Atlanta, Georgia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 16, 2010</td>
+                        <td>KFC Yum! Center</td>
+                        <td>Louisville, Kentucky</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 19, 2010</td>
+                        <td>Consol Energy Center</td>
+                        <td>Pittsburgh, Pennsylvania</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 2, 2010</td>
+                        <td>Oracle Arena</td>
+                        <td>Oakland, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 24, 2010</td>
+                        <td>Wells Fargo Arena</td>
+                        <td>Des Moines, Iowa</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 26, 2010</td>
+                        <td>Amway Center</td>
+                        <td>Orlando, Florida</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 27, 2010</td>
+                        <td>BankAtlantic Center</td>
+                        <td>Sunrise, Florida</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 20, 2011</td>
+                        <td>Impact Arena</td>
+                        <td>Bangkok, Thailand</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 23, 2011</td>
+                        <td>Singapore Indoor Stadium</td>
+                        <td>Singapore, Singapore</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 26, 2011</td>
+                        <td>Lincoln Stadium</td>
+                        <td>Taipei, Taiwan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 1, 2011</td>
+                        <td>Hop Farm</td>
+                        <td>Paddock Wood, England</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 12, 2011</td>
+                        <td>Viking Stadion</td>
+                        <td>Stavanger, Norway</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 13, 2011</td>
+                        <td>Frognerbadet</td>
+                        <td>Oslo, Norway</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 15, 2011</td>
+                        <td>Hjallerup Markedsplads</td>
+                        <td>Aalborg, Denmark</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 17, 2011</td>
+                        <td>Norrporten arena</td>
+                        <td>Sundsvall, Sweden</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 19, 2011</td>
+                        <td>Bowling Green</td>
+                        <td>Wiesbaden, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 21, 2011</td>
+                        <td>Lanxess Arena</td>
+                        <td>Cologne, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 23, 2011</td>
+                        <td>Waldbühne</td>
+                        <td>Berlin, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 25, 2011</td>
+                        <td>Schwarzl Freizeitzentrum</td>
+                        <td>Unterpremstätten, Austria</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 26, 2011</td>
+                        <td>Königsplatz</td>
+                        <td>Munich, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>June 28, 2011</td>
+                        <td>O2 World</td>
+                        <td>Hamburg, Germany</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 1, 2011</td>
+                        <td>Kyocera Dome</td>
+                        <td>Osaka, Japan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 15, 2011</td>
+                        <td>Olympic Gymnastics Arena</td>
+                        <td>Seoul, South Korea</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 18, 2011</td>
+                        <td>HKCEC</td>
+                        <td>Hong Kong, Hong Kong</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 3, 2011</td>
+                        <td>Nagoya Dome</td>
+                        <td>Nagoya, Japan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 5, 2011</td>
+                        <td>Tokyo Dome</td>
+                        <td>Tokyo, Japan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 6, 2011</td>
+                        <td>Tokyo Dome</td>
+                        <td>Tokyo, Japan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 19, 2011</td>
+                        <td>MGM Grand Garden Arena</td>
+                        <td>Las Vegas, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 5, 2011</td>
+                        <td>MGM Grand Garden Arena</td>
+                        <td>Las Vegas, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 21, 2012</td>
+                        <td>MGM Grand Garden Arena</td>
+                        <td>Las Vegas, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>April 8, 2012</td>
+                        <td>FNB Stadium</td>
+                        <td>Johannesburg, South Africa</td>
+                    </tr>
+                
+                    <tr>
+                        <td>December 30, 2012</td>
+                        <td>MGM Grand Garden Arena</td>
+                        <td>Las Vegas, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 2, 2012</td>
+                        <td>Verizon Wireless Amphitheatre at Encore Park</td>
+                        <td>Alpharetta, Georgia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>May 5, 2012</td>
+                        <td>Fair Grounds Race Course</td>
+                        <td>New Orleans, Louisana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 15, 2012</td>
+                        <td>Beacon Theatre</td>
+                        <td>New York, New York</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 17, 2012</td>
+                        <td>MGM Grand Garden Arena</td>
+                        <td>Las Vegas, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 1, 2012</td>
+                        <td>Ovation Hall</td>
+                        <td>Atlantic City, New Jersey</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 2, 2012</td>
+                        <td>Ovation Hall</td>
+                        <td>Atlantic City, New Jersey</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 11, 2013</td>
+                        <td>Air Canada Centre</td>
+                        <td>Toronto, Ontario</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 13, 2013</td>
+                        <td>Centennial Park</td>
+                        <td>Grand Falls, Newfoundland</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 15, 2013</td>
+                        <td>Canadian Tire Centre</td>
+                        <td>Ottawa, Ontario</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 16, 2013</td>
+                        <td>Wells Fargo Center</td>
+                        <td>Philadelphia, Pennsylvania</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 18, 2013</td>
+                        <td>Mohegan Sun Arena</td>
+                        <td>Uncasville, Connecticut</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 19, 2013</td>
+                        <td>Comcast Center</td>
+                        <td>Mansfield, Massachusetts</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 22, 2013</td>
+                        <td>Verizon Center</td>
+                        <td>Washington DC</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 23, 2013</td>
+                        <td>Consol Energy Center</td>
+                        <td>Pittsburgh, Pennsylvania</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 25, 2013</td>
+                        <td>Bethel Woods Center For The Arts</td>
+                        <td>Bethel, New York</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 6, 2013</td>
+                        <td>KFC Yum! Center</td>
+                        <td>Louisville, Kentucky</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 7, 2013</td>
+                        <td>Marcus Amphitheater</td>
+                        <td>Milwaukee, Wisconsin</td>
+                    </tr>
+                
+                    <tr>
+                        <td>July 9, 2013</td>
+                        <td>Quicken Loans Arena</td>
+                        <td>Cleveland, Ohio</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 23, 2013</td>
+                        <td>MGM Grand Garden Arena</td>
+                        <td>Las Vegas, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 11, 2013</td>
+                        <td>Madison Square Garden</td>
+                        <td>New York, New York</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 13, 2013</td>
+                        <td>Thompson-Boling Arena</td>
+                        <td>Knoxville, Tennessee</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 15, 2013</td>
+                        <td>Time Warner Cable Arena</td>
+                        <td>Charlotte, North Carolina</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 16, 2013</td>
+                        <td>Greensboro Coliseum</td>
+                        <td>Greensboro, North Carolina</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 18, 2013</td>
+                        <td>BJCC Arena</td>
+                        <td>Birmingham, Alabama</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 20, 2013</td>
+                        <td>Tampa Bay Times Forum</td>
+                        <td>Tampa, Florida</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 22, 2013</td>
+                        <td>American Airlines Arena</td>
+                        <td>Miami, Florida</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 23, 2013</td>
+                        <td>Amway Center</td>
+                        <td>Orlando, Florida</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 4, 2013</td>
+                        <td>Centre Bell</td>
+                        <td>Montreal, Quebec</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 6, 2013</td>
+                        <td>Air Canada Centre</td>
+                        <td>Toronto, Ontario</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 8, 2013</td>
+                        <td>Madison Square Garden</td>
+                        <td>New York, New York</td>
+                    </tr>
+                
+                    <tr>
+                        <td>November 9, 2013</td>
+                        <td>Madison Square Garden</td>
+                        <td>New York, New York</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 11, 2013</td>
+                        <td>American Airlines Center</td>
+                        <td>Dallas, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 12, 2013</td>
+                        <td>American Airlines Center</td>
+                        <td>Dallas, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 14, 2013</td>
+                        <td>FedExForum</td>
+                        <td>Memphis, Tennessee</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 16, 2013</td>
+                        <td>Bridgestone Arena</td>
+                        <td>Nashville, Tennessee</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 18, 2013</td>
+                        <td>Bankers Life Fieldhouse</td>
+                        <td>Indianapolis, Indiana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 19, 2013</td>
+                        <td>Allstate Arena</td>
+                        <td>Rosemont, Illinois</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 21, 2013</td>
+                        <td>I Wireless Center</td>
+                        <td>Moline, Illinois</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 23, 2013</td>
+                        <td>Sprint Center</td>
+                        <td>Kansas City, Missouri</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 24, 2013</td>
+                        <td>Scottrade Center</td>
+                        <td>St. Louis, Missouri</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 4, 2013</td>
+                        <td>Pinnacle Bank Arena</td>
+                        <td>Lincoln, Nebraska</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 5, 2013</td>
+                        <td>Pepsi Center</td>
+                        <td>Denver, Colorado</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 7, 2013</td>
+                        <td>INTRUST Bank Arena</td>
+                        <td>Wichita, Kansas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>October 9, 2013</td>
+                        <td>BOK Center</td>
+                        <td>Tulsa, Oklahoma</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 11, 2013</td>
+                        <td>Scotiabank Saddledome</td>
+                        <td>Calgary, Alberta</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 12, 2013</td>
+                        <td>Scotiabank Saddledome</td>
+                        <td>Calgary, Alberta</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 14, 2013</td>
+                        <td>Credit Union Centre</td>
+                        <td>Saskatoon, Saskatchewan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 16, 2013</td>
+                        <td>MTS Centre</td>
+                        <td>Winnipeg, Manitoba</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 18, 2013</td>
+                        <td>Target Center</td>
+                        <td>Minneapolis, Minnesota</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 20, 2013</td>
+                        <td>United Center</td>
+                        <td>Chicago, Illinois</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 21, 2013</td>
+                        <td>The Palace of Auburn Hills</td>
+                        <td>Auburn Hills, Michigan</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 4, 2013</td>
+                        <td>KeyArena</td>
+                        <td>Seattle, Washington</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 6, 2013</td>
+                        <td>Rogers Arena</td>
+                        <td>Vancouver, British Columbia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 7, 2013</td>
+                        <td>Rogers Arena</td>
+                        <td>Vancouver, British Columbia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>September 9, 2013</td>
+                        <td>Rexall Place</td>
+                        <td>Edmonton, Alberta</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 15, 2014</td>
+                        <td>MGM Grand Garden Arena</td>
+                        <td>Las Vegas, Nevada</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 19, 2014</td>
+                        <td>American Airlines Center</td>
+                        <td>Dallas, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 21, 2014</td>
+                        <td>Toyota Center</td>
+                        <td>Houston, Texas</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 23, 2014</td>
+                        <td>Smoothie King Center</td>
+                        <td>New Orleans, Louisana</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 24, 2014</td>
+                        <td>Philips Arena</td>
+                        <td>Atlanta, Georgia</td>
+                    </tr>
+                
+                    <tr>
+                        <td>February 28, 2014</td>
+                        <td>PNC Arena</td>
+                        <td>Raleigh, North Carolina</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 15, 2014</td>
+                        <td>The Forum</td>
+                        <td>Inglewood, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 17, 2014</td>
+                        <td>The Forum</td>
+                        <td>Inglewood, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 18, 2014</td>
+                        <td>The Forum</td>
+                        <td>Inglewood, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 24, 2014</td>
+                        <td>The Forum</td>
+                        <td>Inglewood, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 25, 2014</td>
+                        <td>The Forum</td>
+                        <td>Inglewood, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 28, 2014</td>
+                        <td>Sleep Train Arena</td>
+                        <td>Sacramento, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 29, 2014</td>
+                        <td>SAP Center</td>
+                        <td>San Jose, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>January 31, 2014</td>
+                        <td>SAP Center</td>
+                        <td>San Jose, California</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 1, 2014</td>
+                        <td>Verizon Center</td>
+                        <td>Washington DC,</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 3, 2014</td>
+                        <td>U.S. Bank Arena</td>
+                        <td>Cincinnati, Ohio</td>
+                    </tr>
+                
+                    <tr>
+                        <td>March 5, 2014</td>
+                        <td>Nationwide Arena</td>
+                        <td>Columbus, Ohio</td>
+                    </tr>
+                
             </tbody>
         </table>
     </div>
-{% endblock %}
 
-{% block kpcc_scripts %}
+            </div>
+            <div class="row data-comments">
+                
+            </div>
+
+            
+                <div class="row kpcc-footer">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <footer>
+            <ul class="list-inline">
+                <li><a href="http://scpr.org/terms/">Terms &amp; Conditions</a></li>
+                <li><a href="http://scpr.org/privacy/">Privacy</a></li>
+                <li><a href="http://scpr.org/web_site_feedback">Website Feedback</a></li>
+                <li><a href="http://scpr.org/">Copyright 2013 &copy; Southern California Public Radio</a></li>
+            </ul>
+        </footer>
+    </div>
+</div>
+            
+
+        </div>
+        <!-- end main container -->
+
+        <!-- begin scripts -->
+            
     <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
-{% endblock kpcc_scripts %}
+
+            <script src="app.js"></script>
+        <!-- end scripts -->
+
+        <!-- begin analytics -->
+        
+        <!-- end analytics -->
+
+    </body>
+    <!-- end body -->
+
+</html>
+<!-- end document -->
