@@ -1,0 +1,89 @@
+{# The default project templates assumes a _base.html template to be extended. #}
+{% extends "_base.html" %}
+
+{% block data_visuals_content %}
+    {% for item in data if item.order %}
+        <div class="detail-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            {% if item.alignment == "left" %}
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    {% if item.type == "skywriting" %}
+                        <h5 class="left-align">{{ item.question }}</h5>
+                        <p class="right-align"><span class="sky-writing">{{ item.answer_skywriting }}</span><br />{{ item.answer_context|safe }}</p>
+                    {% elif item.type == "iconify" %}
+                        <h5 class="left-align">{{ item.question }}</h5>
+                        <p class="right-align"><span class="sky-writing">{{ item.answer_skywriting }}</span><br />{{ item.answer_context|safe }}</p>
+                        {{ item.answer_skywriting|iconify_this|safe }}
+                    {% elif item.type == "image" %}
+                        <h5 class="left-align">{{ item.question }}</h5>
+                        <p class="right-align"><span class="sky-writing">{{ item.answer_skywriting }}</span><br />{{ item.answer_context|safe }}</p>
+                        <img src="{{ item.answer_image }}" />
+                    {% elif item.type == "narrative" %}
+                        {{ item.answer_context|safe }}
+                    {% else %}
+                        {{ item.answer_context|safe }}
+                    {% endif %}
+                </div>
+            {% elif item.alignment == "full" %}
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    {% if item.type == "skywriting" %}
+                        <h5>{{ item.question }}</h5>
+                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                            <p><span class="sky-writing">{{ item.answer_skywriting }}</span></p>
+                        </div>
+                        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                            <p style="margin-top: 55px;">{{ item.answer_context|safe }}</p>
+                        </div>
+                    {% elif item.type == "iconify" %}
+                        <h5 class="right-align">{{ item.question }}</h5>
+                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                            <p class="left-align"><span class="sky-writing">{{ item.answer_skywriting }}</span><br />{{ item.answer_context|safe }}</p>
+                        </div>
+                        <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                            {{ item.answer_skywriting|iconify_this|safe }}
+                        </div>
+                    {% elif item.type == "image" %}
+                        <h5 class="left-align">{{ item.question }}</h5>
+                        <p class="right-align"><span class="sky-writing">{{ item.answer_skywriting }}</span><br />{{ item.answer_context|safe }}</p>
+                        <img class="push-right" src="{{ item.answer_image }}" />
+                    {% elif item.type == "narrative" %}
+                        <h5 class="left-align">{{ item.question }}</h5>
+                        <p class="right-align"><span class="sky-writing">{{ item.answer_skywriting }}</span></p>
+                        {{ item.answer_context|safe }}
+                    {% else %}
+                        <h5 class="left-align">{{ item.question }}</h5>
+                        {{ item.answer_context|safe }}
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+    <div class="table-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h5>Any chance there's a record of every time The Eagles performed "Hotel California" live on tour?</h5>
+        <p><span class="sky-writing">Actually, yes</span> ... The folks at <a href="http://www.setlist.fm/" target="blank">setlist.fm</a> have attempted to do <a href="http://www.setlist.fm/stats/songs/eagles-6bd6bede.html?song=Hotel+California" target="blank">this</a>. Some of that data is re-displayed below.</p>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Venue</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for show in played_on_tour %}
+                    <tr>
+                        <td>{{ show.full_date }}</td>
+                        <td>{{ show.venue }}</td>
+                        <td>{{ show.location }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block kpcc_scripts %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+{% endblock kpcc_scripts %}
