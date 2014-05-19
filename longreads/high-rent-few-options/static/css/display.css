@@ -3046,8 +3046,8 @@ object, embed {
 #content-map-container #pin-query-response img {vertical-align: text-bottom;}
 
 @media screen and (min-width: 1400px) and (max-width: 3000px) {
-    #content-map-container {height: 1470px;}
-	#content-map-explainer {height: 1230px;}
+    #content-map-container {height: 1400px;}
+	#content-map-explainer {height: 1130px;}
     #content-map-container h2 { font-size: 18px; line-height: 22px; margin: 0 0 5px 0; }
     #content-map-container h4 { font-size: 16px; line-height: 20px; margin: 0 0 5px 0; }
     #content-map-container blockquote,
@@ -3057,7 +3057,7 @@ object, embed {
     #content-map-container .controls .toggle label { font-size: 0.65em;}
 }
 
-@media screen and (min-width: 1080px) and (max-width: 1399px) {
+@media screen and (min-width: 1180px) and (max-width: 1399px) {
     #content-map-container {height: 1480px;}
 	#content-map-explainer {height: 1230px;}
     #content-map-container h2 { font-size: 16px; line-height: 20px; margin: 0 0 5px 0; }
@@ -3070,8 +3070,8 @@ object, embed {
 }
 
 @media screen and (min-width: 1021px) and (max-width: 1179px) {
-    #content-map-container {height: 1610px;}
-	#content-map-explainer {height: 1330px;}
+    #content-map-container {height: 1600px;}
+	#content-map-explainer {height: auto; min-height: 1340px;}
     #content-map-container h2 { font-size: 16px; line-height: 20px; margin: 0 0 5px 0; }
     #content-map-container h4 { font-size: 14px; line-height: 18px; margin: 0 0 5px 0; }
     #content-map-container blockquote,
@@ -3082,8 +3082,8 @@ object, embed {
 }
 
 @media screen and (min-width: 880px) and (max-width: 1020px) {
-    #content-map-container {height: 1730px;}
-	#content-map-explainer {height: 1440px;}
+    #content-map-container {height: 1530px;}
+	#content-map-explainer {height: auto; min-height: 1240px;}
     #content-map-container h2 { font-size: 16px; line-height: 20px; margin: 0 0 5px 0; }
     #content-map-container h4 { font-size: 14px; line-height: 18px; margin: 0 0 5px 0; }
     #content-map-container blockquote,
@@ -3096,7 +3096,7 @@ object, embed {
 @media screen and (min-width: 680px) and (max-width: 879px) {
     .row-pt1-d.map-row { padding :0 10px; }
     #content-map-container { height: auto; }
-    #content-map-explainer { float: none; height: 920px; width: 100%; }
+    #content-map-explainer { float: none; height: auto; min-height: 920px; width: 100%; }
     #content-map-canvas { float: none; height: 600px; width: 100%; }
     #content-map-legend { float: none; width:100%; }
     #content-map-methodology { float: none; width: 100%; }
@@ -3112,7 +3112,7 @@ object, embed {
 @media screen and (max-width:679px) {
     .row-pt1-d.map-row { padding :0 10px; }
     #content-map-container { height: auto; }
-    #content-map-explainer { float: none; height: 1020px; width: 100%; }
+    #content-map-explainer { float: none; height: auto; min-height: 1040px; width: 100%; }
     #content-map-canvas { float: none; height: 600px; width: 100%; }
     #content-map-legend { float: none; width:100%; }
     #content-map-methodology { float: none; width: 100%; }
