@@ -3048,7 +3048,7 @@ object, embed {
 @media screen and (min-width: 1400px) and (max-width: 3000px) {
     #content-map-container {height: 1400px;}
 	#content-map-explainer {height: 1130px;}
-    #content-map-container h2 { font-size: 18px; line-height: 22px; margin: 0 0 5px 0; }
+    #content-map-container h2 { font-size: 18px; line-height: 26px; margin: 0 0 5px 0; }
     #content-map-container h4 { font-size: 16px; line-height: 20px; margin: 0 0 5px 0; }
     #content-map-container blockquote,
     #content-map-explainer p,
@@ -3060,7 +3060,7 @@ object, embed {
 @media screen and (min-width: 1180px) and (max-width: 1399px) {
     #content-map-container {height: 1480px;}
 	#content-map-explainer {height: 1230px;}
-    #content-map-container h2 { font-size: 16px; line-height: 20px; margin: 0 0 5px 0; }
+    #content-map-container h2 { font-size: 16px; line-height: 26px; margin: 0 0 5px 0; }
     #content-map-container h4 { font-size: 14px; line-height: 18px; margin: 0 0 5px 0; }
     #content-map-container blockquote,
     #content-map-explainer p,
@@ -3072,7 +3072,7 @@ object, embed {
 @media screen and (min-width: 1021px) and (max-width: 1179px) {
     #content-map-container {height: 1600px;}
 	#content-map-explainer {height: auto; min-height: 1340px;}
-    #content-map-container h2 { font-size: 16px; line-height: 20px; margin: 0 0 5px 0; }
+    #content-map-container h2 { font-size: 16px; line-height: 26px; margin: 0 0 5px 0; }
     #content-map-container h4 { font-size: 14px; line-height: 18px; margin: 0 0 5px 0; }
     #content-map-container blockquote,
     #content-map-explainer p,
@@ -3084,7 +3084,7 @@ object, embed {
 @media screen and (min-width: 880px) and (max-width: 1020px) {
     #content-map-container {height: 1530px;}
 	#content-map-explainer {height: auto; min-height: 1240px;}
-    #content-map-container h2 { font-size: 16px; line-height: 20px; margin: 0 0 5px 0; }
+    #content-map-container h2 { font-size: 16px; line-height: 26px; margin: 0 0 5px 0; }
     #content-map-container h4 { font-size: 14px; line-height: 18px; margin: 0 0 5px 0; }
     #content-map-container blockquote,
     #content-map-explainer p,
@@ -3100,7 +3100,7 @@ object, embed {
     #content-map-canvas { float: none; height: 600px; width: 100%; }
     #content-map-legend { float: none; width:100%; }
     #content-map-methodology { float: none; width: 100%; }
-    #content-map-container h2 { font-size: 16px; line-height: 20px; margin: 0 0 5px 0; }
+    #content-map-container h2 { font-size: 16px; line-height: 26px; margin: 0 0 5px 0; }
     #content-map-container h4 { font-size: 14px; line-height: 18px; margin: 0 0 5px 0; }
     #content-map-container blockquote,
     #content-map-explainer p,
@@ -3116,7 +3116,7 @@ object, embed {
     #content-map-canvas { float: none; height: 600px; width: 100%; }
     #content-map-legend { float: none; width:100%; }
     #content-map-methodology { float: none; width: 100%; }
-    #content-map-container h2 { font-size: 14px; line-height: 20px; margin: 0 0 5px 0; }
+    #content-map-container h2 { font-size: 14px; line-height: 26px; margin: 0 0 5px 0; }
     #content-map-container h4 { font-size: 12px; line-height: 16px; margin: 0 0 5px 0; }
     #content-map-container blockquote,
     #content-map-explainer p,
@@ -3130,7 +3130,7 @@ object, embed {
     #content-map-explainer { float: none; height: 1120px; width: 94%; margin: 0 3% 0 3%; }
     #content-map-canvas { float: none; height: 600px; width: 94%; margin: 0 3% 0 3%; }
     #content-map-data { font-size: 0.7em; line-height: 2em; }
-    #content-map-container h2 { font-size: 14px; line-height: 20px; margin: 0 0 5px 0; }
+    #content-map-container h2 { font-size: 14px; line-height: 26px; margin: 0 0 5px 0; }
     #content-map-container h4 { font-size: 12px; line-height: 16px; margin: 0 0 5px 0; }
     #content-map-container blockquote,
     #content-map-explainer p,

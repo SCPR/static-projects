@@ -322,6 +322,8 @@
             mapDataObject.map = this.map;
             this.geojsonOne.addTo(this.map);
             this.geojsonTwo.addTo(this.map);
+            $("input:checkbox").prop("checked", true);
+            this.getCheckboxIds();
         },
 
         getCheckboxIds: function(event){
