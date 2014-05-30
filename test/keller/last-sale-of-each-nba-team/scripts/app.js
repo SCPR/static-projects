@@ -88,14 +88,23 @@ var fn = {
         configChart.tooltip = {
             useHTML: true,
             formatter: function(){
-                return "<p><strong>" + this.point.name + "</strong></p>" +
-                    "<ul>" +
-                        "<li><strong>Owner</strong>: " + this.point.ownership + "</li>" +
-                        "<li><strong>Purchased</strong>: In " + this.point.x + " for $" + Highcharts.numberFormat(this.point.purchase_price, 0, ".") + "</li>" +
-                        "<li><strong> Adjusted for inflation (2014)</strong>: " + Highcharts.numberFormat(this.point.y, 0, ".") + "</li>" +
-                        "<li><strong>2014 Forbes valuation rank</strong>: " + this.point.forbes_2014_rank + "</li>" +
-                        "<li><strong>2014 Forbes valuation</strong>: " + Highcharts.numberFormat(this.point.forbes_2014_valuation, 0, ".") + "</li>" +
-                    "</ul>";
+                if (this.series.name === "2005 Collective Bargaining Agreement") {
+                    return "Six-year collective bargaining agreement signed in 2005.";
+                } else if  (this.series.name === "2011 Collective Bargaining Agreement") {
+                    return "Ten-year collective bargaining agreement signed in Dec. 2011.";
+                } else if  (this.series.name === "1999 Collective Bargaining Agreement") {
+                    return "Six-year collective bargaining agreement signed in Jan. 1999 after 191 day lockout.";
+                } else {
+                    return "<p><strong>" + this.point.name + "</strong></p>" +
+                        "<ul>" +
+                            "<li><strong>Owner</strong>: " + this.point.ownership + "</li>" +
+                            "<li><strong>Purchased</strong>: In " + this.point.x + " for $" + Highcharts.numberFormat(this.point.purchase_price, 0, ".") + "</li>" +
+                            "<li><strong> Adjusted for inflation (2014)</strong>: " + Highcharts.numberFormat(this.point.y, 0, ".") + "</li>" +
+                            "<li><strong>2014 Forbes valuation rank</strong>: " + this.point.forbes_2014_rank + "</li>" +
+                            "<li><strong>2014 Forbes valuation</strong>: " + Highcharts.numberFormat(this.point.forbes_2014_valuation, 0, ".") + "</li>" +
+                        "</ul>"
+                    ;
+                }
             },
             backgroundColor: "#020202",
             style: {
@@ -144,12 +153,57 @@ var fn = {
         };
 
         configChart.series = chartDataArray;
+
+        console.log(configChart.series);
+
         return configChart;
     }
 };
 
 var salesDataArray = [
     {
+        visible: true,
+        color: "#f07a30",
+        type: "line",
+        name: "1999 Collective Bargaining Agreement",
+        data: [[1999, 0], [1999, 650000000]],
+        showInLegend: false,
+        marker: {
+            enabled: false,
+            symbol: "circle"
+        },
+        hover: {
+            enabled: false
+        }
+    }, {
+        visible: true,
+        color: "#f07a30",
+        type: "line",
+        name: "2005 Collective Bargaining Agreement",
+        data: [[2005, 0], [2005, 650000000]],
+        showInLegend: false,
+        marker: {
+            enabled: false,
+            symbol: "circle"
+        },
+        hover: {
+            enabled: false
+        }
+    }, {
+        visible: true,
+        color: "#f07a30",
+        type: "line",
+        name: "2011 Collective Bargaining Agreement",
+        data: [[2011, 0], [2011, 650000000]],
+        showInLegend: false,
+        marker: {
+            enabled: false,
+            symbol: "circle"
+        },
+        hover: {
+            enabled: false
+        }
+    }, {
         name: "New York Knicks",
         color: '#FF5C2B',
         marker: {
