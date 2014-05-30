@@ -29,16 +29,25 @@ var fn = {
     configScatterPlot: function(containerToRenderTo, chartType, chartDataArray, xTitle, yTitle){
         var deviceInterval;
         if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
-            deviceInterval = 5;
+            deviceIntervalX = 6;
+            deviceIntervalY = 100000000;
+            deviceZoom = "xy";
+            for (var i=0; i<salesDataArray.length; i++) {
+                if (salesDataArray[i].type != undefined){
+                    salesDataArray[i].visible = false;
+                }
+            };
         } else {
-            deviceInterval = 2;
+            deviceIntervalX = 2;
+            deviceIntervalY = 50000000;
+            deviceZoom = null;
         }
         var configChart = {};
         configChart.chart = {
             renderTo: containerToRenderTo,
             backgroundColor: "#ffffff",
             type: chartType,
-            //zoomType: "xy",
+            zoomType: deviceZoom,
             pinchType: null,
             style: {
                 font: "100%/1.5 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;"
@@ -59,7 +68,7 @@ var fn = {
         configChart.xAxis = [{
             type: "date",
             categories: ["1979"],
-            tickInterval: deviceInterval,
+            tickInterval: deviceIntervalX,
             endOnTick: true,
             labels: {
                 style: {
@@ -81,7 +90,7 @@ var fn = {
         configChart.yAxis = [{
             min: 0,
             max: 650000000,
-            tickInterval: 50000000,
+            tickInterval: deviceIntervalY,
             endOnTick: true,
             labels: {
                 formatter: function() {
