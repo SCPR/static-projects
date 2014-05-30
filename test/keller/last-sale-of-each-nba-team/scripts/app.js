@@ -6,6 +6,12 @@ var appConfig = appConfig || {};
 // begin main function
 jqueryNoConflict(document).ready(function() {
     initializeTemplates.renderStaticTemplates();
+
+    var urlLink = window.location.href;
+    if (urlLink.indexOf("embed") > -1){
+        appConfig.openAboutThis = false;
+    };
+
     var charts = [new Highcharts.Chart(
         fn.configScatterPlot(
             "scatter-plot-chart",
@@ -20,8 +26,8 @@ jqueryNoConflict(document).ready(function() {
 // application configuration object
 var appConfig = {
     openAboutThis: true,
-    embed_this: false,
-    embed_url_root: ""
+    embed_this: true,
+    embed_url_root: "http://projects.scpr.org/static/charts/last-sale-of-each-nba-team/?=embed/"
 };
 
 // build a scatterplot
