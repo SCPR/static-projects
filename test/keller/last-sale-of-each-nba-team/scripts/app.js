@@ -43,7 +43,7 @@ var fn = {
             renderTo: containerToRenderTo,
             backgroundColor: "#ffffff",
             type: chartType,
-            zoomType: "xy",
+            //zoomType: "xy",
             pinchType: null
         };
 
