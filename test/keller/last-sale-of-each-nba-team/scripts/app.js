@@ -12,7 +12,7 @@ jqueryNoConflict(document).ready(function() {
             "scatter",
             salesDataArray,
             "Year team was purchased",
-            "Purchase price adjusted for 2014 inflation (in millions)"
+            "Purchase price adjusted for 2014 inflation"
         )
     )];
 });
@@ -26,65 +26,80 @@ var appConfig = {
 
 // build a scatterplot
 var fn = {
-
     configScatterPlot: function(containerToRenderTo, chartType, chartDataArray, xTitle, yTitle){
-
         var deviceInterval;
-
         if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
             deviceInterval = 5;
         } else {
             deviceInterval = 2;
         }
-
         var configChart = {};
-
         configChart.chart = {
             renderTo: containerToRenderTo,
             backgroundColor: "#ffffff",
             type: chartType,
             //zoomType: "xy",
-            pinchType: null
+            pinchType: null,
+            style: {
+                font: "100%/1.5 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;"
+            }
         };
-
         configChart.title = {
             text: "",
             style: {
                 display: "none"
             }
         };
-
         configChart.subtitle = {
             text: "",
             style: {
                 display: "none"
             }
         };
-
         configChart.xAxis = [{
             type: "date",
             categories: ["1979"],
             tickInterval: deviceInterval,
-            offset: 50,
+            endOnTick: true,
+            labels: {
+                style: {
+                    color: "#020202",
+                }
+            },
+            offset: 25,
             title: {
                 enabled: true,
                 text: xTitle,
+                style: {
+                    color: "#020202",
+                }
             },
             startOnTick: true,
             endOnTick: true,
             showLastLabel: true
         }];
-
         configChart.yAxis = [{
             min: 0,
             max: 650000000,
             tickInterval: 50000000,
+            endOnTick: true,
+            labels: {
+                formatter: function() {
+                    return "$" + this.value/1000000 + " million";
+                },
+                style: {
+                    color: "#020202",
+                }
+            },
+            gridLineColor: "#020202",
             title: {
                 enabled: true,
                 text: yTitle,
+                style: {
+                    color: "#020202",
+                }
             },
         }];
-
         configChart.tooltip = {
             useHTML: true,
             formatter: function(){
@@ -98,11 +113,9 @@ var fn = {
                     var htmlOutput =
                         "<p>" + this.point.ownership + "</strong> purchased the " + this.point.name + " in " + this.point.x + ".</p>" +
                         "<ul>" +
-                        "<li>Est. purchase price: $" +
-                            Highcharts.numberFormat(this.point.purchase_price, 0, ".") + "</li>" +
-                        "<li>Est. purchase price adjusted for inflation: $" +
-                            Highcharts.numberFormat(this.point.y, 0, ".") + "</li>";
-
+                        "<li>Est. purchase price: $" + this.point.purchase_price/1000000 + " million</li>" +
+                        "<li>Est. purchase price adjusted for inflation: $" + this.point.y/1000000 + " million</li>" +
+                        "</ul>";
                     return htmlOutput;
                 }
             },
@@ -116,7 +129,6 @@ var fn = {
             followPointer: true,
             followTouchMove: true
         };
-
         configChart.legend = {
             enabled: false,
             layout: "horizontal",
@@ -126,10 +138,9 @@ var fn = {
             y: 0,
             floating: false,
             borderWidth: 1,
-            backgroundColor: "#FFFFFF",
+            backgroundColor: "#ffffff",
             shadow: true
         };
-
         configChart.plotOptions = {
             scatter: {
                 marker: {
@@ -145,17 +156,12 @@ var fn = {
 
             }
         };
-
         configChart.credits = {
             enabled: false,
             text: "",
             href: ""
         };
-
         configChart.series = chartDataArray;
-
-        console.log(configChart.series);
-
         return configChart;
     }
 };
