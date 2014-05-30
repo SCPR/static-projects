@@ -35,7 +35,7 @@ var fn = {
     configScatterPlot: function(containerToRenderTo, chartType, chartDataArray, xTitle, yTitle){
         var deviceInterval;
         if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
-            deviceIntervalX = 6;
+            deviceIntervalX = 10;
             deviceIntervalY = 100000000;
             deviceZoom = "xy";
             for (var i=0; i<salesDataArray.length; i++) {
