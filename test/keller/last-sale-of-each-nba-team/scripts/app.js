@@ -89,28 +89,28 @@ var fn = {
             useHTML: true,
             formatter: function(){
                 if (this.series.name === "2005 Collective Bargaining Agreement") {
-                    return "Six-year collective bargaining agreement signed in 2005.";
+                    return "<p>Six-year collective bargaining agreement signed in 2005.</p>";
                 } else if  (this.series.name === "2011 Collective Bargaining Agreement") {
-                    return "Ten-year collective bargaining agreement signed in Dec. 2011.";
+                    return "<p>Ten-year collective bargaining agreement signed in Dec. 2011.</p>";
                 } else if  (this.series.name === "1999 Collective Bargaining Agreement") {
-                    return "Six-year collective bargaining agreement signed in Jan. 1999 after 191 day lockout.";
+                    return "<p>Six-year collective bargaining agreement signed in Jan. 1999 after 191 day lockout.</p>";
                 } else {
-                    return "<p><strong>" + this.point.name + "</strong></p>" +
+                    var htmlOutput =
+                        "<p>" + this.point.ownership + "</strong> purchased the " + this.point.name + " in " + this.point.x + ".</p>" +
                         "<ul>" +
-                            "<li><strong>Owner</strong>: " + this.point.ownership + "</li>" +
-                            "<li><strong>Purchased</strong>: In " + this.point.x + " for $" + Highcharts.numberFormat(this.point.purchase_price, 0, ".") + "</li>" +
-                            "<li><strong> Adjusted for inflation (2014)</strong>: " + Highcharts.numberFormat(this.point.y, 0, ".") + "</li>" +
-                            "<li><strong>2014 Forbes valuation rank</strong>: " + this.point.forbes_2014_rank + "</li>" +
-                            "<li><strong>2014 Forbes valuation</strong>: " + Highcharts.numberFormat(this.point.forbes_2014_valuation, 0, ".") + "</li>" +
-                        "</ul>"
-                    ;
+                        "<li>Est. purchase price: $" +
+                            Highcharts.numberFormat(this.point.purchase_price, 0, ".") + "</li>" +
+                        "<li>Est. purchase price adjusted for inflation: $" +
+                            Highcharts.numberFormat(this.point.y, 0, ".") + "</li>";
+
+                    return htmlOutput;
                 }
             },
             backgroundColor: "#020202",
             style: {
                 width: "100%",
                 color: "#ffffff",
-                fontSize: "10px",
+                fontSize: "100%",
                 padding: "8px"
             },
             followPointer: true,
