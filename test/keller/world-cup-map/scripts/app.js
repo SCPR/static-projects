@@ -55,27 +55,27 @@ function createMap() {
     google.maps.event.addListener(layer, 'click', function(e) {
 
         var fusionTableObject = {
-            audio_options: e.row['AUDIO OPTIONS'].value,
-            city: e.row['CITY'].value,
-            dress: e.row['DRESS'].value,
-            drink: e.row['DRINK'].value,
-            food: e.row['FOOD'].value,
-            food_image: e.row['FOOD IMAGE'].value,
-            game_dates: e.row['GAME DATES'].value,
-            nation: e.row['NATION'].value,
-            nearby_attractions: e.row['NEARBY ATTRACTIONS'].value,
-            notes: e.row['NOTES'].value,
-            official_slogan: e.row['OFFICIAL SLOGAN'].value,
-            phone: e.row['PHONE'].value,
-            photos: e.row['PHOTOS'].value,
-            song: e.row['SONG/CHEER'].value,
-            state: e.row['STATE'].value,
-            street_address: e.row['STREET ADDRESS'].value,
             venue: e.row['VENUE'].value,
-            visual_assets: e.row['VISUAL ASSETS'].value,
+            street_address: e.row['STREET ADDRESS'].value,
+            city: e.row['CITY'].value,
+            state: e.row['STATE'].value,
             zip: e.row['ZIP'].value,
-            geocode_address: e.row['geocode_address'].value
+            geocode_address: e.row['geocode_address'].value,
+            phone: e.row['PHONE'].value,
+            nation: e.row['NATION'].value,
+            visual_assets: e.row['VISUAL ASSETS'].value,
+            food: e.row['FOOD'].value,
+            drink: e.row['DRINK'].value,
+            song: e.row['SONG/CHEER'].value,
+            official_slogan: e.row['OFFICIAL SLOGAN'].value,
+            dress: e.row['DRESS'].value,
+            nearby_attractions: e.row['NEARBY ATTRACTIONS'].value,
+            photos: e.row['PHOTOS'].value,
+            audio_options: e.row['AUDIO OPTIONS'].value,
+            notes: e.row['NOTES'].value,
+            game_dates: e.row['GAME DATES'].value
         }
+
         var leftDisplay = _.template(
             "<div class='row'>" +
                 "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
@@ -90,9 +90,9 @@ function createMap() {
                     "</div>" +
                     "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
                         "<p><strong>About <%= venue %></strong>: <%= notes %></p>" +
-                        "<p><%= official_slogan %></p>" +
-                        "<p><%= dress %></p>" +
-                        "<p><%= game_dates %></p>" +
+                        "<p><strong>World Cup slogan</strong>: <%= official_slogan %></p>" +
+                        "<p><strong>Team colors</strong>: <%= dress %></p>" +
+                        "<p><strong>Game dates</strong>: <%= game_dates %></p>" +
                     "</div>" +
                 "</div>" +
             "</div>", fusionTableObject);
