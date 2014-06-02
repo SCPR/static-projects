@@ -1,0 +1,105 @@
+#map-info {width: 100%; min-height: 300px; height: auto;}
+
+#map-canvas {width: 100%; height: 600px;}
+
+#project-container {width: 100%; padding: 20px 10px 0 10px; background: #ffffff;}
+
+#project-container h2 {margin-top: 0px; margin-bottom: 0px;}
+
+.flag {width: 100%;}
+
+/* main typography */
+body.minimal {font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;}
+
+body.minimal .kicker {text-transform: uppercase; font-weight: bold;}
+
+@media (max-width: 480px) {
+    body.minimal h1 {font-size: 370%; font-weight: bold;}
+    body.minimal h2 {font-size: 320%;}
+    body.minimal h3 {font-size: 280%;}
+    body.minimal h4 {font-size: 240%;}
+    body.minimal h5 {font-size: 200%;}
+    body.minimal h6 {font-size: 180%;}
+    body.minimal p {font-size: 130%;}
+    body.minimal a.btn-primary {font-size: 120%;}
+    body.minimal .kicker {font-size: 110%;}
+    body.minimal .small-writing {font-size: 120%;}
+    body.minimal .sky-writing {font-size: 450%; color: #EC7C04;}
+    body.minimal .jumbotron p {font-size: 70%; font-weight: normal;}
+    body.minimal table {font-size: 130%;}
+    body.minimal ul li {font-size: 130%;}
+}
+
+@media (min-width: 481px) {
+    body.minimal h1 {font-size: 420%; font-weight: bold;}
+    body.minimal h2 {font-size: 380%;}
+    body.minimal h3 {font-size: 340%;}
+    body.minimal h4 {font-size: 300%;}
+    body.minimal h5 {font-size: 260%;}
+    body.minimal h6 {font-size: 220%;}
+    body.minimal p {font-size: 130%;}
+    body.minimal a.btn-primary {font-size: 120%;}
+    body.minimal .kicker {font-size: 130%;}
+    body.minimal .small-writing {font-size: 120%;}
+    body.minimal .sky-writing {font-size: 500%; color: #EC7C04;}
+    body.minimal .jumbotron p {font-size: 70%; font-weight: normal;}
+    body.minimal table {font-size: 130%;}
+    body.minimal ul li {font-size: 130%;}
+}
+
+@media (min-width: 768px) {
+    body.minimal h1 {font-size: 460%; font-weight: bold;}
+    body.minimal h2 {font-size: 400%;}
+    body.minimal h3 {font-size: 340%;}
+    body.minimal h4 {font-size: 280%;}
+    body.minimal h5 {font-size: 220%;}
+    body.minimal h6 {font-size: 160%;}
+    body.minimal p {font-size: 150%;}
+    body.minimal a.btn-primary {font-size: 140%;}
+    body.minimal .kicker {font-size: 150%;}
+    body.minimal .small-writing {font-size: 130%;}
+    body.minimal .sky-writing {font-size: 600%; color: #EC7C04;}
+    body.minimal .jumbotron p {font-size: 80%; font-weight: normal;}
+    body.minimal table {font-size: 140%;}
+    body.minimal ul li {font-size: 140%;}
+}
+
+@media (min-width: 992px) {
+    body.minimal h1 {font-size: 480%; font-weight: bold;}
+    body.minimal h2 {font-size: 420%;}
+    body.minimal h3 {font-size: 360%;}
+    body.minimal h4 {font-size: 300%;}
+    body.minimal h5 {font-size: 240%;}
+    body.minimal h6 {font-size: 180%;}
+    body.minimal p {font-size: 150%;}
+    body.minimal a.btn-primary {font-size: 140%;}
+    body.minimal .kicker {font-size: 150%;}
+    body.minimal .small-writing {font-size: 130%;}
+    body.minimal .sky-writing {font-size: 600%; color: #EC7C04;}
+    body.minimal .jumbotron p {font-size: 80%; font-weight: normal;}
+    body.minimal table {font-size: 140%;}
+    body.minimal ul li {font-size: 140%;}
+}
+
+
+/****** /
+.teaminfo {display:block;}
+
+
+.banner {display:inline;}
+.nationname {display: inline; width: 250px; color: white; background-color:rgba(0,127,166,1.0); padding-left:20px; padding-right:20px;}
+#slogan {margin-left:10px; color: rgba(0,127,166,1.0); font-size:23px; font-weight: 800; font-family: Lucida Grande;}
+#venue {width: 600px;color: white; background-color:rgba(0,127,166,1.0); padding-left:20px; margin: 10px;}
+#description {width: 600px; padding: 10px;}
+#nation {float: center; color: white; background-color:rgba(0,127,166,1.0); padding-left:20px; padding-right:20px; padding-top:0px; padding-bottom:0px;}
+#dates {margin-left:40px;}
+#back {margin-top: 20px;}
+#video {position:absolute; top: 200px; left: 10px;}
+#food {color: white; background-color:rgba(0,127,166,1.0); padding-left:20px; margin: 10px;}
+
+
+/*
+#leftbox {width: 250px;}
+#middlebox {position:absolute; top: 0px; left: 280px;}
+#rightbox {position:absolute; top: 0px; left: 940px; width: 400px;}
+*/
