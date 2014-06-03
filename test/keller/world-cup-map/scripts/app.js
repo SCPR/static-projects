@@ -17,8 +17,17 @@ var appConfig = {
 };
 
 function initializeDisplay(array){
+
+    jqueryNoConflict("#venue-display").empty();
+    jqueryNoConflict("#details-display").empty();
+    jqueryNoConflict("#navigation-display").empty();
+
     for (var i=0; i<array.length; i++) {
+
+
         jqueryNoConflict("#venue-display").append("<p><a id='" + array[i].nation + "' href='javascript:void(0)'>" + array[i].nation + "</a></p>");
+
+
     };
 
     $("#venue-display a").click(function(){
@@ -57,6 +66,11 @@ function displayVenueData(id, venueData){
             "</div>" +
         "</div>", matchingCountryData[0]);
 
+    jqueryNoConflict("#navigation-display").html(
+        "<div class='buttons btn-group btn-group-justified'>" +
+            "<a id='navigationbutton' class='btn btn-primary' href='javascript:void(0)'><span class='glyphicon glyphicon-link'></span> Back</a>" +
+        "</div>");
+
     jqueryNoConflict("#venue-display").html(mainDisplay);
 
     venueDetails(matchingCountryData[0]);
@@ -67,6 +81,10 @@ function displayVenueData(id, venueData){
 
     jqueryNoConflict("#teambutton").live("click", function(){
         teamDetails(matchingCountryData[0]);
+    });
+
+    jqueryNoConflict("#navigationbutton").live("click", function(){
+        initializeDisplay(venueData);
     });
 
 };
