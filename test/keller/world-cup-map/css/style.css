@@ -1,12 +1,6 @@
-#map-info {width: 100%; min-height: 300px; height: auto;}
+#project-container {width: 538px; max-width: 538px; height: 900px; background: #ffffff; margin: 50px auto 0 auto;}
 
-#map-canvas {width: 100%; height: 600px;}
-
-#project-container {padding: 20px 10px 0 10px; background: #ffffff;}
-
-#project-container h2 {margin-top: 0px; margin-bottom: 0px;}
-
-.flag {width: 100%;}
+#project-container .flag {width: 100%;}
 
 /* main typography */
 body.minimal {font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;}
@@ -83,6 +77,14 @@ body.minimal .kicker {text-transform: uppercase; font-weight: bold;}
 
 
 /****** /
+
+#map-info {width: 100%; min-height: 300px; height: auto;}
+#map-canvas {width: 100%; height: 600px;}
+#project-container h2 {margin-top: 0px; margin-bottom: 0px;}
+
+
+
+
 .teaminfo {display:block;}
 
 
