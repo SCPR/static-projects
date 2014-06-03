@@ -58,39 +58,39 @@ function displayVenueData(id, venueData){
                     "<p><%= streetaddress %><br><%= city %>, <%= state %>, <%= zip %><br><%= phone %></p>" +
                 "</div>" +
             "</div>" +
+        "</div>" +
+        "<div class='row'>" +
+            "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
+                "<div class='buttons btn-group btn-group-justified'>" +
+                    "<a id='venue' class='btn btn-primary' href='javascript:void(0)'><span class='glyphicon glyphicon-link'></span> Venue</a>" +
+                    "<a id='team' class='btn btn-primary' href='javascript:void(0)'><span class='glyphicon glyphicon-link'></span> Team</a>" +
+                "</div>" +
+            "</div>" +
         "</div>", testFilter[0]);
 
     jqueryNoConflict("#venue-display").html(venueDisplay);
 
     var detailsDisplay = _.template(
         "<div class='row'>" +
-
-        "<div class='row'>" +
             "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
-                "<div class='buttons btn-group btn-group-justified'>" +
-                    "<a class='btn btn-primary' href='javascript:void(0)'><span class='glyphicon glyphicon-link'></span> Venue</a>" +
-                    "<a class='btn btn-primary' href='javascript:void(0)'><span class='glyphicon glyphicon-link'></span> Location</a>" +
-                    "<a class='btn btn-primary' href='javascript:void(0)'><span class='glyphicon glyphicon-link'></span> Cheer Gear</a>" +
-                "</div>" +
-            "</div>" +
-        "</div>" +
-
-
-            "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
-                "<img class='flag' src='http://maps.googleapis.com/maps/api/staticmap?center=<%= latitude %>,<%= longitude %>&zoom=12&size=300x300&markers=color:red%7C<%= latitude %>,<%= longitude %>&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8'>" +
                 "<p><strong>About this venue</strong>: <%= notes %></p>" +
-                "<p><strong>World Cup slogan</strong>: <%= officialslogan %></p>" +
-                "<p><strong>Team colors</strong>: <%= dress %></p>" +
-                "<p><strong>Game dates</strong>: <%= gamedates %></p>" +
-            "</div>" +
-            "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
-                "<iframe width='100%' src='<%= songcheer %>' frameborder='0' allowfullscreen></iframe>" +
+                "<img src='http://maps.googleapis.com/maps/api/staticmap?center=<%= latitude %>,<%= longitude %>&zoom=12&size=300x300&markers=color:red%7C<%= latitude %>,<%= longitude %>&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8'>" +
             "</div>" +
         "</div>", testFilter[0]);
 
     jqueryNoConflict("#details-display").html(detailsDisplay);
 
 };
+
+
+
+
+
+
+
+
+
+
 
 // begin function
 function createMap() {
