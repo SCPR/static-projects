@@ -5,12 +5,8 @@ var appConfig = appConfig || {};
 
 //begin main function
 jqueryNoConflict(document).ready(function(){
-
     initializeDisplay(venueData);
-
-    //createMap();
     //initializeTemplates.renderStaticTemplates();
-
 });
 
 // application configuration object
@@ -20,7 +16,6 @@ var appConfig = {
     embed_url_root: null
 };
 
-
 function initializeDisplay(array){
     for (var i=0; i<array.length; i++) {
         jqueryNoConflict("#venue-display").append("<p><a id='" + array[i].nation + "' href='javascript:void(0)'>" + array[i].nation + "</a></p>");
@@ -29,13 +24,18 @@ function initializeDisplay(array){
     $("#venue-display a").click(function(){
         var id = jqueryNoConflict(this).attr('id');
         displayVenueData(id, venueData);
+    });
+}
 
-        function displayVenueData(id, venueData){
-    var testFilter = _.where(venueData, {nation: id});
+function displayVenueData(id, venueData){
+    var matchingCountryData = _.where(venueData, {nation: id});
+
+    // here is an issue we need to work through...
+    console.log(matchingCountryData);
 
     jqueryNoConflict("#venue-display").find("a").addClass("hidden");
 
-    var venueDisplay = _.template(
+    var mainDisplay = _.template(
         "<div class='row'>" +
             "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
                 "<h4 id='title'><%= nation %></h4>" +
@@ -47,7 +47,7 @@ function initializeDisplay(array){
                     "<p><%= streetaddress %><br><%= city %>, <%= state %>, <%= zip %><br><%= phone %></p>" +
                 "</div>" +
             "</div>" +
-        "</div>" + 
+        "</div>" +
         "<div class='row'>" +
             "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
                 "<div class='buttons btn-group btn-group-justified'>" +
@@ -55,36 +55,37 @@ function initializeDisplay(array){
                     "<a id='teambutton'class='btn btn-primary' href='javascript:void(0)'><span class='glyphicon glyphicon-link'></span> Team</a>" +
                 "</div>" +
             "</div>" +
-        "</div>", testFilter[0]);
+        "</div>", matchingCountryData[0]);
 
-        var detailsDisplay = _.template(
-            "<div class='row'>" +
-                "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
-                
-                    "<p><%= notes %></p>" +
-                    
-                "</div>" +
-            "</div>", testFilter[0]);
+    jqueryNoConflict("#venue-display").html(mainDisplay);
 
-    jqueryNoConflict("#venue-display").html(venueDisplay);
-    jqueryNoConflict("#details-display").html(detailsDisplay);
+    venueDetails(matchingCountryData[0]);
 
-        };
+    jqueryNoConflict("#venuebutton").live("click", function(){
+        venueDetails(matchingCountryData[0]);
     });
 
+    jqueryNoConflict("#teambutton").live("click", function(){
+        teamDetails(matchingCountryData[0]);
+    });
 
-$("#teambutton").live("click",function(){
-        var id = jqueryNoConflict(this).attr('id');
-        displayTeamData(id, venueData);
+};
 
-        function displayTeamData(id, venueData){
-    var testFilter = _.where(venueData, {nation: id});
-
-    var teamDisplay = _.template(
+function venueDetails(arrayOfData){
+    var venueDetails = _.template(
         "<div class='row'>" +
             "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
-                "<img src='http://maps.googleapis.com/maps/api/staticmap?center=<%= latitude %>,<%= longitude %>&zoom=12&size=300x300&markers=color:red%7C<%= latitude %>,<%= longitude %>&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8'>" +
                 "<p><strong>About this venue</strong>: <%= notes %></p>" +
+                "<img src='http://maps.googleapis.com/maps/api/staticmap?center=<%= latitude %>,<%= longitude %>&zoom=12&size=300x300&markers=color:red%7C<%= latitude %>,<%= longitude %>&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8'>" +
+            "</div>" +
+        "</div>", arrayOfData);
+    jqueryNoConflict("#details-display").html(venueDetails);
+};
+
+function teamDetails(arrayOfData){
+    var teamDetails = _.template(
+        "<div class='row'>" +
+            "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
                 "<p><strong>World Cup slogan</strong>: <%= officialslogan %></p>" +
                 "<p><strong>Team colors</strong>: <%= dress %></p>" +
                 "<p><strong>Game dates</strong>: <%= gamedates %></p>" +
@@ -92,163 +93,9 @@ $("#teambutton").live("click",function(){
             "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
                 "<iframe width='100%' src='<%= songcheer %>' frameborder='0' allowfullscreen></iframe>" +
             "</div>" +
-        "</div>", testFilter[0]);
-
-    jqueryNoConflict("#details-display").html(teamDisplay);
-
-        };
-
-});
-
-    $("#venuebutton").live('click',function(){
-        var id = jqueryNoConflict(this).attr('id');
-        displayVenueData(id, venueData);
-
-        function displayVenueData(id, venueData){
-    var testFilter = _.where(venueData, {nation: id});
-
-
-     var anotherDisplay = _.template(
-            "<div class='row'>" +
-                "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
-                
-                    "<p><%= nation %></p>" +
-                    
-                "</div>" +
-            "</div>", testFilter[0]);
-
-    jqueryNoConflict("#details-display").html(anotherDisplay);
-
-        };
-    });
-
-
-
-    /*
-    for (var x=0; x<testElements.length; x++) {
-        var anchorId = jqueryNoConflict(testElements[x]).attr("id");
-        if (anchorId != id){
-            jqueryNoConflict(testElements[x]).addClass("hidden");
-        }
-    };
-    */
-
-  
-
-    
-
+        "</div>", arrayOfData);
+    jqueryNoConflict("#details-display").html(teamDetails);
 };
-
-
-
-
-
-
-
-
-
-
-
-// begin function
-function createMap() {
-    var locationColumn = 'geocode_address';
-    var tableID = '1Zyd01azLsZrT9LB___7T4DO_P8GQ7Tga-930TKjl';
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-        center: new
-        google.maps.LatLng(34.16589048389459,-118.2683405195312),
-        zoom: 10,
-        scrollwheel: false,
-        draggable: true,
-        mapTypeControl: false,
-        navigationControl: true,
-        streetViewControl: false,
-        panControl: false,
-        scaleControl: false,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        navigationControlOptions: {
-            style: google.maps.NavigationControlStyle.SMALL,
-            position: google.maps.ControlPosition.RIGHT_TOP}
-    });
-
-    // Initialize ft layer
-    var  layer = new google.maps.FusionTablesLayer({
-        map: map,
-        query: {
-            select: "col5",
-            from: "1Zyd01azLsZrT9LB___7T4DO_P8GQ7Tga-930TKjl",
-            where: ""
-        },
-        options: {
-            styleId: 2,
-            templateId: 3,
-            suppressInfoWindows: true,
-        }
-    });
-
-    google.maps.event.addListener(layer, 'click', function(e) {
-
-        var fusionTableObject = {
-            venue: e.row['VENUE'].value,
-            street_address: e.row['STREET ADDRESS'].value,
-            city: e.row['CITY'].value,
-            state: e.row['STATE'].value,
-            zip: e.row['ZIP'].value,
-            geocode_address: e.row['geocode_address'].value,
-            phone: e.row['PHONE'].value,
-            nation: e.row['NATION'].value,
-            visual_assets: e.row['VISUAL ASSETS'].value,
-            food: e.row['FOOD'].value,
-            drink: e.row['DRINK'].value,
-            song: e.row['SONG/CHEER'].value,
-            official_slogan: e.row['OFFICIAL SLOGAN'].value,
-            dress: e.row['DRESS'].value,
-            nearby_attractions: e.row['NEARBY ATTRACTIONS'].value,
-            photos: e.row['PHOTOS'].value,
-            audio_options: e.row['AUDIO OPTIONS'].value,
-            notes: e.row['NOTES'].value,
-            game_dates: e.row['GAME DATES'].value
-        }
-
-        var leftDisplay = _.template(
-            "<div class='row'>" +
-                "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
-                    "<div class='col-xs-2 col-sm-2 col-md-2 col-lg-2'>" +
-                        "<div class='teaminfo'>" +
-                            "<img class='flag' src='img/<%= nation %>.jpg'>" +
-                        "</div>" +
-                    "</div>" +
-                    "<div class='col-xs-10 col-sm-10 col-md-10 col-lg-10'>" +
-                        "<h2><%= venue %> (<%= nation %>)</h2>" +
-                        "<p><%= street_address %><br><%= city %>, <%= state %>, <%= zip %><br><%= phone %></p>" +
-                    "</div>" +
-                    "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
-                        "<p><strong>About <%= venue %></strong>: <%= notes %></p>" +
-                        "<p><strong>World Cup slogan</strong>: <%= official_slogan %></p>" +
-                        "<p><strong>Team colors</strong>: <%= dress %></p>" +
-                        "<p><strong>Game dates</strong>: <%= game_dates %></p>" +
-                    "</div>" +
-                "</div>" +
-            "</div>", fusionTableObject);
-
-        var rightDisplay = _.template(
-                "<div id='video'>" +
-                    "<iframe width='600' height='315' src='<%= song %>' frameborder='0' allowfullscreen></iframe>" +
-                "</div>", fusionTableObject);
-
-        jqueryNoConflict("#intro-display").empty();
-        jqueryNoConflict("#left-display").html(leftDisplay);
-        jqueryNoConflict("#right-display").html(rightDisplay);
-
-    });
-
-    $("#back").click (function(){
-        $("#info").html(
-            "<div class='banner' id='a'><img class='flag' src='img/Argentina.jpg'></div><div class='banner id='b'><img class='flag' src='img/Brazil.jpg'></div><div class='banner' id='c'><img class='flag' src='img/Colombia.jpg'></div><div class='banner' id='d'><img class='flag' src='img/England.jpg'></div><div class='banner' id='e'><img class='flag' src='img/France.jpg'></div>"
-        )
-    });
-
-};
-// end function
 
 // begin template rendering object
 var initializeTemplates = {
