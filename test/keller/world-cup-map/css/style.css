@@ -14,7 +14,7 @@ body.minimal header h3#site-title a { background-image: url('http://projects.scp
 
 #project-container .flag { width: 100%; display: inline; margin: 10px; border: #000000 solid 1px; }
 
-#project-container .main-flag { width: 70%; display: inline; margin: 0 15% 0 15%;}
+#project-container .main-flag { width: 70%; display: inline; margin: 0 15% 0 15%; border: #000000 solid 1px; }
 
 #content-container #details-display { width: 100%; height: 380px; }
 
@@ -39,6 +39,11 @@ body.minimal header h3#site-title a { background-image: url('http://projects.scp
     color: #2B2B2B;
     text-align: center;
     text-shadow: 0 0px 0px rgba(0,0,0,0.6);
+}
+
+.carousel-caption #details-display p,
+.carousel-caption #team-display p {
+    text-align: left;
 }
 
 .carousel-indicators {

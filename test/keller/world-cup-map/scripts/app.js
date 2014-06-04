@@ -7,7 +7,7 @@ jqueryNoConflict(document).ready(function(){
 
 function initializeDisplay(array){
     jqueryNoConflict("#content-intro").html(
-        "<h1>Xxxxx xxxx</h1>" +
+        "<h3>World Cup: Where to watch</h3>" +
         "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ipsum libero, consectetur at libero non, viverra mattis nunc. Cras nec ipsum ullamcorper, accumsan justo sit amet.</p>"
     );
 
@@ -67,8 +67,8 @@ function displayVenueData(id, matchingCountryData){
                         "<div class='row'>" +
                             "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
                                 "<div id='team-display' class='hidden'>" +
-                                    "<p><strong>World Cup slogan</strong>: <%= officialslogan %></p>" +
-                                    "<p><strong>Team colors</strong>: <%= dress %></p>" +
+                                    "<p><strong><%= officialslogan %></strong></p>" +
+                                    "<p><%= nation %>'s team colors are <%= dress %> and will play in <%= group %> during the 2014 World Cup.</p>" +
                                     "<p><strong>Game dates</strong>: <%= gamedates %></p>" +
                                     "<iframe width='100%' src='<%= songcheer %>' frameborder='0' allowfullscreen></iframe>" +
                                 "</div>" +
@@ -106,27 +106,20 @@ function displayVenueData(id, matchingCountryData){
     });
 
     jqueryNoConflict("#reset-teams").on("click", "#navigationbutton", function(){
-
         jqueryNoConflict("#reset-teams").addClass("hidden");
-
         jqueryNoConflict(".carousel-indicators").empty();
-
         jqueryNoConflict(".carousel-inner").empty();
-
         if (jqueryNoConflict('#team-selection').length){
             initializeDisplay(venueData);
         } else {
             jqueryNoConflict("<div id='team-selection'></div>").insertBefore("#venue-carousel");
             initializeDisplay(venueData);
         }
-
         if (jqueryNoConflict('#content-intro').length){
             initializeDisplay(venueData);
         } else {
             jqueryNoConflict("<div id='content-intro'></div>").insertBefore("#team-selection");
             initializeDisplay(venueData);
         }
-
     });
-
 };
