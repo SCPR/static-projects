@@ -51,11 +51,7 @@
         <![endif]-->
 
         <!-- begin base scripts -->
-
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <!--
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-        -->
         <script type="text/javascript" src="//use.typekit.net/air8rql.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <!-- end base scripts -->
@@ -69,6 +65,9 @@
             <div id="project-container" class="row">
                 <div id="content-container" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <header>
+                        <div id="reset-teams" class="buttons btn-group hidden">
+                            <a id="navigationbutton" class="btn btn-primary" href="javascript:void(0)"><span class="glyphicon glyphicon-backward"></span> View full list</a>
+                        </div>
                         <div class="navbar-header">
                             <h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
                         </div>
@@ -76,11 +75,8 @@
                     <div id="content-intro"></div>
                     <div id="team-selection"></div>
                     <div id="venue-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                        <ol class="carousel-indicators"></ol>
+                        <ul class="pagination"></ul>
                         <div class="carousel-inner"></div>
-                    </div>
-                    <div id="reset-teams" class="buttons btn-group btn-group-justified hidden">
-                        <a id="navigationbutton" class="btn btn-primary" href="javascript:void(0)"><span class="glyphicon glyphicon-link"></span> Back</a>
                     </div>
                 </div>
             </div>

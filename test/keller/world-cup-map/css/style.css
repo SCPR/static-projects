@@ -1,8 +1,8 @@
-body.minimal header { background: #ffffff; width: 100%; height: 60px; margin: 0 0 10px 0; }
+body.minimal header { background: #ffffff; width: 100%; height: 65px; margin: 0 0 25px 0; }
 
 body.minimal header h3#site-title a { background-image: url('http://projects.scpr.org/static/static-files/images/main/logo-masthead.png'); width: 181px; height: 42px; display: block; text-indent: -9999px; margin-top: 15px; }
 
-#project-container { width: 538px; max-width: 538px; height: 1000px; background: #3d3d3d; margin: 0 auto 0 auto; }
+#project-container { width: 100%; max-width: 538px; height: 1000px; background: #3d3d3d; margin: 0 auto 0 auto; }
 
 #content-container { width: 94%; height: 960px; margin: 3% 3% 3% 3%; background: #ffffff; position: relative;}
 
@@ -12,9 +12,9 @@ body.minimal header h3#site-title a { background-image: url('http://projects.scp
 
 #venue-carousel { width: 100%; height: auto; overflow: hidden; }
 
-#project-container .flag { width: 100%; display: inline; margin: 10px; border: #000000 solid 1px; }
+#project-container .flag { width: 100%; height: 72px; display: inline; margin: 10px; border: #000000 solid 1px; }
 
-#project-container .main-flag { width: 70%; display: inline; margin: 0 15% 0 15%; border: #000000 solid 1px; }
+#project-container .main-flag { width: 70%; display: inline; margin: 30px 15% 0 15%; border: #000000 solid 1px; }
 
 #content-container #details-display { width: 100%; height: 380px; }
 
@@ -22,9 +22,27 @@ body.minimal header h3#site-title a { background-image: url('http://projects.scp
 
 #content-container #team-display { width: 100%; height: auto; margin: 25px 0 0 10px; }
 
-#content-container #reset-teams { position: absolute; bottom: 0; }
+#content-container #reset-teams { margin: 22px 0 10px 0; }
 
-.carousel-caption .buttons { z-index: 35; }
+#content-container .navbar-header {float: right;}
+
+#project-container iframe {width: 100%;}
+
+.aspect-ratio {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 51%;
+}
+
+.aspect-ratio iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0; top: 0;
+}
+
+.carousel-caption .buttons { margin-bottom: 10px; z-index: 35; }
 
 .carousel-caption .btn { text-shadow: none; }
 
@@ -46,44 +64,7 @@ body.minimal header h3#site-title a { background-image: url('http://projects.scp
     text-align: left;
 }
 
-.carousel-indicators {
-    position: relative;
-    top: 50px;
-    left: 90%;
-    z-index: 5;
-    width: 60%;
-    padding-left: 0;
-    margin-left: -30%;
-    text-align: center;
-    list-style: none;
-}
-
-.carousel-indicators li {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin: 1px;
-    text-indent: -999px;
-    cursor: pointer;
-    background-color: #e5e5e5;
-    border: 1px solid #000000;
-    border-radius: 10px;
-}
-
-.carousel-indicators .active {
-    width: 22px;
-    height: 22px;
-    margin: 0;
-    background-color: #000000;}
-
-@media screen and (min-width: 768px) {
-  .carousel-control .glyphicon-chevron-left,
-  .carousel-control .glyphicon-chevron-right,
-  .carousel-control .icon-prev,
-  .carousel-control .icon-next { width: 30px; height: 30px; margin-top: -15px; margin-left: -15px; font-size: 30px; }
-  /*carousel-caption {  right: 20%; left: 20%; padding-bottom: 30px; }*/
-  .carousel-indicators { bottom: 20px; }
-}
+.carousel-caption #details-display p.center { text-align: center; }
 
 /* main typography */
 body.minimal { font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;}
@@ -156,4 +137,118 @@ body.minimal .kicker { text-transform: uppercase; font-weight: bold;}
     body.minimal .jumbotron p { font-size: 80%; font-weight: normal;}
     body.minimal table { font-size: 140%;}
     body.minimal ul li { font-size: 140%;}
+}
+
+
+
+.pagination {
+  position: absolute;
+  z-index: 5;
+  top: -10px;
+  right: 10px;
+  display: block;
+  float: right;
+  padding: 0px;
+  margin: 10px 10px;
+  border-radius: 5px;
+}
+
+.pagination > li {
+  display: inline;
+}
+
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #428bca;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  color: #2a6496;
+  background-color: #eee;
+  border-color: #ddd;
+}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #999;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+  padding: 10px 16px;
+  font-size: 18px;
+}
+
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
