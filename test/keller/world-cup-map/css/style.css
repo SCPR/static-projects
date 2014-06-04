@@ -1,107 +1,154 @@
-#project-container {width: 538px; max-width: 538px; height: 1000px; background: #ffffff; margin: 50px auto 0 auto;}
+body.minimal header { background: #ffffff; width: 100%; height: 60px; margin: 0 0 10px 0; }
 
-#project-container .flag {width: 100%;}
+body.minimal header h3#site-title a { background-image: url('http://projects.scpr.org/static/static-files/images/main/logo-masthead.png'); width: 181px; height: 42px; display: block; text-indent: -9999px; margin-top: 15px; }
+
+#project-container { width: 538px; max-width: 538px; height: 1000px; background: #3d3d3d; margin: 0 auto 0 auto; }
+
+#content-container { width: 94%; height: 960px; margin: 3% 3% 3% 3%; background: #ffffff; position: relative;}
+
+#content-intro { width: 100%; height: auto; margin: 50px 0 0 0; }
+
+#team-selection { width: 100%; height: auto; margin: 60px 0 0 0; }
+
+#venue-carousel { width: 100%; height: auto; overflow: hidden; }
+
+#project-container .flag { width: 100%; display: inline; margin: 10px; border: #000000 solid 1px; }
+
+#project-container .main-flag { width: 70%; display: inline; margin: 0 15% 0 15%;}
+
+#content-container #details-display { width: 100%; height: 380px; }
+
+#content-container #details-display img { width: 300px; height: 300px; margin: 10px auto 10px auto; }
+
+#content-container #team-display { width: 100%; height: auto; margin: 25px 0 0 10px; }
+
+#content-container #reset-teams { position: absolute; bottom: 0; }
+
+.carousel-caption .buttons { z-index: 35; }
+
+.carousel-caption .btn { text-shadow: none; }
+
+.carousel-caption {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #2B2B2B;
+    text-align: center;
+    text-shadow: 0 0px 0px rgba(0,0,0,0.6);
+}
+
+.carousel-indicators {
+    position: relative;
+    top: 50px;
+    left: 90%;
+    z-index: 5;
+    width: 60%;
+    padding-left: 0;
+    margin-left: -30%;
+    text-align: center;
+    list-style: none;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #e5e5e5;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+.carousel-indicators .active {
+    width: 22px;
+    height: 22px;
+    margin: 0;
+    background-color: #000000;}
+
+@media screen and (min-width: 768px) {
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-prev,
+  .carousel-control .icon-next { width: 30px; height: 30px; margin-top: -15px; margin-left: -15px; font-size: 30px; }
+  /*carousel-caption {  right: 20%; left: 20%; padding-bottom: 30px; }*/
+  .carousel-indicators { bottom: 20px; }
+}
 
 /* main typography */
-body.minimal {font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;}
+body.minimal { font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;}
 
-body.minimal .kicker {text-transform: uppercase; font-weight: bold;}
+body.minimal .kicker { text-transform: uppercase; font-weight: bold;}
 
 @media (max-width: 480px) {
-    body.minimal h1 {font-size: 370%; font-weight: bold;}
-    body.minimal h2 {font-size: 320%;}
-    body.minimal h3 {font-size: 280%;}
-    body.minimal h4 {font-size: 240%;}
-    body.minimal h5 {font-size: 200%;}
-    body.minimal h6 {font-size: 180%;}
-    body.minimal p {font-size: 130%;}
-    body.minimal a.btn-primary {font-size: 120%;}
-    body.minimal .kicker {font-size: 110%;}
-    body.minimal .small-writing {font-size: 120%;}
-    body.minimal .sky-writing {font-size: 450%; color: #EC7C04;}
-    body.minimal .jumbotron p {font-size: 70%; font-weight: normal;}
-    body.minimal table {font-size: 130%;}
-    body.minimal ul li {font-size: 130%;}
+    body.minimal h1 { font-size: 370%; font-weight: bold;}
+    body.minimal h2 { font-size: 320%;}
+    body.minimal h3 { font-size: 280%;}
+    body.minimal h4 { font-size: 240%;}
+    body.minimal h5 { font-size: 200%;}
+    body.minimal h6 { font-size: 180%;}
+    body.minimal p { font-size: 130%;}
+    body.minimal a.btn-primary { font-size: 120%;}
+    body.minimal .kicker { font-size: 110%;}
+    body.minimal .small-writing { font-size: 120%;}
+    body.minimal .sky-writing { font-size: 450%; color: #EC7C04;}
+    body.minimal .jumbotron p { font-size: 70%; font-weight: normal;}
+    body.minimal table { font-size: 130%;}
+    body.minimal ul li { font-size: 130%;}
 }
 
 @media (min-width: 481px) {
-    body.minimal h1 {font-size: 420%; font-weight: bold;}
-    body.minimal h2 {font-size: 380%;}
-    body.minimal h3 {font-size: 340%;}
-    body.minimal h4 {font-size: 300%;}
-    body.minimal h5 {font-size: 260%;}
-    body.minimal h6 {font-size: 220%;}
-    body.minimal p {font-size: 130%;}
-    body.minimal a.btn-primary {font-size: 120%;}
-    body.minimal .kicker {font-size: 130%;}
-    body.minimal .small-writing {font-size: 120%;}
-    body.minimal .sky-writing {font-size: 500%; color: #EC7C04;}
-    body.minimal .jumbotron p {font-size: 70%; font-weight: normal;}
-    body.minimal table {font-size: 130%;}
-    body.minimal ul li {font-size: 130%;}
+    body.minimal h1 { font-size: 420%; font-weight: bold;}
+    body.minimal h2 { font-size: 380%;}
+    body.minimal h3 { font-size: 340%;}
+    body.minimal h4 { font-size: 300%;}
+    body.minimal h5 { font-size: 260%;}
+    body.minimal h6 { font-size: 220%;}
+    body.minimal p { font-size: 130%;}
+    body.minimal a.btn-primary { font-size: 120%;}
+    body.minimal .kicker { font-size: 130%;}
+    body.minimal .small-writing { font-size: 120%;}
+    body.minimal .sky-writing { font-size: 500%; color: #EC7C04;}
+    body.minimal .jumbotron p { font-size: 70%; font-weight: normal;}
+    body.minimal table { font-size: 130%;}
+    body.minimal ul li { font-size: 130%;}
 }
 
 @media (min-width: 768px) {
-    body.minimal h1 {font-size: 460%; font-weight: bold;}
-    body.minimal h2 {font-size: 400%;}
-    body.minimal h3 {font-size: 340%;}
-    body.minimal h4 {font-size: 280%;}
-    body.minimal h5 {font-size: 220%;}
-    body.minimal h6 {font-size: 160%;}
-    body.minimal p {font-size: 150%;}
-    body.minimal a.btn-primary {font-size: 140%;}
-    body.minimal .kicker {font-size: 150%;}
-    body.minimal .small-writing {font-size: 130%;}
-    body.minimal .sky-writing {font-size: 600%; color: #EC7C04;}
-    body.minimal .jumbotron p {font-size: 80%; font-weight: normal;}
-    body.minimal table {font-size: 140%;}
-    body.minimal ul li {font-size: 140%;}
+    body.minimal h1 { font-size: 460%; font-weight: bold;}
+    body.minimal h2 { font-size: 400%;}
+    body.minimal h3 { font-size: 340%;}
+    body.minimal h4 { font-size: 280%;}
+    body.minimal h5 { font-size: 220%;}
+    body.minimal h6 { font-size: 160%;}
+    body.minimal p { font-size: 150%;}
+    body.minimal a.btn-primary { font-size: 140%;}
+    body.minimal .kicker { font-size: 150%;}
+    body.minimal .small-writing { font-size: 130%;}
+    body.minimal .sky-writing { font-size: 600%; color: #EC7C04;}
+    body.minimal .jumbotron p { font-size: 80%; font-weight: normal;}
+    body.minimal table { font-size: 140%;}
+    body.minimal ul li { font-size: 140%;}
 }
 
 @media (min-width: 992px) {
-    body.minimal h1 {font-size: 480%; font-weight: bold;}
-    body.minimal h2 {font-size: 420%;}
-    body.minimal h3 {font-size: 360%;}
-    body.minimal h4 {font-size: 300%;}
-    body.minimal h5 {font-size: 240%;}
-    body.minimal h6 {font-size: 180%;}
-    body.minimal p {font-size: 150%;}
-    body.minimal a.btn-primary {font-size: 140%;}
-    body.minimal .kicker {font-size: 150%;}
-    body.minimal .small-writing {font-size: 130%;}
-    body.minimal .sky-writing {font-size: 600%; color: #EC7C04;}
-    body.minimal .jumbotron p {font-size: 80%; font-weight: normal;}
-    body.minimal table {font-size: 140%;}
-    body.minimal ul li {font-size: 140%;}
+    body.minimal h1 { font-size: 480%; font-weight: bold;}
+    body.minimal h2 { font-size: 420%;}
+    body.minimal h3 { font-size: 360%;}
+    body.minimal h4 { font-size: 300%;}
+    body.minimal h5 { font-size: 240%;}
+    body.minimal h6 { font-size: 180%;}
+    body.minimal p { font-size: 150%;}
+    body.minimal a.btn-primary { font-size: 140%;}
+    body.minimal .kicker { font-size: 150%;}
+    body.minimal .small-writing { font-size: 130%;}
+    body.minimal .sky-writing { font-size: 600%; color: #EC7C04;}
+    body.minimal .jumbotron p { font-size: 80%; font-weight: normal;}
+    body.minimal table { font-size: 140%;}
+    body.minimal ul li { font-size: 140%;}
 }
-
-
-/****** /
-
-#map-info {width: 100%; min-height: 300px; height: auto;}
-#map-canvas {width: 100%; height: 600px;}
-#project-container h2 {margin-top: 0px; margin-bottom: 0px;}
-
-
-
-
-.teaminfo {display:block;}
-
-
-.banner {display:inline;}
-.nationname {display: inline; width: 250px; color: white; background-color:rgba(0,127,166,1.0); padding-left:20px; padding-right:20px;}
-#slogan {margin-left:10px; color: rgba(0,127,166,1.0); font-size:23px; font-weight: 800; font-family: Lucida Grande;}
-#venue {width: 600px;color: white; background-color:rgba(0,127,166,1.0); padding-left:20px; margin: 10px;}
-#description {width: 600px; padding: 10px;}
-#nation {float: center; color: white; background-color:rgba(0,127,166,1.0); padding-left:20px; padding-right:20px; padding-top:0px; padding-bottom:0px;}
-#dates {margin-left:40px;}
-#back {margin-top: 20px;}
-#video {position:absolute; top: 200px; left: 10px;}
-#food {color: white; background-color:rgba(0,127,166,1.0); padding-left:20px; margin: 10px;}
-
-
-/*
-#leftbox {width: 250px;}
-#middlebox {position:absolute; top: 0px; left: 280px;}
-#rightbox {position:absolute; top: 0px; left: 940px; width: 400px;}
-*/

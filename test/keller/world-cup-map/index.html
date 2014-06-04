@@ -7,7 +7,7 @@
     <head>
 
         <!-- begin meta -->
-        <title>Xxxxx | scpr.org</title>
+        <title>Where to watch the 2014 World Cup | scpr.org</title>
         <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" id="meta-viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
@@ -19,7 +19,7 @@
         <meta name="robots" content="" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
-        <meta property="og:title" content="Xxxxx" />
+        <meta property="og:title" content="Where to watch the 2014 World Cup" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png" />
         <meta property="og:image:width" content="500" />
@@ -30,7 +30,7 @@
         <meta name="twitter:url" content="">
         <meta name="twitter:domain" content="http://projects.scpr.org/">
         <meta name="twitter:site" content="KPCC">
-        <meta name="twitter:title" content="Xxxxx">
+        <meta name="twitter:title" content="Where to watch the 2014 World Cup">
         <meta name="twitter:description" content="">
         <meta name="twitter:image:src" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png">
         <!-- end meta -->
@@ -39,7 +39,6 @@
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" />
         <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" />
-        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
 
         <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
@@ -52,10 +51,11 @@
         <![endif]-->
 
         <!-- begin base scripts -->
-        <!--
+
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        -->
+        <!--
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+        -->
         <script type="text/javascript" src="//use.typekit.net/air8rql.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <!-- end base scripts -->
@@ -67,17 +67,21 @@
         <body class="minimal">
 
             <div id="project-container" class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div id="project-intro">
-                        <h5 class="kicker">2014 World Cup</h5>
-                        <h1>Evie's Machine</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ipsum libero, consectetur at libero non, viverra mattis nunc. Cras nec ipsum ullamcorper, accumsan justo sit amet.</p>
+                <div id="content-container" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <header>
+                        <div class="navbar-header">
+                            <h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
+                        </div>
+                    </header>
+                    <div id="content-intro"></div>
+                    <div id="team-selection"></div>
+                    <div id="venue-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                        <ol class="carousel-indicators"></ol>
+                        <div class="carousel-inner"></div>
                     </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div id="venue-display"></div>
-                    <div id="details-display"></div>
-                    <div id="navigation-display"></div>
+                    <div id="reset-teams" class="buttons btn-group btn-group-justified hidden">
+                        <a id="navigationbutton" class="btn btn-primary" href="javascript:void(0)"><span class="glyphicon glyphicon-link"></span> Back</a>
+                    </div>
                 </div>
             </div>
 
