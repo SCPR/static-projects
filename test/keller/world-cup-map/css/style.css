@@ -6,9 +6,9 @@ body.minimal header h3#site-title a { background-image: url('http://projects.scp
 
 #content-container { width: 94%; height: 960px; margin: 3% 3% 3% 3%; background: #ffffff; position: relative;}
 
-#content-intro { width: 100%; height: auto; margin: 50px 0 0 0; }
+#content-intro { width: 100%; height: auto; margin: 0 0 0 0; }
 
-#team-selection { width: 100%; height: auto; margin: 60px 0 0 0; }
+#team-selection { width: 100%; height: auto; margin: 20px 0 0 0; }
 
 #venue-carousel { width: 100%; height: auto; overflow: hidden; }
 
