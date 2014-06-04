@@ -8,7 +8,7 @@ jqueryNoConflict(document).ready(function(){
 function initializeDisplay(array){
     jqueryNoConflict("#content-intro").html(
         "<h3>World Cup: Where to watch</h3>" +
-        "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ipsum libero, consectetur at libero non, viverra mattis nunc. Cras nec ipsum ullamcorper, accumsan justo sit amet.</p>"
+        "<p>Whether you're a fan of a specific country's national team, or just want to soak up a new experience with those who are, we've compiled a list of places to catch the international flavor of the 2014 World Cup in the nation's most diverse city.</p>"
     );
 
     var arrayOfNations = _.uniq(_.collect(array, function(x){
@@ -18,7 +18,6 @@ function initializeDisplay(array){
     jqueryNoConflict("#team-selection").empty();
 
     for (var i=0; i<arrayOfNations.length; i++) {
-
         jqueryNoConflict("#team-selection").append(
                 "<div class='col-xs-6 col-sm-4 col-md-4 col-lg-4'>" +
                     "<a id='" + arrayOfNations[i] + "' href='javascript:void(0)' title='" + arrayOfNations[i] + "'><img class='flag' src='img/" + arrayOfNations[i] + ".jpg'></a>" +
