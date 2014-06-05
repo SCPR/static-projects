@@ -2,7 +2,18 @@ var jqueryNoConflict = jQuery;
 
 //begin main function
 jqueryNoConflict(document).ready(function(){
+
     initializeDisplay(venueData);
+
+    // set params for mobile devices
+    if (navigator.userAgent.match(/(iPad)/i)) {
+        console.log("ipad");
+    } else if (navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i)) {
+        console.log("iphone");
+    } else {
+        console.log("neither");
+    };
+
 });
 
 function initializeDisplay(array){
@@ -19,7 +30,7 @@ function initializeDisplay(array){
 
     for (var i=0; i<arrayOfNations.length; i++) {
         jqueryNoConflict("#team-selection").append(
-                "<div class='col-xs-6 col-sm-4 col-md-4 col-lg-4'>" +
+                "<div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>" +
                     "<a id='" + arrayOfNations[i] + "' href='javascript:void(0)' title='" + arrayOfNations[i] + "'><img class='flag' src='img/" + arrayOfNations[i] + ".jpg'></a>" +
                 "</div>"
         );
@@ -55,8 +66,13 @@ function displayVenueData(id, matchingCountryData){
                         "<img class='main-flag' src='img/<%= nation %>.jpg'>" +
                         "<div class='carousel-caption'>" +
                             "<h5><%= venue %></h5>" +
-                            "<p><%= streetaddress %><br><%= city %>, <%= state %>, <%= zip %><br><%= phone %><br><a href='<%= website %>' target='_top'>Website</a></p>" +
-                            "<div class='buttons btn-group btn-group-justified'>" +
+                            "<p><%= streetaddress %><br><%= city %>, <%= state %>, <%= zip %><br><a href='tel:<%= phone %>'><%= phone %></a>" +
+                            "<% if (website === ''){ %>" +
+                            "<% } else { %>" +
+                                "&nbsp;&nbsp;&nbsp;<a href='<%= website %>' target='_top'>Website</a>" +
+                            "<% } %>" +
+                            "</p>" +
+                            "<div class='buttons toggle-buttons btn-group btn-group-justified'>" +
                                 "<a id='venuebutton' class='btn btn-primary' href='javascript:void(0)'> About</a>" +
                                 "<a id='teambutton'class='btn btn-primary' href='javascript:void(0)'> Team <%= nation %></a>" +
                             "</div>" +
@@ -65,7 +81,7 @@ function displayVenueData(id, matchingCountryData){
                                     "<div id='details-display'>" +
                                         "<p><%= notes %></p>" +
                                         "<p class='center'><strong>Click the map below to get directions</strong></p>" +
-                                        "<a href='https://www.google.com/maps/place/<%= streetaddress %>/@<%= latitude %>,<%= longitude %>,16z' ><img src='http://maps.googleapis.com/maps/api/staticmap?center=<%= latitude %>,<%= longitude %>&zoom=12&size=300x300&markers=color:red%7C<%= latitude %>,<%= longitude %>&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8'></a>" +
+                                        "<a href='https://www.google.com/maps/place/<%= streetaddress %>/@<%= latitude %>,<%= longitude %>,16z' ><img src='http://maps.googleapis.com/maps/api/staticmap?center=<%= latitude %>,<%= longitude %>&zoom=13&size=300x300&markers=color:red%7C<%= latitude %>,<%= longitude %>&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8'></a>" +
                                     "</div>" +
                                 "</div>" +
                             "</div>" +
@@ -103,13 +119,13 @@ function displayVenueData(id, matchingCountryData){
                         "<img class='main-flag' src='img/<%= nation %>.jpg'>" +
                         "<div class='carousel-caption'>" +
                             "<h5><%= venue %></h5>" +
-                            "<p><%= streetaddress %><br><%= city %>, <%= state %>, <%= zip %><br><%= phone %><br>" +
+                            "<p><%= streetaddress %><br><%= city %>, <%= state %>, <%= zip %><br><%= phone %>" +
                             "<% if (website === ''){ %>" +
                             "<% } else { %>" +
-                                "<a href='<%= website %>' target='_top'>Website</a>" +
+                                "&nbsp;&nbsp;&nbsp;<a href='<%= website %>' target='_top'>Website</a>" +
                             "<% } %>" +
                             "</p>" +
-                            "<div class='buttons btn-group btn-group-justified'>" +
+                            "<div class='buttons toggle-buttons btn-group btn-group-justified'>" +
                                 "<a id='venuebutton' class='btn btn-primary' href='javascript:void(0)'> About</a>" +
                                 "<a id='teambutton'class='btn btn-primary' href='javascript:void(0)'> Team <%= nation %></a>" +
                             "</div>" +
@@ -118,7 +134,7 @@ function displayVenueData(id, matchingCountryData){
                                     "<div id='details-display'>" +
                                         "<p><%= notes %></p>" +
                                         "<p class='center'><strong>Click the map below to get directions</strong></p>" +
-                                        "<a href='https://www.google.com/maps/place/<%= streetaddress %>/@<%= latitude %>,<%= longitude %>,16z' ><img src='http://maps.googleapis.com/maps/api/staticmap?center=<%= latitude %>,<%= longitude %>&zoom=12&size=300x300&markers=color:red%7C<%= latitude %>,<%= longitude %>&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8'></a>" +
+                                        "<a href='https://www.google.com/maps/place/<%= streetaddress %>/@<%= latitude %>,<%= longitude %>,16z' ><img src='http://maps.googleapis.com/maps/api/staticmap?center=<%= latitude %>,<%= longitude %>&zoom=13&size=300x300&markers=color:red%7C<%= latitude %>,<%= longitude %>&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8'></a>" +
                                     "</div>" +
                                 "</div>" +
                             "</div>" +
@@ -139,29 +155,37 @@ function displayVenueData(id, matchingCountryData){
                 "</div>", matchingCountryData[i]);
 
             jqueryNoConflict(".carousel-inner").append(mainDisplay);
-            $(".carousel-inner .item").first().addClass("active");
+            jqueryNoConflict(".carousel-inner .item").first().addClass("active");
         }
     };
 
-    jqueryNoConflict(".carousel-inner .active").on("click", "#venuebutton", function(){
+    toggleDisplays();
 
-        console.log(this);
+    resetApplication();
 
-        jqueryNoConflict("#team-display").addClass("hidden");
-        jqueryNoConflict("#details-display").removeClass("hidden");
-
+    jqueryNoConflict("#venue-carousel").on('slid', function(){
+        toggleDisplays();
     });
 
+};
 
-    jqueryNoConflict(".carousel-inner .active").on("click", "#teambutton", function(){
-
-        console.log(this);
-
-        jqueryNoConflict("#details-display").addClass("hidden");
-        jqueryNoConflict("#team-display").removeClass("hidden");
-
+function toggleDisplays(){
+    var targetButtons = jqueryNoConflict(".carousel-inner .active .toggle-buttons").find("a")
+    jqueryNoConflict(targetButtons).on("click", function(){
+        var detailsDisplay = jqueryNoConflict(".carousel-inner .active").find("#details-display");
+        var teamDetails = jqueryNoConflict(".carousel-inner .active").find("#team-display");
+        var id = $(this).attr('id');
+        if (id === "venuebutton"){
+            jqueryNoConflict(detailsDisplay).removeClass("hidden");
+            jqueryNoConflict(teamDetails).addClass("hidden");
+        } else {
+            jqueryNoConflict(detailsDisplay).addClass("hidden");
+            jqueryNoConflict(teamDetails).removeClass("hidden");
+        }
     });
+};
 
+function resetApplication(){
     jqueryNoConflict("#reset-teams").on("click", "#navigationbutton", function(){
         jqueryNoConflict("#reset-teams").addClass("hidden");
         jqueryNoConflict(".pagination").empty();
