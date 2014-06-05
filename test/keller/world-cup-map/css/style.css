@@ -64,7 +64,10 @@ body.minimal header h3#site-title a { background-image: url('http://projects.scp
     text-align: left;
 }
 
-.carousel-caption #details-display p.center { text-align: center; }
+.carousel-caption #details-display p.center,
+.carousel-caption #team-display p.center {
+  text-align: center;
+}
 
 /* main typography */
 body.minimal { font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;}

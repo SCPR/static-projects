@@ -88,7 +88,7 @@ function displayVenueData(id, matchingCountryData){
                             "<div class='row'>" +
                                 "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
                                     "<div id='team-display' class='hidden'>" +
-                                        "<p><strong><%= officialslogan %></strong></p>" +
+                                        "<p class='center'><strong><%= officialslogan %></strong></p>" +
                                         "<p><a href='<%= fifapage %>' target='_top'><%= nation %>'s</a> team colors are <%= dress %> and will play in <%= group %> during the 2014 World Cup.</p>" +
                                         "<p><strong>Game dates</strong>: <%= gamedates %></p>" +
                                         "<div class='aspect-ratio'>" +
@@ -141,7 +141,7 @@ function displayVenueData(id, matchingCountryData){
                             "<div class='row'>" +
                                 "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
                                     "<div id='team-display' class='hidden'>" +
-                                        "<p><strong><%= officialslogan %></strong></p>" +
+                                        "<p class='center'><strong><%= officialslogan %></strong></p>" +
                                         "<p><a href='<%= fifapage %>' target='_top'><%= nation %>'s</a> team colors are <%= dress %> and will play in <%= group %> during the 2014 World Cup.</p>" +
                                         "<p><strong>Game dates</strong>: <%= gamedates %></p>" +
                                         "<div class='aspect-ratio'>" +
