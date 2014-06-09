@@ -7,9 +7,9 @@ jqueryNoConflict(document).ready(function(){
 
     // set params for mobile devices
     if (navigator.userAgent.match(/(iPad)/i)) {
-
+        //$("navbar-right").addClass("hidden");
     } else if (navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i)) {
-        $("navbar-right").addClass("hidden");
+        //$("navbar-right").addClass("hidden");
     } else {
 
     };

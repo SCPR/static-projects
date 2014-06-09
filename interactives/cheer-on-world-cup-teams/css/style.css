@@ -114,6 +114,12 @@ body.minimal .pubdate {color: #b94a48; font-style: italic; display: inline;}
     body.minimal ul li { font-size: 140%;}
 }
 
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    #content-container .navbar-right { display: none; }
+}
+
+
 /* embed box */
 body.minimal #popup_container {font-size: 100%; min-width: 300px; max-width: 400px; background: #fdfdfd; border: solid 1px #2B2B2B; color: #2B2B2B; -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;}
 body.minimal #popup_title {font-size: 150%; font-weight: bold; text-align: center; line-height: 1.75em; color: #fdfdfd; background: rgba(0, 127, 166, 1.0); border: solid 1px #fdfdfd; border-bottom: solid 1px #999; cursor: default; padding: 0em; margin: 0em;}
