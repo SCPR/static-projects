@@ -43,8 +43,10 @@ body.minimal .header-links a.projects-home {background:url('http://projects.scpr
 
 /* main typography */
 body.minimal { font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;}
-
 body.minimal .kicker { text-transform: uppercase; font-weight: bold;}
+
+body.minimal .credits {font-style: italic; display: inline;}
+body.minimal .pubdate {color: #b94a48; font-style: italic; display: inline;}
 
 @media (max-width: 480px) {
     body.minimal h1 { font-size: 370%; font-weight: bold;}
@@ -53,7 +55,7 @@ body.minimal .kicker { text-transform: uppercase; font-weight: bold;}
     body.minimal h4 { font-size: 240%;}
     body.minimal h5 { font-size: 200%;}
     body.minimal h6 { font-size: 180%;}
-    body.minimal p { font-size: 130%;}
+    body.minimal p { font-size: 120%;}
     body.minimal a.btn-primary { font-size: 120%;}
     body.minimal .kicker { font-size: 110%;}
     body.minimal .small-writing { font-size: 120%;}
@@ -70,7 +72,7 @@ body.minimal .kicker { text-transform: uppercase; font-weight: bold;}
     body.minimal h4 { font-size: 300%;}
     body.minimal h5 { font-size: 260%;}
     body.minimal h6 { font-size: 220%;}
-    body.minimal p { font-size: 130%;}
+    body.minimal p { font-size: 120%;}
     body.minimal a.btn-primary { font-size: 120%;}
     body.minimal .kicker { font-size: 130%;}
     body.minimal .small-writing { font-size: 120%;}
@@ -87,7 +89,7 @@ body.minimal .kicker { text-transform: uppercase; font-weight: bold;}
     body.minimal h4 { font-size: 280%;}
     body.minimal h5 { font-size: 220%;}
     body.minimal h6 { font-size: 160%;}
-    body.minimal p { font-size: 150%;}
+    body.minimal p { font-size: 130%;}
     body.minimal a.btn-primary { font-size: 140%;}
     body.minimal .kicker { font-size: 150%;}
     body.minimal .small-writing { font-size: 130%;}
@@ -104,7 +106,7 @@ body.minimal .kicker { text-transform: uppercase; font-weight: bold;}
     body.minimal h4 { font-size: 300%;}
     body.minimal h5 { font-size: 240%;}
     body.minimal h6 { font-size: 180%;}
-    body.minimal p { font-size: 150%;}
+    body.minimal p { font-size: 130%;}
     body.minimal a.btn-primary { font-size: 140%;}
     body.minimal .kicker { font-size: 150%;}
     body.minimal .small-writing { font-size: 130%;}
@@ -113,8 +115,6 @@ body.minimal .kicker { text-transform: uppercase; font-weight: bold;}
     body.minimal table { font-size: 140%;}
     body.minimal ul li { font-size: 140%;}
 }
-
-
 
 .pagination {
   position: absolute;

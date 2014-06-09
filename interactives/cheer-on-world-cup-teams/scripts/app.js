@@ -18,7 +18,8 @@ jqueryNoConflict(document).ready(function(){
 
 function initializeDisplay(array){
     jqueryNoConflict("#content-intro").html(
-        "<h3>World Cup: Where to watch</h3>" +
+        "<h4>World Cup 2014: Where to watch your country</h4>" +
+        "<p><span class='credits'>Produced by Evie Liu, Francine Rios &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller'>Chris Keller</a></span> | <span class='pubdate'>Published April 29, 2014</span></p>" +
         "<p>Whether you're a fan of a specific country's national team, or just want to soak up a new experience with those who are, we've compiled a list of places to catch the international flavor of the 2014 World Cup in the nation's most diverse city.</p>"
     );
 
