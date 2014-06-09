@@ -18,9 +18,9 @@ jqueryNoConflict(document).ready(function(){
 
 function initializeDisplay(array){
     jqueryNoConflict("#content-intro").html(
-        "<h4>World Cup 2014: Where to watch your country</h4>" +
-        "<p><span class='credits'>Produced by Evie Liu, Francine Rios &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller'>Chris Keller</a></span> | <span class='pubdate'>Published April 29, 2014</span></p>" +
-        "<p>Whether you're a fan of a specific country's World Cup team, or just want to experience the \"beautiful game\" with those who are, we've curated a list of places to catch the international flavor of the 2014 World Cup in the nation's most diverse city. Is your favorite spot missing? <a href='mailto:scprweb@scpr.org?Subject=World Cup 2014: Where to watch your country' target='_top'>Let us know.</a></p>"
+        "<h3>World Cup 2014: Where to watch your country’s team</h3>" +
+        "<p><span class='credits'>Produced by Evie Liu, Francine Rios &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller'>Chris Keller</a></span> | <span class='pubdate'>Published June 9, 2014</span></p>" +
+        "<p>World Cup matches start up this week, and whether you're a fan of a specific country's team or just want to experience the \"beautiful game\" with those who are, we've curated a list of a few key places to catch the international flavor of the 2014 World Cup in Southern California, the nation's most diverse region. Is your favorite spot missing? <a href='mailto:scprweb@scpr.org?Subject=World Cup 2014: Where to watch your country’s team' target='_top'>Let us know.</a></p>"
     );
 
     var arrayOfNations = _.uniq(_.collect(array, function(x){
@@ -30,11 +30,13 @@ function initializeDisplay(array){
     jqueryNoConflict("#team-selection").empty();
 
     for (var i=0; i<arrayOfNations.length; i++) {
-        jqueryNoConflict("#team-selection").append(
-                "<div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>" +
-                    "<a id='" + arrayOfNations[i] + "' href='javascript:void(0)' title='" + arrayOfNations[i] + "'><img class='flag' src='img/" + arrayOfNations[i] + ".jpg'></a>" +
-                "</div>"
-        );
+        if (arrayOfNations[i] !="Uruguay"){
+            jqueryNoConflict("#team-selection").append(
+                    "<div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>" +
+                        "<a id='" + arrayOfNations[i] + "' href='javascript:void(0)' title='" + arrayOfNations[i] + "'><img class='flag' src='img/" + arrayOfNations[i] + ".jpg'></a>" +
+                    "</div>"
+            );
+        };
     };
 
     $("#team-selection a").click(function(){
