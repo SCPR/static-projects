@@ -9,7 +9,7 @@ jqueryNoConflict(document).ready(function(){
     if (navigator.userAgent.match(/(iPad)/i)) {
 
     } else if (navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i)) {
-
+        $("navbar-right").addClass("hidden");
     } else {
 
     };
