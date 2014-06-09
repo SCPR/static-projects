@@ -20,7 +20,7 @@ function initializeDisplay(array){
     jqueryNoConflict("#content-intro").html(
         "<h4>World Cup 2014: Where to watch your country</h4>" +
         "<p><span class='credits'>Produced by Evie Liu, Francine Rios &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller'>Chris Keller</a></span> | <span class='pubdate'>Published April 29, 2014</span></p>" +
-        "<p>Whether you're a fan of a specific country's national team, or just want to soak up a new experience with those who are, we've compiled a list of places to catch the international flavor of the 2014 World Cup in the nation's most diverse city.</p>"
+        "<p>Whether you're a fan of a specific country's World Cup team, or just want to experience the \"beautiful game\" with those who are, we've compiled a list of places to catch the international flavor of the 2014 World Cup in the nation's most diverse city.</p>"
     );
 
     var arrayOfNations = _.uniq(_.collect(array, function(x){
@@ -134,7 +134,7 @@ function displayVenueData(id, matchingCountryData){
                                 "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
                                     "<div id='details-display'>" +
                                         "<p><%= notes %></p>" +
-                                        "<p class='center'><strong>Click the map below to get directions</strong></p>" +
+                                        "<p class='center'><strong>Click the map below to find directions</strong></p>" +
                                         "<a href='https://www.google.com/maps/place/<%= streetaddress %>/@<%= latitude %>,<%= longitude %>,16z' ><img src='http://maps.googleapis.com/maps/api/staticmap?center=<%= latitude %>,<%= longitude %>&zoom=13&size=300x300&markers=color:red%7C<%= latitude %>,<%= longitude %>&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8'></a>" +
                                     "</div>" +
                                 "</div>" +
