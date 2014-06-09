@@ -13,7 +13,7 @@ body.minimal .header-links .share-links {width: 63px; margin: 0 auto;}
 body.minimal .header-links a.facebook {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-facebook.png') no-repeat 0 0; display: block; float: left; margin: 0 10px 1px 0; width: 22px; height: 22px;}
 body.minimal .header-links a.twitter {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-twitter.png') no-repeat 0 0; display: block; float: left; width: 31px; height: 22px;}
 body.minimal .header-links a.embed-this {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-embed.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
-body.minimal .header-links a.projects-home {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-home.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
+
 
 /* content structure */
 #project-container { width: 100%; max-width: 538px; height: 1055px; background: #3d3d3d; margin: 0 auto 0 auto; }
