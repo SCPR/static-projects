@@ -8,8 +8,8 @@ body.minimal .header-links a {color: #454545; padding: 0 0 0 0;}
 body.minimal .header-links b {display: block; font-size: 12px;}
 body.minimal .header-links a.icon {display: block; text-indent: -9999px;}
 body.minimal .header-links a.icon:hover {opacity: 0.7;}
-body.minimal .header-links a.facebook {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-facebook.png') no-repeat 0 0; display: block; float: right; margin: 0 10px 1px 0; width: 22px; height: 24px;}
-body.minimal .header-links a.twitter {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-twitter.png') no-repeat 0 0; display: block; float: left; width: 31px; height: 25px;}
+body.minimal .header-links a.facebook {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-facebook.png') no-repeat 0 0; display: block; margin: 0 10px 1px 0; width: 22px; height: 24px;}
+body.minimal .header-links a.twitter {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-twitter.png') no-repeat 0 0; display: block; width: 31px; height: 25px;}
 body.minimal .header-links a.embed-this {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-embed.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 25px;}
 
 /* content structure */
