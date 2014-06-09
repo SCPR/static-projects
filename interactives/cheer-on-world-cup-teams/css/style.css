@@ -24,7 +24,8 @@ body.minimal .header-links a.embed-this {background:url('http://projects.scpr.or
 #content-container #details-display img { width: 300px; height: 300px; margin: 10px auto 10px auto; }
 #content-container #team-display { width: 100%; height: auto; margin: 25px 0 0 10px; }
 #content-container #reset-teams { margin: 10px 0 15px 0; }
-#content-container .navbar-header {float: right;}
+#content-container .navbar-header {float: left;}
+#content-container .navbar-right {float: right;}
 #project-container iframe {width: 100%;}
 
 .aspect-ratio { position: relative; width: 100%; height: 0; padding-bottom: 51%; }
