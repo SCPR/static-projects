@@ -20,7 +20,7 @@ function initializeDisplay(array){
     jqueryNoConflict("#content-intro").html(
         "<h4>World Cup 2014: Where to watch your country</h4>" +
         "<p><span class='credits'>Produced by Evie Liu, Francine Rios &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller'>Chris Keller</a></span> | <span class='pubdate'>Published April 29, 2014</span></p>" +
-        "<p>Whether you're a fan of a specific country's World Cup team, or just want to experience the \"beautiful game\" with those who are, we've compiled a list of places to catch the international flavor of the 2014 World Cup in the nation's most diverse city.</p>"
+        "<p>Whether you're a fan of a specific country's World Cup team, or just want to experience the \"beautiful game\" with those who are, we've curated a list of places to catch the international flavor of the 2014 World Cup in the nation's most diverse city. Is your favorite spot missing? <a href='mailto:scprweb@scpr.org?Subject=World Cup 2014: Where to watch your country' target='_top'>Let us know.</a></p>"
     );
 
     var arrayOfNations = _.uniq(_.collect(array, function(x){
