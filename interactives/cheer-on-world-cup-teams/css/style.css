@@ -1,73 +1,45 @@
-body.minimal header { background: #ffffff; width: 100%; height: 65px; margin: 0 0 25px 0; }
-
+/* header */
+body.minimal header { background: #ffffff; width: 100%; height: 70px; margin: 0 0 5px 0; }
 body.minimal header h3#site-title a { background-image: url('http://projects.scpr.org/static/static-files/images/main/logo-masthead.png'); width: 181px; height: 42px; display: block; text-indent: -9999px; margin-top: 15px; }
+body.minimal .header-links {margin: 17px 0 10px 0;}
+body.minimal .header-links li {border-right: 1px solid #e9e9e9; display: block; float: left; list-style: none; padding: 8px 10px;}
+body.minimal .header-links li:last-child {border: 0; padding-right: 0;}
+body.minimal .header-links a {color: #454545; padding: 0 0 0 0;}
+body.minimal .header-links b {display: block; font-size: 12px;}
+body.minimal .header-links a.icon {display: block; text-indent: -9999px;}
+body.minimal .header-links a.icon:hover {opacity: 0.7;}
+body.minimal .header-links a.pledge-now {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-pledge.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
+body.minimal .header-links .share-links {width: 63px; margin: 0 auto;}
+body.minimal .header-links a.facebook {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-facebook.png') no-repeat 0 0; display: block; float: left; margin: 0 10px 1px 0; width: 22px; height: 22px;}
+body.minimal .header-links a.twitter {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-twitter.png') no-repeat 0 0; display: block; float: left; width: 31px; height: 22px;}
+body.minimal .header-links a.embed-this {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-embed.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
+body.minimal .header-links a.projects-home {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-home.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
 
-#project-container { width: 100%; max-width: 538px; height: 1000px; background: #3d3d3d; margin: 0 auto 0 auto; }
-
-#content-container { width: 94%; height: 960px; margin: 3% 3% 3% 3%; background: #ffffff; position: relative;}
-
+/* content structure */
+#project-container { width: 100%; max-width: 538px; height: 1055px; background: #3d3d3d; margin: 0 auto 0 auto; }
+#content-container { width: 94%; height: 1020px; margin: 3% 3% 3% 3%; background: #ffffff; position: relative;}
 #content-intro { width: 100%; height: auto; margin: 0 0 0 0; }
-
 #team-selection { width: 100%; height: auto; margin: 20px 0 0 0; }
-
 #venue-carousel { width: 100%; height: auto; overflow: hidden; }
-
 #project-container .flag { width: 100%; height: 72px; display: inline; margin: 10px; border: #000000 solid 1px; }
-
 #project-container .main-flag { width: 70%; display: inline; margin: 30px 15% 0 15%; border: #000000 solid 1px; }
-
 #content-container #details-display { width: 100%; height: 380px; }
-
 #content-container #details-display img { width: 300px; height: 300px; margin: 10px auto 10px auto; }
-
 #content-container #team-display { width: 100%; height: auto; margin: 25px 0 0 10px; }
-
-#content-container #reset-teams { margin: 22px 0 10px 0; }
-
+#content-container #reset-teams { margin: 10px 0 15px 0; }
 #content-container .navbar-header {float: right;}
-
 #project-container iframe {width: 100%;}
 
-.aspect-ratio {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 51%;
-}
-
-.aspect-ratio iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0; top: 0;
-}
+.aspect-ratio { position: relative; width: 100%; height: 0; padding-bottom: 51%; }
+.aspect-ratio iframe { position: absolute; width: 100%; height: 100%; left: 0; top: 0; }
 
 .carousel-caption .buttons { margin-bottom: 10px; z-index: 35; }
-
 .carousel-caption .btn { text-shadow: none; }
-
-.carousel-caption {
-    position: relative;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    color: #2B2B2B;
-    text-align: center;
-    text-shadow: 0 0px 0px rgba(0,0,0,0.6);
-}
-
+.carousel-caption { position: relative; right: 0; bottom: 0; left: 0; z-index: 10; padding-top: 20px; padding-bottom: 20px; color: #2B2B2B; text-align: center; text-shadow: 0 0px 0px rgba(0,0,0,0.6); }
 .carousel-caption #details-display p,
-.carousel-caption #team-display p {
-    text-align: left;
-}
-
+.carousel-caption #team-display p { text-align: left; }
 .carousel-caption #details-display p.center,
-.carousel-caption #team-display p.center {
-  text-align: center;
-}
+.carousel-caption #team-display p.center { text-align: center; }
 
 /* main typography */
 body.minimal { font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;}
