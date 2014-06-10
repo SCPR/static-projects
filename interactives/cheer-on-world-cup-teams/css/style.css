@@ -116,6 +116,7 @@ body.minimal .pubdate {color: #b94a48; font-style: italic; display: inline;}
 
 @media (max-width: 459px) {
     #project-container .flag { width:96%; height: 55px;}
+    #content-container .navbar-right { display: none; }
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
