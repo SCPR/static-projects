@@ -5,66 +5,21 @@ var appConfig = appConfig || {};
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
-    Swag.registerHelpers(Handlebars);
+
+    var urlLink = window.location.href;
+    if (urlLink.indexOf("embed") > -1){
+        appConfig.openAboutThis = false;
+    };
+
     initializeTemplates.renderStaticTemplates();
-    //fn.determineDataSource(appConfig.dataSource);
 });
 
 // application configuration object
 var appConfig = {
-
     openAboutThis: true,
-
-    // embedding settings
     embed_this: true,
-    embed_url_root: "http://projects.scpr.org/static/interactives/nba-owner-reaction-to-sterling-punishment/",
-
-    // use flat-file or spreadsheet
-    dataSource: "flat-file",
-
-    // enter path to the data source below
-    spreadsheetKey: "",
-    flatFile: "data/nba_owner_reactions.json"
+    embed_url_root: "http://localhost:8880/2kpcc/static-projects/test/keller/fourscore-chart/?=embed/",
 };
-
-// begin data processing object
-var fn = {
-
-    determineDataSource: function(dataSource){
-        if (dataSource === 'spreadsheet'){
-            fn.retrieveTabletopData(appConfig.spreadsheetKey);
-        } else {
-            fn.retrieveFlatData(appConfig.flatFile);
-        };
-    },
-
-    retrieveTabletopData: function(spreadsheetKey){
-        Tabletop.init({
-            key: spreadsheetKey,
-            callback: fn.processData,
-            simpleSheet: true
-        });
-    },
-
-    retrieveFlatData: function(flatFile){
-        jqueryNoConflict.getJSON(flatFile, function(data){
-            fn.renderDataVisualsTemplate(data);
-        });
-    },
-
-    processData: function(data){
-        var handlebarsData = {
-            objects: data
-        }
-        fn.renderDataVisualsTemplate(handlebarsData);
-    },
-
-    renderDataVisualsTemplate: function(data){
-        console.log(data);
-        renderHandlebarsTemplate('templates/data-visuals.handlebars', '.data-visuals', data);
-    }
-};
-// end data processing object
 
 // begin template rendering object
 var initializeTemplates = {

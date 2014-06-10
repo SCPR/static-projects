@@ -1,129 +1,133 @@
 var FourScore = function(opt){
-
-  var existing_data,
-      $tooltip,
-      $grid;
-
-/********************************/
-
-  function range(start, stop, step) {
-    if (arguments.length < 3) {
-      step = 1;
-      if (arguments.length < 2) {
-        stop = start;
-        start = 0;
-      }
-    }
-    if ((stop - start) / step === Infinity) throw new Error('infinite range');
-    var range = [],
-         k = range_integerScale(Math.abs(step)),
-         i = -1,
-         j;
-    start *= k, stop *= k, step *= k;
-    if (step < 0) while ((j = start + step * ++i) > stop) range.push(j / k);
-    else while ((j = start + step * ++i) < stop) range.push(j / k);
-    return range;
-  };
-
-  function range_integerScale(x) {
-    var k = 1;
-    while (x * k % 1) k *= 10;
-    return k;
-  }
-
-  var isArray = Array.isArray || $.isArray;
-
-  // http://bl.ocks.org/aubergene/7791133
-
-  // This is a function
-  function Normalizer(min, max) {
-    return function(val) {
-      return (val - min) / (max - min);
-    }
-  }
-
-  // This is another
-  function Interpolater(min, max, clamp) {
-    return function(val) {
-      val = min + (max - min) * val;
-      return clamp ? Math.min(Math.max(val, min), max) : val;
-    }
-  }
-
-  // This is a third
-  function Scale(minDomain, maxDomain, minRange, maxRange, clamp) {
-    var normalize = new Normalizer(minDomain, maxDomain);
-    var interpolate = new Interpolater(minRange, maxRange, clamp);
-    var _normalize = new Normalizer(minRange, maxRange);
-    var _interpolate = new Interpolater(minDomain, maxDomain, clamp);
-    var s = function(val) {
-      return interpolate(normalize(val));
-    };
-    s.inverse = function(val) {
-      return _interpolate(_normalize(val));
-    };
-    return s;
-  }
-
+    var existing_data,
+        $tooltip,
+        $grid;
 
 /********************************/
 
-  function findGridMax(submissions, scale){
-    var max = 0,
+    function range(start, stop, step) {
+        if (arguments.length < 3) {
+            step = 1;
+            if (arguments.length < 2) {
+                stop = start;
+                start = 0;
+            }
+        }
+
+        if ((stop - start) / step === Infinity) throw new Error('infinite range');
+
+        var range = [],
+            k = range_integerScale(Math.abs(step)),
+            i = -1,
+            j;
+
+        start *= k, stop *= k, step *= k;
+
+        if (step < 0) while ((j = start + step * ++i) > stop) range.push(j / k);
+        else while ((j = start + step * ++i) < stop) range.push(j / k);
+        return range;
+    };
+
+    function range_integerScale(x) {
+        var k = 1;
+        while (x * k % 1) k *= 10;
+        return k;
+    };
+
+    var isArray = Array.isArray || $.isArray;
+
+    // http://bl.ocks.org/aubergene/7791133
+
+    function Normalizer(min, max) {
+        return function(val) {
+            return (val - min) / (max - min);
+        }
+    };
+
+    function Interpolater(min, max, clamp) {
+        return function(val) {
+            val = min + (max - min) * val;
+            return clamp ? Math.min(Math.max(val, min), max) : val;
+        }
+    };
+
+    function Scale(minDomain, maxDomain, minRange, maxRange, clamp) {
+        var normalize = new Normalizer(minDomain, maxDomain);
+        var interpolate = new Interpolater(minRange, maxRange, clamp);
+        var _normalize = new Normalizer(minRange, maxRange);
+        var _interpolate = new Interpolater(minDomain, maxDomain, clamp);
+        var s = function(val) {
+            return interpolate(normalize(val));
+        };
+        s.inverse = function(val) {
+            return _interpolate(_normalize(val));
+        };
+        return s;
+    };
+
+/********************************/
+
+    function findGridMax(submissions, scale){
+        var max = 0,
         idx_max;
-    for (var i = 0; i < submissions.length; i++){
-      idx_max = Math.max(Math.round(scale(submissions[i].x)), Math.round(scale(submissions[i].y)));
-      if (idx_max > max) max = idx_max;
-    }
-    return max + 1; // Add one because this returns the highest index, but we want to know the length
-  }
+        for (var i = 0; i < submissions.length; i++){
+            idx_max = Math.max(Math.round(scale(submissions[i].x)), Math.round(scale(submissions[i].y)));
+            if (idx_max > max) max = idx_max;
+        }
+        return max + 1; // Add one because this returns the highest index, but we want to know the length
+    };
 
-  function makeGridArray(data, size) {
-    var extent;
-    // If they haven't specified a custom input range then make it a one-to-one based on grid size
-    if (!data.inputExtents){
-      extent = Math.floor(size/2);
-      data.inputExtents = [extent * -1, extent];
-    }
-    var userValueToGridIdx = new Scale(data.inputExtents[0], data.inputExtents[1], 0, size - 1),
-        grid = $.map(
-          range(0,size),
-          function(c) {
-            return [$.map(range(0,size),
-              function(b) {
-                return {
-                  submission_value: [Math.round(userValueToGridIdx.inverse(b)),Math.round(userValueToGridIdx.inverse(c))],
-                  count: 0,
-                  ids: []
+    function makeGridArray(data, size) {
+        var extent;
+
+        // If they haven't specified a custom input range then make it a one-to-one based on grid size
+        if (!data.inputExtents){
+            extent = Math.floor(size/2);
+            data.inputExtents = [extent * -1, extent];
+        }
+
+        var userValueToGridIdx = new Scale(data.inputExtents[0], data.inputExtents[1], 0, size - 1),
+            grid = $.map(
+                range(0,size),
+                function(c) {
+                    return [$.map(range(0,size),
+                        function(b) {
+                            return {
+                                submission_value: [Math.round(userValueToGridIdx.inverse(b)),Math.round(userValueToGridIdx.inverse(c))],
+                                count: 0,
+                                ids: []
+                            }
+                        }
+                    )]
                 }
-              }
-            )]
-          }
-        ),
+            ),
+
         grid_x,
         grid_y,
         grid_xy,
         max = 0,
         cell;
 
-    var grid_max = findGridMax(data.submissions, userValueToGridIdx);
-    var possible_input_extent = Math.round((grid_max + 1) / 2);
+        var grid_max = findGridMax(data.submissions, userValueToGridIdx);
+        var possible_input_extent = Math.round((grid_max + 1) / 2);
 
-    for (var i = 0; i < data.submissions.length; i++){
-      grid_x = Math.round(userValueToGridIdx(data.submissions[i].x));
-      grid_y = Math.round(userValueToGridIdx(data.submissions[i].y));
-      grid_xy = [grid_x, grid_y];
-      try {
-        cell = grid[grid_xy[1]][grid_xy[0]];
-        cell.count++;
-        cell.ids.push(data.submissions[i].uid);
-        if (cell.count > max) max = cell.count;
-      } catch(e){
-        throw 'Input data outside of grid range. Please make your grid larger than ' + grid_max + ' or manually add inputExtents in your config file that cover the range of input values. Perhaps `inputExtents: [-'+possible_input_extent+','+possible_input_extent+'],` will work for you.';
-      }
-    }
-    return {grid: grid, extents: [0, max]}
-  }
+        for (var i = 0; i < data.submissions.length; i++){
+            grid_x = Math.round(userValueToGridIdx(data.submissions[i].x));
+            grid_y = Math.round(userValueToGridIdx(data.submissions[i].y));
+            grid_xy = [grid_x, grid_y];
+            try {
+                cell = grid[grid_xy[1]][grid_xy[0]];
+                cell.count++;
+                cell.ids.push(data.submissions[i].uid);
+
+                if (cell.count > max) max = cell.count;
+            } catch(e) {
+                throw 'Input data outside of grid range. Please make your grid larger than ' + grid_max + ' or manually add inputExtents in your config file that cover the range of input values. Perhaps `inputExtents: [-'+possible_input_extent+','+possible_input_extent+'],` will work for you.';
+            }
+        }
+
+        return {grid: grid, extents: [0, max]}
+    };
 
   function convertNameToSelector(selector){
     if (typeof selector == 'string') {
@@ -214,7 +218,18 @@ var FourScore = function(opt){
         var location = $(this).attr("data-submission-value");
         var locationX = location.replace("[", "").replace("]", "").split(",")[0]
         var locationY = location.replace("[", "").replace("]", "").split(",")[1]
-        console.log(locationY);
+
+        var targetComment = "#comment" + locationX + "-" + locationY;
+
+        console.log(targetComment);
+
+        $("#comments")
+            .find(targetComment)
+            .animate({
+                backgroundColor: 'rgba(236, 124, 45, 0.5)',
+            }).animate({
+                backgroundColor: '#fff'
+            });
       });
 
     if (localStorage.getItem('fs-cell')) {
@@ -284,7 +299,7 @@ var FourScore = function(opt){
       var is_hidden= $el.hasClass('fs-hide');
       var quadrant  = $el.attr('data-quadrant');
 
-      var $quadrant_comments = $('.fs-comment-container[data-quadrant="'+quadrant+'"]');
+      var $quadrant_comments = $('.fs-comment-container[data-quadrant="' + quadrant + '"]' + i);
       if (!is_hidden){
         $quadrant_comments.show();
       }else{
