@@ -114,11 +114,13 @@ body.minimal .pubdate {color: #b94a48; font-style: italic; display: inline;}
     body.minimal ul li { font-size: 140%;}
 }
 
+@media (max-width: 459px) {
+    #project-container .flag { width:96%; height: 55px;}
+}
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
     #content-container .navbar-right { display: none; }
 }
-
 
 /* embed box */
 body.minimal #popup_container {font-size: 100%; min-width: 300px; max-width: 400px; background: #fdfdfd; border: solid 1px #2B2B2B; color: #2B2B2B; -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;}
