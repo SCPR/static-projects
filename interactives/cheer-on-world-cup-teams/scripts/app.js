@@ -65,7 +65,7 @@ function displayVenueData(id, matchingCountryData){
             var mainDisplay = _.template(
                 "<div class='item'>" +
                     "<div class='container'>" +
-                        "<h5 class='kicker'><%= nation %> (Showing " + resultIndex + " of " + matchingCountryData.length + ")</h5>" +
+                        "<h5 class='kicker'><%= nation %></h5>" +
                         "<img class='main-flag' src='img/<%= nation %>.jpg'>" +
                         "<div class='carousel-caption'>" +
                             "<h5><%= venue %></h5>" +
