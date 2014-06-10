@@ -1,0 +1,58 @@
+.data-visuals #comments { height: 400px; overflow: scroll; }
+
+/* the standard border color separating cells */
+.fs-cell { border: 1px solid #fff; }
+
+/*
+axes - specify a different color here to show axes
+(only applies if the grid size is an even number)
+*/
+.fs-cell.fs-axis-bottom { border-bottom-color: #333; }
+
+.fs-cell.fs-axis-left { border-left-color: #333; }
+
+.fs-cell.fs-axis-right { border-right-color: #333; }
+
+.fs-cell.fs-axis-top { border-top-color: #333; }
+
+/* styling for hovering over a cell */
+.fs-grid.submittable .fs-cell:hover{ opacity: .6; }
+
+/* styling for axis labels */
+
+.fs-grid-label{ background-color: rgba(0,0,0,.5); letter-spacing: 1px; font-size: 14px; color: #fff; padding: 2px 10px 2px 10px; }
+
+/* styling for a selected cell */
+.fs-grid.submittable .fs-cell.fs-selected,.submittable .fs-cell.fs-selected:hover{ border: 3px solid #f0a; opacity: 1; }
+
+/* dot color for minimaps */
+.fs-mm-dot { background-color: #2646ea; }
+
+/* center the filter buttons for comments */
+#fs-comment-filters { text-align: center; margin: 12px 0; }
+
+/*
+styling for the cell they've saved their response to
+this version inserts a star in the middle
+*/
+
+.fs-cell.saved {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAMAAAANf8AYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8YBMDAAAABB0Uk5TABAgMEBQYHCAkKCwwNDg8FTgqMgAAACtSURBVBgZ7cHhbsIgGIbR94NCpQg893+1k5isuk0Licn+9BzpdPo007yrpgWcZm2smtUomhQApzkJiJpTgawpns40I9FFzah0WYeWyivF6wXL/C3pjdj4rS16yxV+yqYjF560VQOWyq54DVnYmcYkdlFjKrusIZ5HGpLoSqx0QSMKN0myzM2mAQ5oi7oVaBqwwtV05wsEHSus+mYbmw656vUoVB0y0zNnOp3+0ReObA/KxOPqOgAAAABJRU5ErkJggg==");
+    /* todo test base64 in ie filter */
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAMAAAANf8AYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8YBMDAAAABB0Uk5TABAgMEBQYHCAkKCwwNDg8FTgqMgAAACtSURBVBgZ7cHhbsIgGIbR94NCpQg893+1k5isuk0Licn+9BzpdPo007yrpgWcZm2smtUomhQApzkJiJpTgawpns40I9FFzah0WYeWyivF6wXL/C3pjdj4rS16yxV+yqYjF560VQOWyq54DVnYmcYkdlFjKrusIZ5HGpLoSqx0QSMKN0myzM2mAQ5oi7oVaBqwwtV05wsEHSus+mYbmw656vUoVB0y0zNnOp3+0ReObA/KxOPqOgAAAABJRU5ErkJggg==', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAMAAAANf8AYAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADNQTFRF////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8YBMDAAAABB0Uk5TABAgMEBQYHCAkKCwwNDg8FTgqMgAAACtSURBVBgZ7cHhbsIgGIbR94NCpQg893+1k5isuk0Licn+9BzpdPo007yrpgWcZm2smtUomhQApzkJiJpTgawpns40I9FFzah0WYeWyivF6wXL/C3pjdj4rS16yxV+yqYjF560VQOWyq54DVnYmcYkdlFjKrusIZ5HGpLoSqx0QSMKN0myzM2mAQ5oi7oVaBqwwtV05wsEHSus+mYbmw656vUoVB0y0zNnOp3+0ReObA/KxOPqOgAAAABJRU5ErkJggg==', sizingMethod='scale')";
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+@media screen and (max-width: 800px) {
+    .fs-cell.saved { font-size: 20px; }
+}
+
+@media screen and (max-width: 600px) {
+    .fs-cell.saved { font-size: 32px; }
+}
+
+@media screen and (max-width: 400px) {
+      .fs-cell.saved { font-size: 12px; }
+}
