@@ -420,7 +420,11 @@ var FourScore = function(opt){
       // Hide it so that it renders faster
       $comments_container.hide();
 
-      $(".total-submitted-comments").html("Filter " + submissions.length + " comments")
+      if (submissions.length === 0){
+        $(".total-submitted-comments").html("Be the first to comment");
+      } else {
+        $(".total-submitted-comments").html("Filter " + submissions.length + " comments");
+      }
 
       // Add comments
       for (var i = 0; i < submissions.length; i++) {
