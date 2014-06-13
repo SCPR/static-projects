@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="row data-legend">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jumbotron">
+                    <noscript>Please enable JavaScript to view this interactive.</noscript>
+                    <h4 class="centered">Money budgeted for</h4>
+                    <div id="content-action-bar">
+                        <select id="school-list">
+                            <option>-- Choose your school --</option>
+                            <% _.each(collection, function(model) { %>
+                                <option value="<%= model.schoolname %>"><%= model.schoolname %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+                    <div id="details-schoolname"></div>
+                    <ul id="details-display"></div>
+                    <div id="last-updated"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
