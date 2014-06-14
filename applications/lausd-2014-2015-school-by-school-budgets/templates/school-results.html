@@ -1,0 +1,10 @@
+<h5><%= window.splitOnCapitalLetter(schoolname) %></h5>
+<div class="row">
+    <ul>
+        <% _.each(collection, function(model) { %>
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-4">
+                <li><strong><%= model.majorgroup %></strong>:<br /><%=window.createCurrency(model.grandtotal) %></li>
+            </div>
+        <% }); %>
+    </ul>
+</div>
