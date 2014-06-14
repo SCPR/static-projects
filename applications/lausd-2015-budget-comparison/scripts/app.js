@@ -38,6 +38,11 @@
         return newString;
     };
 
+    window.slugifyString = function(string){
+        var newString = string.toLowerCase().split(' ').join('-');
+        return newString;
+    };
+
     window.createCurrency = function(nStr){
         nStr += '';
         x = nStr.split('.');
@@ -121,18 +126,17 @@
             this.createVisuals(".data-visuals", "templates/data-visuals.html");
         },
 
-        displayIndividualSchool: function(schoolname){
+        displayIndividualSchool: function(schoolslug){
 
             this.createVisuals(".data-visuals", "templates/data-visuals.html");
 
             this.schoolBudget = window.schoolBudgetCollection.where({
-                schoolname: schoolname
+                schoolslug: schoolslug
             });
 
-            $("#school-list").val(schoolname);
+            $("#school-list").val(schoolslug);
 
             this.detailsView = new App.Views.DetailsView({
-                schoolName: schoolname,
                 schoolArray: this.schoolBudget,
                 container: "#school-details",
                 template: "templates/school-results.html"
@@ -168,8 +172,8 @@
 
         evaluateSelectedSchool: function(e){
             e.preventDefault();
-            var schoolName = $("#school-list").val();
-            window.router.navigate('#school/' + schoolName, {
+            var schoolslug = $("#school-list").val();
+            window.router.navigate('#school/' + schoolslug, {
                 trigger: true,
                 replace: false,
             });
@@ -197,7 +201,7 @@
             this.navigatedCollection = new App.Models.SchoolBudgets();
             this.navigatedCollection.add(viewObject.schoolArray);
             $(viewObject.container).html(this.$el.html(this.detailsTemplate({
-                schoolname: viewObject.schoolName,
+                schoolname: viewObject.schoolArray[0].attributes.propername,
                 collection: this.navigatedCollection.toJSON()
             })));
         }
