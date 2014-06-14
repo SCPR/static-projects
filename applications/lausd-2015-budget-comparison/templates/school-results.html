@@ -1,3 +1,7 @@
-<% _.each(collection, function(model) { %>
-    <option value="<%= model.schoolname %>"><%= model.schoolname %></option>
-<% }); %>
+<h5><%= window.splitOnCapitalLetter(schoolname) %></h5>
+
+<ul>
+    <% _.each(collection, function(model) { %>
+        <li><strong><%= model.majorgroup %></strong>: <%=window.createCurrency(model.grandtotal) %></li>
+    <% }); %>
+</ul>

@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="row data-legend">
+            <p class="small-writing"><strong>About this</strong>: How much does your child's school spend on libraries? On nursing staff? How much of the budget goes to teachers? Use the drop down menu to find your school. Data on every Los Angeles Unified traditional and charter school is listed below, detailing spending in broad categories. (Note: If categories are listed more than once, it's because the money comes from different funding streams. Taken together, they represent total costs for that category.)</p>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="jumbotron">
                     <noscript>Please enable JavaScript to view this interactive.</noscript>
@@ -9,13 +10,11 @@
                         <select id="school-list">
                             <option>-- Choose your school --</option>
                             <% _.each(collection, function(model) { %>
-                                <option value="<%= model.schoolname %>"><%= model.schoolname %></option>
+                                <option value="<%= model.schoolname %>"><%= window.splitOnCapitalLetter(model.schoolname) %></option>
                             <% }); %>
                         </select>
                     </div>
-                    <div id="details-schoolname"></div>
-                    <ul id="details-display"></div>
-                    <div id="last-updated"></div>
+                    <div id="school-details"></div>
                 </div>
             </div>
         </div>
