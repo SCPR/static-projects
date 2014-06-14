@@ -33,6 +33,11 @@
         return decimal
     };
 
+    window.splitOnCapitalLetter = function(string){
+        var newString = string.replace(/([a-z])([A-Z])/g, '$1 $2')
+        return newString;
+    };
+
     window.createCurrency = function(nStr){
         nStr += '';
         x = nStr.split('.');
@@ -109,10 +114,29 @@
 
         routes: {
             "": "indexView",
+            "school/:schoolname": "displayIndividualSchool"
         },
 
         indexView: function(){
             this.createVisuals(".data-visuals", "templates/data-visuals.html");
+        },
+
+        displayIndividualSchool: function(schoolname){
+
+            this.createVisuals(".data-visuals", "templates/data-visuals.html");
+
+            this.schoolBudget = window.schoolBudgetCollection.where({
+                schoolname: schoolname
+            });
+
+            $("#school-list").val(schoolname);
+
+            this.detailsView = new App.Views.DetailsView({
+                schoolName: schoolname,
+                schoolArray: this.schoolBudget,
+                container: "#school-details",
+                template: "templates/school-results.html"
+            });
         },
 
         createVisuals: function(container, template){
@@ -128,16 +152,13 @@
 
     });
 
-
     App.Views.VisualsView = Backbone.View.extend({
-
         tagName: "div",
 
         className: "col-xs-12 col-sm-12 col-md-12 col-lg-12",
 
         initialize: function(viewObject){
             this.dataTemplate = _.template(template(viewObject.template)),
-            this.detailsTemplate = _.template(template("templates/school-results.html"));
             this.render(viewObject);
         },
 
@@ -145,56 +166,13 @@
             "change #school-list": "evaluateSelectedSchool",
         },
 
-        evaluateSelectedSchool: function(){
-            $("#details-display").empty();
-            this.selectedSchool = window.schoolsCollection.where({
-                schoolname: $("#school-list").val()
+        evaluateSelectedSchool: function(e){
+            e.preventDefault();
+            var schoolName = $("#school-list").val();
+            window.router.navigate('#school/' + schoolName, {
+                trigger: true,
+                replace: false,
             });
-            this.alignSelectedModels(this.selectedSchool);
-        },
-
-        alignSelectedModels: function(selectedSchool){
-            this.selectedSchool = selectedSchool[0].attributes;
-            this.schoolBudget = window.schoolBudgetCollection.where({
-                schoolname: this.selectedSchool.schoolname
-            });
-
-            if (this.schoolBudget.length > 0){
-                this.displayBudgetDetails(this.schoolBudget);
-            } else {
-                console.log("none");
-            }
-        },
-
-        displayBudgetDetails: function(arrayOfModels){
-
-            _.each(arrayOfModels, function(item){
-
-                //console.log(item.attributes);
-
-                $("#details-schoolname").html(
-                    "<h4>" + item.attributes.schoolname + "</h4>"
-                );
-
-                $("#details-display").append(
-                    "<li>" + item.attributes.majorgroup + ": " + window.createCurrency(item.attributes.grandtotal) + "</li>"
-                );
-
-
-
-            });
-
-
-
-
-
-            /*
-            $("#details-display").html(this.detailsTemplate({
-                model: arrayOfModels,
-                message: "It works"
-            }));
-            */
-
         },
 
         render: function(viewObject){
@@ -204,69 +182,29 @@
         }
     });
 
+    App.Views.DetailsView = Backbone.View.extend({
 
+        tagName: "div",
 
+        className: "col-xs-12 col-sm-12 col-md-12 col-lg-12",
 
+        initialize: function(viewObject){
+            this.detailsTemplate = _.template(template(viewObject.template)),
+            this.render(viewObject);
+        },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        render: function(viewObject){
+            this.navigatedCollection = new App.Models.SchoolBudgets();
+            this.navigatedCollection.add(viewObject.schoolArray);
+            $(viewObject.container).html(this.$el.html(this.detailsTemplate({
+                schoolname: viewObject.schoolName,
+                collection: this.navigatedCollection.toJSON()
+            })));
+        }
+    });
 
     window.appConfig = {
-        openAboutThis: false,
+        openAboutThis: true,
         comments: true,
         embed_this: true,
         embed_url_root: 'http://projects.scpr.org/static/applications/lausd-2015-budget-comparison/',
