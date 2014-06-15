@@ -9,6 +9,11 @@ jqueryNoConflict(document).ready(function() {
 
     initializeTemplates.renderStaticTemplates();
 
+    var urlLink = window.location.href;
+    if (urlLink.indexOf("embed") > -1){
+        appConfig.openAboutThis = false;
+    };
+
     var storymap_data = "data/published.json";
 
     var storymap_options = {};
@@ -25,7 +30,7 @@ jqueryNoConflict(document).ready(function() {
 var appConfig = {
     openAboutThis: true,
     embed_this: true,
-    embed_url_root: "http://projects.scpr.org/static/interactives/nba-owner-reaction-to-sterling-punishment/",
+    embed_url_root: "http://projects.scpr.org/static/maps/anniversary-of-oj-simpson-pursuit/?=embed/",
 };
 
 // begin template rendering object
@@ -35,7 +40,6 @@ var initializeTemplates = {
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');
-        renderHandlebarsTemplate('templates/data-details.handlebars', '.data-details');
 
         var checkExist = setInterval(function() {
 
