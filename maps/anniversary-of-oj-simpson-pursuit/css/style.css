@@ -1,1 +1,3 @@
 body.minimal .data-container {max-width: 100%; margin: 0 auto;}
+
+body.minimal .data-container h2 {margin-bottom: 5%;}
