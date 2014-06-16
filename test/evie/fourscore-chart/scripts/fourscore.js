@@ -211,48 +211,42 @@ var FourScore = function(opt){
 
     }
 
-      $ (".fs-cell").mouseenter(function(){
-            var location = $(this).attr("data-submission-value");
-            var locationX = location.replace("[", "").replace("]", "").split(",")[0]
-            var locationY = location.replace("[", "").replace("]", "").split(",")[1]
-            
-            //$(".fs-comment-container").hide();
+    $(".fs-cell").mouseenter(function(){
+        var location = $(this).attr("data-submission-value");
+        var locationX = location.replace("[", "").replace("]", "").split(",")[0];
+        var locationY = location.replace("[", "").replace("]", "").split(",")[1];
+
+        //$(".fs-comment-container").hide();
+
+        $(".fs-comment-container").each(function(){
+            if (this.id == "cell_" + locationX + "_" + locationY){
+                $(".fs-comment-container").hide();
+                //console.log("match");
+                //console.log(others);
+                $ (this).show();
+                var idNumber = this.id;
+            }
 
             $(".fs-comment-container").each(function(){
-            
-                if (this.id == "cell_" + locationX + "_" + locationY)
-
-                    { $(".fs-comment-container").hide();
-                      console.log("match")
-                      //var others = $(".fs-comment-container").not($(this));
-                      //console.log(others);
-                      $ (this).show();
-                      var idNumber = this.id;                               
-                    }               
-
-                $(".fs-comment-container").each(function(){
-                    if (this.id == idNumber)
-                        { $(this).show(); }
-                });
-               
-             });
-
+                if (this.id == idNumber){
+                    $(this).show();
+                }
+            });
+        });
     });
 
+    $(".fs-cell").mouseout(function(){
+        var location = $(this).attr("data-submission-value");
+        var locationX = location.replace("[", "").replace("]", "").split(",")[0];
+        var locationY = location.replace("[", "").replace("]", "").split(",")[1];
 
-      $ (".fs-cell").mouseout(function(){
-            var location = $(this).attr("data-submission-value");
-            var locationX = location.replace("[", "").replace("]", "").split(",")[0]
-            var locationY = location.replace("[", "").replace("]", "").split(",")[1]
-        
-       
-            $(".fs-comment-container").each(function(){
-                  if (this.id == "cell_" + locationX + "_" + locationY)
-                      { $ (".fs-comment-container").show();}
-            });     
+        $(".fs-comment-container").each(function(){
+            if (this.id == "cell_" + locationX + "_" + locationY){
+                $(".fs-comment-container").show();
+            }
+        });
+    });
 
-      });
-      
 
     if (localStorage.getItem('fs-cell')) {
 
