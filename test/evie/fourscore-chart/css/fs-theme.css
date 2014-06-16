@@ -29,7 +29,7 @@ axes - specify a different color here to show axes
 .fs-mm-dot { background-color: #2646ea; }
 
 /* center the filter buttons for comments */
-#fs-comment-filters { text-align: center; margin: 12px 0; }
+#fs-comment-filters { text-align: center; margin: 12px 0;}
 
 /*
 styling for the cell they've saved their response to
