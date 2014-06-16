@@ -186,6 +186,26 @@ body.minimal #popup_content.alert {background-image: url(images/info.gif)}
 body.minimal #popup_content.confirm {background-image: url(images/important.gif)}
 body.minimal #popup_content.prompt {background-image: url(images/help.gif)}
 body.minimal #popup_message {padding-left: 48px;}
+
+body.minimal #popup_message textarea {
+    display: block;
+    width: 90%;
+    margin: 0 auto 15px;
+    border: none;
+    border-radius: 3px;
+    background: #bfcde2;
+    color: black;
+    resize: none;
+    padding: 7px;
+    font-family: Courier New, Courier, monospace;
+    font-weight: normal;
+    font-size: 0.8125em;
+    line-height: 1.15;
+    height: 6.5em;
+    overflow: auto;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.7);
+}
+
 body.minimal #popup_message p {padding-bottom: 2px;}
 body.minimal #popup_panel {text-align: center; margin: 1em 0em 0em 1em;}
 body.minimal #popup_panel #popup_ok {background: rgba(0, 127, 166, 1.0); border-color: rgba(0, 127, 166, 1.0); color: #fdfdfd; display: inline-block; padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; text-align: center; white-space: nowrap; vertical-align: middle; cursor: pointer; border: 1px solid transparent; border-radius: 0px; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; -khtml-border-radius: 0;}
