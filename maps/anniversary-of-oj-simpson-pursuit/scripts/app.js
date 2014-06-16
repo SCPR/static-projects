@@ -31,7 +31,7 @@ var appConfig = {
     openAboutThis: true,
     embed_this: true,
     embed_url_root: "http://projects.scpr.org/static/maps/anniversary-of-oj-simpson-pursuit/?=embed/",
-    embed_width: "100%",
+    embed_width: "92%",
     embed_height: "1000px"
 };
 
