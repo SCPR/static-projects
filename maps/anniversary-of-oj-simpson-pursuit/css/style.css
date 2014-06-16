@@ -43,9 +43,14 @@ body.minimal .data-container h2 {margin-bottom: 5%;}
     body.minimal .data-container p {font-size: 95%; line-height: 125%;}
 }
 
-@media screen and (max-width:679px) {
-    body.minimal .data-container h2 {font-size: 300%; line-height: 100%;}
-    body.minimal .data-container p {font-size: 110%; line-height: 125%;}
+@media screen and (min-width: 530px) and (max-width:679px) {
+    body.minimal .data-container h2 {font-size: 280%; line-height: 100%;}
+    body.minimal .data-container p {font-size: 95%; line-height: 125%;}
+}
+
+@media screen and (max-width:529px) {
+    body.minimal .data-container h2 {font-size: 190%; line-height: 100%;}
+    body.minimal .data-container p {font-size: 77%; line-height: 125%;}
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
