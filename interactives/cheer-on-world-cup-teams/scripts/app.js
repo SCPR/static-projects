@@ -30,13 +30,11 @@ function initializeDisplay(array){
     jqueryNoConflict("#team-selection").empty();
 
     for (var i=0; i<arrayOfNations.length; i++) {
-        if (arrayOfNations[i] !="Uruguay"){
-            jqueryNoConflict("#team-selection").append(
-                    "<div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>" +
-                        "<a id='" + arrayOfNations[i] + "' href='javascript:void(0)' title='" + arrayOfNations[i] + "'><img class='flag' src='img/" + arrayOfNations[i] + ".jpg'></a>" +
-                    "</div>"
-            );
-        };
+        jqueryNoConflict("#team-selection").append(
+                "<div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>" +
+                    "<a id='" + arrayOfNations[i] + "' href='javascript:void(0)' title='" + arrayOfNations[i] + "'><img class='flag' src='img/" + arrayOfNations[i] + ".jpg'></a>" +
+                "</div>"
+        );
     };
 
     $("#team-selection a").click(function(){
