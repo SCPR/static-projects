@@ -26,7 +26,7 @@
     body.minimal .data-container h4 {font-size: 175%;}
     body.minimal .data-container h5 {font-size: 130%;}
     body.minimal .data-container h6 {font-size: 95%;}
-    .data-container .data-legend .jumbotron ul li {font-size: 75%;}
+    .data-container .data-legend .jumbotron ul li {font-size: 65%;}
     .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
     .data-container .data-legend #icon-display p {font-size: 65%;}
 }
@@ -35,7 +35,7 @@
     body.minimal .data-container h4 {font-size: 175%;}
     body.minimal .data-container h5 {font-size: 130%;}
     body.minimal .data-container h6 {font-size: 95%;}
-    .data-container .data-legend .jumbotron ul li {font-size: 75%;}
+    .data-container .data-legend .jumbotron ul li {font-size: 65%;}
     .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
     .data-container .data-legend #icon-display p {font-size: 65%;}
 }
@@ -44,7 +44,7 @@
     body.minimal .data-container h4 {font-size: 200%;}
     body.minimal .data-container h5 {font-size: 150%;}
     body.minimal .data-container h6 {font-size: 115%;}
-    .data-container .data-legend .jumbotron ul li {font-size: 75%;}
+    .data-container .data-legend .jumbotron ul li {font-size: 65%;}
     .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
     .data-container .data-legend #icon-display p {font-size: 75%;}
 }
@@ -53,7 +53,7 @@
     body.minimal .data-container h4 {font-size: 200%;}
     body.minimal .data-container h5 {font-size: 150%;}
     body.minimal .data-container h6 {font-size: 115%;}
-    .data-container .data-legend .jumbotron ul li {font-size: 75%;}
+    .data-container .data-legend .jumbotron ul li {font-size: 65%;}
     .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
     .data-container .data-legend #icon-display p {font-size: 75%;}
 }
@@ -62,7 +62,7 @@
     body.minimal .data-container h4 {font-size: 200%;}
     body.minimal .data-container h5 {font-size: 150%;}
     body.minimal .data-container h6 {font-size: 115%;}
-    .data-container .data-legend .jumbotron ul li {font-size: 75%;}
+    .data-container .data-legend .jumbotron ul li {font-size: 65%;}
     .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
     .data-container .data-legend #icon-display p {font-size: 75%;}
 }
@@ -71,7 +71,7 @@
     body.minimal .data-container h4 {font-size: 250%;}
     body.minimal .data-container h5 {font-size: 180%;}
     body.minimal .data-container h6 {font-size: 145%;}
-    .data-container .data-legend .jumbotron ul li {font-size: 75%;}
+    .data-container .data-legend .jumbotron ul li {font-size: 65%;}
     .data-container .data-legend #icon-display .placemark {width: 60px; vertical-align: text-bottom;}
     .data-container .data-legend #icon-display p {font-size: 90%;}
 }
