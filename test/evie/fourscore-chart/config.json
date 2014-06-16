@@ -1,17 +1,20 @@
 {
   "options": {
+
+    "testing": true,
+
     "dataSource": {
-      "url": "0Aq8qwSArzKP9dHplakZMb3FnTmZSamRZWUZRTlVOd2c",
+      "url": "0AngasJS3wnwRdDRRT1M2LWVOa1YwZHFoR3dDWHRIbHc",
       "type": "google"
     },
     "gridSize": 20,
     "xAxis": [
-      "This isn't the cause",
-      "Causing children to fail"
+      "High expectation",
+      "Low expectation"
     ],
     "yAxis": [
-      "Agree with ruling",
-      "Disagree with ruling"
+      "Support",
+      "Not care"
     ],
     "gridTarget": "grid",
     "commentsTarget": "comments",
@@ -20,31 +23,46 @@
       "number": 5
     }
   },
-  "dataDestination": "https://docs.google.com/forms/d/1s6tcbtfmSM0VENHGC4VKRxutLWvHawlDGT5P-gmgA_A/formResponse",
+  "dataDestination": "https://docs.google.com/forms/d/1VlMokLXEkRovncoJN16_bA9H9n_1xeA6zXLcDlU-OgQ/formResponse",
   "fields": [
-    {
-      "name": "X",
-      "required": true,
-      "type": "text",
-      "field": "entry.749686376"
-    },
-    {
-      "name": "Y",
-      "required": true,
-      "type": "text",
-      "field": "entry.57595959"
-    },
-    {
-      "name": "Name",
-      "required": true,
-      "type": "text",
-      "field": "entry.1979968130"
-    },
-    {
-      "name": "Your Thoughts",
-      "required": false,
-      "type": "textarea",
-      "field": "entry.752890172"
-    }
+      {
+        "name": "X",
+        "required": true,
+        "type": "text",
+        "field": "entry.1067664370"
+      },
+      {
+        "name": "Y",
+        "required": true,
+        "type": "text",
+        "field": "entry.1333082821"
+      },
+      {
+        "name": "Your favorite soccer team in 2014 World Cup",
+        "required": true,
+        "type": "select",
+        "field": "entry.1091901276",
+        "choices": [
+          "",
+          "Germany",
+          "Brazil"
+        ]
+      },
+      {
+        "name": "Will you root for the US team if it's playing against your favorite team?",
+        "required": true,
+        "type": "radio",
+        "field": "entry.394932762",
+        "choices": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "name": "What's your opinion?",
+        "required": true,
+        "type": "text",
+        "field": "entry.151283011"
+      }
   ]
 }
