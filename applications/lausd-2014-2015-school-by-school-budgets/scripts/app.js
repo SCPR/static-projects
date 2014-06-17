@@ -205,21 +205,34 @@
 
             this.navigatedCollection.add(viewObject.schoolArray);
 
-            var test = _.each(viewObject.schoolArray, function(item){
-                console.log(item.attributes);
+            // reduce multiple budget categories to single keys with an array of values
+            var groups = _.groupBy(viewObject.schoolArray, function(model){
+
+                return model.get("majorgroup");
+
             });
 
-            var sum = _.reduce([1, 2, 3], function(memo, num){
-                return memo + num;
-            }, 0);
+            this.combineBudgetGroups = _.each(groups, function(group, key){
+                var summed = 0;
+                for (var i=0; i<group.length; i++) {
+                    summed += parseInt(group[i].attributes.grandtotal);
+                };
 
-            console.log(sum);
+                console.log(group[0].get("majorgroup") + ":<br />" + summed);
+
+                return group[0].get("majorgroup") + ":<br />" + summed;
+
+            });
+
+
+            //console.log(this.combineBudgetGroups);
 
             $(viewObject.container).html(this.$el.html(this.detailsTemplate({
                 schoolname: viewObject.schoolArray[0].attributes.propername,
                 collection: this.navigatedCollection.toJSON()
             })));
         }
+
     });
 
     window.appConfig = {
