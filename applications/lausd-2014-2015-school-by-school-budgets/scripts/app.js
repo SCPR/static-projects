@@ -74,7 +74,7 @@
         },
     });
 
-    App.Models.SchoolBudget = Backbone.Model.extend({
+    App.Models.SchoolBudgetItem = Backbone.Model.extend({
         defaults: {
             schoolname: null,
             programdescription: null,
@@ -83,6 +83,15 @@
             restricted: null,
             other: null,
             grandtotal: null,
+            line_item: null,
+            line_item_total: null
+        },
+    });
+
+    App.Models.SchoolBudgetAggregate = Backbone.Model.extend({
+        defaults: {
+            school_name: null,
+            line_items: [],
         },
     });
 
@@ -94,8 +103,8 @@
         }
     });
 
-    App.Models.SchoolBudgets = Backbone.Collection.extend({
-        model: App.Models.SchoolBudget,
+    App.Collections.SchoolBudgetItems = Backbone.Collection.extend({
+        model: App.Models.SchoolBudgetItem,
         url: "data/school_budgets.json",
         comparator: function(model) {
             return model.get('schoolname');
@@ -111,7 +120,7 @@
             window.schoolsCollection.fetch({
                 async: false,
             });
-            window.schoolBudgetCollection = new App.Models.SchoolBudgets();
+            window.schoolBudgetCollection = new App.Collections.SchoolBudgetItems();
             window.schoolBudgetCollection.fetch({
                 async: false,
             });
@@ -127,20 +136,42 @@
         },
 
         displayIndividualSchool: function(schoolslug){
-
             this.createVisuals(".data-visuals", "templates/data-visuals.html");
+            $("#school-list").val(schoolslug);
 
-            this.schoolBudget = window.schoolBudgetCollection.where({
+            var schoolBudget = window.schoolBudgetCollection.where({
                 schoolslug: schoolslug
             });
 
-            $("#school-list").val(schoolslug);
+            var schoolInstance = new App.Models.SchoolBudgetAggregate();
+
+            schoolInstance.set({
+                school_name: schoolBudget[0].attributes.propername
+            });
+
+            var combinedBudgetGroups = _.groupBy(schoolBudget, function(model){
+                return model.get("majorgroup");
+            });
+
+            var summedBudgetGroups = _.each(combinedBudgetGroups, function(group, key){
+                var summed = 0;
+                for (var i=0; i<group.length; i++) {
+                    summed += parseInt(group[i].attributes.grandtotal);
+                };
+                schoolInstance.set({
+                    line_items: schoolInstance.get("line_items").concat({
+                        major_group: group[0].get("majorgroup"),
+                        major_group_budget: summed
+                    })
+                });
+            });
 
             this.detailsView = new App.Views.DetailsView({
-                schoolArray: this.schoolBudget,
+                model: schoolInstance,
                 container: "#school-details",
                 template: "templates/school-results.html"
             });
+
         },
 
         createVisuals: function(container, template){
@@ -198,41 +229,10 @@
         },
 
         render: function(viewObject){
-
-            console.log(viewObject.schoolArray);
-
-            this.navigatedCollection = new App.Models.SchoolBudgets();
-
-            this.navigatedCollection.add(viewObject.schoolArray);
-
-            // reduce multiple budget categories to single keys with an array of values
-            var groups = _.groupBy(viewObject.schoolArray, function(model){
-
-                return model.get("majorgroup");
-
-            });
-
-            this.combineBudgetGroups = _.each(groups, function(group, key){
-                var summed = 0;
-                for (var i=0; i<group.length; i++) {
-                    summed += parseInt(group[i].attributes.grandtotal);
-                };
-
-                console.log(group[0].get("majorgroup") + ":<br />" + summed);
-
-                return group[0].get("majorgroup") + ":<br />" + summed;
-
-            });
-
-
-            //console.log(this.combineBudgetGroups);
-
             $(viewObject.container).html(this.$el.html(this.detailsTemplate({
-                schoolname: viewObject.schoolArray[0].attributes.propername,
-                collection: this.navigatedCollection.toJSON()
+                collection: viewObject.model.toJSON()
             })));
         }
-
     });
 
     window.appConfig = {
