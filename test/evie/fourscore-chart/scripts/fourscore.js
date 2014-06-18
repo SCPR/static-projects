@@ -632,6 +632,7 @@ var FourScore = function(opt){
   }
 
   function stageData(grid_data,config) {
+    console.log(grid_data)
     grid_data = $.map(grid_data,function(d){
       d.x = ('x' in d) ? +d.x : +d.X;
       d.y = ('y' in d) ? +d.y : +d.Y;
@@ -652,7 +653,6 @@ var FourScore = function(opt){
   */
   function initFromConfig(config) {
 
-
     var $form = $('<form/>').attr('target','fs-iframe'),
         $form_outer = $('<div/>').addClass('fs-form'),
         $iframe = $('<iframe/>').addClass('fs-iframe')
@@ -672,7 +672,6 @@ var FourScore = function(opt){
       Tabletop.init({ key: config.options.dataSource.url,
         callback: function(data) {
             stageData(data,config);
-            console.log(data)
           },
         simpleSheet: true
       });

@@ -169,10 +169,10 @@
 
 .fs-mini-map{
 	position: relative;
-	width: 70px;
-	height: 70px;
+	width: 100px;
+	height: 100px;
 	margin-right: 10px;
-	float: left;
+	float: right;
 }
 
 .fs-mm-quadrant{
@@ -198,17 +198,17 @@
 .fs-name{
 	font-size: 20px;
 	margin-bottom: 5px;
-	font-weight: bold;
+	color: blue;
 }
 
-.fs-comment{
+.fs-question{
 	font-size: 16px;
-	font-style: italic;
+	font-weight: bold;
 }
 
 .fs-paragraph{
 	margin-top: 10px;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .fs-mm-dot{
