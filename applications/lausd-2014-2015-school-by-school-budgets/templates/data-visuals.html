@@ -10,7 +10,7 @@
                         <select id="school-list">
                             <option>-- Choose your school --</option>
                             <% _.each(collection, function(model) { %>
-                                <option value="<%= window.slugifyString(model.schoolname) %>"><%= model.schoolname %></option>
+                                <option value="<%= model.schoolslug %>"><%= model.propername %></option>
                             <% }); %>
                         </select>
                     </div>

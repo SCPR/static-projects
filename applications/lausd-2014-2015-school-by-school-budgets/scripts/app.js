@@ -113,9 +113,11 @@
 
     App.Router = Backbone.Router.extend({
         initialize: function(){
+
             $(".kpcc-header").html(_.template(template("templates/kpcc-header.html")));
             $(".data-details").html(_.template(template("templates/data-details.html")));
             $(".kpcc-footer").html(_.template(template("templates/kpcc-footer.html")));
+
             window.schoolsCollection = new App.Collections.SchoolInstances();
             window.schoolsCollection.fetch({
                 async: false,
@@ -259,6 +261,8 @@
 
         if (urlLink.indexOf("embed") > -1){
             window.appConfig.openAboutThis = false;
+            window.appConfig.comments = false;
+            $(".data-comments").remove();
         };
 
         if (window.appConfig.comments === true){
