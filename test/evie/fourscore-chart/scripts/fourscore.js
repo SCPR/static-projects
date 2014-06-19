@@ -248,11 +248,11 @@ var FourScore = function(opt){
     });
 
 
-    if (localStorage.getItem('fs-cell')) {
+    /*if (localStorage.getItem('fs-cell')) {
 
       $('div[data-cell-id="' + JSON.parse(localStorage.getItem('fs-cell')).join('-') + '"]').addClass('saved');
 
-    }
+    }*/
 
 
 
@@ -337,7 +337,7 @@ var FourScore = function(opt){
     });
 
     //Don't bind the rest if they've already submitted
-    if (localStorage.getItem('fs-cell')) return true;
+    //if (localStorage.getItem('fs-cell')) return true;
 
     //Move the tooltip
     $grid.on('mouseover.tooltip', '.fs-cell', function(e){
@@ -375,7 +375,9 @@ var FourScore = function(opt){
           gridWidth = $grid.outerWidth(),
           $formDiv = $('div.fs-form'),
           formWidth = $formDiv.outerWidth(),
+          formHeight = $formDiv.outerHeight(),
           formLeft = e.pageX + 2,
+          formTop = e.pageY + 2,
           submission_values = JSON.parse($this.attr('data-submission-value'));
 
       $('input.x').val(submission_values[0]);
@@ -391,10 +393,11 @@ var FourScore = function(opt){
 
       //Math for where to position the form
       if (e.pageX + 2 + formWidth > gridOffset.left + gridWidth) formLeft -= 4 + formWidth;
+       if (e.pageY + 2 + formWidth > gridOffset.top + gridWidth) formTop -= 4 + formHeight;
 
       $formDiv
         .css({
-          top: e.pageY + 2 - gridOffset.top,
+          top:  formTop - gridOffset.top,
           left: formLeft - gridOffset.left
         });
 
@@ -628,8 +631,8 @@ var FourScore = function(opt){
 
     $('div[data-cell-id="' + x + '-' + y + '"]').addClass('saved');
     $grid.removeClass('open');
-    $('div.fs-form').remove();
-  }
+    $('div.fs-form').remove(); 
+  } 
 
   function stageData(grid_data,config) {
     console.log(grid_data)
@@ -640,12 +643,12 @@ var FourScore = function(opt){
     });
 
     existing_data = {submissions: grid_data};
-    if (config.inputExtents) existing_data.inputExtents = config.inputExtents
+    if (config.inputExtents) existing_data.inputExtents = config.inputExtents 
 
     // Create the Grid
     createViz(existing_data,config);
 
-  }
+  } 
 
 
   /*
@@ -688,13 +691,13 @@ var FourScore = function(opt){
     }
 
     //Don't populate the form or set listeners if they already submitted
-    try {
+   /* try {
       //If they've already submitted, don't let them resubmit
       if (localStorage.getItem('fs-cell')) {
         $grid.removeClass('submittable');
         return true;
       }
-    } catch (e) {}
+    } catch (e) {} */
 
     //Add the listener for the iframe that will get the submission
     $iframe.on('load',function(){
