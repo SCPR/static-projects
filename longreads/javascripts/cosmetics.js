@@ -1,0 +1,1 @@
+jQuery(document).ready(function(i){i(".titling .station > ul > li:nth-child(2)").click(function(){i(this).find("ul").toggle()}),i(".gallery .picker a").click(function(){var l=i(this).closest("li").index()+1;return i(".gallery .showcase li").hide(),i(".gallery .showcase li:nth-child("+l+")").show(),!1})});

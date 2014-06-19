@@ -13,8 +13,8 @@ body.minimal .header-links a.twitter {background:url('http://projects.scpr.org/s
 body.minimal .header-links a.embed-this {background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-embed.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 25px;}
 
 /* content structure */
-#project-container { width: 100%; max-width: 538px; height: 1055px; background: #3d3d3d; margin: 0 auto 0 auto; }
-#content-container { width: 94%; height: 1020px; margin: 3% 3% 3% 3%; background: #ffffff; position: relative;}
+#project-container { width: 100%; max-width: 538px; height: 1100px; background: #3d3d3d; margin: 0 auto 0 auto; }
+#content-container { width: 94%; height: 1065px; margin: 3% 3% 3% 3%; background: #ffffff; position: relative;}
 #content-intro { width: 100%; height: auto; margin: 0 0 0 0; }
 #team-selection { width: 100%; height: auto; margin: 20px 0 0 0; }
 #venue-carousel { width: 100%; height: auto; overflow: hidden; }

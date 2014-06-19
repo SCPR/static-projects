@@ -39,7 +39,14 @@
     };
 
     window.slugifyString = function(string){
-        var newString = string.toLowerCase().split(' ').join('-');
+        var newString = string.toLowerCase()
+            //.replace(/&/g, "")
+            //.replace(/\,\s/g, "")
+            //.replace(/\//g, " ")
+            .replace(/\W/g, " ")
+            .replace(/\s\s/g, "")
+            .split(" ")
+            .join('-');
         return newString;
     };
 
@@ -71,18 +78,43 @@
     App.Models.SchoolInstance = Backbone.Model.extend({
         defaults: {
             schoolname: null,
+            majorgroup_slug: null,
         },
     });
 
-    App.Models.SchoolBudget = Backbone.Model.extend({
+    App.Models.BudgetCategory = Backbone.Model.extend({
+        defaults: {
+            majorgroup: null,
+            majorgroup_slug: null,
+        },
+    });
+
+    App.Models.SchoolBudgetItem = Backbone.Model.extend({
         defaults: {
             schoolname: null,
             programdescription: null,
             majorgroup: null,
+            majorgroup_slug: null,
             unrestricted: null,
             restricted: null,
             other: null,
             grandtotal: null,
+            line_item: null,
+            line_item_total: null
+        },
+    });
+
+    App.Models.SchoolBudgetAggregate = Backbone.Model.extend({
+        defaults: {
+            school_name: null,
+            line_items: [],
+        },
+    });
+
+    App.Models.BudgetCategoryAggregate = Backbone.Model.extend({
+        defaults: {
+            line_item: null,
+            schools: [],
         },
     });
 
@@ -94,8 +126,16 @@
         }
     });
 
-    App.Models.SchoolBudgets = Backbone.Collection.extend({
-        model: App.Models.SchoolBudget,
+    App.Collections.BudgetCategories = Backbone.Collection.extend({
+        model: App.Models.BudgetCategory,
+        url: "data/budget_instances.json",
+        comparator: function(model) {
+            return model.get('majorgroup');
+        }
+    });
+
+    App.Collections.SchoolBudgetItems = Backbone.Collection.extend({
+        model: App.Models.SchoolBudgetItem,
         url: "data/school_budgets.json",
         comparator: function(model) {
             return model.get('schoolname');
@@ -104,50 +144,179 @@
 
     App.Router = Backbone.Router.extend({
         initialize: function(){
+
             $(".kpcc-header").html(_.template(template("templates/kpcc-header.html")));
             $(".data-details").html(_.template(template("templates/data-details.html")));
             $(".kpcc-footer").html(_.template(template("templates/kpcc-footer.html")));
+
             window.schoolsCollection = new App.Collections.SchoolInstances();
             window.schoolsCollection.fetch({
                 async: false,
             });
-            window.schoolBudgetCollection = new App.Models.SchoolBudgets();
+
+            window.budgetItemsCollection = new App.Collections.BudgetCategories();
+            window.budgetItemsCollection.fetch({
+                async: false,
+            });
+
+            window.budgetItemsCollection.forEach(function(model, index) {
+                model.set("majorgroup_slug", window.slugifyString(model.get("majorgroup")));
+            });
+
+            window.schoolBudgetCollection = new App.Collections.SchoolBudgetItems();
             window.schoolBudgetCollection.fetch({
                 async: false,
+            });
+
+            window.schoolBudgetCollection.forEach(function(model, index) {
+                model.set("majorgroup_slug", window.slugifyString(model.get("majorgroup")));
             });
         },
 
         routes: {
             "": "indexView",
-            "school/:schoolname": "displayIndividualSchool"
+            "school/:schoolSlug": "displayIndividualSchool",
+            "line-item/:lineItem": "displayIndividualBudgetItem"
         },
 
         indexView: function(){
-            this.createVisuals(".data-visuals", "templates/data-visuals.html");
+            this.createSchoolSelect(".data-visuals", "templates/school-select.html");
         },
 
-        displayIndividualSchool: function(schoolslug){
+        displayIndividualSchool: function(schoolSlug){
 
-            this.createVisuals(".data-visuals", "templates/data-visuals.html");
+            this.createSchoolSelect(".data-visuals", "templates/school-select.html");
 
-            this.schoolBudget = window.schoolBudgetCollection.where({
-                schoolslug: schoolslug
+            $("#school-list").val(schoolSlug);
+
+            var schoolBudget = window.schoolBudgetCollection.where({
+                schoolslug: schoolSlug
             });
 
-            $("#school-list").val(schoolslug);
+            var schoolInstance = new App.Models.SchoolBudgetAggregate();
 
-            this.detailsView = new App.Views.DetailsView({
-                schoolArray: this.schoolBudget,
+            schoolInstance.set({
+                school_name: schoolBudget[0].attributes.propername
+            });
+
+            var combinedBudgetGroups = _.groupBy(schoolBudget, function(model){
+                return model.get("majorgroup");
+            });
+
+            var summedBudgetGroups = _.each(combinedBudgetGroups, function(group, key){
+                var summed = 0;
+                for (var i=0; i<group.length; i++) {
+                    summed += parseInt(group[i].attributes.grandtotal);
+                };
+                schoolInstance.set({
+                    line_items: schoolInstance.get("line_items").concat({
+                        major_group: group[0].get("majorgroup"),
+                        majorgroup_slug: group[0].get("majorgroup_slug"),
+                        major_group_budget: summed,
+                        major_group_percent: 10
+                    })
+                });
+            });
+
+            var aggregateArray = [];
+            _.each(schoolInstance.attributes.line_items, function(item) {
+                aggregateArray.push(item.major_group_budget);
+            });
+
+            var aggregateItemBudget = _.reduce(aggregateArray, function(memo, num){
+                return memo + num;
+            }, 0);
+
+            schoolInstance.set({
+                totalbudgeted: aggregateItemBudget
+            });
+
+            _.each(schoolInstance.attributes.line_items, function(item) {
+                item.major_group_percent = window.percentifyValue(item.major_group_budget / schoolInstance.attributes.totalbudgeted);
+            });
+
+            this.schoolDetailsView = new App.Views.SchoolDetailsView({
+                model: schoolInstance,
                 container: "#school-details",
                 template: "templates/school-results.html"
             });
+
         },
 
-        createVisuals: function(container, template){
+        displayIndividualBudgetItem: function(lineItem){
+
+            this.createBudgetSelect(".data-visuals", "templates/budget-select.html");
+
+            $("#budget-list").val(lineItem);
+
+            var budgetCategories = window.schoolBudgetCollection.where({
+                majorgroup_slug: lineItem
+            });
+
+            var categoryInstance = new App.Models.BudgetCategoryAggregate();
+
+            categoryInstance.set({
+                line_item: budgetCategories[0].attributes.majorgroup
+            });
+
+            var combinedSchools = _.groupBy(budgetCategories, function(model){
+                return model.get("propername");
+            });
+
+            var summedBudgetSchools = _.each(combinedSchools, function(group, key){
+                var summed = 0;
+                for (var i=0; i<group.length; i++) {
+                    summed += parseInt(group[i].attributes.grandtotal);
+                };
+                categoryInstance.set({
+                    schools: categoryInstance.get("schools").concat({
+                        school_name: group[0].get("propername"),
+                        major_group_budget: summed
+                    })
+                });
+            });
+
+            var aggregateArray = [];
+            _.each(categoryInstance.attributes.schools, function(budget) {
+                aggregateArray.push(budget.major_group_budget);
+            });
+
+            var aggregateItemBudget = _.reduce(aggregateArray, function(memo, num){
+                return memo + num;
+            }, 0);
+
+            var sortedSchools = _.sortBy(categoryInstance.attributes.schools, function(instance){
+                return instance.major_group_budget;
+            });
+
+            categoryInstance.set({
+                schools: sortedSchools.reverse(),
+                totalbudgeted: aggregateItemBudget
+            });
+
+            this.budgetDetailsView = new App.Views.BudgetDetailsView({
+                model: categoryInstance,
+                container: "#school-details",
+                template: "templates/budget-results.html"
+            });
+        },
+
+        createBudgetSelect: function(container, template){
+            if (this.budgetSelectView){
+                this.budgetSelectView.remove();
+            };
+            this.budgetSelectView = new App.Views.BudgetSelectView({
+                container: container,
+                template: template
+            });
+            return this.budgetSelectView;
+        },
+
+        createSchoolSelect: function(container, template){
             if (this.visualsView){
                 this.visualsView.remove();
             };
-            this.visualsView = new App.Views.VisualsView({
+            this.visualsView = new App.Views.SchoolSelectView({
                 container: container,
                 template: template
             });
@@ -156,7 +325,39 @@
 
     });
 
-    App.Views.VisualsView = Backbone.View.extend({
+    App.Views.BudgetSelectView = Backbone.View.extend({
+
+        tagName: "div",
+
+        className: "col-xs-12 col-sm-12 col-md-12 col-lg-12",
+
+        initialize: function(viewObject){
+            this.dataTemplate = _.template(template(viewObject.template)),
+            this.render(viewObject);
+        },
+
+        events: {
+            "change #budget-list": "evalBudgetCategory",
+        },
+
+        evalBudgetCategory: function(e){
+            e.preventDefault();
+            var lineItem = $("#budget-list").val();
+            window.router.navigate('#line-item/' + lineItem, {
+                trigger: true,
+                replace: false,
+            });
+        },
+
+        render: function(viewObject){
+            $(viewObject.container).html(this.$el.html(this.dataTemplate({
+                collection: window.budgetItemsCollection.toJSON()
+            })));
+        }
+    });
+
+    App.Views.SchoolSelectView = Backbone.View.extend({
+
         tagName: "div",
 
         className: "col-xs-12 col-sm-12 col-md-12 col-lg-12",
@@ -186,7 +387,7 @@
         }
     });
 
-    App.Views.DetailsView = Backbone.View.extend({
+    App.Views.SchoolDetailsView = Backbone.View.extend({
 
         tagName: "div",
 
@@ -197,27 +398,53 @@
             this.render(viewObject);
         },
 
-        render: function(viewObject){
+        events: {
+            "click li a": "evalBudgetCategory",
+        },
 
-            console.log(viewObject.schoolArray);
-
-            this.navigatedCollection = new App.Models.SchoolBudgets();
-
-            this.navigatedCollection.add(viewObject.schoolArray);
-
-            var test = _.each(viewObject.schoolArray, function(item){
-                console.log(item.attributes);
+        evalBudgetCategory: function(e){
+            e.preventDefault();
+            var lineItem = e.target.id;
+            window.router.navigate('#line-item/' + lineItem, {
+                trigger: true,
+                replace: false,
             });
+        },
 
-            var sum = _.reduce([1, 2, 3], function(memo, num){
-                return memo + num;
-            }, 0);
-
-            console.log(sum);
-
+        render: function(viewObject){
             $(viewObject.container).html(this.$el.html(this.detailsTemplate({
-                schoolname: viewObject.schoolArray[0].attributes.propername,
-                collection: this.navigatedCollection.toJSON()
+                collection: viewObject.model.toJSON()
+            })));
+        }
+    });
+
+    App.Views.BudgetDetailsView = Backbone.View.extend({
+
+        tagName: "div",
+
+        className: "col-xs-12 col-sm-12 col-md-12 col-lg-12",
+
+        initialize: function(viewObject){
+            this.detailsTemplate = _.template(template(viewObject.template)),
+            this.render(viewObject);
+        },
+
+        events: {
+            "click li a": "evaluateSelectedSchool",
+        },
+
+        evaluateSelectedSchool: function(e){
+            e.preventDefault();
+            var schoolslug = e.target.id;
+            window.router.navigate('#school/' + schoolslug, {
+                trigger: true,
+                replace: false,
+            });
+        },
+
+        render: function(viewObject){
+            $(viewObject.container).html(this.$el.html(this.detailsTemplate({
+                collection: viewObject.model.toJSON()
             })));
         }
     });
@@ -246,6 +473,8 @@
 
         if (urlLink.indexOf("embed") > -1){
             window.appConfig.openAboutThis = false;
+            window.appConfig.comments = false;
+            $(".data-comments").remove();
         };
 
         if (window.appConfig.comments === true){

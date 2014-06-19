@@ -70,7 +70,7 @@
 @media (min-width: 992px) {
     body.minimal .data-container h4 {font-size: 250%;}
     body.minimal .data-container h5 {font-size: 180%;}
-    body.minimal .data-container h6 {font-size: 145%;}
+    body.minimal .data-container h6 {font-size: 125%;}
     .data-container .data-legend .jumbotron ul li {font-size: 65%;}
     .data-container .data-legend #icon-display .placemark {width: 60px; vertical-align: text-bottom;}
     .data-container .data-legend #icon-display p {font-size: 90%;}
