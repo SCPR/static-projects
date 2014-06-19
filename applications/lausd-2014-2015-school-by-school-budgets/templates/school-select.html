@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="row data-legend">
+            <p class="small-writing"><strong>About the data</strong>: How much is your child's school slated to spend on libraries? On nursing staff? How much of the budget goes to teachers? And how much does LA Unified plan to spend toward teachers throughout the district? Use the drop down menu to find LA Unified traditional and charter schools, and detailed spending plans across broad categories. Then, click on a category to see how money is being allocated to each school. Categories with restricted and unrestricted funding streams have been combined to display the total money allocated for that category. The total budgeted amounts reflect available data from LA Unified.</p>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="jumbotron">
+                    <noscript>Please enable JavaScript to view this interactive.</noscript>
+                    <h4 class="centered">View 2014-2015 money budgeted for</h4>
+                    <div id="content-action-bar">
+                        <select id="school-list">
+                            <option>-- Choose your school --</option>
+                            <% _.each(collection, function(model) { %>
+                                <option value="<%= model.schoolslug %>"><%= model.propername %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+                    <div id="school-details"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

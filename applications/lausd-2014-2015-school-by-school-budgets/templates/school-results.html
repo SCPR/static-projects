@@ -1,9 +1,9 @@
-<h5><%= collection.school_name %></h5>
+<h6>LA Unified budget for <%= collection.school_name %>: <%= window.createCurrency(collection.totalbudgeted) %></h6>
 <div class="row">
-    <ul>
+    <ul class="budget-line-items">
         <% _.each(collection.line_items, function(model) { %>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                <li><strong><%= model.major_group %></strong>:<br /><%=window.createCurrency(model.major_group_budget) %></li>
+                <li><strong><a id="<%= model.majorgroup_slug %>" href="javascript:void(0)"><%= model.major_group %></a></strong>:<br /><strong><%=window.createCurrency(model.major_group_budget) %></strong> - (<strong><%= model.major_group_percent %>%</strong> of the school's budget)</li>
             </div>
         <% }); %>
     </ul>
