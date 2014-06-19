@@ -1,0 +1,10 @@
+<h6>LA Unified budget for <%= collection.line_item %>: <%= window.createCurrency(collection.totalbudgeted) %></h6>
+<div class="row">
+    <ul class="budget-line-items">
+        <% _.each(collection.schools, function(model) { %>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <li><strong><a id="<%= window.slugifyString(model.school_name) %>" href="javascript:void(0)"><%= model.school_name %></a></strong>:<br /><%= window.createCurrency(model.major_group_budget) %></li>
+            </div>
+        <% }); %>
+    </ul>
+</div>
