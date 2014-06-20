@@ -17,7 +17,7 @@ jqueryNoConflict(document).ready(function() {
 // application configuration object
 var appConfig = {
     openAboutThis: true,
-    embed_this: true,
+    embed_this: false,
     embed_url_root: "http://projects.scpr.org/static/charts/sentiments-la-parking/?=embed/",
     embed_width: "100%",
     embed_height: "850px"
