@@ -1,0 +1,97 @@
+<div class="candidate-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div id="content-action-bar" class="jumbotron">
+        <select id="search-congressional-delegation" onchange="fn.scrollToRep(this.value);">
+            <option value="#return-to-top">Scroll to your representative</option>
+            {{#objects}}
+                <option value="#{{firstname}}_{{lastname}}">{{firstname}} {{lastname}}</option>
+            {{/objects}}
+        </select>
+    </div>
+    {{#objects}}
+        <div class="row">
+            <div id="{{firstname}}_{{lastname}}" class="response col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <dl>
+                        <dd>
+                            {{#if votepromise}}
+                                {{#is votepromise 'likely_yes'}}
+                                    <div class="{{votepromise}}">&#10004;</div>
+                                    <div class="vote-indicator">
+                                        <p><strong>{{votepromise}}</strong></p>
+                                        {{#if promisedate}}
+                                            <p class="data-instructions">As of {{promisedate}}</p>
+                                        {{/if}}
+                                    </div>
+                                {{else}}
+                                {{/is}}
+                                {{#is votepromise 'likely_no'}}
+                                    <div class="{{votepromise}}">X</div>
+                                    <div class="vote-indicator">
+                                        <p><strong>{{votepromise}}</strong></p>
+                                        {{#if promisedate}}
+                                            <p class="data-instructions">As of {{promisedate}}</p>
+                                        {{/if}}
+                                    </div>
+                                {{else}}
+                                {{/is}}
+                                {{#is votepromise 'undecided'}}
+                                    <div class="{{votepromise}}">?</div>
+                                    <div class="vote-indicator">
+                                        <p><strong>{{votepromise}}</strong></p>
+                                        {{#if promisedate}}
+                                            <p class="data-instructions">As of {{promisedate}}</p>
+                                        {{/if}}
+                                    </div>
+                                {{else}}
+                                {{/is}}
+                            {{else}}
+                                <div class="awaiting_response">&#8212;</div>
+                                <div class="vote-indicator">
+                                    <p><strong>Awaiting Response</strong></p>
+                                    {{#if promisedate}}
+                                        <p class="data-instructions">As of {{promisedate}}</p>
+                                    {{/if}}
+                                </div>
+                            {{/if}}
+
+                        </dd>
+                    </dl>
+                </div>
+                <div id="image-container" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                    <dl>
+                        <dd>
+                            <div class="img">
+                                <a href="{{reptrackerurl}}" target="_blank"><img class="placemark" src="{{imageurl}}" alt="{{position}}_{{firstname}}_{{lastname}}" /></a>
+                            </div>
+                            <div class="text"><p class="data-instructions"><strong>{{position}} {{lastname}}</strong></p></div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                    <dl>
+                        <dd>
+                            <h3>{{position}} {{firstname}} {{lastname}} ({{party}}-{{district}})</h3>
+                        </dd>
+                        <dd>
+                            {{#if viewoniraqinvolvement}}
+                                <p><strong>View on Iraq involvement</strong>: {{viewoniraqinvolvement}}</p>
+                                {{#if source}}
+                                    <p>- {{source}}</p>
+                                {{else}}
+                                {{/if}}
+                            {{else}}
+                            {{/if}}
+                        </dd>
+                        <dd>
+                            {{#if updateddate}}
+                                <p class="data-instructions"><strong>Updated</strong>: {{updateddate}}</p>
+                            {{else}}
+                            {{/if}}
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <hr/>
+    {{/objects}}
+</div>
