@@ -6,12 +6,12 @@
     },
     "gridSize": 20,
     "xAxis": [
-      "West",
-      "East"
+      "West LA",
+      "East LA"
     ],
     "yAxis": [
-      "North",
-      "South"
+      "North LA",
+      "South LA"
     ],
     "gridTarget": "grid",
     "commentsTarget": "comments",
