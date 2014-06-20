@@ -40,14 +40,14 @@
       "type": "text",
       "field": "entry.81637281"
     },
-    {
-      "name": "Which city/ neighborhood do you live in or work in?",
+   {
+      "name": "Which specific area (street or zip code)  in this part of the city do you find most difficult to park?",
       "required": true,
-      "type": "text",
+      "type": "textarea",
       "field": "entry.551789512"
     },
     {
-      "name": "Where in Los Angeles do you find most difficult to find parking?",
+      "name": "Why do you find parking is difficult here? Share your parking story with us!",
       "required": true,
       "type": "textarea",
       "field": "entry.1633382753"
