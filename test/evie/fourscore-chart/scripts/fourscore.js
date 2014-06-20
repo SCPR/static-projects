@@ -375,7 +375,9 @@ var FourScore = function(opt){
           gridWidth = $grid.outerWidth(),
           $formDiv = $('div.fs-form'),
           formWidth = $formDiv.outerWidth(),
+          formHeight = $formDiv.outerHeight(),
           formLeft = e.pageX + 2,
+          formTop = e.pageY + 2,
           submission_values = JSON.parse($this.attr('data-submission-value'));
 
       $('input.x').val(submission_values[0]);
@@ -391,10 +393,11 @@ var FourScore = function(opt){
 
       //Math for where to position the form
       if (e.pageX + 2 + formWidth > gridOffset.left + gridWidth) formLeft -= 4 + formWidth;
+       if (e.pageY + 2 + formWidth > gridOffset.top + gridWidth) formTop -= 4 + formHeight;
 
       $formDiv
         .css({
-          top: e.pageY + 2 - gridOffset.top,
+          top:  formTop - gridOffset.top,
           left: formLeft - gridOffset.left
         });
 
@@ -688,7 +691,7 @@ var FourScore = function(opt){
     }
 
     //Don't populate the form or set listeners if they already submitted
-    try {
+   try {
       //If they've already submitted, don't let them resubmit
       if (localStorage.getItem('fs-cell')) {
         $grid.removeClass('submittable');

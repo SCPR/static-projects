@@ -18,7 +18,7 @@ jqueryNoConflict(document).ready(function() {
 var appConfig = {
     openAboutThis: true,
     embed_this: true,
-    embed_url_root: "http://projects.scpr.org/static/test/evie/fourscore-chart/?=embed/",
+    embed_url_root: "http://projects.scpr.org/static/charts/sentiments-la-parking/?=embed/",
     embed_width: "100%",
     embed_height: "850px"
 };

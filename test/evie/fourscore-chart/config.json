@@ -6,12 +6,12 @@
     },
     "gridSize": 20,
     "xAxis": [
-      "Parking fines are appropriate",
-      "Parking fines are too high"
+      "West LA",
+      "East LA"
     ],
     "yAxis": [
-      "Parking signs are clear",
-      "Parking signs super confusing"
+      "North LA",
+      "South LA"
     ],
     "gridTarget": "grid",
     "commentsTarget": "comments",
@@ -35,34 +35,22 @@
       "field": "entry.465344063"
     },
     {
-      "name": "What's your name? (Optional)",
-      "required": false,
+      "name": "What's your name?",
+      "required": true,
       "type": "text",
       "field": "entry.81637281"
     },
-    {
-      "name": "Where in Los Angeles did you get most parking tickets? Share your story!",
-      "required": false,
+   {
+      "name": "Which specific area (street or zip code)  in this part of the city do you find most difficult to park?",
+      "required": true,
       "type": "textarea",
-      "field": "entry.1633382753"
-    },
-    {
-      "name": "Which city/ neighborhood do you live in or work in?",
-      "required": false,
-      "type": "text",
       "field": "entry.551789512"
     },
     {
-      "name": "Tell us the zip code if you know!",
-      "required": false,
-      "type": "number",
-      "field": "entry.1904618128"
-    },
-    {
-      "name": "Parking tips for new comers in your city/ neighborhood?",
-      "required": false,
+      "name": "Why do you find parking is difficult here? Share your parking story with us!",
+      "required": true,
       "type": "textarea",
-      "field": "entry.106855936"
+      "field": "entry.1633382753"
     }
   ]
 }
