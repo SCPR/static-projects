@@ -42,7 +42,6 @@
 
 .fs-tooltip,.fs-form {
 	z-index: 990;
-	position: absolute;
 	background-color: black;
 	border: 5px solid #ccc;
 	color: white;
@@ -53,6 +52,10 @@
 	font-size: 16px;
 	font-weight: 2px;
 	width: 300px;
+}
+
+.fs-tooltip {
+	position: absolute;
 }
 
 .fs-form.loading #fs-form-submit{

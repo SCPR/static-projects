@@ -393,19 +393,29 @@ var FourScore = function(opt){
 
       //Math for where to position the form
       if (e.pageX + 2 + formWidth > gridOffset.left + gridWidth) formLeft -= 4 + formWidth;
-       if (e.pageY + 2 + formWidth > gridOffset.top + gridWidth) formTop -= 4 + formHeight;
+      if (e.pageY + 2 + formWidth > gridOffset.top + gridWidth) formTop -= 4 + formHeight;
 
-      $formDiv
-        .css({
-          top:  formTop - gridOffset.top,
-          left: formLeft - gridOffset.left
-        });
+      //$formDiv
+        //.css({
+          //position: "fixed",
+          //top: (testTop - formHeight) - 200,
+          //left: testLeft
+        //});
+
+        $formDiv.center();
 
       $grid.addClass('open');
 
     });
 
   }
+
+    $.fn.center = function () {
+        this.css('position','fixed');
+        this.css('top', ( $(window).height() - this.height() ) / 4);
+        this.css('left', ( $(window).width() - this.width() ) / 2);
+        return this;
+    }
 
   //Take off all the grid listeners
   function unbindHandlers() {
@@ -635,7 +645,6 @@ var FourScore = function(opt){
   }
 
   function stageData(grid_data,config) {
-    console.log(grid_data)
     grid_data = $.map(grid_data,function(d){
       d.x = ('x' in d) ? +d.x : +d.X;
       d.y = ('y' in d) ? +d.y : +d.Y;
