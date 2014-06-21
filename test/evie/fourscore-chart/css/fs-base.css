@@ -96,7 +96,7 @@
 }
 
 .fs-form {
-	z-index: 999;
+	z-index: 10;
 	max-width: 300px;
 }
 
