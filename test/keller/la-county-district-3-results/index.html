@@ -7,7 +7,7 @@
     <head>
 
         <!-- begin meta -->
-        <title>Xxxxxxx xxxxx xxxxxx | scpr.org</title>
+        <title>LA County's 3rd Supervisor District | scpr.org</title>
         <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,21 +17,21 @@
         <meta name="format-detection" content="telephone=no"/>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         <meta name="robots" content="#" />
-        <meta name="description" content="#" />
+        <meta name="description" content="After finishing as the top-two vote getters from the June 3 primary, former state lawmaker Sheila Kuehl and former Santa Monica Mayor Bobby Shriver are headed for a November election to determine who will represent the 3rd District on the LA County Board of Supervisors." />
         <meta name="keywords" content="#" />
-        <meta property="og:title" content="#" />
+        <meta property="og:title" content="LA County's 3rd Supervisor District" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png" />
         <meta property="og:image:width" content="500" />
         <meta property="og:image:height" content="500" />
         <meta property="og:url" content="#" />
-        <meta property="og:description" content="#" />
+        <meta property="og:description" content="After finishing as the top-two vote getters from the June 3 primary, former state lawmaker Sheila Kuehl and former Santa Monica Mayor Bobby Shriver are headed for a November election to determine who will represent the 3rd District on the LA County Board of Supervisors." />
         <meta name="twitter:card" content="summary">
         <meta name="twitter:url" content="#">
         <meta name="twitter:domain" content="http://projects.scpr.org/">
         <meta name="twitter:site" content="KPCC">
-        <meta name="twitter:title" content="#">
-        <meta name="twitter:description" content="#">
+        <meta name="twitter:title" content="LA County's 3rd Supervisor District">
+        <meta name="twitter:description" content="After finishing as the top-two vote getters from the June 3 primary, former state lawmaker Sheila Kuehl and former Santa Monica Mayor Bobby Shriver are headed for a November election to determine who will represent the 3rd District on the LA County Board of Supervisors.">
         <meta name="twitter:image:src" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png">
         <!-- end meta -->
 
@@ -41,7 +41,7 @@
         <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
-        <link href="test.css" rel="stylesheet" type="text/css" />
+        <link href="style.css" rel="stylesheet" type="text/css" />
         <!-- end css -->
 
         <!--[if lte IE 8]>
@@ -85,43 +85,25 @@
                     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                         <div id="content-display-canvas">
                             <div class="bound prologue">
-                                <h1 class="chapter">Xxxx xxx xxxx xxxx</h1>
-                                <p>Xxxx xxx xxxx xxxx</p>
-                                <p>Xxxx xxx xxxx xxxx</p>
+                                <h1 class="chapter">LA County's 3rd Supervisor District</h1>
+                                <p>After finishing as the top-two vote getters from the June 3 primary, former state lawmaker Sheila Kuehl and former Santa Monica Mayor Bobby Shriver are headed for a November election to determine who will represent the 3rd District on the LA County Board of Supervisors.</p>
+                                <p>This map shows which candidate "won" which precinct during the primary. Click a precinct for more detail or use the buttons below to filter the results.</p>
                             </div>
                             <div id="content-map-explainer">
                                 <div class="controls">
                                     <form class="filters">
                                         <div id="data-toggles">
-                                            <ul class="list-inline">
-                                                <li><a class="kuehlPrecincts" href="javascript:void(0)">Show only precincts for Kuehl</a></li>
-                                                <li><a class="shriverPrecincts" href="javascript:void(0)">Show only precincts for Shriver</a></li>
-                                                <li><a class="resetMap" href="javascript:void(0)">Reset Map</a></li>
+                                            <ul class="list-inline buttons btn-group btn-group-justified">
+                                                <li><a class="kuehlPrecincts btn btn-primary" href="javascript:void(0)">Show only precincts for Kuehl</a></li>
+                                                <li><a class="shriverPrecincts btn btn-primary" href="javascript:void(0)">Show only precincts for Shriver</a></li>
+                                                <li><a class="resetMap btn btn-primary" href="javascript:void(0)">Reset Map</a></li>
                                             </ul>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="data-display clearfix"></div>
                                 <div id="content-map-data">
-
                                     <div id="data-point-display"></div>
-
-                                    <!--
-                                    <table class="table table-striped table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th>Location</th>
-                                                <th>Registered</th>
-                                                <th>Votes</th>
-                                                <th>Turnout</th>
-                                                <th style="background: rgba(191,91,23,0.8); color: #000000;">Shriver</th>
-                                                <th style="background: rgba(255,255,153,0.8); color: #000000;">Kuehl</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="appendHere"></tbody>
-                                    </table>
-                                    -->
-
                                 </div>
                             </div>
                         </div>
@@ -131,34 +113,32 @@
                             <table class="table table-striped">
                                 <tbody>
                                     <tr>
-                                        <td style="width: 33%; background: rgba(255,255,153,0.8); color: #000000; font-weight: bold;">Precinct won by Kuehl</td>
-                                        <td style="width: 33%; background: rgba(191,91,23,0.8); color: #000000; font-weight: bold;">Precinct won by Shriver</td>
+                                        <td style="width: 33%; background: #55cbdd; color: #000000; font-weight: bold;">Shriver beat Kuehl</td>
                                         <td style="width: 33%; background: rgba(0,0,0,0.8); color: #ffffff; font-weight: bold;">Candidates tied</td>
+                                        <td style="width: 33%; background: #fbd341; color: #000000; font-weight: bold;">Kuehl beat Shriver</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <div id="content-map-canvas"></div>
-                        <!--
-                        <div id="content-map-methodology">
-                            <p><strong>About the data</strong>: <p>Renter data for <a href="http://www.census.gov/geo/reference/zctas.html">Zip Code Tabulation Areas</a> in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties via <a href="http://censusreporter.org/">Census Reporter</a> and based on <a href="http://www.census.gov/acs/www/data_documentation/2012_release/">American Community Survey 2012 5-year estimates</a>. ZCTAs for which the coefficient variable for the estimated number of renters is more than 10 percent are not displayed. Number of renters is based on occupied housing units from <a href="http://censusreporter.org/data/table/?table=B25003&amp;geo_ids=860|05000US06037">ACS Table B25003</a>. Median monthly rent is based on renter-occupied housing units paying cash rent from <a href="http://censusreporter.org/data/table/?table=B25064&amp;geo_ids=860|05000US06037">ACS Table B25064</a>. Median annual income is based on occupied housing units from the past 12 months and displayed in 2012 inflation-adjusted dollars from <a href="http://censusreporter.org/data/table/?table=B25119&amp;geo_ids=860|05000US06037">ACS Table B25119</a>. Median rent burden is based on renter-occupied housing units paying cash rent from the past 12 months from <a href="http://censusreporter.org/data/table/?table=B25071&amp;geo_ids=860|05000US06037">ACS Table B25071</a>. Household rent burden as a percentage of its income is based on renter-occupied housing units from the past 12 months from <a href="http://censusreporter.org/data/table/?table=B25070&amp;geo_ids=860|05000US06037">ACS Table B25070</a>. GIS data for Zip Code Tabulation Areas via the L.A. Times <a href="http://boundaries.latimes.com/sets/">Mapping L.A. Boundaries API</a>.</p>
-                        </div>
-                        -->
                     </div>
                 </div>
             </div>
         </script>
 
         <script id="featcherPrecinct" type="text/template">
-            <div class="row" id="precinct_<%= june_2014_ %>">
+            <div class="row precinct-data" id="precinct_<%= june_2014_ %>">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <p><%= june_2014_ %></p>
-                    <p><%= proper_loc %></p>
-                    <p><%= registrati %></p>
-                    <p><%= ballots %></p>
-                    <p><%= window.percentifyValue(results[0].voterTurnout) %></p>
-                    <p><%= shriver %></p>
-                    <p><%= kuehl %></p>
+                    <h6><%= june_2014_ %> - <%= proper_loc %></h6>
+                    <ul class="list-inline">
+                        <li><strong>Registered voters</strong>: <%= registrati %></li>
+                        <li><strong>Ballots cast</strong>: <%= ballots %></li>
+                        <li><strong>Voter turnout</strong>: <%= window.percentifyValue(results.voterTurnout) %>%</li>
+                    </ul>
+                    <ul class="list-inline">
+                        <li><strong>Shriver votes</strong>: <%= shriver %> (<%= window.percentifyValue(shriver/ballots) %>%)</li>
+                        <li><strong>Kuehl votes</strong>: <%= kuehl %> (<%= window.percentifyValue(kuehl/ballots) %>%)</li>
+                    </ul>
                 </div>
             </div>
             <hr />
@@ -185,7 +165,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.2.1/moment.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script src="test-map.js"></script>
+        <script src="map-application.js"></script>
         <!-- end scripts -->
 
         <!-- begin chartbeat -->

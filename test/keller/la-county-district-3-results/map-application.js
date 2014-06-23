@@ -120,12 +120,13 @@
             "click a.resetMap": "resetMap",
             "click a.kuehlPrecincts": "kuehlMap",
             "click a.shriverPrecincts": "shriverMap",
+            "click .precinct-data": "thisPrecinct",
         },
 
         styleFeatures: function (feature) {
             var layerColor;
             var totalVotes = feature.properties.ballots;
-            feature.properties.results = [{
+            feature.properties.results = {
                 registeredVoters: feature.properties.registrati,
                 totalVotes: totalVotes,
                 voterTurnout: window.toFixedPercent(totalVotes, feature.properties.registrati),
@@ -140,14 +141,14 @@
                     {candidate: "Preven", votes: feature.properties.preven, percent: window.toFixedPercent(feature.properties.preven, totalVotes)},
                     {candidate: "Ulich", votes: feature.properties.ulich, percent: window.toFixedPercent(feature.properties.ulich, totalVotes)}
                     */
-                ]
-            }];
+                ],
+            };
 
-            var maxValue = _.max(feature.properties.results[0].precinctResults, function(candidate){
+            var maxValue = _.max(feature.properties.results.precinctResults, function(candidate){
                 return candidate.percent;
             });
 
-            var winners = _.filter(feature.properties.results[0].precinctResults, function(candidate){
+            var winners = _.filter(feature.properties.results.precinctResults, function(candidate){
                 return candidate.percent == maxValue.percent;
             });
 
@@ -161,13 +162,13 @@
                 } else if (winners[0].candidate === "Kremer"){
                     layerColor = "rgb(253,192,134)";
                 } else if (winners[0].candidate === "Kuehl"){
-                    layerColor = "rgb(255,255,153)";
+                    layerColor = "#fbd341";
                 } else if (winners[0].candidate === "Melendez"){
                     layerColor = "rgb(56,108,176)";
                 } else if (winners[0].candidate === "Preven"){
                     layerColor = "rgb(240,2,127)";
                 } else if (winners[0].candidate === "Shriver"){
-                    layerColor = "rgb(191,91,23)";
+                    layerColor = "#55cbdd";
                 } else if (winners[0].candidate === "Ulich"){
                     layerColor = "rgb(102,102,102)";
                 }
@@ -185,13 +186,14 @@
         },
 
         onEachFeature: function(feature, layer) {
+
             feature.selected = false;
+
             layer.on("click", function (e) {
 
-
                 var thisLat = e.latlng.lat;
-                var thisLat = e.latlng.lng;
-
+                var thisLong = e.latlng.lng;
+                //getCensusApiData(thisLat, thisLong);
 
                 if (feature.selected === false){
                     this.setStyle({
@@ -199,8 +201,6 @@
                         opacity: 2,
                         fillOpacity: 2,
                     });
-
-                    //$("#appendHere").append(window.featcherSentence(feature.properties));
 
                     $("#data-point-display").append(window.featcherPrecinct(feature.properties));
 
@@ -217,15 +217,60 @@
             });
         },
 
-        kuehlMap: function(){
-            this.changeLayerStylesForWinner("Kuehl");
+        getCensusApiData: function(lat, lng){
+            var apiPrefix = "http://api.censusreporter.org/1.0/geo/search?";
+            var apiQuery = apiPrefix + "lat=" + lat + "&lon=" + lng;
+            console.log(apiQuery);
+
+
         },
 
-        shriverMap: function(){
+        kuehlMap: function(e){
+            this.changeLayerStylesForWinner("Kuehl");
+            $(e.currentTarget).css(
+                "background", "rgba(0, 127, 166, .6)"
+            );
+            $("a.shriverPrecincts").css(
+                "background", "rgba(0, 127, 166, 1)"
+            );
+        },
+
+        shriverMap: function(e){
             this.changeLayerStylesForWinner("Shriver");
+            $(e.currentTarget).css(
+                "background", "rgba(0, 127, 166, .6)"
+            );
+            $("a.kuehlPrecincts").css(
+                "background", "rgba(0, 127, 166, 1)"
+            );
+        },
+
+        thisPrecinct: function(e){
+            var precinctBoundingBox;
+            _.each(this.map._layers, function(group, key){
+                if ("feature" in group){
+                    if (e.currentTarget.id === "precinct_" + group.feature.properties.june_2014_){
+                        precinctBoundingBox = group.getBounds();
+                        group.setStyle({
+                            weight: 2,
+                            opacity: 2,
+                            fillOpacity: 2,
+                        });
+                        group.feature.selected = true;
+                    } else {
+                        group.setStyle({
+                            weight: .3,
+                            opacity: .3,
+                            fillOpacity: .3,
+                        });
+                    }
+                }
+            });
+            this.map.fitBounds(precinctBoundingBox);
         },
 
         changeLayerStylesForWinner: function(winnerName){
+            $("#data-point-display").empty();
             _.each(this.map._layers, function(group, key){
                 if ("feature" in group){
                     if (group.feature.properties.winner.length === 1){
@@ -252,6 +297,12 @@
 
         resetMap: function(){
             $("#data-point-display").empty();
+            $("a.shriverPrecincts").css(
+                "background", "rgba(0, 127, 166, 1)"
+            );
+            $("a.kuehlPrecincts").css(
+                "background", "rgba(0, 127, 166, 1)"
+            );
             _.each(this.map._layers, function(group, key){
                 if ("feature" in group){
                     if (group.feature.selected === true){
@@ -264,6 +315,9 @@
                     });
                 }
             });
+            this.map.setView(
+                this.center, 11
+            );
         },
 
         render: function(mapDataObject){
