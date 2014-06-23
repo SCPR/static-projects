@@ -7,8 +7,18 @@
         Router: {}
     };
 
-    window.template = function(id){
-        return _.template( $("#" + id).html());
+    // load external templates via ajax
+    window.template = function(url){
+        var data = "<h1> failed to load url : " + url + "</h1>";
+        $.ajax({
+            async: false,
+            dataType: "text",
+            url: url,
+            success: function(response) {
+                data = response;
+            }
+        });
+        return data;
     };
 
     window.percentifyValue = function(value){
@@ -65,6 +75,11 @@
     });
 
     App.Router = Backbone.Router.extend({
+        initialize: function(){
+            $(".kpcc-header").html(_.template(template("http://projects.scpr.org/static/static-files/v3-dependencies/templates/kpcc-header.html")));
+            $(".kpcc-footer").html(_.template(template("http://projects.scpr.org/static/static-files/v3-dependencies/templates/kpcc-footer.html")));
+        },
+
         routes: {
             "": "createMap",
         },
@@ -85,14 +100,10 @@
     });
 
     App.Views.MapApplication = Backbone.View.extend({
-        template: template("map-application-template"),
+        template: template("templates/map-application.html"),
         el: ".data-visuals",
         initialize: function(mapDataObject){
             this.mapDataObject = mapDataObject;
-
-            window.featcherSentence = template("featcherSentence");
-            window.featcherPrecinct = template("featcherPrecinct");
-
             this.stamenToner = new L.tileLayer(
                 "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
                     attribution: "Map tiles by <a href='http://stamen.com' target='_blank'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0' target='_blank'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://openstreetmap.org' target='_blank'>OpenStreetMap</a> contributors, <a href='http://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>",
@@ -201,9 +212,7 @@
                         opacity: 2,
                         fillOpacity: 2,
                     });
-
-                    $("#data-point-display").append(window.featcherPrecinct(feature.properties));
-
+                    $("#data-point-display").append(_.template(template("templates/featcherPrecinct.html"), feature.properties));
                     feature.selected = true;
                 } else {
                     this.setStyle({
@@ -282,7 +291,9 @@
                                 fillOpacity: 2,
                             });
                             group.feature.selected = true;
-                            $("#data-point-display").append(window.featcherPrecinct(group.feature.properties));
+
+                            $("#data-point-display").append(_.template(template("templates/featcherPrecinct.html"), group.feature.properties));
+
                         } else {
                             group.setStyle({
                                 weight: .3,
@@ -321,7 +332,7 @@
         },
 
         render: function(mapDataObject){
-            $(mapDataObject.container).html(this.template);
+            $(mapDataObject.container).html(_.template(this.template));
             this.map = L.map("content-map-canvas", {
                 scrollWheelZoom: false,
                 zoomControl: false,

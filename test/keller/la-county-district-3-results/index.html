@@ -41,7 +41,7 @@
         <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
-        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
         <!-- end css -->
 
         <!--[if lte IE 8]>
@@ -79,83 +79,8 @@
         </div>
         <!-- end main container -->
 
-        <script id="map-application-template" type="text/template">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                        <div id="content-display-canvas">
-                            <div class="bound prologue">
-                                <h1 class="chapter">LA County's 3rd Supervisor District</h1>
-                                <p>After finishing as the top-two vote getters from the June 3 primary, former state lawmaker Sheila Kuehl and former Santa Monica Mayor Bobby Shriver are headed for a November election to determine who will represent the 3rd District on the LA County Board of Supervisors.</p>
-                                <p>This map shows which candidate "won" which precinct during the primary. Click a precinct for more detail or use the buttons below to filter the results.</p>
-                            </div>
-                            <div id="content-map-explainer">
-                                <div class="controls">
-                                    <form class="filters">
-                                        <div id="data-toggles">
-                                            <ul class="list-inline buttons btn-group btn-group-justified">
-                                                <li><a class="kuehlPrecincts btn btn-primary" href="javascript:void(0)">Show only precincts for Kuehl</a></li>
-                                                <li><a class="shriverPrecincts btn btn-primary" href="javascript:void(0)">Show only precincts for Shriver</a></li>
-                                                <li><a class="resetMap btn btn-primary" href="javascript:void(0)">Reset Map</a></li>
-                                            </ul>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="data-display clearfix"></div>
-                                <div id="content-map-data">
-                                    <div id="data-point-display"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-                        <div id="content-map-legend">
-                            <table class="table table-striped">
-                                <tbody>
-                                    <tr>
-                                        <td style="width: 33%; background: #55cbdd; color: #000000; font-weight: bold;">Shriver beat Kuehl</td>
-                                        <td style="width: 33%; background: rgba(0,0,0,0.8); color: #ffffff; font-weight: bold;">Candidates tied</td>
-                                        <td style="width: 33%; background: #fbd341; color: #000000; font-weight: bold;">Kuehl beat Shriver</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div id="content-map-canvas"></div>
-                    </div>
-                </div>
-            </div>
-        </script>
-
-        <script id="featcherPrecinct" type="text/template">
-            <div class="row precinct-data" id="precinct_<%= june_2014_ %>">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <h6><%= june_2014_ %> - <%= proper_loc %></h6>
-                    <ul class="list-inline">
-                        <li><strong>Registered voters</strong>: <%= registrati %></li>
-                        <li><strong>Ballots cast</strong>: <%= ballots %></li>
-                        <li><strong>Voter turnout</strong>: <%= window.percentifyValue(results.voterTurnout) %>%</li>
-                    </ul>
-                    <ul class="list-inline">
-                        <li><strong>Shriver votes</strong>: <%= shriver %> (<%= window.percentifyValue(shriver/ballots) %>%)</li>
-                        <li><strong>Kuehl votes</strong>: <%= kuehl %> (<%= window.percentifyValue(kuehl/ballots) %>%)</li>
-                    </ul>
-                </div>
-            </div>
-            <hr />
-        </script>
-
-        <script id="featcherSentence" type="text/template">
-            <tr id="precinct_<%= june_2014_ %>">
-            <td><%= proper_loc %></td>
-            <td><%= registrati %></td>
-            <td><%= ballots %></td>
-            <td><%= window.percentifyValue(results[0].voterTurnout) %></td>
-            <td><%= shriver %></td>
-            <td><%= kuehl %></td>
-        </script>
-
         <!-- begin scripts -->
-        <script src="la-county-district-3-results.js"></script>
+        <script src="data/la-county-district-3-results.js"></script>
         <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.2/leaflet.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -165,7 +90,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.2.1/moment.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script src="map-application.js"></script>
+        <script src="scripts/map-application.js"></script>
         <!-- end scripts -->
 
         <!-- begin chartbeat -->
