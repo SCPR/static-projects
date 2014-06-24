@@ -6,14 +6,14 @@
     <li class="projects-share">
         <div class="share-links clearfix">
             <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
-                <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fprojects.scpr.org%2Fstatic%2Finteractives%2Fnba-owner-reaction-to-sterling-punishment%2F" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
-                <a class="twitter icon" href="http://twitter.com/share?text=Donald Sterling: Where the 30 NBA owners stand&url=http%3A%2F%2Fprojects.scpr.org%2Fstatic%2Finteractives%2Fnba-owner-reaction-to-sterling-punishment%2F"></a>
+                <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=<%= encoded_share_url %>" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
+                <a class="twitter icon" href="http://twitter.com/share?text=<%= twitter_share_text %>&url=<%= encoded_share_url %>"></a>
         </div>
         <b>Share this</b>
     </li>
     <li class="projects-embed">
-        <a href="javascript:void(0)" class="embed-this icon" onclick="initializeTemplates.renderEmbedBox()">Embed This</a>
-        <a href="javascript:void(0)" target="_blank" onclick="initializeTemplates.renderEmbedBox()"><b>Embed This</b></a>
+        <a href="javascript:void(0)" class="embed-this icon">Embed This</a>
+        <a href="javascript:void(0)" target="_blank"><b>Embed This</b></a>
     </li>
     <li class="projects-home">
         <a href="http://projects.scpr.org/" class="projects-home icon">Projects Home</a>
