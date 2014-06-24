@@ -77,6 +77,7 @@
     App.Router = Backbone.Router.extend({
         initialize: function(){
             $(".kpcc-header").html(_.template(template("http://projects.scpr.org/static/static-files/v3-dependencies/templates/kpcc-header.html")));
+            $(".data-details").html(_.template(template("templates/data-details.html")));
             $(".kpcc-footer").html(_.template(template("http://projects.scpr.org/static/static-files/v3-dependencies/templates/kpcc-footer.html")));
         },
 
@@ -100,7 +101,7 @@
     });
 
     App.Views.MapApplication = Backbone.View.extend({
-        template: template("templates/map-application.html"),
+        template: template("templates/data-visuals.html"),
         el: ".data-visuals",
         initialize: function(mapDataObject){
             this.mapDataObject = mapDataObject;
@@ -212,7 +213,7 @@
                         opacity: 2,
                         fillOpacity: 2,
                     });
-                    $("#data-point-display").append(_.template(template("templates/featcherPrecinct.html"), feature.properties));
+                    $("#data-point-display").append(_.template(template("templates/featcher-precinct.html"), feature.properties));
                     feature.selected = true;
                 } else {
                     this.setStyle({
@@ -230,8 +231,6 @@
             var apiPrefix = "http://api.censusreporter.org/1.0/geo/search?";
             var apiQuery = apiPrefix + "lat=" + lat + "&lon=" + lng;
             console.log(apiQuery);
-
-
         },
 
         kuehlMap: function(e){
@@ -292,7 +291,7 @@
                             });
                             group.feature.selected = true;
 
-                            $("#data-point-display").append(_.template(template("templates/featcherPrecinct.html"), group.feature.properties));
+                            $("#data-point-display").append(_.template(template("templates/featcher-precinct.html"), group.feature.properties));
 
                         } else {
                             group.setStyle({
