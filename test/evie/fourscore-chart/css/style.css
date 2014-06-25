@@ -1,8 +1,11 @@
 .data-container .data-visuals { margin: 40px auto 5px auto; }
 
+#fs-comment-filters { margin-top: 35px; }
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
     .fs-tooltip { font-weight: 80%; width: 90%; display: none; }
     .fs-form label { font-size: 80%; }
+    #fs-comment-filters .fs-comment-filter{ width: 40px; height: 40px; }
 }
 
 @media screen and (min-width: 1021px) and (max-width: 1179px) {
@@ -18,9 +21,11 @@
 @media screen and (min-width: 680px) and (max-width: 879px) {
     .fs-tooltip { font-weight: 80%; width: 90%; display: none; }
     .fs-form label { font-size: 80%; }
+    #fs-comment-filters .fs-comment-filter{ width: 40px; height: 40px; }
 }
 
 @media screen and (max-width:679px) {
     .fs-tooltip { font-weight: 80%; width: 90%; display: none; }
     .fs-form label { font-size: 80%; }
+    #fs-comment-filters .fs-comment-filter{ width: 40px; height: 40px; }
 }
