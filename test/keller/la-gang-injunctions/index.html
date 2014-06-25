@@ -7,7 +7,7 @@
     <head>
 
         <!-- begin meta -->
-        <title>Xxxxxxx xxxxx xxxxxx | scpr.org</title>
+        <title>Xxxxxxx | scpr.org</title>
         <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@
         <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
         <!-- end css -->
 
         <!--[if lte IE 8]>
@@ -75,6 +75,13 @@
         <div class="container data-container">
             <div class="row data-details"></div>
             <div class="row data-visuals"></div>
+            <div class="row data-comments">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="disqus_thread"></div>
+                </div>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
             <div class="row kpcc-footer"></div>
         </div>
         <!-- end main container -->
@@ -89,23 +96,13 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.2.1/moment.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script src="scripts/jquery.ba-dotimeout.min.js"></script>
-        <script src="scripts/data.js"></script>
+        <script src="data/data.js"></script>
+        <script src="scripts/wrapper.js"></script>
         <script src="scripts/app.js"></script>
-        <script src="scripts/router/router.js"></script>
-        <script src="scripts/models/safetyZone.js"></script>
-        <script src="scripts/collections/safetyZones.js"></script>
-        <script src="scripts/views/map.js"></script>
-
-        <!--
-        <script src="scripts/views/appView.js"></script>
-        <script src="scripts/views/listView.js"></script>
-        <script src="scripts/views/detailView.js"></script>
-        -->
-
         <!-- end scripts -->
 
         <!-- begin chartbeat -->
+        <!--
         <script type="text/javascript">
             var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
             (function() {
@@ -121,9 +118,11 @@
                 window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
             })();
         </script>
+        -->
         <!-- end chartbeat -->
 
         <!-- begin google analytics -->
+        <!--
         <script type="text/javascript">
             var hostName = 'projects.scpr.org';
             var _gaq = _gaq || [];
@@ -145,9 +144,11 @@
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
         </script>
+        -->
         <!-- end google analytics -->
 
         <!-- begin webtrends stats -->
+        <!--
         <script src="http://media.scpr.org/assets/scripts/webtrends.v2.js"></script>
         <script>
             //<![CDATA[
@@ -167,9 +168,11 @@
         <noscript>
             <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsyqctzwuz5bdsebpmwhwe8w_2p8d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.3.0&amp;WT.dcssip=www.scpr.org"/></div>
         </noscript>
+        -->
         <!-- end webtrends stats -->
 
         <!-- begin comscore stats -->
+        <!--
         <script>
             var _comscore = _comscore || [];
             _comscore.push({ c1: "2", c2: "6035974", c3: "", c4: "" });
@@ -182,7 +185,9 @@
         <noscript>
             <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035974&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
         </noscript>
+        -->
         <!-- end comscore stats -->
+
     </body>
     <!-- end body -->
 

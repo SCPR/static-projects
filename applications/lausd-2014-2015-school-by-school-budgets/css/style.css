@@ -23,7 +23,7 @@
 .data-legend #icon-display {margin: 25px 0 0 0;}
 
 @media (max-width: 491px) {
-    body.minimal .data-container h4 {font-size: 175%;}
+    body.minimal .data-container h4 {font-size: 140%;}
     body.minimal .data-container h5 {font-size: 130%;}
     body.minimal .data-container h6 {font-size: 95%;}
     .data-container .data-legend .jumbotron ul li {font-size: 65%;}
