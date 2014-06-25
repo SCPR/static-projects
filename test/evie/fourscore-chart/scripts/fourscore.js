@@ -282,23 +282,23 @@ var FourScore = function(opt){
     label_height_perc = $('.fs-grid-label[data-location="left"]').outerHeight() / grid_height / 2 * 100;
     label_height_padding_px = $('.fs-grid-label[data-location="left"]').outerHeight() - $('.fs-grid-label[data-location="left"]').height();
     label_width_px = $('.fs-grid-label[data-location="left"]').width() / 2;
-    $('.fs-grid-label[data-location="left"]').css({'left': '-' + (label_width_px + label_height_padding_px - 1) + 'px', 'top': (50 - label_height_perc) + '%', });
+    $('.fs-grid-label[data-location="left"]').css({'left': '-' + (label_width_px + label_height_padding_px + 20) + 'px', 'top': (50 - label_height_perc) + '%', });
     // Right
     $('<div class="fs-grid-label" data-location="right"></div>').hide().appendTo($grid).html(x_labels[1]);
     label_height_padding_px = $('.fs-grid-label[data-location="right"]').outerHeight() - $('.fs-grid-label[data-location="right"]').height();
     label_width_px = $('.fs-grid-label[data-location="right"]').width() / 2;
 
-    $('.fs-grid-label[data-location="right"]').css({'right': '-'+ (label_width_px + label_height_padding_px - 2) +  'px', 'top': (50 - label_height_perc) + '%', });
+    $('.fs-grid-label[data-location="right"]').css({'right': '-'+ (label_width_px + label_height_padding_px + 20) +  'px', 'top': (50 - label_height_perc) + '%', });
 
     /* Y-Labels */
     // Top
     $('<div class="fs-grid-label" data-location="top"></div>').hide().appendTo($grid).html(y_labels[0]);
     label_width_perc = $('.fs-grid-label[data-location="top"]').outerWidth() / grid_width / 2 * 100;
-    $('.fs-grid-label[data-location="top"]').css({'top': 0, 'left': (50 - label_width_perc ) + '%'});
+    $('.fs-grid-label[data-location="top"]').css({'top': -25, 'left': (50 - label_width_perc ) + '%'});
     // Bottom
     $('<div class="fs-grid-label" data-location="bottom"></div>').hide().appendTo($grid).html(y_labels[1]);
     label_width_perc = $('.fs-grid-label[data-location="bottom"]').outerWidth() / grid_width / 2 * 100;
-    $('.fs-grid-label[data-location="bottom"]').css({'bottom': 0, 'left': (50 - label_width_perc ) + '%'});
+    $('.fs-grid-label[data-location="bottom"]').css({'bottom': -25, 'left': (50 - label_width_perc ) + '%'});
 
     $('.fs-grid-label').show();
   }
@@ -392,8 +392,8 @@ var FourScore = function(opt){
       }
 
       //Math for where to position the form
-      if (e.pageX + 2 + formWidth > gridOffset.left + gridWidth) formLeft -= 4 + formWidth;
-      if (e.pageY + 2 + formWidth > gridOffset.top + gridWidth) formTop -= 4 + formHeight;
+      //if (e.pageX + 2 + formWidth > gridOffset.left + gridWidth) formLeft -= 4 + formWidth;
+      //if (e.pageY + 2 + formWidth > gridOffset.top + gridWidth) formTop -= 4 + formHeight;
 
       //$formDiv
         //.css({
@@ -411,9 +411,16 @@ var FourScore = function(opt){
   }
 
     $.fn.center = function () {
+
         this.css('position','fixed');
-        this.css('top', ( $(window).height() - this.height() ) / 4);
-        this.css('left', ( $(window).width() - this.width() ) / 2);
+
+        if (navigator.userAgent.match(/(iPhone)|(iPod)|(android)|(webOS)/i)) {
+            this.css('left', ( $(window).width() - this.width() ) / 5);
+        } else {
+            this.css('left', ( $(window).width() - this.width() ) / 2);
+        };
+
+        this.css('top', ( $(window).height() - this.height() ) / 2);
         return this;
     }
 

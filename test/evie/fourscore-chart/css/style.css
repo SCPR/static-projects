@@ -1,3 +1,26 @@
-#team-container {background: #ffffff; min-height: 230px; height: 100%; margin-bottom: 15px; padding: 5px 0 5px 0;}
-#team-container img {width: 92%; margin: 20px 4% 10px 4%; vertical-align: middle;}
-.buttons {margin-top: 25px;}
+.data-container .data-visuals { margin: 40px auto 5px auto; }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    .fs-tooltip { font-weight: 80%; width: 90%; display: none; }
+    .fs-form label { font-size: 80%; }
+}
+
+@media screen and (min-width: 1021px) and (max-width: 1179px) {
+    .fs-tooltip { font-weight: 80%; width: 90%; display: none; }
+    .fs-form label { font-size: 80%; }}
+}
+
+@media screen and (min-width: 880px) and (max-width: 1020px) {
+    .fs-tooltip { font-weight: 80%; width: 90%; display: none; }
+    .fs-form label { font-size: 80%; }
+}
+
+@media screen and (min-width: 680px) and (max-width: 879px) {
+    .fs-tooltip { font-weight: 80%; width: 90%; display: none; }
+    .fs-form label { font-size: 80%; }
+}
+
+@media screen and (max-width:679px) {
+    .fs-tooltip { font-weight: 80%; width: 90%; display: none; }
+    .fs-form label { font-size: 80%; }
+}

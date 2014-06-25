@@ -8,7 +8,12 @@ jqueryNoConflict(document).ready(function() {
 
     var urlLink = window.location.href;
     if (urlLink.indexOf("embed") > -1){
-        appConfig.openAboutThis = false;
+        appConfig.open_about_this = false;
+    };
+
+    // set params for mobile devices
+    if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+        appConfig.open_about_this = false;
     };
 
     initializeTemplates.renderStaticTemplates();
@@ -16,7 +21,7 @@ jqueryNoConflict(document).ready(function() {
 
 // application configuration object
 var appConfig = {
-    openAboutThis: true,
+    open_about_this: true,
     embed_this: false,
     embed_url_root: "http://projects.scpr.org/static/charts/sentiments-la-parking/?=embed/",
     embed_width: "100%",
@@ -70,7 +75,7 @@ var initializeTemplates = {
             jqueryNoConflict('span.about').addClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-up');
         });
 
-        if (appConfig.openAboutThis === true){
+        if (appConfig.open_about_this === true){
             $('.text').collapse('show');
         };
 
