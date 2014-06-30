@@ -1,0 +1,26 @@
+<div class="candidate-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <% _.each(collection, function(model) { %>
+        <div class="category row">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <img class="placemark" src="<%= model.icon %>" alt="<%= model.goal %>" />
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                <h2 class="text-center"><%= model.goal %><h2>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                <h2 class="text-center">
+                    <% if (model.grade === "A" || model.grade === "B" ) { %>
+                        <span style="color: green;">
+                    <% } else if (model.grade === "C") { %>
+                        <span style="color: blue;">
+                    <% } else { %>
+                        <span style="color: red;">
+                    <% } %>
+                        <%= model.grade %>
+                    </span>
+                </h2>
+            </div>
+        </div>
+        <hr />
+    <% }); %>
+</div>

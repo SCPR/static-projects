@@ -1,0 +1,39 @@
+body.minimal .data-container {max-width: 100%; margin: 0 auto;}
+
+.data-visuals .category {margin: 15px 0 10px 0;}
+
+@media (max-width: 491px) {
+    body.minimal .data-container h2 {font-size: 175%; margin-top: 10%;}
+    .placemark {width: 170%; vertical-align: text-bottom;}
+    .data-container p {font-size: 65%;}
+}
+
+@media (min-width: 491px) {
+    body.minimal .data-container h2 {font-size: 200%; margin-top: 10%;}
+    .placemark {width: 150%; vertical-align: text-bottom;}
+    .data-container p {font-size: 65%;}
+}
+
+@media (min-width: 567px) {
+    body.minimal .data-container h2 {font-size: 300%; margin-top: 10%;}
+    .placemark {width: 150%; vertical-align: text-bottom;}
+    .data-container p {font-size: 75%;}
+}
+
+@media (min-width: 768px) {
+    body.minimal .data-container h2 {font-size: 350%; margin-top: 10%;}
+    .placemark {width: 100%; vertical-align: text-bottom;}
+    .data-container p {font-size: 75%;}
+}
+
+@media (min-width: 830px) {
+    body.minimal .data-container h2 {font-size: 400%; margin-top: 10%;}
+    .placemark {width: 100%; vertical-align: text-bottom;}
+    .data-container p {font-size: 75%;}
+}
+
+@media (min-width: 992px) {
+    body.minimal .data-container h2 {font-size: 450%; margin-top: 10%;}
+    .placemark {width: 100%; vertical-align: text-bottom;}
+    .data-container p {font-size: 90%;}
+}
