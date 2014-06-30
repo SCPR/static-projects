@@ -57,7 +57,7 @@ var appConfig = {
     // use flat-file or spreadsheet
     dataSource: "spreadsheet",
     spreadsheetKey: "0AjsyCVrBXivzdDVma0I4a01iREEyNUQxWHhaN2xzSWc",
-    flatFile: "data/nba_owner_reactions.json"
+    flatFile: null
 };
 
 // begin data processing object
