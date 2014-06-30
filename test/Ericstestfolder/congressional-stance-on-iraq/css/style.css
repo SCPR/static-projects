@@ -15,15 +15,15 @@
 #content-action-bar {width: 100%; height: 20px; text-align: left; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px; z-index: 1;}
 
 
-.quote {background: url(i/ephemera-quote-blue-open.png) no-repeat 0 0, url(i/ephemera-quote-blue-close.png) no-repeat bottom right; 
+.quote {background: url(i/ephemera-quote-blue-open.png) no-repeat 0 0, url(i/ephemera-quote-blue-close.png) no-repeat bottom right;
     background-size:
-		120px 60px,
-		120px 60px;
-	padding-top: 3%;
-	padding-left: 5%;
-	padding-bottom: 1%;
-	margin-top: 3%;
-	margin-left: -4%;
+        120px 60px,
+        120px 60px;
+    padding-top: 3%;
+    padding-left: 5%;
+    padding-bottom: 1%;
+    margin-top: 3%;
+    margin-left: -4%;
 }
 
 .quote p{padding:15px}
@@ -43,12 +43,12 @@ select {width: 80%; margin: 0 10% 0 10%;}
 
 /* headlines, photos for Large desktop */
 @media (max-width: 1000px) {
-    .placemark {height:150px}    
+    .placemark {height:150px}
 }
 
 /* headlines, photos for Large desktop */
 @media (max-width: 767px) {
-    .placemark {height:350px}    
+    .placemark {height:350px}
 }
 
 
