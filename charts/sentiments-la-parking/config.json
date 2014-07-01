@@ -17,7 +17,7 @@
     "commentsTarget": "comments",
     "colors": {
       "name": "Reds",
-      "number": 5
+      "number": 9
     }
   },
   "dataDestination": "https://docs.google.com/forms/d/1vx9M3BFcjlZ3LRj2cpsokNuus4-ktORPaPtwWWPhKTE/formResponse",

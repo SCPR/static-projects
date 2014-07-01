@@ -189,19 +189,21 @@
 
             this.center = new L.LatLng(34.061841979429445, -118.26370239257812);
 
+/*
             this.geojsonLayer = L.geoJson(null, {
                 filter: this.filterFeatures,
                 style: this.styleFeatures,
                 onEachFeature: this.onEachFeature
             });
+    */
 
-            /*
+            
             this.geojsonLayer = L.geoJson(gangInjunctionData, {
                 filter: this.filterFeatures,
                 style: this.styleFeatures,
                 onEachFeature: this.onEachFeature
             });
-            */
+            
 
             this.render(this.mapDataObject);
 
