@@ -104,13 +104,13 @@
             });
     */
 
-            
+
             this.geojsonLayer = L.geoJson(gangInjunctionData, {
                 filter: this.filterFeatures,
                 style: this.styleFeatures,
                 onEachFeature: this.onEachFeature
             });
-            
+
 
             this.render(this.mapDataObject);
 
