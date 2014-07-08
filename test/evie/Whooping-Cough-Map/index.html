@@ -1,198 +1,345 @@
-<!DOCTYPE html>
+ <html>
 
-<!-- begin doc -->
-<html lang="en">
+ <head>
 
-    <!-- begin header -->
-    <head>
+<!-- css -->
+ <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
-        <!-- begin meta -->
-        <title>Xxxxxxx | scpr.org</title>
-        <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <link rel="apple-touch-icon" href="http://media.scpr.org/assets/images/icon.png">
-        <meta name="format-detection" content="telephone=no"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="robots" content="#" />
-        <meta name="description" content="#" />
-        <meta name="keywords" content="#" />
-        <meta property="og:title" content="#" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png" />
-        <meta property="og:image:width" content="500" />
-        <meta property="og:image:height" content="500" />
-        <meta property="og:url" content="#" />
-        <meta property="og:description" content="#" />
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:url" content="#">
-        <meta name="twitter:domain" content="http://projects.scpr.org/">
-        <meta name="twitter:site" content="KPCC">
-        <meta name="twitter:title" content="#">
-        <meta name="twitter:description" content="#">
-        <meta name="twitter:image:src" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png">
-        <!-- end meta -->
+<!-- script -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script src="scripts/ca_county_shapes_with_data.js"></script>
 
-        <!-- begin css -->
-        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
-        <link href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
-        <link href="css/style.css" rel="stylesheet" type="text/css" />
-        <!-- end css -->
 
-        <!--[if lte IE 8]>
-            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.ie.min.css" />
-        <![endif]-->
 
-        <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
-        <!--[if lte IE 9]>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
-            <link href="http://projects.scpr.org/static/static-files/v3-dependencies/respond-proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
-            <link href="respond-proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
-            <script src="respond-proxy/respond.proxy.js"></script>
-        <![endif]-->
+</head>
 
-        <!-- begin base scripts -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script type="text/javascript" src="//use.typekit.net/air8rql.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-        <!-- end base scripts -->
 
-    </head>
-    <!-- end header -->
+<body>
 
-    <!-- begin body -->
-    <body class="minimal">
+ <button id="number_2013"> 2013 </button>
+ <button id="number_2014"> 2014 </button>
+ <div id="map" style="height: 680px;"></div>
 
-        <div class="kpcc-header"></div>
 
-        <!-- begin main container -->
-        <div class="container data-container">
-            <div class="row data-details"></div>
-            <div class="row data-visuals"></div>
-            <div class="row data-comments">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div id="disqus_thread"></div>
-                </div>
-                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-            </div>
-            <div class="row kpcc-footer"></div>
-        </div>
-        <!-- end main container -->
+ <script>
 
-        <!-- begin scripts -->
-        <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.2/leaflet.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/tabletop.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
-        <script src="scripts/tabletop.js"></script>
-        <script src="scripts/backbone.tabletopSync.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.2.1/moment.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script src="scripts/ca-county-shapes.js"></script>
-        <script src="scripts/wrapper.js"></script>
-        <script src="scripts/app.js"></script>
-        <!-- end scripts -->
+var map = L.map('map').setView([37.853742, -121.028776], 6);
 
-        <!-- begin chartbeat -->
-        <!--
-        <script type="text/javascript">
-            var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
-            (function() {
-                function loadChartbeat() {
-                    window._sf_endpt = (new Date()).getTime();
-                    var e = document.createElement('script');
-                    e.setAttribute('language', 'javascript');
-                    e.setAttribute('type', 'text/javascript');
-                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
-                    document.body.appendChild(e);
-                };
-                var oldonload = window.onload;
-                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
-            })();
-        </script>
-        -->
-        <!-- end chartbeat -->
+blackscale = L.tileLayer("http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    minZoom: 6,
+    maxZoom: 14
+}).addTo(map);
 
-        <!-- begin google analytics -->
-        <!--
-        <script type="text/javascript">
-            var hostName = 'projects.scpr.org';
-            var _gaq = _gaq || [];
-            _gaq.push(
-                ['_setAccount', 'UA-624724-1'],
-                ['_setDomainName', hostName],
-                ['_setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
-                ['_setCustomVar', 7, 'PageType', 'Story', 3],
-                ['_trackPageview'],
-                ['b._setAccount', 'UA-18188937-11'],
-                ['b._setDomainName', hostName],
-                ['b._setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
-                ['b._setCustomVar', 7, 'PageType', 'Story', 3],
-                ['b._trackPageview']
-            );
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
-        -->
-        <!-- end google analytics -->
+$.getJSON("data.json", function(coughdata){
 
-        <!-- begin webtrends stats -->
-        <!--
-        <script src="http://media.scpr.org/assets/scripts/webtrends.v2.js"></script>
-        <script>
-            //<![CDATA[
-                var _tag=new WebTrends();
-                _tag.dcsGetId();
-            //]]>
-        </script>
-        <script>
-            //<![CDATA[
-                _tag.dcsCustom=function(){
-                    // Add custom parameters here.
-                    //_tag.DCSext.param_name=param_value;
-                }
-            _tag.dcsCollect();
-            //]]>
-        </script>
-        <noscript>
-            <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsyqctzwuz5bdsebpmwhwe8w_2p8d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.3.0&amp;WT.dcssip=www.scpr.org"/></div>
-        </noscript>
-        -->
-        <!-- end webtrends stats -->
+    });
 
-        <!-- begin comscore stats -->
-        <!--
-        <script>
-            var _comscore = _comscore || [];
-            _comscore.push({ c1: "2", c2: "6035974", c3: "", c4: "" });
-            (function() {
-            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
-            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
-            el.parentNode.insertBefore(s, el);
-            })();
-        </script>
-        <noscript>
-            <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035974&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
-        </noscript>
-        -->
-        <!-- end comscore stats -->
 
-    </body>
-    <!-- end body -->
+    function getColor(d) {
+    return d > 30 ? '#800026' :
+           d > 25  ? '#BD0026' :
+           d > 20  ? '#E31A1C' :
+           d > 15  ? '#FC4E2A' :
+           d > 10   ? '#FD8D3C' :
+           d > 5   ? '#FEB24C' :
+           d > 2   ? '#FED976' :
+                      '#FFEDA0';
+    }
 
-</html>
-<!-- end document -->
+    
+    function style2010(feature) {
+
+    return {
+        fillColor: getColor(feature.properties.data_OneRate),
+        weight: 0.3,
+        opacity: 1,
+        color: 'black',
+        //dashArray: '3',
+        fillOpacity: 0.8
+        };
+        
+
+    } 
+
+
+    function style2011(feature) {
+
+    return {
+        fillColor: getColor(feature.properties.data_TwoRate),
+        weight: 0.3,
+        opacity: 1,
+        color: 'black',
+        //dashArray: '3',
+        fillOpacity: 0.8
+        };
+
+    } 
+
+    function style2012(feature) {
+
+    return {
+        fillColor: getColor(feature.properties.data_ThreeRate),
+        weight: 0.3,
+        opacity: 1,
+        color: 'black',
+        //dashArray: '3',
+        fillOpacity: 0.8
+        };
+        
+
+    } 
+
+    function style2013(feature) {
+
+    return {
+        fillColor: getColor(feature.properties.data_FourRate),
+        weight: 0.3,
+        opacity: 1,
+        color: 'black',
+        //dashArray: '3',
+        fillOpacity: 0.8
+        };
+        
+
+    } 
+
+
+    function style2014(feature) {
+
+    return {
+        fillColor: getColor(feature.properties.data_FiveRate),
+        weight: 0.3,
+        opacity: 1,
+        color: 'black',
+        //dashArray: '3',
+        fillOpacity: 0.8
+        };
+        
+
+    } 
+
+
+
+function highlightFeature(e) {
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 3,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7,
+        fillColor: 'black'
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera) {
+        layer.bringToFront();
+    }
+
+     info.update(layer.feature.properties);
+}
+
+function resetHighlight2010(e) {
+    data2010.resetStyle(e.target);
+
+    info.update();
+}
+
+function resetHighlight2011(e) {
+    data2011.resetStyle(e.target);
+
+    info2011.update();
+}
+
+
+function resetHighlight2012(e) {
+    data2012.resetStyle(e.target);
+
+    info2012.update();
+}
+
+function resetHighlight2013(e) {
+    data2013.resetStyle(e.target);
+
+    info2013.update();
+}
+
+
+function resetHighlight2014(e) {
+    data2014.resetStyle(e.target);
+
+    info2014.update();
+}
+
+
+function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+}
+
+
+function onEachFeature2010(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight2010,
+        click: zoomToFeature
+    });
+}
+
+function onEachFeature2011(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight2011,
+        click: zoomToFeature
+    });
+}
+
+
+function onEachFeature2012(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight2012,
+        click: zoomToFeature
+    });
+}
+
+function onEachFeature2013(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight2013,
+        click: zoomToFeature
+    });
+}
+
+function onEachFeature2014(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight2014,
+        click: zoomToFeature
+    });
+}
+
+data2010 = L.geoJson(ca_county, {
+    style: style2010,
+    onEachFeature: onEachFeature2010
+});
+
+data2011 = L.geoJson(ca_county, {
+    style: style2011,
+    onEachFeature: onEachFeature2011
+});
+
+data2012 = L.geoJson(ca_county, {
+    style: style2012,
+    onEachFeature: onEachFeature2012
+});
+
+data2013 = L.geoJson(ca_county, {
+    style: style2013,
+    onEachFeature: onEachFeature2013
+});
+
+data2014 = L.geoJson(ca_county, {
+    style: style2014,
+    onEachFeature: onEachFeature2014
+}).addTo(map); 
+
+
+var baseMaps = {
+    "Data2010": data2010,
+    "Data2011": data2011,
+    "Data2012": data2012,
+    "Data2013": data2013,
+    "Data2014": data2014,
+};
+
+var overlayMaps = {
+
+};
+
+var controlPanel = {
+    "position": "topleft",
+    "collapsed": false,
+};
+
+L.control.layers(baseMaps, overlayMaps, controlPanel).addTo(map);
+
+
+
+var info = L.control();
+
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+
+// method that we will use to update the control based on feature properties passed
+
+info.update = function (props) {
+    this._div.innerHTML = '<h4>Whooping Cough Case Numbers</h4>' +  (props ?
+        '<b>' + props.name + '</b><br />' + props.data_OneCases + ' cases / 100,000 population'
+        : 'Hover over a county');
+};
+
+info.addTo(map);
+
+
+/* var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+        labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    }
+
+    return div;
+};
+
+legend.addTo(map); */
+
+
+
+
+ </script>
+
+ <style>
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+ </style>
+
+
+</body>
+
+
+
+ </html>
