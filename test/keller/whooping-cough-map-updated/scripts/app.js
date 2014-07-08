@@ -11,94 +11,75 @@
             cases: null,
             rate: null,
         },
-
         tabletop: {
             instance: window.storage,
             sheet: "data_2014"
         },
-
         sync: Backbone.tabletopSync
     });
-
 
     App.Collections.WhoopingCoughYears = Backbone.Collection.extend({
         model: App.Models.WhoopingCoughYear,
-
-        //url: "data/data.json",
-
         tabletop: {
             instance: window.storage,
             sheet: "data_2014"
         },
-
         sync: Backbone.tabletopSync
-
     });
-
 
     App.Router = Backbone.Router.extend({
 
         initialize: function(){
-
             this.applicationWrapper = new App.Views.ApplicationWrapper();
             return this.applicationWrapper;
-
         },
 
         routes: {
-            "": "renderApplicationVisuals",
+            "": "fetchData",
         },
 
-        renderApplicationVisuals: function(){
+        fetchData: function(){
 
-            window.whoopingCollection = new App.Collections.WhoopingCoughYears();
+            var _this = this;
 
-            window.whoopingCollection.fetch();
+            var applicationCollection = new App.Collections.WhoopingCoughYears();
+
+            applicationCollection.fetch({
+                async: true
+            });
+
+            var checkExist = setInterval(function() {
+                if (applicationCollection.length > 0){
+                    clearInterval(checkExist);
+                    _this.renderApplicationVisuals(applicationCollection);
+                }
+            }, 500);
+        },
+
+        renderApplicationVisuals: function(collection){
 
             if (this.applicationVisuals){
                 this.applicationVisuals.remove();
             };
 
             this.applicationVisuals = new App.Views.ApplicationVisuals({
-                collection: window.whoopingCollection,
-                container: ".data-visuals",
+                collection: collection,
+                container: ".data-visuals"
             });
 
             return this.applicationVisuals;
+
         },
 
     });
 
     App.Views.ApplicationVisuals = Backbone.View.extend({
-
-        //tagName: "div",
-
-        //className: "col-xs-12 col-sm-12 col-md-12 col-lg-12",
-
         template: template("templates/data-visuals.html"),
 
         el: ".data-visuals",
 
         initialize: function(viewObject){
-
-            console.log(viewObject);
-
-            this.viewObject = viewObject;
-
-            this.stamenToner = new L.tileLayer(
-                "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
-                    attribution: "Map tiles by <a href='http://stamen.com' target='_blank'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0' target='_blank'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://openstreetmap.org' target='_blank'>OpenStreetMap</a> contributors, <a href='http://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>",
-                    minZoom: 6,
-                    maxZoom: 14
-            });
-
-            this.geojsonLayer = L.geoJson(californiaCounties, {
-                filter: this.filterFeatures,
-                style: this.styleFeatures,
-                onEachFeature: this.onEachFeature
-            });
-
-            this.render(this.viewObject);
+            this.render(viewObject);
 
             /*
             $("#animation-slider").slider({
@@ -135,21 +116,12 @@
         },
 
         styleFeatures: function (feature) {
-
-            var layerColor;
-
-            if (feature.properties.name === "Los Angeles"){
-                layerColor = "red";
-            } else {
-                layerColor = "green";
-            }
-
             return {
                 color: "black",
                 weight: 1,
                 opacity: 1,
-                fillOpacity: .5,
-                fillColor: layerColor
+                fillOpacity: 1,
+                fillColor: feature.properties.layerColor
             }
         },
 
@@ -159,7 +131,7 @@
 
             layer.on("click", function(e){
 
-                console.log(feature);
+                console.log(feature.properties.rate);
 
                 /*
                 $("#injunction-details").html(
@@ -245,8 +217,71 @@
         },
         */
 
-        render: function(mapDataObject){
-            $(mapDataObject.container).html(_.template(this.template));
+
+        render: function(viewObject){
+
+            $(viewObject.container).html(_.template(this.template));
+
+            var equalIntervalArray = [];
+
+            for (var i=0; i<californiaCounties.features.length; i++){
+
+                var casesObject = viewObject.collection.where({
+                    "countyproper": californiaCounties.features[i].properties.name
+                });
+
+                equalIntervalArray.push(parseFloat(casesObject[0].attributes.rate));
+
+                californiaCounties.features[i].properties.updated = casesObject[0].attributes.updated;
+                californiaCounties.features[i].properties.cases = parseInt(casesObject[0].attributes.cases);
+                californiaCounties.features[i].properties.rate = parseFloat(casesObject[0].attributes.rate);
+                californiaCounties.features[i].properties.test = casesObject[0].attributes.county;
+            };
+
+            console.log(equalIntervalArray);
+
+            var equalIntervalBreaks = jsStats.equalIntervalBreaks(equalIntervalArray, 5);
+
+            console.log(equalIntervalBreaks);
+
+            //var minValue = _.min(equalIntervalArray);
+            //var maxValue = _.max(equalIntervalArray);
+            //var numRanges = 4;
+            //var mapIntervalBreaks = (maxValue - minValue)/numRanges;
+            //console.log(maxValue);
+            //console.log(minValue);
+            //console.log(mapIntervalBreaks);
+
+            for (var i=0; i<californiaCounties.features.length; i++){
+                var comparitor = californiaCounties.features;
+                if (comparitor[i].properties.rate >= equalIntervalBreaks[3].upper){
+                    comparitor[i].properties.layerColor = "#bd0026";
+                } else if (comparitor[i].properties.rate >= equalIntervalBreaks[2].upper) {
+                    comparitor[i].properties.layerColor = "#f03b20";
+                } else if (comparitor[i].properties.rate >= equalIntervalBreaks[1].upper){
+                    comparitor[i].properties.layerColor = "#fd8d3c";
+                } else if (comparitor[i].properties.rate >= equalIntervalBreaks[0].upper){
+                    comparitor[i].properties.layerColor = "#fecc5c";
+                } else {
+                    comparitor[i].properties.layerColor = "#ffffb2";
+                }
+            };
+
+            viewObject.features = californiaCounties.features;
+
+            this.geojsonLayer = L.geoJson(viewObject.features, {
+                filter: this.filterFeatures,
+                style: this.styleFeatures,
+                onEachFeature: this.onEachFeature
+            });
+
+            this.stamenToner = new L.tileLayer(
+                "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
+                    attribution: "Map tiles by <a href='http://stamen.com' target='_blank'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0' target='_blank'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://openstreetmap.org' target='_blank'>OpenStreetMap</a> contributors, <a href='http://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>",
+                    minZoom: 6,
+                    maxZoom: 14
+            });
+
             this.map = L.map("content-map-canvas", {
                 scrollWheelZoom: false,
                 zoomControl: false,
@@ -259,7 +294,7 @@
             ).addControl(L.control.zoom({
                 position: "topright"
             }));
-            mapDataObject.map = this.map;
+            viewObject.map = this.map;
             this.geojsonLayer.addTo(this.map);
         }
 
