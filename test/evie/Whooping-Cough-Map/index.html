@@ -38,6 +38,9 @@ $.getJSON("data.json", function(coughdata){
 
 
     function getColor(d) {
+
+        console.log(d);
+
     return d > 30 ? '#800026' :
            d > 25  ? '#BD0026' :
            d > 20  ? '#E31A1C' :
@@ -48,7 +51,7 @@ $.getJSON("data.json", function(coughdata){
                       '#FFEDA0';
     }
 
-    
+
     function style2010(feature) {
 
     return {
@@ -59,9 +62,9 @@ $.getJSON("data.json", function(coughdata){
         //dashArray: '3',
         fillOpacity: 0.8
         };
-        
 
-    } 
+
+    }
 
 
     function style2011(feature) {
@@ -75,7 +78,7 @@ $.getJSON("data.json", function(coughdata){
         fillOpacity: 0.8
         };
 
-    } 
+    }
 
     function style2012(feature) {
 
@@ -87,11 +90,12 @@ $.getJSON("data.json", function(coughdata){
         //dashArray: '3',
         fillOpacity: 0.8
         };
-        
 
-    } 
+
+    }
 
     function style2013(feature) {
+
 
     return {
         fillColor: getColor(feature.properties.data_FourRate),
@@ -101,9 +105,9 @@ $.getJSON("data.json", function(coughdata){
         //dashArray: '3',
         fillOpacity: 0.8
         };
-        
 
-    } 
+
+    }
 
 
     function style2014(feature) {
@@ -116,9 +120,9 @@ $.getJSON("data.json", function(coughdata){
         //dashArray: '3',
         fillOpacity: 0.8
         };
-        
 
-    } 
+
+    }
 
 
 
@@ -242,7 +246,7 @@ data2013 = L.geoJson(ca_county, {
 data2014 = L.geoJson(ca_county, {
     style: style2014,
     onEachFeature: onEachFeature2014
-}).addTo(map); 
+}).addTo(map);
 
 
 var baseMaps = {

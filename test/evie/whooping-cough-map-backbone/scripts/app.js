@@ -3,7 +3,7 @@
         wait: true
     });
 
-    App.Models.WhoopingCoughYear = Backbone.Model.extend({
+    App.Models.WhoopingCoughCurrent = Backbone.Model.extend({
         defaults: {
             county: null,
             countyproper: null,
@@ -18,13 +18,27 @@
         sync: Backbone.tabletopSync
     });
 
-    App.Collections.WhoopingCoughYears = Backbone.Collection.extend({
-        model: App.Models.WhoopingCoughYear,
+    App.Models.WhoopingCoughHistorical = Backbone.Model.extend({
+        defaults: {
+            county: null,
+            countyproper: null,
+            updated: null,
+            cases: null,
+            rate: null,
+        },
+    });
+
+    App.Collections.WhoopingCoughCurrents = Backbone.Collection.extend({
+        model: App.Models.WhoopingCoughCurrent,
         tabletop: {
             instance: window.storage,
             sheet: "data_2014"
         },
         sync: Backbone.tabletopSync
+    });
+
+    App.Collections.WhoopingCoughHistoricals = Backbone.Collection.extend({
+        model: App.Models.WhoopingCoughHistorical
     });
 
     App.Router = Backbone.Router.extend({
@@ -39,15 +53,11 @@
         },
 
         fetchData: function(){
-
             var _this = this;
-
-            var applicationCollection = new App.Collections.WhoopingCoughYears();
-
+            var applicationCollection = new App.Collections.WhoopingCoughCurrents();
             applicationCollection.fetch({
                 async: true
             });
-
             var checkExist = setInterval(function() {
                 if (applicationCollection.length > 0){
                     clearInterval(checkExist);
@@ -57,7 +67,6 @@
         },
 
         renderApplicationVisuals: function(collection){
-
             if (this.applicationVisuals){
                 this.applicationVisuals.remove();
             };
@@ -131,7 +140,7 @@
 
             layer.on("click", function(e){
 
-                console.log(feature.properties.rate);
+                console.log(feature.properties);
 
                 /*
                 $("#injunction-details").html(
@@ -218,42 +227,28 @@
         */
 
 
-        render: function(viewObject){
-
-            $(viewObject.container).html(_.template(this.template));
+        testCombine: function(geoJson, collection){
 
             var equalIntervalArray = [];
 
-            for (var i=0; i<californiaCounties.features.length; i++){
+            for (var i=0; i<geoJson.features.length; i++){
 
-                var casesObject = viewObject.collection.where({
-                    "countyproper": californiaCounties.features[i].properties.name
+                var dataObject = collection.where({
+                    "countyproper": geoJson.features[i].properties.name
                 });
 
-                equalIntervalArray.push(parseFloat(casesObject[0].attributes.rate));
+                equalIntervalArray.push(parseFloat(dataObject[0].attributes.rate));
 
-                californiaCounties.features[i].properties.updated = casesObject[0].attributes.updated;
-                californiaCounties.features[i].properties.cases = parseInt(casesObject[0].attributes.cases);
-                californiaCounties.features[i].properties.rate = parseFloat(casesObject[0].attributes.rate);
-                californiaCounties.features[i].properties.test = casesObject[0].attributes.county;
+                geoJson.features[i].properties.updated = dataObject[0].attributes.updated;
+                geoJson.features[i].properties.cases = parseInt(dataObject[0].attributes.cases);
+                geoJson.features[i].properties.rate = parseFloat(dataObject[0].attributes.rate);
+
             };
-
-            console.log(equalIntervalArray);
 
             var equalIntervalBreaks = jsStats.equalIntervalBreaks(equalIntervalArray, 5);
 
-            console.log(equalIntervalBreaks);
-
-            //var minValue = _.min(equalIntervalArray);
-            //var maxValue = _.max(equalIntervalArray);
-            //var numRanges = 4;
-            //var mapIntervalBreaks = (maxValue - minValue)/numRanges;
-            //console.log(maxValue);
-            //console.log(minValue);
-            //console.log(mapIntervalBreaks);
-
-            for (var i=0; i<californiaCounties.features.length; i++){
-                var comparitor = californiaCounties.features;
+            for (var i=0; i<geoJson.features.length; i++){
+                var comparitor = geoJson.features;
                 if (comparitor[i].properties.rate >= equalIntervalBreaks[3].upper){
                     comparitor[i].properties.layerColor = "#bd0026";
                 } else if (comparitor[i].properties.rate >= equalIntervalBreaks[2].upper) {
@@ -267,13 +262,73 @@
                 }
             };
 
-            viewObject.features = californiaCounties.features;
-
-            this.geojsonLayer = L.geoJson(viewObject.features, {
+            var combinedGeoJsonLayer = L.geoJson(geoJson.features, {
                 filter: this.filterFeatures,
                 style: this.styleFeatures,
                 onEachFeature: this.onEachFeature
             });
+
+            return combinedGeoJsonLayer;
+
+        },
+
+        createNewBasemapLayer: function(collectionName, dataUrl){
+            var collectionName = new App.Collections.WhoopingCoughHistoricals();
+            collectionName.fetch({
+                url: dataUrl,
+                async: false
+            });
+            var myGeoJsonLayer = this.testCombine(californiaCounties, collectionName);
+            return myGeoJsonLayer;
+        },
+
+        render: function(viewObject){
+
+            /*
+            var data2013Collection = new App.Collections.WhoopingCoughHistoricals();
+            data2013Collection.fetch({
+                url: "data/data_2013.json",
+                async: false
+            });
+            var geoJsonLayer_2013 = this.testCombine(californiaCounties, data2013Collection);
+
+            var data2012Collection = new App.Collections.WhoopingCoughHistoricals();
+            data2012Collection.fetch({
+                url: "data/data_2012.json",
+                async: false
+            });
+            var geoJsonLayer_2012 = this.testCombine(californiaCounties, data2012Collection);
+
+            var data2011Collection = new App.Collections.WhoopingCoughHistoricals();
+            data2011Collection.fetch({
+                url: "data/data_2011.json",
+                async: false
+            });
+            var geoJsonLayer_2011 = this.testCombine(californiaCounties, data2011Collection);
+
+            var data2010Collection = new App.Collections.WhoopingCoughHistoricals();
+            data2010Collection.fetch({
+                url: "data/data_2010.json",
+                async: false
+            });
+            var geoJsonLayer_2010 = this.testCombine(californiaCounties, data2010Collection);
+            */
+
+            $(viewObject.container).html(_.template(this.template));
+            var geoJsonLayer_2014 = this.testCombine(californiaCounties, viewObject.collection);
+
+            var baseMaps = {
+                "Data2014": geoJsonLayer_2014,
+                "Data2013": this.createNewBasemapLayer("data2013Collection", "data/data_2013.json"),
+                "Data2012": this.createNewBasemapLayer("data2012Collection", "data/data_2012.json"),
+                "Data2011": this.createNewBasemapLayer("data2011Collection", "data/data_2011.json"),
+                "Data2010": this.createNewBasemapLayer("data2010Collection", "data/data_2010.json"),
+            };
+
+
+
+
+
 
             this.stamenToner = new L.tileLayer(
                 "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
@@ -294,8 +349,23 @@
             ).addControl(L.control.zoom({
                 position: "topright"
             }));
+
             viewObject.map = this.map;
-            this.geojsonLayer.addTo(this.map);
+
+            geoJsonLayer_2014.addTo(this.map);
+
+            var overlayMaps = {};
+
+            var controlPanel = {
+
+                "position": "topleft",
+                "collapsed": false
+
+            };
+
+            L.control.layers(baseMaps, overlayMaps, controlPanel).addTo(this.map);
+
+
         }
 
     });
