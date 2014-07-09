@@ -89,32 +89,6 @@
 
         initialize: function(viewObject){
             this.render(viewObject);
-
-            /*
-            $("#animation-slider").slider({
-                "value": 0,
-                "min": 1999,
-                "max": 2013,
-                "step": 1,
-
-                slide: function(event, ui) {
-                    var increment = ui.value;
-                    $("#slider-value").html("<h4>Year: " + increment + "</h4>");
-                },
-
-                change: function(event, ui) {
-                    var increment = ui.value;
-                    $("#slider-value").html("<h4>Year: " + increment + "</h4>");
-                },
-
-                start: function(event, ui) {
-                    //$.doTimeout("slider_timer");
-                }
-            });
-
-            $("#slider-value").html("<h4>Year: " + $("#animation-slider").slider("option", "min") + "</h4>");
-            */
-
         },
 
         events: {
@@ -127,128 +101,85 @@
         styleFeatures: function (feature) {
             return {
                 color: "black",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 1,
+                weight: 0.7,
+                opacity: 0.7,
+                fillOpacity: 0.7,
                 fillColor: feature.properties.layerColor
             }
         },
 
         onEachFeature: function(feature, layer) {
 
-            feature.selected = false;
-
-            layer.on("click", function(e){
-
-                console.log(feature.properties);
-
-                /*
-                $("#injunction-details").html(
-                    "<h6>" + feature.properties.ZONE_NAME + "</h6>" +
-                    "<p><strong>Targeted gang</strong>: " + feature.properties.NAME + "</p>" +
-                    "<p>" + feature.properties.AREA + "</p>" +
-                    "<p><strong>Implemented in</strong>: " + feature.properties.year_of_i + "</p>" +
-                    "<p><strong>Individuals targeted</strong>: " + feature.properties.number_or + "</p>" +
-                    "<p><strong>Case number</strong>: " + feature.properties.case_numb + "</p>" +
-                    "<p><strong>Case filed</strong>: " + feature.properties.case_file + "</p>" +
-                    "<p><strong>Injunction approved</strong>: " + feature.properties.date_of_i + "</p>" +
-                    "<p><strong>Issued by judge</strong>: " + feature.properties.judges_na + "</p>" +
-                    "<p>" + feature.properties.document_ + "</p>"
-                );
-                */
-
-            });
-
-        },
-
-        /*
-        moveIncrementBackward: function(){
-            var comparisonValue = $("#animation-slider").slider("value");
-            if (comparisonValue == $("#animation-slider").slider("option", "min")){
-                return false;
-            } else {
-                var newValue = comparisonValue - 1
-                $("#animation-slider").slider("value", newValue);
-                this.loopThroughGeoJsonAddingData(newValue);
-            }
-        },
-
-        playIncrementForward: function(e){
-            e.preventDefault();
-            if ($("a#animation-play").hasClass("active")){
-                $("a#animation-play").removeClass("active").html("<h5><span class='glyphicon glyphicon-play'></span></h5>");
-                $.doTimeout("slider_timer");
-            } else {
-                $("a#animation-play").addClass("active").html("<h5><span class='glyphicon glyphicon-pause'></span></h5>");
-                if ($("#animation-slider").slider("option", "value") == $("#animation-slider").slider("option", "max")){
-                    $("#animation-slider").slider("value", 0);
-                }
-                $.doTimeout("slider_timer", 1000, function(){
-                    $("#animation-slider").slider("value", parseInt($("#animation-slider").slider("option", "value")) +1);
-                    if ($("#animation-slider").slider("option", "value") == $("#animation-slider").slider("option", "max")){
-                        $("a#animation-play").removeClass("active").html("<h5><span class='glyphicon glyphicon-play'></span></h5>");
-                        return false;
-                    }
-                    return true;
-                });
-            }
-        },
-
-        moveIncrementForward: function(){
-            var comparisonValue = $("#animation-slider").slider("value");
-            if (comparisonValue == $("#animation-slider").slider("option", "max")){
-                return false;
-            } else {
-                var newValue = comparisonValue + 1
-                $("#animation-slider").slider("value", newValue);
-                this.loopThroughGeoJsonAddingData(newValue);
-            }
-        },
-
-        createIncrementLayer: function(){
-            if ($("#injunction-details").length){
-                $("#injunction-details").empty();
-            }
-            this.geojsonLayer.clearLayers();
-            var comparisonValue = $("#animation-slider").slider("value");
-            this.loopThroughGeoJsonAddingData(comparisonValue);
-        },
-
-        loopThroughGeoJsonAddingData: function(comparisonValue){
-            console.log(comparisonValue);
-            for(var i=0; i<gangInjunctionData.features.length; i++){
-                var gangInjunctionYear = parseInt(gangInjunctionData.features[i].properties.year_of_i);
-                if (gangInjunctionYear <= comparisonValue){
-                    this.geojsonLayer.addData(gangInjunctionData.features[i]).addTo(this.map);
-                    $("#injunction-details").html("<h6>overview of what happened in " + comparisonValue + "</h6>");
-                };
+            var highlightedStyle = {
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 1,
             };
+
+            var unhighlightedStyle = {
+                weight: 0.7,
+                opacity: 0.7,
+                fillOpacity: 0.7,
+            };
+
+            var testTemplate = (
+                "<h5><%= countyproper %></h5>" +
+                "<p><%= cases %> total cases</p>" +
+                "<p><%= rate %> per 100,000 people</p>" +
+                "<p><%= updated %></p>"
+            );
+
+            layer.on({
+                mouseover: function(e){
+                    this.setStyle(highlightedStyle);
+                    var data = e.target.feature.properties;
+                    $(".content-feature-data").html(_.template(testTemplate, data));
+                },
+
+                mouseout: function(e){
+                    this.setStyle(unhighlightedStyle);
+                    //$(".content-feature-data").html("<h5>Hover over a county</h5>");
+                },
+
+                click: function(e){
+                    //e.layer._map.fitBounds(e.target.getBounds());
+                    var data = e.target.feature.properties;
+                    $(".content-feature-data").html(_.template(testTemplate, data));
+                }
+            });
         },
-        */
 
+        createNewBasemapLayer: function(collection, dataUrl){
+            var collection = new App.Collections.WhoopingCoughHistoricals();
+            collection.fetch({
+                url: dataUrl,
+                async: false
+            });
+            var baseLayer = this.combineCollectionWithShape(collection);
+            return baseLayer;
+        },
 
-        testCombine: function(geoJson, collection){
+        combineCollectionWithShape: function(collection){
+
+            var copyOfCountyShapes = $.extend(true, {}, californiaCounties);
 
             var equalIntervalArray = [];
 
-            for (var i=0; i<geoJson.features.length; i++){
-
+            for (var i=0; i<copyOfCountyShapes.features.length; i++){
                 var dataObject = collection.where({
-                    "countyproper": geoJson.features[i].properties.name
+                    "countyproper": copyOfCountyShapes.features[i].properties.name
                 });
-
                 equalIntervalArray.push(parseFloat(dataObject[0].attributes.rate));
-
-                geoJson.features[i].properties.updated = dataObject[0].attributes.updated;
-                geoJson.features[i].properties.cases = parseInt(dataObject[0].attributes.cases);
-                geoJson.features[i].properties.rate = parseFloat(dataObject[0].attributes.rate);
-
+                copyOfCountyShapes.features[i].properties.updated = dataObject[0].attributes.updated;
+                copyOfCountyShapes.features[i].properties.cases = parseInt(dataObject[0].attributes.cases);
+                copyOfCountyShapes.features[i].properties.rate = parseFloat(dataObject[0].attributes.rate);
+                copyOfCountyShapes.features[i].properties.countyproper = dataObject[0].attributes.countyproper + " County";
             };
 
             var equalIntervalBreaks = jsStats.equalIntervalBreaks(equalIntervalArray, 5);
 
-            for (var i=0; i<geoJson.features.length; i++){
-                var comparitor = geoJson.features;
+            for (var i=0; i<copyOfCountyShapes.features.length; i++){
+                var comparitor = copyOfCountyShapes.features;
                 if (comparitor[i].properties.rate >= equalIntervalBreaks[3].upper){
                     comparitor[i].properties.layerColor = "#bd0026";
                 } else if (comparitor[i].properties.rate >= equalIntervalBreaks[2].upper) {
@@ -262,73 +193,18 @@
                 }
             };
 
-            var combinedGeoJsonLayer = L.geoJson(geoJson.features, {
+            var newGeoJsonLayer = L.geoJson(copyOfCountyShapes, {
                 filter: this.filterFeatures,
                 style: this.styleFeatures,
                 onEachFeature: this.onEachFeature
             });
 
-            return combinedGeoJsonLayer;
-
-        },
-
-        createNewBasemapLayer: function(collectionName, dataUrl){
-            var collectionName = new App.Collections.WhoopingCoughHistoricals();
-            collectionName.fetch({
-                url: dataUrl,
-                async: false
-            });
-            var myGeoJsonLayer = this.testCombine(californiaCounties, collectionName);
-            return myGeoJsonLayer;
+            return newGeoJsonLayer;
         },
 
         render: function(viewObject){
 
-            /*
-            var data2013Collection = new App.Collections.WhoopingCoughHistoricals();
-            data2013Collection.fetch({
-                url: "data/data_2013.json",
-                async: false
-            });
-            var geoJsonLayer_2013 = this.testCombine(californiaCounties, data2013Collection);
-
-            var data2012Collection = new App.Collections.WhoopingCoughHistoricals();
-            data2012Collection.fetch({
-                url: "data/data_2012.json",
-                async: false
-            });
-            var geoJsonLayer_2012 = this.testCombine(californiaCounties, data2012Collection);
-
-            var data2011Collection = new App.Collections.WhoopingCoughHistoricals();
-            data2011Collection.fetch({
-                url: "data/data_2011.json",
-                async: false
-            });
-            var geoJsonLayer_2011 = this.testCombine(californiaCounties, data2011Collection);
-
-            var data2010Collection = new App.Collections.WhoopingCoughHistoricals();
-            data2010Collection.fetch({
-                url: "data/data_2010.json",
-                async: false
-            });
-            var geoJsonLayer_2010 = this.testCombine(californiaCounties, data2010Collection);
-            */
-
             $(viewObject.container).html(_.template(this.template));
-            var geoJsonLayer_2014 = this.testCombine(californiaCounties, viewObject.collection);
-
-            var baseMaps = {
-                "Data2014": geoJsonLayer_2014,
-                "Data2013": this.createNewBasemapLayer("data2013Collection", "data/data_2013.json"),
-                "Data2012": this.createNewBasemapLayer("data2012Collection", "data/data_2012.json"),
-                "Data2011": this.createNewBasemapLayer("data2011Collection", "data/data_2011.json"),
-                "Data2010": this.createNewBasemapLayer("data2010Collection", "data/data_2010.json"),
-            };
-
-
-
-
-
 
             this.stamenToner = new L.tileLayer(
                 "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
@@ -346,28 +222,35 @@
                 window.appConfig.map_center_california, window.appConfig.initial_map_zoom
             ).addLayer(
                 this.stamenToner
-            ).addControl(L.control.zoom({
-                position: "topright"
-            }));
+            );
 
-            viewObject.map = this.map;
-
-            geoJsonLayer_2014.addTo(this.map);
+            var baseMaps = {
+                "2014 Cases": this.combineCollectionWithShape(viewObject.collection),
+                "2013 Cases": this.createNewBasemapLayer("data2013Collection", "data/data_2013.json"),
+                "2012 Cases": this.createNewBasemapLayer("data2012Collection", "data/data_2012.json"),
+                "2011 Cases": this.createNewBasemapLayer("data2011Collection", "data/data_2011.json"),
+                "2010 Cases": this.createNewBasemapLayer("data2010Collection", "data/data_2010.json"),
+            };
 
             var overlayMaps = {};
 
             var controlPanel = {
-
-                "position": "topleft",
+                "position": "topright",
                 "collapsed": false
-
             };
 
-            L.control.layers(baseMaps, overlayMaps, controlPanel).addTo(this.map);
+            L.control.layers(
+                baseMaps,
+                overlayMaps,
+                controlPanel
+            ).addTo(this.map);
 
+            L.control.zoom({
+                position: "topright"
+            }).addTo(this.map);
 
+            baseMaps["2014 Cases"].addTo(this.map);
         }
-
     });
 
     // helper functions
