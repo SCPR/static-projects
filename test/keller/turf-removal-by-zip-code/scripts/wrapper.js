@@ -3,7 +3,7 @@
 window.appConfig = {
 
     // general configs
-    testing: true,
+    //testing: false,
     open_about_this: false,
     comments: false,
     project_root: "http://projects.scpr.org/static/test/evie/whooping-cough-map",
@@ -41,25 +41,27 @@ App.Views.ApplicationWrapper = Backbone.View.extend({
 
     initialize: function(){
 
-        // checks for testing environment
-        if (window.appConfig.testing === true){
-            window.wrapperTemplatePath = "/2kpcc/static-projects/static-files/v3-dependencies/templates/"
-        } else {
+        // checks url to see if we're live
+        var urlLink = window.location.href;
+
+        // sets template path
+        if (urlLink.indexOf("http://projects.scpr.org/") > -1){
             window.wrapperTemplatePath = "http://projects.scpr.org/static/static-files/v3-dependencies/templates/"
-        }
+        } else {
+            window.wrapperTemplatePath = "/2kpcc/static-projects/static-files/v3-dependencies/templates/"
+        };
+
+        // sets embed options
+        if (urlLink.indexOf("embed") > -1){
+            window.appConfig.open_about_this = false;
+            window.appConfig.comments = false;
+            $(".data-comments").remove();
+        };
 
         // set params for mobile devices
         if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
             window.appConfig.open_about_this = false;
             window.appConfig.initial_zoom = 7;
-        };
-
-        // checks url to see if its embedded
-        var urlLink = window.location.href;
-        if (urlLink.indexOf("embed") > -1){
-            window.appConfig.open_about_this = false;
-            window.appConfig.comments = false;
-            $(".data-comments").remove();
         };
 
         // checks comments setting
