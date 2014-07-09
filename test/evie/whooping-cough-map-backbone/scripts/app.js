@@ -175,6 +175,7 @@
 
             var equalIntervalBreaks = jsStats.equalIntervalBreaks(equalIntervalArray, 5);
 
+            /*
             for (var i=0; i<copyOfCountyShapes.features.length; i++){
                 var comparitor = copyOfCountyShapes.features;
                 if (comparitor[i].properties.rate >= equalIntervalBreaks[3].upper){
@@ -187,6 +188,26 @@
                     comparitor[i].properties.layerColor = "#fecc5c";
                 } else {
                     comparitor[i].properties.layerColor = "#ffffb2";
+                }
+            };
+            */
+
+            for (var i=0; i<copyOfCountyShapes.features.length; i++){
+                var comparitor = copyOfCountyShapes.features;
+                if (comparitor[i].properties.rate >= 5){
+                    comparitor[i].properties.layerColor = "#FEB24C";
+                } else if (comparitor[i].properties.rate >= 10){
+                    comparitor[i].properties.layerColor = "#FD8D3C";
+                } else if (comparitor[i].properties.rate >= 15){
+                    comparitor[i].properties.layerColor = "#FC4E2A";
+                } else if (comparitor[i].properties.rate >= 20) {
+                    comparitor[i].properties.layerColor = "#E31A1C";
+                } else if (comparitor[i].properties.rate >= 25){
+                    comparitor[i].properties.layerColor = "#BD0026";
+                } else if (comparitor[i].properties.rate >= 30){
+                    comparitor[i].properties.layerColor = "#800026";
+                } else {
+                    comparitor[i].properties.layerColor = "#FFEDA0";
                 }
             };
 
@@ -249,6 +270,29 @@
             baseMaps["2014 Cases"].addTo(this.map);
         }
     });
+
+    // legend
+
+    /* var legend = L.control({position: 'bottomright'});
+
+    legend.onAdd = function (map) {
+
+        var div = $(".content-feature-data")
+        var colorData = e.target.feature.properties.layerColor;
+        grades = [0, 5, 10, 20, 30],
+        labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+        for (var i = 0; i < grades.length; i++) {
+            div.innerHtml +=
+            '<i style="background:' + grades[i] + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+        }
+
+        return div;
+    };
+
+    legend.addTo(this.map); */
 
     // helper functions
     window.percentifyValue = function(value){
