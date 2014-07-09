@@ -1,20 +1,349 @@
  <html>
-     <head>
 
-        <!-- css -->
-         <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-         <link href="css/style.css" rel="stylesheet" type="text/css" />
+ <head>
 
-        <!-- script -->
-          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-          <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<!-- css -->
+ <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
 
-    </head>
-    <body>
-        <div id="map"></div>
+<!-- script -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  <script src="scripts/ca_county_shapes_with_data.js"></script>
 
-        <script src="scripts/ca-county-shapes.js"></script>
-        <script src="scripts/app.js"></script>
 
-    </body>
+
+</head>
+
+
+<body>
+
+ <button id="number_2013"> 2013 </button>
+ <button id="number_2014"> 2014 </button>
+ <div id="map" style="height: 680px;"></div>
+
+
+ <script>
+
+var map = L.map('map').setView([37.853742, -121.028776], 6);
+
+blackscale = L.tileLayer("http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    minZoom: 6,
+    maxZoom: 14
+}).addTo(map);
+
+$.getJSON("data.json", function(coughdata){
+
+    });
+
+
+    function getColor(d) {
+
+        console.log(d);
+
+    return d > 30 ? '#800026' :
+           d > 25  ? '#BD0026' :
+           d > 20  ? '#E31A1C' :
+           d > 15  ? '#FC4E2A' :
+           d > 10   ? '#FD8D3C' :
+           d > 5   ? '#FEB24C' :
+           d > 2   ? '#FED976' :
+                      '#FFEDA0';
+    }
+
+
+    function style2010(feature) {
+
+    return {
+        fillColor: getColor(feature.properties.data_OneRate),
+        weight: 0.3,
+        opacity: 1,
+        color: 'black',
+        //dashArray: '3',
+        fillOpacity: 0.8
+        };
+
+
+    }
+
+
+    function style2011(feature) {
+
+    return {
+        fillColor: getColor(feature.properties.data_TwoRate),
+        weight: 0.3,
+        opacity: 1,
+        color: 'black',
+        //dashArray: '3',
+        fillOpacity: 0.8
+        };
+
+    }
+
+    function style2012(feature) {
+
+    return {
+        fillColor: getColor(feature.properties.data_ThreeRate),
+        weight: 0.3,
+        opacity: 1,
+        color: 'black',
+        //dashArray: '3',
+        fillOpacity: 0.8
+        };
+
+
+    }
+
+    function style2013(feature) {
+
+
+    return {
+        fillColor: getColor(feature.properties.data_FourRate),
+        weight: 0.3,
+        opacity: 1,
+        color: 'black',
+        //dashArray: '3',
+        fillOpacity: 0.8
+        };
+
+
+    }
+
+
+    function style2014(feature) {
+
+    return {
+        fillColor: getColor(feature.properties.data_FiveRate),
+        weight: 0.3,
+        opacity: 1,
+        color: 'black',
+        //dashArray: '3',
+        fillOpacity: 0.8
+        };
+
+
+    }
+
+
+
+function highlightFeature(e) {
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 3,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7,
+        fillColor: 'black'
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera) {
+        layer.bringToFront();
+    }
+
+     info.update(layer.feature.properties);
+}
+
+function resetHighlight2010(e) {
+    data2010.resetStyle(e.target);
+
+    info.update();
+}
+
+function resetHighlight2011(e) {
+    data2011.resetStyle(e.target);
+
+    info2011.update();
+}
+
+
+function resetHighlight2012(e) {
+    data2012.resetStyle(e.target);
+
+    info2012.update();
+}
+
+function resetHighlight2013(e) {
+    data2013.resetStyle(e.target);
+
+    info2013.update();
+}
+
+
+function resetHighlight2014(e) {
+    data2014.resetStyle(e.target);
+
+    info2014.update();
+}
+
+
+function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+}
+
+
+function onEachFeature2010(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight2010,
+        click: zoomToFeature
+    });
+}
+
+function onEachFeature2011(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight2011,
+        click: zoomToFeature
+    });
+}
+
+
+function onEachFeature2012(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight2012,
+        click: zoomToFeature
+    });
+}
+
+function onEachFeature2013(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight2013,
+        click: zoomToFeature
+    });
+}
+
+function onEachFeature2014(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight2014,
+        click: zoomToFeature
+    });
+}
+
+data2010 = L.geoJson(ca_county, {
+    style: style2010,
+    onEachFeature: onEachFeature2010
+});
+
+data2011 = L.geoJson(ca_county, {
+    style: style2011,
+    onEachFeature: onEachFeature2011
+});
+
+data2012 = L.geoJson(ca_county, {
+    style: style2012,
+    onEachFeature: onEachFeature2012
+});
+
+data2013 = L.geoJson(ca_county, {
+    style: style2013,
+    onEachFeature: onEachFeature2013
+});
+
+data2014 = L.geoJson(ca_county, {
+    style: style2014,
+    onEachFeature: onEachFeature2014
+}).addTo(map);
+
+
+var baseMaps = {
+    "Data2010": data2010,
+    "Data2011": data2011,
+    "Data2012": data2012,
+    "Data2013": data2013,
+    "Data2014": data2014,
+};
+
+var overlayMaps = {
+
+};
+
+var controlPanel = {
+    "position": "topleft",
+    "collapsed": false,
+};
+
+L.control.layers(baseMaps, overlayMaps, controlPanel).addTo(map);
+
+
+
+var info = L.control();
+
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+
+// method that we will use to update the control based on feature properties passed
+
+info.update = function (props) {
+    this._div.innerHTML = '<h4>Whooping Cough Case Numbers</h4>' +  (props ?
+        '<b>' + props.name + '</b><br />' + props.data_OneCases + ' cases / 100,000 population'
+        : 'Hover over a county');
+};
+
+info.addTo(map);
+
+
+/* var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+        labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    }
+
+    return div;
+};
+
+legend.addTo(map); */
+
+
+
+
+ </script>
+
+ <style>
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+ </style>
+
+
+</body>
+
+
+
  </html>

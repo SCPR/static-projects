@@ -1,75 +1,80 @@
-    window.storage = Tabletop.init({
-        key: "https://docs.google.com/spreadsheets/d/1H6hFZQiolqW7fU5Zdruy0LWTPn8zqDN2gW4ZkQoFUaI/pubhtml",
-        wait: true
-    });
+    window.percentifyValue = function(value){
+        var value = value * 100
+        return parseFloat(value.toFixed(2));
+    };
 
-    App.Models.WhoopingCoughYear = Backbone.Model.extend({
+    window.toFixedPercent = function(part, whole){
+        var targetValue = part / whole;
+        var decimal = parseFloat(targetValue);
+        return decimal
+    };
+
+    window.addCommas = function(nStr){
+        nStr += "";
+        x = nStr.split(".");
+        x1 = x[0];
+        x2 = x.length > 1 ? "." + x[1] : "";
+            var rgx = /(\d+)(\d{3})/;
+                while (rgx.test(x1)) {
+                    x1 = x1.replace(rgx, "$1" + "," + "$2");
+                }
+            return x1 + x2;
+    };
+
+    String.prototype.truncateToGraf = function(){
+        var lengthLimit = 900;
+        if (this.length > lengthLimit){
+            return this.substring(0, lengthLimit) + " ... ";
+        } else {
+            return this;
+        }
+    };
+
+    String.prototype.toProperCase = function(){
+        return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+    };
+
+
+    App.Models.SafetyZone = Backbone.Model.extend({
         defaults: {
-            county: null,
-            countyproper: null,
-            updated: null,
-            cases: null,
-            rate: null,
+            gang_name: null,
+            url_to_injunction: null,
+            document_cloud_url: null,
+            case_filed: null,
+            date_of_injunction: null,
+            year_of_injunction: null,
+            trial_date: null,
+            judges_name: null,
+            case_number: null,
+            number_originally_targeted: null,
+            notes: null,
         },
-
-        tabletop: {
-            instance: window.storage,
-            sheet: "data_2014"
-        },
-
-        sync: Backbone.tabletopSync
     });
 
-
-    App.Collections.WhoopingCoughYears = Backbone.Collection.extend({
-        model: App.Models.WhoopingCoughYear,
-
-        //url: "data/data.json",
-
-        tabletop: {
-            instance: window.storage,
-            sheet: "data_2014"
-        },
-
-        sync: Backbone.tabletopSync
-
+    App.Collections.SafetyZones = Backbone.Collection.extend({
+        model: App.Models.SafetyZone,
+        url: "data/data.json",
+        comparator: function(model) {
+            return model.get("NAME");
+        }
     });
-
 
     App.Router = Backbone.Router.extend({
-
         initialize: function(){
-
-            this.applicationWrapper = new App.Views.ApplicationWrapper();
-            return this.applicationWrapper;
 
         },
 
         routes: {
-            "": "renderApplicationVisuals",
+            "": "renderApplicationWrapper",
         },
 
-        renderApplicationVisuals: function(){
-
-            window.whoopingCollection = new App.Collections.WhoopingCoughYears();
-
-            window.whoopingCollection.fetch();
-
-            if (this.applicationVisuals){
-                this.applicationVisuals.remove();
-            };
-
-            this.applicationVisuals = new App.Views.ApplicationVisuals({
-                collection: window.whoopingCollection,
-                container: ".data-visuals",
-            });
-
-            return this.applicationVisuals;
+        renderApplicationWrapper: function(){
+            this.applicationWrapper = new App.Views.ApplicationWrapper();
+            return this.applicationWrapper;
         },
-
     });
 
-    App.Views.ApplicationVisuals = Backbone.View.extend({
+    App.Views.MapApplication = Backbone.View.extend({
 
         //tagName: "div",
 
@@ -79,11 +84,9 @@
 
         el: ".data-visuals",
 
-        initialize: function(viewObject){
+        initialize: function(mapDataObject){
 
-            console.log(viewObject);
-
-            this.viewObject = viewObject;
+            this.mapDataObject = mapDataObject;
 
             this.stamenToner = new L.tileLayer(
                 "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
@@ -92,15 +95,26 @@
                     maxZoom: 14
             });
 
-            this.geojsonLayer = L.geoJson(californiaCounties, {
+            this.center = new L.LatLng(34.061841979429445, -118.26370239257812);
+
+/*
+            this.geojsonLayer = L.geoJson(null, {
+                filter: this.filterFeatures,
+                style: this.styleFeatures,
+                onEachFeature: this.onEachFeature
+            });
+    */
+
+
+            this.geojsonLayer = L.geoJson(gangInjunctionData, {
                 filter: this.filterFeatures,
                 style: this.styleFeatures,
                 onEachFeature: this.onEachFeature
             });
 
-            this.render(this.viewObject);
 
-            /*
+            this.render(this.mapDataObject);
+
             $("#animation-slider").slider({
                 "value": 0,
                 "min": 1999,
@@ -123,7 +137,6 @@
             });
 
             $("#slider-value").html("<h4>Year: " + $("#animation-slider").slider("option", "min") + "</h4>");
-            */
 
         },
 
@@ -135,37 +148,24 @@
         },
 
         styleFeatures: function (feature) {
-
-            var layerColor;
-
-            if (feature.properties.name === "Los Angeles"){
-                layerColor = "red";
-            } else {
-                layerColor = "green";
-            }
-
             return {
-                color: "black",
-                weight: 1,
-                opacity: 1,
-                fillOpacity: .5,
-                fillColor: layerColor
+                color: 'green',
+                weight: .8,
+                opacity: .8,
+                fillOpacity: .8,
+                fillColor: "green"
             }
         },
 
         onEachFeature: function(feature, layer) {
-
             feature.selected = false;
-
             layer.on("click", function(e){
-
-                console.log(feature);
-
-                /*
                 $("#injunction-details").html(
                     "<h6>" + feature.properties.ZONE_NAME + "</h6>" +
                     "<p><strong>Targeted gang</strong>: " + feature.properties.NAME + "</p>" +
-                    "<p>" + feature.properties.AREA + "</p>" +
+
+                    //"<p>" + feature.properties.AREA + "</p>" +
+
                     "<p><strong>Implemented in</strong>: " + feature.properties.year_of_i + "</p>" +
                     "<p><strong>Individuals targeted</strong>: " + feature.properties.number_or + "</p>" +
                     "<p><strong>Case number</strong>: " + feature.properties.case_numb + "</p>" +
@@ -174,13 +174,9 @@
                     "<p><strong>Issued by judge</strong>: " + feature.properties.judges_na + "</p>" +
                     "<p>" + feature.properties.document_ + "</p>"
                 );
-                */
-
             });
-
         },
 
-        /*
         moveIncrementBackward: function(){
             var comparisonValue = $("#animation-slider").slider("value");
             if (comparisonValue == $("#animation-slider").slider("option", "min")){
@@ -234,7 +230,9 @@
         },
 
         loopThroughGeoJsonAddingData: function(comparisonValue){
+
             console.log(comparisonValue);
+
             for(var i=0; i<gangInjunctionData.features.length; i++){
                 var gangInjunctionYear = parseInt(gangInjunctionData.features[i].properties.year_of_i);
                 if (gangInjunctionYear <= comparisonValue){
@@ -243,7 +241,6 @@
                 };
             };
         },
-        */
 
         render: function(mapDataObject){
             $(mapDataObject.container).html(_.template(this.template));
@@ -253,7 +250,7 @@
                 minZoom: 6,
                 maxZoom: 14
             }).setView(
-                window.appConfig.map_center_california, window.appConfig.initial_map_zoom
+                this.center, window.appConfig.initial_zoom
             ).addLayer(
                 this.stamenToner
             ).addControl(L.control.zoom({
@@ -264,40 +261,3 @@
         }
 
     });
-
-    // helper functions
-    window.percentifyValue = function(value){
-        var value = value * 100
-        return parseFloat(value.toFixed(2));
-    };
-
-    window.toFixedPercent = function(part, whole){
-        var targetValue = part / whole;
-        var decimal = parseFloat(targetValue);
-        return decimal
-    };
-
-    window.addCommas = function(nStr){
-        nStr += "";
-        x = nStr.split(".");
-        x1 = x[0];
-        x2 = x.length > 1 ? "." + x[1] : "";
-            var rgx = /(\d+)(\d{3})/;
-                while (rgx.test(x1)) {
-                    x1 = x1.replace(rgx, "$1" + "," + "$2");
-                }
-            return x1 + x2;
-    };
-
-    String.prototype.truncateToGraf = function(){
-        var lengthLimit = 900;
-        if (this.length > lengthLimit){
-            return this.substring(0, lengthLimit) + " ... ";
-        } else {
-            return this;
-        }
-    };
-
-    String.prototype.toProperCase = function(){
-        return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-    };
