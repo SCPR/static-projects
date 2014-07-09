@@ -64,6 +64,7 @@
 
             layer = new google.maps.FusionTablesLayer({
                 map: map,
+                suppressInfoWindows: true,
                 heatmap: {
                     enabled: false
                 },
@@ -76,6 +77,38 @@
                     styleId: 2,
                     templateId: 2
                 }
+            });
+
+            google.maps.event.addListener(layer, 'click', function(e) {
+                var fusionTableDataObject = {
+                    install_zip_code: e.row.install_zip_code.value,
+                    total_2008: e.row.total_2008.value,
+                    total_2009: e.row.total_2009.value,
+                    total_2010: e.row.total_2010.value,
+                    total_2011: e.row.total_2011.value,
+                    total_2012: e.row.total_2012.value,
+                    total_2013: e.row.total_2013.value,
+                    total_2014: e.row.total_2014.value,
+                    total_overall: e.row.total_overall.value,
+                    data_source: e.row.data_source.value,
+                    incentive_program: e.row.incentive_program.value,
+                    about_the_program: e.row.about_the_program.value
+                }
+
+                var dataDescription = _.template(
+                    "<h4><%= install_zip_code %></h4>" +
+                    "<p><strong>Total removed</strong>: <%= window.addCommas(total_overall) %></p>" +
+                    "<p><%= window.addCommas(total_2014) %></p>" +
+                    "<p><%= window.addCommas(total_2013) %></p>" +
+                    "<p><%= window.addCommas(total_2012) %></p>" +
+                    "<p><%= window.addCommas(total_2011) %></p>" +
+                    "<p><%= window.addCommas(total_2010) %></p>" +
+                    "<p><%= window.addCommas(total_2009) %></p>" +
+                    "<p><%= window.addCommas(total_2008) %></p>" +
+                    "<p><%= data_source %></p>" +
+                    "<p><%= incentive_program %></p>" +
+                    "<p class='small-writing'><strong>About the program</strong>: <%= about_the_program %></p>", fusionTableDataObject);
+                $(".content-feature-data").html(dataDescription);
             });
 
             google.maps.event.addDomListener(map, 'idle', function() {
