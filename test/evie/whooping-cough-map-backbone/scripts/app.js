@@ -91,13 +91,6 @@
             this.render(viewObject);
         },
 
-        events: {
-            "click a#animation-backward": "moveIncrementBackward",
-            "click a#animation-play": "playIncrementForward",
-            "click a#animation-forward": "moveIncrementForward",
-            "slidechange #animation-slider": "createIncrementLayer",
-        },
-
         styleFeatures: function (feature) {
             return {
                 color: "black",
@@ -122,6 +115,7 @@
                 fillOpacity: 0.7,
             };
 
+            // this is what is being written to the display div
             var testTemplate = (
                 "<h5><%= countyproper %></h5>" +
                 "<p><%= cases %> total cases</p>" +
@@ -132,7 +126,10 @@
             layer.on({
                 mouseover: function(e){
                     this.setStyle(highlightedStyle);
+
+                    // here is where we're rendering to the display div
                     var data = e.target.feature.properties;
+                    console.log(data);
                     $(".content-feature-data").html(_.template(testTemplate, data));
                 },
 
