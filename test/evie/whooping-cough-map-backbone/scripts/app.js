@@ -104,9 +104,6 @@
         onEachFeature: function(feature, layer) {
 
             var highlightedStyle = {
-                //weight: 1,
-                //opacity: 1,
-                //fillOpacity: 1,
                 weight: 3,
                 color: '#666',
                 dashArray: '',
@@ -121,7 +118,6 @@
                 fillColor: feature.properties.layerColor
             };
 
-
             // this is what is being written to the display div
             var testTemplate = (
                 "<h5><%= countyproper %></h5>" +
@@ -130,28 +126,34 @@
                 "<p>Data updated: <%= updated %></p>"
             );
 
+            feature.selected = false;
+
             layer.on({
                 mouseover: function(e){
                     this.setStyle(highlightedStyle);
-
-                    // here is where we're rendering to the display div
                     var data = e.target.feature.properties;
-                    console.log(data);
                     $(".content-feature-data").html(_.template(testTemplate, data));
                 },
 
                 mouseout: function(e){
                     this.setStyle(unhighlightedStyle);
-                    //$(".content-feature-data").html("<h5>Hover over a county</h5>");
                 },
 
+                /*
                 click: function(e){
-                    console.log(e);
-                    e.layer._map.fitBounds(e.target.getBounds());
                     var data = e.target.feature.properties;
-                    $(".content-feature-data").html(_.template(testTemplate, data));
-                    //map.fitBounds(e.target.getBounds());
+                    if (feature.selected === false){
+                        this.setStyle(highlightedStyle);
+                        $(".content-feature-data").html(_.template(testTemplate, data));
+                        feature.selected = true;
+                    } else {
+                        this.setStyle(unhighlightedStyle);
+                        $(".content-feature-data").remove();
+                        feature.selected = false;
+                    }
                 }
+                */
+
             });
         },
 
@@ -316,12 +318,6 @@
         }
 
     });
-
-
-
-
-
-
 
     // helper functions
     window.percentifyValue = function(value){
