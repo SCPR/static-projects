@@ -88,10 +88,6 @@
         el: ".data-visuals",
 
         initialize: function(viewObject){
-
-
-
-
             this.render(viewObject);
         },
 
@@ -181,24 +177,6 @@
                 copyOfCountyShapes.features[i].properties.rate = parseFloat(dataObject[0].attributes.rate);
                 copyOfCountyShapes.features[i].properties.countyproper = dataObject[0].attributes.countyproper + " County";
             };
-
-            /*
-            var equalIntervalBreaks = jsStats.equalIntervalBreaks(equalIntervalArray, 5);
-            for (var i=0; i<copyOfCountyShapes.features.length; i++){
-                var comparitor = copyOfCountyShapes.features;
-                if (comparitor[i].properties.rate >= equalIntervalBreaks[3].upper){
-                    comparitor[i].properties.layerColor = "#bd0026";
-                } else if (comparitor[i].properties.rate >= equalIntervalBreaks[2].upper) {
-                    comparitor[i].properties.layerColor = "#f03b20";
-                } else if (comparitor[i].properties.rate >= equalIntervalBreaks[1].upper){
-                    comparitor[i].properties.layerColor = "#fd8d3c";
-                } else if (comparitor[i].properties.rate >= equalIntervalBreaks[0].upper){
-                    comparitor[i].properties.layerColor = "#fecc5c";
-                } else {
-                    comparitor[i].properties.layerColor = "#ffffb2";
-                }
-            };
-            */
 
             for (var i=0; i<copyOfCountyShapes.features.length; i++){
                 var comparitor = copyOfCountyShapes.features;
