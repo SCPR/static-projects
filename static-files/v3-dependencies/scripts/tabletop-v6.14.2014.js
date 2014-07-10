@@ -71,7 +71,8 @@
     this.callbackContext = options.callbackContext;
 
     if(typeof(options.proxy) !== 'undefined') {
-      this.endpoint = options.proxy;
+      // Remove trailing slash, it will break the app
+      this.endpoint = options.proxy.replace(/\/$/,'');
       this.simple_url = true;
       this.singleton = true;
       // Let's only use CORS (straight JSON request) when
@@ -90,8 +91,13 @@
 
     /* Be friendly about what you accept */
     if(/key=/.test(this.key)) {
-      this.log("You passed a key as a URL! Attempting to parse.");
-      this.key = this.key.match("key=(.*?)&")[1];
+      this.log("You passed an old Google Docs url as the key! Attempting to parse.");
+      this.key = this.key.match("key=(.*?)(&|#|$)")[1];
+    }
+
+    if(/pubhtml/.test(this.key)) {
+      this.log("You passed a new Google Spreadsheets url as the key! Attempting to parse.");
+      this.key = this.key.match("d\\/(.*?)\\/pubhtml")[1];
     }
 
     if(!this.key) {
@@ -302,12 +308,16 @@
         this.foundSheetNames.push(data.feed.entry[i].title.$t);
         // Only pull in desired sheets to reduce loading
         if( this.isWanted(data.feed.entry[i].content.$t) ) {
-          var sheet_id = data.feed.entry[i].link[3].href.substr( data.feed.entry[i].link[3].href.length - 3, 3);
-          var json_path = "/feeds/list/" + this.key + "/" + sheet_id + "/public/values?sq=" + this.query + '&alt='
+          var linkIdx = data.feed.entry[i].link.length-1;
+          var sheet_id = data.feed.entry[i].link[linkIdx].href.split('/').pop();
+          var json_path = "/feeds/list/" + this.key + "/" + sheet_id + "/public/values?alt="
           if (inNodeJS || supportsCORS) {
             json_path += 'json';
           } else {
             json_path += 'json-in-script';
+          }
+          if(this.query) {
+            json_path += "&sq=" + this.query;
           }
           if(this.orderby) {
             json_path += "&orderby=column:" + this.orderby.toLowerCase();
