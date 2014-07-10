@@ -13,7 +13,7 @@
         },
         tabletop: {
             instance: window.storage,
-            sheet: "data_2014"
+            sheet: "data_6_24_2014"
         },
         sync: Backbone.tabletopSync
     });
@@ -32,7 +32,7 @@
         model: App.Models.WhoopingCoughCurrent,
         tabletop: {
             instance: window.storage,
-            sheet: "data_2014"
+            sheet: "data_6_24_2014"
         },
         sync: Backbone.tabletopSync
     });
