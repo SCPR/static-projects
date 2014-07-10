@@ -297,19 +297,40 @@
                 // loop through our density intervals and generate a label with a colored square for each interval
                     for (var i=0; i<grades.length; i++){
                         div.innerHTML +=
-                        '<i style="background:' + dataColor[i] + '"></i> ' +
-                        grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+ per 100,000 people');
+                        "<i style='display: inline; margin: 0px; background:" + dataColor[i] + "'></i>"
                     };
 
+                return div;
+            };
+
+            legend2 = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+
+                    grades = [0, 5, 10, 15, 20, 25, 30],
+                    labels = [],
+                    dataColor = ["#FFEDA0", "#FEB24C", "#FD8D3C", "#FC4E2A", "#E31A1C", "#BD0026", "#800026"];
+
+                      console.log(div);
+
+                // loop through our density intervals and generate a label with a colored square for each interval
+
+                    for (var i=0; i<grades.length; i++){
+                        div.innerHTML +=
+                        "<div style='display: inline; margin-left: 13px; margin-right: 13px;'>" + (grades[i + 1] ?  grades[i + 1] + " </div>" : "<br> cases per 100,000 people")
+                    };
 
                 return div;
             };
 
             //legend.addTo(this.map);
             legend();
+            legend2();
 
             addLegend = function () {
                 $ ("#content-map-legend").html(legend);
+                 $ ("#content-map-legend").append("</br>");
+                $ ("#content-map-legend").append(legend2);
             };
 
             addLegend();
