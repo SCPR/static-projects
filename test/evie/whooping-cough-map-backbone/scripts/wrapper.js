@@ -3,13 +3,13 @@
     window.appConfig = {
 
         // general configs
-        open_about_this: false,
-        comments: false,
-        project_root: "http://projects.scpr.org/static/test/evie/whooping-cough-map",
+        open_about_this: true,
+        comments: true,
+        project_root: "http://projects.scpr.org/static/maps/california-cases-of-whooping-cough-by-county",
         embed_this: true,
         embed_width: "100%",
         embed_height: "850px",
-        twitter_share_text: "This is shared via the Twitter share button",
+        twitter_share_text: "Map: View a county-by-county breakdown of whooping cough cases in California so far in 2014",
 
         // map configs
         initial_map_zoom: 7,
@@ -136,5 +136,4 @@
             pushState: false,
         });
     });
-
 })();

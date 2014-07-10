@@ -88,6 +88,10 @@
         el: ".data-visuals",
 
         initialize: function(viewObject){
+
+
+
+
             this.render(viewObject);
         },
 
@@ -120,10 +124,14 @@
 
             // this is what is being written to the display div
             var testTemplate = (
-                "<h5><%= countyproper %></h5>" +
-                "<p><%= cases %> total cases</p>" +
-                "<p><%= rate %> per 100,000 people</p>" +
-                "<p>Data updated: <%= updated %></p>"
+                "<div class='pull-left'>" +
+                    "<h5><%= countyproper %></h5>" +
+                    "<h6>Last updated: <%= moment(updated).format('MMMM D[th], YYYY') %></h6>" +
+                "</div>" +
+                "<div class='pull-right'>" +
+                    "<h5><%= rate %> cases per 100,000 people</h5>" +
+                    "<h6><%= cases %> total cases</h6>" +
+                "</div>"
             );
 
             feature.selected = false;
@@ -137,23 +145,13 @@
 
                 mouseout: function(e){
                     this.setStyle(unhighlightedStyle);
+                    $(".content-feature-data").html(
+                        "<div class='pull-left'>" +
+                            "<h5>Hover over a county to see the latest whooping cough case rates in California</h5>" +
+                            "<h6>&nbsp;</h6>" +
+                        "</div>"
+                    );
                 },
-
-                /*
-                click: function(e){
-                    var data = e.target.feature.properties;
-                    if (feature.selected === false){
-                        this.setStyle(highlightedStyle);
-                        $(".content-feature-data").html(_.template(testTemplate, data));
-                        feature.selected = true;
-                    } else {
-                        this.setStyle(unhighlightedStyle);
-                        $(".content-feature-data").remove();
-                        feature.selected = false;
-                    }
-                }
-                */
-
             });
         },
 
@@ -230,9 +228,45 @@
             return newGeoJsonLayer;
         },
 
-        render: function(viewObject){
+        createLegend: function(){
+            grades = [0, 5, 10, 15, 20, 25, 30];
+            dataColor = ["#FFEDA0", "#FEB24C", "#FD8D3C", "#FC4E2A", "#E31A1C", "#BD0026", "#800026"];
+            for (var i=0; i<grades.length; i++){
+                $("#legend-colors").append(
+                    "<td style='background:" + dataColor[i] + "'>" + grades[i] + "</td>"
+                );
+            };
+        },
 
+        render: function(viewObject){
             $(viewObject.container).html(_.template(this.template));
+
+            $(window).bind('scroll', function(){
+
+                var aboveHeight;
+
+                var barWidth = $(".content-map-data").width();
+
+                if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)){
+                    aboveHeight = $(".content-map-data").outerHeight();
+                } else {
+                    aboveHeight = $("header").outerHeight();
+                }
+
+                //if scrolled down more than the varibles"s height
+                if ($(window).scrollTop() > aboveHeight){
+
+                    // if yes, add "fixed" class to the <nav>
+                    // add padding top to the #content (value is same as the height of the nav)
+                    $(".content-map-data").addClass("fixed").css("width", barWidth);
+
+                } else {
+
+                    // when scroll up or less than aboveHeight, remove the "fixed" class, and the padding-top
+                    $(".content-map-data").removeClass("fixed").css("width", "width: 100%;");
+                }
+
+            });
 
             this.stamenToner = new L.tileLayer(
                 "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
@@ -279,63 +313,7 @@
 
             baseMaps["2014 Cases"].addTo(this.map);
 
-
-
-
-            //var legend = L.control({position: 'bottomleft'});
-
-            legend = function (map) {
-
-                var div = L.DomUtil.create('div', 'info legend'),
-
-                    grades = [0, 5, 10, 15, 20, 25, 30],
-                    labels = [],
-                    dataColor = ["#FFEDA0", "#FEB24C", "#FD8D3C", "#FC4E2A", "#E31A1C", "#BD0026", "#800026"];
-
-                      console.log(div);
-
-                // loop through our density intervals and generate a label with a colored square for each interval
-                    for (var i=0; i<grades.length; i++){
-                        div.innerHTML +=
-                        "<i style='display: inline; margin: 0px; background:" + dataColor[i] + "'></i>"
-                    };
-
-                return div;
-            };
-
-            legend2 = function (map) {
-
-                var div = L.DomUtil.create('div', 'info legend'),
-
-                    grades = [0, 5, 10, 15, 20, 25, 30],
-                    labels = [],
-                    dataColor = ["#FFEDA0", "#FEB24C", "#FD8D3C", "#FC4E2A", "#E31A1C", "#BD0026", "#800026"];
-
-                      console.log(div);
-
-                // loop through our density intervals and generate a label with a colored square for each interval
-
-                    for (var i=0; i<grades.length; i++){
-                        div.innerHTML +=
-                        "<div style='display: inline; margin-left: 13px; margin-right: 13px;'>" + (grades[i + 1] ?  grades[i + 1] + " </div>" : "<br> cases per 100,000 people")
-                    };
-
-                return div;
-            };
-
-            //legend.addTo(this.map);
-            legend();
-            legend2();
-
-            addLegend = function () {
-                $ ("#content-map-legend").html(legend);
-                 $ ("#content-map-legend").append("</br>");
-                $ ("#content-map-legend").append(legend2);
-            };
-
-            addLegend();
-
-
+            this.createLegend();
         }
 
     });
