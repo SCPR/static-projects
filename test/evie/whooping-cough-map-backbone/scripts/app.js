@@ -182,9 +182,8 @@
                 copyOfCountyShapes.features[i].properties.countyproper = dataObject[0].attributes.countyproper + " County";
             };
 
-            var equalIntervalBreaks = jsStats.equalIntervalBreaks(equalIntervalArray, 5);
-
             /*
+            var equalIntervalBreaks = jsStats.equalIntervalBreaks(equalIntervalArray, 5);
             for (var i=0; i<copyOfCountyShapes.features.length; i++){
                 var comparitor = copyOfCountyShapes.features;
                 if (comparitor[i].properties.rate >= equalIntervalBreaks[3].upper){
@@ -318,8 +317,8 @@
 
     });
 
-       
-   
+
+
 
 
 
