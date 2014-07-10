@@ -1,1 +1,28 @@
 #map {width: 100%; height: 680px;}
+
+#title {	
+	text-align: center;
+}
+
+.content-feature-data {
+	text-align: right;
+	font-size: 14px;
+}
+
+.content-info-data {
+	height: 200px;
+	margin-right: 20px;
+}
+
+.legend {
+    line-height: 25px;
+    color: #555;
+    font-size: 18px;
+}
+.legend i {
+    width: 25px;
+    height: 25px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}

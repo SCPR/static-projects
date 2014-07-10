@@ -32,14 +32,9 @@ blackscale = L.tileLayer("http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
     maxZoom: 14
 }).addTo(map);
 
-$.getJSON("data.json", function(coughdata){
-
-    });
-
 
     function getColor(d) {
 
-        console.log(d);
 
     return d > 30 ? '#800026' :
            d > 25  ? '#BD0026' :
@@ -124,9 +119,34 @@ $.getJSON("data.json", function(coughdata){
 
     }
 
+data2010 = L.geoJson(ca_county, {
+    style: style2010,
+    onEachFeature: onEachFeature
+});
 
+
+data2011 = L.geoJson(ca_county, {
+    style: style2011,
+    onEachFeature: onEachFeature
+});
+
+data2012 = L.geoJson(ca_county, {
+    style: style2012,
+    onEachFeature: onEachFeature
+});
+
+data2013 = L.geoJson(ca_county, {
+    style: style2013,
+    onEachFeature: onEachFeature
+});
+
+data2014 = L.geoJson(ca_county, {
+    style: style2014,
+    onEachFeature: onEachFeature
+}).addTo(map);
 
 function highlightFeature(e) {
+
     var layer = e.target;
 
     layer.setStyle({
@@ -144,37 +164,25 @@ function highlightFeature(e) {
      info.update(layer.feature.properties);
 }
 
-function resetHighlight2010(e) {
-    data2010.resetStyle(e.target);
-
-    info.update();
-}
-
-function resetHighlight2011(e) {
-    data2011.resetStyle(e.target);
-
-    info2011.update();
-}
+createResetStyle("ResetStyle", data2010);
 
 
-function resetHighlight2012(e) {
-    data2012.resetStyle(e.target);
 
-    info2012.update();
-}
+function createResetStyle(newResetStyleName, dataLayer) {
+    
+    var newResetStyleName = function (e) {
 
-function resetHighlight2013(e) {
-    data2013.resetStyle(e.target);
+        console.log(newResetStyleName);
+        console.log(dataLayer);
+        dataLayer.resetStyle(e.target);
+    //infoWindow.update();
+};
 
-    info2013.update();
+    newResetStyleName();
 }
 
 
-function resetHighlight2014(e) {
-    data2014.resetStyle(e.target);
-
-    info2014.update();
-}
+//console.log(ResetStyle);
 
 
 function zoomToFeature(e) {
@@ -182,71 +190,14 @@ function zoomToFeature(e) {
 }
 
 
-function onEachFeature2010(feature, layer) {
+function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
-        mouseout: resetHighlight2010,
+        //mouseout: ResetStyle,
         click: zoomToFeature
     });
 }
 
-function onEachFeature2011(feature, layer) {
-    layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight2011,
-        click: zoomToFeature
-    });
-}
-
-
-function onEachFeature2012(feature, layer) {
-    layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight2012,
-        click: zoomToFeature
-    });
-}
-
-function onEachFeature2013(feature, layer) {
-    layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight2013,
-        click: zoomToFeature
-    });
-}
-
-function onEachFeature2014(feature, layer) {
-    layer.on({
-        mouseover: highlightFeature,
-        mouseout: resetHighlight2014,
-        click: zoomToFeature
-    });
-}
-
-data2010 = L.geoJson(ca_county, {
-    style: style2010,
-    onEachFeature: onEachFeature2010
-});
-
-data2011 = L.geoJson(ca_county, {
-    style: style2011,
-    onEachFeature: onEachFeature2011
-});
-
-data2012 = L.geoJson(ca_county, {
-    style: style2012,
-    onEachFeature: onEachFeature2012
-});
-
-data2013 = L.geoJson(ca_county, {
-    style: style2013,
-    onEachFeature: onEachFeature2013
-});
-
-data2014 = L.geoJson(ca_county, {
-    style: style2014,
-    onEachFeature: onEachFeature2014
-}).addTo(map);
 
 
 var baseMaps = {
@@ -289,7 +240,7 @@ info.update = function (props) {
 info.addTo(map);
 
 
-/* var legend = L.control({position: 'bottomright'});
+var legend = L.control({position: 'bottomright'});
 
 legend.onAdd = function (map) {
 
@@ -307,7 +258,7 @@ legend.onAdd = function (map) {
     return div;
 };
 
-legend.addTo(map); */
+legend.addTo(map);
 
 
 

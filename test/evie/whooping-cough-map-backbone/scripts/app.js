@@ -104,23 +104,30 @@
         onEachFeature: function(feature, layer) {
 
             var highlightedStyle = {
-                weight: 1,
-                opacity: 1,
-                fillOpacity: 1,
+                //weight: 1,
+                //opacity: 1,
+                //fillOpacity: 1,
+                weight: 3,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7,
+                fillColor: 'black'
             };
 
             var unhighlightedStyle = {
                 weight: 0.7,
                 opacity: 0.7,
                 fillOpacity: 0.7,
+                fillColor: feature.properties.layerColor
             };
+
 
             // this is what is being written to the display div
             var testTemplate = (
                 "<h5><%= countyproper %></h5>" +
                 "<p><%= cases %> total cases</p>" +
                 "<p><%= rate %> per 100,000 people</p>" +
-                "<p><%= updated %></p>"
+                "<p>Data updated: <%= updated %></p>"
             );
 
             layer.on({
@@ -139,9 +146,11 @@
                 },
 
                 click: function(e){
-                    //e.layer._map.fitBounds(e.target.getBounds());
+                    console.log(e);
+                    e.layer._map.fitBounds(e.target.getBounds());
                     var data = e.target.feature.properties;
                     $(".content-feature-data").html(_.template(testTemplate, data));
+                    //map.fitBounds(e.target.getBounds());
                 }
             });
         },
@@ -194,15 +203,15 @@
 
             for (var i=0; i<copyOfCountyShapes.features.length; i++){
                 var comparitor = copyOfCountyShapes.features;
-                if (comparitor[i].properties.rate >= 5){
+                if (comparitor[i].properties.rate >= 5 && comparitor[i].properties.rate < 10){
                     comparitor[i].properties.layerColor = "#FEB24C";
-                } else if (comparitor[i].properties.rate >= 10){
+                } else if (comparitor[i].properties.rate >= 10 && comparitor[i].properties.rate < 15){
                     comparitor[i].properties.layerColor = "#FD8D3C";
-                } else if (comparitor[i].properties.rate >= 15){
+                } else if (comparitor[i].properties.rate >= 15 && comparitor[i].properties.rate < 20){
                     comparitor[i].properties.layerColor = "#FC4E2A";
-                } else if (comparitor[i].properties.rate >= 20) {
+                } else if (comparitor[i].properties.rate >= 20 && comparitor[i].properties.rate < 25) {
                     comparitor[i].properties.layerColor = "#E31A1C";
-                } else if (comparitor[i].properties.rate >= 25){
+                } else if (comparitor[i].properties.rate >= 25 && comparitor[i].properties.rate < 30){
                     comparitor[i].properties.layerColor = "#BD0026";
                 } else if (comparitor[i].properties.rate >= 30){
                     comparitor[i].properties.layerColor = "#800026";
@@ -268,31 +277,52 @@
             }).addTo(this.map);
 
             baseMaps["2014 Cases"].addTo(this.map);
+
+
+
+
+            //var legend = L.control({position: 'bottomleft'});
+
+            legend = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+
+                    grades = [0, 5, 10, 15, 20, 25, 30],
+                    labels = [],
+                    dataColor = ["#FFEDA0", "#FEB24C", "#FD8D3C", "#FC4E2A", "#E31A1C", "#BD0026", "#800026"];
+
+                      console.log(div);
+
+                // loop through our density intervals and generate a label with a colored square for each interval
+                    for (var i=0; i<grades.length; i++){
+                        div.innerHTML +=
+                        '<i style="background:' + dataColor[i] + '"></i> ' +
+                        grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+ per 100,000 people');
+                    };
+
+
+                return div;
+            };
+
+            //legend.addTo(this.map);
+            legend();
+
+            addLegend = function () {
+                $ ("#content-map-legend").html(legend);
+            };
+
+            addLegend();
+
+
         }
+
     });
 
-    // legend
+       
+   
 
-    /* var legend = L.control({position: 'bottomright'});
 
-    legend.onAdd = function (map) {
 
-        var div = $(".content-feature-data")
-        var colorData = e.target.feature.properties.layerColor;
-        grades = [0, 5, 10, 20, 30],
-        labels = [];
-
-    // loop through our density intervals and generate a label with a colored square for each interval
-        for (var i = 0; i < grades.length; i++) {
-            div.innerHtml +=
-            '<i style="background:' + grades[i] + '"></i> ' +
-            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-        }
-
-        return div;
-    };
-
-    legend.addTo(this.map); */
 
     // helper functions
     window.percentifyValue = function(value){
