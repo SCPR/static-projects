@@ -13,7 +13,7 @@
         },
         tabletop: {
             instance: window.storage,
-            sheet: "data_6_24_2014"
+            sheet: "data_7_8_2014"
         },
         sync: Backbone.tabletopSync
     });
@@ -32,7 +32,7 @@
         model: App.Models.WhoopingCoughCurrent,
         tabletop: {
             instance: window.storage,
-            sheet: "data_6_24_2014"
+            sheet: "data_7_8_2014"
         },
         sync: Backbone.tabletopSync
     });
@@ -83,12 +83,13 @@
     });
 
     App.Views.ApplicationVisuals = Backbone.View.extend({
-
         template: template("templates/data-visuals.html"),
 
         el: ".data-visuals",
 
         initialize: function(viewObject){
+
+            this.dataColor = ["#ffffff", "#ffffb2", "#fed976", "#feb24c", "#fd8d3c", "#f03b20", "#bd0026"];
 
             $(window).bind('scroll', function(){
                 var aboveHeight = $(".kpcc-header").outerHeight() + $(".data-details").outerHeight();
@@ -203,20 +204,20 @@
 
             for (var i=0; i<copyOfCountyShapes.features.length; i++){
                 var comparitor = copyOfCountyShapes.features;
-                if (comparitor[i].properties.rate >= 5 && comparitor[i].properties.rate < 10){
-                    comparitor[i].properties.layerColor = "#FEB24C";
-                } else if (comparitor[i].properties.rate >= 10 && comparitor[i].properties.rate < 15){
-                    comparitor[i].properties.layerColor = "#FD8D3C";
-                } else if (comparitor[i].properties.rate >= 15 && comparitor[i].properties.rate < 20){
-                    comparitor[i].properties.layerColor = "#FC4E2A";
-                } else if (comparitor[i].properties.rate >= 20 && comparitor[i].properties.rate < 25) {
-                    comparitor[i].properties.layerColor = "#E31A1C";
-                } else if (comparitor[i].properties.rate >= 25 && comparitor[i].properties.rate < 30){
-                    comparitor[i].properties.layerColor = "#BD0026";
-                } else if (comparitor[i].properties.rate >= 30){
-                    comparitor[i].properties.layerColor = "#800026";
+                if (comparitor[i].properties.rate <= 120 && comparitor[i].properties.rate >= 100){
+                    comparitor[i].properties.layerColor = this.dataColor[5];
+                } else if (comparitor[i].properties.rate <= 100 && comparitor[i].properties.rate >= 80){
+                    comparitor[i].properties.layerColor = this.dataColor[4];
+                } else if (comparitor[i].properties.rate <= 80 && comparitor[i].properties.rate >= 60){
+                    comparitor[i].properties.layerColor = this.dataColor[3];
+                } else if (comparitor[i].properties.rate <= 60 && comparitor[i].properties.rate >= 40){
+                    comparitor[i].properties.layerColor = this.dataColor[2];
+                } else if (comparitor[i].properties.rate <= 40 && comparitor[i].properties.rate >= 20){
+                    comparitor[i].properties.layerColor = this.dataColor[1];
+                } else if (comparitor[i].properties.rate <= 20 && comparitor[i].properties.rate >= 0){
+                    comparitor[i].properties.layerColor = this.dataColor[0];
                 } else {
-                    comparitor[i].properties.layerColor = "#FFEDA0";
+                    comparitor[i].properties.layerColor = "#ffffff";
                 }
             };
 
@@ -230,11 +231,19 @@
         },
 
         createLegend: function(){
-            grades = [0, 5, 10, 15, 20, 25, 30];
-            dataColor = ["#FFEDA0", "#FEB24C", "#FD8D3C", "#FC4E2A", "#E31A1C", "#BD0026", "#800026"];
-            for (var i=0; i<grades.length; i++){
+            var dataRanges = [
+                "No cases reported",
+                "Less than 20",
+                "Less than 40",
+                "Less than 60",
+                "Less than 80",
+                "Less than 100",
+                "Less than 120"
+            ];
+
+            for (var i=0; i<this.dataColor.length; i++){
                 $("#legend-colors").append(
-                    "<td style='background:" + dataColor[i] + "'>" + grades[i] + "</td>"
+                    "<td style='background:" + this.dataColor[i] + "'>" + dataRanges[i] + "</td>"
                 );
             };
         },
