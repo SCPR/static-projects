@@ -83,6 +83,7 @@
     });
 
     App.Views.ApplicationVisuals = Backbone.View.extend({
+
         template: template("templates/data-visuals.html"),
 
         el: ".data-visuals",
@@ -100,6 +101,10 @@
             });
 
             this.render(viewObject);
+        },
+
+        events: {
+          "click input": "layerSwitch"
         },
 
         styleFeatures: function (feature) {
@@ -255,12 +260,12 @@
                 this.stamenToner
             );
 
-            var baseMaps = {
-                "2014": this.combineCollectionWithShape(viewObject.collection),
-                "2013": this.createNewBasemapLayer("data2013Collection", "data/data_2013.json"),
-                "2012": this.createNewBasemapLayer("data2012Collection", "data/data_2012.json"),
-                "2011": this.createNewBasemapLayer("data2011Collection", "data/data_2011.json"),
-                "2010": this.createNewBasemapLayer("data2010Collection", "data/data_2010.json"),
+            this.baseMaps = {
+                "layer2014": this.combineCollectionWithShape(viewObject.collection),
+                "layer2013": this.createNewBasemapLayer("data2013Collection", "data/data_2013.json"),
+                "layer2012": this.createNewBasemapLayer("data2012Collection", "data/data_2012.json"),
+                "layer2011": this.createNewBasemapLayer("data2011Collection", "data/data_2011.json"),
+                "layer2010": this.createNewBasemapLayer("data2010Collection", "data/data_2010.json"),
             };
 
             var overlayMaps = {};
@@ -270,22 +275,37 @@
                 "collapsed": false
             };
 
-            L.control.layers(
+            /* L.control.layers(
                 baseMaps,
                 overlayMaps,
                 controlPanel
-            ).addTo(this.map);
+            ).addTo(this.map); */
 
             L.control.zoom({
                 position: "topright"
             }).addTo(this.map);
 
-            baseMaps["2014"].addTo(this.map);
+            this.dataLayer = new L.layerGroup();
+            this.dataLayer.addLayer(this.baseMaps["layer2014"]);
+            this.dataLayer.addTo(this.map);
 
             this.createLegend();
+            
+        },
+
+
+       layerSwitch: function(ev){
+                var layerName = ev.target.id;
+                this.dataLayer.clearLayers();
+                this.dataLayer.addLayer(this.baseMaps[layerName]);
+                this.dataLayer.addTo(this.map);
+
         }
 
     });
+
+
+
 
     // helper functions
     window.percentifyValue = function(value){

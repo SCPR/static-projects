@@ -96,15 +96,15 @@
                 }
 
                 var dataDescription = _.template(
-                    "<h4><%= install_zip_code %></h4>" +
-                    "<p><strong>Total removed</strong>: <%= window.addCommas(total_overall) %></p>" +
-                    "<p><%= window.addCommas(total_2014) %></p>" +
-                    "<p><%= window.addCommas(total_2013) %></p>" +
-                    "<p><%= window.addCommas(total_2012) %></p>" +
-                    "<p><%= window.addCommas(total_2011) %></p>" +
-                    "<p><%= window.addCommas(total_2010) %></p>" +
-                    "<p><%= window.addCommas(total_2009) %></p>" +
-                    "<p><%= window.addCommas(total_2008) %></p>" +
+                    "<h4><%= window.addCommas(total_overall) %></h4>" +
+                    "<p><strong>turfs have been removed in zipcode <%= install_zip_code %></strong>: </p>" +
+                    "<p>Year 2014: <%= window.addCommas(total_2014) %></p>" +
+                    "<p>Year 2013: <%= window.addCommas(total_2013) %></p>" +
+                    "<p>Year 2012: <%= window.addCommas(total_2012) %></p>" +
+                    "<p>Year 2011: <%= window.addCommas(total_2011) %></p>" +
+                    "<p>Year 2010: <%= window.addCommas(total_2010) %></p>" +
+                    "<p>Year 2009: <%= window.addCommas(total_2009) %></p>" +
+                    "<p>Year 2008: <%= window.addCommas(total_2008) %></p>" +
                     "<p><%= data_source %></p>" +
                     "<p><%= incentive_program %></p>" +
                     "<p class='small-writing'><strong>About the program</strong>: <%= about_the_program %></p>", fusionTableDataObject);
