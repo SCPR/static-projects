@@ -88,6 +88,17 @@
         el: ".data-visuals",
 
         initialize: function(viewObject){
+
+            $(window).bind('scroll', function(){
+                var aboveHeight = $(".kpcc-header").outerHeight() + $(".data-details").outerHeight();
+                var barWidth = $(".content-map-data").width();
+                if ($(window).scrollTop() > aboveHeight){
+                    $(".content-map-data").addClass("fixed").css("width", barWidth);
+                } else {
+                    $(".content-map-data").removeClass("fixed").css("width", "width: 100%;");
+                }
+            });
+
             this.render(viewObject);
         },
 
@@ -119,36 +130,43 @@
             };
 
             // this is what is being written to the display div
-            var testTemplate = (
-                "<div class='pull-left'>" +
+            var featcherDetails = (
+                "<div class='col-xs-12 col-sm-12 col-md-6 col-lg-6'>" +
                     "<h5><%= countyproper %></h5>" +
                     "<h6>Last updated: <%= moment(updated).format('MMMM D[th], YYYY') %></h6>" +
                 "</div>" +
-                "<div class='pull-right'>" +
+                "<div class='col-xs-12 col-sm-12 col-md-6 col-lg-6'>" +
                     "<h5><%= rate %> cases per 100,000 people</h5>" +
                     "<h6><%= cases %> total cases</h6>" +
                 "</div>"
             );
 
-            feature.selected = false;
+            if (window.appConfig.isMobile === true){
+                layer.on({
+                    click: function(e){
+                        var data = e.target.feature.properties;
+                        $(".content-feature-data").html(_.template(featcherDetails, data));
+                    }
+                });
+            } else {
+                layer.on({
+                    mouseover: function(e){
+                        this.setStyle(highlightedStyle);
+                        var data = e.target.feature.properties;
+                        $(".content-feature-data").html(_.template(featcherDetails, data));
+                    },
 
-            layer.on({
-                mouseover: function(e){
-                    this.setStyle(highlightedStyle);
-                    var data = e.target.feature.properties;
-                    $(".content-feature-data").html(_.template(testTemplate, data));
-                },
-
-                mouseout: function(e){
-                    this.setStyle(unhighlightedStyle);
-                    $(".content-feature-data").html(
-                        "<div class='pull-left'>" +
-                            "<h5>Hover over a county to see the latest whooping cough case rates in California</h5>" +
-                            "<h6>&nbsp;</h6>" +
-                        "</div>"
-                    );
-                },
-            });
+                    mouseout: function(e){
+                        this.setStyle(unhighlightedStyle);
+                        $(".content-feature-data").html(
+                            "<div class='pull-left'>" +
+                                "<h5>Hover over a county to see the latest whooping cough case rates in California</h5>" +
+                                "<h6>&nbsp;</h6>" +
+                            "</div>"
+                        );
+                    },
+                });
+            }
         },
 
         createNewBasemapLayer: function(collection, dataUrl){
@@ -219,33 +237,6 @@
         render: function(viewObject){
             $(viewObject.container).html(_.template(this.template));
 
-            $(window).bind('scroll', function(){
-
-                var aboveHeight;
-
-                var barWidth = $(".content-map-data").width();
-
-                if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)){
-                    aboveHeight = $(".content-map-data").outerHeight();
-                } else {
-                    aboveHeight = $("header").outerHeight();
-                }
-
-                //if scrolled down more than the varibles"s height
-                if ($(window).scrollTop() > aboveHeight){
-
-                    // if yes, add "fixed" class to the <nav>
-                    // add padding top to the #content (value is same as the height of the nav)
-                    $(".content-map-data").addClass("fixed").css("width", barWidth);
-
-                } else {
-
-                    // when scroll up or less than aboveHeight, remove the "fixed" class, and the padding-top
-                    $(".content-map-data").removeClass("fixed").css("width", "width: 100%;");
-                }
-
-            });
-
             this.stamenToner = new L.tileLayer(
                 "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
                     attribution: "Map tiles by <a href='http://stamen.com' target='_blank'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0' target='_blank'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://openstreetmap.org' target='_blank'>OpenStreetMap</a> contributors, <a href='http://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>",
@@ -265,11 +256,11 @@
             );
 
             var baseMaps = {
-                "2014 Cases": this.combineCollectionWithShape(viewObject.collection),
-                "2013 Cases": this.createNewBasemapLayer("data2013Collection", "data/data_2013.json"),
-                "2012 Cases": this.createNewBasemapLayer("data2012Collection", "data/data_2012.json"),
-                "2011 Cases": this.createNewBasemapLayer("data2011Collection", "data/data_2011.json"),
-                "2010 Cases": this.createNewBasemapLayer("data2010Collection", "data/data_2010.json"),
+                "2014": this.combineCollectionWithShape(viewObject.collection),
+                "2013": this.createNewBasemapLayer("data2013Collection", "data/data_2013.json"),
+                "2012": this.createNewBasemapLayer("data2012Collection", "data/data_2012.json"),
+                "2011": this.createNewBasemapLayer("data2011Collection", "data/data_2011.json"),
+                "2010": this.createNewBasemapLayer("data2010Collection", "data/data_2010.json"),
             };
 
             var overlayMaps = {};
@@ -289,7 +280,7 @@
                 position: "topright"
             }).addTo(this.map);
 
-            baseMaps["2014 Cases"].addTo(this.map);
+            baseMaps["2014"].addTo(this.map);
 
             this.createLegend();
         }

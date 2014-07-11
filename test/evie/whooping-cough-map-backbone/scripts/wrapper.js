@@ -5,6 +5,7 @@
         // general configs
         open_about_this: true,
         comments: true,
+        isMobile: false,
         project_root: "http://projects.scpr.org/static/maps/california-cases-of-whooping-cough-by-county",
         embed_this: true,
         embed_width: "100%",
@@ -66,7 +67,8 @@
             // set params for mobile devices
             if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
                 window.appConfig.open_about_this = false;
-                window.appConfig.initial_zoom = 5;
+                window.appConfig.isMobile = true;
+                window.appConfig.initial_map_zoom = 1;
             };
 
             // checks comments setting
