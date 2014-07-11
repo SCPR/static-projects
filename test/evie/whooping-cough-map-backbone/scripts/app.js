@@ -205,6 +205,7 @@
             for (var i=0; i<copyOfCountyShapes.features.length; i++){
                 var comparitor = copyOfCountyShapes.features;
                 if (comparitor[i].properties.rate <= 120 && comparitor[i].properties.rate >= 100){
+<<<<<<< Updated upstream
                     comparitor[i].properties.layerColor = this.dataColor[6];
                 } else if (comparitor[i].properties.rate <= 99 && comparitor[i].properties.rate >= 80){
                     comparitor[i].properties.layerColor = this.dataColor[5];
@@ -218,6 +219,21 @@
                     comparitor[i].properties.layerColor = this.dataColor[1];
                 } else {
                     comparitor[i].properties.layerColor = this.dataColor[0];
+=======
+                    comparitor[i].properties.layerColor = this.dataColor[5];
+                } else if (comparitor[i].properties.rate <= 100 && comparitor[i].properties.rate >= 80){
+                    comparitor[i].properties.layerColor = this.dataColor[4];
+                } else if (comparitor[i].properties.rate <= 80 && comparitor[i].properties.rate >= 60){
+                    comparitor[i].properties.layerColor = this.dataColor[3];
+                } else if (comparitor[i].properties.rate <= 60 && comparitor[i].properties.rate >= 40){
+                    comparitor[i].properties.layerColor = this.dataColor[2];
+                } else if (comparitor[i].properties.rate <= 40 && comparitor[i].properties.rate >= 20){
+                    comparitor[i].properties.layerColor = this.dataColor[1];
+                } else if (comparitor[i].properties.rate <= 20 && comparitor[i].properties.rate >= 0){
+                    comparitor[i].properties.layerColor = this.dataColor[0];
+                } else {
+                    comparitor[i].properties.layerColor = "#ffffff";
+>>>>>>> Stashed changes
                 }
             };
 
@@ -284,11 +300,21 @@
                 "collapsed": false
             };
 
+<<<<<<< Updated upstream
             /* L.control.layers(
                 baseMaps,
                 overlayMaps,
                 controlPanel
             ).addTo(this.map); */
+=======
+            /*
+            L.control.layers(
+                baseMaps,
+                overlayMaps,
+                controlPanel
+            ).addTo(this.map);
+            */
+>>>>>>> Stashed changes
 
             L.control.zoom({
                 position: "topright"
