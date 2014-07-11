@@ -89,7 +89,14 @@
 
         initialize: function(viewObject){
 
-            this.dataColor = ["#ffffff", "#ffffb2", "#fed976", "#feb24c", "#fd8d3c", "#f03b20", "#bd0026"];
+
+            this.dataColor = [
+                "#ffffff",
+                "#ffffb2",
+                "#fecc5c",
+                "#fd8d3c",
+                "#e31a1c"
+            ];
 
             $(window).bind('scroll', function(){
                 var aboveHeight = $(".kpcc-header").outerHeight() + $(".data-details").outerHeight();
@@ -137,11 +144,11 @@
 
             // this is what is being written to the display div
             var featcherDetails = (
-                "<div class='col-xs-12 col-sm-12 col-md-6 col-lg-6'>" +
+                "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
                     "<h5><%= countyproper %></h5>" +
                     "<h6>Last updated: <%= moment(updated).format('MMMM D[th], YYYY') %></h6>" +
                 "</div>" +
-                "<div class='col-xs-12 col-sm-12 col-md-6 col-lg-6'>" +
+                "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
                     "<h5><%= rate %> cases per 100,000 people</h5>" +
                     "<h6><%= cases %> total cases</h6>" +
                 "</div>"
@@ -204,17 +211,13 @@
 
             for (var i=0; i<copyOfCountyShapes.features.length; i++){
                 var comparitor = copyOfCountyShapes.features;
-                if (comparitor[i].properties.rate <= 120 && comparitor[i].properties.rate >= 100){
-                    comparitor[i].properties.layerColor = this.dataColor[6];
-                } else if (comparitor[i].properties.rate <= 99 && comparitor[i].properties.rate >= 80){
-                    comparitor[i].properties.layerColor = this.dataColor[5];
-                } else if (comparitor[i].properties.rate <= 79 && comparitor[i].properties.rate >= 60){
+                if (comparitor[i].properties.rate > 45 && comparitor[i].properties.rate <= 120){
                     comparitor[i].properties.layerColor = this.dataColor[4];
-                } else if (comparitor[i].properties.rate <= 59 && comparitor[i].properties.rate >= 40){
+                } else if (comparitor[i].properties.rate > 28 && comparitor[i].properties.rate <= 45){
                     comparitor[i].properties.layerColor = this.dataColor[3];
-                } else if (comparitor[i].properties.rate <= 39 && comparitor[i].properties.rate >= 20){
+                } else if (comparitor[i].properties.rate > 12 && comparitor[i].properties.rate <= 28){
                     comparitor[i].properties.layerColor = this.dataColor[2];
-                } else if (comparitor[i].properties.rate <= 19 && comparitor[i].properties.rate > 0){
+                } else if (comparitor[i].properties.rate > 0 && comparitor[i].properties.rate <= 12){
                     comparitor[i].properties.layerColor = this.dataColor[1];
                 } else {
                     comparitor[i].properties.layerColor = this.dataColor[0];
@@ -233,12 +236,10 @@
         createLegend: function(){
             var dataRanges = [
                 "No cases reported",
-                "Less than 20",
-                "Less than 40",
-                "Less than 60",
-                "Less than 80",
-                "Less than 100",
-                "Less than 120"
+                "1 to 12",
+                "More than 12",
+                "More than 28",
+                "More than 45"
             ];
 
             for (var i=0; i<this.dataColor.length; i++){
