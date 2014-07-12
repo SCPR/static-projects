@@ -89,13 +89,12 @@
 
         initialize: function(viewObject){
 
-
             this.dataColor = [
-                "#ffffff",
-                "#ffffb2",
-                "#fecc5c",
-                "#fd8d3c",
-                "#e31a1c"
+                "rgba(255, 255, 255, 0.7)",
+                "rgba(255, 255, 178, 0.7)",
+                "rgba(254, 204, 92, 0.7)",
+                "rgba(253, 141, 60, 0.7)",
+                "rgba(227, 26, 28, 0.7)"
             ];
 
             $(window).bind('scroll', function(){
@@ -142,19 +141,19 @@
                 fillColor: feature.properties.layerColor
             };
 
-            // this is what is being written to the display div
-            var featcherDetails = (
-                "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
-                    "<h5><%= countyproper %></h5>" +
-                    "<h6>Last updated: <%= moment(updated).format('MMMM D[th], YYYY') %></h6>" +
-                "</div>" +
-                "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
-                    "<h5><%= rate %> cases per 100,000 people</h5>" +
-                    "<h6><%= cases %> total cases</h6>" +
-                "</div>"
-            );
-
             if (window.appConfig.isMobile === true){
+
+                var featcherDetails = (
+                    "<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>" +
+                        "<h5><%= countyproper %></h5>" +
+                        "<h6>Last updated: <%= moment(updated).format('MMMM D[th], YYYY') %></h6>" +
+                    "</div>" +
+                    "<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>" +
+                        "<h5><%= rate %> cases per 100,000 people</h5>" +
+                        "<h6><%= cases %> total cases</h6>" +
+                    "</div>"
+                );
+
                 layer.on({
                     click: function(e){
                         var data = e.target.feature.properties;
@@ -162,6 +161,18 @@
                     }
                 });
             } else {
+
+                var featcherDetails = (
+                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
+                        "<h5><%= countyproper %></h5>" +
+                        "<h6>Last updated: <%= moment(updated).format('MMMM D[th], YYYY') %></h6>" +
+                    "</div>" +
+                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
+                        "<h5><%= rate %> cases per 100,000 people</h5>" +
+                        "<h6><%= cases %> total cases</h6>" +
+                    "</div>"
+                );
+
                 layer.on({
                     mouseover: function(e){
                         this.setStyle(highlightedStyle);
@@ -172,8 +183,8 @@
                     mouseout: function(e){
                         this.setStyle(unhighlightedStyle);
                         $(".content-feature-data").html(
-                            "<div class='pull-left'>" +
-                                "<h5>Hover over a county to see the latest whooping cough case rates in California</h5>" +
+                            "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
+                                "<h5>Hover over a county to see the rate of whooping cough cases per 100,000 people</h5>" +
                                 "<h6>&nbsp;</h6>" +
                             "</div>"
                         );
@@ -193,11 +204,8 @@
         },
 
         combineCollectionWithShape: function(collection){
-
             var copyOfCountyShapes = $.extend(true, {}, californiaCounties);
-
             var equalIntervalArray = [];
-
             for (var i=0; i<copyOfCountyShapes.features.length; i++){
                 var dataObject = collection.where({
                     "countyproper": copyOfCountyShapes.features[i].properties.name
