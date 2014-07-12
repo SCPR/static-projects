@@ -9,7 +9,7 @@
         project_root: "http://projects.scpr.org/static/maps/california-cases-of-whooping-cough-by-county",
         embed_this: true,
         embed_width: "100%",
-        embed_height: "850px",
+        embed_height: "1650px",
         twitter_share_text: "Map: View a county-by-county breakdown of whooping cough cases in California so far in 2014",
 
         // map configs
@@ -90,7 +90,7 @@
         },
 
         renderEmbedBox: function(){
-            jAlert("<h4>Embed this on your site or blog</h4><span>Copy this code and paste to source of your page. You may need to adjust the height parameter.<br /><br /><textarea>&lt;iframe src='" + window.appConfig.project_root + "?=embed/' width='" + appConfig.embed_width + "' height='" + appConfig.embed_height + "' style='margin: 0 0 0 0;' frameborder='no'&gt;&lt;/iframe></textarea>");
+            jAlert("<h4>Embed this on your site or blog</h4><span>Copy this code and paste to source of your page. You may need to adjust the height parameter.<br /><br /><textarea>&lt;iframe src='" + window.appConfig.project_root + "?=embed/' width='" + appConfig.embed_width + "' height='" + appConfig.embed_height + "' style='margin: 0 0 0 0;' scrolling='no' frameborder='no'&gt;&lt;/iframe></textarea>");
         },
 
         render: function(){
