@@ -96,18 +96,47 @@
                 }
 
                 var dataDescription = _.template(
-                    "<h4><%= window.addCommas(total_overall) %></h4>" +
-                    "<p><strong>turfs have been removed in zipcode <%= install_zip_code %></strong>: </p>" +
-                    "<p>Year 2014: <%= window.addCommas(total_2014) %></p>" +
-                    "<p>Year 2013: <%= window.addCommas(total_2013) %></p>" +
-                    "<p>Year 2012: <%= window.addCommas(total_2012) %></p>" +
-                    "<p>Year 2011: <%= window.addCommas(total_2011) %></p>" +
-                    "<p>Year 2010: <%= window.addCommas(total_2010) %></p>" +
-                    "<p>Year 2009: <%= window.addCommas(total_2009) %></p>" +
-                    "<p>Year 2008: <%= window.addCommas(total_2008) %></p>" +
-                    "<p><%= data_source %></p>" +
-                    "<p><%= incentive_program %></p>" +
-                    "<p class='small-writing'><strong>About the program</strong>: <%= about_the_program %></p>", fusionTableDataObject);
+                    "<h6><%= window.addCommas(total_overall) %> square feet of turf has been removed in zip code <%= install_zip_code %></h6>" +
+                    "<table class='table'>" +
+                        "<thead>" +
+                            "<tr>" +
+                                "<th>Year</th>" +
+                                "<th>Total</th>" +
+                            "</tr>" +
+                        "</thead>" +
+                        "<tbody>" +
+                            "<tr>" +
+                                "<td>2014</td>" +
+                                "<td><%= window.ifEmptyStringForTotal(total_2014) %></td>" +
+                            "</tr>" +
+                            "<tr>" +
+                                "<td>2013</td>" +
+                                "<td><%= window.ifEmptyStringForTotal(total_2013) %></td>" +
+                            "</tr>" +
+                            "<tr>" +
+                                "<td>2012</td>" +
+                                "<td><%= window.ifEmptyStringForTotal(total_2012) %></td>" +
+                            "</tr>" +
+                            "<tr>" +
+                                "<td>2011</td>" +
+                                "<td><%= window.ifEmptyStringForTotal(total_2011) %></td>" +
+                            "</tr>" +
+                            "<tr>" +
+                                "<td>2010</td>" +
+                                "<td><%= window.ifEmptyStringForTotal(total_2010) %></td>" +
+                            "</tr>" +
+                            "<tr>" +
+                                "<td>2009</td>" +
+                                "<td><%= window.ifEmptyStringForTotal(total_2009) %></td>" +
+                            "</tr>" +
+                            "<tr>" +
+                                "<td>2008</td>" +
+                                "<td><%= window.ifEmptyStringForTotal(total_2008) %></td>" +
+                            "</tr>" +
+                        "</tbody>" +
+                    "<table>" +
+                    "<p class='small-writing'><strong>About the program</strong>: <%= about_the_program %></p>" +
+                    "<p class='small-writing'><strong>Data</strong>: <%= data_source %></p>", fusionTableDataObject);
                 $(".content-feature-data").html(dataDescription);
             });
 
@@ -150,6 +179,16 @@
         var targetValue = part / whole;
         var decimal = parseFloat(targetValue);
         return decimal
+    };
+
+    window.ifEmptyStringForTotal = function(value){
+        var result;
+        if (value === ""){
+            result = "Total not available";
+        } else {
+            result = window.addCommas(value);
+        }
+        return result;
     };
 
     window.addCommas = function(nStr){
