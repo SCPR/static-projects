@@ -101,11 +101,11 @@
             $(".kpcc-footer").html(_.template(template(window.wrapperTemplatePath + "kpcc-footer.html")));
 
             if (window.appConfig.open_about_this === true){
-                $('.text').collapse('show');
+                $(".text").collapse("show");
             };
 
             if (window.appConfig.embed_this === false){
-                $('li.projects-embed').addClass('hidden');
+                $("li.projects-embed").addClass("hidden");
             }
 
             if (window.appConfig.is_embedded === true){
@@ -113,31 +113,31 @@
                 $(".buttons a:last").before("<a class='btn btn-primary' href='" + window.appConfig.project_root + "' target='_blank'><span class='glyphicon glyphicon-resize-full'></span> New window</a>");
             }
 
-            $('.text').on('shown.bs.collapse', function(){
-                $('span.text')
-                    .removeClass('glyphicon-chevron-down')
-                    .addClass('glyphicon-chevron-up')
+            $(".text").on("shown.bs.collapse", function(){
+                $("span.text")
+                    .removeClass("glyphicon-chevron-down")
+                    .addClass("glyphicon-chevron-up")
                     .css("height", "auto");
             });
 
-            $('.text').on('hidden.bs.collapse', function(){
-                $('span.text')
-                    .removeClass('glyphicon-chevron-up')
-                    .addClass('glyphicon-chevron-down')
+            $(".text").on("hidden.bs.collapse", function(){
+                $("span.text")
+                    .removeClass("glyphicon-chevron-up")
+                    .addClass("glyphicon-chevron-down")
                     .css("height", "auto");
             });
 
-            $('.about').on('shown.bs.collapse', function(){
-                $('span.about')
-                    .removeClass('glyphicon-chevron-down')
-                    .addClass('glyphicon-chevron-up')
+            $(".about").on("shown.bs.collapse", function(){
+                $("span.about")
+                    .removeClass("glyphicon-chevron-down")
+                    .addClass("glyphicon-chevron-up")
                     .css("height", "auto");
             });
 
-            $('.about').on('hidden.bs.collapse', function(){
-                $('span.about')
-                    .removeClass('glyphicon-chevron-up')
-                    .addClass('glyphicon-chevron-down')
+            $(".about").on("hidden.bs.collapse", function(){
+                $("span.about")
+                    .removeClass("glyphicon-chevron-up")
+                    .addClass("glyphicon-chevron-down")
                     .css("height", "auto");
             });
 

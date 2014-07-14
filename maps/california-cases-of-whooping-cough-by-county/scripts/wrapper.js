@@ -5,9 +5,10 @@
         // general configs
         open_about_this: true,
         comments: true,
-        isMobile: false,
+        isMobile: null,
         project_root: "http://projects.scpr.org/static/maps/california-cases-of-whooping-cough-by-county",
         embed_this: true,
+        is_embedded: false,
         embed_width: "100%",
         embed_height: "1650px",
         twitter_share_text: "Map: View a county-by-county breakdown of whooping cough cases in California so far in 2014",
@@ -47,28 +48,28 @@
 
         initialize: function(){
 
-            // checks url to see if we're live
-            var urlLink = window.location.href;
-
             // sets template path
-            if (urlLink.indexOf("http://projects.scpr.org/") > -1){
+            if (window.location.href.indexOf("http://projects.scpr.org/") > -1){
                 window.wrapperTemplatePath = "http://projects.scpr.org/static/static-files/v3-dependencies/templates/"
             } else {
                 window.wrapperTemplatePath = "/2kpcc/static-projects/static-files/v3-dependencies/templates/"
             };
 
             // sets embed options
-            if (urlLink.indexOf("embed") > -1){
+            if (window.location.href.indexOf("embed") > -1){
                 window.appConfig.open_about_this = false;
                 window.appConfig.comments = false;
-                $(".data-comments").remove();
+                window.appConfig.is_embedded = true;
             };
 
             // set params for mobile devices
-            if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+            window.appConfig.is_mobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
+
+            if (window.appConfig.is_mobile) {
                 window.appConfig.open_about_this = false;
-                window.appConfig.isMobile = true;
-                window.appConfig.initial_map_zoom = 1;
+                window.appConfig.comments = false;
+                window.appConfig.is_mobile = true;
+                window.appConfig.initial_map_zoom = 8;
             };
 
             // checks comments setting
@@ -105,30 +106,48 @@
             $(".kpcc-footer").html(_.template(template(window.wrapperTemplatePath + "kpcc-footer.html")));
 
             if (window.appConfig.open_about_this === true){
-                $('.text').collapse('show');
+                $(".text").collapse("show");
             };
 
             if (window.appConfig.embed_this === false){
-                $('li.projects-embed').addClass('hidden');
+                $("li.projects-embed").addClass("hidden");
             }
 
-            $('.text').on('shown.bs.collapse', function(){
-                $('span.text').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+            if (window.appConfig.is_embedded === true){
+                $(".data-comments").remove();
+                $(".buttons a:last").before("<a class='btn btn-primary' href='" + window.appConfig.project_root + "' target='_blank'><span class='glyphicon glyphicon-resize-full'></span> New window</a>");
+            }
+
+            $(".text").on("shown.bs.collapse", function(){
+                $("span.text")
+                    .removeClass("glyphicon-chevron-down")
+                    .addClass("glyphicon-chevron-up")
+                    .css("height", "auto");
             });
 
-            $('.text').on('hidden.bs.collapse', function(){
-                $('span.text').addClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-up');
+            $(".text").on("hidden.bs.collapse", function(){
+                $("span.text")
+                    .removeClass("glyphicon-chevron-up")
+                    .addClass("glyphicon-chevron-down")
+                    .css("height", "auto");
             });
 
-            $('.about').on('shown.bs.collapse', function(){
-                $('span.about').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+            $(".about").on("shown.bs.collapse", function(){
+                $("span.about")
+                    .removeClass("glyphicon-chevron-down")
+                    .addClass("glyphicon-chevron-up")
+                    .css("height", "auto");
             });
 
-            $('.about').on('hidden.bs.collapse', function(){
-                $('span.about').addClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-up');
+            $(".about").on("hidden.bs.collapse", function(){
+                $("span.about")
+                    .removeClass("glyphicon-chevron-up")
+                    .addClass("glyphicon-chevron-down")
+                    .css("height", "auto");
             });
 
         }
+
     });
 
     $(function(){
