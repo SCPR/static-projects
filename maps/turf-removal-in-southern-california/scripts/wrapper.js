@@ -6,6 +6,7 @@
         comments: true,
         project_root: "http://projects.scpr.org/static/maps/turf-removal-in-southern-california",
         embed_this: true,
+        is_embedded: false,
         embed_width: "100%",
         embed_height: "1650px",
         twitter_share_text: "Map: View a breakdown of turf removal in Southern California zip codes",
@@ -41,26 +42,24 @@
 
         initialize: function(){
 
-            // checks url to see if we're live
-            var urlLink = window.location.href;
-
             // sets template path
-            if (urlLink.indexOf("http://projects.scpr.org/") > -1){
+            if (window.location.href.indexOf("http://projects.scpr.org/") > -1){
                 window.wrapperTemplatePath = "http://projects.scpr.org/static/static-files/v3-dependencies/templates/"
             } else {
                 window.wrapperTemplatePath = "/2kpcc/static-projects/static-files/v3-dependencies/templates/"
             };
 
             // sets embed options
-            if (urlLink.indexOf("embed") > -1){
+            if (window.location.href.indexOf("embed") > -1){
                 window.appConfig.open_about_this = false;
                 window.appConfig.comments = false;
-                $(".data-comments").remove();
+                window.appConfig.is_embedded = true;
             };
 
             // set params for mobile devices
             if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
                 window.appConfig.open_about_this = false;
+                window.appConfig.comments = false;
                 window.appConfig.initial_map_zoom = 7;
             };
 
@@ -105,6 +104,11 @@
                 $('li.projects-embed').addClass('hidden');
             }
 
+            if (window.appConfig.is_embedded === true){
+                $(".data-comments").remove();
+                $(".buttons a:last").before("<a class='btn btn-primary' href='" + window.appConfig.project_root + "' target='_blank'><span class='glyphicon glyphicon-resize-full'></span> New window</a>");
+            }
+
             $('.text').on('shown.bs.collapse', function(){
                 $('span.text').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
             });
@@ -122,6 +126,7 @@
             });
 
         }
+
     });
 
     $(function(){
