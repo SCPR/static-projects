@@ -160,6 +160,16 @@
             return x1 + x2;
     };
 
+    window.ifEmptyStringForTotal = function(value){
+        var result;
+        if (value === ""){
+            result = "Total not available";
+        } else {
+            result = window.addCommas(value);
+        }
+        return result;
+    };
+
     String.prototype.truncateToGraf = function(){
         var lengthLimit = 900;
         if (this.length > lengthLimit){

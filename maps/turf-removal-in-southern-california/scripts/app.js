@@ -142,7 +142,7 @@
             });
 
             google.maps.event.addDomListener(window, "resize", function() {
-                map.setCenter(center);
+                map.setCenter(34.000304, -118.238039);
             });
 
             if (window.appConfig.is_mobile) {
