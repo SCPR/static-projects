@@ -4,6 +4,7 @@
         // general configs
         open_about_this: true,
         comments: true,
+        is_mobile: null,
         project_root: "http://projects.scpr.org/static/maps/turf-removal-in-southern-california",
         embed_this: true,
         is_embedded: false,
@@ -57,10 +58,13 @@
             };
 
             // set params for mobile devices
-            if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
+            window.appConfig.is_mobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
+
+            if (window.appConfig.is_mobile) {
                 window.appConfig.open_about_this = false;
                 window.appConfig.comments = false;
-                window.appConfig.initial_map_zoom = 7;
+                window.appConfig.is_mobile = true;
+                window.appConfig.initial_map_zoom = 8;
             };
 
             // checks comments setting

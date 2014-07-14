@@ -18,29 +18,26 @@
     });
 
     App.Views.ApplicationVisuals = Backbone.View.extend({
+
         template: template("templates/data-visuals.html"),
+
         el: ".data-visuals",
+
         initialize: function(viewObject){
             this.render(viewObject);
         },
 
         render: function(viewObject){
-
             $(viewObject.container).html(_.template(this.template));
 
             google.maps.visualRefresh = true;
 
-            var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
+            var mapDiv = document.getElementById("content-map-canvas");
 
-            if (isMobile) {
-                var viewport = document.querySelector("meta[name=viewport]");
-                viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
-            };
-
-            var mapDiv = document.getElementById('content-map-canvas');
-
-            mapDiv.style.width = isMobile ? '100%' : '100%';
-            mapDiv.style.height = isMobile ? '100%' : '680px';
+            if (window.appConfig.is_mobile){
+                mapDiv.style.width = "100%";
+                mapDiv.style.height = "400px";
+            }
 
             var map = new google.maps.Map(mapDiv, {
                 center: new google.maps.LatLng(34.000304, -118.238039),
@@ -59,8 +56,8 @@
                 }
             });
 
-            map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend-open'));
-            map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
+            map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById("googft-legend-open"));
+            map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById("googft-legend"));
 
             layer = new google.maps.FusionTablesLayer({
                 map: map,
@@ -79,7 +76,7 @@
                 }
             });
 
-            google.maps.event.addListener(layer, 'click', function(e) {
+            google.maps.event.addListener(layer, "click", function(e) {
                 var fusionTableDataObject = {
                     install_zip_code: e.row.install_zip_code.value,
                     total_2008: e.row.total_2008.value,
@@ -140,32 +137,31 @@
                 $(".content-feature-data").html(dataDescription);
             });
 
-            google.maps.event.addDomListener(map, 'idle', function() {
+            google.maps.event.addDomListener(map, "idle", function() {
                 center = map.getCenter();
             });
 
-            google.maps.event.addDomListener(window, 'resize', function() {
+            google.maps.event.addDomListener(window, "resize", function() {
                 map.setCenter(center);
             });
 
-            if (isMobile) {
-                var legend = document.getElementById('googft-legend');
-                var legendOpenButton = document.getElementById('googft-legend-open');
-                var legendCloseButton = document.getElementById('googft-legend-close');
-                legend.style.display = 'none';
-                legendOpenButton.style.display = 'block';
-                legendCloseButton.style.display = 'block';
+            if (window.appConfig.is_mobile) {
+                var legend = document.getElementById("googft-legend");
+                var legendOpenButton = document.getElementById("googft-legend-open");
+                var legendCloseButton = document.getElementById("googft-legend-close");
+                legend.style.display = "none";
+                legendOpenButton.style.display = "block";
+                legendCloseButton.style.display = "block";
                 legendOpenButton.onclick = function() {
-                    legend.style.display = 'block';
-                    legendOpenButton.style.display = 'none';
+                    legend.style.display = "block";
+                    legendOpenButton.style.display = "none";
                 };
 
                 legendCloseButton.onclick = function() {
-                    legend.style.display = 'none';
-                    legendOpenButton.style.display = 'block';
+                    legend.style.display = "none";
+                    legendOpenButton.style.display = "block";
                 };
             };
-
         }
 
     });
