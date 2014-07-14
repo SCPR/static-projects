@@ -162,6 +162,9 @@
                     legendOpenButton.style.display = "block";
                 };
             };
+
+            var pymChild = new pym.Child();
+
         }
 
     });

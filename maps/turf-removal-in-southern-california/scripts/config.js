@@ -1,5 +1,3 @@
-var pymChild = new pym.Child();
-
 window.appConfig = {
 
     // general configs
