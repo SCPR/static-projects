@@ -114,19 +114,31 @@
             }
 
             $('.text').on('shown.bs.collapse', function(){
-                $('span.text').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+                $('span.text')
+                    .removeClass('glyphicon-chevron-down')
+                    .addClass('glyphicon-chevron-up')
+                    .css("height", "auto");
             });
 
             $('.text').on('hidden.bs.collapse', function(){
-                $('span.text').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+                $('span.text')
+                    .removeClass('glyphicon-chevron-up')
+                    .addClass('glyphicon-chevron-down')
+                    .css("height", "auto");
             });
 
             $('.about').on('shown.bs.collapse', function(){
-                $('span.about').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+                $('span.about')
+                    .removeClass('glyphicon-chevron-down')
+                    .addClass('glyphicon-chevron-up')
+                    .css("height", "auto");
             });
 
             $('.about').on('hidden.bs.collapse', function(){
-                $('span.about').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+                $('span.about')
+                    .removeClass('glyphicon-chevron-up')
+                    .addClass('glyphicon-chevron-down')
+                    .css("height", "auto");
             });
 
         }
