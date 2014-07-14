@@ -43,6 +43,9 @@
 
     App.Router = Backbone.Router.extend({
         initialize: function(){
+
+            console.log(window.appConfig);
+
             this.applicationWrapper = new App.Views.ApplicationWrapper();
             return this.applicationWrapper;
         },
