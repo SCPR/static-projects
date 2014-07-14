@@ -118,7 +118,7 @@
             });
 
             $('.text').on('hidden.bs.collapse', function(){
-                $('span.text').addClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-up');
+                $('span.text').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
             });
 
             $('.about').on('shown.bs.collapse', function(){
@@ -126,7 +126,7 @@
             });
 
             $('.about').on('hidden.bs.collapse', function(){
-                $('span.about').addClass('glyphicon-chevron-down').removeClass('glyphicon-chevron-up');
+                $('span.about').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
             });
 
         }
