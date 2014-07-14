@@ -43,9 +43,6 @@
 
     App.Router = Backbone.Router.extend({
         initialize: function(){
-
-            console.log(window.appConfig);
-
             this.applicationWrapper = new App.Views.ApplicationWrapper();
             return this.applicationWrapper;
         },
@@ -90,7 +87,6 @@
         el: ".data-visuals",
 
         initialize: function(viewObject){
-
             this.dataColor = [
                 "rgba(255, 255, 255, 0.7)",
                 "rgba(255, 255, 178, 0.7)",
@@ -143,7 +139,7 @@
                 fillColor: feature.properties.layerColor
             };
 
-            if (window.appConfig.isMobile === true){
+            if (window.appConfig.is_mobile){
 
                 var featcherDetails = (
                     "<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>" +
@@ -162,6 +158,7 @@
                         $(".content-feature-data").html(_.template(featcherDetails, data));
                     }
                 });
+
             } else {
 
                 var featcherDetails = (

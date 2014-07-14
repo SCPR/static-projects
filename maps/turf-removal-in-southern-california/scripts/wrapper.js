@@ -1,21 +1,4 @@
 (function(){
-    window.appConfig = {
-
-        // general configs
-        open_about_this: true,
-        comments: true,
-        is_mobile: null,
-        project_root: "http://projects.scpr.org/static/maps/turf-removal-in-southern-california",
-        embed_this: true,
-        is_embedded: false,
-        embed_width: "100%",
-        embed_height: "1650px",
-        twitter_share_text: "Map: View a breakdown of turf removal in Southern California zip codes",
-
-        // map configs
-        initial_map_zoom: 10,
-    };
-
     window.App = {
         Models: {},
         Collections: {},
