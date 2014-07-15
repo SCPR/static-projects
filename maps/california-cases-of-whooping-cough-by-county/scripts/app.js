@@ -301,6 +301,7 @@
             this.dataLayer.addLayer(this.baseMaps["layer2014"]);
             this.dataLayer.addTo(this.map);
             this.createLegend();
+            var pymChild = new pym.Child();
         },
 
        layerSwitch: function(ev){

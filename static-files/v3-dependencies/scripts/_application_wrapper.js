@@ -69,12 +69,11 @@
             "click li.projects-embed a": "renderEmbedBox",
         },
 
-        /*
         renderEmbedBox: function(){
             jAlert("<h4>Embed this on your site or blog</h4><span>Copy this code and paste to source of your page. You may need to adjust the height parameter.<br /><br /><textarea>&lt;iframe src='" + window.appConfig.project_root + "?=embed/' width='" + appConfig.embed_width + "' height='" + appConfig.embed_height + "' style='margin: 0 0 0 0;' scrolling='no' frameborder='0'&gt;&lt;/iframe></textarea>");
         },
-        */
 
+        /*
         renderEmbedBox: function(){
             jAlert(
                 "<div id='projects-embed'></div>" +
@@ -85,6 +84,7 @@
                 "</script>"
             );
         },
+        */
 
         render: function(){
             $(".kpcc-header").html(_.template(template(window.wrapperTemplatePath + "kpcc-header.html"), {
