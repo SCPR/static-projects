@@ -1,6 +1,7 @@
 .content-map-data {width: 100%; background: rgba(240, 248, 255, 1.0); padding: 2% 0 2% 0;}
 .content-map-description {width: 92%; margin: 0 4% 0 4%;}
 .content-map-data table td {font-size: 95%;}
+body.minimal .data-container .googft-info-window p {font-size: 95%;}
 #googft-legend { background-color:#fff; border:1px solid #000; font-family:Arial, sans-serif; font-size:12px; margin:5px; padding:10px 10px 8px; }
 #googft-legend div { margin-bottom:5px; }
 .googft-legend-swatch { border:1px solid; float:left; height:12px; margin-right:8px; width:20px; }

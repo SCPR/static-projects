@@ -26,13 +26,15 @@
         el: "body",
 
         initialize: function(){
-
             // sets template path
             if (window.location.href.indexOf("http://projects.scpr.org/") > -1){
                 window.wrapperTemplatePath = "http://projects.scpr.org/static/static-files/v3-dependencies/templates/"
             } else {
                 window.wrapperTemplatePath = "/2kpcc/static-projects/static-files/v3-dependencies/templates/"
             };
+
+            // sets window size
+            window.appConfig.windowSize = $(window).width();
 
             // sets embed options
             if (window.location.href.indexOf("embed") > -1){
@@ -42,12 +44,12 @@
             };
 
             // set params for mobile devices
-            window.appConfig.is_mobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
+            window.appConfig.is_mobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/) || (window.appConfig.windowSize < 568));
 
             if (window.appConfig.is_mobile) {
                 window.appConfig.open_about_this = false;
                 window.appConfig.comments = false;
-                window.appConfig.initial_map_zoom = 8;
+                window.appConfig.initial_map_zoom = 9;
             };
 
             // checks comments setting
@@ -61,19 +63,30 @@
             };
 
             this.render();
-
         },
 
         events: {
             "click li.projects-embed a": "renderEmbedBox",
         },
 
+        /*
         renderEmbedBox: function(){
             jAlert("<h4>Embed this on your site or blog</h4><span>Copy this code and paste to source of your page. You may need to adjust the height parameter.<br /><br /><textarea>&lt;iframe src='" + window.appConfig.project_root + "?=embed/' width='" + appConfig.embed_width + "' height='" + appConfig.embed_height + "' style='margin: 0 0 0 0;' scrolling='no' frameborder='0'&gt;&lt;/iframe></textarea>");
         },
+        */
+
+        renderEmbedBox: function(){
+            jAlert(
+                "<div id='projects-embed'></div>" +
+                "<script src='http://projects.scpr.org/static/static-files/v3-dependencies/scripts/pym.js' type='text/javascript'></script>" +
+                "<script>" +
+                    "var embedPath = window.appConfig.project_root + '?=embed/';" +
+                    "var pymParent = new pym.Parent('projects-embed', embedPath, {});" +
+                "</script>"
+            );
+        },
 
         render: function(){
-
             $(".kpcc-header").html(_.template(template(window.wrapperTemplatePath + "kpcc-header.html"), {
                 "encoded_share_url": encodeURIComponent(window.appConfig.project_root),
                 "twitter_share_text": window.appConfig.twitter_share_text
@@ -123,9 +136,7 @@
                     .addClass("glyphicon-chevron-down")
                     .css("height", "auto");
             });
-
         }
-
     });
 
     $(function(){
