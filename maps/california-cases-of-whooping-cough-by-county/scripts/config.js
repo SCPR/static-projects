@@ -6,7 +6,7 @@ window.appConfig = {
     is_mobile: null,
     project_root: "http://projects.scpr.org/static/maps/california-cases-of-whooping-cough-by-county",
     embed_this: true,
-    is_embedded: null,
+    is_embedded: false,
     embed_width: "100%",
     embed_height: "1650px",
     twitter_share_text: "Map: View a county-by-county breakdown of whooping cough cases in California so far in 2014",
