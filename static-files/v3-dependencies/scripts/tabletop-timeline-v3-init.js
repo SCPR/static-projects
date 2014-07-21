@@ -5,6 +5,14 @@ var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
+
+    // sets template path
+    if (window.location.href.indexOf("http://projects.scpr.org/") > -1){
+        window.wrapperTemplatePath = "http://projects.scpr.org/static/static-files/v3-dependencies/templates/"
+    } else {
+        window.wrapperTemplatePath = "/2kpcc/static-projects/static-files/v3-dependencies/templates/"
+    };
+
     fn.determineDataSource();
     initializeTemplates.renderStaticTemplates();
 });
@@ -53,8 +61,8 @@ var fn = {
             objects: data
         };
 
-        renderHandlebarsTemplate(proxyPrefix + 'timeline-data-share.handlebars', '.data-share', handlebarsData);
-        renderHandlebarsTemplate(proxyPrefix + 'timeline-data-details.handlebars', '.data-details', handlebarsData);
+        renderHandlebarsTemplate(window.wrapperTemplatePath + 'timeline-data-share.handlebars', '.data-share', handlebarsData);
+        renderHandlebarsTemplate(window.wrapperTemplatePath + 'timeline-data-details.handlebars', '.data-details', handlebarsData);
     }
 }
 // end data configuration object
@@ -62,8 +70,8 @@ var fn = {
 // begin template rendering object
 var initializeTemplates = {
     renderStaticTemplates: function(){
-        renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
-        renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
+        renderHandlebarsTemplate(window.wrapperTemplatePath + 'kpcc-header.handlebars', '.kpcc-header');
+        renderHandlebarsTemplate(window.wrapperTemplatePath + 'kpcc-footer.handlebars', '.kpcc-footer');
 
         var checkExist = setInterval(function() {
             if (jqueryNoConflict('.buttons').length) {
