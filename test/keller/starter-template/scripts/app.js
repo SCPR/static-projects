@@ -82,6 +82,7 @@
     });
 
     App.Views.ApplicationVisuals = Backbone.View.extend({
+
         template: template("templates/data-visuals.html"),
 
         el: ".data-visuals",
