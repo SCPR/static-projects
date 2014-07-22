@@ -1,46 +1,3 @@
-    window.storage = Tabletop.init({
-        key: "https://docs.google.com/spreadsheets/d/1H6hFZQiolqW7fU5Zdruy0LWTPn8zqDN2gW4ZkQoFUaI/pubhtml",
-        wait: true
-    });
-
-    App.Models.WhoopingCoughCurrent = Backbone.Model.extend({
-        defaults: {
-            county: null,
-            countyproper: null,
-            updated: null,
-            cases: null,
-            rate: null,
-        },
-        tabletop: {
-            instance: window.storage,
-            sheet: "data_7_8_2014"
-        },
-        sync: Backbone.tabletopSync
-    });
-
-    App.Models.WhoopingCoughHistorical = Backbone.Model.extend({
-        defaults: {
-            county: null,
-            countyproper: null,
-            updated: null,
-            cases: null,
-            rate: null,
-        },
-    });
-
-    App.Collections.WhoopingCoughCurrents = Backbone.Collection.extend({
-        model: App.Models.WhoopingCoughCurrent,
-        tabletop: {
-            instance: window.storage,
-            sheet: "data_7_8_2014"
-        },
-        sync: Backbone.tabletopSync
-    });
-
-    App.Collections.WhoopingCoughHistoricals = Backbone.Collection.extend({
-        model: App.Models.WhoopingCoughHistorical
-    });
-
     App.Router = Backbone.Router.extend({
         initialize: function(){
             this.applicationWrapper = new App.Views.ApplicationWrapper();
@@ -48,36 +5,18 @@
         },
 
         routes: {
-            "": "fetchData",
+            "": "renderApplicationVisuals",
         },
 
-        fetchData: function(){
-            var _this = this;
-            var applicationCollection = new App.Collections.WhoopingCoughCurrents();
-            applicationCollection.fetch({
-                async: true
-            });
-            var checkExist = setInterval(function() {
-                if (applicationCollection.length > 0){
-                    clearInterval(checkExist);
-                    _this.renderApplicationVisuals(applicationCollection);
-                }
-            }, 500);
-        },
-
-        renderApplicationVisuals: function(collection){
+        renderApplicationVisuals: function(){
             if (this.applicationVisuals){
                 this.applicationVisuals.remove();
             };
-
             this.applicationVisuals = new App.Views.ApplicationVisuals({
-                collection: collection,
                 container: ".data-visuals"
             });
-
             return this.applicationVisuals;
-
-        },
+        }
 
     });
 
@@ -88,225 +27,133 @@
         el: ".data-visuals",
 
         initialize: function(viewObject){
-            this.dataColor = [
-                "rgba(255, 255, 255, 0.7)",
-                "rgba(255, 255, 178, 0.7)",
-                "rgba(254, 204, 92, 0.7)",
-                "rgba(253, 141, 60, 0.7)",
-                "rgba(227, 26, 28, 0.7)"
-            ];
-
-            $(window).bind('scroll', function(){
-                var aboveHeight = $(".kpcc-header").outerHeight() + $(".data-details").outerHeight();
-                var barWidth = $(".content-map-data").width();
-                if ($(window).scrollTop() > aboveHeight){
-                    $(".content-map-data").addClass("fixed").css("width", barWidth);
-                } else {
-                    $(".content-map-data").removeClass("fixed").css("width", "width: 100%;");
-                }
-            });
-
-            this.render(viewObject);
+            window.viewObject = viewObject;
+            $(viewObject.container).html(_.template(this.template));
         },
 
         events: {
-          "click input": "layerSwitch"
+            "keyup :input": "addressSearch",
+            "click button#submit": "navigate",
         },
 
-        styleFeatures: function (feature) {
-            return {
-                color: "black",
-                weight: 0.7,
-                opacity: 0.7,
-                fillOpacity: 0.7,
-                fillColor: feature.properties.layerColor
-            }
-        },
+        addressSearch: function(e){
+            $("input[id='addressSearch']").focus(function(){
+                $("#representative-profile").empty();
+            });
 
-        onEachFeature: function(feature, layer) {
+            $("input[id='addressSearch']").geocomplete({
+                details: "form"
+            });
 
-            var highlightedStyle = {
-                weight: 3,
-                color: '#666',
-                dashArray: '',
-                fillOpacity: 0.7,
-                fillColor: 'black'
-            };
+            var latitude = $("input[id='latitudeSearch']").val();
+            var longitude = $("input[id='longitudeSearch']").val();
 
-            var unhighlightedStyle = {
-                weight: 0.7,
-                opacity: 0.7,
-                fillOpacity: 0.7,
-                fillColor: feature.properties.layerColor
-            };
-
-            if (window.appConfig.is_mobile){
-
-                var featcherDetails = (
-                    "<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>" +
-                        "<h5><%= countyproper %></h5>" +
-                        "<h6>Last updated: <%= moment(updated).format('MMMM D[th], YYYY') %></h6>" +
-                    "</div>" +
-                    "<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>" +
-                        "<h5><%= rate %> cases per 100,000 people</h5>" +
-                        "<h6><%= cases %> total cases</h6>" +
-                    "</div>"
-                );
-
-                layer.on({
-                    click: function(e){
-                        var data = e.target.feature.properties;
-                        $(".content-feature-data").html(_.template(featcherDetails, data));
-                    }
-                });
-
+            if(e.keyCode != 13) {
+                return false;
+            } else if (e.keyCode === 13 && latitude === '' && longitude === '') {
+                return false;
             } else {
-
-                var featcherDetails = (
-                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
-                        "<h5><%= countyproper %></h5>" +
-                        "<h6>Last updated: <%= moment(updated).format('MMMM D[th], YYYY') %></h6>" +
-                    "</div>" +
-                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
-                        "<h5><%= rate %> cases per 100,000 people</h5>" +
-                        "<h6><%= cases %> total cases</h6>" +
-                    "</div>"
-                );
-
-                layer.on({
-                    mouseover: function(e){
-                        this.setStyle(highlightedStyle);
-                        var data = e.target.feature.properties;
-                        $(".content-feature-data").html(_.template(featcherDetails, data));
-                    },
-
-                    mouseout: function(e){
-                        this.setStyle(unhighlightedStyle);
-                        $(".content-feature-data").html(
-                            "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
-                                "<h5>Hover over a county to see the rate of whooping cough cases per 100,000 people</h5>" +
-                                "<h6>&nbsp;</h6>" +
-                            "</div>"
-                        );
-                    },
-                });
+                this.navigate();
             }
         },
 
-        createNewBasemapLayer: function(collection, dataUrl){
-            var collection = new App.Collections.WhoopingCoughHistoricals();
-            collection.fetch({
-                url: dataUrl,
-                async: false
-            });
-            var baseLayer = this.combineCollectionWithShape(collection);
-            return baseLayer;
+        navigate: function(){
+            var latitude = $("input[id='latitudeSearch']").val();
+            var longitude = $("input[id='longitudeSearch']").val();
+            window.viewObject.latitude = latitude;
+            window.viewObject.longitude = longitude;
+            window.viewObject.center = new google.maps.LatLng(latitude, longitude);
+            window.viewObject.sizeParams = "600x400";
+            this.render(window.viewObject);
         },
 
-        combineCollectionWithShape: function(collection){
-            var copyOfCountyShapes = $.extend(true, {}, californiaCounties);
-            var equalIntervalArray = [];
-            for (var i=0; i<copyOfCountyShapes.features.length; i++){
-                var dataObject = collection.where({
-                    "countyproper": copyOfCountyShapes.features[i].properties.name
-                });
-                equalIntervalArray.push(parseFloat(dataObject[0].attributes.rate));
-                copyOfCountyShapes.features[i].properties.updated = dataObject[0].attributes.updated;
-                copyOfCountyShapes.features[i].properties.cases = parseInt(dataObject[0].attributes.cases);
-                copyOfCountyShapes.features[i].properties.rate = parseFloat(dataObject[0].attributes.rate);
-                copyOfCountyShapes.features[i].properties.countyproper = dataObject[0].attributes.countyproper + " County";
-            };
-
-            for (var i=0; i<copyOfCountyShapes.features.length; i++){
-                var comparitor = copyOfCountyShapes.features;
-                if (comparitor[i].properties.rate > 45 && comparitor[i].properties.rate <= 120){
-                    comparitor[i].properties.layerColor = this.dataColor[4];
-                } else if (comparitor[i].properties.rate > 28 && comparitor[i].properties.rate <= 45){
-                    comparitor[i].properties.layerColor = this.dataColor[3];
-                } else if (comparitor[i].properties.rate > 12 && comparitor[i].properties.rate <= 28){
-                    comparitor[i].properties.layerColor = this.dataColor[2];
-                } else if (comparitor[i].properties.rate > 0 && comparitor[i].properties.rate <= 12){
-                    comparitor[i].properties.layerColor = this.dataColor[1];
-                } else {
-                    comparitor[i].properties.layerColor = this.dataColor[0];
-                }
-            };
-
-            var newGeoJsonLayer = L.geoJson(copyOfCountyShapes, {
-                filter: this.filterFeatures,
-                style: this.styleFeatures,
-                onEachFeature: this.onEachFeature
-            });
-
-            return newGeoJsonLayer;
-        },
-
-        createLegend: function(){
-            var dataRanges = [
-                "No cases reported",
-                "1 to 12",
-                "More than 12",
-                "More than 28",
-                "More than 45"
-            ];
-
-            for (var i=0; i<this.dataColor.length; i++){
-                $("#legend-colors").append(
-                    "<td style='background:" + this.dataColor[i] + "'>" + dataRanges[i] + "</td>"
-                );
-            };
+        generateStaticMap: function(lat, lng, zoomLevel){
+            $(".content-map-data").html(
+                "<h3>Here's your image. Copy the <a href='http://maps.googleapis.com/maps/api/staticmap?center=" + window.viewObject.latitude + "," + window.viewObject.longitude + "&zoom=" + zoomLevel + "&size=" + window.viewObject.sizeParams + "&scale=2&markers=color:red%7Clabel:%7C" + window.viewObject.latitude + "," + window.viewObject.longitude + "' target='blank'>url</a> and upload into <a href='http://a.scpr.org/a/assets' target='blank'>AssetHost</a></h3>" +
+                "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" + window.viewObject.latitude + "," + window.viewObject.longitude + "&zoom=" + zoomLevel + "&size=" + window.viewObject.sizeParams + "&scale=2&markers=color:red%7Clabel:%7C" + window.viewObject.latitude + "," + window.viewObject.longitude + "' />"
+            );
         },
 
         render: function(viewObject){
-            $(viewObject.container).html(_.template(this.template));
 
-            this.stamenToner = new L.tileLayer(
-                "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
-                    attribution: "Map tiles by <a href='http://stamen.com' target='_blank'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0' target='_blank'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://openstreetmap.org' target='_blank'>OpenStreetMap</a> contributors, <a href='http://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>",
-                    minZoom: 6,
-                    maxZoom: 14
-            });
+            console.log(viewObject);
 
-            this.map = L.map("content-map-canvas", {
-                scrollWheelZoom: false,
-                zoomControl: false,
-                minZoom: 6,
-                maxZoom: 14
-            }).setView(
-                window.appConfig.map_center_california, window.appConfig.initial_map_zoom
-            ).addLayer(
-                this.stamenToner
+            $(".map-container").html(
+                "<h3>Here's your preview</h3>" +
+                "<div id='content-map-canvas' class='initial'></div>"
             );
 
-            this.baseMaps = {
-                "layer2014": this.combineCollectionWithShape(viewObject.collection),
-                "layer2013": this.createNewBasemapLayer("data2013Collection", "data/data_2013.json"),
-                "layer2012": this.createNewBasemapLayer("data2012Collection", "data/data_2012.json"),
-                "layer2011": this.createNewBasemapLayer("data2011Collection", "data/data_2011.json"),
-                "layer2010": this.createNewBasemapLayer("data2010Collection", "data/data_2010.json"),
-            };
+            google.maps.visualRefresh = true;
 
-            var overlayMaps = {};
+            var mapDiv = document.getElementById("content-map-canvas");
 
-            var controlPanel = {
-                "position": "topright",
-                "collapsed": false
-            };
+            if (window.appConfig.is_mobile){
+                mapDiv.style.width = "100%";
+                mapDiv.style.height = "400px";
+            }
 
-            L.control.zoom({
-                position: "topright"
-            }).addTo(this.map);
+            var map = new google.maps.Map(mapDiv, {
+                center: window.viewObject.center,
+                zoom: window.appConfig.initial_map_zoom,
+                scrollwheel: true,
+                draggable: true,
+                mapTypeControl: false,
+                navigationControl: true,
+                streetViewControl: false,
+                panControl: false,
+                scaleControl: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                navigationControlOptions: {
+                style: google.maps.NavigationControlStyle.SMALL,
+                position: google.maps.ControlPosition.RIGHT_TOP
+                }
+            });
 
-            this.dataLayer = new L.layerGroup();
-            this.dataLayer.addLayer(this.baseMaps["layer2014"]);
-            this.dataLayer.addTo(this.map);
-            this.createLegend();
-        },
+            var zoomLevel = map.getZoom();
 
-       layerSwitch: function(ev){
-                var layerName = ev.target.id;
-                this.dataLayer.clearLayers();
-                this.dataLayer.addLayer(this.baseMaps[layerName]);
-                this.dataLayer.addTo(this.map);
+            this.generateStaticMap(window.viewObject.latitude, window.viewObject.longitude, zoomLevel);
+
+            google.maps.event.addDomListener(map, "idle", function() {
+                center = map.getCenter();
+            });
+
+            google.maps.event.addDomListener(window, "resize", function() {
+                map.setCenter(window.appConfig.map_center_los_angeles);
+            });
+
+            google.maps.event.addListener(map,'click', function(event){
+                $(".content-map-data").empty();
+                var zoomLevel = map.getZoom();
+
+                window.viewObject.latitude = event.latLng.lat();
+                window.viewObject.longitude = event.latLng.lng();
+
+                $(".content-map-data").html(
+                    "<h3>Here's your image. Copy the <a href='http://maps.googleapis.com/maps/api/staticmap?center=" + window.viewObject.latitude + "," + window.viewObject.longitude + "&zoom=" + zoomLevel + "&size=" + window.viewObject.sizeParams + "&scale=2&markers=color:red%7Clabel:%7C" + window.viewObject.latitude + "," + window.viewObject.longitude + "' target='blank'>url</a> and upload into <a href='http://a.scpr.org/a/assets' target='blank'>AssetHost</a></h3>" +
+                    "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" + window.viewObject.latitude + "," + window.viewObject.longitude + "&zoom=" + zoomLevel + "&size=" + window.viewObject.sizeParams + "&scale=2&markers=color:red%7Clabel:%7C" + window.viewObject.latitude + "," + window.viewObject.longitude + "' />"
+                );
+
+                $("input[id='addressSearch']").val("");
+                $("input[id='latitudeSearch']").val(window.viewObject.latitude);
+                $("input[id='longitudeSearch']").val(window.viewObject.longitude);
+            });
+
+            google.maps.event.addListener(map,'zoom_changed', function(){
+                $(".content-map-data").empty();
+                var zoomLevel = map.getZoom();
+                var lat = window.viewObject.latitude;
+                var lng = window.viewObject.longitude;
+
+                $(".content-map-data").html(
+                    "<h3>Here's your image. Copy the <a href='http://maps.googleapis.com/maps/api/staticmap?center=" + window.viewObject.latitude + "," + window.viewObject.longitude + "&zoom=" + zoomLevel + "&size=" + window.viewObject.sizeParams + "&scale=2&markers=color:red%7Clabel:%7C" + window.viewObject.latitude + "," + window.viewObject.longitude + "' target='blank'>url</a> and upload into <a href='http://a.scpr.org/a/assets' target='blank'>AssetHost</a></h3>" +
+                    "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" + window.viewObject.latitude + "," + window.viewObject.longitude + "&zoom=" + zoomLevel + "&size=" + window.viewObject.sizeParams + "&scale=2&markers=color:red%7Clabel:%7C" + window.viewObject.latitude + "," + window.viewObject.longitude + "' />"
+                );
+
+                $("input[id='addressSearch']").val("");
+                $("input[id='latitudeSearch']").val(window.viewObject.latitude);
+                $("input[id='longitudeSearch']").val(window.viewObject.longitude);
+            });
+
         }
+
     });
