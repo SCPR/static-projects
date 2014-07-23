@@ -24,7 +24,7 @@ var kpccTimelineConfig = {
     projectDirectory: 'http://projects.scpr.org/static/timelines/capital-punishment-in-california',
 
     // newest or oldest
-    defaultDirection: 'oldest',
+    defaultDirection: 'newest',
 
     // collapsed or expanded
     defaultExpansion: 'expanded',
