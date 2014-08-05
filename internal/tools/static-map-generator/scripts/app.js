@@ -1,5 +1,6 @@
     window.MapCreatorConfig = {
-        mapType: null
+        mapType: null,
+        sizeParams: "600x400"
     };
 
     App.Router = Backbone.Router.extend({
@@ -9,35 +10,54 @@
         },
 
         routes: {
-
             "": "renderApplicationVisuals",
-            "map-creator/:mapType/": "renderGeneralMapInstance"
-
+            "map-creator/:mapType/": "renderGeneralMapInstance",
+            "map-creator/:mapType?lat=:latitude&lng=:longitude&zoom=:zoomLevel": "renderCustomMapInstance"
         },
 
         renderApplicationVisuals: function(){
-
             this.applicationVisuals = new App.Views.ApplicationVisuals({
                 container: ".data-visuals"
             });
-
             return this.applicationVisuals;
         },
 
         renderGeneralMapInstance: function(mapType){
-
+            window.MapCreatorConfig.mapType = mapType;
             this.renderApplicationVisuals();
-
             this.generalMapInstance = new App.Views.GeneralMapInstance({
                 container: ".content-map-data",
                 mapDiv: "content-map-canvas",
                 mapType: mapType
             });
-
             return this.generalMapInstance;
+        },
+
+        renderCustomMapInstance: function(mapType, latitude, longitude, zoomLevel){
+            window.MapCreatorConfig.mapType = mapType;
+            this.renderApplicationVisuals();
+            this.customMapInstance = new App.Views.GeneralMapInstance({
+                route: "custom",
+                container: ".content-map-data",
+                mapDiv: "content-map-canvas",
+                mapType: mapType,
+                latitude: latitude,
+                longitude: longitude,
+                zoomLevel: zoomLevel
+            });
+            return this.customMapInstance;
         }
     });
 
+
+
+
+
+
+
+
+
+    // view for data-visuals
     App.Views.ApplicationVisuals = Backbone.View.extend({
 
         template: template("templates/data-visuals.html"),
@@ -61,6 +81,7 @@
         }
     });
 
+    // renders the initial general map
     App.Views.GeneralMapInstance = Backbone.View.extend({
 
         template: template("templates/general-map.html"),
@@ -74,11 +95,29 @@
             }));
 
             this.render(viewObject);
+        },
+
+
+        mapZoomListener: function(map, viewObject){
+
+            // abstract this function out
+            google.maps.event.addListener(map,'zoom_changed', function(){
+                $(".image-link").empty();
+                $("#content-map-image").empty();
+                var newZoomLevel = map.getZoom();
+                var newMapCenter = map.getCenter();
+                viewObject.container = "#content-map-controls";
+                viewObject.lat = newMapCenter.k;
+                viewObject.lng = newMapCenter.B;
+                viewObject.zoomLevel = newZoomLevel;
+                this.pointMapInstance = new App.Views.PointMapInstance(viewObject);
+                return this.pointMapInstance;
+            });
 
         },
 
-        render: function(viewObject){
 
+        render: function(viewObject){
             $("#map-type-list option").each(function(){
                 if ($(this).val() === viewObject.mapType){
                     this.selected = true;
@@ -87,11 +126,19 @@
 
             var mapDiv = document.getElementById(viewObject.mapDiv);
 
+            if (viewObject.route === "custom"){
+                this.mapZoom = parseInt(viewObject.zoomLevel);
+                this.mapCenter = new google.maps.LatLng(viewObject.latitude,viewObject.longitude);
+            } else {
+                this.mapZoom = window.appConfig.initial_map_zoom;
+                this.mapCenter = window.appConfig.map_center_los_angeles;
+            }
+
             var map = new google.maps.Map(mapDiv, {
-                center: window.appConfig.map_center_los_angeles,
-                zoom: window.appConfig.initial_map_zoom,
-                scrollwheel: true,
-                draggable: true,
+                center: this.mapCenter,
+                zoom: this.mapZoom,
+                scrollwheel: false,
+                draggable: false,
                 mapTypeControl: false,
                 navigationControl: true,
                 streetViewControl: false,
@@ -104,17 +151,27 @@
                 }
             });
 
+            var marker = new google.maps.Marker({
+                position: this.mapCenter,
+                map: map
+            });
+
+            // changes map display on zoom
+            this.mapZoomListener(map, viewObject);
+
             if (viewObject.mapType === "point-map"){
-                this.pointMapInstance = new App.Views.PointMapInstance({
-                    container: "#content-map-controls",
-                });
+                viewObject.container = "#content-map-controls";
+                viewObject.lat = this.mapCenter.k;
+                viewObject.lng = this.mapCenter.B;
+                viewObject.zoomLevel = this.mapZoom;
+                this.pointMapInstance = new App.Views.PointMapInstance(viewObject);
                 return this.pointMapInstance;
             }
-
         }
-
     });
 
+
+    // handles the display of point maps
     App.Views.PointMapInstance = Backbone.View.extend({
 
         template: template("templates/point-map.html"),
@@ -123,9 +180,11 @@
 
         initialize: function(viewObject){
 
+            $("input[id='latitudeSearch']").val(viewObject.latitude);
+            $("input[id='longitudeSearch']").val(viewObject.longitude);
+            $("input[id='addressSearch']").val("");
             $(viewObject.container).html(_.template(this.template));
-
-            //this.render(viewObject);
+            this.render(viewObject);
 
         },
 
@@ -135,12 +194,6 @@
         },
 
         addressSearch: function(e){
-            /*
-            $("input[id='addressSearch']").focus(function(){
-                $("#representative-profile").empty();
-            });
-            */
-
             $("input[id='addressSearch']").geocomplete({
                 details: "form"
             });
@@ -157,30 +210,23 @@
             }
         },
 
-
         navigate: function(latitude, longitude){
+            var latitude = $("input[id='latitudeSearch']").val();
+            var longitude = $("input[id='longitudeSearch']").val();
 
-            console.log(latitude);
-
-
-            //window.viewObject.latitude = latitude;
-            //window.viewObject.longitude = longitude;
-            //window.viewObject.center = new google.maps.LatLng(latitude, longitude);
-            //window.viewObject.sizeParams = "600x400";
-            //this.render(window.viewObject);
-
+            window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + latitude + "&lng=" + longitude + "&zoom=" + 10, {
+                trigger: true,
+                replace: false,
+            });
 
         },
 
-
-
-
-
         render: function(viewObject){
-
-            console.log(viewObject);
-
+            $("#content-map-image").html(
+                "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" + viewObject.lat + "," + viewObject.lng + "&zoom=" + viewObject.zoomLevel + "&size=" + window.MapCreatorConfig.sizeParams + "&scale=2&markers=color:red%7Clabel:%7C" + viewObject.lat + "," + viewObject.lng + "' />"
+            );
+            $("#content-map-image").before(
+                "<h1 class='image-link'>Here's your image. Copy the <a href='http://maps.googleapis.com/maps/api/staticmap?center=" + viewObject.lat + "," + viewObject.lng + "&zoom=" + viewObject.zoomLevel + "&size=" + window.MapCreatorConfig.sizeParams + "&scale=2&markers=color:red%7Clabel:%7C" + viewObject.lat + "," + viewObject.lng + "' target='blank'>url</a> and upload into <a href='http://a.scpr.org/a/assets' target='blank'>AssetHost</a></h1>"
+            );
         }
-
-
     });
