@@ -1,4 +1,4 @@
-var ca_county = {
+var californiaCounties = {
         "type": "FeatureCollection",
         "properties": {
                 "kind": "state",
