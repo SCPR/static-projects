@@ -1,92 +1,264 @@
-    window.percentifyValue = function(value){
-        var value = value * 100
-        return parseFloat(value.toFixed(2));
-    };
+    window.storage = Tabletop.init({
+        key: "https://docs.google.com/spreadsheets/d/1H6hFZQiolqW7fU5Zdruy0LWTPn8zqDN2gW4ZkQoFUaI/pubhtml",
+        wait: true
+    });
 
-    window.toFixedPercent = function(part, whole){
-        var targetValue = part / whole;
-        var decimal = parseFloat(targetValue);
-        return decimal
-    };
-
-    window.addCommas = function(nStr){
-        nStr += "";
-        x = nStr.split(".");
-        x1 = x[0];
-        x2 = x.length > 1 ? "." + x[1] : "";
-            var rgx = /(\d+)(\d{3})/;
-                while (rgx.test(x1)) {
-                    x1 = x1.replace(rgx, "$1" + "," + "$2");
-                }
-            return x1 + x2;
-    };
-
-    String.prototype.truncateToGraf = function(){
-        var lengthLimit = 900;
-        if (this.length > lengthLimit){
-            return this.substring(0, lengthLimit) + " ... ";
-        } else {
-            return this;
-        }
-    };
-
-    String.prototype.toProperCase = function(){
-        return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-    };
-
-
-    App.Models.SafetyZone = Backbone.Model.extend({
+    App.Models.WhoopingCoughCurrent = Backbone.Model.extend({
         defaults: {
-            gang_name: null,
-            url_to_injunction: null,
-            document_cloud_url: null,
-            case_filed: null,
-            date_of_injunction: null,
-            year_of_injunction: null,
-            trial_date: null,
-            judges_name: null,
-            case_number: null,
-            number_originally_targeted: null,
-            notes: null,
+            county: null,
+            countyproper: null,
+            updated: null,
+            cases: null,
+            rate: null,
+        },
+        tabletop: {
+            instance: window.storage,
+            sheet: "data_7_8_2014"
+        },
+        sync: Backbone.tabletopSync
+    });
+
+    App.Models.WhoopingCoughHistorical = Backbone.Model.extend({
+        defaults: {
+            county: null,
+            countyproper: null,
+            updated: null,
+            cases: null,
+            rate: null,
         },
     });
 
-    App.Collections.SafetyZones = Backbone.Collection.extend({
-        model: App.Models.SafetyZone,
-        url: "data/data.json",
-        comparator: function(model) {
-            return model.get("NAME");
-        }
+    App.Collections.WhoopingCoughCurrents = Backbone.Collection.extend({
+        model: App.Models.WhoopingCoughCurrent,
+        tabletop: {
+            instance: window.storage,
+            sheet: "data_7_8_2014"
+        },
+        sync: Backbone.tabletopSync
+    });
+
+    App.Collections.WhoopingCoughHistoricals = Backbone.Collection.extend({
+        model: App.Models.WhoopingCoughHistorical
     });
 
     App.Router = Backbone.Router.extend({
         initialize: function(){
-
-        },
-
-        routes: {
-            "": "renderApplicationWrapper",
-        },
-
-        renderApplicationWrapper: function(){
             this.applicationWrapper = new App.Views.ApplicationWrapper();
             return this.applicationWrapper;
         },
+
+        routes: {
+            "": "fetchData",
+        },
+
+        fetchData: function(){
+            var _this = this;
+            var applicationCollection = new App.Collections.WhoopingCoughCurrents();
+            applicationCollection.fetch({
+                async: true
+            });
+            var checkExist = setInterval(function() {
+                if (applicationCollection.length > 0){
+                    clearInterval(checkExist);
+                    _this.renderApplicationVisuals(applicationCollection);
+                }
+            }, 500);
+        },
+
+        renderApplicationVisuals: function(collection){
+            if (this.applicationVisuals){
+                this.applicationVisuals.remove();
+            };
+
+            this.applicationVisuals = new App.Views.ApplicationVisuals({
+                collection: collection,
+                container: ".data-visuals"
+            });
+
+            return this.applicationVisuals;
+
+        },
+
     });
 
-    App.Views.MapApplication = Backbone.View.extend({
-
-        //tagName: "div",
-
-        //className: "col-xs-12 col-sm-12 col-md-12 col-lg-12",
+    App.Views.ApplicationVisuals = Backbone.View.extend({
 
         template: template("templates/data-visuals.html"),
 
         el: ".data-visuals",
 
-        initialize: function(mapDataObject){
+        initialize: function(viewObject){
+            this.dataColor = [
+                "rgba(255, 255, 255, 0.7)",
+                "rgba(255, 255, 178, 0.7)",
+                "rgba(254, 204, 92, 0.7)",
+                "rgba(253, 141, 60, 0.7)",
+                "rgba(227, 26, 28, 0.7)"
+            ];
 
-            this.mapDataObject = mapDataObject;
+            $(window).bind('scroll', function(){
+                var aboveHeight = $(".kpcc-header").outerHeight() + $(".data-details").outerHeight();
+                var barWidth = $(".content-map-data").width();
+                if ($(window).scrollTop() > aboveHeight){
+                    $(".content-map-data").addClass("fixed").css("width", barWidth);
+                } else {
+                    $(".content-map-data").removeClass("fixed").css("width", "width: 100%;");
+                }
+            });
+
+            this.render(viewObject);
+        },
+
+        events: {
+          "click input": "layerSwitch"
+        },
+
+        styleFeatures: function (feature) {
+            return {
+                color: "black",
+                weight: 0.7,
+                opacity: 0.7,
+                fillOpacity: 0.7,
+                fillColor: feature.properties.layerColor
+            }
+        },
+
+        onEachFeature: function(feature, layer) {
+
+            var highlightedStyle = {
+                weight: 3,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.7,
+                fillColor: 'black'
+            };
+
+            var unhighlightedStyle = {
+                weight: 0.7,
+                opacity: 0.7,
+                fillOpacity: 0.7,
+                fillColor: feature.properties.layerColor
+            };
+
+            if (window.appConfig.is_mobile){
+
+                var featcherDetails = (
+                    "<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>" +
+                        "<h5><%= countyproper %></h5>" +
+                        "<h6>Last updated: <%= moment(updated).format('MMMM D[th], YYYY') %></h6>" +
+                    "</div>" +
+                    "<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>" +
+                        "<h5><%= rate %> cases per 100,000 people</h5>" +
+                        "<h6><%= cases %> total cases</h6>" +
+                    "</div>"
+                );
+
+                layer.on({
+                    click: function(e){
+                        var data = e.target.feature.properties;
+                        $(".content-feature-data").html(_.template(featcherDetails, data));
+                    }
+                });
+
+            } else {
+
+                var featcherDetails = (
+                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
+                        "<h5><%= countyproper %></h5>" +
+                        "<h6>Last updated: <%= moment(updated).format('MMMM D[th], YYYY') %></h6>" +
+                    "</div>" +
+                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
+                        "<h5><%= rate %> cases per 100,000 people</h5>" +
+                        "<h6><%= cases %> total cases</h6>" +
+                    "</div>"
+                );
+
+                layer.on({
+                    mouseover: function(e){
+                        this.setStyle(highlightedStyle);
+                        var data = e.target.feature.properties;
+                        $(".content-feature-data").html(_.template(featcherDetails, data));
+                    },
+
+                    mouseout: function(e){
+                        this.setStyle(unhighlightedStyle);
+                        $(".content-feature-data").html(
+                            "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
+                                "<h5>Hover over a county to see the rate of whooping cough cases per 100,000 people</h5>" +
+                                "<h6>&nbsp;</h6>" +
+                            "</div>"
+                        );
+                    },
+                });
+            }
+        },
+
+        createNewBasemapLayer: function(collection, dataUrl){
+            var collection = new App.Collections.WhoopingCoughHistoricals();
+            collection.fetch({
+                url: dataUrl,
+                async: false
+            });
+            var baseLayer = this.combineCollectionWithShape(collection);
+            return baseLayer;
+        },
+
+        combineCollectionWithShape: function(collection){
+            var copyOfCountyShapes = $.extend(true, {}, californiaCounties);
+            var equalIntervalArray = [];
+            for (var i=0; i<copyOfCountyShapes.features.length; i++){
+                var dataObject = collection.where({
+                    "countyproper": copyOfCountyShapes.features[i].properties.name
+                });
+                equalIntervalArray.push(parseFloat(dataObject[0].attributes.rate));
+                copyOfCountyShapes.features[i].properties.updated = dataObject[0].attributes.updated;
+                copyOfCountyShapes.features[i].properties.cases = parseInt(dataObject[0].attributes.cases);
+                copyOfCountyShapes.features[i].properties.rate = parseFloat(dataObject[0].attributes.rate);
+                copyOfCountyShapes.features[i].properties.countyproper = dataObject[0].attributes.countyproper + " County";
+            };
+
+            for (var i=0; i<copyOfCountyShapes.features.length; i++){
+                var comparitor = copyOfCountyShapes.features;
+                if (comparitor[i].properties.rate > 45 && comparitor[i].properties.rate <= 120){
+                    comparitor[i].properties.layerColor = this.dataColor[4];
+                } else if (comparitor[i].properties.rate > 28 && comparitor[i].properties.rate <= 45){
+                    comparitor[i].properties.layerColor = this.dataColor[3];
+                } else if (comparitor[i].properties.rate > 12 && comparitor[i].properties.rate <= 28){
+                    comparitor[i].properties.layerColor = this.dataColor[2];
+                } else if (comparitor[i].properties.rate > 0 && comparitor[i].properties.rate <= 12){
+                    comparitor[i].properties.layerColor = this.dataColor[1];
+                } else {
+                    comparitor[i].properties.layerColor = this.dataColor[0];
+                }
+            };
+
+            var newGeoJsonLayer = L.geoJson(copyOfCountyShapes, {
+                filter: this.filterFeatures,
+                style: this.styleFeatures,
+                onEachFeature: this.onEachFeature
+            });
+
+            return newGeoJsonLayer;
+        },
+
+        createLegend: function(){
+            var dataRanges = [
+                "No cases reported",
+                "1 to 12",
+                "More than 12",
+                "More than 28",
+                "More than 45"
+            ];
+
+            for (var i=0; i<this.dataColor.length; i++){
+                $("#legend-colors").append(
+                    "<td style='background:" + this.dataColor[i] + "'>" + dataRanges[i] + "</td>"
+                );
+            };
+        },
+
+        render: function(viewObject){
+            $(viewObject.container).html(_.template(this.template));
 
             this.stamenToner = new L.tileLayer(
                 "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
@@ -95,169 +267,46 @@
                     maxZoom: 14
             });
 
-            this.center = new L.LatLng(34.061841979429445, -118.26370239257812);
-
-/*
-            this.geojsonLayer = L.geoJson(null, {
-                filter: this.filterFeatures,
-                style: this.styleFeatures,
-                onEachFeature: this.onEachFeature
-            });
-    */
-
-
-            this.geojsonLayer = L.geoJson(gangInjunctionData, {
-                filter: this.filterFeatures,
-                style: this.styleFeatures,
-                onEachFeature: this.onEachFeature
-            });
-
-
-            this.render(this.mapDataObject);
-
-            $("#animation-slider").slider({
-                "value": 0,
-                "min": 1999,
-                "max": 2013,
-                "step": 1,
-
-                slide: function(event, ui) {
-                    var increment = ui.value;
-                    $("#slider-value").html("<h4>Year: " + increment + "</h4>");
-                },
-
-                change: function(event, ui) {
-                    var increment = ui.value;
-                    $("#slider-value").html("<h4>Year: " + increment + "</h4>");
-                },
-
-                start: function(event, ui) {
-                    //$.doTimeout("slider_timer");
-                }
-            });
-
-            $("#slider-value").html("<h4>Year: " + $("#animation-slider").slider("option", "min") + "</h4>");
-
-        },
-
-        events: {
-            "click a#animation-backward": "moveIncrementBackward",
-            "click a#animation-play": "playIncrementForward",
-            "click a#animation-forward": "moveIncrementForward",
-            "slidechange #animation-slider": "createIncrementLayer",
-        },
-
-        styleFeatures: function (feature) {
-            return {
-                color: 'green',
-                weight: .8,
-                opacity: .8,
-                fillOpacity: .8,
-                fillColor: "green"
-            }
-        },
-
-        onEachFeature: function(feature, layer) {
-            feature.selected = false;
-            layer.on("click", function(e){
-                $("#injunction-details").html(
-                    "<h6>" + feature.properties.ZONE_NAME + "</h6>" +
-                    "<p><strong>Targeted gang</strong>: " + feature.properties.NAME + "</p>" +
-
-                    //"<p>" + feature.properties.AREA + "</p>" +
-
-                    "<p><strong>Implemented in</strong>: " + feature.properties.year_of_i + "</p>" +
-                    "<p><strong>Individuals targeted</strong>: " + feature.properties.number_or + "</p>" +
-                    "<p><strong>Case number</strong>: " + feature.properties.case_numb + "</p>" +
-                    "<p><strong>Case filed</strong>: " + feature.properties.case_file + "</p>" +
-                    "<p><strong>Injunction approved</strong>: " + feature.properties.date_of_i + "</p>" +
-                    "<p><strong>Issued by judge</strong>: " + feature.properties.judges_na + "</p>" +
-                    "<p>" + feature.properties.document_ + "</p>"
-                );
-            });
-        },
-
-        moveIncrementBackward: function(){
-            var comparisonValue = $("#animation-slider").slider("value");
-            if (comparisonValue == $("#animation-slider").slider("option", "min")){
-                return false;
-            } else {
-                var newValue = comparisonValue - 1
-                $("#animation-slider").slider("value", newValue);
-                this.loopThroughGeoJsonAddingData(newValue);
-            }
-        },
-
-        playIncrementForward: function(e){
-            e.preventDefault();
-            if ($("a#animation-play").hasClass("active")){
-                $("a#animation-play").removeClass("active").html("<h5><span class='glyphicon glyphicon-play'></span></h5>");
-                $.doTimeout("slider_timer");
-            } else {
-                $("a#animation-play").addClass("active").html("<h5><span class='glyphicon glyphicon-pause'></span></h5>");
-                if ($("#animation-slider").slider("option", "value") == $("#animation-slider").slider("option", "max")){
-                    $("#animation-slider").slider("value", 0);
-                }
-                $.doTimeout("slider_timer", 1000, function(){
-                    $("#animation-slider").slider("value", parseInt($("#animation-slider").slider("option", "value")) +1);
-                    if ($("#animation-slider").slider("option", "value") == $("#animation-slider").slider("option", "max")){
-                        $("a#animation-play").removeClass("active").html("<h5><span class='glyphicon glyphicon-play'></span></h5>");
-                        return false;
-                    }
-                    return true;
-                });
-            }
-        },
-
-        moveIncrementForward: function(){
-            var comparisonValue = $("#animation-slider").slider("value");
-            if (comparisonValue == $("#animation-slider").slider("option", "max")){
-                return false;
-            } else {
-                var newValue = comparisonValue + 1
-                $("#animation-slider").slider("value", newValue);
-                this.loopThroughGeoJsonAddingData(newValue);
-            }
-        },
-
-        createIncrementLayer: function(){
-            if ($("#injunction-details").length){
-                $("#injunction-details").empty();
-            }
-            this.geojsonLayer.clearLayers();
-            var comparisonValue = $("#animation-slider").slider("value");
-            this.loopThroughGeoJsonAddingData(comparisonValue);
-        },
-
-        loopThroughGeoJsonAddingData: function(comparisonValue){
-
-            console.log(comparisonValue);
-
-            for(var i=0; i<gangInjunctionData.features.length; i++){
-                var gangInjunctionYear = parseInt(gangInjunctionData.features[i].properties.year_of_i);
-                if (gangInjunctionYear <= comparisonValue){
-                    this.geojsonLayer.addData(gangInjunctionData.features[i]).addTo(this.map);
-                    $("#injunction-details").html("<h6>overview of what happened in " + comparisonValue + "</h6>");
-                };
-            };
-        },
-
-        render: function(mapDataObject){
-            $(mapDataObject.container).html(_.template(this.template));
             this.map = L.map("content-map-canvas", {
                 scrollWheelZoom: false,
                 zoomControl: false,
                 minZoom: 6,
                 maxZoom: 14
             }).setView(
-                this.center, window.appConfig.initial_zoom
+                window.appConfig.map_center_california, window.appConfig.initial_map_zoom
             ).addLayer(
                 this.stamenToner
-            ).addControl(L.control.zoom({
-                position: "topright"
-            }));
-            mapDataObject.map = this.map;
-            this.geojsonLayer.addTo(this.map);
-        }
+            );
 
+            this.baseMaps = {
+                "layer2014": this.combineCollectionWithShape(viewObject.collection),
+                "layer2013": this.createNewBasemapLayer("data2013Collection", "data/data_2013.json"),
+                "layer2012": this.createNewBasemapLayer("data2012Collection", "data/data_2012.json"),
+                "layer2011": this.createNewBasemapLayer("data2011Collection", "data/data_2011.json"),
+                "layer2010": this.createNewBasemapLayer("data2010Collection", "data/data_2010.json"),
+            };
+
+            var overlayMaps = {};
+
+            var controlPanel = {
+                "position": "topright",
+                "collapsed": false
+            };
+
+            L.control.zoom({
+                position: "topright"
+            }).addTo(this.map);
+
+            this.dataLayer = new L.layerGroup();
+            this.dataLayer.addLayer(this.baseMaps["layer2014"]);
+            this.dataLayer.addTo(this.map);
+            this.createLegend();
+        },
+
+       layerSwitch: function(ev){
+                var layerName = ev.target.id;
+                this.dataLayer.clearLayers();
+                this.dataLayer.addLayer(this.baseMaps[layerName]);
+                this.dataLayer.addTo(this.map);
+        }
     });
