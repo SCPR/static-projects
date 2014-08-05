@@ -13,7 +13,7 @@
         },
         tabletop: {
             instance: window.storage,
-            sheet: "data_7_8_2014"
+            sheet: "latest_data_report"
         },
         sync: Backbone.tabletopSync
     });
@@ -32,7 +32,7 @@
         model: App.Models.WhoopingCoughCurrent,
         tabletop: {
             instance: window.storage,
-            sheet: "data_7_8_2014"
+            sheet: "latest_data_report"
         },
         sync: Backbone.tabletopSync
     });
@@ -165,7 +165,7 @@
                 var featcherDetails = (
                     "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
                         "<h5><%= countyproper %></h5>" +
-                        "<h6>Last updated: <%= moment(updated).format('MMMM D[th], YYYY') %></h6>" +
+                        "<h6>Last updated: <%= moment(updated).format('MMMM D, YYYY') %></h6>" +
                     "</div>" +
                     "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
                         "<h5><%= rate %> cases per 100,000 people</h5>" +
