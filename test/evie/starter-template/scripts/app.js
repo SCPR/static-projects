@@ -88,6 +88,7 @@
         el: ".data-visuals",
 
         initialize: function(viewObject){
+            
             this.dataColor = [
                 "rgba(255, 255, 255, 0.7)",
                 "rgba(255, 255, 178, 0.7)",
