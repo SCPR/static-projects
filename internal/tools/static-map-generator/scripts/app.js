@@ -1,6 +1,6 @@
     window.MapCreatorConfig = {
         mapType: null,
-        sizeParams: "600x400"
+        sizeParams: "640x400"
     };
 
     App.Router = Backbone.Router.extend({
@@ -11,8 +11,8 @@
 
         routes: {
             "": "renderApplicationVisuals",
-            "map-creator/:mapType/": "renderGeneralMapInstance",
-            "map-creator/:mapType?lat=:latitude&lng=:longitude&zoom=:zoomLevel": "renderCustomMapInstance"
+            "map-creator/:mapType/": "renderPointMapInstance",
+            "map-creator/:mapType?lat=:latitude&lng=:longitude&zoom=:zoomLevel&layer=:layer": "renderCustomMapInstance"
         },
 
         renderApplicationVisuals: function(){
@@ -22,42 +22,37 @@
             return this.applicationVisuals;
         },
 
-        renderGeneralMapInstance: function(mapType){
-            window.MapCreatorConfig.mapType = mapType;
+        renderPointMapInstance: function(mapType){
             this.renderApplicationVisuals();
-            this.generalMapInstance = new App.Views.GeneralMapInstance({
+            this.pointMapInstance = new App.Views.PointMapInstance({
+                route: "initial",
                 container: ".content-map-data",
                 mapDiv: "content-map-canvas",
-                mapType: mapType
+                mapType: mapType,
+                mapCenter: window.appConfig.map_center_los_angeles,
+                mapZoomLevel: window.appConfig.initial_map_zoom,
+                mapLayerId: "ROADMAP"
             });
-            return this.generalMapInstance;
+            return this.pointMapInstance;
         },
 
-        renderCustomMapInstance: function(mapType, latitude, longitude, zoomLevel){
-            window.MapCreatorConfig.mapType = mapType;
+        renderCustomMapInstance: function(mapType, latitude, longitude, zoomLevel, layer){
             this.renderApplicationVisuals();
-            this.customMapInstance = new App.Views.GeneralMapInstance({
+            var lat = parseFloat(latitude);
+            var lng = parseFloat(longitude);
+            this.customMapInstance = new App.Views.PointMapInstance({
                 route: "custom",
                 container: ".content-map-data",
                 mapDiv: "content-map-canvas",
                 mapType: mapType,
-                latitude: latitude,
-                longitude: longitude,
-                zoomLevel: zoomLevel
+                mapCenter: new google.maps.LatLng(lat,lng),
+                mapZoomLevel: zoomLevel,
+                mapLayerId: layer
             });
             return this.customMapInstance;
         }
     });
 
-
-
-
-
-
-
-
-
-    // view for data-visuals
     App.Views.ApplicationVisuals = Backbone.View.extend({
 
         template: template("templates/data-visuals.html"),
@@ -73,8 +68,8 @@
         },
 
         evaluateSelectedMap: function(){
-            window.MapCreatorConfig.mapType = $("#map-type-list").val();
-            window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "/", {
+            var mapType = $("#map-type-list").val();
+            window.app.navigate("#map-creator/" + mapType + "/", {
                 trigger: true,
                 replace: false,
             });
@@ -82,61 +77,109 @@
     });
 
     // renders the initial general map
-    App.Views.GeneralMapInstance = Backbone.View.extend({
+    App.Views.PointMapInstance = Backbone.View.extend({
 
-        template: template("templates/general-map.html"),
+        template: template("templates/point-map.html"),
 
         el: ".content-map-data",
 
         initialize: function(viewObject){
 
-            $(viewObject.container).html(_.template(this.template, {
-                value: viewObject.mapType
-            }));
-
-            this.render(viewObject);
-        },
-
-
-        mapZoomListener: function(map, viewObject){
-
-            // abstract this function out
-            google.maps.event.addListener(map,'zoom_changed', function(){
-                $(".image-link").empty();
-                $("#content-map-image").empty();
-                var newZoomLevel = map.getZoom();
-                var newMapCenter = map.getCenter();
-                viewObject.container = "#content-map-controls";
-                viewObject.lat = newMapCenter.k;
-                viewObject.lng = newMapCenter.B;
-                viewObject.zoomLevel = newZoomLevel;
-                this.pointMapInstance = new App.Views.PointMapInstance(viewObject);
-                return this.pointMapInstance;
-            });
-
-        },
-
-
-        render: function(viewObject){
             $("#map-type-list option").each(function(){
                 if ($(this).val() === viewObject.mapType){
                     this.selected = true;
                 }
             });
 
-            var mapDiv = document.getElementById(viewObject.mapDiv);
+            this.viewObject = viewObject;
 
-            if (viewObject.route === "custom"){
-                this.mapZoom = parseInt(viewObject.zoomLevel);
-                this.mapCenter = new google.maps.LatLng(viewObject.latitude,viewObject.longitude);
+            window.MapCreatorConfig.mapType = this.viewObject.mapType;
+
+            $(this.viewObject.container).html(_.template(this.template));
+
+            $("#" + this.viewObject.mapLayerId).prop("checked", true);
+
+            this.render(this.viewObject);
+        },
+
+        events: {
+            "keyup :input": "addressSearch",
+            "change input[type=radio]": "changeRadio",
+            "click button#submit": "generateImage",
+        },
+
+        addressSearch: function(e){
+
+            $("input[id='addressSearch']").geocomplete({
+                details: "form"
+            });
+
+            var latitude = $("input[id='latitudeSearch']").val();
+            var longitude = $("input[id='longitudeSearch']").val();
+            var layer = $('input[name=map-type]:checked').val();
+
+            if(e.keyCode != 13) {
+                return false;
+            } else if (e.keyCode === 13 && latitude === '' && longitude === '') {
+                return false;
             } else {
-                this.mapZoom = window.appConfig.initial_map_zoom;
-                this.mapCenter = window.appConfig.map_center_los_angeles;
+                this.updateMap(latitude, longitude, layer);
             }
 
+        },
+
+        changeRadio: function(e){
+            var latitude = $("input[id='latitudeSearch']").val();
+            var longitude = $("input[id='longitudeSearch']").val();
+            var layer = e.target.value;
+            this.updateMap(latitude, longitude, layer);
+        },
+
+        updateMap: function(latitude, longitude, layer){
+
+            var latitude = $("input[id='latitudeSearch']").val();
+            var longitude = $("input[id='longitudeSearch']").val();
+            var layer = $('input[name=map-type]:checked').val();
+
+            if (latitude != '' && longitude != ''){
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + latitude + "&lng=" + longitude + "&zoom=" + window.appConfig.initial_map_zoom + "&layer=" + layer, {
+                    trigger: true,
+                    replace: true,
+                });
+            } else {
+                alert("NO!");
+                window.app.navigate("", {
+                    trigger: true,
+                    replace: true,
+                });
+            }
+
+        },
+
+        generateImage: function(){
+            $("#content-map-image").html(
+                "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" +
+                this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B + "&zoom=" +
+                this.viewObject.mapZoomLevel + "&size=" + window.MapCreatorConfig.sizeParams + "&scale=2&maptype=" +
+                this.viewObject.mapLayerId.toLowerCase() + "&markers=color:red%7Clabel:%7C" +
+                this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B + "&key=AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do' />"
+            );
+
+            $("#content-map-image").before(
+                "<h6 class='image-link'>Copy the <a href='http://maps.googleapis.com/maps/api/staticmap?center=" +
+                this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B + "&zoom=" +
+                this.viewObject.mapZoomLevel + "&size=" + window.MapCreatorConfig.sizeParams +
+                "&scale=2&markers=color:red%7Clabel:%7C" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B + "' target='blank'>url</a> for this image</h6>"
+            );
+        },
+
+        render: function(viewObject){
+
+            var mapDiv = document.getElementById(viewObject.mapDiv);
+
             var map = new google.maps.Map(mapDiv, {
-                center: this.mapCenter,
-                zoom: this.mapZoom,
+                center: viewObject.mapCenter,
+                zoom: parseInt(viewObject.mapZoomLevel),
                 scrollwheel: false,
                 draggable: false,
                 mapTypeControl: false,
@@ -144,7 +187,7 @@
                 streetViewControl: false,
                 panControl: false,
                 scaleControl: false,
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeId: google.maps.MapTypeId[viewObject.mapLayerId],
                 navigationControlOptions: {
                 style: google.maps.NavigationControlStyle.SMALL,
                 position: google.maps.ControlPosition.RIGHT_TOP
@@ -152,81 +195,81 @@
             });
 
             var marker = new google.maps.Marker({
-                position: this.mapCenter,
+                position: viewObject.mapCenter,
+                draggable: true,
                 map: map
             });
 
-            // changes map display on zoom
-            this.mapZoomListener(map, viewObject);
+            this.mapZoomListener(map, this.viewObject);
 
-            if (viewObject.mapType === "point-map"){
-                viewObject.container = "#content-map-controls";
-                viewObject.lat = this.mapCenter.k;
-                viewObject.lng = this.mapCenter.B;
-                viewObject.zoomLevel = this.mapZoom;
-                this.pointMapInstance = new App.Views.PointMapInstance(viewObject);
-                return this.pointMapInstance;
-            }
-        }
-    });
+            this.mapClickListener(map, this.viewObject);
 
+            this.mapDragListener(marker, this.viewObject);
 
-    // handles the display of point maps
-    App.Views.PointMapInstance = Backbone.View.extend({
-
-        template: template("templates/point-map.html"),
-
-        el: "#content-map-controls",
-
-        initialize: function(viewObject){
-
-            $("input[id='latitudeSearch']").val(viewObject.latitude);
-            $("input[id='longitudeSearch']").val(viewObject.longitude);
-            $("input[id='addressSearch']").val("");
-            $(viewObject.container).html(_.template(this.template));
-            this.render(viewObject);
-
-        },
-
-        events: {
-            "keyup :input": "addressSearch",
-            "click button#submit": "navigate",
-        },
-
-        addressSearch: function(e){
-            $("input[id='addressSearch']").geocomplete({
-                details: "form"
+            /*
+            google.maps.event.addDomListener(map, "idle", function() {
+                center = map.getCenter();
             });
 
-            var latitude = $("input[id='latitudeSearch']").val();
-            var longitude = $("input[id='longitudeSearch']").val();
+            google.maps.event.addDomListener(window, "resize", function() {
+                map.setCenter(this.mapCenter);
+            });
+            */
 
-            if(e.keyCode != 13) {
-                return false;
-            } else if (e.keyCode === 13 && latitude === '' && longitude === '') {
-                return false;
-            } else {
-                this.navigate(latitude, longitude);
+            if (this.viewObject.route === "custom"){
+                $("input[id='latitudeSearch']").val(viewObject.mapCenter.k);
+                $("input[id='longitudeSearch']").val(viewObject.mapCenter.B);
             }
+
+            $("#content-map-canvas").before(
+                "<h6 class='live-link'>" + viewObject.mapType + "</h6>"
+            );
+
         },
 
-        navigate: function(latitude, longitude){
-            var latitude = $("input[id='latitudeSearch']").val();
-            var longitude = $("input[id='longitudeSearch']").val();
+        mapZoomListener: function(map, viewObject){
+            google.maps.event.addListener(map,'zoom_changed', function(){
+                $(".image-link").empty();
+                $("#content-map-image").empty();
+                var newZoomLevel = map.getZoom();
+                var newMapCenter = map.getCenter();
+                var layer = $('input[name=map-type]:checked').val();
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + newMapCenter.k + "&lng=" + newMapCenter.B + "&zoom=" + newZoomLevel + "&layer=" + layer, {
+                    trigger: true,
+                    replace: true,
+                });
 
-            window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + latitude + "&lng=" + longitude + "&zoom=" + 10, {
-                trigger: true,
-                replace: false,
             });
 
         },
 
-        render: function(viewObject){
-            $("#content-map-image").html(
-                "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" + viewObject.lat + "," + viewObject.lng + "&zoom=" + viewObject.zoomLevel + "&size=" + window.MapCreatorConfig.sizeParams + "&scale=2&markers=color:red%7Clabel:%7C" + viewObject.lat + "," + viewObject.lng + "' />"
-            );
-            $("#content-map-image").before(
-                "<h1 class='image-link'>Here's your image. Copy the <a href='http://maps.googleapis.com/maps/api/staticmap?center=" + viewObject.lat + "," + viewObject.lng + "&zoom=" + viewObject.zoomLevel + "&size=" + window.MapCreatorConfig.sizeParams + "&scale=2&markers=color:red%7Clabel:%7C" + viewObject.lat + "," + viewObject.lng + "' target='blank'>url</a> and upload into <a href='http://a.scpr.org/a/assets' target='blank'>AssetHost</a></h1>"
-            );
+        mapClickListener: function(map, viewObject){
+            google.maps.event.addListener(map,'click', function(event){
+                $(".image-link").empty();
+                $("#content-map-image").empty();
+                viewObject.mapZoomLevel = map.getZoom();
+                viewObject.mapCenter = event.latLng;
+                var layer = $('input[name=map-type]:checked').val();
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.mapCenter.k + "&lng=" + viewObject.mapCenter.B + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
+                    trigger: true,
+                    replace: true,
+                });
+            });
+
+        },
+
+        mapDragListener: function (marker, viewObject){
+            google.maps.event.addListener(marker, 'dragend', function(){
+                $(".image-link").empty();
+                $("#content-map-image").empty();
+                var newMarkerPosition = marker.getPosition();
+                viewObject.mapCenter = newMarkerPosition;
+                var layer = $('input[name=map-type]:checked').val();
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.mapCenter.k + "&lng=" + viewObject.mapCenter.B + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
+                    trigger: true,
+                    replace: true,
+                });
+            });
         }
+
     });
