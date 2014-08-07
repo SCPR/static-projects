@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     /* window.storage = Tabletop.init({
         key: "https://docs.google.com/spreadsheets/d/1H6hFZQiolqW7fU5Zdruy0LWTPn8zqDN2gW4ZkQoFUaI/pubhtml",
         wait: true
@@ -68,6 +69,27 @@
     
     console.log( quizQuestions.models[0].attributes); 
 
+=======
+    // create a model for a question here
+    App.Models.UserQuestion = Backbone.Model.extend({
+        defaults: {
+            question_text: null,
+            answer_1: null,
+            answer_2: null,
+            answer_3: null,
+            answer_4: null,
+            answer_5: null,
+            answer_6: null
+        },
+    });
+
+    // create a collection for models here
+    App.Collections.UserQuestions = Backbone.Collection.extend({
+        model: App.Models.UserQuestion,
+    });
+
+    // router helps to manage the flow of things through routes
+>>>>>>> 5a838e6bf5bd64a258eb61a192864ec94306aa49
     App.Router = Backbone.Router.extend({
         //initialize: function(){
            //console.log("route");
@@ -94,9 +116,17 @@
            "actions": "renderBeginningPage",
         }, 
 
+<<<<<<< HEAD
         /* fetchData: function(){
             var _this = this;
             var applicationCollection = new App.Collections.SixCaliforniaQuestion();
+=======
+        // we'll use this when user hits the main page to
+        // populate our models with data
+        fetchData: function(){
+            var _this = this;
+            this.applicationCollection = new App.Collections.UserQuestions();
+>>>>>>> 5a838e6bf5bd64a258eb61a192864ec94306aa49
             applicationCollection.fetch({
                 async: true
             });
@@ -105,6 +135,7 @@
                     clearInterval(checkExist);
                     _this.renderBeginningPage(applicationCollection);
                 }
+<<<<<<< HEAD
             }, 500); 
         }, */
 
@@ -117,29 +148,65 @@
     })
 
     App.Views.BeginningPage = Backbone.View.extend({
+=======
+            }, 500);
+        },
 
+        // render our template where the user will interact
+        renderApplicationVisuals: function(collection){
+            if (this.applicationVisuals){
+                this.applicationVisuals.remove();
+            };
+            this.applicationVisuals = new App.Views.ApplicationVisuals({
+                collection: collection,
+                container: ".data-visuals"
+            });
+            return this.applicationVisuals;
+        },
+    });
+
+    // this is what will basically be our landing view
+    // where the user can initiate the quiz
+    // all our views will mimic this structure and
+    // change out templates and element values
+    App.Views.ApplicationVisuals = Backbone.View.extend({
+>>>>>>> 5a838e6bf5bd64a258eb61a192864ec94306aa49
+
+        // specifies the template we'll use
         template: template("templates/data-visuals.html"),
 
+        // specifies which element receives the template
         el: ".data-visuals",
 
+<<<<<<< HEAD
         initialize: function(){
             console.log("hi");           
 
             this.render();
+=======
+        // initialize starts the ball rolling
+        // accepts an object holding information about our app
+        initialize: function(viewObject){
+            console.log("hi");
+
+            // passes the view object to a render
+            // function that writes the template
+            this.render(viewObject);
+>>>>>>> 5a838e6bf5bd64a258eb61a192864ec94306aa49
 
         },
 
-
-
+        // controls actions on dom elements
+        // helps organize the state of the application
         events: {
           "click button": "beginQuiz"
         },
 
-                
         beginQuiz: function () {
             alert("Clicked!")
         },
 
+<<<<<<< HEAD
         render: function(){
 
             this.$el.html(_.template(this.template));
@@ -159,4 +226,11 @@
         
 
 
+=======
+        // renders the template
+        // accepts an object holding information about our app
+        render: function(viewObject){
+            $(viewObject.container).html(_.template(this.template));
+        },
+>>>>>>> 5a838e6bf5bd64a258eb61a192864ec94306aa49
     });
