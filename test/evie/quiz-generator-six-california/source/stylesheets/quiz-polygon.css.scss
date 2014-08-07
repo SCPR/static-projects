@@ -1,0 +1,102 @@
+$font-stack: 'Gotham SSm A', 'Gotham SSm B', Arial, sans-serif;
+$purple: #3F1E45;
+
+// Container for generated quiz
+.quiz-container {
+  font-family: $font-stack;
+  border-top: 3px solid #000000;
+}
+
+// Text for each question
+.qq-question {
+  font-family: $font-stack;
+  font-weight: bold;
+  color: #000000;
+  font-size: 1.5em;
+  margin: 0% auto;
+  margin-bottom: 20px;
+}
+
+// Description for each question
+.qq-description {
+  font-family: $font-stack;
+  padding: 20px 20px 0px 20px;
+}
+
+// Answer options for each question
+ol.answers > li {
+  font-family: $font-stack;
+
+  &:before {
+    font-family: $font-stack;
+    font-style: italic;
+    color: #FFFFFF;
+    background-color: $purple;
+    width: 30px;
+  }
+  &:hover {
+    background-color: #EBEBEC;
+  }
+}
+
+// Buttons
+.qq-button {
+  font-family: $font-stack;
+  font-style: italic;
+  font-weight: 800;
+  color: #FFFFFF;
+  background-color: #FF0052;
+  width: 180px;
+  &:hover {
+    background-color: $purple !important;
+  }
+}
+
+// Highlights selected answer
+.selected {
+  background-color: #DFDFE0;
+}
+
+// Submit button color when an answer is selected
+.submit-highlight {
+  background-color: #CD1949;
+}
+
+// Checking selected answer
+.answer p:first-child {
+  font-family: $font-stack;
+}
+
+// Social media buttons on final scorecard
+#social-media ul li a svg {
+  &:hover {
+    fill: #ED1C55;
+  }
+  path:hover {
+    fill: #FFFFFF;
+  }
+  fill: $purple;
+}
+
+// Hyperlinks
+.answer a {
+  color: #FF0052;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// FLowchart selection
+.flowchart-selected {
+  background-color: $purple !important;
+  color: #FFFFFF !important;
+}
+
+// Flowchart button hover
+.flowchart-button {
+  &:hover {
+    background-color: $purple;
+    color: #FFFFFF;
+  }
+}

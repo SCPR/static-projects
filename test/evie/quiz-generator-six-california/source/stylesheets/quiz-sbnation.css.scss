@@ -1,0 +1,101 @@
+$font-stack: 'Gotham SSm A', 'Gotham SSm B', Arial, sans-serif;
+$question-font: 'Sentinel SSm A', 'Sentinel SSm B', Georgia, serif;
+$red: #C52327;
+
+// Container for generated quiz
+.quiz-container {
+  font-family: $font-stack;
+  text-align: center;
+  border-top: 7px solid $red;
+  padding-top: 20px;
+}
+
+// Text for each question
+.qq-question {
+  font-family: $question-font;
+  color: #000000;
+  font-size: 1.5em;
+  margin: 0% auto;
+  margin-bottom: 20px;
+}
+
+// Description for each question
+.qq-description {
+  font-family: $font-stack;
+  padding: 20px 10px 0px 10px;
+}
+
+// Answer options for each question
+ol.answers > li {
+  font-family: $font-stack;
+  font-size: 0.9em;
+
+  &:before {
+    font-family: $question-font;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: $red;
+    width: 30px;
+  }
+  &:hover {
+    background-color: #EEEDED;
+  }
+}
+
+// Buttons
+.qq-button {
+  font-family: ff-din-web-condensed, Helvetica, sans-serif;
+  color: #FFFFFF;
+  font-weight: 800;
+  background-color: #000000;
+  &:hover {
+    background-color: $red !important;
+  }
+}
+
+// Submit button color when an answer is selected
+.submit-highlight {
+  background-color: #6D6E70;
+}
+
+// Checking selected answer
+.answer p {
+  font-family: $font-stack;
+  font-size: 0.9em;
+  &:first-child {
+    font-family: $question-font;
+  }
+}
+
+// Social media buttons on final scorecard
+#social-media ul li a svg {
+  &:hover {
+    fill: $red;
+  }
+  path:hover {
+    fill: #FFFFFF;
+  }
+}
+
+// Hyperlinks
+.answer a {
+  color: $red;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// FLowchart selection
+.flowchart-selected {
+  background-color: $red !important;
+  color: #FFFFFF !important;
+}
+
+// Flowchart button hover
+.flowchart-button {
+  &:hover {
+    background-color: $red;
+    color: #FFFFFF;
+  }
+}
