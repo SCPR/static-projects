@@ -122,6 +122,8 @@
 
             this.viewObject = viewObject;
 
+            console.log(this.viewObject);
+
             window.MapCreatorConfig.mapType = this.viewObject.mapType;
 
             $(this.viewObject.container).html(_.template(this.template));
@@ -159,7 +161,7 @@
 
         changeRadio: function(e){
             var latitude = this.viewObject.mapCenter.k;
-            var longitude = this.viewObject.mapCenter.B;
+            var longitude = this.viewObject.mapCenter.A;
             var layer = e.target.value;
             this.updateMap(latitude, longitude, layer);
         },
@@ -176,17 +178,17 @@
         generateImage: function(){
             $("#content-map-image").html(
                 "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" +
-                this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B + "&zoom=" +
+                this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.A + "&zoom=" +
                 this.viewObject.mapZoomLevel + "&size=" + window.MapCreatorConfig.sizeParams + "&scale=2&maptype=" +
                 this.viewObject.mapLayerId.toLowerCase() + "&markers=color:red%7Clabel:%7C" +
-                this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B + "&key=AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do' />"
+                this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.A + "&key=AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do' />"
             );
 
             $("#content-map-image").before(
                 "<h6 class='image-link'>Copy the <a href='http://maps.googleapis.com/maps/api/staticmap?center=" +
-                this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B + "&zoom=" +
+                this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.A + "&zoom=" +
                 this.viewObject.mapZoomLevel + "&size=" + window.MapCreatorConfig.sizeParams +
-                "&scale=2&markers=color:red%7Clabel:%7C" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B + "' target='blank'>url</a> for this image</h6>"
+                "&scale=2&markers=color:red%7Clabel:%7C" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.A + "' target='blank'>url</a> for this image</h6>"
             );
         },
 
@@ -235,7 +237,7 @@
 
             if (this.viewObject.route === "custom"){
                 $("input[id='latitudeSearch']").val(viewObject.mapCenter.k);
-                $("input[id='longitudeSearch']").val(viewObject.mapCenter.B);
+                $("input[id='longitudeSearch']").val(viewObject.mapCenter.A);
             }
 
             $("#content-map-canvas").before(
@@ -251,7 +253,7 @@
                 var newZoomLevel = map.getZoom();
                 var newMapCenter = map.getCenter();
                 var layer = $('input[name=map-type]:checked').val();
-                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + newMapCenter.k + "&lng=" + newMapCenter.B + "&zoom=" + newZoomLevel + "&layer=" + layer, {
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + newMapCenter.k + "&lng=" + newMapCenter.A + "&zoom=" + newZoomLevel + "&layer=" + layer, {
                     trigger: true,
                     replace: true,
                 });
@@ -267,7 +269,7 @@
                 viewObject.mapZoomLevel = map.getZoom();
                 viewObject.mapCenter = event.latLng;
                 var layer = $('input[name=map-type]:checked').val();
-                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.mapCenter.k + "&lng=" + viewObject.mapCenter.B + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.mapCenter.k + "&lng=" + viewObject.mapCenter.A + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
                     trigger: true,
                     replace: true,
                 });
@@ -282,7 +284,7 @@
                 var newMarkerPosition = marker.getPosition();
                 viewObject.mapCenter = newMarkerPosition;
                 var layer = $('input[name=map-type]:checked').val();
-                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.mapCenter.k + "&lng=" + viewObject.mapCenter.B + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.mapCenter.k + "&lng=" + viewObject.mapCenter.A + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
                     trigger: true,
                     replace: true,
                 });
@@ -365,7 +367,7 @@
 
         changeRadio: function(e){
             var latitude = this.viewObject.mapCenter.k;
-            var longitude = this.viewObject.mapCenter.B;
+            var longitude = this.viewObject.mapCenter.A;
             var layer = e.target.value;
             this.updateMap(latitude, longitude, layer);
         },
@@ -419,7 +421,7 @@
 
         generateImage: function(){
             var baseUrl = "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do";
-            var mapCenter = "&center=" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B;
+            var mapCenter = "&center=" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.A;
             var mapZoom = "&zoom=" + this.viewObject.mapZoomLevel;
             var mapSize = "&size=" + window.MapCreatorConfig.sizeParams;
             var mapType = "&scale=2&maptype=" + this.viewObject.mapLayerId.toLowerCase();
@@ -501,7 +503,7 @@
 
             if (this.viewObject.route === "custom"){
                 $("input[id='latitudeSearch']").val(this.viewObject.mapCenter.k);
-                $("input[id='longitudeSearch']").val(this.viewObject.mapCenter.B);
+                $("input[id='longitudeSearch']").val(this.viewObject.mapCenter.A);
             }
 
             $("#content-map-canvas").before(
