@@ -1,29 +1,15 @@
-    <div class="row data-legend">
-        <div class="jumbotron">
-            <noscript>Please enable JavaScript to view this interactive.</noscript>
-            <form id="submission-form" class="form-inline" role="form">
-                <div class="row">
-                    <div id="form-controls">
-                        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-                            <input type="text" class="form-control" id="addressSearch" placeholder="Start typing your address...">
-                            <button type="button" class="btn btn-primary btn-group btn-group-justified" id="submit">Generate the map!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <input type="text" class="form-control" name="lat" id="latitudeSearch">
-                    </div>
-                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <input type="text" class="form-control" name="lng" id="longitudeSearch">
-                    </div>
-                </div>
-            </form>
-        </div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="jumbotron">
+        <noscript>Please enable JavaScript to view this interactive.</noscript>
+        <h6>What kind of static map would you like to generate</h6>
+        <select id="map-type-list">
+            <option>-- Select a map type --</option>
+            <option value="point-map">Point map</option>
+            <!--
+            <option value="line-map">Line map</option>
+            <option value="polygon-map">Polygon map</option>
+            -->
+        </select>
+        <div class="content-map-data"></div>
     </div>
-    <div class="row">
-        <div class="map-container col-xs-12 col-sm-12 col-md-4 col-lg-4"></div>
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-            <div class="content-map-data"></div>
-        </div>
-    </div>
+</div>

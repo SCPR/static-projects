@@ -12,6 +12,6 @@ window.appConfig = {
     twitter_share_text: "Map: View a county-by-county breakdown of whooping cough cases in California so far in 2014",
 
     // map configs
-    initial_map_zoom: 14,
-    map_center_los_angeles: new google.maps.LatLng(37.335194502529724, -119.366455078125),
+    initial_map_zoom: 10,
+    map_center_los_angeles: new google.maps.LatLng(34.0204989,-118.4117325)
 };
