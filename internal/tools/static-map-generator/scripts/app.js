@@ -47,8 +47,6 @@
                 //this.polygonMapInstance = new App.Views.PolygonMapInstance(configObject);
                 //return this.polygonMapInstance;
             }
-
-
         },
 
         renderCustomMapInstance: function(mapType, latitude, longitude, zoomLevel, layer){
@@ -152,7 +150,8 @@
             } else if (e.keyCode === 13 && latitude === '' && longitude === '') {
                 return false;
             } else {
-                this.updateMap(latitude, longitude, layer);
+                this.generateImage();
+                //this.updateMap(latitude, longitude, layer);
             }
 
         },
@@ -174,24 +173,41 @@
         },
 
         generateImage: function(){
+            $("input[id='latitudeSearch']").val(this.viewObject.mapCenter.k);
+            $("input[id='longitudeSearch']").val(this.viewObject.mapCenter.B);
+            var layer = $('input[name=map-type]:checked').val();
+            this.updateMap(this.viewObject.mapCenter.k, this.viewObject.mapCenter.B, layer);
+            var baseUrl = "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do";
+            var mapCenter = "&center=" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B;
+            var mapZoom = "&zoom=" + this.viewObject.mapZoomLevel;
+            var mapSize = "&size=" + window.MapCreatorConfig.sizeParams;
+            var mapType = "&scale=2&maptype=" + this.viewObject.mapLayerId.toLowerCase();
+            var mapMarker = "&markers=color:red%7Clabel:%7C" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B;
+            var imageUrl = baseUrl + mapCenter + mapZoom + mapSize + mapType + mapMarker;
+
             $("#content-map-image").html(
-                "<img src='http://maps.googleapis.com/maps/api/staticmap?center=" +
-                this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B + "&zoom=" +
-                this.viewObject.mapZoomLevel + "&size=" + window.MapCreatorConfig.sizeParams + "&scale=2&maptype=" +
-                this.viewObject.mapLayerId.toLowerCase() + "&markers=color:red%7Clabel:%7C" +
-                this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B + "&key=AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do' />"
+                "<img src='" + imageUrl + "' />"
             );
 
+            if ($("h6.image-link").length){
+                $("h6.image-link").empty();
+            }
+
             $("#content-map-image").before(
-                "<h6 class='image-link'>Copy the <a href='http://maps.googleapis.com/maps/api/staticmap?center=" +
-                this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B + "&zoom=" +
-                this.viewObject.mapZoomLevel + "&size=" + window.MapCreatorConfig.sizeParams +
-                "&scale=2&markers=color:red%7Clabel:%7C" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B + "' target='blank'>url</a> for this image</h6>"
+                "<h6 class='image-link'>Copy the <a href='" + imageUrl + "' target='blank'>url</a> for this image</h6>"
             );
+
+            var checkExist = setInterval(function() {
+                if ($("#content-map-image").length) {
+                    clearInterval(checkExist);
+                    $("html, body").animate({
+                       scrollTop: $("#content-map-image").offset().top
+                    });
+                }
+            }, 500);
         },
 
         render: function(viewObject){
-
             var mapDiv = document.getElementById(viewObject.mapDiv);
 
             var map = new google.maps.Map(mapDiv, {
@@ -218,9 +234,7 @@
             });
 
             this.mapZoomListener(map, this.viewObject);
-
             this.mapClickListener(map, this.viewObject);
-
             this.mapDragListener(marker, this.viewObject);
 
             /*
@@ -255,9 +269,7 @@
                     trigger: true,
                     replace: true,
                 });
-
             });
-
         },
 
         mapClickListener: function(map, viewObject){
@@ -272,7 +284,6 @@
                     replace: true,
                 });
             });
-
         },
 
         mapDragListener: function (marker, viewObject){
@@ -304,11 +315,6 @@
     App.Collections.LineSegments = Backbone.Collection.extend({
         model: App.Models.LineSegment
     });
-
-
-
-
-
 
     // renders the map to draw lines on
     App.Views.LineMapInstance = Backbone.View.extend({
