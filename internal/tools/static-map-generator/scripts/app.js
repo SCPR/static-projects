@@ -136,11 +136,11 @@
         },
 
         addressSearch: function(e){
-
             $("input[id='addressSearch']").geocomplete({
                 details: "form"
             });
 
+            var address = $("input[id='addressSearch']").val();
             var latitude = $("input[id='latitudeSearch']").val();
             var longitude = $("input[id='longitudeSearch']").val();
             var layer = $('input[name=map-type]:checked').val();
@@ -150,33 +150,35 @@
             } else if (e.keyCode === 13 && latitude === '' && longitude === '') {
                 return false;
             } else {
-                //this.generateImage();
-                this.updateMap(latitude, longitude, layer);
+                address = address.toLowerCase().replace(/ /g, '-').replace(/,/g, '');
+                this.updateMap(latitude, longitude, layer, address);
             }
-
         },
 
         changeRadio: function(e){
+            var address = $("input[id='addressSearch']").val();
             var latitude = this.viewObject.mapCenter.k;
             var longitude = this.viewObject.mapCenter.B;
             var layer = e.target.value;
-            this.updateMap(latitude, longitude, layer);
-        },
-
-        updateMap: function(latitude, longitude, layer){
-            if (latitude != '' && longitude != ''){
-                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + latitude + "&lng=" + longitude + "&zoom=" + this.viewObject.mapZoomLevel + "&layer=" + layer, {
-                    trigger: true,
-                    replace: true,
-                });
-            }
+            this.updateMap(latitude, longitude, layer, address);
         },
 
         generateImage: function(){
+            var address = $("input[id='addressSearch']").val();
+            var latitude = $("input[id='latitudeSearch']").val();
+            var longitude = $("input[id='longitudeSearch']").val();
+            var layer = $('input[name=map-type]:checked').val();
+            this.updateMap(latitude, longitude, layer, address);
+
+            this.viewObject.mapCenter.k = latitude;
+            this.viewObject.mapCenter.B = longitude;
+
+            /*
             $("input[id='latitudeSearch']").val(this.viewObject.mapCenter.k);
             $("input[id='longitudeSearch']").val(this.viewObject.mapCenter.B);
             var layer = $('input[name=map-type]:checked').val();
-            this.updateMap(this.viewObject.mapCenter.k, this.viewObject.mapCenter.B, layer);
+            */
+
             var baseUrl = "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do";
             var mapCenter = "&center=" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B;
             var mapZoom = "&zoom=" + this.viewObject.mapZoomLevel;
@@ -205,6 +207,15 @@
                     });
                 }
             }, 500);
+        },
+
+        updateMap: function(latitude, longitude, layer, address){
+            if (latitude != '' && longitude != ''){
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + latitude + "&lng=" + longitude + "&zoom=" + this.viewObject.mapZoomLevel + "&layer=" + layer, {
+                    trigger: true,
+                    replace: true,
+                });
+            }
         },
 
         render: function(viewObject){
