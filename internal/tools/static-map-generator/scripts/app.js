@@ -150,8 +150,8 @@
             } else if (e.keyCode === 13 && latitude === '' && longitude === '') {
                 return false;
             } else {
-                this.generateImage();
-                //this.updateMap(latitude, longitude, layer);
+                //this.generateImage();
+                this.updateMap(latitude, longitude, layer);
             }
 
         },
