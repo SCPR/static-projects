@@ -1,19 +1,190 @@
-<head>
-<link rel="stylesheet" href="stylesheets/kpcc-style.css" type="text/css" />
-<!--<link rel="stylesheet" href="stylesheets/kpcc-quiz-style.css" type="text/css" />-->
-<script type='text/javascript'src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+<!DOCTYPE html>
 
-</head>
+<!-- begin doc -->
+<html lang="en">
 
-<body>
+    <!-- begin header -->
+    <head>
 
-	<div class='quiz-container'></div>
+        <!-- begin meta -->
+        <title>Xxxxxx | scpr.org</title>
+        <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link rel="apple-touch-icon" href="http://media.scpr.org/assets/images/icon.png">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="description" content="Xxxxxx" />
+        <meta name="keywords" content="Xxxxxx" />
+        <meta property="og:title" content="Xxxxxx" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png" />
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:height" content="500" />
+        <meta property="og:url" content="Xxxxxx" />
+        <meta property="og:description" content="Xxxxxx" />
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:url" content="Xxxxxx">
+        <meta name="twitter:domain" content="http://projects.scpr.org/">
+        <meta name="twitter:site" content="KPCC">
+        <meta name="twitter:title" content="Xxxxxx">
+        <meta name="twitter:description" content="Xxxxxx">
+        <meta name="twitter:image:src" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png">
+        <!-- end meta -->
 
+        <!-- begin css -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-ui.1.10.3.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
+        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/leaflet.0.7.3.css" rel="stylesheet" />
+        <link href="stylesheets/kpcc-style.css" rel="stylesheet" type="text/css" />
+        <!-- end css -->
 
-	<script type='text/javascript'>
-		var input = [{"description":"","question":"What's the highest level of education you've achieved?","a":"Not completed high school","b":"High school or above","c":"Bachelor's degree","d":"Master's degree","e":"Professional school degree","f":"Doctorate degree","result":"Silicon Valley","explanation":"You're young and hungry. You know what you want and you'll settle for nothing less than the best. You're environmentally conscious and you're down to take public transit, but that won't stop you from attending extravagant parties and schmoozing your way to the top.","rowNumber":1},{"description":"","question":"What's your political leaning?","a":"Loyal Liberal: Very liberal on both social and fiscal issues","b":"Moderate Liberal: Moderately liberal on both social and fiscal issues ","c":"Conservative Liberal: Conservative on social issues and moderately liberal on fiscal issues","d":"Moderate Conservative: Moderately liberal on social issues and conservative on fiscal issues ","e":"Committed Conservative: Conservative on both social and fiscal issues","f":"","result":"North California","explanation":"You're a Cali gal or guy through and through. You love the outdoors and you're hella chill. You're into sports (because everyone else is) but let's talk about your perfect night: Grab your cat for a night of selfies, that coupled with a joint and a large glass of wine.","rowNumber":2},{"description":"","question":"How do you get to work?","a":"Drive alone","b":"Carpool","c":"Motorcycle/ bicycle/ railroad/ ferryboat/ streetcar/ subway","d":"Bus/ trolley bus","e":"Walk","f":"","result":"Central California","explanation":"You're a no fuss kind of Californian and you're not afraid to get your hands dirty. Anything outdoors is your thing. You're low key, gardening and picking fresh fruit sounds like an ideal Saturday.","rowNumber":3},{"description":"","question":"Do you or your friends have a marijuana card?","a":"Yes. I personally have one.","b":"I don't have one, but I can always find someone with a card when I need it.","c":"Well.. I know someone with a card, but that's not common. ","d":"Never heard of anyone having it. Weed is not my thing.","e":"","f":"","result":"West California","explanation":"You're a triple threat and you're not afraid to let us know about it. You either work in the industry or you definitely know someone who does. You drive EVERYWHERE. You don't follow the trends. You make them. You eat healthy, most of the time. Did someone say In,N,Out?","rowNumber":4},{"description":"","question":"What are your sentiments toward the drought?","a":"What drought?","b":"I do my best to conserve, but you got to wash your car every now and then, right?","c":"I haven't showered in days.","d":"","e":"","f":"","result":"South California","explanation":"Surf's up! You would hang at the beach every day if you could. Also: Never. Enough. Tacos. Shots anyone? Let's just say you like to have a good time.","rowNumber":5},{"description":"","question":"Which industry do you want to work in?","a":"Government","b":"Tech","c":"Leisure and hospitality","d":"Farming","e":"Trade and transportation","f":"Finance","result":"Jefferson","explanation":"You don't mind living life in the slow lane. You're down,to,earth and prefer the inexpensive things in life.","rowNumber":6},{"description":"","question":"Do you like cats?","a":"YES. Can't live without them.","b":"Meh. Could not care less.","c":"Growing up as a kid, they were around. But not really.","d":"NO way.","e":"","f":"","result":"","explanation":"","rowNumber":7},{"description":"","question":"What's your ideal wedding?","a":"At a vineyard with great wine and killer company. ","b":"A friendship ceremony with an intimate group among the Redwoods.","c":"An extravagent party with a photo booth. Oh, and did we mention? It's 'Game of Thrones' themed. ","d":"Beach wedding. Flip flops and the sounds of the ocean.","e":"Something fancy. Maybe the Beverly Hills Hotel. Or how about a yacht?","f":"A charming barn wedding. Think rustic chic. ","result":"","explanation":"","rowNumber":8}];
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="http://projects.scpr.org/static/static-files/v3-dependencies/css/leaflet.ie.0.6.4.min.css" />
+        <![endif]-->
 
-		</script>
-		<script src='javascripts/quiz.js'></script>
+        <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
+        <!--[if lte IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+            <link href="http://projects.scpr.org/static/static-files/v3-dependencies/respond-proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+            <link href="respond-proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+            <script src="respond-proxy/respond.proxy.js"></script>
+        <![endif]-->
 
-</body>
+        <!-- begin base scripts -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/air8rql.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <!-- end base scripts -->
+
+    </head>
+    <!-- end header -->
+
+    <!-- begin body -->
+    <body class="minimal">
+
+        <div class="kpcc-header"></div>
+
+        <!-- begin main container -->
+        <div class="container data-container">
+            <div class="row data-details"></div>
+            <div class="row data-controls">
+            </div>
+            <div class="row data-visuals"></div>
+            <div class="row data-comments">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="disqus_thread"></div>
+                </div>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            <div class="row kpcc-footer"></div>
+        </div>
+        <!-- end main container -->
+
+        <!-- begin scripts -->
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/modernizr-2.5.3.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery-ui.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/underscore-min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/moment.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="javascripts/config.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/_application_wrapper.js"></script>
+        <script src="javascripts/app.js"></script>
+        <script>
+            var input = [{"description":"","question":"What's the highest level of education you've achieved?","a":"Not completed high school","b":"High school or above","c":"Bachelor's degree","d":"Master's degree","e":"Professional school degree","f":"Doctorate degree","result":"Silicon Valley","explanation":"You're young and hungry. You know what you want and you'll settle for nothing less than the best. You're environmentally conscious and you're down to take public transit, but that won't stop you from attending extravagant parties and schmoozing your way to the top.","rowNumber":1},{"description":"","question":"What's your political leaning?","a":"Loyal Liberal: Very liberal on both social and fiscal issues","b":"Moderate Liberal: Moderately liberal on both social and fiscal issues ","c":"Conservative Liberal: Conservative on social issues and moderately liberal on fiscal issues","d":"Moderate Conservative: Moderately liberal on social issues and conservative on fiscal issues ","e":"Committed Conservative: Conservative on both social and fiscal issues","f":"","result":"North California","explanation":"You're a Cali gal or guy through and through. You love the outdoors and you're hella chill. You're into sports (because everyone else is) but let's talk about your perfect night: Grab your cat for a night of selfies, that coupled with a joint and a large glass of wine.","rowNumber":2},{"description":"","question":"How do you get to work?","a":"Drive alone","b":"Carpool","c":"Motorcycle/ bicycle/ railroad/ ferryboat/ streetcar/ subway","d":"Bus/ trolley bus","e":"Walk","f":"","result":"Central California","explanation":"You're a no fuss kind of Californian and you're not afraid to get your hands dirty. Anything outdoors is your thing. You're low key, gardening and picking fresh fruit sounds like an ideal Saturday.","rowNumber":3},{"description":"","question":"Do you or your friends have a marijuana card?","a":"Yes. I personally have one.","b":"I don't have one, but I can always find someone with a card when I need it.","c":"Well.. I know someone with a card, but that's not common. ","d":"Never heard of anyone having it. Weed is not my thing.","e":"","f":"","result":"West California","explanation":"You're a triple threat and you're not afraid to let us know about it. You either work in the industry or you definitely know someone who does. You drive EVERYWHERE. You don't follow the trends. You make them. You eat healthy, most of the time. Did someone say In,N,Out?","rowNumber":4},{"description":"","question":"What are your sentiments toward the drought?","a":"What drought?","b":"I do my best to conserve, but you got to wash your car every now and then, right?","c":"I haven't showered in days.","d":"","e":"","f":"","result":"South California","explanation":"Surf's up! You would hang at the beach every day if you could. Also: Never. Enough. Tacos. Shots anyone? Let's just say you like to have a good time.","rowNumber":5},{"description":"","question":"Which industry do you want to work in?","a":"Government","b":"Tech","c":"Leisure and hospitality","d":"Farming","e":"Trade and transportation","f":"Finance","result":"Jefferson","explanation":"You don't mind living life in the slow lane. You're down,to,earth and prefer the inexpensive things in life.","rowNumber":6},{"description":"","question":"Do you like cats?","a":"YES. Can't live without them.","b":"Meh. Could not care less.","c":"Growing up as a kid, they were around. But not really.","d":"NO way.","e":"","f":"","result":"","explanation":"","rowNumber":7},{"description":"","question":"What's your ideal wedding?","a":"At a vineyard with great wine and killer company. ","b":"A friendship ceremony with an intimate group among the Redwoods.","c":"An extravagent party with a photo booth. Oh, and did we mention? It's 'Game of Thrones' themed. ","d":"Beach wedding. Flip flops and the sounds of the ocean.","e":"Something fancy. Maybe the Beverly Hills Hotel. Or how about a yacht?","f":"A charming barn wedding. Think rustic chic. ","result":"","explanation":"","rowNumber":8}];
+        </script>
+        <script src="javascripts/quiz.js"></script>
+        <!-- end scripts -->
+
+        <!-- begin chartbeat -->
+        <script type="text/javascript">
+            var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
+            (function() {
+                function loadChartbeat() {
+                    window._sf_endpt = (new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+                    document.body.appendChild(e);
+                };
+                var oldonload = window.onload;
+                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+            })();
+        </script>
+        <!-- end chartbeat -->
+
+        <!-- begin google analytics -->
+        <script type="text/javascript">
+            var hostName = 'projects.scpr.org';
+            var _gaq = _gaq || [];
+            _gaq.push(
+                ['_setAccount', 'UA-624724-1'],
+                ['_setDomainName', hostName],
+                ['_setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['_setCustomVar', 7, 'PageType', 'Story', 3],
+                ['_trackPageview'],
+                ['b._setAccount', 'UA-18188937-11'],
+                ['b._setDomainName', hostName],
+                ['b._setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['b._setCustomVar', 7, 'PageType', 'Story', 3],
+                ['b._trackPageview']
+            );
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!-- end google analytics -->
+
+        <!-- begin webtrends stats -->
+        <script src="http://media.scpr.org/assets/scripts/webtrends.v2.js"></script>
+        <script>
+            //<![CDATA[
+                var _tag=new WebTrends();
+                _tag.dcsGetId();
+            //]]>
+        </script>
+        <script>
+            //<![CDATA[
+                _tag.dcsCustom=function(){
+                    // Add custom parameters here.
+                    //_tag.DCSext.param_name=param_value;
+                }
+            _tag.dcsCollect();
+            //]]>
+        </script>
+        <noscript>
+            <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsyqctzwuz5bdsebpmwhwe8w_2p8d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.3.0&amp;WT.dcssip=www.scpr.org"/></div>
+        </noscript>
+        <!-- end webtrends stats -->
+
+        <!-- begin comscore stats -->
+        <script>
+            var _comscore = _comscore || [];
+            _comscore.push({ c1: "2", c2: "6035974", c3: "", c4: "" });
+            (function() {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+            })();
+        </script>
+        <noscript>
+            <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035974&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
+        </noscript>
+        <!-- end comscore stats -->
+
+    </body>
+    <!-- end body -->
+
+</html>
+<!-- end document -->
