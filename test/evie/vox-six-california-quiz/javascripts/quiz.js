@@ -4,7 +4,6 @@ $(document).ready(function(){
 
 // load the map with six california states
 var loadMap = function () {
-    $(".quiz-container").append("<div id='map-container' style='height: 400px; width: 100%;'></div>");
     var map = L.map("map-container",{
         scrollWheelZoom: false
     }).setView([37.335194502529724, -119.366455078125], 6);
@@ -539,11 +538,7 @@ function highlightFeature(e) {
             //console.log(window.max);
 
             $(".quiz-container").html(
-                "<div class='scorecard'><div id='youbelongto'>You belong to</div><div id='statename'>" + window.max +
-                "</div><div id='content'><div id='facts' style='margin: 20px;'></div><div id='description' style='margin: 20px;'></div></div><div id='social-media'>Share the result on social media!<ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook +
-                "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=I belong to " + max +
-                " according to KPCC six California quiz! Check your result here." + link + " via @" + account +
-                "' target='_blank'>" + twitter   + "</a></li></ul></div></div>"
+                "<div class='scorecard'><div id='social-media'>Share the result on social media!</br><ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=I belong to " + window.max + " according to KPCC six California quiz! Check your result here." + link + " via @" + account + "' target='_blank'>" + twitter   + "</a></li></ul></div><div id='youbelongto'>You belong to</div><div id='statename'>" + window.max + "</div><div id='clickother'>Click on the map to check other states</div><div id='content'><div id='map-container'></div><div id='description'></div><div id='facts'></div></div>"
             );
 
             // social media sharing buttons
@@ -568,11 +563,6 @@ function highlightFeature(e) {
             };
         };
     };
-
-    // move to the html
-    $('head').append('<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />');
-    $('head').append('<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>');
-    $('head').append('<script src="data/six_states.js"></script>');
 
     function unpackQuizHack() {
         var newInput = [];

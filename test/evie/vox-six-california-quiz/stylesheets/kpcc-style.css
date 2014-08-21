@@ -4,7 +4,8 @@
   background-color: #ffffff;
   margin: 0% auto;
   width: 100%;
-  max-width: 770px;
+  max-width: 1000px;
+  height: 110%;
   margin-top: 20px;
   margin-bottom: 10px;
   padding-bottom: 60px;
@@ -111,32 +112,27 @@
   float: right;
   padding-right: 7%; }
 
-/* line 122, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
 #social-media ul {
   text-align: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
   margin-bottom: 10px; }
-  /* line 128, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
   #social-media ul li {
     display: inline-block; }
-    /* line 130, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
     #social-media ul li a {
       text-decoration: none; }
-      /* line 132, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
       #social-media ul li a svg {
         height: 2em;
         width: 3.4em;
         margin-right: 1em; }
 
-/* line 142, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
 .answer {
   margin: 0% auto;
   width: 90%;
   max-width: 550px;
   margin-top: 20px !important; }
-  /* line 148, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
+
 .answer p:first-child {
     font-weight: bold;
     font-size: 1.2em;
@@ -145,7 +141,7 @@
     padding-top: 30px;
     padding-bottom: 0px;
     border-top: 1px solid #000000; }
-  /* line 157, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
+
 .answer p:nth-child(2) {
     margin: 0% auto;
     display: block;
@@ -153,54 +149,69 @@
     padding-top: 0px;
     padding-bottom: 20px; } */
 
-/* line 168, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
 .answer > p {
   margin: 0px 0px 20px 0px !important; }
 
-/* line 174, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
+#content {
+  height: 600px;
+}
+
 .scorecard #youbelongto {
   font-size: 25px;
   font-weight: bold;
   line-height: 1em !important;
   display: inline-block;
-  padding-top: 20px;
-  padding-bottom: 20px; 
+  padding-bottom: 10px; 
 }
-/* line 181, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
+
 .scorecard #statename {
   font-size: 50px;
   font-weight: bold;
   padding-bottom: 20px;
 }
 
-.scorecard #content {
-  height: 450px;
-}
 
 .scorecard #facts {
   font-size: 18px;
-  padding-bottom: 40px;
-  padding-left: 20px;
   text-align: left;
-  width: 40%;
-  margin: 10px;
-  float: left;
+  width: 45%;
+  float: right;
+  padding-bottom: 10px;
+  padding-right: 40px; 
 }
 
 .scorecard #description {
   font-size: 18px;
-  padding-bottom: 40px;
   text-align: left;
-  width: 40%;
-  margin: 10px;
+  width: 45%;
   float: right;
+  padding-bottom: 40px;
+  padding-top: 30px;
+  padding-right: 40px; 
 }
 
-#social-media {
+.scorecard #social-media {
   font-size: 18px;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
 }
+
+.scorecard #clickother {
+  font-size: 18px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scorecard #map-container {
+  height: 600px; 
+  width: 45%;
+  margin-left: 40px;
+  float: left;
+  margin-top: 30px;
+}
+
+
+
