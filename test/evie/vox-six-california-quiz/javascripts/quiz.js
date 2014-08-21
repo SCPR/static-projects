@@ -5,7 +5,9 @@ $(document).ready(function(){
 // load the map with six california states
 var loadMap = function () {
     $(".quiz-container").append("<div id='map-container' style='height: 400px; width: 100%;'></div>");
-    var map = L.map('map-container').setView([37.335194502529724, -119.366455078125], 6);
+    var map = L.map("map-container",{
+        scrollWheelZoom: false
+    }).setView([37.335194502529724, -119.366455078125], 6);
     L.tileLayer('http://{s}.tiles.mapbox.com/v3/examples.map-20v6611k/{z}/{x}/{y}.png', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
         maxZoom: 14,
