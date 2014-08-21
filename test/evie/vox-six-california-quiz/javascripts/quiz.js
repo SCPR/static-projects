@@ -22,7 +22,7 @@
   var buildQuiz = function (input) {
 
     qnumber = currentQuestion + 1;
-    $(".quiz-container").html("<div class='progress'>Question " + qnumber + "&nbsp;of&nbsp;" + input.length + "</div><div class='qq-question'><div class='qq-description'>" + input[currentQuestion].description + "</div><br><div class='question'>" + input[currentQuestion].question + "</div></div>" +
+    $(".quiz-container").html("<div class='progressbar'>Question " + qnumber + "&nbsp;of&nbsp;" + input.length + "</div><div class='qq-question'><div class='qq-description'>" + input[currentQuestion].description + "</div><br><div class='question'>" + input[currentQuestion].question + "</div></div>" +
       "<div class='answers'><div id='option-a' class='list'>" + input[currentQuestion].a + "</div>" +
       "<div id='option-b' class='list'>" + input[currentQuestion].b + "</div>" +
       "<div id='option-c' class='list'>" + input[currentQuestion].c + "</div>" +
@@ -44,7 +44,7 @@
 
   // write the final question and answers on html to break the tie
   var buildExtraQuiz = function () {
-     $(".quiz-container").html("<div class='progress'>Bonus Question</div><div class='qq-question'><div class='qq-description'>Oops.. Seems like you are a mixed type. Let's decide on this with the final strike!</div><br><div class='question'>What's your drink of choice?</div></div>" +
+     $(".quiz-container").html("<div class='progressbar'>Bonus Question</div><div class='qq-question'><div class='qq-description'>Oops.. Seems like you are a mixed type. Let's decide on this with the final strike!</div><br><div class='question'>What's your drink of choice?</div></div>" +
       "<div class='answers'></div>" +
       "<div class='answer'></div>");
 
@@ -59,7 +59,7 @@
         
     for (i = 0; i < finalQuestion.length; i++) {    
       if (finalQuestion[i].state == window.max || finalQuestion[i].state == window.max_2) {
-         $(".answers").append("<div class='list 'id='" + finalQuestion[i].state + "'>" + finalQuestion[i].drink + "</li>");
+         $(".answers").append("<div class='finallist 'id='" + finalQuestion[i].state + "'>" + finalQuestion[i].drink + "</li>");
       };                 
     };
     
@@ -71,12 +71,12 @@
               
   // shows (1) out of (3) questinos
   var displayProgress = function () {
-    $('.progress').html("<div class='progress'>Question " + qnumber + "&nbsp;of&nbsp;" + input.length + "</div>");
+    $('.progressbar').html("<div class='progressbar'>Question " + qnumber + "&nbsp;of&nbsp;" + input.length + "</div>");
   }
 
   // style changes when user selects answers
   var selectAnswer = function () {
-    $(".list").click(function() {
+    $(".list, .finallist").click(function() {
       trackEvent(
         'q' + qnumber + '-selected-' + this.id,
         'Q' + qnumber + ' selected ' + this.id);
@@ -472,9 +472,9 @@
         trackEvent('completed', 'Quiz completed');
 
         $(".quiz-container")
-          .html("<div class='scorecard'><p>You belong to</p><p id='statename'>" + window.max 
-          + "</p><div id='description' style='margin: 20px;'></div><div id='social-media'><ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook 
-          + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=I belong to " + max + " according to KPCC six California quiz!" + link + " via @" + account + "' target='_blank'>" + twitter   + "</a></li></ul></div><p>Challenge your friends!</p></div>");
+          .html("<div class='scorecard'><div id='youbelongto'>You belong to</div><div id='statename'>" + window.max 
+          + "</div><div id='content'><div id='facts' style='margin: 20px;'></div><div id='description' style='margin: 20px;'></div></div><div id='social-media'>Share the result on social media!<ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook 
+          + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=I belong to " + max + " according to KPCC six California quiz! Check your result here." + link + " via @" + account + "' target='_blank'>" + twitter   + "</a></li></ul></div></div>");
         
         // social media sharing buttons     
         $('.quiz-container .fb-share').click(function() {
@@ -491,7 +491,8 @@
 
                 for (i = 0; i < 6; i++ ) {
                   if (input[i].result == window.max) {                
-                    $("#description").html(input[i].explanation);                   
+                    $("#description").html(input[i].explanation);  
+                    $("#facts").html(input[i].datapoints);                 
                   };
                 };
               };
@@ -564,6 +565,7 @@
                 for (i = 0; i < 6; i++ ) {
                   if (input[i].result == layer.feature.properties.six_cali_1) {
                     $("#description").html(input[i].explanation);
+                    $("#facts").html(input[i].datapoints);
                     $("#statename").html(input[i].result);      
 
                   }

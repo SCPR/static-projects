@@ -1,15 +1,50 @@
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div id="content-article">
         <div class="headlines">
-            <h4 class="kicker">xxxxxx</h4>
-            <h1>Xxxxxxx</h1>
+            <h4 class="kicker">Fun Quiz</h4>
+            <h1>Six California: Which state do you belong to?</h1>
         </div>
         <div class="text collapse">
-            <p><span class="credits">Produced by Evie Liu &amp; </span> | <span class="pubdate">Published Xxxxx xx, 2014</span></p>
+            <p><span class="credits">Produced by Evie Liu, Kristen Lepore &amp; Danielle Tarasiuk</span> | <span class="pubdate">Published August 19, 2014</span></p>
             <p>Xxxxx xxxxx xxxxxx.</p>
         </div>
         <div class="about collapse">
-            <p><strong>Source(s): </strong><a href="http://www.cdph.ca.gov/Pages/Default.aspx" target="blank">California Department of Public Health</a> <a href="http://www.cdph.ca.gov/programs/immunize/Pages/PertussisSummaryReports.aspx" target="blank">pertussis summary reports</a>. <strong>Built using</strong> <a href="http://underscorejs.org/">underscore.js</a>, <a href="http://backbonejs.org/">backbone.js</a>, <a href="https://github.com/jsoma/tabletop">tabletop.js</a> &amp; <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>. <strong>Data: </strong> Download the  <a href="http://projects.scpr.org/static/maps/california-cases-of-whooping-cough-by-county/data/data_2010.json" target="blank">2010</a>,  <a href="http://projects.scpr.org/static/maps/california-cases-of-whooping-cough-by-county/data/data_2011.json" target="blank">2011</a>, <a href="http://projects.scpr.org/static/maps/california-cases-of-whooping-cough-by-county/data/data_2012.json" target="blank">2012</a>, <a href="http://projects.scpr.org/static/maps/california-cases-of-whooping-cough-by-county/data/data_2013.json" target="blank">2013</a>, <a href="http://projects.scpr.org/static/maps/california-cases-of-whooping-cough-by-county/data/data_2014.json" target="blank">2014</a> data.</p>
+            <p><strong>How do we achieve the result?</strong></br></br>We’ve designed 9 questions in this quiz and each quiz has 3 to 6 answers. Each answer falls into one or two out of the six California states, you will get the result for whichever state you scored most.</br>Please notice that KPCC's online quizzes are not scientific surveys with rigorous statistical process, although they are largely supported by data from credible sources.</br>Below is an explainer of all the questions and how we decide on the answers either based on data or general stereotypes.</br></br><strong>Data-based questions: </strong></br></br>
+
+            Question: What’s the highest level of education you've achieved?</br>
+            Source: <a href="http://censusreporter.org/data/table/?table=B15003&geo_ids=04000US06,050%7C04000US06&primary_geo_id=04000US06">Census Reporter, Table B15003</br></a>
+            Data explanation: Percentage of surveyed population with different education attainment levels, by county</br></br>
+
+            Question: What’s your political leaning?</br>
+            Source: <a href="http://www.ppic.org/main/publication_quick.asp?i=1007">Public Policy Institute of California, California's Political Geography, Figure 4</br></a>
+            Data explanation: The map shows how places differ by opinions on social and fiscal issues. The social dimension combines answers to questions about abortion and gay marriage, while the fiscal dimension uses questions about the size of government and the use of spending cuts to address the state budget deficit.</br></br>
+
+            Question: How do you get to work?</br>
+            Source: <a href="http://censusreporter.org/data/table/?table=B08134&geo_ids=04000US06,050%7C04000US06&primary_geo_id=04000US06">Census Reporter, Table B08134</br></a>
+            Data explanation: Percentage of surveyed population with different means of transportation to work, by county</br></br>
+
+            Question: Do you or your friends have a marijuana card?</br>
+            Source: <a href="http://www.cdph.ca.gov/programs/MMP/Documents/MMP%20County%20Card%20Count%20FY%2013-14%20June.pdf">California Department of Public Health</br></a>
+            Data explanation: Number of California medical marijuana identification cards issued from 2004 to 2014, by county. The number is divided by population before sorting, so the result is based on marijuana cards per 10,000 people.</br></br>
+
+            Question: What are your sentiments toward the drought?</br>
+            Source: <a href="http://water.usgs.gov/watuse/data/2005/index.html">U.S. Geological Survey, Water Use in the United States</br></a>
+            Data explanation: Number of domestic total use of water(withdrawals + deliveries, in Mgal/d), by county. The number is divided by population before sorting, so the result is based on domestic total water use per thousand people.</br></br>
+
+            Question: Which industry do you want to work in?</br>
+            Source: <a href="http://www.labormarketinfo.edd.ca.gov/cgi/dataanalysis/areaselection.asp?tablename=ces">California Employment Development Department, Industry Employment Official Monthly Estimates (CES)</br></a>
+            Data explanation: Number of employed population in different industries, by county. The number is divided by population before sorting, so the result is based on percentage of industry employment out of the whole population. Besides data, the answers in this question also include some general stereotypes about areas.</br></br>
+
+            Question: Do you like cats?</br>
+            Source: <a href="http://iknowwhereyourcatlives.com/">“I Know Where Your Cat Lives”</br></a>
+            Data explanation: I Know Where Your Cat Lives is a data experiment that visualizes a sample of 1 million public pics of cats on a world map, locating them by the latitude and longitude coordinates embedded in their metadata. The cats were accessed via publicly available APIs provided by popular photo sharing websites.</br></br>
+
+            <strong>Stereotype-based questions:</strong></br>
+            Question: What’s your drink of choice?</br>
+            Question: What’s your ideal wedding?</br></br>
+
+
+            <strong>Built using</strong> <a href="https://github.com/voxmedia/quiz-generator">Vox Media quiz generator</a>, <a href="http://leafletjs.com/">Leaflet.js</a>
             </p>
         </div>
         <div class="buttons btn-group btn-group-justified">
