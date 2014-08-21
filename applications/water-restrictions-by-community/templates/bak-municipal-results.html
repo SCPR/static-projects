@@ -1,0 +1,21 @@
+<% if (model.incentivesoffered === "TRUE") { %>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h6 class="centered"><%= model.incentivesdetails %></h6>
+            <p><a href="<%= model.incentivesurl %>" target="_blank">Here</a> is more information.</p>
+        </div>
+    </div>
+<% } %>
+
+<% if (model.turfremovaloffered === "TRUE") { %>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h6 class="centered">A turf removal program also reimburses <%= model.turfrebatefigure %> per square foot.</h6>
+            <% if (model.turfremovaldetails != "NULL") { %>
+                <p><%= model.turfremovaldetails %></p>
+            <% } %>
+            <p><a href="<%= model.turfremovalurl %>" target="_blank">Here</a> is more information.</p>
+            <p class="pubdate small-writing">&ndash; Last updated <%= model.incentiveslastupdated %></p>
+        </div>
+    </div>
+<% } %>
