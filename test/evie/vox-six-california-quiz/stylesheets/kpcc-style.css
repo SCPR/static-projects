@@ -153,7 +153,7 @@
   margin: 0px 0px 20px 0px !important; }
 
 #content {
-  height: 600px;
+  height: 700px;
 }
 
 .scorecard #youbelongto {
@@ -200,18 +200,42 @@
 
 .scorecard #clickother {
   font-size: 18px;
-  padding-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+  width: 45%;
+  float: right;
+  padding-bottom: 40px;
+  padding-right: 40px;
+  text-transform: uppercase;
 }
 
 .scorecard #map-container {
-  height: 600px; 
+  height: 700px; 
   width: 45%;
   margin-left: 40px;
   float: left;
   margin-top: 30px;
 }
+
+.leaflet-popup-close-button {
+  display:none;
+}
+
+.leaflet-label-overlay {
+  line-height:0px;
+  margin-top: 9px;
+  position:absolute;
+}
+
+.labels {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  width: 200px;
+}
+
 
 
 

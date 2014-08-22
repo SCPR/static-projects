@@ -22,6 +22,83 @@ var loadMap = function () {
     };
 
     geojson = L.geoJson(sixCalifornia, {style: style, onEachFeature: onEachFeature}).addTo(map);
+
+    L.LabelOverlay = L.Class.extend({
+        initialize: function(/*LatLng*/ latLng, /*String*/ label, options) {
+            this._latlng = latLng;
+            this._label = label;
+            L.Util.setOptions(this, options);
+        },
+        options: {
+            offset: new L.Point(0, 2)
+        },
+        onAdd: function(map) {
+            this._map = map;
+            if (!this._container) {
+                this._initLayout();
+            }
+            map.getPanes().overlayPane.appendChild(this._container);
+            this._container.innerHTML = this._label;
+            map.on('viewreset', this._reset, this);
+            this._reset();
+        },
+        onRemove: function(map) {
+            map.getPanes().overlayPane.removeChild(this._container);
+            map.off('viewreset', this._reset, this);
+        },
+        _reset: function() {
+            var pos = this._map.latLngToLayerPoint(this._latlng);
+            var op = new L.Point(pos.x + this.options.offset.x, pos.y - this.options.offset.y);
+            L.DomUtil.setPosition(this._container, op);
+        },
+        _initLayout: function() {
+            this._container = L.DomUtil.create('div', 'leaflet-label-overlay');
+        }
+    });   
+
+  console.log(geojson);
+
+    // add text labels:
+    var labelLocation_cen = new L.LatLng(36.366169, -119.978825);
+    var labelTitle_cen = new L.LabelOverlay(labelLocation_cen, "<div class='labels'>Central California</div>");
+    map.addLayer(labelTitle_cen);
+
+    var labelLocation_west = new L.LatLng(34.829876, -120.105376);
+    var labelTitle_west = new L.LabelOverlay(labelLocation_west, "<div class='labels'>West California</div>");
+    map.addLayer(labelTitle_west);
+
+    var labelLocation_jeff = new L.LatLng(41.035866, -123.500151);
+    var labelTitle_jeff = new L.LabelOverlay(labelLocation_jeff, "<div class='labels'>Jefferson</div>");
+    map.addLayer(labelTitle_jeff);
+
+    var labelLocation_silicon = new L.LatLng(36.982816, -122.857494);
+    var labelTitle_silicon = new L.LabelOverlay(labelLocation_silicon, "<div class='labels'>Silicon Valley</div>");
+    map.addLayer(labelTitle_silicon);
+
+
+    var labelLocation_south = new L.LatLng(33.365238, -117.864165);
+    var labelTitle_south = new L.LabelOverlay(labelLocation_south, "<div class='labels'>South California</div>");
+    map.addLayer(labelTitle_south);
+
+    var labelLocation_north= new L.LatLng(38.854835, -122.813298);
+    var labelTitle_south = new L.LabelOverlay(labelLocation_north, "<div class='labels'>North California</div>");
+    map.addLayer(labelTitle_south);
+
+
+
+
+
+    // In order to prevent the text labels to "jump" when zooming in and out,
+    // in Google Chrome, I added this event handler:
+
+    map.on('movestart', function () {
+        map.removeLayer(labelTitle);
+        map.removeLayer(labelTitle2);
+    });
+    map.on('moveend', function () {
+        map.addLayer(labelTitle);
+        map.addLayer(labelTitle2);
+    });
 };
 
 function getColor(d) {
@@ -538,7 +615,7 @@ function highlightFeature(e) {
             //console.log(window.max);
 
             $(".quiz-container").html(
-                "<div class='scorecard'><div id='social-media'>Share the result on social media!</br><ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=I belong to " + window.max + " according to KPCC six California quiz! Check your result here." + link + " via @" + account + "' target='_blank'>" + twitter   + "</a></li></ul></div><div id='youbelongto'>You belong to</div><div id='statename'>" + window.max + "</div><div id='clickother'>Click on the map to check other states</div><div id='content'><div id='map-container'></div><div id='description'></div><div id='facts'></div></div>"
+                "<div class='scorecard'><div id='social-media'>Share the result on social media!</br><ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=I belong to " + window.max + " according to KPCC six California quiz! Check your result here." + link + " via @" + account + "' target='_blank'>" + twitter   + "</a></li></ul></div><div id='youbelongto'>You belong to</div><div id='statename'>" + window.max + "</div><div id='content'><div id='map-container'></div><div id='description'></div><div id='facts'></div><div id='clickother'>Click on the map to check other states</div><button id='playagain' class='qq-button'>Play again!</button></div>"
             );
 
             // social media sharing buttons
@@ -552,6 +629,7 @@ function highlightFeature(e) {
 
             showDescription(input);
             loadMap();
+            $('#playagain').on('click',reloadPage);
         };
     };
 
@@ -562,6 +640,11 @@ function highlightFeature(e) {
                 $("#facts").html(input[i].datapoints);
             };
         };
+    };
+
+
+    function reloadPage() {
+      location.reload();
     };
 
     function unpackQuizHack() {
