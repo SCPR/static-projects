@@ -23,6 +23,7 @@ var loadMap = function () {
 
     geojson = L.geoJson(sixCalifornia, {style: style, onEachFeature: onEachFeature}).addTo(map);
 
+    // Extend class to create overlay text labels
     L.LabelOverlay = L.Class.extend({
         initialize: function(/*LatLng*/ latLng, /*String*/ label, options) {
             this._latlng = latLng;
@@ -56,8 +57,6 @@ var loadMap = function () {
         }
     });   
 
-  console.log(geojson);
-
     // add text labels:
     var labelLocation_cen = new L.LatLng(36.366169, -119.978825);
     var labelTitle_cen = new L.LabelOverlay(labelLocation_cen, "<div class='labels'>Central California</div>");
@@ -85,12 +84,9 @@ var loadMap = function () {
     map.addLayer(labelTitle_south);
 
 
-
-
-
-    // In order to prevent the text labels to "jump" when zooming in and out,
-    // in Google Chrome, I added this event handler:
-
+    // In order to prevent the text labels to "jump" when zooming in and out, in Google Chrome, I added this event handler:
+    
+    /* 
     map.on('movestart', function () {
         map.removeLayer(labelTitle);
         map.removeLayer(labelTitle2);
@@ -98,7 +94,9 @@ var loadMap = function () {
     map.on('moveend', function () {
         map.addLayer(labelTitle);
         map.addLayer(labelTitle2);
-    });
+    }); 
+    */
+
 };
 
 function getColor(d) {

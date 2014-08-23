@@ -26,8 +26,9 @@
 
 /* line 33, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
 .qq-description {
-  font-size: 0.6em;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 600;
+  color: red;
   text-align: left;
   line-height: 1.5;
   text-transform: none;
