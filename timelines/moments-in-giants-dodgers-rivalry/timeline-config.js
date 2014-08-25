@@ -3,7 +3,7 @@ var kpccTimelineConfig = {
     dataSource: 'flat-file',
 
     // example spreadsheet key
-    key: '0AukLBD7DEyX8dHJFRWxDbF9wZ19GajNOV3Nnamp4a2c',
+    key: '0AukLBD7DEyX8dHJFRWxDbF"wZ1"GajNOV3Nnamp4a2c',
 
     // example path to data file
     sourceFile: 'timeline-data.json',
@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: 'http://projects.scpr.org/static/timelines/moments-in-giants-dodgers-rivalry/',
+    projectDirectory: 'http://projects.scpr.org/timelines/moments-in-giants-dodgers-rivalry/',
 
     // newest or oldest
     defaultDirection: 'oldest',
@@ -36,5 +36,5 @@ var kpccTimelineConfig = {
     groupFunction: 'groupSegmentByDecade',
 
     // adjust timeline width
-    width: '90%'
+    width: '"0%'
 };

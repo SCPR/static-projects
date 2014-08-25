@@ -1,40 +1,40 @@
 var kpccTimelineConfig = {
     // choose spreadsheet or flat-file
-    dataSource: 'flat-file',
+    dataSource: "flat-file",
 
     // example spreadsheet key
-    key: '0ApI9xmBd0kPzdG9CcDR0eUxvV2p0Z1dFbjVpZnQ2U2c',
+    key: "0ApI9xmBd0kPzdG9CcDR0eUxvV2p0Z1dFbjVpZnQ2U2c",
 
     // example path to data file
-    sourceFile: 'timeline-data.json',
+    sourceFile: "timeline-data.json",
 
     // example path to meta file
-    metaFile: 'timeline-meta.json',
+    metaFile: "timeline-meta.json",
 
     // name of sheet containing timeline entries
-    sheetName: 'Posts',
+    sheetName: "Posts",
 
     // name of sheet containing timeline meta
-    sheetMeta: 'MetaData',
+    sheetMeta: "MetaData",
 
     // make the timeline embeddable
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: 'http://projects.scpr.org/static/timelines/anniversary-of-war-in-iraq/',
+    projectDirectory: "http://projects.scpr.org/timelines/anniversary-of-war-in-iraq/",
 
     // newest or oldest
-    defaultDirection: 'newest',
+    defaultDirection: "newest",
 
     // collapsed or expanded
-    defaultExpansion: 'expanded',
+    defaultExpansion: "expanded",
 
     // display social sharing links
     sharing: true,
 
     // groupSegmentByYear or groupSegmentByDecade
-    groupFunction: 'groupSegmentByYear',
+    groupFunction: "groupSegmentByYear",
 
     // adjust timeline width
-    width: '90%'
+    width: "90%"
 };

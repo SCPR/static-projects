@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: 'http://projects.scpr.org/static/timelines/life-of-nelson-mandela',
+    projectDirectory: 'http://projects.scpr.org/timelines/life-of-nelson-mandela',
 
     // newest or oldest
     defaultDirection: 'newest',
