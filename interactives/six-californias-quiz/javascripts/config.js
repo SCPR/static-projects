@@ -7,5 +7,5 @@ window.appConfig = {
     is_embedded: null,
     embed_width: "100%",
     embed_height: "1000px",
-    twitter_share_text: "I belong to Central California according to KPCC's Six California quiz! Check your result here",
+    twitter_share_text: "Which of the proposed six Californias should you live in? Take the quiz by KPCC and find out! @KPCC",
 };

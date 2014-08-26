@@ -613,7 +613,7 @@ function highlightFeature(e) {
             //console.log(window.max);
 
             $(".quiz-container").html(
-                "<div class='scorecard'><div id='social-media'>Share the result on social media!</br><ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=I belong to " + window.max + " according to KPCC six California quiz! Check your result here." + link + " via @" + account + "' target='_blank'>" + twitter   + "</a></li></ul></div><div id='youbelongto'>You belong to</div><div id='statename'>" + window.max + "</div><div id='content'><div id='map-container'></div><div id='description'></div><div id='facts'></div><div id='clickother'>Click on the map to check other states</div><button id='playagain' class='qq-button'>Play again!</button></div>"
+                "<div class='scorecard'><div id='social-media'>Share the result on social media!</br><ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=I should move to " + window.max + " according to KPCC's six Californias quiz! Check your result here. " + link + " via @" + account + "' target='_blank'>" + twitter   + "</a></li></ul></div><div id='youbelongto'>You belong to</div><div id='statename'>" + window.max + "</div><div id='content'><div id='map-container'></div><div id='description'></div><div id='facts'></div><div id='clickother'>Click on the map to check other states</div><button id='playagain' class='qq-button'>Play again!</button></div>"
             );
 
             // social media sharing buttons
