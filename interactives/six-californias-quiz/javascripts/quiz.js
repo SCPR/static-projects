@@ -190,7 +190,8 @@ function highlightFeature(e) {
             "<div id='option-c' class='list'>" + input[currentQuestion].c + "</div>" +
             "<div id='option-d' class='list'>" + input[currentQuestion].d + "</div>" +
             "<div id='option-e' class='list'>" + input[currentQuestion].e + "</div>" +
-            "<div id='option-f' class='list'>" + input[currentQuestion].f + "</div></div>" +
+            "<div id='option-f' class='list'>" + input[currentQuestion].f + "</div>" +
+            "<div id='option-g' class='list'>" + input[currentQuestion].g + "</div></div>" +
             "<div class='answer'></div>"
         );
 
@@ -468,23 +469,24 @@ function highlightFeature(e) {
           score_north++;
           displayProgress();
         } else if (answer == 'option-b') {
-          score_jeff++;
-          displayProgress();
-        }
-        else if (answer == 'option-c') {
           score_silicon++;
           displayProgress();
         }
-        else if (answer == 'option-d') {
+        else if (answer == 'option-c') {
           score_south++;
           displayProgress();
         }
-        else if (answer == 'option-e') {
-          score_west++;
+        else if (answer == 'option-d') {
+          score_cen++;
+          score_jeff++;
           displayProgress();
         }
         else if (answer == 'option-f') {
-          score_cen++;
+          score_west++;
+          displayProgress();
+        }
+        else if (answer == 'option-g') {
+          score_north++;
           displayProgress();
         };
 
