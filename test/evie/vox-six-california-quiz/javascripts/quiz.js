@@ -55,7 +55,7 @@ var loadMap = function () {
         _initLayout: function() {
             this._container = L.DomUtil.create('div', 'leaflet-label-overlay');
         }
-    });   
+    });
 
     // add text labels:
     var labelLocation_cen = new L.LatLng(36.366169, -119.978825);
@@ -85,8 +85,8 @@ var loadMap = function () {
 
 
     // In order to prevent the text labels to "jump" when zooming in and out, in Google Chrome, I added this event handler:
-    
-    /* 
+
+    /*
     map.on('movestart', function () {
         map.removeLayer(labelTitle);
         map.removeLayer(labelTitle2);
@@ -94,7 +94,7 @@ var loadMap = function () {
     map.on('moveend', function () {
         map.addLayer(labelTitle);
         map.addLayer(labelTitle2);
-    }); 
+    });
     */
 
 };
@@ -578,7 +578,7 @@ function highlightFeature(e) {
     };
 
     // display final result card and social media sharing
-    var link = document.URL
+    var link = "http://projects.scpr.org/static/interactives/six-californias-quiz"
 
     var finalScoreFinal = function () {
         checkAnswer[9]();
