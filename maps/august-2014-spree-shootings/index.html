@@ -37,11 +37,12 @@
 
         <!-- begin css -->
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" />
-        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" />
+        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-ui.1.10.3.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
         <link rel="stylesheet" href="http://cdn.knightlab.com/libs/storymapjs/latest/css/storymap.css">
         <link href="css/style.css" rel="stylesheet" />
+        <!-- end css -->
 
         <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
         <!--[if lte IE 9]>
@@ -53,7 +54,7 @@
         <![endif]-->
 
         <!-- begin base scripts -->
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="//use.typekit.net/air8rql.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <!-- end base scripts -->
@@ -68,19 +69,30 @@
 
         <!-- begin main container -->
         <div class="container data-container">
-            <div id="story-map-container" style="width: 100%; height: 800px;"></div>
+            <div class="row data-details"></div>
+            <div class="row data-controls">
+            </div>
+            <div class="row data-visuals"></div>
+            <div class="row data-comments">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="disqus_thread"></div>
+                </div>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
             <div class="row kpcc-footer"></div>
         </div>
         <!-- end main container -->
 
         <!-- begin scripts -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/modernizr-2.5.3.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery-ui.min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/underscore-min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/handlebars-ajax.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/swag.js"></script>
+        <script src="scripts/config.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/_application_wrapper.js"></script>
         <script type="text/javascript" src="http://cdn.knightlab.com/libs/storymapjs/latest/js/storymap-min.js"></script>
         <script src="scripts/app.js"></script>
         <!-- end scripts -->
