@@ -74,7 +74,6 @@ var loadMap = function () {
     var labelTitle_silicon = new L.LabelOverlay(labelLocation_silicon, "<div class='labels'>Silicon Valley</div>");
     map.addLayer(labelTitle_silicon);
 
-
     var labelLocation_south = new L.LatLng(33.365238, -117.864165);
     var labelTitle_south = new L.LabelOverlay(labelLocation_south, "<div class='labels'>South California</div>");
     map.addLayer(labelTitle_south);
@@ -82,21 +81,6 @@ var loadMap = function () {
     var labelLocation_north= new L.LatLng(38.854835, -122.813298);
     var labelTitle_south = new L.LabelOverlay(labelLocation_north, "<div class='labels'>North California</div>");
     map.addLayer(labelTitle_south);
-
-
-    // In order to prevent the text labels to "jump" when zooming in and out, in Google Chrome, I added this event handler:
-
-    /*
-    map.on('movestart', function () {
-        map.removeLayer(labelTitle);
-        map.removeLayer(labelTitle2);
-    });
-    map.on('moveend', function () {
-        map.addLayer(labelTitle);
-        map.addLayer(labelTitle2);
-    });
-    */
-
 };
 
 function getColor(d) {
@@ -281,8 +265,6 @@ function highlightFeature(e) {
           score_silicon++;
           displayProgress();
         };
-
-        //console.log(score_cen, score_jeff, score_west, score_north, score_south, score_silicon);
       }
     },
 
@@ -311,8 +293,6 @@ function highlightFeature(e) {
           score_south++;
           displayProgress();
         };
-
-        //console.log(score_cen, score_jeff, score_west, score_north, score_south, score_silicon);
       }
     },
 
@@ -341,8 +321,6 @@ function highlightFeature(e) {
           score_jeff++;
           displayProgress();
         };
-
-        //console.log(score_cen, score_jeff, score_west, score_north, score_south, score_silicon);
       }
     },
 
@@ -368,9 +346,6 @@ function highlightFeature(e) {
           score_cen++;
           displayProgress();
         };
-
-        //console.log(score_cen, score_jeff, score_west, score_north, score_south, score_silicon);
-
       }
     },
 
@@ -393,9 +368,6 @@ function highlightFeature(e) {
           score_west++;
           displayProgress();
         };
-
-        //console.log(score_cen, score_jeff, score_west, score_north, score_south, score_silicon);
-
       }
     },
 
@@ -427,8 +399,6 @@ function highlightFeature(e) {
           score_north++;
           displayProgress();
         };
-
-        //console.log(score_cen, score_jeff, score_west, score_north, score_south, score_silicon);
       }
     },
 
@@ -454,9 +424,6 @@ function highlightFeature(e) {
           score_cen++;
           displayProgress();
         };
-
-        //console.log(score_cen, score_jeff, score_west, score_north, score_south, score_silicon);
-
       }
     },
 
@@ -489,8 +456,6 @@ function highlightFeature(e) {
           score_north++;
           displayProgress();
         };
-
-        //console.log(score_cen, score_jeff, score_west, score_north, score_south, score_silicon);
       }
     },
 
@@ -522,8 +487,6 @@ function highlightFeature(e) {
           score_south++;
           displayProgress();
         };
-
-        //console.log(score_cen, score_jeff, score_west, score_north, score_south, score_silicon);
       }
     },
 
@@ -612,24 +575,41 @@ function highlightFeature(e) {
         } else {
 
             // show the final resuilt of quiz
-            //console.log(window.max);
-
             $(".quiz-container").html(
-                "<div class='scorecard'><div id='social-media'>Share the result on social media!</br><ul><li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li><li><a class=\"twitter-share\" href='http://twitter.com/home?status=I should move to " + window.max + " according to KPCC's six Californias quiz! Check your result here. " + link + " via @" + account + "' target='_blank'>" + twitter   + "</a></li></ul></div><div id='youbelongto'>You belong to</div><div id='statename'>" + window.max + "</div><div id='content'><div id='map-container'></div><div id='description'></div><div id='facts'></div><div id='clickother'>Click on the map to check other states</div><button id='playagain' class='qq-button'>Play again!</button></div>"
+                "<div class='scorecard'>" +
+                    "<div id='social-media'>Share the result on social media!</br>" +
+                        "<ul>" +
+                            "<li><a class=\"fb-share\" href='http://www.facebook.com/sharer.php?u=" + link + "' target='_blank'>" + facebook + "</a></li>" +
+                            "<li><a class=\"twitter-share\" href='http://twitter.com/home?status=I should move to " + window.max + " according to KPCC's six Californias quiz! Check your result here. " + link + " via @" + account + "' target='_blank'>" + twitter   + "</a></li>" +
+                        "</ul>" +
+                    "</div>" +
+                    "<div id='youbelongto'>You belong to</div>" +
+                    "<div id='statename'>" + window.max + "</div>" +
+                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
+                        "<div id='map-container'></div>" +
+                    "</div>" +
+                    "<div class='col-xs-12 col-sm-6 col-md-6 col-lg-6'>" +
+                        "<div id='description'></div>" +
+                        "<div id='facts'></div>" +
+                        "<div id='clickother'>Click on the map to check other states</div>" +
+                        "<button id='playagain' class='qq-button'>Play again!</button>" +
+                    "</div>" +
+                "</div>"
             );
 
             // social media sharing buttons
-            $('.quiz-container .fb-share').click(function() {
+            $('.quiz-container .fb-share').click(function(){});
 
-            });
-
-            $('.quiz-container .twitter-share').click(function() {
-
-            });
+            $('.quiz-container .twitter-share').click(function() {});
 
             showDescription(input);
             loadMap();
-            $('#playagain').on('click',reloadPage);
+
+            $("#playagain").on("click", reloadPage);
+
+            // dynamically set the quiz container height based on div height
+            var displayHeight = $(".data-visuals").height();
+            $(".quiz-container").height(displayHeight + 30);
         };
     };
 

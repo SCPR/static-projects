@@ -1,242 +1,60 @@
-/* line 11, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
-.quiz-container {
-  text-align: center;
-  background-color: #ffffff;
-  margin: 0% auto;
-  width: 100%;
-  max-width: 1000px;
-  height: 110%;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  padding-bottom: 60px;
-  padding-top: 20px;
-  border: 3px; 
-}
+/* quiz styles */
+.qq-question { font-size: 30px; font-weight: bold; max-width: 80%; margin: 0% auto; margin-top: 20px !important; margin-bottom: 50px !important; line-height: 1.2; }
 
-/* line 24, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
-.qq-question {
-  font-size: 30px;
-  font-weight: bold;
-  max-width: 80%;
-  margin: 0% auto;
-  margin-top: 20px !important;
-  margin-bottom: 50px !important;
-  line-height: 1.2; 
-}
+.qq-description { font-size: 18px; font-weight: 600; color: red; text-align: left; line-height: 1.5; text-transform: none; font-style: normal; }
 
-/* line 33, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
-.qq-description {
-  font-size: 18px;
-  font-weight: 600;
-  color: red;
-  text-align: left;
-  line-height: 1.5;
-  text-transform: none;
-  font-style: normal; }
+.question { padding-top: 10px; }
 
-/* line 44, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
-.question {
-  padding-top: 10px; }
+.progressbar { font-size: 20px; text-align: right; position: relative; right: 30px; }
 
-/* line 49, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
-.progressbar {
-  font-size: 20px;
-  text-align: right;
-  position: relative;
-  right: 30px; }
+.list { font-size: 18px; cursor: pointer; position: relative; text-align: left; margin: 0px auto; width: 80%; max-width: 500px; margin-bottom: 5px; margin-top: 5px; padding: 10px; }
 
+.finallist { font-size: 18px; cursor: pointer; position: relative; text-align: center; margin: 0px auto; width: 80%; max-width: 500px; margin-bottom: 5px; margin-top: 5px; padding: 10px; }
 
-.list {
-  font-size: 18px;
-  cursor: pointer;
-  position: relative;
-  text-align: left;
-  margin: 0px auto;
-  width: 80%;
-  max-width: 500px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  padding: 10px; }
+.qq-button { -o-transition: 0.2s; -ms-transition: 0.2s; -moz-transition: 0.2s; -webkit-transition: 0.2s; transition: 0.2s; font-size: 20px; color: white; text-transform: uppercase; line-height: 1; display: inline-block; cursor: pointer; width: 220px; margin: 2px 5px; padding: .7em .7em .6em; border: 2; background-color: black; }
 
-.finallist {
-  font-size: 18px;
-  cursor: pointer;
-  position: relative;
-  text-align: center;
-  margin: 0px auto;
-  width: 80%;
-  max-width: 500px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  padding: 10px; }
+.qq-button:hover { background: transparent; background-color: red; }
 
-/* line 87, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
-.qq-button {
-  -o-transition: 0.2s;
-  -ms-transition: 0.2s;
-  -moz-transition: 0.2s;
-  -webkit-transition: 0.2s;
-  transition: 0.2s;
-  font-size: 20px;
-  color: white;
-  text-transform: uppercase;
-  line-height: 1;
-  display: inline-block;
-  cursor: pointer;
-  width: 220px;
-  margin: 2px 5px;
-  padding: .7em .7em .6em;
-  border: 2;
-  background-color: black; 
-}
+.selected { font-weight: bold; font-size: 20px; }
 
-/* line 100, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
-.qq-button:hover {
-  background: transparent; 
-  background-color: red;
-}
+.score { font-size: .8em; float: right; padding-right: 7%; }
 
-/* line 105, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
-.selected {
-  /* background-color: #dfdfe0; */
-  font-weight: bold; 
-  font-size: 20px;
-}
+.answer { margin: 0% auto; width: 90%; max-width: 550px; margin-top: 20px !important; }
 
-/* line 111, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
-.scorecard {
-  display: block !important; }
+.answer p:first-child { font-weight: bold; font-size: 1.2em; display: inline-block; width: 100%; padding-top: 30px; padding-bottom: 0px; border-top: 1px solid #000000; }
 
-/* line 115, /Users/rebeccalai/repos/quiz-generator/source/stylesheets/quiz.css.scss */
-.score {
-  font-size: .8em;
-  float: right;
-  padding-right: 7%; }
+.answer p:nth-child(2) { margin: 0% auto; display: block; width: 100%; padding-top: 0px; padding-bottom: 20px; }
 
-#social-media ul {
-  text-align: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 10px; }
-  #social-media ul li {
-    display: inline-block; }
-    #social-media ul li a {
-      text-decoration: none; }
-      #social-media ul li a svg {
-        height: 2em;
-        width: 3.4em;
-        margin-right: 1em; }
+.answer > p { margin: 0px 0px 20px 0px !important; }
 
-.answer {
-  margin: 0% auto;
-  width: 90%;
-  max-width: 550px;
-  margin-top: 20px !important; }
+/* map labels */
+.leaflet-popup-close-button { display: none; }
 
-.answer p:first-child {
-    font-weight: bold;
-    font-size: 1.2em;
-    display: inline-block;
-    width: 100%;
-    padding-top: 30px;
-    padding-bottom: 0px;
-    border-top: 1px solid #000000; }
+.leaflet-label-overlay { line-height: 0px; margin-top: 9px; position: absolute; }
 
-.answer p:nth-child(2) {
-    margin: 0% auto;
-    display: block;
-    width: 100%;
-    padding-top: 0px;
-    padding-bottom: 20px; } */
+.labels { font-size: 20px; color: white; font-weight: bold; text-align: left; width: 200px; }
 
-.answer > p {
-  margin: 0px 0px 20px 0px !important; }
+/* structure */
+.quiz-container { text-align: center; background-color: #ffffff; width: 100%; height: auto; padding: 20px 0 20px 0;}
 
-#content {
-  height: 700px;
-}
+#social-media ul { text-align: center; list-style-type: none; margin: 0; padding: 0; margin-bottom: 10px; }
 
-.scorecard #youbelongto {
-  font-size: 25px;
-  font-weight: bold;
-  line-height: 1em !important;
-  display: inline-block;
-  padding-bottom: 10px; 
-}
+#social-media ul li { display: inline-block; }
 
-.scorecard #statename {
-  font-size: 50px;
-  font-weight: bold;
-  padding-bottom: 20px;
-}
+#social-media ul li a { text-decoration: none; }
 
+#social-media ul li a svg { height: 2em; width: 3.4em; margin-right: 1em; }
 
-.scorecard #facts {
-  font-size: 18px;
-  text-align: left;
-  width: 45%;
-  float: right;
-  padding-bottom: 10px;
-  padding-right: 40px; 
-}
+.scorecard #youbelongto { font-size: 25px; font-weight: bold; line-height: 1em !important; display: inline-block; padding-bottom: 10px; }
 
-.scorecard #description {
-  font-size: 18px;
-  text-align: left;
-  width: 45%;
-  float: right;
-  padding-bottom: 40px;
-  padding-top: 30px;
-  padding-right: 40px; 
-}
+.scorecard #statename { font-size: 50px; font-weight: bold; padding-bottom: 20px; }
 
-.scorecard #social-media {
-  font-size: 18px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
+.scorecard #facts { font-size: 18px; text-align: left; margin-bottom: 10px; }
 
-.scorecard #clickother {
-  font-size: 18px;
-  font-weight: bold;
-  color: red;
-  text-align: center;
-  width: 45%;
-  float: right;
-  padding-bottom: 40px;
-  padding-right: 40px;
-  text-transform: uppercase;
-}
+.scorecard #description { font-size: 18px; text-align: left; margin-bottom: 20px;}
 
-.scorecard #map-container {
-  height: 700px; 
-  width: 45%;
-  margin-left: 40px;
-  float: left;
-  margin-top: 30px;
-}
+.scorecard #social-media { font-size: 18px; padding-bottom: 10px; padding-top: 10px; margin-left: auto; margin-right: auto; }
 
-.leaflet-popup-close-button {
-  display:none;
-}
+.scorecard #clickother { font-size: 18px; font-weight: bold; color: red; text-align: center; padding-bottom: 40px; padding-right: 40px; text-transform: uppercase; }
 
-.leaflet-label-overlay {
-  line-height:0px;
-  margin-top: 9px;
-  position:absolute;
-}
-
-.labels {
-  font-size: 20px;
-  color: white;
-  font-weight: bold;
-  text-align: left;
-  width: 200px;
-}
-
-
-
-
+.scorecard #map-container { width: 100%; height: 700px;}
