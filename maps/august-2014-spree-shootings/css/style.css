@@ -1,0 +1,59 @@
+body.minimal header {background: none; height: 74px; margin: 0 0 25px 0;}
+
+body.minimal header .navbar-default {box-shadow: 0 0 0 rgba(0,0,0,0.0);}
+
+body.minimal header .navbar-default {background-color: #e7e7e7; border-color: none;}
+
+body.minimal .data-container {max-width: 100%; margin: 0 auto;}
+
+body.minimal .data-container h2 {margin-bottom: 5%;}
+
+@media screen and (min-width: 1630px) and (max-width: 3000px) {
+    body.minimal .data-container h2 {font-size: 420%; line-height: 100%;}
+    body.minimal .data-container p {font-size: 150%; line-height: 125%;}
+}
+
+@media screen and (min-width: 1546px) and (max-width: 1629px) {
+    body.minimal .data-container h2 {font-size: 390%; line-height: 100%;}
+    body.minimal .data-container p {font-size: 140%; line-height: 125%;}
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1545px) {
+    body.minimal .data-container h2 {font-size: 370%; line-height: 100%;}
+    body.minimal .data-container p {font-size: 130%; line-height: 125%;}
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1399px) {
+    body.minimal .data-container h2 {font-size: 320%; line-height: 100%;}
+    body.minimal .data-container p {font-size: 120%; line-height: 125%;}
+}
+
+@media screen and (min-width: 1021px) and (max-width: 1100px) {
+    body.minimal .data-container h2 {font-size: 290%; line-height: 100%;}
+    body.minimal .data-container p {font-size: 110%; line-height: 125%;}
+}
+
+@media screen and (min-width: 880px) and (max-width: 1020px) {
+    body.minimal .data-container h2 {font-size: 280%; line-height: 100%;}
+    body.minimal .data-container p {font-size: 100%; line-height: 125%;}
+}
+
+@media screen and (min-width: 680px) and (max-width: 879px) {
+    body.minimal .data-container h2 {font-size: 250%; line-height: 100%;}
+    body.minimal .data-container p {font-size: 95%; line-height: 125%;}
+}
+
+@media screen and (min-width: 530px) and (max-width:679px) {
+    body.minimal .data-container h2 {font-size: 280%; line-height: 100%;}
+    body.minimal .data-container p {font-size: 95%; line-height: 125%;}
+}
+
+@media screen and (max-width:529px) {
+    body.minimal .data-container h2 {font-size: 190%; line-height: 100%;}
+    body.minimal .data-container p {font-size: 77%; line-height: 125%;}
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    body.minimal .data-container h2 {font-size: 250%; line-height: 100%;}
+    body.minimal .data-container p {font-size: 95%; line-height: 125%;}
+}
