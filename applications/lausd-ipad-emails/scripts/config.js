@@ -7,5 +7,5 @@ window.appConfig = {
     is_embedded: null,
     embed_width: "100%",
     embed_height: "750px",
-    twitter_share_text: "Emails obtained by KPCC through a public records request show Los Angeles Unified School District John Deasy directed his staff to figure out how to incorporate Pearson PLC's software into the school system's plan to transition to the Common Core standards.",
+    twitter_share_text: "KPCC reviewed more than 1,000 emails during an investigation into LAUSD's iPad contract. Here are 18 key emails: ",
 };
