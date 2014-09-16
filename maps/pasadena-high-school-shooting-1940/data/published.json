@@ -1,0 +1,119 @@
+{
+"storymap": {
+"map_as_image": false,
+"slides": [
+{
+"date": "",
+"text": {
+"headline": "1940 South Pasadena Shooting",
+"text": "<p>On the morning of May 6, 1940, South Pasadena Junior High School Principal Verlin Spencer went on a shooting spree that left five dead and one injured. Here is his route based on police and witness reports.</p>"
+},
+"media": {
+"url": "https://3964de7c8a027100e79ec9f1fa6ef3e04acf4d3d.googledrive.com/host/0BzsyCVrBXivzSWpwelRaTGRadGc/91826_83c97a4ff05cdfa17071d5afbd5c494b_966a790b0227b017e998d0094968fbc6.jpg",
+"credit": "South Pasadena Review, May 19, 1940",
+"caption": ""
+},
+"location": {
+"line": true,
+"icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png"
+},
+"type": "overview"
+},
+{
+"date": "",
+"text": {
+"headline": "Spencer leaves his apartment",
+"text": "<p>Verlin Spencer leaves his apartment that he shares with his wife at 1105 Mound Ave.</p>"
+},
+"media": {
+"url": "https://3964de7c8a027100e79ec9f1fa6ef3e04acf4d3d.googledrive.com/host/0BzsyCVrBXivzSWpwelRaTGRadGc/92016_d35a89b38394adfa586043f09501a8ee_44ed696608e604ae60d7e5291daabc73.jpg",
+"credit": "South Pasadena Review",
+"caption": ""
+},
+"location": {
+"line": true,
+"icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+"lat": 34.113461,
+"lon": -118.15212200000002,
+"zoom": 1
+}
+},
+{
+"date": "",
+"text": {
+"headline": "Spencer notarizes his will",
+"text": "<p>The sequence of his next stops remains unclear. Police believe Spencer drives to a Bank of America somewhere in Los Angeles to have his will notarized, fuels up his car at 920 Fair Oaks Ave. and visits his school sometime in the morning.</p>"
+},
+"media": {
+"url": "",
+"credit": "",
+"caption": ""
+},
+"location": {
+"line": true,
+"icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+"lat": 34.1618847,
+"lon": -118.15058750000003,
+"zoom": 1
+}
+},
+{
+"date": "",
+"text": {
+"headline": "2:15 pm: school admin building",
+"text": "<p>Spencer arrives to attend a meeting at the school administration building. Once there, he kills three administrators and wounds a secretary.</p>"
+},
+"media": {
+"url": "https://3964de7c8a027100e79ec9f1fa6ef3e04acf4d3d.googledrive.com/host/0BzsyCVrBXivzSWpwelRaTGRadGc/91829_448e8f55db62629f134430b9f7bda161_861ebf1ef41387b0c1894bf7bbaced5d.jpg",
+"credit": "Courtesy of the South Pasadena Public Library",
+"caption": ""
+},
+"location": {
+"line": true,
+"icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+"lat": 34.11010750000001,
+"lon": -118.15584360000003,
+"zoom": 1
+}
+},
+{
+"date": "",
+"text": {
+"headline": "South Pasadena jr High",
+"text": "<p>Spencer next drives to his school, South Pasadena Junior&nbsp;High. Two teachers are killed there.&nbsp;</p>"
+},
+"media": {
+"url": "https://3964de7c8a027100e79ec9f1fa6ef3e04acf4d3d.googledrive.com/host/0BzsyCVrBXivzSWpwelRaTGRadGc/91833_c951f2835cd7b8f07c11d62675553195_ceb69b0d181652338b78b3dc9b1baff0.jpg",
+"credit": "Courtesy of the South Pasadena Public Library",
+"caption": ""
+},
+"location": {
+"line": true,
+"icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+"lat": 34.1706917,
+"lon": -118.15063079999999,
+"zoom": 1
+}
+},
+{
+"date": "",
+"text": {
+"headline": "Spencer cornered",
+"text": "<p>Police corner Spencer in the school cafeteria, where he shoots and wounds himself. He would&nbsp;later stand trial and serve 30 years in prison.</p>"
+},
+"media": {
+"url": "https://3964de7c8a027100e79ec9f1fa6ef3e04acf4d3d.googledrive.com/host/0BzsyCVrBXivzSWpwelRaTGRadGc/91836_33cac3b29b375f2eaac14e8267accc73_aa58f8f6f3e9dac547faa9a2261bc399.jpg",
+"credit": "Courtesy of the South Pasadena Public Library",
+"caption": ""
+},
+"location": {
+"line": true,
+"icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
+"lat": 34.1706917,
+"lon": -118.15063079999999,
+"zoom": 1
+}
+}
+]
+}
+}
