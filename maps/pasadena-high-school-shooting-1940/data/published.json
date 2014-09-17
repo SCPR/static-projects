@@ -5,7 +5,7 @@
 {
 "date": "",
 "text": {
-"headline": "1940 South Pasadena Shooting",
+"headline": "Timeline: 1940 South Pasadena Shooting",
 "text": "<p>On the morning of May 6, 1940, South Pasadena Junior High School Principal Verlin Spencer went on a shooting spree that left five dead and one injured. Here is his route based on police and witness reports.</p>"
 },
 "media": {
@@ -26,8 +26,8 @@
 "text": "<p>Verlin Spencer leaves his apartment that he shares with his wife at 1105 Mound Ave.</p>"
 },
 "media": {
-"url": "https://3964de7c8a027100e79ec9f1fa6ef3e04acf4d3d.googledrive.com/host/0BzsyCVrBXivzSWpwelRaTGRadGc/92016_d35a89b38394adfa586043f09501a8ee_44ed696608e604ae60d7e5291daabc73.jpg",
-"credit": "South Pasadena Review",
+"url": "",
+"credit": "",
 "caption": ""
 },
 "location": {
@@ -45,22 +45,22 @@
 "text": "<p>The sequence of his next stops remains unclear. Police believe Spencer drives to a Bank of America somewhere in Los Angeles to have his will notarized, fuels up his car at 920 Fair Oaks Ave. and visits his school sometime in the morning.</p>"
 },
 "media": {
-"url": "",
-"credit": "",
+"url": "http://a.scpr.org/i/98fb4150a392050dbd8a79e2141a18dc/92016-six.jpg",
+"credit": "South Pasadena Jr. High School yearbook",
 "caption": ""
 },
 "location": {
 "line": true,
 "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
-"lat": 34.1618847,
-"lon": -118.15058750000003,
+"lat": 34.1298815,
+"lon": -118.1503199,
 "zoom": 1
 }
 },
 {
 "date": "",
 "text": {
-"headline": "2:15 pm: school admin building",
+"headline": "2:15 pm: Shooting at admin building",
 "text": "<p>Spencer arrives to attend a meeting at the school administration building. Once there, he kills three administrators and wounds a secretary.</p>"
 },
 "media": {
@@ -79,7 +79,7 @@
 {
 "date": "",
 "text": {
-"headline": "South Pasadena jr High",
+"headline": "Shooting at South Pasadena jr High",
 "text": "<p>Spencer next drives to his school, South Pasadena Junior&nbsp;High. Two teachers are killed there.&nbsp;</p>"
 },
 "media": {
@@ -90,8 +90,8 @@
 "location": {
 "line": true,
 "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
-"lat": 34.1706917,
-"lon": -118.15063079999999,
+"lat": 34.1077829,
+"lon": -118.15032009999999,
 "zoom": 1
 }
 },
@@ -109,11 +109,13 @@
 "location": {
 "line": true,
 "icon": "http://maps.gstatic.com/intl/en_us/mapfiles/ms/micons/blue-pushpin.png",
-"lat": 34.1706917,
-"lon": -118.15063079999999,
+"lat": 34.1077829,
+"lon": -118.15032009999999,
 "zoom": 1
 }
 }
-]
+],
+"map_type": "stamen:toner",
+"map_subdomains": ""
 }
 }
