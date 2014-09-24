@@ -5,12 +5,6 @@ var kpccTimelineConfig = {
     // example spreadsheet key
     key: "1-4pTr9sw4gvh4OwyJevGw5xG5x09CAIWidZEb_yb6kQ",
 
-    // example path to data file
-    sourceFile: "timeline-data.json",
-
-    // example path to meta file
-    metaFile: "timeline-meta.json",
-
     // name of sheet containing timeline entries
     sheetName: "Sheet1",
 
@@ -21,7 +15,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/",
+    projectDirectory: "http://projects.scpr.org/timelines/mark-berndt",
 
     // newest or oldest
     defaultDirection: "oldest",
