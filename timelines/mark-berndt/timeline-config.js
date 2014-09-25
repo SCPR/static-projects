@@ -6,7 +6,7 @@ var kpccTimelineConfig = {
     key: "1-4pTr9sw4gvh4OwyJevGw5xG5x09CAIWidZEb_yb6kQ",
 
     // name of sheet containing timeline entries
-    sheetName: "Sheet1",
+    sheetName: "posts",
 
     // name of sheet containing timeline meta
     sheetMeta: "MetaData",
