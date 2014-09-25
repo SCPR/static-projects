@@ -3,10 +3,10 @@ var kpccTimelineConfig = {
     dataSource: "spreadsheet",
 
     // example spreadsheet key
-    key: "1-4pTr9sw4gvh4OwyJevGw5xG5x09CAIWidZEb_yb6kQ",
+    key: "0AjsyCVrBXivzdFRJTzhBaXh6bEo2TEVKUDJHLW5ZNFE",
 
     // name of sheet containing timeline entries
-    sheetName: "posts",
+    sheetName: "Posts",
 
     // name of sheet containing timeline meta
     sheetMeta: "MetaData",
