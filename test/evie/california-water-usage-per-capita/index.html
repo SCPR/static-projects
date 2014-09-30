@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<!-- Load CSS -->
+<link href="styles/c3.css" rel="stylesheet" type="text/css">
+<link href="styles/style.css" rel="stylesheet" type="text/css">
+
+<!-- Load Javascript -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="scripts/d3.js" charset="utf-8"></script>
+<script src="scripts/c3.js"></script>
+<script src="scripts/config.js"></script>
+
+</head>
+
+<body>
+	<div id="title" align="center"></div>
+	<div id="chart"></div>
+	<div id="embed" align="center">
+		<button id="generate">Generate Embed Code</button></br>
+		<textarea id="embed_code" value="Embed code here"></textarea>
+	</div>
+
+
+<!-- C3 -->
+
+<script>
+
+$( document ).ready(function(){
+	$("#title").html("<h3>" + window.appConfig.title + "</h3><p>Source: " + window.appConfig.source + "</p>");
+});
+
+var chart = c3.generate({
+	bindto: '#chart',
+	data: {
+		x: 'x',
+		url: window.appConfig.csv_url,
+		type: window.appConfig.type,
+		groups: [ window.appConfig.stacked_group ],
+		onclick: function (d, i) { console.log("onclick", d, i); },
+		labels: window.appConfig.labels,
+		//axes: {
+            //rate: 'y',
+           // percapita: 'y2'
+        //},
+	},
+
+	axis: {
+		x: {
+	        type: 'category',
+	        label: {
+	      		text: window.appConfig.axis_x_label,
+	      		position: 'outer-middle'
+	    	},
+		},
+
+		y: {
+		    label: {
+		      text: window.appConfig.axis_y_label,
+		      position: 'outer-middle'
+		    }
+		  },
+
+		//y2: {
+            //show: true
+        //},
+		
+		rotated: window.appConfig.rotated,
+	},
+
+	grid: {
+	    y: {
+	        lines: [
+	        	{value: window.appConfig.grid_value1}, 
+	        	{value: window.appConfig.grid_value2},
+	        	{value: window.appConfig.grid_value3},
+	        	{value: window.appConfig.grid_value4},
+	        	{value: window.appConfig.grid_value5},
+	        	{value: window.appConfig.grid_value6},
+	        	{value: window.appConfig.grid_value7},
+	        	{value: window.appConfig.grid_value8},
+	        ]
+	    }
+	},
+});
+
+$ ("#generate").click(function(){
+	$ ("#embed_code").val("<iframe src='" + window.appConfig.project_root + "' width='100%' height='1055px' style='margin: 0 auto;' frameborder='no'></iframe>")
+});
+
+</script>
+
+
+
+</body>
+
+</html>
