@@ -7,4 +7,5 @@ window.appConfig = {
     embed_width: "100%",
     embed_height: "1000px",
     twitter_share_text: "",
+    csv:"data/highest-by-year.csv",
 };
