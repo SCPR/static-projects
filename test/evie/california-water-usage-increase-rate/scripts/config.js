@@ -9,7 +9,7 @@ window.appConfig = {
     twitter_share_text: "",
 
     project_root: "http://projects.scpr.org/charts/so-cal-marriage-licenses/",
-    csv_url: "data/july-water-data.csv",
+    csv_url: "../data/july-water-data.csv",
     title: "Top 5 water agencies with most/ least water usage increase in California, July 2014 data",
     source: "California Water Resources Control Board",
     type: "bar",// line, bar, spline, area, area-spline, pie, donut, gauge
