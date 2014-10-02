@@ -78,3 +78,8 @@
     body.minimal table { font-size: 140%;}
     body.minimal ul li { font-size: 140%;}
 }
+
+h2 {
+    margin-top: 20px;
+
+}
