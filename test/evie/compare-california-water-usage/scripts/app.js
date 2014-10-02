@@ -29,7 +29,7 @@
 
         el: ".data-visuals",
 
-        renderChart: function(chartbox,csv_url){
+        renderChart: function(chartbox,csv_url,chart_color){
 
                 var chart = c3.generate({
                     bindto: chartbox,
@@ -38,10 +38,19 @@
                         url: csv_url,
                         type: "bar",
                         onclick: function (d, i) { console.log("onclick", d, i); },
-                        labels: true,
+                        labels: {
+                           format: {
+                                //y: d3.format('%')
+                           }
+                        },
                         colors: {
-                            rate: "red",
+                            Rate: chart_color
                         }
+                    },
+
+                    size: { 
+                        //height: 400,
+                        //width: 300
                     },
 
                     legend: {
@@ -60,7 +69,8 @@
                         y: {
                             label: {
                               text: "Rate (%)",
-                              position: 'outer-middle'
+                              position: 'outer-middle',
+
                             }
                           },
                         
@@ -77,17 +87,17 @@
 
         render: function(viewObject){
             $(viewObject.container).html(_.template(this.template));
-            $("#title-by-year").html("<h2>Compare by year (same month)</h2><p>July 2014 vs July 2013</p>");
-            $("#subtitle-increase-by-year").html("<h4>Top 10 agencies with most increase</h4>");
-            $("#subtitle-decrease-by-year").html("<h4>Top 10 agencies with most decrease</h4>");
-            $("#title-by-month").html("<h2>Compare by month (same year)</h2><p>July 2014 vs June 2014</p>");
-            $("#subtitle-increase-by-month").html("<h4>Top 10 agencies with most increase</h4>");
-            $("#subtitle-decrease-by-month").html("<h4>Top 10 agencies with most decrease</h4>");
+            $("#title-by-year").html("<h2>July 2014 vs July 2013</h2>");
+            $("#subtitle-increase-by-year").html("<h4>Agencies with largest increase</h4>");
+            $("#subtitle-decrease-by-year").html("<h4>Agencies with largest decrease</h4>");
+            $("#title-by-month").html("<h2>July 2014 vs June 2014</h2>");
+            $("#subtitle-increase-by-month").html("<h4>Agencies with largest increase</h4>");
+            $("#subtitle-decrease-by-month").html("<h4>Agencies with largest decrease</h4>");
 
-            this.renderChart("#increase-by-year","data/highest-by-year.csv");
-            this.renderChart("#decrease-by-year","data/lowest-by-year.csv");
-            this.renderChart("#increase-by-month","data/highest-by-month.csv");
-            this.renderChart("#decrease-by-month","data/lowest-by-month.csv");          
+            this.renderChart("#increase-by-year","data/highest-by-year.csv","red");
+            this.renderChart("#decrease-by-year","data/lowest-by-year.csv","green");
+            this.renderChart("#increase-by-month","data/highest-by-month.csv","red");
+            this.renderChart("#decrease-by-month","data/lowest-by-month.csv","green");          
 
         },
     });
