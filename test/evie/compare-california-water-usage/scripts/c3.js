@@ -6030,7 +6030,7 @@
                         lineUpdate.attr("x2", -innerTickSize).attr("y2", 0);
                         textUpdate.attr("x", -(Math.max(innerTickSize, 0) + tickPadding)).attr("y", tickOffset);
                         //changed font size for axis label
-                        text.attr("dy", ".32em").style("text-anchor", "end").style("font-size", "15px");
+                        text.attr("dy", ".32em").style("text-anchor", "end").style("font-size", "12px");
                         pathUpdate.attr("d", "M" + -outerTickSize + "," + range[0] + "H0V" + range[1] + "H" + -outerTickSize);
                         break;
                     }
