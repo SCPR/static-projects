@@ -1,0 +1,61 @@
+/* main container */
+.container { max-width: 100%; height: auto; color: #ffffff; border-bottom: 5px solid #000; }
+
+/* main columns */
+#left-container,
+#right-container { background: #000; width: 50%; height: auto; display: inline-block; position: relative; z-index: -10;}
+#right-container { position: absolute; right: 0; top: 0; }
+
+/* contribution sections */
+header { background: #000; text-transform: uppercase; padding: 2% 0% 2% 0%;}
+section.display { background: #999; width: 100%; padding-bottom: 1%; }
+
+/* display of contributions header */
+div.support section.display h1 { background: #B4DD0A; text-transform: uppercase; padding: 1% 0 1% 0; }
+div.oppose section.display h1 { background: #66D8D8;  text-transform: uppercase; padding: 1% 0 1% 0; }
+
+/* display of line-item contributions */
+section.display ol { width: 100%; padding: 2% 0% 2% 0%; }
+section.display ol li { width: 100%; min-height: 1.5em; color: #000; margin-bottom: .5%; border-bottom: 1px solid #000; }
+section.display ol li:last-child { border-bottom: 0px solid #000; }
+section.display ol li dl { position: relative; }
+section.display ol li dl dt { color: Crimson; margin-right: 30px; }
+section.display ol li dl dd { color: Black; position: absolute; right: 0; top: 0; }
+
+/* display of total contributions */
+#span-container { background: #ffffff; width: 100%; height: 760px; margin-top: 20px; padding-bottom: 1%; color: #000; border-bottom: 1px solid #000; position: relative; z-index: -10; }
+#span-container .support,
+#span-container .oppose { width: 25%; height: auto; display: inline-block; }
+#span-container .support { position: absolute; left: 1%; top: 0; }
+#span-container .oppose { position: absolute; right: 1%; top: 0; }
+
+#span-container .chart-container {
+    z-index: -1;
+    width: 50%;
+    height: 1090px;
+    /* position: absolute; */
+    margin-left: auto;
+    margin-right: auto;
+    /* left: 0; */
+    /* right: 0; */
+}
+
+#span-container .chart-container svg {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#span-container div dl {  }
+#span-container div dl dt { color: #999; }
+#span-container div dl dd { color: #000; }
+#span-container footer { margin-top: 20px; color: #999; padding-bottom: 1%; }
+
+/* misc typography */
+.support-accent { color: #B4DD0A; }
+.oppose-accent { color: #66D8D8; }
+.bold-accent { color: yellow; text-transform: uppercase; }
+.align-left { text-align: left; }
+.align-right { text-align: right; }

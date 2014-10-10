@@ -40,7 +40,7 @@
         <!-- end meta -->
 
         <!-- begin css -->
-        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/static/css/reset.css" media="screen" rel="stylesheet" type="text/css" />
         <link href="/static/css/styles.css" media="screen" rel="stylesheet" type="text/css" />
         
         <!-- end css -->
@@ -58,6 +58,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="//use.typekit.net/air8rql.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        
+    <script>
+        var chartConfig = {"support_percent": 100.0, "end_angle": 90, "oppose_percent": 0.0, "start_angle": -90};
+    </script>
+
         <!-- end base scripts -->
 
     </head>
@@ -67,109 +72,116 @@
     <body>
 
         <!-- begin main container -->
-        <div class="container">
-            
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="pull-left">
-                        For Prop 46
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="pull-right">
-                        Prop 46 Against
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="pull-left">
-                        Top five contributors
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="pull-right">
-                        Top five contributors
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="pull-left">
-                        <ul>
-                            
-                                <li>American Council of Engineering Companies $250,000.00</li>
-                            
-                                <li>Netflix $250,000.00</li>
-                            
-                                <li>United Brotherhood of Carpenters and Joiners of America (UBC) $250,000.00</li>
-                            
-                                <li>California Association of Hospitals and Health Systems (CAHHS) $250,000.00</li>
-                            
-                                <li>United Brotherhood of Carpenters and Joiners of America (UBC) $200,000.00</li>
-                            
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="pull-right">
-                        <ul>
-                            
-                                <li>$0.00 </li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="pull-left">
-                        Number Of Contributions: 28
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="pull-right">
-                        Number Of Contributions: 1
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="pull-left">
-                        Total contributions
-                        $1,933,105.00
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="pull-right">
-                        Total contributions
-                        $0.00
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="pull-left">
-                        Data Source
-                        Design &amp; Code
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="pull-right">
-                        <img src="/static/images/maplight_logo_partner.png" />
-                    </div>
-                </div>
-            </div>
-        </div>
+        
+<div class="container clearfix">
+    <div id="left-container" class="support">
+        <header>
+            <mark>
+                <h1 class="align-left"><span class="support-accent">For</span> Prop. 2</h1>
+            </mark>
+        </header>
+        <section class="display">
+            <mark>
+                <h1 class="align-left">Top five contributors</h1>
+            </mark>
+            <ol>
+                
+                    <li>
+                        <dl>
+                            <dt>American Council of Engineering Companies</dt>
+                            <dd>$250,000.00</dd>
+                        </dl>
+                    </li>
+                
+                    <li>
+                        <dl>
+                            <dt>Netflix</dt>
+                            <dd>$250,000.00</dd>
+                        </dl>
+                    </li>
+                
+                    <li>
+                        <dl>
+                            <dt>United Brotherhood of Carpenters and Joiners of America (UBC)</dt>
+                            <dd>$250,000.00</dd>
+                        </dl>
+                    </li>
+                
+                    <li>
+                        <dl>
+                            <dt>California Association of Hospitals and Health Systems (CAHHS)</dt>
+                            <dd>$250,000.00</dd>
+                        </dl>
+                    </li>
+                
+                    <li>
+                        <dl>
+                            <dt>United Brotherhood of Carpenters and Joiners of America (UBC)</dt>
+                            <dd>$200,000.00</dd>
+                        </dl>
+                    </li>
+                
+            </ol>
+            <mark>
+                <h3 class="align-left">Total contributors: 28</h3>
+            </mark>
+        </section>
     </div>
-
+    <div id="right-container" class="oppose">
+        <header class="prologue">
+            <mark>
+                <h1 class="align-right">Prop. 2 <span class="oppose-accent">Against</span></h1>
+            </mark>
+        </header>
+        <section class="display">
+            <mark>
+                <h1 class="align-right">Top five contributors</h1>
+            </mark>
+            <ol>
+                
+                    <li>
+                        <dl>
+                            <dt>$0.00</dt>
+                            <dd></dd>
+                        </dl>
+                    </li>
+                
+            </ol>
+            <mark>
+                <h3 class="align-right">Total contributors: 1</h3>
+            </mark>
+        </section>
+    </div>
+    <div id="span-container">
+        <div class="support">
+            <dl class="align-left">
+                <dt>Amount total</dt>
+                <dd>$1,933,105.00</dd>
+            </dl>
         </div>
+        <div class="chart-container"></div>
+        <div class="oppose">
+            <dl class="align-right">
+                <dt>Amount total</dt>
+                <dd>$0.00</dd>
+            </dl>
+        </div>
+        <!--
+        <footer>
+            <p>Data Source <span>MapLight</span></p>
+            <p>Design &amp; Code <span>89.3 KPCC</span></p>
+            <p><img src="/static/images/maplight_logo_partner.png" /></p>
+        </footer>
+        -->
+    </div>
+</div>
+
         <!-- end main container -->
 
         <!-- begin scripts -->
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/modernizr-2.5.3.min.js"></script>
+        <script src="/static/scripts/d3.js"></script>
+        <script src="/static/scripts/app.js"></script>
         <!-- end scripts -->
 
         <!-- begin chartbeat -->
