@@ -16,7 +16,7 @@ window.appConfig = {
     axis_x_label: "Year",
     axis_y_label: "Number of Licenses",
     rotated: true,
-    labels: false,   
+    labels: false,
     grid_value1: "1000",
     grid_value2: "2000",
     grid_value3: "3000",
