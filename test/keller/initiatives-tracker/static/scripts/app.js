@@ -1,74 +1,98 @@
-    var w = 400, //width
-        h = 420, //height
-        r = 180, //radius
-        pi = Math.PI,
-        //color = d3.scale.category20c();
-        //border = 5,
-        outerRadius = w / 2 - 10,
-        innerRadius = w / 3,
-        data = [
-            {"value": chartConfig.support_percent},
-            {"value": chartConfig.oppose_percent}
-        ];
+    $(window).load(function() {
+        if (Modernizr.svg) { // if svg is supported, draw dynamic chart
+            var chartContainerWidth = $("#chart-container").width() / 2;
+            var chartContainerHeight = $("#chart-container").height();
+            drawGraphic(chartContainerWidth, chartContainerHeight);
+            window.onresize = function(){
+                $graphic.empty();
+                var chartContainerWidth = $("#chart-container").width() / 2;
+                var chartContainerHeight = $("#chart-container").height();
+                drawGraphic(chartContainerWidth, chartContainerHeight);
+            };
+        }
+    });
 
-    var color = d3.scale.ordinal()
-        .domain(["one","two"])
-        .range(["#B4DD0A", "#66D8D8"]);
+    var $graphic = $("#chart-container");
 
-    var vis = d3.select(".chart-container")
-        .append("svg:svg")
-        .data([data])
-        .attr("width", "100%")
-        .attr("height", "100%")
-        .attr('viewBox','0 0 '+Math.min(w, h) + ' ' + Math.min(w, h))
-        .attr('preserveAspectRatio','xMinYMin')
-        .append("svg:g")
-        .attr("transform", "translate(" + Math.min(w, h) / 2 + "," + Math.min(w, h) / 2 + ")");
+    function drawGraphic(w, h) {
+        var pi = Math.PI,
+            //w = 100, //width
+            //h = 100, //height
+            //r = 100, //radius
+            //color = d3.scale.category20c();
+            //border = 5,
+            //outerRadius = w / 1,
+            //innerRadius = w / 3,
 
-    /*
-    var vis = d3.select(".chart-container")
-        .append("svg:svg")
-        .data([data])
-        .attr("width", w)
-        .attr("height", h)
-        .append("svg:g")
-        .attr("transform", "translate(" + w / 2 + "," + h / 2 + ")");
-    */
+            data = [
+                {"value": chartConfig.support_percent},
+                {"value": chartConfig.oppose_percent}
+            ];
 
-    var arc = d3.svg.arc() //this will create <path> elements for us using arc data
-        .outerRadius(r);
+        $graphic.empty();
 
-    var arcBorder = d3.svg.arc()
-        .innerRadius(outerRadius)
-        .outerRadius(outerRadius + 10);
+        var color = d3.scale.ordinal()
+            .domain(["one","two"])
+            .range(["#B4DD0A", "#66D8D8"]);
 
-    var spaceBorder = d3.svg.arc()
-        .innerRadius(outerRadius)
-        .outerRadius(outerRadius);
+        var vis = d3.select("#chart-container")
+            .append("svg:svg")
+            .data([data])
+            .attr("width", "100%")
+            .attr("height", "100%")
 
-    var pie = d3.layout.pie()
-        .value(function(d){
-            return d.value;
-        })
-        .startAngle(chartConfig.start_angle * (pi/180))
-        .endAngle(chartConfig.end_angle * (pi/180));
+            //.attr('viewBox','0 0 '+Math.min(w, h) + ' ' + Math.min(w, h))
+            //.attr('preserveAspectRatio','xMinYMin')
+            //.attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+            //.attr("transform", "translate(" + Math.min(w, h) / 2 + "," + Math.min(w, h) / 2 + ")");
+            //.attr("transform", "translate(200, 200)");
 
-    var arcs = vis.selectAll("g.slice") //this selects all <g> elements with class slice (there aren't any yet)
-        .data(pie) //array of arcs, each having startAngle, endAngle and value properties
-        .enter()
             .append("svg:g")
-            .attr("class", "slice");
+            .attr("transform", "translate(" + w + "," + h + ")")
 
-        arcs.append("svg:path")
-            .attr("fill", function(d, i){
-                return color(i);
-            }) //set the color for each slice to be chosen from the color function defined above
-            .attr("d", arc); //creates SVG path using the associated data (pie) with the arc drawing function
+        var arc = d3.svg.arc() //this will create <path> elements for us using arc data
+            .outerRadius(w - 5);
 
-        arcs.append("svg:path")
-            .attr("fill", "#999999")
-            .attr("d", arcBorder);
+        var innerNugget = d3.svg.arc()
+            .innerRadius(0)
+            .outerRadius(10);
 
-        arcs.append("svg:path")
-            .attr("fill", "#ffffff")
-            .attr("d", spaceBorder);
+        var spaceBorder = d3.svg.arc()
+            .innerRadius(w - 20)
+            .outerRadius(w - 10);
+
+        var arcBorder = d3.svg.arc()
+            .innerRadius(w - 10)
+            .outerRadius(w);
+
+        var pie = d3.layout.pie()
+            .value(function(d){
+                return d.value;
+            })
+            .startAngle(chartConfig.start_angle * (pi / 180))
+            .endAngle(chartConfig.end_angle * (pi / 180));
+
+        var arcs = vis.selectAll("g.slice")
+            .data(pie)
+            .enter()
+                .append("svg:g")
+                .attr("class", "slice");
+
+            arcs.append("svg:path")
+                .attr("fill", function(d, i){
+                    return color(i);
+                })
+                .attr("d", arc);
+
+            arcs.append("svg:path")
+                .attr("fill", "#ffffff")
+                .attr("d", innerNugget);
+
+            arcs.append("svg:path")
+                .attr("fill", "#ffffff")
+                .attr("d", spaceBorder);
+
+            arcs.append("svg:path")
+                .attr("fill", "#999999")
+                .attr("d", arcBorder);
+    }

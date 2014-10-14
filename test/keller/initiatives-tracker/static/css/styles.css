@@ -1,7 +1,7 @@
 /* main container */
 .ledger { max-width: 100%; height: auto; color: #ffffff; /*border-bottom: 5px solid #000;*/ position: relative; }
 
-.contributors { background: #e6e6e6; min-height: 330px; position: relative; padding: 0 0 0 0; z-index: 4; }
+.contributors { background: #e6e6e6; min-height: 220px; height: 300px; position: relative; padding: 0 0 0 0; z-index: 4; }
 
 /* main columns */
 .support,
@@ -30,7 +30,7 @@ header h1 { padding: 0 2% 0 2%; font-size: 16px; font-family: "proxima-nova-cond
 /* display of line-item contributions */
 section.display ol { width: 100%; padding: 2% 0% 2% 0%; }
 
-section.display ol li { width: 96%; min-height: 1.5em; color: #000; margin: 0 2% .5% 2%; border-bottom: 1px solid #000; }
+section.display ol li { min-width: 364px; width: 96%; min-height: 1.5em; color: #000; margin: 0 2% .5% 2%; border-bottom: 1px solid #000; }
 
 section.display ol li:last-child { border-bottom: 0px solid #000; }
 
@@ -42,7 +42,7 @@ section.display ol li dl { position: relative; font-size: 13px; width: 100%; }
 
 .oppose section.display ol li dl dt { width: 65%; text-align: right; float: right; }
 
-.oppose section.display ol li dl dd { width: 20%; text-align: left; float: left; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 900; }
+.oppose section.display ol li dl dd { min-width: 100px; width: 20%; text-align: left; float: left; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 900; }
 
 .support-contributor-totals,
 .oppose-contributor-totals { position: absolute; z-index: 15; margin-bottom: .5%; color: #999999; font-size: 12px; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 900; text-transform: uppercase; }
@@ -55,7 +55,7 @@ section.display ol li dl { position: relative; font-size: 13px; width: 100%; }
 aside.totals { background: none; width: 100%; height: 60px; margin-top: 0px; color: #000; padding-bottom: 5px; position: relative; z-index: 6; }
 
 aside.totals .support-total,
-aside.totals .oppose-total { background: none; width: 10%; min-height: 25px; height: auto; margin: 15px 0 0 0; }
+aside.totals .oppose-total { background: none; min-width: 147px; width: 10%; min-height: 25px; height: auto; margin: 15px 0 0 0; }
 
 aside.totals .support-total { float: left; margin-right: 0; }
 aside.totals .oppose-total { float: right; margin-left: 0; }
@@ -70,42 +70,33 @@ aside.totals div dl dt { color: #999999; font-size: 12px; font-family: "proxima-
 aside.totals div dl dd { color: #000; font-size: 20px; font-weight: 900; }
 
 .rule-style-left,
-.rule-style-right { width: 35.2%; height: 1px; background: #000000; margin-top: 40px; }
+.rule-style-right { max-width: 655px; width: 35.2%; height: 1px; background: #000000; margin-top: 40px; }
 
 .rule-style-left { float: left; }
 
 .rule-style-right { float: right; }
 
-.chart-container { width: 10%; height: 200px; margin: -2% 45% 0 45%; position: absolute; z-index: 5; }
+#chart-container { width: 200px; height: 100px; margin: -2% 0 0 -100px; position: absolute; bottom: 0; left:50%; z-index: 10; }
 
-.chart-container svg { background: none; z-index: 5;
-
-    /*
-    left: 0;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    */
-
-}
+#chart-container svg { background: none; z-index: 5; }
 
 footer { background: #ffffff; width: 100%; height: auto; margin: 20px 0 0 0; padding-bottom: 20px; border-bottom: 5px solid #000; }
 
-footer .text { width: 49%; margin-left: 1%; display: block-inline; float: left; color: #999999; font-size: 12px; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; }
+footer .text { width: 49%; margin-left: 0%; display: block-inline; float: left; color: #999999; font-size: 12px; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; }
 
 footer .text ol { width: 100%; padding: 2% 0% 2% 0%; }
 
-footer .text ol li { width: 96%; min-height: 1.5em; margin: 0 2% .5% 2%; }
+footer .text ol li { width: 100%; min-height: 1.5em; margin: 0 0 .5% 2%; }
 
-footer .text ol li dl { position: relative; width: 25%; }
+footer .text ol li dl { position: relative; width: 100%; }
 
-footer .text ol li dl dt { width: 50%; text-align: left; float: left; text-transform: uppercase; }
+footer .text ol li dl dt { min-width: 90px; margin-right: 5%; text-align: left; float: left; text-transform: uppercase; }
 
-footer .text ol li dl dd { width: 30%; text-align: right; float: right;  }
+footer .text ol li dl dd { min-width: 75%; }
 
 footer .logo { width: 49%; margin-right: 1%; display: block-inline; float: right; }
 
-footer .logo img { float: right; width: 200px;}
+footer .logo img { float: right; width: 120px;}
 
 /* misc typography */
 .bold-accent { color: yellow; text-transform: uppercase; }
@@ -114,21 +105,53 @@ footer .logo img { float: right; width: 200px;}
 
 .align-right { text-align: right; }
 
-/* collapse the two main columns under < 500px */
-@media screen and (max-width: 700px) {
-
-    /*
-    .support section.display ol li dl dt { width: 60%; }
-    .support section.display ol li dl dd { width: 30%; }
-    .oppose section.display ol li dl dt { width: 60%; }
-    .oppose section.display ol li dl dd { width: 30%; }
-    */
+@media screen and (max-width: 1550px) {
 
 }
 
+@media screen and (max-width: 1469px) {
+    .contributors { height: 270px; }
+}
+
+@media screen and (max-width: 999px) {
+    .contributors { height: 260px; }
+    .rule-style-left,
+    .rule-style-right { width: 25.2%; }
+}
+
+@media screen and (max-width: 840px) {
+    .contributors { height: 250px; }
+    section.display ol { width: 100%; padding: 2% 0% 2% 0%; }
+    section.display ol li { min-width: 90px; width: 96%; margin: 0 2% .5% 2%; }
+    section.display ol li dl { position: relative; font-size: 13px; width: 100%; }
+    .support section.display ol li dl dt { width: 65%; }
+    .support section.display ol li dl dd { min-width: 100px; width: 25%; }
+    .oppose section.display ol li dl dt { width: 65%; }
+    .oppose section.display ol li dl dd { min-width: 100px; width: 25%; }
+}
+
+@media screen and (max-width: 634px) {
+    .contributors { height: 230px; }
+    #chart-container { width: 175px; height: 87px; margin: -2% 0 0 -87px; }
+}
 
 @media screen and (max-width: 633px) {
+    .contributors { height: auto; }
     .support,
     .oppose { width: 100%; height: auto; display: block; position: relative; z-index: 10; }
     .oppose { position: relative; }
+    .rule-style-left,
+    .rule-style-right { display: none; }
+}
+
+@media screen and (max-width: 510px) {
+    #chart-container { width: 175px; height: 87px; margin: -2% 0 0 -87px; }
+}
+
+@media screen and (max-width: 475px) {
+    #chart-container { width: 140px; height: 70px; margin: -2% 0 0 -70px; }
+}
+
+@media screen and (max-width: 450px) {
+    #chart-container { width: 110px; height: 55px; margin: -2% 0 0 -55px; }
 }
