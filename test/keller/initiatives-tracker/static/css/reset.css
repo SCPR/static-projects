@@ -73,8 +73,6 @@ a img { border: none; }
 
 html { -webkit-text-size-adjust: none; }
 
-body { font-size: 100%; font-weight: normal; }
-
 a { text-decoration: none; color: inherit; }
 
 img { display: block; }
@@ -102,4 +100,4 @@ ul,
 ol,
 li { display: block; }
 
-body { background-color: #ffffff; font-family: "proxima-nova",  "Avenir Next",  "Avenir",  "Lucida Grande",  "Corbel",  "Tahoma",  Arial,  sans-serif; }
+body { background-color: #ffffff; font-family: "proxima-nova-condensed", "Avenir Next",  "Avenir",  "Lucida Grande",  "Corbel",  "Tahoma",  Arial,  sans-serif; font-size: 100%; font-weight: normal; }
