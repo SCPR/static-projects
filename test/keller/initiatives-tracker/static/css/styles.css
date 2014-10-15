@@ -1,4 +1,6 @@
 /* main container */
+body { height: 493px; min-height: 493px; max-height: 493px; }
+
 .ledger { max-width: 100%; height: auto; color: #ffffff; /*border-bottom: 5px solid #000;*/ position: relative; }
 
 .contributors { background: #e6e6e6; min-height: 220px; height: 300px; position: relative; padding: 0 0 0 0; z-index: 4; }
@@ -80,7 +82,7 @@ aside.totals div dl dd { color: #000; font-size: 20px; font-weight: 900; }
 
 #chart-container svg { background: none; z-index: 5; }
 
-footer { background: #ffffff; width: 100%; height: auto; margin: 20px 0 0 0; padding-bottom: 20px; border-bottom: 5px solid #000; }
+footer { background: #ffffff; width: 100%; height: auto; margin: 20px 0 0 0; border-bottom: 5px solid #000; }
 
 footer .text { width: 49%; margin-left: 0%; display: block-inline; float: left; color: #999999; font-size: 12px; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; }
 
@@ -131,27 +133,49 @@ footer .logo img { float: right; width: 120px;}
 }
 
 @media screen and (max-width: 634px) {
-    .contributors { height: 230px; }
+    .contributors { height: 250px; }
     #chart-container { width: 175px; height: 87px; margin: -2% 0 0 -87px; }
 }
 
-@media screen and (max-width: 633px) {
-    .contributors { height: auto; }
-    .support,
-    .oppose { width: 100%; height: auto; display: block; position: relative; z-index: 10; }
-    .oppose { position: relative; }
+@media screen and (max-width: 625px) {
+    .contributors { height: 315px; }
+    .support section.display ol li dl dt { width: 50%; }
+    .support section.display ol li dl dd { width: 50%; }
+    .oppose section.display ol li dl dt { width: 50%; }
+    .oppose section.display ol li dl dd { width: 50%; }
     .rule-style-left,
     .rule-style-right { display: none; }
-}
-
-@media screen and (max-width: 510px) {
     #chart-container { width: 175px; height: 87px; margin: -2% 0 0 -87px; }
 }
 
 @media screen and (max-width: 475px) {
+    .contributors { height: 356px; }
+    section.display ol li dl { font-size: 12px; }
+    .support section.display ol li dl dt { width: 54%; }
+    .support section.display ol li dl dd { width: 46%; }
+    .oppose section.display ol li dl dt { width: 54%; }
+    .oppose section.display ol li dl dd { width: 46%; }
     #chart-container { width: 140px; height: 70px; margin: -2% 0 0 -70px; }
 }
 
 @media screen and (max-width: 450px) {
     #chart-container { width: 110px; height: 55px; margin: -2% 0 0 -55px; }
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    section.display ol { width: 98%; margin: 0 1% 0 1%; }
+    section.display ol li dl { font-size: 13px; }
+    .support section.display ol li dl dt { width: 100%; }
+    .support section.display ol li dl dd { width: 100%; text-align: left; }
+    .oppose section.display ol li dl dt { width: 100%; }
+    .oppose section.display ol li dl dd { width: 100%; text-align: right;}
+    .support-contributor-totals,
+    .oppose-contributor-totals { font-size: 11px;  }
+    aside.totals .support-total,
+    aside.totals .oppose-total { min-width: 100px; width: 10%; }
+    aside.totals .support-total { float: left; margin-left: 10px; }
+    aside.totals .oppose-total { float: right; margin-right: 10px; }
+    aside.totals div dl dt { font-size: 10px; }
+    aside.totals div dl dd { font-size: 14px;  }
+    #chart-container { width: 90px; height: 45px; margin: -2% 0 0 -45px; }
 }
