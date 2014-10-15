@@ -16,18 +16,18 @@ header { background: #000; text-transform: uppercase; padding: 2% 0% 2% 0%;}
 
 header h1 { padding: 0 2% 0 2%; font-size: 16px; font-family: "proxima-nova-condensed", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; }
 
-.support-accent { color: #B4DD0A; font-size: 21px; font-family: "proxima-nova-condensed", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 900; }
+.support-accent { color: #B4DD0A; font-size: 21px; font-family: "proxima-nova-condensed", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 400; }
 
-.oppose-accent { color: #66D8D8; font-size: 21px; font-family: "proxima-nova-condensed", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 900; }
+.oppose-accent { color: #66D8D8; font-size: 21px; font-family: "proxima-nova-condensed", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 400; }
 
 /* display of contributions titles */
 .support section.display { width: 100%; padding-bottom: 1%; position: relative; }
 
 .oppose section.display { width: 100%; padding-bottom: 1%; position: relative; }
 
-.support section.display h1 { font-size: 12px; font-weight: 900; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; background: #B4DD0A; text-transform: uppercase; padding: 1% 0 1% 2%; }
+.support section.display h1 { font-size: 12px; font-weight: 700; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; background: #B4DD0A; text-transform: uppercase; padding: 1% 0 1% 2%; }
 
-.oppose section.display h1 { font-size: 12px; font-weight: 900; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; background: #66D8D8;  text-transform: uppercase; padding: 1% 2% 1% 0; }
+.oppose section.display h1 { font-size: 12px; font-weight: 700; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; background: #66D8D8;  text-transform: uppercase; padding: 1% 2% 1% 0; }
 
 /* display of line-item contributions */
 section.display ol { width: 100%; padding: 2% 0% 2% 0%; }
@@ -40,14 +40,14 @@ section.display ol li dl { position: relative; font-size: 13px; width: 100%; }
 
 .support section.display ol li dl dt { width: 65%; text-align: left; float: left; }
 
-.support section.display ol li dl dd { width: 20%; text-align: right; float: right; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 900; }
+.support section.display ol li dl dd { width: 20%; text-align: right; float: right; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 700; }
 
 .oppose section.display ol li dl dt { width: 65%; text-align: right; float: right; }
 
-.oppose section.display ol li dl dd { min-width: 100px; width: 20%; text-align: left; float: left; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 900; }
+.oppose section.display ol li dl dd { min-width: 100px; width: 20%; text-align: left; float: left; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 700; }
 
 .support-contributor-totals,
-.oppose-contributor-totals { position: absolute; z-index: 15; margin-bottom: .5%; color: #999999; font-size: 12px; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 900; text-transform: uppercase; }
+.oppose-contributor-totals { position: absolute; z-index: 15; margin-bottom: .5%; color: #999999; font-size: 12px; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 700; text-transform: uppercase; }
 
 .support-contributor-totals { left: 1%; bottom: 0; }
 
@@ -67,9 +67,9 @@ aside.totals .oppose-total dl { background: none; }
 
 aside.totals div dl { width: 100%; text-align: center; }
 
-aside.totals div dl dt { color: #999999; font-size: 12px; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 900; text-transform: uppercase; }
+aside.totals div dl dt { color: #999999; font-size: 12px; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 700; }
 
-aside.totals div dl dd { color: #000; font-size: 20px; font-weight: 900; }
+aside.totals div dl dd { color: #000; font-size: 20px; font-weight: 700; }
 
 .rule-style-left,
 .rule-style-right { max-width: 655px; width: 35.2%; height: 1px; background: #000000; margin-top: 40px; }
