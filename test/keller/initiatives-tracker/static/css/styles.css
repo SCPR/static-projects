@@ -87,17 +87,11 @@ footer { background: #ffffff; width: 100%; height: auto; margin: 20px 0 0 0; bor
 footer .text { width: 49%; margin-left: 0%; display: block-inline; float: left; color: #999999; font-size: 12px; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; }
 
 footer .text ol { width: 100%; padding: 2% 0% 2% 0%; }
-
 footer .text ol li { width: 100%; min-height: 1.5em; margin: 0 0 .5% 2%; }
-
 footer .text ol li dl { position: relative; width: 100%; }
-
 footer .text ol li dl dt { min-width: 90px; margin-right: 5%; text-align: left; float: left; text-transform: uppercase; }
-
 footer .text ol li dl dd { min-width: 75%; }
-
 footer .logo { width: 49%; margin-right: 1%; display: block-inline; float: right; }
-
 footer .logo img { float: right; width: 120px;}
 
 /* misc typography */
@@ -107,21 +101,21 @@ footer .logo img { float: right; width: 120px;}
 
 .align-right { text-align: right; }
 
-@media screen and (max-width: 1550px) {
+@media all and (max-width: 1550px) {
 
 }
 
-@media screen and (max-width: 1469px) {
+@media all and (max-width: 1469px) {
     .contributors { height: 270px; }
 }
 
-@media screen and (max-width: 999px) {
+@media all and (max-width: 999px) {
     .contributors { height: 260px; }
     .rule-style-left,
     .rule-style-right { width: 25.2%; }
 }
 
-@media screen and (max-width: 840px) {
+@media all and (max-width: 840px) {
     .contributors { height: 250px; }
     section.display ol { width: 100%; padding: 2% 0% 2% 0%; }
     section.display ol li { min-width: 90px; width: 96%; margin: 0 2% .5% 2%; }
@@ -132,38 +126,55 @@ footer .logo img { float: right; width: 120px;}
     .oppose section.display ol li dl dd { min-width: 100px; width: 25%; }
 }
 
-@media screen and (max-width: 634px) {
-    .contributors { height: 250px; }
-    #chart-container { width: 175px; height: 87px; margin: -2% 0 0 -87px; }
-}
-
-@media screen and (max-width: 625px) {
-    .contributors { height: 315px; }
+@media all and (max-width: 700px) {
+    .contributors { height: 275px; }
     .support section.display ol li dl dt { width: 50%; }
     .support section.display ol li dl dd { width: 50%; }
     .oppose section.display ol li dl dt { width: 50%; }
     .oppose section.display ol li dl dd { width: 50%; }
-    .rule-style-left,
-    .rule-style-right { display: none; }
-    #chart-container { width: 175px; height: 87px; margin: -2% 0 0 -87px; }
 }
 
-@media screen and (max-width: 475px) {
-    .contributors { height: 356px; }
-    section.display ol li dl { font-size: 12px; }
+@media all and (max-width: 600px) {
+    .contributors { height: 300px; }
+    .rule-style-left,
+    .rule-style-right { display: none; }
+}
+
+@media all and (max-width: 480px) {
+    .contributors { height: 300px; }
+    section.display ol li dl { font-size: 13px; }
     .support section.display ol li dl dt { width: 54%; }
     .support section.display ol li dl dd { width: 46%; }
     .oppose section.display ol li dl dt { width: 54%; }
     .oppose section.display ol li dl dd { width: 46%; }
-    #chart-container { width: 140px; height: 70px; margin: -2% 0 0 -70px; }
+    #chart-container { width: 180px; height: 90px; margin: -2% 0 0 -90px; }
 }
 
-@media screen and (max-width: 450px) {
-    #chart-container { width: 110px; height: 55px; margin: -2% 0 0 -55px; }
+@media all and (max-width: 453px) {
+    .contributors { height: 320px; }
+    section.display ol li dl { font-size: 13px; }
+    .support section.display ol li dl dt { width: 100%; }
+    .support section.display ol li dl dd { width: 100%; text-align: left; }
+    .oppose section.display ol li dl dt { width: 100%; }
+    .oppose section.display ol li dl dd { width: 100%; text-align: right;}
+    #chart-container { width: 175px; height: 87px; margin: -2% 0 0 -87px; }
 }
 
-@media screen and (max-width: 300px) {
-    .contributors { height: 322px; }
+@media all and (max-width: 445px) {
+    .contributors { height: 330px; }
+    .support-contributor-totals,
+    .oppose-contributor-totals { font-size: 11px; }
+    aside.totals .support-total,
+    aside.totals .oppose-total { min-width: 90px; width: 10%; }
+    aside.totals .support-total { float: left; margin-left: 5px; }
+    aside.totals .oppose-total { float: right; margin-right: 5px; }
+    aside.totals div dl dt { font-size: 11px; }
+    aside.totals div dl dd { font-size: 17px;  }
+
+}
+
+@media all and (max-width: 399px) {
+    .contributors { height: 330px; }
     section.display ol { width: 98%; margin: 0 1% 0 1%; }
     section.display ol li dl { font-size: .73em; }
     .support section.display ol li dl dt { width: 100%; }
@@ -176,11 +187,43 @@ footer .logo img { float: right; width: 120px;}
     aside.totals .oppose-total { min-width: 100px; width: 10%; }
     aside.totals .support-total { float: left; margin-left: 5px; }
     aside.totals .oppose-total { float: right; margin-right: 5px; }
-    aside.totals div dl dt { font-size: 10px; }
-    aside.totals div dl dd { font-size: 12px;  }
-    #chart-container { width: 90px; height: 45px; margin: -2% 0 0 -45px; }
+    aside.totals div dl dt { font-size: 12px; }
+    aside.totals div dl dd { font-size: 14px;  }
 }
 
+@media all and (max-width: 370px) {
+    #chart-container { width: 150px; height: 75px; margin: -2% 0 0 -75px; }
+}
+
+@media all and (max-width: 335px) {
+    #chart-container { width: 140px; height: 70px; margin: -2% 0 0 -70px; }
+}
+
+@media all and (max-width: 320px) {
+    #chart-container { width: 125px; height: 62px; margin: -2% 0 0 -62px; }
+}
+
+@media all and (max-width: 315px) {
+    footer .text { font-size: 10px; }
+    footer .text ol li dl { position: relative; width: 100%; }
+    footer .text ol li dl dt { min-width: 78px; margin-right: 10%; text-align: left; float: left; text-transform: uppercase; }
+    footer .text ol li dl dd { min-width: 85%; }
+}
+
+@media all and (max-width: 300px) {
+    #chart-container { width: 110px; height: 55px; margin: -2% 0 0 -55px; }
+}
+
+@media all and (max-width: 287px) {
+    #chart-container { display: none; }
+    footer .text ol { width: 100%; padding: 2% 0% 2% 0%; }
+    footer .text ol li { width: 100%; min-height: 1.5em; margin: 0 0 .5% 2%; }
+    footer .text ol li dl { position: relative; width: 100%; }
+    footer .text ol li dl dt { width: 100%; }
+    footer .text ol li dl dd { width: 100%; }
+}
+
+/*
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
     section.display ol { width: 98%; margin: 0 1% 0 1%; }
     section.display ol li dl { font-size: 13px; }
@@ -198,3 +241,4 @@ footer .logo img { float: right; width: 120px;}
     aside.totals div dl dd { font-size: 14px;  }
     #chart-container { width: 90px; height: 45px; margin: -2% 0 0 -45px; }
 }
+*/
