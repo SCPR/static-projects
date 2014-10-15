@@ -54,7 +54,7 @@ section.display ol li dl { position: relative; font-size: 13px; width: 100%; }
 .oppose-contributor-totals { right: 1%; bottom: 0; }
 
 /* display of total contributions */
-aside.totals { background: none; width: 100%; height: 60px; margin-top: 0px; color: #000; padding-bottom: 5px; position: relative; z-index: 6; }
+aside.totals { background: none; width: 100%; height: 60px; margin-top: 0px; color: #000; padding-bottom: 5px; position: relative; z-index: 6; border-bottom: .1em solid #999999; }
 
 aside.totals .support-total,
 aside.totals .oppose-total { background: none; min-width: 147px; width: 10%; min-height: 25px; height: auto; margin: 15px 0 0 0; }
