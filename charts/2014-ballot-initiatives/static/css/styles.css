@@ -67,7 +67,7 @@ aside.totals .oppose-total dl { background: none; }
 
 aside.totals div dl { width: 100%; text-align: center; }
 
-aside.totals div dl dt { color: #999999; font-size: 12px; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 700; }
+aside.totals div dl dt { color: #999999; font-size: 12px; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 700; text-transform: uppercase; }
 
 aside.totals div dl dd { color: #000; font-size: 20px; font-weight: 700; }
 
