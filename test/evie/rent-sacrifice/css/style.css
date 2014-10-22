@@ -1,0 +1,84 @@
+body {font-size:62.5%;}
+
+body.extraWide {font-size: 85%;}
+body.wide {font-size: 75%;}
+
+body.narrow {font-size: 50%;}
+body.extraNarrow {font-size: 40%;}
+
+#box {
+    background-image: url('../img/background.png');
+    background-repeat: no-repeat;   
+    background-size: contain;
+
+}
+
+#inner-box {
+	width: 100%; 
+	position: relative; 
+	padding-top: 75%;
+}
+
+#icon {
+	position: absolute; 
+	top: 15%; 
+	bottom: 65%; 
+	left: 10%; 
+	right: 65%;
+	width: 25%;
+	height: 20%;
+}
+
+#quotes {
+	font-size: 2.2em; 
+	font-weight: bold; 
+	position: absolute; 
+	top: 10%; 
+	bottom: 65%; 
+	left: 60%; 
+	right: 65%; 
+	width: 35%; 
+	height: 20%;
+}
+
+#iconimg {
+	width: 100%;
+}
+
+#name {
+	font-size: 2.2em; 
+	font-style: italic; 
+	position: absolute; 
+	top: 37%; 
+	bottom: 65%; 
+	left: 85%; 
+	right: 65%; 
+	width: 30%; 
+	height: 20%;
+}
+
+#location {
+	font-size: 2.2em; 
+	font-style: italic; 
+	position: absolute; 
+	top: 40%; 
+	bottom: 65%; 
+	left: 85%; 
+	right: 65%; 
+	width: 30%; 
+	height: 20%;
+}
+
+#button {
+	position: absolute; 
+	top: 48%; 
+	bottom: 10%; 
+	left: 75%; 
+	right: 15%; 
+	width: 15%; 
+	height: 10%;
+}
+
+#next {
+	width: 100%;
+}
