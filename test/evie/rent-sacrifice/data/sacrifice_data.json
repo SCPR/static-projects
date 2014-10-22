@@ -1,0 +1,122 @@
+[
+  {
+    "name":"Theresa P-K.",
+    "location":"Eagle Rock",
+    "quote":"I am always bargain shopping for food and we rarely go out to eat. Personally, I am always conscience of what I spend and find myself questioning every purchase I make asking, \"is it worth it?\" And with each passing month it seems we find ourselves looking for ways to cut our spending even more.",
+    "image":"grocery"
+  },
+  {
+    "name":"T.H.H.",
+    "location":"Temple City",
+    "quote":"We shop at 99 cent stores as much as possible. I go to the day old bread store and I am waiting for World Harvest food bank to re-open - we have only 300.00 a month for food for 5 people.",
+    "image":"grocery"
+  },
+  {
+    "name":"Jill R.",
+    "location":"El Monte",
+    "quote":"I continue to drive a 15 year old car with only liability and uninsured motorist coverage",
+    "image":"car"
+  },
+  {
+    "name":"Darla W.",
+    "location":"Signal Hill",
+    "quote":"We are lucky we can pay our bills, get groceries and go out to eat some times. I don't know how people who make so much less than I do survive.",
+    "image":"bill"
+  },
+  {
+    "name":"Pablo E.",
+    "location":"Long Beach",
+    "quote":"I have sacrificed purchasing a new computer or a camera which prevents me from following my dream to be a photographer.",
+    "image":"dreams"
+  },
+  {
+    "name":"Danielle A.",
+    "location":"Glendale",
+    "quote":"Like many millennials, I find it kind of hard to participate in the economy in more adult ways. I won't be buying a house, car, or having children anytime soon even if I want to.",
+    "image":"holding_pattern"
+  },
+  {
+    "name":"Danielle A.",
+    "location":"Glendale",
+    "quote":"I am just kind of in this holding pattern that will probably get a little worse. I know I have things pretty good compared to many in this city, but the pinch is totally still there. There are really not that many options.",
+    "image":"holding_pattern"
+  },
+  {
+    "name":"Marilyn C.",
+    "location":"",
+    "quote":"I can't afford to do anything other than eat-in cheaply, my social life is the worst since everyone I know has significant others to share their rent costs with",
+    "image":"entertainment"
+  },
+  {
+    "name":"Dorothy K.",
+    "location":"Oceanside",
+    "quote":"I get about 17,000 per year with Social Security and work, so I cook and eat cheaply. I don't eat out.",
+    "image":"entertainment"
+  },
+  {
+    "name":"Wendy S.",
+    "location":"Burbank",
+    "quote":"We hardly ever eat out or buy tickets for entertainment. We often buy groceries at discount stores. We shop at thrift stores when feasible. Rent is not the only large expense we have, but at least we are out of debt.",
+    "image":"entertainment"
+  },
+  {
+    "name":"Barbara G.",
+    "location":"",
+    "quote":"Internet, cell phone, Costco membership, dinners out with friends, movies. �Many of the things I took as second nature in my day to day life are now all weighed for cost effectiveness.",
+    "image":"entertainment"
+  },
+  {
+    "name":"Jonathan C.",
+    "location":"Irvine",
+    "quote":"We�ve sacrificed our long term financial future - any possibility of getting a �real� house, any possibility of not living paycheck to paycheck.",
+    "image":"house"
+  },
+  {
+    "name":"T.H.H.",
+    "location":"Temple City",
+    "quote":"The house we rent has no heat, no dish washer, no central air. It has not been updated since the 70's.",
+    "image":"house"
+  },
+  {
+    "name":"Kevin L.",
+    "location":"Pasadena",
+    "quote":"I now own a house for the simple reason that rent had gotten so high that a $300,000 mortgage is actually cheaper than renting. After figuring in the annual tax break on interest, I pay $500 per month less than it would cost to rent something comparable.",
+    "image":"house"
+  },
+  {
+    "name":"Melissa B.",
+    "location":"Las Vegas",
+    "quote":"I lived in Glendale CA for 23 years and moved away because I could no longer afford rent. Rent in 1994 was $695 per month. In 2008 I began managing my 8 unit complex so I could stay there at $1000 per month. I have been on permanent disability since 2001.",
+    "image":"relocation"
+  },
+  {
+    "name":"Marco P.",
+    "location":"Monterey",
+    "quote":"I moved out of Los Angeles because of several key issues: safety (after the Rodney King riots, I saw that a crisis situation could escalate out of control, and that gangs can take control), health (air quality), congestion (traffic, waste of time and stress), and expense.",
+    "image":"relocation"
+  },
+  {
+    "name":"Jill R.",
+    "location":"Pomona",
+    "quote":"A little over 6 months ago I moved to Pomona because it was the lowest rent I could find within an hour bus ride to L.A. �It is $900. On the plus side it has 2 bedrooms and allows dogs. On the downside: No pool, no AC unit.",
+    "image":"relocation"
+  },
+  {
+    "name":"Melissa M.",
+    "location":"Mill Valley",
+    "quote":"We now live in Mill Valley, but that is because my husband, myself and our two children could no longer afford to live on our own. We have moved in with my mother-in-law who owns her place outright. It is a two bedroom, but she has been incredibly gracious.",
+    "image":"relocation"
+  },
+  {
+    "name":"Melissa B.",
+    "location":"",
+    "quote":"I eventually had a lot of credit card debt so essentially my income went to paying rent and utilities and credit card payments. I did not buy clothing or household items. I needed an updated computer to work on my art and writing but no solution for that at the time. I did have Medicare. I had had a bankruptcy while I was undergoing cancer treatment.",
+    "image":"clothes"
+  },
+  {
+    "name":"Frank O.",
+    "location":"",
+    "quote":"I had to sell my truck because I couldn�t afford to pump gas in it weekly anymore.",
+    "image":"car"
+  }
+]
