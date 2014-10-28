@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
    scaleFont();
 });
@@ -9,14 +10,15 @@ $(window).resize(function() {
 
 function scaleFont() {
 
-  var viewPortWidth = $(window).width();
+var viewPortWidth = $(window).width();
 
   if (viewPortWidth >= 1900) {$('body').attr('class','extraWide');}
   else if (viewPortWidth >= 1400) {$('body').attr('class','wide');}
   else if (viewPortWidth >= 1000) {$('body').attr('class','medium');}
-  else if (viewPortWidth >= 600) {$('body').attr('class','narrow');}
+  else if (viewPortWidth >= 700) {$('body').attr('class','narrow');}
   else {$('body').attr('class','extraNarrow');}
 };
+
 
 $.getJSON("data/sacrifice_data.json", function(data){
 

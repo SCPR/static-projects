@@ -3,6 +3,8 @@ body.narrow {font-size: 60%;}
 body.extraNarrow {font-size: 40%;}
 
 #box {
+	height: 720px;
+	background-color: #FCFBCA;
 
 }
 
@@ -16,18 +18,17 @@ body.extraNarrow {font-size: 40%;}
 }
 
 #content {
-	background-color: #FCFBCA;
-	padding-bottom: 5%;
+	padding-bottom: 20px;
 }
 
 
 #icon {
 	text-align: center;
-	padding: 5%;
+	padding: 20px;
 }
 
 #iconimg {
-	width: 80%;
+	width: 300px;
 }
 
 #category {
@@ -42,14 +43,14 @@ body.extraNarrow {font-size: 40%;}
 	width: 100%;
 	padding-left: 10%;
 	padding-right: 10%;
-	padding-top: 5%;
+	padding-top: 20px;
 }
 
 #name {
 	font-size: 4.0em; 
 	text-align: right;
 	padding-right: 10%;
-	padding-top: 5%;
+	padding-top: 20px;
 }
 
 #location {
@@ -61,7 +62,7 @@ body.extraNarrow {font-size: 40%;}
 #button {
 	float: left;
 	padding-left: 10%;
-	padding-top: 5%;
+	padding-top: 25px;
 	width: 30%;
 }
 
