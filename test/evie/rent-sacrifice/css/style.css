@@ -1,82 +1,68 @@
-body {font-size:62.5%;}
-
-body.extraWide {font-size: 85%;}
-body.wide {font-size: 75%;}
-
-body.narrow {font-size: 50%;}
+body.medium {font-size:80%;}
+body.narrow {font-size: 60%;}
 body.extraNarrow {font-size: 40%;}
 
 #box {
-    background-image: url('../img/background.png');
-    background-repeat: no-repeat;   
-    background-size: contain;
 
 }
 
-#inner-box {
-	width: 100%; 
-	position: relative; 
-	padding-top: 75%;
+#headline {
+	text-align: center;
+	background-color: #DDDD2F;
+	font-size: 10.0em;
+	font-family: 'Droid Sans', sans-serif;
+	font-weight: bold;
+
 }
+
+#content {
+	background-color: #FCFBCA;
+	padding-bottom: 5%;
+}
+
 
 #icon {
-	position: absolute; 
-	top: 15%; 
-	bottom: 65%; 
-	left: 10%; 
-	right: 65%;
-	width: 25%;
-	height: 20%;
-}
-
-#quotes {
-	font-size: 2.2em; 
-	font-weight: bold; 
-	position: absolute; 
-	top: 10%; 
-	bottom: 65%; 
-	left: 60%; 
-	right: 65%; 
-	width: 35%; 
-	height: 20%;
+	text-align: center;
+	padding: 5%;
 }
 
 #iconimg {
+	width: 80%;
+}
+
+#category {
+	text-align: center;
+	font-size: 8.0em;
+	font-weight: bold;
+}
+
+
+#quotes {
+	font-size: 4.0em; 
 	width: 100%;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-top: 5%;
 }
 
 #name {
-	font-size: 2.2em; 
-	font-style: italic; 
-	position: absolute; 
-	top: 37%; 
-	bottom: 65%; 
-	left: 85%; 
-	right: 65%; 
-	width: 30%; 
-	height: 20%;
+	font-size: 4.0em; 
+	text-align: right;
+	padding-right: 10%;
+	padding-top: 5%;
 }
 
 #location {
-	font-size: 2.2em; 
-	font-style: italic; 
-	position: absolute; 
-	top: 40%; 
-	bottom: 65%; 
-	left: 85%; 
-	right: 65%; 
-	width: 30%; 
-	height: 20%;
+	font-size: 4.0em; 
+	text-align: right;
+	padding-right: 10%;
 }
 
 #button {
-	position: absolute; 
-	top: 48%; 
-	bottom: 10%; 
-	left: 75%; 
-	right: 15%; 
-	width: 15%; 
-	height: 10%;
+	float: left;
+	padding-left: 10%;
+	padding-top: 5%;
+	width: 30%;
 }
 
 #next {
