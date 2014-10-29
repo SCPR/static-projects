@@ -1,20 +1,19 @@
-body.medium {font-size:80%;}
+body.medium {font-size: 80%;}
 body.narrow {font-size: 60%;}
 body.extraNarrow {font-size: 40%;}
 
 #box {
-	height: 720px;
+	height: 800px;
 	background-color: #FCFBCA;
-
 }
 
 #headline {
 	text-align: center;
 	background-color: #DDDD2F;
-	font-size: 10.0em;
+	font-size: 8.0em;
 	font-family: 'Droid Sans', sans-serif;
 	font-weight: bold;
-
+	padding: 0px;
 }
 
 #content {
@@ -28,7 +27,7 @@ body.extraNarrow {font-size: 40%;}
 }
 
 #iconimg {
-	width: 300px;
+	width: 200px;
 }
 
 #category {
@@ -39,7 +38,7 @@ body.extraNarrow {font-size: 40%;}
 
 
 #quotes {
-	font-size: 4.0em; 
+	font-size: 3.0em; 
 	width: 100%;
 	padding-left: 10%;
 	padding-right: 10%;
@@ -47,14 +46,14 @@ body.extraNarrow {font-size: 40%;}
 }
 
 #name {
-	font-size: 4.0em; 
+	font-size: 3.0em; 
 	text-align: right;
 	padding-right: 10%;
 	padding-top: 20px;
 }
 
 #location {
-	font-size: 4.0em; 
+	font-size: 3.0em; 
 	text-align: right;
 	padding-right: 10%;
 }
