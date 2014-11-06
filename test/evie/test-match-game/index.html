@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>KPCC Reporter Matching Quiz</title>
+	<link type="text/css" href="css/style.css" rel="stylesheet" />
+	
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+	<script src="js/app.js"></script>
+</head>
+
+<body>
+	<!--FB STUFF-->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=278973778787146";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- END FB STUFF-->
+	
+
+	<div id="overallCon">
+		<h2> How does your favorite KPCC voice look like? </h2>
+
+		<div id="introCon">
+		<p>Everyday, you turn on the radio, tune into 89.3, and enjoy all the news KPCC reporters bring to you. You know their voices so well that you can guess who the reporter is even before their sign-offs. We know you are proud of this, as a public radio fan.</p>
+
+		<p>But have you ever been curious how the KPCC reporters look like? Do they look similar to what you expected from their voices?</p>
+
+		<p>Take the quiz below and find out! Just listen to 12 short pieces of audio, drag the headshot to the voice you think it belongs to, and see if you are right. How many attempts will you take to get them all correct?</p>
+
+		</div>
+
+	<div id="scoreCon">
+			<div class="instruct">Drag the headshots below to their corresponding voice!</div>
+			<div class="score">Correct: <span class="numDisp" id="numCorrect">0</span></div>
+			<div class="score">Attempts: <span class="numDisp" id="numAttempts">0</span></div>
+		</div>
+		
+		<div style="clear:both"></div>
+
+		<div id="detail">
+			<div id="detailCon">
+				<div id="closebtn">X</div>
+				<div id="photoCon"></div>
+				<div id="correct"><h1>Correct!</h1></div>
+				<div id="desc"></div>
+			</div>
+		</div>
+
+		<div id="audioCon">
+			<!--DRAGGABLE THINGS-->
+			<div id="headCon" class="">
+				<div class="headcircle droppable" id="hsanden"><iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175490823&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>Sanden Totten</div>
+				<div class="headcircle droppable" id="hrebecca"><iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175490779&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>Rebecca Plevin</div>
+				<div class="headcircle droppable" id="hdeepa"><iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175490442&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>Deepa Fernandes</div>
+				<div class="headcircle droppable" id="hmolly"><iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175497032&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>Molly Peterson</div>
+				<div class="headcircle droppable" id="hjed"><iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175490516&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>Jed Kim</div>
+				<div class="headcircle droppable" id="hsharon"><iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175490878&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>Sharon McNary</div>
+				<div class="headcircle droppable" id="hannie"><iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175490372&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>Annie Gilbertson</div>
+				<div class="headcircle droppable" id="hstephanie"><iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175490940&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>Stephanie O'Neill</div>
+				<div class="headcircle droppable" id="hadolfo"><iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175490201&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>Adolfo Guzman-Lopez</div>
+				<div class="headcircle droppable" id="hjosie"><iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175490571&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>Josie Huang</div>
+				<div class="headcircle droppable" id="hkitty"><iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175490621&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>Kitty Felde</div>
+				<div class="headcircle droppable" id="hmary"><iframe width="100%" height="100%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/175490667&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>Mary Plummer</div>
+
+				
+			</div>
+		<!--END DRAGGABLE THINGS-->
+		</div>
+
+		<!--DROP TARGETS-->
+		<div id="tatCon">
+
+			<div class="reporter draggable" id="tadolfo" data-id="0">
+				<div class="messagewrong">Try again</div>
+				<div class="messageright">Good job!</div>
+				<img id="headshot" src="imgs/adolfo_guzman_lopez_education_reporter.jpg" />
+				<div class="headcircleinside" id="adolfoinside"><img src="imgs/adolfo_guzman_lopez_education_reporter.jpg" />Adolfo Guzman-lopez</div>
+			</div>
+			
+			<div class="reporter draggable" id="tannie" data-id="1">
+				<div class="messagewrong">Try again</div>
+				<div class="messageright">Good job!</div>
+				<img id="headshot" src="imgs/annie_gilbertson_education_reporter.jpg" />
+				<div class="headcircleinside" id="annieinside"><img src="imgs/annie_gilbertson_education_reporter.jpg" />Annie Gilbertson</div>
+			</div>
+
+			<div class="reporter draggable" id="tmary" data-id="2">
+				<div class="messagewrong">Try again</div>
+				<div class="messageright">Good job!</div>
+				<img id="headshot" src="imgs/mary_plummer_education_reporter.jpg" />
+				<div class="headcircleinside" id="maryinside"><img src="imgs/mary_plummer_education_reporter.jpg" />Mary Plummer</div>
+			</div>
+
+			<div class="reporter draggable" id="tdeepa" data-id="3">
+				<div class="messagewrong">Try again</div>
+				<div class="messageright">Good job!</div>
+				<img id="headshot" src="imgs/deepa_fernandes_early_childhood_development_correspondent.jpg" />
+				<div class="headcircleinside" id="deepainside"><img src="imgs/deepa_fernandes_early_childhood_development_correspondent.jpg" />Deepa Fernandes</div>
+			</div>
+
+			<div class="reporter draggable" id="tkitty" data-id="4">
+				<div class="messagewrong">Try again</div>
+				<div class="messageright">Good job!</div>
+				<img id="headshot" src="imgs/kitty_felde_washington_dc_correspondent.jpg" />
+				<div class="headcircleinside" id="kittyinside"><img src="imgs/kitty_felde_washington_dc_correspondent.jpg" />Kitty Felde</div>
+			</div>
+
+			<div class="reporter draggable" id="tjed" data-id="5">
+				<div class="messagewrong">Try again</div>
+				<div class="messageright">Good job!</div>
+				<img id="headshot" src="imgs/jed_kim_environment_reporter.jpg" />
+				<div class="headcircleinside" id="jedinside"><img src="imgs/jed_kim_environment_reporter.jpg" />Jed Kim</div>
+			</div>
+			
+			<div class="reporter draggable" id="tjosie" data-id="6">
+				<div class="messagewrong">Try again</div>
+				<div class="messageright">Good job!</div>
+				<img id="headshot" src="imgs/josie_huang_immigration_and_emerging_communities_reporter.jpg" />
+				<div class="headcircleinside" id="josieinside"><img src="imgs/josie_huang_immigration_and_emerging_communities_reporter.jpg" />Josie Huang</div>
+			</div>
+			
+			<div class="reporter draggable" id="tsanden" data-id="7">
+				<div class="messagewrong">Try again</div>
+				<div class="messageright">Good job!</div>
+				<img id="headshot" src="imgs/sanden_totten_science_reporter.jpg" />
+				<div class="headcircleinside" id="sandeninside"><img src="imgs/sanden_totten_science_reporter.jpg" />Sanden Totten</div>
+			</div>
+
+			<div class="reporter draggable" id="tsharon" data-id="8">
+				<div class="messagewrong">Try again</div>
+				<div class="messageright">Good job!</div>
+				<img id="headshot" src="imgs/sharon_mcnary_politics_reporter.jpg" />
+				<div class="headcircleinside" id="sharoninside"><img src="imgs/sharon_mcnary_politics_reporter.jpg" />Sharon McNary</div>
+			</div>
+
+			<div class="reporter draggable" id="trebecca" data-id="9">
+				<div class="messagewrong">Try again</div>
+				<div class="messageright">Good job!</div>
+				<img id="headshot" src="imgs/rebecca_plevin_health_reporter.jpg" />
+				<div class="headcircleinside" id="rebeccainside"><img src="imgs/rebecca_plevin_health_reporter.jpg" />Rebecca Plevin</div>
+			</div>
+			
+			<div class="reporter draggable" id="tstephanie" data-id="10">
+				<div class="messagewrong">Try again</div>
+				<div class="messageright">Good job!</div>
+				<img id="headshot" src="imgs/stephanie_oneill_health_care_correspondent.jpg" />
+				<div class="headcircleinside" id="stephanieinside"><img src="imgs/stephanie_oneill_health_care_correspondent.jpg" />Stephanie O'Neill</div>
+			</div>
+
+			<div class="reporter draggable" id="tmolly" data-id="11">
+				<div class="messagewrong">Try again</div>
+				<div class="messageright">Good job!</div>
+				<img id="headshot" src="imgs/molly_peterson_environment_correspondent.jpg" />
+				<div class="headcircleinside" id="mollyinside"><img src="imgs/molly_peterson_environment_correspondent.jpg" />Molly Peterson</div>
+			</div>
+			
+			
+			
+		</div>
+		<!--END DROP TARGETS-->
+
+		<!--TWITTER AND FACEBOOK SHARING-->
+		<div id="shareCon">
+				<p class="congrats">Congratulations, you matched all 12 reporters!</p>
+				<p id="share">It took you 00 attempts to match them all. Share your score!</p>
+				<div><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.twincities.com/timberwolves/ci_24385647/minnesota-timberwolves-can-you-match-these-players-their" data-text="I just matched all 12 reporters' voices with their faces @KPCC. Test your own knowledge about public radio reporters!">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> </div>
+
+<div class="fb-like" data-href="http://www.twincities.com/timberwolves/ci_24385647/minnesota-timberwolves-can-you-match-these-players-their" data-width="100" data-height="20" data-colorscheme="light" data-layout="button_count" data-action="like" data-show-faces="false" data-send="false"></div>
+
+		</div>
+		<!--END TWITTER AND FACEBOOK SHARING-->
+
+	</div>
+
+	<div class="credits-con">
+    	Credits: Nelson Hsu / DFM; Evie Liu/ KPCC; Photos courtesy KPCC
+    </div>
+
+    <!--analytics-->
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-37303540-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+</body>
+
+</html>
