@@ -1,0 +1,52 @@
+<div class="candidate-container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div id="content-action-bar" class="jumbotron">
+        <select id="search-congressional-delegation">
+            <option value="#content-action-bar">Scroll to your representative</option>
+            <% _.each(collection, function(model) { %>
+                <% if (model.viewonexecutiveorder != "") { %>
+                    <option value="#<%= model.firstname %>-<%= model.lastname %>"><%= model.firstname %> <%= model.lastname %></option>
+                <% } %>
+            <% }); %>
+        </select>
+    </div>
+    <% _.each(collection, function(model) { %>
+        <% if (model.viewonexecutiveorder != "") { %>
+            <div id="<%= model.firstname %>-<%= model.lastname %>">
+                <a href="<%= model.reptrackerurl %>" target="_blank"><h6><%= model.position %> <%= model.firstname %> <%= model.lastname %> (<%= model.party %>-<%= model.district %>)</h6></a>
+            </div>
+            <div class="row">
+                <div class="response col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="image-container" class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                        <dl>
+                            <dd>
+                                <div class="img">
+                                    <a href="<%= model.reptrackerurl %>" target="_blank"><img class="placemark" src="<%= model.imageurl %>" alt="<%= model.position %>_<%= model.firstname %>_<%= model.lastname %>" /></a>
+                                </div>
+                                <div class="text">
+                                    <p>California District <%= model.districtid %></p>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+                        <dl>
+                            <dd>
+                                <% if (model.viewonexecutiveorder != "") { %>
+                                    <div class="quote">
+                                        <p><%= model.viewonexecutiveorder %></p>
+                                        <% if (model.sourceurl != "") { %>
+                                            <p><a href="<%= model.sourceurl %>">- <%= model.source %></a></p>
+                                        <% } else { %>
+                                            <p> - <%= model.source %></p>
+                                        <% } %>
+                                    </div>
+                                <% } %>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+        <% } %>
+    <% }); %>
+</div>

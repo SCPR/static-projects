@@ -1,0 +1,46 @@
+.response { height: auto; margin-bottom: 15px; padding: 15px 0 5px 0; }
+.response img { width: 92%; margin: 20px 4% 10px 4%; vertical-align: middle; }
+.candidate-container .vote-indicator { margin-top: 20px; text-align: center; }
+.candidate-container .undecided { margin-top: 40px; color: black; font-weight: bold; font-size: 64px; text-align: center; }
+.candidate-container .likely_no { margin-top: 40px; color: red; font-weight: bold; font-size: 64px; text-align: center; }
+.candidate-container .likely_yes { margin-top: 40px; color: green; font-weight: bold; font-size: 64px; text-align: center; }
+.candidate-container .awaiting_response { margin-top: 40px; color: black; font-weight: bold; font-size: 64px; text-align: center; }
+
+#content-action-bar { width: 100%; height: 20px; text-align: left; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px; z-index: 1; }
+
+.quote { background: url(i/ephemera-quote-blue-open.png) no-repeat 0 0, url(i/ephemera-quote-blue-close.png) no-repeat bottom right; background-size: 120px 60px, 120px 60px; padding-top: 3%; padding-left: 5%; padding-bottom: 1%; margin-top: 3%; margin-left: -4%; }
+
+.quote p { padding:15px; }
+
+select { width: 80%; margin: 0 10% 0 10%; }
+
+.fixed { position: fixed; top: 2%; margin: 0; background: rgba(241, 122, 49, 0.6); padding: 10px 0 10px 0; }
+
+.img { text-align: center; }
+
+.placemark { height: auto; }
+
+/* headlines for Large desktop */
+@media (min-width: 1200px) {
+    #data-container img {}
+}
+
+/* headlines, photos for Large desktop */
+@media (max-width: 1000px) {
+    .placemark { height: 150%; }
+}
+
+/* headlines, photos for Large desktop */
+@media (max-width: 767px) {
+    .placemark { height: 350%; }
+}
+
+/* headlines for Portrait tablet to landscape and desktop */
+@media (min-width: 486px) and (max-width: 979px) {
+    #data-container img {}
+}
+
+/* headlines for Landscape phones and down */
+@media (max-width: 485px) {
+    #data-container img {}
+}
