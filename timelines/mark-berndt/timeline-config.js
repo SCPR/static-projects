@@ -1,9 +1,15 @@
 var kpccTimelineConfig = {
     // choose spreadsheet or flat-file
-    dataSource: "spreadsheet",
+    dataSource: "flat-file",
 
     // example spreadsheet key
-    key: "0AjsyCVrBXivzdFRJTzhBaXh6bEo2TEVKUDJHLW5ZNFE",
+    key: "0Aq8qwSArzKP9dEFPeEZhQXRmTl9MWmxrYl9kQXo3d1E",
+
+    // example path to data file
+    sourceFile: "timeline-data.json",
+
+    // example path to meta file
+    metaFile: "timeline-meta.json",
 
     // name of sheet containing timeline entries
     sheetName: "Posts",
@@ -15,10 +21,10 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/mark-berndt",
+    projectDirectory: "http://projects.scpr.org/timelines/mark-berndt/",
 
     // newest or oldest
-    defaultDirection: "oldest",
+    defaultDirection: "newest",
 
     // collapsed or expanded
     defaultExpansion: "expanded",
