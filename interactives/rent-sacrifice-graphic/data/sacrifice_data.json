@@ -2,7 +2,7 @@
   {
     "name":"Theresa P-K.",
     "location":"Eagle Rock",
-    "quote":"I am always bargain shopping for food and we rarely go out to eat. Personally, I am always conscience of what I spend and find myself questioning every purchase I make asking, \"is it worth it?\" And with each passing month it seems we find ourselves looking for ways to cut our spending even more.",
+    "quote":"I am always bargain shopping for food and we rarely go out to eat. Personally, I am always conscience of what I spend and find myself questioning every purchase I make asking: 'Is it worth it?' And with each passing month, it seems we find ourselves looking for ways to cut our spending even more.",
     "image":"grocery",
     "category":"my grocery options"
   },
@@ -16,28 +16,28 @@
   {
     "name":"T.H.H.",
     "location":"Temple City",
-    "quote":"The house we rent has no heat, no dish washer, no central air. It has not been updated since the 70's.",
+    "quote":"The house we rent has no heat, no dish washer, no central air. It has not been updated since the '70s.",
     "image":"house",
     "category":"my living conditions"
   },
   {
     "name":"Jill R.",
     "location":"Pomona",
-    "quote":"A little over 6 months ago I moved to Pomona because it was the lowest rent I could find within an hour bus ride to L.A. It is $900. On the plus side it has 2 bedrooms and allows dogs. On the downside: No pool, no AC unit.",
+    "quote":"A little over 6 months ago, I moved to Pomona because it was the lowest rent I could find within an hour bus ride to L.A. It is $900. On the plus side, it has two bedrooms and allows dogs. On the downside. no pool, no AC unit.",
     "image":"relocation",
     "category":"living in Los Angeles"
   },
   {
     "name":"Barbara G.",
     "location":"",
-    "quote":"Internet, dinners out with friends, movies. Many of the things I took as second nature in my day to day life are now all weighed for cost effectiveness.",
+    "quote":"Internet, dinners out with friends, movies. Many of the things I took as second nature in my day-to-day life are now all weighed for cost effectiveness.",
     "image":"entertainment",
     "category":"my quality of life"
   },
   {
     "name":"T.H.H.",
     "location":"Temple City",
-    "quote":"We shop at 99 cent stores as much as possible. I go to the day old bread store and I am waiting for World Harvest food bank to reopen - we have only $300 a month for food for 5 people.",
+    "quote":"We shop at .99 cent stores as much as possible. I go to the day-old bread store, and I am waiting for World Harvest food bank to reopen. We have only $300 a month for food for five people.",
     "image":"grocery",
     "category":"my grocery options"
   },
@@ -51,35 +51,35 @@
   {
     "name":"Jill R.",
     "location":"El Monte",
-    "quote":"I continue to drive a 15 year old car with only liability and uninsured motorist coverage.",
+    "quote":"I continue to drive a 15-year-old car with only liability and uninsured motorist coverage.",
     "image":"car",
     "category":"upgrading my car"
   },
   {
     "name":"Pablo E.",
     "location":"Long Beach",
-    "quote":"I have sacrificed purchasing a new computer or a camera which prevents me from following my dream to be a photographer.",
+    "quote":"I have sacrificed purchasing a new computer or a camera, which prevents me from following my dream to be a photographer.",
     "image":"dreams",
     "category":"my dreams"
   },
   {
     "name":"Melissa B.",
     "location":"Las Vegas",
-    "quote":"I lived in Glendale CA for 23 years and moved away because I could no longer afford rent. Rent in 1994 was $695 per month. In 2008 I began managing my 8 unit complex so I could stay there at $1000 per month. I have been on permanent disability since 2001.",
+    "quote":"I lived in Glendale, California for 23 years and moved away because I could no longer afford rent. Rent in 1994 was $695 per month. In 2008, I began managing my eight-unit complex so I could stay there at $1,000 per month. I have been on permanent disability since 2001.",
     "image":"relocation",
     "category":"living in Los Angeles"
   },
   {
     "name":"Marilyn C.",
     "location":"",
-    "quote":"I can't afford to do anything other than eat-in cheaply, my social life is the worst since everyone I know has significant others to share their rent costs with.",
+    "quote":"I can't afford to do anything other than eat in cheaply; my social life is the worst since everyone I know has significant others to share their rent costs with.",
     "image":"entertainment",
     "category":"my social life"
   },
   {
     "name":"Jonathan C.",
     "location":"Irvine",
-    "quote":"We've sacrificed our long term financial future - any possibility of getting a 'real' house, any possibility of not living paycheck to paycheck.",
+    "quote":"We've sacrificed our long-term financial future — any possibility of getting a real house, any possibility of not living paycheck to paycheck.",
     "image":"house",
     "category":"my financial future"
   },
@@ -107,7 +107,7 @@
   {
     "name":"Danielle A.",
     "location":"Glendale",
-    "quote":"Like many millennials, I find it hard to participate in the economy in more adult ways. I won't be buying a house, car, or having children anytime soon even if I want to.",
+    "quote":"Like many millennials, I find it hard to participate in the economy in more adult ways. I won't be buying a house, car or having children anytime soon — even if I want to.",
     "image":"house",
     "category":"my financial future"
   },
