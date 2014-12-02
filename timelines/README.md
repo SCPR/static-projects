@@ -1,32 +1,58 @@
-# Creating timelines for scpr.org web stories
-----
+## Creating timelines for scpr.org web stories
 
-**Created 11/19/2012 by [Chris Keller](ckeller@scpr.org)**
-
-**Updated 2/20/2014 by [Chris Keller](ckeller@scpr.org)**
-
-----
+* **Created**: 11/19/2012 by [Chris Keller](ckeller@scpr.org)
+* **Updated**: 2/20/2014 by [Chris Keller](ckeller@scpr.org)
+* **Updated**: 12/2/2014 by [Chris Keller](ckeller@scpr.org)
 
 ## Table of contents
 
-#### [Overview](#overview)
-#### [Quickstart checklist](#quickstart)
-#### [Storing the data](#storing-data)
-#### [Configuring & deploying to the web](#configuring-and-deploying)
-#### [Publishing in a story](#publishing)
-#### [Technical Requirements](#technical-requirements)
-#### [Resources](#resources)
+* [Overview](#overview)
+* [Configuring your machine](#configuring-your-machine)
+* [Quickstart](#quickstart)
+* [Storing the data](#storing-data)
+* [Configuring & deploying to the web](#configuring-and-deploying)
+* [Publishing in a story](#publishing)
+* [Technical Requirements](#technical-requirements)
+* [Resources](#resources)
 
 ----
 
 <a name="overview"></a>
 #### Overview
 
-With a little practice, you can create and deploy a [topical timeline ](http://projects.scpr.org/static/timelines/life-of-nelson-mandela/) for [scpr.org](http://www.scpr.org/) using a Google Spreadsheet, a HTML index file and a JavaScript configuration file.
+With a little practice - and some web development tools in place - you can create and deploy a [topical timeline ](http://projects.scpr.org/static/timelines/life-of-nelson-mandela/) for [scpr.org](http://www.scpr.org/) using a Google Spreadsheet, a HTML index file and a JavaScript configuration file.
 
-Roughly 95 percent of the work takes place in the Google spreadsheet, and we have a handy [template](https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&usp=drive_web#gid=0) to get you started.
+Roughly 95 percent of the content preparation takes place in the Google spreadsheet using a handy [template](https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&usp=drive_web#gid=0) that will get you started. The rest of the work involves changing some configuration settings in a JavaScript file. Don't worry - you got this.
 
-Follow the steps below to build, deploy and publish your very own timeline. And you'll want to check out the [tool we made](https://github.com/SCPR/timeline-data-generator) to query KPCC's [content API](https://github.com/SCPR/api-docs) and create a csv file that can be used to kickstart a timeline.
+Follow the steps below to build, deploy and publish your very own timeline. And you'll want to check out the [tool we made](https://github.com/SCPR/timeline-data-generator) that queries KPCC's [content API](https://github.com/SCPR/api-docs) to create a csv file that can be used to kickstart a timeline.
+
+<a name="configuring-your-machine"></a>
+#### Configuring your machine
+
+Let's take things from the beginning, which is more than some will want but it's the way to do this properly.
+
+1. Quick Route
+    * [Download](https://mac.github.com/) the GitHub for Mac and install following the setup instructions
+    * Follow the setup instructions
+        * Create a GitHub account and activate it.
+        * Add your login and password to the GitHub for Mac application and sign in.
+        * Click continue to add Git Config information and install the Command Line tools.
+        * You do not have any local repositories so click done.
+        * Clone the [static-projects](https://github.com/SCPR/static-projects/) repository on GitHub by clicking Clone in Desktop on the right-hand side.
+
+2. Longer Route
+    * See if you have git installed. Git is a version control system designed to allow for collaboration on web development projects.
+        * Assuming you're on a Mac, open an application called Terminal.
+        * At the prompt in terminal, type ```git --version```.
+            * If it returns something like ```git version 2.1.3``` - disco
+            * If it returns ```-bash: git: command not found``` that means you have to install git. You will still be able to create a timeline, but Chris or Eric will have to help you get it ready for the web.
+        * [Generate ssh keys](https://help.github.com/articles/generating-ssh-keys/) for your GitHub account.
+        * Change to your home directory by typing ```cd ~``` in your terminal.
+        * Clone the [static-projects](https://github.com/SCPR/static-projects/) repository on GitHub.
+            * Enter the following into your terminal: ```git clone git@github.com:SCPR/static-projects.git```
+
+
+
 
 <a name="quickstart"></a>
 #### Quickstart checklist
