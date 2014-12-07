@@ -13,7 +13,7 @@ body {
 	overflow-x: hidden;
 	line-height: 1.1em;
 	font-size: 0.75em;
-	color: #2B2B2B;
+	color: #666;
 }
 
 cite {
@@ -201,6 +201,7 @@ input[type="text"] {
 
 textarea {
 	width: 100%;
+	resize: none;
 }
 
 select {
@@ -223,8 +224,9 @@ textarea {
 .input-box {
 	max-height: 100px;
 	overflow: scroll;
-	white-space: nowrap;
+	white-space: pre;
 	tab-size: 20;
+	-moz-tab-size: 20;
 }
 
 #rightColumn cite {
@@ -237,7 +239,7 @@ textarea {
 
 #datainput textarea,
 #datainput table {
-	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: Monaco, sans-serif;
 }
 
 @media (min-width: 1250px) {
@@ -334,7 +336,7 @@ textarea {
 .updateButton p {
 	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	padding: 5px;
-	background-color: #999;
+	background-color: #2B2B2B;
 	color: #ffffff;
 	text-align: center;
 	-webkit-border-radius: 4px;
@@ -360,4 +362,3 @@ div.colorPicker-swatch {
 div.colorPicker_hexWrap {
 	display: none;
 }
-

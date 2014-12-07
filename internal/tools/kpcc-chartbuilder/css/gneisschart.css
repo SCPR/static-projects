@@ -2,7 +2,7 @@
 // Make sure to change the name of the font
 // in the webfont.js loader in index.html
 */
-@import url(http://fonts.googleapis.com/css?family=Cutive);
+@import url(//fonts.googleapis.com/css?family=Cutive);
 
 svg {
 	font-size: 14px;
@@ -46,14 +46,13 @@ svg .axis text {
 
 svg .legendItem text {
 	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	text-transform:capitalize;
 }
 
 svg text.metaText {
 	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:  10px;
 	text-rendering:   optimizeLegibility;
-	fill: #2B2B2B;
+	fill:  #999999;
 }
 
 svg text.barLabel,
@@ -72,7 +71,7 @@ svg path.seriesLine {
 
 svg .seriesScatter circle {
 	stroke:#fff;
-	stroke-width:1;
+	stroke-width":1;
 }
 
 #titleLine {

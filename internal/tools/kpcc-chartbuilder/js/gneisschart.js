@@ -24,6 +24,7 @@ Gneiss.defaultGneissChartConfig = {
 	container: "#chartContainer", //css id of target chart container
 	editable: true, // reserved for enabling or dissabling on chart editing
 	lineDotsThreshold: 15, //line charts will have dots on points until a series has this number of points
+	dotRadius: 4, //the radius of dots used on line and scatter plots
 	bargridLabelMargin: 4, //the horizontal space between a bargrid bar and it's label
 	bargridBarThickness: 20, //thickness of the bars in a bargrid
 	xAxisMargin: 8, //the vertical space between the plot area and the x axis
@@ -34,8 +35,9 @@ Gneiss.defaultGneissChartConfig = {
 	axisBarGap: 5, //the horizontal space between a vertical axis and an adjacent bar
 	maxColumnWidth: 7.5, // the maximum width of a column as a percent of the available chart width	primaryAxisPosition: "right", // the first axis will be rendered on this side, "right" or "left" only
 	primaryAxisPosition: "right", // the first axis will be rendered on this side, "right" or "left" only
+	allowAxisOverlap: false,
 	legend: true, // whether or not there should be a legend
-	title: "", // the chart title
+	title: "Your Title Here", // the chart title
 	titleBottomMargin: 5, // the vertical space between the title and the next element (sometimes a legend, sometimes an axis)
 	bargridLabelBottomMargin: 5, //the space between the bargrid series label and the top most bar
 	colors: ["#ff4cf4","#ffb3ff","#e69ce6","#cc87cc","#b373b3","#995f99","#804c80","#665266","#158eff","#99cdff","#9cc2e6","#87abcc","#7394b3","#5f7d99","#466780","#525c66"],
@@ -73,7 +75,7 @@ Gneiss.defaultGneissChartConfig = {
 	],
 	series: [
 		{
-			name: "apples",
+			name: "Apples",
 			data: [5.5,10.2,6.1,3.8],
 			source: "Some Org",
 			type: "line",
@@ -81,7 +83,7 @@ Gneiss.defaultGneissChartConfig = {
 			color: null
 		},
 		{
-			name: "oranges",
+			name: "Oranges",
 			data: [23,10,13,7],
 			source: "Some Org",
 			type: "line",
@@ -92,66 +94,113 @@ Gneiss.defaultGneissChartConfig = {
 	xAxisRef: [
 		{
 			name: "names",
-			data: ["juicyness","color","flavor","travelability"]
+			data: ["Juicyness","Color","Flavor","Travelability"]
 		}
 	],
-	sourceline: "",
-	creditline: "Made with Chartbuilder"
+	sourceline: "Something like Data: Bureau of Labor Statistics",
+	creditline: "KPCC using Quartz\'s Chartbuilder"
 };
 
 Gneiss.dateParsers = {
-  "mmddyyyy": function(d) { return [d.getMonth() + 1, d.getDate(), d.getFullYear()].join("/"); },
-  "ddmmyyyy": function(d) { return [d.getDate(), d.getMonth() + 1, d.getFullYear()].join("/"); },
-  "mmdd": function(d) { return [d.getMonth() + 1, d.getDate()].join("/"); },
-  "Mdd": function(d) {
-    var month = d.getMonth() + 1;
-    if(month == 5) {
-      return d.format('{Mon}') + " " + d.getDate();
-    }
-    else {
-      return d.format('{Mon}.') + " " + d.getDate();
-    }
-  },
-  "ddM": function(d) {
-    var month = d.getMonth() + 1;
-    if(month == 5) {
-      return "" + d.getDate() + " " + d.format('{Mon}');
-    }
-    else {
-      return "" + d.getDate() + " " + d.format('{Mon}.');
-    }
-  },
-  "mmyy": function(d) { return [d.getMonth() + 1, String(d.getFullYear()).split("").splice(2,2).join("")].join("/"); },
-  "yy": function(d) { return "’" + String(d.getFullYear()).split("").splice(2,2).join(""); },
-  "yyyy": function(d) { return "" + d.getFullYear(); },
-  "MM": function(d) {
-    var month = d.getMonth() + 1;
-    if(month == 1) {
-      return "" + d.getFullYear();
-    }
-    else {
-      return d.format('{Month}');
-    }
-  },
-  "M": function(d) {
-    var month = d.getMonth() + 1;
-    if(month == 1) {
-      return "’" + String(d.getFullYear()).split("").splice(2,2).join("");
-    }
-    else if(month == 5) {
-      return d.format('{Mon}');
-    }
-    else {
-      return d.format('{Mon}.');
-    }
-  },
-  "hmm": function(d) {
-    if(Date.getLocale().code == 'en') {
-      return d.format('{12hr}:{mm}');
-    } else {
-      return d.format('{24hr}:{mm}');
-    }
-  }
+	"mmddyyyy": function(d) { return [d.getMonth() + 1, d.getDate(), d.getFullYear()].join("/"); },
+	"ddmmyyyy": function(d) { return [d.getDate(), d.getMonth() + 1, d.getFullYear()].join("/"); },
+	"mmdd": function(d) { return [d.getMonth() + 1, d.getDate()].join("/"); },
+	"Mdd": function(d) {
+		var month = d.getMonth() + 1;
+		if(month == 5) {
+			return d.format('{Mon}') + " " + d.getDate();
+		}
+		else {
+			return d.format('{Mon}.') + " " + d.getDate();
+		}
+	},
+	"ddM": function(d) {
+		var month = d.getMonth() + 1;
+		if(month == 5) {
+			return "" + d.getDate() + " " + d.format('{Mon}');
+		}
+		else {
+			return "" + d.getDate() + " " + d.format('{Mon}.');
+		}
+	},
+	"mmyy": function(d) { return [d.getMonth() + 1, String(d.getFullYear()).split("").splice(2,2).join("")].join("/"); },
+	"yy": function(d) { return "’" + String(d.getFullYear()).split("").splice(2,2).join(""); },
+	"yyyy": function(d) { return "" + d.getFullYear(); },
+	"MM": function(d) {
+		var month = d.getMonth() + 1;
+		if(month == 1) {
+			return "" + d.getFullYear();
+		}
+		else {
+			return d.format('{Month}');
+		}
+	},
+	"M": function(d) {
+		var month = d.getMonth() + 1;
+		if(month == 1) {
+			return "’" + String(d.getFullYear()).split("").splice(2,2).join("");
+		}
+		else if(month == 5) {
+			return d.format('{Mon}');
+		}
+		else {
+			return d.format('{Mon}.');
+		}
+	},
+	"hmm": function(d) {
+		if(d.getHours() === 0 && d.getMinutes() === 0) {
+			return Gneiss.dateParsers.Mdd(d);
+		}
+
+		if(Date.getLocale().code == 'en') {
+			return d.format('{12hr}:{mm}{tt}');
+		} else {
+			return d.format('{24hr}:{mm}{tt}');
+		}
+	},
+	"QJan": function(d) {
+		var year = d.getFullYear();
+		var month = d.getMonth() + 1;
+		var day = d.getDate();
+		if (day == 1) {
+			if (month == 1) {
+				return year;
+			}
+
+			if (month == 4 || month == 7 || month == 10) {
+				return "Q" + (((month-1) / 3) + 1);
+			}
+
+		}
+
+		return "";
+	},
+	"QJul": function(d) {
+		var year = d.getFullYear();
+		var month = d.getMonth() + 1;
+		var day = d.getDate();
+		if (day == 1) {
+			if (month == 7) {
+				return year;
+			}
+
+			if (month == 1) {
+				return "Q3";
+			}
+
+			if (month == 4) {
+				return "Q4";
+			}
+
+			if (month == 10) {
+				return "Q2";
+			}
+
+		}
+
+		return "";
+
+	}
 };
 
 Gneiss.helper = {
@@ -237,6 +286,7 @@ function Gneiss(config)
 	var xAxisRef;
 
 	var lineDotsThreshold;
+	var dotRadius;
 	var bargridLabelMargin;
 	var bargridBarThickness;
 	var xAxisMargin;
@@ -249,6 +299,7 @@ function Gneiss(config)
 	var titleBottomMargin;
 	var bargridLabelBottomMargin;
 	var axisBarGap;
+	var allowAxisOverlap;
 
 
 	var columnWidth;
@@ -438,6 +489,13 @@ function Gneiss(config)
 			lineDotsThreshold = n;
 	};
 
+	this.dotRadius = function Gneiss$dotRadius(n) {
+		if (!arguments.length) {
+			return dotRadius;
+		}
+			dotRadius = n;
+	};
+
 	this.bargridLabelMargin = function Gneiss$bargridLabelMargin(n) {
 		if (!arguments.length) {
 			return bargridLabelMargin;
@@ -525,6 +583,14 @@ function Gneiss(config)
 		axisBarGap = n;
 	};
 
+	this.allowAxisOverlap = function Gneiss$allowAxisOverlap(b) {
+		if(!arguments.length) {
+			return allowAxisOverlap;
+		}
+
+		allowAxisOverlap = b;
+	};
+
 	this.hasColumns = function Gneiss$hasColumns(b) {
 		if(!arguments.length) {
 			return hasColumns;
@@ -564,6 +630,7 @@ function Gneiss(config)
 		g.defaultPadding($.extend(true, {}, config.padding));
 		g.padding($.extend(true, {}, config.padding));
 		g.lineDotsThreshold(config.lineDotsThreshold *1);
+		g.dotRadius(config.dotRadius *1);
 		g.bargridLabelMargin(config.bargridLabelMargin *1);
 		g.bargridBarThickness(config.bargridBarThickness *1);
 		g.xAxisMargin(config.xAxisMargin * 1);
@@ -576,6 +643,7 @@ function Gneiss(config)
 		g.titleBottomMargin(config.titleBottomMargin * 1);
 		g.bargridLabelBottomMargin(config.bargridLabelBottomMargin *1);
 		g.axisBarGap(config.axisBarGap * 1);
+		g.allowAxisOverlap(config.allowAxisOverlap);
 
 
 
@@ -814,18 +882,30 @@ function Gneiss(config)
 
 		// Set the range of the x-axis
 		var rangeArray = [];
+		var left;
+		var right;
 
 		if(g.isBargrid()) {
 			rangeArray = [p.top, g.height() - p.bottom];
 		}
 		else if(g.hasColumns()) {
-			var left;
-			var right;
 			var halfColumnWidth = g.columnGroupWidth() / 2;
 
 			left = p.left + halfColumnWidth + ((g.yAxis().length == 1) ? 0 : d3.selectAll("#leftAxis.yAxis g:not(.topAxisItem) text")[0].pop().getBoundingClientRect().width + g.axisBarGap());
 			right = g.width() - p.right - d3.selectAll("#rightAxis.yAxis g:not(.topAxisItem) text")[0].pop().getBoundingClientRect().width - halfColumnWidth - g.axisBarGap();
 			rangeArray = [left,right];
+		}
+		else if(!g.allowAxisOverlap()) {
+			try {
+				left = p.left + ((g.yAxis().length == 1) ? 0 : d3.selectAll("#leftAxis.yAxis g:not(.topAxisItem) text")[0].pop().getBoundingClientRect().width);
+				right = g.width() - p.right - d3.selectAll("#rightAxis.yAxis g:not(.topAxisItem) text")[0].pop().getBoundingClientRect().width - g.dotRadius();
+				rangeArray = [left,right];
+			}
+			catch(e){
+				//the this happens when the axis hasn't been created yet
+				rangeArray = [p.left, g.width() - p.right];
+			}
+
 		}
 		else {
 			rangeArray = [p.left, g.width() - p.right];
@@ -1101,7 +1181,8 @@ function Gneiss(config)
 						//auto suggest the propper tick gap
 						var timeSpan = g.xAxis().scale.domain()[1]-g.xAxis().scale.domain()[0],
 										months = timeSpan/2592000000,
-										years = timeSpan/31536000000;
+										years = timeSpan/31536000000,
+										days = timeSpan/86400000;
 
 						if(years > 30) {
 							yearGap = 10;
@@ -1112,6 +1193,17 @@ function Gneiss(config)
 						else {
 							yearGap = 1;
 						}
+
+						if(days > 2) {
+							hourGap = 6;
+						}
+						else if (days > 1) {
+							hourGap = 4;
+						}
+						else {
+							hourGap = 1;
+						}
+
 						switch(g.xAxis().formatter) {
 							case "yy":
 								g.xAxis().axis.ticks(d3.time.years,yearGap);
@@ -1132,6 +1224,18 @@ function Gneiss(config)
 							case "YY":
 								g.xAxis().axis.ticks(d3.time.years,1);
 							break;
+
+							case "QJan":
+								g.xAxis().axis.ticks(d3.time.months,3);
+							break;
+
+							case "QJul":
+								g.xAxis().axis.ticks(d3.time.months,3);
+							break;
+
+							case "hmm":
+								g.xAxis().axis.ticks(d3.time.hour,hourGap)
+							break
 						}
 					}
 					else if(g.xAxis().ticks instanceof Array) {
@@ -1140,11 +1244,14 @@ function Gneiss(config)
 							gapString = g.xAxis().ticks[1],
 							num = parseInt(g.xAxis().ticks[0]);
 
+							if((/hour/i).text(gapString)) {
+								gap = d3.time.hour
+							}
 							if((/day/i).test(gapString)) {
-								gap = d3.time.days;
+								gap = d3.time.hour;
 							}
 							else if((/week/i).test(gapString)) {
-								gap = d3.time.weeks;
+								gap = d3.time.day;
 							}
 							else if((/month/i).test(gapString)) {
 								gap = d3.time.months;
@@ -1173,13 +1280,15 @@ function Gneiss(config)
 				.orient(g.isBargrid() ? "left" : "bottom");
 
 
-
 			if(g.xAxis().type == "date") {
 				if(g.xAxis().ticks === null || !isNaN(g.xAxis().ticks)) {
 					//auto suggest the propper tick gap
 					var timeSpan = g.xAxis().scale.domain()[1]-g.xAxis().scale.domain()[0],
-						months = timeSpan/2592000000,
-						years = timeSpan/31536000000;
+									months = timeSpan/2592000000,
+									years = timeSpan/31536000000,
+									days = timeSpan/86400000,
+									hours = timeSpan/3600000,
+									minutes = timeSpan/60000;
 
 					if(years > 30) {
 						yearGap = 10;
@@ -1190,6 +1299,24 @@ function Gneiss(config)
 					else {
 						yearGap = 1;
 					}
+
+
+					if(days > 2) {
+						hourGap = 6;
+					}
+					else if (days >= 1) {
+						hourGap = 4;
+					}
+					else if (hours > 7) {
+						hourGap = 4;
+					}
+					else if (hours > 1){
+						hourGap = 1;
+					}
+
+					console.log(hours, hourGap);
+
+
 					switch(g.xAxis().formatter) {
 						case "yy":
 							g.xAxis().axis.ticks(d3.time.years,yearGap);
@@ -1210,14 +1337,29 @@ function Gneiss(config)
 						case "YY":
 							g.xAxis().axis.ticks(d3.time.years,1);
 						break;
+
+						case "QJan":
+							g.xAxis().axis.ticks(d3.time.months,3);
+						break;
+
+						case "QJul":
+							g.xAxis().axis.ticks(d3.time.months,3);
+						break;
+
+						case "hmm":
+							g.xAxis().axis.ticks(d3.time.hours,hourGap);
+						break
 					}
 				}
 				else if(g.xAxis().ticks instanceof Array) {
-					var gap,
-						gapString = g.xAxis().ticks[1],
-						num = parseInt(g.xAxis().ticks[0]);
+					var gap;
+					var gapString = g.xAxis().ticks[1];
+					var num = parseInt(g.xAxis().ticks[0],10);
 
-						if((/day/i).test(gapString)) {
+						if( (/hour/i).test(gapString) ) {
+							gap = d3.time.hours;
+						}
+						else if((/day/i).test(gapString)) {
 							gap = d3.time.days;
 						}
 						else if((/week/i).test(gapString)) {
@@ -1251,11 +1393,11 @@ function Gneiss(config)
 				var attry = Number(attr.split(")")[0].split(",")[1])
 				if(!g.isBargrid()) {
 					// fix labels to not fall off edge when not bargrid
-					if (pwidth/2 + attrx >  g.width()) {
+					if (pwidth + attrx >  g.width()) {
 						this.setAttribute("x",Number(this.getAttribute("x"))-(pwidth + attrx -  g.width() + g.padding().right))
 						this.setAttribute("text-anchor","start")
 					}
-					else if (attrx - pwidth/2 < 0) {
+					else if (attrx - pwidth < 0) {
 						this.setAttribute("text-anchor","start")
 					}
 					g.padding().left = g.defaultPadding().left
@@ -1312,12 +1454,6 @@ function Gneiss(config)
 
 		// Determine the proper column width
 		var effectiveChartWidth = g.width() - g.padding().right - g.padding().left - g.axisBarGap();
-		try {
-			effectiveChartWidth = g.xAxis().scale.range()[1] - g.xAxis().scale.range()[0];
-		}
-		catch(e) {
-			//do nothing if there's no scale object yet
-		}
 
 		var columnWidth = Math.floor((effectiveChartWidth / numDataPoints) / numColumnSeries);
 		columnWidth = columnWidth - g.columnGap()
@@ -1326,7 +1462,6 @@ function Gneiss(config)
 
 		// Make sure columns are not wider than the specified portion of the available width
 		columnWidth = Math.min(columnWidth, effectiveChartWidth * g.maxColumnWidth()/100);
-
 		g.columnWidth(columnWidth);
 		g.columnGroupWidth((columnWidth + g.columnGap()) * numColumnSeries);
 		g.columnGroupShift(columnWidth + g.columnGap());
@@ -1417,7 +1552,7 @@ function Gneiss(config)
 					.data(function(d){ return d.data})
 					.enter()
 						.append("circle")
-						.attr("r",4)
+						.attr("r",g.dotRadius())
 						.attr("transform",function(d,i){
 							yAxisIndex = d3.select(this.parentNode).data()[0].axis;
 							return "translate("+(g.xAxis().type=="date" ?
@@ -1438,7 +1573,7 @@ function Gneiss(config)
 					.data(function(d){ return d.data})
 				scatterDots.enter()
 						.append("circle")
-						.attr("r",4)
+						.attr("r",g.dotRadius())
 						.attr("transform",function(d,i){
 							yAxisIndex = d3.select(this.parentNode).data()[0].axis;
 							return "translate("+(g.xAxis().type=="date" ?
@@ -1698,7 +1833,7 @@ function Gneiss(config)
 
 				lineSeriesDots.enter()
 					.append("circle")
-					.attr("r",4)
+					.attr("r",g.dotRadius())
 					.attr("transform",function(d,i){
 						yAxisIndex = d3.select(this.parentNode).data()[0].axis;
 							var y = d || d ===0 ? g.yAxis()[yAxisIndex].scale(d) : -100;
@@ -1733,7 +1868,7 @@ function Gneiss(config)
 
 				scatterDots.enter()
 						.append("circle")
-						.attr("r",4)
+						.attr("r",g.dotRadius())
 						.attr("transform",function(d,i){
 							yAxisIndex = d3.select(this.parentNode).data()[0].axis;
 							return "translate("+g.xAxis().scale(g.xAxisRef()[0].data[i]) + "," + g.yAxis()[yAxisIndex].scale(d) + ")"
