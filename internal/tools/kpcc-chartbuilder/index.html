@@ -260,17 +260,10 @@
             creditline: "KPCC using Quartz\'s Chartbuilder"
         };
 
-        //this loads the webfonts and starts chartbuilder once they're present
-        WebFont.load({
-            custom: {
-                families: ["Cutive"]
-            },
-            active: function(name) {
-                $(document).ready(function() {
-                    ChartBuilder.start(kpccConfig);
-                });
-            }
+        $(document).ready(function() {
+            ChartBuilder.start(kpccConfig);
         });
+
         </script>
         <!-- end scripts -->
 
