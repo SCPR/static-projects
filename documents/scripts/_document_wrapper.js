@@ -26,6 +26,9 @@
         el: "body",
 
         initialize: function(){
+
+            window.appConfig.project_root = window.location.href;
+
             // sets template path
             if (window.location.href.indexOf("http://projects.scpr.org/") > -1){
                 window.wrapperTemplatePath = "http://projects.scpr.org/static/static-files/v3-dependencies/templates/"
@@ -39,7 +42,6 @@
             // sets embed options
             if (window.location.href.indexOf("embed") > -1){
                 window.appConfig.open_about_this = false;
-                window.appConfig.comments = false;
                 window.appConfig.is_embedded = true;
             };
 
@@ -48,18 +50,6 @@
 
             if (window.appConfig.is_mobile) {
                 window.appConfig.open_about_this = false;
-                window.appConfig.comments = false;
-                window.appConfig.initial_map_zoom = 9;
-            };
-
-            // checks comments setting
-            if (window.appConfig.comments === true){
-                var disqus_shortname = 'kpcc-projects';
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(dsq);
-            } else {
-                $(".data-comments").remove();
             };
 
             this.render();
