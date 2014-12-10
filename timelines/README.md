@@ -3,14 +3,16 @@
 * **Created**: 11/19/2012 by [Chris Keller](ckeller@scpr.org)
 * **Updated**: 2/20/2014 by [Chris Keller](ckeller@scpr.org)
 * **Updated**: 12/2/2014 by [Chris Keller](ckeller@scpr.org)
+* **Updated**: 12/9/2014 by [Chris Keller](ckeller@scpr.org)
 
 ## Table of contents
 
 * [Overview](#overview)
 * [Configuring your machine](#configuring-your-machine)
 * [Quickstart](#quickstart)
-* [Storing the data](#storing-data)
-* [Configuring & deploying to the web](#configuring-and-deploying)
+* [Creating the spreadsheet](#creating-the-spreadsheet)
+* [Configuring the timeline files](#configuring)
+* [Deploying to the web](#deploying)
 * [Publishing in a story](#publishing)
 * [Technical Requirements](#technical-requirements)
 * [Resources](#resources)
@@ -24,6 +26,8 @@ With a little practice - and some web development tools in place - you can creat
 
 Roughly 95 percent of the content preparation takes place in the Google spreadsheet using a handy [template](https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&usp=drive_web#gid=0) that will get you started. The rest of the work involves changing some configuration settings in a JavaScript file. Don't worry - you got this.
 
+That said, the remaining 5 percent involves gettting your machine setup with the tools and scripts necessary to make the 95 percent flow smoothly. *Probably a poor way to explain things, but you get the idea*
+
 Follow the steps below to build, deploy and publish your very own timeline. And you'll want to check out the [tool we made](https://github.com/SCPR/timeline-data-generator) that queries KPCC's [content API](https://github.com/SCPR/api-docs) to create a csv file that can be used to kickstart a timeline.
 
 <a name="configuring-your-machine"></a>
@@ -32,13 +36,15 @@ Follow the steps below to build, deploy and publish your very own timeline. And 
 Let's take things from the beginning, which is more than some will want but it's the way to do this properly.
 
 1. Quick Route
-    * [Download](https://mac.github.com/) the GitHub for Mac and install following the setup instructions
+    * [Download](https://mac.github.com/) GitHub for Mac and install
     * Follow the setup instructions
         * Create a GitHub account and activate it.
         * Add your login and password to the GitHub for Mac application and sign in.
         * Click continue to add Git Config information and install the Command Line tools.
         * You do not have any local repositories so click done.
-        * Clone the [static-projects](https://github.com/SCPR/static-projects/) repository on GitHub by clicking Clone in Desktop on the right-hand side.
+        * Open a browser and go to SCPR's [GitHub page](https://github.com/SCPR/static-projects/).
+        * Clone the [static-projects](https://github.com/SCPR/static-projects/) repository by clicking "Clone in Desktop" on the right-hand side.
+        * Save this repository in a place where you want to work on code projects.
 
 2. Longer Route
     * See if you have git installed. Git is a version control system designed to allow for collaboration on web development projects.
@@ -51,21 +57,27 @@ Let's take things from the beginning, which is more than some will want but it's
         * Clone the [static-projects](https://github.com/SCPR/static-projects/) repository on GitHub.
             * Enter the following into your terminal: ```git clone git@github.com:SCPR/static-projects.git```
 
+What is the heck did we just do?
 
-
+**Xxxxx xxxxx**
 
 <a name="quickstart"></a>
-#### Quickstart checklist
+#### Quickstart
 
-* [ ] Make a copy of the file titled [Template: KPCC Timeline Template](https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&usp=drive_web#gid=0) that is stored in the KPCC Data Desk Google Drive account.
-* [ ] In the spreadsheet you will find two sheets. Add data for the timeline on the sheet labeled **'Posts'.**
-* [ ] Move on to the sheet labeled **'MetaData'.**
-* [ ] Publish the spreadsheet and get the spreadsheet key.
-* [ ] Complete the timeline-config.js file and add metadata to the index.html file.
-* [ ] Deploy a timeline so users can see it on the web.
+* [ ] Log into the KPCC DataDesk's Google Drive account, or your own, if the ```web_timelines_templates``` folder has been shared with you
+* [ ] While in the directory, make a copy of the directory titled [_Template: timeline-template](https://docs.google.com/spreadsheet/ccc?key=0Aq8qwSArzKP9dDR2a1FDbnEtTzIxU19SV25sSThLWVE#gid=0) that is stored in the KPCC Data Desk Google Drive account.
+* [ ] Add data for the timeline on the sheet labeled ```Posts```
+* [ ] Add data for the headline, intro, byline and publish dates on the sheet labeled ```MetaData```
+* [ ] Publish the spreadsheet and get the spreadsheet key
+* [ ] Open the repository that you cloned and go into the ```timelines``` directory
+* [ ] Using the option-drag method, make a copy of the directory titled ```timeline-template```
+* [ ] Complete the ```timeline-config.js``` file and fill out the fields to your liking
+* [ ] Open ```index.html``` and add metadata to the top of the file
+* [ ] Commit your changes to the repo, or open a pull request
+* [ ] Contact Eric or Chris to deploy the timeline so users can see it on the web
 
-<a name="storing-data"></a>
-#### Storing the data
+<a name="creating-the-spreadsheet"></a>
+#### Creating the spreadsheet
 
 This assumes you've already got a topic in mind and a data source, and you're familiar with using Google spreadsheets.
 
@@ -141,8 +153,8 @@ This assumes you've already got a topic in mind and a data source, and you're fa
         * ```0An8W63YKWOsxdFFSZjB5VV9aVmZGblQxSFhpZ1NFd3c```
 5. Congratulations. You have now created a timeline. Want to update your timeline with new information...? Here's the beautiful part: Just add more information to the Google Spreadsheet and it will be updated. Now that your timeline is ready to deploy, you'll need some help.
 
-<a name="configuring-and-deploying"></a>
-#### Configuring & deploying to the web
+<a name="configuring"></a>
+#### Configuring the timeline files
 
 What do we mean when we say configuring & deploying? Configuring means we fill out a pre-compiled script with information about our timeline project that will push our spreadsheet data to a template. Deploying means we push these templates to a server and make the timeline viewable by our digital audience.
 
@@ -290,13 +302,11 @@ Here's an overview of the [configuration](#configuration) and [deployment](#depl
 
                 <meta name="keywords" content="#" />
 
-<a name="flat-file-data"></a>
-**Flat file data configuration**
+4. Flat file data configuration**
+    * **COMING SOON**
 
-**COMING SOON**
-
-<a name="deployment"></a>
-**Deployment**
+<a name="deploying"></a>
+#### Deploying To The Web
 
 1. To deploy a timeline so users can see it on the web, we add the project to the GitHub repository.
 
@@ -306,13 +316,13 @@ Here's an overview of the [configuration](#configuration) and [deployment](#depl
 
         ```git commit 'adds <project name> to the repository'```
 
-3. We deploy it to the server
+3. We push it to the repository to make it available to go live
+
+        ```git commit 'adds <project name> to the repository'```
+
+4. Chris or Eric deploys the timeline using Rundeck. This isn't ideal we realize, but [technical requirements](#technical-requirements) will be required to allow others to do so.
 
         ```cap deploy```
-
-On the web team, only Chris K. and Eric Z. can do this. Bryan Ricker can do so in a pinch.
-
-This isn't ideal we realize, but [technical requirements](#technical-requirements) will be required to allow others to do so.
 
 <a name="publishing">
 #### Publishing
@@ -333,14 +343,11 @@ To be in a position to configure and deploy timelines, some foundational element
 **Install on your laptop (assuming you're on a Mac)**
 
 * Git
-* Ruby
-* Capistrano 2.14.1
-* Development environment (MAMP or Python simple server)
+* GitHub account added to SCPR data team
+* Your machine registered with projects VPN
+* The Rundeck login information
 
 **Misc**
-
-* GitHub account added to SCPR data team
-* ssh key added to the media server by Bryan Ricker
 
 Having a GitHub account and a development environment will get you started in at least configuring a timeline, though Chris K. or Eric Z. will need to deploy.
 
