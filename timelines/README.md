@@ -12,6 +12,7 @@
 * [Quickstart](#quickstart)
 * [Creating the spreadsheet](#creating-the-spreadsheet)
 * [Configuring the timeline files](#configuring)
+    * [Flat file data configuration](#flat-file-data)
 * [Deploying to the web](#deploying)
 * [Publishing in a story](#publishing)
 * [Technical Requirements](#technical-requirements)
@@ -57,9 +58,13 @@ Let's take things from the beginning, which is more than some will want but it's
         * Clone the [static-projects](https://github.com/SCPR/static-projects/) repository on GitHub.
             * Enter the following into your terminal: ```git clone git@github.com:SCPR/static-projects.git```
 
-What is the heck did we just do?
+What in the heck did we just do?
 
-**Xxxxx xxxxx**
+* [Git](https://en.wikipedia.org/wiki/Git_%28software%29) is a version-control system. It can be used for code, narrative text and data, but it's best for the former. It allows multiple people to work on the same project, make changes indepdent of each other and then weave those changes or "features" together.
+
+* [GitHub](https://github.com/) is a platform used to share git repositories -- or repos -- with each other in an effort to improve projects. All of the [projects and experiments](https://github.com/SCPR/static-projects) we do can be found on GitHub.
+
+* We built up your machine to combine these two things allows you access to the projects, and the ability to create your own.
 
 <a name="quickstart"></a>
 #### Quickstart
@@ -83,7 +88,7 @@ This assumes you've already got a topic in mind and a data source, and you're fa
 
 1. Begin by making a copy of the file titled [Template: KPCC Timeline Template](https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&usp=drive_web#gid=0) that is stored in the KPCC Data Desk Google Drive account. You may be prompted to request access. Don't worry, if you're on staff we'll approve you.
 
-2. In the spreadsheet you will find two sheets. One is labeled **'Posts'** and one is labeled **'MetaData'**. I begin by entering the data for the timeline, which means I start in the sheet labeled **Posts.** Here's an explanation of the data that should appear in each column:
+2. In the spreadsheet you will find two sheets. One is labeled ```Posts``` and one is labeled ```MetaData```. I begin by entering the data for the timeline, which means I start in the sheet labeled ```Posts```. Here's an explanation of the data that should appear in each column:
 
     * **title**
         * **Type**: text
@@ -113,7 +118,8 @@ This assumes you've already got a topic in mind and a data source, and you're fa
         * **Type**: url
         * **Description**: This field is a link to that source.
 
-3. Now lets move on to the sheet labeled **MetaData.** Here's an explanation of the data that should appear in each column:
+3. Now lets move on to the sheet labeled ```MetaData```. Here's an explanation of the data that should appear in each column:
+
     * **projecturl**
         * **Type**: url
         * **Description**: This is the URL where the timeline will be visible on the web. If you don't know this, Chris K., Eric Z. or Brian F. can help you.
@@ -146,28 +152,28 @@ This assumes you've already got a topic in mind and a data source, and you're fa
         * **Type**: text
         * **Description**: This is an umbrella listing for sources used to compile the timeline.
         * **Example**: ```Associated Press```
+
 4. Once the **Posts** and **MetaData** sheets are completed you have to publish the spreadsheet. To do this go to *File* --> *Publish to the web* and choose *Start publishing*. A URL will appear, and we're interested in the part between 'key=' and the '&' symbol.
+
     * Here's an example URL:
         * ```https://docs.google.com/spreadsheet/pub?key=0Aq8qwSArzKP9dEo4Wl9VMTJXNllVaG5nWU5GMkhJclE&output=html```
     * We want this portion:
         * ```0An8W63YKWOsxdFFSZjB5VV9aVmZGblQxSFhpZ1NFd3c```
+
 5. Congratulations. You have now created a timeline. Want to update your timeline with new information...? Here's the beautiful part: Just add more information to the Google Spreadsheet and it will be updated. Now that your timeline is ready to deploy, you'll need some help.
 
 <a name="configuring"></a>
 #### Configuring the timeline files
 
-What do we mean when we say configuring & deploying? Configuring means we fill out a pre-compiled script with information about our timeline project that will push our spreadsheet data to a template. Deploying means we push these templates to a server and make the timeline viewable by our digital audience.
+What do we mean when we say configuring?
 
-Right now, Chris K. and Eric Z. can handle this part of the processs. Brian F. has been trained. We're happy to train others, but there are some [technical requirements](#technical-requirements) before this can happen.
-
-Here's an overview of the [configuration](#configuration) and [deployment](#deployment) process. [Flat file data configuration](#flat-file-data) coming soon.
-
-<a name="configuration"></a>
-**Configuration**
+Configuring means we fill out a pre-compiled script with information about our timeline project that will push our spreadsheet data to a template.
 
 1. Clone the [SCPR/static-projects repository](https://github.com/SCPR/static-projects) from [GitHub](https://github.com/about) to your local machine.
+
 2. In the main directory there is a timelines subdirectory that contains the **timeline-template** folder. Duplicate this **timeline-template** folder (option-drag on a Mac) and rename it to match the timeline topic. I wouldn't use more than three or four words, which are separated by hyphens.
     * **Example**: ```life-of-nelson-mandela```
+
 3. Inside the new directory you created you will find four files and a directory titled respond-proxy. For now, we're only really interested in **timeline-config.js** and **index.html**. Both need to be filled out.
     * **timeline-config.js** contains the configuration variables that allow the data on your spreadsheet to be displayed on a template for the user. Here's what is looks like and what each of the keys refer to:
 
@@ -302,11 +308,50 @@ Here's an overview of the [configuration](#configuration) and [deployment](#depl
 
                 <meta name="keywords" content="#" />
 
-4. Flat file data configuration**
-    * **COMING SOON**
+<a name="flat-file-data"></a>
+4. The flat file data configuration option
+    * What do we mean when we say flat file?
+        * By default, a timeline pulls **live data** or **dynamic data** from a Google spreadsheet. This can work well when beginning a project or when creating a timeline during a breaking news situation.
+        * Information can be added in near real-time and the latest updates can be seen bu our audience when they arrive at the page. Of course this opens up a whole can of worms and the need to make sure you get the information correct and accurate, but that's a different discussion.
+        * Flat file -- or static -- data is the opposite of dynamic. It's stored in a file and used to populate the timeline with information.
+            * The use case for this is when a timeline no longer needs regular updates and leaving it dynamic can cause more harm than good.
+    * Creating a flat-file.
+        * In this example, creating a flat-file is simply taking data in one form - a csv - and converting it to another form - json. There are many ways to do this. I wrote a basic [python script](https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py) to help facilitate this process, but [online solutions](https://shancarter.github.io/mr-data-converter/) exist.
+            * Download csvs of both the ```Posts``` and the ```MetaData```.
+            * Convert each to json. If using my [python script](https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py) you would do it like this.
+            * Assuming you're on a Mac, open your terminal and change to the directory where you saved the csv files. If you saved them to your Desktop for instance...
+
+                    cd ~/Desktop/
+
+            * Copy the [python script](https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py) to your Desktop as well.
+
+                    curl -l https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py > ~/Desktop/csv-to-json.py
+
+            * Run the python script, passing into two arguments -- or options: the name of the file and the format you would like -- in this case ```timeline```. So for the ```Posts``` sheet.
+
+                    python csv-to-json.py _Template-\ timeline-template\ -\ Posts.csv timeline
+
+            * You should see output like this
+
+                    parsing _Template- timeline-template - Posts.csv
+
+                    creating json for timeline
+                    _Template- timeline-template - Posts.csv converted to _Template- timeline-template - Posts_timeline.json
+
+            * And you should now have a file on your desktop titled ```_Template- timeline-template - Posts_timeline.json``` Do the same for the ```Meta``` sheet.
+
+                    python csv-to-json.py _Template-\ timeline-template\ -\ Meta.csv timeline
+
+            * These can become the ```timeline-data.json``` and the ```timeline-meta.json``` files used to power the timeline.
 
 <a name="deploying"></a>
 #### Deploying To The Web
+
+What do we mean when we say deploying?
+Deploying means we push these templates to a server and make the timeline viewable by our digital audience.
+
+Right now, Chris K. and Eric Z. can handle this part of the processs. Brian F. has been trained. We're happy to train others, but there are some [technical requirements](#technical-requirements) before this can happen.
+
 
 1. To deploy a timeline so users can see it on the web, we add the project to the GitHub repository.
 
