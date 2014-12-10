@@ -29,7 +29,7 @@ Roughly 95 percent of the content preparation takes place in the Google spreadsh
 
 That said, the remaining 5 percent involves gettting your machine setup with the tools and scripts necessary to make the 95 percent flow smoothly. *Probably a poor way to explain things, but you get the idea*
 
-Follow the steps below to build, deploy and publish your very own timeline. And you'll want to check out the [tool we made](https://github.com/SCPR/timeline-data-generator) that queries KPCC's [content API](https://github.com/SCPR/api-docs) to create a csv file that can be used to kickstart a timeline.
+Follow the steps below -- or [here](http://projects.scpr.org/timelines/README.html) -- to build, deploy and publish your very own timeline. And you'll want to check out the [tool we made](https://github.com/SCPR/timeline-data-generator) that queries KPCC's [content API](https://github.com/SCPR/api-docs) to create a csv file that can be used to kickstart a timeline.
 
 <a name="configuring-your-machine"></a>
 #### Configuring your machine
@@ -310,39 +310,40 @@ Configuring means we fill out a pre-compiled script with information about our t
 
 <a name="flat-file-data"></a>
 4. The flat file data configuration option
-    * What do we mean when we say flat file?
-        * By default, a timeline pulls **live data** or **dynamic data** from a Google spreadsheet. This can work well when beginning a project or when creating a timeline during a breaking news situation.
-        * Information can be added in near real-time and the latest updates can be seen bu our audience when they arrive at the page. Of course this opens up a whole can of worms and the need to make sure you get the information correct and accurate, but that's a different discussion.
-        * Flat file -- or static -- data is the opposite of dynamic. It's stored in a file and used to populate the timeline with information.
-            * The use case for this is when a timeline no longer needs regular updates and leaving it dynamic can cause more harm than good.
-    * Creating a flat-file.
-        * In this example, creating a flat-file is simply taking data in one form - a csv - and converting it to another form - json. There are many ways to do this. I wrote a basic [python script](https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py) to help facilitate this process, but [online solutions](https://shancarter.github.io/mr-data-converter/) exist.
-            * Download csvs of both the ```Posts``` and the ```MetaData```.
-            * Convert each to json. If using my [python script](https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py) you would do it like this.
-            * Assuming you're on a Mac, open your terminal and change to the directory where you saved the csv files. If you saved them to your Desktop for instance...
 
-                    cd ~/Desktop/
+* What do we mean when we say flat file?
+    * By default, a timeline pulls **live data** or **dynamic data** from a Google spreadsheet. This can work well when beginning a project or when creating a timeline during a breaking news situation.
+    * Information can be added in near real-time and the latest updates can be seen bu our audience when they arrive at the page. Of course this opens up a whole can of worms and the need to make sure you get the information correct and accurate, but that's a different discussion.
+    * Flat file -- or static -- data is the opposite of dynamic. It's stored in a file and used to populate the timeline with information.
+        * The use case for this is when a timeline no longer needs regular updates and leaving it dynamic can cause more harm than good.
+* Creating a flat-file.
+    * In this example, creating a flat-file is simply taking data in one form - a csv - and converting it to another form - json. There are many ways to do this. I wrote a basic [python script](https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py) to help facilitate this process, but [online solutions](https://shancarter.github.io/mr-data-converter/) exist.
+        * Download csvs of both the ```Posts``` and the ```MetaData```.
+        * Convert each to json. If using my [python script](https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py) you would do it like this.
+        * Assuming you're on a Mac, open your terminal and change to the directory where you saved the csv files. If you saved them to your Desktop for instance...
 
-            * Copy the [python script](https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py) to your Desktop as well.
+                cd ~/Desktop/
 
-                    curl -l https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py > ~/Desktop/csv-to-json.py
+        * Copy the [python script](https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py) to your Desktop as well.
 
-            * Run the python script, passing into two arguments -- or options: the name of the file and the format you would like -- in this case ```timeline```. So for the ```Posts``` sheet.
+                curl -l https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py > ~/Desktop/csv-to-json.py
 
-                    python csv-to-json.py _Template-\ timeline-template\ -\ Posts.csv timeline
+        * Run the python script, passing into two arguments -- or options: the name of the file and the format you would like -- in this case ```timeline```. So for the ```Posts``` sheet.
 
-            * You should see output like this
+                python csv-to-json.py _Template-\ timeline-template\ -\ Posts.csv timeline
 
-                    parsing _Template- timeline-template - Posts.csv
+        * You should see output like this
 
-                    creating json for timeline
-                    _Template- timeline-template - Posts.csv converted to _Template- timeline-template - Posts_timeline.json
+                parsing _Template- timeline-template - Posts.csv
 
-            * And you should now have a file on your desktop titled ```_Template- timeline-template - Posts_timeline.json``` Do the same for the ```Meta``` sheet.
+                creating json for timeline
+                _Template- timeline-template - Posts.csv converted to _Template- timeline-template - Posts_timeline.json
 
-                    python csv-to-json.py _Template-\ timeline-template\ -\ Meta.csv timeline
+        * And you should now have a file on your desktop titled ```_Template- timeline-template - Posts_timeline.json``` Do the same for the ```Meta``` sheet.
 
-            * These can become the ```timeline-data.json``` and the ```timeline-meta.json``` files used to power the timeline.
+                python csv-to-json.py _Template-\ timeline-template\ -\ Meta.csv timeline
+
+        * These can become the ```timeline-data.json``` and the ```timeline-meta.json``` files used to power the timeline.
 
 <a name="deploying"></a>
 #### Deploying To The Web
@@ -355,21 +356,19 @@ Right now, Chris K. and Eric Z. can handle this part of the processs. Brian F. h
 
 1. To deploy a timeline so users can see it on the web, we add the project to the GitHub repository.
 
-        ```git add <project name>```
+        git add <project name>
 
 2. We add a commit message saying what we just did
 
-        ```git commit 'adds <project name> to the repository'```
+        git commit 'adds <project name> to the repository'
 
 3. We push it to the repository to make it available to go live
 
-        ```git commit 'adds <project name> to the repository'```
+        git commit 'adds <project name> to the repository'
 
 4. Chris or Eric deploys the timeline using Rundeck. This isn't ideal we realize, but [technical requirements](#technical-requirements) will be required to allow others to do so.
 
-        ```cap deploy```
-
-<a name="publishing">
+<a name="publishing"></a>
 #### Publishing
 
 When it comes time to add the timeline to a news story or blog post, and provided you made it embeddable, just visit the timeline and click the "Embed This" button in the top right corner. An alert will pop up and give you the iframe code.
@@ -406,22 +405,21 @@ The process is similar to the one outline in the [deployment](#deployment) secti
 <a name="resources"></a>
 ####Resources
 
-[scpr GitHub repo](https://github.com/SCPR/static-projects/tree/master/timelines) that contains the timelines we have published
+* [scpr GitHub repo](https://github.com/SCPR/static-projects/tree/master/timelines) that contains the timelines we have published
 
-[tabletop-timeline-v3-init.js](https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-init.js)
+* [tabletop-timeline-v3-init.js](https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-init.js)
 
-[tabletop-timeline-v3-main.js](https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-main.js)
+* [tabletop-timeline-v3-main.js](https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-main.js)
 
-[tabletop-timeline-v3-plugins.js](https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-plugins.js)
+* [tabletop-timeline-v3-plugins.js](https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-plugins.js)
 
-[MinnPost's jquery-vertical-timeline](https://github.com/MinnPost/jquery-vertical-timeline)
+* [MinnPost's jquery-vertical-timeline](https://github.com/MinnPost/jquery-vertical-timeline)
 
-[Tabletop.js](https://github.com/jsoma/tabletop)
+* [Tabletop.js](https://github.com/jsoma/tabletop)
 
-[Modernizr](http://modernizr.com/)
+* [Modernizr](http://modernizr.com/)
 
-[Handlebars.js](http://handlebarsjs.com/)
+* [Handlebars.js](http://handlebarsjs.com/)
 
-[Isotope](http://isotope.metafizzy.co/)
-
-[License for Isotope](http://projects.scpr.org/static/static-files/scripts/isotope_commercial_license/isotope-commercial-license.txt) purchased by [Chris Keller](ckeller@scpr.org)
+* [Isotope](http://isotope.metafizzy.co/)
+    * [License for Isotope](http://projects.scpr.org/static/static-files/scripts/isotope_commercial_license/isotope-commercial-license.txt) purchased by [Chris Keller](http://www.scpr.org/about/people/staff/chris-keller)

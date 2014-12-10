@@ -1,21 +1,821 @@
-<h2>Creating timelines for scpr.org web stories</h2>
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  width: 45em;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 30px;
+}
+
+@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .anchor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding-right: 6px;
+  padding-left: 30px;
+  margin-left: -30px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  display: none;
+  color: #000;
+  vertical-align: middle;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  height: 1em;
+  padding-left: 8px;
+  margin-left: -30px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  display: inline-block;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body .highlight {
+  background: #ffffff;
+}
+
+.markdown-body .highlight .c {
+  color: #999988;
+  font-style: italic;
+}
+
+.markdown-body .highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+
+.markdown-body .highlight .k {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .o {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+
+.markdown-body .highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+
+.markdown-body .highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.markdown-body .highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+
+.markdown-body .highlight .gd .x {
+  color: #000000;
+  background-color: #ffaaaa;
+}
+
+.markdown-body .highlight .ge {
+  font-style: italic;
+}
+
+.markdown-body .highlight .gr {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .gh {
+  color: #999999;
+}
+
+.markdown-body .highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+
+.markdown-body .highlight .gi .x {
+  color: #000000;
+  background-color: #aaffaa;
+}
+
+.markdown-body .highlight .go {
+  color: #888888;
+}
+
+.markdown-body .highlight .gp {
+  color: #555555;
+}
+
+.markdown-body .highlight .gs {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gu {
+  color: #800080;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .gt {
+  color: #aa0000;
+}
+
+.markdown-body .highlight .kc {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kd {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kn {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kp {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kr {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .m {
+  color: #009999;
+}
+
+.markdown-body .highlight .s {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .n {
+  color: #333333;
+}
+
+.markdown-body .highlight .na {
+  color: teal;
+}
+
+.markdown-body .highlight .nb {
+  color: #0086b3;
+}
+
+.markdown-body .highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .no {
+  color: teal;
+}
+
+.markdown-body .highlight .ni {
+  color: purple;
+}
+
+.markdown-body .highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+
+.markdown-body .highlight .nn {
+  color: #555555;
+}
+
+.markdown-body .highlight .nt {
+  color: navy;
+}
+
+.markdown-body .highlight .nv {
+  color: teal;
+}
+
+.markdown-body .highlight .ow {
+  font-weight: bold;
+}
+
+.markdown-body .highlight .w {
+  color: #bbbbbb;
+}
+
+.markdown-body .highlight .mf {
+  color: #009999;
+}
+
+.markdown-body .highlight .mh {
+  color: #009999;
+}
+
+.markdown-body .highlight .mi {
+  color: #009999;
+}
+
+.markdown-body .highlight .mo {
+  color: #009999;
+}
+
+.markdown-body .highlight .sb {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sc {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sd {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .s2 {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .se {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sh {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .si {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sx {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .sr {
+  color: #009926;
+}
+
+.markdown-body .highlight .s1 {
+  color: #dd1144;
+}
+
+.markdown-body .highlight .ss {
+  color: #990073;
+}
+
+.markdown-body .highlight .bp {
+  color: #999999;
+}
+
+.markdown-body .highlight .vc {
+  color: teal;
+}
+
+.markdown-body .highlight .vg {
+  color: teal;
+}
+
+.markdown-body .highlight .vi {
+  color: teal;
+}
+
+.markdown-body .highlight .il {
+  color: #009999;
+}
+
+.markdown-body .highlight .gc {
+  color: #999;
+  background-color: #EAF2F5;
+}
+
+.markdown-body .octicon {
+  font: normal normal 16px octicons-anchor;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+</style><title>README</title></head><body><article class="markdown-body"><h2>
+<a id="user-content-creating-timelines-for-scprorg-web-stories" class="anchor" href="#creating-timelines-for-scprorg-web-stories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating timelines for scpr.org web stories</h2>
 
 <ul>
-<li><strong>Created</strong>: 11/19/2012 by <a href="ckeller@scpr.org">Chris Keller</a></li>
-<li><strong>Updated</strong>: 2/20/2014 by <a href="ckeller@scpr.org">Chris Keller</a></li>
-<li><strong>Updated</strong>: 12/2/2014 by <a href="ckeller@scpr.org">Chris Keller</a></li>
-<li><strong>Updated</strong>: 12/9/2014 by <a href="ckeller@scpr.org">Chris Keller</a></li>
+<li>
+<strong>Created</strong>: 11/19/2012 by <a href="ckeller@scpr.org">Chris Keller</a>
+</li>
+<li>
+<strong>Updated</strong>: 2/20/2014 by <a href="ckeller@scpr.org">Chris Keller</a>
+</li>
+<li>
+<strong>Updated</strong>: 12/2/2014 by <a href="ckeller@scpr.org">Chris Keller</a>
+</li>
+<li>
+<strong>Updated</strong>: 12/9/2014 by <a href="ckeller@scpr.org">Chris Keller</a>
+</li>
 </ul>
 
-
-<h2>Table of contents</h2>
+<h2>
+<a id="user-content-table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table of contents</h2>
 
 <ul>
 <li><a href="#overview">Overview</a></li>
 <li><a href="#configuring-your-machine">Configuring your machine</a></li>
 <li><a href="#quickstart">Quickstart</a></li>
 <li><a href="#creating-the-spreadsheet">Creating the spreadsheet</a></li>
-<li><a href="#configuring">Configuring the timeline files</a>
+<li>
+<a href="#configuring">Configuring the timeline files</a>
 
 <ul>
 <li><a href="#flat-file-data">Flat file data configuration</a></li>
@@ -27,12 +827,12 @@
 <li><a href="#resources">Resources</a></li>
 </ul>
 
+<hr>
 
-<hr />
+<p><a name="user-content-overview"></a></p>
 
-<p><a name="overview"></a></p>
-
-<h4>Overview</h4>
+<h4>
+<a id="user-content-overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h4>
 
 <p>With a little practice - and some web development tools in place - you can create and deploy a <a href="http://projects.scpr.org/static/timelines/life-of-nelson-mandela/">topical timeline </a> for <a href="http://www.scpr.org/">scpr.org</a> using a Google Spreadsheet, a HTML index file and a JavaScript configuration file.</p>
 
@@ -40,19 +840,22 @@
 
 <p>That said, the remaining 5 percent involves gettting your machine setup with the tools and scripts necessary to make the 95 percent flow smoothly. <em>Probably a poor way to explain things, but you get the idea</em></p>
 
-<p>Follow the steps below to build, deploy and publish your very own timeline. And you'll want to check out the <a href="https://github.com/SCPR/timeline-data-generator">tool we made</a> that queries KPCC's <a href="https://github.com/SCPR/api-docs">content API</a> to create a csv file that can be used to kickstart a timeline.</p>
+<p>Follow the steps below -- or <a href="http://projects.scpr.org/timelines/README.html">here</a> -- to build, deploy and publish your very own timeline. And you'll want to check out the <a href="https://github.com/SCPR/timeline-data-generator">tool we made</a> that queries KPCC's <a href="https://github.com/SCPR/api-docs">content API</a> to create a csv file that can be used to kickstart a timeline.</p>
 
-<p><a name="configuring-your-machine"></a></p>
+<p><a name="user-content-configuring-your-machine"></a></p>
 
-<h4>Configuring your machine</h4>
+<h4>
+<a id="user-content-configuring-your-machine" class="anchor" href="#configuring-your-machine" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring your machine</h4>
 
 <p>Let's take things from the beginning, which is more than some will want but it's the way to do this properly.</p>
 
 <ol>
-<li><p>Quick Route</p>
+<li>
+<p>Quick Route</p>
 
 <ul>
-<li><a href="https://mac.github.com/">Download</a> GitHub for Mac and install</li>
+<li>
+<a href="https://mac.github.com/">Download</a> GitHub for Mac and install</li>
 <li>Follow the setup instructions
 
 <ul>
@@ -67,7 +870,8 @@
 </li>
 </ul>
 </li>
-<li><p>Longer Route</p>
+<li>
+<p>Longer Route</p>
 
 <ul>
 <li>See if you have git installed. Git is a version control system designed to allow for collaboration on web development projects.
@@ -81,12 +885,14 @@
 <li>If it returns <code>-bash: git: command not found</code> that means you have to install git. You will still be able to create a timeline, but Chris or Eric will have to help you get it ready for the web.</li>
 </ul>
 </li>
-<li><a href="https://help.github.com/articles/generating-ssh-keys/">Generate ssh keys</a> for your GitHub account.</li>
+<li>
+<a href="https://help.github.com/articles/generating-ssh-keys/">Generate ssh keys</a> for your GitHub account.</li>
 <li>Change to your home directory by typing <code>cd ~</code> in your terminal.</li>
 <li>Clone the <a href="https://github.com/SCPR/static-projects/">static-projects</a> repository on GitHub.
 
 <ul>
-<li>Enter the following into your terminal: <code>git clone git@github.com:SCPR/static-projects.git</code></li>
+<li>Enter the following into your terminal: <code>git clone git@github.com:SCPR/static-projects.git</code>
+</li>
 </ul>
 </li>
 </ul>
@@ -94,7 +900,6 @@
 </ul>
 </li>
 </ol>
-
 
 <p>What in the heck did we just do?</p>
 
@@ -104,172 +909,245 @@
 <li><p>We built up your machine to combine these two things allows you access to the projects, and the ability to create your own.</p></li>
 </ul>
 
+<p><a name="user-content-quickstart"></a></p>
 
-<p><a name="quickstart"></a></p>
-
-<h4>Quickstart</h4>
+<h4>
+<a id="user-content-quickstart" class="anchor" href="#quickstart" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quickstart</h4>
 
 <ul>
 <li>[ ] Log into the KPCC DataDesk's Google Drive account, or your own, if the <code>web_timelines_templates</code> folder has been shared with you</li>
 <li>[ ] While in the directory, make a copy of the directory titled <a href="https://docs.google.com/spreadsheet/ccc?key=0Aq8qwSArzKP9dDR2a1FDbnEtTzIxU19SV25sSThLWVE#gid=0">_Template: timeline-template</a> that is stored in the KPCC Data Desk Google Drive account.</li>
-<li>[ ] Add data for the timeline on the sheet labeled <code>Posts</code></li>
-<li>[ ] Add data for the headline, intro, byline and publish dates on the sheet labeled <code>MetaData</code></li>
+<li>[ ] Add data for the timeline on the sheet labeled <code>Posts</code>
+</li>
+<li>[ ] Add data for the headline, intro, byline and publish dates on the sheet labeled <code>MetaData</code>
+</li>
 <li>[ ] Publish the spreadsheet and get the spreadsheet key</li>
 <li>[ ] Open the repository that you cloned and go into the <code>timelines</code> directory</li>
-<li>[ ] Using the option-drag method, make a copy of the directory titled <code>timeline-template</code></li>
+<li>[ ] Using the option-drag method, make a copy of the directory titled <code>timeline-template</code>
+</li>
 <li>[ ] Complete the <code>timeline-config.js</code> file and fill out the fields to your liking</li>
 <li>[ ] Open <code>index.html</code> and add metadata to the top of the file</li>
 <li>[ ] Commit your changes to the repo, or open a pull request</li>
 <li>[ ] Contact Eric or Chris to deploy the timeline so users can see it on the web</li>
 </ul>
 
+<p><a name="user-content-creating-the-spreadsheet"></a></p>
 
-<p><a name="creating-the-spreadsheet"></a></p>
-
-<h4>Creating the spreadsheet</h4>
+<h4>
+<a id="user-content-creating-the-spreadsheet" class="anchor" href="#creating-the-spreadsheet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating the spreadsheet</h4>
 
 <p>This assumes you've already got a topic in mind and a data source, and you're familiar with using Google spreadsheets.</p>
 
 <ol>
 <li><p>Begin by making a copy of the file titled <a href="https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&amp;usp=drive_web#gid=0">Template: KPCC Timeline Template</a> that is stored in the KPCC Data Desk Google Drive account. You may be prompted to request access. Don't worry, if you're on staff we'll approve you.</p></li>
-<li><p>In the spreadsheet you will find two sheets. One is labeled <code>Posts</code> and one is labeled <code>MetaData</code>. I begin by entering the data for the timeline, which means I start in the sheet labeled <code>Posts</code>. Here's an explanation of the data that should appear in each column:</p>
+<li>
+<p>In the spreadsheet you will find two sheets. One is labeled <code>Posts</code> and one is labeled <code>MetaData</code>. I begin by entering the data for the timeline, which means I start in the sheet labeled <code>Posts</code>. Here's an explanation of the data that should appear in each column:</p>
 
 <ul>
-<li><strong>title</strong>
+<li>
+<strong>title</strong>
 
 <ul>
-<li><strong>Type</strong>: text</li>
-<li><strong>Description</strong>: This is the headline that will appear above the item on the timeline. Keep it pithy and to the point.</li>
+<li>
+<strong>Type</strong>: text</li>
+<li>
+<strong>Description</strong>: This is the headline that will appear above the item on the timeline. Keep it pithy and to the point.</li>
 </ul>
 </li>
-<li><strong>date</strong>
+<li>
+<strong>date</strong>
 
 <ul>
-<li><strong>Type</strong>: date</li>
-<li><strong>Description</strong>: This is the date the item took place and is required for sorting purposes. The end user will not see this value. Please note that the date column should contain data in a <strong>Month Day, Year</strong> format. -- <strong>April 25, 2012</strong> so the JavaScript can parse it correctly. If you don't know the date something occurred, we can fudge it for sorting purposes by just entering the first or second day of a month.</li>
+<li>
+<strong>Type</strong>: date</li>
+<li>
+<strong>Description</strong>: This is the date the item took place and is required for sorting purposes. The end user will not see this value. Please note that the date column should contain data in a <strong>Month Day, Year</strong> format. -- <strong>April 25, 2012</strong> so the JavaScript can parse it correctly. If you don't know the date something occurred, we can fudge it for sorting purposes by just entering the first or second day of a month.</li>
 </ul>
 </li>
-<li><strong>display date</strong>
+<li>
+<strong>display date</strong>
 
 <ul>
-<li><strong>Type</strong>: text</li>
-<li><strong>Description</strong>: This is the date the user will see on the timeline. You can format this however it makes sense given the item's context. Sometime we use March 2003, sometimes 2003. It's really a free form text field to explain to the user when something happened.</li>
+<li>
+<strong>Type</strong>: text</li>
+<li>
+<strong>Description</strong>: This is the date the user will see on the timeline. You can format this however it makes sense given the item's context. Sometime we use March 2003, sometimes 2003. It's really a free form text field to explain to the user when something happened.</li>
 </ul>
 </li>
-<li><strong>media type</strong>
+<li>
+<strong>media type</strong>
 
 <ul>
-<li><strong>Type</strong>: image or embed</li>
-<li><strong>Description</strong>: This field accepts two values: image or embed. It is used to tell the presentation template how to adjust to a photo or an iframe/video embed.</li>
+<li>
+<strong>Type</strong>: image or embed</li>
+<li>
+<strong>Description</strong>: This field accepts two values: image or embed. It is used to tell the presentation template how to adjust to a photo or an iframe/video embed.</li>
 </ul>
 </li>
-<li><strong>media url</strong>
+<li>
+<strong>media url</strong>
 
 <ul>
-<li><strong>Type</strong>: url</li>
-<li><strong>Description</strong>: This field is a link to an image -- if the media type is image -- or an iframe embed code. In most cases we should only be linking to images we have stored in assethost. Put another way: Do not hotlink to images on other sites. We have no reason to believe those images will always exist or won't be switched out for some meme.</li>
+<li>
+<strong>Type</strong>: url</li>
+<li>
+<strong>Description</strong>: This field is a link to an image -- if the media type is image -- or an iframe embed code. In most cases we should only be linking to images we have stored in assethost. Put another way: Do not hotlink to images on other sites. We have no reason to believe those images will always exist or won't be switched out for some meme.</li>
 </ul>
 </li>
-<li><strong>caption</strong>
+<li>
+<strong>caption</strong>
 
 <ul>
-<li><strong>Type</strong>: text</li>
-<li><strong>Description</strong>: This field is the caption for the image.</li>
+<li>
+<strong>Type</strong>: text</li>
+<li>
+<strong>Description</strong>: This field is the caption for the image.</li>
 </ul>
 </li>
-<li><strong>body</strong>
+<li>
+<strong>body</strong>
 
 <ul>
-<li><strong>Type</strong>: text</li>
-<li><strong>Description</strong>: This field contains body text for the item. Should your item not warrant body text, this field isn't necessary.</li>
+<li>
+<strong>Type</strong>: text</li>
+<li>
+<strong>Description</strong>: This field contains body text for the item. Should your item not warrant body text, this field isn't necessary.</li>
 </ul>
 </li>
-<li><strong>read more source</strong>
+<li>
+<strong>read more source</strong>
 
 <ul>
-<li><strong>Type</strong>: text</li>
-<li><strong>Description</strong>: This field is the source of an item.</li>
+<li>
+<strong>Type</strong>: text</li>
+<li>
+<strong>Description</strong>: This field is the source of an item.</li>
 </ul>
 </li>
-<li><strong>read more url</strong>
+<li>
+<strong>read more url</strong>
 
 <ul>
-<li><strong>Type</strong>: url</li>
-<li><strong>Description</strong>: This field is a link to that source.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Now lets move on to the sheet labeled <code>MetaData</code>. Here's an explanation of the data that should appear in each column:</p>
-
-<ul>
-<li><strong>projecturl</strong>
-
-<ul>
-<li><strong>Type</strong>: url</li>
-<li><strong>Description</strong>: This is the URL where the timeline will be visible on the web. If you don't know this, Chris K., Eric Z. or Brian F. can help you.</li>
-<li><strong>Example</strong>: <code>http://projects.scpr.org/static/timelines/life-of-nelson-mandela/</code></li>
-</ul>
-</li>
-<li><strong>kicker</strong>
-
-<ul>
-<li><strong>Type</strong>: text</li>
-<li><strong>Description</strong>: Projects have a "kicker" headline element that describes the topic of the project. This will usually be something like "Politics," "Crime," "Education".</li>
-<li><strong>Example</strong>: <code>Politics</code></li>
-</ul>
-</li>
-<li><strong>headline</strong>
-
-<ul>
-<li><strong>Type</strong>: text</li>
-<li><strong>Description</strong>: This is the headline of the project that will appear as a H1 heading on the page.</li>
-<li><strong>Example</strong>: <code>Timeline: The Life of Nelson Mandela</code></li>
-</ul>
-</li>
-<li><strong>credits</strong>
-
-<ul>
-<li><strong>Type</strong>: text + HTML</li>
-<li><strong>Description</strong>: This is the byline of the project with a link to the producer's bio if applicable.</li>
-<li><strong>Example</strong>: <code>Produced by &lt;a href="http://www.scpr.org/about/people/staff/brian-frank" target="blank"&gt;Brian Frank&lt;/a&gt; and &lt;a href="http://www.scpr.org/about/people/staff/chris-keller" target="blank"&gt;Chris Keller&lt;/a&gt;</code></li>
-</ul>
-</li>
-<li><strong>published</strong>
-
-<ul>
-<li><strong>Type</strong>: text</li>
-<li><strong>Description</strong>: This is the date a project was published or updated.</li>
-<li><strong>Example</strong>: <code>Published Dec. 5, 2013</code></li>
-</ul>
-</li>
-<li><strong>text</strong>
-
-<ul>
-<li><strong>Type</strong>: html</li>
-<li><strong>Description</strong>: This is a paragraph or two to describe the timeline for the user.</li>
-<li><strong>Example</strong>: <code>&lt;p&gt;Nelson Mandela, who became one of the world's most beloved statesmen and a colossus of the 20th century when he emerged from 27 years in prison to negotiate an end to white minority rule in South Africa, has died. He was 95. South African President Jacob Zuma made the announcement at a news conference late Thursday, saying "we've lost our greatest son."&lt;/p&gt;</code></li>
-</ul>
-</li>
-<li><strong>readmoreurl</strong>
-
-<ul>
-<li><strong>Type</strong>: url</li>
-<li><strong>Description</strong>: This is a link that serves to direct the user to a post, segment or landing page.</li>
-<li><strong>Example</strong>: <code>http://www.scpr.org/news/2013/12/05/40776/nelson-mandela-has-died-according-to-south-africa/</code></li>
-</ul>
-</li>
-<li><strong>sources</strong>
-
-<ul>
-<li><strong>Type</strong>: text</li>
-<li><strong>Description</strong>: This is an umbrella listing for sources used to compile the timeline.</li>
-<li><strong>Example</strong>: <code>Associated Press</code></li>
+<li>
+<strong>Type</strong>: url</li>
+<li>
+<strong>Description</strong>: This field is a link to that source.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>Once the <strong>Posts</strong> and <strong>MetaData</strong> sheets are completed you have to publish the spreadsheet. To do this go to <em>File</em> --> <em>Publish to the web</em> and choose <em>Start publishing</em>. A URL will appear, and we're interested in the part between 'key=' and the '&amp;' symbol.</p>
+<li>
+<p>Now lets move on to the sheet labeled <code>MetaData</code>. Here's an explanation of the data that should appear in each column:</p>
+
+<ul>
+<li>
+<strong>projecturl</strong>
+
+<ul>
+<li>
+<strong>Type</strong>: url</li>
+<li>
+<strong>Description</strong>: This is the URL where the timeline will be visible on the web. If you don't know this, Chris K., Eric Z. or Brian F. can help you.</li>
+<li>
+<strong>Example</strong>: <code>http://projects.scpr.org/static/timelines/life-of-nelson-mandela/</code>
+</li>
+</ul>
+</li>
+<li>
+<strong>kicker</strong>
+
+<ul>
+<li>
+<strong>Type</strong>: text</li>
+<li>
+<strong>Description</strong>: Projects have a "kicker" headline element that describes the topic of the project. This will usually be something like "Politics," "Crime," "Education".</li>
+<li>
+<strong>Example</strong>: <code>Politics</code>
+</li>
+</ul>
+</li>
+<li>
+<strong>headline</strong>
+
+<ul>
+<li>
+<strong>Type</strong>: text</li>
+<li>
+<strong>Description</strong>: This is the headline of the project that will appear as a H1 heading on the page.</li>
+<li>
+<strong>Example</strong>: <code>Timeline: The Life of Nelson Mandela</code>
+</li>
+</ul>
+</li>
+<li>
+<strong>credits</strong>
+
+<ul>
+<li>
+<strong>Type</strong>: text + HTML</li>
+<li>
+<strong>Description</strong>: This is the byline of the project with a link to the producer's bio if applicable.</li>
+<li>
+<strong>Example</strong>: <code>Produced by &lt;a href="http://www.scpr.org/about/people/staff/brian-frank" target="blank"&gt;Brian Frank&lt;/a&gt; and &lt;a href="http://www.scpr.org/about/people/staff/chris-keller" target="blank"&gt;Chris Keller&lt;/a&gt;</code>
+</li>
+</ul>
+</li>
+<li>
+<strong>published</strong>
+
+<ul>
+<li>
+<strong>Type</strong>: text</li>
+<li>
+<strong>Description</strong>: This is the date a project was published or updated.</li>
+<li>
+<strong>Example</strong>: <code>Published Dec. 5, 2013</code>
+</li>
+</ul>
+</li>
+<li>
+<strong>text</strong>
+
+<ul>
+<li>
+<strong>Type</strong>: html</li>
+<li>
+<strong>Description</strong>: This is a paragraph or two to describe the timeline for the user.</li>
+<li>
+<strong>Example</strong>: <code>&lt;p&gt;Nelson Mandela, who became one of the world's most beloved statesmen and a colossus of the 20th century when he emerged from 27 years in prison to negotiate an end to white minority rule in South Africa, has died. He was 95. South African President Jacob Zuma made the announcement at a news conference late Thursday, saying "we've lost our greatest son."&lt;/p&gt;</code>
+</li>
+</ul>
+</li>
+<li>
+<strong>readmoreurl</strong>
+
+<ul>
+<li>
+<strong>Type</strong>: url</li>
+<li>
+<strong>Description</strong>: This is a link that serves to direct the user to a post, segment or landing page.</li>
+<li>
+<strong>Example</strong>: <code>http://www.scpr.org/news/2013/12/05/40776/nelson-mandela-has-died-according-to-south-africa/</code>
+</li>
+</ul>
+</li>
+<li>
+<strong>sources</strong>
+
+<ul>
+<li>
+<strong>Type</strong>: text</li>
+<li>
+<strong>Description</strong>: This is an umbrella listing for sources used to compile the timeline.</li>
+<li>
+<strong>Example</strong>: <code>Associated Press</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Once the <strong>Posts</strong> and <strong>MetaData</strong> sheets are completed you have to publish the spreadsheet. To do this go to <em>File</em> --&gt; <em>Publish to the web</em> and choose <em>Start publishing</em>. A URL will appear, and we're interested in the part between 'key=' and the '&amp;' symbol.</p>
 
 <ul>
 <li>Here's an example URL:
@@ -289,10 +1167,10 @@
 <li><p>Congratulations. You have now created a timeline. Want to update your timeline with new information...? Here's the beautiful part: Just add more information to the Google Spreadsheet and it will be updated. Now that your timeline is ready to deploy, you'll need some help.</p></li>
 </ol>
 
+<p><a name="user-content-configuring"></a></p>
 
-<p><a name="configuring"></a></p>
-
-<h4>Configuring the timeline files</h4>
+<h4>
+<a id="user-content-configuring-the-timeline-files" class="anchor" href="#configuring-the-timeline-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuring the timeline files</h4>
 
 <p>What do we mean when we say configuring?</p>
 
@@ -300,243 +1178,364 @@
 
 <ol>
 <li><p>Clone the <a href="https://github.com/SCPR/static-projects">SCPR/static-projects repository</a> from <a href="https://github.com/about">GitHub</a> to your local machine.</p></li>
-<li><p>In the main directory there is a timelines subdirectory that contains the <strong>timeline-template</strong> folder. Duplicate this <strong>timeline-template</strong> folder (option-drag on a Mac) and rename it to match the timeline topic. I wouldn't use more than three or four words, which are separated by hyphens.</p>
+<li>
+<p>In the main directory there is a timelines subdirectory that contains the <strong>timeline-template</strong> folder. Duplicate this <strong>timeline-template</strong> folder (option-drag on a Mac) and rename it to match the timeline topic. I wouldn't use more than three or four words, which are separated by hyphens.</p>
 
 <ul>
-<li><strong>Example</strong>: <code>life-of-nelson-mandela</code></li>
+<li>
+<strong>Example</strong>: <code>life-of-nelson-mandela</code>
+</li>
 </ul>
 </li>
-<li><p>Inside the new directory you created you will find four files and a directory titled respond-proxy. For now, we're only really interested in <strong>timeline-config.js</strong> and <strong>index.html</strong>. Both need to be filled out.</p>
+<li>
+<p>Inside the new directory you created you will find four files and a directory titled respond-proxy. For now, we're only really interested in <strong>timeline-config.js</strong> and <strong>index.html</strong>. Both need to be filled out.</p>
 
 <ul>
-<li><p><strong>timeline-config.js</strong> contains the configuration variables that allow the data on your spreadsheet to be displayed on a template for the user. Here's what is looks like and what each of the keys refer to:</p>
+<li>
+<p><strong>timeline-config.js</strong> contains the configuration variables that allow the data on your spreadsheet to be displayed on a template for the user. Here's what is looks like and what each of the keys refer to:</p>
 
-<pre><code>  var kpccTimelineConfig = {
-      // choose spreadsheet or flat-file
-      dataSource: 'spreadsheet',
+<pre><code>var kpccTimelineConfig = {
+    // choose spreadsheet or flat-file
+    dataSource: 'spreadsheet',
 
-      // example spreadsheet key
-      key: '0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE',
+    // example spreadsheet key
+    key: '0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE',
 
-      // example path to data file
-      sourceFile: 'timeline-data.json',
+    // example path to data file
+    sourceFile: 'timeline-data.json',
 
-      // example path to meta file
-      metaFile: 'timeline-meta.json',
+    // example path to meta file
+    metaFile: 'timeline-meta.json',
 
-      // name of sheet containing timeline entries
-      sheetName: 'Posts',
+    // name of sheet containing timeline entries
+    sheetName: 'Posts',
 
-      // name of sheet containing timeline meta
-      sheetMeta: 'MetaData',
+    // name of sheet containing timeline meta
+    sheetMeta: 'MetaData',
 
-      // make the timeline embeddable
-      embedThis: true,
+    // make the timeline embeddable
+    embedThis: true,
 
-      // url of the timeline
-      projectDirectory: 'http://projects.scpr.org/static/timelines/timeline-template/',
+    // url of the timeline
+    projectDirectory: 'http://projects.scpr.org/static/timelines/timeline-template/',
 
-      // newest or oldest
-      defaultDirection: 'newest',
+    // newest or oldest
+    defaultDirection: 'newest',
 
-      // collapsed or expanded
-      defaultExpansion: 'expanded',
+    // collapsed or expanded
+    defaultExpansion: 'expanded',
 
-      // display social sharing links
-      sharing: true,
+    // display social sharing links
+    sharing: true,
 
-      // groupSegmentByYear or groupSegmentByDecade
-      groupFunction: 'groupSegmentByYear',
+    // groupSegmentByYear or groupSegmentByDecade
+    groupFunction: 'groupSegmentByYear',
 
-      // adjust timeline width
-      width: '90%'
-  };
+    // adjust timeline width
+    width: '90%'
+};
 </code></pre>
 
 <ul>
-<li><p><strong>dataSource:</strong></p>
+<li>
+<p><strong>dataSource:</strong></p>
 
 <ul>
-<li><strong>Description</strong>: Tells the timeline whether the data is coming from a spreadsheet or a JSON file.</li>
-<li><strong>Default value</strong>: <code>'spreadsheet'</code></li>
-<li><strong>Options</strong>: <code>'spreadsheet'</code> or <code>'flat-file'</code></li>
-</ul>
+<li>
+<strong>Description</strong>: Tells the timeline whether the data is coming from a spreadsheet or a JSON file.</li>
+<li>
+<strong>Default value</strong>: <code>'spreadsheet'</code>
 </li>
-<li><p><strong>key:</strong></p>
-
-<ul>
-<li><strong>Description</strong>: This is the key to the spreadsheet where the data lives.</li>
-<li><strong>Default value</strong>: <code>'0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE'</code></li>
-<li><strong>Options</strong>: n/a</li>
-</ul>
-</li>
-<li><p><strong>sourceFile:</strong></p>
-
-<ul>
-<li><strong>Description</strong>: If your dataSource is flat-file, this is the path to that json file that contains the items posted on the spreadsheets <strong>Posts</strong> sheet. It should be included in the repository in the timeline's directory.</li>
-<li><strong>Default value</strong>: <code>'timeline-data.json'</code></li>
-<li><strong>Options</strong>: n/a</li>
-</ul>
-</li>
-<li><p><strong>metaFile:</strong></p>
-
-<ul>
-<li><strong>Description</strong>: If your dataSource is flat-file, this is the path to that json file that contains the items posted on the spreadsheets <strong>MetaData</strong> sheet. It should be included in the repository in the timeline's directory.</li>
-<li><strong>Default value</strong>: <code>'timeline-data.json'</code></li>
-<li><strong>Options</strong>: n/a</li>
-</ul>
-</li>
-<li><p><strong>sheetName:</strong></p>
-
-<ul>
-<li><strong>Description</strong>: Should you change the name of the sheet that stores your item data from <strong>Posts</strong>, this needs to be reflected here.</li>
-<li><strong>Default value</strong>: <code>'Posts'</code></li>
-<li><strong>Options</strong>: n/a</li>
-</ul>
-</li>
-<li><p><strong>sheetMeta:</strong></p>
-
-<ul>
-<li><strong>Description</strong>: Should you change the name of the sheet that stores your metadata from <strong>MetaData</strong>, this needs to be reflected here.</li>
-<li><strong>Default value</strong>: <code>'MetaData'</code></li>
-<li><strong>Options</strong>: n/a</li>
-</ul>
-</li>
-<li><p><strong>embedThis:</strong></p>
-
-<ul>
-<li><strong>Description</strong>: Do you want to allow others to embed this timeline?</li>
-<li><strong>Default value</strong>: <code>true</code></li>
-<li><strong>Options</strong>: <code>true</code> or <code>false</code></li>
-</ul>
-</li>
-<li><p><strong>projectDirectory:</strong></p>
-
-<ul>
-<li><strong>Description</strong>: url of the timeline</li>
-<li><strong>Default value</strong>: <code>'http://projects.scpr.org/static/timelines/timeline-template/'</code></li>
-<li><strong>Options</strong>: n/a</li>
-</ul>
-</li>
-<li><p><strong>projectDirectory:</strong></p>
-
-<ul>
-<li><strong>Description</strong>: Direction the timeline's items will be displayed when the user loads the page.</li>
-<li><strong>Default value</strong>: <code>'newest'</code></li>
-<li><strong>Options</strong>: <code>'newest'</code> or <code>'oldest'</code></li>
-</ul>
-</li>
-<li><p><strong>defaultDirection:</strong></p>
-
-<ul>
-<li><strong>Description</strong>: Direction the timeline's items will be displayed when the user loads the page.</li>
-<li><strong>Default value</strong>: <code>'newest'</code></li>
-<li><strong>Options</strong>: <code>'newest'</code> or <code>'oldest'</code></li>
-</ul>
-</li>
-<li><p><strong>defaultExpansion:</strong></p>
-
-<ul>
-<li><strong>Description</strong>: Determines if the timeline's items will be open or closed when the user loads the page.</li>
-<li><strong>Default value</strong>: <code>'expanded'</code></li>
-<li><strong>Options</strong>: <code>'expanded'</code> or <code>'collapsed'</code></li>
-</ul>
-</li>
-<li><p><strong>sharing:</strong></p>
-
-<ul>
-<li><strong>Description</strong>: Determines if links and social links to an individual timeline item should be displayed to the user.</li>
-<li><strong>Default value</strong>: <code>true</code></li>
-<li><strong>Options</strong>: <code>true</code> or <code>false</code></li>
-</ul>
-</li>
-<li><p><strong>groupFunction:</strong></p>
-
-<ul>
-<li><strong>Description</strong>: Determines if the items should be grouped by year or by decade.</li>
-<li><strong>Default value</strong>: <code>'groupSegmentByYear'</code></li>
-<li><strong>Options</strong>: <code>'groupSegmentByYear'</code> or <code>'groupSegmentByDecade'</code></li>
-</ul>
-</li>
-<li><p><strong>width:</strong></p>
-
-<ul>
-<li><strong>Description</strong>: Sets the width of the timeline in the template container.</li>
-<li><strong>Default value</strong>: <code>'90%'</code></li>
-<li><strong>Options</strong>: n/a</li>
-</ul>
+<li>
+<strong>Options</strong>: <code>'spreadsheet'</code> or <code>'flat-file'</code>
 </li>
 </ul>
 </li>
-<li><p><strong>index.html</strong> contains the markup that will be served to the user on the web. We have to enter four pieces of information in this file.</p>
+<li>
+<p><strong>key:</strong></p>
 
 <ul>
-<li><p>Add the project's title to the following:</p>
+<li>
+<strong>Description</strong>: This is the key to the spreadsheet where the data lives.</li>
+<li>
+<strong>Default value</strong>: <code>'0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE'</code>
+</li>
+<li>
+<strong>Options</strong>: n/a</li>
+</ul>
+</li>
+<li>
+<p><strong>sourceFile:</strong></p>
 
-<pre><code>  &lt;title&gt;Timeline: Title | scpr.org&lt;/title&gt;
-  &lt;meta property="og:title" content="#" /&gt;
-  &lt;meta name="twitter:title" content="#"&gt;
-</code></pre></li>
-<li><p>Add the project's url to the following:</p>
+<ul>
+<li>
+<strong>Description</strong>: If your dataSource is flat-file, this is the path to that json file that contains the items posted on the spreadsheets <strong>Posts</strong> sheet. It should be included in the repository in the timeline's directory.</li>
+<li>
+<strong>Default value</strong>: <code>'timeline-data.json'</code>
+</li>
+<li>
+<strong>Options</strong>: n/a</li>
+</ul>
+</li>
+<li>
+<p><strong>metaFile:</strong></p>
 
-<pre><code>  &lt;meta property="og:url" content="#" /&gt;
-  &lt;meta name="twitter:url" content="#"&gt;
-</code></pre></li>
-<li><p>Complete the projects's description:</p>
+<ul>
+<li>
+<strong>Description</strong>: If your dataSource is flat-file, this is the path to that json file that contains the items posted on the spreadsheets <strong>MetaData</strong> sheet. It should be included in the repository in the timeline's directory.</li>
+<li>
+<strong>Default value</strong>: <code>'timeline-data.json'</code>
+</li>
+<li>
+<strong>Options</strong>: n/a</li>
+</ul>
+</li>
+<li>
+<p><strong>sheetName:</strong></p>
 
-<pre><code>  &lt;meta name="description" content="#" /&gt;
-</code></pre></li>
-<li><p>Complete the projects's keywords:</p>
+<ul>
+<li>
+<strong>Description</strong>: Should you change the name of the sheet that stores your item data from <strong>Posts</strong>, this needs to be reflected here.</li>
+<li>
+<strong>Default value</strong>: <code>'Posts'</code>
+</li>
+<li>
+<strong>Options</strong>: n/a</li>
+</ul>
+</li>
+<li>
+<p><strong>sheetMeta:</strong></p>
 
-<pre><code>  &lt;meta name="keywords" content="#" /&gt;
-</code></pre></li>
+<ul>
+<li>
+<strong>Description</strong>: Should you change the name of the sheet that stores your metadata from <strong>MetaData</strong>, this needs to be reflected here.</li>
+<li>
+<strong>Default value</strong>: <code>'MetaData'</code>
+</li>
+<li>
+<strong>Options</strong>: n/a</li>
+</ul>
+</li>
+<li>
+<p><strong>embedThis:</strong></p>
+
+<ul>
+<li>
+<strong>Description</strong>: Do you want to allow others to embed this timeline?</li>
+<li>
+<strong>Default value</strong>: <code>true</code>
+</li>
+<li>
+<strong>Options</strong>: <code>true</code> or <code>false</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>projectDirectory:</strong></p>
+
+<ul>
+<li>
+<strong>Description</strong>: url of the timeline</li>
+<li>
+<strong>Default value</strong>: <code>'http://projects.scpr.org/static/timelines/timeline-template/'</code>
+</li>
+<li>
+<strong>Options</strong>: n/a</li>
+</ul>
+</li>
+<li>
+<p><strong>projectDirectory:</strong></p>
+
+<ul>
+<li>
+<strong>Description</strong>: Direction the timeline's items will be displayed when the user loads the page.</li>
+<li>
+<strong>Default value</strong>: <code>'newest'</code>
+</li>
+<li>
+<strong>Options</strong>: <code>'newest'</code> or <code>'oldest'</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>defaultDirection:</strong></p>
+
+<ul>
+<li>
+<strong>Description</strong>: Direction the timeline's items will be displayed when the user loads the page.</li>
+<li>
+<strong>Default value</strong>: <code>'newest'</code>
+</li>
+<li>
+<strong>Options</strong>: <code>'newest'</code> or <code>'oldest'</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>defaultExpansion:</strong></p>
+
+<ul>
+<li>
+<strong>Description</strong>: Determines if the timeline's items will be open or closed when the user loads the page.</li>
+<li>
+<strong>Default value</strong>: <code>'expanded'</code>
+</li>
+<li>
+<strong>Options</strong>: <code>'expanded'</code> or <code>'collapsed'</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>sharing:</strong></p>
+
+<ul>
+<li>
+<strong>Description</strong>: Determines if links and social links to an individual timeline item should be displayed to the user.</li>
+<li>
+<strong>Default value</strong>: <code>true</code>
+</li>
+<li>
+<strong>Options</strong>: <code>true</code> or <code>false</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>groupFunction:</strong></p>
+
+<ul>
+<li>
+<strong>Description</strong>: Determines if the items should be grouped by year or by decade.</li>
+<li>
+<strong>Default value</strong>: <code>'groupSegmentByYear'</code>
+</li>
+<li>
+<strong>Options</strong>: <code>'groupSegmentByYear'</code> or <code>'groupSegmentByDecade'</code>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>width:</strong></p>
+
+<ul>
+<li>
+<strong>Description</strong>: Sets the width of the timeline in the template container.</li>
+<li>
+<strong>Default value</strong>: <code>'90%'</code>
+</li>
+<li>
+<strong>Options</strong>: n/a</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>index.html</strong> contains the markup that will be served to the user on the web. We have to enter four pieces of information in this file.</p>
+
+<ul>
+<li>
+<p>Add the project's title to the following:</p>
+
+<pre><code>&lt;title&gt;Timeline: Title | scpr.org&lt;/title&gt;
+&lt;meta property="og:title" content="#" /&gt;
+&lt;meta name="twitter:title" content="#"&gt;
+</code></pre>
+</li>
+<li>
+<p>Add the project's url to the following:</p>
+
+<pre><code>&lt;meta property="og:url" content="#" /&gt;
+&lt;meta name="twitter:url" content="#"&gt;
+</code></pre>
+</li>
+<li>
+<p>Complete the projects's description:</p>
+
+<pre><code>&lt;meta name="description" content="#" /&gt;
+</code></pre>
+</li>
+<li>
+<p>Complete the projects's keywords:</p>
+
+<pre><code>&lt;meta name="keywords" content="#" /&gt;
+</code></pre>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
 
+<p><a name="user-content-flat-file-data"></a>
+4. The flat file data configuration option</p>
 
-<p><a name="flat-file-data"></a>
-4. The flat file data configuration option
-    * What do we mean when we say flat file?
-        * By default, a timeline pulls <strong>live data</strong> or <strong>dynamic data</strong> from a Google spreadsheet. This can work well when beginning a project or when creating a timeline during a breaking news situation.
-        * Information can be added in near real-time and the latest updates can be seen bu our audience when they arrive at the page. Of course this opens up a whole can of worms and the need to make sure you get the information correct and accurate, but that's a different discussion.
-        * Flat file -- or static -- data is the opposite of dynamic. It's stored in a file and used to populate the timeline with information.
-            * The use case for this is when a timeline no longer needs regular updates and leaving it dynamic can cause more harm than good.
-    * Creating a flat-file.
-        * In this example, creating a flat-file is simply taking data in one form - a csv - and converting it to another form - json. There are many ways to do this. I wrote a basic <a href="https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py">python script</a> to help facilitate this process, but <a href="https://shancarter.github.io/mr-data-converter/">online solutions</a> exist.
-            * Download csvs of both the <code>Posts</code> and the <code>MetaData</code>.
-            * Convert each to json. If using my <a href="https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py">python script</a> you would do it like this.
-            * Assuming you're on a Mac, open your terminal and change to the directory where you saved the csv files. If you saved them to your Desktop for instance...</p>
+<ul>
+<li>What do we mean when we say flat file?
 
-<pre><code>                cd ~/Desktop/
+<ul>
+<li>By default, a timeline pulls <strong>live data</strong> or <strong>dynamic data</strong> from a Google spreadsheet. This can work well when beginning a project or when creating a timeline during a breaking news situation.</li>
+<li>Information can be added in near real-time and the latest updates can be seen bu our audience when they arrive at the page. Of course this opens up a whole can of worms and the need to make sure you get the information correct and accurate, but that's a different discussion.</li>
+<li>Flat file -- or static -- data is the opposite of dynamic. It's stored in a file and used to populate the timeline with information.
 
-        * Copy the [python script](https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py) to your Desktop as well.
+<ul>
+<li>The use case for this is when a timeline no longer needs regular updates and leaving it dynamic can cause more harm than good.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Creating a flat-file.</p>
 
-                curl -l https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py &gt; ~/Desktop/csv-to-json.py
+<ul>
+<li>
+<p>In this example, creating a flat-file is simply taking data in one form - a csv - and converting it to another form - json. There are many ways to do this. I wrote a basic <a href="https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py">python script</a> to help facilitate this process, but <a href="https://shancarter.github.io/mr-data-converter/">online solutions</a> exist.</p>
 
-        * Run the python script, passing into two arguments -- or options: the name of the file and the format you would like -- in this case ```timeline```. So for the ```Posts``` sheet.
+<ul>
+<li>Download csvs of both the <code>Posts</code> and the <code>MetaData</code>.</li>
+<li>Convert each to json. If using my <a href="https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py">python script</a> you would do it like this.</li>
+<li>
+<p>Assuming you're on a Mac, open your terminal and change to the directory where you saved the csv files. If you saved them to your Desktop for instance...</p>
 
-                python csv-to-json.py _Template-\ timeline-template\ -\ Posts.csv timeline
-
-        * You should see output like this
-
-                parsing _Template- timeline-template - Posts.csv
-
-                creating json for timeline
-                _Template- timeline-template - Posts.csv converted to _Template- timeline-template - Posts_timeline.json
-
-        * And you should now have a file on your desktop titled ```_Template- timeline-template - Posts_timeline.json``` Do the same for the ```Meta``` sheet.
-
-                python csv-to-json.py _Template-\ timeline-template\ -\ Meta.csv timeline
-
-        * These can become the ```timeline-data.json``` and the ```timeline-meta.json``` files used to power the timeline.
+<pre><code>cd ~/Desktop/
 </code></pre>
+</li>
+<li>
+<p>Copy the <a href="https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py">python script</a> to your Desktop as well.</p>
 
-<p><a name="deploying"></a></p>
+<pre><code>curl -l https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py &gt; ~/Desktop/csv-to-json.py
+</code></pre>
+</li>
+<li>
+<p>Run the python script, passing into two arguments -- or options: the name of the file and the format you would like -- in this case <code>timeline</code>. So for the <code>Posts</code> sheet.</p>
 
-<h4>Deploying To The Web</h4>
+<pre><code>python csv-to-json.py _Template-\ timeline-template\ -\ Posts.csv timeline
+</code></pre>
+</li>
+<li>
+<p>You should see output like this</p>
+
+<pre><code>parsing _Template- timeline-template - Posts.csv
+
+creating json for timeline
+_Template- timeline-template - Posts.csv converted to _Template- timeline-template - Posts_timeline.json
+</code></pre>
+</li>
+<li>
+<p>And you should now have a file on your desktop titled <code>_Template- timeline-template - Posts_timeline.json</code> Do the same for the <code>Meta</code> sheet.</p>
+
+<pre><code>python csv-to-json.py _Template-\ timeline-template\ -\ Meta.csv timeline
+</code></pre>
+</li>
+<li><p>These can become the <code>timeline-data.json</code> and the <code>timeline-meta.json</code> files used to power the timeline.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p><a name="user-content-deploying"></a></p>
+
+<h4>
+<a id="user-content-deploying-to-the-web" class="anchor" href="#deploying-to-the-web" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deploying To The Web</h4>
 
 <p>What do we mean when we say deploying?
 Deploying means we push these templates to a server and make the timeline viewable by our digital audience.</p>
@@ -544,28 +1543,31 @@ Deploying means we push these templates to a server and make the timeline viewab
 <p>Right now, Chris K. and Eric Z. can handle this part of the processs. Brian F. has been trained. We're happy to train others, but there are some <a href="#technical-requirements">technical requirements</a> before this can happen.</p>
 
 <ol>
-<li><p>To deploy a timeline so users can see it on the web, we add the project to the GitHub repository.</p>
+<li>
+<p>To deploy a timeline so users can see it on the web, we add the project to the GitHub repository.</p>
 
-<pre><code> ```git add &lt;project name&gt;```
-</code></pre></li>
-<li><p>We add a commit message saying what we just did</p>
+<pre><code>git add &lt;project name&gt;
+</code></pre>
+</li>
+<li>
+<p>We add a commit message saying what we just did</p>
 
-<pre><code> ```git commit 'adds &lt;project name&gt; to the repository'```
-</code></pre></li>
-<li><p>We push it to the repository to make it available to go live</p>
+<pre><code>git commit 'adds &lt;project name&gt; to the repository'
+</code></pre>
+</li>
+<li>
+<p>We push it to the repository to make it available to go live</p>
 
-<pre><code> ```git commit 'adds &lt;project name&gt; to the repository'```
-</code></pre></li>
-<li><p>Chris or Eric deploys the timeline using Rundeck. This isn't ideal we realize, but <a href="#technical-requirements">technical requirements</a> will be required to allow others to do so.</p>
-
-<pre><code> ```cap deploy```
-</code></pre></li>
+<pre><code>git commit 'adds &lt;project name&gt; to the repository'
+</code></pre>
+</li>
+<li><p>Chris or Eric deploys the timeline using Rundeck. This isn't ideal we realize, but <a href="#technical-requirements">technical requirements</a> will be required to allow others to do so.</p></li>
 </ol>
 
+<p><a name="user-content-publishing"></a></p>
 
-<p><a name="publishing"></p>
-
-<h4>Publishing</h4>
+<h4>
+<a id="user-content-publishing" class="anchor" href="#publishing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Publishing</h4>
 
 <p>When it comes time to add the timeline to a news story or blog post, and provided you made it embeddable, just visit the timeline and click the "Embed This" button in the top right corner. An alert will pop up and give you the iframe code.</p>
 
@@ -577,9 +1579,10 @@ Deploying means we push these templates to a server and make the timeline viewab
 <pre><code>    &lt;iframe src="http://projects.scpr.org/static/timelines/life-of-nelson-mandela" width="100%" height="850px" style="margin: 0 auto;" frameborder="no"&gt;&lt;/iframe&gt;
 </code></pre>
 
-<p><a name="technical-requirements"></a></p>
+<p><a name="user-content-technical-requirements"></a></p>
 
-<h4>Technical Requirements</h4>
+<h4>
+<a id="user-content-technical-requirements" class="anchor" href="#technical-requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Technical Requirements</h4>
 
 <p>To be in a position to configure and deploy timelines, some foundational elements need to be in place.</p>
 
@@ -591,7 +1594,6 @@ Deploying means we push these templates to a server and make the timeline viewab
 <li>Your machine registered with projects VPN</li>
 <li>The Rundeck login information</li>
 </ul>
-
 
 <p><strong>Misc</strong></p>
 
@@ -606,27 +1608,28 @@ Deploying means we push these templates to a server and make the timeline viewab
 <li>Open a <a href="https://github.com/SCPR/static-projects/pulls">pull request</a> to have your additions or changes reviewed by Chris K. or Eric Z.</li>
 </ol>
 
+<p><a name="user-content-resources"></a></p>
 
-<p><a name="resources"></a></p>
+<h4>
+<a id="user-content-resources" class="anchor" href="#resources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Resources</h4>
 
-<h4>Resources</h4>
-
-<p><a href="https://github.com/SCPR/static-projects/tree/master/timelines">scpr GitHub repo</a> that contains the timelines we have published</p>
-
-<p><a href="https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-init.js">tabletop-timeline-v3-init.js</a></p>
-
-<p><a href="https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-main.js">tabletop-timeline-v3-main.js</a></p>
-
-<p><a href="https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-plugins.js">tabletop-timeline-v3-plugins.js</a></p>
-
-<p><a href="https://github.com/MinnPost/jquery-vertical-timeline">MinnPost's jquery-vertical-timeline</a></p>
-
-<p><a href="https://github.com/jsoma/tabletop">Tabletop.js</a></p>
-
-<p><a href="http://modernizr.com/">Modernizr</a></p>
-
-<p><a href="http://handlebarsjs.com/">Handlebars.js</a></p>
-
+<ul>
+<li><p><a href="https://github.com/SCPR/static-projects/tree/master/timelines">scpr GitHub repo</a> that contains the timelines we have published</p></li>
+<li><p><a href="https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-init.js">tabletop-timeline-v3-init.js</a></p></li>
+<li><p><a href="https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-main.js">tabletop-timeline-v3-main.js</a></p></li>
+<li><p><a href="https://github.com/SCPR/static-projects/blob/master/static-files/v3-dependencies/scripts/tabletop-timeline-v3-plugins.js">tabletop-timeline-v3-plugins.js</a></p></li>
+<li><p><a href="https://github.com/MinnPost/jquery-vertical-timeline">MinnPost's jquery-vertical-timeline</a></p></li>
+<li><p><a href="https://github.com/jsoma/tabletop">Tabletop.js</a></p></li>
+<li><p><a href="http://modernizr.com/">Modernizr</a></p></li>
+<li><p><a href="http://handlebarsjs.com/">Handlebars.js</a></p></li>
+<li>
 <p><a href="http://isotope.metafizzy.co/">Isotope</a></p>
 
-<p><a href="http://projects.scpr.org/static/static-files/scripts/isotope_commercial_license/isotope-commercial-license.txt">License for Isotope</a> purchased by <a href="ckeller@scpr.org">Chris Keller</a></p>
+<ul>
+<li>
+<a href="http://projects.scpr.org/static/static-files/scripts/isotope_commercial_license/isotope-commercial-license.txt">License for Isotope</a> purchased by <a href="http://www.scpr.org/about/people/staff/chris-keller">Chris Keller</a>
+</li>
+</ul>
+</li>
+</ul>
+</article></body></html>
