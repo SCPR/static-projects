@@ -1,28 +1,32 @@
-<h1>Creating timelines for scpr.org web stories</h1>
+<h2>Creating timelines for scpr.org web stories</h2>
 
-<hr />
+<ul>
+<li><strong>Created</strong>: 11/19/2012 by <a href="ckeller@scpr.org">Chris Keller</a></li>
+<li><strong>Updated</strong>: 2/20/2014 by <a href="ckeller@scpr.org">Chris Keller</a></li>
+<li><strong>Updated</strong>: 12/2/2014 by <a href="ckeller@scpr.org">Chris Keller</a></li>
+<li><strong>Updated</strong>: 12/9/2014 by <a href="ckeller@scpr.org">Chris Keller</a></li>
+</ul>
 
-<p><strong>Created 11/19/2012 by <a href="ckeller@scpr.org">Chris Keller</a></strong></p>
-
-<p><strong>Updated 2/20/2014 by <a href="ckeller@scpr.org">Chris Keller</a></strong></p>
-
-<hr />
 
 <h2>Table of contents</h2>
 
-<h4><a href="#overview">Overview</a></h4>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#configuring-your-machine">Configuring your machine</a></li>
+<li><a href="#quickstart">Quickstart</a></li>
+<li><a href="#creating-the-spreadsheet">Creating the spreadsheet</a></li>
+<li><a href="#configuring">Configuring the timeline files</a>
 
-<h4><a href="#quickstart">Quickstart checklist</a></h4>
+<ul>
+<li><a href="#flat-file-data">Flat file data configuration</a></li>
+</ul>
+</li>
+<li><a href="#deploying">Deploying to the web</a></li>
+<li><a href="#publishing">Publishing in a story</a></li>
+<li><a href="#technical-requirements">Technical Requirements</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
 
-<h4><a href="#storing-data">Storing the data</a></h4>
-
-<h4><a href="#configuring-and-deploying">Configuring &amp; deploying to the web</a></h4>
-
-<h4><a href="#publishing">Publishing in a story</a></h4>
-
-<h4><a href="#technical-requirements">Technical Requirements</a></h4>
-
-<h4><a href="#resources">Resources</a></h4>
 
 <hr />
 
@@ -30,35 +34,105 @@
 
 <h4>Overview</h4>
 
-<p>With a little practice, you can create and deploy a <a href="http://projects.scpr.org/static/timelines/life-of-nelson-mandela/">topical timeline </a> for <a href="http://www.scpr.org/">scpr.org</a> using a Google Spreadsheet, a HTML index file and a JavaScript configuration file.</p>
+<p>With a little practice - and some web development tools in place - you can create and deploy a <a href="http://projects.scpr.org/static/timelines/life-of-nelson-mandela/">topical timeline </a> for <a href="http://www.scpr.org/">scpr.org</a> using a Google Spreadsheet, a HTML index file and a JavaScript configuration file.</p>
 
-<p>Roughly 95 percent of the work takes place in the Google spreadsheet, and we have a handy <a href="https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&amp;usp=drive_web#gid=0">template</a> to get you started.</p>
+<p>Roughly 95 percent of the content preparation takes place in the Google spreadsheet using a handy <a href="https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&amp;usp=drive_web#gid=0">template</a> that will get you started. The rest of the work involves changing some configuration settings in a JavaScript file. Don't worry - you got this.</p>
 
-<p>Follow the steps below to build, deploy and publish your very own timeline. And you'll want to check out the <a href="https://github.com/SCPR/timeline-data-generator">tool we made</a> to query KPCC's <a href="https://github.com/SCPR/api-docs">content API</a> and create a csv file that can be used to kickstart a timeline.</p>
+<p>That said, the remaining 5 percent involves gettting your machine setup with the tools and scripts necessary to make the 95 percent flow smoothly. <em>Probably a poor way to explain things, but you get the idea</em></p>
 
-<p><a name="quickstart"></a></p>
+<p>Follow the steps below to build, deploy and publish your very own timeline. And you'll want to check out the <a href="https://github.com/SCPR/timeline-data-generator">tool we made</a> that queries KPCC's <a href="https://github.com/SCPR/api-docs">content API</a> to create a csv file that can be used to kickstart a timeline.</p>
 
-<h4>Quickstart checklist</h4>
+<p><a name="configuring-your-machine"></a></p>
+
+<h4>Configuring your machine</h4>
+
+<p>Let's take things from the beginning, which is more than some will want but it's the way to do this properly.</p>
+
+<ol>
+<li><p>Quick Route</p>
 
 <ul>
-<li>[ ] Make a copy of the file titled <a href="https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&amp;usp=drive_web#gid=0">Template: KPCC Timeline Template</a> that is stored in the KPCC Data Desk Google Drive account.</li>
-<li>[ ] In the spreadsheet you will find two sheets. Add data for the timeline on the sheet labeled <strong>'Posts'.</strong></li>
-<li>[ ] Move on to the sheet labeled <strong>'MetaData'.</strong></li>
-<li>[ ] Publish the spreadsheet and get the spreadsheet key.</li>
-<li>[ ] Complete the timeline-config.js file and add metadata to the index.html file.</li>
-<li>[ ] Deploy a timeline so users can see it on the web.</li>
+<li><a href="https://mac.github.com/">Download</a> GitHub for Mac and install</li>
+<li>Follow the setup instructions
+
+<ul>
+<li>Create a GitHub account and activate it.</li>
+<li>Add your login and password to the GitHub for Mac application and sign in.</li>
+<li>Click continue to add Git Config information and install the Command Line tools.</li>
+<li>You do not have any local repositories so click done.</li>
+<li>Open a browser and go to SCPR's <a href="https://github.com/SCPR/static-projects/">GitHub page</a>.</li>
+<li>Clone the <a href="https://github.com/SCPR/static-projects/">static-projects</a> repository by clicking "Clone in Desktop" on the right-hand side.</li>
+<li>Save this repository in a place where you want to work on code projects.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Longer Route</p>
+
+<ul>
+<li>See if you have git installed. Git is a version control system designed to allow for collaboration on web development projects.
+
+<ul>
+<li>Assuming you're on a Mac, open an application called Terminal.</li>
+<li>At the prompt in terminal, type <code>git --version</code>.
+
+<ul>
+<li>If it returns something like <code>git version 2.1.3</code> - disco</li>
+<li>If it returns <code>-bash: git: command not found</code> that means you have to install git. You will still be able to create a timeline, but Chris or Eric will have to help you get it ready for the web.</li>
+</ul>
+</li>
+<li><a href="https://help.github.com/articles/generating-ssh-keys/">Generate ssh keys</a> for your GitHub account.</li>
+<li>Change to your home directory by typing <code>cd ~</code> in your terminal.</li>
+<li>Clone the <a href="https://github.com/SCPR/static-projects/">static-projects</a> repository on GitHub.
+
+<ul>
+<li>Enter the following into your terminal: <code>git clone git@github.com:SCPR/static-projects.git</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+
+<p>What in the heck did we just do?</p>
+
+<ul>
+<li><p><a href="https://en.wikipedia.org/wiki/Git_%28software%29">Git</a> is a version-control system. It can be used for code, narrative text and data, but it's best for the former. It allows multiple people to work on the same project, make changes indepdent of each other and then weave those changes or "features" together.</p></li>
+<li><p><a href="https://github.com/">GitHub</a> is a platform used to share git repositories -- or repos -- with each other in an effort to improve projects. All of the <a href="https://github.com/SCPR/static-projects">projects and experiments</a> we do can be found on GitHub.</p></li>
+<li><p>We built up your machine to combine these two things allows you access to the projects, and the ability to create your own.</p></li>
 </ul>
 
 
-<p><a name="storing-data"></a></p>
+<p><a name="quickstart"></a></p>
 
-<h4>Storing the data</h4>
+<h4>Quickstart</h4>
+
+<ul>
+<li>[ ] Log into the KPCC DataDesk's Google Drive account, or your own, if the <code>web_timelines_templates</code> folder has been shared with you</li>
+<li>[ ] While in the directory, make a copy of the directory titled <a href="https://docs.google.com/spreadsheet/ccc?key=0Aq8qwSArzKP9dDR2a1FDbnEtTzIxU19SV25sSThLWVE#gid=0">_Template: timeline-template</a> that is stored in the KPCC Data Desk Google Drive account.</li>
+<li>[ ] Add data for the timeline on the sheet labeled <code>Posts</code></li>
+<li>[ ] Add data for the headline, intro, byline and publish dates on the sheet labeled <code>MetaData</code></li>
+<li>[ ] Publish the spreadsheet and get the spreadsheet key</li>
+<li>[ ] Open the repository that you cloned and go into the <code>timelines</code> directory</li>
+<li>[ ] Using the option-drag method, make a copy of the directory titled <code>timeline-template</code></li>
+<li>[ ] Complete the <code>timeline-config.js</code> file and fill out the fields to your liking</li>
+<li>[ ] Open <code>index.html</code> and add metadata to the top of the file</li>
+<li>[ ] Commit your changes to the repo, or open a pull request</li>
+<li>[ ] Contact Eric or Chris to deploy the timeline so users can see it on the web</li>
+</ul>
+
+
+<p><a name="creating-the-spreadsheet"></a></p>
+
+<h4>Creating the spreadsheet</h4>
 
 <p>This assumes you've already got a topic in mind and a data source, and you're familiar with using Google spreadsheets.</p>
 
 <ol>
 <li><p>Begin by making a copy of the file titled <a href="https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&amp;usp=drive_web#gid=0">Template: KPCC Timeline Template</a> that is stored in the KPCC Data Desk Google Drive account. You may be prompted to request access. Don't worry, if you're on staff we'll approve you.</p></li>
-<li><p>In the spreadsheet you will find two sheets. One is labeled <strong>'Posts'</strong> and one is labeled <strong>'MetaData'</strong>. I begin by entering the data for the timeline, which means I start in the sheet labeled <strong>Posts.</strong> Here's an explanation of the data that should appear in each column:</p>
+<li><p>In the spreadsheet you will find two sheets. One is labeled <code>Posts</code> and one is labeled <code>MetaData</code>. I begin by entering the data for the timeline, which means I start in the sheet labeled <code>Posts</code>. Here's an explanation of the data that should appear in each column:</p>
 
 <ul>
 <li><strong>title</strong>
@@ -126,7 +200,7 @@
 </li>
 </ul>
 </li>
-<li><p>Now lets move on to the sheet labeled <strong>MetaData.</strong> Here's an explanation of the data that should appear in each column:</p>
+<li><p>Now lets move on to the sheet labeled <code>MetaData</code>. Here's an explanation of the data that should appear in each column:</p>
 
 <ul>
 <li><strong>projecturl</strong>
@@ -195,7 +269,7 @@
 </li>
 </ul>
 </li>
-<li>Once the <strong>Posts</strong> and <strong>MetaData</strong> sheets are completed you have to publish the spreadsheet. To do this go to <em>File</em> --> <em>Publish to the web</em> and choose <em>Start publishing</em>. A URL will appear, and we're interested in the part between 'key=' and the '&amp;' symbol.
+<li><p>Once the <strong>Posts</strong> and <strong>MetaData</strong> sheets are completed you have to publish the spreadsheet. To do this go to <em>File</em> --> <em>Publish to the web</em> and choose <em>Start publishing</em>. A URL will appear, and we're interested in the part between 'key=' and the '&amp;' symbol.</p>
 
 <ul>
 <li>Here's an example URL:
@@ -212,32 +286,27 @@
 </li>
 </ul>
 </li>
-<li>Congratulations. You have now created a timeline. Want to update your timeline with new information...? Here's the beautiful part: Just add more information to the Google Spreadsheet and it will be updated. Now that your timeline is ready to deploy, you'll need some help.</li>
+<li><p>Congratulations. You have now created a timeline. Want to update your timeline with new information...? Here's the beautiful part: Just add more information to the Google Spreadsheet and it will be updated. Now that your timeline is ready to deploy, you'll need some help.</p></li>
 </ol>
 
 
-<p><a name="configuring-and-deploying"></a></p>
+<p><a name="configuring"></a></p>
 
-<h4>Configuring &amp; deploying to the web</h4>
+<h4>Configuring the timeline files</h4>
 
-<p>What do we mean when we say configuring &amp; deploying? Configuring means we fill out a pre-compiled script with information about our timeline project that will push our spreadsheet data to a template. Deploying means we push these templates to a server and make the timeline viewable by our digital audience.</p>
+<p>What do we mean when we say configuring?</p>
 
-<p>Right now, Chris K. and Eric Z. can handle this part of the processs. Brian F. has been trained. We're happy to train others, but there are some <a href="#technical-requirements">technical requirements</a> before this can happen.</p>
-
-<p>Here's an overview of the <a href="#configuration">configuration</a> and <a href="#deployment">deployment</a> process. <a href="#flat-file-data">Flat file data configuration</a> coming soon.</p>
-
-<p><a name="configuration"></a>
-<strong>Configuration</strong></p>
+<p>Configuring means we fill out a pre-compiled script with information about our timeline project that will push our spreadsheet data to a template.</p>
 
 <ol>
-<li>Clone the <a href="https://github.com/SCPR/static-projects">SCPR/static-projects repository</a> from <a href="https://github.com/about">GitHub</a> to your local machine.</li>
-<li>In the main directory there is a timelines subdirectory that contains the <strong>timeline-template</strong> folder. Duplicate this <strong>timeline-template</strong> folder (option-drag on a Mac) and rename it to match the timeline topic. I wouldn't use more than three or four words, which are separated by hyphens.
+<li><p>Clone the <a href="https://github.com/SCPR/static-projects">SCPR/static-projects repository</a> from <a href="https://github.com/about">GitHub</a> to your local machine.</p></li>
+<li><p>In the main directory there is a timelines subdirectory that contains the <strong>timeline-template</strong> folder. Duplicate this <strong>timeline-template</strong> folder (option-drag on a Mac) and rename it to match the timeline topic. I wouldn't use more than three or four words, which are separated by hyphens.</p>
 
 <ul>
 <li><strong>Example</strong>: <code>life-of-nelson-mandela</code></li>
 </ul>
 </li>
-<li>Inside the new directory you created you will find four files and a directory titled respond-proxy. For now, we're only really interested in <strong>timeline-config.js</strong> and <strong>index.html</strong>. Both need to be filled out.
+<li><p>Inside the new directory you created you will find four files and a directory titled respond-proxy. For now, we're only really interested in <strong>timeline-config.js</strong> and <strong>index.html</strong>. Both need to be filled out.</p>
 
 <ul>
 <li><p><strong>timeline-config.js</strong> contains the configuration variables that allow the data on your spreadsheet to be displayed on a template for the user. Here's what is looks like and what each of the keys refer to:</p>
@@ -429,12 +498,50 @@
 
 
 <p><a name="flat-file-data"></a>
-<strong>Flat file data configuration</strong></p>
+4. The flat file data configuration option
+    * What do we mean when we say flat file?
+        * By default, a timeline pulls <strong>live data</strong> or <strong>dynamic data</strong> from a Google spreadsheet. This can work well when beginning a project or when creating a timeline during a breaking news situation.
+        * Information can be added in near real-time and the latest updates can be seen bu our audience when they arrive at the page. Of course this opens up a whole can of worms and the need to make sure you get the information correct and accurate, but that's a different discussion.
+        * Flat file -- or static -- data is the opposite of dynamic. It's stored in a file and used to populate the timeline with information.
+            * The use case for this is when a timeline no longer needs regular updates and leaving it dynamic can cause more harm than good.
+    * Creating a flat-file.
+        * In this example, creating a flat-file is simply taking data in one form - a csv - and converting it to another form - json. There are many ways to do this. I wrote a basic <a href="https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py">python script</a> to help facilitate this process, but <a href="https://shancarter.github.io/mr-data-converter/">online solutions</a> exist.
+            * Download csvs of both the <code>Posts</code> and the <code>MetaData</code>.
+            * Convert each to json. If using my <a href="https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py">python script</a> you would do it like this.
+            * Assuming you're on a Mac, open your terminal and change to the directory where you saved the csv files. If you saved them to your Desktop for instance...</p>
 
-<p><strong>COMING SOON</strong></p>
+<pre><code>                cd ~/Desktop/
 
-<p><a name="deployment"></a>
-<strong>Deployment</strong></p>
+        * Copy the [python script](https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py) to your Desktop as well.
+
+                curl -l https://gist.githubusercontent.com/chrislkeller/4700210/raw/76926ca7da362997d63b0d2dfc26a6a18b15899e/csv-to-json.py &gt; ~/Desktop/csv-to-json.py
+
+        * Run the python script, passing into two arguments -- or options: the name of the file and the format you would like -- in this case ```timeline```. So for the ```Posts``` sheet.
+
+                python csv-to-json.py _Template-\ timeline-template\ -\ Posts.csv timeline
+
+        * You should see output like this
+
+                parsing _Template- timeline-template - Posts.csv
+
+                creating json for timeline
+                _Template- timeline-template - Posts.csv converted to _Template- timeline-template - Posts_timeline.json
+
+        * And you should now have a file on your desktop titled ```_Template- timeline-template - Posts_timeline.json``` Do the same for the ```Meta``` sheet.
+
+                python csv-to-json.py _Template-\ timeline-template\ -\ Meta.csv timeline
+
+        * These can become the ```timeline-data.json``` and the ```timeline-meta.json``` files used to power the timeline.
+</code></pre>
+
+<p><a name="deploying"></a></p>
+
+<h4>Deploying To The Web</h4>
+
+<p>What do we mean when we say deploying?
+Deploying means we push these templates to a server and make the timeline viewable by our digital audience.</p>
+
+<p>Right now, Chris K. and Eric Z. can handle this part of the processs. Brian F. has been trained. We're happy to train others, but there are some <a href="#technical-requirements">technical requirements</a> before this can happen.</p>
 
 <ol>
 <li><p>To deploy a timeline so users can see it on the web, we add the project to the GitHub repository.</p>
@@ -445,16 +552,16 @@
 
 <pre><code> ```git commit 'adds &lt;project name&gt; to the repository'```
 </code></pre></li>
-<li><p>We deploy it to the server</p>
+<li><p>We push it to the repository to make it available to go live</p>
+
+<pre><code> ```git commit 'adds &lt;project name&gt; to the repository'```
+</code></pre></li>
+<li><p>Chris or Eric deploys the timeline using Rundeck. This isn't ideal we realize, but <a href="#technical-requirements">technical requirements</a> will be required to allow others to do so.</p>
 
 <pre><code> ```cap deploy```
 </code></pre></li>
 </ol>
 
-
-<p>On the web team, only Chris K. and Eric Z. can do this. Bryan Ricker can do so in a pinch.</p>
-
-<p>This isn't ideal we realize, but <a href="#technical-requirements">technical requirements</a> will be required to allow others to do so.</p>
 
 <p><a name="publishing"></p>
 
@@ -480,19 +587,13 @@
 
 <ul>
 <li>Git</li>
-<li>Ruby</li>
-<li>Capistrano 2.14.1</li>
-<li>Development environment (MAMP or Python simple server)</li>
+<li>GitHub account added to SCPR data team</li>
+<li>Your machine registered with projects VPN</li>
+<li>The Rundeck login information</li>
 </ul>
 
 
 <p><strong>Misc</strong></p>
-
-<ul>
-<li>GitHub account added to SCPR data team</li>
-<li>ssh key added to the media server by Bryan Ricker</li>
-</ul>
-
 
 <p>Having a GitHub account and a development environment will get you started in at least configuring a timeline, though Chris K. or Eric Z. will need to deploy.</p>
 
