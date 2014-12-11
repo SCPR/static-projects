@@ -6,6 +6,6 @@ window.appConfig = {
     embed_this: true,
     is_embedded: null,
     embed_width: "100%",
-    embed_height: "1020px",
+    embed_height: "750px",
     twitter_share_text: null,
 };
