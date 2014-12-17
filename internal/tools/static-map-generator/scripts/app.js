@@ -158,7 +158,7 @@
         changeRadio: function(e){
             var address = $("input[id='addressSearch']").val();
             var latitude = this.viewObject.mapCenter.k;
-            var longitude = this.viewObject.mapCenter.B;
+            var longitude = this.viewObject.mapCenter.D;
             var layer = e.target.value;
             this.updateMap(latitude, longitude, layer, address);
         },
@@ -171,20 +171,20 @@
             this.updateMap(latitude, longitude, layer, address);
 
             this.viewObject.mapCenter.k = latitude;
-            this.viewObject.mapCenter.B = longitude;
+            this.viewObject.mapCenter.D = longitude;
 
             /*
             $("input[id='latitudeSearch']").val(this.viewObject.mapCenter.k);
-            $("input[id='longitudeSearch']").val(this.viewObject.mapCenter.B);
+            $("input[id='longitudeSearch']").val(this.viewObject.mapCenter.D);
             var layer = $('input[name=map-type]:checked').val();
             */
 
             var baseUrl = "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do";
-            var mapCenter = "&center=" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B;
+            var mapCenter = "&center=" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.D;
             var mapZoom = "&zoom=" + this.viewObject.mapZoomLevel;
             var mapSize = "&size=" + window.MapCreatorConfig.sizeParams;
             var mapType = "&scale=2&maptype=" + this.viewObject.mapLayerId.toLowerCase();
-            var mapMarker = "&markers=color:red%7Clabel:%7C" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B;
+            var mapMarker = "&markers=color:red%7Clabel:%7C" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.D;
             var imageUrl = baseUrl + mapCenter + mapZoom + mapSize + mapType + mapMarker;
 
             $("#content-map-image").html(
@@ -260,7 +260,7 @@
 
             if (this.viewObject.route === "custom"){
                 $("input[id='latitudeSearch']").val(viewObject.mapCenter.k);
-                $("input[id='longitudeSearch']").val(viewObject.mapCenter.B);
+                $("input[id='longitudeSearch']").val(viewObject.mapCenter.D);
             }
 
             $("#content-map-canvas").before(
@@ -275,8 +275,12 @@
                 $("#content-map-image").empty();
                 var newZoomLevel = map.getZoom();
                 var newMapCenter = map.getCenter();
+
+                console.log(newMapCenter);
+
+
                 var layer = $('input[name=map-type]:checked').val();
-                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + newMapCenter.k + "&lng=" + newMapCenter.B + "&zoom=" + newZoomLevel + "&layer=" + layer, {
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + newMapCenter.k + "&lng=" + newMapCenter.D + "&zoom=" + newZoomLevel + "&layer=" + layer, {
                     trigger: true,
                     replace: true,
                 });
@@ -290,7 +294,7 @@
                 viewObject.mapZoomLevel = map.getZoom();
                 viewObject.mapCenter = event.latLng;
                 var layer = $('input[name=map-type]:checked').val();
-                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.mapCenter.k + "&lng=" + viewObject.mapCenter.B + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.mapCenter.k + "&lng=" + viewObject.mapCenter.D + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
                     trigger: true,
                     replace: true,
                 });
@@ -304,7 +308,7 @@
                 var newMarkerPosition = marker.getPosition();
                 viewObject.mapCenter = newMarkerPosition;
                 var layer = $('input[name=map-type]:checked').val();
-                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.mapCenter.k + "&lng=" + viewObject.mapCenter.B + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.mapCenter.k + "&lng=" + viewObject.mapCenter.D + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
                     trigger: true,
                     replace: true,
                 });
@@ -382,7 +386,7 @@
 
         changeRadio: function(e){
             var latitude = this.viewObject.mapCenter.k;
-            var longitude = this.viewObject.mapCenter.B;
+            var longitude = this.viewObject.mapCenter.D;
             var layer = e.target.value;
             this.updateMap(latitude, longitude, layer);
         },
@@ -436,7 +440,7 @@
 
         generateImage: function(){
             var baseUrl = "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do";
-            var mapCenter = "&center=" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.B;
+            var mapCenter = "&center=" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.D;
             var mapZoom = "&zoom=" + this.viewObject.mapZoomLevel;
             var mapSize = "&size=" + window.MapCreatorConfig.sizeParams;
             var mapType = "&scale=2&maptype=" + this.viewObject.mapLayerId.toLowerCase();
@@ -445,7 +449,7 @@
             var pathArrays = this.viewObject.polylinePaths;
 
 
-            //mapPolyline += "|" + lineArray[x].k + "," + lineArray[x].B;
+            //mapPolyline += "|" + lineArray[x].k + "," + lineArray[x].D;
 
             console.log(pathArrays);
 
@@ -518,7 +522,7 @@
 
             if (this.viewObject.route === "custom"){
                 $("input[id='latitudeSearch']").val(this.viewObject.mapCenter.k);
-                $("input[id='longitudeSearch']").val(this.viewObject.mapCenter.B);
+                $("input[id='longitudeSearch']").val(this.viewObject.mapCenter.D);
             }
 
             $("#content-map-canvas").before(
