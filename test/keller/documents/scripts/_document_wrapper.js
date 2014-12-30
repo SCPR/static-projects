@@ -87,6 +87,7 @@
                 $(".projects-share a").attr("target", "_top");
                 $(".projects-embed a").attr("target", "_top");
                 $(".projects-home a").attr("target", "_top");
+                $(".about a").attr("target", "_top");
             }
 
             $(".text").on("shown.bs.collapse", function(){
