@@ -26,12 +26,12 @@
         $("meta[property='og:url']").attr("content", data.document.resources.published_url);
         $("meta[name='twitter:url']").attr("content", data.document.resources.published_url);
         if (_.has(data.document.data, "topic") === true){
-            $(".headlines").append(
+            $(".headlines").html(
                 "<h4 class='kicker'>" + data.document.data.topic + "</h4>" +
                 "<h3>" + data.document.title + "</h3>"
             );
         } else {
-            $(".headlines").append(
+            $(".headlines").html(
                 "<h3>" + data.document.title + "</h3>"
             );
         }
@@ -41,16 +41,19 @@
         if (data.document.source != null){
             $(".source").html("<strong>Source(s): </strong>" + data.document.source + ". ");
         }
+
         $(".full-document").html("<strong>View</strong>: <a href='" + data.document.resources.pdf + "'>Full document</a>");
-        if (data.document.resources.related_article != null){
-            $(".control-buttons").append(
-                "<a class='btn btn-primary read-more' href='" + data.document.resources.related_article + "' target='_blank'><span class='glyphicon glyphicon-link'></span> Read more</a>"
-            );
+
+        if (data.document.resources.related_article != window.appConfig.parentUrl && data.document.resources.related_article != null){
+            $("a.read-more").attr("href", data.document.resources.related_article);
+        } else{
+            $("a.read-more").addClass("hidden");
         }
+
     };
 
 
-    window.loadDocumentView = function(instanceConfig){
+    window.loadDocumentInstance = function(instanceConfig){
         var documentInstance = DV.load(instanceConfig.docUrl, {
             width: instanceConfig.initialWidth,
             height: instanceConfig.docHeightParam,
@@ -76,28 +79,28 @@
 
         routes: {
             "": "renderDocumentList",
-            ":docId/#annotation/:annotation": "renderDocumentAnnotations",
-            ":docId/?=embed/": "renderDocumentInstance",
-            ":docId/": "renderDocumentInstance"
+            //":docId/#annotation/:annotation(/)": "renderDocumentAnnotations",
+            ":docId/?=embed(/)": "renderDocumentInstance",
+            ":docId(/)": "renderDocumentInstance"
         },
 
         renderDocumentList: function(){
 
-            console.log("renderDocumentList - List all of the documents right?");
+            //console.log("renderDocumentList - List all of the documents right?");
 
         },
 
         renderDocumentInstance: function(docId){
             console.log("renderDocumentInstance");
 
-            if (this.documentView){
-                this.documentView.remove();
+            if (this.documentInstance){
+                this.documentInstance.remove();
             };
 
             var instanceConfig = window.sizeDocContainer();
             instanceConfig.docId = docId;
             $.getJSON(window.docCloudApiPrefix + docId + ".json", window.populateDocumentMeta);
-            this.documentView = new App.Views.DocumentView(instanceConfig);
+            this.documentInstance = new App.Views.DocumentInstance(instanceConfig);
             return this.applicationVisuals;
         },
 
@@ -118,9 +121,9 @@
     });
 
 
-    App.Views.DocumentView = Backbone.View.extend({
+    App.Views.DocumentInstance = Backbone.View.extend({
         initialize: function(instanceConfig){
-            console.log("DocumentView");
+            console.log("DocumentInstance");
             instanceConfig.docDiv = "DV-viewer-" + instanceConfig.docId;
             instanceConfig.docUrl = "//www.documentcloud.org/documents/" + instanceConfig.docId + ".js";
             instanceConfig.docContainer = "#DV-viewer-" + instanceConfig.docId;
@@ -129,7 +132,7 @@
         render: function(instanceConfig){
             console.log(instanceConfig);
             $("#document-container").html("<div id=\"" + instanceConfig.docDiv + "\" class=\"DV-container\"></div>");
-            window.loadDocumentView(instanceConfig);
+            window.loadDocumentInstance(instanceConfig);
         }
     });
 
@@ -149,19 +152,27 @@
 
         events: {
             "click .DV-permalink": "evaluate",
+            "click .DV-annotationTitle": "evaluate",
         },
 
-        evaluate: function(){
+        evaluate: function(e){
+
+            console.log(e);
+
+
             console.log("clicked");
             console.log(this.instanceConfig);
-            window.app.navigate(this.instanceConfig.docId + "/#annotation/" + this.instanceConfig.annotation, {
-                trigger: true,
-                replace: true,
-            });
+
+            e.preventDefault();
+
+            //window.app.navigate(this.instanceConfig.docId + "/#annotation/" + this.instanceConfig.annotation, {
+                //trigger: true,
+                //replace: false,
+            //});
         },
 
         render: function(instanceConfig){
             $("#document-container").html("<div id=\"" + instanceConfig.docDiv + "\" class=\"DV-container\"></div>");
-            window.loadDocumentView(instanceConfig);
+            window.loadDocumentInstance(instanceConfig);
         }
     });

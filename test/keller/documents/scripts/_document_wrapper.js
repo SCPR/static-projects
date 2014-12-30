@@ -80,6 +80,7 @@
             }
 
             if (window.appConfig.is_embedded === true){
+                window.appConfig.parentUrl = (window.location != window.parent.location) ? document.referrer: document.location;
                 $(".data-comments").remove();
                 $(".buttons a:last").before("<a class='btn btn-primary' href='" + window.appConfig.project_root + "' target='_top'><span class='glyphicon glyphicon-resize-full'></span> Full screen</a>");
                 $("#site-title a").attr("target", "_top");
@@ -88,6 +89,7 @@
                 $(".projects-embed a").attr("target", "_top");
                 $(".projects-home a").attr("target", "_top");
                 $(".about a").attr("target", "_top");
+                $("a.read-more").attr("target", "_top");
             }
 
             $(".text").on("shown.bs.collapse", function(){
