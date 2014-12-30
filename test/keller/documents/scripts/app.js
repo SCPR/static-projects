@@ -25,18 +25,28 @@
         $("meta[name='twitter:description']").attr("content", data.document.description);
         $("meta[property='og:url']").attr("content", data.document.resources.published_url);
         $("meta[name='twitter:url']").attr("content", data.document.resources.published_url);
-        $(".headlines").append(
-            "<h4 class='kicker'>Documents</h4>" +
-            "<h3>" + data.document.title + "</h3>"
-        );
+        if (_.has(data.document.data, "topic") === true){
+            $(".headlines").append(
+                "<h4 class='kicker'>" + data.document.data.topic + "</h4>" +
+                "<h3>" + data.document.title + "</h3>"
+            );
+        } else {
+            $(".headlines").append(
+                "<h3>" + data.document.title + "</h3>"
+            );
+        }
         $(".doc-description").html("<p>" + data.document.description + "</p>");
-        $(".credits").html("Produced by " + data.document.contributor);
+        $(".credits").html("Produced by KPCC staff");
         $(".pubdate").html("Updated " + moment(data.document.updated_at).format("MMM D, YYYY"));
-        $(".source").html(data.document.source);
-        $(".full-document").html("<strong>View</strong>: <a href='data.document.resources.pdf'>Full document</a>");
-        $(".control-buttons").append(
-            "<a class='btn btn-primary read-more' href='" + data.document.resources.related_article + "' target='_blank'><span class='glyphicon glyphicon-link'></span> Read more</a>"
-        );
+        if (data.document.source != null){
+            $(".source").html("<strong>Source(s): </strong>" + data.document.source + ". ");
+        }
+        $(".full-document").html("<strong>View</strong>: <a href='" + data.document.resources.pdf + "'>Full document</a>");
+        if (data.document.resources.related_article != null){
+            $(".control-buttons").append(
+                "<a class='btn btn-primary read-more' href='" + data.document.resources.related_article + "' target='_blank'><span class='glyphicon glyphicon-link'></span> Read more</a>"
+            );
+        }
     };
 
 
@@ -47,6 +57,7 @@
             sidebar: instanceConfig.sidebarParam,
             text: true,
             pdf: true,
+            responsive: true,
             container: instanceConfig.docContainer
         });
         return documentInstance;
@@ -55,6 +66,9 @@
 
     App.Router = Backbone.Router.extend({
         initialize: function(){
+
+            console.log(window.appConfig);
+
             window.docCloudApiPrefix = "https://www.documentcloud.org/api/documents/";
             this.applicationWrapper = new App.Views.ApplicationWrapper();
             return this.applicationWrapper;
