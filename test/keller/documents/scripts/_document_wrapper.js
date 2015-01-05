@@ -27,7 +27,18 @@
 
         initialize: function(){
 
-            window.appConfig.project_root = window.location.href;
+            // handle legacy requests for documents and redirect them
+            if (window.location.search != ""){
+                var redirectUrl;
+                var requestedDocument = $.url.param("doc").replace("/", "");
+                // sets embed options
+                if (window.location.href.indexOf("embed") > -1){
+                    redirectUrl = window.appConfig.project_root + "#document=" + requestedDocument + "?=embed/";
+                } else {
+                    redirectUrl = window.appConfig.project_root + "#document=" + requestedDocument;
+                };
+                window.location.replace(redirectUrl);
+            };
 
             // sets template path
             if (window.location.href.indexOf("http://projects.scpr.org/") > -1){
@@ -60,7 +71,7 @@
         },
 
         renderEmbedBox: function(){
-            jAlert("<h4>Embed this on your site or blog</h4><span>Copy this code and paste to source of your page. You may need to adjust the height parameter.<br /><br /><textarea>&lt;iframe src='" + window.appConfig.project_root + "?=embed/' width='" + appConfig.embed_width + "' height='" + appConfig.embed_height + "' style='margin: 0 0 0 0;' scrolling='no' frameborder='0'&gt;&lt;/iframe></textarea>");
+            jAlert("<h4>Embed this on your site or blog</h4><span>Copy this code and paste to source of your page. You may need to adjust the height parameter.<br /><br /><textarea>&lt;iframe src='" + window.appConfig.project_embed + "' width='" + appConfig.embed_width + "' height='" + appConfig.embed_height + "' style='margin: 0 0 0 0;' scrolling='no' frameborder='0'&gt;&lt;/iframe></textarea>");
         },
 
         render: function(){
@@ -125,7 +136,7 @@
     $(function(){
         window.app = new App.Router();
         Backbone.history.start({
-            //root: window.appConfig.project_root,
+            root: window.appConfig.project_root,
             pushState: false
         });
     });
