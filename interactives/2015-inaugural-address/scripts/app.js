@@ -61,6 +61,7 @@ var fn = {
             sidebar: sidebarParam,
             text: false,
             pdf: false,
+            responsive: true,
             container: docContainer
         });
 
@@ -132,7 +133,8 @@ var fn = {
             'width': elementDimension + 'px',
             'height': elementDimension + 'px'
         });
-        jqueryNoConflict('#controls .indicator:first').addClass('active');
+
+        //jqueryNoConflict('#controls .indicator:first').addClass('active');
 
         // here's the click event
         jqueryNoConflict('div.indicator').click(function(){

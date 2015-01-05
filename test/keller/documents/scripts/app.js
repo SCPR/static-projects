@@ -96,8 +96,7 @@ window.loadDocumentInstance = function(instanceConfig){
     console.log(instanceConfig);
 
 
-    /*
-    var documentInstance = DV.load(instanceConfig.docUrl, {
+    var documentInstance = DV.load(instanceConfig.docJs, {
         width: instanceConfig.initialWidthParam,
         height: instanceConfig.docHeightParam,
         sidebar: instanceConfig.sidebarParam,
@@ -107,6 +106,6 @@ window.loadDocumentInstance = function(instanceConfig){
         container: instanceConfig.docContainer
     });
     return documentInstance;
-    */
+
 
 };
