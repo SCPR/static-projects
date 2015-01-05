@@ -126,7 +126,7 @@
         window.app = new App.Router();
         Backbone.history.start({
             //root: window.appConfig.project_root,
-            pushState: false,
+            pushState: false
         });
     });
 

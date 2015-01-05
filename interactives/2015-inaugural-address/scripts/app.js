@@ -16,10 +16,10 @@ jqueryNoConflict(document).ready(function() {
 var appConfig = {
     openAboutThis: true,
     embed_this: true,
-    embed_url_root: 'http://projects.scpr.org/static/interactives/2015-state-of-state/',
-    docDiv: "DV-viewer-1005633-california-2013-state-of-state-address",
-    docUrl: "//www.documentcloud.org/documents/1005633-california-2013-state-of-state-address.js",
-    docContainer: "#DV-viewer-1005633-california-2013-state-of-state-address"
+    embed_url_root: 'http://projects.scpr.org/static/interactives/2015-inaugural-address/',
+    docDiv: "DV-viewer-1390043-governor-brown-sworn-in-delivers-inaugural-address",
+    docUrl: "//www.documentcloud.org/documents/1390043-governor-brown-sworn-in-delivers-inaugural-address.js",
+    docContainer: "#DV-viewer-1390043-governor-brown-sworn-in-delivers-inaugural-address"
 };
 
 // begin application object
