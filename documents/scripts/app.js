@@ -47,8 +47,9 @@ App.Router = Backbone.Router.extend({
         window.appConfig.project_embed = window.appConfig.project_root + "#document=" + instanceConfig.docId + "/?=embed/";
 
         Backbone.history.root = window.appConfig.project_root + "#document=" + instanceConfig.docId + "/";
-        console.log(Backbone.history);
-        console.log(Backbone.history.root);
+
+        //console.log(Backbone.history);
+        //console.log(Backbone.history.root);
 
         this.documentInstance = new App.Views.DocumentInstance(instanceConfig);
         return this.documentInstance;
@@ -191,6 +192,9 @@ window.populateDocumentMeta = function(data){
     $(".full-document").html("<strong>View</strong>: <a href='" + data.document.resources.pdf + "'>Full document</a>");
 
     // pull link to related article if present
+
+    console.log(window.appConfig.parentUrl);
+
     if (data.document.resources.related_article != window.appConfig.parentUrl && data.document.resources.related_article != null){
         $("a.read-more").attr("href", data.document.resources.related_article);
     } else{

@@ -33,6 +33,8 @@
                 var requestedDocument = $.url.param("doc").replace("/", "");
                 // sets embed options
                 if (window.location.href.indexOf("embed") > -1){
+                    window.appConfig.open_about_this = false;
+                    window.appConfig.is_embedded = true;
                     redirectUrl = window.appConfig.project_root + "#document=" + requestedDocument + "?=embed/";
                 } else {
                     redirectUrl = window.appConfig.project_root + "#document=" + requestedDocument;
