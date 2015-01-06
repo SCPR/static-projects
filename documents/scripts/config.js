@@ -7,5 +7,4 @@ window.appConfig = {
     is_embedded: null,
     embed_width: "100%",
     embed_height: "1320px",
-    twitter_share_text: null,
 };

@@ -24,10 +24,9 @@ App.Router = Backbone.Router.extend({
             Backbone.history.loadUrl("#document=" + this.redirectDocId + "?=embed/");
         };
 
-        console.log(document.referrer);
+        //console.log(document.referrer);
         window.appConfig.parentUrl = document.referrer;
-
-        console.log(window.appConfig);
+        //console.log(window.appConfig);
 
         this.applicationWrapper = new App.Views.ApplicationWrapper();
         return this.applicationWrapper;
@@ -35,9 +34,6 @@ App.Router = Backbone.Router.extend({
 
     routes: {
         "": "renderDocumentList",
-
-
-
         //":docId/#annotation/:annotation(/)": "renderDocumentAnnotations",
         ":docId(/)": "renderDocumentInstance",
         ":docId/?=embed(/)": "renderDocumentInstance",
@@ -151,7 +147,8 @@ window.loadDocumentInstance = function(instanceConfig){
 
 
 window.populateDocumentMeta = function(data){
-    window.appConfig.twitter_share_text = "View a document: " + data.document.title;
+    $(".projects-share a.facebook").attr("href", "https://www.facebook.com/sharer/sharer.php?u=" + data.document.resources.published_url);
+    $(".projects-share a.twitter").attr("href", "http://twitter.com/share?text=View a document: " + data.document.title + "&url=" + data.document.resources.published_url);
 
     // update the page title
     $("#maintitle").text(data.document.title);
