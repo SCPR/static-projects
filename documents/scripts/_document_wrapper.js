@@ -27,21 +27,6 @@
 
         initialize: function(){
 
-            // handle legacy requests for documents and redirect them
-            if (window.location.search != ""){
-                var redirectUrl;
-                var requestedDocument = $.url.param("doc").replace("/", "");
-                // sets embed options
-                if (window.location.href.indexOf("embed") > -1){
-                    window.appConfig.open_about_this = false;
-                    window.appConfig.is_embedded = true;
-                    redirectUrl = window.appConfig.project_root + "#document=" + requestedDocument + "?=embed/";
-                } else {
-                    redirectUrl = window.appConfig.project_root + "#document=" + requestedDocument;
-                };
-                window.location.replace(redirectUrl);
-            };
-
             // sets template path
             if (window.location.href.indexOf("http://projects.scpr.org/") > -1){
                 window.wrapperTemplatePath = "http://projects.scpr.org/static/static-files/v3-dependencies/templates/"
@@ -93,7 +78,6 @@
             }
 
             if (window.appConfig.is_embedded === true){
-                window.appConfig.parentUrl = (window.location != window.parent.location) ? document.referrer: document.location;
                 $(".data-comments").remove();
                 $(".buttons a:last").before("<a class='btn btn-primary' href='" + window.appConfig.project_root + "' target='_top'><span class='glyphicon glyphicon-resize-full'></span> Full screen</a>");
                 $("#site-title a").attr("target", "_top");

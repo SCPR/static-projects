@@ -17,24 +17,37 @@ window.sizeDocContainer = function(){
 
 App.Router = Backbone.Router.extend({
     initialize: function(){
+
+        // hack fallback for existing embeds
+        if (window.location.search != ""){
+            this.redirectDocId = window.location.search.replace("?doc=", "").replace("?=embed/", "");
+            Backbone.history.loadUrl("#document=" + this.redirectDocId + "?=embed/");
+        };
+
+        console.log(document.referrer);
+        window.appConfig.parentUrl = document.referrer;
+
+        console.log(window.appConfig);
+
         this.applicationWrapper = new App.Views.ApplicationWrapper();
         return this.applicationWrapper;
     },
 
     routes: {
         "": "renderDocumentList",
+
+
+
         //":docId/#annotation/:annotation(/)": "renderDocumentAnnotations",
         ":docId(/)": "renderDocumentInstance",
         ":docId/?=embed(/)": "renderDocumentInstance",
     },
 
+
     renderDocumentList: function(){
-        console.log("renderDocumentList - List all of the documents or handle this appropriately");
+        //console.log("renderDocumentList - List all of the documents or handle this appropriately");
         //window.appConfig.project_root = window.location.href;
     },
-
-
-
 
     renderDocumentInstance: function(docId){
         if (this.documentInstance){
@@ -46,15 +59,12 @@ App.Router = Backbone.Router.extend({
         instanceConfig.docId = document[1].replace("?", "");
         window.appConfig.project_embed = window.appConfig.project_root + "#document=" + instanceConfig.docId + "/?=embed/";
 
-        Backbone.history.root = window.appConfig.project_root + "#document=" + instanceConfig.docId + "/";
-
+        //Backbone.history.root = window.appConfig.project_root + "#document=" + instanceConfig.docId + "/";
         //console.log(Backbone.history);
         //console.log(Backbone.history.root);
 
         this.documentInstance = new App.Views.DocumentInstance(instanceConfig);
         return this.documentInstance;
-
-
     },
 
     /*
@@ -73,9 +83,6 @@ App.Router = Backbone.Router.extend({
     */
 
 });
-
-
-
 
 
 App.Views.DocumentInstance = Backbone.View.extend({
@@ -192,13 +199,11 @@ window.populateDocumentMeta = function(data){
     $(".full-document").html("<strong>View</strong>: <a href='" + data.document.resources.pdf + "'>Full document</a>");
 
     // pull link to related article if present
-
-    console.log(window.appConfig.parentUrl);
-
-    if (data.document.resources.related_article != window.appConfig.parentUrl && data.document.resources.related_article != null){
+    if (data.document.resources.related_article != null || data.document.resources.related_article != undefined){
         $("a.read-more").attr("href", data.document.resources.related_article);
-    } else{
-        $("a.read-more").addClass("hidden");
-    }
+    };
 
+    if (window.appConfig.parentUrl === data.document.resources.related_article){
+        $("a.read-more").addClass("hidden");
+    };
 };
