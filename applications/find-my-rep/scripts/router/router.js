@@ -12,8 +12,7 @@ App.Router = Backbone.Router.extend({
 
     displayIndividualLegislators: function(legiChamber, legiStateName, legislatorParams){
         legislatorParams = legislatorParams.split('-');
-        //console.log(legislatorParams);
-        votesmart_id = parseInt(legislatorParams[0]);
+        votesmart_id = legislatorParams[0];
         this.model = window.appView.legislatorCollection.where({'votesmart_id': votesmart_id});
         window.appView.detailView.setModel(this.model);
     },

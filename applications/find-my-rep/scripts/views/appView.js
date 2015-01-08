@@ -30,13 +30,13 @@ App.Views.AppView = Backbone.View.extend({
         var latitude = $("input[id='latitudeSearch']").val();
         var longitude = $("input[id='longitudeSearch']").val();
 
-    	if(e.keyCode != 13) {
-    	    return false;
-    	} else if (e.keyCode === 13 && latitude === '' && longitude === '') {
-    	    return false;
-    	} else {
+        if(e.keyCode != 13) {
+            return false;
+        } else if (e.keyCode === 13 && latitude === '' && longitude === '') {
+            return false;
+        } else {
             this.navigate();
-    	}
+        }
     },
 
     findMe: function(){

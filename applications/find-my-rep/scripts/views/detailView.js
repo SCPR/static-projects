@@ -16,15 +16,13 @@ App.Views.DetailView = Backbone.View.extend({
     },
 
     setModel: function(model){
-
         $('.progress-detail').removeClass('hidden');
 
         this.model = model;
 
         var $this = this;
-
-        if ($this.model[0].attributes.birthday != null){
-            var age = this.calculateAge(moment($this.model[0].attributes.birthday).format('MM/DD/YYYY'));
+        if ($this.model[0].attributes.birthdate != null){
+            var age = this.calculateAge(moment($this.model[0].attributes.birthdate).format('MM/DD/YYYY'));
             $this.model[0].set('age', age);
         } else {
             $this.model[0].set('age', null);
@@ -94,8 +92,8 @@ App.Views.DetailView = Backbone.View.extend({
         };
     },
 
-    calculateAge: function(birthday){
-        var birth = new Date(birthday);
+    calculateAge: function(birthdate){
+        var birth = new Date(birthdate);
         var today = moment().format('MM/DD/YYYY');
         var check = new Date(today);
         var milliDay = 1000 * 60 * 60 * 24;
