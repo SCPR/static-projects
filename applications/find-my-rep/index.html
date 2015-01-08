@@ -71,13 +71,29 @@
 
         <!-- begin main container -->
         <div class="container data-container">
-            <div class="row data-header">
+            <div class="row data-details">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <h4 class="kicker">Politics</h4>
-                    <h1>Find my Congressional representative</h1>
-                    <p>Enter your address <span class="hide-ie-9">or use your location</span> to find Congressional representatives for your district<span class="hide-ie-9">, view biographical information and read past coverage from <a href="http://www.scpr.org/" target="_blank">KPCC</a></span>.</p>
+                <h4 class="kicker">Politics</h4>
+                <h1>Find my Congressional representative</h1>
+                    <div id="content-article">
+                        <div class="text collapse">
+                            <p><span class="credits">Produced by <a href="http://www.scpr.org/about/people/staff/eric-zassenhaus">Eric Zassenhaus</a> &amp; <a href="http://www.scpr.org/about/people/staff/chris-keller">Chris Keller</a></span> | <span class="pubdate">Updated Jan. 7, 2015</span></p>
+                            <p>Enter your address <span class="hide-ie-9">or use your location</span> to find Congressional representatives for your district<span class="hide-ie-9">, view biographical information and read past coverage from <a href="http://www.scpr.org/" target="_blank">KPCC</a></span>.</p>
+                        </div>
+                        <div class="about collapse">
+                            <p><strong>About the data:</strong> Details and images of Congressional representatives, as well as location information, comes via <a href="http://www.sunlightfoundation.com/" target="blank">the Sunlight Foundation's</a> <a href="http://sunlightlabs.github.io/congress/" target="_blank">Congress API</a>. KPCC news articles come via KPCC. <strong>Built using</strong>: <a href="http://handlebarsjs.com/">handlebars.js</a>, <a href="http://handlebarsjs.com/">backbone.js</a>, <a href="http://handlebarsjs.com/">underscore.js</a>, <a href="http://handlebarsjs.com/">moment.js</a> &amp; <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>. State and United States icons via <a href="http://propublica.github.io/stateface/">Pro Publica's StateFace font</a>. <a href="http://thenounproject.com/noun/user/#icon-No1331">Male placeholder image</a> designed by <a href="http://thenounproject.com/r0/#">Ryan Oksenhorn</a> from The Noun Project <a href="http://creativecommons.org/publicdomain/mark/1.0/">via a Public Domain Mark</a>. <a href="http://thenounproject.com/noun/user/#icon-No2553">Female placeholder image</a> designed by <a href="http://thenounproject.com/catalarem" target="_blank">Rémy Médard</a> from The Noun Project <a href="http://creativecommons.org/licenses/by/3.0/">via Creative Commons CC BY 3.0</a>. Home &amp; map marker icons via <a href="http://iconmonstr.com" target="_blank">IconMonstr</a>.</p>
+                        </div>
+                        <div class="buttons btn-group btn-group-justified">
+                            <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".text"><span class="text glyphicon glyphicon-chevron-down"></span>  About</a>
+                            <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".about"><span class="about glyphicon glyphicon-chevron-down"></span>  Sources</a>
+                            <a class="btn btn-primary" href="http://www.scpr.org/politics/"><span class="glyphicon glyphicon-link"></span> Read more</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
+
             <div class="row data-legend">
                 <div class="jumbotron">
                     <noscript>Please enable JavaScript to view this interactive.</noscript>
@@ -118,24 +134,6 @@
             <div class="row data-visuals">
                 <div class="progress progress-striped progress-detail active hidden" style="margin-top: 15px;">
                     <div class="progress-bar"  role="progressbar" aria-valuenow="100" style="width: 100%;"></div>
-                </div>
-            </div>
-            <div class="row data-details">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <div id="content-article">
-                        <div class="text collapse">
-                            <p><span class="credits">Produced by <a href="http://www.scpr.org/about/people/staff/eric-zassenhaus">Eric Zassenhaus</a> &amp; <a href="http://www.scpr.org/about/people/staff/chris-keller">Chris Keller</a></span> | <span class="pubdate">Published Dec. 4, 2013</span></p>
-                            <p>Enter your address or use your location to find your Congressional representative, view biographical information and read past coverage from <a href="http://www.scpr.org/" target="_blank">KPCC</a>.</p>
-                        </div>
-                        <div class="about collapse">
-                            <p><strong>About the data:</strong> Details and images of Congressional representatives, as well as location information, comes via <a href="http://www.sunlightfoundation.com/" target="blank">the Sunlight Foundation's</a> <a href="http://sunlightlabs.github.io/congress/" target="_blank">Congress API</a>. KPCC news articles come via KPCC. <strong>Built using</strong>: <a href="http://handlebarsjs.com/">handlebars.js</a>, <a href="http://handlebarsjs.com/">backbone.js</a>, <a href="http://handlebarsjs.com/">underscore.js</a>, <a href="http://handlebarsjs.com/">moment.js</a> &amp; <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>. State and United States icons via <a href="http://propublica.github.io/stateface/">Pro Publica's StateFace font</a>. <a href="http://thenounproject.com/noun/user/#icon-No1331">Male placeholder image</a> designed by <a href="http://thenounproject.com/r0/#">Ryan Oksenhorn</a> from The Noun Project <a href="http://creativecommons.org/publicdomain/mark/1.0/">via a Public Domain Mark</a>. <a href="http://thenounproject.com/noun/user/#icon-No2553">Female placeholder image</a> designed by <a href="http://thenounproject.com/catalarem" target="_blank">Rémy Médard</a> from The Noun Project <a href="http://creativecommons.org/licenses/by/3.0/">via Creative Commons CC BY 3.0</a>. Home &amp; map marker icons via <a href="http://iconmonstr.com" target="_blank">IconMonstr</a>.</p>
-                        </div>
-                        <div class="buttons btn-group btn-group-justified">
-                            <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".text"><span class="text glyphicon glyphicon-chevron-down"></span>  About</a>
-                            <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".about"><span class="about glyphicon glyphicon-chevron-down"></span>  Sources</a>
-                            <a class="btn btn-primary" href="http://www.scpr.org/politics/"><span class="glyphicon glyphicon-link"></span> Read more</a>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="row kpcc-footer"></div>
