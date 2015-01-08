@@ -36,9 +36,11 @@ App.Views.DetailView = Backbone.View.extend({
 
         var twitterApiQuery = $this.model[0].attributes.twitter_id;
 
+        console.log(twitterApiQuery);
+
         var twitterApiQueryUrl;
 
-        if (twitterApiQuery === null){
+        if (twitterApiQuery === null || twitterApiQuery === undefined || twitterApiQuery === ""){
             twitterApiQueryUrl = null
         } else {
             twitterApiQueryUrl = "https://socal-political-tweets.herokuapp.com/1.1/statuses/user_timeline.json?count=5&screen_name=" + twitterApiQuery + "&callback=?";

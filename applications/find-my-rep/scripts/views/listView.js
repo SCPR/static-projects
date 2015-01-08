@@ -15,7 +15,7 @@ App.Views.Legislator = Backbone.View.extend({
         var legiStateName = this.model.attributes.state_name.replace(' ', '-').toLowerCase();
         var legiFirstName = this.model.attributes.first_name.toLowerCase();
         var legiLastName = this.model.attributes.last_name.toLowerCase();
-        var legiId = this.model.attributes.votesmart_id;
+        var legiId = this.model.attributes.bioguide_id;
         var legislatorParams = legiId + '-' + legiFirstName + '-' + legiLastName;
         window.app.navigate('#legislators/' + legiChamber + '/' + legiStateName + '/' + legislatorParams, {
             trigger: true,

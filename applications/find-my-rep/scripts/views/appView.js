@@ -97,7 +97,7 @@ App.Views.AppView = Backbone.View.extend({
         $(".data-visuals").append(this.searchedDetailView.el);
         this.searchedCollection = new App.Collections.Legislators();
         for(var i=0; i<data.results.length; i++){
-            var testModel = window.appView.legislatorCollection.where({"votesmart_id": data.results[i].votesmart_id});
+            var testModel = window.appView.legislatorCollection.where({"bioguide_id": data.results[i].bioguide_id});
             this.searchedCollection.add(testModel);
         };
         this.searchedLegislatorListView = new App.Views.Legislators({
