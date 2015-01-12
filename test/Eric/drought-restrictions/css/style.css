@@ -1,0 +1,66 @@
+/* basic structure */
+.data-container .data-visuals {margin: 20px auto 5px auto;}
+
+.data-container .data-legend {width: 100%; height: auto; margin: 10px 0 5px 0;}
+
+.data-container .data-legend .jumbotron {width: 100%; height: auto; background: rgba(240, 248, 255, 1.0); margin: 10px 0% 10px 0%; padding: 10px; overflow: hidden;}
+
+.data-container .data-legend .jumbotron .question {font: normal 200 2.1875em/1.2 sans-serif;}
+
+.data-legend #content-action-bar {margin: -55px 25% 0 25%;}
+
+.data-legend #content-action-bar select {width: 50%; margin: 0 25% 0 25%;}
+
+.data-legend #results-display {width: 70%; margin: 25px 15% 0 15%;}
+
+.data-legend #icon-display {margin: 25px 0 0 0;}
+
+.data legend #municipality-list {font: normal 200 2.1875em/1.2 sans-serif;}
+
+@media (max-width: 491px) {
+    body.minimal .data-container h4 {font-size: 175%;}
+    body.minimal .data-container h5 {font-size: 130%;}
+    body.minimal .data-container h6 {font-size: 95%;}
+    .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
+    .data-container .data-legend #icon-display p {font-size: 65%;}
+}
+
+@media (min-width: 491px) {
+    body.minimal .data-container h4 {font-size: 175%;}
+    body.minimal .data-container h5 {font-size: 130%;}
+    body.minimal .data-container h6 {font-size: 95%;}
+    .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
+    .data-container .data-legend #icon-display p {font-size: 65%;}
+}
+
+@media (min-width: 567px) {
+    body.minimal .data-container h4 {font-size: 200%;}
+    body.minimal .data-container h5 {font-size: 150%;}
+    body.minimal .data-container h6 {font-size: 115%;}
+    .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
+    .data-container .data-legend #icon-display p {font-size: 75%;}
+}
+
+@media (min-width: 768px) {
+    body.minimal .data-container h4 {font-size: 200%;}
+    body.minimal .data-container h5 {font-size: 150%;}
+    body.minimal .data-container h6 {font-size: 115%;}
+    .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
+    .data-container .data-legend #icon-display p {font-size: 75%;}
+}
+
+@media (min-width: 830px) {
+    body.minimal .data-container h4 {font-size: 200%;}
+    body.minimal .data-container h5 {font-size: 150%;}
+    body.minimal .data-container h6 {font-size: 115%;}
+    .data-container .data-legend #icon-display .placemark {width: 45px; vertical-align: text-bottom;}
+    .data-container .data-legend #icon-display p {font-size: 75%;}
+}
+
+@media (min-width: 992px) {
+    body.minimal .data-container h4 {font-size: 250%;}
+    body.minimal .data-container h5 {font-size: 180%;}
+    body.minimal .data-container h6 {font-size: 145%;}
+    .data-container .data-legend #icon-display .placemark {width: 60px; vertical-align: text-bottom;}
+    .data-container .data-legend #icon-display p {font-size: 90%;}
+}
