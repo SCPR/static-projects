@@ -1,0 +1,30 @@
+/* basic structure */
+.data-container .data-visuals {margin: 20px auto 5px auto;}
+
+.data-container .data-visuals #content-map-canvas {height: 600px; margin: 0px 0 10px 0;}
+
+#animation-container {width: 100%; height: 200px; background: #d7d7d7; padding: 0 0 10px 0; margin-bottom: 15px;}
+
+@media (max-width: 491px) {
+
+}
+
+@media (min-width: 491px) {
+
+}
+
+@media (min-width: 567px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 830px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
