@@ -50,7 +50,7 @@ var fn = {
             docHeightParam = 400;
         } else {
             sidebarParam = false;
-            docHeightParam = 820;
+            docHeightParam = 1020;
         };
 
         var initialWidth = jqueryNoConflict('#document-container').width();

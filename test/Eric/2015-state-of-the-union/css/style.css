@@ -24,7 +24,7 @@
 #controls #environment.indicator {z-index: 10; background: #ffffff; background-image: url(../images/environment.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
 /* environment.png used via a Public Domain Mark - http://thenounproject.com/term/recycle/7162/ */
 
-#controls #government.indicator {z-index: 10; background: #ffffff; background-image: url(../images/politics.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
+#controls #politics.indicator {z-index: 10; background: #ffffff; background-image: url(../images/politics.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
 /* politics.png used via a Public Domain Mark - http://thenounproject.com/term/state-government/15214/ */
 
 #controls #health-care.indicator {z-index: 10; background: #ffffff; background-image: url(../images/health-care.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
@@ -34,6 +34,12 @@
 /* prisons.png used via a Public Domain Mark - http://thenounproject.com/term/arrest/4259/ */
 
 #controls #the-speech.indicator {z-index: 10; background: #ffffff; background-image: url(../images/speech.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
+/* prisons.png used via a Public Domain Mark - http://thenounproject.com/term/speech/16988/ */
+
+#controls #housing.indicator {z-index: 10; background: #ffffff; background-image: url(../images/housing.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
+/* prisons.png used via a Public Domain Mark - http://thenounproject.com/term/speech/16988/ */
+
+#controls #immigration.indicator {z-index: 10; background: #ffffff; background-image: url(../images/immigration.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
 /* prisons.png used via a Public Domain Mark - http://thenounproject.com/term/speech/16988/ */
 
 @media (max-width: 491px) {
