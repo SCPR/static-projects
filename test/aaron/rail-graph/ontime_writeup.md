@@ -1,0 +1,35 @@
+Want to get to your destination on time? Hop on the Metro's Blue Line train. Don't mind showing up late? Wait for the bus -- especially the 130, 205 or 217.
+
+One-fifth of Metro buses show up to stops 5 minutes late, or later, according to data from the agency covering the last five years. About 5% of buses show up early, and more than 75% of buses show up on time. But the definition of "on time" may surprise bus riders: buses defined as "on time" can be as much as five minutes late.
+
+The Metro's trains are far more timely than its buses. Since December 2009, more than 99% of trains have arrived on time. Trains have gotten slightly more late in recent years, as the rail system has undergone rapid expansion. But in 2014, the data show that 99.3% of trains still showed up on time.
+
+Some lines are more punctual than others (embed graph of rail line lateness). For example, about 1 in 50 Blue Line trains showed up late, the worst in the system. Red and Purple line trains are four times as likely to show up on time -- only 1 in 200 trains on those lines (which are tracked together) arrive late. Metro spokesman Giancarlo Restreppo said that Blue Line trains has more street-grade crossings than other lines, making it more susceptable to street traffic.
+
+No bus line is as timely as the MTA's trains. Some are punctual, though. The 901 bus rapid transit line--which ferries commuters from Chatsworth to North Hollywood in its own dedicated lane--showed up within 5 minutes of schedule 94% of the time. The 901 is also known as the Orange Line.
+
+On the other side of the specutrum, the 205 bus--which runs along Western, Vermont and Wilmington from San Pedro to Willowbrook--made it to stops on schedule about 70% of the time. That's the worst of any bus with more than 250,000 stops recorded by the MTA. (EXPLORE OUR INTERACTIVE....)
+
+Then again, you'd have better luck on the 205 in the summer than in the fall. Over millions of stops tracked in the database, some months emerge as timelier than others for buses.
+
+For example, less than a fifth of all Metro buses were late in July (17.5% late) and January (18%). But the numbers for October (22.1% late) and September (21.9%) are considerably worse. 
+
+Metro spokesman Giancarlo Restreppo says there's a reason for that. "October and September late rates are seasonally high due to increased ridership as most schools are  back in session. During the Summer, ridership decreases. It is easier to adhere to a schedule if there are less patrons." He cites traffic and heavy laods as the biggest challenges in keeping the buses running on time.
+
+Buses have gotten slightly more timely in recent years, according to the data. 20.1% of the trips tracked by the the MTA in 2012 showed up five minutes late or worse. In 2013, that number fell to 19.2% and in 2014 it was 19.1%.
+
+The data, provided by the MTA in response to a Public Records Act request, tallies 74,425,377 stops by its buses and trains across Southern California. In recent years, the MTA has outfitted buses with equipment that tracks where and when they open and shut their doors. Each night, that data is downloaded from buses and matched to bus schedules to determine how many arrived early, on-time and late. 
+
+The system ignores buses that were more than 20 minutes early or more than an hour late, and the first and last stops are also ignored.
+
+Data collection works differently for trains. When a train arrives more than five minutes late, or is cancelled, an employee at the Rail Operations Control Center makes a paper record. Those records are eventually entered into an electronic databases. According to spokesman Giancarlo Restreppo, "we may miss logging one or two delays but it’s a rare occurrence."
+
+Restreppo says that the price tag on such data efforts is unknown. Richard Anderson, who studies transit at Imperial College London, says that some systems have moved towards "passenger dealy metrics", which gauge the impact of transit service for riders. Buses that are late but fairly regular may not incovenice riders, the thinking shows. The Metro doesn't track such metrics, according to Restreppo.
+
+It's difficult to compare the on-time performance of Los Angeles' transit system to others around the country. The Bureau of Transportation Statistics doesn't track on-time transit performance. Few transit systems publicize their numbers. And methodlogies and data collection can vary widely from system to system.
+
+The Metro surveyed other transit systems in 2008, and found that it ranked the lowest of any agency surveyed, which included Seatlle, New York and TK. On-time performance improved from 2009 to 2014, according to Metro's data.
+
+Data from the Orange County Transportation Authority... TK, hopefully coming soon.
+
+* quotes might be helpful for context? From a wonk?
