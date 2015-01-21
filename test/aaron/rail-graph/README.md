@@ -4,7 +4,7 @@ This is data includes the on-time performance data per bus line for each month, 
 # index.html
 This is the graph of rail lines and how often they're late.
 
-# ontime_writeup.txt
+# ontime_writeup.md
 Here's a sketch of a story that can go along with the interactive, explaining the data.
 
 # railonly.csv
