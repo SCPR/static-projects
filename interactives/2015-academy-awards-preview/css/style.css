@@ -1,0 +1,11 @@
+#nominee-container { height: 510px; overflow: hidden; margin-bottom: 15px; }
+
+#nominee-container .nominee-image img { width: 92%; margin: 0 4% 0 4%; }
+
+#nominee-container .nominee-name { max-height: 25px; height: 25px; }
+
+#nominee-container .awards-won {}
+
+#nominee-container .prediction {}
+
+#nominee-container .resource-links {}
