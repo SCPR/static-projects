@@ -1,0 +1,67 @@
+{{#objects}}
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h3>{{category}}</h3>
+        <div class="row">
+            {{#each nominees}}
+                <div id="nominee-container" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+
+                    <div class="nominee-image">
+                        <img id="{{category}}" src="{{movieimage}}" alt="{{nominee}}" />
+                    </div>
+
+                    <div class="nominee-name">
+                        <h5 class="text-center">{{nominee}}</h5>
+                    </div>
+
+                    {{#if awardswon}}
+                        <div class="awards-won row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <p><strong>Awards won:</strong> <span class="italics">{{awardswon}}</span></p>
+                            </div>
+                        </div>
+                    {{else}}
+                        <div class="awards-won row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                    {{/if}}
+
+                    {{#if prediction}}
+                        <div class="prediction row">
+                            <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <p><strong>Prediction</strong>: {{prediction}} - <span class="italics"><a href="{{predictionlink}}" target="_blank">{{predictionsource}}</a></span></p>
+                            </div>
+                        </div>
+                    {{else}}
+                        <div class="prediction row">
+                            <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <p>&nbsp;</p>
+                            </div>
+                        </div>
+                    {{/if}}
+
+                    <div class="resource-links row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <p class="centered">
+                                {{#if imdbpage}}
+                                    <a href="{{imdbpage}}" target="_blank">IMDB</a> |
+                                {{else}}
+                                {{/if}}
+                                {{#if trailer}}
+                                    <a href="{{trailer}}" target="_blank">Movie Trailer</a> |
+                                {{else}}
+                                {{/if}}
+                                {{#if officialsite}}
+                                    <a href="{{officialsite}}" target="_blank">Official Site</a>
+                                {{else}}
+                                {{/if}}
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            {{/each}}
+        </div>
+    </div>
+{{/objects}}
