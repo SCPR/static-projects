@@ -30,7 +30,7 @@
 #controls #health-care.indicator {z-index: 10; background: #ffffff; background-image: url(../images/health-care.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
 /* health-care.png used via a Public Domain Mark - http://thenounproject.com/term/x-ray/615/ */
 
-#controls #prisons.indicator {z-index: 10; background: #ffffff; background-image: url(../images/prisons.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
+#controls #policing.indicator {z-index: 10; background: #ffffff; background-image: url(../images/prisons.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}
 /* prisons.png used via a Public Domain Mark - http://thenounproject.com/term/arrest/4259/ */
 
 #controls #the-speech.indicator {z-index: 10; background: #ffffff; background-image: url(../images/speech.png); background-size: 70%; background-repeat: no-repeat; background-position: bottom center;}

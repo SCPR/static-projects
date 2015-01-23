@@ -17,9 +17,9 @@ var appConfig = {
     openAboutThis: true,
     embed_this: true,
     embed_url_root: 'http://projects.scpr.org/static/interactives/2015-inaugural-address/',
-    docDiv: "DV-viewer-1501413-president-barack-obamas-state-of-the-union",
-    docUrl: "//www.documentcloud.org/documents/1501413-president-barack-obamas-state-of-the-union.js",
-    docContainer: "#DV-viewer-1501413-president-barack-obamas-state-of-the-union"
+    docDiv: "DV-viewer-1506580-sotu2015",
+    docUrl: "//www.documentcloud.org/documents/1506580-sotu2015.js",
+    docContainer: "#DV-viewer-1506580-sotu2015"
 };
 
 // begin application object
@@ -76,7 +76,7 @@ var fn = {
     },
 
     processDocumentMetaData: function(data){
-        jqueryNoConflict('#document-meta-data').html("<h6><span id='speech-topic'>Click an icon to see what Gov. Jerry Brown said about a particular topic in his State of the State address.</span></h6>"
+        jqueryNoConflict('#document-meta-data').html("<h6><span id='speech-topic'>Click an icon to see what President Obama said about a particular topic in his State Of The Union address.</span></h6>"
         );
 
         // get unique note topics we will display
