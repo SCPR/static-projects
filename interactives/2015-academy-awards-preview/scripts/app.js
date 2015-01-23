@@ -74,8 +74,10 @@ var fn = {
 
     createCategoryObjects: function(array, data){
         for(var i=0; i<array.length; i++){
+            var slug = array[i].toLowerCase().replace(/\s/g, '-');
             var categoryObjectClass = {
                 category: array[i],
+                categorySlug: slug,
                 nominees: fn.createArrayOfNominees(array[i], data)
             };
             fn.categoryObjectArray.push(categoryObjectClass);
@@ -98,6 +100,34 @@ var fn = {
 
     renderDataVisualsTemplate: function(data){
         renderHandlebarsTemplate('templates/data-visuals.handlebars', '.data-visuals', data);
+        fn.calculateHeights();
+    },
+
+    calculateHeights: function(){
+        var checkExist = setInterval(function() {
+            if (jqueryNoConflict(".data-visuals").length) {
+                clearInterval(checkExist);
+                var categoryRows = []
+                $(".elements").each(function (){
+                    categoryRows.push(this.id);
+                });
+                jqueryNoConflict.each(categoryRows, function(index, value){
+                    var targetElementId = "#" + value;
+                    var test = fn.getHighestHeight(targetElementId);
+                    var desiredHeight = 15 + Math.max.apply(Math, test);
+                    jqueryNoConflict(targetElementId + " .nominee-container").css('height', desiredHeight);
+                });
+            }
+        }, 1000);
+    },
+
+    getHighestHeight: function(targetElementId){
+        var heights = [];
+        jqueryNoConflict(targetElementId).children().each(function(){
+            var new_height = jqueryNoConflict(this).outerHeight();
+            heights.push(new_height)
+        });
+        return heights;
     }
 };
 // end data processing object
