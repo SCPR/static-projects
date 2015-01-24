@@ -2,7 +2,7 @@ window.appConfig = {
 
     // general configs
     open_about_this: true,
-    comments: false,
+    comments: true,
     is_mobile: null,
     project_root: "http://projects.scpr.org/interactives/2015-academy-awards-preview/",
     embed_this: true,
