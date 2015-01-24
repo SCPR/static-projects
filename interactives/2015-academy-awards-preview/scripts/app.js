@@ -29,6 +29,9 @@
 
     App.Collections.Nominees = Backbone.Collection.extend({
         model: App.Models.Nominee,
+
+        //url: window.appConfig.data_url,
+
         tabletop: {
             instance: window.storage,
             sheet: "live_data"
