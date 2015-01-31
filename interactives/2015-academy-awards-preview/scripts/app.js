@@ -8,6 +8,7 @@
             awardswon: null,
             category: null,
             imdbpage: null,
+            kpccinterview: null,
             movie: null,
             movieimage: null,
             nominee: null,

@@ -18,16 +18,24 @@
                             <p class="text-center">&nbsp;</p>
                         <% } %>
                         <% if (model.prediction.length) { %>
-                            <p><strong>Prediction</strong>: <%= model.prediction %> - <span class="italics"><a href="<%= model.predictionlink %>" target="_blank"><%= model.predictionsource %></a></span></p>
+                            <p><%= model.prediction %> - <span class="italics">
+                                <% if (model.predictionlink.length) { %>
+                                    <a href="<%= model.predictionlink %>" target="_blank"><%= model.predictionsource %></a></span></p>
+                                <% } else {%>
+                                    <%= model.predictionsource %></span></p>
+                                <% } %>
                         <% } else {%>
                             <p class="text-center">&nbsp;</p>
                         <% } %>
                         <p class="centered">
+                            <% if (model.kpccinterview.length) { %>
+                                <a href="<%= model.kpccinterview %>" target="_blank">KPCC</a> |
+                            <% } %>
                             <% if (model.imdbpage.length) { %>
                                 <a href="<%= model.imdbpage %>" target="_blank">IMDB</a> |
                             <% } %>
                             <% if (model.trailer.length) { %>
-                                <a href="<%= model.trailer %>" target="_blank">Movie Trailer</a> |
+                                <a href="<%= model.trailer %>" target="_blank">Trailer</a> |
                             <% } %>
                             <% if (model.officialsite.length) { %>
                                 <a href="<%= model.officialsite %>" target="_blank">Official Site</a>

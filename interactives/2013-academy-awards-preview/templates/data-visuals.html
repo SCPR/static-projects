@@ -18,7 +18,12 @@
                             <p class="text-center">&nbsp;</p>
                         <% } %>
                         <% if (model.prediction.length) { %>
-                            <p><strong>Prediction</strong>: <%= model.prediction %> - <span class="italics"><a href="<%= model.predictionlink %>" target="_blank"><%= model.predictionsource %></a></span></p>
+                            <p><strong>Prediction</strong>: <%= model.prediction %> - <span class="italics">
+                                <% if (model.predictionlink.length) { %>
+                                    <a href="<%= model.predictionlink %>" target="_blank"><%= model.predictionsource %></a></span></p>
+                                <% } else {%>
+                                    <%= model.predictionsource %></span></p>
+                                <% } %>
                         <% } else {%>
                             <p class="text-center">&nbsp;</p>
                         <% } %>
