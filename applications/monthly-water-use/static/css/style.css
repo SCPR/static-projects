@@ -5,6 +5,13 @@
 .decrease,
 .increase { min-height: 400px; height: auto; }
 
+.decrease header.charts { width: 100%; height: 75px; background: #66d8d8; padding: 1% 0 1% 2%; }
+
+.increase header.charts { width: 100%; height: 75px; background: #d86666; padding: 1% 2% 1% 0; }
+
+.decrease header.charts h5,
+.increase header.charts h5 { font-weight: 700; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; text-transform: uppercase; }
+
 section.display ol { width: 100%; padding: 2% 0% 2% 0%; }
 
 section.display ol li { min-width: 96%; width: 96%; min-height: 1.5em; color: #000; margin: 0 2% .5% 2%; border-bottom: 1px solid #000; }
@@ -36,10 +43,6 @@ section.display ol li dl { position: relative; width: 100%; }
 .decrease-accent { color: #66d8d8; }
 .increase-accent { color: #d86666; }
 
-.decrease section.display h5 { background: #66d8d8; font-weight: 700; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; text-transform: uppercase; padding: 1% 0 1% 2%; }
-
-.increase section.display h5 { background: #d86666; font-weight: 700; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; text-transform: uppercase; padding: 1% 2% 1% 0; }
-
 /* select-menu */
 .data-container .data-legend .jumbotron { width: 100%; height: auto; background: rgba(240, 248, 255, 1.0); margin: 10px 0% 10px 0%; padding: 10px; overflow: hidden; }
 
@@ -62,18 +65,14 @@ section.display ol li dl { position: relative; width: 100%; }
 
 /* conservation methods */
 .icon-display { margin: 25px 0 0 0; }
+
 .icon-display .icons { margin: 35px 0 0 0; }
+
 .placemark {width: 45px; vertical-align: text-bottom;}
 
 .restrictions {margin-top: 40px; }
 
-.restrictions ul li {
-   list-style-type: disc;
-   list-style-position: inside;
-   margin-left: 25px;
-}
-
-
+.restrictions ul li { list-style-type: disc; list-style-position: inside; margin-left: 25px; }
 
 ._year_change,
 ._2014,
