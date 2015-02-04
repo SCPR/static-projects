@@ -29,7 +29,6 @@
             if (window.appConfig.is_mobile) {
                 window.appConfig.open_about_this = false;
                 window.appConfig.comments = false;
-                window.appConfig.initial_map_zoom = 9;
             };
 
             // checks comments setting
@@ -55,7 +54,6 @@
         },
 
         render: function(){
-
             if (window.appConfig.open_about_this === true){
                 $(".about").collapse("show");
             };

@@ -1,5 +1,13 @@
 /* basic structure */
-.data-container .data-visuals { min-height: 600px; height: auto; padding-bottom: 25px; margin: 20px auto 5px auto; }
+body.minimal .data-container .data-visuals { min-height: 600px; height: auto; padding-bottom: 25px; margin: 20px auto 5px auto; }
+
+body.minimal .data-container h2 { margin-bottom: 2%; }
+
+body.minimal .data-container a.btn { padding: 0px 0px; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; -khtml-border-radius: 0; }
+body.minimal .data-container a.btn-primary,
+body.minimal .data-container a.btn-primary:focus,
+body.minimal .data-container a.btn-primary:active { background: rgba(0, 127, 166, 1.0); border: rgba(0, 127, 166, 1.0) solid .1em; }
+body.minimal .data-container a.btn-primary:hover { background: rgba(0, 127, 166, .6); border: rgba(0, 127, 166, .6) solid .1em; color: #2B2B2B; }
 
 /* index page bar charts */
 .decrease,
@@ -118,7 +126,12 @@ section.display ol li dl { position: relative; width: 100%; }
 
     ._year_change dt, ._2014 dt, ._2013 dt { font-size: 200%; }
 
-    ._year_change dd, ._2014 dd, ._2013 dd { font-size: 75%; }
+    /*._year_change dd, ._2014 dd, ._2013 dd { font-size: 75%; }*/
+
+    body.minimal .data-container p,
+    ._year_change dd,
+    ._2014 dd,
+    ._2013 dd { font-size: 75%; }
 
     .icon-display .placemark {width: 30%; margin: 0 35% 20px 35%; }
 
@@ -149,7 +162,12 @@ section.display ol li dl { position: relative; width: 100%; }
 
     ._year_change dt, ._2014 dt, ._2013 dt { font-size: 280%; }
 
-    ._year_change dd, ._2014 dd, ._2013 dd { font-size: 100%; }
+    /*._year_change dd, ._2014 dd, ._2013 dd { font-size: 100%; }*/
+
+    body.minimal .data-container p,
+    ._year_change dd,
+    ._2014 dd,
+    ._2013 dd { font-size: 100%; }
 
     .icon-display .placemark {width: 30%; margin: 0 35% 20px 35%; }
 
@@ -180,7 +198,12 @@ section.display ol li dl { position: relative; width: 100%; }
 
     ._year_change dt, ._2014 dt, ._2013 dt { font-size: 300%; }
 
-    ._year_change dd, ._2014 dd, ._2013 dd { font-size: 100%; }
+    /*._year_change dd, ._2014 dd, ._2013 dd { font-size: 100%; }*/
+
+    body.minimal .data-container p,
+    ._year_change dd,
+    ._2014 dd,
+    ._2013 dd { font-size: 100%; }
 
     .icon-display .placemark {width: 30%; margin: 0 35% 20px 35%; }
 
@@ -212,7 +235,12 @@ section.display ol li dl { position: relative; width: 100%; }
 
     ._year_change dt, ._2014 dt, ._2013 dt { font-size: 340%; }
 
-    ._year_change dd, ._2014 dd, ._2013 dd { font-size: 100%; }
+    /*._year_change dd, ._2014 dd, ._2013 dd { font-size: 100%; }*/
+
+    body.minimal .data-container p,
+    ._year_change dd,
+    ._2014 dd,
+    ._2013 dd { font-size: 100%; }
 
     .icon-display .placemark {width: 30%; margin: 0 35% 20px 35%; }
 
@@ -243,7 +271,12 @@ section.display ol li dl { position: relative; width: 100%; }
 
     ._year_change dt, ._2014 dt, ._2013 dt { font-size: 340%; }
 
-    ._year_change dd, ._2014 dd, ._2013 dd { font-size: 130%; }
+    /*._year_change dd, ._2014 dd, ._2013 dd { font-size: 130%; }*/
+
+    body.minimal .data-container p,
+    ._year_change dd,
+    ._2014 dd,
+    ._2013 dd { font-size: 130%; }
 
     .icon-display .placemark {width: 30%; margin: 0 35% 20px 35%; }
 
@@ -258,7 +291,11 @@ section.display ol li dl { position: relative; width: 100%; }
 
     ._2014 dt, ._2013 dt { font-size: 380%; }
 
-    ._2014 dd, ._2013 dd { font-size: 140%; }
+    body.minimal .data-container p,
+    ._year_change dd,
+    ._2014 dd,
+    ._2013 dd { font-size: 140%; }
+
 }
 
 
@@ -286,7 +323,12 @@ section.display ol li dl { position: relative; width: 100%; }
 
     ._year_change dt, ._2014 dt, ._2013 dt { font-size: 500%; }
 
-    ._year_change dd, ._2014 dd, ._2013 dd { font-size: 145%; }
+    /*._year_change dd, ._2014 dd, ._2013 dd { font-size: 145%; }*/
+
+    body.minimal .data-container p,
+    ._year_change dd,
+    ._2014 dd,
+    ._2013 dd { font-size: 145%; }
 
     .icon-display .placemark {width: 30%; margin: 0 35% 20px 35%; }
 
@@ -321,7 +363,12 @@ section.display ol li dl { position: relative; width: 100%; }
 
     ._year_change dt, ._2014 dt, ._2013 dt { font-size: 590%; }
 
-    ._year_change dd, ._2014 dd, ._2013 dd { font-size: 145%; }
+    /*._year_change dd, ._2014 dd, ._2013 dd { font-size: 145%; }*/
+
+    body.minimal .data-container p,
+    ._year_change dd,
+    ._2014 dd,
+    ._2013 dd { font-size: 145%; }
 
     .icon-display .placemark {width: 30%; margin: 0 35% 20px 35%; }
 
@@ -353,7 +400,12 @@ section.display ol li dl { position: relative; width: 100%; }
 
     ._year_change dt, ._2014 dt, ._2013 dt { font-size: 750%; }
 
-    ._year_change dd, ._2014 dd, ._2013 dd { font-size: 130%; }
+    /*._year_change dd, ._2014 dd, ._2013 dd { font-size: 130%; }*/
+
+    body.minimal .data-container p,
+    ._year_change dd,
+    ._2014 dd,
+    ._2013 dd { font-size: 135%; }
 
     .icon-display .placemark {width: 30%; margin: 0 35% 20px 35%; }
 
