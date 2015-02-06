@@ -1,11 +1,11 @@
 /* standard styles */
-body.minimal { background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/bg-body.png') repeat 0 0; }
+body.minimal { background:url("http://projects.scpr.org/static/static-files/images/tablestacker-tables/bg-body.png") repeat 0 0; }
 body.minimal .data-container { max-width: 1110px; margin: 0 auto; }
 
 /* standard header */
 body.minimal header { background: #ffffff; height: 74px; margin: 0 0 25px 0; }
 body.minimal header .navbar-default { box-shadow: 0 0 8px rgba(0,0,0,0.7); }
-body.minimal header h3#site-title a { background-image: url('http://projects.scpr.org/static/static-files/images/main/logo-masthead.png'); width: 181px; height: 42px; display: block; text-indent: -9999px; width: 180px; height: 42px; margin-top: 15px; }
+body.minimal header h3#site-title a { background-image: url("http://projects.scpr.org/static/static-files/images/main/logo-masthead.png"); width: 181px; height: 42px; display: block; text-indent: -9999px; width: 180px; height: 42px; margin-top: 15px; }
 body.minimal .header-links { margin: 17px 0 10px 0; }
 body.minimal .header-links li { border-right: 1px solid #e9e9e9; display: block; float: left; list-style: none; padding: 8px 10px; }
 body.minimal .header-links li:last-child { border: 0; padding-right: 0; }
@@ -13,12 +13,12 @@ body.minimal .header-links a { color: #454545; padding: 0 0 0 0; }
 body.minimal .header-links b { display: block; font-size: 12px; }
 body.minimal .header-links a.icon { display: block; text-indent: -9999px; }
 body.minimal .header-links a.icon:hover { opacity: 0.7; }
-body.minimal .header-links a.pledge-now { background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-pledge.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px; }
+body.minimal .header-links a.pledge-now { background:url("http://projects.scpr.org/static/static-files/images/template-icons/ico-pledge.png") no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px; }
 body.minimal .header-links .share-links { width: 63px; margin: 0 auto; }
-body.minimal .header-links a.facebook { background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-facebook.png') no-repeat 0 0; display: block; float: left; margin: 0 10px 1px 0; width: 22px; height: 22px; }
-body.minimal .header-links a.twitter { background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-twitter.png') no-repeat 0 0; display: block; float: left; width: 31px; height: 22px; }
-body.minimal .header-links a.embed-this { background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-embed.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px; }
-body.minimal .header-links a.projects-home { background:url('http://projects.scpr.org/static/static-files/images/template-icons/ico-home.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px; }
+body.minimal .header-links a.facebook { background:url("http://projects.scpr.org/static/static-files/images/template-icons/ico-facebook.png") no-repeat 0 0; display: block; float: left; margin: 0 10px 1px 0; width: 22px; height: 22px; }
+body.minimal .header-links a.twitter { background:url("http://projects.scpr.org/static/static-files/images/template-icons/ico-twitter.png") no-repeat 0 0; display: block; float: left; width: 31px; height: 22px; }
+body.minimal .header-links a.embed-this { background:url("http://projects.scpr.org/static/static-files/images/template-icons/ico-embed.png") no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px; }
+body.minimal .header-links a.projects-home { background:url("http://projects.scpr.org/static/static-files/images/template-icons/ico-home.png") no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px; }
 
 /* standard footer */
 body.minimal footer { text-align: center; padding: 10px 0; }
@@ -241,41 +241,34 @@ body.minimal #popup_prompt { margin: .5em 0em }
 #table-container #table_fu #legend { float: left; margin-bottom: 10px; margin-top: -5px; }
 #table-container #table_fu #download { font-size:12px; margin-top:7px; margin-bottom:0px; display: inline; float: right; }
 #table-container #table_fu #pubdate { color:#930000; font-style:italic; font-size:11px; margin-bottom:0px; display:inline; }
-#table-container #table_fu #pager form select { width: 20%; margin: 0 0 0 0; }
 */
 
-#table-container #table_fu div#ribbon { height: auto; clear: both; display: block; overflow: visible; margin: 10px 0 15px 0; }
-
-#table-container #table_fu div#ribbon #controls { height: auto; }
-
-#table-container #table_fu div#ribbon #controls #filter #text-search input[type="text"] { height: 34px; margin: 15px auto; display: inline-block; }
-
-#table-container #table_fu div#ribbon #controls #filter #page-search .paging-search { margin: 20px auto; }
-
-#table-container #table_fu div#ribbon #controls #filter #items-per-page .pagesize { height: 34px; margin: 15px auto; }
+#table-container #table_fu #controls { height: auto; clear: both; display: block; overflow: visible; margin: 10px 0 5px 0; }
+#table-container #table_fu #controls #filter,
+#table-container #table_fu #controls #pager { margin: 5px auto 25px auto; }
 
 @media (max-width: 491px) {
-    #table-container #table_fu div#ribbon { font-size: 140%; }
+    #table-container #table_fu #ribbon { font-size: 140%; }
     #table-container #table_fu #pager form { font-size: 110%; font-weight: 400; }
  }
 
 @media (min-width: 491px) {
-    #table-container #table_fu div#ribbon { font-size: 140%; }
+    #table-container #table_fu #ribbon { font-size: 140%; }
     #table-container #table_fu #pager form { font-size: 110%; font-weight: 400; }
  }
 
 @media (min-width: 567px) {
-    #table-container #table_fu div#ribbon { font-size: 140%; }
+    #table-container #table_fu #ribbon { font-size: 140%; }
     #table-container #table_fu #pager form { font-size: 110%; font-weight: 400; }
  }
 
 @media (min-width: 768px) {
-    #table-container #table_fu div#ribbon { font-size: 140%; }
+    #table-container #table_fu #ribbon { font-size: 140%; }
     #table-container #table_fu #pager form { font-size: 110%; font-weight: 400; }
  }
 
 @media (min-width: 992px) {
-    #table-container #table_fu div#ribbon { font-size: 140%; }
+    #table-container #table_fu #ribbon { font-size: 140%; }
     #table-container #table_fu #pager form { font-size: 110%; font-weight: 400; }
  }
 
