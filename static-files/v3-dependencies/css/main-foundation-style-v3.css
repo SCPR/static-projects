@@ -226,17 +226,6 @@ body.minimal #popup_prompt { margin: .5em 0em }
 #table-container .kpcc-table tr td:first-child mark { display: none; }
 #table-container .kpcc-table tr td:last-child { box-shadow: none; }
 
-@media screen and (max-width: 550px) {
-    #table-container .kpcc-table { border-top: 3px solid #f17b21; border-bottom: 3px solid black; width: 100%; }
-    #table-container .kpcc-table thead { display: none; }
-    #table-container .kpcc-table tbody, #table-container .kpcc-table tr, #table-container .kpcc-table td { width: 100%; }
-    #table-container .kpcc-table td { box-shadow: none; display: block; width: 100%; padding: 7px 10px 7px 10px; font-size: 0.8125em; border-bottom-color: #cfcfcf; }
-    #table-container .kpcc-table td mark { display: block; }
-    #table-container .kpcc-table tr td:first-child { font-size: 1.25em; background: #f5f5f5; font-weight: 700; border-bottom-color: gray; padding-top: 15px; }
-    #table-container .kpcc-table tr td:nth-child(2) { padding-top: 12px; }
-    #table-container .kpcc-table tr td:last-child { padding-bottom: 20px; border-bottom: 1px solid black; }
- }
-
 /*
 #table-container #table_fu #legend { float: left; margin-bottom: 10px; margin-top: -5px; }
 #table-container #table_fu #download { font-size:12px; margin-top:7px; margin-bottom:0px; display: inline; float: right; }
@@ -247,30 +236,41 @@ body.minimal #popup_prompt { margin: .5em 0em }
 #table-container #table_fu #controls #filter,
 #table-container #table_fu #controls #pager { margin: 5px auto 25px auto; }
 
-@media (max-width: 491px) {
-    #table-container #table_fu #ribbon { font-size: 140%; }
-    #table-container #table_fu #pager form { font-size: 110%; font-weight: 400; }
- }
+@media screen and (max-width: 595px) {
+    #table-container #table_fu #controls { font-size: 140%; }
+    #table-container .kpcc-table { border-top: 3px solid #f17b21; border-bottom: 3px solid black; width: 100%; font-size: 160%; }
+    #table-container .kpcc-table thead { display: none; }
+    #table-container .kpcc-table tbody, #table-container .kpcc-table tr, #table-container .kpcc-table td { width: 100%; }
+    #table-container .kpcc-table td { box-shadow: none; display: block; width: 100%; padding: 7px 10px 7px 10px; font-size: 110%; border-bottom-color: #cfcfcf; }
+    #table-container .kpcc-table td mark { display: block; }
+    #table-container .kpcc-table tr td:first-child { font-size: 1.25em; background: #f5f5f5; font-weight: 700; border-bottom-color: gray; padding-top: 15px; }
+    #table-container .kpcc-table tr td:nth-child(2) { padding-top: 12px; }
+    #table-container .kpcc-table tr td:last-child { padding-bottom: 20px; border-bottom: 1px solid black; }
+}
 
-@media (min-width: 491px) {
-    #table-container #table_fu #ribbon { font-size: 140%; }
-    #table-container #table_fu #pager form { font-size: 110%; font-weight: 400; }
- }
+@media (min-width: 596px) {
+    #table-container #table_fu #controls { font-size: 110%; }
+    #table-container .kpcc-table { font-size: 110%; }
+    #table-container .kpcc-table th { font-size: 70%; }
+}
 
-@media (min-width: 567px) {
-    #table-container #table_fu #ribbon { font-size: 140%; }
-    #table-container #table_fu #pager form { font-size: 110%; font-weight: 400; }
- }
+@media (min-width: 640px) {
+    #table-container #table_fu #controls { font-size: 120%; }
+    #table-container .kpcc-table { font-size: 120%; }
+    #table-container .kpcc-table th { font-size: 85%; }
+}
 
 @media (min-width: 768px) {
-    #table-container #table_fu #ribbon { font-size: 140%; }
-    #table-container #table_fu #pager form { font-size: 110%; font-weight: 400; }
- }
+    #table-container #table_fu #controls { font-size: 130%; }
+    #table-container .kpcc-table { font-size: 130%; }
+    #table-container .kpcc-table th { font-size: 95%; }
+}
 
 @media (min-width: 992px) {
-    #table-container #table_fu #ribbon { font-size: 140%; }
-    #table-container #table_fu #pager form { font-size: 110%; font-weight: 400; }
- }
+    #table-container #table_fu #controls { font-size: 140%; }
+    #table-container .kpcc-table { font-size: 140%; }
+    #table-container .kpcc-table th { font-size: 105%; }
+}
 
 #table-container #table_fu div.bullet-graph-wrap { position: relative; width: 100%; height: 21px; top: 0; left: 0; margin: 0; padding: 0; }
 #table-container #table_fu div.bullet-graph-box1 { position: absolute; height: 20px; width: 30%; left: 0; background-color: #eeeeee; z-index: 1; font-size: 0; }
