@@ -1,8 +1,0 @@
-.table thead th {text-align: center; vertical-align: middle; cursor: pointer;}
-.table tbody td {text-align: left; vertical-align: middle;}
-tr.odd {background-color: #e8e8e8;}
-tr.even {background-color: white;}
-tr.odd td.sorting_1 {background-color: #D3D6FF;}
-label, input, button, select, textarea {line-height: 30px;}
-input, textarea, select, .uneditable-input {height: 25px; line-height: 25px;}
-.table-striped tbody>tr:nth-child(odd)>th>td.sorting_1 {background-color: #D3D6FF;}
