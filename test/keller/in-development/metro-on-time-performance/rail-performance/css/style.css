@@ -1,13 +1,67 @@
-.content-map-data { width: 100%; min-height: 150px; height: auto; padding: 5px 0 5px; z-index: 100; background: #ffffff; }
-.content-legend-data { width: 94%; margin: 5px 3% 5px 3%; }
-.content-legend-data ul { width: 100%; height: auto; }
-.content-legend-data li { /*float: left; width: 20%;*/ font-weight: bold; }
-#data-legend td { width: 14.287%; text-align: center; }
-.data-container .data-visuals #content-map-canvas { height: 1100px; margin: 0 0 10px 0; }
-.fixed { position: fixed; top: 2%; margin: 0; background: rgba(240, 248, 255, 0.8); padding: 10px 0 10px 0; }
+.ct-chart .ct-label, .ct-chart .ct-label.ct-horizontal {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: rgba(43, 43, 43, .7);
+    color: rgba(43, 43, 43, .7);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.ct-chart .ct-label.ct-vertical {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: rgba(43, 43, 43, .7);
+    color: rgba(43, 43, 43, .7);
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: right;
+}
+
+.ct-chart .ct-grid {
+    stroke: rgba(43, 43, 43, .7);
+    stroke-width: 1px;
+    stroke-dasharray: 1px;
+}
+.ct-chart .ct-point {
+    stroke-width: 10px;
+    stroke-linecap: round;
+}
+.ct-chart .ct-line {
+    fill: none;
+    stroke-width: 4px;
+}
+
+/* blue line */
+.ct-chart .ct-series.ct-series-a .ct-bar, .ct-chart .ct-series.ct-series-a .ct-line, .ct-chart .ct-series.ct-series-a .ct-point, .ct-chart .ct-series.ct-series-a .ct-slice.ct-donut {
+    stroke: #b4dd0a;
+}
+
+/* blue line */
+.ct-chart .ct-series.ct-series-a .ct-area, .ct-chart .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
+    fill: #b4dd0a;
+}
+
+.ct-chart .ct-series.ct-series-b .ct-bar, .ct-chart .ct-series.ct-series-b .ct-line, .ct-chart .ct-series.ct-series-b .ct-point, .ct-chart .ct-series.ct-series-b .ct-slice.ct-donut {
+    stroke: #330add;
+}
+
+.ct-chart .ct-series.ct-series-b .ct-area, .ct-chart .ct-series.ct-series-b .ct-slice:not(.ct-donut) {
+    fill: #330add;
+}
+
+
+
+
+
+
+
+
+
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
-    .data-container .data-visuals #content-map-canvas { height: 600px; margin: 0 0 10px 0; }
     body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
     body.minimal .data-container h2 { font-size: 240%; }
     body.minimal .data-container h3 { font-size: 210%; }
@@ -18,7 +72,6 @@
 }
 
 @media (max-width: 480px) {
-    .data-container .data-visuals #content-map-canvas { height: 600px; margin: 0 0 10px 0; }
     body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
     body.minimal .data-container h2 { font-size: 240%; }
     body.minimal .data-container h3 { font-size: 210%; }
@@ -36,13 +89,6 @@
     body.minimal h5 { font-size: 260%; }
     body.minimal h6 { font-size: 220%; }
     body.minimal p { font-size: 120%; }
-    body.minimal a.btn-primary { font-size: 120%; }
-    body.minimal .kicker { font-size: 130%; }
-    body.minimal .small-writing { font-size: 120%; }
-    body.minimal .sky-writing { font-size: 500%; color: #EC7C04; }
-    body.minimal .jumbotron p { font-size: 70%; font-weight: normal; }
-    body.minimal table { font-size: 130%; }
-    body.minimal ul li { font-size: 130%; }
 }
 
 @media (min-width: 767px) {
@@ -53,13 +99,6 @@
     body.minimal h5 { font-size: 220%;}
     body.minimal h6 { font-size: 160%;}
     body.minimal p { font-size: 130%;}
-    body.minimal a.btn-primary { font-size: 140%;}
-    body.minimal .kicker { font-size: 150%;}
-    body.minimal .small-writing { font-size: 130%;}
-    body.minimal .sky-writing { font-size: 600%; color: #EC7C04;}
-    body.minimal .jumbotron p { font-size: 80%; font-weight: normal;}
-    body.minimal table { font-size: 140%;}
-    body.minimal ul li { font-size: 140%;}
 }
 
 @media (min-width: 992px) {
@@ -70,11 +109,4 @@
     body.minimal h5 { font-size: 240%;}
     body.minimal h6 { font-size: 180%;}
     body.minimal p { font-size: 130%;}
-    body.minimal a.btn-primary { font-size: 140%;}
-    body.minimal .kicker { font-size: 150%;}
-    body.minimal .small-writing { font-size: 130%;}
-    body.minimal .sky-writing { font-size: 600%; color: #EC7C04;}
-    body.minimal .jumbotron p { font-size: 80%; font-weight: normal;}
-    body.minimal table { font-size: 140%;}
-    body.minimal ul li { font-size: 140%;}
 }
