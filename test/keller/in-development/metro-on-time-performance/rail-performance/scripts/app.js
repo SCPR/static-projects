@@ -41,45 +41,6 @@
                 ]
             };
 
-            // we are setting a few options for our chart and override the defaults
-            var options = {
-
-                // line chart points
-                showPoint: true,
-
-                // line smoothing
-                lineSmooth: true,
-
-                // overriding the natural low of the chart
-                low: 0,
-
-                // overriding the natural high of the chart allows you to zoom
-                high: undefined,
-
-                // x-axis specific configuration
-                axisX: {
-
-                    // we can disable the grid for this axis
-                    showGrid: true,
-
-                    // and also don't show the label
-                    showLabel: true
-                },
-
-                // y-axis specific configuration
-                axisY: {
-
-                    // lets offset the chart a bit from the labels
-                    offset: 60,
-
-                    // the label interpolation function enables you to modify the values
-                    // used for the labels on each axis. here we are converting the
-                    // values into million pound.
-                    labelInterpolationFnc: function(value) {
-                        return value +  " rgpcd";
-                    }
-                }
-            };
 
             new Chartist.Line(".ct-chart", data, options);
 
@@ -88,7 +49,7 @@
             var $toolTip = $chart
                 .append('<div class="tooltip"></div>')
                 .find('.tooltip')
-                .hide();
+                ;
 
             $chart.on('mouseenter', '.ct-point', function(){
                 var $point = $(this),
@@ -108,6 +69,44 @@
                 });
             });
 
+            // we are setting a few options for our chart and override the defaults
+            var options = {
+
+                // line chart points
+                showPoint: true,
+
+                // line smoothing
+                lineSmooth: true,
+
+                // overriding the natural low of the chart
+                low: 0,
+
+                // overriding the natural high of the chart allows you to zoom
+                high: undefined,
+
+                // x-axis specific configuration
+                axisX: {
+
+                    // we can but don't want to disable the grid for this axis
+                    showGrid: true,
+
+                    // and also 't show the label
+                    showLabel: true
+                },
+
+                // y-axis specific configuration
+                axisY: {
+
+                    // lets offset the chart a bit from the labels
+                    offset: 60,
+
+                    // the label interpolation function enables you to modify the values
+                    // used for the labels on each axis.
+                    labelInterpolationFnc: function(value) {
+                        return value +  " %";
+                    }
+                }
+            };
         },
 
         render: function(viewObject){
