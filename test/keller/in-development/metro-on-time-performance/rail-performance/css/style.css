@@ -25,13 +25,17 @@
     stroke-width: 1px;
     stroke-dasharray: 1px;
 }
+
 .ct-chart .ct-point {
-    stroke-width: 10px;
+    stroke-width: 25px;
     stroke-linecap: round;
+    opacity: 0;
 }
+
 .ct-chart .ct-line {
     fill: none;
-    stroke-width: 3px;
+    stroke-width: 4px;
+    opacity: .9;
 }
 
 /* blue line */
@@ -79,12 +83,24 @@
     fill: #6cc06b;
 }
 
+.tooltip {
+  position: absolute;
+  z-index: 1;
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  border-radius: 3px;
+  text-align: center;
+  pointer-events: none;
+  color: white;
+  font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  transition: opacity .1s ease-out;
+}
 
-
-
-
-
-
+.tooltip.tooltip-hidden {
+  opacity: 0;
+}
 
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {

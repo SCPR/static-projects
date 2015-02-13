@@ -33,11 +33,11 @@
 
                 // our series array that contains series objects or in this case series data arrays
                 series: [
-                    {name: "Blue", data: [0.943745802, 1.159244835, 3.359141299, 2.347333308,2.234413863]},
-                    {name: "Gold", data: [0.621658231,0.354086751,0.836737707,1.413523425,0.808481654]},
-                    {name:"Expo", data: [0,0,0.938836215,0.713218023,0.633092701]},
-                    {name:"Red/Purple", data: [0.406598775,0.255049388,0.454982711,0.654698233,0.736225515]},
-                    {name:"Green", data: [0.470150283,0.451894641,1.161451334,1.509439136,1.890563468]}
+                    {name: "Blue", data: [0.94, 1.16, 3.36, 2.35,2.23]},
+                    {name: "Gold", data: [0.62,0.35,0.83,1.41,0.80]},
+                    {name:"Expo", data: [0,0,0.94,0.71,0.63]},
+                    {name:"Red/Purple", data: [0.41,0.26,0.46,0.66,0.74]},
+                    {name:"Green", data: [0.47,0.45,1.16,1.51,1.89]}
                 ]
             };
 
@@ -46,27 +46,26 @@
 
             var $chart = $('.ct-chart');
 
-            var $toolTip = $chart
-                .append('<div class="tooltip"></div>')
-                .find('.tooltip')
-                ;
-
-            $chart.on('mouseenter', '.ct-point', function(){
-                var $point = $(this),
-                    value = $point.attr('ct:value'),
-                    seriesName = $point.parent().attr('ct:series-name');
-                    $toolTip.html(seriesName + '<br>' + value).show();
+            var $tooltip = $('<div class="tooltip tooltip-hidden"></div>').appendTo($('.ct-chart'));
+             
+            $(document).on('mouseenter', '.ct-point', function() {
+              var seriesName = $(this).closest('.ct-series').attr('ct:series-name'),
+                  value = $(this).attr('ct:value');
+              
+              $tooltip.text(seriesName + ': ' + value +'%');
+              $tooltip.removeClass('tooltip-hidden');
             });
 
-            $chart.on('mouseleave', '.ct-point', function() {
-                $toolTip.hide();
+            $(document).on('mouseleave', '.ct-point', function() {
+              $tooltip.addClass('tooltip-hidden');
             });
 
-            $chart.on('mousemove', function(event) {
-                $toolTip.css({
-                    left: (event.offsetX || event.originalEvent.layerX) - $toolTip.width() / 2 - 10,
-                    top: (event.offsetY || event.originalEvent.layerY) - $toolTip.height() - 40
-                });
+            $(document).on('mousemove', '.ct-point', function(event) {
+              console.log(event);
+              $tooltip.css({
+                left: (event.offsetX || event.originalEvent.layerX) - $tooltip.width() / 2,
+                top: (event.offsetY || event.originalEvent.layerY) - $tooltip.height() - 20
+              });
             });
 
             // we are setting a few options for our chart and override the defaults
