@@ -191,19 +191,19 @@
     </div>
 
     <!-- charts -->
-    <!--
     <div class="row chart">
         <div class="hidden-xs col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <h6></h6>
+            <h6>And over the past 7 months, this supplier and its consumers have decreased water use by -55.28%, going from 129.26 gallons used per person per day to 57.81 gallons used per person per day.</h6>
             <div class="ct-chart ct-double-octave"></div>
         </div>
     </div>
 
+    <!--
     <div class="row calculated-last-year">
         <div class="_year_change col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
             <dl>
                 <dt>102.49</dt>
-                <dd>when averaged between Xxxxx and Xxxxx </dd>
+                <dd></dd>
             </dl>
         </div>
         <div class="_2014 col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
@@ -237,24 +237,25 @@
                         </div>
                     
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-                            <img class="placemark" src="http://projects.scpr.org/applications/water-restrictions-by-community/images/sprinkler.png" />
-                            <p class="text-center">Repair broken sprinklers</p>
+                            <img class="placemark" src="http://projects.scpr.org/applications/water-restrictions-by-community/images/cactus.png" />
+                            <p class="text-center">Plant California Friendly plants</p>
                         </div>
                     
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-                            <img class="placemark" src="http://projects.scpr.org/applications/water-restrictions-by-community/images/leak.png" />
-                            <p class="text-center">Repair leaks</p>
+                            <img class="placemark" src="http://projects.scpr.org/applications/water-restrictions-by-community/images/broom.png" />
+                            <p class="text-center">Use a broom to clean the driveway or sidewalk</p>
                         </div>
                     
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-                            <img class="placemark" src="http://projects.scpr.org/applications/water-restrictions-by-community/images/clock.png" />
-                            <p class="text-center">Water before 8 a.m. or after 8 p.m.</p>
+                            <img class="placemark" src="http://projects.scpr.org/applications/water-restrictions-by-community/images/washer.png" />
+                            <p class="text-center">Wash only full loads</p>
                         </div>
                     
                 </div>
             </div>
         </div>
     </div>
+    <p class="lead"><strong>About the data</strong>: This data is for urban water suppliers and is based on the the most recent reports submitted to the <a href="http://www.waterboards.ca.gov/waterrights/">State Water Resources Control Board</a>. Since the gallons of water used per person per day measurement does not take into account rainfall, temperature, humidity and population density, the State Water Resources Control Board discourages comparisons between water suppliers.</p>
 </div>
 
             </div>
@@ -299,8 +300,7 @@
     <script src="../static/scripts/_application_wrapper_0.5.js"></script>
 
     <script>
-    /*
-        var numericLabels = [6, 7, 8, 9, 10, 11, 12]
+        var numericLabels = [12, 11, 10, 9, 8, 7, 6]
         var stringLabels = []
         for (var i=0; i<numericLabels.length; i++) {
             var dateString;
@@ -341,8 +341,8 @@
 
             // our series array that contains series objects or in this case series data arrays
             series: [
-                //[74.5771530605, 84.8115368522, 120.788300787, 105.598641082, 125.037676509, 131.57653987, 134.730332556],
-                [129.264971008, 126.433762888, 121.820099923, 101.205895949, 111.92758374, 73.3940104011, 57.8115808168],
+                //,
+                [57.8115808168, 73.3940104011, 111.92758374, 101.205895949, 121.820099923, 126.433762888, 129.264971008],
             ]
         };
 
@@ -370,11 +370,20 @@
             // x-axis specific configuration
             axisX: {
 
+                labelOffset: {
+                    x: 0,
+                    y: 10
+                },
+
                 // we can disable the grid for this axis
                 showGrid: true,
 
                 // and also don't show the label
-                showLabel: true
+                showLabel: true,
+
+                labelInterpolationFnc: function(value) {
+                    return value + " 2014";
+                }
             },
 
             // y-axis specific configuration
@@ -386,9 +395,9 @@
                 // the label interpolation function enables you to modify the values
                 // used for the labels on each axis. here we are converting the
                 // values into million pound.
-                //labelInterpolationFnc: function(value) {
-                    //return value +  " rgpcd";
-                //}
+                labelInterpolationFnc: function(value) {
+                    return value + " gpppd";
+                }
             }
         };
 
@@ -396,7 +405,33 @@
         // that is resolving to our chart container element. the second parameter
         // is the actual data object.
         new Chartist.Line(".ct-chart", data, options);
-    */
+
+        var $chart = $('.ct-chart');
+
+        var $tooltip = $('<div class="tooltip tooltip-hidden"></div>').appendTo($('.ct-chart'));
+
+        $(document).on('mouseenter', '.ct-point', function() {
+
+            //var seriesName = $(this).closest('.ct-series').attr('ct:series-name');
+
+            var value = parseFloat($(this).attr('ct:value')).toFixed(2);
+
+            $tooltip.text(value + " gpppd");
+
+            $tooltip.removeClass('tooltip-hidden');
+        });
+
+        $(document).on('mouseleave', '.ct-point', function() {
+            $tooltip.addClass('tooltip-hidden');
+        });
+
+        $(document).on('mousemove', '.ct-point', function(event) {
+            $tooltip.css({
+                left: (event.offsetX || event.originalEvent.layerX) - $tooltip.width() / 2,
+                top: (event.offsetY || event.originalEvent.layerY) - $tooltip.height() - 20
+            });
+        });
+
     </script>
 
         <!-- end scripts -->
