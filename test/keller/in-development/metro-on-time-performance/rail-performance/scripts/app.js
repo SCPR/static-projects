@@ -34,24 +34,47 @@
                 // our series array that contains series objects or in this case series data arrays
                 series: [
                     {name: "Blue", data: [0.94, 1.16, 3.36, 2.35,2.23]},
-                    {name: "Gold", data: [0.62,0.35,0.83,1.41,0.80]},
-                    {name:"Expo", data: [0,0,0.94,0.71,0.63]},
-                    {name:"Red/Purple", data: [0.41,0.26,0.46,0.66,0.74]},
-                    {name:"Green", data: [0.47,0.45,1.16,1.51,1.89]}
+                    {name: "Gold", data: [0.62, 0.35, 0.83, 1.41, 0.80]},
+                    {name:"Expo", data: [0, 0, 0.94, 0.71, 0.63]},
+                    {name:"Red/Purple", data: [0.41, 0.26, 0.46, 0.66, 0.74]},
+                    {name:"Green", data: [0.47, 0.45, 1.16, 1.51, 1.89]}
                 ]
             };
 
+            var chart = new Chartist.Line(".ct-chart", data, options);
 
-            new Chartist.Line(".ct-chart", data, options);
+            chart.on("draw", function(data) {
+
+                if(data.type === "line"){
+
+                    if (data.values[0] === 0 && data.values[1] === 0) {
+
+                        // Get the first line or curve instruction (at position 0 is the move instruction)
+                        var firstLine = data.path.pathElements[2];
+
+                        // move cursor to position 0 and remove 2 elements (the move and first line instruction).
+                        // then we can add a new move instruction based on the corrdinates of firstline
+                        data.path
+                            .position(0)
+                            .remove(3)
+                            .move(firstLine.x, firstLine.y);
+
+                        // replace the current element path description attribute with the newly constructed one
+                        data.element.attr({
+                            d: data.path.stringify()
+                        });
+                    }
+                }
+            });
 
             var $chart = $('.ct-chart');
 
             var $tooltip = $('<div class="tooltip tooltip-hidden"></div>').appendTo($('.ct-chart'));
-             
+
             $(document).on('mouseenter', '.ct-point', function() {
               var seriesName = $(this).closest('.ct-series').attr('ct:series-name'),
                   value = $(this).attr('ct:value');
-              
+
               $tooltip.text(seriesName + ': ' + value +'%');
               $tooltip.removeClass('tooltip-hidden');
             });
@@ -61,11 +84,10 @@
             });
 
             $(document).on('mousemove', '.ct-point', function(event) {
-              console.log(event);
-              $tooltip.css({
-                left: (event.offsetX || event.originalEvent.layerX) - $tooltip.width() / 2,
-                top: (event.offsetY || event.originalEvent.layerY) - $tooltip.height() - 20
-              });
+                $tooltip.css({
+                    left: (event.offsetX || event.originalEvent.layerX) - $tooltip.width() / 2,
+                    top: (event.offsetY || event.originalEvent.layerY) - $tooltip.height() - 20
+                });
             });
 
             // we are setting a few options for our chart and override the defaults
@@ -110,19 +132,6 @@
 
         render: function(viewObject){
             $(viewObject.container).html(_.template(this.template));
-            //this.chartContainerWidth = document.getElementById("chartContainer").offsetWidth;
-            //this.chartContainerHeight = this.chartContainerWidth / 1.75;
-            //this.drawChart(this.chartContainerWidth, this.chartContainerHeight);
-
             this.drawChart();
-
-            /*
-            $(window).resize(function(){
-                this.chartContainerWidth = document.getElementById("chartContainer").offsetWidth;
-                this.chartContainerHeight = this.chartContainerWidth / 1.75;
-                console.log(this.chartContainerWidth + this.chartContainerHeight);
-            });
-            */
-
         }
     });
