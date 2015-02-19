@@ -9,5 +9,5 @@ window.appConfig = {
     is_embedded: null,
     embed_width: "100%",
     embed_height: "1650px",
-    twitter_share_text: "Xxxxxxx",
+    twitter_share_text: "Which buses in LA Metro's system are best and worst when it comes to on-time performance?",
 };

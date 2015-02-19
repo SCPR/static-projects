@@ -9,5 +9,5 @@ window.appConfig = {
     is_embedded: null,
     embed_width: "100%",
     embed_height: "1650px",
-    twitter_share_text: "How often are Metro's trains late?",
+    twitter_share_text: "How often are LA Metro's trains late? Explore @KPCC's interactive chart.",
 };
