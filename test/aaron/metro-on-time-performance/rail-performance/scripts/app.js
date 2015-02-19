@@ -75,7 +75,7 @@
               var seriesName = $(this).closest('.ct-series').attr('ct:series-name'),
                   value = $(this).attr('ct:value');
 
-              $tooltip.text(seriesName + ': ' + value +'%');
+              $tooltip.text(seriesName + ': ' + value +'% late');
               $tooltip.removeClass('tooltip-hidden');
             });
 
