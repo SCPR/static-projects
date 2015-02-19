@@ -33,11 +33,11 @@
 
                 // our series array that contains series objects or in this case series data arrays
                 series: [
-                    {name: "Blue", data: [0.94, 1.16, 3.36, 2.35,2.23]},
-                    {name: "Gold", data: [0.62, 0.35, 0.83, 1.41, 0.80]},
-                    {name:"Expo", data: [0, 0, 0.94, 0.71, 0.63]},
-                    {name:"Red/Purple", data: [0.41, 0.26, 0.46, 0.66, 0.74]},
-                    {name:"Green", data: [0.47, 0.45, 1.16, 1.51, 1.89]}
+                    {name: "Blue Line", data: [0.94, 1.16, 3.36, 2.35,2.23]},
+                   {name: "Gold Line", data: [0.62, 0.35, 0.83, 1.41, 0.80]},
+                   {name:"Expo Line", data: [0, 0, 0.94, 0.71, 0.63]},
+                   {name:"Red & Purple Lines", data: [0.41, 0.26, 0.46, 0.66, 0.74]},
+                   {name:"Green Line", data: [0.47, 0.45, 1.16, 1.51, 1.89]}
                 ]
             };
 
