@@ -27,7 +27,7 @@
 }
 
 .ct-chart .ct-point {
-    stroke-width: 25px;
+    stroke-width: 20px;
     stroke-linecap: round;
     opacity: 0;
 }
