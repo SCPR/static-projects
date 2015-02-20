@@ -4,7 +4,7 @@ window.appConfig = {
     open_about_this: false,
     comments: false,
     is_mobile: null,
-    project_root: "http://projects.scpr.org/static/internal/tools/static-map-generator/",
+    project_root: "http://projects.scpr.org/internal/tools/static-map-generator/",
     embed_this: false,
     is_embedded: null,
     embed_width: "100%",

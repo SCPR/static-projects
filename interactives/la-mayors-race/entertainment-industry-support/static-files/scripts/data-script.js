@@ -118,7 +118,7 @@ function createVisual(){
 
     // embed function
     function embedBox() {
-        var embed_url = 'http://projects.scpr.org/static/interactives/la-mayors-race/entertainment-industry-support/iframe.html';
+        var embed_url = 'http://projects.scpr.org/interactives/la-mayors-race/entertainment-industry-support/iframe.html';
 
         jAlert('<strong>To embed this visualization your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+ embed_url +'\" width=\"600px\" height=\"820px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
     }

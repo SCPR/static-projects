@@ -1,5 +1,5 @@
 /* Body Styles */
-body.minimal { background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/bg-body.png') repeat 0 0; }
+body.minimal { background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/bg-body.png') repeat 0 0; }
 body.minimal header { background: #fff; box-shadow: 0 0 8px rgba(0,0,0,0.7); height: auto; margin: 0 0 40px; }
 body.minimal header h3#site-title a { background-image:url('http://www.scpr.org/assets/logo-masthead.png'); width: 181px; height: 42px; }
 body.minimal, body.minimal p, h1, h2, h3, h4, h5, h6 { font-family: "proxima nova", sans-serif; }
@@ -13,10 +13,10 @@ body.minimal .header-links b, body.minimal .header-links a { color: #454545; fon
 body.minimal .header-links b { display: block; }
 body.minimal .header-links a.icon { display: block; text-indent: -9999px; }
 body.minimal .header-links a.icon:hover { opacity: 0.7; }
-body.minimal .header-links a.pledge-now { background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/ico-pledge.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px; }
+body.minimal .header-links a.pledge-now { background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/ico-pledge.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px; }
 body.minimal .header-links .share-links { width: 63px; margin: 0 auto; }
-body.minimal .header-links a.facebook { background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/ico-facebook.png') no-repeat 0 0; display: block; float: left; margin-right: 10px; width: 22px; height: 22px; }
-body.minimal .header-links a.twitter { background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/ico-twitter.png') no-repeat 0 0; display: block; float: left; width: 31px; height: 22px; }
+body.minimal .header-links a.facebook { background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/ico-facebook.png') no-repeat 0 0; display: block; float: left; margin-right: 10px; width: 22px; height: 22px; }
+body.minimal .header-links a.twitter { background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/ico-twitter.png') no-repeat 0 0; display: block; float: left; width: 31px; height: 22px; }
 body.minimal footer { text-align: center; padding: 10px 0; }
 body.minimal footer ul { margin: 0; list-style: none; }
 body.minimal footer ul li, footer ul li a { color: #999; font-size:11px; }

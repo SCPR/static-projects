@@ -12,7 +12,7 @@ The directory consists of three main directories, each with subdirectories. They
 
 	css
 	images
-	scripts 
+	scripts
 
 My vision for the directories is to house the main -- read as reused over and over -- styles, images and scripts for maps, searchable tables, charts and timelines. Localized styles for these can be house in the project directories.
 
@@ -42,7 +42,7 @@ Images for timelines
 	isotope-1.5.18.js
 	modernizr-2.5.3.min.js
 	tabletop.js
-   
+
 #### Links to Resources
 
 [Highcharts](http://www.highcharts.com/)
@@ -55,6 +55,6 @@ Images for timelines
 
 [Isotope](http://isotope.metafizzy.co/)
 
-[License for Isotope](http://projects.scpr.org/static/static-files/scripts/isotope_commercial_license/isotope-commercial-license.txt) purchased by [Chris Keller](ckeller@scpr.org)
+[License for Isotope](http://projects.scpr.org/static-files/scripts/isotope_commercial_license/isotope-commercial-license.txt) purchased by [Chris Keller](ckeller@scpr.org)
 
 [GitHub repo](https://github.com/balancemedia/Timeline) for the scripts used in the Timeline code

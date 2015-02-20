@@ -2,7 +2,7 @@ window.appConfig = {
     open_about_this: false,
     comments: false,
     is_mobile: null,
-    project_root: "http://projects.scpr.org/static/interactives/la-mayors-race/mayoral-general-election-exit-polls/",
+    project_root: "http://projects.scpr.org/interactives/la-mayors-race/mayoral-general-election-exit-polls/",
     embed_this: true,
     is_embedded: null,
     embed_width: "100%",

@@ -33,11 +33,11 @@ h1 {font:normal 600 6.875em/1.25 "adelle", Georgia, serif}
 
 @font-face {
     font-family: 'StateFaceRegular';
-    src: url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.eot');
-    src: url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.woff') format('woff'),
-        url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.ttf') format('truetype'),
-        url('http://projects.scpr.org/static/static-files/images/stateface/webfont/stateface-regular-webfont.svg#StateFaceRegular') format('svg');
+    src: url('http://projects.scpr.org/static-files/images/stateface/webfont/stateface-regular-webfont.eot');
+    src: url('http://projects.scpr.org/static-files/images/stateface/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('http://projects.scpr.org/static-files/images/stateface/webfont/stateface-regular-webfont.woff') format('woff'),
+        url('http://projects.scpr.org/static-files/images/stateface/webfont/stateface-regular-webfont.ttf') format('truetype'),
+        url('http://projects.scpr.org/static-files/images/stateface/webfont/stateface-regular-webfont.svg#StateFaceRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }

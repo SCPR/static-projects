@@ -1,5 +1,5 @@
 var jqueryNoConflict = jQuery;
-var proxyPrefix = 'http://projects.scpr.org/static/static-files/templates/';
+var proxyPrefix = 'http://projects.scpr.org/static-files/templates/';
 
 var termsToKnow = {
     title: 'Terms to Know',

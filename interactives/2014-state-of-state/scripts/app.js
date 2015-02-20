@@ -16,7 +16,7 @@ jqueryNoConflict(document).ready(function() {
 var appConfig = {
     openAboutThis: true,
     embed_this: true,
-    embed_url_root: 'http://projects.scpr.org/static/interactives/2014-state-of-state/',
+    embed_url_root: 'http://projects.scpr.org/interactives/2014-state-of-state/',
     docDiv: "DV-viewer-1008354-california-2014-state-of-the-state-address",
     docUrl: "//www.documentcloud.org/documents/1008354-california-2014-state-of-the-state-address.js",
     docContainer: "#DV-viewer-1008354-california-2014-state-of-the-state-address"
@@ -174,7 +174,7 @@ var fn = {
 // begin template rendering object
 var initializeTemplates = {
     renderStaticTemplates: function(){
-        var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/templates/';
+        var proxyPrefix = 'http://projects.scpr.org/static-files/v3-dependencies/templates/';
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');

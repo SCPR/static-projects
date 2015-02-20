@@ -45,7 +45,7 @@
 
     // zoom level when map is loaded (bigger is more zoomed in)
     defaultZoom:        14,
-    addrMarkerImage: 'http://projects.scpr.org/static/static-files/images/maps-icons-collection/blue-pushpin.png',
+    addrMarkerImage: 'http://projects.scpr.org/static-files/images/maps-icons-collection/blue-pushpin.png',
     currentPinpoint: null,
 
     // begin

@@ -6,7 +6,7 @@ table th { font-weight: bold; }
 table td, table th { padding: 9px 10px; text-align: left; }
 
 body.minimal {
-    background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/bg-body.png') repeat 0 0;
+    background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/bg-body.png') repeat 0 0;
 }
 body.minimal header {
     background:#fff;
@@ -64,7 +64,7 @@ body.minimal .header-links li {
         opacity:0.7;
     }
         body.minimal .header-links a.pledge-now {
-            background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/ico-pledge.png') no-repeat 0 0;
+            background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/ico-pledge.png') no-repeat 0 0;
             margin:0 auto;
             width:31px;
             height:22px;
@@ -74,7 +74,7 @@ body.minimal .header-links li {
             margin:0 auto;
         }
         body.minimal .header-links a.facebook {
-            background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/ico-facebook.png') no-repeat 0 0;
+            background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/ico-facebook.png') no-repeat 0 0;
             display:block;
             float:left;
             margin-right:10px;
@@ -82,7 +82,7 @@ body.minimal .header-links li {
             height:22px;
         }
         body.minimal .header-links a.twitter {
-            background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/ico-twitter.png') no-repeat 0 0;
+            background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/ico-twitter.png') no-repeat 0 0;
             display:block;
             float:left;
             width:31px;

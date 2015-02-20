@@ -1,5 +1,5 @@
 /* body styles */
-body.minimal {background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/bg-body.png') repeat 0 0;}
+body.minimal {background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/bg-body.png') repeat 0 0;}
 body.minimal hr {background-color: #ccc; border-bottom: 1px solid #fff; height: 1px;}
 
 /* branded header */
@@ -13,10 +13,10 @@ body.minimal .header-links b, body.minimal .header-links a {color: #454545; font
 body.minimal .header-links b {display: block;}
 body.minimal .header-links a.icon {display: block; text-indent: -9999px;}
 body.minimal .header-links a.icon:hover {opacity: 0.7;}
-body.minimal .header-links a.pledge-now {background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/ico-pledge.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
+body.minimal .header-links a.pledge-now {background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/ico-pledge.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
 body.minimal .header-links .share-links {width: 63px; margin: 0 auto;}
-body.minimal .header-links a.facebook {background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/ico-facebook.png') no-repeat 0 0; display: block; float: left; margin-right: 10px; width: 22px; height: 22px;}
-body.minimal .header-links a.twitter {background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/ico-twitter.png') no-repeat 0 0; display: block; float: left; width: 31px; height: 22px;}
+body.minimal .header-links a.facebook {background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/ico-facebook.png') no-repeat 0 0; display: block; float: left; margin-right: 10px; width: 22px; height: 22px;}
+body.minimal .header-links a.twitter {background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/ico-twitter.png') no-repeat 0 0; display: block; float: left; width: 31px; height: 22px;}
 
 /* branded footer */
 body.minimal footer {text-align: center; padding: 10px 0;}

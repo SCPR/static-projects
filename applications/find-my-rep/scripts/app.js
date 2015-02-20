@@ -15,7 +15,7 @@
         window.app = new App.Router();
         window.appView = new App.Views.AppView({el:document});
         Backbone.history.start({
-            root: 'http://projects.scpr.org/static/applications/find-my-rep/',
+            root: 'http://projects.scpr.org/applications/find-my-rep/',
             pushState: false,
         });
     });
@@ -26,11 +26,11 @@
 var initializeTemplates = initializeTemplates || {};
 
 var embed_this = false;
-var embed_url_root = 'http://projects.scpr.org/static/applications/find-my-rep/';
+var embed_url_root = 'http://projects.scpr.org/applications/find-my-rep/';
 
 var initializeTemplates = {
     renderStaticTemplates: function(){
-        var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/templates/';
+        var proxyPrefix = 'http://projects.scpr.org/static-files/v3-dependencies/templates/';
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');
