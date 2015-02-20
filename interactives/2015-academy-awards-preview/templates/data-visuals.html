@@ -27,18 +27,18 @@
                         <% } else {%>
                             <p class="text-center">&nbsp;</p>
                         <% } %>
-                        <p class="centered">
+                        <ul class="list-inline">
                             <% if (model.kpccinterview.length) { %>
-                                <a href="<%= model.kpccinterview %>" target="_blank">KPCC's The Frame</a> |
+                                <li><a href="<%= model.kpccinterview %>" target="_blank"><%= model.kpccsource %></a></li>
                             <% } %>
                             <% if (model.imdbpage.length) { %>
-                                <a href="<%= model.imdbpage %>" target="_blank">IMDB</a> |
+                                <li><a href="<%= model.imdbpage %>" target="_blank">IMDB</a></li>
                             <% } %>
                             <% if (model.trailer.length) { %>
-                                <a href="<%= model.trailer %>" target="_blank">Trailer</a> |
+                                <li><a href="<%= model.trailer %>" target="_blank">Trailer</a></li>
                             <% } %>
                             <% if (model.officialsite.length) { %>
-                                <a href="<%= model.officialsite %>" target="_blank">Official Site</a>
+                                <li><a href="<%= model.officialsite %>" target="_blank">Official Site</a></li>
                             <% } %>
                         </p>
                     </div>
