@@ -27,7 +27,7 @@
 .vertical-timeline-container .vertical-timeline-timeline .post .btn-group-justified {width: 50%; margin: 0 25% 0 25%;}
 .vertical-timeline-container .vertical-timeline-timeline .post a.more { color: #2B2B2B; text-decoration: none; font-size: 12px; font-weight: bold; text-align: center; width: 211px; height: 22px; margin: 0 auto 0 auto; border: 1px #cccccc solid; background-color: #F0F0F0; display: block; /*float: left;*/ line-height: 23px; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; -webkit-box-shadow: 0px 1px 1px 0px #cccccc; -moz-box-shadow: 0px 1px 1px 0px #cccccc; box-shadow: 0px 1px 1px 0px #cccccc; }
 .vertical-timeline-container .vertical-timeline-timeline .post a.more:hover { background-color: #ffffff;}
-.vertical-timeline-container .vertical-timeline-timeline .post a.open-close { background: transparent url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/button-up-down-arrow.png) no-repeat; height: 17px; width: 16px; position: absolute; right: 15px; top: 15px; }
+.vertical-timeline-container .vertical-timeline-timeline .post a.open-close { background: transparent url(http://projects.scpr.org/static-files/images/tabletop-timelines/button-up-down-arrow.png) no-repeat; height: 17px; width: 16px; position: absolute; right: 15px; top: 15px; }
 .vertical-timeline-container .vertical-timeline-timeline .post.closed a.open-close { background-position: left bottom }
 .vertical-timeline-container .vertical-timeline-timeline .post.closed .title {display: table; min-height: 40px;}
 .vertical-timeline-container .vertical-timeline-timeline .post.closed .title h3 {display: table-cell; vertical-align: middle;}
@@ -36,9 +36,9 @@
 .vertical-timeline-container .vertical-timeline-timeline .post ul.share-links {margin-top: 5px;}
 .vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li {padding-right: 0px; padding-left: 0px;}
 .vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a {color: #2B2B2B; font-size: 150%;}
-.vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a.link {padding: 20px; text-align: left; background: url('http://projects.scpr.org/static/static-files/v3-dependencies/images/tabletop-timeline-v3/iconmonstr-link-2-icon-24.png') left center no-repeat;}
-.vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a.twitter {padding: 20px; text-align: left; background: url('http://projects.scpr.org/static/static-files/v3-dependencies/images/tabletop-timeline-v3/iconmonstr-twitter-2-icon-24.png') left center no-repeat;}
-.vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a.facebook {padding: 20px; text-align: left; background: url('http://projects.scpr.org/static/static-files/v3-dependencies/images/tabletop-timeline-v3/iconmonstr-facebook-2-icon-24.png') left center no-repeat;}
+.vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a.link {padding: 20px; text-align: left; background: url('http://projects.scpr.org/static-files/v3-dependencies/images/tabletop-timeline-v3/iconmonstr-link-2-icon-24.png') left center no-repeat;}
+.vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a.twitter {padding: 20px; text-align: left; background: url('http://projects.scpr.org/static-files/v3-dependencies/images/tabletop-timeline-v3/iconmonstr-twitter-2-icon-24.png') left center no-repeat;}
+.vertical-timeline-container .vertical-timeline-timeline .post ul.share-links li a.facebook {padding: 20px; text-align: left; background: url('http://projects.scpr.org/static-files/v3-dependencies/images/tabletop-timeline-v3/iconmonstr-facebook-2-icon-24.png') left center no-repeat;}
 
 /* post groups */
 .vertical-timeline-container .vertical-timeline-timeline .group-marker { float: left; width: 80px; margin: -5px 0 5px 0; }
@@ -65,8 +65,8 @@
 .data-legend-items a.label:hover {background: rgba(0, 127, 166, .6); color: #2b2b2b;}
 .vertical-timeline-container .vertical-timeline-buttons a span { padding-right: 15px; background-position: right -20px; }
 .vertical-timeline-container .vertical-timeline-buttons a.active span { background-position: right 4px }
-.vertical-timeline-container .vertical-timeline-buttons a.expand-all span, .vertical-timeline-container .vertical-timeline-buttons a.sort-newest span { background-image: url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/up-arrows.png); background-repeat: no-repeat; }
-.vertical-timeline-container .vertical-timeline-buttons a.collapse-all span, .vertical-timeline-container .vertical-timeline-buttons a.sort-oldest span { background-image: url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/down-arrows.png); background-repeat: no-repeat; }
+.vertical-timeline-container .vertical-timeline-buttons a.expand-all span, .vertical-timeline-container .vertical-timeline-buttons a.sort-newest span { background-image: url(http://projects.scpr.org/static-files/images/tabletop-timelines/up-arrows.png); background-repeat: no-repeat; }
+.vertical-timeline-container .vertical-timeline-buttons a.collapse-all span, .vertical-timeline-container .vertical-timeline-buttons a.sort-oldest span { background-image: url(http://projects.scpr.org/static-files/images/tabletop-timelines/down-arrows.png); background-repeat: no-repeat; }
 */
 
 /* isotope css3 transitions */

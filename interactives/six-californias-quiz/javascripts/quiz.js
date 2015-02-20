@@ -543,7 +543,7 @@ function highlightFeature(e) {
     };
 
     // display final result card and social media sharing
-    var link = "http://projects.scpr.org/static/interactives/six-californias-quiz"
+    var link = "http://projects.scpr.org/interactives/six-californias-quiz"
 
     var finalScoreFinal = function () {
         checkAnswer[9]();

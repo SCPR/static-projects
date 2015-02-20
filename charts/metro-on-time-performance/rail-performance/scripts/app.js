@@ -33,6 +33,18 @@
 
                 // our series array that contains series objects or in this case series data arrays
                 series: [
+<<<<<<< HEAD:test/keller/in-development/metro-on-time-performance/rail-performance/scripts/app.js
+                    {name: "Blue", data: [0.94, 1.16, 3.36, 2.35,2.23]},
+                    {name: "Gold", data: [0.62,0.35,0.83,1.41,0.80]},
+                    {name:"Expo", data: [0,0,0.94,0.71,0.63]},
+                    {name:"Red/Purple", data: [0.41,0.26,0.46,0.66,0.74]},
+                    {name:"Green", data: [0.47,0.45,1.16,1.51,1.89]}
+                ]
+            };
+
+
+            new Chartist.Line(".ct-chart", data, options);
+=======
                     {name: "Blue Line", data: [0.94, 1.16, 3.36, 2.35,2.23]},
                    {name: "Gold Line", data: [0.62, 0.35, 0.83, 1.41, 0.80]},
                    {name:"Expo Line", data: [0, 0, 0.94, 0.71, 0.63]},
@@ -66,16 +78,26 @@
                     }
                 }
             });
+>>>>>>> master:charts/metro-on-time-performance/rail-performance/scripts/app.js
 
             var $chart = $('.ct-chart');
 
             var $tooltip = $('<div class="tooltip tooltip-hidden"></div>').appendTo($('.ct-chart'));
+<<<<<<< HEAD:test/keller/in-development/metro-on-time-performance/rail-performance/scripts/app.js
+             
+            $(document).on('mouseenter', '.ct-point', function() {
+              var seriesName = $(this).closest('.ct-series').attr('ct:series-name'),
+                  value = $(this).attr('ct:value');
+              
+              $tooltip.text(seriesName + ': ' + value +'%');
+=======
 
             $(document).on('mouseenter', '.ct-point', function() {
               var seriesName = $(this).closest('.ct-series').attr('ct:series-name'),
                   value = $(this).attr('ct:value');
 
               $tooltip.text(seriesName + ': ' + value +'% late');
+>>>>>>> master:charts/metro-on-time-performance/rail-performance/scripts/app.js
               $tooltip.removeClass('tooltip-hidden');
             });
 
@@ -84,10 +106,18 @@
             });
 
             $(document).on('mousemove', '.ct-point', function(event) {
+<<<<<<< HEAD:test/keller/in-development/metro-on-time-performance/rail-performance/scripts/app.js
+              console.log(event);
+              $tooltip.css({
+                left: (event.offsetX || event.originalEvent.layerX) - $tooltip.width() / 2,
+                top: (event.offsetY || event.originalEvent.layerY) - $tooltip.height() - 20
+              });
+=======
                 $tooltip.css({
                     left: (event.offsetX || event.originalEvent.layerX) - $tooltip.width() / 2,
                     top: (event.offsetY || event.originalEvent.layerY) - $tooltip.height() - 20
                 });
+>>>>>>> master:charts/metro-on-time-performance/rail-performance/scripts/app.js
             });
 
             // we are setting a few options for our chart and override the defaults

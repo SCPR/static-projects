@@ -4,7 +4,7 @@ window.appConfig = {
     open_about_this: true,
     comments: true,
     is_mobile: null,
-    project_root: "http://projects.scpr.org/static/maps/california-cases-of-whooping-cough-by-county",
+    project_root: "http://projects.scpr.org/maps/california-cases-of-whooping-cough-by-county",
     embed_this: true,
     is_embedded: false,
     embed_width: "100%",

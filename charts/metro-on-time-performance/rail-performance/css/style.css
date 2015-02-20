@@ -27,7 +27,11 @@
 }
 
 .ct-chart .ct-point {
+<<<<<<< HEAD:test/keller/in-development/metro-on-time-performance/rail-performance/css/style.css
+    stroke-width: 25px;
+=======
     stroke-width: 20px;
+>>>>>>> master:charts/metro-on-time-performance/rail-performance/css/style.css
     stroke-linecap: round;
     opacity: 0;
 }

@@ -30,7 +30,7 @@ jqueryNoConflict(document).ready(function() {
 var appConfig = {
     openAboutThis: true,
     embed_this: true,
-    embed_url_root: "http://projects.scpr.org/static/maps/anniversary-of-oj-simpson-pursuit/?=embed/",
+    embed_url_root: "http://projects.scpr.org/maps/anniversary-of-oj-simpson-pursuit/?=embed/",
     embed_width: "92%",
     embed_height: "1000px"
 };
@@ -38,7 +38,7 @@ var appConfig = {
 // begin template rendering object
 var initializeTemplates = {
     renderStaticTemplates: function(){
-        var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/templates/';
+        var proxyPrefix = 'http://projects.scpr.org/static-files/v3-dependencies/templates/';
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');

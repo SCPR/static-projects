@@ -2,7 +2,7 @@ var jqueryNoConflict = jQuery;
 var initializeTemplates = initializeTemplates || {};
 var fn = fn || {};
 var embed_this = true;
-var embed_url_root = 'http://projects.scpr.org/static/interactives/northridge-earthquake-anniversary/before-after-photos/';
+var embed_url_root = 'http://projects.scpr.org/interactives/northridge-earthquake-anniversary/before-after-photos/';
 
 // begin main function
 jqueryNoConflict(document).ready(function() {
@@ -60,7 +60,7 @@ var fn = {
 // begin template rendering object
 var initializeTemplates = {
     renderStaticTemplates: function(){
-        var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/templates/';
+        var proxyPrefix = 'http://projects.scpr.org/static-files/v3-dependencies/templates/';
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');

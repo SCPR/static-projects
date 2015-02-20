@@ -131,7 +131,7 @@ td { vertical-align: top; }
 }
 
 .vertical-timeline-container .vertical-timeline-timeline .post a.open-close {
-    background: transparent url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/button-up-down-arrow.png) no-repeat;
+    background: transparent url(http://projects.scpr.org/static-files/images/tabletop-timelines/button-up-down-arrow.png) no-repeat;
     height: 17px;
     width: 16px;
     position: absolute;
@@ -185,7 +185,7 @@ td { vertical-align: top; }
     width: 20%;
     height: 28px;
     border: 1px #87b2d3 solid;
-    background: #d6e5f0 url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/icon-share.png) no-repeat center center;
+    background: #d6e5f0 url(http://projects.scpr.org/static-files/images/tabletop-timelines/icon-share.png) no-repeat center center;
     display: block;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -207,7 +207,7 @@ td { vertical-align: top; }
 
 .vertical-timeline-container .vertical-timeline-timeline .post .share-popup {
     display: none;
-    background: transparent url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/popup.png) no-repeat;
+    background: transparent url(http://projects.scpr.org/static-files/images/tabletop-timelines/popup.png) no-repeat;
     width: 166px;
     height: 50px;
     position: absolute;
@@ -242,11 +242,11 @@ td { vertical-align: top; }
 }
 
 .vertical-timeline-container .vertical-timeline-timeline .post.left .date {
-  background: transparent url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/tab-left.png) no-repeat right;
+  background: transparent url(http://projects.scpr.org/static-files/images/tabletop-timelines/tab-left.png) no-repeat right;
   right: -54px;
 }
 
-.vertical-timeline-container .vertical-timeline-timeline .post.right .date {background: transparent url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/tab-right.png) no-repeat left; left: -54px;}
+.vertical-timeline-container .vertical-timeline-timeline .post.right .date {background: transparent url(http://projects.scpr.org/static-files/images/tabletop-timelines/tab-right.png) no-repeat left; left: -54px;}
 
 .vertical-timeline-container .vertical-timeline-timeline .group-marker {
     float: left;
@@ -320,13 +320,13 @@ td { vertical-align: top; }
 
 .vertical-timeline-container .vertical-timeline-buttons a.expand-all span,
 .vertical-timeline-container .vertical-timeline-buttons a.sort-newest span {
-    background-image: url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/up-arrows.png);
+    background-image: url(http://projects.scpr.org/static-files/images/tabletop-timelines/up-arrows.png);
     background-repeat: no-repeat;
 }
 
 .vertical-timeline-container .vertical-timeline-buttons a.collapse-all span,
 .vertical-timeline-container .vertical-timeline-buttons a.sort-oldest span {
-    background-image: url(http://projects.scpr.org/static/static-files/images/tabletop-timelines/down-arrows.png);
+    background-image: url(http://projects.scpr.org/static-files/images/tabletop-timelines/down-arrows.png);
     background-repeat: no-repeat;
 }
 

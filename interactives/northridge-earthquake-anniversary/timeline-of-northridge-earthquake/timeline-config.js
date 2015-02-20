@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: 'http://projects.scpr.org/static/interactives/northridge-earthquake-anniversary/timeline-of-northridge-earthquake/',
+    projectDirectory: 'http://projects.scpr.org/interactives/northridge-earthquake-anniversary/timeline-of-northridge-earthquake/',
 
     // newest or oldest
     defaultDirection: 'oldest',
