@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
 /*	##############################################################################################################
 FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	############################################################################################################## */
-   eventTracking = new EventTracking(); 
+   eventTracking = new EventTracking();
    $.scrollDepth({
      elements: ['section.event'], // Track DOM elements
      percentage: false // Don't track depth percentage
@@ -39,7 +39,7 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 /*	##############################################################################################################
 	MARKUP FIDDLING
 	############################################################################################################## */
-	
+
 	$(".school").last().addClass("school-last");
 
 
@@ -126,9 +126,9 @@ FIRE UP GOOGLE ANALYTICS EVENT TRACKING
 	}
 
 	// Despite appearances, Parts 1 and 2 are intentionally "flipped." The radio pieces aired in a different order than how the site is sequenced.
-	js_audioPlayer("http://projects.scpr.org/static/test/Ericstestfolder/prison_pregnancy/media/audio/collage_zodiacal.mp3",1);
-	js_audioPlayer("http://projects.scpr.org/static/test/Ericstestfolder/prison_pregnancy/media/audio/collage_bray.mp3",2);
-	js_audioPlayer("http://projects.scpr.org/static/test/Ericstestfolder/prison_pregnancy/media/audio/collage_bass.mp3",3);
+	js_audioPlayer("http://projects.scpr.org/test/Ericstestfolder/prison_pregnancy/media/audio/collage_zodiacal.mp3",1);
+	js_audioPlayer("http://projects.scpr.org/test/Ericstestfolder/prison_pregnancy/media/audio/collage_bray.mp3",2);
+	js_audioPlayer("http://projects.scpr.org/test/Ericstestfolder/prison_pregnancy/media/audio/collage_bass.mp3",3);
 	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/bilingual-taketwo-pt2.m4a",9);
 	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/bilingual-taketwo-pt1.m4a",10);
 	js_audioPlayer("http://projects.scpr.org/bilinguallearning/media/audio/bilingual-taketwo-pt3.m4a",11);

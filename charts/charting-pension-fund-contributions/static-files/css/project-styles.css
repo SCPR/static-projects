@@ -1,7 +1,7 @@
 /*based on WaPo styles found here:
 http://www.washingtonpost.com/wp-srv/special/world/india-leads-push-to-7-billion/ */
 
-body.minimal .header-links a.projects-home {background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/ico-home.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
+body.minimal .header-links a.projects-home {background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/ico-home.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
 
 #chart-filter {width: 100%; height: 50px; margin: 20px auto 25px auto;}
 #chart-filter #slider {width: 50%; margin: 0 auto 0 auto;}

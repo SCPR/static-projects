@@ -14,7 +14,7 @@ var appConfig = {
 
     // embedding settings
     embed_this: true,
-    embed_url_root: 'http://projects.scpr.org/static/charts/reaction-to-henry-waxmans-retirement',
+    embed_url_root: 'http://projects.scpr.org/charts/reaction-to-henry-waxmans-retirement',
 
     // use flat-file or spreadsheet
     dataSource: 'spreadsheet',
@@ -64,7 +64,7 @@ var fn = {
 // begin template rendering object
 var initializeTemplates = {
     renderStaticTemplates: function(){
-        var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/templates/';
+        var proxyPrefix = 'http://projects.scpr.org/static-files/v3-dependencies/templates/';
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');

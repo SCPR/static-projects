@@ -2,7 +2,7 @@
 
     window.appConfig = {
         testing: true,
-        project_root: "http://projects.scpr.org/static/applications/",
+        project_root: "http://projects.scpr.org/applications/",
         open_about_this: false,
         comments: false,
         embed_this: false,
@@ -43,7 +43,7 @@
             if (window.appConfig.testing === true){
                 window.wrapperTemplatePath = "/2kpcc/static-projects/static-files/v3-dependencies/templates/"
             } else {
-                window.wrapperTemplatePath = "http://projects.scpr.org/static/static-files/v3-dependencies/templates/"
+                window.wrapperTemplatePath = "http://projects.scpr.org/static-files/v3-dependencies/templates/"
             }
 
             // checks embed settings

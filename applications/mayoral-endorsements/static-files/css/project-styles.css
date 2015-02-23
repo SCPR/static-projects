@@ -1,6 +1,6 @@
 #content-article {width: 100%; height: auto; margin: 0 auto 5px auto;}
 
-body.minimal .header-links a.projects-home {background:url('http://projects.scpr.org/static/static-files/images/tablestacker-tables/ico-home.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
+body.minimal .header-links a.projects-home {background:url('http://projects.scpr.org/static-files/images/tablestacker-tables/ico-home.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
 
 /* Landscape phones and down */
 @media (max-width: 485px) {

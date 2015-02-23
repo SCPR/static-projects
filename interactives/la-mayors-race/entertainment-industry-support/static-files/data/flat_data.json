@@ -7,7 +7,7 @@ var json = {
             "full_name": "Austin Beutner",
             "amount_recv": "3,000",
             "$color": "#00B9F3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
             "$area": 3000
             },
         "id": "CBS_candidate_Beutner",
@@ -17,7 +17,7 @@ var json = {
             "full_name": "Eric Garcetti",
             "amount_recv": "5,950",
             "$color": "#002734",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
             "$area": 5950
             },
         "id": "CBS_candidate_Garcetti",
@@ -27,7 +27,7 @@ var json = {
             "full_name": "Wendy Greuel",
             "amount_recv": "1,850",
             "$color": "#005873",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
             "$area": 1850
             },
         "id": "CBS_candidate_Greuel",
@@ -37,7 +37,7 @@ var json = {
             "full_name": "Jan Perry",
             "amount_recv": "1,250",
             "$color": "#0088B3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_jan_perry.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_jan_perry.jpg",
             "$area": 1250
             },
         "id": "CBS_candidate_Perry",
@@ -60,7 +60,7 @@ var json = {
             "full_name": "Austin Beutner",
             "amount_recv": "6,450",
             "$color": "#00B9F3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
             "$area": 6450
             },
         "id": "CAA_candidate_Beutner",
@@ -70,7 +70,7 @@ var json = {
             "full_name": "Eric Garcetti",
             "amount_recv": "13,750",
             "$color": "#002734",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
             "$area": 13750
             },
         "id": "CAA_candidate_Garcetti",
@@ -80,7 +80,7 @@ var json = {
             "full_name": "Wendy Greuel",
             "amount_recv": "7,850",
             "$color": "#005873",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
             "$area": 7850
             },
         "id": "CAA_candidate_Greuel",
@@ -90,7 +90,7 @@ var json = {
             "full_name": "Kevin James",
             "amount_recv": "1,000",
             "$color": "#00A6D9",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 1000
             },
         "id": "CAA_candidate_James",
@@ -100,7 +100,7 @@ var json = {
             "full_name": "Jan Perry",
             "amount_recv": "1,000",
             "$color": "#0088B3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_jan_perry.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_jan_perry.jpg",
             "$area": 1000
             },
         "id": "CAA_candidate_Perry",
@@ -123,7 +123,7 @@ var json = {
             "full_name": "Austin Beutner",
             "amount_recv": "2,100",
             "$color": "#00B9F3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
             "$area": 2100
             },
         "id": "Disney_candidate_Beutner",
@@ -133,7 +133,7 @@ var json = {
             "full_name": "Eric Garcetti",
             "amount_recv": "15,400",
             "$color": "#002734",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
             "$area": 15400
             },
         "id": "Disney_candidate_Garcetti",
@@ -143,7 +143,7 @@ var json = {
             "full_name": "Wendy Greuel",
             "amount_recv": "10,800",
             "$color": "#005873",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
             "$area": 10800
             },
         "id": "Disney_candidate_Greuel",
@@ -153,7 +153,7 @@ var json = {
             "full_name": "Kevin James",
             "amount_recv": "300",
             "$color": "#00A6D9",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 300
             },
         "id": "Disney_candidate_James",
@@ -163,7 +163,7 @@ var json = {
             "full_name": "Jan Perry",
             "amount_recv": "1,550",
             "$color": "#0088B3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_jan_perry.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_jan_perry.jpg",
             "$area": 1550
             },
         "id": "Disney_candidate_Perry",
@@ -186,7 +186,7 @@ var json = {
             "full_name": "Austin Beutner",
             "amount_recv": "3,250",
             "$color": "#00B9F3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
             "$area": 3250
             },
         "id": "Fox_candidate_Beutner",
@@ -196,7 +196,7 @@ var json = {
             "full_name": "Eric Garcetti",
             "amount_recv": "11,250",
             "$color": "#002734",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
             "$area": 11250
             },
         "id": "Fox_candidate_Garcetti",
@@ -206,7 +206,7 @@ var json = {
             "full_name": "Wendy Greuel",
             "amount_recv": "7,850",
             "$color": "#005873",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
             "$area": 7850
             },
         "id": "Fox_candidate_Greuel",
@@ -216,7 +216,7 @@ var json = {
             "full_name": "Kevin James",
             "amount_recv": "100",
             "$color": "#00A6D9",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 100
             },
         "id": "Fox_candidate_James",
@@ -226,7 +226,7 @@ var json = {
             "full_name": "Emanuel Pleitez",
             "amount_recv": "100",
             "$color": "#009CCD",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_emanuel_pleitez.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_emanuel_pleitez.jpg",
             "$area": 100
             },
         "id": "Fox_candidate_Pleitez",
@@ -249,7 +249,7 @@ var json = {
             "full_name": "Austin Beutner",
             "amount_recv": "3,250",
             "$color": "#00B9F3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
             "$area": 3250
             },
         "id": "NBCU_candidate_Beutner",
@@ -259,7 +259,7 @@ var json = {
             "full_name": "Eric Garcetti",
             "amount_recv": "4,550",
             "$color": "#002734",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
             "$area": 4550
             },
         "id": "NBCU_candidate_Garcetti",
@@ -269,7 +269,7 @@ var json = {
             "full_name": "Wendy Greuel",
             "amount_recv": "900",
             "$color": "#005873",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
             "$area": 900
             },
         "id": "NBCU_candidate_Greuel",
@@ -279,7 +279,7 @@ var json = {
             "full_name": "Kevin James",
             "amount_recv": "1,000",
             "$color": "#00A6D9",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 1000
             },
         "id": "NBCU_candidate_James",
@@ -289,7 +289,7 @@ var json = {
             "full_name": "Jan Perry",
             "amount_recv": "1,000",
             "$color": "#0088B3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_jan_perry.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_jan_perry.jpg",
             "$area": 1000
             },
         "id": "NBCU_candidate_Perry",
@@ -299,7 +299,7 @@ var json = {
             "full_name": "Emanuel Pleitez",
             "amount_recv": "100",
             "$color": "#009CCD",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_emanuel_pleitez.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_emanuel_pleitez.jpg",
             "$area": 100
             },
         "id": "NBCU_candidate_Pleitez",
@@ -322,7 +322,7 @@ var json = {
             "full_name": "Austin Beutner",
             "amount_recv": "5,600",
             "$color": "#00B9F3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
             "$area": 5600
             },
         "id": "Sony_candidate_Beutner",
@@ -332,7 +332,7 @@ var json = {
             "full_name": "Eric Garcetti",
             "amount_recv": "9,200",
             "$color": "#002734",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
             "$area": 9200
             },
         "id": "Sony_candidate_Garcetti",
@@ -342,7 +342,7 @@ var json = {
             "full_name": "Wendy Greuel",
             "amount_recv": "3,400",
             "$color": "#005873",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
             "$area": 3400
             },
         "id": "Sony_candidate_Greuel",
@@ -352,7 +352,7 @@ var json = {
             "full_name": "Kevin James",
             "amount_recv": "750",
             "$color": "#00A6D9",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 750
             },
         "id": "Sony_candidate_James",
@@ -362,7 +362,7 @@ var json = {
             "full_name": "Jan Perry",
             "amount_recv": "1,000",
             "$color": "#0088B3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_jan_perry.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_jan_perry.jpg",
             "$area": 1000
             },
         "id": "Sony_candidate_Perry",
@@ -385,7 +385,7 @@ var json = {
             "full_name": "Austin Beutner",
             "amount_recv": "5,150",
             "$color": "#00B9F3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
             "$area": 5150
             },
         "id": "Time_Warner_candidate_Beutner",
@@ -395,7 +395,7 @@ var json = {
             "full_name": "Eric Garcetti",
             "amount_recv": "23,787",
             "$color": "#002734",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
             "$area": 23787
             },
         "id": "Time_Warner_candidate_Garcetti",
@@ -405,7 +405,7 @@ var json = {
             "full_name": "Wendy Greuel",
             "amount_recv": "16,605",
             "$color": "#005873",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
             "$area": 16605
             },
         "id": "Time_Warner_candidate_Greuel",
@@ -415,7 +415,7 @@ var json = {
             "full_name": "Kevin James",
             "amount_recv": "500",
             "$color": "#00A6D9",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 500
             },
         "id": "Time_Warner_candidate_James",
@@ -425,7 +425,7 @@ var json = {
             "full_name": "Jan Perry",
             "amount_recv": "1,300",
             "$color": "#0088B3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_jan_perry.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_jan_perry.jpg",
             "$area": 1300
             },
         "id": "Time_Warner_candidate_Perry",
@@ -448,7 +448,7 @@ var json = {
             "full_name": "Austin Beutner",
             "amount_recv": "2,000",
             "$color": "#00B9F3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_austin_beutner.jpg",
             "$area": 2000
             },
         "id": "Viacom_candidate_Beutner",
@@ -458,7 +458,7 @@ var json = {
             "full_name": "Eric Garcetti",
             "amount_recv": "7,400",
             "$color": "#002734",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
             "$area": 7400
             },
         "id": "Viacom_candidate_Garcetti",
@@ -468,7 +468,7 @@ var json = {
             "full_name": "Wendy Greuel",
             "amount_recv": "11,250",
             "$color": "#005873",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
             "$area": 11250
             },
         "id": "Viacom_candidate_Greuel",
@@ -478,7 +478,7 @@ var json = {
             "full_name": "Kevin James",
             "amount_recv": "400",
             "$color": "#00A6D9",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_kevin_james.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_kevin_james.jpg",
             "$area": 400
             },
         "id": "Viacom_candidate_James",
@@ -488,7 +488,7 @@ var json = {
             "full_name": "Jan Perry",
             "amount_recv": "1,000",
             "$color": "#0088B3",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_jan_perry.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_jan_perry.jpg",
             "$area": 1000
             },
         "id": "Viacom_candidate_Perry",
@@ -511,7 +511,7 @@ var json = {
             "full_name": "Eric Garcetti",
             "amount_recv": "118,437.06",
             "$color": "#002734",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_eric_garcetti.jpg",
             "$area": 118437.06
             },
         "id": "self_employed_candidate_Garcetti",
@@ -521,7 +521,7 @@ var json = {
             "full_name": "Wendy Greuel",
             "amount_recv": "3,450",
             "$color": "#005873",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
             "$area": 3450
             },
         "id": "self_employed_candidate_Greuel",
@@ -544,7 +544,7 @@ var json = {
             "full_name": "Wendy Greuel",
             "amount_recv": "7,350",
             "$color": "#005873",
-            "image": "http://projects.scpr.org/static/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
+            "image": "http://projects.scpr.org/static-files/images/la-mayors-race/mug_wendy_greuel.jpg",
             "$area": 7350
             },
         "id": "IATSE_candidate_Greuel",

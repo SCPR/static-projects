@@ -17,7 +17,7 @@ var appConfig = {
 
     // embedding settings
     embed_this: false,
-    embed_url_root: 'http://projects.scpr.org/static/test/keller/project-template/project-interactive/',
+    embed_url_root: 'http://projects.scpr.org/test/keller/project-template/project-interactive/',
 
     // use flat-file or spreadsheet
     dataSource: null,
@@ -88,7 +88,7 @@ function takeTime(dateInput) {
 // begin template rendering object
 var initializeTemplates = {
     renderStaticTemplates: function(){
-        var proxyPrefix = 'http://projects.scpr.org/static/static-files/v3-dependencies/templates/';
+        var proxyPrefix = 'http://projects.scpr.org/static-files/v3-dependencies/templates/';
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');

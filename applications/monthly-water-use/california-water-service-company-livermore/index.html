@@ -17,7 +17,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="format-detection" content="telephone=no"/>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        
+
         <meta name="description" content="Gallons of water used per person per day decreased in December 2014 compared to December 2013 in the California Water Service Company Livermore" />
         <meta name="keywords" content="drought, state water resources control board, california" />
         <meta name="author" content="89.3 KPCC" />
@@ -41,13 +41,17 @@
         <!-- end meta -->
 
         <!-- begin css -->
-        
+
     <link href="../static/css/reset.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-ui.1.10.3.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://projects.scpr.org/static-files/v3-dependencies/css/jquery-ui.1.10.3.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://projects.scpr.org/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
     <link href="../static/css/main-foundation-style-v3.css" media="screen" rel="stylesheet" type="text/css" />
+
     <link href="../static/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../static/css/chartist.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../static/css/chart-override.css" media="screen" rel="stylesheet" type="text/css" />
+
 
         <!-- end css -->
 
@@ -55,7 +59,7 @@
         <!--[if lte IE 9]>
             <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
-            <link href="http://projects.scpr.org/static/static-files/v3-dependencies/respond-proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+            <link href="http://projects.scpr.org/static-files/v3-dependencies/respond-proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
             <link href="../static/respond-proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
             <script src="../static/respond-proxy/respond.proxy.js"></script>
         <![endif]-->
@@ -64,7 +68,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="//use.typekit.net/vtu6xsq.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-        
+
         <!-- end base scripts -->
 
     </head>
@@ -115,7 +119,7 @@
         </div>
         <div class="container data-container">
             <div class="row data-details">
-                
+
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div id="content-article">
             <div class="headlines">
@@ -123,32 +127,32 @@
                 <h1>Where is California water use decreasing?</h1>
             </div>
             <div class="about collapse">
-                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/'>Chris Keller</a></span> | <span class="pubdate">Updated Feb. 3, 2015</span></p>
+                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/'>Chris Keller</a></span> | <span class="pubdate">Updated Feb. 17, 2015</span></p>
                 <p>State officials say California cities cut water use by more than 22 percent in December over the previous year, meeting for the first time the goal for water savings set by Gov. Jerry Brown when he declared drought last January.</p><p>About 56 percent of the state&rsquo;s population lives in the South Coast Hydrologic Region, which stretches from Ventura down to San Diego and east toward Riverside. South Coast achieved the third-highest conservation totals, and was one of five regions to beat Brown&rsquo;s goal in December.</p><p>Regulations passed by the <a href='http://www.waterboards.ca.gov/waterrights/'>State Water Resources Control Board</a> last year required urban water suppliers to set mandatory conservation rules in their communities – and required those suppliers to report consumption data, to help illustrate how well the rules are working.</p><p>Districts have been providing data about how much water their customers use on a daily basis, in addition to the raw total water volume they produce or take from their various sources. This gallons of water used per person per day measurement doesn't take into account regional rainfall, temperature, humidity, and population density.</p>
             </div>
             <div class="sources collapse">
                 <p>
-                    
+
                         <strong>Sources</strong>: <a href='http://www.swrcb.ca.gov/waterrights/water_issues/programs/drought/conservation_reporting_info.shtml'>California Water Resources Control Board</a>.
-                    
-                    
+
+
                         <strong>Built using</strong>: <a href='https://github.com/datadesk/django-bakery'>django-bakery</a>, <a href='http://backbonejs.org/'>backbone.js</a> &amp; <a href='http://twitter.github.com/bootstrap/'>Bootstrap</a>. <strong>Icon credits: </strong><a href='http://thenounproject.com/term/26765/'><strong>Waste icon</strong></a> created by <a href='http://thenounproject.com/Luis'><strong>Luis Prado</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/26128/'><strong>Washing Machine icon</strong></a> created by <a href='http://thenounproject.com/megan.sheehan'><strong>Megan Sheehan</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/25510/'><strong>Bucket icon</strong></a> created by <a href='http://thenounproject.com/nsteve'><strong>Nithin Viswanathan</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/17734/'><strong>Water drop icon</strong></a> created by <a href='http://thenounproject.com/diegonaive'><strong>Diego Naive</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/12962/'><strong>Broom icon</strong></a> created by <a href='http://thenounproject.com/The%20Moza'><strong>Anna Weiss</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/2729/'><strong>Clock icon</strong></a> created by <a href='http://thenounproject.com/pavel.nikandrov'><strong>Pavel Nikandrov</strong></a> and used via a <a href='http://creativecommons.org/publicdomain/mark/1.0/'>Public Domain Mark</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/12109/'><strong>Sprinkler icon</strong></a> created by <a href='http://thenounproject.com/micahwest'><strong>Micah West</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/457/'><strong>Cactus icon</strong></a> created by <a href='http://thenounproject.com/edward'><strong>Edward Boatman</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/shower/51/'><strong>Shower icon</strong></a> used via a <a href='http://creativecommons.org/publicdomain/mark/1.0/'>Public Domain Mark</a> from <a href='http://thenounproject.com/'>The Noun Project</a>.
-                    
-                    
-                    
+
+
+
                 </p>
             </div>
             <div class="buttons btn-group btn-group-justified">
                 <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".about"><span class="about glyphicon glyphicon-chevron-down"></span>  About</a>
                 <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".sources"><span class="sources glyphicon glyphicon-chevron-down"></span>  Sources</a>
-                
+
             </div>
         </div>
     </div>
 
             </div>
             <div class="row data-visuals">
-                
+
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -165,8 +169,7 @@
             <h6>The number of gallons of water used per person per day <span>decreased</span> in December 2014 compared to December 2013, according to the <a href="http://www.swrcb.ca.gov/waterrights/water_issues/programs/drought/conservation_reporting_info.shtml">latest data submitted</a> to the <a href="http://www.waterboards.ca.gov/waterrights/">State Water Resources Control Board</a> by the California Water Service Company Livermore.</h6>
         </div>
     </div>
-
-    <div class="row">
+    <div class="row calculated-last-year">
         <div class="_year_change col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
             <dl>
                 <dt><span class='decrease-accent'>-35.90%</span></dt>
@@ -187,37 +190,72 @@
         </div>
     </div>
 
-    <div class="row restrictions">
+    <!-- charts -->
+    <div class="row chart">
+        <div class="hidden-xs col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h6>And over the past 7 months, this supplier and its consumers have decreased water use by -63.33%, going from 137.04 gallons used per person per day to 50.25 gallons used per person per day.</h6>
+            <div class="ct-chart ct-double-octave"></div>
+        </div>
+    </div>
+
+    <!--
+    <div class="row calculated-last-year">
+        <div class="_year_change col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+            <dl>
+                <dt>103.88</dt>
+                <dd></dd>
+            </dl>
+        </div>
+        <div class="_2014 col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+            <dl>
+                <dt></dt>
+                <dd></dd>
+            </dl>
+        </div>
+        <div class="_2013 col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+            <dl>
+                <dt></dt>
+                <dd></dd>
+            </dl>
+        </div>
+    </div>
+    -->
+
+
+
+
+
+    <div class="row conservation">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="icon-display">
                 <h6 class="text-center">Here are some ways you can help conserve water</h6>
                 <div class="row icons">
-                    
+
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-                            <img class="placemark" src="http://projects.scpr.org/applications/water-restrictions-by-community/images/shower.png" />
-                            <p class="text-center">Take shorter showers	</p>
+                            <img class="placemark" src="http://projects.scpr.org/applications/water-restrictions-by-community/images/leak.png" />
+                            <p class="text-center">Repair leaks</p>
                         </div>
-                    
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-                            <img class="placemark" src="http://projects.scpr.org/applications/water-restrictions-by-community/images/cactus.png" />
-                            <p class="text-center">Plant California Friendly plants</p>
-                        </div>
-                    
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-                            <img class="placemark" src="http://projects.scpr.org/applications/water-restrictions-by-community/images/wash-bucket.png" />
-                            <p class="text-center">Wash cars with a bucket and sponge</p>
-                        </div>
-                    
+
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
                             <img class="placemark" src="http://projects.scpr.org/applications/water-restrictions-by-community/images/sprinkler.png" />
                             <p class="text-center">Repair broken sprinklers</p>
                         </div>
-                    
+
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                            <img class="placemark" src="http://projects.scpr.org/applications/water-restrictions-by-community/images/tap-water.png" />
+                            <p class="text-center">Capture tap water</p>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+                            <img class="placemark" src="http://projects.scpr.org/applications/water-restrictions-by-community/images/wash-bucket.png" />
+                            <p class="text-center">Wash cars with a bucket and sponge</p>
+                        </div>
+
                 </div>
             </div>
         </div>
     </div>
-
+    <p class="lead"><strong>About the data</strong>: This data is for urban water suppliers and is based on the the most recent reports submitted to the <a href="http://www.waterboards.ca.gov/waterrights/">State Water Resources Control Board</a>. Since the gallons of water used per person per day measurement does not take into account rainfall, temperature, humidity and population density, the State Water Resources Control Board discourages comparisons between water suppliers.</p>
 </div>
 
             </div>
@@ -244,20 +282,157 @@
         <!-- end main container -->
 
         <!-- begin scripts -->
-        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery-ui.min.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
+        <script src="http://projects.scpr.org/static-files/v3-dependencies/scripts/jquery-ui.min.js"></script>
+        <script src="http://projects.scpr.org/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/underscore-min.js"></script>
-        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
-        
+        <script src="http://projects.scpr.org/static-files/v3-dependencies/scripts/underscore-min.js"></script>
+        <script src="http://projects.scpr.org/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
+
     <script>
         $(document).ready(function(){
             $("#metatabs li:eq(0) a").tab('show');
         });
-        window.appConfig = {"embed_this": true, "project_root": "http://projects.scpr.org/static/applications/monthly-water-use/", "embed_height": "2080px", "open_about_this": true, "data_url": null, "is_embedded": false, "data_source": null, "is_mobile": false, "comments": true, "embed_width": "100%", "spreadsheet_key": null};
+        window.appConfig = {"embed_this": true, "project_root": "http://projects.scpr.org/applications/monthly-water-use/", "embed_height": "2080px", "open_about_this": true, "data_url": null, "is_embedded": false, "data_source": null, "is_mobile": false, "comments": false, "embed_width": "100%", "spreadsheet_key": null};
         window.appConfig.open_about_this = false;
     </script>
+
+    <script src="../static/scripts/chartist.min.js"></script>
     <script src="../static/scripts/_application_wrapper_0.5.js"></script>
+
+    <script>
+        var numericLabels = [12, 11, 10, 9, 8, 7, 6]
+        var stringLabels = []
+        for (var i=0; i<numericLabels.length; i++) {
+            var dateString;
+            var dateInt = numericLabels[i];
+            if (dateInt === 1){
+                dateString = "Jan.";
+            } else if (dateInt === 2){
+                dateString = "Feb.";
+            } else if (dateInt === 3){
+                dateString = "Mar.";
+            } else if (dateInt === 4){
+                dateString = "Apr.";
+            } else if (dateInt === 5){
+                dateString = "May.";
+            } else if (dateInt === 6){
+                dateString = "Jun.";
+            } else if (dateInt === 7){
+                dateString = "Jul.";
+            } else if (dateInt === 8){
+                dateString = "Aug.";
+            } else if (dateInt === 9){
+                dateString = "Sep.";
+            } else if (dateInt === 10){
+                dateString = "Oct.";
+            } else if (dateInt === 11){
+                dateString = "Nov.";
+            } else if (dateInt === 12){
+                dateString = "Dec.";
+            } else {
+                dateString = "n/a";
+            }
+            stringLabels.push(dateString)
+        };
+
+        var data = {
+            // a labels array that can contain any sort of values
+            labels: stringLabels,
+
+            // our series array that contains series objects or in this case series data arrays
+            series: [
+                //,
+                [50.2520808502, 79.4822225507, 98.8838642424, 114.558732698, 120.949281043, 126.012274203, 137.043036152],
+            ]
+        };
+
+        // we are setting a few options for our chart and override the defaults
+        var options = {
+
+            seriesBarDistance: 15,
+
+            reverseData: true,
+
+            horizontalBars: true,
+
+            // line chart points
+            showPoint: true,
+
+            // line smoothing
+            lineSmooth: true,
+
+            // overriding the natural low of the chart
+            low: 0,
+
+            // overriding the natural high of the chart allows you to zoom
+            high: undefined,
+
+            // x-axis specific configuration
+            axisX: {
+
+                labelOffset: {
+                    x: 0,
+                    y: 10
+                },
+
+                // we can disable the grid for this axis
+                showGrid: true,
+
+                // and also don't show the label
+                showLabel: true,
+
+                labelInterpolationFnc: function(value) {
+                    return value + " 2014";
+                }
+            },
+
+            // y-axis specific configuration
+            axisY: {
+
+                // lets offset the chart a bit from the labels
+                offset: 70,
+
+                // the label interpolation function enables you to modify the values
+                // used for the labels on each axis. here we are converting the
+                // values into million pound.
+                labelInterpolationFnc: function(value) {
+                    return value + " gpppd";
+                }
+            }
+        };
+
+        // create a new line chart object where as first parameter we pass in a selector
+        // that is resolving to our chart container element. the second parameter
+        // is the actual data object.
+        new Chartist.Line(".ct-chart", data, options);
+
+        var $chart = $('.ct-chart');
+
+        var $tooltip = $('<div class="tooltip tooltip-hidden"></div>').appendTo($('.ct-chart'));
+
+        $(document).on('mouseenter', '.ct-point', function() {
+
+            //var seriesName = $(this).closest('.ct-series').attr('ct:series-name');
+
+            var value = parseFloat($(this).attr('ct:value')).toFixed(2);
+
+            $tooltip.text(value + " gpppd");
+
+            $tooltip.removeClass('tooltip-hidden');
+        });
+
+        $(document).on('mouseleave', '.ct-point', function() {
+            $tooltip.addClass('tooltip-hidden');
+        });
+
+        $(document).on('mousemove', '.ct-point', function(event) {
+            $tooltip.css({
+                left: (event.offsetX || event.originalEvent.layerX) - $tooltip.width() / 2,
+                top: (event.offsetY || event.originalEvent.layerY) - $tooltip.height() - 20
+            });
+        });
+
+    </script>
 
         <!-- end scripts -->
 

@@ -1,6 +1,6 @@
 var jqueryNoConflict = jQuery;
 var fn = fn || {};
-var embed_url_root = 'http://projects.scpr.org/static/maps/following-la-aqueduct';
+var embed_url_root = 'http://projects.scpr.org/maps/following-la-aqueduct';
 
 // begin main function
 jqueryNoConflict(document).ready(function() {

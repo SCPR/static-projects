@@ -1,7 +1,9 @@
+    /*
     window.storage = Tabletop.init({
         key: "https://docs.google.com/spreadsheet/pub?key=0Aq8qwSArzKP9dEJNQjhYREtjU2lGLVcwYkNBRlQwMVE&output=html",
         wait: true
     });
+    */
 
     App.Models.Nominee = Backbone.Model.extend({
         defaults: {
@@ -21,23 +23,29 @@
             trailer: null
         },
 
+        /*
         tabletop: {
             instance: window.storage,
             sheet: "live_data"
         },
         sync: Backbone.tabletopSync
+        */
+
     });
 
     App.Collections.Nominees = Backbone.Collection.extend({
         model: App.Models.Nominee,
 
-        //url: window.appConfig.data_url,
+        url: window.appConfig.data_url,
 
+        /*
         tabletop: {
             instance: window.storage,
             sheet: "live_data"
         },
         sync: Backbone.tabletopSync
+        */
+
     });
 
     App.Router = Backbone.Router.extend({

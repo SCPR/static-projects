@@ -104,25 +104,25 @@
 }
 
 .paginate_disabled_previous {
-	background: url('http://projects.scpr.org/static/static-files/images/datatables-base/back_disabled.png') no-repeat top left;
+	background: url('http://projects.scpr.org/static-files/images/datatables-base/back_disabled.png') no-repeat top left;
 }
 
 .paginate_enabled_previous {
-	background: url('http://projects.scpr.org/static/static-files/images/datatables-base/back_enabled.png') no-repeat top left;
+	background: url('http://projects.scpr.org/static-files/images/datatables-base/back_enabled.png') no-repeat top left;
 }
 .paginate_enabled_previous:hover {
-	background: url('http://projects.scpr.org/static/static-files/images/datatables-base/back_enabled_hover.png') no-repeat top left;
+	background: url('http://projects.scpr.org/static-files/images/datatables-base/back_enabled_hover.png') no-repeat top left;
 }
 
 .paginate_disabled_next {
-	background: url('http://projects.scpr.org/static/static-files/images/datatables-base/forward_disabled.png') no-repeat top right;
+	background: url('http://projects.scpr.org/static-files/images/datatables-base/forward_disabled.png') no-repeat top right;
 }
 
 .paginate_enabled_next {
-	background: url('http://projects.scpr.org/static/static-files/images/datatables-base/forward_enabled.png') no-repeat top right;
+	background: url('http://projects.scpr.org/static-files/images/datatables-base/forward_enabled.png') no-repeat top right;
 }
 .paginate_enabled_next:hover {
-	background: url('http://projects.scpr.org/static/static-files/images/datatables-base/forward_enabled_hover.png') no-repeat top right;
+	background: url('http://projects.scpr.org/static-files/images/datatables-base/forward_enabled_hover.png') no-repeat top right;
 }
 
 
@@ -182,23 +182,23 @@ table.display td.center {
  */
 
 .sorting_asc {
-	background: url('http://projects.scpr.org/static/static-files/images/datatables-base/sort_asc.png') no-repeat center right;
+	background: url('http://projects.scpr.org/static-files/images/datatables-base/sort_asc.png') no-repeat center right;
 }
 
 .sorting_desc {
-	background: url('http://projects.scpr.org/static/static-files/images/datatables-base/sort_desc.png') no-repeat center right;
+	background: url('http://projects.scpr.org/static-files/images/datatables-base/sort_desc.png') no-repeat center right;
 }
 
 .sorting {
-	background: url('http://projects.scpr.org/static/static-files/images/datatables-base/sort_both.png') no-repeat center right;
+	background: url('http://projects.scpr.org/static-files/images/datatables-base/sort_both.png') no-repeat center right;
 }
 
 .sorting_asc_disabled {
-	background: url('http://projects.scpr.org/static/static-files/images/datatables-base/sort_asc_disabled.png') no-repeat center right;
+	background: url('http://projects.scpr.org/static-files/images/datatables-base/sort_asc_disabled.png') no-repeat center right;
 }
 
 .sorting_desc_disabled {
-	background: url('http://projects.scpr.org/static/static-files/images/datatables-base/sort_desc_disabled.png') no-repeat center right;
+	background: url('http://projects.scpr.org/static-files/images/datatables-base/sort_desc_disabled.png') no-repeat center right;
 }
 
 th:active {
