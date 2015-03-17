@@ -37,9 +37,12 @@ var fn = {
         var city = jqueryNoConflict('#city').val();
         var state = jqueryNoConflict('#state').val();
         var zip_code = jqueryNoConflict('#zip_code').val();
+
         var data_request = jqueryNoConflict('#data_request').val();
         data_request = "<p>" + data_request.replace(/\r?\n/g, "<br />") + "</p>";
+
         var reporter_signature = jqueryNoConflict('#reporter_signature').val();
+        reporter_signature = "<p>" + reporter_signature.replace(/\r?\n/g, "<br />") + "</p>";
 
         var objectData = {"objects": [{
             date: currentTime,
