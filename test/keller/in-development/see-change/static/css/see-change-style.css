@@ -3,6 +3,8 @@ body.minimal .data-container .data-visuals { min-height: 600px; height: auto; pa
 
 body.minimal .data-container .data-visuals .row { margin: 15px 0 25px 0; }
 
+body.minimal .data-container .data-visuals .submission { background: #ffffff; padding: 15px 0 15px 0; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+
 body.minimal .data-container h2 { margin-bottom: 2%; }
 
 body.minimal .data-container a.btn { padding: 0px 0px; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; -khtml-border-radius: 0; }
@@ -14,9 +16,9 @@ body.minimal .data-container a.btn-primary:active { background: rgba(0, 127, 166
 body.minimal .data-container a.btn-primary:hover { background: rgba(0, 127, 166, .6); border: rgba(0, 127, 166, .6) solid .1em; color: #2B2B2B; }
 
 
-.quote { background: url(i/ephemera-quote-blue-open.png) no-repeat 0 0, url(i/ephemera-quote-blue-close.png) no-repeat bottom right; background-size: 120px 60px, 120px 60px; padding-top: 3%; padding-left: 5%; padding-bottom: 1%; margin-top: 3%; margin-left: -4%; }
+.quote { background: url(i/ephemera-quote-blue-open.png) no-repeat 0 0, url(i/ephemera-quote-blue-close.png) no-repeat bottom right; background-size: 120px 60px, 120px 60px; padding: 5% 10% 5% 10%; margin: 5% 0% 5% 0%; }
 
-.quote p { padding:15px; }
+.quote p { padding: 15px; }
 
 @media (min-width: 318px) {
 
