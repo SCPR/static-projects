@@ -11,16 +11,15 @@ body.minimal .data-container a.btn-primary:focus,
 body.minimal .data-container a.btn-primary:active { background: rgba(0, 127, 166, 1.0); border: rgba(0, 127, 166, 1.0) solid .1em; }
 body.minimal .data-container a.btn-primary:hover { background: rgba(0, 127, 166, .6); border: rgba(0, 127, 166, .6) solid .1em; color: #2B2B2B; }
 
+.data-container .data-visuals .jumbotron {width: 100%; height: auto; background: rgba(240, 248, 255, 1.0); margin: 10px 0% 10px 0%; padding: 10px 0 10px 0; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; -khtml-border-radius: 0;}
 
-
-
-
+.data-container .data-visuals .jumbotron #content-action-bar {width: 96%; height: auto; text-align: center; margin: 15px 2% 15px 2%;}
 
 /* index page bar charts */
 .decrease,
 .increase { min-height: 400px; height: auto; }
 
-.decrease header.charts { width: 100%; height: 75px; background: #66d8d8; padding: 1% 0 1% 2%; }
+.decrease header.charts { width: 100%; height: 75px; background: #b4dd0a; padding: 1% 0 1% 2%; }
 
 .increase header.charts { width: 100%; height: 75px; background: #d86666; padding: 1% 2% 1% 0; }
 
@@ -46,7 +45,7 @@ section.display ol li dl { position: relative; width: 100%; }
 .decrease section.display ol li dl dd.neg,
 .increase section.display ol li dl dd.pos { height: 50px; margin-bottom: 5px; }
 
-.decrease section.display ol li dl dd.neg { float: right; background-color: #66d8d8; clear: right; }
+.decrease section.display ol li dl dd.neg { float: right; background-color: #b4dd0a; clear: right; }
 
 .decrease section.display ol li dl dd.neg span { position: absolute; bottom: 25px; left: 5px; }
 
@@ -55,7 +54,7 @@ section.display ol li dl { position: relative; width: 100%; }
 .increase section.display ol li dl dd.pos { float: left; background-color: #d86666; clear: left; }
 
 /* typography */
-.decrease-accent { color: #66d8d8; }
+.decrease-accent { color: #b4dd0a; }
 .increase-accent { color: #d86666; }
 
 /* select-menu */
@@ -418,3 +417,80 @@ section.display ol li dl { position: relative; width: 100%; }
 
     .icon-display p {font-size: 90%;}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    Leaflet.label, a plugin that adds labels to markers and vectors for Leaflet powered maps.
+    (c) 2012-2013, Jacob Toye, Smartrak
+
+    https://github.com/Leaflet/Leaflet.label
+    http://leafletjs.com
+    https://github.com/jacobtoye
+*/
+.leaflet-label {
+    background: rgb(235, 235, 235);
+    background: rgba(235, 235, 235, 0.81);
+    background-clip: padding-box;
+    border-color: #777;
+    border-color: rgba(0,0,0,0.25);
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 4px;
+    color: #111;
+    display: block;
+    font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 1px 6px;
+    position: absolute;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 6;
+}
+
+.leaflet-label.leaflet-clickable {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.leaflet-label:before,
+.leaflet-label:after {
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    content: none;
+    position: absolute;
+    top: 5px;
+}
+
+.leaflet-label:before {
+    border-right: 6px solid black;
+    border-right-color: inherit;
+    left: -10px;
+}
+
+.leaflet-label:after {
+    border-left: 6px solid black;
+    border-left-color: inherit;
+    right: -10px;
+}
+
+.leaflet-label-right:before,
+.leaflet-label-left:after {
+    content: "";
+}
+
+
+
