@@ -35,19 +35,19 @@
 }
 
 .ct-chart .ct-series.ct-series-a .ct-bar, .ct-chart .ct-series.ct-series-a .ct-line, .ct-chart .ct-series.ct-series-a .ct-point, .ct-chart .ct-series.ct-series-a .ct-slice.ct-donut {
-    stroke: #330add;
+    stroke: rgba(31, 120, 180, .7);
 }
 
 .ct-chart .ct-series.ct-series-a .ct-area, .ct-chart .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
-    fill: #330add;
+    fill: rgba(31, 120, 180, .7);
 }
 
 .ct-chart .ct-series.ct-series-b .ct-bar, .ct-chart .ct-series.ct-series-b .ct-line, .ct-chart .ct-series.ct-series-b .ct-point, .ct-chart .ct-series.ct-series-b .ct-slice.ct-donut {
-    stroke: #330add;
+    stroke: rgba(31, 120, 180, .7);
 }
 
 .ct-chart .ct-series.ct-series-b .ct-area, .ct-chart .ct-series.ct-series-b .ct-slice:not(.ct-donut) {
-    fill: #330add;
+    fill: rgba(31, 120, 180, .7);
 }
 
 .tooltip {

@@ -48,7 +48,6 @@
     <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
     <link href="static/css/main-foundation-style-v3.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="static/css/cali-water-style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
 
         <!-- end css -->
 
@@ -65,10 +64,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="//use.typekit.net/vtu6xsq.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
-    <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.2/leaflet.js"></script>
-
         <!-- end base scripts -->
 
     </head>
@@ -128,7 +123,7 @@
             </div>
             <div class="about collapse">
                 <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/'>Chris Keller</a></span> | <span class="pubdate">Updated April 7, 2015</span></p>
-                <p>More evidence that California needs to do more to cut water use – the state water board reported today that Californians in February conserved the smallest amount of seasonal water supplies since the state began compiling monthly statistics on water use last June. The meager cuts were fueled largely by increased water use in Southern California.</p><p>Statewide in February, Californians cut water use by just 2.8 percent compared to the same month in 2013.  But in the hydrological regions that cover most of Southern California – an area of 8.7 million people — water use actually rose. The South Coast region, which runs along the coast from Ventura to San Diego County, saw increased water use of more than 2 percent. And water consumption in the Colorado River region, which mostly covers San Bernardino, Riverside and Imperial counties, inched up half a percent.</p><p>Across much of the state — and particularly in Southern California — February saw significantly warmer temperatures and less rain than average, prompting urban water users to turn on their sprinklers to keep lawns green.</p><p>At the same time, average water use rose from levels in January, which was also unusually hot and dry. February water use was 77 gallons per person per day compared to 73 gallons the month before.</p><p>The findings were reported during a meeting of the State Water Resources Control Board, which is discussing how to enforce mandatory reductions in water use ordered last week by Gov. Jerry Brown.</p>
+                <p>More evidence that California needs to do more to cut water use – the state water board reported today that Californians in February conserved the smallest amount of seasonal water supplies since the state began compiling monthly statistics on water use last June. The meager cuts were fueled largely by increased water use in Southern California.</p><p>Statewide in February, Californians cut water use by just 2.8 percent compared to the same month a year ago.  But in the hydrological regions that cover most of Southern California – an area of 8.7 million people — water use actually rose. The South Coast region, which runs along the coast from Ventura to San Diego County, saw increased water use of more than 2 percent. And water consumption in the Colorado River region, which mostly covers San Bernardino, Riverside and Imperial counties, inched up half a percent.</p><p>Across much of the state — and particularly in Southern California — February saw significantly warmer temperatures and less rain than average, prompting urban water users to turn on their sprinklers to keep lawns green.</p><p>At the same time, average water use rose from levels in January, which was also unusually hot and dry. February water use was 77 gallons per person per day compared to 73 gallons the month before.</p><p>The findings were reported during a meeting of the State Water Resources Control Board, which is discussing how to enforce mandatory reductions in water use ordered last week by Gov. Jerry Brown.</p>
             </div>
             <div class="sources collapse">
                 <p>
@@ -1020,6 +1015,7 @@
         </div>
         <p class="lead"><strong>About the data</strong>: These charts show urban water suppliers in Southern California that saw daily water use per resident rise and fall by the most and least. They cover the most recent reporting period &mdash; February 2015 &mdash; and are compared to the baseline measure from February 2013. Since the gallons of water used per person per day measurement does not take into account rainfall, temperature, humidity and population density, the <a href="http://www.waterboards.ca.gov/waterrights/">State Water Resources Control Board</a> discourages comparisons between water suppliers.</p>
     </div>
+
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
         <div class="decrease">
             <header class="charts">
@@ -1189,6 +1185,83 @@
 
 
 
+    <!--
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>Central Coast: 67.7286112444 .... 71.9714479857</p>
+                    <p><span class='decrease-accent'>-5.90%</span></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>Colorado River: 129.610517606 .... 141.823563775</p>
+                    <p><span class='decrease-accent'>-8.61%</span></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>North Coast: 65.3327329148 .... 70.4268471614</p>
+                    <p><span class='decrease-accent'>-7.23%</span></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>North Lahontan: 92.5669930085 .... 110.369625344</p>
+                    <p><span class='decrease-accent'>-16.13%</span></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>Sacramento River: 84.2593613248 .... 97.4372445115</p>
+                    <p><span class='decrease-accent'>-13.52%</span></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>San Francisco Bay: 61.0367850355 .... 67.0968864362</p>
+                    <p><span class='decrease-accent'>-9.03%</span></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>San Joaquin River: 75.9624026896 .... 88.4322508217</p>
+                    <p><span class='decrease-accent'>-14.10%</span></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>South Coast: 96.9750490485 .... 93.9395080943</p>
+                    <p><span class='increase-accent'>+3.23%</span></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>South Lahontan: 81.2912700303 .... 87.4095140005</p>
+                    <p><span class='decrease-accent'>-7.00%</span></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <p>Tulare Lake: 93.3488981647 .... 104.227236106</p>
+                    <p><span class='decrease-accent'>-10.44%</span></p>
+                </div>
+            </div>
+
+    </div>
+    -->
+
+
 
 
 
@@ -1224,10 +1297,12 @@
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/underscore-min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
 
-    <script src="static/scripts/leaflet_label.js"></script>
-    <script src="static/data/california.js"></script>
-    <script src="static/data/calif_hydrologic_regions.js"></script>
     <script>
+
+        window.percentChange = function(oldValue, newValue){
+            var pctChange = ((newValue - oldValue) / oldValue * 100);
+            return parseFloat(pctChange.toFixed(2));
+        };
 
         window.appConfig = {"embed_this": true, "project_root": "http://projects.scpr.org/static/applications/monthly-water-use/", "embed_height": "2080px", "open_about_this": false, "data_url": null, "is_embedded": false, "data_source": null, "is_mobile": false, "comments": false, "embed_width": "100%", "spreadsheet_key": null};
 

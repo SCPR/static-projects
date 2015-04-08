@@ -19,9 +19,9 @@ body.minimal .data-container a.btn-primary:hover { background: rgba(0, 127, 166,
 .decrease,
 .increase { min-height: 400px; height: auto; }
 
-.decrease header.charts { width: 100%; height: 75px; background: #b4dd0a; padding: 1% 0 1% 2%; }
+.decrease header.charts { width: 100%; height: 75px; background: rgba(51, 160, 44, 1.0); padding: 1% 0 1% 2%; }
 
-.increase header.charts { width: 100%; height: 75px; background: #d86666; padding: 1% 2% 1% 0; }
+.increase header.charts { width: 100%; height: 75px; background: rgba(227, 26, 28, 1.0); padding: 1% 2% 1% 0; }
 
 .decrease header.charts h5,
 .increase header.charts h5 { font-weight: 700; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; text-transform: uppercase; }
@@ -45,17 +45,17 @@ section.display ol li dl { position: relative; width: 100%; }
 .decrease section.display ol li dl dd.neg,
 .increase section.display ol li dl dd.pos { height: 50px; margin-bottom: 5px; }
 
-.decrease section.display ol li dl dd.neg { float: right; background-color: #b4dd0a; clear: right; }
+.decrease section.display ol li dl dd.neg { float: right; background-color: rgba(51, 160, 44, 1.0); clear: right; }
 
 .decrease section.display ol li dl dd.neg span { position: absolute; bottom: 25px; left: 5px; }
 
 .increase section.display ol li dl dd.pos span { position: absolute; bottom: 25px; right: 5px; }
 
-.increase section.display ol li dl dd.pos { float: left; background-color: #d86666; clear: left; }
+.increase section.display ol li dl dd.pos { float: left; background-color: rgba(227, 26, 28, 1.0); clear: left; }
 
 /* typography */
-.decrease-accent { color: #b4dd0a; }
-.increase-accent { color: #d86666; }
+.decrease-accent { color: rgba(51, 160, 44, 1.0); }
+.increase-accent { color: rgba(227, 26, 28, 1.0); }
 
 /* select-menu */
 .data-container .data-legend .jumbotron { width: 100%; height: auto; background: rgba(240, 248, 255, 1.0); margin: 10px 0% 10px 0%; padding: 10px; overflow: hidden; }
@@ -100,7 +100,7 @@ section.display ol li dl { position: relative; width: 100%; }
 ._2014 dt, ._2013 dt { font-size: 750%; }
 ._2014 dd, ._2013 dd { font-size: 130%; }
 ._2014 dt { color: #330add; }
-._2013 dt { color: #b4dd0a; }
+._2013 dt { color: rgba(51, 160, 44, 1.0); }
 */
 
 
@@ -419,78 +419,37 @@ section.display ol li dl { position: relative; width: 100%; }
 }
 
 
-
-
-
-
-
-
-
-
-
-
 /*
     Leaflet.label, a plugin that adds labels to markers and vectors for Leaflet powered maps.
     (c) 2012-2013, Jacob Toye, Smartrak
-
     https://github.com/Leaflet/Leaflet.label
     http://leafletjs.com
     https://github.com/jacobtoye
 */
+
 .leaflet-label {
-    background: rgb(235, 235, 235);
-    background: rgba(235, 235, 235, 0.81);
+    background: rgba(255, 255, 255, 1);
     background-clip: padding-box;
-    border-color: #777;
-    border-color: rgba(0,0,0,0.25);
-    border-radius: 4px;
+    border-color: rgba(0, 0, 0, 0.25);
     border-style: solid;
     border-width: 4px;
-    color: #111;
+    color: #000000;
     display: block;
-    font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif;
     font-weight: bold;
     padding: 1px 6px;
     position: absolute;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    pointer-events: none;
     white-space: nowrap;
-    z-index: 6;
+    z-index: 10;
 }
 
-.leaflet-label.leaflet-clickable {
-    cursor: pointer;
-    pointer-events: auto;
-}
+.leaflet-label.leaflet-clickable { cursor: pointer; pointer-events: auto; }
 
-.leaflet-label:before,
-.leaflet-label:after {
-    border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    content: none;
-    position: absolute;
-    top: 5px;
-}
+.leaflet-label:before, .leaflet-label:after { border-top: 6px solid transparent; border-bottom: 6px solid transparent; content: none; position: absolute; top: 5px; }
 
-.leaflet-label:before {
-    border-right: 6px solid black;
-    border-right-color: inherit;
-    left: -10px;
-}
+.leaflet-label:before { border-right: 6px solid black; border-right-color: inherit; left: -10px; }
 
-.leaflet-label:after {
-    border-left: 6px solid black;
-    border-left-color: inherit;
-    right: -10px;
-}
+.leaflet-label:after { border-left: 6px solid black; border-left-color: inherit; right: -10px; }
 
-.leaflet-label-right:before,
-.leaflet-label-left:after {
-    content: "";
-}
-
-
-
+.leaflet-label-right:before, .leaflet-label-left:after { content: ""; }
