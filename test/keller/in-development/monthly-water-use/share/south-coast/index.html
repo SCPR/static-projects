@@ -1,0 +1,2355 @@
+
+
+
+<!DOCTYPE html>
+
+<!-- begin doc -->
+<html lang="en">
+
+    <!-- begin header -->
+    <head>
+
+        <!-- begin meta -->
+        <title>Water use in California's South Coast hydrologic region | scpr.org</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        
+        <meta name="description" content="South Coast residential customers increased daily water use in Feb. 2015 to an average of 80.55 gallons in the  hydrologic region compared to Feb. 2013. Based on data from 170 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate." />
+        <meta name="keywords" content="drought, state water resources control board, california" />
+        <meta name="author" content="89.3 KPCC" />
+        <meta property="og:title" content="Water use in California's South Coast hydrologic region" />
+        <meta property="og:site_name" content="KPCC" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="http://a.scpr.org/i/f44ef3b9a8278abb79b6bbb3caf882c7/87989-full.jpg" />
+        <meta property="og:image:width" content="1024" />
+        <meta property="og:image:height" content="683" />
+        <meta property="og:url" content="http://projects.scpr.org/static/applications/monthly-water-use/region/south-coast" />
+        <meta property="og:description" content="South Coast residential customers increased daily water use in Feb. 2015 to an average of 80.55 gallons in the  hydrologic region compared to Feb. 2013. Based on data from 170 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate." />
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:url" content="http://projects.scpr.org/static/applications/monthly-water-use/region/south-coast"/>
+        <meta name="twitter:domain" content="http://projects.scpr.org/"/>
+        <meta name="twitter:site" content="KPCC"/>
+        <meta name="twitter:title" content="Water use in California's South Coast hydrologic region"/>
+        <meta name="twitter:description" content="South Coast residential customers increased daily water use in Feb. 2015 to an average of 80.55 gallons in the  hydrologic region compared to Feb. 2013. Based on data from 170 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate."/>
+        <meta name="twitter:image:src" content="http://a.scpr.org/i/f44ef3b9a8278abb79b6bbb3caf882c7/87989-full.jpg">
+        <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="http://media.scpr.org/assets/images/icon.png">
+        <!-- end meta -->
+
+        <!-- begin css -->
+        
+    <link href="../../static/css/reset.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-ui.1.10.3.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../static/css/main-foundation-style-v3.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../../static/css/cali-water-style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
+
+        <!-- end css -->
+
+        <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
+        <!--[if lte IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+            <link href="http://projects.scpr.org/static/static-files/v3-dependencies/respond-proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+            <link href="../static/respond-proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+            <script src="../static/respond-proxy/respond.proxy.js"></script>
+        <![endif]-->
+
+        <!-- begin base scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/vtu6xsq.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        
+    <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+        <!-- end base scripts -->
+
+    </head>
+    <!-- end header -->
+
+    <!-- begin body -->
+    <body class="minimal">
+        <div class="kpcc-header">
+            <header>
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container data-container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
+                        </div>
+                        <div class="data-share navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right header-links clearfix">
+                                <li class="projects-pledge">
+                                    <a href="https://scprcontribute.publicradio.org/" class="pledge-now icon">Contribute to KPCC</a>
+                                    <a href="https://scprcontribute.publicradio.org/" target="_blank"><b>Pledge now</b></a>
+                                </li>
+                                <li class="projects-share">
+                                    <div class="share-links clearfix">
+                                        <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
+                                            <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=http://projects.scpr.org/static/applications/monthly-water-use" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
+                                            <a class="twitter icon" href="http://twitter.com/share?text=Water use in California's South Coast hydrologic region&url=http://projects.scpr.org/static/applications/monthly-water-use/region/south-coast"></a>
+                                    </div>
+                                    <b>Share this</b>
+                                </li>
+                                <li class="projects-embed">
+                                    <a href="javascript:void(0)" class="embed-this icon">Embed This</a>
+                                    <a href="javascript:void(0)" target="_blank"><b>Embed This</b></a>
+                                </li>
+                                <li class="projects-home">
+                                    <a href="http://projects.scpr.org/" class="projects-home icon">Projects Home</a>
+                                    <a href="http://projects.scpr.org/"><b>All Projects</b></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <div class="container data-container">
+            <div class="row data-details">
+                
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="content-article">
+            <div class="headlines">
+                <h4 class="kicker">Environment</h4>
+                <h1>Where is California water use decreasing?</h1>
+            </div>
+            <div class="about collapse">
+                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/'>Chris Keller</a></span> | <span class="pubdate">Updated April 7, 2015</span></p>
+                <p>More evidence that California needs to do more to cut water use – the state water board reported today that Californians in February conserved the smallest amount of seasonal water supplies since the state began compiling monthly statistics on water use last June. The meager cuts were fueled largely by increased water use in Southern California.</p><p>Statewide in February, Californians cut water use by just 2.8 percent compared to the same month a year ago.  But in the hydrological regions that cover most of Southern California – an area of 8.7 million people — water use actually rose. The South Coast region, which runs along the coast from Ventura to San Diego County, saw increased water use of more than 2 percent. And water consumption in the Colorado River region, which mostly covers San Bernardino, Riverside and Imperial counties, inched up half a percent.</p><p>Across much of the state — and particularly in Southern California — February saw significantly warmer temperatures and less rain than average, prompting urban water users to turn on their sprinklers to keep lawns green.</p><p>At the same time, average water use rose from levels in January, which was also unusually hot and dry. February water use was 77 gallons per person per day compared to 73 gallons the month before.</p><p>The findings were reported during a meeting of the State Water Resources Control Board, which is discussing how to enforce mandatory reductions in water use ordered last week by Gov. Jerry Brown.</p>
+            </div>
+            <div class="sources collapse">
+                <p>
+                    
+                        <strong>Sources</strong>: <a href='http://www.swrcb.ca.gov/waterrights/water_issues/programs/drought/conservation_reporting_info.shtml'>California Water Resources Control Board</a>.
+                    
+                    
+                        <strong>Built using</strong>: <a href='https://github.com/datadesk/django-bakery'>django-bakery</a>, <a href='http://underscorejs.org/'>underscore.js</a>, <a href='http://backbonejs.org/'>backbone.js</a>, <a href='http://leafletjs.com/'>leaflet.js</a>, <a href='https://gionkunz.github.io/chartist-js/'>chartist.js</a> &amp; <a href='http://twitter.github.com/bootstrap/'>Bootstrap</a>. Circles on a line distribution charts based on <a href='http://censusreporter.org/data/distribution/?table=B25118&geo_ids=05000US06037&primary_geo_id=05000US06037'>CensusReporter charts</a>, <a href='https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450'>design</a> and <a href='https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703'>code</a>. <strong>Icon credits: </strong><a href='http://thenounproject.com/term/26765/'><strong>Waste icon</strong></a> created by <a href='http://thenounproject.com/Luis'><strong>Luis Prado</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/26128/'><strong>Washing Machine icon</strong></a> created by <a href='http://thenounproject.com/megan.sheehan'><strong>Megan Sheehan</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/25510/'><strong>Bucket icon</strong></a> created by <a href='http://thenounproject.com/nsteve'><strong>Nithin Viswanathan</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/17734/'><strong>Water drop icon</strong></a> created by <a href='http://thenounproject.com/diegonaive'><strong>Diego Naive</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/12962/'><strong>Broom icon</strong></a> created by <a href='http://thenounproject.com/The%20Moza'><strong>Anna Weiss</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/2729/'><strong>Clock icon</strong></a> created by <a href='http://thenounproject.com/pavel.nikandrov'><strong>Pavel Nikandrov</strong></a> and used via a <a href='http://creativecommons.org/publicdomain/mark/1.0/'>Public Domain Mark</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/12109/'><strong>Sprinkler icon</strong></a> created by <a href='http://thenounproject.com/micahwest'><strong>Micah West</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/457/'><strong>Cactus icon</strong></a> created by <a href='http://thenounproject.com/edward'><strong>Edward Boatman</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/shower/51/'><strong>Shower icon</strong></a> used via a <a href='http://creativecommons.org/publicdomain/mark/1.0/'>Public Domain Mark</a> from <a href='http://thenounproject.com/'>The Noun Project</a>.
+                    
+                    
+                    
+                </p>
+            </div>
+            <div class="buttons btn-group btn-group-justified">
+                <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".about"><span class="about glyphicon glyphicon-chevron-down"></span>  About</a>
+                <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".sources"><span class="sources glyphicon glyphicon-chevron-down"></span>  Sources</a>
+                
+            </div>
+        </div>
+    </div>
+
+            </div>
+            <div class="row data-visuals">
+                
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline">
+                    <li><a href="../../">Home</a></li>
+                    <li>|</li>
+                    <li><a href="../../region/south-coast">South Coast</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="jumbotron">
+            <noscript>Please enable JavaScript to view this interactive.</noscript>
+            <h4 class="text-center">Choose a water supplier</h4>
+            <div id="content-action-bar">
+                <select id="water-supplier-list" class="form-control">
+                    <option>-- Select a South Coast supplier --</option>
+                    
+                        <option value="../../beaumont-cherry-valley-water-district">Beaumont-Cherry Valley Water District</option>
+                    
+                        <option value="../../bellflower-somerset-mutual-water-company">Bellflower-Somerset Mutual Water Company</option>
+                    
+                        <option value="../../big-bear-city-community-services-district">Big Bear City Community Services District</option>
+                    
+                        <option value="../../california-water-service-company-dominguez">California Water Service Company Dominguez</option>
+                    
+                        <option value="../../california-water-service-company-east-los-angeles">California Water Service Company East Los Angeles</option>
+                    
+                        <option value="../../california-water-service-company-hermosa-redondo">California Water Service Company Hermosa Redondo</option>
+                    
+                        <option value="../../california-water-service-company-palos-verdes">California Water Service Company Palos Verdes</option>
+                    
+                        <option value="../../california-water-service-company-westlake">California Water Service Company Westlake</option>
+                    
+                        <option value="../../california-american-water-company-los-angeles-district">California-American Water Company Los Angeles District</option>
+                    
+                        <option value="../../california-american-water-company-san-diego-district">California-American Water Company San Diego District</option>
+                    
+                        <option value="../../california-american-water-ventura-district">California-American Water Ventura District</option>
+                    
+                        <option value="../../camrosa-water-district">Camrosa Water District</option>
+                    
+                        <option value="../../carlsbad-municipal-water-district">Carlsbad Municipal Water District</option>
+                    
+                        <option value="../../casitas-municipal-water-district">Casitas Municipal Water District</option>
+                    
+                        <option value="../../castaic-lake-water-agency-santa-clarita-water-division">Castaic Lake Water Agency Santa Clarita Water Division</option>
+                    
+                        <option value="../../city-of-anaheim">City Of Anaheim</option>
+                    
+                        <option value="../../city-of-arcadia">City Of Arcadia</option>
+                    
+                        <option value="../../city-of-azusa">City Of Azusa</option>
+                    
+                        <option value="../../city-of-beverly-hills">City Of Beverly Hills</option>
+                    
+                        <option value="../../city-of-big-bear-lake-dept-of-water-power">City Of Big Bear Lake Dept Of Water Power</option>
+                    
+                        <option value="../../city-of-brea">City Of Brea</option>
+                    
+                        <option value="../../city-of-buena-park">City Of Buena Park</option>
+                    
+                        <option value="../../city-of-burbank">City Of Burbank</option>
+                    
+                        <option value="../../city-of-camarillo">City Of Camarillo</option>
+                    
+                        <option value="../../city-of-cerritos">City Of Cerritos</option>
+                    
+                        <option value="../../city-of-chino-hills">City Of Chino Hills</option>
+                    
+                        <option value="../../city-of-colton">City Of Colton</option>
+                    
+                        <option value="../../city-of-compton">City Of Compton</option>
+                    
+                        <option value="../../city-of-corona">City Of Corona</option>
+                    
+                        <option value="../../city-of-covina">City Of Covina</option>
+                    
+                        <option value="../../city-of-downey">City Of Downey</option>
+                    
+                        <option value="../../city-of-el-segundo">City Of El Segundo</option>
+                    
+                        <option value="../../city-of-escondido">City Of Escondido</option>
+                    
+                        <option value="../../city-of-fountain-valley">City Of Fountain Valley</option>
+                    
+                        <option value="../../city-of-fullerton">City Of Fullerton</option>
+                    
+                        <option value="../../city-of-garden-grove">City Of Garden Grove</option>
+                    
+                        <option value="../../city-of-glendale">City Of Glendale</option>
+                    
+                        <option value="../../city-of-glendora">City Of Glendora</option>
+                    
+                        <option value="../../city-of-hawthorne">City Of Hawthorne</option>
+                    
+                        <option value="../../city-of-hemet">City Of Hemet</option>
+                    
+                        <option value="../../city-of-huntington-beach">City Of Huntington Beach</option>
+                    
+                        <option value="../../city-of-huntington-park">City Of Huntington Park</option>
+                    
+                        <option value="../../city-of-inglewood">City Of Inglewood</option>
+                    
+                        <option value="../../city-of-la-habra">City Of La Habra</option>
+                    
+                        <option value="../../city-of-la-palma">City Of La Palma</option>
+                    
+                        <option value="../../city-of-la-verne">City Of La Verne</option>
+                    
+                        <option value="../../city-of-lakewood">City Of Lakewood</option>
+                    
+                        <option value="../../city-of-loma-linda">City Of Loma Linda</option>
+                    
+                        <option value="../../city-of-lomita">City Of Lomita</option>
+                    
+                        <option value="../../city-of-long-beach">City Of Long Beach</option>
+                    
+                        <option value="../../city-of-lynwood">City Of Lynwood</option>
+                    
+                        <option value="../../city-of-manhattan-beach">City Of Manhattan Beach</option>
+                    
+                        <option value="../../city-of-monterey-park">City Of Monterey Park</option>
+                    
+                        <option value="../../city-of-newport-beach">City Of Newport Beach</option>
+                    
+                        <option value="../../city-of-norwalk">City Of Norwalk</option>
+                    
+                        <option value="../../city-of-oceanside">City Of Oceanside</option>
+                    
+                        <option value="../../city-of-ontario">City Of Ontario</option>
+                    
+                        <option value="../../city-of-orange">City Of Orange</option>
+                    
+                        <option value="../../city-of-oxnard">City Of Oxnard</option>
+                    
+                        <option value="../../city-of-paramount">City Of Paramount</option>
+                    
+                        <option value="../../city-of-pasadena">City Of Pasadena</option>
+                    
+                        <option value="../../city-of-perris">City Of Perris</option>
+                    
+                        <option value="../../city-of-pico-rivera">City Of Pico Rivera</option>
+                    
+                        <option value="../../city-of-pomona">City Of Pomona</option>
+                    
+                        <option value="../../city-of-poway">City Of Poway</option>
+                    
+                        <option value="../../city-of-redlands">City Of Redlands</option>
+                    
+                        <option value="../../city-of-rialto">City Of Rialto</option>
+                    
+                        <option value="../../city-of-riverside">City Of Riverside</option>
+                    
+                        <option value="../../city-of-san-bernardino">City Of San Bernardino</option>
+                    
+                        <option value="../../city-of-san-buenaventura">City Of San Buenaventura</option>
+                    
+                        <option value="../../city-of-san-clemente">City Of San Clemente</option>
+                    
+                        <option value="../../city-of-san-diego">City Of San Diego</option>
+                    
+                        <option value="../../city-of-san-fernando">City Of San Fernando</option>
+                    
+                        <option value="../../city-of-san-jacinto">City Of San Jacinto</option>
+                    
+                        <option value="../../city-of-san-juan-capistrano">City Of San Juan Capistrano</option>
+                    
+                        <option value="../../city-of-sanger">City Of Sanger</option>
+                    
+                        <option value="../../city-of-santa-ana">City Of Santa Ana</option>
+                    
+                        <option value="../../city-of-santa-fe-springs">City Of Santa Fe Springs</option>
+                    
+                        <option value="../../city-of-santa-monica">City Of Santa Monica</option>
+                    
+                        <option value="../../city-of-santa-paula">City Of Santa Paula</option>
+                    
+                        <option value="../../city-of-seal-beach">City Of Seal Beach</option>
+                    
+                        <option value="../../city-of-sierra-madre">City Of Sierra Madre</option>
+                    
+                        <option value="../../city-of-south-gate">City Of South Gate</option>
+                    
+                        <option value="../../city-of-south-pasadena">City Of South Pasadena</option>
+                    
+                        <option value="../../city-of-thousand-oaks">City Of Thousand Oaks</option>
+                    
+                        <option value="../../city-of-tustin">City Of Tustin</option>
+                    
+                        <option value="../../city-of-upland">City Of Upland</option>
+                    
+                        <option value="../../city-of-vernon">City Of Vernon</option>
+                    
+                        <option value="../../city-of-westminster">City Of Westminster</option>
+                    
+                        <option value="../../city-of-whittier">City Of Whittier</option>
+                    
+                        <option value="../../crescenta-valley-water-district">Crescenta Valley Water District</option>
+                    
+                        <option value="../../cucamonga-valley-water-district">Cucamonga Valley Water District</option>
+                    
+                        <option value="../../east-orange-county-water-district">East Orange County Water District</option>
+                    
+                        <option value="../../east-valley-water-district">East Valley Water District</option>
+                    
+                        <option value="../../eastern-municipal-water-district">Eastern Municipal Water District</option>
+                    
+                        <option value="../../el-toro-water-district">El Toro Water District</option>
+                    
+                        <option value="../../elsinore-valley-municipal-water-district">Elsinore Valley Municipal Water District</option>
+                    
+                        <option value="../../fallbrook-public-utility-district">Fallbrook Public Utility District</option>
+                    
+                        <option value="../../golden-state-water-company-artesia">Golden State Water Company Artesia</option>
+                    
+                        <option value="../../golden-state-water-company-bell-bell-gardens">Golden State Water Company Bell-Bell Gardens</option>
+                    
+                        <option value="../../golden-state-water-company-claremont">Golden State Water Company Claremont</option>
+                    
+                        <option value="../../golden-state-water-company-cowan-heights">Golden State Water Company Cowan Heights</option>
+                    
+                        <option value="../../golden-state-water-company-culver-city">Golden State Water Company Culver City</option>
+                    
+                        <option value="../../golden-state-water-company-florence-graham">Golden State Water Company Florence Graham</option>
+                    
+                        <option value="../../golden-state-water-company-norwalk">Golden State Water Company Norwalk</option>
+                    
+                        <option value="../../golden-state-water-company-ojai">Golden State Water Company Ojai</option>
+                    
+                        <option value="../../golden-state-water-company-placentia">Golden State Water Company Placentia</option>
+                    
+                        <option value="../../golden-state-water-company-s-arcadia">Golden State Water Company S Arcadia</option>
+                    
+                        <option value="../../golden-state-water-company-s-san-gabriel">Golden State Water Company S San Gabriel</option>
+                    
+                        <option value="../../golden-state-water-company-san-dimas">Golden State Water Company San Dimas</option>
+                    
+                        <option value="../../golden-state-water-company-simi-valley">Golden State Water Company Simi Valley</option>
+                    
+                        <option value="../../golden-state-water-company-southwest">Golden State Water Company Southwest</option>
+                    
+                        <option value="../../golden-state-water-company-west-orange">Golden State Water Company West Orange</option>
+                    
+                        <option value="../../helix-water-district">Helix Water District</option>
+                    
+                        <option value="../../irvine-ranch-water-district">Irvine Ranch Water District</option>
+                    
+                        <option value="../../jurupa-community-service-district">Jurupa Community Service District</option>
+                    
+                        <option value="../../laguna-beach-county-water-district">Laguna Beach County Water District</option>
+                    
+                        <option value="../../lake-hemet-municipal-water-district">Lake Hemet Municipal Water District</option>
+                    
+                        <option value="../../lakeside-water-district">Lakeside Water District</option>
+                    
+                        <option value="../../las-virgenes-municipal-water-district">Las Virgenes Municipal Water District</option>
+                    
+                        <option value="../../lee-lake-water-district">Lee Lake Water District</option>
+                    
+                        <option value="../../lincoln-avenue-water-company">Lincoln Avenue Water Company</option>
+                    
+                        <option value="../../los-angeles-county-public-works-waterworks-district-29">Los Angeles County Public Works Waterworks District 29</option>
+                    
+                        <option value="../../los-angeles-department-of-water-and-power">Los Angeles Department Of Water And Power</option>
+                    
+                        <option value="../../mesa-water-district">Mesa Water District</option>
+                    
+                        <option value="../../monte-vista-water-district">Monte Vista Water District</option>
+                    
+                        <option value="../../montebello-land-and-water-company">Montebello Land And Water Company</option>
+                    
+                        <option value="../../moulton-niguel-water-district">Moulton Niguel Water District</option>
+                    
+                        <option value="../../newhall-county-water-district">Newhall County Water District</option>
+                    
+                        <option value="../../olivenhain-municipal-water-district">Olivenhain Municipal Water District</option>
+                    
+                        <option value="../../orchard-dale-water-district">Orchard Dale Water District</option>
+                    
+                        <option value="../../otay-water-district">Otay Water District</option>
+                    
+                        <option value="../../padre-dam-municipal-water-district">Padre Dam Municipal Water District</option>
+                    
+                        <option value="../../park-water-company">Park Water Company</option>
+                    
+                        <option value="../../pico-water-district">Pico Water District</option>
+                    
+                        <option value="../../rainbow-municipal-water-district">Rainbow Municipal Water District</option>
+                    
+                        <option value="../../ramona-municipal-water-district">Ramona Municipal Water District</option>
+                    
+                        <option value="../../rancho-california-water-district">Rancho California Water District</option>
+                    
+                        <option value="../../rincon-del-diablo-municipal-water-district">Rincon Del Diablo Municipal Water District</option>
+                    
+                        <option value="../../riverside-highland-water-company">Riverside Highland Water Company</option>
+                    
+                        <option value="../../rowland-water-district">Rowland Water District</option>
+                    
+                        <option value="../../rubidoux-community-service-district">Rubidoux Community Service District</option>
+                    
+                        <option value="../../rubio-canyon-land-and-water-association">Rubio Canyon Land And Water Association</option>
+                    
+                        <option value="../../san-bernardino-county-service-area-70">San Bernardino County Service Area 70</option>
+                    
+                        <option value="../../san-dieguito-water-district">San Dieguito Water District</option>
+                    
+                        <option value="../../san-gabriel-county-water-district">San Gabriel County Water District</option>
+                    
+                        <option value="../../san-gabriel-valley-fontana-water-company">San Gabriel Valley Fontana Water Company</option>
+                    
+                        <option value="../../san-gabriel-valley-water-company">San Gabriel Valley Water Company</option>
+                    
+                        <option value="../../santa-fe-irrigation-district">Santa Fe Irrigation District</option>
+                    
+                        <option value="../../santa-margarita-water-district">Santa Margarita Water District</option>
+                    
+                        <option value="../../serrano-water-district">Serrano Water District</option>
+                    
+                        <option value="../../south-coast-water-district">South Coast Water District</option>
+                    
+                        <option value="../../suburban-water-systems-san-jose-hills">Suburban Water Systems San Jose Hills</option>
+                    
+                        <option value="../../suburban-water-systems-whittier-la-mirada">Suburban Water Systems Whittier La Mirada</option>
+                    
+                        <option value="../../sunny-slope-water-company">Sunny Slope Water Company</option>
+                    
+                        <option value="../../sweetwater-authority">Sweetwater Authority</option>
+                    
+                        <option value="../../trabuco-canyon-water-district">Trabuco Canyon Water District</option>
+                    
+                        <option value="../../triunfo-sanitation-district-oak-park-water-service">Triunfo Sanitation District Oak Park Water Service</option>
+                    
+                        <option value="../../valencia-water-company">Valencia Water Company</option>
+                    
+                        <option value="../../vallecitos-water-district">Vallecitos Water District</option>
+                    
+                        <option value="../../valley-center-municipal-water-district">Valley Center Municipal Water District</option>
+                    
+                        <option value="../../valley-water-company">Valley Water Company</option>
+                    
+                        <option value="../../ventura-county-waterworks-district-no-1">Ventura County Waterworks District No 1</option>
+                    
+                        <option value="../../ventura-county-waterworks-district-no-8">Ventura County Waterworks District No 8</option>
+                    
+                        <option value="../../vista-irrigation-district">Vista Irrigation District</option>
+                    
+                        <option value="../../walnut-valley-water-district">Walnut Valley Water District</option>
+                    
+                        <option value="../../west-valley-water-district">West Valley Water District</option>
+                    
+                        <option value="../../western-municipal-water-district-of-riverside">Western Municipal Water District Of Riverside</option>
+                    
+                        <option value="../../yorba-linda-water-district">Yorba Linda Water District</option>
+                    
+                        <option value="../../yucaipa-valley-water-district">Yucaipa Valley Water District</option>
+                    
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p class="lead"><strong>About the data</strong>: These charts show urban water suppliers in Southern California that saw daily water use per resident rise and fall by the most and least. They cover the most recent reporting period &mdash; February 2015 &mdash; and are compared to the baseline measure from February 2013. Since the gallons of water used per person per day measurement does not take into account rainfall, temperature, humidity and population density, the <a href="http://www.waterboards.ca.gov/waterrights/">State Water Resources Control Board</a> discourages comparisons between water suppliers.</p>
+    </div>
+
+    
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div id="south-coast" class="map" style="width: 100%; height: 215px"></div>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                <h3>South Coast</h3>
+                <p>Residential customers <span class='increase-accent'>increased</span> daily water use in Feb. 2015 to an average of 80.55 gallons in the South Coast hydrologic region compared to Feb. 2013. Based on data from 170 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate.</p>
+
+                 <!--
+                     based on census reporter distribution "circles on a line" charts. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+
+                     formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+
+                     styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                -->
+
+                <section class="coal-chart-container">
+                    <ul class="coal-chart">
+                        
+                            <li id="beaumont-cherry-valley-water-district" class="chart-point" style="left: 22.63%;">
+                                <span class="point" data-index="beaumont-cherry-valley-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../beaumont-cherry-valley-water-district">Beaumont-Cherry Valley Water District</a></span><br />
+                                        <span class="value text-center">108.76</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="bellflower-somerset-mutual-water-company" class="chart-point" style="left: 12.27%;">
+                                <span class="point" data-index="bellflower-somerset-mutual-water-company">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../bellflower-somerset-mutual-water-company">Bellflower-Somerset Mutual Water Company</a></span><br />
+                                        <span class="value text-center">77.20</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="big-bear-city-community-services-district" class="chart-point" style="left: 6.91%;">
+                                <span class="point" data-index="big-bear-city-community-services-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../big-bear-city-community-services-district">Big Bear City Community Services District</a></span><br />
+                                        <span class="value text-center">60.86</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-water-service-company-dominguez" class="chart-point" style="left: 9.68%;">
+                                <span class="point" data-index="california-water-service-company-dominguez">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../california-water-service-company-dominguez">California Water Service Company Dominguez</a></span><br />
+                                        <span class="value text-center">69.29</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-water-service-company-east-los-angeles" class="chart-point" style="left: 1.46%;">
+                                <span class="point" data-index="california-water-service-company-east-los-angeles">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../california-water-service-company-east-los-angeles">California Water Service Company East Los Angeles</a></span><br />
+                                        <span class="value text-center">44.23</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-water-service-company-hermosa-redondo" class="chart-point" style="left: 13.14%;">
+                                <span class="point" data-index="california-water-service-company-hermosa-redondo">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../california-water-service-company-hermosa-redondo">California Water Service Company Hermosa Redondo</a></span><br />
+                                        <span class="value text-center">79.83</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-water-service-company-palos-verdes" class="chart-point" style="left: 44.61%;">
+                                <span class="point" data-index="california-water-service-company-palos-verdes">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../california-water-service-company-palos-verdes">California Water Service Company Palos Verdes</a></span><br />
+                                        <span class="value text-center">175.78</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-water-service-company-westlake" class="chart-point" style="left: 48.36%;">
+                                <span class="point" data-index="california-water-service-company-westlake">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../california-water-service-company-westlake">California Water Service Company Westlake</a></span><br />
+                                        <span class="value text-center">187.21</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-american-water-company-los-angeles-district" class="chart-point" style="left: 21.5%;">
+                                <span class="point" data-index="california-american-water-company-los-angeles-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../california-american-water-company-los-angeles-district">California-American Water Company Los Angeles District</a></span><br />
+                                        <span class="value text-center">105.34</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-american-water-company-san-diego-district" class="chart-point" style="left: 6.09%;">
+                                <span class="point" data-index="california-american-water-company-san-diego-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../california-american-water-company-san-diego-district">California-American Water Company San Diego District</a></span><br />
+                                        <span class="value text-center">58.34</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-american-water-ventura-district" class="chart-point" style="left: 25.87%;">
+                                <span class="point" data-index="california-american-water-ventura-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../california-american-water-ventura-district">California-American Water Ventura District</a></span><br />
+                                        <span class="value text-center">118.66</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="camrosa-water-district" class="chart-point" style="left: 33.63%;">
+                                <span class="point" data-index="camrosa-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../camrosa-water-district">Camrosa Water District</a></span><br />
+                                        <span class="value text-center">142.32</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="carlsbad-municipal-water-district" class="chart-point" style="left: 29.29%;">
+                                <span class="point" data-index="carlsbad-municipal-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../carlsbad-municipal-water-district">Carlsbad Municipal Water District</a></span><br />
+                                        <span class="value text-center">129.07</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="casitas-municipal-water-district" class="chart-point" style="left: 7.23%;">
+                                <span class="point" data-index="casitas-municipal-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../casitas-municipal-water-district">Casitas Municipal Water District</a></span><br />
+                                        <span class="value text-center">61.81</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="castaic-lake-water-agency-santa-clarita-water-division" class="chart-point" style="left: 22.63%;">
+                                <span class="point" data-index="castaic-lake-water-agency-santa-clarita-water-division">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../castaic-lake-water-agency-santa-clarita-water-division">Castaic Lake Water Agency Santa Clarita Water Division</a></span><br />
+                                        <span class="value text-center">108.78</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-anaheim" class="chart-point" style="left: 11.95%;">
+                                <span class="point" data-index="city-of-anaheim">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-anaheim">City Of Anaheim</a></span><br />
+                                        <span class="value text-center">76.21</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-arcadia" class="chart-point" style="left: 36.53%;">
+                                <span class="point" data-index="city-of-arcadia">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-arcadia">City Of Arcadia</a></span><br />
+                                        <span class="value text-center">151.15</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-azusa" class="chart-point" style="left: 9.82%;">
+                                <span class="point" data-index="city-of-azusa">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-azusa">City Of Azusa</a></span><br />
+                                        <span class="value text-center">69.72</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-beverly-hills" class="chart-point" style="left: 40.06%;">
+                                <span class="point" data-index="city-of-beverly-hills">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-beverly-hills">City Of Beverly Hills</a></span><br />
+                                        <span class="value text-center">161.90</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-big-bear-lake-dept-of-water-power" class="chart-point" style="left: 0.56%;">
+                                <span class="point" data-index="city-of-big-bear-lake-dept-of-water-power">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-big-bear-lake-dept-of-water-power">City Of Big Bear Lake Dept Of Water Power</a></span><br />
+                                        <span class="value text-center">41.49</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-brea" class="chart-point" style="left: 20.5%;">
+                                <span class="point" data-index="city-of-brea">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-brea">City Of Brea</a></span><br />
+                                        <span class="value text-center">102.27</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-buena-park" class="chart-point" style="left: 12.32%;">
+                                <span class="point" data-index="city-of-buena-park">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-buena-park">City Of Buena Park</a></span><br />
+                                        <span class="value text-center">77.33</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-burbank" class="chart-point" style="left: 14.42%;">
+                                <span class="point" data-index="city-of-burbank">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-burbank">City Of Burbank</a></span><br />
+                                        <span class="value text-center">83.74</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-camarillo" class="chart-point" style="left: 12.58%;">
+                                <span class="point" data-index="city-of-camarillo">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-camarillo">City Of Camarillo</a></span><br />
+                                        <span class="value text-center">78.13</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-cerritos" class="chart-point" style="left: 21.18%;">
+                                <span class="point" data-index="city-of-cerritos">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-cerritos">City Of Cerritos</a></span><br />
+                                        <span class="value text-center">104.35</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-chino-hills" class="chart-point" style="left: 16.05%;">
+                                <span class="point" data-index="city-of-chino-hills">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-chino-hills">City Of Chino Hills</a></span><br />
+                                        <span class="value text-center">88.70</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-colton" class="chart-point" style="left: 12.74%;">
+                                <span class="point" data-index="city-of-colton">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-colton">City Of Colton</a></span><br />
+                                        <span class="value text-center">78.61</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-compton" class="chart-point" style="left: 4.42%;">
+                                <span class="point" data-index="city-of-compton">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-compton">City Of Compton</a></span><br />
+                                        <span class="value text-center">53.27</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-corona" class="chart-point" style="left: 13.06%;">
+                                <span class="point" data-index="city-of-corona">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-corona">City Of Corona</a></span><br />
+                                        <span class="value text-center">79.59</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-covina" class="chart-point" style="left: 18.11%;">
+                                <span class="point" data-index="city-of-covina">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-covina">City Of Covina</a></span><br />
+                                        <span class="value text-center">95.00</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-downey" class="chart-point" style="left: 12.5%;">
+                                <span class="point" data-index="city-of-downey">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-downey">City Of Downey</a></span><br />
+                                        <span class="value text-center">77.88</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-el-segundo" class="chart-point" style="left: 12.78%;">
+                                <span class="point" data-index="city-of-el-segundo">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-el-segundo">City Of El Segundo</a></span><br />
+                                        <span class="value text-center">78.73</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-escondido" class="chart-point" style="left: 9.84%;">
+                                <span class="point" data-index="city-of-escondido">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-escondido">City Of Escondido</a></span><br />
+                                        <span class="value text-center">69.77</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-fountain-valley" class="chart-point" style="left: 1.89%;">
+                                <span class="point" data-index="city-of-fountain-valley">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-fountain-valley">City Of Fountain Valley</a></span><br />
+                                        <span class="value text-center">45.55</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-fullerton" class="chart-point" style="left: 21.88%;">
+                                <span class="point" data-index="city-of-fullerton">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-fullerton">City Of Fullerton</a></span><br />
+                                        <span class="value text-center">106.49</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-garden-grove" class="chart-point" style="left: 19.07%;">
+                                <span class="point" data-index="city-of-garden-grove">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-garden-grove">City Of Garden Grove</a></span><br />
+                                        <span class="value text-center">97.93</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-glendale" class="chart-point" style="left: 14.59%;">
+                                <span class="point" data-index="city-of-glendale">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-glendale">City Of Glendale</a></span><br />
+                                        <span class="value text-center">84.27</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-glendora" class="chart-point" style="left: 27.27%;">
+                                <span class="point" data-index="city-of-glendora">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-glendora">City Of Glendora</a></span><br />
+                                        <span class="value text-center">122.93</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-hawthorne" class="chart-point" style="left: 9.11%;">
+                                <span class="point" data-index="city-of-hawthorne">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-hawthorne">City Of Hawthorne</a></span><br />
+                                        <span class="value text-center">67.57</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-hemet" class="chart-point" style="left: 23.59%;">
+                                <span class="point" data-index="city-of-hemet">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-hemet">City Of Hemet</a></span><br />
+                                        <span class="value text-center">111.69</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-huntington-beach" class="chart-point" style="left: 11.43%;">
+                                <span class="point" data-index="city-of-huntington-beach">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-huntington-beach">City Of Huntington Beach</a></span><br />
+                                        <span class="value text-center">74.62</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-huntington-park" class="chart-point" style="left: 6.15%;">
+                                <span class="point" data-index="city-of-huntington-park">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-huntington-park">City Of Huntington Park</a></span><br />
+                                        <span class="value text-center">58.53</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-inglewood" class="chart-point" style="left: 6.97%;">
+                                <span class="point" data-index="city-of-inglewood">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-inglewood">City Of Inglewood</a></span><br />
+                                        <span class="value text-center">61.04</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-la-habra" class="chart-point" style="left: 9.93%;">
+                                <span class="point" data-index="city-of-la-habra">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-la-habra">City Of La Habra</a></span><br />
+                                        <span class="value text-center">70.06</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-la-palma" class="chart-point" style="left: 4.43%;">
+                                <span class="point" data-index="city-of-la-palma">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-la-palma">City Of La Palma</a></span><br />
+                                        <span class="value text-center">53.30</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-la-verne" class="chart-point" style="left: 30.59%;">
+                                <span class="point" data-index="city-of-la-verne">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-la-verne">City Of La Verne</a></span><br />
+                                        <span class="value text-center">133.03</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-lakewood" class="chart-point" style="left: 12.69%;">
+                                <span class="point" data-index="city-of-lakewood">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-lakewood">City Of Lakewood</a></span><br />
+                                        <span class="value text-center">78.48</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-loma-linda" class="chart-point" style="left: 26.08%;">
+                                <span class="point" data-index="city-of-loma-linda">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-loma-linda">City Of Loma Linda</a></span><br />
+                                        <span class="value text-center">119.30</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-lomita" class="chart-point" style="left: 11.77%;">
+                                <span class="point" data-index="city-of-lomita">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-lomita">City Of Lomita</a></span><br />
+                                        <span class="value text-center">75.68</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-long-beach" class="chart-point" style="left: 10.01%;">
+                                <span class="point" data-index="city-of-long-beach">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-long-beach">City Of Long Beach</a></span><br />
+                                        <span class="value text-center">70.30</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-lynwood" class="chart-point" style="left: 9.93%;">
+                                <span class="point" data-index="city-of-lynwood">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-lynwood">City Of Lynwood</a></span><br />
+                                        <span class="value text-center">70.06</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-manhattan-beach" class="chart-point" style="left: 15.25%;">
+                                <span class="point" data-index="city-of-manhattan-beach">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-manhattan-beach">City Of Manhattan Beach</a></span><br />
+                                        <span class="value text-center">86.28</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-monterey-park" class="chart-point" style="left: 14.27%;">
+                                <span class="point" data-index="city-of-monterey-park">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-monterey-park">City Of Monterey Park</a></span><br />
+                                        <span class="value text-center">83.27</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-newport-beach" class="chart-point" style="left: 20.26%;">
+                                <span class="point" data-index="city-of-newport-beach">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-newport-beach">City Of Newport Beach</a></span><br />
+                                        <span class="value text-center">101.54</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-norwalk" class="chart-point" style="left: 14.51%;">
+                                <span class="point" data-index="city-of-norwalk">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-norwalk">City Of Norwalk</a></span><br />
+                                        <span class="value text-center">84.01</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-oceanside" class="chart-point" style="left: 11.86%;">
+                                <span class="point" data-index="city-of-oceanside">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-oceanside">City Of Oceanside</a></span><br />
+                                        <span class="value text-center">75.93</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-ontario" class="chart-point" style="left: 12.89%;">
+                                <span class="point" data-index="city-of-ontario">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-ontario">City Of Ontario</a></span><br />
+                                        <span class="value text-center">79.09</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-orange" class="chart-point" style="left: 22.64%;">
+                                <span class="point" data-index="city-of-orange">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-orange">City Of Orange</a></span><br />
+                                        <span class="value text-center">108.80</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-oxnard" class="chart-point" style="left: 7.67%;">
+                                <span class="point" data-index="city-of-oxnard">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-oxnard">City Of Oxnard</a></span><br />
+                                        <span class="value text-center">63.17</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-paramount" class="chart-point" style="left: 5.79%;">
+                                <span class="point" data-index="city-of-paramount">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-paramount">City Of Paramount</a></span><br />
+                                        <span class="value text-center">57.44</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-pasadena" class="chart-point" style="left: 15.09%;">
+                                <span class="point" data-index="city-of-pasadena">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-pasadena">City Of Pasadena</a></span><br />
+                                        <span class="value text-center">85.80</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-perris" class="chart-point" style="left: 11.38%;">
+                                <span class="point" data-index="city-of-perris">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-perris">City Of Perris</a></span><br />
+                                        <span class="value text-center">74.46</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-pico-rivera" class="chart-point" style="left: 15.14%;">
+                                <span class="point" data-index="city-of-pico-rivera">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-pico-rivera">City Of Pico Rivera</a></span><br />
+                                        <span class="value text-center">85.93</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-pomona" class="chart-point" style="left: 9.8%;">
+                                <span class="point" data-index="city-of-pomona">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-pomona">City Of Pomona</a></span><br />
+                                        <span class="value text-center">69.65</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-poway" class="chart-point" style="left: 22.86%;">
+                                <span class="point" data-index="city-of-poway">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-poway">City Of Poway</a></span><br />
+                                        <span class="value text-center">109.49</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-redlands" class="chart-point" style="left: 44.21%;">
+                                <span class="point" data-index="city-of-redlands">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-redlands">City Of Redlands</a></span><br />
+                                        <span class="value text-center">174.56</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-rialto" class="chart-point" style="left: 33.7%;">
+                                <span class="point" data-index="city-of-rialto">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-rialto">City Of Rialto</a></span><br />
+                                        <span class="value text-center">142.52</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-riverside" class="chart-point" style="left: 11.31%;">
+                                <span class="point" data-index="city-of-riverside">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-riverside">City Of Riverside</a></span><br />
+                                        <span class="value text-center">74.28</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-san-bernardino" class="chart-point" style="left: 19.36%;">
+                                <span class="point" data-index="city-of-san-bernardino">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-san-bernardino">City Of San Bernardino</a></span><br />
+                                        <span class="value text-center">98.80</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-san-buenaventura" class="chart-point" style="left: 9.71%;">
+                                <span class="point" data-index="city-of-san-buenaventura">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-san-buenaventura">City Of San Buenaventura</a></span><br />
+                                        <span class="value text-center">69.40</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-san-clemente" class="chart-point" style="left: 14.05%;">
+                                <span class="point" data-index="city-of-san-clemente">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-san-clemente">City Of San Clemente</a></span><br />
+                                        <span class="value text-center">82.62</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-san-diego" class="chart-point" style="left: 6.29%;">
+                                <span class="point" data-index="city-of-san-diego">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-san-diego">City Of San Diego</a></span><br />
+                                        <span class="value text-center">58.97</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-san-fernando" class="chart-point" style="left: 13.84%;">
+                                <span class="point" data-index="city-of-san-fernando">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-san-fernando">City Of San Fernando</a></span><br />
+                                        <span class="value text-center">81.98</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-san-jacinto" class="chart-point" style="left: 23.83%;">
+                                <span class="point" data-index="city-of-san-jacinto">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-san-jacinto">City Of San Jacinto</a></span><br />
+                                        <span class="value text-center">112.42</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-san-juan-capistrano" class="chart-point" style="left: 17.9%;">
+                                <span class="point" data-index="city-of-san-juan-capistrano">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-san-juan-capistrano">City Of San Juan Capistrano</a></span><br />
+                                        <span class="value text-center">94.34</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-sanger" class="chart-point" style="left: 12.82%;">
+                                <span class="point" data-index="city-of-sanger">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-sanger">City Of Sanger</a></span><br />
+                                        <span class="value text-center">78.87</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-santa-ana" class="chart-point" style="left: 6.49%;">
+                                <span class="point" data-index="city-of-santa-ana">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-santa-ana">City Of Santa Ana</a></span><br />
+                                        <span class="value text-center">59.57</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-santa-fe-springs" class="chart-point" style="left: 9.03%;">
+                                <span class="point" data-index="city-of-santa-fe-springs">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-santa-fe-springs">City Of Santa Fe Springs</a></span><br />
+                                        <span class="value text-center">67.31</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-santa-monica" class="chart-point" style="left: 12.89%;">
+                                <span class="point" data-index="city-of-santa-monica">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-santa-monica">City Of Santa Monica</a></span><br />
+                                        <span class="value text-center">79.09</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-santa-paula" class="chart-point" style="left: 13.52%;">
+                                <span class="point" data-index="city-of-santa-paula">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-santa-paula">City Of Santa Paula</a></span><br />
+                                        <span class="value text-center">81.00</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-seal-beach" class="chart-point" style="left: 2.38%;">
+                                <span class="point" data-index="city-of-seal-beach">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-seal-beach">City Of Seal Beach</a></span><br />
+                                        <span class="value text-center">47.04</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-sierra-madre" class="chart-point" style="left: 33.34%;">
+                                <span class="point" data-index="city-of-sierra-madre">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-sierra-madre">City Of Sierra Madre</a></span><br />
+                                        <span class="value text-center">141.42</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-south-gate" class="chart-point" style="left: 4.74%;">
+                                <span class="point" data-index="city-of-south-gate">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-south-gate">City Of South Gate</a></span><br />
+                                        <span class="value text-center">54.23</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-south-pasadena" class="chart-point" style="left: 16.0%;">
+                                <span class="point" data-index="city-of-south-pasadena">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-south-pasadena">City Of South Pasadena</a></span><br />
+                                        <span class="value text-center">88.57</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-thousand-oaks" class="chart-point" style="left: 20.43%;">
+                                <span class="point" data-index="city-of-thousand-oaks">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-thousand-oaks">City Of Thousand Oaks</a></span><br />
+                                        <span class="value text-center">102.06</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-tustin" class="chart-point" style="left: 22.85%;">
+                                <span class="point" data-index="city-of-tustin">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-tustin">City Of Tustin</a></span><br />
+                                        <span class="value text-center">109.46</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-upland" class="chart-point" style="left: 29.7%;">
+                                <span class="point" data-index="city-of-upland">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-upland">City Of Upland</a></span><br />
+                                        <span class="value text-center">130.32</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-vernon" class="chart-point" style="left: 0.0%;">
+                                <span class="point" data-index="city-of-vernon">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-vernon">City Of Vernon</a></span><br />
+                                        <span class="value text-center">39.78</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-westminster" class="chart-point" style="left: 14.25%;">
+                                <span class="point" data-index="city-of-westminster">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-westminster">City Of Westminster</a></span><br />
+                                        <span class="value text-center">83.23</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-whittier" class="chart-point" style="left: 22.94%;">
+                                <span class="point" data-index="city-of-whittier">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-whittier">City Of Whittier</a></span><br />
+                                        <span class="value text-center">109.73</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="crescenta-valley-water-district" class="chart-point" style="left: 8.52%;">
+                                <span class="point" data-index="crescenta-valley-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../crescenta-valley-water-district">Crescenta Valley Water District</a></span><br />
+                                        <span class="value text-center">65.75</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="cucamonga-valley-water-district" class="chart-point" style="left: 21.92%;">
+                                <span class="point" data-index="cucamonga-valley-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../cucamonga-valley-water-district">Cucamonga Valley Water District</a></span><br />
+                                        <span class="value text-center">106.62</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="east-orange-county-water-district" class="chart-point" style="left: 48.13%;">
+                                <span class="point" data-index="east-orange-county-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../east-orange-county-water-district">East Orange County Water District</a></span><br />
+                                        <span class="value text-center">186.51</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="east-valley-water-district" class="chart-point" style="left: 19.92%;">
+                                <span class="point" data-index="east-valley-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../east-valley-water-district">East Valley Water District</a></span><br />
+                                        <span class="value text-center">100.51</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="eastern-municipal-water-district" class="chart-point" style="left: 11.33%;">
+                                <span class="point" data-index="eastern-municipal-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../eastern-municipal-water-district">Eastern Municipal Water District</a></span><br />
+                                        <span class="value text-center">74.32</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="el-toro-water-district" class="chart-point" style="left: 16.38%;">
+                                <span class="point" data-index="el-toro-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../el-toro-water-district">El Toro Water District</a></span><br />
+                                        <span class="value text-center">89.72</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="elsinore-valley-municipal-water-district" class="chart-point" style="left: 19.6%;">
+                                <span class="point" data-index="elsinore-valley-municipal-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../elsinore-valley-municipal-water-district">Elsinore Valley Municipal Water District</a></span><br />
+                                        <span class="value text-center">99.54</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="fallbrook-public-utility-district" class="chart-point" style="left: 30.42%;">
+                                <span class="point" data-index="fallbrook-public-utility-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../fallbrook-public-utility-district">Fallbrook Public Utility District</a></span><br />
+                                        <span class="value text-center">132.52</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-artesia" class="chart-point" style="left: 7.26%;">
+                                <span class="point" data-index="golden-state-water-company-artesia">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-artesia">Golden State Water Company Artesia</a></span><br />
+                                        <span class="value text-center">61.90</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-bell-bell-gardens" class="chart-point" style="left: 1.66%;">
+                                <span class="point" data-index="golden-state-water-company-bell-bell-gardens">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-bell-bell-gardens">Golden State Water Company Bell-Bell Gardens</a></span><br />
+                                        <span class="value text-center">44.84</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-claremont" class="chart-point" style="left: 28.37%;">
+                                <span class="point" data-index="golden-state-water-company-claremont">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-claremont">Golden State Water Company Claremont</a></span><br />
+                                        <span class="value text-center">126.27</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-cowan-heights" class="chart-point" style="left: 98.37%;">
+                                <span class="point" data-index="golden-state-water-company-cowan-heights">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-cowan-heights">Golden State Water Company Cowan Heights</a></span><br />
+                                        <span class="value text-center">339.69</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-culver-city" class="chart-point" style="left: 8.27%;">
+                                <span class="point" data-index="golden-state-water-company-culver-city">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-culver-city">Golden State Water Company Culver City</a></span><br />
+                                        <span class="value text-center">64.99</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-florence-graham" class="chart-point" style="left: 4.0%;">
+                                <span class="point" data-index="golden-state-water-company-florence-graham">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-florence-graham">Golden State Water Company Florence Graham</a></span><br />
+                                        <span class="value text-center">51.96</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-norwalk" class="chart-point" style="left: 5.95%;">
+                                <span class="point" data-index="golden-state-water-company-norwalk">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-norwalk">Golden State Water Company Norwalk</a></span><br />
+                                        <span class="value text-center">57.91</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-ojai" class="chart-point" style="left: 18.42%;">
+                                <span class="point" data-index="golden-state-water-company-ojai">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-ojai">Golden State Water Company Ojai</a></span><br />
+                                        <span class="value text-center">95.94</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-placentia" class="chart-point" style="left: 12.71%;">
+                                <span class="point" data-index="golden-state-water-company-placentia">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-placentia">Golden State Water Company Placentia</a></span><br />
+                                        <span class="value text-center">78.53</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-s-arcadia" class="chart-point" style="left: 10.24%;">
+                                <span class="point" data-index="golden-state-water-company-s-arcadia">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-s-arcadia">Golden State Water Company S Arcadia</a></span><br />
+                                        <span class="value text-center">70.99</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-s-san-gabriel" class="chart-point" style="left: 5.29%;">
+                                <span class="point" data-index="golden-state-water-company-s-san-gabriel">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-s-san-gabriel">Golden State Water Company S San Gabriel</a></span><br />
+                                        <span class="value text-center">55.92</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-san-dimas" class="chart-point" style="left: 18.09%;">
+                                <span class="point" data-index="golden-state-water-company-san-dimas">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-san-dimas">Golden State Water Company San Dimas</a></span><br />
+                                        <span class="value text-center">94.95</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-simi-valley" class="chart-point" style="left: 15.36%;">
+                                <span class="point" data-index="golden-state-water-company-simi-valley">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-simi-valley">Golden State Water Company Simi Valley</a></span><br />
+                                        <span class="value text-center">86.62</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-southwest" class="chart-point" style="left: 6.22%;">
+                                <span class="point" data-index="golden-state-water-company-southwest">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-southwest">Golden State Water Company Southwest</a></span><br />
+                                        <span class="value text-center">58.73</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="golden-state-water-company-west-orange" class="chart-point" style="left: 12.27%;">
+                                <span class="point" data-index="golden-state-water-company-west-orange">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../golden-state-water-company-west-orange">Golden State Water Company West Orange</a></span><br />
+                                        <span class="value text-center">77.20</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="helix-water-district" class="chart-point" style="left: 10.6%;">
+                                <span class="point" data-index="helix-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../helix-water-district">Helix Water District</a></span><br />
+                                        <span class="value text-center">72.10</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="irvine-ranch-water-district" class="chart-point" style="left: 8.49%;">
+                                <span class="point" data-index="irvine-ranch-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../irvine-ranch-water-district">Irvine Ranch Water District</a></span><br />
+                                        <span class="value text-center">65.66</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="jurupa-community-service-district" class="chart-point" style="left: 16.14%;">
+                                <span class="point" data-index="jurupa-community-service-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../jurupa-community-service-district">Jurupa Community Service District</a></span><br />
+                                        <span class="value text-center">88.99</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="laguna-beach-county-water-district" class="chart-point" style="left: 15.99%;">
+                                <span class="point" data-index="laguna-beach-county-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../laguna-beach-county-water-district">Laguna Beach County Water District</a></span><br />
+                                        <span class="value text-center">88.54</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="lake-hemet-municipal-water-district" class="chart-point" style="left: 12.14%;">
+                                <span class="point" data-index="lake-hemet-municipal-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../lake-hemet-municipal-water-district">Lake Hemet Municipal Water District</a></span><br />
+                                        <span class="value text-center">76.80</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="lakeside-water-district" class="chart-point" style="left: 11.65%;">
+                                <span class="point" data-index="lakeside-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../lakeside-water-district">Lakeside Water District</a></span><br />
+                                        <span class="value text-center">75.29</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="las-virgenes-municipal-water-district" class="chart-point" style="left: 43.73%;">
+                                <span class="point" data-index="las-virgenes-municipal-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../las-virgenes-municipal-water-district">Las Virgenes Municipal Water District</a></span><br />
+                                        <span class="value text-center">173.12</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="lee-lake-water-district" class="chart-point" style="left: 28.11%;">
+                                <span class="point" data-index="lee-lake-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../lee-lake-water-district">Lee Lake Water District</a></span><br />
+                                        <span class="value text-center">125.50</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="lincoln-avenue-water-company" class="chart-point" style="left: 11.47%;">
+                                <span class="point" data-index="lincoln-avenue-water-company">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../lincoln-avenue-water-company">Lincoln Avenue Water Company</a></span><br />
+                                        <span class="value text-center">74.76</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="los-angeles-county-public-works-waterworks-district-29" class="chart-point" style="left: 45.32%;">
+                                <span class="point" data-index="los-angeles-county-public-works-waterworks-district-29">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../los-angeles-county-public-works-waterworks-district-29">Los Angeles County Public Works Waterworks District 29</a></span><br />
+                                        <span class="value text-center">177.95</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="los-angeles-department-of-water-and-power" class="chart-point" style="left: 9.74%;">
+                                <span class="point" data-index="los-angeles-department-of-water-and-power">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../los-angeles-department-of-water-and-power">Los Angeles Department Of Water And Power</a></span><br />
+                                        <span class="value text-center">69.46</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="mesa-water-district" class="chart-point" style="left: 12.5%;">
+                                <span class="point" data-index="mesa-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../mesa-water-district">Mesa Water District</a></span><br />
+                                        <span class="value text-center">77.89</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="monte-vista-water-district" class="chart-point" style="left: 15.23%;">
+                                <span class="point" data-index="monte-vista-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../monte-vista-water-district">Monte Vista Water District</a></span><br />
+                                        <span class="value text-center">86.22</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="montebello-land-and-water-company" class="chart-point" style="left: 7.8%;">
+                                <span class="point" data-index="montebello-land-and-water-company">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../montebello-land-and-water-company">Montebello Land And Water Company</a></span><br />
+                                        <span class="value text-center">63.57</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="moulton-niguel-water-district" class="chart-point" style="left: 19.0%;">
+                                <span class="point" data-index="moulton-niguel-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../moulton-niguel-water-district">Moulton Niguel Water District</a></span><br />
+                                        <span class="value text-center">97.70</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="newhall-county-water-district" class="chart-point" style="left: 17.91%;">
+                                <span class="point" data-index="newhall-county-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../newhall-county-water-district">Newhall County Water District</a></span><br />
+                                        <span class="value text-center">94.37</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="olivenhain-municipal-water-district" class="chart-point" style="left: 29.64%;">
+                                <span class="point" data-index="olivenhain-municipal-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../olivenhain-municipal-water-district">Olivenhain Municipal Water District</a></span><br />
+                                        <span class="value text-center">130.16</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="orchard-dale-water-district" class="chart-point" style="left: 11.12%;">
+                                <span class="point" data-index="orchard-dale-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../orchard-dale-water-district">Orchard Dale Water District</a></span><br />
+                                        <span class="value text-center">73.68</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="otay-water-district" class="chart-point" style="left: 7.2%;">
+                                <span class="point" data-index="otay-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../otay-water-district">Otay Water District</a></span><br />
+                                        <span class="value text-center">61.73</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="padre-dam-municipal-water-district" class="chart-point" style="left: 14.01%;">
+                                <span class="point" data-index="padre-dam-municipal-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../padre-dam-municipal-water-district">Padre Dam Municipal Water District</a></span><br />
+                                        <span class="value text-center">82.51</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="park-water-company" class="chart-point" style="left: 1.91%;">
+                                <span class="point" data-index="park-water-company">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../park-water-company">Park Water Company</a></span><br />
+                                        <span class="value text-center">45.59</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="pico-water-district" class="chart-point" style="left: 18.62%;">
+                                <span class="point" data-index="pico-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../pico-water-district">Pico Water District</a></span><br />
+                                        <span class="value text-center">96.54</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="rainbow-municipal-water-district" class="chart-point" style="left: 49.37%;">
+                                <span class="point" data-index="rainbow-municipal-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../rainbow-municipal-water-district">Rainbow Municipal Water District</a></span><br />
+                                        <span class="value text-center">190.28</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="ramona-municipal-water-district" class="chart-point" style="left: 20.69%;">
+                                <span class="point" data-index="ramona-municipal-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../ramona-municipal-water-district">Ramona Municipal Water District</a></span><br />
+                                        <span class="value text-center">102.87</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="rancho-california-water-district" class="chart-point" style="left: 46.6%;">
+                                <span class="point" data-index="rancho-california-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../rancho-california-water-district">Rancho California Water District</a></span><br />
+                                        <span class="value text-center">181.84</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="rincon-del-diablo-municipal-water-district" class="chart-point" style="left: 17.99%;">
+                                <span class="point" data-index="rincon-del-diablo-municipal-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../rincon-del-diablo-municipal-water-district">Rincon Del Diablo Municipal Water District</a></span><br />
+                                        <span class="value text-center">94.64</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="riverside-highland-water-company" class="chart-point" style="left: 25.89%;">
+                                <span class="point" data-index="riverside-highland-water-company">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../riverside-highland-water-company">Riverside Highland Water Company</a></span><br />
+                                        <span class="value text-center">118.71</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="rowland-water-district" class="chart-point" style="left: 11.8%;">
+                                <span class="point" data-index="rowland-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../rowland-water-district">Rowland Water District</a></span><br />
+                                        <span class="value text-center">75.75</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="rubidoux-community-service-district" class="chart-point" style="left: 19.96%;">
+                                <span class="point" data-index="rubidoux-community-service-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../rubidoux-community-service-district">Rubidoux Community Service District</a></span><br />
+                                        <span class="value text-center">100.65</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="rubio-canyon-land-and-water-association" class="chart-point" style="left: 22.26%;">
+                                <span class="point" data-index="rubio-canyon-land-and-water-association">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../rubio-canyon-land-and-water-association">Rubio Canyon Land And Water Association</a></span><br />
+                                        <span class="value text-center">107.65</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="san-bernardino-county-service-area-70" class="chart-point" style="left: 18.09%;">
+                                <span class="point" data-index="san-bernardino-county-service-area-70">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../san-bernardino-county-service-area-70">San Bernardino County Service Area 70</a></span><br />
+                                        <span class="value text-center">94.93</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="san-dieguito-water-district" class="chart-point" style="left: 22.77%;">
+                                <span class="point" data-index="san-dieguito-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../san-dieguito-water-district">San Dieguito Water District</a></span><br />
+                                        <span class="value text-center">109.20</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="san-gabriel-county-water-district" class="chart-point" style="left: 12.56%;">
+                                <span class="point" data-index="san-gabriel-county-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../san-gabriel-county-water-district">San Gabriel County Water District</a></span><br />
+                                        <span class="value text-center">78.06</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="san-gabriel-valley-fontana-water-company" class="chart-point" style="left: 17.11%;">
+                                <span class="point" data-index="san-gabriel-valley-fontana-water-company">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../san-gabriel-valley-fontana-water-company">San Gabriel Valley Fontana Water Company</a></span><br />
+                                        <span class="value text-center">91.95</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="san-gabriel-valley-water-company" class="chart-point" style="left: 5.97%;">
+                                <span class="point" data-index="san-gabriel-valley-water-company">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../san-gabriel-valley-water-company">San Gabriel Valley Water Company</a></span><br />
+                                        <span class="value text-center">57.97</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="santa-fe-irrigation-district" class="chart-point" style="left: 100.0%;">
+                                <span class="point" data-index="santa-fe-irrigation-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../santa-fe-irrigation-district">Santa Fe Irrigation District</a></span><br />
+                                        <span class="value text-center">344.66</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="santa-margarita-water-district" class="chart-point" style="left: 14.92%;">
+                                <span class="point" data-index="santa-margarita-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../santa-margarita-water-district">Santa Margarita Water District</a></span><br />
+                                        <span class="value text-center">85.27</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="serrano-water-district" class="chart-point" style="left: 88.75%;">
+                                <span class="point" data-index="serrano-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../serrano-water-district">Serrano Water District</a></span><br />
+                                        <span class="value text-center">310.35</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="south-coast-water-district" class="chart-point" style="left: 13.73%;">
+                                <span class="point" data-index="south-coast-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../south-coast-water-district">South Coast Water District</a></span><br />
+                                        <span class="value text-center">81.64</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="suburban-water-systems-san-jose-hills" class="chart-point" style="left: 12.62%;">
+                                <span class="point" data-index="suburban-water-systems-san-jose-hills">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../suburban-water-systems-san-jose-hills">Suburban Water Systems San Jose Hills</a></span><br />
+                                        <span class="value text-center">78.26</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="suburban-water-systems-whittier-la-mirada" class="chart-point" style="left: 16.66%;">
+                                <span class="point" data-index="suburban-water-systems-whittier-la-mirada">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../suburban-water-systems-whittier-la-mirada">Suburban Water Systems Whittier La Mirada</a></span><br />
+                                        <span class="value text-center">90.58</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="sunny-slope-water-company" class="chart-point" style="left: 12.7%;">
+                                <span class="point" data-index="sunny-slope-water-company">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../sunny-slope-water-company">Sunny Slope Water Company</a></span><br />
+                                        <span class="value text-center">78.51</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="sweetwater-authority" class="chart-point" style="left: 5.72%;">
+                                <span class="point" data-index="sweetwater-authority">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../sweetwater-authority">Sweetwater Authority</a></span><br />
+                                        <span class="value text-center">57.23</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="trabuco-canyon-water-district" class="chart-point" style="left: 24.49%;">
+                                <span class="point" data-index="trabuco-canyon-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../trabuco-canyon-water-district">Trabuco Canyon Water District</a></span><br />
+                                        <span class="value text-center">114.44</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="triunfo-sanitation-district-oak-park-water-service" class="chart-point" style="left: 26.35%;">
+                                <span class="point" data-index="triunfo-sanitation-district-oak-park-water-service">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../triunfo-sanitation-district-oak-park-water-service">Triunfo Sanitation District Oak Park Water Service</a></span><br />
+                                        <span class="value text-center">120.13</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="valencia-water-company" class="chart-point" style="left: 13.79%;">
+                                <span class="point" data-index="valencia-water-company">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../valencia-water-company">Valencia Water Company</a></span><br />
+                                        <span class="value text-center">81.83</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="vallecitos-water-district" class="chart-point" style="left: 16.54%;">
+                                <span class="point" data-index="vallecitos-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../vallecitos-water-district">Vallecitos Water District</a></span><br />
+                                        <span class="value text-center">90.20</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="valley-center-municipal-water-district" class="chart-point" style="left: 31.23%;">
+                                <span class="point" data-index="valley-center-municipal-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../valley-center-municipal-water-district">Valley Center Municipal Water District</a></span><br />
+                                        <span class="value text-center">135.01</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="valley-water-company" class="chart-point" style="left: 62.56%;">
+                                <span class="point" data-index="valley-water-company">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../valley-water-company">Valley Water Company</a></span><br />
+                                        <span class="value text-center">230.50</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="ventura-county-waterworks-district-no-1" class="chart-point" style="left: 27.74%;">
+                                <span class="point" data-index="ventura-county-waterworks-district-no-1">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../ventura-county-waterworks-district-no-1">Ventura County Waterworks District No 1</a></span><br />
+                                        <span class="value text-center">124.36</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="ventura-county-waterworks-district-no-8" class="chart-point" style="left: 17.9%;">
+                                <span class="point" data-index="ventura-county-waterworks-district-no-8">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../ventura-county-waterworks-district-no-8">Ventura County Waterworks District No 8</a></span><br />
+                                        <span class="value text-center">94.35</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="vista-irrigation-district" class="chart-point" style="left: 13.76%;">
+                                <span class="point" data-index="vista-irrigation-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../vista-irrigation-district">Vista Irrigation District</a></span><br />
+                                        <span class="value text-center">81.72</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="walnut-valley-water-district" class="chart-point" style="left: 21.34%;">
+                                <span class="point" data-index="walnut-valley-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../walnut-valley-water-district">Walnut Valley Water District</a></span><br />
+                                        <span class="value text-center">104.83</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="west-valley-water-district" class="chart-point" style="left: 27.94%;">
+                                <span class="point" data-index="west-valley-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../west-valley-water-district">West Valley Water District</a></span><br />
+                                        <span class="value text-center">124.97</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="western-municipal-water-district-of-riverside" class="chart-point" style="left: 27.24%;">
+                                <span class="point" data-index="western-municipal-water-district-of-riverside">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../western-municipal-water-district-of-riverside">Western Municipal Water District Of Riverside</a></span><br />
+                                        <span class="value text-center">122.83</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="yorba-linda-water-district" class="chart-point" style="left: 36.3%;">
+                                <span class="point" data-index="yorba-linda-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../yorba-linda-water-district">Yorba Linda Water District</a></span><br />
+                                        <span class="value text-center">150.47</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="yucaipa-valley-water-district" class="chart-point" style="left: 31.7%;">
+                                <span class="point" data-index="yucaipa-valley-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../yucaipa-valley-water-district">Yucaipa Valley Water District</a></span><br />
+                                        <span class="value text-center">136.43</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                        <li class="tick-mark tick-mark-min" style="left: 0.0%;">
+                            <span class="text-center"><b>Min</b> <br /> 39.78</span>
+                        </li>
+
+                        <li class="tick-mark tick-mark-median" style="left: 14.59%;">
+                            <span class="text-center"><b>Median</b> <br /> 84.27</span>
+                        </li>
+                        <li class="tick-mark tick-mark-average" style="left: 13.37%;">
+                            <span class="text-center"><b>Average</b> <br /> 80.55</span>
+                        </li>
+                        <li class="tick-mark tick-mark-max" style="left: 100.0%;">
+                            <span class="text-center"><b>Max</b> <br /> 344.66</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    
+
+            </div>
+            <div class="row data-comments">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="disqus_thread"></div>
+                </div>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            <div class="row kpcc-footer">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <footer>
+                        <ul class="list-inline">
+                            <li><a href="http://scpr.org/terms/">Terms &amp; Conditions</a></li>
+                            <li><a href="http://scpr.org/privacy/">Privacy</a></li>
+                            <li><a href="http://scpr.org/web_site_feedback">Website Feedback</a></li>
+                            <li><a href="http://scpr.org/">Copyright 2013 &copy; Southern California Public Radio</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <!-- end main container -->
+
+        <!-- begin scripts -->
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery-ui.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/underscore-min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
+        
+    <script src="../../static/data/california.js"></script>
+    <script src="../../static/data/calif_hydrologic_regions.js"></script>
+    <script>
+
+        window.appConfig = {"embed_this": true, "project_root": "http://projects.scpr.org/static/applications/monthly-water-use/", "embed_height": "2080px", "open_about_this": false, "is_embedded": false, "is_mobile": false, "comments": false, "embed_width": "100%"};
+
+        window.appConfig.project_root = window.appConfig.project_root + "region/south-coast";
+
+        $(document).ready(function(){
+
+            /*
+                 from census reporter distribution "circles on a line" charts. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+
+                 formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+
+                 styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+            */
+
+            var comparison = {};
+
+            comparison.coalCharts = $('.coal-chart');
+
+            comparison.coalChartPoints = $('.coal-chart .point');
+
+            comparison.coalCharts.on('mouseover', '.point', function(e) {
+                var chosenIndex = $(this).data('index'),
+                    filteredPoints = comparison.coalChartPoints.filter('[data-index='+chosenIndex+']');
+                filteredPoints.addClass('hovered');
+                filteredPoints.children('span').css('display', 'block');
+            });
+
+            comparison.coalCharts.on('mouseout', '.point', function(e) {
+                comparison.coalChartPoints.removeClass('hovered');
+                comparison.coalChartPoints.children('span').removeAttr('style');
+            });
+
+            comparison.coalCharts.on('click', '.point', function(e) {
+                // allow clicking on the hovercard link
+                if (e.target.tagName == 'A') return;
+                e.preventDefault();
+                comparison.toggleSelectedDistributionPoints($(this).data('index'));
+                //comparison.trackEvent('Distribution View', 'Click to toggle point highlight', '');
+            });
+
+            comparison.toggleSelectedDistributionPoints = function(chosenIndex){
+                var filteredPoints = comparison.coalChartPoints.filter('[data-index='+chosenIndex+']');
+                if (!filteredPoints.hasClass('selected')){
+                    targetColor = "#f17b21"
+                }
+                filteredPoints.toggleClass('selected').removeAttr('style').filter('.selected').css({
+                    'background-color': targetColor,
+                    'border-color': targetColor
+                });
+            }
+        });
+
+        window.percentChange = function(oldValue, newValue){
+            var pctChange = ((newValue - oldValue) / oldValue * 100);
+            return parseFloat(pctChange.toFixed(2));
+        };
+
+        window.slugify = function(string){
+            string = string.toLowerCase();
+            output = string.replace(/ /g, '-');
+            return output
+        };
+
+        document.getElementById("water-supplier-list").onchange = function() {
+            var selectedOption = this.value;
+            window.location.href = selectedOption;
+        }
+
+        var layerColors = [
+            'rgb(166,206,227)',
+            'rgb(31,120,180)',
+            'rgb(178,223,138)',
+            'rgb(51,160,44)',
+            'rgb(251,154,153)',
+            'rgb(227,26,28)',
+            'rgb(253,191,111)',
+            'rgb(255,127,0)',
+            'rgb(202,178,214)',
+            'rgb(106,61,154)'
+        ];
+
+        var layerData = [{"count": 170, "max_range": 100.0, "average_range": 13.37, "this_month_avg": 80.55059455433869, "this_min": {"calculated_rgpcd_2014__min": 39.7806576314}, "this_month_baseline_avg": 79.1326828436621, "hydrologic_region": "South Coast", "min_range": 0.0, "median": 84.2720640213, "this_max": {"calculated_rgpcd_2014__max": 344.660245055}, "last_month_avg": 75.69958870524593, "hydrologic_slug": "south-coast", "median_range": 14.59, "suppliers": [{"distribution_precent": 22.63, "calculated_rgpcd_2014": 108.760171946, "supplier_name": "beaumont-cherry valley water district"}, {"distribution_precent": 12.27, "calculated_rgpcd_2014": 77.1978828348, "supplier_name": "bellflower-somerset mutual water company"}, {"distribution_precent": 6.91, "calculated_rgpcd_2014": 60.8614821555, "supplier_name": "big bear city community services district"}, {"distribution_precent": 9.68, "calculated_rgpcd_2014": 69.2874512619, "supplier_name": "california water service company dominguez"}, {"distribution_precent": 1.46, "calculated_rgpcd_2014": 44.2307408426, "supplier_name": "california water service company east los angeles"}, {"distribution_precent": 13.14, "calculated_rgpcd_2014": 79.8324399806, "supplier_name": "california water service company hermosa redondo"}, {"distribution_precent": 44.61, "calculated_rgpcd_2014": 175.775006199, "supplier_name": "california water service company palos verdes"}, {"distribution_precent": 48.36, "calculated_rgpcd_2014": 187.20627879, "supplier_name": "california water service company westlake"}, {"distribution_precent": 21.5, "calculated_rgpcd_2014": 105.342583341, "supplier_name": "california-american water company los angeles district"}, {"distribution_precent": 6.09, "calculated_rgpcd_2014": 58.3376451305, "supplier_name": "california-american water company san diego district"}, {"distribution_precent": 25.87, "calculated_rgpcd_2014": 118.662875304, "supplier_name": "california-american water ventura district"}, {"distribution_precent": 33.63, "calculated_rgpcd_2014": 142.319711454, "supplier_name": "camrosa water district"}, {"distribution_precent": 29.29, "calculated_rgpcd_2014": 129.070396268, "supplier_name": "carlsbad municipal water district"}, {"distribution_precent": 7.23, "calculated_rgpcd_2014": 61.8109923381, "supplier_name": "casitas municipal water district"}, {"distribution_precent": 22.63, "calculated_rgpcd_2014": 108.779247793, "supplier_name": "castaic lake water agency santa clarita water division"}, {"distribution_precent": 11.95, "calculated_rgpcd_2014": 76.2124581807, "supplier_name": "city of anaheim"}, {"distribution_precent": 36.53, "calculated_rgpcd_2014": 151.153532876, "supplier_name": "city of arcadia"}, {"distribution_precent": 9.82, "calculated_rgpcd_2014": 69.7198599378, "supplier_name": "city of azusa"}, {"distribution_precent": 40.06, "calculated_rgpcd_2014": 161.904870853, "supplier_name": "city of beverly hills"}, {"distribution_precent": 0.56, "calculated_rgpcd_2014": 41.4882971262, "supplier_name": "city of big bear lake dept of water power"}, {"distribution_precent": 20.5, "calculated_rgpcd_2014": 102.27496024, "supplier_name": "city of brea"}, {"distribution_precent": 12.32, "calculated_rgpcd_2014": 77.3302855951, "supplier_name": "city of buena park"}, {"distribution_precent": 14.42, "calculated_rgpcd_2014": 83.7355681397, "supplier_name": "city of burbank"}, {"distribution_precent": 12.58, "calculated_rgpcd_2014": 78.1321154301, "supplier_name": "city of camarillo"}, {"distribution_precent": 21.18, "calculated_rgpcd_2014": 104.345555296, "supplier_name": "city of cerritos"}, {"distribution_precent": 16.05, "calculated_rgpcd_2014": 88.7005497446, "supplier_name": "city of chino hills"}, {"distribution_precent": 12.74, "calculated_rgpcd_2014": 78.6097195847, "supplier_name": "city of colton"}, {"distribution_precent": 4.42, "calculated_rgpcd_2014": 53.2700898061, "supplier_name": "city of compton"}, {"distribution_precent": 13.06, "calculated_rgpcd_2014": 79.5888028808, "supplier_name": "city of corona"}, {"distribution_precent": 18.11, "calculated_rgpcd_2014": 95.0020045104, "supplier_name": "city of covina"}, {"distribution_precent": 12.5, "calculated_rgpcd_2014": 77.8820684789, "supplier_name": "city of downey"}, {"distribution_precent": 12.78, "calculated_rgpcd_2014": 78.7312836365, "supplier_name": "city of el segundo"}, {"distribution_precent": 9.84, "calculated_rgpcd_2014": 69.7690509236, "supplier_name": "city of escondido"}, {"distribution_precent": 1.89, "calculated_rgpcd_2014": 45.5508524768, "supplier_name": "city of fountain valley"}, {"distribution_precent": 21.88, "calculated_rgpcd_2014": 106.486711536, "supplier_name": "city of fullerton"}, {"distribution_precent": 19.07, "calculated_rgpcd_2014": 97.9272105013, "supplier_name": "city of garden grove"}, {"distribution_precent": 14.59, "calculated_rgpcd_2014": 84.2720640213, "supplier_name": "city of glendale"}, {"distribution_precent": 27.27, "calculated_rgpcd_2014": 122.930686171, "supplier_name": "city of glendora"}, {"distribution_precent": 9.11, "calculated_rgpcd_2014": 67.5678946987, "supplier_name": "city of hawthorne"}, {"distribution_precent": 23.59, "calculated_rgpcd_2014": 111.693196365, "supplier_name": "city of hemet"}, {"distribution_precent": 11.43, "calculated_rgpcd_2014": 74.6179054947, "supplier_name": "city of huntington beach"}, {"distribution_precent": 6.15, "calculated_rgpcd_2014": 58.5329725076, "supplier_name": "city of huntington park"}, {"distribution_precent": 6.97, "calculated_rgpcd_2014": 61.0425612316, "supplier_name": "city of inglewood"}, {"distribution_precent": 9.93, "calculated_rgpcd_2014": 70.0638720773, "supplier_name": "city of la habra"}, {"distribution_precent": 4.43, "calculated_rgpcd_2014": 53.2972522156, "supplier_name": "city of la palma"}, {"distribution_precent": 30.59, "calculated_rgpcd_2014": 133.030172118, "supplier_name": "city of la verne"}, {"distribution_precent": 12.69, "calculated_rgpcd_2014": 78.4785885059, "supplier_name": "city of lakewood"}, {"distribution_precent": 26.08, "calculated_rgpcd_2014": 119.304777913, "supplier_name": "city of loma linda"}, {"distribution_precent": 11.77, "calculated_rgpcd_2014": 75.6756447766, "supplier_name": "city of lomita"}, {"distribution_precent": 10.01, "calculated_rgpcd_2014": 70.2959240318, "supplier_name": "city of long beach"}, {"distribution_precent": 9.93, "calculated_rgpcd_2014": 70.0599444999, "supplier_name": "city of lynwood"}, {"distribution_precent": 15.25, "calculated_rgpcd_2014": 86.2832250859, "supplier_name": "city of manhattan beach"}, {"distribution_precent": 14.27, "calculated_rgpcd_2014": 83.2737932508, "supplier_name": "city of monterey park"}, {"distribution_precent": 20.26, "calculated_rgpcd_2014": 101.535009094, "supplier_name": "city of newport beach"}, {"distribution_precent": 14.51, "calculated_rgpcd_2014": 84.0115306511, "supplier_name": "city of norwalk"}, {"distribution_precent": 11.86, "calculated_rgpcd_2014": 75.9299841939, "supplier_name": "city of oceanside"}, {"distribution_precent": 12.89, "calculated_rgpcd_2014": 79.0873083402, "supplier_name": "city of ontario"}, {"distribution_precent": 22.64, "calculated_rgpcd_2014": 108.804505154, "supplier_name": "city of orange"}, {"distribution_precent": 7.67, "calculated_rgpcd_2014": 63.1651578559, "supplier_name": "city of oxnard"}, {"distribution_precent": 5.79, "calculated_rgpcd_2014": 57.4434301598, "supplier_name": "city of paramount"}, {"distribution_precent": 15.09, "calculated_rgpcd_2014": 85.7989293168, "supplier_name": "city of pasadena"}, {"distribution_precent": 11.38, "calculated_rgpcd_2014": 74.4628439838, "supplier_name": "city of perris"}, {"distribution_precent": 15.14, "calculated_rgpcd_2014": 85.9344309962, "supplier_name": "city of pico rivera"}, {"distribution_precent": 9.8, "calculated_rgpcd_2014": 69.6549917427, "supplier_name": "city of pomona"}, {"distribution_precent": 22.86, "calculated_rgpcd_2014": 109.49102569, "supplier_name": "city of poway"}, {"distribution_precent": 44.21, "calculated_rgpcd_2014": 174.558779974, "supplier_name": "city of redlands"}, {"distribution_precent": 33.7, "calculated_rgpcd_2014": 142.522625979, "supplier_name": "city of rialto"}, {"distribution_precent": 11.31, "calculated_rgpcd_2014": 74.2766427214, "supplier_name": "city of riverside"}, {"distribution_precent": 19.36, "calculated_rgpcd_2014": 98.8016566425, "supplier_name": "city of san bernardino"}, {"distribution_precent": 9.71, "calculated_rgpcd_2014": 69.3978633527, "supplier_name": "city of san buenaventura"}, {"distribution_precent": 14.05, "calculated_rgpcd_2014": 82.6211310532, "supplier_name": "city of san clemente"}, {"distribution_precent": 6.29, "calculated_rgpcd_2014": 58.9690443359, "supplier_name": "city of san diego"}, {"distribution_precent": 13.84, "calculated_rgpcd_2014": 81.9847024271, "supplier_name": "city of san fernando"}, {"distribution_precent": 23.83, "calculated_rgpcd_2014": 112.422400148, "supplier_name": "city of san jacinto"}, {"distribution_precent": 17.9, "calculated_rgpcd_2014": 94.3394189935, "supplier_name": "city of san juan capistrano"}, {"distribution_precent": 12.82, "calculated_rgpcd_2014": 78.8692470832, "supplier_name": "city of sanger"}, {"distribution_precent": 6.49, "calculated_rgpcd_2014": 59.5675199413, "supplier_name": "city of santa ana"}, {"distribution_precent": 9.03, "calculated_rgpcd_2014": 67.3145260667, "supplier_name": "city of santa fe springs"}, {"distribution_precent": 12.89, "calculated_rgpcd_2014": 79.0863093624, "supplier_name": "city of santa monica"}, {"distribution_precent": 13.52, "calculated_rgpcd_2014": 80.99555531, "supplier_name": "city of santa paula"}, {"distribution_precent": 2.38, "calculated_rgpcd_2014": 47.0355833413, "supplier_name": "city of seal beach"}, {"distribution_precent": 33.34, "calculated_rgpcd_2014": 141.416557688, "supplier_name": "city of sierra madre"}, {"distribution_precent": 4.74, "calculated_rgpcd_2014": 54.2261056318, "supplier_name": "city of south gate"}, {"distribution_precent": 16.0, "calculated_rgpcd_2014": 88.5746185598, "supplier_name": "city of south pasadena"}, {"distribution_precent": 20.43, "calculated_rgpcd_2014": 102.063367193, "supplier_name": "city of thousand oaks"}, {"distribution_precent": 22.85, "calculated_rgpcd_2014": 109.459675811, "supplier_name": "city of tustin"}, {"distribution_precent": 29.7, "calculated_rgpcd_2014": 130.324569839, "supplier_name": "city of upland"}, {"distribution_precent": 0.0, "calculated_rgpcd_2014": 39.7806576314, "supplier_name": "city of vernon"}, {"distribution_precent": 14.25, "calculated_rgpcd_2014": 83.2272821652, "supplier_name": "city of westminster"}, {"distribution_precent": 22.94, "calculated_rgpcd_2014": 109.734596717, "supplier_name": "city of whittier"}, {"distribution_precent": 8.52, "calculated_rgpcd_2014": 65.7450579016, "supplier_name": "crescenta valley water district"}, {"distribution_precent": 21.92, "calculated_rgpcd_2014": 106.620997081, "supplier_name": "cucamonga valley water district"}, {"distribution_precent": 48.13, "calculated_rgpcd_2014": 186.509047453, "supplier_name": "east orange county water district"}, {"distribution_precent": 19.92, "calculated_rgpcd_2014": 100.507576525, "supplier_name": "east valley water district"}, {"distribution_precent": 11.33, "calculated_rgpcd_2014": 74.3219727964, "supplier_name": "eastern municipal water district"}, {"distribution_precent": 16.38, "calculated_rgpcd_2014": 89.7154953009, "supplier_name": "el toro water district"}, {"distribution_precent": 19.6, "calculated_rgpcd_2014": 99.5439947209, "supplier_name": "elsinore valley municipal water district"}, {"distribution_precent": 30.42, "calculated_rgpcd_2014": 132.519801771, "supplier_name": "fallbrook public utility district"}, {"distribution_precent": 7.26, "calculated_rgpcd_2014": 61.904514685, "supplier_name": "golden state water company artesia"}, {"distribution_precent": 1.66, "calculated_rgpcd_2014": 44.8413488178, "supplier_name": "golden state water company bell-bell gardens"}, {"distribution_precent": 28.37, "calculated_rgpcd_2014": 126.266264013, "supplier_name": "golden state water company claremont"}, {"distribution_precent": 98.37, "calculated_rgpcd_2014": 339.685649234, "supplier_name": "golden state water company cowan heights"}, {"distribution_precent": 8.27, "calculated_rgpcd_2014": 64.9925280583, "supplier_name": "golden state water company culver city"}, {"distribution_precent": 4.0, "calculated_rgpcd_2014": 51.961263836, "supplier_name": "golden state water company florence graham"}, {"distribution_precent": 5.95, "calculated_rgpcd_2014": 57.909947792, "supplier_name": "golden state water company norwalk"}, {"distribution_precent": 18.42, "calculated_rgpcd_2014": 95.9424485169, "supplier_name": "golden state water company ojai"}, {"distribution_precent": 12.71, "calculated_rgpcd_2014": 78.5299704631, "supplier_name": "golden state water company placentia"}, {"distribution_precent": 10.24, "calculated_rgpcd_2014": 70.9877688215, "supplier_name": "golden state water company s arcadia"}, {"distribution_precent": 5.29, "calculated_rgpcd_2014": 55.9192375517, "supplier_name": "golden state water company s san gabriel"}, {"distribution_precent": 18.09, "calculated_rgpcd_2014": 94.9484706053, "supplier_name": "golden state water company san dimas"}, {"distribution_precent": 15.36, "calculated_rgpcd_2014": 86.6207968051, "supplier_name": "golden state water company simi valley"}, {"distribution_precent": 6.22, "calculated_rgpcd_2014": 58.7311299904, "supplier_name": "golden state water company southwest"}, {"distribution_precent": 12.27, "calculated_rgpcd_2014": 77.1956160244, "supplier_name": "golden state water company west orange"}, {"distribution_precent": 10.6, "calculated_rgpcd_2014": 72.1009500556, "supplier_name": "helix water district"}, {"distribution_precent": 8.49, "calculated_rgpcd_2014": 65.6634288714, "supplier_name": "irvine ranch water district"}, {"distribution_precent": 16.14, "calculated_rgpcd_2014": 88.9871978506, "supplier_name": "jurupa community service district"}, {"distribution_precent": 15.99, "calculated_rgpcd_2014": 88.5366874185, "supplier_name": "laguna beach county water district"}, {"distribution_precent": 12.14, "calculated_rgpcd_2014": 76.799698832, "supplier_name": "lake hemet municipal water district"}, {"distribution_precent": 11.65, "calculated_rgpcd_2014": 75.2867288918, "supplier_name": "lakeside water district"}, {"distribution_precent": 43.73, "calculated_rgpcd_2014": 173.118296341, "supplier_name": "las virgenes municipal water district"}, {"distribution_precent": 28.11, "calculated_rgpcd_2014": 125.496069622, "supplier_name": "lee lake water district"}, {"distribution_precent": 11.47, "calculated_rgpcd_2014": 74.7643730559, "supplier_name": "lincoln avenue water company"}, {"distribution_precent": 45.32, "calculated_rgpcd_2014": 177.945052792, "supplier_name": "los angeles county public works waterworks district 29"}, {"distribution_precent": 9.74, "calculated_rgpcd_2014": 69.463627817, "supplier_name": "los angeles department of water and power"}, {"distribution_precent": 12.5, "calculated_rgpcd_2014": 77.893361257, "supplier_name": "mesa water district"}, {"distribution_precent": 15.23, "calculated_rgpcd_2014": 86.2219809364, "supplier_name": "monte vista water district"}, {"distribution_precent": 7.8, "calculated_rgpcd_2014": 63.5743527149, "supplier_name": "montebello land and water company"}, {"distribution_precent": 19.0, "calculated_rgpcd_2014": 97.6981290486, "supplier_name": "moulton niguel water district"}, {"distribution_precent": 17.91, "calculated_rgpcd_2014": 94.3698934118, "supplier_name": "newhall county water district"}, {"distribution_precent": 29.64, "calculated_rgpcd_2014": 130.15700286, "supplier_name": "olivenhain municipal water district"}, {"distribution_precent": 11.12, "calculated_rgpcd_2014": 73.6838202202, "supplier_name": "orchard dale water district"}, {"distribution_precent": 7.2, "calculated_rgpcd_2014": 61.7281928613, "supplier_name": "otay water district"}, {"distribution_precent": 14.01, "calculated_rgpcd_2014": 82.5088613024, "supplier_name": "padre dam municipal water district"}, {"distribution_precent": 1.91, "calculated_rgpcd_2014": 45.5939158812, "supplier_name": "park water company"}, {"distribution_precent": 18.62, "calculated_rgpcd_2014": 96.5433844104, "supplier_name": "pico water district"}, {"distribution_precent": 49.37, "calculated_rgpcd_2014": 190.284728831, "supplier_name": "rainbow municipal water district"}, {"distribution_precent": 20.69, "calculated_rgpcd_2014": 102.867637988, "supplier_name": "ramona municipal water district"}, {"distribution_precent": 46.6, "calculated_rgpcd_2014": 181.840875412, "supplier_name": "rancho california water district"}, {"distribution_precent": 17.99, "calculated_rgpcd_2014": 94.6388721382, "supplier_name": "rincon del diablo municipal water district"}, {"distribution_precent": 25.89, "calculated_rgpcd_2014": 118.710130356, "supplier_name": "riverside highland water company"}, {"distribution_precent": 11.8, "calculated_rgpcd_2014": 75.7542619262, "supplier_name": "rowland water district"}, {"distribution_precent": 19.96, "calculated_rgpcd_2014": 100.649784998, "supplier_name": "rubidoux community service district"}, {"distribution_precent": 22.26, "calculated_rgpcd_2014": 107.64734642, "supplier_name": "rubio canyon land and water association"}, {"distribution_precent": 18.09, "calculated_rgpcd_2014": 94.9325064246, "supplier_name": "san bernardino county service area 70"}, {"distribution_precent": 22.77, "calculated_rgpcd_2014": 109.195408717, "supplier_name": "san dieguito water district"}, {"distribution_precent": 12.56, "calculated_rgpcd_2014": 78.0588730929, "supplier_name": "san gabriel county water district"}, {"distribution_precent": 17.11, "calculated_rgpcd_2014": 91.9518791119, "supplier_name": "san gabriel valley fontana water company"}, {"distribution_precent": 5.97, "calculated_rgpcd_2014": 57.9721867403, "supplier_name": "san gabriel valley water company"}, {"distribution_precent": 100.0, "calculated_rgpcd_2014": 344.660245055, "supplier_name": "santa fe irrigation district"}, {"distribution_precent": 14.92, "calculated_rgpcd_2014": 85.2721229463, "supplier_name": "santa margarita water district"}, {"distribution_precent": 88.75, "calculated_rgpcd_2014": 310.34637491, "supplier_name": "serrano water district"}, {"distribution_precent": 13.73, "calculated_rgpcd_2014": 81.6424205246, "supplier_name": "south coast water district"}, {"distribution_precent": 12.62, "calculated_rgpcd_2014": 78.2645729673, "supplier_name": "suburban water systems san jose hills"}, {"distribution_precent": 16.66, "calculated_rgpcd_2014": 90.5837215408, "supplier_name": "suburban water systems whittier la mirada"}, {"distribution_precent": 12.7, "calculated_rgpcd_2014": 78.5149607326, "supplier_name": "sunny slope water company"}, {"distribution_precent": 5.72, "calculated_rgpcd_2014": 57.2330278322, "supplier_name": "sweetwater authority"}, {"distribution_precent": 24.49, "calculated_rgpcd_2014": 114.442026766, "supplier_name": "trabuco canyon water district"}, {"distribution_precent": 26.35, "calculated_rgpcd_2014": 120.129096778, "supplier_name": "triunfo sanitation district oak park water service"}, {"distribution_precent": 13.79, "calculated_rgpcd_2014": 81.8345508196, "supplier_name": "valencia water company"}, {"distribution_precent": 16.54, "calculated_rgpcd_2014": 90.2043938439, "supplier_name": "vallecitos water district"}, {"distribution_precent": 31.23, "calculated_rgpcd_2014": 135.005954833, "supplier_name": "valley center municipal water district"}, {"distribution_precent": 62.56, "calculated_rgpcd_2014": 230.498741746, "supplier_name": "valley water company"}, {"distribution_precent": 27.74, "calculated_rgpcd_2014": 124.361301856, "supplier_name": "ventura county waterworks district no 1"}, {"distribution_precent": 17.9, "calculated_rgpcd_2014": 94.3508217383, "supplier_name": "ventura county waterworks district no 8"}, {"distribution_precent": 13.76, "calculated_rgpcd_2014": 81.7220162948, "supplier_name": "vista irrigation district"}, {"distribution_precent": 21.34, "calculated_rgpcd_2014": 104.827987421, "supplier_name": "walnut valley water district"}, {"distribution_precent": 27.94, "calculated_rgpcd_2014": 124.972868199, "supplier_name": "west valley water district"}, {"distribution_precent": 27.24, "calculated_rgpcd_2014": 122.833629455, "supplier_name": "western municipal water district of riverside"}, {"distribution_precent": 36.3, "calculated_rgpcd_2014": 150.466450074, "supplier_name": "yorba linda water district"}, {"distribution_precent": 31.7, "calculated_rgpcd_2014": 136.429841027, "supplier_name": "yucaipa valley water district"}]}];
+
+        for (var i=0; i<layerData.length; i++) {
+
+            var regionName = layerData[i].hydrologic_region;
+
+            var map_id = window.slugify(layerData[i].hydrologic_region);
+
+            var map = L.map(map_id, {
+                scrollWheelZoom: false,
+                zoomControl: false,
+                minZoom: 2,
+                maxZoom: 7
+            }).setView([37.335194502529724, -119.366455078125], 4.46);
+
+            L.geoJson(california, {
+                style: function (feature) {
+                    return {
+                        color: "#ffffff",
+                        weight: 0,
+                        fillColor: "#ffffff",
+                        opacity: 1,
+                        fillOpacity: 1
+                    }
+                }
+            }).addTo(map);
+
+            var thisRegionName = findProperRegion(regionName);
+
+            L.geoJson(thisRegionName, {
+                style: function(feature){
+                    return {
+                        color: "rgba(31, 120, 180, .7)",
+                        weight: 0,
+                        fillColor: "rgba(31, 120, 180, .7)",
+                        opacity: 1,
+                        fillOpacity: 1
+                    }
+                },
+            }).addTo(map);
+        };
+
+        function findProperRegion(regionName){
+            var theRegions = hydrologic_regions.features;
+
+            var layer;
+
+            for (var i=0; i<theRegions.length; i++) {
+
+                console.log();
+
+                if (theRegions[i].properties.FIRST_HRNA === regionName){
+                    layer = theRegions[i];
+                }
+            };
+
+            return layer;
+
+        };
+    </script>
+    <script src="../../static/scripts/_application_wrapper_0.5.js"></script>
+
+        <!-- end scripts -->
+
+        <!-- begin chartbeat -->
+        <script type="text/javascript">
+            var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
+            (function() {
+                function loadChartbeat() {
+                    window._sf_endpt = (new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+                    document.body.appendChild(e);
+                };
+                var oldonload = window.onload;
+                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+            })();
+        </script>
+        <!-- end chartbeat -->
+
+        <!-- begin google analytics -->
+        <script type="text/javascript">
+            var hostName = 'projects.scpr.org';
+            var _gaq = _gaq || [];
+            _gaq.push(
+                ['_setAccount', 'UA-624724-1'],
+                ['_setDomainName', hostName],
+                ['_setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['_setCustomVar', 7, 'PageType', 'Story', 3],
+                ['_trackPageview'],
+                ['b._setAccount', 'UA-18188937-11'],
+                ['b._setDomainName', hostName],
+                ['b._setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['b._setCustomVar', 7, 'PageType', 'Story', 3],
+                ['b._trackPageview']
+            );
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!-- end google analytics -->
+
+        <!-- begin webtrends stats -->
+        <script src="http://media.scpr.org/assets/scripts/webtrends.v2.js"></script>
+        <script>
+            //<![CDATA[
+                var _tag=new WebTrends();
+                _tag.dcsGetId();
+            //]]>
+        </script>
+        <script>
+            //<![CDATA[
+                _tag.dcsCustom=function(){
+                    // Add custom parameters here.
+                    //_tag.DCSext.param_name=param_value;
+                }
+            _tag.dcsCollect();
+            //]]>
+        </script>
+        <noscript>
+            <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsyqctzwuz5bdsebpmwhwe8w_2p8d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.3.0&amp;WT.dcssip=www.scpr.org"/></div>
+        </noscript>
+        <!-- end webtrends stats -->
+
+        <!-- begin comscore stats -->
+        <script>
+            var _comscore = _comscore || [];
+            _comscore.push({ c1: "2", c2: "6035974", c3: "", c4: "" });
+            (function() {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+            })();
+        </script>
+        <noscript>
+            <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035974&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
+        </noscript>
+        <!-- end comscore stats -->
+
+    </body>
+    <!-- end body -->
+
+</html>
+<!-- end document -->

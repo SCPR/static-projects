@@ -1,0 +1,782 @@
+
+
+
+<!DOCTYPE html>
+
+<!-- begin doc -->
+<html lang="en">
+
+    <!-- begin header -->
+    <head>
+
+        <!-- begin meta -->
+        <title>Water use in California's San Joaquin River hydrologic region | scpr.org</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        
+        <meta name="description" content="San Joaquin River residential customers decreased daily water use in Feb. 2015 to an average of 73.96 gallons in the  hydrologic region compared to Feb. 2013. Based on data from 27 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate." />
+        <meta name="keywords" content="drought, state water resources control board, california" />
+        <meta name="author" content="89.3 KPCC" />
+        <meta property="og:title" content="Water use in California's San Joaquin River hydrologic region" />
+        <meta property="og:site_name" content="KPCC" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="http://a.scpr.org/i/f44ef3b9a8278abb79b6bbb3caf882c7/87989-full.jpg" />
+        <meta property="og:image:width" content="1024" />
+        <meta property="og:image:height" content="683" />
+        <meta property="og:url" content="http://projects.scpr.org/static/applications/monthly-water-use/region/san-joaquin-river" />
+        <meta property="og:description" content="San Joaquin River residential customers decreased daily water use in Feb. 2015 to an average of 73.96 gallons in the  hydrologic region compared to Feb. 2013. Based on data from 27 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate." />
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:url" content="http://projects.scpr.org/static/applications/monthly-water-use/region/san-joaquin-river"/>
+        <meta name="twitter:domain" content="http://projects.scpr.org/"/>
+        <meta name="twitter:site" content="KPCC"/>
+        <meta name="twitter:title" content="Water use in California's San Joaquin River hydrologic region"/>
+        <meta name="twitter:description" content="San Joaquin River residential customers decreased daily water use in Feb. 2015 to an average of 73.96 gallons in the  hydrologic region compared to Feb. 2013. Based on data from 27 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate."/>
+        <meta name="twitter:image:src" content="http://a.scpr.org/i/f44ef3b9a8278abb79b6bbb3caf882c7/87989-full.jpg">
+        <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="http://media.scpr.org/assets/images/icon.png">
+        <!-- end meta -->
+
+        <!-- begin css -->
+        
+    <link href="../../static/css/reset.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-ui.1.10.3.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../static/css/main-foundation-style-v3.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../../static/css/cali-water-style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
+
+        <!-- end css -->
+
+        <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
+        <!--[if lte IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+            <link href="http://projects.scpr.org/static/static-files/v3-dependencies/respond-proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+            <link href="../static/respond-proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+            <script src="../static/respond-proxy/respond.proxy.js"></script>
+        <![endif]-->
+
+        <!-- begin base scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/vtu6xsq.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        
+    <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+        <!-- end base scripts -->
+
+    </head>
+    <!-- end header -->
+
+    <!-- begin body -->
+    <body class="minimal">
+        <div class="kpcc-header">
+            <header>
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container data-container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
+                        </div>
+                        <div class="data-share navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right header-links clearfix">
+                                <li class="projects-pledge">
+                                    <a href="https://scprcontribute.publicradio.org/" class="pledge-now icon">Contribute to KPCC</a>
+                                    <a href="https://scprcontribute.publicradio.org/" target="_blank"><b>Pledge now</b></a>
+                                </li>
+                                <li class="projects-share">
+                                    <div class="share-links clearfix">
+                                        <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
+                                            <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=http://projects.scpr.org/static/applications/monthly-water-use" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
+                                            <a class="twitter icon" href="http://twitter.com/share?text=Water use in California's San Joaquin River hydrologic region&url=http://projects.scpr.org/static/applications/monthly-water-use/region/san-joaquin-river"></a>
+                                    </div>
+                                    <b>Share this</b>
+                                </li>
+                                <li class="projects-embed">
+                                    <a href="javascript:void(0)" class="embed-this icon">Embed This</a>
+                                    <a href="javascript:void(0)" target="_blank"><b>Embed This</b></a>
+                                </li>
+                                <li class="projects-home">
+                                    <a href="http://projects.scpr.org/" class="projects-home icon">Projects Home</a>
+                                    <a href="http://projects.scpr.org/"><b>All Projects</b></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <div class="container data-container">
+            <div class="row data-details">
+                
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="content-article">
+            <div class="headlines">
+                <h4 class="kicker">Environment</h4>
+                <h1>Where is California water use decreasing?</h1>
+            </div>
+            <div class="about collapse">
+                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/'>Chris Keller</a></span> | <span class="pubdate">Updated April 7, 2015</span></p>
+                <p>More evidence that California needs to do more to cut water use – the state water board reported today that Californians in February conserved the smallest amount of seasonal water supplies since the state began compiling monthly statistics on water use last June. The meager cuts were fueled largely by increased water use in Southern California.</p><p>Statewide in February, Californians cut water use by just 2.8 percent compared to the same month a year ago.  But in the hydrological regions that cover most of Southern California – an area of 8.7 million people — water use actually rose. The South Coast region, which runs along the coast from Ventura to San Diego County, saw increased water use of more than 2 percent. And water consumption in the Colorado River region, which mostly covers San Bernardino, Riverside and Imperial counties, inched up half a percent.</p><p>Across much of the state — and particularly in Southern California — February saw significantly warmer temperatures and less rain than average, prompting urban water users to turn on their sprinklers to keep lawns green.</p><p>At the same time, average water use rose from levels in January, which was also unusually hot and dry. February water use was 77 gallons per person per day compared to 73 gallons the month before.</p><p>The findings were reported during a meeting of the State Water Resources Control Board, which is discussing how to enforce mandatory reductions in water use ordered last week by Gov. Jerry Brown.</p>
+            </div>
+            <div class="sources collapse">
+                <p>
+                    
+                        <strong>Sources</strong>: <a href='http://www.swrcb.ca.gov/waterrights/water_issues/programs/drought/conservation_reporting_info.shtml'>California Water Resources Control Board</a>.
+                    
+                    
+                        <strong>Built using</strong>: <a href='https://github.com/datadesk/django-bakery'>django-bakery</a>, <a href='http://underscorejs.org/'>underscore.js</a>, <a href='http://backbonejs.org/'>backbone.js</a>, <a href='http://leafletjs.com/'>leaflet.js</a>, <a href='https://gionkunz.github.io/chartist-js/'>chartist.js</a> &amp; <a href='http://twitter.github.com/bootstrap/'>Bootstrap</a>. Circles on a line distribution charts based on <a href='http://censusreporter.org/data/distribution/?table=B25118&geo_ids=05000US06037&primary_geo_id=05000US06037'>CensusReporter charts</a>, <a href='https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450'>design</a> and <a href='https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703'>code</a>. <strong>Icon credits: </strong><a href='http://thenounproject.com/term/26765/'><strong>Waste icon</strong></a> created by <a href='http://thenounproject.com/Luis'><strong>Luis Prado</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/26128/'><strong>Washing Machine icon</strong></a> created by <a href='http://thenounproject.com/megan.sheehan'><strong>Megan Sheehan</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/25510/'><strong>Bucket icon</strong></a> created by <a href='http://thenounproject.com/nsteve'><strong>Nithin Viswanathan</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/17734/'><strong>Water drop icon</strong></a> created by <a href='http://thenounproject.com/diegonaive'><strong>Diego Naive</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/12962/'><strong>Broom icon</strong></a> created by <a href='http://thenounproject.com/The%20Moza'><strong>Anna Weiss</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/2729/'><strong>Clock icon</strong></a> created by <a href='http://thenounproject.com/pavel.nikandrov'><strong>Pavel Nikandrov</strong></a> and used via a <a href='http://creativecommons.org/publicdomain/mark/1.0/'>Public Domain Mark</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/12109/'><strong>Sprinkler icon</strong></a> created by <a href='http://thenounproject.com/micahwest'><strong>Micah West</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/457/'><strong>Cactus icon</strong></a> created by <a href='http://thenounproject.com/edward'><strong>Edward Boatman</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/shower/51/'><strong>Shower icon</strong></a> used via a <a href='http://creativecommons.org/publicdomain/mark/1.0/'>Public Domain Mark</a> from <a href='http://thenounproject.com/'>The Noun Project</a>.
+                    
+                    
+                    
+                </p>
+            </div>
+            <div class="buttons btn-group btn-group-justified">
+                <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".about"><span class="about glyphicon glyphicon-chevron-down"></span>  About</a>
+                <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".sources"><span class="sources glyphicon glyphicon-chevron-down"></span>  Sources</a>
+                
+            </div>
+        </div>
+    </div>
+
+            </div>
+            <div class="row data-visuals">
+                
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline">
+                    <li><a href="../../">Home</a></li>
+                    <li>|</li>
+                    <li><a href="../../region/san-joaquin-river">San Joaquin River</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="jumbotron">
+            <noscript>Please enable JavaScript to view this interactive.</noscript>
+            <h4 class="text-center">Choose a water supplier</h4>
+            <div id="content-action-bar">
+                <select id="water-supplier-list" class="form-control">
+                    <option>-- Select a San Joaquin River supplier --</option>
+                    
+                        <option value="../../amador-water-agency">Amador Water Agency</option>
+                    
+                        <option value="../../calaveras-county-water-district">Calaveras County Water District</option>
+                    
+                        <option value="../../california-water-service-company-stockton">California Water Service Company Stockton</option>
+                    
+                        <option value="../../city-of-antioch">City Of Antioch</option>
+                    
+                        <option value="../../city-of-brentwood">City Of Brentwood</option>
+                    
+                        <option value="../../city-of-ceres">City Of Ceres</option>
+                    
+                        <option value="../../city-of-lathrop">City Of Lathrop</option>
+                    
+                        <option value="../../city-of-livingston">City Of Livingston</option>
+                    
+                        <option value="../../city-of-lodi">City Of Lodi</option>
+                    
+                        <option value="../../city-of-los-banos">City Of Los Banos</option>
+                    
+                        <option value="../../city-of-madera">City Of Madera</option>
+                    
+                        <option value="../../city-of-manteca">City Of Manteca</option>
+                    
+                        <option value="../../city-of-merced">City Of Merced</option>
+                    
+                        <option value="../../city-of-modesto">City Of Modesto</option>
+                    
+                        <option value="../../city-of-newman-water-department">City Of Newman Water Department</option>
+                    
+                        <option value="../../city-of-oakdale">City Of Oakdale</option>
+                    
+                        <option value="../../city-of-patterson">City Of Patterson</option>
+                    
+                        <option value="../../city-of-ripon">City Of Ripon</option>
+                    
+                        <option value="../../city-of-riverbank">City Of Riverbank</option>
+                    
+                        <option value="../../city-of-stockton">City Of Stockton</option>
+                    
+                        <option value="../../city-of-tracy">City Of Tracy</option>
+                    
+                        <option value="../../city-of-turlock">City Of Turlock</option>
+                    
+                        <option value="../../diablo-water-district">Diablo Water District</option>
+                    
+                        <option value="../../discovery-bay-community-services-district">Discovery Bay Community Services District</option>
+                    
+                        <option value="../../groveland-community-services-district">Groveland Community Services District</option>
+                    
+                        <option value="../../tuolumne-utilities-district">Tuolumne Utilities District</option>
+                    
+                        <option value="../../winton-water-sanitary-district">Winton Water Sanitary District</option>
+                    
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p class="lead"><strong>About the data</strong>: These charts show urban water suppliers in Southern California that saw daily water use per resident rise and fall by the most and least. They cover the most recent reporting period &mdash; February 2015 &mdash; and are compared to the baseline measure from February 2013. Since the gallons of water used per person per day measurement does not take into account rainfall, temperature, humidity and population density, the <a href="http://www.waterboards.ca.gov/waterrights/">State Water Resources Control Board</a> discourages comparisons between water suppliers.</p>
+    </div>
+
+    
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div id="san-joaquin-river" class="map" style="width: 100%; height: 215px"></div>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                <h3>San Joaquin River</h3>
+                <p>Residential customers <span class='decrease-accent'>decreased</span> daily water use in Feb. 2015 to an average of 73.96 gallons in the San Joaquin River hydrologic region compared to Feb. 2013. Based on data from 27 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate.</p>
+
+                 <!--
+                     based on census reporter distribution "circles on a line" charts. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+
+                     formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+
+                     styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                -->
+
+                <section class="coal-chart-container">
+                    <ul class="coal-chart">
+                        
+                            <li id="amador-water-agency" class="chart-point" style="left: 28.1%;">
+                                <span class="point" data-index="amador-water-agency">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../amador-water-agency">Amador Water Agency</a></span><br />
+                                        <span class="value text-center">58.57</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="calaveras-county-water-district" class="chart-point" style="left: 53.03%;">
+                                <span class="point" data-index="calaveras-county-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../calaveras-county-water-district">Calaveras County Water District</a></span><br />
+                                        <span class="value text-center">77.61</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-water-service-company-stockton" class="chart-point" style="left: 22.13%;">
+                                <span class="point" data-index="california-water-service-company-stockton">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../california-water-service-company-stockton">California Water Service Company Stockton</a></span><br />
+                                        <span class="value text-center">54.01</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-antioch" class="chart-point" style="left: 53.39%;">
+                                <span class="point" data-index="city-of-antioch">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-antioch">City Of Antioch</a></span><br />
+                                        <span class="value text-center">77.89</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-brentwood" class="chart-point" style="left: 45.75%;">
+                                <span class="point" data-index="city-of-brentwood">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-brentwood">City Of Brentwood</a></span><br />
+                                        <span class="value text-center">72.06</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-ceres" class="chart-point" style="left: 41.41%;">
+                                <span class="point" data-index="city-of-ceres">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-ceres">City Of Ceres</a></span><br />
+                                        <span class="value text-center">68.74</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-lathrop" class="chart-point" style="left: 43.35%;">
+                                <span class="point" data-index="city-of-lathrop">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-lathrop">City Of Lathrop</a></span><br />
+                                        <span class="value text-center">70.22</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-livingston" class="chart-point" style="left: 48.62%;">
+                                <span class="point" data-index="city-of-livingston">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-livingston">City Of Livingston</a></span><br />
+                                        <span class="value text-center">74.24</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-lodi" class="chart-point" style="left: 54.13%;">
+                                <span class="point" data-index="city-of-lodi">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-lodi">City Of Lodi</a></span><br />
+                                        <span class="value text-center">78.46</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-los-banos" class="chart-point" style="left: 99.78%;">
+                                <span class="point" data-index="city-of-los-banos">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-los-banos">City Of Los Banos</a></span><br />
+                                        <span class="value text-center">113.33</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-madera" class="chart-point" style="left: 50.04%;">
+                                <span class="point" data-index="city-of-madera">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-madera">City Of Madera</a></span><br />
+                                        <span class="value text-center">75.33</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-manteca" class="chart-point" style="left: 38.17%;">
+                                <span class="point" data-index="city-of-manteca">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-manteca">City Of Manteca</a></span><br />
+                                        <span class="value text-center">66.26</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-merced" class="chart-point" style="left: 80.67%;">
+                                <span class="point" data-index="city-of-merced">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-merced">City Of Merced</a></span><br />
+                                        <span class="value text-center">98.73</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-modesto" class="chart-point" style="left: 82.91%;">
+                                <span class="point" data-index="city-of-modesto">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-modesto">City Of Modesto</a></span><br />
+                                        <span class="value text-center">100.44</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-newman-water-department" class="chart-point" style="left: 41.27%;">
+                                <span class="point" data-index="city-of-newman-water-department">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-newman-water-department">City Of Newman Water Department</a></span><br />
+                                        <span class="value text-center">68.63</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-oakdale" class="chart-point" style="left: 41.57%;">
+                                <span class="point" data-index="city-of-oakdale">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-oakdale">City Of Oakdale</a></span><br />
+                                        <span class="value text-center">68.86</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-patterson" class="chart-point" style="left: 56.38%;">
+                                <span class="point" data-index="city-of-patterson">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-patterson">City Of Patterson</a></span><br />
+                                        <span class="value text-center">80.17</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-ripon" class="chart-point" style="left: 100.0%;">
+                                <span class="point" data-index="city-of-ripon">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-ripon">City Of Ripon</a></span><br />
+                                        <span class="value text-center">113.49</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-riverbank" class="chart-point" style="left: 31.62%;">
+                                <span class="point" data-index="city-of-riverbank">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-riverbank">City Of Riverbank</a></span><br />
+                                        <span class="value text-center">61.26</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-stockton" class="chart-point" style="left: 24.98%;">
+                                <span class="point" data-index="city-of-stockton">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-stockton">City Of Stockton</a></span><br />
+                                        <span class="value text-center">56.19</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-tracy" class="chart-point" style="left: 0.0%;">
+                                <span class="point" data-index="city-of-tracy">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-tracy">City Of Tracy</a></span><br />
+                                        <span class="value text-center">37.11</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-turlock" class="chart-point" style="left: 53.1%;">
+                                <span class="point" data-index="city-of-turlock">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-turlock">City Of Turlock</a></span><br />
+                                        <span class="value text-center">77.67</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="diablo-water-district" class="chart-point" style="left: 39.07%;">
+                                <span class="point" data-index="diablo-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../diablo-water-district">Diablo Water District</a></span><br />
+                                        <span class="value text-center">66.95</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="discovery-bay-community-services-district" class="chart-point" style="left: 79.46%;">
+                                <span class="point" data-index="discovery-bay-community-services-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../discovery-bay-community-services-district">Discovery Bay Community Services District</a></span><br />
+                                        <span class="value text-center">97.80</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="groveland-community-services-district" class="chart-point" style="left: 35.15%;">
+                                <span class="point" data-index="groveland-community-services-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../groveland-community-services-district">Groveland Community Services District</a></span><br />
+                                        <span class="value text-center">63.96</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="tuolumne-utilities-district" class="chart-point" style="left: 49.6%;">
+                                <span class="point" data-index="tuolumne-utilities-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../tuolumne-utilities-district">Tuolumne Utilities District</a></span><br />
+                                        <span class="value text-center">75.00</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="winton-water-sanitary-district" class="chart-point" style="left: 79.76%;">
+                                <span class="point" data-index="winton-water-sanitary-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../winton-water-sanitary-district">Winton Water Sanitary District</a></span><br />
+                                        <span class="value text-center">98.03</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                        <li class="tick-mark tick-mark-min" style="left: 0.0%;">
+                            <span class="text-center"><b>Min</b> <br /> 37.11</span>
+                        </li>
+
+                        <li class="tick-mark tick-mark-median" style="left: 49.6%;">
+                            <span class="text-center"><b>Median</b> <br /> 75.00</span>
+                        </li>
+                        <li class="tick-mark tick-mark-average" style="left: 48.25%;">
+                            <span class="text-center"><b>Average</b> <br /> 73.96</span>
+                        </li>
+                        <li class="tick-mark tick-mark-max" style="left: 100.0%;">
+                            <span class="text-center"><b>Max</b> <br /> 113.49</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    
+
+            </div>
+            <div class="row data-comments">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="disqus_thread"></div>
+                </div>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            <div class="row kpcc-footer">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <footer>
+                        <ul class="list-inline">
+                            <li><a href="http://scpr.org/terms/">Terms &amp; Conditions</a></li>
+                            <li><a href="http://scpr.org/privacy/">Privacy</a></li>
+                            <li><a href="http://scpr.org/web_site_feedback">Website Feedback</a></li>
+                            <li><a href="http://scpr.org/">Copyright 2013 &copy; Southern California Public Radio</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <!-- end main container -->
+
+        <!-- begin scripts -->
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery-ui.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/underscore-min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
+        
+    <script src="../../static/data/california.js"></script>
+    <script src="../../static/data/calif_hydrologic_regions.js"></script>
+    <script>
+
+        window.appConfig = {"embed_this": true, "project_root": "http://projects.scpr.org/static/applications/monthly-water-use/", "embed_height": "2080px", "open_about_this": false, "is_embedded": false, "is_mobile": false, "comments": false, "embed_width": "100%"};
+
+        window.appConfig.project_root = window.appConfig.project_root + "region/san-joaquin-river";
+
+        $(document).ready(function(){
+
+            /*
+                 from census reporter distribution "circles on a line" charts. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+
+                 formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+
+                 styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+            */
+
+            var comparison = {};
+
+            comparison.coalCharts = $('.coal-chart');
+
+            comparison.coalChartPoints = $('.coal-chart .point');
+
+            comparison.coalCharts.on('mouseover', '.point', function(e) {
+                var chosenIndex = $(this).data('index'),
+                    filteredPoints = comparison.coalChartPoints.filter('[data-index='+chosenIndex+']');
+                filteredPoints.addClass('hovered');
+                filteredPoints.children('span').css('display', 'block');
+            });
+
+            comparison.coalCharts.on('mouseout', '.point', function(e) {
+                comparison.coalChartPoints.removeClass('hovered');
+                comparison.coalChartPoints.children('span').removeAttr('style');
+            });
+
+            comparison.coalCharts.on('click', '.point', function(e) {
+                // allow clicking on the hovercard link
+                if (e.target.tagName == 'A') return;
+                e.preventDefault();
+                comparison.toggleSelectedDistributionPoints($(this).data('index'));
+                //comparison.trackEvent('Distribution View', 'Click to toggle point highlight', '');
+            });
+
+            comparison.toggleSelectedDistributionPoints = function(chosenIndex){
+                var filteredPoints = comparison.coalChartPoints.filter('[data-index='+chosenIndex+']');
+                if (!filteredPoints.hasClass('selected')){
+                    targetColor = "#f17b21"
+                }
+                filteredPoints.toggleClass('selected').removeAttr('style').filter('.selected').css({
+                    'background-color': targetColor,
+                    'border-color': targetColor
+                });
+            }
+        });
+
+        window.percentChange = function(oldValue, newValue){
+            var pctChange = ((newValue - oldValue) / oldValue * 100);
+            return parseFloat(pctChange.toFixed(2));
+        };
+
+        window.slugify = function(string){
+            string = string.toLowerCase();
+            output = string.replace(/ /g, '-');
+            return output
+        };
+
+        document.getElementById("water-supplier-list").onchange = function() {
+            var selectedOption = this.value;
+            window.location.href = selectedOption;
+        }
+
+        var layerColors = [
+            'rgb(166,206,227)',
+            'rgb(31,120,180)',
+            'rgb(178,223,138)',
+            'rgb(51,160,44)',
+            'rgb(251,154,153)',
+            'rgb(227,26,28)',
+            'rgb(253,191,111)',
+            'rgb(255,127,0)',
+            'rgb(202,178,214)',
+            'rgb(106,61,154)'
+        ];
+
+        var layerData = [{"count": 27, "max_range": 100.0, "average_range": 48.25, "this_month_avg": 73.9608395713212, "this_min": {"calculated_rgpcd_2014__min": 37.1052349586}, "this_month_baseline_avg": 85.29114606780728, "hydrologic_region": "San Joaquin River", "min_range": 0.0, "median": 74.9953210122, "this_max": {"calculated_rgpcd_2014__max": 113.493450266}, "last_month_avg": 71.63163300169508, "hydrologic_slug": "san-joaquin-river", "median_range": 49.6, "suppliers": [{"distribution_precent": 28.1, "calculated_rgpcd_2014": 58.5677061891, "supplier_name": "amador water agency"}, {"distribution_precent": 53.03, "calculated_rgpcd_2014": 77.6109786277, "supplier_name": "calaveras county water district"}, {"distribution_precent": 22.13, "calculated_rgpcd_2014": 54.0068077237, "supplier_name": "california water service company stockton"}, {"distribution_precent": 53.39, "calculated_rgpcd_2014": 77.8900340184, "supplier_name": "city of antioch"}, {"distribution_precent": 45.75, "calculated_rgpcd_2014": 72.0552419576, "supplier_name": "city of brentwood"}, {"distribution_precent": 41.41, "calculated_rgpcd_2014": 68.7378666896, "supplier_name": "city of ceres"}, {"distribution_precent": 43.35, "calculated_rgpcd_2014": 70.2161838968, "supplier_name": "city of lathrop"}, {"distribution_precent": 48.62, "calculated_rgpcd_2014": 74.2427439621, "supplier_name": "city of livingston"}, {"distribution_precent": 54.13, "calculated_rgpcd_2014": 78.4566284448, "supplier_name": "city of lodi"}, {"distribution_precent": 99.78, "calculated_rgpcd_2014": 113.326171515, "supplier_name": "city of los banos"}, {"distribution_precent": 50.04, "calculated_rgpcd_2014": 75.3326655121, "supplier_name": "city of madera"}, {"distribution_precent": 38.17, "calculated_rgpcd_2014": 66.260710346, "supplier_name": "city of manteca"}, {"distribution_precent": 80.67, "calculated_rgpcd_2014": 98.7286742035, "supplier_name": "city of merced"}, {"distribution_precent": 82.91, "calculated_rgpcd_2014": 100.437207654, "supplier_name": "city of modesto"}, {"distribution_precent": 41.27, "calculated_rgpcd_2014": 68.6342332208, "supplier_name": "city of newman water department"}, {"distribution_precent": 41.57, "calculated_rgpcd_2014": 68.8568497075, "supplier_name": "city of oakdale"}, {"distribution_precent": 56.38, "calculated_rgpcd_2014": 80.1739030685, "supplier_name": "city of patterson"}, {"distribution_precent": 100.0, "calculated_rgpcd_2014": 113.493450266, "supplier_name": "city of ripon"}, {"distribution_precent": 31.62, "calculated_rgpcd_2014": 61.2587837092, "supplier_name": "city of riverbank"}, {"distribution_precent": 24.98, "calculated_rgpcd_2014": 56.1882158604, "supplier_name": "city of stockton"}, {"distribution_precent": 0.0, "calculated_rgpcd_2014": 37.1052349586, "supplier_name": "city of tracy"}, {"distribution_precent": 53.1, "calculated_rgpcd_2014": 77.6689405479, "supplier_name": "city of turlock"}, {"distribution_precent": 39.07, "calculated_rgpcd_2014": 66.9530141631, "supplier_name": "diablo water district"}, {"distribution_precent": 79.46, "calculated_rgpcd_2014": 97.8021978022, "supplier_name": "discovery bay community services district"}, {"distribution_precent": 35.15, "calculated_rgpcd_2014": 63.9562, "supplier_name": "groveland community services district"}, {"distribution_precent": 49.6, "calculated_rgpcd_2014": 74.9953210122, "supplier_name": "tuolumne utilities district"}, {"distribution_precent": 79.76, "calculated_rgpcd_2014": 98.028907563, "supplier_name": "winton water sanitary district"}]}];
+
+        for (var i=0; i<layerData.length; i++) {
+
+            var regionName = layerData[i].hydrologic_region;
+
+            var map_id = window.slugify(layerData[i].hydrologic_region);
+
+            var map = L.map(map_id, {
+                scrollWheelZoom: false,
+                zoomControl: false,
+                minZoom: 2,
+                maxZoom: 7
+            }).setView([37.335194502529724, -119.366455078125], 4.46);
+
+            L.geoJson(california, {
+                style: function (feature) {
+                    return {
+                        color: "#ffffff",
+                        weight: 0,
+                        fillColor: "#ffffff",
+                        opacity: 1,
+                        fillOpacity: 1
+                    }
+                }
+            }).addTo(map);
+
+            var thisRegionName = findProperRegion(regionName);
+
+            L.geoJson(thisRegionName, {
+                style: function(feature){
+                    return {
+                        color: "rgba(31, 120, 180, .7)",
+                        weight: 0,
+                        fillColor: "rgba(31, 120, 180, .7)",
+                        opacity: 1,
+                        fillOpacity: 1
+                    }
+                },
+            }).addTo(map);
+        };
+
+        function findProperRegion(regionName){
+            var theRegions = hydrologic_regions.features;
+
+            var layer;
+
+            for (var i=0; i<theRegions.length; i++) {
+
+                console.log();
+
+                if (theRegions[i].properties.FIRST_HRNA === regionName){
+                    layer = theRegions[i];
+                }
+            };
+
+            return layer;
+
+        };
+    </script>
+    <script src="../../static/scripts/_application_wrapper_0.5.js"></script>
+
+        <!-- end scripts -->
+
+        <!-- begin chartbeat -->
+        <script type="text/javascript">
+            var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
+            (function() {
+                function loadChartbeat() {
+                    window._sf_endpt = (new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+                    document.body.appendChild(e);
+                };
+                var oldonload = window.onload;
+                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+            })();
+        </script>
+        <!-- end chartbeat -->
+
+        <!-- begin google analytics -->
+        <script type="text/javascript">
+            var hostName = 'projects.scpr.org';
+            var _gaq = _gaq || [];
+            _gaq.push(
+                ['_setAccount', 'UA-624724-1'],
+                ['_setDomainName', hostName],
+                ['_setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['_setCustomVar', 7, 'PageType', 'Story', 3],
+                ['_trackPageview'],
+                ['b._setAccount', 'UA-18188937-11'],
+                ['b._setDomainName', hostName],
+                ['b._setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['b._setCustomVar', 7, 'PageType', 'Story', 3],
+                ['b._trackPageview']
+            );
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!-- end google analytics -->
+
+        <!-- begin webtrends stats -->
+        <script src="http://media.scpr.org/assets/scripts/webtrends.v2.js"></script>
+        <script>
+            //<![CDATA[
+                var _tag=new WebTrends();
+                _tag.dcsGetId();
+            //]]>
+        </script>
+        <script>
+            //<![CDATA[
+                _tag.dcsCustom=function(){
+                    // Add custom parameters here.
+                    //_tag.DCSext.param_name=param_value;
+                }
+            _tag.dcsCollect();
+            //]]>
+        </script>
+        <noscript>
+            <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsyqctzwuz5bdsebpmwhwe8w_2p8d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.3.0&amp;WT.dcssip=www.scpr.org"/></div>
+        </noscript>
+        <!-- end webtrends stats -->
+
+        <!-- begin comscore stats -->
+        <script>
+            var _comscore = _comscore || [];
+            _comscore.push({ c1: "2", c2: "6035974", c3: "", c4: "" });
+            (function() {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+            })();
+        </script>
+        <noscript>
+            <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035974&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
+        </noscript>
+        <!-- end comscore stats -->
+
+    </body>
+    <!-- end body -->
+
+</html>
+<!-- end document -->

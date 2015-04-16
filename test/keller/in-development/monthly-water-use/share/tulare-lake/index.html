@@ -1,0 +1,771 @@
+
+
+
+<!DOCTYPE html>
+
+<!-- begin doc -->
+<html lang="en">
+
+    <!-- begin header -->
+    <head>
+
+        <!-- begin meta -->
+        <title>Water use in California's Tulare Lake hydrologic region | scpr.org</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        
+        <meta name="description" content="Tulare Lake residential customers decreased daily water use in Feb. 2015 to an average of 80.95 gallons in the  hydrologic region compared to Feb. 2013. Based on data from 26 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate." />
+        <meta name="keywords" content="drought, state water resources control board, california" />
+        <meta name="author" content="89.3 KPCC" />
+        <meta property="og:title" content="Water use in California's Tulare Lake hydrologic region" />
+        <meta property="og:site_name" content="KPCC" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="http://a.scpr.org/i/f44ef3b9a8278abb79b6bbb3caf882c7/87989-full.jpg" />
+        <meta property="og:image:width" content="1024" />
+        <meta property="og:image:height" content="683" />
+        <meta property="og:url" content="http://projects.scpr.org/static/applications/monthly-water-use/region/tulare-lake" />
+        <meta property="og:description" content="Tulare Lake residential customers decreased daily water use in Feb. 2015 to an average of 80.95 gallons in the  hydrologic region compared to Feb. 2013. Based on data from 26 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate." />
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:url" content="http://projects.scpr.org/static/applications/monthly-water-use/region/tulare-lake"/>
+        <meta name="twitter:domain" content="http://projects.scpr.org/"/>
+        <meta name="twitter:site" content="KPCC"/>
+        <meta name="twitter:title" content="Water use in California's Tulare Lake hydrologic region"/>
+        <meta name="twitter:description" content="Tulare Lake residential customers decreased daily water use in Feb. 2015 to an average of 80.95 gallons in the  hydrologic region compared to Feb. 2013. Based on data from 26 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate."/>
+        <meta name="twitter:image:src" content="http://a.scpr.org/i/f44ef3b9a8278abb79b6bbb3caf882c7/87989-full.jpg">
+        <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="http://media.scpr.org/assets/images/icon.png">
+        <!-- end meta -->
+
+        <!-- begin css -->
+        
+    <link href="../../static/css/reset.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-ui.1.10.3.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../static/css/main-foundation-style-v3.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="../../static/css/cali-water-style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
+
+        <!-- end css -->
+
+        <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
+        <!--[if lte IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+            <link href="http://projects.scpr.org/static/static-files/v3-dependencies/respond-proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+            <link href="../static/respond-proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+            <script src="../static/respond-proxy/respond.proxy.js"></script>
+        <![endif]-->
+
+        <!-- begin base scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/vtu6xsq.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        
+    <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+
+        <!-- end base scripts -->
+
+    </head>
+    <!-- end header -->
+
+    <!-- begin body -->
+    <body class="minimal">
+        <div class="kpcc-header">
+            <header>
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container data-container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
+                        </div>
+                        <div class="data-share navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right header-links clearfix">
+                                <li class="projects-pledge">
+                                    <a href="https://scprcontribute.publicradio.org/" class="pledge-now icon">Contribute to KPCC</a>
+                                    <a href="https://scprcontribute.publicradio.org/" target="_blank"><b>Pledge now</b></a>
+                                </li>
+                                <li class="projects-share">
+                                    <div class="share-links clearfix">
+                                        <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
+                                            <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=http://projects.scpr.org/static/applications/monthly-water-use" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
+                                            <a class="twitter icon" href="http://twitter.com/share?text=Water use in California's Tulare Lake hydrologic region&url=http://projects.scpr.org/static/applications/monthly-water-use/region/tulare-lake"></a>
+                                    </div>
+                                    <b>Share this</b>
+                                </li>
+                                <li class="projects-embed">
+                                    <a href="javascript:void(0)" class="embed-this icon">Embed This</a>
+                                    <a href="javascript:void(0)" target="_blank"><b>Embed This</b></a>
+                                </li>
+                                <li class="projects-home">
+                                    <a href="http://projects.scpr.org/" class="projects-home icon">Projects Home</a>
+                                    <a href="http://projects.scpr.org/"><b>All Projects</b></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <div class="container data-container">
+            <div class="row data-details">
+                
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="content-article">
+            <div class="headlines">
+                <h4 class="kicker">Environment</h4>
+                <h1>Where is California water use decreasing?</h1>
+            </div>
+            <div class="about collapse">
+                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/'>Chris Keller</a></span> | <span class="pubdate">Updated April 7, 2015</span></p>
+                <p>More evidence that California needs to do more to cut water use – the state water board reported today that Californians in February conserved the smallest amount of seasonal water supplies since the state began compiling monthly statistics on water use last June. The meager cuts were fueled largely by increased water use in Southern California.</p><p>Statewide in February, Californians cut water use by just 2.8 percent compared to the same month a year ago.  But in the hydrological regions that cover most of Southern California – an area of 8.7 million people — water use actually rose. The South Coast region, which runs along the coast from Ventura to San Diego County, saw increased water use of more than 2 percent. And water consumption in the Colorado River region, which mostly covers San Bernardino, Riverside and Imperial counties, inched up half a percent.</p><p>Across much of the state — and particularly in Southern California — February saw significantly warmer temperatures and less rain than average, prompting urban water users to turn on their sprinklers to keep lawns green.</p><p>At the same time, average water use rose from levels in January, which was also unusually hot and dry. February water use was 77 gallons per person per day compared to 73 gallons the month before.</p><p>The findings were reported during a meeting of the State Water Resources Control Board, which is discussing how to enforce mandatory reductions in water use ordered last week by Gov. Jerry Brown.</p>
+            </div>
+            <div class="sources collapse">
+                <p>
+                    
+                        <strong>Sources</strong>: <a href='http://www.swrcb.ca.gov/waterrights/water_issues/programs/drought/conservation_reporting_info.shtml'>California Water Resources Control Board</a>.
+                    
+                    
+                        <strong>Built using</strong>: <a href='https://github.com/datadesk/django-bakery'>django-bakery</a>, <a href='http://underscorejs.org/'>underscore.js</a>, <a href='http://backbonejs.org/'>backbone.js</a>, <a href='http://leafletjs.com/'>leaflet.js</a>, <a href='https://gionkunz.github.io/chartist-js/'>chartist.js</a> &amp; <a href='http://twitter.github.com/bootstrap/'>Bootstrap</a>. Circles on a line distribution charts based on <a href='http://censusreporter.org/data/distribution/?table=B25118&geo_ids=05000US06037&primary_geo_id=05000US06037'>CensusReporter charts</a>, <a href='https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450'>design</a> and <a href='https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703'>code</a>. <strong>Icon credits: </strong><a href='http://thenounproject.com/term/26765/'><strong>Waste icon</strong></a> created by <a href='http://thenounproject.com/Luis'><strong>Luis Prado</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/26128/'><strong>Washing Machine icon</strong></a> created by <a href='http://thenounproject.com/megan.sheehan'><strong>Megan Sheehan</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/25510/'><strong>Bucket icon</strong></a> created by <a href='http://thenounproject.com/nsteve'><strong>Nithin Viswanathan</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/17734/'><strong>Water drop icon</strong></a> created by <a href='http://thenounproject.com/diegonaive'><strong>Diego Naive</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/12962/'><strong>Broom icon</strong></a> created by <a href='http://thenounproject.com/The%20Moza'><strong>Anna Weiss</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/2729/'><strong>Clock icon</strong></a> created by <a href='http://thenounproject.com/pavel.nikandrov'><strong>Pavel Nikandrov</strong></a> and used via a <a href='http://creativecommons.org/publicdomain/mark/1.0/'>Public Domain Mark</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/12109/'><strong>Sprinkler icon</strong></a> created by <a href='http://thenounproject.com/micahwest'><strong>Micah West</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/457/'><strong>Cactus icon</strong></a> created by <a href='http://thenounproject.com/edward'><strong>Edward Boatman</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/shower/51/'><strong>Shower icon</strong></a> used via a <a href='http://creativecommons.org/publicdomain/mark/1.0/'>Public Domain Mark</a> from <a href='http://thenounproject.com/'>The Noun Project</a>.
+                    
+                    
+                    
+                </p>
+            </div>
+            <div class="buttons btn-group btn-group-justified">
+                <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".about"><span class="about glyphicon glyphicon-chevron-down"></span>  About</a>
+                <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".sources"><span class="sources glyphicon glyphicon-chevron-down"></span>  Sources</a>
+                
+            </div>
+        </div>
+    </div>
+
+            </div>
+            <div class="row data-visuals">
+                
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline">
+                    <li><a href="../../">Home</a></li>
+                    <li>|</li>
+                    <li><a href="../../region/tulare-lake">Tulare Lake</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="jumbotron">
+            <noscript>Please enable JavaScript to view this interactive.</noscript>
+            <h4 class="text-center">Choose a water supplier</h4>
+            <div id="content-action-bar">
+                <select id="water-supplier-list" class="form-control">
+                    <option>-- Select a Tulare Lake supplier --</option>
+                    
+                        <option value="../../arvin-community-services-district">Arvin Community Services District</option>
+                    
+                        <option value="../../bakman-water-company">Bakman Water Company</option>
+                    
+                        <option value="../../california-water-service-company-bakersfield">California Water Service Company Bakersfield</option>
+                    
+                        <option value="../../california-water-service-company-kern-river-valley">California Water Service Company Kern River Valley</option>
+                    
+                        <option value="../../california-water-service-company-selma">California Water Service Company Selma</option>
+                    
+                        <option value="../../california-water-service-company-visalia">California Water Service Company Visalia</option>
+                    
+                        <option value="../../city-of-bakersfield">City Of Bakersfield</option>
+                    
+                        <option value="../../city-of-clovis">City Of Clovis</option>
+                    
+                        <option value="../../city-of-corcoran">City Of Corcoran</option>
+                    
+                        <option value="../../city-of-delano">City Of Delano</option>
+                    
+                        <option value="../../city-of-exeter">City Of Exeter</option>
+                    
+                        <option value="../../city-of-fresno">City Of Fresno</option>
+                    
+                        <option value="../../city-of-kerman">City Of Kerman</option>
+                    
+                        <option value="../../city-of-kingsburg">City Of Kingsburg</option>
+                    
+                        <option value="../../city-of-lemoore">City Of Lemoore</option>
+                    
+                        <option value="../../city-of-reedley">City Of Reedley</option>
+                    
+                        <option value="../../city-of-shafter">City Of Shafter</option>
+                    
+                        <option value="../../city-of-tehachapi">City Of Tehachapi</option>
+                    
+                        <option value="../../city-of-tulare">City Of Tulare</option>
+                    
+                        <option value="../../city-of-wasco">City Of Wasco</option>
+                    
+                        <option value="../../east-niles-community-service-district">East Niles Community Service District</option>
+                    
+                        <option value="../../lamont-public-utility-district">Lamont Public Utility District</option>
+                    
+                        <option value="../../oildale-mutual-water-company">Oildale Mutual Water Company</option>
+                    
+                        <option value="../../pinedale-county-water-district">Pinedale County Water District</option>
+                    
+                        <option value="../../vaughn-water-company">Vaughn Water Company</option>
+                    
+                        <option value="../../west-kern-water-district">West Kern Water District</option>
+                    
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p class="lead"><strong>About the data</strong>: These charts show urban water suppliers in Southern California that saw daily water use per resident rise and fall by the most and least. They cover the most recent reporting period &mdash; February 2015 &mdash; and are compared to the baseline measure from February 2013. Since the gallons of water used per person per day measurement does not take into account rainfall, temperature, humidity and population density, the <a href="http://www.waterboards.ca.gov/waterrights/">State Water Resources Control Board</a> discourages comparisons between water suppliers.</p>
+    </div>
+
+    
+        <div class="row">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div id="tulare-lake" class="map" style="width: 100%; height: 215px"></div>
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                <h3>Tulare Lake</h3>
+                <p>Residential customers <span class='decrease-accent'>decreased</span> daily water use in Feb. 2015 to an average of 80.95 gallons in the Tulare Lake hydrologic region compared to Feb. 2013. Based on data from 26 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate.</p>
+
+                 <!--
+                     based on census reporter distribution "circles on a line" charts. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+
+                     formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+
+                     styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                -->
+
+                <section class="coal-chart-container">
+                    <ul class="coal-chart">
+                        
+                            <li id="arvin-community-services-district" class="chart-point" style="left: 32.04%;">
+                                <span class="point" data-index="arvin-community-services-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../arvin-community-services-district">Arvin Community Services District</a></span><br />
+                                        <span class="value text-center">90.21</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="bakman-water-company" class="chart-point" style="left: 60.93%;">
+                                <span class="point" data-index="bakman-water-company">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../bakman-water-company">Bakman Water Company</a></span><br />
+                                        <span class="value text-center">126.26</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-water-service-company-bakersfield" class="chart-point" style="left: 29.89%;">
+                                <span class="point" data-index="california-water-service-company-bakersfield">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../california-water-service-company-bakersfield">California Water Service Company Bakersfield</a></span><br />
+                                        <span class="value text-center">87.53</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-water-service-company-kern-river-valley" class="chart-point" style="left: 19.69%;">
+                                <span class="point" data-index="california-water-service-company-kern-river-valley">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../california-water-service-company-kern-river-valley">California Water Service Company Kern River Valley</a></span><br />
+                                        <span class="value text-center">74.79</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-water-service-company-selma" class="chart-point" style="left: 24.4%;">
+                                <span class="point" data-index="california-water-service-company-selma">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../california-water-service-company-selma">California Water Service Company Selma</a></span><br />
+                                        <span class="value text-center">80.67</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-water-service-company-visalia" class="chart-point" style="left: 17.47%;">
+                                <span class="point" data-index="california-water-service-company-visalia">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../california-water-service-company-visalia">California Water Service Company Visalia</a></span><br />
+                                        <span class="value text-center">72.02</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-bakersfield" class="chart-point" style="left: 38.75%;">
+                                <span class="point" data-index="city-of-bakersfield">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-bakersfield">City Of Bakersfield</a></span><br />
+                                        <span class="value text-center">98.58</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-clovis" class="chart-point" style="left: 28.02%;">
+                                <span class="point" data-index="city-of-clovis">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-clovis">City Of Clovis</a></span><br />
+                                        <span class="value text-center">85.19</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-corcoran" class="chart-point" style="left: 52.09%;">
+                                <span class="point" data-index="city-of-corcoran">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-corcoran">City Of Corcoran</a></span><br />
+                                        <span class="value text-center">115.23</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-delano" class="chart-point" style="left: 16.24%;">
+                                <span class="point" data-index="city-of-delano">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-delano">City Of Delano</a></span><br />
+                                        <span class="value text-center">70.49</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-exeter" class="chart-point" style="left: 35.08%;">
+                                <span class="point" data-index="city-of-exeter">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-exeter">City Of Exeter</a></span><br />
+                                        <span class="value text-center">94.00</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-fresno" class="chart-point" style="left: 7.97%;">
+                                <span class="point" data-index="city-of-fresno">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-fresno">City Of Fresno</a></span><br />
+                                        <span class="value text-center">60.16</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-kerman" class="chart-point" style="left: 25.96%;">
+                                <span class="point" data-index="city-of-kerman">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-kerman">City Of Kerman</a></span><br />
+                                        <span class="value text-center">82.61</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-kingsburg" class="chart-point" style="left: 47.71%;">
+                                <span class="point" data-index="city-of-kingsburg">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-kingsburg">City Of Kingsburg</a></span><br />
+                                        <span class="value text-center">109.76</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-lemoore" class="chart-point" style="left: 23.51%;">
+                                <span class="point" data-index="city-of-lemoore">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-lemoore">City Of Lemoore</a></span><br />
+                                        <span class="value text-center">79.56</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-reedley" class="chart-point" style="left: 0.0%;">
+                                <span class="point" data-index="city-of-reedley">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-reedley">City Of Reedley</a></span><br />
+                                        <span class="value text-center">50.22</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-shafter" class="chart-point" style="left: 31.33%;">
+                                <span class="point" data-index="city-of-shafter">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-shafter">City Of Shafter</a></span><br />
+                                        <span class="value text-center">89.32</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-tehachapi" class="chart-point" style="left: 2.26%;">
+                                <span class="point" data-index="city-of-tehachapi">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-tehachapi">City Of Tehachapi</a></span><br />
+                                        <span class="value text-center">53.04</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-tulare" class="chart-point" style="left: 30.71%;">
+                                <span class="point" data-index="city-of-tulare">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-tulare">City Of Tulare</a></span><br />
+                                        <span class="value text-center">88.54</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-wasco" class="chart-point" style="left: 15.9%;">
+                                <span class="point" data-index="city-of-wasco">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../city-of-wasco">City Of Wasco</a></span><br />
+                                        <span class="value text-center">70.06</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="east-niles-community-service-district" class="chart-point" style="left: 51.84%;">
+                                <span class="point" data-index="east-niles-community-service-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../east-niles-community-service-district">East Niles Community Service District</a></span><br />
+                                        <span class="value text-center">114.92</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="lamont-public-utility-district" class="chart-point" style="left: 30.19%;">
+                                <span class="point" data-index="lamont-public-utility-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../lamont-public-utility-district">Lamont Public Utility District</a></span><br />
+                                        <span class="value text-center">87.90</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="oildale-mutual-water-company" class="chart-point" style="left: 77.46%;">
+                                <span class="point" data-index="oildale-mutual-water-company">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../oildale-mutual-water-company">Oildale Mutual Water Company</a></span><br />
+                                        <span class="value text-center">146.89</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="pinedale-county-water-district" class="chart-point" style="left: 64.58%;">
+                                <span class="point" data-index="pinedale-county-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../pinedale-county-water-district">Pinedale County Water District</a></span><br />
+                                        <span class="value text-center">130.81</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="vaughn-water-company" class="chart-point" style="left: 100.0%;">
+                                <span class="point" data-index="vaughn-water-company">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../vaughn-water-company">Vaughn Water Company</a></span><br />
+                                        <span class="value text-center">175.02</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="west-kern-water-district" class="chart-point" style="left: 34.52%;">
+                                <span class="point" data-index="west-kern-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../../west-kern-water-district">West Kern Water District</a></span><br />
+                                        <span class="value text-center">93.31</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                        <li class="tick-mark tick-mark-min" style="left: 0.0%;">
+                            <span class="text-center"><b>Min</b> <br /> 50.22</span>
+                        </li>
+
+                        <li class="tick-mark tick-mark-median" style="left: 30.71%;">
+                            <span class="text-center"><b>Median</b> <br /> 88.54</span>
+                        </li>
+                        <li class="tick-mark tick-mark-average" style="left: 24.63%;">
+                            <span class="text-center"><b>Average</b> <br /> 80.95</span>
+                        </li>
+                        <li class="tick-mark tick-mark-max" style="left: 100.0%;">
+                            <span class="text-center"><b>Max</b> <br /> 175.02</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    
+
+            </div>
+            <div class="row data-comments">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="disqus_thread"></div>
+                </div>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            <div class="row kpcc-footer">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <footer>
+                        <ul class="list-inline">
+                            <li><a href="http://scpr.org/terms/">Terms &amp; Conditions</a></li>
+                            <li><a href="http://scpr.org/privacy/">Privacy</a></li>
+                            <li><a href="http://scpr.org/web_site_feedback">Website Feedback</a></li>
+                            <li><a href="http://scpr.org/">Copyright 2013 &copy; Southern California Public Radio</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <!-- end main container -->
+
+        <!-- begin scripts -->
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery-ui.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/underscore-min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
+        
+    <script src="../../static/data/california.js"></script>
+    <script src="../../static/data/calif_hydrologic_regions.js"></script>
+    <script>
+
+        window.appConfig = {"embed_this": true, "project_root": "http://projects.scpr.org/static/applications/monthly-water-use/", "embed_height": "2080px", "open_about_this": false, "is_embedded": false, "is_mobile": false, "comments": false, "embed_width": "100%"};
+
+        window.appConfig.project_root = window.appConfig.project_root + "region/tulare-lake";
+
+        $(document).ready(function(){
+
+            /*
+                 from census reporter distribution "circles on a line" charts. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+
+                 formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+
+                 styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+            */
+
+            var comparison = {};
+
+            comparison.coalCharts = $('.coal-chart');
+
+            comparison.coalChartPoints = $('.coal-chart .point');
+
+            comparison.coalCharts.on('mouseover', '.point', function(e) {
+                var chosenIndex = $(this).data('index'),
+                    filteredPoints = comparison.coalChartPoints.filter('[data-index='+chosenIndex+']');
+                filteredPoints.addClass('hovered');
+                filteredPoints.children('span').css('display', 'block');
+            });
+
+            comparison.coalCharts.on('mouseout', '.point', function(e) {
+                comparison.coalChartPoints.removeClass('hovered');
+                comparison.coalChartPoints.children('span').removeAttr('style');
+            });
+
+            comparison.coalCharts.on('click', '.point', function(e) {
+                // allow clicking on the hovercard link
+                if (e.target.tagName == 'A') return;
+                e.preventDefault();
+                comparison.toggleSelectedDistributionPoints($(this).data('index'));
+                //comparison.trackEvent('Distribution View', 'Click to toggle point highlight', '');
+            });
+
+            comparison.toggleSelectedDistributionPoints = function(chosenIndex){
+                var filteredPoints = comparison.coalChartPoints.filter('[data-index='+chosenIndex+']');
+                if (!filteredPoints.hasClass('selected')){
+                    targetColor = "#f17b21"
+                }
+                filteredPoints.toggleClass('selected').removeAttr('style').filter('.selected').css({
+                    'background-color': targetColor,
+                    'border-color': targetColor
+                });
+            }
+        });
+
+        window.percentChange = function(oldValue, newValue){
+            var pctChange = ((newValue - oldValue) / oldValue * 100);
+            return parseFloat(pctChange.toFixed(2));
+        };
+
+        window.slugify = function(string){
+            string = string.toLowerCase();
+            output = string.replace(/ /g, '-');
+            return output
+        };
+
+        document.getElementById("water-supplier-list").onchange = function() {
+            var selectedOption = this.value;
+            window.location.href = selectedOption;
+        }
+
+        var layerColors = [
+            'rgb(166,206,227)',
+            'rgb(31,120,180)',
+            'rgb(178,223,138)',
+            'rgb(51,160,44)',
+            'rgb(251,154,153)',
+            'rgb(227,26,28)',
+            'rgb(253,191,111)',
+            'rgb(255,127,0)',
+            'rgb(202,178,214)',
+            'rgb(106,61,154)'
+        ];
+
+        var layerData = [{"count": 26, "max_range": 100.0, "average_range": 24.63, "this_month_avg": 80.95445826568896, "this_min": {"calculated_rgpcd_2014__min": 50.2190625775}, "this_month_baseline_avg": 88.89357921488276, "hydrologic_region": "Tulare Lake", "min_range": 0.0, "median": 88.5433538495, "this_max": {"calculated_rgpcd_2014__max": 175.016969476}, "last_month_avg": 76.20014743913677, "hydrologic_slug": "tulare-lake", "median_range": 30.71, "suppliers": [{"distribution_precent": 32.04, "calculated_rgpcd_2014": 90.2067669173, "supplier_name": "arvin community services district"}, {"distribution_precent": 60.93, "calculated_rgpcd_2014": 126.259064879, "supplier_name": "bakman water company"}, {"distribution_precent": 29.89, "calculated_rgpcd_2014": 87.5273435536, "supplier_name": "california water service company bakersfield"}, {"distribution_precent": 19.69, "calculated_rgpcd_2014": 74.7904941069, "supplier_name": "california water service company kern river valley"}, {"distribution_precent": 24.4, "calculated_rgpcd_2014": 80.6670741697, "supplier_name": "california water service company selma"}, {"distribution_precent": 17.47, "calculated_rgpcd_2014": 72.015592579, "supplier_name": "california water service company visalia"}, {"distribution_precent": 38.75, "calculated_rgpcd_2014": 98.5795545189, "supplier_name": "city of bakersfield"}, {"distribution_precent": 28.02, "calculated_rgpcd_2014": 85.1867313463, "supplier_name": "city of clovis"}, {"distribution_precent": 52.09, "calculated_rgpcd_2014": 115.230676078, "supplier_name": "city of corcoran"}, {"distribution_precent": 16.24, "calculated_rgpcd_2014": 70.4868558122, "supplier_name": "city of delano"}, {"distribution_precent": 35.08, "calculated_rgpcd_2014": 94.0043269098, "supplier_name": "city of exeter"}, {"distribution_precent": 7.97, "calculated_rgpcd_2014": 60.1648534561, "supplier_name": "city of fresno"}, {"distribution_precent": 25.96, "calculated_rgpcd_2014": 82.610534805, "supplier_name": "city of kerman"}, {"distribution_precent": 47.71, "calculated_rgpcd_2014": 109.756097561, "supplier_name": "city of kingsburg"}, {"distribution_precent": 23.51, "calculated_rgpcd_2014": 79.5616979437, "supplier_name": "city of lemoore"}, {"distribution_precent": 0.0, "calculated_rgpcd_2014": 50.2190625775, "supplier_name": "city of reedley"}, {"distribution_precent": 31.33, "calculated_rgpcd_2014": 89.3243493849, "supplier_name": "city of shafter"}, {"distribution_precent": 2.26, "calculated_rgpcd_2014": 53.0379004997, "supplier_name": "city of tehachapi"}, {"distribution_precent": 30.71, "calculated_rgpcd_2014": 88.5433538495, "supplier_name": "city of tulare"}, {"distribution_precent": 15.9, "calculated_rgpcd_2014": 70.0637694851, "supplier_name": "city of wasco"}, {"distribution_precent": 51.84, "calculated_rgpcd_2014": 114.916339791, "supplier_name": "east niles community service district"}, {"distribution_precent": 30.19, "calculated_rgpcd_2014": 87.8951612903, "supplier_name": "lamont public utility district"}, {"distribution_precent": 77.46, "calculated_rgpcd_2014": 146.891754394, "supplier_name": "oildale mutual water company"}, {"distribution_precent": 64.58, "calculated_rgpcd_2014": 130.80971664, "supplier_name": "pinedale county water district"}, {"distribution_precent": 100.0, "calculated_rgpcd_2014": 175.016969476, "supplier_name": "vaughn water company"}, {"distribution_precent": 34.52, "calculated_rgpcd_2014": 93.3053102582, "supplier_name": "west kern water district"}]}];
+
+        for (var i=0; i<layerData.length; i++) {
+
+            var regionName = layerData[i].hydrologic_region;
+
+            var map_id = window.slugify(layerData[i].hydrologic_region);
+
+            var map = L.map(map_id, {
+                scrollWheelZoom: false,
+                zoomControl: false,
+                minZoom: 2,
+                maxZoom: 7
+            }).setView([37.335194502529724, -119.366455078125], 4.46);
+
+            L.geoJson(california, {
+                style: function (feature) {
+                    return {
+                        color: "#ffffff",
+                        weight: 0,
+                        fillColor: "#ffffff",
+                        opacity: 1,
+                        fillOpacity: 1
+                    }
+                }
+            }).addTo(map);
+
+            var thisRegionName = findProperRegion(regionName);
+
+            L.geoJson(thisRegionName, {
+                style: function(feature){
+                    return {
+                        color: "rgba(31, 120, 180, .7)",
+                        weight: 0,
+                        fillColor: "rgba(31, 120, 180, .7)",
+                        opacity: 1,
+                        fillOpacity: 1
+                    }
+                },
+            }).addTo(map);
+        };
+
+        function findProperRegion(regionName){
+            var theRegions = hydrologic_regions.features;
+
+            var layer;
+
+            for (var i=0; i<theRegions.length; i++) {
+
+                console.log();
+
+                if (theRegions[i].properties.FIRST_HRNA === regionName){
+                    layer = theRegions[i];
+                }
+            };
+
+            return layer;
+
+        };
+    </script>
+    <script src="../../static/scripts/_application_wrapper_0.5.js"></script>
+
+        <!-- end scripts -->
+
+        <!-- begin chartbeat -->
+        <script type="text/javascript">
+            var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
+            (function() {
+                function loadChartbeat() {
+                    window._sf_endpt = (new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+                    document.body.appendChild(e);
+                };
+                var oldonload = window.onload;
+                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+            })();
+        </script>
+        <!-- end chartbeat -->
+
+        <!-- begin google analytics -->
+        <script type="text/javascript">
+            var hostName = 'projects.scpr.org';
+            var _gaq = _gaq || [];
+            _gaq.push(
+                ['_setAccount', 'UA-624724-1'],
+                ['_setDomainName', hostName],
+                ['_setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['_setCustomVar', 7, 'PageType', 'Story', 3],
+                ['_trackPageview'],
+                ['b._setAccount', 'UA-18188937-11'],
+                ['b._setDomainName', hostName],
+                ['b._setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['b._setCustomVar', 7, 'PageType', 'Story', 3],
+                ['b._trackPageview']
+            );
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!-- end google analytics -->
+
+        <!-- begin webtrends stats -->
+        <script src="http://media.scpr.org/assets/scripts/webtrends.v2.js"></script>
+        <script>
+            //<![CDATA[
+                var _tag=new WebTrends();
+                _tag.dcsGetId();
+            //]]>
+        </script>
+        <script>
+            //<![CDATA[
+                _tag.dcsCustom=function(){
+                    // Add custom parameters here.
+                    //_tag.DCSext.param_name=param_value;
+                }
+            _tag.dcsCollect();
+            //]]>
+        </script>
+        <noscript>
+            <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsyqctzwuz5bdsebpmwhwe8w_2p8d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.3.0&amp;WT.dcssip=www.scpr.org"/></div>
+        </noscript>
+        <!-- end webtrends stats -->
+
+        <!-- begin comscore stats -->
+        <script>
+            var _comscore = _comscore || [];
+            _comscore.push({ c1: "2", c2: "6035974", c3: "", c4: "" });
+            (function() {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+            })();
+        </script>
+        <noscript>
+            <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035974&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
+        </noscript>
+        <!-- end comscore stats -->
+
+    </body>
+    <!-- end body -->
+
+</html>
+<!-- end document -->
