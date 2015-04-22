@@ -292,6 +292,13 @@ section.display ol li dl {
 }
 */
 
+
+.image-map img {
+
+    width: 100%;
+
+}
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
     /*
     .data-legend #content-action-bar select {
@@ -383,7 +390,7 @@ section.display ol li dl {
     }
 
     body.minimal .data-container h4 {
-        font-size: 200%;
+        font-size: 160%;
     }
 
     body.minimal .data-container h5 {
@@ -1099,4 +1106,23 @@ section.chart-divider h2 {
     height: 200px;
     padding-top: 75px;
     border: 1px solid #777;
+}
+
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #000;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.select2-container--default .select2-results__group {
+    cursor: default;
+    display: block;
+    padding: 6px;
+    font-size: 130%;
+}
+
+.select2-container--default .select2-results__option .select2-results__option {
+    padding-left: 1em;
+    font-size: 120%;
 }

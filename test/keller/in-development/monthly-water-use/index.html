@@ -42,13 +42,13 @@
 
         <!-- begin css -->
 
-    <link href="static/css/reset.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="static/cali_water/css/reset.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-ui.1.10.3.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="static/css/main-foundation-style-v3.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="static/css/cali-water-style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
+    <link href="static/cali_water/css/main-foundation-style-v3.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
+    <link href="static/cali_water/css/cali-water-style.css" media="screen" rel="stylesheet" type="text/css" />
 
         <!-- end css -->
 
@@ -57,8 +57,8 @@
             <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
             <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
             <link href="http://projects.scpr.org/static/static-files/v3-dependencies/respond-proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
-            <link href="static/respond-proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
-            <script src="static/respond-proxy/respond.proxy.js"></script>
+            <link href="../static/respond-proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+            <script src="../static/respond-proxy/respond.proxy.js"></script>
         <![endif]-->
 
         <!-- begin base scripts -->
@@ -66,8 +66,7 @@
         <script type="text/javascript" src="//use.typekit.net/vtu6xsq.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-    <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 
         <!-- end base scripts -->
 
@@ -127,7 +126,7 @@
                 <h1>Where is California water use decreasing?</h1>
             </div>
             <div class="about collapse">
-                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/'>Chris Keller</a></span> | <span class="pubdate">Updated April 7, 2015</span></p>
+                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/'>Chris Keller</a></span> | <span class="pubdate">Updated April 22, 2015</span></p>
                 <p>More evidence that California needs to do more to cut water use – the state water board reported today that Californians in February conserved the smallest amount of seasonal water supplies since the state began compiling monthly statistics on water use last June. The meager cuts were fueled largely by increased water use in Southern California.</p><p>Statewide in February, Californians cut water use by just 2.8 percent compared to the same month a year ago.  But in the hydrological regions that cover most of Southern California – an area of 8.7 million people — water use actually rose. The South Coast region, which runs along the coast from Ventura to San Diego County, saw increased water use of more than 2 percent. And water consumption in the Colorado River region, which mostly covers San Bernardino, Riverside and Imperial counties, inched up half a percent.</p><p>Across much of the state — and particularly in Southern California — February saw significantly warmer temperatures and less rain than average, prompting urban water users to turn on their sprinklers to keep lawns green.</p><p>At the same time, average water use rose from levels in January, which was also unusually hot and dry. February water use was 77 gallons per person per day compared to 73 gallons the month before.</p><p>The findings were reported during a meeting of the State Water Resources Control Board, which is discussing how to enforce mandatory reductions in water use ordered last week by Gov. Jerry Brown.</p>
             </div>
             <div class="sources collapse">
@@ -156,12 +155,12 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <div class="jumbotron">
             <noscript>Please enable JavaScript to view this interactive.</noscript>
-            <h4 class="text-center">Choose a water supplier</h4>
+            <h4 class="text-center">Choose your water agency</h4>
             <div id="content-action-bar">
-                <select id="water-supplier-list" class="form-control">
+                <select id="water-supplier-list" class="form-control js-basic-single">
                     <option>-- Select by hydrological region --</option>
 
-                        <optgroup label="Central Coast">
+                        <optgroup label="Central Coast"></optgroup>
 
                             <option value="../monthly-water-use/alco-water-service">Alco Water Service</option>
 
@@ -230,7 +229,7 @@
                             <option value="../monthly-water-use/sunnyslope-county-water-district">Sunnyslope County Water District</option>
 
 
-                        <optgroup label="Colorado River">
+                        <optgroup label="Colorado River"></optgroup>
 
                             <option value="../monthly-water-use/city-of-banning">City Of Banning</option>
 
@@ -263,7 +262,7 @@
                             <option value="../monthly-water-use/twentynine-palms-water-district">Twentynine Palms Water District</option>
 
 
-                        <optgroup label="North Coast">
+                        <optgroup label="North Coast"></optgroup>
 
                             <option value="../monthly-water-use/california-water-service-company-redwood-valley">California Water Service Company Redwood Valley</option>
 
@@ -296,7 +295,7 @@
                             <option value="../monthly-water-use/town-of-windsor">Town Of Windsor</option>
 
 
-                        <optgroup label="North Lahontan">
+                        <optgroup label="North Lahontan"></optgroup>
 
                             <option value="../monthly-water-use/city-of-susanville">City Of Susanville</option>
 
@@ -309,7 +308,7 @@
                             <option value="../monthly-water-use/truckee-donner-public-utilities-district">Truckee-Donner Public Utilities District</option>
 
 
-                        <optgroup label="Sacramento River">
+                        <optgroup label="Sacramento River"></optgroup>
 
                             <option value="../monthly-water-use/bella-vista-water-district">Bella Vista Water District</option>
 
@@ -398,7 +397,7 @@
                             <option value="../monthly-water-use/south-feather-water-and-power-agency">South Feather Water And Power Agency</option>
 
 
-                        <optgroup label="San Francisco Bay">
+                        <optgroup label="San Francisco Bay"></optgroup>
 
                             <option value="../monthly-water-use/alameda-county-water-district">Alameda County Water District</option>
 
@@ -495,7 +494,7 @@
                             <option value="../monthly-water-use/westborough-water-district">Westborough Water District</option>
 
 
-                        <optgroup label="San Joaquin River">
+                        <optgroup label="San Joaquin River"></optgroup>
 
                             <option value="../monthly-water-use/amador-water-agency">Amador Water Agency</option>
 
@@ -556,7 +555,7 @@
                             <option value="../monthly-water-use/winton-water-sanitary-district">Winton Water Sanitary District</option>
 
 
-                        <optgroup label="South Coast">
+                        <optgroup label="South Coast"></optgroup>
 
                             <option value="../monthly-water-use/beaumont-cherry-valley-water-district">Beaumont-Cherry Valley Water District</option>
 
@@ -820,6 +819,8 @@
 
                             <option value="../monthly-water-use/los-angeles-county-public-works-waterworks-district-29">Los Angeles County Public Works Waterworks District 29</option>
 
+                            <option value="../monthly-water-use/los-angeles-county-public-works-waterworks-district-40">Los Angeles County Public Works Waterworks District 40</option>
+
                             <option value="../monthly-water-use/los-angeles-department-of-water-and-power">Los Angeles Department Of Water And Power</option>
 
                             <option value="../monthly-water-use/mesa-water-district">Mesa Water District</option>
@@ -915,7 +916,7 @@
                             <option value="../monthly-water-use/yucaipa-valley-water-district">Yucaipa Valley Water District</option>
 
 
-                        <optgroup label="South Lahontan">
+                        <optgroup label="South Lahontan"></optgroup>
 
                             <option value="../monthly-water-use/apple-valley-ranchos-water-company">Apple Valley Ranchos Water Company</option>
 
@@ -935,8 +936,6 @@
 
                             <option value="../monthly-water-use/lake-arrowhead-community-services-district">Lake Arrowhead Community Services District</option>
 
-                            <option value="../monthly-water-use/los-angeles-county-public-works-waterworks-district-40">Los Angeles County Public Works Waterworks District 40</option>
-
                             <option value="../monthly-water-use/mammoth-community-water-district">Mammoth Community Water District</option>
 
                             <option value="../monthly-water-use/palmdale-water-district">Palmdale Water District</option>
@@ -954,7 +953,7 @@
                             <option value="../monthly-water-use/victorville-water-district">Victorville Water District</option>
 
 
-                        <optgroup label="Tulare Lake">
+                        <optgroup label="Tulare Lake"></optgroup>
 
                             <option value="../monthly-water-use/arvin-community-services-district">Arvin Community Services District</option>
 
@@ -1026,12 +1025,12 @@
 
 
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div id="central-coast" class="map" style="width: 100%; height: 215px"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 image-map">
+                <img src="static/cali_water/images/cal-region-central-coast.png" />
             </div>
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/central-coast">Central Coast</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 63.30 gallons in the Central Coast hydrologic region. That number is compared to the Feb. 2013 baseline. The chart below shows how the 27 agencies in this region performed.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 63.30 gallons in the Central Coast hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 27 agencies in this region performed. <a href="../monthly-water-use/region/central-coast/reduction-comparison">Click here</a> to see proposed reductions for this region.</p>
 
                 <!--
                     based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -1310,12 +1309,12 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div id="colorado-river" class="map" style="width: 100%; height: 215px"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 image-map">
+                <img src="static/cali_water/images/cal-region-colorado-river.png" />
             </div>
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/colorado-river">Colorado River</a></h3>
-                <p>Daily per capita residential water use <span class='increase-accent'>increased</span> in Feb. 2015 to an average of 165.55 gallons in the Colorado River hydrologic region. That number is compared to the Feb. 2013 baseline. The chart below shows how the 15 agencies in this region performed.</p>
+                <p>Daily per capita residential water use <span class='increase-accent'>increased</span> in Feb. 2015 to an average of 165.55 gallons in the Colorado River hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 15 agencies in this region performed. <a href="../monthly-water-use/region/colorado-river/reduction-comparison">Click here</a> to see proposed reductions for this region.</p>
 
                 <!--
                     based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -1486,12 +1485,12 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div id="north-coast" class="map" style="width: 100%; height: 215px"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 image-map">
+                <img src="static/cali_water/images/cal-region-north-coast.png" />
             </div>
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/north-coast">North Coast</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 58.42 gallons in the North Coast hydrologic region. That number is compared to the Feb. 2013 baseline. The chart below shows how the 15 agencies in this region performed.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 58.42 gallons in the North Coast hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 15 agencies in this region performed. <a href="../monthly-water-use/region/north-coast/reduction-comparison">Click here</a> to see proposed reductions for this region.</p>
 
                 <!--
                     based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -1662,12 +1661,12 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div id="north-lahontan" class="map" style="width: 100%; height: 215px"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 image-map">
+                <img src="static/cali_water/images/cal-region-north-lahontan.png" />
             </div>
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/north-lahontan">North Lahontan</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 94.19 gallons in the North Lahontan hydrologic region. That number is compared to the Feb. 2013 baseline. The chart below shows how the 5 agencies in this region performed.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 94.19 gallons in the North Lahontan hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 5 agencies in this region performed. <a href="../monthly-water-use/region/north-lahontan/reduction-comparison">Click here</a> to see proposed reductions for this region.</p>
 
                 <!--
                     based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -1748,12 +1747,12 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div id="sacramento-river" class="map" style="width: 100%; height: 215px"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 image-map">
+                <img src="static/cali_water/images/cal-region-sacramento-river.png" />
             </div>
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/sacramento-river">Sacramento River</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 78.22 gallons in the Sacramento River hydrologic region. That number is compared to the Feb. 2013 baseline. The chart below shows how the 41 agencies in this region performed.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 78.22 gallons in the Sacramento River hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 41 agencies in this region performed. <a href="../monthly-water-use/region/sacramento-river/reduction-comparison">Click here</a> to see proposed reductions for this region.</p>
 
                 <!--
                     based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -2158,12 +2157,12 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div id="san-francisco-bay" class="map" style="width: 100%; height: 215px"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 image-map">
+                <img src="static/cali_water/images/cal-region-san-francisco-bay.png" />
             </div>
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/san-francisco-bay">San Francisco Bay</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 57.95 gallons in the San Francisco Bay hydrologic region. That number is compared to the Feb. 2013 baseline. The chart below shows how the 46 agencies in this region performed.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 57.95 gallons in the San Francisco Bay hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 46 agencies in this region performed. <a href="../monthly-water-use/region/san-francisco-bay/reduction-comparison">Click here</a> to see proposed reductions for this region.</p>
 
                 <!--
                     based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -2613,12 +2612,12 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div id="san-joaquin-river" class="map" style="width: 100%; height: 215px"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 image-map">
+                <img src="static/cali_water/images/cal-region-san-joaquin-river.png" />
             </div>
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/san-joaquin-river">San Joaquin River</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 73.96 gallons in the San Joaquin River hydrologic region. That number is compared to the Feb. 2013 baseline. The chart below shows how the 27 agencies in this region performed.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 73.96 gallons in the San Joaquin River hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 27 agencies in this region performed. <a href="../monthly-water-use/region/san-joaquin-river/reduction-comparison">Click here</a> to see proposed reductions for this region.</p>
 
                 <!--
                     based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -2897,12 +2896,12 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div id="south-coast" class="map" style="width: 100%; height: 215px"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 image-map">
+                <img src="static/cali_water/images/cal-region-south-coast.png" />
             </div>
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/south-coast">South Coast</a></h3>
-                <p>Daily per capita residential water use <span class='increase-accent'>increased</span> in Feb. 2015 to an average of 80.55 gallons in the South Coast hydrologic region. That number is compared to the Feb. 2013 baseline. The chart below shows how the 170 agencies in this region performed.</p>
+                <p>Daily per capita residential water use <span class='increase-accent'>increased</span> in Feb. 2015 to an average of 80.65 gallons in the South Coast hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 171 agencies in this region performed. <a href="../monthly-water-use/region/south-coast/reduction-comparison">Click here</a> to see proposed reductions for this region.</p>
 
                 <!--
                     based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -3788,6 +3787,15 @@
                                 </span>
                             </li>
 
+                            <li id="los-angeles-county-public-works-waterworks-district-40" class="chart-point" style="left: 15.45%;">
+                                <span class="point" data-index="los-angeles-county-public-works-waterworks-district-40">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="../monthly-water-use/los-angeles-county-public-works-waterworks-district-40">Los Angeles County Public Works Waterworks District 40</a></span><br />
+                                        <span class="value text-center">89.90</span>
+                                    </span>
+                                </span>
+                            </li>
+
                             <li id="vallecitos-water-district" class="chart-point" style="left: 15.53%;">
                                 <span class="point" data-index="vallecitos-water-district">
                                     <span class="hovercard">
@@ -4451,11 +4459,11 @@
                             <span class="text-center"><b>Min</b> <br /> 39.78</span>
                         </li>
 
-                        <li class="tick-mark tick-mark-median" style="left: 13.8%;">
-                            <span class="text-center"><b>Median</b> <br /> 84.27</span>
+                        <li class="tick-mark tick-mark-median" style="left: 14.09%;">
+                            <span class="text-center"><b>Median</b> <br /> 85.27</span>
                         </li>
-                        <li class="tick-mark tick-mark-average" style="left: 12.71%;">
-                            <span class="text-center"><b>Average</b> <br /> 80.55</span>
+                        <li class="tick-mark tick-mark-average" style="left: 12.74%;">
+                            <span class="text-center"><b>Average</b> <br /> 80.65</span>
                         </li>
                         <li class="tick-mark tick-mark-max" style="left: 89.98%;">
                             <span class="text-center"><b>Max</b> <br /> 344.66</span>
@@ -4468,12 +4476,12 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div id="south-lahontan" class="map" style="width: 100%; height: 215px"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 image-map">
+                <img src="static/cali_water/images/cal-region-south-lahontan.png" />
             </div>
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/south-lahontan">South Lahontan</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 78.82 gallons in the South Lahontan hydrologic region. That number is compared to the Feb. 2013 baseline. The chart below shows how the 18 agencies in this region performed.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 75.46 gallons in the South Lahontan hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 17 agencies in this region performed. <a href="../monthly-water-use/region/south-lahontan/reduction-comparison">Click here</a> to see proposed reductions for this region.</p>
 
                 <!--
                     based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -4612,15 +4620,6 @@
                                 </span>
                             </li>
 
-                            <li id="los-angeles-county-public-works-waterworks-district-40" class="chart-point" style="left: 15.45%;">
-                                <span class="point" data-index="los-angeles-county-public-works-waterworks-district-40">
-                                    <span class="hovercard">
-                                        <span class="text-center"><a class="label-title" href="../monthly-water-use/los-angeles-county-public-works-waterworks-district-40">Los Angeles County Public Works Waterworks District 40</a></span><br />
-                                        <span class="value text-center">89.90</span>
-                                    </span>
-                                </span>
-                            </li>
-
                             <li id="san-bernardino-county-service-area-64" class="chart-point" style="left: 17.11%;">
                                 <span class="point" data-index="san-bernardino-county-service-area-64">
                                     <span class="hovercard">
@@ -4657,8 +4656,8 @@
                         <li class="tick-mark tick-mark-median" style="left: 13.15%;">
                             <span class="text-center"><b>Median</b> <br /> 82.05</span>
                         </li>
-                        <li class="tick-mark tick-mark-average" style="left: 12.2%;">
-                            <span class="text-center"><b>Average</b> <br /> 78.82</span>
+                        <li class="tick-mark tick-mark-average" style="left: 11.22%;">
+                            <span class="text-center"><b>Average</b> <br /> 75.46</span>
                         </li>
                         <li class="tick-mark tick-mark-max" style="left: 28.7%;">
                             <span class="text-center"><b>Max</b> <br /> 135.22</span>
@@ -4671,12 +4670,12 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div id="tulare-lake" class="map" style="width: 100%; height: 215px"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 image-map">
+                <img src="static/cali_water/images/cal-region-tulare-lake.png" />
             </div>
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+            <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/tulare-lake">Tulare Lake</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 80.95 gallons in the Tulare Lake hydrologic region. That number is compared to the Feb. 2013 baseline. The chart below shows how the 26 agencies in this region performed.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 80.95 gallons in the Tulare Lake hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 26 agencies in this region performed. <a href="../monthly-water-use/region/tulare-lake/reduction-comparison">Click here</a> to see proposed reductions for this region.</p>
 
                 <!--
                     based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -4977,18 +4976,14 @@
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/underscore-min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
 
-    <!--
-    <script src="static/scripts/leaflet_label.js"></script>
-    -->
-    <script src="static/data/california.js"></script>
-    <script src="static/data/calif_hydrologic_regions.js"></script>
     <script>
-
         window.appConfig = {"embed_this": true, "project_root": "http://projects.scpr.org/static/applications/monthly-water-use/", "embed_height": "2080px", "open_about_this": false, "is_embedded": false, "is_mobile": false, "comments": false, "embed_width": "100%"};
 
         window.appConfig.embed_this = false;
 
         $(document).ready(function(){
+
+            $(".js-basic-single").select2();
 
             /*
                 based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -5050,82 +5045,9 @@
         document.getElementById("water-supplier-list").onchange = function() {
             var selectedOption = this.value;
             window.location.href = selectedOption;
-        }
-
-        var layerColors = [
-            'rgb(166,206,227)',
-            'rgb(31,120,180)',
-            'rgb(178,223,138)',
-            'rgb(51,160,44)',
-            'rgb(251,154,153)',
-            'rgb(227,26,28)',
-            'rgb(253,191,111)',
-            'rgb(255,127,0)',
-            'rgb(202,178,214)',
-            'rgb(106,61,154)'
-        ];
-
-        var layerData = [{"count": 27, "max_range": 29.65, "average_range": 7.66, "this_month_avg": 63.30113815725384, "this_month_baseline_avg": 68.1034138442331, "hydrologic_region": "Central Coast", "min_range": 2.12, "median": 62.164063452, "this_max": {"calculated_rgpcd_2014__max": 138.43614103}, "last_month_avg": 62.474495843585665, "this_min": {"calculated_rgpcd_2014__min": 44.3617520991}, "median_range": 7.33, "suppliers": [{"distribution_precent": 2.12, "calculated_rgpcd_2014": 44.3617520991, "supplier_name": "city of santa cruz"}, {"distribution_precent": 2.37, "calculated_rgpcd_2014": 45.2027312126, "supplier_name": "california water service company king city"}, {"distribution_precent": 3.27, "calculated_rgpcd_2014": 48.2816619952, "supplier_name": "goleta water district"}, {"distribution_precent": 3.54, "calculated_rgpcd_2014": 49.201825481, "supplier_name": "soquel creek water district"}, {"distribution_precent": 4.25, "calculated_rgpcd_2014": 51.6476625713, "supplier_name": "city of san luis obispo"}, {"distribution_precent": 4.31, "calculated_rgpcd_2014": 51.848496795, "supplier_name": "california-american water company monterey district"}, {"distribution_precent": 5.32, "calculated_rgpcd_2014": 55.2890566318, "supplier_name": "california water service company salinas district"}, {"distribution_precent": 5.79, "calculated_rgpcd_2014": 56.88730305, "supplier_name": "scotts valley water district"}, {"distribution_precent": 5.86, "calculated_rgpcd_2014": 57.1483997955, "supplier_name": "city of santa barbara"}, {"distribution_precent": 5.87, "calculated_rgpcd_2014": 57.1655740689, "supplier_name": "city of watsonville"}, {"distribution_precent": 6.56, "calculated_rgpcd_2014": 59.5395958349, "supplier_name": "city of hollister"}, {"distribution_precent": 6.76, "calculated_rgpcd_2014": 60.2090760839, "supplier_name": "city of morro bay"}, {"distribution_precent": 6.95, "calculated_rgpcd_2014": 60.8772087623, "supplier_name": "city of gilroy"}, {"distribution_precent": 7.26, "calculated_rgpcd_2014": 61.9199898496, "supplier_name": "city of greenfield"}, {"distribution_precent": 7.33, "calculated_rgpcd_2014": 62.164063452, "supplier_name": "marina coast water district"}, {"distribution_precent": 7.41, "calculated_rgpcd_2014": 62.45025491, "supplier_name": "city of lompoc"}, {"distribution_precent": 7.7, "calculated_rgpcd_2014": 63.4307326643, "supplier_name": "sunnyslope county water district"}, {"distribution_precent": 8.46, "calculated_rgpcd_2014": 66.0278107044, "supplier_name": "atascadero mutual water company"}, {"distribution_precent": 9.21, "calculated_rgpcd_2014": 68.583202645, "supplier_name": "carpinteria valley water district"}, {"distribution_precent": 9.78, "calculated_rgpcd_2014": 70.5328970209, "supplier_name": "city of paso robles"}, {"distribution_precent": 9.86, "calculated_rgpcd_2014": 70.8083172005, "supplier_name": "city of morgan hill"}, {"distribution_precent": 10.11, "calculated_rgpcd_2014": 71.6547526536, "supplier_name": "city of soledad"}, {"distribution_precent": 15.77, "calculated_rgpcd_2014": 90.9969626501, "supplier_name": "city of santa maria"}, {"distribution_precent": 16.87, "calculated_rgpcd_2014": 94.7813949029, "supplier_name": "city of arroyo grande"}, {"distribution_precent": 18.62, "calculated_rgpcd_2014": 100.751555669, "supplier_name": "alco water service"}, {"distribution_precent": 20.88, "calculated_rgpcd_2014": 108.474083865, "supplier_name": "nipomo community services district"}, {"distribution_precent": 29.65, "calculated_rgpcd_2014": 138.43614103, "supplier_name": "golden state water company orcutt"}]}, {"count": 15, "max_range": 100.0, "average_range": 37.58, "this_month_avg": 165.55061514803668, "this_month_baseline_avg": 165.19139393707977, "hydrologic_region": "Colorado River", "min_range": 6.33, "median": 100.33136168, "this_max": {"calculated_rgpcd_2014__max": 378.914804777}, "last_month_avg": 144.8754396957443, "this_min": {"calculated_rgpcd_2014__min": 58.7311600008}, "median_range": 18.5, "suppliers": [{"distribution_precent": 6.33, "calculated_rgpcd_2014": 58.7311600008, "supplier_name": "hi-desert water district"}, {"distribution_precent": 10.64, "calculated_rgpcd_2014": 73.4628937671, "supplier_name": "city of el centro"}, {"distribution_precent": 10.64, "calculated_rgpcd_2014": 73.4665063219, "supplier_name": "twentynine palms water district"}, {"distribution_precent": 11.65, "calculated_rgpcd_2014": 76.9100056127, "supplier_name": "city of brawley"}, {"distribution_precent": 13.05, "calculated_rgpcd_2014": 81.7042146999, "supplier_name": "city of coachella"}, {"distribution_precent": 13.24, "calculated_rgpcd_2014": 82.3748642512, "supplier_name": "city of calexico"}, {"distribution_precent": 14.46, "calculated_rgpcd_2014": 86.5380953816, "supplier_name": "city of banning"}, {"distribution_precent": 15.79, "calculated_rgpcd_2014": 91.0718286534, "supplier_name": "joshua basin water district"}, {"distribution_precent": 18.5, "calculated_rgpcd_2014": 100.33136168, "supplier_name": "city of blythe"}, {"distribution_precent": 19.73, "calculated_rgpcd_2014": 104.546823723, "supplier_name": "city of imperial"}, {"distribution_precent": 21.16, "calculated_rgpcd_2014": 109.443056083, "supplier_name": "mission springs water district"}, {"distribution_precent": 25.24, "calculated_rgpcd_2014": 123.369682546, "supplier_name": "city of indio"}, {"distribution_precent": 53.81, "calculated_rgpcd_2014": 221.031885336, "supplier_name": "desert water agency"}, {"distribution_precent": 71.72, "calculated_rgpcd_2014": 282.260581262, "supplier_name": "coachella valley water district"}, {"distribution_precent": 100.0, "calculated_rgpcd_2014": 378.914804777, "supplier_name": "myoma dunes mutual water company"}]}, {"count": 15, "max_range": 21.75, "average_range": 6.24, "this_month_avg": 58.41804945075584, "this_month_baseline_avg": 63.771170503404356, "hydrologic_region": "North Coast", "min_range": 1.7, "median": 58.9635915524, "this_max": {"calculated_rgpcd_2014__max": 111.433649289}, "last_month_avg": 58.00493044927657, "this_min": {"calculated_rgpcd_2014__min": 42.912381477}, "median_range": 6.39, "suppliers": [{"distribution_precent": 1.7, "calculated_rgpcd_2014": 42.912381477, "supplier_name": "city of arcata"}, {"distribution_precent": 3.92, "calculated_rgpcd_2014": 50.4960728934, "supplier_name": "city of rohnert park"}, {"distribution_precent": 4.04, "calculated_rgpcd_2014": 50.9293002915, "supplier_name": "city of yreka"}, {"distribution_precent": 4.33, "calculated_rgpcd_2014": 51.9071566549, "supplier_name": "town of windsor"}, {"distribution_precent": 4.4, "calculated_rgpcd_2014": 52.1340502297, "supplier_name": "city of santa rosa"}, {"distribution_precent": 4.4, "calculated_rgpcd_2014": 52.1368584759, "supplier_name": "city of ukiah"}, {"distribution_precent": 5.31, "calculated_rgpcd_2014": 55.2523060971, "supplier_name": "sweetwater springs water district"}, {"distribution_precent": 5.76, "calculated_rgpcd_2014": 56.8053677092, "supplier_name": "mckinleyville community service district"}, {"distribution_precent": 6.39, "calculated_rgpcd_2014": 58.9635915524, "supplier_name": "california water service company redwood valley"}, {"distribution_precent": 7.74, "calculated_rgpcd_2014": 63.5631351579, "supplier_name": "city of healdsburg"}, {"distribution_precent": 8.36, "calculated_rgpcd_2014": 65.6872826607, "supplier_name": "city of crescent city"}, {"distribution_precent": 11.99, "calculated_rgpcd_2014": 78.091684435, "supplier_name": "city of fortuna"}, {"distribution_precent": 14.67, "calculated_rgpcd_2014": 87.2581003168, "supplier_name": "city of eureka"}, {"distribution_precent": 19.11, "calculated_rgpcd_2014": 102.420056481, "supplier_name": "humboldt community service district"}, {"distribution_precent": 21.75, "calculated_rgpcd_2014": 111.433649289, "supplier_name": "humboldt bay municipal water district"}]}, {"count": 5, "max_range": 24.44, "average_range": 16.7, "this_month_avg": 94.19085109209597, "this_month_baseline_avg": 109.3258332880432, "hydrologic_region": "North Lahontan", "min_range": 11.16, "median": 102.472711072, "this_max": {"calculated_rgpcd_2014__max": 120.637376931}, "last_month_avg": 105.9365410951588, "this_min": {"calculated_rgpcd_2014__min": 75.2623844146}, "median_range": 19.12, "suppliers": [{"distribution_precent": 11.16, "calculated_rgpcd_2014": 75.2623844146, "supplier_name": "tahoe city public utilities district"}, {"distribution_precent": 12.32, "calculated_rgpcd_2014": 79.2157142857, "supplier_name": "north tahoe public utility district"}, {"distribution_precent": 14.08, "calculated_rgpcd_2014": 85.2467783394, "supplier_name": "south tahoe public utilities district"}, {"distribution_precent": 19.12, "calculated_rgpcd_2014": 102.472711072, "supplier_name": "city of susanville"}, {"distribution_precent": 24.44, "calculated_rgpcd_2014": 120.637376931, "supplier_name": "truckee-donner public utilities district"}]}, {"count": 41, "max_range": 25.59, "average_range": 12.03, "this_month_avg": 78.21867259200141, "this_month_baseline_avg": 90.90696978207906, "hydrologic_region": "Sacramento River", "min_range": 5.43, "median": 85.8633831893, "this_max": {"calculated_rgpcd_2014__max": 124.578817034}, "last_month_avg": 78.43999603120753, "this_min": {"calculated_rgpcd_2014__min": 55.670554422}, "median_range": 14.26, "suppliers": [{"distribution_precent": 5.43, "calculated_rgpcd_2014": 55.670554422, "supplier_name": "city of roseville"}, {"distribution_precent": 5.78, "calculated_rgpcd_2014": 56.8752490736, "supplier_name": "california water service company oroville"}, {"distribution_precent": 7.12, "calculated_rgpcd_2014": 61.4323418887, "supplier_name": "city of sacramento"}, {"distribution_precent": 7.27, "calculated_rgpcd_2014": 61.9595596778, "supplier_name": "city of davis"}, {"distribution_precent": 7.34, "calculated_rgpcd_2014": 62.1833744007, "supplier_name": "california water service company willows"}, {"distribution_precent": 7.49, "calculated_rgpcd_2014": 62.7176857053, "supplier_name": "california water service company marysville"}, {"distribution_precent": 8.02, "calculated_rgpcd_2014": 64.5041084366, "supplier_name": "california-american water company sacramento district"}, {"distribution_precent": 8.1, "calculated_rgpcd_2014": 64.7750871902, "supplier_name": "city of woodland"}, {"distribution_precent": 8.77, "calculated_rgpcd_2014": 67.0658620452, "supplier_name": "city of california water service company dixon"}, {"distribution_precent": 9.64, "calculated_rgpcd_2014": 70.0446225249, "supplier_name": "city of fairfield"}, {"distribution_precent": 9.97, "calculated_rgpcd_2014": 71.1796087983, "supplier_name": "el dorado irrigation district"}, {"distribution_precent": 11.92, "calculated_rgpcd_2014": 77.8563609264, "supplier_name": "nevada irrigation district"}, {"distribution_precent": 11.94, "calculated_rgpcd_2014": 77.9305528343, "supplier_name": "city of lincoln"}, {"distribution_precent": 12.73, "calculated_rgpcd_2014": 80.6305639034, "supplier_name": "del oro water company"}, {"distribution_precent": 12.77, "calculated_rgpcd_2014": 80.742974525, "supplier_name": "sacramento county water agency"}, {"distribution_precent": 13.06, "calculated_rgpcd_2014": 81.7388311622, "supplier_name": "olivehurst public utility district"}, {"distribution_precent": 13.66, "calculated_rgpcd_2014": 83.8014739559, "supplier_name": "city of shasta lake"}, {"distribution_precent": 13.69, "calculated_rgpcd_2014": 83.9031249998, "supplier_name": "citrus heights water district"}, {"distribution_precent": 13.94, "calculated_rgpcd_2014": 84.7402766707, "supplier_name": "carmichael water district"}, {"distribution_precent": 14.02, "calculated_rgpcd_2014": 85.0192391259, "supplier_name": "fair oaks water district"}, {"distribution_precent": 14.02, "calculated_rgpcd_2014": 85.0312349832, "supplier_name": "city of rio vista"}, {"distribution_precent": 14.26, "calculated_rgpcd_2014": 85.8633831893, "supplier_name": "city of galt"}, {"distribution_precent": 14.32, "calculated_rgpcd_2014": 86.0396592637, "supplier_name": "california water service company chico district"}, {"distribution_precent": 14.46, "calculated_rgpcd_2014": 86.5454278664, "supplier_name": "elk grove water service"}, {"distribution_precent": 14.54, "calculated_rgpcd_2014": 86.7885156659, "supplier_name": "city of folsom"}, {"distribution_precent": 15.04, "calculated_rgpcd_2014": 88.499504825, "supplier_name": "city of west sacramento"}, {"distribution_precent": 15.37, "calculated_rgpcd_2014": 89.631278301, "supplier_name": "city of redding"}, {"distribution_precent": 15.42, "calculated_rgpcd_2014": 89.8097815122, "supplier_name": "san juan water district"}, {"distribution_precent": 15.8, "calculated_rgpcd_2014": 91.1016208908, "supplier_name": "linda county water district"}, {"distribution_precent": 16.11, "calculated_rgpcd_2014": 92.1704000739, "supplier_name": "city of vacaville"}, {"distribution_precent": 16.35, "calculated_rgpcd_2014": 93.00603071, "supplier_name": "georgetown divide public utilities district"}, {"distribution_precent": 16.56, "calculated_rgpcd_2014": 93.7174937282, "supplier_name": "city of yuba city"}, {"distribution_precent": 17.24, "calculated_rgpcd_2014": 96.0356915422, "supplier_name": "sacramento suburban water district"}, {"distribution_precent": 17.25, "calculated_rgpcd_2014": 96.0552923904, "supplier_name": "paradise irrigation district"}, {"distribution_precent": 18.18, "calculated_rgpcd_2014": 99.238061329, "supplier_name": "orange vale water company"}, {"distribution_precent": 18.82, "calculated_rgpcd_2014": 101.430080925, "supplier_name": "rio linda - elverta community water district"}, {"distribution_precent": 18.83, "calculated_rgpcd_2014": 101.478575946, "supplier_name": "placer county water agency"}, {"distribution_precent": 20.79, "calculated_rgpcd_2014": 108.165746417, "supplier_name": "bella vista water district"}, {"distribution_precent": 21.89, "calculated_rgpcd_2014": 111.921829408, "supplier_name": "golden state water company cordova"}, {"distribution_precent": 22.13, "calculated_rgpcd_2014": 112.75393605, "supplier_name": "fruitridge vista water company"}, {"distribution_precent": 25.59, "calculated_rgpcd_2014": 124.578817034, "supplier_name": "city of red bluff"}]}, {"count": 46, "max_range": 16.64, "average_range": 6.1, "this_month_avg": 57.94667329569237, "this_month_baseline_avg": 63.057520066902406, "hydrologic_region": "San Francisco Bay", "min_range": 0.57, "median": 60.9764705882, "this_max": {"calculated_rgpcd_2014__max": 93.9684555236}, "last_month_avg": 57.230686986135964, "this_min": {"calculated_rgpcd_2014__min": 39.0538242889}, "median_range": 6.98, "suppliers": [{"distribution_precent": 0.57, "calculated_rgpcd_2014": 39.0538242889, "supplier_name": "city of daly city"}, {"distribution_precent": 1.04, "calculated_rgpcd_2014": 40.6672271162, "supplier_name": "city of san bruno"}, {"distribution_precent": 1.58, "calculated_rgpcd_2014": 42.5031671857, "supplier_name": "city of martinez"}, {"distribution_precent": 1.74, "calculated_rgpcd_2014": 43.0427083146, "supplier_name": "california water service company south san francisco"}, {"distribution_precent": 1.88, "calculated_rgpcd_2014": 43.5261475004, "supplier_name": "san francisco public utilities commission"}, {"distribution_precent": 2.41, "calculated_rgpcd_2014": 45.332132289, "supplier_name": "golden state water company bay point"}, {"distribution_precent": 2.9, "calculated_rgpcd_2014": 47.0206345725, "supplier_name": "city of hayward"}, {"distribution_precent": 3.2, "calculated_rgpcd_2014": 48.0582494239, "supplier_name": "westborough water district"}, {"distribution_precent": 3.3, "calculated_rgpcd_2014": 48.3750760035, "supplier_name": "city of east palo alto"}, {"distribution_precent": 4.1, "calculated_rgpcd_2014": 51.1219716937, "supplier_name": "city of sunnyvale"}, {"distribution_precent": 4.13, "calculated_rgpcd_2014": 51.2379619756, "supplier_name": "city of mountain view"}, {"distribution_precent": 4.84, "calculated_rgpcd_2014": 53.6340251711, "supplier_name": "north coast county water district"}, {"distribution_precent": 5.13, "calculated_rgpcd_2014": 54.6494394118, "supplier_name": "great oaks water company incorporated"}, {"distribution_precent": 5.23, "calculated_rgpcd_2014": 54.9812523894, "supplier_name": "city of millbrae"}, {"distribution_precent": 5.47, "calculated_rgpcd_2014": 55.816976639, "supplier_name": "city of redwood city"}, {"distribution_precent": 5.71, "calculated_rgpcd_2014": 56.6376867922, "supplier_name": "city of menlo park"}, {"distribution_precent": 5.86, "calculated_rgpcd_2014": 57.1221893116, "supplier_name": "city of napa"}, {"distribution_precent": 5.89, "calculated_rgpcd_2014": 57.2319842008, "supplier_name": "california water service company mid peninsula"}, {"distribution_precent": 6.32, "calculated_rgpcd_2014": 58.7240988876, "supplier_name": "california water service company livermore"}, {"distribution_precent": 6.41, "calculated_rgpcd_2014": 59.0236125385, "supplier_name": "east bay municipal utilities district"}, {"distribution_precent": 6.51, "calculated_rgpcd_2014": 59.3434343434, "supplier_name": "san jose water company"}, {"distribution_precent": 6.68, "calculated_rgpcd_2014": 59.9349917781, "supplier_name": "city of burlingame"}, {"distribution_precent": 6.76, "calculated_rgpcd_2014": 60.2249954068, "supplier_name": "valley of the moon water district"}, {"distribution_precent": 6.98, "calculated_rgpcd_2014": 60.9764705882, "supplier_name": "alameda county water district"}, {"distribution_precent": 7.14, "calculated_rgpcd_2014": 61.506392168, "supplier_name": "city of petaluma"}, {"distribution_precent": 7.27, "calculated_rgpcd_2014": 61.948844653, "supplier_name": "city of milpitas"}, {"distribution_precent": 7.51, "calculated_rgpcd_2014": 62.767829255, "supplier_name": "city of santa clara"}, {"distribution_precent": 7.9, "calculated_rgpcd_2014": 64.0914909114, "supplier_name": "dublin san ramon services district"}, {"distribution_precent": 8.11, "calculated_rgpcd_2014": 64.8220420507, "supplier_name": "city of vallejo"}, {"distribution_precent": 8.26, "calculated_rgpcd_2014": 65.3448177464, "supplier_name": "marin municipal water district"}, {"distribution_precent": 8.29, "calculated_rgpcd_2014": 65.4573507544, "supplier_name": "north marin water district"}, {"distribution_precent": 9.12, "calculated_rgpcd_2014": 68.2801206717, "supplier_name": "contra costa water district"}, {"distribution_precent": 9.2, "calculated_rgpcd_2014": 68.5635552445, "supplier_name": "city of san jose"}, {"distribution_precent": 9.33, "calculated_rgpcd_2014": 69.0130291376, "supplier_name": "city of pleasanton"}, {"distribution_precent": 9.51, "calculated_rgpcd_2014": 69.6022699605, "supplier_name": "mid-peninsula water district"}, {"distribution_precent": 9.59, "calculated_rgpcd_2014": 69.894852903, "supplier_name": "city of american canyon"}, {"distribution_precent": 9.6, "calculated_rgpcd_2014": 69.9261387584, "supplier_name": "city of sonoma"}, {"distribution_precent": 9.62, "calculated_rgpcd_2014": 69.9823429166, "supplier_name": "city of palo alto"}, {"distribution_precent": 9.73, "calculated_rgpcd_2014": 70.376629622, "supplier_name": "city of livermore"}, {"distribution_precent": 10.69, "calculated_rgpcd_2014": 73.6556575474, "supplier_name": "coastside county water district"}, {"distribution_precent": 10.74, "calculated_rgpcd_2014": 73.8063939596, "supplier_name": "city of pittsburg"}, {"distribution_precent": 11.14, "calculated_rgpcd_2014": 75.1823978286, "supplier_name": "estero municipal improvement district"}, {"distribution_precent": 12.35, "calculated_rgpcd_2014": 79.3122601242, "supplier_name": "suisun-solano water authority"}, {"distribution_precent": 12.77, "calculated_rgpcd_2014": 80.7637426131, "supplier_name": "california water service company los altos suburban"}, {"distribution_precent": 12.9, "calculated_rgpcd_2014": 81.1852394622, "supplier_name": "city of benicia"}, {"distribution_precent": 16.64, "calculated_rgpcd_2014": 93.9684555236, "supplier_name": "california water service company bear gulch"}]}, {"count": 27, "max_range": 22.35, "average_range": 10.78, "this_month_avg": 73.9608395713212, "this_month_baseline_avg": 85.29114606780728, "hydrologic_region": "San Joaquin River", "min_range": 0.0, "median": 74.9953210122, "this_max": {"calculated_rgpcd_2014__max": 113.493450266}, "last_month_avg": 71.63163300169508, "this_min": {"calculated_rgpcd_2014__min": 37.1052349586}, "median_range": 11.09, "suppliers": [{"distribution_precent": 0.0, "calculated_rgpcd_2014": 37.1052349586, "supplier_name": "city of tracy"}, {"distribution_precent": 4.94, "calculated_rgpcd_2014": 54.0068077237, "supplier_name": "california water service company stockton"}, {"distribution_precent": 5.58, "calculated_rgpcd_2014": 56.1882158604, "supplier_name": "city of stockton"}, {"distribution_precent": 6.28, "calculated_rgpcd_2014": 58.5677061891, "supplier_name": "amador water agency"}, {"distribution_precent": 7.07, "calculated_rgpcd_2014": 61.2587837092, "supplier_name": "city of riverbank"}, {"distribution_precent": 7.86, "calculated_rgpcd_2014": 63.9562, "supplier_name": "groveland community services district"}, {"distribution_precent": 8.53, "calculated_rgpcd_2014": 66.260710346, "supplier_name": "city of manteca"}, {"distribution_precent": 8.73, "calculated_rgpcd_2014": 66.9530141631, "supplier_name": "diablo water district"}, {"distribution_precent": 9.22, "calculated_rgpcd_2014": 68.6342332208, "supplier_name": "city of newman water department"}, {"distribution_precent": 9.25, "calculated_rgpcd_2014": 68.7378666896, "supplier_name": "city of ceres"}, {"distribution_precent": 9.29, "calculated_rgpcd_2014": 68.8568497075, "supplier_name": "city of oakdale"}, {"distribution_precent": 9.69, "calculated_rgpcd_2014": 70.2161838968, "supplier_name": "city of lathrop"}, {"distribution_precent": 10.22, "calculated_rgpcd_2014": 72.0552419576, "supplier_name": "city of brentwood"}, {"distribution_precent": 10.86, "calculated_rgpcd_2014": 74.2427439621, "supplier_name": "city of livingston"}, {"distribution_precent": 11.09, "calculated_rgpcd_2014": 74.9953210122, "supplier_name": "tuolumne utilities district"}, {"distribution_precent": 11.18, "calculated_rgpcd_2014": 75.3326655121, "supplier_name": "city of madera"}, {"distribution_precent": 11.85, "calculated_rgpcd_2014": 77.6109786277, "supplier_name": "calaveras county water district"}, {"distribution_precent": 11.87, "calculated_rgpcd_2014": 77.6689405479, "supplier_name": "city of turlock"}, {"distribution_precent": 11.93, "calculated_rgpcd_2014": 77.8900340184, "supplier_name": "city of antioch"}, {"distribution_precent": 12.1, "calculated_rgpcd_2014": 78.4566284448, "supplier_name": "city of lodi"}, {"distribution_precent": 12.6, "calculated_rgpcd_2014": 80.1739030685, "supplier_name": "city of patterson"}, {"distribution_precent": 17.76, "calculated_rgpcd_2014": 97.8021978022, "supplier_name": "discovery bay community services district"}, {"distribution_precent": 17.82, "calculated_rgpcd_2014": 98.028907563, "supplier_name": "winton water sanitary district"}, {"distribution_precent": 18.03, "calculated_rgpcd_2014": 98.7286742035, "supplier_name": "city of merced"}, {"distribution_precent": 18.53, "calculated_rgpcd_2014": 100.437207654, "supplier_name": "city of modesto"}, {"distribution_precent": 22.3, "calculated_rgpcd_2014": 113.326171515, "supplier_name": "city of los banos"}, {"distribution_precent": 22.35, "calculated_rgpcd_2014": 113.493450266, "supplier_name": "city of ripon"}]}, {"count": 170, "max_range": 89.98, "average_range": 12.71, "this_month_avg": 80.55059455433869, "this_month_baseline_avg": 79.1326828436621, "hydrologic_region": "South Coast", "min_range": 0.78, "median": 84.2720640213, "this_max": {"calculated_rgpcd_2014__max": 344.660245055}, "last_month_avg": 75.69958870524593, "this_min": {"calculated_rgpcd_2014__min": 39.7806576314}, "median_range": 13.8, "suppliers": [{"distribution_precent": 0.78, "calculated_rgpcd_2014": 39.7806576314, "supplier_name": "city of vernon"}, {"distribution_precent": 1.28, "calculated_rgpcd_2014": 41.4882971262, "supplier_name": "city of big bear lake dept of water power"}, {"distribution_precent": 2.08, "calculated_rgpcd_2014": 44.2307408426, "supplier_name": "california water service company east los angeles"}, {"distribution_precent": 2.26, "calculated_rgpcd_2014": 44.8413488178, "supplier_name": "golden state water company bell-bell gardens"}, {"distribution_precent": 2.47, "calculated_rgpcd_2014": 45.5508524768, "supplier_name": "city of fountain valley"}, {"distribution_precent": 2.48, "calculated_rgpcd_2014": 45.5939158812, "supplier_name": "park water company"}, {"distribution_precent": 2.91, "calculated_rgpcd_2014": 47.0355833413, "supplier_name": "city of seal beach"}, {"distribution_precent": 4.35, "calculated_rgpcd_2014": 51.961263836, "supplier_name": "golden state water company florence graham"}, {"distribution_precent": 4.73, "calculated_rgpcd_2014": 53.2700898061, "supplier_name": "city of compton"}, {"distribution_precent": 4.74, "calculated_rgpcd_2014": 53.2972522156, "supplier_name": "city of la palma"}, {"distribution_precent": 5.01, "calculated_rgpcd_2014": 54.2261056318, "supplier_name": "city of south gate"}, {"distribution_precent": 5.5, "calculated_rgpcd_2014": 55.9192375517, "supplier_name": "golden state water company s san gabriel"}, {"distribution_precent": 5.89, "calculated_rgpcd_2014": 57.2330278322, "supplier_name": "sweetwater authority"}, {"distribution_precent": 5.95, "calculated_rgpcd_2014": 57.4434301598, "supplier_name": "city of paramount"}, {"distribution_precent": 6.09, "calculated_rgpcd_2014": 57.909947792, "supplier_name": "golden state water company norwalk"}, {"distribution_precent": 6.1, "calculated_rgpcd_2014": 57.9721867403, "supplier_name": "san gabriel valley water company"}, {"distribution_precent": 6.21, "calculated_rgpcd_2014": 58.3376451305, "supplier_name": "california-american water company san diego district"}, {"distribution_precent": 6.27, "calculated_rgpcd_2014": 58.5329725076, "supplier_name": "city of huntington park"}, {"distribution_precent": 6.33, "calculated_rgpcd_2014": 58.7311299904, "supplier_name": "golden state water company southwest"}, {"distribution_precent": 6.4, "calculated_rgpcd_2014": 58.9690443359, "supplier_name": "city of san diego"}, {"distribution_precent": 6.57, "calculated_rgpcd_2014": 59.5675199413, "supplier_name": "city of santa ana"}, {"distribution_precent": 6.95, "calculated_rgpcd_2014": 60.8614821555, "supplier_name": "big bear city community services district"}, {"distribution_precent": 7.0, "calculated_rgpcd_2014": 61.0425612316, "supplier_name": "city of inglewood"}, {"distribution_precent": 7.2, "calculated_rgpcd_2014": 61.7281928613, "supplier_name": "otay water district"}, {"distribution_precent": 7.23, "calculated_rgpcd_2014": 61.8109923381, "supplier_name": "casitas municipal water district"}, {"distribution_precent": 7.26, "calculated_rgpcd_2014": 61.904514685, "supplier_name": "golden state water company artesia"}, {"distribution_precent": 7.62, "calculated_rgpcd_2014": 63.1651578559, "supplier_name": "city of oxnard"}, {"distribution_precent": 7.74, "calculated_rgpcd_2014": 63.5743527149, "supplier_name": "montebello land and water company"}, {"distribution_precent": 8.16, "calculated_rgpcd_2014": 64.9925280583, "supplier_name": "golden state water company culver city"}, {"distribution_precent": 8.36, "calculated_rgpcd_2014": 65.6634288714, "supplier_name": "irvine ranch water district"}, {"distribution_precent": 8.38, "calculated_rgpcd_2014": 65.7450579016, "supplier_name": "crescenta valley water district"}, {"distribution_precent": 8.84, "calculated_rgpcd_2014": 67.3145260667, "supplier_name": "city of santa fe springs"}, {"distribution_precent": 8.91, "calculated_rgpcd_2014": 67.5678946987, "supplier_name": "city of hawthorne"}, {"distribution_precent": 9.42, "calculated_rgpcd_2014": 69.2874512619, "supplier_name": "california water service company dominguez"}, {"distribution_precent": 9.45, "calculated_rgpcd_2014": 69.3978633527, "supplier_name": "city of san buenaventura"}, {"distribution_precent": 9.47, "calculated_rgpcd_2014": 69.463627817, "supplier_name": "los angeles department of water and power"}, {"distribution_precent": 9.52, "calculated_rgpcd_2014": 69.6549917427, "supplier_name": "city of pomona"}, {"distribution_precent": 9.54, "calculated_rgpcd_2014": 69.7198599378, "supplier_name": "city of azusa"}, {"distribution_precent": 9.56, "calculated_rgpcd_2014": 69.7690509236, "supplier_name": "city of escondido"}, {"distribution_precent": 9.64, "calculated_rgpcd_2014": 70.0599444999, "supplier_name": "city of lynwood"}, {"distribution_precent": 9.64, "calculated_rgpcd_2014": 70.0638720773, "supplier_name": "city of la habra"}, {"distribution_precent": 9.71, "calculated_rgpcd_2014": 70.2959240318, "supplier_name": "city of long beach"}, {"distribution_precent": 9.91, "calculated_rgpcd_2014": 70.9877688215, "supplier_name": "golden state water company s arcadia"}, {"distribution_precent": 10.24, "calculated_rgpcd_2014": 72.1009500556, "supplier_name": "helix water district"}, {"distribution_precent": 10.7, "calculated_rgpcd_2014": 73.6838202202, "supplier_name": "orchard dale water district"}, {"distribution_precent": 10.87, "calculated_rgpcd_2014": 74.2766427214, "supplier_name": "city of riverside"}, {"distribution_precent": 10.89, "calculated_rgpcd_2014": 74.3219727964, "supplier_name": "eastern municipal water district"}, {"distribution_precent": 10.93, "calculated_rgpcd_2014": 74.4628439838, "supplier_name": "city of perris"}, {"distribution_precent": 10.97, "calculated_rgpcd_2014": 74.6179054947, "supplier_name": "city of huntington beach"}, {"distribution_precent": 11.02, "calculated_rgpcd_2014": 74.7643730559, "supplier_name": "lincoln avenue water company"}, {"distribution_precent": 11.17, "calculated_rgpcd_2014": 75.2867288918, "supplier_name": "lakeside water district"}, {"distribution_precent": 11.28, "calculated_rgpcd_2014": 75.6756447766, "supplier_name": "city of lomita"}, {"distribution_precent": 11.31, "calculated_rgpcd_2014": 75.7542619262, "supplier_name": "rowland water district"}, {"distribution_precent": 11.36, "calculated_rgpcd_2014": 75.9299841939, "supplier_name": "city of oceanside"}, {"distribution_precent": 11.44, "calculated_rgpcd_2014": 76.2124581807, "supplier_name": "city of anaheim"}, {"distribution_precent": 11.61, "calculated_rgpcd_2014": 76.799698832, "supplier_name": "lake hemet municipal water district"}, {"distribution_precent": 11.73, "calculated_rgpcd_2014": 77.1956160244, "supplier_name": "golden state water company west orange"}, {"distribution_precent": 11.73, "calculated_rgpcd_2014": 77.1978828348, "supplier_name": "bellflower-somerset mutual water company"}, {"distribution_precent": 11.77, "calculated_rgpcd_2014": 77.3302855951, "supplier_name": "city of buena park"}, {"distribution_precent": 11.93, "calculated_rgpcd_2014": 77.8820684789, "supplier_name": "city of downey"}, {"distribution_precent": 11.93, "calculated_rgpcd_2014": 77.893361257, "supplier_name": "mesa water district"}, {"distribution_precent": 11.98, "calculated_rgpcd_2014": 78.0588730929, "supplier_name": "san gabriel county water district"}, {"distribution_precent": 12.0, "calculated_rgpcd_2014": 78.1321154301, "supplier_name": "city of camarillo"}, {"distribution_precent": 12.04, "calculated_rgpcd_2014": 78.2645729673, "supplier_name": "suburban water systems san jose hills"}, {"distribution_precent": 12.1, "calculated_rgpcd_2014": 78.4785885059, "supplier_name": "city of lakewood"}, {"distribution_precent": 12.11, "calculated_rgpcd_2014": 78.5149607326, "supplier_name": "sunny slope water company"}, {"distribution_precent": 12.12, "calculated_rgpcd_2014": 78.5299704631, "supplier_name": "golden state water company placentia"}, {"distribution_precent": 12.14, "calculated_rgpcd_2014": 78.6097195847, "supplier_name": "city of colton"}, {"distribution_precent": 12.18, "calculated_rgpcd_2014": 78.7312836365, "supplier_name": "city of el segundo"}, {"distribution_precent": 12.22, "calculated_rgpcd_2014": 78.8692470832, "supplier_name": "city of sanger"}, {"distribution_precent": 12.28, "calculated_rgpcd_2014": 79.0863093624, "supplier_name": "city of santa monica"}, {"distribution_precent": 12.28, "calculated_rgpcd_2014": 79.0873083402, "supplier_name": "city of ontario"}, {"distribution_precent": 12.43, "calculated_rgpcd_2014": 79.5888028808, "supplier_name": "city of corona"}, {"distribution_precent": 12.5, "calculated_rgpcd_2014": 79.8324399806, "supplier_name": "california water service company hermosa redondo"}, {"distribution_precent": 12.84, "calculated_rgpcd_2014": 80.99555531, "supplier_name": "city of santa paula"}, {"distribution_precent": 13.03, "calculated_rgpcd_2014": 81.6424205246, "supplier_name": "south coast water district"}, {"distribution_precent": 13.05, "calculated_rgpcd_2014": 81.7220162948, "supplier_name": "vista irrigation district"}, {"distribution_precent": 13.09, "calculated_rgpcd_2014": 81.8345508196, "supplier_name": "valencia water company"}, {"distribution_precent": 13.13, "calculated_rgpcd_2014": 81.9847024271, "supplier_name": "city of san fernando"}, {"distribution_precent": 13.28, "calculated_rgpcd_2014": 82.5088613024, "supplier_name": "padre dam municipal water district"}, {"distribution_precent": 13.32, "calculated_rgpcd_2014": 82.6211310532, "supplier_name": "city of san clemente"}, {"distribution_precent": 13.49, "calculated_rgpcd_2014": 83.2272821652, "supplier_name": "city of westminster"}, {"distribution_precent": 13.51, "calculated_rgpcd_2014": 83.2737932508, "supplier_name": "city of monterey park"}, {"distribution_precent": 13.64, "calculated_rgpcd_2014": 83.7355681397, "supplier_name": "city of burbank"}, {"distribution_precent": 13.72, "calculated_rgpcd_2014": 84.0115306511, "supplier_name": "city of norwalk"}, {"distribution_precent": 13.8, "calculated_rgpcd_2014": 84.2720640213, "supplier_name": "city of glendale"}, {"distribution_precent": 14.09, "calculated_rgpcd_2014": 85.2721229463, "supplier_name": "santa margarita water district"}, {"distribution_precent": 14.25, "calculated_rgpcd_2014": 85.7989293168, "supplier_name": "city of pasadena"}, {"distribution_precent": 14.29, "calculated_rgpcd_2014": 85.9344309962, "supplier_name": "city of pico rivera"}, {"distribution_precent": 14.37, "calculated_rgpcd_2014": 86.2219809364, "supplier_name": "monte vista water district"}, {"distribution_precent": 14.39, "calculated_rgpcd_2014": 86.2832250859, "supplier_name": "city of manhattan beach"}, {"distribution_precent": 14.49, "calculated_rgpcd_2014": 86.6207968051, "supplier_name": "golden state water company simi valley"}, {"distribution_precent": 15.05, "calculated_rgpcd_2014": 88.5366874185, "supplier_name": "laguna beach county water district"}, {"distribution_precent": 15.06, "calculated_rgpcd_2014": 88.5746185598, "supplier_name": "city of south pasadena"}, {"distribution_precent": 15.09, "calculated_rgpcd_2014": 88.7005497446, "supplier_name": "city of chino hills"}, {"distribution_precent": 15.18, "calculated_rgpcd_2014": 88.9871978506, "supplier_name": "jurupa community service district"}, {"distribution_precent": 15.39, "calculated_rgpcd_2014": 89.7154953009, "supplier_name": "el toro water district"}, {"distribution_precent": 15.53, "calculated_rgpcd_2014": 90.2043938439, "supplier_name": "vallecitos water district"}, {"distribution_precent": 15.65, "calculated_rgpcd_2014": 90.5837215408, "supplier_name": "suburban water systems whittier la mirada"}, {"distribution_precent": 16.05, "calculated_rgpcd_2014": 91.9518791119, "supplier_name": "san gabriel valley fontana water company"}, {"distribution_precent": 16.74, "calculated_rgpcd_2014": 94.3394189935, "supplier_name": "city of san juan capistrano"}, {"distribution_precent": 16.75, "calculated_rgpcd_2014": 94.3508217383, "supplier_name": "ventura county waterworks district no 8"}, {"distribution_precent": 16.75, "calculated_rgpcd_2014": 94.3698934118, "supplier_name": "newhall county water district"}, {"distribution_precent": 16.83, "calculated_rgpcd_2014": 94.6388721382, "supplier_name": "rincon del diablo municipal water district"}, {"distribution_precent": 16.92, "calculated_rgpcd_2014": 94.9325064246, "supplier_name": "san bernardino county service area 70"}, {"distribution_precent": 16.92, "calculated_rgpcd_2014": 94.9484706053, "supplier_name": "golden state water company san dimas"}, {"distribution_precent": 16.94, "calculated_rgpcd_2014": 95.0020045104, "supplier_name": "city of covina"}, {"distribution_precent": 17.21, "calculated_rgpcd_2014": 95.9424485169, "supplier_name": "golden state water company ojai"}, {"distribution_precent": 17.39, "calculated_rgpcd_2014": 96.5433844104, "supplier_name": "pico water district"}, {"distribution_precent": 17.73, "calculated_rgpcd_2014": 97.6981290486, "supplier_name": "moulton niguel water district"}, {"distribution_precent": 17.79, "calculated_rgpcd_2014": 97.9272105013, "supplier_name": "city of garden grove"}, {"distribution_precent": 18.05, "calculated_rgpcd_2014": 98.8016566425, "supplier_name": "city of san bernardino"}, {"distribution_precent": 18.27, "calculated_rgpcd_2014": 99.5439947209, "supplier_name": "elsinore valley municipal water district"}, {"distribution_precent": 18.55, "calculated_rgpcd_2014": 100.507576525, "supplier_name": "east valley water district"}, {"distribution_precent": 18.59, "calculated_rgpcd_2014": 100.649784998, "supplier_name": "rubidoux community service district"}, {"distribution_precent": 18.85, "calculated_rgpcd_2014": 101.535009094, "supplier_name": "city of newport beach"}, {"distribution_precent": 19.0, "calculated_rgpcd_2014": 102.063367193, "supplier_name": "city of thousand oaks"}, {"distribution_precent": 19.07, "calculated_rgpcd_2014": 102.27496024, "supplier_name": "city of brea"}, {"distribution_precent": 19.24, "calculated_rgpcd_2014": 102.867637988, "supplier_name": "ramona municipal water district"}, {"distribution_precent": 19.67, "calculated_rgpcd_2014": 104.345555296, "supplier_name": "city of cerritos"}, {"distribution_precent": 19.81, "calculated_rgpcd_2014": 104.827987421, "supplier_name": "walnut valley water district"}, {"distribution_precent": 19.96, "calculated_rgpcd_2014": 105.342583341, "supplier_name": "california-american water company los angeles district"}, {"distribution_precent": 20.3, "calculated_rgpcd_2014": 106.486711536, "supplier_name": "city of fullerton"}, {"distribution_precent": 20.34, "calculated_rgpcd_2014": 106.620997081, "supplier_name": "cucamonga valley water district"}, {"distribution_precent": 20.64, "calculated_rgpcd_2014": 107.64734642, "supplier_name": "rubio canyon land and water association"}, {"distribution_precent": 20.96, "calculated_rgpcd_2014": 108.760171946, "supplier_name": "beaumont-cherry valley water district"}, {"distribution_precent": 20.97, "calculated_rgpcd_2014": 108.779247793, "supplier_name": "castaic lake water agency santa clarita water division"}, {"distribution_precent": 20.98, "calculated_rgpcd_2014": 108.804505154, "supplier_name": "city of orange"}, {"distribution_precent": 21.09, "calculated_rgpcd_2014": 109.195408717, "supplier_name": "san dieguito water district"}, {"distribution_precent": 21.17, "calculated_rgpcd_2014": 109.459675811, "supplier_name": "city of tustin"}, {"distribution_precent": 21.18, "calculated_rgpcd_2014": 109.49102569, "supplier_name": "city of poway"}, {"distribution_precent": 21.25, "calculated_rgpcd_2014": 109.734596717, "supplier_name": "city of whittier"}, {"distribution_precent": 21.82, "calculated_rgpcd_2014": 111.693196365, "supplier_name": "city of hemet"}, {"distribution_precent": 22.03, "calculated_rgpcd_2014": 112.422400148, "supplier_name": "city of san jacinto"}, {"distribution_precent": 22.63, "calculated_rgpcd_2014": 114.442026766, "supplier_name": "trabuco canyon water district"}, {"distribution_precent": 23.86, "calculated_rgpcd_2014": 118.662875304, "supplier_name": "california-american water ventura district"}, {"distribution_precent": 23.87, "calculated_rgpcd_2014": 118.710130356, "supplier_name": "riverside highland water company"}, {"distribution_precent": 24.05, "calculated_rgpcd_2014": 119.304777913, "supplier_name": "city of loma linda"}, {"distribution_precent": 24.29, "calculated_rgpcd_2014": 120.129096778, "supplier_name": "triunfo sanitation district oak park water service"}, {"distribution_precent": 25.08, "calculated_rgpcd_2014": 122.833629455, "supplier_name": "western municipal water district of riverside"}, {"distribution_precent": 25.11, "calculated_rgpcd_2014": 122.930686171, "supplier_name": "city of glendora"}, {"distribution_precent": 25.53, "calculated_rgpcd_2014": 124.361301856, "supplier_name": "ventura county waterworks district no 1"}, {"distribution_precent": 25.71, "calculated_rgpcd_2014": 124.972868199, "supplier_name": "west valley water district"}, {"distribution_precent": 25.86, "calculated_rgpcd_2014": 125.496069622, "supplier_name": "lee lake water district"}, {"distribution_precent": 26.09, "calculated_rgpcd_2014": 126.266264013, "supplier_name": "golden state water company claremont"}, {"distribution_precent": 26.91, "calculated_rgpcd_2014": 129.070396268, "supplier_name": "carlsbad municipal water district"}, {"distribution_precent": 27.22, "calculated_rgpcd_2014": 130.15700286, "supplier_name": "olivenhain municipal water district"}, {"distribution_precent": 27.27, "calculated_rgpcd_2014": 130.324569839, "supplier_name": "city of upland"}, {"distribution_precent": 27.91, "calculated_rgpcd_2014": 132.519801771, "supplier_name": "fallbrook public utility district"}, {"distribution_precent": 28.06, "calculated_rgpcd_2014": 133.030172118, "supplier_name": "city of la verne"}, {"distribution_precent": 28.64, "calculated_rgpcd_2014": 135.005954833, "supplier_name": "valley center municipal water district"}, {"distribution_precent": 29.06, "calculated_rgpcd_2014": 136.429841027, "supplier_name": "yucaipa valley water district"}, {"distribution_precent": 30.52, "calculated_rgpcd_2014": 141.416557688, "supplier_name": "city of sierra madre"}, {"distribution_precent": 30.78, "calculated_rgpcd_2014": 142.319711454, "supplier_name": "camrosa water district"}, {"distribution_precent": 30.84, "calculated_rgpcd_2014": 142.522625979, "supplier_name": "city of rialto"}, {"distribution_precent": 33.17, "calculated_rgpcd_2014": 150.466450074, "supplier_name": "yorba linda water district"}, {"distribution_precent": 33.37, "calculated_rgpcd_2014": 151.153532876, "supplier_name": "city of arcadia"}, {"distribution_precent": 36.51, "calculated_rgpcd_2014": 161.904870853, "supplier_name": "city of beverly hills"}, {"distribution_precent": 39.79, "calculated_rgpcd_2014": 173.118296341, "supplier_name": "las virgenes municipal water district"}, {"distribution_precent": 40.21, "calculated_rgpcd_2014": 174.558779974, "supplier_name": "city of redlands"}, {"distribution_precent": 40.57, "calculated_rgpcd_2014": 175.775006199, "supplier_name": "california water service company palos verdes"}, {"distribution_precent": 41.2, "calculated_rgpcd_2014": 177.945052792, "supplier_name": "los angeles county public works waterworks district 29"}, {"distribution_precent": 42.34, "calculated_rgpcd_2014": 181.840875412, "supplier_name": "rancho california water district"}, {"distribution_precent": 43.71, "calculated_rgpcd_2014": 186.509047453, "supplier_name": "east orange county water district"}, {"distribution_precent": 43.91, "calculated_rgpcd_2014": 187.20627879, "supplier_name": "california water service company westlake"}, {"distribution_precent": 44.81, "calculated_rgpcd_2014": 190.284728831, "supplier_name": "rainbow municipal water district"}, {"distribution_precent": 56.58, "calculated_rgpcd_2014": 230.498741746, "supplier_name": "valley water company"}, {"distribution_precent": 79.94, "calculated_rgpcd_2014": 310.34637491, "supplier_name": "serrano water district"}, {"distribution_precent": 88.52, "calculated_rgpcd_2014": 339.685649234, "supplier_name": "golden state water company cowan heights"}, {"distribution_precent": 89.98, "calculated_rgpcd_2014": 344.660245055, "supplier_name": "santa fe irrigation district"}]}, {"count": 18, "max_range": 28.7, "average_range": 12.2, "this_month_avg": 78.82040017717648, "this_month_baseline_avg": 87.87066603842922, "hydrologic_region": "South Lahontan", "min_range": 4.03, "median": 82.0495480391, "this_max": {"calculated_rgpcd_2014__max": 135.215042147}, "last_month_avg": 78.88359529520547, "this_min": {"calculated_rgpcd_2014__min": 50.8658300187}, "median_range": 13.15, "suppliers": [{"distribution_precent": 4.03, "calculated_rgpcd_2014": 50.8658300187, "supplier_name": "lake arrowhead community services district"}, {"distribution_precent": 4.98, "calculated_rgpcd_2014": 54.1284868584, "supplier_name": "valley county water district"}, {"distribution_precent": 5.88, "calculated_rgpcd_2014": 57.2013990281, "supplier_name": "city of adelanto"}, {"distribution_precent": 5.9, "calculated_rgpcd_2014": 57.2849793004, "supplier_name": "crestline village water district"}, {"distribution_precent": 7.34, "calculated_rgpcd_2014": 62.1808850415, "supplier_name": "golden state water company barstow"}, {"distribution_precent": 7.95, "calculated_rgpcd_2014": 64.2692568025, "supplier_name": "victorville water district"}, {"distribution_precent": 12.09, "calculated_rgpcd_2014": 78.4376513317, "supplier_name": "rosamond community service district"}, {"distribution_precent": 12.16, "calculated_rgpcd_2014": 78.6737298694, "supplier_name": "phelan pinon hills community services district"}, {"distribution_precent": 12.96, "calculated_rgpcd_2014": 81.4007488296, "supplier_name": "city of hesperia water district"}, {"distribution_precent": 13.15, "calculated_rgpcd_2014": 82.0495480391, "supplier_name": "palmdale water district"}, {"distribution_precent": 13.6, "calculated_rgpcd_2014": 83.5991550573, "supplier_name": "city of california city"}, {"distribution_precent": 13.75, "calculated_rgpcd_2014": 84.111354664, "supplier_name": "indian wells valley water district"}, {"distribution_precent": 14.58, "calculated_rgpcd_2014": 86.9254462456, "supplier_name": "apple valley ranchos water company"}, {"distribution_precent": 15.11, "calculated_rgpcd_2014": 88.7365633276, "supplier_name": "mammoth community water district"}, {"distribution_precent": 15.45, "calculated_rgpcd_2014": 89.9039721873, "supplier_name": "los angeles county public works waterworks district 40"}, {"distribution_precent": 17.11, "calculated_rgpcd_2014": 95.5721876425, "supplier_name": "san bernardino county service area 64"}, {"distribution_precent": 27.96, "calculated_rgpcd_2014": 132.686624155, "supplier_name": "california water service company antelope valley"}, {"distribution_precent": 28.7, "calculated_rgpcd_2014": 135.215042147, "supplier_name": "quartz hill water district"}]}, {"count": 26, "max_range": 40.35, "average_range": 12.83, "this_month_avg": 80.95445826568896, "this_month_baseline_avg": 88.89357921488276, "hydrologic_region": "Tulare Lake", "min_range": 3.84, "median": 88.5433538495, "this_max": {"calculated_rgpcd_2014__max": 175.016969476}, "last_month_avg": 76.20014743913677, "this_min": {"calculated_rgpcd_2014__min": 50.2190625775}, "median_range": 15.05, "suppliers": [{"distribution_precent": 3.84, "calculated_rgpcd_2014": 50.2190625775, "supplier_name": "city of reedley"}, {"distribution_precent": 4.66, "calculated_rgpcd_2014": 53.0379004997, "supplier_name": "city of tehachapi"}, {"distribution_precent": 6.75, "calculated_rgpcd_2014": 60.1648534561, "supplier_name": "city of fresno"}, {"distribution_precent": 9.64, "calculated_rgpcd_2014": 70.0637694851, "supplier_name": "city of wasco"}, {"distribution_precent": 9.77, "calculated_rgpcd_2014": 70.4868558122, "supplier_name": "city of delano"}, {"distribution_precent": 10.21, "calculated_rgpcd_2014": 72.015592579, "supplier_name": "california water service company visalia"}, {"distribution_precent": 11.03, "calculated_rgpcd_2014": 74.7904941069, "supplier_name": "california water service company kern river valley"}, {"distribution_precent": 12.42, "calculated_rgpcd_2014": 79.5616979437, "supplier_name": "city of lemoore"}, {"distribution_precent": 12.74, "calculated_rgpcd_2014": 80.6670741697, "supplier_name": "california water service company selma"}, {"distribution_precent": 13.31, "calculated_rgpcd_2014": 82.610534805, "supplier_name": "city of kerman"}, {"distribution_precent": 14.07, "calculated_rgpcd_2014": 85.1867313463, "supplier_name": "city of clovis"}, {"distribution_precent": 14.75, "calculated_rgpcd_2014": 87.5273435536, "supplier_name": "california water service company bakersfield"}, {"distribution_precent": 14.86, "calculated_rgpcd_2014": 87.8951612903, "supplier_name": "lamont public utility district"}, {"distribution_precent": 15.05, "calculated_rgpcd_2014": 88.5433538495, "supplier_name": "city of tulare"}, {"distribution_precent": 15.28, "calculated_rgpcd_2014": 89.3243493849, "supplier_name": "city of shafter"}, {"distribution_precent": 15.54, "calculated_rgpcd_2014": 90.2067669173, "supplier_name": "arvin community services district"}, {"distribution_precent": 16.44, "calculated_rgpcd_2014": 93.3053102582, "supplier_name": "west kern water district"}, {"distribution_precent": 16.65, "calculated_rgpcd_2014": 94.0043269098, "supplier_name": "city of exeter"}, {"distribution_precent": 17.98, "calculated_rgpcd_2014": 98.5795545189, "supplier_name": "city of bakersfield"}, {"distribution_precent": 21.25, "calculated_rgpcd_2014": 109.756097561, "supplier_name": "city of kingsburg"}, {"distribution_precent": 22.76, "calculated_rgpcd_2014": 114.916339791, "supplier_name": "east niles community service district"}, {"distribution_precent": 22.86, "calculated_rgpcd_2014": 115.230676078, "supplier_name": "city of corcoran"}, {"distribution_precent": 26.08, "calculated_rgpcd_2014": 126.259064879, "supplier_name": "bakman water company"}, {"distribution_precent": 27.41, "calculated_rgpcd_2014": 130.80971664, "supplier_name": "pinedale county water district"}, {"distribution_precent": 32.12, "calculated_rgpcd_2014": 146.891754394, "supplier_name": "oildale mutual water company"}, {"distribution_precent": 40.35, "calculated_rgpcd_2014": 175.016969476, "supplier_name": "vaughn water company"}]}];
-
-        for (var i=0; i<layerData.length; i++) {
-
-            var regionName = layerData[i].hydrologic_region;
-
-            var map_id = window.slugify(layerData[i].hydrologic_region);
-
-            var map = L.map(map_id, {
-                scrollWheelZoom: false,
-                zoomControl: false,
-                minZoom: 2,
-                maxZoom: 7
-            }).setView([37.335194502529724, -119.366455078125], 4.46);
-
-            L.geoJson(california, {
-                style: function (feature) {
-                    return {
-                        color: "#ffffff",
-                        weight: 0,
-                        fillColor: "#ffffff",
-                        opacity: 1,
-                        fillOpacity: 1
-                    }
-                }
-            }).addTo(map);
-
-            var thisRegionName = findProperRegion(regionName);
-
-            L.geoJson(thisRegionName, {
-                style: function(feature){
-                    return {
-                        color: "rgba(31, 120, 180, .7)",
-                        weight: 0,
-                        fillColor: "rgba(31, 120, 180, .7)",
-                        opacity: 1,
-                        fillOpacity: 1
-                    }
-                },
-            }).addTo(map);
-        };
-
-        function findProperRegion(regionName){
-            var theRegions = hydrologic_regions.features;
-
-            var layer;
-
-            for (var i=0; i<theRegions.length; i++) {
-
-                console.log();
-
-                if (theRegions[i].properties.FIRST_HRNA === regionName){
-                    layer = theRegions[i];
-                }
-            };
-
-            return layer;
-
         };
     </script>
-    <script src="static/scripts/_application_wrapper_0.5.js"></script>
+    <script src="static/cali_water/scripts/_application_wrapper_0.5.js"></script>
 
         <!-- end scripts -->
 

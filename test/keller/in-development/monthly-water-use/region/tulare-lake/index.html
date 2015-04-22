@@ -47,8 +47,8 @@
     <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-ui.1.10.3.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
     <link href="../../static/css/main-foundation-style-v3.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
     <link href="../../static/css/cali-water-style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
 
         <!-- end css -->
 
@@ -66,8 +66,7 @@
         <script type="text/javascript" src="//use.typekit.net/vtu6xsq.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         
-    <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 
         <!-- end base scripts -->
 
@@ -127,7 +126,7 @@
                 <h1>Where is California water use decreasing?</h1>
             </div>
             <div class="about collapse">
-                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/'>Chris Keller</a></span> | <span class="pubdate">Updated April 7, 2015</span></p>
+                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/'>Chris Keller</a></span> | <span class="pubdate">Updated April 22, 2015</span></p>
                 <p>More evidence that California needs to do more to cut water use – the state water board reported today that Californians in February conserved the smallest amount of seasonal water supplies since the state began compiling monthly statistics on water use last June. The meager cuts were fueled largely by increased water use in Southern California.</p><p>Statewide in February, Californians cut water use by just 2.8 percent compared to the same month a year ago.  But in the hydrological regions that cover most of Southern California – an area of 8.7 million people — water use actually rose. The South Coast region, which runs along the coast from Ventura to San Diego County, saw increased water use of more than 2 percent. And water consumption in the Colorado River region, which mostly covers San Bernardino, Riverside and Imperial counties, inched up half a percent.</p><p>Across much of the state — and particularly in Southern California — February saw significantly warmer temperatures and less rain than average, prompting urban water users to turn on their sprinklers to keep lawns green.</p><p>At the same time, average water use rose from levels in January, which was also unusually hot and dry. February water use was 77 gallons per person per day compared to 73 gallons the month before.</p><p>The findings were reported during a meeting of the State Water Resources Control Board, which is discussing how to enforce mandatory reductions in water use ordered last week by Gov. Jerry Brown.</p>
             </div>
             <div class="sources collapse">
@@ -169,8 +168,8 @@
             <noscript>Please enable JavaScript to view this interactive.</noscript>
             <h4 class="text-center">Choose a water supplier</h4>
             <div id="content-action-bar">
-                <select id="water-supplier-list" class="form-control">
-                    <option>-- Select a Tulare Lake supplier --</option>
+                <select id="water-supplier-list" class="form-control js-basic-single">
+                    <option>-- Select a Tulare Lake agency --</option>
                     
                         <option value="../../arvin-community-services-district">Arvin Community Services District</option>
                     
@@ -235,12 +234,12 @@
 
     
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div id="tulare-lake" class="map" style="width: 100%; height: 215px"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 image-map">
+                <img src="../../static//images/cal-region-tulare-lake.png" />
             </div>
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                 <h3>Tulare Lake</h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 80.95 gallons in the Tulare Lake hydrologic region. That number is compared to the Feb. 2013 baseline. The chart below shows how the 26 agencies in this region performed.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 80.95 gallons in the Tulare Lake hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 26 agencies in this region performed. <a href="../../region/tulare-lake/reduction-comparison">Click here</a> to see proposed reductions for this region.</p>
 
                 <!--
                     based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -536,8 +535,6 @@
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/underscore-min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
         
-    <script src="../../static/data/california.js"></script>
-    <script src="../../static/data/calif_hydrologic_regions.js"></script>
     <script>
 
         window.appConfig = {"embed_this": true, "project_root": "http://projects.scpr.org/static/applications/monthly-water-use/", "embed_height": "2080px", "open_about_this": false, "is_embedded": false, "is_mobile": false, "comments": false, "embed_width": "100%"};
@@ -545,6 +542,8 @@
         window.appConfig.project_root = window.appConfig.project_root + "region/tulare-lake";
 
         $(document).ready(function(){
+
+            $(".js-basic-single").select2();
 
             /*
                 based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -606,79 +605,6 @@
         document.getElementById("water-supplier-list").onchange = function() {
             var selectedOption = this.value;
             window.location.href = selectedOption;
-        }
-
-        var layerColors = [
-            'rgb(166,206,227)',
-            'rgb(31,120,180)',
-            'rgb(178,223,138)',
-            'rgb(51,160,44)',
-            'rgb(251,154,153)',
-            'rgb(227,26,28)',
-            'rgb(253,191,111)',
-            'rgb(255,127,0)',
-            'rgb(202,178,214)',
-            'rgb(106,61,154)'
-        ];
-
-        var layerData = [{"count": 26, "max_range": 100.0, "average_range": 24.63, "this_month_avg": 80.95445826568896, "this_min": {"calculated_rgpcd_2014__min": 50.2190625775}, "this_month_baseline_avg": 88.89357921488276, "hydrologic_region": "Tulare Lake", "min_range": 0.0, "median": 88.5433538495, "this_max": {"calculated_rgpcd_2014__max": 175.016969476}, "last_month_avg": 76.20014743913677, "hydrologic_slug": "tulare-lake", "median_range": 30.71, "suppliers": [{"distribution_precent": 32.04, "calculated_rgpcd_2014": 90.2067669173, "supplier_name": "arvin community services district"}, {"distribution_precent": 60.93, "calculated_rgpcd_2014": 126.259064879, "supplier_name": "bakman water company"}, {"distribution_precent": 29.89, "calculated_rgpcd_2014": 87.5273435536, "supplier_name": "california water service company bakersfield"}, {"distribution_precent": 19.69, "calculated_rgpcd_2014": 74.7904941069, "supplier_name": "california water service company kern river valley"}, {"distribution_precent": 24.4, "calculated_rgpcd_2014": 80.6670741697, "supplier_name": "california water service company selma"}, {"distribution_precent": 17.47, "calculated_rgpcd_2014": 72.015592579, "supplier_name": "california water service company visalia"}, {"distribution_precent": 38.75, "calculated_rgpcd_2014": 98.5795545189, "supplier_name": "city of bakersfield"}, {"distribution_precent": 28.02, "calculated_rgpcd_2014": 85.1867313463, "supplier_name": "city of clovis"}, {"distribution_precent": 52.09, "calculated_rgpcd_2014": 115.230676078, "supplier_name": "city of corcoran"}, {"distribution_precent": 16.24, "calculated_rgpcd_2014": 70.4868558122, "supplier_name": "city of delano"}, {"distribution_precent": 35.08, "calculated_rgpcd_2014": 94.0043269098, "supplier_name": "city of exeter"}, {"distribution_precent": 7.97, "calculated_rgpcd_2014": 60.1648534561, "supplier_name": "city of fresno"}, {"distribution_precent": 25.96, "calculated_rgpcd_2014": 82.610534805, "supplier_name": "city of kerman"}, {"distribution_precent": 47.71, "calculated_rgpcd_2014": 109.756097561, "supplier_name": "city of kingsburg"}, {"distribution_precent": 23.51, "calculated_rgpcd_2014": 79.5616979437, "supplier_name": "city of lemoore"}, {"distribution_precent": 0.0, "calculated_rgpcd_2014": 50.2190625775, "supplier_name": "city of reedley"}, {"distribution_precent": 31.33, "calculated_rgpcd_2014": 89.3243493849, "supplier_name": "city of shafter"}, {"distribution_precent": 2.26, "calculated_rgpcd_2014": 53.0379004997, "supplier_name": "city of tehachapi"}, {"distribution_precent": 30.71, "calculated_rgpcd_2014": 88.5433538495, "supplier_name": "city of tulare"}, {"distribution_precent": 15.9, "calculated_rgpcd_2014": 70.0637694851, "supplier_name": "city of wasco"}, {"distribution_precent": 51.84, "calculated_rgpcd_2014": 114.916339791, "supplier_name": "east niles community service district"}, {"distribution_precent": 30.19, "calculated_rgpcd_2014": 87.8951612903, "supplier_name": "lamont public utility district"}, {"distribution_precent": 77.46, "calculated_rgpcd_2014": 146.891754394, "supplier_name": "oildale mutual water company"}, {"distribution_precent": 64.58, "calculated_rgpcd_2014": 130.80971664, "supplier_name": "pinedale county water district"}, {"distribution_precent": 100.0, "calculated_rgpcd_2014": 175.016969476, "supplier_name": "vaughn water company"}, {"distribution_precent": 34.52, "calculated_rgpcd_2014": 93.3053102582, "supplier_name": "west kern water district"}]}];
-
-        for (var i=0; i<layerData.length; i++) {
-
-            var regionName = layerData[i].hydrologic_region;
-
-            var map_id = window.slugify(layerData[i].hydrologic_region);
-
-            var map = L.map(map_id, {
-                scrollWheelZoom: false,
-                zoomControl: false,
-                minZoom: 2,
-                maxZoom: 7
-            }).setView([37.335194502529724, -119.366455078125], 4.46);
-
-            L.geoJson(california, {
-                style: function (feature) {
-                    return {
-                        color: "#ffffff",
-                        weight: 0,
-                        fillColor: "#ffffff",
-                        opacity: 1,
-                        fillOpacity: 1
-                    }
-                }
-            }).addTo(map);
-
-            var thisRegionName = findProperRegion(regionName);
-
-            L.geoJson(thisRegionName, {
-                style: function(feature){
-                    return {
-                        color: "rgba(31, 120, 180, .7)",
-                        weight: 0,
-                        fillColor: "rgba(31, 120, 180, .7)",
-                        opacity: 1,
-                        fillOpacity: 1
-                    }
-                },
-            }).addTo(map);
-        };
-
-        function findProperRegion(regionName){
-            var theRegions = hydrologic_regions.features;
-
-            var layer;
-
-            for (var i=0; i<theRegions.length; i++) {
-
-                console.log();
-
-                if (theRegions[i].properties.FIRST_HRNA === regionName){
-                    layer = theRegions[i];
-                }
-            };
-
-            return layer;
-
         };
     </script>
     <script src="../../static/scripts/_application_wrapper_0.5.js"></script>

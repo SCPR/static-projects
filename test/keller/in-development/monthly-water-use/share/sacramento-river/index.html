@@ -47,8 +47,8 @@
     <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-ui.1.10.3.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
     <link href="../../static/css/main-foundation-style-v3.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
     <link href="../../static/css/cali-water-style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.min.css" rel="stylesheet" />
 
         <!-- end css -->
 
@@ -66,8 +66,7 @@
         <script type="text/javascript" src="//use.typekit.net/vtu6xsq.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         
-    <script src="http://maps.stamen.com/js/tile.stamen.js?v1.2.4"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 
         <!-- end base scripts -->
 
@@ -127,7 +126,7 @@
                 <h1>Where is California water use decreasing?</h1>
             </div>
             <div class="about collapse">
-                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/'>Chris Keller</a></span> | <span class="pubdate">Updated April 7, 2015</span></p>
+                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/'>Chris Keller</a></span> | <span class="pubdate">Updated April 22, 2015</span></p>
                 <p>More evidence that California needs to do more to cut water use – the state water board reported today that Californians in February conserved the smallest amount of seasonal water supplies since the state began compiling monthly statistics on water use last June. The meager cuts were fueled largely by increased water use in Southern California.</p><p>Statewide in February, Californians cut water use by just 2.8 percent compared to the same month a year ago.  But in the hydrological regions that cover most of Southern California – an area of 8.7 million people — water use actually rose. The South Coast region, which runs along the coast from Ventura to San Diego County, saw increased water use of more than 2 percent. And water consumption in the Colorado River region, which mostly covers San Bernardino, Riverside and Imperial counties, inched up half a percent.</p><p>Across much of the state — and particularly in Southern California — February saw significantly warmer temperatures and less rain than average, prompting urban water users to turn on their sprinklers to keep lawns green.</p><p>At the same time, average water use rose from levels in January, which was also unusually hot and dry. February water use was 77 gallons per person per day compared to 73 gallons the month before.</p><p>The findings were reported during a meeting of the State Water Resources Control Board, which is discussing how to enforce mandatory reductions in water use ordered last week by Gov. Jerry Brown.</p>
             </div>
             <div class="sources collapse">
@@ -169,8 +168,8 @@
             <noscript>Please enable JavaScript to view this interactive.</noscript>
             <h4 class="text-center">Choose a water supplier</h4>
             <div id="content-action-bar">
-                <select id="water-supplier-list" class="form-control">
-                    <option>-- Select a Sacramento River supplier --</option>
+                <select id="water-supplier-list" class="form-control js-basic-single">
+                    <option>-- Select a Sacramento River agency --</option>
                     
                         <option value="../../bella-vista-water-district">Bella Vista Water District</option>
                     
@@ -265,12 +264,12 @@
 
     
         <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <div id="sacramento-river" class="map" style="width: 100%; height: 215px"></div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 image-map">
+                <img src="../../static//images/cal-region-sacramento-river.png" />
             </div>
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                 <h3>Sacramento River</h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 78.22 gallons in the Sacramento River hydrologic region. That number is compared to the Feb. 2013 baseline. The chart below shows how the 41 agencies in this region performed.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 78.22 gallons in the Sacramento River hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 41 agencies in this region performed. <a href="../monthly-water-use/region/sacramento-river/reduction-comparison">Click here</a> to see proposed reductions for this region.</p>
 
                 <!--
                     based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -701,8 +700,6 @@
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/underscore-min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
         
-    <script src="../../static/data/california.js"></script>
-    <script src="../../static/data/calif_hydrologic_regions.js"></script>
     <script>
 
         window.appConfig = {"embed_this": true, "project_root": "http://projects.scpr.org/static/applications/monthly-water-use/", "embed_height": "2080px", "open_about_this": false, "is_embedded": false, "is_mobile": false, "comments": false, "embed_width": "100%"};
@@ -710,6 +707,8 @@
         window.appConfig.project_root = window.appConfig.project_root + "region/sacramento-river";
 
         $(document).ready(function(){
+
+            $(".js-basic-single").select2();
 
             /*
                 based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
@@ -771,79 +770,6 @@
         document.getElementById("water-supplier-list").onchange = function() {
             var selectedOption = this.value;
             window.location.href = selectedOption;
-        }
-
-        var layerColors = [
-            'rgb(166,206,227)',
-            'rgb(31,120,180)',
-            'rgb(178,223,138)',
-            'rgb(51,160,44)',
-            'rgb(251,154,153)',
-            'rgb(227,26,28)',
-            'rgb(253,191,111)',
-            'rgb(255,127,0)',
-            'rgb(202,178,214)',
-            'rgb(106,61,154)'
-        ];
-
-        var layerData = [{"count": 41, "max_range": 100.0, "average_range": 32.72, "this_month_avg": 78.21867259200141, "this_min": {"calculated_rgpcd_2014__min": 55.670554422}, "this_month_baseline_avg": 90.90696978207906, "hydrologic_region": "Sacramento River", "min_range": 0.0, "median": 85.8633831893, "this_max": {"calculated_rgpcd_2014__max": 124.578817034}, "last_month_avg": 78.43999603120753, "hydrologic_slug": "sacramento-river", "median_range": 43.82, "suppliers": [{"distribution_precent": 76.18, "calculated_rgpcd_2014": 108.165746417, "supplier_name": "bella vista water district"}, {"distribution_precent": 44.07, "calculated_rgpcd_2014": 86.0396592637, "supplier_name": "california water service company chico district"}, {"distribution_precent": 10.23, "calculated_rgpcd_2014": 62.7176857053, "supplier_name": "california water service company marysville"}, {"distribution_precent": 1.75, "calculated_rgpcd_2014": 56.8752490736, "supplier_name": "california water service company oroville"}, {"distribution_precent": 9.45, "calculated_rgpcd_2014": 62.1833744007, "supplier_name": "california water service company willows"}, {"distribution_precent": 12.82, "calculated_rgpcd_2014": 64.5041084366, "supplier_name": "california-american water company sacramento district"}, {"distribution_precent": 42.19, "calculated_rgpcd_2014": 84.7402766707, "supplier_name": "carmichael water district"}, {"distribution_precent": 40.97, "calculated_rgpcd_2014": 83.9031249998, "supplier_name": "citrus heights water district"}, {"distribution_precent": 16.54, "calculated_rgpcd_2014": 67.0658620452, "supplier_name": "city of california water service company dixon"}, {"distribution_precent": 9.13, "calculated_rgpcd_2014": 61.9595596778, "supplier_name": "city of davis"}, {"distribution_precent": 20.86, "calculated_rgpcd_2014": 70.0446225249, "supplier_name": "city of fairfield"}, {"distribution_precent": 45.16, "calculated_rgpcd_2014": 86.7885156659, "supplier_name": "city of folsom"}, {"distribution_precent": 43.82, "calculated_rgpcd_2014": 85.8633831893, "supplier_name": "city of galt"}, {"distribution_precent": 32.3, "calculated_rgpcd_2014": 77.9305528343, "supplier_name": "city of lincoln"}, {"distribution_precent": 100.0, "calculated_rgpcd_2014": 124.578817034, "supplier_name": "city of red bluff"}, {"distribution_precent": 49.28, "calculated_rgpcd_2014": 89.631278301, "supplier_name": "city of redding"}, {"distribution_precent": 42.61, "calculated_rgpcd_2014": 85.0312349832, "supplier_name": "city of rio vista"}, {"distribution_precent": 0.0, "calculated_rgpcd_2014": 55.670554422, "supplier_name": "city of roseville"}, {"distribution_precent": 8.36, "calculated_rgpcd_2014": 61.4323418887, "supplier_name": "city of sacramento"}, {"distribution_precent": 40.82, "calculated_rgpcd_2014": 83.8014739559, "supplier_name": "city of shasta lake"}, {"distribution_precent": 52.97, "calculated_rgpcd_2014": 92.1704000739, "supplier_name": "city of vacaville"}, {"distribution_precent": 47.64, "calculated_rgpcd_2014": 88.499504825, "supplier_name": "city of west sacramento"}, {"distribution_precent": 13.21, "calculated_rgpcd_2014": 64.7750871902, "supplier_name": "city of woodland"}, {"distribution_precent": 55.21, "calculated_rgpcd_2014": 93.7174937282, "supplier_name": "city of yuba city"}, {"distribution_precent": 36.22, "calculated_rgpcd_2014": 80.6305639034, "supplier_name": "del oro water company"}, {"distribution_precent": 22.51, "calculated_rgpcd_2014": 71.1796087983, "supplier_name": "el dorado irrigation district"}, {"distribution_precent": 44.81, "calculated_rgpcd_2014": 86.5454278664, "supplier_name": "elk grove water service"}, {"distribution_precent": 42.59, "calculated_rgpcd_2014": 85.0192391259, "supplier_name": "fair oaks water district"}, {"distribution_precent": 82.84, "calculated_rgpcd_2014": 112.75393605, "supplier_name": "fruitridge vista water company"}, {"distribution_precent": 54.18, "calculated_rgpcd_2014": 93.00603071, "supplier_name": "georgetown divide public utilities district"}, {"distribution_precent": 81.63, "calculated_rgpcd_2014": 111.921829408, "supplier_name": "golden state water company cordova"}, {"distribution_precent": 51.42, "calculated_rgpcd_2014": 91.1016208908, "supplier_name": "linda county water district"}, {"distribution_precent": 32.2, "calculated_rgpcd_2014": 77.8563609264, "supplier_name": "nevada irrigation district"}, {"distribution_precent": 37.83, "calculated_rgpcd_2014": 81.7388311622, "supplier_name": "olivehurst public utility district"}, {"distribution_precent": 63.23, "calculated_rgpcd_2014": 99.238061329, "supplier_name": "orange vale water company"}, {"distribution_precent": 58.61, "calculated_rgpcd_2014": 96.0552923904, "supplier_name": "paradise irrigation district"}, {"distribution_precent": 66.48, "calculated_rgpcd_2014": 101.478575946, "supplier_name": "placer county water agency"}, {"distribution_precent": 66.41, "calculated_rgpcd_2014": 101.430080925, "supplier_name": "rio linda - elverta community water district"}, {"distribution_precent": 36.39, "calculated_rgpcd_2014": 80.742974525, "supplier_name": "sacramento county water agency"}, {"distribution_precent": 58.58, "calculated_rgpcd_2014": 96.0356915422, "supplier_name": "sacramento suburban water district"}, {"distribution_precent": 49.54, "calculated_rgpcd_2014": 89.8097815122, "supplier_name": "san juan water district"}]}];
-
-        for (var i=0; i<layerData.length; i++) {
-
-            var regionName = layerData[i].hydrologic_region;
-
-            var map_id = window.slugify(layerData[i].hydrologic_region);
-
-            var map = L.map(map_id, {
-                scrollWheelZoom: false,
-                zoomControl: false,
-                minZoom: 2,
-                maxZoom: 7
-            }).setView([37.335194502529724, -119.366455078125], 4.46);
-
-            L.geoJson(california, {
-                style: function (feature) {
-                    return {
-                        color: "#ffffff",
-                        weight: 0,
-                        fillColor: "#ffffff",
-                        opacity: 1,
-                        fillOpacity: 1
-                    }
-                }
-            }).addTo(map);
-
-            var thisRegionName = findProperRegion(regionName);
-
-            L.geoJson(thisRegionName, {
-                style: function(feature){
-                    return {
-                        color: "rgba(31, 120, 180, .7)",
-                        weight: 0,
-                        fillColor: "rgba(31, 120, 180, .7)",
-                        opacity: 1,
-                        fillOpacity: 1
-                    }
-                },
-            }).addTo(map);
-        };
-
-        function findProperRegion(regionName){
-            var theRegions = hydrologic_regions.features;
-
-            var layer;
-
-            for (var i=0; i<theRegions.length; i++) {
-
-                console.log();
-
-                if (theRegions[i].properties.FIRST_HRNA === regionName){
-                    layer = theRegions[i];
-                }
-            };
-
-            return layer;
-
         };
     </script>
     <script src="../../static/scripts/_application_wrapper_0.5.js"></script>
