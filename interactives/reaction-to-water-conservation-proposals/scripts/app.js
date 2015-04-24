@@ -19,9 +19,12 @@
         renderSearchView: function(){
             $(".data-visuals").html(
                 "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
+
+                    "<h3>First Round</h3>" +
                     "<div id='DC-search-projectid-19698-public-comments-regarding-state-water-board-conservation-proposal' class='DC-search-container'></div>" +
-                "</div>"
+                "</div>" +
             );
+
             dc.embed.load('http://www.documentcloud.org/search/embed/', {
                 q: "projectid: 19698-public-comments-regarding-state-water-board-conservation-proposal ",
                 container: "#DC-search-projectid-19698-public-comments-regarding-state-water-board-conservation-proposal",
@@ -31,5 +34,4 @@
                 organization: 97
             });
         }
-
     });
