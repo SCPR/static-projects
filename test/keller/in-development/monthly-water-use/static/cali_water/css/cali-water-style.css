@@ -524,16 +524,16 @@ section.display ol li dl {
     }
 
     body.minimal .data-container h5 {
-        font-size: 160%;
+        font-size: 180%;
     }
 
     body.minimal .data-container h6 {
-        font-size: 130%;
+        font-size: 160%;
         line-height: 130%;
     }
 
     body.minimal .data-container p {
-        font-size: 100%;
+        font-size: 150%;
     }
 
     body.minimal .data-container .data-visuals .jumbotron h4 {
@@ -555,7 +555,7 @@ section.display ol li dl {
         width: 92%;
         margin: 0 3% 10px 3%;
         height: auto;
-        font-size: 100%;
+        font-size: 150%;
     }
 
     .icon-display {
@@ -572,7 +572,7 @@ section.display ol li dl {
     }
 
     body.minimal .data-container .icon-display p {
-        font-size: 100%;
+        font-size: 130%;
         text-align: center;
     }
 
@@ -615,7 +615,7 @@ section.display ol li dl {
     }
 
     body.minimal .data-container p {
-        font-size: 120%;
+        font-size: 150%;
     }
 
     body.minimal .data-container .data-visuals .jumbotron h4 {
@@ -637,7 +637,7 @@ section.display ol li dl {
         width: 92%;
         margin: 0 3% 10px 3%;
         height: auto;
-        font-size: 120%;
+        font-size: 150%;
     }
 
     .icon-display {
@@ -654,7 +654,7 @@ section.display ol li dl {
     }
 
     body.minimal .data-container .icon-display p {
-        font-size: 110%;
+        font-size: 130%;
         text-align: center;
     }
 
@@ -706,7 +706,7 @@ section.display ol li dl {
     }
 
     body.minimal .data-container p {
-        font-size: 120%;
+        font-size: 150%;
     }
 
     body.minimal .data-container .data-visuals .jumbotron h4 {
@@ -723,7 +723,7 @@ section.display ol li dl {
     }
 
     ._data_figure dd {
-        font-size: 120%;
+        font-size: 150%;
     }
 
     .icon-display {
@@ -740,7 +740,7 @@ section.display ol li dl {
     }
 
     body.minimal .data-container .icon-display p {
-        font-size: 110%;
+        font-size: 130%;
         text-align: center;
     }
 
@@ -774,7 +774,7 @@ section.display ol li dl {
     }
 
     body.minimal .data-container p {
-        font-size: 130%;
+        font-size: 150%;
     }
 
     body.minimal .data-container .data-visuals .jumbotron h4 {
@@ -791,7 +791,7 @@ section.display ol li dl {
     }
 
     ._data_figure dd {
-        font-size: 130%;
+        font-size: 150%;
     }
 
     .icon-display {
@@ -842,7 +842,7 @@ section.display ol li dl {
     }
 
     body.minimal .data-container p {
-        font-size: 130%;
+        font-size: 150%;
     }
 
     body.minimal .data-container .data-visuals .jumbotron h4 {
@@ -859,7 +859,7 @@ section.display ol li dl {
     }
 
     ._data_figure dd {
-        font-size: 130%;
+        font-size: 150%;
     }
 
     .icon-display {
