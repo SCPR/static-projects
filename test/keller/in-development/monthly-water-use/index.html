@@ -12,7 +12,7 @@
         <!-- begin meta -->
         <title>Where is California water use decreasing? | scpr.org</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="format-detection" content="telephone=no"/>
@@ -1033,17 +1033,18 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/central-coast">Central Coast</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 63.30 gallons in the Central Coast hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 27 agencies in this region performed. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/central-coast/reduction-comparison/">Click here</a> to see proposed reductions for this region.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 63.30 gallons in the Central Coast hydrologic region. That number is compared to the Feb. 2013 baseline. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/central-coast/reduction-comparison/">Click here</a> to see proposed reductions for this region. <span class="coal-chart-sentence show">Use the chart below to see how the 27 agencies in this region performed.</span><span class="data-point-sentence hidden">Here are some statistics for the 27 agencies in this region.</span></p>
 
-                <!--
-                    based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+                <section class="coal-chart-container show">
 
-                    formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+                    <!--
+                        based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
 
-                    styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
-                -->
+                        formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
 
-                <section class="coal-chart-container">
+                        styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                    -->
+
                     <ul class="coal-chart">
                         
                             <li id="city-of-santa-cruz" class="chart-point" style="left: 2.12%;">
@@ -1290,24 +1291,39 @@
                             </li>
                         
 
-
                         <li class="tick-mark tick-mark-min" style="left: 2.12%;">
-                            <span class="text-center"><b>Min</b> <br /> 44.36</span>
+                            <span class="text-center"><strong>Min</strong> <br /> 44.36</span>
                         </li>
 
                         <li class="tick-mark tick-mark-median" style="left: 7.33%;">
-                            <span class="text-center"><b>Median</b> <br /> 62.16</span>
+                            <span class="text-center"><strong>Median</strong> <br /> 62.16</span>
                         </li>
                         <li class="tick-mark tick-mark-average" style="left: 7.66%;">
-                            <span class="text-center"><b>Average</b> <br /> 63.30</span>
+                            <span class="text-center"><strong>Average</strong> <br /> 63.30</span>
                         </li>
                         <li class="tick-mark tick-mark-max" style="left: 29.65%;">
-                            <span class="text-center"><b>Max</b> <br /> 138.44</span>
+                            <span class="text-center"><strong>Max</strong> <br /> 138.44</span>
                         </li>
-
-
                     </ul>
                 </section>
+
+                <section class="data-point-container hidden">
+                    <ul class="list-inline mobile-data-points">
+                        <li>
+                            <span class="text-center"><strong>Min</strong><br />44.36<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Median</strong> <br /> 62.16<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Average</strong> <br /> 63.30<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Max</strong> <br /> 138.44<br />gallons</span>
+                        </li>
+                    </ul>
+                </section>
+
             </div>
         </div>
     
@@ -1317,17 +1333,18 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/colorado-river">Colorado River</a></h3>
-                <p>Daily per capita residential water use <span class='increase-accent'>increased</span> in Feb. 2015 to an average of 165.55 gallons in the Colorado River hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 15 agencies in this region performed. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/colorado-river/reduction-comparison/">Click here</a> to see proposed reductions for this region.</p>
+                <p>Daily per capita residential water use <span class='increase-accent'>increased</span> in Feb. 2015 to an average of 165.55 gallons in the Colorado River hydrologic region. That number is compared to the Feb. 2013 baseline. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/colorado-river/reduction-comparison/">Click here</a> to see proposed reductions for this region. <span class="coal-chart-sentence show">Use the chart below to see how the 15 agencies in this region performed.</span><span class="data-point-sentence hidden">Here are some statistics for the 15 agencies in this region.</span></p>
 
-                <!--
-                    based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+                <section class="coal-chart-container show">
 
-                    formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+                    <!--
+                        based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
 
-                    styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
-                -->
+                        formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
 
-                <section class="coal-chart-container">
+                        styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                    -->
+
                     <ul class="coal-chart">
                         
                             <li id="hi-desert-water-district" class="chart-point" style="left: 6.33%;">
@@ -1466,24 +1483,39 @@
                             </li>
                         
 
-
                         <li class="tick-mark tick-mark-min" style="left: 6.33%;">
-                            <span class="text-center"><b>Min</b> <br /> 58.73</span>
+                            <span class="text-center"><strong>Min</strong> <br /> 58.73</span>
                         </li>
 
                         <li class="tick-mark tick-mark-median" style="left: 18.5%;">
-                            <span class="text-center"><b>Median</b> <br /> 100.33</span>
+                            <span class="text-center"><strong>Median</strong> <br /> 100.33</span>
                         </li>
                         <li class="tick-mark tick-mark-average" style="left: 37.58%;">
-                            <span class="text-center"><b>Average</b> <br /> 165.55</span>
+                            <span class="text-center"><strong>Average</strong> <br /> 165.55</span>
                         </li>
                         <li class="tick-mark tick-mark-max" style="left: 100.0%;">
-                            <span class="text-center"><b>Max</b> <br /> 378.91</span>
+                            <span class="text-center"><strong>Max</strong> <br /> 378.91</span>
                         </li>
-
-
                     </ul>
                 </section>
+
+                <section class="data-point-container hidden">
+                    <ul class="list-inline mobile-data-points">
+                        <li>
+                            <span class="text-center"><strong>Min</strong><br />58.73<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Median</strong> <br /> 100.33<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Average</strong> <br /> 165.55<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Max</strong> <br /> 378.91<br />gallons</span>
+                        </li>
+                    </ul>
+                </section>
+
             </div>
         </div>
     
@@ -1493,17 +1525,18 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/north-coast">North Coast</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 58.42 gallons in the North Coast hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 15 agencies in this region performed. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/north-coast/reduction-comparison/">Click here</a> to see proposed reductions for this region.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 58.42 gallons in the North Coast hydrologic region. That number is compared to the Feb. 2013 baseline. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/north-coast/reduction-comparison/">Click here</a> to see proposed reductions for this region. <span class="coal-chart-sentence show">Use the chart below to see how the 15 agencies in this region performed.</span><span class="data-point-sentence hidden">Here are some statistics for the 15 agencies in this region.</span></p>
 
-                <!--
-                    based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+                <section class="coal-chart-container show">
 
-                    formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+                    <!--
+                        based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
 
-                    styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
-                -->
+                        formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
 
-                <section class="coal-chart-container">
+                        styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                    -->
+
                     <ul class="coal-chart">
                         
                             <li id="city-of-arcata" class="chart-point" style="left: 1.7%;">
@@ -1642,24 +1675,39 @@
                             </li>
                         
 
-
                         <li class="tick-mark tick-mark-min" style="left: 1.7%;">
-                            <span class="text-center"><b>Min</b> <br /> 42.91</span>
+                            <span class="text-center"><strong>Min</strong> <br /> 42.91</span>
                         </li>
 
                         <li class="tick-mark tick-mark-median" style="left: 6.39%;">
-                            <span class="text-center"><b>Median</b> <br /> 58.96</span>
+                            <span class="text-center"><strong>Median</strong> <br /> 58.96</span>
                         </li>
                         <li class="tick-mark tick-mark-average" style="left: 6.24%;">
-                            <span class="text-center"><b>Average</b> <br /> 58.42</span>
+                            <span class="text-center"><strong>Average</strong> <br /> 58.42</span>
                         </li>
                         <li class="tick-mark tick-mark-max" style="left: 21.75%;">
-                            <span class="text-center"><b>Max</b> <br /> 111.43</span>
+                            <span class="text-center"><strong>Max</strong> <br /> 111.43</span>
                         </li>
-
-
                     </ul>
                 </section>
+
+                <section class="data-point-container hidden">
+                    <ul class="list-inline mobile-data-points">
+                        <li>
+                            <span class="text-center"><strong>Min</strong><br />42.91<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Median</strong> <br /> 58.96<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Average</strong> <br /> 58.42<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Max</strong> <br /> 111.43<br />gallons</span>
+                        </li>
+                    </ul>
+                </section>
+
             </div>
         </div>
     
@@ -1669,17 +1717,18 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/north-lahontan">North Lahontan</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 94.19 gallons in the North Lahontan hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 5 agencies in this region performed. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/north-lahontan/reduction-comparison/">Click here</a> to see proposed reductions for this region.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 94.19 gallons in the North Lahontan hydrologic region. That number is compared to the Feb. 2013 baseline. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/north-lahontan/reduction-comparison/">Click here</a> to see proposed reductions for this region. <span class="coal-chart-sentence show">Use the chart below to see how the 5 agencies in this region performed.</span><span class="data-point-sentence hidden">Here are some statistics for the 5 agencies in this region.</span></p>
 
-                <!--
-                    based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+                <section class="coal-chart-container show">
 
-                    formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+                    <!--
+                        based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
 
-                    styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
-                -->
+                        formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
 
-                <section class="coal-chart-container">
+                        styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                    -->
+
                     <ul class="coal-chart">
                         
                             <li id="tahoe-city-public-utilities-district" class="chart-point" style="left: 11.16%;">
@@ -1728,24 +1777,39 @@
                             </li>
                         
 
-
                         <li class="tick-mark tick-mark-min" style="left: 11.16%;">
-                            <span class="text-center"><b>Min</b> <br /> 75.26</span>
+                            <span class="text-center"><strong>Min</strong> <br /> 75.26</span>
                         </li>
 
                         <li class="tick-mark tick-mark-median" style="left: 19.12%;">
-                            <span class="text-center"><b>Median</b> <br /> 102.47</span>
+                            <span class="text-center"><strong>Median</strong> <br /> 102.47</span>
                         </li>
                         <li class="tick-mark tick-mark-average" style="left: 16.7%;">
-                            <span class="text-center"><b>Average</b> <br /> 94.19</span>
+                            <span class="text-center"><strong>Average</strong> <br /> 94.19</span>
                         </li>
                         <li class="tick-mark tick-mark-max" style="left: 24.44%;">
-                            <span class="text-center"><b>Max</b> <br /> 120.64</span>
+                            <span class="text-center"><strong>Max</strong> <br /> 120.64</span>
                         </li>
-
-
                     </ul>
                 </section>
+
+                <section class="data-point-container hidden">
+                    <ul class="list-inline mobile-data-points">
+                        <li>
+                            <span class="text-center"><strong>Min</strong><br />75.26<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Median</strong> <br /> 102.47<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Average</strong> <br /> 94.19<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Max</strong> <br /> 120.64<br />gallons</span>
+                        </li>
+                    </ul>
+                </section>
+
             </div>
         </div>
     
@@ -1755,17 +1819,18 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/sacramento-river">Sacramento River</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 78.22 gallons in the Sacramento River hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 41 agencies in this region performed. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/sacramento-river/reduction-comparison/">Click here</a> to see proposed reductions for this region.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 78.22 gallons in the Sacramento River hydrologic region. That number is compared to the Feb. 2013 baseline. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/sacramento-river/reduction-comparison/">Click here</a> to see proposed reductions for this region. <span class="coal-chart-sentence show">Use the chart below to see how the 41 agencies in this region performed.</span><span class="data-point-sentence hidden">Here are some statistics for the 41 agencies in this region.</span></p>
 
-                <!--
-                    based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+                <section class="coal-chart-container show">
 
-                    formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+                    <!--
+                        based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
 
-                    styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
-                -->
+                        formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
 
-                <section class="coal-chart-container">
+                        styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                    -->
+
                     <ul class="coal-chart">
                         
                             <li id="city-of-roseville" class="chart-point" style="left: 5.43%;">
@@ -2138,24 +2203,39 @@
                             </li>
                         
 
-
                         <li class="tick-mark tick-mark-min" style="left: 5.43%;">
-                            <span class="text-center"><b>Min</b> <br /> 55.67</span>
+                            <span class="text-center"><strong>Min</strong> <br /> 55.67</span>
                         </li>
 
                         <li class="tick-mark tick-mark-median" style="left: 14.26%;">
-                            <span class="text-center"><b>Median</b> <br /> 85.86</span>
+                            <span class="text-center"><strong>Median</strong> <br /> 85.86</span>
                         </li>
                         <li class="tick-mark tick-mark-average" style="left: 12.03%;">
-                            <span class="text-center"><b>Average</b> <br /> 78.22</span>
+                            <span class="text-center"><strong>Average</strong> <br /> 78.22</span>
                         </li>
                         <li class="tick-mark tick-mark-max" style="left: 25.59%;">
-                            <span class="text-center"><b>Max</b> <br /> 124.58</span>
+                            <span class="text-center"><strong>Max</strong> <br /> 124.58</span>
                         </li>
-
-
                     </ul>
                 </section>
+
+                <section class="data-point-container hidden">
+                    <ul class="list-inline mobile-data-points">
+                        <li>
+                            <span class="text-center"><strong>Min</strong><br />55.67<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Median</strong> <br /> 85.86<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Average</strong> <br /> 78.22<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Max</strong> <br /> 124.58<br />gallons</span>
+                        </li>
+                    </ul>
+                </section>
+
             </div>
         </div>
     
@@ -2165,17 +2245,18 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/san-francisco-bay">San Francisco Bay</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 57.95 gallons in the San Francisco Bay hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 46 agencies in this region performed. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/san-francisco-bay/reduction-comparison/">Click here</a> to see proposed reductions for this region.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 57.95 gallons in the San Francisco Bay hydrologic region. That number is compared to the Feb. 2013 baseline. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/san-francisco-bay/reduction-comparison/">Click here</a> to see proposed reductions for this region. <span class="coal-chart-sentence show">Use the chart below to see how the 46 agencies in this region performed.</span><span class="data-point-sentence hidden">Here are some statistics for the 46 agencies in this region.</span></p>
 
-                <!--
-                    based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+                <section class="coal-chart-container show">
 
-                    formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+                    <!--
+                        based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
 
-                    styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
-                -->
+                        formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
 
-                <section class="coal-chart-container">
+                        styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                    -->
+
                     <ul class="coal-chart">
                         
                             <li id="city-of-daly-city" class="chart-point" style="left: 0.57%;">
@@ -2593,24 +2674,39 @@
                             </li>
                         
 
-
                         <li class="tick-mark tick-mark-min" style="left: 0.57%;">
-                            <span class="text-center"><b>Min</b> <br /> 39.05</span>
+                            <span class="text-center"><strong>Min</strong> <br /> 39.05</span>
                         </li>
 
                         <li class="tick-mark tick-mark-median" style="left: 6.98%;">
-                            <span class="text-center"><b>Median</b> <br /> 60.98</span>
+                            <span class="text-center"><strong>Median</strong> <br /> 60.98</span>
                         </li>
                         <li class="tick-mark tick-mark-average" style="left: 6.1%;">
-                            <span class="text-center"><b>Average</b> <br /> 57.95</span>
+                            <span class="text-center"><strong>Average</strong> <br /> 57.95</span>
                         </li>
                         <li class="tick-mark tick-mark-max" style="left: 16.64%;">
-                            <span class="text-center"><b>Max</b> <br /> 93.97</span>
+                            <span class="text-center"><strong>Max</strong> <br /> 93.97</span>
                         </li>
-
-
                     </ul>
                 </section>
+
+                <section class="data-point-container hidden">
+                    <ul class="list-inline mobile-data-points">
+                        <li>
+                            <span class="text-center"><strong>Min</strong><br />39.05<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Median</strong> <br /> 60.98<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Average</strong> <br /> 57.95<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Max</strong> <br /> 93.97<br />gallons</span>
+                        </li>
+                    </ul>
+                </section>
+
             </div>
         </div>
     
@@ -2620,17 +2716,18 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/san-joaquin-river">San Joaquin River</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 73.96 gallons in the San Joaquin River hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 27 agencies in this region performed. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/san-joaquin-river/reduction-comparison/">Click here</a> to see proposed reductions for this region.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 73.96 gallons in the San Joaquin River hydrologic region. That number is compared to the Feb. 2013 baseline. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/san-joaquin-river/reduction-comparison/">Click here</a> to see proposed reductions for this region. <span class="coal-chart-sentence show">Use the chart below to see how the 27 agencies in this region performed.</span><span class="data-point-sentence hidden">Here are some statistics for the 27 agencies in this region.</span></p>
 
-                <!--
-                    based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+                <section class="coal-chart-container show">
 
-                    formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+                    <!--
+                        based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
 
-                    styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
-                -->
+                        formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
 
-                <section class="coal-chart-container">
+                        styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                    -->
+
                     <ul class="coal-chart">
                         
                             <li id="city-of-tracy" class="chart-point" style="left: 0.0%;">
@@ -2877,24 +2974,39 @@
                             </li>
                         
 
-
                         <li class="tick-mark tick-mark-min" style="left: 0.0%;">
-                            <span class="text-center"><b>Min</b> <br /> 37.11</span>
+                            <span class="text-center"><strong>Min</strong> <br /> 37.11</span>
                         </li>
 
                         <li class="tick-mark tick-mark-median" style="left: 11.09%;">
-                            <span class="text-center"><b>Median</b> <br /> 75.00</span>
+                            <span class="text-center"><strong>Median</strong> <br /> 75.00</span>
                         </li>
                         <li class="tick-mark tick-mark-average" style="left: 10.78%;">
-                            <span class="text-center"><b>Average</b> <br /> 73.96</span>
+                            <span class="text-center"><strong>Average</strong> <br /> 73.96</span>
                         </li>
                         <li class="tick-mark tick-mark-max" style="left: 22.35%;">
-                            <span class="text-center"><b>Max</b> <br /> 113.49</span>
+                            <span class="text-center"><strong>Max</strong> <br /> 113.49</span>
                         </li>
-
-
                     </ul>
                 </section>
+
+                <section class="data-point-container hidden">
+                    <ul class="list-inline mobile-data-points">
+                        <li>
+                            <span class="text-center"><strong>Min</strong><br />37.11<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Median</strong> <br /> 75.00<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Average</strong> <br /> 73.96<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Max</strong> <br /> 113.49<br />gallons</span>
+                        </li>
+                    </ul>
+                </section>
+
             </div>
         </div>
     
@@ -2904,17 +3016,18 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/south-coast">South Coast</a></h3>
-                <p>Daily per capita residential water use <span class='increase-accent'>increased</span> in Feb. 2015 to an average of 80.65 gallons in the South Coast hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 170 agencies in this region performed. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/south-coast/reduction-comparison/">Click here</a> to see proposed reductions for this region.</p>
+                <p>Daily per capita residential water use <span class='increase-accent'>increased</span> in Feb. 2015 to an average of 80.65 gallons in the South Coast hydrologic region. That number is compared to the Feb. 2013 baseline. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/south-coast/reduction-comparison/">Click here</a> to see proposed reductions for this region. <span class="coal-chart-sentence show">Use the chart below to see how the 170 agencies in this region performed.</span><span class="data-point-sentence hidden">Here are some statistics for the 170 agencies in this region.</span></p>
 
-                <!--
-                    based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+                <section class="coal-chart-container show">
 
-                    formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+                    <!--
+                        based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
 
-                    styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
-                -->
+                        formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
 
-                <section class="coal-chart-container">
+                        styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                    -->
+
                     <ul class="coal-chart">
                         
                             <li id="city-of-vernon" class="chart-point" style="left: 0.78%;">
@@ -4448,24 +4561,39 @@
                             </li>
                         
 
-
                         <li class="tick-mark tick-mark-min" style="left: 0.78%;">
-                            <span class="text-center"><b>Min</b> <br /> 39.78</span>
+                            <span class="text-center"><strong>Min</strong> <br /> 39.78</span>
                         </li>
 
                         <li class="tick-mark tick-mark-median" style="left: 14.09%;">
-                            <span class="text-center"><b>Median</b> <br /> 85.27</span>
+                            <span class="text-center"><strong>Median</strong> <br /> 85.27</span>
                         </li>
                         <li class="tick-mark tick-mark-average" style="left: 12.74%;">
-                            <span class="text-center"><b>Average</b> <br /> 80.65</span>
+                            <span class="text-center"><strong>Average</strong> <br /> 80.65</span>
                         </li>
                         <li class="tick-mark tick-mark-max" style="left: 89.98%;">
-                            <span class="text-center"><b>Max</b> <br /> 344.66</span>
+                            <span class="text-center"><strong>Max</strong> <br /> 344.66</span>
                         </li>
-
-
                     </ul>
                 </section>
+
+                <section class="data-point-container hidden">
+                    <ul class="list-inline mobile-data-points">
+                        <li>
+                            <span class="text-center"><strong>Min</strong><br />39.78<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Median</strong> <br /> 85.27<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Average</strong> <br /> 80.65<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Max</strong> <br /> 344.66<br />gallons</span>
+                        </li>
+                    </ul>
+                </section>
+
             </div>
         </div>
     
@@ -4475,17 +4603,18 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/tulare-lake">Tulare Lake</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 80.92 gallons in the Tulare Lake hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 27 agencies in this region performed. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/tulare-lake/reduction-comparison/">Click here</a> to see proposed reductions for this region.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 80.92 gallons in the Tulare Lake hydrologic region. That number is compared to the Feb. 2013 baseline. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/tulare-lake/reduction-comparison/">Click here</a> to see proposed reductions for this region. <span class="coal-chart-sentence show">Use the chart below to see how the 27 agencies in this region performed.</span><span class="data-point-sentence hidden">Here are some statistics for the 27 agencies in this region.</span></p>
 
-                <!--
-                    based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+                <section class="coal-chart-container show">
 
-                    formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+                    <!--
+                        based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
 
-                    styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
-                -->
+                        formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
 
-                <section class="coal-chart-container">
+                        styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                    -->
+
                     <ul class="coal-chart">
                         
                             <li id="city-of-reedley" class="chart-point" style="left: 3.84%;">
@@ -4732,24 +4861,39 @@
                             </li>
                         
 
-
                         <li class="tick-mark tick-mark-min" style="left: 3.84%;">
-                            <span class="text-center"><b>Min</b> <br /> 50.22</span>
+                            <span class="text-center"><strong>Min</strong> <br /> 50.22</span>
                         </li>
 
                         <li class="tick-mark tick-mark-median" style="left: 15.05%;">
-                            <span class="text-center"><b>Median</b> <br /> 88.54</span>
+                            <span class="text-center"><strong>Median</strong> <br /> 88.54</span>
                         </li>
                         <li class="tick-mark tick-mark-average" style="left: 12.82%;">
-                            <span class="text-center"><b>Average</b> <br /> 80.92</span>
+                            <span class="text-center"><strong>Average</strong> <br /> 80.92</span>
                         </li>
                         <li class="tick-mark tick-mark-max" style="left: 40.35%;">
-                            <span class="text-center"><b>Max</b> <br /> 175.02</span>
+                            <span class="text-center"><strong>Max</strong> <br /> 175.02</span>
                         </li>
-
-
                     </ul>
                 </section>
+
+                <section class="data-point-container hidden">
+                    <ul class="list-inline mobile-data-points">
+                        <li>
+                            <span class="text-center"><strong>Min</strong><br />50.22<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Median</strong> <br /> 88.54<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Average</strong> <br /> 80.92<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Max</strong> <br /> 175.02<br />gallons</span>
+                        </li>
+                    </ul>
+                </section>
+
             </div>
         </div>
     
@@ -4759,17 +4903,18 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                 <h3><a href="../monthly-water-use/region/south-lahontan">South Lahontan</a></h3>
-                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 75.46 gallons in the South Lahontan hydrologic region. That number is compared to the Feb. 2013 baseline. Use the chart below to see how the 17 agencies in this region performed. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/south-lahontan/reduction-comparison/">Click here</a> to see proposed reductions for this region.</p>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in Feb. 2015 to an average of 75.46 gallons in the South Lahontan hydrologic region. That number is compared to the Feb. 2013 baseline. <a href="http://projects.scpr.org/test/keller/in-development/monthly-water-use/region/south-lahontan/reduction-comparison/">Click here</a> to see proposed reductions for this region. <span class="coal-chart-sentence show">Use the chart below to see how the 17 agencies in this region performed.</span><span class="data-point-sentence hidden">Here are some statistics for the 17 agencies in this region.</span></p>
 
-                <!--
-                    based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+                <section class="coal-chart-container show">
 
-                    formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+                    <!--
+                        based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
 
-                    styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
-                -->
+                        formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
 
-                <section class="coal-chart-container">
+                        styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                    -->
+
                     <ul class="coal-chart">
                         
                             <li id="lake-arrowhead-community-services-district" class="chart-point" style="left: 4.03%;">
@@ -4926,28 +5071,42 @@
                             </li>
                         
 
-
                         <li class="tick-mark tick-mark-min" style="left: 4.03%;">
-                            <span class="text-center"><b>Min</b> <br /> 50.87</span>
+                            <span class="text-center"><strong>Min</strong> <br /> 50.87</span>
                         </li>
 
                         <li class="tick-mark tick-mark-median" style="left: 13.15%;">
-                            <span class="text-center"><b>Median</b> <br /> 82.05</span>
+                            <span class="text-center"><strong>Median</strong> <br /> 82.05</span>
                         </li>
                         <li class="tick-mark tick-mark-average" style="left: 11.22%;">
-                            <span class="text-center"><b>Average</b> <br /> 75.46</span>
+                            <span class="text-center"><strong>Average</strong> <br /> 75.46</span>
                         </li>
                         <li class="tick-mark tick-mark-max" style="left: 28.7%;">
-                            <span class="text-center"><b>Max</b> <br /> 135.22</span>
+                            <span class="text-center"><strong>Max</strong> <br /> 135.22</span>
                         </li>
-
-
                     </ul>
                 </section>
+
+                <section class="data-point-container hidden">
+                    <ul class="list-inline mobile-data-points">
+                        <li>
+                            <span class="text-center"><strong>Min</strong><br />50.87<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Median</strong> <br /> 82.05<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Average</strong> <br /> 75.46<br />gallons</span>
+                        </li>
+                        <li>
+                            <span class="text-center"><strong>Max</strong> <br /> 135.22<br />gallons</span>
+                        </li>
+                    </ul>
+                </section>
+
             </div>
         </div>
     
-
 
             </div>
             <div class="row data-comments">
@@ -4980,78 +5139,20 @@
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
         
     <script>
-        window.appConfig = {"embed_this": true, "project_root": "http://projects.scpr.org/static/applications/monthly-water-use/", "embed_height": "2080px", "open_about_this": false, "is_embedded": false, "is_mobile": false, "comments": false, "embed_width": "100%"};
-
+        window.appConfig = {"embed_this": false, "project_root": "http://projects.scpr.org/static/applications/monthly-water-use/", "embed_height": "2080px", "open_about_this": false, "windowSize": "null", "is_embedded": false, "is_mobile": false, "comments": false, "embed_width": "100%"};
         window.appConfig.embed_this = false;
-
-        $(document).ready(function(){
-
-            $(".js-basic-single").select2();
-
-            /*
-                based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
-
-                formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
-
-                styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
-            */
-
-            var comparison = {};
-
-            comparison.coalCharts = $('.coal-chart');
-
-            comparison.coalChartPoints = $('.coal-chart .point');
-
-            comparison.coalCharts.on('mouseover', '.point', function(e) {
-                var chosenIndex = $(this).data('index'),
-                    filteredPoints = comparison.coalChartPoints.filter('[data-index='+chosenIndex+']');
-                filteredPoints.addClass('hovered');
-                filteredPoints.children('span').css('display', 'block');
-            });
-
-            comparison.coalCharts.on('mouseout', '.point', function(e) {
-                comparison.coalChartPoints.removeClass('hovered');
-                comparison.coalChartPoints.children('span').removeAttr('style');
-            });
-
-            comparison.coalCharts.on('click', '.point', function(e) {
-                // allow clicking on the hovercard link
-                if (e.target.tagName == 'A') return;
-                e.preventDefault();
-                comparison.toggleSelectedDistributionPoints($(this).data('index'));
-                //comparison.trackEvent('Distribution View', 'Click to toggle point highlight', '');
-            });
-
-            comparison.toggleSelectedDistributionPoints = function(chosenIndex){
-                var filteredPoints = comparison.coalChartPoints.filter('[data-index='+chosenIndex+']');
-                if (!filteredPoints.hasClass('selected')){
-                    targetColor = "#f17b21"
-                }
-                filteredPoints.toggleClass('selected').removeAttr('style').filter('.selected').css({
-                    'background-color': targetColor,
-                    'border-color': targetColor
-                });
-            }
-        });
-
-        window.percentChange = function(oldValue, newValue){
-            var pctChange = ((newValue - oldValue) / oldValue * 100);
-            return parseFloat(pctChange.toFixed(2));
-        };
-
-        window.slugify = function(string){
-            string = string.toLowerCase();
-            output = string.replace(/ /g, '-');
-            return output
-        };
-
-        document.getElementById("water-supplier-list").onchange = function() {
-            var selectedOption = this.value;
-            window.location.href = selectedOption;
-        };
     </script>
 
         <script src="http://projects.scpr.org/test/keller/in-development/monthly-water-use/static/cali_water/scripts/_application_wrapper_0.5.js"></script>
+        
+    <script src="http://projects.scpr.org/test/keller/in-development/monthly-water-use/static/cali_water/scripts/_application.js"></script>
+    <script>
+        $(document).ready(function(){
+            fn.enableSelectMenu();
+            fn.whichChartToDisplay();
+        });
+    </script>
+
         <!-- end scripts -->
 
         <!-- begin chartbeat -->

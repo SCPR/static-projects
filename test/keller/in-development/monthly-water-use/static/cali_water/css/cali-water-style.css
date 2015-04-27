@@ -1000,3 +1000,37 @@ section.display ol li dl {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+ul.mobile-data-points {
+    display: table;
+    width: 100%;
+    list-style: none;
+}
+
+ul.mobile-data-points li {
+    display: table-cell;
+    text-align: center;
+}
+
+ul.mobile-data-points li:first-child {
+    text-align: left;
+}
+
+ul.mobile-data-points li:last-child {
+    text-align: right;
+}
+
+
+span.show {
+    display: inline !important;
+}
