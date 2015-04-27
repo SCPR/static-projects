@@ -19,13 +19,29 @@
         renderSearchView: function(){
             $(".data-visuals").html(
                 "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
+                    "<h6>April 13, 2015 round of comments regarding conservation proposals</h6>" +
                     "<div id='DC-search-projectid-19698-public-comments-regarding-state-water-board-conservation-proposal' class='DC-search-container'></div>" +
+                "</div>" +
+                "<hr></hr>" +
+                "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
+                    "<h6>April 22, 2015 round of comments regarding conservation proposals</h6>" +
+                    "<div id='DC-search-projectid-19801-second-round-of-public-comments-regarding-state-water-board-conservation-proposal' class='DC-search-container'></div>" +
                 "</div>"
+
             );
 
             dc.embed.load('http://www.documentcloud.org/search/embed/', {
                 q: "projectid: 19698-public-comments-regarding-state-water-board-conservation-proposal ",
                 container: "#DC-search-projectid-19698-public-comments-regarding-state-water-board-conservation-proposal",
+                order: "title",
+                per_page: 12,
+                search_bar: true,
+                organization: 97
+            });
+
+            dc.embed.load('http://www.documentcloud.org/search/embed/', {
+                q: "projectid: 19801-second-round-of-public-comments-regarding-state-water-board-conservation-proposal ",
+                container: "#DC-search-projectid-19801-second-round-of-public-comments-regarding-state-water-board-conservation-proposal",
                 order: "title",
                 per_page: 12,
                 search_bar: true,
