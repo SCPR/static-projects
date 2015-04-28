@@ -15,10 +15,11 @@ body.minimal .data-container a.btn-primary:active { background: rgba(0, 127, 166
 
 body.minimal .data-container a.btn-primary:hover { background: rgba(0, 127, 166, .6); border: rgba(0, 127, 166, .6) solid .1em; color: #2B2B2B; }
 
-
 .quote { background: url(i/ephemera-quote-blue-open.png) no-repeat 0 0, url(i/ephemera-quote-blue-close.png) no-repeat bottom right; background-size: 120px 60px, 120px 60px; padding: 5% 10% 5% 10%; margin: 5% 0% 5% 0%; }
 
-.quote p { padding: 15px; }
+body.minimal .data-container .quote p { font-size: 200%; padding: 15px; }
+
+.change-method { width: 30%; margin: 0 35% 0 35%; }
 
 @media (min-width: 318px) {
 
