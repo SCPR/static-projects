@@ -24,11 +24,39 @@
             };
 
             // set params for mobile devices
-            window.appConfig.is_mobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/) || (window.appConfig.windowSize < 568));
+            if (navigator.userAgent.match(/android/i)){
+                window.appConfig.is_mobile = true;
+                window.appConfig.userAgent = navigator.userAgent;
+            } else if (navigator.userAgent.match(/Blackberry/i)){
+                window.appConfig.is_mobile = true;
+                window.appConfig.userAgent = navigator.userAgent;
+            } else if (navigator.userAgent.match(/iPhone|iPod/i)){
+                window.appConfig.is_mobile = true;
+                window.appConfig.userAgent = navigator.userAgent;
+            } else if (navigator.userAgent.match(/iPad/i)){
+                window.appConfig.is_mobile = true;
+                window.appConfig.userAgent = navigator.userAgent;
+            } else if (navigator.userAgent.match(/Opera Mini/i)){
+                window.appConfig.is_mobile = true;
+                window.appConfig.userAgent = navigator.userAgent;
+            } else if (navigator.userAgent.match(/IEMobile/i)){
+                window.appConfig.is_mobile = true;
+                window.appConfig.userAgent = navigator.userAgent;
+            } else if (navigator.userAgent.match(/webOS/i)){
+                window.appConfig.is_mobile = true;
+                window.appConfig.userAgent = navigator.userAgent;
+            } else if (window.appConfig.windowSize < 568){
+                window.appConfig.is_mobile = true;
+                window.appConfig.userAgent = navigator.userAgent;
+            } else {
+                window.appConfig.is_mobile = false;
+                window.appConfig.userAgent = navigator.userAgent;
+            };
 
-            if (window.appConfig.is_mobile) {
+            if (window.appConfig.is_mobile === true) {
                 window.appConfig.open_about_this = false;
                 window.appConfig.comments = false;
+                window.appConfig.embed_this = false;
             };
 
             // checks comments setting
@@ -122,6 +150,17 @@
         var targetValue = part / whole;
         var decimal = parseFloat(targetValue);
         return decimal
+    };
+
+    window.percentChange = function(oldValue, newValue){
+        var pctChange = ((newValue - oldValue) / oldValue * 100);
+        return parseFloat(pctChange.toFixed(2));
+    };
+
+    window.slugify = function(string){
+        string = string.toLowerCase();
+        output = string.replace(/ /g, '-');
+        return output
     };
 
     window.addCommas = function(nStr){
