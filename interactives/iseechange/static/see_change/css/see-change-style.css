@@ -141,3 +141,11 @@ body.minimal .data-container .quote p { font-size: 200%; margin: 30px 0 10px 0; 
 
     body.minimal .data-container h6 { font-size: 180%; line-height: 150%;}
 }
+
+/* post sharing */
+ul.share-links {margin-top: 5px;}
+ul.share-links li {padding-right: 0px; padding-left: 0px;}
+ul.share-links li a {color: #2B2B2B; font-size: 150%;}
+ul.share-links li a.link {padding: 20px; text-align: left; background: url('http://projects.scpr.org/static-files/v3-dependencies/images/tabletop-timeline-v3/iconmonstr-link-2-icon-24.png') left center no-repeat;}
+ul.share-links li a.twitter {padding: 20px; text-align: left; background: url('http://projects.scpr.org/static-files/v3-dependencies/images/tabletop-timeline-v3/iconmonstr-twitter-2-icon-24.png') left center no-repeat;}
+ul.share-links li a.facebook {padding: 20px; text-align: left; background: url('http://projects.scpr.org/static-files/v3-dependencies/images/tabletop-timeline-v3/iconmonstr-facebook-2-icon-24.png') left center no-repeat;}
