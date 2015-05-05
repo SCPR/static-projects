@@ -111,7 +111,6 @@ var fn = {
                 showLabel: true,
 
                 labelInterpolationFnc: function(value) {
-                    console.log(value);
                     return value;
                 }
             },
@@ -164,7 +163,7 @@ var fn = {
 
     },
 
-    createReductionComparisonTable: function(){
+    createReductionComparisonTable: function(sorting_array, headers_object){
 
         $.tablesorter.defaults.textExtraction = "complex";
 
@@ -219,15 +218,10 @@ var fn = {
 
                 widgets: ["zebra"],
 
-                sortList: [[2, 0], [0, 0]],
+                sortList: sorting_array,
 
-                headers: {
-                    0: {sorter: true},
-                    1: {sorter: true},
-                    2: {sorter: true},
-                    3: {sorter: true},
-                    4: {sorter: true},
-                }
+                headers: headers_object
+
             })
 
             //.tablesorterPager(pagerOptions)
@@ -274,6 +268,4 @@ var fn = {
             });
         }
     }
-
-
 };
