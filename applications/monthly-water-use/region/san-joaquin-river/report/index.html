@@ -1,0 +1,1214 @@
+
+
+
+<!DOCTYPE html>
+
+<!-- begin doc -->
+<html lang="en">
+
+    <!-- begin header -->
+    <head>
+
+        <!-- begin meta -->
+        <title>Water use in California's San Joaquin River hydrologic region | scpr.org</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.5, user-scalable=yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="format-detection" content="telephone=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        
+        <meta name="description" content="San Joaquin River residential customers decreased daily water use in March 2015 to an average of 96.33 gallons in the  hydrologic region compared to March 2013. Based on data from 29 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate." />
+        <meta name="keywords" content="drought, state water resources control board, california" />
+        <meta name="author" content="89.3 KPCC" />
+        <meta property="og:title" content="Water use in California's San Joaquin River hydrologic region" />
+        <meta property="og:site_name" content="KPCC" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="http://a.scpr.org/i/f44ef3b9a8278abb79b6bbb3caf882c7/87989-full.jpg" />
+        <meta property="og:image:width" content="1024" />
+        <meta property="og:image:height" content="683" />
+        <meta property="og:url" content="http://projects.scpr.org/static/applications/monthly-water-use/region/san-joaquin-river" />
+        <meta property="og:description" content="San Joaquin River residential customers decreased daily water use in March 2015 to an average of 96.33 gallons in the  hydrologic region compared to March 2013. Based on data from 29 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate." />
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:url" content="http://projects.scpr.org/static/applications/monthly-water-use/region/san-joaquin-river"/>
+        <meta name="twitter:domain" content="http://projects.scpr.org/"/>
+        <meta name="twitter:site" content="KPCC"/>
+        <meta name="twitter:title" content="Water use in California's San Joaquin River hydrologic region"/>
+        <meta name="twitter:description" content="San Joaquin River residential customers decreased daily water use in March 2015 to an average of 96.33 gallons in the  hydrologic region compared to March 2013. Based on data from 29 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate."/>
+        <meta name="twitter:image:src" content="http://a.scpr.org/i/f44ef3b9a8278abb79b6bbb3caf882c7/87989-full.jpg">
+        <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="http://media.scpr.org/assets/images/icon.png">
+        <!-- end meta -->
+
+        <!-- begin css -->
+        <link href="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/css/reset.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-ui.1.10.3.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/css/main-foundation-style-v3.css" media="screen" rel="stylesheet" type="text/css" />
+        
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
+
+    <style type="text/css">
+
+        /* table styles */
+        .data-container table { width: 100%; height: auto; }
+        .data-container table.table-striped thead th { background-color: #2B2B2B; color: #fdfdfd; }
+        .data-container table.table-striped tbody > tr:nth-child(even) > td,
+        .data-container table.table-striped tbody > tr:nth-child(even) > th { background-color: #aaaaaa; }
+        .data-container table.table-striped tbody > tr:nth-child(odd) > td,
+        .data-container table.table-striped tbody > tr:nth-child(odd) > th { background-color: #fdfdfd; }
+
+        /* tablestacker styles */
+        #table-container {
+            background: #ffffff;
+            padding: 20px 10px 20px 10px;
+            font-family: "proxima-nova", "helvetica neue", helvetica, arial, sans-serif;
+        }
+
+        #table-container .kpcc-table th {
+            color: #B24401;
+            text-transform: uppercase;
+            background: #f5f5f5;
+            text-align: left;
+            vertical-align: middle;
+            font-weight: 500;
+            /*border-top: 1px solid #f17b21;*/
+            /*border-bottom: 1px solid rgba(0, 0, 0, 0.4);*/
+            /*font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif;*/
+            /*font-weight: 700;*/
+            /*vertical-align: bottom;*/
+            /*font-size: 0.6875em;*/
+            /*padding: 20px 14px 9px 5px;*/
+            /*line-height: 1;*/
+            /*color: rgba(0, 0, 0, 0.4);*/
+            /*box-shadow: inset 0 -4px 0 #e8e8e8;*/
+         }
+
+        #table-container .kpcc-table td { text-align: left; vertical-align: middle; font-weight: 500; line-height: 1.1; padding: 10px 14px 10px 5px; vertical-align: top; border-bottom: 1px solid rgba(0, 0, 0, 0.1);}
+        #table-container .kpcc-table td mark { text-transform: uppercase; color: #B24401; background: none; margin-bottom: 4px; font-weight: 700; display: none; }
+        #table-container .kpcc-table tr td:first-child { }
+        #table-container .kpcc-table tr td:first-child mark { display: none; }
+        #table-container .kpcc-table tr td:last-child { box-shadow: none; }
+
+        #table_fu input[type="text"] {
+            display: inline-block;
+            height: 40px;
+            padding: 4px 6px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 20px;
+            color: #555555;
+            font-weight: 700;
+            vertical-align: middle;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+        #table-container #table_fu #controls { height: auto; clear: both; display: block; overflow: visible; margin: 10px 0 15px 0; }
+
+        #table-container #table_fu #controls #filter,
+        #table-container #table_fu #controls #pager { margin: 5px auto 25px auto; }
+
+        @media screen and (max-width: 595px) {
+            #table-container #table_fu #controls { font-size: 140%; }
+            #table-container .kpcc-table { border-top: 3px solid #f17b21; border-bottom: 3px solid black; width: 100%; font-size: 160%; }
+            #table-container .kpcc-table thead { display: none; }
+            #table-container .kpcc-table tbody, #table-container .kpcc-table tr, #table-container .kpcc-table td { width: 100%; }
+            #table-container .kpcc-table td { box-shadow: none; display: block; width: 100%; padding: 7px 10px 7px 10px; font-size: 110%; border-bottom-color: #cfcfcf; }
+            #table-container .kpcc-table td mark { display: block; }
+            #table-container .kpcc-table tr td:first-child { font-size: 1.25em; background: #f5f5f5; font-weight: 700; border-bottom-color: gray; padding-top: 15px; }
+            #table-container .kpcc-table tr td:nth-child(2) { padding-top: 12px; }
+            #table-container .kpcc-table tr td:last-child { padding-bottom: 20px; border-bottom: 1px solid black; }
+        }
+
+        @media (min-width: 596px) {
+            #table-container #table_fu #controls { font-size: 110%; }
+            #table-container .kpcc-table { font-size: 110%; }
+            #table-container .kpcc-table th { font-size: 70%; }
+        }
+
+        @media (min-width: 640px) {
+            #table-container #table_fu #controls { font-size: 120%; }
+            #table-container .kpcc-table { font-size: 120%; }
+            #table-container .kpcc-table th { font-size: 85%; }
+        }
+
+        @media (min-width: 768px) {
+            #table-container #table_fu #controls { font-size: 130%; }
+            #table-container .kpcc-table { font-size: 130%; }
+            #table-container .kpcc-table th { font-size: 95%; }
+        }
+
+        @media (min-width: 992px) {
+            #table-container #table_fu #controls { font-size: 140%; }
+            #table-container .kpcc-table { font-size: 140%; }
+            #table-container .kpcc-table th { font-size: 105%; }
+        }
+
+        #table-container #table_fu div.bullet-graph-wrap { position: relative; width: 100%; height: 21px; top: 0; left: 0; margin: 0; padding: 0; }
+        #table-container #table_fu div.bullet-graph-box1 { position: absolute; height: 20px; width: 30%; left: 0; background-color: #eeeeee; z-index: 1; font-size: 0; }
+        #table-container #table_fu div.bullet-graph-box2 { position: absolute; height: 20px; width: 30%; left: 30%; background-color: #dddddd; z-index: 1; font-size: 0; border:1px solid #CCC; }
+        #table-container #table_fu div.bullet-graph-box3 { position: absolute; height: 20px; width: 30%; left: 60%; background-color: #bbbbbb; z-index: 1; font-size: 0; }
+        #table-container #table_fu div.bullet-graph-box4 { position: absolute; height: 20px; width: 10%; left: 90%; background-color: #bbbbbb; z-index: 1; font-size: 0; }
+        #table-container #table_fu div.bullet-graph-target { position: absolute; height: 21px; width: 2px; left: 32px; top: 0; background-color: #cc0000; z-index: 7; font-size: 0; }
+        #table-container #table_fu div.bullet-graph-actual { position: absolute; height: 8px; left: 0px; top: 7px; background-color: #000000; font-size: 0; z-index: 5; font-size: 0; }
+
+        #table-container table.kpcc-table th, #table-container table.kpcc-table td {
+            text-align: center;
+        }
+    </style>
+
+        <link href="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/css/cali-water-style.css" media="screen" rel="stylesheet" type="text/css" />
+        <!-- end css -->
+
+        <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
+        <!--[if lte IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+            <link href="http://projects.scpr.org/static/static-files/v3-dependencies/respond-proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+            <link href="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/respond-proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+            <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/respond-proxy/respond.proxy.js"></script>
+        <![endif]-->
+
+        <!-- begin base scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/vtu6xsq.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
+
+    <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/jquery.tablesorter.js"></script>
+    <!--
+    <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/jquery.tablesorter.pager.js"></script>
+    -->
+    <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/jquery.tablesorter.multipagefilter.js"></script>
+    <script type="text/javascript">
+        /* For picking out bits from the query string */
+        var getParameterByName = function(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(window.location.href);
+            if(results == null){
+                return "";
+            } else {
+                return decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+        };
+    </script>
+
+        <!-- end base scripts -->
+
+    </head>
+    <!-- end header -->
+
+    <!-- begin body -->
+    <body class="minimal">
+        <div class="kpcc-header">
+            <header>
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container data-container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
+                        </div>
+                        <div class="data-share navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right header-links clearfix">
+                                <li class="projects-pledge">
+                                    <a href="https://scprcontribute.publicradio.org/" class="pledge-now icon">Contribute to KPCC</a>
+                                    <a href="https://scprcontribute.publicradio.org/" target="_blank"><b>Pledge now</b></a>
+                                </li>
+                                <li class="projects-share">
+                                    <div class="share-links clearfix">
+                                        <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
+                                            <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=http://projects.scpr.org/static/applications/monthly-water-use" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
+                                            <a class="twitter icon" href="http://twitter.com/share?text=Water use in California's San Joaquin River hydrologic region&url=http://projects.scpr.org/static/applications/monthly-water-use/region/san-joaquin-river"></a>
+                                    </div>
+                                    <b>Share this</b>
+                                </li>
+                                <li class="projects-embed">
+                                    <a href="javascript:void(0)" class="embed-this icon">Embed This</a>
+                                    <a href="javascript:void(0)" target="_blank"><b>Embed This</b></a>
+                                </li>
+                                <li class="projects-home">
+                                    <a href="http://projects.scpr.org/" class="projects-home icon">Projects Home</a>
+                                    <a href="http://projects.scpr.org/"><b>All Projects</b></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+        <div class="container data-container">
+            <div class="row data-details">
+                
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="content-article">
+            <div class="headlines">
+                <h4 class="kicker">Environment</h4>
+                <h1>Where is California water use decreasing?</h1>
+            </div>
+            <div class="about collapse">
+                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/'>Chris Keller</a></span> | <span class="pubdate">Updated May 5, 2015</span></p>
+                <p>Efforts to conserve water improved somewhat in California in March but were still well below the cuts officials are calling for as the state suffers through its fourth year of drought.</p><p>California used just 3.6 percent less water in March than it did the same month a year earlier.</p><p>This March was unusually warm and dry, but state water officials had been hoping for a bigger reduction given the severity of California's ongoing water shortage. On April 1, Gov. Jerry Brown issued an executive order calling on California cities to reduce their water use 25 percent by the end of the next February.</p>
+            </div>
+            <div class="sources collapse">
+                <p>
+                    
+                        <strong>Sources</strong>: <a href='http://www.swrcb.ca.gov/waterrights/water_issues/programs/drought/conservation_reporting_info.shtml'>California Water Resources Control Board</a>.
+                    
+                    
+                        <strong>Built using</strong>: <a href='https://github.com/datadesk/django-bakery'>django-bakery</a>, <a href='http://underscorejs.org/'>underscore.js</a>, <a href='http://backbonejs.org/'>backbone.js</a>, <a href='http://leafletjs.com/'>leaflet.js</a>, <a href='https://gionkunz.github.io/chartist-js/'>chartist.js</a> &amp; <a href='http://twitter.github.com/bootstrap/'>Bootstrap</a>. Circles on a line distribution charts based on <a href='http://censusreporter.org/data/distribution/?table=B25118&geo_ids=05000US06037&primary_geo_id=05000US06037'>CensusReporter charts</a>, <a href='https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450'>design</a> and <a href='https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703'>code</a> created by <a href='https://twitter.com/ryanpitts'>Ryan Pitts</a>, <a href='https://twitter.com/JoeGermuska'>Joe Germuska</a>, <a href='https://twitter.com/iandees'>Ian Dees</a> and <a href='https://twitter.com/SaraSchnadt'>Sara Schnadt</a>. <strong>Icon credits: </strong><a href='http://thenounproject.com/term/26765/'><strong>Waste icon</strong></a> created by <a href='http://thenounproject.com/Luis'><strong>Luis Prado</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/26128/'><strong>Washing Machine icon</strong></a> created by <a href='http://thenounproject.com/megan.sheehan'><strong>Megan Sheehan</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/25510/'><strong>Bucket icon</strong></a> created by <a href='http://thenounproject.com/nsteve'><strong>Nithin Viswanathan</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/17734/'><strong>Water drop icon</strong></a> created by <a href='http://thenounproject.com/diegonaive'><strong>Diego Naive</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/12962/'><strong>Broom icon</strong></a> created by <a href='http://thenounproject.com/The%20Moza'><strong>Anna Weiss</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/2729/'><strong>Clock icon</strong></a> created by <a href='http://thenounproject.com/pavel.nikandrov'><strong>Pavel Nikandrov</strong></a> and used via a <a href='http://creativecommons.org/publicdomain/mark/1.0/'>Public Domain Mark</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/12109/'><strong>Sprinkler icon</strong></a> created by <a href='http://thenounproject.com/micahwest'><strong>Micah West</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/457/'><strong>Cactus icon</strong></a> created by <a href='http://thenounproject.com/edward'><strong>Edward Boatman</strong></a> and licensed under the <a href='https://creativecommons.org/licenses/by/3.0/us/'>Creative Commons Attribution</a> from <a href='http://thenounproject.com/'>The Noun Project</a>. <a href='http://thenounproject.com/term/shower/51/'><strong>Shower icon</strong></a> used via a <a href='http://creativecommons.org/publicdomain/mark/1.0/'>Public Domain Mark</a> from <a href='http://thenounproject.com/'>The Noun Project</a>.
+                    
+                    
+                    
+                </p>
+            </div>
+            <div class="buttons btn-group btn-group-justified">
+                <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".about"><span class="about glyphicon glyphicon-chevron-down"></span>  About</a>
+                <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".sources"><span class="sources glyphicon glyphicon-chevron-down"></span>  Sources</a>
+                
+            </div>
+        </div>
+    </div>
+
+            </div>
+            <div class="row data-visuals">
+                
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ol class="breadcrumb">
+                    <li><a href="http://projects.scpr.org/applications/monthly-water-use/">Home</a></li>
+                    <li class="active">San Joaquin River</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="jumbotron">
+            <noscript>Please enable JavaScript to view this interactive.</noscript>
+            <h4 class="text-center">Choose a water supplier</h4>
+            <div id="content-action-bar">
+                <select id="water-supplier-list" class="form-control js-basic-single">
+                    <option>-- Select a San Joaquin River agency --</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/amador-water-agency/">Amador Water Agency</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/calaveras-county-water-district/">Calaveras County Water District</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-stockton/">California Water Service Company Stockton</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-antioch/">City Of Antioch</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-atwater/">City Of Atwater</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-brentwood/">City Of Brentwood</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-ceres/">City Of Ceres</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-lathrop/">City Of Lathrop</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-livingston/">City Of Livingston</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-lodi/">City Of Lodi</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-los-banos/">City Of Los Banos</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-madera/">City Of Madera</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-manteca/">City Of Manteca</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-merced/">City Of Merced</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-modesto/">City Of Modesto</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-newman-water-department/">City Of Newman Water Department</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-oakdale/">City Of Oakdale</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-patterson/">City Of Patterson</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-ripon/">City Of Ripon</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-riverbank/">City Of Riverbank</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-stockton/">City Of Stockton</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-tracy/">City Of Tracy</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/city-of-turlock/">City Of Turlock</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/diablo-water-district/">Diablo Water District</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/discovery-bay-community-services-district/">Discovery Bay Community Services District</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/groveland-community-services-district/">Groveland Community Services District</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/madera-county/">Madera County</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/tuolumne-utilities-district/">Tuolumne Utilities District</option>
+                    
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/winton-water-sanitary-district/">Winton Water Sanitary District</option>
+                    
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <p class="lead small"><strong>About the data</strong>: These charts show the daily per capita residential water use rate in California as calculated by the <a href="http://www.waterboards.ca.gov/waterrights/water_issues/programs/drought/docs/ws_tools/guidance_estimate_res_gpcd.pdf">State Water Resources Control Board</a>. The charts cover the March 2015 reporting period, and compared to the baseline measure from the same month in 2013. Since the per capita measure (which reflects gallons of water used per resident per day) does not take into account rainfall, temperature, humidity and population density, the State Water Resources Control Board discourages comparisons between water suppliers.</p>
+</div>
+
+
+
+
+    
+        <div class="row">
+            <div class="hidden-xs col-sm-4 col-md-3 col-lg-3 image-map">
+                <img src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/images/cal-region-san-joaquin-river.png" />
+            </div>
+            <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+                <h3><a href="http://projects.scpr.org/applications/monthly-water-use/region/san-joaquin-river/">San Joaquin River</a></h3>
+                <p>Daily per capita residential water use <span class='decrease-accent'>decreased</span> in March 2015 to an average of 96.33 gallons in the San Joaquin River hydrologic region. That number is compared to the March 2013 baseline. <a href="http://projects.scpr.org/applications/monthly-water-use/region/san-joaquin-river/reduction-comparison/">Click here</a> to see proposed reductions for this region. Use the chart below to see how the 29 agencies in this region performed.</p>
+
+                <!--
+                    based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+
+                    formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+
+                    styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                -->
+
+                <section class="coal-chart-container">
+                    <ul class="coal-chart">
+                        
+                            <li id="amador-water-agency" class="chart-point" style="left: 9.72%;">
+                                <span class="point" data-index="amador-water-agency">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/amador-water-agency/">Amador Water Agency</a></span><br />
+                                        <span class="value text-center">54.10</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="calaveras-county-water-district" class="chart-point" style="left: 36.95%;">
+                                <span class="point" data-index="calaveras-county-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/calaveras-county-water-district/">Calaveras County Water District</a></span><br />
+                                        <span class="value text-center">89.70</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="california-water-service-company-stockton" class="chart-point" style="left: 14.92%;">
+                                <span class="point" data-index="california-water-service-company-stockton">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-stockton/">California Water Service Company Stockton</a></span><br />
+                                        <span class="value text-center">60.90</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-antioch" class="chart-point" style="left: 41.32%;">
+                                <span class="point" data-index="city-of-antioch">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-antioch/">City Of Antioch</a></span><br />
+                                        <span class="value text-center">95.40</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-atwater" class="chart-point" style="left: 64.8%;">
+                                <span class="point" data-index="city-of-atwater">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-atwater/">City Of Atwater</a></span><br />
+                                        <span class="value text-center">126.10</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-brentwood" class="chart-point" style="left: 47.67%;">
+                                <span class="point" data-index="city-of-brentwood">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-brentwood/">City Of Brentwood</a></span><br />
+                                        <span class="value text-center">103.70</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-ceres" class="chart-point" style="left: 40.09%;">
+                                <span class="point" data-index="city-of-ceres">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-ceres/">City Of Ceres</a></span><br />
+                                        <span class="value text-center">93.80</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-lathrop" class="chart-point" style="left: 38.56%;">
+                                <span class="point" data-index="city-of-lathrop">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-lathrop/">City Of Lathrop</a></span><br />
+                                        <span class="value text-center">91.80</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-livingston" class="chart-point" style="left: 33.28%;">
+                                <span class="point" data-index="city-of-livingston">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-livingston/">City Of Livingston</a></span><br />
+                                        <span class="value text-center">84.90</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-lodi" class="chart-point" style="left: 50.8%;">
+                                <span class="point" data-index="city-of-lodi">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-lodi/">City Of Lodi</a></span><br />
+                                        <span class="value text-center">107.80</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-los-banos" class="chart-point" style="left: 51.19%;">
+                                <span class="point" data-index="city-of-los-banos">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-los-banos/">City Of Los Banos</a></span><br />
+                                        <span class="value text-center">108.30</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-madera" class="chart-point" style="left: 52.87%;">
+                                <span class="point" data-index="city-of-madera">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-madera/">City Of Madera</a></span><br />
+                                        <span class="value text-center">110.50</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-manteca" class="chart-point" style="left: 41.78%;">
+                                <span class="point" data-index="city-of-manteca">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-manteca/">City Of Manteca</a></span><br />
+                                        <span class="value text-center">96.00</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-merced" class="chart-point" style="left: 58.91%;">
+                                <span class="point" data-index="city-of-merced">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-merced/">City Of Merced</a></span><br />
+                                        <span class="value text-center">118.40</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-modesto" class="chart-point" style="left: 75.06%;">
+                                <span class="point" data-index="city-of-modesto">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-modesto/">City Of Modesto</a></span><br />
+                                        <span class="value text-center">139.50</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-newman-water-department" class="chart-point" style="left: 18.59%;">
+                                <span class="point" data-index="city-of-newman-water-department">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-newman-water-department/">City Of Newman Water Department</a></span><br />
+                                        <span class="value text-center">65.70</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-oakdale" class="chart-point" style="left: 42.85%;">
+                                <span class="point" data-index="city-of-oakdale">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-oakdale/">City Of Oakdale</a></span><br />
+                                        <span class="value text-center">97.40</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-patterson" class="chart-point" style="left: 49.27%;">
+                                <span class="point" data-index="city-of-patterson">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-patterson/">City Of Patterson</a></span><br />
+                                        <span class="value text-center">105.80</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-ripon" class="chart-point" style="left: 100.0%;">
+                                <span class="point" data-index="city-of-ripon">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-ripon/">City Of Ripon</a></span><br />
+                                        <span class="value text-center">172.10</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-riverbank" class="chart-point" style="left: 15.91%;">
+                                <span class="point" data-index="city-of-riverbank">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-riverbank/">City Of Riverbank</a></span><br />
+                                        <span class="value text-center">62.20</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-stockton" class="chart-point" style="left: 25.1%;">
+                                <span class="point" data-index="city-of-stockton">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-stockton/">City Of Stockton</a></span><br />
+                                        <span class="value text-center">74.20</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-tracy" class="chart-point" style="left: 0.0%;">
+                                <span class="point" data-index="city-of-tracy">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-tracy/">City Of Tracy</a></span><br />
+                                        <span class="value text-center">41.40</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="city-of-turlock" class="chart-point" style="left: 51.72%;">
+                                <span class="point" data-index="city-of-turlock">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-turlock/">City Of Turlock</a></span><br />
+                                        <span class="value text-center">109.00</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="diablo-water-district" class="chart-point" style="left: 36.34%;">
+                                <span class="point" data-index="diablo-water-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/diablo-water-district/">Diablo Water District</a></span><br />
+                                        <span class="value text-center">88.90</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="discovery-bay-community-services-district" class="chart-point" style="left: 74.67%;">
+                                <span class="point" data-index="discovery-bay-community-services-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/discovery-bay-community-services-district/">Discovery Bay Community Services District</a></span><br />
+                                        <span class="value text-center">139.00</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="groveland-community-services-district" class="chart-point" style="left: 29.61%;">
+                                <span class="point" data-index="groveland-community-services-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/groveland-community-services-district/">Groveland Community Services District</a></span><br />
+                                        <span class="value text-center">80.10</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="madera-county" class="chart-point" style="left: 75.82%;">
+                                <span class="point" data-index="madera-county">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/madera-county/">Madera County</a></span><br />
+                                        <span class="value text-center">140.50</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="tuolumne-utilities-district" class="chart-point" style="left: 28.54%;">
+                                <span class="point" data-index="tuolumne-utilities-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/tuolumne-utilities-district/">Tuolumne Utilities District</a></span><br />
+                                        <span class="value text-center">78.70</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="winton-water-sanitary-district" class="chart-point" style="left: 60.29%;">
+                                <span class="point" data-index="winton-water-sanitary-district">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/winton-water-sanitary-district/">Winton Water Sanitary District</a></span><br />
+                                        <span class="value text-center">120.20</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                        <li class="tick-mark tick-mark-min" style="left: 0.0%;">
+                            <span class="text-center"><b>Min</b> <br /> 41.40</span>
+                        </li>
+
+                        <li class="tick-mark tick-mark-median" style="left: 42.85%;">
+                            <span class="text-center"><b>Median</b> <br /> 97.40</span>
+                        </li>
+                        <li class="tick-mark tick-mark-average" style="left: 42.03%;">
+                            <span class="text-center"><b>Average</b> <br /> 96.33</span>
+                        </li>
+                        <li class="tick-mark tick-mark-max" style="left: 100.0%;">
+                            <span class="text-center"><b>Max</b> <br /> 172.10</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="table-container">
+            <div id="table_fu">
+                <div id="controls" class="row">
+                    <div class="filter col-xs-12 col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                        <form class="form-inline" >
+                            <input type="text" class="search form-control" placeholder="Filter list of San Joaquin River agencies...">
+                        </form>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <table id="data" class="kpcc-table tabular table">
+                    <thead>
+                        <tr>
+                            <th style="cursor: pointer;">Water Agency</th>
+                            <th class="text-center" style="cursor: pointer;">March 2015</th>
+                            <th class="text-center" style="cursor: pointer;">March 2013</th>
+                            <th class="text-center" style="cursor: pointer;">Change from March 2013</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/amador-water-agency/" target="blank">Amador Water Agency</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>54.10</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/calaveras-county-water-district/" target="blank">Calaveras County Water District</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>89.70</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-stockton/" target="blank">California Water Service Company Stockton</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>60.90</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-antioch/" target="blank">City Of Antioch</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>95.40</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-atwater/" target="blank">City Of Atwater</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>126.10</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-brentwood/" target="blank">City Of Brentwood</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>103.70</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-ceres/" target="blank">City Of Ceres</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>93.80</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-lathrop/" target="blank">City Of Lathrop</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>91.80</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-livingston/" target="blank">City Of Livingston</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>84.90</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-lodi/" target="blank">City Of Lodi</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>107.80</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-los-banos/" target="blank">City Of Los Banos</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>108.30</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-madera/" target="blank">City Of Madera</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>110.50</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-manteca/" target="blank">City Of Manteca</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>96.00</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-merced/" target="blank">City Of Merced</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>118.40</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-modesto/" target="blank">City Of Modesto</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>139.50</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-newman-water-department/" target="blank">City Of Newman Water Department</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>65.70</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-oakdale/" target="blank">City Of Oakdale</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>97.40</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-patterson/" target="blank">City Of Patterson</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>105.80</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-ripon/" target="blank">City Of Ripon</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>172.10</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-riverbank/" target="blank">City Of Riverbank</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>62.20</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-stockton/" target="blank">City Of Stockton</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>74.20</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-tracy/" target="blank">City Of Tracy</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>41.40</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-turlock/" target="blank">City Of Turlock</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>109.00</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/diablo-water-district/" target="blank">Diablo Water District</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>88.90</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/discovery-bay-community-services-district/" target="blank">Discovery Bay Community Services District</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>139.00</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/groveland-community-services-district/" target="blank">Groveland Community Services District</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>80.10</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/madera-county/" target="blank">Madera County</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>140.50</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/tuolumne-utilities-district/" target="blank">Tuolumne Utilities District</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>78.70</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                                <tr>
+                                    <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/winton-water-sanitary-district/" target="blank">Winton Water Sanitary District</a></td>
+                                    <td class="text-center"><mark>March 2015</mark>120.20</td>
+
+
+                                    
+                                        <td class="text-center"><mark>March 2013</mark>n/a</td>
+                                        <td class="text-center"><mark>Change from March 2013</mark>n/a</td>
+                                    
+
+
+                                </tr>
+                            
+                        
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+            </div>
+            <div class="row data-comments">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="disqus_thread"></div>
+                </div>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            <div class="row kpcc-footer">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <footer>
+                        <ul class="list-inline">
+                            <li><a href="http://scpr.org/terms/">Terms &amp; Conditions</a></li>
+                            <li><a href="http://scpr.org/privacy/">Privacy</a></li>
+                            <li><a href="http://scpr.org/web_site_feedback">Website Feedback</a></li>
+                            <li><a href="http://scpr.org/">Copyright 2013 &copy; Southern California Public Radio</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <!-- end main container -->
+
+        <!-- begin scripts -->
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery-ui.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/underscore-min.js"></script>
+        <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
+        
+    <script>
+        window.appConfig = {"embed_this": false, "project_root": "http://projects.scpr.org/applications/monthly-water-use/", "embed_height": "1050px", "open_about_this": false, "windowSize": "null", "is_embedded": false, "is_mobile": false, "comments": false, "embed_width": "100%"};
+        window.appConfig.embed_this = true;
+        window.appConfig.project_root = window.appConfig.project_root + "region/san-joaquin-river";
+    </script>
+
+        <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/_application_wrapper_0.5.js"></script>
+        
+    <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/_application.js"></script>
+    <script>
+        $(document).ready(function(){
+            fn.enableSelectMenu();
+            fn.enableComparisonCharts();
+            fn.createReductionComparisonTable();
+        });
+    </script>
+
+        <!-- end scripts -->
+
+        <!-- begin chartbeat -->
+        <script type="text/javascript">
+            var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
+            (function() {
+                function loadChartbeat() {
+                    window._sf_endpt = (new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+                    document.body.appendChild(e);
+                };
+                var oldonload = window.onload;
+                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+            })();
+        </script>
+        <!-- end chartbeat -->
+
+        <!-- begin google analytics -->
+        <script type="text/javascript">
+            var hostName = 'projects.scpr.org';
+            var _gaq = _gaq || [];
+            _gaq.push(
+                ['_setAccount', 'UA-624724-1'],
+                ['_setDomainName', hostName],
+                ['_setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['_setCustomVar', 7, 'PageType', 'Story', 3],
+                ['_trackPageview'],
+                ['b._setAccount', 'UA-18188937-11'],
+                ['b._setDomainName', hostName],
+                ['b._setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['b._setCustomVar', 7, 'PageType', 'Story', 3],
+                ['b._trackPageview']
+            );
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!-- end google analytics -->
+
+        <!-- begin webtrends stats -->
+        <script src="http://media.scpr.org/assets/scripts/webtrends.v2.js"></script>
+        <script>
+            //<![CDATA[
+                var _tag=new WebTrends();
+                _tag.dcsGetId();
+            //]]>
+        </script>
+        <script>
+            //<![CDATA[
+                _tag.dcsCustom=function(){
+                    // Add custom parameters here.
+                    //_tag.DCSext.param_name=param_value;
+                }
+            _tag.dcsCollect();
+            //]]>
+        </script>
+        <noscript>
+            <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsyqctzwuz5bdsebpmwhwe8w_2p8d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.3.0&amp;WT.dcssip=www.scpr.org"/></div>
+        </noscript>
+        <!-- end webtrends stats -->
+
+        <!-- begin comscore stats -->
+        <script>
+            var _comscore = _comscore || [];
+            _comscore.push({ c1: "2", c2: "6035974", c3: "", c4: "" });
+            (function() {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+            })();
+        </script>
+        <noscript>
+            <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035974&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
+        </noscript>
+        <!-- end comscore stats -->
+
+    </body>
+    <!-- end body -->
+
+</html>
+<!-- end document -->
