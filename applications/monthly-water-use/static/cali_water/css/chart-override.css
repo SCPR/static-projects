@@ -43,11 +43,11 @@
 }
 
 .ct-chart .ct-series.ct-series-b .ct-bar, .ct-chart .ct-series.ct-series-b .ct-line, .ct-chart .ct-series.ct-series-b .ct-point, .ct-chart .ct-series.ct-series-b .ct-slice.ct-donut {
-    stroke: rgba(31, 120, 180, .7);
+    stroke: rgba(255, 197, 31, .7);
 }
 
 .ct-chart .ct-series.ct-series-b .ct-area, .ct-chart .ct-series.ct-series-b .ct-slice:not(.ct-donut) {
-    fill: rgba(31, 120, 180, .7);
+    fill: rgba(255, 197, 31, .7);
 }
 
 .tooltip {

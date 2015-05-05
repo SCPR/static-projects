@@ -111,6 +111,7 @@ var fn = {
                 showLabel: true,
 
                 labelInterpolationFnc: function(value) {
+                    console.log(value);
                     return value;
                 }
             },
@@ -125,7 +126,7 @@ var fn = {
                 // used for the labels on each axis. here we are converting the
                 // values into million pound.
                 labelInterpolationFnc: function(value) {
-                    return value + " gpppd";
+                    return value + " rgpcd";
                 }
             }
         };
@@ -135,26 +136,26 @@ var fn = {
         // is the actual data object.
         new Chartist.Line(".ct-chart", data, options);
 
-        var $chart = $('.ct-chart');
+        var $chart = $(".ct-chart");
 
-        var $tooltip = $('<div class="tooltip tooltip-hidden"></div>').appendTo($('.ct-chart'));
+        var $tooltip = $("<div class='tooltip tooltip-hidden'></div>").appendTo($(".ct-chart"));
 
-        $(document).on('mouseenter', '.ct-point', function() {
+        $(document).on("mouseenter", ".ct-point", function() {
 
-            //var seriesName = $(this).closest('.ct-series').attr('ct:series-name');
+            var seriesName = $(this).parent().attr('ct:series-name');
 
-            var value = parseFloat($(this).attr('ct:value')).toFixed(2);
+            var value = parseFloat($(this).attr("ct:value")).toFixed(2);
 
-            $tooltip.text(value + " gpppd");
+            $tooltip.text(seriesName + ": " + value + " rgpcd");
 
-            $tooltip.removeClass('tooltip-hidden');
+            $tooltip.removeClass("tooltip-hidden");
         });
 
-        $(document).on('mouseleave', '.ct-point', function() {
-            $tooltip.addClass('tooltip-hidden');
+        $(document).on("mouseleave", ".ct-point", function() {
+            $tooltip.addClass("tooltip-hidden");
         });
 
-        $(document).on('mousemove', '.ct-point', function(event) {
+        $(document).on("mousemove", ".ct-point", function(event) {
             $tooltip.css({
                 left: (event.offsetX || event.originalEvent.layerX) - $tooltip.width() / 2,
                 top: (event.offsetY || event.originalEvent.layerY) - $tooltip.height() - 20
@@ -218,7 +219,7 @@ var fn = {
 
                 widgets: ["zebra"],
 
-                sortList: [[2, 1], [3, 1]],
+                sortList: [[2, 0], [0, 0]],
 
                 headers: {
                     0: {sorter: true},
