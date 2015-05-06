@@ -36,15 +36,7 @@
                     }
                 },
                 title: {
-                    text: 'Income and water use in Southern California',
-                    style: {
-                        color: '#7798bf',
-                        fontWeight: 'bold',
-                        fontSize: '34px'
-                    }
-                },
-                subtitle: {
-                    text: 'Sources: State Water Resources Control Board, California Department of Public Health, US Census'
+                    text: ""
                 },
                 exporting: {
                     buttons: {
@@ -59,7 +51,10 @@
                 xAxis: {
                     title: {
                         enabled: true,
-                        text: 'Median Household Income'
+                        text: 'Median Household Income',
+                            style: {
+                                fontSize: '18px'
+                            }
                     },
                     startOnTick: true,
                     endOnTick: true,
@@ -67,7 +62,10 @@
                 },
                 yAxis: {
                     title: {
-                        text: 'Gallons of water per resident per day'
+                        text: 'Gallons of water per resident per day',
+                            style: {
+                                fontSize: '18px'
+                            }
                     }
                 },
                 legend: {
@@ -96,7 +94,7 @@
                         },
                         tooltip: {
                             headerFormat: '<b>{series.name}</b><br>',
-                            pointFormat: '${point.x}, {point.y} gallons'
+                            pointFormat: '${point.x}, {point.y} gallons/day'
                         }
                     }
                 },
