@@ -87,7 +87,7 @@
                 plotOptions: {
                     scatter: {
                         marker: {
-                            radius: 5.5,
+                            radius: 7,
                             symbol: 'circle',
                             states: {
                                 hover: {
