@@ -23,19 +23,20 @@
         },
 
         renderMapApplication: function(mapType){
-
             this.renderApplicationVisuals();
-
+            var lat = parseFloat(window.appConfig.map_center_lat);
+            var lng = parseFloat(window.appConfig.map_center_lng);
             var configObject = {
+                lat: lat,
+                lng: lng,
                 route: "initial",
                 container: ".content-map-data",
                 mapDiv: "content-map-canvas",
                 mapType: mapType,
-                mapCenter: window.appConfig.map_center_los_angeles,
+                mapCenter: new google.maps.LatLng(lat,lng),
                 mapZoomLevel: window.appConfig.initial_map_zoom,
                 mapLayerId: "ROADMAP"
             };
-
             if (mapType === "point-map"){
                 this.pointMapInstance = new App.Views.PointMapInstance(configObject);
                 return this.pointMapInstance;
@@ -51,11 +52,11 @@
 
         renderCustomMapInstance: function(mapType, latitude, longitude, zoomLevel, layer){
             this.renderApplicationVisuals();
-
             var lat = parseFloat(latitude);
             var lng = parseFloat(longitude);
-
             var configObject = {
+                lat: lat,
+                lng: lng,
                 route: "custom",
                 container: ".content-map-data",
                 mapDiv: "content-map-canvas",
@@ -64,7 +65,6 @@
                 mapZoomLevel: zoomLevel,
                 mapLayerId: layer
             };
-
             if (mapType === "point-map"){
                 this.customMapInstance = new App.Views.PointMapInstance(configObject);
                 return this.customMapInstance;
@@ -76,24 +76,18 @@
                 //this.customMapInstance = new App.Views.PolygonMapInstance(configObject);
                 //return this.customMapInstance;
             }
-
         }
     });
 
     App.Views.ApplicationVisuals = Backbone.View.extend({
-
         template: template("templates/data-visuals.html"),
-
         el: ".data-visuals",
-
         initialize: function(viewObject){
             $(viewObject.container).html(_.template(this.template));
         },
-
         events: {
             "change #map-type-list": "evaluateSelectedMap",
         },
-
         evaluateSelectedMap: function(){
             var mapType = $("#map-type-list").val();
             window.app.navigate("#map-creator/" + mapType + "/", {
@@ -105,27 +99,18 @@
 
     // renders point map
     App.Views.PointMapInstance = Backbone.View.extend({
-
         template: template("templates/point-map.html"),
-
         el: ".content-map-data",
-
         initialize: function(viewObject){
-
             $("#map-type-list option").each(function(){
                 if ($(this).val() === viewObject.mapType){
                     this.selected = true;
                 }
             });
-
             this.viewObject = viewObject;
-
             window.MapCreatorConfig.mapType = this.viewObject.mapType;
-
             $(this.viewObject.container).html(_.template(this.template));
-
             $("#" + this.viewObject.mapLayerId).prop("checked", true);
-
             this.render(this.viewObject);
         },
 
@@ -139,12 +124,10 @@
             $("input[id='addressSearch']").geocomplete({
                 details: "form"
             });
-
             var address = $("input[id='addressSearch']").val();
             var latitude = $("input[id='latitudeSearch']").val();
             var longitude = $("input[id='longitudeSearch']").val();
             var layer = $('input[name=map-type]:checked').val();
-
             if(e.keyCode != 13) {
                 return false;
             } else if (e.keyCode === 13 && latitude === '' && longitude === '') {
@@ -157,8 +140,8 @@
 
         changeRadio: function(e){
             var address = $("input[id='addressSearch']").val();
-            var latitude = this.viewObject.mapCenter.k;
-            var longitude = this.viewObject.mapCenter.D;
+            var latitude = this.viewObject.mapInstance.getCenter().lat();
+            var longitude = this.viewObject.mapInstance.getCenter().lng();
             var layer = e.target.value;
             this.updateMap(latitude, longitude, layer, address);
         },
@@ -170,21 +153,12 @@
             var layer = $('input[name=map-type]:checked').val();
             this.updateMap(latitude, longitude, layer, address);
 
-            this.viewObject.mapCenter.k = latitude;
-            this.viewObject.mapCenter.D = longitude;
-
-            /*
-            $("input[id='latitudeSearch']").val(this.viewObject.mapCenter.k);
-            $("input[id='longitudeSearch']").val(this.viewObject.mapCenter.D);
-            var layer = $('input[name=map-type]:checked').val();
-            */
-
             var baseUrl = "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do";
-            var mapCenter = "&center=" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.D;
+            var mapCenter = "&center=" + latitude + "," + longitude;
             var mapZoom = "&zoom=" + this.viewObject.mapZoomLevel;
             var mapSize = "&size=" + window.MapCreatorConfig.sizeParams;
             var mapType = "&scale=2&maptype=" + this.viewObject.mapLayerId.toLowerCase();
-            var mapMarker = "&markers=color:red%7Clabel:%7C" + this.viewObject.mapCenter.k + "," + this.viewObject.mapCenter.D;
+            var mapMarker = "&markers=color:red%7Clabel:%7C" + latitude + "," + longitude;
             var imageUrl = baseUrl + mapCenter + mapZoom + mapSize + mapType + mapMarker;
 
             $("#content-map-image").html(
@@ -221,8 +195,10 @@
         render: function(viewObject){
             var mapDiv = document.getElementById(viewObject.mapDiv);
 
+            var my_center = new google.maps.LatLng(viewObject.lat,viewObject.lng);
+
             var map = new google.maps.Map(mapDiv, {
-                center: viewObject.mapCenter,
+                center: my_center,
                 zoom: parseInt(viewObject.mapZoomLevel),
                 scrollwheel: false,
                 draggable: true,
@@ -238,8 +214,10 @@
                 }
             });
 
+            this.viewObject.mapInstance = map;
+
             var marker = new google.maps.Marker({
-                position: viewObject.mapCenter,
+                position: my_center,
                 draggable: true,
                 map: map
             });
@@ -248,19 +226,18 @@
             this.mapClickListener(map, this.viewObject);
             this.mapDragListener(marker, this.viewObject);
 
-            /*
+           /*
             google.maps.event.addDomListener(map, "idle", function() {
                 center = map.getCenter();
             });
-
             google.maps.event.addDomListener(window, "resize", function() {
                 map.setCenter(this.mapCenter);
             });
             */
 
             if (this.viewObject.route === "custom"){
-                $("input[id='latitudeSearch']").val(viewObject.mapCenter.k);
-                $("input[id='longitudeSearch']").val(viewObject.mapCenter.D);
+                $("input[id='latitudeSearch']").val(viewObject.lat);
+                $("input[id='longitudeSearch']").val(viewObject.lng);
             }
 
             $("#content-map-canvas").before(
@@ -273,14 +250,12 @@
             google.maps.event.addListener(map,'zoom_changed', function(){
                 $(".image-link").empty();
                 $("#content-map-image").empty();
-                var newZoomLevel = map.getZoom();
-                var newMapCenter = map.getCenter();
-
-                console.log(newMapCenter);
-
-
+                viewObject.mapZoomLevel = map.getZoom();
+                viewObject.lat = map.getCenter().lat();
+                viewObject.lng = map.getCenter().lng();
+                viewObject.mapCenter = new google.maps.LatLng(viewObject.lat,viewObject.lng);
                 var layer = $('input[name=map-type]:checked').val();
-                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + newMapCenter.k + "&lng=" + newMapCenter.D + "&zoom=" + newZoomLevel + "&layer=" + layer, {
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.lat + "&lng=" + viewObject.lng + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
                     trigger: true,
                     replace: true,
                 });
@@ -292,9 +267,11 @@
                 $(".image-link").empty();
                 $("#content-map-image").empty();
                 viewObject.mapZoomLevel = map.getZoom();
-                viewObject.mapCenter = event.latLng;
+                viewObject.lat = map.getCenter().lat();
+                viewObject.lng = map.getCenter().lng();
+                viewObject.mapCenter = new google.maps.LatLng(viewObject.lat,viewObject.lng);
                 var layer = $('input[name=map-type]:checked').val();
-                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.mapCenter.k + "&lng=" + viewObject.mapCenter.D + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.lat + "&lng=" + viewObject.lng + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
                     trigger: true,
                     replace: true,
                 });
@@ -305,16 +282,18 @@
             google.maps.event.addListener(marker, 'dragend', function(){
                 $(".image-link").empty();
                 $("#content-map-image").empty();
-                var newMarkerPosition = marker.getPosition();
-                viewObject.mapCenter = newMarkerPosition;
+                viewObject.lat = marker.getPosition().lat();
+                viewObject.lng = marker.getPosition().lng();
+                viewObject.mapCenter = marker.getPosition();
                 var layer = $('input[name=map-type]:checked').val();
-                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.mapCenter.k + "&lng=" + viewObject.mapCenter.D + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
+                $("input[id='latitudeSearch']").val(viewObject.lat);
+                $("input[id='longitudeSearch']").val(viewObject.lng);
+                window.app.navigate("#map-creator/" + window.MapCreatorConfig.mapType + "?lat=" + viewObject.lat + "&lng=" + viewObject.lng + "&zoom=" + viewObject.mapZoomLevel + "&layer=" + layer, {
                     trigger: true,
                     replace: true,
                 });
             });
         }
-
     });
 
     App.Models.LineSegment = Backbone.Model.extend({
