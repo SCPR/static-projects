@@ -27,10 +27,10 @@
         <meta property="og:image" content="http://a.scpr.org/i/f44ef3b9a8278abb79b6bbb3caf882c7/87989-full.jpg" />
         <meta property="og:image:width" content="1024" />
         <meta property="og:image:height" content="683" />
-        <meta property="og:url" content="http://projects.scpr.org/static/applications/monthly-water-use/reduction-comparison/" />
+        <meta property="og:url" content="http://projects.scpr.org/applications/monthly-water-use/region/colorado-river/reduction-comparison/" />
         <meta property="og:description" content="After an outcry from water agencies, the State Water Resources Control Board has updated its plan to achieve a 25 percent reduction in water use, shrinking required cuts on some communities while demanding even larger cuts from the heaviest users. This chart compares the latest proposed cuts to water use for South Coast agencies with the first draft." />
         <meta name="twitter:card" content="summary"/>
-        <meta name="twitter:url" content="http://projects.scpr.org/static/applications/monthly-water-use/region/south-coast/reduction-comparison/"/>
+        <meta name="twitter:url" content="http://projects.scpr.org/applications/monthly-water-use/region/colorado-river/reduction-comparison/"/>
         <meta name="twitter:domain" content="http://projects.scpr.org/"/>
         <meta name="twitter:site" content="KPCC"/>
         <meta name="twitter:title" content="Comparing cutbacks called for in state water conservation proposals"/>
@@ -47,117 +47,6 @@
         <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
         <link href="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/css/main-foundation-style-v3.css" media="screen" rel="stylesheet" type="text/css" />
         
-    <style type="text/css">
-
-        /* table styles */
-        .data-container table { width: 100%; height: auto; }
-        .data-container table.table-striped thead th { background-color: #2B2B2B; color: #fdfdfd; }
-        .data-container table.table-striped tbody > tr:nth-child(even) > td,
-        .data-container table.table-striped tbody > tr:nth-child(even) > th { background-color: #aaaaaa; }
-        .data-container table.table-striped tbody > tr:nth-child(odd) > td,
-        .data-container table.table-striped tbody > tr:nth-child(odd) > th { background-color: #fdfdfd; }
-
-        /* tablestacker styles */
-        #table-container {
-            background: #ffffff;
-            padding: 20px 10px 20px 10px;
-            font-family: "proxima-nova", "helvetica neue", helvetica, arial, sans-serif;
-        }
-
-        #table-container .kpcc-table th {
-            color: #B24401;
-            text-transform: uppercase;
-            background: #f5f5f5;
-            text-align: left;
-            vertical-align: middle;
-            font-weight: 500;
-            /*border-top: 1px solid #f17b21;*/
-            /*border-bottom: 1px solid rgba(0, 0, 0, 0.4);*/
-            /*font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif;*/
-            /*font-weight: 700;*/
-            /*vertical-align: bottom;*/
-            /*font-size: 0.6875em;*/
-            /*padding: 20px 14px 9px 5px;*/
-            /*line-height: 1;*/
-            /*color: rgba(0, 0, 0, 0.4);*/
-            /*box-shadow: inset 0 -4px 0 #e8e8e8;*/
-         }
-
-        #table-container .kpcc-table td { text-align: left; vertical-align: middle; font-weight: 500; line-height: 1.1; padding: 10px 14px 10px 5px; vertical-align: top; border-bottom: 1px solid rgba(0, 0, 0, 0.1);}
-        #table-container .kpcc-table td mark { text-transform: uppercase; color: #B24401; background: none; margin-bottom: 4px; font-weight: 700; display: none; }
-        #table-container .kpcc-table tr td:first-child { }
-        #table-container .kpcc-table tr td:first-child mark { display: none; }
-        #table-container .kpcc-table tr td:last-child { box-shadow: none; }
-
-        #table_fu input[type="text"] {
-            display: inline-block;
-            height: 40px;
-            padding: 4px 6px;
-            margin-bottom: 10px;
-            font-size: 14px;
-            line-height: 20px;
-            color: #555555;
-            font-weight: 700;
-            vertical-align: middle;
-            -webkit-border-radius: 4px;
-            -moz-border-radius: 4px;
-            border-radius: 4px;
-        }
-
-        #table-container #table_fu #controls { height: auto; clear: both; display: block; overflow: visible; margin: 10px 0 15px 0; }
-
-        #table-container #table_fu #controls #filter,
-        #table-container #table_fu #controls #pager { margin: 5px auto 25px auto; }
-
-        @media screen and (max-width: 595px) {
-            #table-container #table_fu #controls { font-size: 140%; }
-            #table-container .kpcc-table { border-top: 3px solid #f17b21; border-bottom: 3px solid black; width: 100%; font-size: 160%; }
-            #table-container .kpcc-table thead { display: none; }
-            #table-container .kpcc-table tbody, #table-container .kpcc-table tr, #table-container .kpcc-table td { width: 100%; }
-            #table-container .kpcc-table td { box-shadow: none; display: block; width: 100%; padding: 7px 10px 7px 10px; font-size: 110%; border-bottom-color: #cfcfcf; }
-            #table-container .kpcc-table td mark { display: block; }
-            #table-container .kpcc-table tr td:first-child { font-size: 1.25em; background: #f5f5f5; font-weight: 700; border-bottom-color: gray; padding-top: 15px; }
-            #table-container .kpcc-table tr td:nth-child(2) { padding-top: 12px; }
-            #table-container .kpcc-table tr td:last-child { padding-bottom: 20px; border-bottom: 1px solid black; }
-        }
-
-        @media (min-width: 596px) {
-            #table-container #table_fu #controls { font-size: 110%; }
-            #table-container .kpcc-table { font-size: 110%; }
-            #table-container .kpcc-table th { font-size: 70%; }
-        }
-
-        @media (min-width: 640px) {
-            #table-container #table_fu #controls { font-size: 120%; }
-            #table-container .kpcc-table { font-size: 120%; }
-            #table-container .kpcc-table th { font-size: 85%; }
-        }
-
-        @media (min-width: 768px) {
-            #table-container #table_fu #controls { font-size: 130%; }
-            #table-container .kpcc-table { font-size: 130%; }
-            #table-container .kpcc-table th { font-size: 95%; }
-        }
-
-        @media (min-width: 992px) {
-            #table-container #table_fu #controls { font-size: 140%; }
-            #table-container .kpcc-table { font-size: 140%; }
-            #table-container .kpcc-table th { font-size: 105%; }
-        }
-
-        #table-container #table_fu div.bullet-graph-wrap { position: relative; width: 100%; height: 21px; top: 0; left: 0; margin: 0; padding: 0; }
-        #table-container #table_fu div.bullet-graph-box1 { position: absolute; height: 20px; width: 30%; left: 0; background-color: #eeeeee; z-index: 1; font-size: 0; }
-        #table-container #table_fu div.bullet-graph-box2 { position: absolute; height: 20px; width: 30%; left: 30%; background-color: #dddddd; z-index: 1; font-size: 0; border:1px solid #CCC; }
-        #table-container #table_fu div.bullet-graph-box3 { position: absolute; height: 20px; width: 30%; left: 60%; background-color: #bbbbbb; z-index: 1; font-size: 0; }
-        #table-container #table_fu div.bullet-graph-box4 { position: absolute; height: 20px; width: 10%; left: 90%; background-color: #bbbbbb; z-index: 1; font-size: 0; }
-        #table-container #table_fu div.bullet-graph-target { position: absolute; height: 21px; width: 2px; left: 32px; top: 0; background-color: #cc0000; z-index: 7; font-size: 0; }
-        #table-container #table_fu div.bullet-graph-actual { position: absolute; height: 8px; left: 0px; top: 7px; background-color: #000000; font-size: 0; z-index: 5; font-size: 0; }
-
-        #table-container table.kpcc-table th, #table-container table.kpcc-table td {
-            text-align: center;
-        }
-    </style>
-
         <link href="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/css/cali-water-style.css" media="screen" rel="stylesheet" type="text/css" />
         <!-- end css -->
 
@@ -224,8 +113,8 @@
                                 <li class="projects-share">
                                     <div class="share-links clearfix">
                                         <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
-                                            <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=http://projects.scpr.org/static/applications/monthly-water-use/region/south-coast/reduction-comparison/" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
-                                            <a class="twitter icon" href="http://twitter.com/share?text=This chart compares the latest proposed cuts in water use from State Water Resources Control Board with the first draft released earlier in April.&url=http://projects.scpr.org/static/applications/monthly-water-use/region/south-coast/reduction-comparison/"></a>
+                                            <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=http://projects.scpr.org/applications/monthly-water-use/region/colorado-river/reduction-comparison/" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
+                                            <a class="twitter icon" href="http://twitter.com/share?text=This chart compares the latest proposed cuts in water use from State Water Resources Control Board with the first draft released earlier in April.&url=http://projects.scpr.org/applications/monthly-water-use/region/colorado-river/reduction-comparison/"></a>
                                     </div>
                                     <b>Share this</b>
                                 </li>

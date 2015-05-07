@@ -66,7 +66,7 @@
                 sortRestart      : false,      // restart sort to 'sortInitialOrder' when clicking on previously unsorted columns
 
                 emptyTo          : 'bottom',   // sort empty cell to bottom, top, none, zero, emptyMax, emptyMin
-                stringTo         : 'max',      // sort strings in numerical column as max, min, top, bottom, zero
+                stringTo         : 'bottom',      // sort strings in numerical column as max, min, top, bottom, zero
                 textExtraction   : 'basic',    // text extraction method/function - function(node, table, cellIndex){}
                 textAttribute    : 'data-text',// data-attribute that contains alternate cell text (used in default textExtraction function)
                 textSorter       : null,       // choose overall or specific column sorter function(a, b, direction, table, columnIndex) [alt: ts.sortText]
