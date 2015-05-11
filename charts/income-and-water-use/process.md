@@ -15,7 +15,7 @@ We focused our analysis on water districts that have areas that closely resemble
 
 To do that, we found which South Coast water district areas had at least 85% overlap with a census place. Then we did the reverse, determining if a census place had at least 85% overlap with a water district. If the place-district pair met both qualifications, we went forward with it. There are 44 place-district pairs in our dataset (174 districts classified by the SWRCB reported on water use in the most recent report).
 
-A note about the water district shapefiles we used: the are imperfect. The collection and maintenance of district boundaries is neither mandated nor funded in California and the job fell to the Department of Public Health to begin collecting them. 
+A note about the water district shapefiles we used: they are imperfect. The collection and maintenance of district boundaries is neither mandated nor funded in California and the job fell to the Department of Public Health to begin collecting them. 
 
 There are more than 8,000 public water systems in California, and the DPH's data only has a couple thousand entries; reporting is voluntary. But most of the larger water districts in the state make an appearance. The earliest entries in tool are from 2009, and a handful are from 2015\. There are often multiple entries for a single district.
 
