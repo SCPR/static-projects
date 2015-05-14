@@ -79,7 +79,7 @@
 
             if (window.appConfig.is_embedded === true){
                 $(".data-comments").remove();
-                $(".buttons a:last").before("<a class='btn btn-primary' href='" + window.appConfig.project_root + "' target='_top'><span class='glyphicon glyphicon-resize-full'></span> Full screen</a>");
+                $(".buttons a:last").before("<a class='btn btn-primary full-screen' href='" + window.appConfig.project_root + "' target='_top'><span class='glyphicon glyphicon-resize-full'></span> Full screen</a>");
                 $("#site-title a").attr("target", "_top");
                 $(".projects-pledge a").attr("target", "_top");
                 $(".projects-share a").attr("target", "_top");

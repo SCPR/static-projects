@@ -193,11 +193,19 @@ window.populateDocumentMeta = function(data){
     }
 
     // pull link to full document
-    $(".full-document").html("<strong>View</strong>: <a href='" + data.document.resources.pdf + "'>Full document</a>");
+    if (data.document.resources.published_url != null || data.document.resources.published_url != undefined){
+        $(".full-document").html("<strong>View</strong>: <a href='" + data.document.resources.published_url + "'>Full document</a>");
+        $("a.full-screen").attr("href", data.document.resources.published_url);
+    } else {
+        $(".full-document").remove();
+        $("a.full-screen").remove();
+    };
 
     // pull link to related article if present
     if (data.document.resources.related_article != null || data.document.resources.related_article != undefined){
         $("a.read-more").attr("href", data.document.resources.related_article);
+    } else {
+        $("a.read-more").remove();
     };
 
     if (window.appConfig.parentUrl === data.document.resources.related_article){
