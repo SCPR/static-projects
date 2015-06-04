@@ -39,3 +39,9 @@ body.minimal .header-links a.projects-home {background:url('http://projects.scpr
 body.minimal { font: 100%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal; }
 
 #app-sunset-message { background-color: #F87E21; text-align: center; font-size: 110%; }
+
+body.minimal header h3#site-title a {
+    background-image:url('http://projects.scpr.org/static-files/images/main/logo-masthead.png');
+    width:181px;
+    height:42px;
+}
