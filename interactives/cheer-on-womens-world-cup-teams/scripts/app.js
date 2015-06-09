@@ -90,7 +90,7 @@ function displayVenueData(id, matchingCountryData){
                                 "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
                                     "<div id='team-display' class='hidden'>" +
                                         //"<p class='center'><strong><%= officialslogan %></strong></p>" +
-                                        "<p><a href='<%= fifapage %>' target='_top'><%= nation %>'s</a> team colors are <%= dress %> and will play in <%= group %> during the 2014 World Cup.</p>" +
+                                        "<p><a href='<%= fifapage %>' target='_top'><%= nation %>'s</a> team colors are <%= dress %>. The team will play in <%= group %> during the 2015 World Cup.</p>" +
                                         "<p><strong>Game dates</strong>: <%= gamedates %></p>" +
                                         //"<div class='aspect-ratio'>" +
                                             //"<iframe width='100%' src='<%= songcheer %>' frameborder='0' allowfullscreen></iframe>" +
@@ -141,7 +141,7 @@ function displayVenueData(id, matchingCountryData){
                                         //"<% } else { %>" +
                                             //"<p class='center'><strong><%= officialslogan %></strong></p>" +
                                         //"<% } %>" +
-                                        "<p><a href='<%= fifapage %>' target='_top'><%= nation %>'s</a> team colors are <%= dress %> and will play in <%= group %> during the 2014 World Cup.</p>" +
+                                        "<p><a href='<%= fifapage %>' target='_top'><%= nation %>'s</a> team colors are <%= dress %>. The team will playin <%= group %> during the 2015 World Cup.</p>" +
                                         "<p><strong>Game dates</strong>: <%= gamedates %></p>" +
                                         //"<% if (songcheer === ''){ %>" +
                                         //"<% } else { %>" +
