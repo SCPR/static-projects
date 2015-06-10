@@ -82,7 +82,7 @@ function displayVenueData(id, matchingCountryData){
                                     "<div id='details-display'>" +
                                         "<p><%= notes %></p>" +
                                         "<p class='center'><strong>Click the map below to get directions</strong></p>" +
-                                        "<a href='https://www.google.com/maps/place/<%= streetaddress %>/@<%= latitude %>,<%= longitude %>,16z' ><img src='http://maps.googleapis.com/maps/api/staticmap?center=<%= latitude %>,<%= longitude %>&zoom=13&size=300x300&markers=color:red%7C<%= latitude %>,<%= longitude %>&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8'></a>" +
+                                        "<a href='https://www.google.com/maps/@<%= latitude %>,<%= longitude %>,16z' ><img src='http://maps.googleapis.com/maps/api/staticmap?center=<%= latitude %>,<%= longitude %>&zoom=13&size=300x300&markers=color:red%7C<%= latitude %>,<%= longitude %>&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8'></a>" +
                                     "</div>" +
                                 "</div>" +
                             "</div>" +
@@ -130,7 +130,7 @@ function displayVenueData(id, matchingCountryData){
                                     "<div id='details-display'>" +
                                         "<p><%= notes %></p>" +
                                         "<p class='center'><strong>Click the map below to find directions</strong></p>" +
-                                        "<a href='https://www.google.com/maps/place/<%= streetaddress %>/@<%= latitude %>,<%= longitude %>,16z' ><img src='http://maps.googleapis.com/maps/api/staticmap?center=<%= latitude %>,<%= longitude %>&zoom=13&size=300x300&markers=color:red%7C<%= latitude %>,<%= longitude %>&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8'></a>" +
+                                        "<a href='https://www.google.com/maps/@<%= latitude %>,<%= longitude %>,16z' ><img src='http://maps.googleapis.com/maps/api/staticmap?center=<%= latitude %>,<%= longitude %>&zoom=13&size=300x300&markers=color:red%7C<%= latitude %>,<%= longitude %>&sensor=false&key=AIzaSyAtS1OYyuRY0inb23BK0nuGId3FiOC6Rb8'></a>" +
                                     "</div>" +
                                 "</div>" +
                             "</div>" +
@@ -141,7 +141,7 @@ function displayVenueData(id, matchingCountryData){
                                         //"<% } else { %>" +
                                             //"<p class='center'><strong><%= officialslogan %></strong></p>" +
                                         //"<% } %>" +
-                                        "<p><a href='<%= fifapage %>' target='_top'><%= nation %>'s</a> team colors are <%= dress %>. The team will playin <%= group %> during the 2015 World Cup.</p>" +
+                                        "<p><a href='<%= fifapage %>' target='_top'><%= nation %>'s</a> team colors are <%= dress %>. The team will play in <%= group %> during the 2015 World Cup.</p>" +
                                         "<p><strong>Game dates</strong>: <%= gamedates %></p>" +
                                         //"<% if (songcheer === ''){ %>" +
                                         //"<% } else { %>" +
