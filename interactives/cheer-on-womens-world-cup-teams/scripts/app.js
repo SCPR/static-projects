@@ -20,7 +20,7 @@ function initializeDisplay(array){
     jqueryNoConflict("#content-intro").html(
         "<h3>Women's World Cup 2015: Where to watch your team</h3>" +
         "<p><span class='credits'>Produced by Taylor Haney &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller'>Chris Keller</a></span> | <span class='pubdate'>Published June 9, 2015</span></p>" +
-        "<p>World Cup matches start up this week, and whether you're a fan of a specific country's team or just want to experience the \"beautiful game\" with those who are, we've curated a list of a few key places to catch the 2015 Women's World Cup in Southern California, the nation's most diverse region. Is your favorite spot missing? <a href='mailto:scprweb@scpr.org?Subject=World Cup 2015: Where to watch your country’s team' target='_top'>Let us know.</a></p>"
+        "<p>World Cup matches start up this week, and whether you're a fan of a specific country's team or just want to experience the \"beautiful game\" with those who are, we've curated a list of places to catch the 2015 Women's World Cup in Southern California, the nation's most diverse region. Is your favorite spot missing? <a href='mailto:scprweb@scpr.org?Subject=World Cup 2015: Where to watch your country’s team' target='_top'>Let us know.</a></p>"
     );
 
     var arrayOfNations = _.uniq(_.collect(array, function(x){
