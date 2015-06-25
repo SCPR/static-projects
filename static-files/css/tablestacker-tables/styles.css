@@ -15,7 +15,7 @@ body.minimal header {
     margin:0 0 40px;
 }
 body.minimal header h3#site-title a {
-    background-image:url('http://www.scpr.org/assets/logo-masthead.png');
+    background-image:url('http://projects.scpr.org/static-files/images/main/logo-masthead.png');
     width:181px;
     height:42px;
 }

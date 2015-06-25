@@ -17,7 +17,7 @@ var appConfig = {
 
     // embedding settings
     embed_this: false,
-    embed_url_root: 'http://projects.scpr.org/test/keller/project-template/project-interactive/',
+    embed_url_root: null,
 
     // use flat-file or spreadsheet
     dataSource: null,
@@ -30,16 +30,6 @@ var appConfig = {
 // data configuration object
 var fn = {
 
-    checkForDataVisuals: function(){
-        var checkExist = setInterval(function() {
-            if (jqueryNoConflict('.jumbotron').length) {
-                clearInterval(checkExist);
-                fn.constructCapitolWordsQuery('government+shutdown');
-                fn.retrievePhraseToQuery();
-            }
-        }, 1000);
-    },
-
     retriveData: function(){
         var currentTime = new Date();
         var agency_name = jqueryNoConflict('#agency_name').val();
@@ -47,10 +37,14 @@ var fn = {
         var city = jqueryNoConflict('#city').val();
         var state = jqueryNoConflict('#state').val();
         var zip_code = jqueryNoConflict('#zip_code').val();
-        var data_request = jqueryNoConflict('#data_request').val();
-        var reporter_signature = jqueryNoConflict('#reporter_signature').val();
 
-        var testData = {"objects": [{
+        var data_request = jqueryNoConflict('#data_request').val();
+        data_request = "<p>" + data_request.replace(/\r?\n/g, "<br />") + "</p>";
+
+        var reporter_signature = jqueryNoConflict('#reporter_signature').val();
+        reporter_signature = "<p>" + reporter_signature.replace(/\r?\n/g, "<br />") + "</p>";
+
+        var objectData = {"objects": [{
             date: currentTime,
             agency_name: agency_name,
             street_address: street_address,
@@ -61,7 +55,7 @@ var fn = {
             reporter_signature: reporter_signature}]
         };
 
-        renderHandlebarsTemplate('templates/data-visuals.handlebars', '.data-visuals', testData);
+        renderHandlebarsTemplate('templates/data-visuals.handlebars', '.data-visuals', objectData);
 
     }
 };
@@ -93,7 +87,6 @@ var initializeTemplates = {
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');
         renderHandlebarsTemplate('templates/data-details.handlebars', '.data-details');
-        renderHandlebarsTemplate('templates/data-legend.handlebars', '.data-legend');
 
         var checkExist = setInterval(function() {
 

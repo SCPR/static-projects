@@ -13,5 +13,7 @@ window.appConfig = {
 
     // map configs
     initial_map_zoom: 10,
-    map_center_los_angeles: new google.maps.LatLng(34.0204989,-118.4117325)
+    map_center_los_angeles: new google.maps.LatLng(34.0204989,-118.4117325),
+    map_center_lat: 34.0204989,
+    map_center_lng: -118.4117325
 };
