@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+
+<!-- begin doc -->
+<html lang="en">
+
+    <!-- begin header -->
+    <head>
+
+        <!-- begin meta -->
+        <title>LAUSD budget comparison</title>
+        <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" id="meta-viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link rel="apple-touch-icon" href="http://media.scpr.org/assets/images/icon.png">
+        <meta name="format-detection" content="telephone=no"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+        <meta name="robots" content="" />
+        <meta name="description" content="The Los Angeles Unified School District buget changes yearly. This is a database comparing the budget for the 2015/16 fiscal year to the budget for the previous fiscal year" >
+        <meta name="keywords" content="California, LAUSD, budget" >
+        
+    
+    <meta property="og:title" content="How this year's LAUSD budget compares to last year" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
+    <meta property="og:url" content="/ag_progress_audit/" />
+    
+        <meta property="og:description" content="The Los Angeles Unified School District buget changes yearly. This is a database comparing the budget for the 2015/16 fiscal year to the budget for the previous fiscal year"/>
+    
+
+        
+    
+    <meta name="twitter:title" content="The LAUSD budget in comparison">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="http://projects.scpr.org/">
+    <meta name="twitter:site" content="KPCC">
+    <meta name="twitter:image:src" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png">
+    <meta name="twitter:url" content="/ag_progress_audit/">
+    
+        <meta property="twitter:description" content="The Los Angeles Unified School District buget changes yearly. This is a database comparing the budget for the 2015/16 fiscal year to the budget for the previous fiscal year"/>
+    
+
+        <!-- end meta -->
+
+        <!-- begin css -->
+        <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/css/base/jquery-ui.css" rel="stylesheet" />
+        <link href="http://projects.scpr.org/static-files/v3-dependencies/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" />
+        <link href="http://projects.scpr.org/static-files/v3-dependencies/css/main-foundation-style-v3.css" rel="stylesheet" />
+        
+
+        <!-- html5 shim and respond.js ie8 support of html5 elements and media queries -->
+        <!--[if lte IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
+            <link href="http://projects.scpr.org/static-files/v3-dependencies/respond-proxy/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+            <link href="respond-proxy/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+            <script src="respond-proxy/respond.proxy.js"></script>
+        <![endif]-->
+
+        <!-- begin base scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/vtu6xsq.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script src='http://projects.scpr.org/static-files/scripts/jquery.tablesorter.js' type='text/javascript'></script>
+        <script src="http://projects.scpr.org/static-files/scripts/jquery.tablesorter.pager.js" type="text/javascript"></script>
+        <script src="http://projects.scpr.org/static-files/scripts/jquery.tablesorter.multipagefilter.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            /* For picking out bits from the query string */
+            var getParameterByName = function(name) {
+                name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+                var regexS = "[\\?&]" + name + "=([^&#]*)";
+                var regex = new RegExp(regexS);
+                var results = regex.exec(window.location.href);
+                if(results == null)
+                    return "";
+                else
+                    return decodeURIComponent(results[1].replace(/\+/g, " "));
+            };
+        </script>
+        <!-- end base scripts -->
+
+    </head>
+    <!-- end header -->
+
+    <!-- begin body -->
+    <body class="minimal">
+
+        <div class="kpcc-header">
+            <header>
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="container data-container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <h3 id="site-title" ><a href="http://www.scpr.org/">KPCC 89.3</a></h3>
+                        </div>
+                        <div class="data-share navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right header-links clearfix">
+                                <li class="projects-pledge">
+                                    <a href="https://scprcontribute.publicradio.org/" class="pledge-now icon">Contribute to KPCC</a>
+                                    <a href="https://scprcontribute.publicradio.org/" target="_blank"><b>Pledge now</b></a>
+                                </li>
+                                <li class="projects-share">
+                                    <div class="share-links clearfix">
+                                        <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
+                                            <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
+                                            <a class="twitter icon" href="http://twitter.com/share?text=The Los Angeles Unified School District buget changes yearly. This is a database comparing the budget for the 2015/16 fiscal year to the budget for the previous fiscal year.&amp;url=http://projects.scpr.org/databases/2015-lausd-budget/"></a>
+                                    </div>
+                                    <b>Share this</b>
+                                </li>
+                                <li class="projects-embed">
+                                    <a href="javascript:void(0)" class="embed-this icon" onclick="renderEmbedBox()">Embed This</a>
+                                    <a href="javascript:void(0)" target="_blank" onclick="renderEmbedBox()"><b>Embed This</b></a>
+                                </li>
+                                <li class="projects-home">
+                                    <a href="http://projects.scpr.org/" class="projects-home icon">Projects Home</a>
+                                    <a href="http://projects.scpr.org/"><b>All Projects</b></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+
+        <!-- begin main container -->
+        <div class="container data-container">
+            <div class="row data-details">
+                
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="content-article">
+            <div class="headlines">
+                <h4 class="kicker">Education</h4>
+                <h1>LAUSD's 2015-2016 budget</h1>
+            </div>
+            <div class="text collapse">
+                <p><span class="credits">Produced by <a href="http://www.scpr.org/about/people/staff/annie-gilbertson">Annie Gilbertson</a>, Sarah Monte & Will Craft</span> </p>
+                <p>The Los Angeles Unified School District's $8 billion budget pays for more than 25,000 teachers and serves 650,000 students.</p>
+ 
+  <p>Superintendent Ramon Cortines and the school board are designating a $820 million increase in funding covering the 2015-2016 school year largely for teacher raises, maintenance, instructional materials, and other overdue operational costs deferred during the recession.</p>
+   
+  <p>As part of Gov. Jerry Brown’s formula for local education, L.A. Unified received more than $1 billion to serve low-income students, foster youth and English learners. Advocates contend little is being invested in new and improved services for these students while the new cash flows to general operations.</p>
+   
+  <p>This data shows the priorities of Cortines and the board for the next school year.  Each line represents a major spending group – such as preschool, teacher costs and cafeteria funds – alongside its percent change from last school year.</p>
+                
+            </div>
+            
+            <div class="about collapse">
+                <p><strong>Source(s): </strong>Los Angeles Unified School District. <strong>Built using</strong> <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.</p>
+            </div>
+         
+            <div class="buttons btn-group btn-group-justified">
+                <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".text"><span class="text glyphicon glyphicon-chevron-down"></span>  About</a>
+                <a class="btn btn-primary" href="javascript:void(0)" data-toggle="collapse" data-target=".about"><span class="about glyphicon glyphicon-chevron-down"></span>  Sources</a>
+                
+            </div>
+          
+        </div>
+    </div>
+
+            </div>
+            <div class="row data-visuals">
+                
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div id="table-container">
+       <div style="height:500px;overflow:auto;">
+
+<table class="kpcc-table">
+  <thead>
+    <tr>
+      <th>Major Group</th>
+      <th>2014-2015</th>
+      <th>2015-2016</th>
+      <th>Percent change</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>NEW SCHOOLS START UP COSTS</td>
+      <td>$0.29</td>
+      <td>$1.65</td>
+      <td>468.97%</td>
+      <td>Start-up costs for new schools, including administrators, counselors, clerical, library supplies, custodians, custodial supplies, instructional materials, general supplies, and professional development days.</td>
+    </tr>
+    <tr>
+      <td>COORDINATED EARLY INTERVENING SERVICES</td>
+      <td>$4.72</td>
+      <td>$19.73</td>
+      <td>318.01%</td>
+      <td>The State mandated a corrective action plan for LAUSD regarding disproportionate representation of certain ethnicities as students with disabilities. The corrective action plan is not about students with disabilities identified for special education services but about Early Intervention Services for general education students needing to reduce referrals for special education.</td>
+    </tr>
+    <tr>
+      <td>CLERICAL SUBSTITUTES</td>
+      <td>$3.84</td>
+      <td>$11.81</td>
+      <td>207.55%</td>
+      <td>Replacement resources for absent clerical support positions.</td>
+    </tr>
+    <tr>
+      <td>SCHOOL TECHNOLOGY SUPPORT (MCSA)</td>
+      <td>$1.80</td>
+      <td>$5.21</td>
+      <td>189.44%</td>
+      <td>Microcomputer Support Assistants assigned to provide onsite local technical support for schools.</td>
+    </tr>
+    <tr>
+      <td>COUNSELING TIME (REGISTRATION)</td>
+      <td>$2.11</td>
+      <td>$5.49</td>
+      <td>160.19%</td>
+      <td>Resources to support registration prior to school opening. </td>
+    </tr>
+    <tr>
+      <td>CHARTER SCHOOL CATEGORICAL BLOCK GRANT</td>
+      <td>$9.30</td>
+      <td>$23.63</td>
+      <td>154.09%</td>
+      <td>Categorical Block Grant and Allocation in Lieu of EIA (Economic Impact Aid) for Affiliated Charter Schools from the State.</td>
+    </tr>
+    <tr>
+      <td>ONGOING & MAJOR MAINTENANCE</td>
+      <td>$80.03</td>
+      <td>$201.22</td>
+      <td>151.43%</td>
+      <td>Regular Routine General Maintenance program, Plant Maintenance, School Bathroom Renovation, & Plant Maintenance Salaries.</td>
+    </tr>
+    <tr>
+      <td>CHARTER SCHOOL OVERSIGHT FEE</td>
+      <td>$10.78</td>
+      <td>$25.43</td>
+      <td>135.90%</td>
+      <td>1% Oversight Fee to provide services to charter schools.</td>
+    </tr>
+    <tr>
+      <td>OFF-NORM & ONE TIME SCHOOL ALLOCATIONS</td>
+      <td>$7.40</td>
+      <td>$15.45</td>
+      <td>108.78%</td>
+      <td>One-time allocations such as teachers, administrators and clerical positions and other off-norm positions.</td>
+    </tr>
+    <tr>
+      <td>INSTRUCTIONAL MATERIALS</td>
+      <td>$158.49</td>
+      <td>$295.07</td>
+      <td>86.18%</td>
+      <td>Resources that support and/or supplement the core instructional program and operations.</td>
+    </tr>
+    <tr>
+      <td>EMPLOYEE BENEFITS/ADJUSTMENTS/PUBLI C EMPLOYEE RETIREMENTS</td>
+      <td>-$23.18</td>
+      <td>-$42.60</td>
+      <td>83.78%</td>
+      <td>Payment to the state for reduced employer contribution to Public Employees' Retirement System.</td>
+    </tr>
+    <tr>
+      <td>ATHLETICS</td>
+      <td>$6.33</td>
+      <td>$11.53</td>
+      <td>82.15%</td>
+      <td>Provides auxiliary positions for Athletic Directors, athletic coach differentials, and rental of spectator materiel (i.e. bleachers) for athletic events.</td>
+    </tr>
+    <tr>
+      <td>TEXTBOOKS</td>
+      <td>$42.59</td>
+      <td>$74.56</td>
+      <td>75.06%</td>
+      <td>District funded textbooks.</td>
+    </tr>
+    <tr>
+      <td>SPED-ASSISTANTS-PRESCHOOL</td>
+      <td>$21.25</td>
+      <td>$35.40</td>
+      <td>66.59%</td>
+      <td>Assist preschool teachers with special education students.</td>
+    </tr>
+    <tr>
+      <td>COUNSELORS, PUPIL SERVICES & ATTENDANCE (PSA)</td>
+      <td>$16.92</td>
+      <td>$26.75</td>
+      <td>58.10%</td>
+      <td>Counselors working with students, parents, and school personnel to increase student attendance. </td>
+    </tr>
+    <tr>
+      <td>PROPERTY RENTALS</td>
+      <td>$7.45</td>
+      <td>$11.02</td>
+      <td>47.92%</td>
+      <td>Rental expense for leasing of school facilities.</td>
+    </tr>
+    <tr>
+      <td>CHARTER SCHOOL FEE FOR SERVICE</td>
+      <td>$4.40</td>
+      <td>$6.32</td>
+      <td>43.64%</td>
+      <td>Charter school fees for district provided services.</td>
+    </tr>
+    <tr>
+      <td>SPED-EXTENDED SCHOOL YEAR</td>
+      <td>$13.51</td>
+      <td>$19.18</td>
+      <td>41.97%</td>
+      <td>Resources provided to special education students to prevent instructional regression.</td>
+    </tr>
+    <tr>
+      <td>ARTS PROGRAM</td>
+      <td>$22.83</td>
+      <td>$32.38</td>
+      <td>41.83%</td>
+      <td>Elementary Arts Teachers to support the Arts program.</td>
+    </tr>
+    <tr>
+      <td>PSYCHIATRIC SOCIAL WORKERS</td>
+      <td>$9.08</td>
+      <td>$12.81</td>
+      <td>41.08%</td>
+      <td>Provides specialized services to identified students to remove emotional, behavioral, and family crisis barriers to learning.</td>
+    </tr>
+    <tr>
+      <td>SPED-REIMBURSEMENT-DUE PROCESS</td>
+      <td>$7.59</td>
+      <td>$10.59</td>
+      <td>39.53%</td>
+      <td>Reimbursement to parents, schools and agencies based on Due Process agreements involving students with disabilities.</td>
+    </tr>
+    <tr>
+      <td>AUDIT FEES AND FINDINGS</td>
+      <td>$6.50</td>
+      <td>$9.00</td>
+      <td>38.46%</td>
+      <td>Contract for the District's external audits and audit questions cost.</td>
+    </tr>
+    <tr>
+      <td>INTER-FUND TRANSFER CERTIFICATE OF PARTICIPATION (COPS)</td>
+      <td>$39.00</td>
+      <td>$50.88</td>
+      <td>30.46%</td>
+      <td>Income and expenditures initially recorded in the General Fund and then transferred, in accordance with accounting requirements, to a special fund.</td>
+    </tr>
+    <tr>
+      <td>PROP 39 CLEAN ENERGY</td>
+      <td>$59.91</td>
+      <td>$77.84</td>
+      <td>29.93%</td>
+      <td>Funds that support retrofit projects which will help ensure long-term energy savings.</td>
+    </tr>
+    <tr>
+      <td>E-RATE MATCH/REBATE</td>
+      <td>$20.30</td>
+      <td>$26.02</td>
+      <td>28.18%</td>
+      <td>Local revenue funding for the E-Rate Match/Rebate program.</td>
+    </tr>
+    <tr>
+      <td>SPED-PRESCHOOL  PROGRAM SERVICES (INCLUDING ITINERANTS)</td>
+      <td>$17.78</td>
+      <td>$22.68</td>
+      <td>27.56%</td>
+      <td>Provide special education services for children ages 3-5 who have been identified with one of Federal and State defined special education eligibilities. Children are served in the least restrictive environment. Emphasis is placed on the development of language, social emotional, motor and preacademic skills. Families and staff work together to develop an IEP that guides the service delivery for each child. </td>
+    </tr>
+    <tr>
+      <td>INSTRUCTIONAL TECHNOLOGY SUPPORT (VLC)</td>
+      <td>$4.00</td>
+      <td>$5.06</td>
+      <td>26.50%</td>
+      <td>Resources to support virtual learning.</td>
+    </tr>
+    <tr>
+      <td>TEACHER - LIBRARY MEDIA</td>
+      <td>$10.52</td>
+      <td>$13.19</td>
+      <td>25.38%</td>
+      <td>Aligns the school library media program, collection, and services with the school curriculum.</td>
+    </tr>
+    <tr>
+      <td>SPED-TEACHER-SPECIAL DAY PROGRAM-PRESCHOOL</td>
+      <td>$41.34</td>
+      <td>$51.49</td>
+      <td>24.55%</td>
+      <td>Special Day Program Preschool Teacher Positions.</td>
+    </tr>
+    <tr>
+      <td>SPED-ASSISTIVE TECHNOLOGY</td>
+      <td>$2.14</td>
+      <td>$2.66</td>
+      <td>24.30%</td>
+      <td>Assistive Technology service</td>
+    </tr>
+    <tr>
+      <td>SPED-IMA-EQUIP-MATERIAL</td>
+      <td>$12.88</td>
+      <td>$15.63</td>
+      <td>21.35%</td>
+      <td>Instructional materials and equipment used to support students with disabilities.</td>
+    </tr>
+    <tr>
+      <td>SPED-PROGRAM SPECIALISTS- CERTIFICATED</td>
+      <td>$5.25</td>
+      <td>$6.34</td>
+      <td>20.76%</td>
+      <td>Program Specialists plan programs, coordinate curricular resources, and monitor the effectiveness of programs for students with disabilities.</td>
+    </tr>
+    <tr>
+      <td>SPED-ADAPTED PHYSICAL EDUCATION</td>
+      <td>$18.94</td>
+      <td>$22.85</td>
+      <td>20.64%</td>
+      <td>Adapted Physical Education programs for Special Education students.\nEducation students.</td>
+    </tr>
+    <tr>
+      <td>SPED-SPEECH & LANGUAGE</td>
+      <td>$38.65</td>
+      <td>$46.57</td>
+      <td>20.49%</td>
+      <td>School-based Speech Therapy supports the\neducational program for students who have a disorder in communication involving articulation, language, fluency and/or voice.</td>
+    </tr>
+    <tr>
+      <td>PSYCHOLOGISTS</td>
+      <td>$17.04</td>
+      <td>$20.40</td>
+      <td>19.72%</td>
+      <td>Provides specialized pupil services for individuals or groups.</td>
+    </tr>
+    <tr>
+      <td>TEACHER SUPPORT - REED SETTLEMENT</td>
+      <td>$25.43</td>
+      <td>$30.24</td>
+      <td>18.91%</td>
+      <td>Resources to improve teacher retention and academic achievement at Reed schools.</td>
+    </tr>
+    <tr>
+      <td>FOSTER YOUTH SUPPORT PLAN/FAMILY SOURCE SYSTEM PROPOSAL</td>
+      <td>$9.88</td>
+      <td>$11.68</td>
+      <td>18.22%</td>
+      <td>Resources to increase academic and support services to Foster Youth.</td>
+    </tr>
+    <tr>
+      <td>CLASS SIZE REDUCTION MIDDLE SCHOOLS - MATH & ELA</td>
+      <td>$6.00</td>
+      <td>$7.01</td>
+      <td>16.83%</td>
+      <td>Resources to reduce class sizes at middle schools.</td>
+    </tr>
+    <tr>
+      <td>SPED-TEACHER-SPECIAL DAY PROGRAM</td>
+      <td>$240.33</td>
+      <td>$277.17</td>
+      <td>15.33%</td>
+      <td>Special Day Program Teacher Positions.</td>
+    </tr>
+    <tr>
+      <td>DATA PROCESSING</td>
+      <td>$7.40</td>
+      <td>$8.50</td>
+      <td>14.86%</td>
+      <td>Information Technology (IT) equipment, materials, and software licensing.</td>
+    </tr>
+    <tr>
+      <td>SPED-OCCUPATIONAL  & PHYSICAL THERAPY</td>
+      <td>$21.63</td>
+      <td>$24.84</td>
+      <td>14.84%</td>
+      <td>School physical therapy for special education students.</td>
+    </tr>
+    <tr>
+      <td>NURSES</td>
+      <td>$35.66</td>
+      <td>$40.58</td>
+      <td>13.80%</td>
+      <td>Support health services.</td>
+    </tr>
+    <tr>
+      <td>ADULT EDUCATION/ REGIONAL OCCUPATION CENTER/PROGRAMS</td>
+      <td>$130.70</td>
+      <td>$147.90</td>
+      <td>13.16%</td>
+      <td>Provides career technical education and training to adult students.</td>
+    </tr>
+    <tr>
+      <td>COORDINATORS</td>
+      <td>$19.38</td>
+      <td>$21.93</td>
+      <td>13.16%</td>
+      <td>Supports instructional needs of various programs and\noffices.</td>
+    </tr>
+    <tr>
+      <td>CENTRAL OFFICE/EDUCATIONAL SERVICE CENTERS</td>
+      <td>$504.76</td>
+      <td>$570.83</td>
+      <td>13.09%</td>
+      <td>Resources that support school sites and day to day operations of the District.  Special Education central office is included in the special education categories.</td>
+    </tr>
+    <tr>
+      <td>SPED-PASS THROUGH FOR INDEPENDENT CHARTERS</td>
+      <td>$66.78</td>
+      <td>$75.47</td>
+      <td>13.01%</td>
+      <td>Expenditure account that records Special Education expenditures for fiscally independent charter schools. The amount recorded matches the revenue provided to these charter schools.</td>
+    </tr>
+    <tr>
+      <td>INSURANCE PREMIUMS</td>
+      <td>$26.03</td>
+      <td>$29.25</td>
+      <td>12.37%</td>
+      <td>Cost of insurance coverage for liability, property, and vehicles.</td>
+    </tr>
+    <tr>
+      <td>SPED-NURSING SERVICES</td>
+      <td>$11.22</td>
+      <td>$12.54</td>
+      <td>11.76%</td>
+      <td>Provide health services to students with disabilities.</td>
+    </tr>
+    <tr>
+      <td>MAGNET SCHOOLS RESOURCES</td>
+      <td>$17.66</td>
+      <td>$19.59</td>
+      <td>10.93%</td>
+      <td>Additional resources for magnet schools and centers.</td>
+    </tr>
+    <tr>
+      <td>SPED-TEACHER-RESOURCE SPECIALIST PROGRAM</td>
+      <td>$113.54</td>
+      <td>$125.25</td>
+      <td>10.31%</td>
+      <td>Resource Specialist Program Teacher Positions.</td>
+    </tr>
+    <tr>
+      <td>SPED-ASSISTANTS</td>
+      <td>$309.68</td>
+      <td>$341.48</td>
+      <td>10.27%</td>
+      <td>Assist teachers with students with disabilities.</td>
+    </tr>
+    <tr>
+      <td>SPED-VISUALLY IMPAIRED</td>
+      <td>$5.62</td>
+      <td>$6.13</td>
+      <td>9.07%</td>
+      <td>The Visually Impaired (VI) program provides services to students with vision impairments.</td>
+    </tr>
+    <tr>
+      <td>SPED-LEAST RESTRICTIVE ENVIRONMENT COUNSELORS</td>
+      <td>$1.16</td>
+      <td>$1.26</td>
+      <td>8.62%</td>
+      <td>LRE Counselors provide counseling services to students with physical disabilities who are eligible for counseling through their IEPs.</td>
+    </tr>
+    <tr>
+      <td>REASONABLE ACCOMMODATIONS</td>
+      <td>$4.69</td>
+      <td>$5.08</td>
+      <td>8.32%</td>
+      <td>Resources provided to employees with disabilities. Resources include Education Aides, Teacher Assistants, Sign Language Interpreters, and Special Education Assistants.</td>
+    </tr>
+    <tr>
+      <td>SPED-DONATIONS</td>
+      <td>$1.19</td>
+      <td>$1.28</td>
+      <td>7.56%</td>
+      <td>Support for students with disabilities provided to various schools and offices by donors.</td>
+    </tr>
+    <tr>
+      <td>SPED-NON PUBLIC SERVICES</td>
+      <td>$163.36</td>
+      <td>$175.10</td>
+      <td>7.19%</td>
+      <td>Payments to certified non-District nonpublic schools/agencies for services provided to district students with disabilities.</td>
+    </tr>
+    <tr>
+      <td>SPED-OPTIONS</td>
+      <td>$8.43</td>
+      <td>$9.03</td>
+      <td>7.12%</td>
+      <td>Special Education services at Options Schools.</td>
+    </tr>
+    <tr>
+      <td>CERTIFICATED SUPPLEMENTAL TIME (X, Z, & PROFESSIONAL DEVELOPMENT)</td>
+      <td>$35.59</td>
+      <td>$38.08</td>
+      <td>7.00%</td>
+      <td>Resources for additional certificated assignments.</td>
+    </tr>
+    <tr>
+      <td>UTILITIES</td>
+      <td>$126.84</td>
+      <td>$135.58</td>
+      <td>6.89%</td>
+      <td>Electrical, water, and gas expenses for schools.</td>
+    </tr>
+    <tr>
+      <td>EARLY CHILDHOOD DEVELOPMENT</td>
+      <td>$127.80</td>
+      <td>$136.32</td>
+      <td>6.67%</td>
+      <td>Early Childhood Development.</td>
+    </tr>
+    <tr>
+      <td>SPED-CAREER & TRANSITION PROGRAM</td>
+      <td>$11.65</td>
+      <td>$12.42</td>
+      <td>6.61%</td>
+      <td>The District Office of Transition Services assists in the planning and delivery of transition services for all students with disabilities, beginning at age 14 (or younger, if appropriate) to prepare them for transition from school to adult living.</td>
+    </tr>
+    <tr>
+      <td>TEACHERS</td>
+      <td>$1,989.33</td>
+      <td>$2,113.92</td>
+      <td>6.26%</td>
+      <td>Teacher positions.</td>
+    </tr>
+    <tr>
+      <td>LIBRARY AIDES</td>
+      <td>$12.42</td>
+      <td>$13.19</td>
+      <td>6.20%</td>
+      <td>Provides assistance to students and teachers in a school library media center.</td>
+    </tr>
+    <tr>
+      <td>FACILITIES MAINTENANCE/OPERATIONS</td>
+      <td>$47.81</td>
+      <td>$50.54</td>
+      <td>5.71%</td>
+      <td>Building & Grounds Workers, roving gardeners, window washing crew, landscaping, tree trimming, pest control, repair/replacement  of fire extinguishers, repair of lighting for auditorium and gym.</td>
+    </tr>
+    <tr>
+      <td>ADMINISTRATORS  (ASSISTANT PRINCIPAL - SECONDARY COUNSELING SERVICES)</td>
+      <td>$9.68</td>
+      <td>$10.22</td>
+      <td>5.58%</td>
+      <td>Administrators of counseling services for school sites.</td>
+    </tr>
+    <tr>
+      <td>SPED-ASSISTANT PRINCIPAL ELEMENTARY INSTRUCTIONAL SPECIALIST</td>
+      <td>$24.14</td>
+      <td>$25.39</td>
+      <td>5.18%</td>
+      <td>Provide support for Special Education compliance at elementary schools.</td>
+    </tr>
+    <tr>
+      <td>NON-FILMING RENTAL</td>
+      <td>$5.92</td>
+      <td>$6.22</td>
+      <td>5.07%</td>
+      <td>Funds received  from non filming rental. School resources yet to be allocated.</td>
+    </tr>
+    <tr>
+      <td>FINANCIAL MANAGERS</td>
+      <td>$9.86</td>
+      <td>$10.35</td>
+      <td>4.97%</td>
+      <td>Manages and advises on financial matters and accounting procedures pertaining to student body funds.</td>
+    </tr>
+    <tr>
+      <td>CAFETERIA</td>
+      <td>$351.12</td>
+      <td>$366.08</td>
+      <td>4.26%</td>
+      <td>Operational support of the Cafeteria program (including grants and Breakfast in the Classroom Incentive).</td>
+    </tr>
+    <tr>
+      <td>JUNIOR RESERVE OFFICER TRAINING CORPS (JROTC)</td>
+      <td>$5.30</td>
+      <td>$5.52</td>
+      <td>4.15%</td>
+      <td>Teacher positions for the JROTC program.</td>
+    </tr>
+    <tr>
+      <td>PARAPROFESSIONAL  TEACHER TRAINING</td>
+      <td>$0.82</td>
+      <td>$0.85</td>
+      <td>3.66%</td>
+      <td>A paraeducator (instructional assistant/aide) career ladder program that leads to a teacher preparation program.</td>
+    </tr>
+    <tr>
+      <td>SPED-TRANSPORTATION</td>
+      <td>$65.12</td>
+      <td>$67.44</td>
+      <td>3.56%</td>
+      <td>Transportation for students with disabilities.</td>
+    </tr>
+    <tr>
+      <td>SPED-EDUCATIONALLY RELATED MENTAL HEALTH SERVICES</td>
+      <td>$40.71</td>
+      <td>$42.03</td>
+      <td>3.24%</td>
+      <td>Provide educationally related counseling services that may include individual counseling, group counseling, family consultation, and/or family support as needed.</td>
+    </tr>
+    <tr>
+      <td>INTERNAL SERVICE FUNDS</td>
+      <td>$1,108.22</td>
+      <td>$1,141.96</td>
+      <td>3.04%</td>
+      <td>Payments and claims for Health and Welfare Fund and Workers Compensation\nWorkers' Compensation.</td>
+    </tr>
+    <tr>
+      <td>TEACHER ACADEMIC DIFFERENTIALS</td>
+      <td>$0.99</td>
+      <td>$1.02</td>
+      <td>3.03%</td>
+      <td>Supplemental pay for coordinating academic activities\n(i.e. Yearbook, Musicals, Decathlon).</td>
+    </tr>
+    <tr>
+      <td>ACCELERATED ACADEMIC LITERACY</td>
+      <td>$4.06</td>
+      <td>$4.18</td>
+      <td>2.96%</td>
+      <td>Class size reduction literacy classes for secondary schools.</td>
+    </tr>
+    <tr>
+      <td>HOUSEKEEPERS</td>
+      <td>$5.12</td>
+      <td>$5.27</td>
+      <td>2.93%</td>
+      <td>Performs general housekeeping duties in an early education center. </td>
+    </tr>
+    <tr>
+      <td>SCHOOL POLICE</td>
+      <td>$57.39</td>
+      <td>$58.98</td>
+      <td>2.77%</td>
+      <td>Safety and security for schools and district property.</td>
+    </tr>
+    <tr>
+      <td>LOCAL INITIATIVE SCHOOL</td>
+      <td>$1.11</td>
+      <td>$1.14</td>
+      <td>2.70%</td>
+      <td>Local School Initiative support resources.</td>
+    </tr>
+    <tr>
+      <td>RESERVE FOR NEW GRANTS</td>
+      <td>$95.72</td>
+      <td>$98.27</td>
+      <td>2.66%</td>
+      <td>Resources for pending grants.</td>
+    </tr>
+    <tr>
+      <td>PHYSICAL EDUCATION TEACHER INCENTIVE</td>
+      <td>$1.64</td>
+      <td>$1.67</td>
+      <td>1.83%</td>
+      <td>Provides funding to hire credentialed physical education teachers in selected schools serving grades kindergarten and first through eight.</td>
+    </tr>
+    <tr>
+      <td>DONATIONS</td>
+      <td>$28.99</td>
+      <td>$29.50</td>
+      <td>1.76%</td>
+      <td>Donations by individuals or groups to schools.</td>
+    </tr>
+    <tr>
+      <td>CATEGORICAL PROGRAM ADVISORS</td>
+      <td>$28.72</td>
+      <td>$29.20</td>
+      <td>1.67%</td>
+      <td>Supports categorical program needs at school sites.</td>
+    </tr>
+    <tr>
+      <td>COUNSELORS</td>
+      <td>$57.57</td>
+      <td>$58.51</td>
+      <td>1.63%</td>
+      <td>Student or youth counseling and/or guidance. </td>
+    </tr>
+    <tr>
+      <td>SUBSTITUTES-DAY  TO DAY AND LONG-TERM</td>
+      <td>$70.49</td>
+      <td>$71.60</td>
+      <td>1.57%</td>
+      <td>Replacement resources for absent teachers. Includes funding for long-term substitutes, long-term clerical substitutes, and Contract Pool Teachers.</td>
+    </tr>
+    <tr>
+      <td>ADVANCED PLACEMENT FEE</td>
+      <td>$2.32</td>
+      <td>$2.34</td>
+      <td>0.86%</td>
+      <td>Reimbursement from students to take Advanced\nPlacement tests.</td>
+    </tr>
+    <tr>
+      <td>EARLY CHILDHOOD DEVELOPMENT, INTER-FUND TRANSFER</td>
+      <td>$40.69</td>
+      <td>$41.00</td>
+      <td>0.76%</td>
+      <td>Income and expenditures initially recorded in the General Fund and then transferred, in accordance with accounting requirements, to a special fund.</td>
+    </tr>
+    <tr>
+      <td>TELEPHONE</td>
+      <td>$21.90</td>
+      <td>$22.06</td>
+      <td>0.73%</td>
+      <td>Telephone services for all schools.</td>
+    </tr>
+    <tr>
+      <td>HEALTH SERVICES</td>
+      <td>$30.95</td>
+      <td>$31.14</td>
+      <td>0.61%</td>
+      <td>Personnel and operational expenses of Student Health\n& Human Services Division (i.e., Physician, Coordinator- Nurses, PSA, Audiometrists & Student Discipline,
+clerical support, mileage, nurse substitute). Mandated nursing services, attendance recovery, additional psychologist support.</td>
+    </tr>
+    <tr>
+      <td>TRANSPORTATION</td>
+      <td>$81.75</td>
+      <td>$81.93</td>
+      <td>0.22%</td>
+      <td>Bus transportation for all District traveling program students including magnet.</td>
+    </tr>
+    <tr>
+      <td>CUSTODIANS</td>
+      <td>$144.44</td>
+      <td>$144.61</td>
+      <td>0.12%</td>
+      <td>Supports and maintains the cleanliness of school sites and offices.</td>
+    </tr>
+    <tr>
+      <td>ADMINISTRATOR STIPENDS</td>
+      <td>$0.20</td>
+      <td>$0.20</td>
+      <td>0.00%</td>
+      <td>Stipends for school administrators.</td>
+    </tr>
+    <tr>
+      <td>EVALUATION</td>
+      <td>$0.23</td>
+      <td>$0.23</td>
+      <td>0.00%</td>
+      <td>Training instructional personnel in a robust and detailed way to view instruction.</td>
+    </tr>
+    <tr>
+      <td>SPED-TEMPORARY  PERSONNEL ACCOUNT</td>
+      <td>$0.23</td>
+      <td>$0.23</td>
+      <td>0.00%</td>
+      <td>Resources to support the instructional program and operations at Special Education Centers.</td>
+    </tr>
+    <tr>
+      <td>UTLA RELEASE TIME</td>
+      <td>$0.25</td>
+      <td>$0.25</td>
+      <td>0.00%</td>
+      <td>Authorized release time for teachers.</td>
+    </tr>
+    <tr>
+      <td>ACCREDITATION</td>
+      <td>$0.32</td>
+      <td>$0.32</td>
+      <td>0.00%</td>
+      <td>Western Association of Schools & Colleges reimbursement for school applications, annual membership fees, visiting committee members expenses, and school expenses (coordinatorship, overtime, substitutes, & reprographics).</td>
+    </tr>
+    <tr>
+      <td>ACADEMIC DECATHLON</td>
+      <td>$0.58</td>
+      <td>$0.58</td>
+      <td>0.00%</td>
+      <td>Differential supplemental salary payment (1 per participating school) for Academic Decathlon Coach, fees for participation in academic decathlon, supplies, and travel expenses.</td>
+    </tr>
+    <tr>
+      <td>SPECIAL EDUCATION INTERDISTRICT EXCESS COST PAYMENT</td>
+      <td>$0.65</td>
+      <td>$0.65</td>
+      <td>0.00%</td>
+      <td>Payments for the excess cost of LAUSD students with disabilities attending other Districts.</td>
+    </tr>
+    <tr>
+      <td>SPED-IMA ALLOCATION TO SCHOOLS</td>
+      <td>$1.89</td>
+      <td>$1.89</td>
+      <td>0.00%</td>
+      <td>Allocation to support and/or supplement the core instructional program and operations for students with disabilities.</td>
+    </tr>
+    <tr>
+      <td>FIRE DAMAGE</td>
+      <td>$2.46</td>
+      <td>$2.46</td>
+      <td>0.00%</td>
+      <td>Repair fire damage.</td>
+    </tr>
+    <tr>
+      <td>SALARY OVERPAYMENT</td>
+      <td>$3.00</td>
+      <td>$3.00</td>
+      <td>0.00%</td>
+      <td>Estimated salary overpayments of District personnel.</td>
+    </tr>
+    <tr>
+      <td>WATER/TOXIC TESTING/FEES & PERMIT (CA CLEAN AIR)</td>
+      <td>$3.52</td>
+      <td>$3.52</td>
+      <td>0.00%</td>
+      <td>Air Quality Management district fees. </td>
+    </tr>
+    <tr>
+      <td>SPED-ALLOCATION  TO SCHOOLS FOR COMPLIANCE</td>
+      <td>$6.09</td>
+      <td>$6.09</td>
+      <td>0.00%</td>
+      <td>Allocation for support of Special Education Compliance based on active Individualized Education Programs (IEPs) in Welligent.</td>
+    </tr>
+    <tr>
+      <td>RUBBISH/TRASH DISPOSAL</td>
+      <td>$6.86</td>
+      <td>$6.86</td>
+      <td>0.00%</td>
+      <td>Trash disposal for all schools and offices.</td>
+    </tr>
+    <tr>
+      <td>LIABILITY RESERVE</td>
+      <td>$15.65</td>
+      <td>$15.65</td>
+      <td>0.00%</td>
+      <td> Districtwide liability. </td>
+    </tr>
+    <tr>
+      <td>DIFFERENTIALS/LONGEVITIES</td>
+      <td>$7.83</td>
+      <td>$7.83</td>
+      <td>0.00%</td>
+      <td>Supplemental salary resources for years of service, and degrees per collective bargaining.</td>
+    </tr>
+    <tr>
+      <td>DEBT SERVICE</td>
+      <td>$927.37</td>
+      <td>$926.90</td>
+      <td>-0.05%</td>
+      <td>Payment for principal and interest for Certificate of\nParticipation (COPs) and other debt instruments.</td>
+    </tr>
+    <tr>
+      <td>CLASS SIZE REDUCTION HIGH SCHOOLS - MATH & ELA</td>
+      <td>$7.00</td>
+      <td>$6.97</td>
+      <td>-0.43%</td>
+      <td>Resources to reduce class sizes at senior high schools.</td>
+    </tr>
+    <tr>
+      <td>AFTERSCHOOL PROGRAMS</td>
+      <td>$97.85</td>
+      <td>$97.32</td>
+      <td>-0.54%</td>
+      <td>Afterschool programs.</td>
+    </tr>
+    <tr>
+      <td>MILEAGE & TUITION REIMBURSEMENT</td>
+      <td>$1.60</td>
+      <td>$1.59</td>
+      <td>-0.62%</td>
+      <td>Mileage and Tuition reimbursement due to a bargaining unit agreement.</td>
+    </tr>
+    <tr>
+      <td>ADMINISTRATORS  (PRINCIPALS\n& ASSISTANT PRINCIPALS)</td>
+      <td>$148.50</td>
+      <td>$147.37</td>
+      <td>-0.76%</td>
+      <td>School site instructional leaders and operations administrators.</td>
+    </tr>
+    <tr>
+      <td>VEHICLE REPAIRS/REPLACEMENT</td>
+      <td>$12.04</td>
+      <td>$11.94</td>
+      <td>-0.83%</td>
+      <td>Vehicle maintenance expenditures for school buses.</td>
+    </tr>
+    <tr>
+      <td>CUSTODIAL SUPPLIES</td>
+      <td>$4.98</td>
+      <td>$4.91</td>
+      <td>-1.41%</td>
+      <td>Supplies to support the maintenance and cleanliness of school sites.</td>
+    </tr>
+    <tr>
+      <td>CAMPUS AIDES</td>
+      <td>$34.42</td>
+      <td>$33.85</td>
+      <td>-1.66%</td>
+      <td>Campus aides for selected schools.</td>
+    </tr>
+    <tr>
+      <td>SPED-CENTRAL OFFICE</td>
+      <td>$19.90</td>
+      <td>$19.57</td>
+      <td>-1.66%</td>
+      <td>Resources that support Special Education needs at school sites and day to day operations of the District.</td>
+    </tr>
+    <tr>
+      <td>LUMP SUM VACATION</td>
+      <td>$12.92</td>
+      <td>$12.68</td>
+      <td>-1.86%</td>
+      <td>Lump sum vacation and other benefits.</td>
+    </tr>
+    <tr>
+      <td>SPED-TEACHER-SUPPL  & SUB TIME/RENORMING/PROF DEVELOPMENT</td>
+      <td>$9.37</td>
+      <td>$9.09</td>
+      <td>-2.99%</td>
+      <td>Resources for additional teacher assignments, replacement for absent teachers, renorming, and professional development.</td>
+    </tr>
+    <tr>
+      <td>EARLY RETIREMENT INCENTIVE</td>
+      <td>$9.62</td>
+      <td>$9.30</td>
+      <td>-3.33%</td>
+      <td>Retirement bonus for employees paid during the 1992-\n93 school year.</td>
+    </tr>
+    <tr>
+      <td>PERSONNEL WITH PENDING CASES</td>
+      <td>$21.19</td>
+      <td>$20.47</td>
+      <td>-3.40%</td>
+      <td>Personnel housed pending personnel action.</td>
+    </tr>
+    <tr>
+      <td>CAFETERIA, INTER-FUND TRANSFER</td>
+      <td>$63.12</td>
+      <td>$60.80</td>
+      <td>-3.68%</td>
+      <td>Income and expenditures initially recorded in the General Fund and then transferred, in accordance with accounting requirements, to a special fund.</td>
+    </tr>
+    <tr>
+      <td>SPED-PSYCHOLOGISTS</td>
+      <td>$31.85</td>
+      <td>$30.47</td>
+      <td>-4.33%</td>
+      <td>Provide assessment and counseling services to students with disabilities.</td>
+    </tr>
+    <tr>
+      <td>FILMING</td>
+      <td>$5.29</td>
+      <td>$5.05</td>
+      <td>-4.54%</td>
+      <td>Funds received  from Filming and Photography. School resources yet to be allocated.</td>
+    </tr>
+    <tr>
+      <td>CLERICAL SUPPORT</td>
+      <td>$136.86</td>
+      <td>$130.04</td>
+      <td>-4.98%</td>
+      <td>School site clerical positions (i.e. School Administrative</td>
+    </tr>
+    <tr>
+      <td>GENERAL SUPPLIES</td>
+      <td>$8.71</td>
+      <td>$8.21</td>
+      <td>-5.74%</td>
+      <td>School site resources to support the instructional program and operations.</td>
+    </tr>
+    <tr>
+      <td>COACHES INSTRUCTIONAL</td>
+      <td>$38.30</td>
+      <td>$36.04</td>
+      <td>-5.90%</td>
+      <td>Supports instructional needs at school sites.</td>
+    </tr>
+    <tr>
+      <td>STUDENT HEALTH AND HUMAN SUPPORT PERSONNEL</td>
+      <td>$9.12</td>
+      <td>$8.35</td>
+      <td>-8.44%</td>
+      <td>Provides health, mental health, and learning support services to students.</td>
+    </tr>
+    <tr>
+      <td>TEACHER ASSISTANTS</td>
+      <td>$41.72</td>
+      <td>$37.99</td>
+      <td>-8.94%</td>
+      <td>Provides reinforcement and support of instruction under the direct supervision of a highly qualified classroom teacher.</td>
+    </tr>
+    <tr>
+      <td>SPED-INFANT PROGRAM SERVICES</td>
+      <td>$4.70</td>
+      <td>$4.26</td>
+      <td>-9.36%</td>
+      <td>Provide early intervention and related services for children birth to three years of age identified with a hearing loss, visual impairment, or severe orthopedic impairment.</td>
+    </tr>
+    <tr>
+      <td>CIVIC CENTER</td>
+      <td>$2.66</td>
+      <td>$2.40</td>
+      <td>-9.77%</td>
+      <td>Rental of district facilities by community groups.</td>
+    </tr>
+    <tr>
+      <td>IMA-LIBRARY FINES</td>
+      <td>$0.71</td>
+      <td>$0.64</td>
+      <td>-9.86%</td>
+      <td>Fees and fines for lost and damaged books.</td>
+    </tr>
+    <tr>
+      <td>PROFESSIONAL DEVELOPMENT</td>
+      <td>$1.20</td>
+      <td>$1.08</td>
+      <td>-10.00%</td>
+      <td>Resources to support the professional development of district employees.\nDistrict employees.</td>
+    </tr>
+    <tr>
+      <td>EMPLOYEES LOANED TO AGENCIES/OFFICE</td>
+      <td>$4.56</td>
+      <td>$4.04</td>
+      <td>-11.40%</td>
+      <td>District employees loaned to other entities. The\nDistrict is reimbursed for salaries.</td>
+    </tr>
+    <tr>
+      <td>TEMPORARY PERSONNEL ACCOUNT</td>
+      <td>$12.43</td>
+      <td>$10.76</td>
+      <td>-13.44%</td>
+      <td>Resources to support the instructional program and operations.</td>
+    </tr>
+    <tr>
+      <td>CAPITAL FUNDS</td>
+      <td>$2,633.87</td>
+      <td>$2,272.60</td>
+      <td>-13.72%</td>
+      <td>Resources for capital projects.</td>
+    </tr>
+    <tr>
+      <td>SPED-PRIVATE SCHOOLS SUPPORT</td>
+      <td>$1.64</td>
+      <td>$1.35</td>
+      <td>-17.68%</td>
+      <td>Provide support and collaboration for private school teachers who work with students with disabilities. </td>
+    </tr>
+    <tr>
+      <td>PARENT INVOLVEMENT</td>
+      <td>$20.93</td>
+      <td>$16.81</td>
+      <td>-19.68%</td>
+      <td>Parent support through workshops, trainings, communications, and school involvement.</td>
+    </tr>
+    <tr>
+      <td>OPTIONS PROGRAM</td>
+      <td>$83.53</td>
+      <td>$66.85</td>
+      <td>-19.97%</td>
+      <td>Options schools are designed to provide students a smaller, more personalized education supported by knowledgeable, supportive educators working collaboratively.</td>
+    </tr>
+    <tr>
+      <td>SPED-ADMINISTRATORS-SPED CENTERS</td>
+      <td>$3.68</td>
+      <td>$2.94</td>
+      <td>-20.11%</td>
+      <td>Instructional leaders at Special Education Centers.</td>
+    </tr>
+    <tr>
+      <td>COUNSELING AIDES</td>
+      <td>$0.84</td>
+      <td>$0.67</td>
+      <td>-20.24%</td>
+      <td>Assist counselors with student counseling. </td>
+    </tr>
+    <tr>
+      <td>SPED-ASSISTANT OVERTIME-X & Z TIME/RENORMING</td>
+      <td>$11.42</td>
+      <td>$9.10</td>
+      <td>-20.32%</td>
+      <td>Resources for additional Special Education Assistant assignments, replacement for absent assistants, and renorming.</td>
+    </tr>
+    <tr>
+      <td>RESTORATIVE JUSTICE PROGRAM</td>
+      <td>$4.09</td>
+      <td>$2.95</td>
+      <td>-27.87%</td>
+      <td>Program to help improve student behavior and provide alternatives to suspensions and expulsions.</td>
+    </tr>
+    <tr>
+      <td>FACILITIES NON-BOND REQUIREMENTS</td>
+      <td>$3.55</td>
+      <td>$2.53</td>
+      <td>-28.73%</td>
+      <td>General fund resources for facilities projects.</td>
+    </tr>
+    <tr>
+      <td>TECHNOLOGY</td>
+      <td>$4.25</td>
+      <td>$2.97</td>
+      <td>-30.12%</td>
+      <td>Technology infrastructure and support for schools.</td>
+    </tr>
+    <tr>
+      <td>TEACHERS - CONTRACT POOL</td>
+      <td>$44.04</td>
+      <td>$30.38</td>
+      <td>-31.02%</td>
+      <td>Contract pool teachers. These teachers may also serve as day-to-day and long-term substitutes.</td>
+    </tr>
+    <tr>
+      <td>TESTING</td>
+      <td>$2.36</td>
+      <td>$1.58</td>
+      <td>-33.05%</td>
+      <td>Standards and assessment testing, and testing coordinator differentials for select schools.</td>
+    </tr>
+    <tr>
+      <td>BEGINNING TEACHERS SUPPORT AND ASSESSMENT (BTSA)</td>
+      <td>$4.90</td>
+      <td>$3.10</td>
+      <td>-36.73%</td>
+      <td>A State-approved program allowing teachers who have a Preliminary Teaching Credential to obtain a Professional Clear Teaching Credential.</td>
+    </tr>
+    <tr>
+      <td>SCHOOL READINESS LANGUAGE DEVELOPMENT PROGRAM</td>
+      <td>$35.55</td>
+      <td>$22.02</td>
+      <td>-38.06%</td>
+      <td>An oral language program that prepares students for kindergarten.</td>
+    </tr>
+    <tr>
+      <td>SPED-DEAF AND HARD OF HEARING</td>
+      <td>$12.96</td>
+      <td>$7.94</td>
+      <td>-38.73%</td>
+      <td>The Deaf and Hard of Hearing program serves eligible students with a documented hearing loss.</td>
+    </tr>
+    <tr>
+      <td>INSTRUCTIONAL AIDES</td>
+      <td>$5.69</td>
+      <td>$3.33</td>
+      <td>-41.48%</td>
+      <td>Assist certificated employees in developing and presenting specialized educational materials and in conducting instructional activities requiring specialized education, training, or vocational experience.</td>
+    </tr>
+    <tr>
+      <td>ADVISORS</td>
+      <td>$38.87</td>
+      <td>$20.60</td>
+      <td>-47.00%</td>
+      <td>Supports instructional needs of various programs and offices.</td>
+    </tr>
+    <tr>
+      <td>CUSTODIAL OVERTIME & RELIEF</td>
+      <td>$0.82</td>
+      <td>$0.42</td>
+      <td>-48.78%</td>
+      <td>Resources for additional custodial assignments. </td>
+    </tr>
+    <tr>
+      <td>INTER-FUND TRANSFER MEDICARE PART D</td>
+      <td>$9.20</td>
+      <td>$4.60</td>
+      <td>-50.00%</td>
+      <td>Income and expenditures initially recorded in the General Fund and then transferred, in accordance with accounting requirements, to a special fund.</td>
+    </tr>
+    <tr>
+      <td>GIFTED AND TALENTED PROGRAM (GATE)</td>
+      <td>$2.57</td>
+      <td>$1.28</td>
+      <td>-50.19%</td>
+      <td>Supports staff training for employees who work with gifted students.</td>
+    </tr>
+    <tr>
+      <td>TARGETED SUPPORT FOR MIDDLE AND SPAN SCHOOLS</td>
+      <td>$7.00</td>
+      <td>$3.48</td>
+      <td>-50.29%</td>
+      <td>Resources to support middle and span schools.</td>
+    </tr>
+    <tr>
+      <td>CLASSIFIED OVERTIME, X & Z TIME</td>
+      <td>$1.54</td>
+      <td>$0.75</td>
+      <td>-51.30%</td>
+      <td>Resources for additional classified assignments.</td>
+    </tr>
+    <tr>
+      <td>SPED-CLERICAL SUPPORT-SPED CENTERS</td>
+      <td>$8.68</td>
+      <td>$3.73</td>
+      <td>-57.03%</td>
+      <td>Clerical Positions at Special Education Centers (i.e. School Administrative Assistant, Office Technicians).</td>
+    </tr>
+    <tr>
+      <td>SPED-PSYCHIATRIC  SOCIAL WORKERS</td>
+      <td>$6.64</td>
+      <td>$2.33</td>
+      <td>-64.91%</td>
+      <td>Provide case management; individual, group, and family therapy, and mental health consultation to special education population.</td>
+    </tr>
+    <tr>
+      <td>ENGLISH LEARNER IMPLEMENTATION  AND SUPPORT</td>
+      <td>$19.80</td>
+      <td>$6.30</td>
+      <td>-68.18%</td>
+      <td>Support for English Learner students to improve academic achievement.</td>
+    </tr>
+    <tr>
+      <td>ENERGY REBATE CONSERVATION</td>
+      <td>$3.08</td>
+      <td>$0.90</td>
+      <td>-70.78%</td>
+      <td>Improvement of buildings and job-cost materials.</td>
+    </tr>
+    <tr>
+      <td>PROP 39 CHARTER SCHOOL CO- LOCATION</td>
+      <td>$8.32</td>
+      <td>$2.40</td>
+      <td>-71.15%</td>
+      <td>Charter school fees for district provided services.</td>
+    </tr>
+    <tr>
+      <td>SPED-TEACHER-ITINERANTS</td>
+      <td>$7.65</td>
+      <td>$0.96</td>
+      <td>-87.45%</td>
+      <td>Special Education Itinerant Teacher Positions.</td>
+    </tr>
+    <tr>
+      <td>SUMMER SCHOOL-CREDIT RECOVERY</td>
+      <td>$12.00</td>
+      <td>$1.00</td>
+      <td>-91.67%</td>
+      <td>To fund the summer school program for credit recovery courses.</td>
+    </tr>
+    <tr>
+      <td>A-G Implimentation</td>
+      <td>NA</td>
+      <td>$15.02</td>
+      <td></td>
+      <td>Resources to support Board adoption of Resolution\n070-14/15, “Equity on A-G: reaffirming Our commitment to A-G Life Preparation for All”</td>
+    </tr>
+    <tr>
+      <td>SPECIAL EDUCATION ASSISTANTS</td>
+      <td>$0.05</td>
+      <td>NA</td>
+      <td></td>
+      <td>Assist teachers with students with disabilities.</td>
+    </tr>
+    <tr>
+      <td>EARLY CHILDHOOD AND FAMILY LITERACY GRANTS</td>
+      <td>$0.25</td>
+      <td>NA</td>
+      <td></td>
+      <td>Resources to support early childhood and family literacy programs. </td>
+    </tr>
+    <tr>
+      <td>PILOT SCHOOL STARTUP FUNDS</td>
+      <td>$0.50</td>
+      <td>NA</td>
+      <td></td>
+      <td>Start-up costs for new pilot schools.</td>
+    </tr>
+    <tr>
+      <td>ANNUAL COST INCREASES FOR POSITIONS</td>
+      <td>$6.24</td>
+      <td>NA</td>
+      <td></td>
+      <td>Resources to fund health and welfare and retiree benefit cost increases.</td>
+    </tr>
+    <tr>
+      <td>SPED-ASSISTANTS  LONGER HOURS</td>
+      <td>$10.70</td>
+      <td>NA</td>
+      <td></td>
+      <td>Support for Special Education Assistants to extend work hours.</td>
+    </tr>
+    <tr>
+      <td>SUPPORT SERVICES (PSAs, PSWs)</td>
+      <td>$13.14</td>
+      <td>NA</td>
+      <td></td>
+      <td>Maintain 12-13 staffing levels for support personnel.</td>
+    </tr>
+    <tr>
+      <td>SCHOOL ADJUSTMENT FOR CERTIFIED UNDUPLICATED COUNTS</td>
+      <td>$16.52</td>
+      <td>NA</td>
+      <td></td>
+      <td>Resources for schools based on certified unduplicated counts in the fall of the school year.</td>
+    </tr>
+    <tr>
+      <td>SPED-SUPPLEMENTAL  INCREASE</td>
+      <td>$17.55</td>
+      <td>NA</td>
+      <td></td>
+      <td>Support for special education students that are English Learner, Low-Income, and/or Foster Care to improve academic achievement.</td>
+    </tr>
+    <tr>
+      <td>CALPERS EMPLOYER PAID MEMBER CONTRIBUTION</td>
+      <td>$17.65</td>
+      <td>NA</td>
+      <td></td>
+      <td>Agreement with bargaining units to eliminate Employer Paid Member Contribution to CalPERS in return for a salary adjustment of an equivalent percentage.</td>
+    </tr>
+    <tr>
+      <td>CORE WAIVER</td>
+      <td>$61.08</td>
+      <td>NA</td>
+      <td></td>
+      <td>Waiver from No Child left behind through the california office to reform education … </td>
+    </tr>
+    <tr>
+      <td>COMMON CORE STATE STANDARDS</td>
+      <td>$91.39</td>
+      <td>NA</td>
+      <td></td>
+      <td>Funding for the implementation of common core standards. </td>
+    </tr>
+    <tr>
+      <td>TARGETED STUDENT POPULATION</td>
+      <td>NA</td>
+      <td>$161.80</td>
+      <td></td>
+      <td>Resources to support the academic achievement of low-income, english learner, foster youth and other at-risk populations as required under the local control funding formula. </td>
+    </tr>
+    <tr>
+      <td>RESERVE FOR APPROVED SALARY INCREASES</td>
+      <td>NA</td>
+      <td>$146.29</td>
+      <td></td>
+      <td>Resources for salary increases. </td>
+    </tr>
+    <tr>
+      <td>INTER FUND TRANSFERS</td>
+      <td>NA</td>
+      <td>$82.42</td>
+      <td></td>
+      <td>Income and expenditures initially recorded in the General Fund and then transferred, in accordance with accounting requirements, to a special fund.</td>
+    </tr>
+    <tr>
+      <td>SPED-INDIRECT COST</td>
+      <td>NA</td>
+      <td>$46.83</td>
+      <td></td>
+      <td>Elements of cost necessary in the operation of a District or in the performance of a service that are such a nature that the amount applicable to each accounting unit cannot be determined readily.</td>
+    </tr>
+    <tr>
+      <td>ESTIMATED CARRYOVER</td>
+      <td>NA</td>
+      <td>$35.52</td>
+      <td></td>
+      <td>Projected unspent resources. </td>
+    </tr>
+    <tr>
+      <td>DUAL LANGUAGE PROGRAM</td>
+      <td>NA</td>
+      <td>$29.50</td>
+      <td></td>
+      <td>Resources to support students in two-way immersion programs receiving instruction in English and a\ntarget language in the same classroom to develop academic proficiency in both languages.</td>
+    </tr>
+    <tr>
+      <td>4 YEAR OLD TK ACADEMIC PROGRAM</td>
+      <td>NA</td>
+      <td>$7.00</td>
+      <td></td>
+      <td>Differential supplemental salary payment (1 per participating school) for Academic Decathlon Coach, fees for participation in academic decathlon, supplies, and travel expenses.</td>
+    </tr>
+    <tr>
+      <td>LCFF COUNTY OFFICE TRANSFERS </td>
+      <td>NA</td>
+      <td>$5.52</td>
+      <td></td>
+      <td>Reimbursement to county offices of education for district-referred students. </td>
+    </tr>
+    <tr>
+      <td>SPED-INCLUSION PROGRAM</td>
+      <td>NA</td>
+      <td>$3.75</td>
+      <td></td>
+      <td>Resources to support students with disabilities in general education settings. </td>
+    </tr>
+    <tr>
+      <td>DIPLOMA PROJECT</td>
+      <td>NA</td>
+      <td>$2.00</td>
+      <td></td>
+      <td>Supports efforts to increase graduation rates at schools with highest dropout rates, including a parent enagement component on how to support learning at hoem and at school.</td>
+    </tr>
+    <tr>
+      <td>COUNSELORS - CONTRACT </td>
+      <td>NA</td>
+      <td>$0.97</td>
+      <td></td>
+      <td>Contract pool counselors. </td>
+    </tr>
+    <tr>
+      <td>STUDENT ENROLLMENT PLACEMENT ASSESSMENT CENTER </td>
+      <td>NA</td>
+      <td>$0.81</td>
+      <td></td>
+      <td>Provides assistance for families with special stduent populations such as unaccompanied youth, homeless, and foster youth that need extra help with the LAUSD enrollment process, beyond  the school's resources. </td>
+    </tr>
+    <tr>
+      <td>CAREER TECHNICAL EDUCATION</td>
+      <td>NA</td>
+      <td>$0.80</td>
+      <td></td>
+      <td>A program of study that involves a multiyear sequence of courses that integrates core academic knowledge with technical and occupational knowledge to provide students with a pathway to postsecondary education and careers.</td>
+    </tr>
+    <tr>
+      <td>STUDENT ENGAGEMENT</td>
+      <td>NA</td>
+      <td>$0.25</td>
+      <td></td>
+      <td>Resources to support student engagement as specified under the Local Control Funding Formula. </td>
+    </tr>
+    <tr>
+      <td>ALL CITY MARCHING BAND</td>
+      <td>NA</td>
+      <td>$0.15</td>
+      <td></td>
+      <td>To provide performance opportunities for LAUSD high school musicians and auxiliary unit programs.</td>
+    </tr>
+    <tr>
+      <td>INDIRECT COST</td>
+      <td>NA</td>
+      <td>-$69.25</td>
+      <td></td>
+      <td>Elements of cost necessary in the operation of a District or in the performance of a service that are such a nature that the amount applicable to each accounting unit cannot be determined readily.</td>
+    </tr>
+    <tr>
+      <td>HOMELESS YOUTH ACHIEVEMENT PLAN</td>
+      <td>NA</td>
+      <td>$1.80</td>
+      <td></td>
+      <td>Provide support as a district liasons for Homeless students and families to ensure timely enrollment, advocate for school stability, and provide supplemntal services and resources as needed.</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+    </div>
+</div>
+
+    <script type="text/javascript">
+
+        var sortOrder = [[4, 1]];
+
+        var perPage = 10;
+
+        var embed_url_root = 'http://projects.scpr.org/static/databases/2014-2015-kindergarten-immunizations';
+
+        $(document).ready(function(){
+            $.tablesorter.defaults.textExtraction = "complex";
+            var extractResponsiveMark = function(node){
+                if (node.childNodes[0].nextSibling === null){
+                    return " ";
+                } else {
+                    var cellContent = node.childNodes[0].nextSibling.textContent;
+                    return cellContent
+                };
+            };
+
+            fn.createResponsiveTable();
+
+            fn.toggleDisplayIcon();
+
+            var fu = $('#table_fu');
+            var table = window.table = $('#data', fu)
+              .tablesorter({
+                textExtraction: extractResponsiveMark,
+                widgets: ['columnHighlight'],
+                sortList: sortOrder
+               })
+              .tablesorterPager({ container: $("#pager", fu), size: perPage, positionFixed: false })
+              .tablesorterMultiPageFilter({ filterSelector: $("#filter input", fu) });
+            var urlSortColumn = getParameterByName("sortColumn");
+            var urlSortOrder = getParameterByName("sortOrder");
+            if (urlSortColumn && urlSortOrder) {
+                urlSortColumn  = parseInt(urlSortColumn);
+                urlSortOrder  = parseInt(urlSortOrder);
+                newSort = [[urlSortColumn, urlSortOrder]];
+                $("table").trigger("sorton", [newSort]);
+            };
+
+        });
+
+        $(window).resize(function(){
+            fn.createResponsiveTable();
+        });
+
+        var fn = {
+            createResponsiveTable: function(){
+                var windowWidth = $(window).width();
+                if (windowWidth <= 595){
+                    $(".kpcc-table").each(function(){
+                        $("tbody tr").each(function(){
+                            $(this).find("td").each(function(){
+                                $(this).css("width", "100%");
+                            });
+                        });
+                    });
+                } else {
+                    $(".kpcc-table").each(function(){
+                        var numberOfCells = $("tbody tr:nth-child(2) td").length;
+                        var widthResize = 100 / numberOfCells
+                        $("tbody tr").each(function(){
+                            $(this).find("td").each(function(){
+                                $(this).css("width", widthResize + "%");
+                            });
+                        });
+                    });
+                }
+            },
+
+            renderEmbedBox: function(){
+                var embed_url = embed_url_root + '/iframe.html';
+                jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"100%\" height=\"850px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
+            },
+
+            toggleDisplayIcon: function(){
+
+                
+                    $(".text").collapse("show");
+                    $("span.text")
+                        .removeClass("glyphicon-chevron-down")
+                        .addClass("glyphicon-chevron-up")
+                        .css("height", "auto");
+                
+
+                
+                    $("li.projects-embed").addClass("hidden");
+                
+
+                $(".text").on("shown.bs.collapse", function(){
+                    $("span.text")
+                        .removeClass("glyphicon-chevron-down")
+                        .addClass("glyphicon-chevron-up")
+                        .css("height", "auto");
+                });
+
+                $(".text").on("hidden.bs.collapse", function(){
+                    $("span.text")
+                        .removeClass("glyphicon-chevron-up")
+                        .addClass("glyphicon-chevron-down")
+                        .css("height", "auto");
+                });
+
+                $(".about").on("shown.bs.collapse", function(){
+                    $("span.about")
+                        .removeClass("glyphicon-chevron-down")
+                        .addClass("glyphicon-chevron-up")
+                        .css("height", "auto");
+                });
+
+                $(".about").on("hidden.bs.collapse", function(){
+                    $("span.about")
+                        .removeClass("glyphicon-chevron-up")
+                        .addClass("glyphicon-chevron-down")
+                        .css("height", "auto");
+                });
+            }
+        };
+    </script>
+
+
+            </div>
+            <div class="row kpcc-footer">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <footer>
+                        <ul>
+                            <li><a href="http://scpr.org/terms/">Terms &amp; Conditions</a></li>
+                            <li><a href="http://scpr.org/privacy/">Privacy</a></li>
+                            <li><a href="http://scpr.org/web_site_feedback">Website Feedback</a></li>
+                            <li><a href="http://scpr.org/">Copyright 2013 &copy; Southern California Public Radio</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <!-- end main container -->
+
+        <!-- begin scripts -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="http://projects.scpr.org/static-files/v3-dependencies/scripts/jquery.alerts.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+        <!-- end scripts -->
+
+        <!-- begin chartbeat -->
+        <script type="text/javascript">
+            var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
+            (function() {
+                function loadChartbeat() {
+                    window._sf_endpt = (new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+                    document.body.appendChild(e);
+                };
+                var oldonload = window.onload;
+                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+            })();
+        </script>
+        <!-- end chartbeat -->
+
+        <!-- begin google analytics -->
+        <script type="text/javascript">
+            var hostName = 'projects.scpr.org';
+            var _gaq = _gaq || [];
+            _gaq.push(
+                ['_setAccount', 'UA-624724-1'],
+                ['_setDomainName', hostName],
+                ['_setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['_setCustomVar', 7, 'PageType', 'Story', 3],
+                ['_trackPageview'],
+                ['b._setAccount', 'UA-18188937-11'],
+                ['b._setDomainName', hostName],
+                ['b._setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
+                ['b._setCustomVar', 7, 'PageType', 'Story', 3],
+                ['b._trackPageview']
+            );
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <!-- end google analytics -->
+
+        <!-- begin webtrends stats -->
+        <script src="http://media.scpr.org/assets/scripts/webtrends.v2.js"></script>
+        <script>
+            //<![CDATA[
+                var _tag=new WebTrends();
+                _tag.dcsGetId();
+            //]]>
+        </script>
+        <script>
+            //<![CDATA[
+                _tag.dcsCustom=function(){
+                    // Add custom parameters here.
+                    //_tag.DCSext.param_name=param_value;
+                }
+            _tag.dcsCollect();
+            //]]>
+        </script>
+        <noscript>
+            <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsyqctzwuz5bdsebpmwhwe8w_2p8d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.3.0&amp;WT.dcssip=www.scpr.org"/></div>
+        </noscript>
+        <!-- end webtrends stats -->
+
+        <!-- begin comscore stats -->
+        <script>
+            var _comscore = _comscore || [];
+            _comscore.push({ c1: "2", c2: "6035974", c3: "", c4: "" });
+            (function() {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+            })();
+        </script>
+        <noscript>
+            <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035974&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
+        </noscript>
+        <!-- end comscore stats -->
+
+    </body>
+    <!-- end body -->
+
+</html>
+<!-- end document -->
