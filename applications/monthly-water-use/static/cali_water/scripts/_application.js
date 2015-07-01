@@ -145,7 +145,9 @@ var fn = {
 
             var value = parseFloat($(this).attr("ct:value")).toFixed(2);
 
-            $tooltip.text(seriesName + ": " + value + " rgpcd");
+            //$tooltip.text(seriesName + ": " + value + " rgpcd");
+
+            $tooltip.text(value + " rgpcd");
 
             $tooltip.removeClass("tooltip-hidden");
         });
