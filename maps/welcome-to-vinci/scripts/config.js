@@ -1,10 +1,7 @@
 window.appConfig = {
-
-    // general configs
-    open_about_this: false,
-    comments: false,
+    open_about_this: true,
     is_mobile: null,
-    project_root: "#",
+    project_root: "http://projects.scpr.org/maps/welcome-to-vinci/",
     embed_this: true,
     is_embedded: null,
     embed_width: "100%",
