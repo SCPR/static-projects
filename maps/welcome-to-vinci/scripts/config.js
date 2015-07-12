@@ -6,5 +6,5 @@ window.appConfig = {
     is_embedded: null,
     embed_width: "100%",
     embed_height: "1150px",
-    twitter_share_text: "#",
+    twitter_share_text: "View the dark, brooding and mysterious locations of True Detective, as discovered by Southern California Public Radio.",
 };

@@ -31,7 +31,7 @@
                 viewObject.initial_display = "grid";
                 viewObject.initialZoom = 6;
             } else {
-                viewObject.initial_display = "map";
+                viewObject.initial_display = "grid";
                 viewObject.initialZoom = 12;
             }
 
@@ -47,7 +47,6 @@
             this.render(viewObject);
 
         },
-
 
         events: {
             //"click a.search": "getSearchTerm",
@@ -75,19 +74,22 @@
 
                 this.featcherSentence = _.template(
                     "<div class='submission row'>" +
-                        "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-4'>" +
-                            "<img src='https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do&center=<%= latitude %>,<%= longitude %>&zoom=12&size=200x200&maptype=terrain&markers=color:yellow%7Clabel:%7C<%= latitude %>,<%= longitude %>' />" +
+                        "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
+                            "<% if (imagedisplay === 'both'){ %>" +
+                                "<img class='double' src='<%= primaryimagelink %>' />" +
+                                "<img class='double'src='<%= secondaryimagelink %>' />" +
+                            "<% } else { %>" +
+                                "<img class='double' src='<%= primaryimagelink %>' />" +
+                            "<% }; %>" +
+                        "</div>" +
+                        "<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>" +
                             "<div class='quote'>" +
-                                "<p><%= about %></p>" +
+                                "<h5 class='text-center'><%= name %><br /><br /><%= displaylocation %></h5>" +
+                                "<p class='text-center'><%= about %></p>" +
                             "</div>" +
                         "</div>" +
-                        "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-8'>" +
-                            "<% if (imagedisplay === 'both'){ %>" +
-                                "<img src='<%= primaryimagelink %>' />" +
-                                "<img src='<%= secondaryimagelink %>' />" +
-                            "<% } else { %>" +
-                                "<img src='<%= primaryimagelink %>' />" +
-                            "<% }; %>" +
+                        "<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>" +
+                            "<img src='https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyCgh93OAbzooidV0OUpIOoc6kTxV5o69do&center=<%= latitude %>,<%= longitude %>&zoom=12&size=200x200&maptype=terrain&markers=color:yellow%7Clabel:%7C<%= latitude %>,<%= longitude %>' />" +
                         "</div>" +
                     "</div>", location_data[i]);
 
