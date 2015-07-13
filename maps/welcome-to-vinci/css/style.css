@@ -42,6 +42,7 @@ body.minimal .data-container .pubdate { color: #ffffff; }
     body.minimal .data-container h5 { font-size: 150%; }
     body.minimal .data-container h6 { font-size: 130%; }
     body.minimal .data-container p { font-size: 110%; }
+    body.minimal .data-container .quote p { font-size: 110%; }
 }
 
 @media (max-width: 480px) {
@@ -53,6 +54,7 @@ body.minimal .data-container .pubdate { color: #ffffff; }
     body.minimal .data-container h5 { font-size: 150%; }
     body.minimal .data-container h6 { font-size: 130%; }
     body.minimal .data-container p { font-size: 110%; }
+    body.minimal .data-container .quote p { font-size: 110%; }
 }
 
 @media (min-width: 481px) {
@@ -63,6 +65,7 @@ body.minimal .data-container .pubdate { color: #ffffff; }
     body.minimal h5 { font-size: 260%; }
     body.minimal h6 { font-size: 220%; }
     body.minimal p { font-size: 120%; }
+    body.minimal .data-container .quote p { font-size: 120%; }
     body.minimal a.btn-primary { font-size: 120%; }
     body.minimal .kicker { font-size: 130%; }
     body.minimal .small-writing { font-size: 120%; }
@@ -80,6 +83,7 @@ body.minimal .data-container .pubdate { color: #ffffff; }
     body.minimal h5 { font-size: 220%;}
     body.minimal h6 { font-size: 160%;}
     body.minimal p { font-size: 130%;}
+    body.minimal .data-container .quote p { font-size: 130%;}
     body.minimal a.btn-primary { font-size: 140%;}
     body.minimal .kicker { font-size: 150%;}
     body.minimal .small-writing { font-size: 130%;}
@@ -97,6 +101,7 @@ body.minimal .data-container .pubdate { color: #ffffff; }
     body.minimal h5 { font-size: 240%;}
     body.minimal h6 { font-size: 180%;}
     body.minimal p { font-size: 130%;}
+    body.minimal .data-container .quote p { font-size: 160%;}
     body.minimal a.btn-primary { font-size: 140%;}
     body.minimal .kicker { font-size: 150%;}
     body.minimal .small-writing { font-size: 130%;}
