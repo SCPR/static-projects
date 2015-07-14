@@ -18,8 +18,8 @@ var MapsLib = {
     crossWalkTableId: "1vdWsizdohZnLO11PlAf1HRvcBa73EoRziHr_gi0",
     crossWalkLocation: "Lat",
 
-    userContribTableId: "1dxh8eWT8AhDtOyEW45UeCj1m17krm-ymh4XMiDM",
-    userContribLocationColumn: "Location",
+    userContribTableId: "1L_k1wgUIDJFXX6-bLcCnj5eap1LT5QBNnc5qpmw",
+    userContribLocationColumn: "geocoded_location",
 
     //userContribTableId: "1L_k1wgUIDJFXX6-bLcCnj5eap1LT5QBNnc5qpmw",
     //userContribLocationColumn: "geocoded_location",
@@ -321,10 +321,10 @@ var MapsLib = {
                 pedestrian_cyclist: e.row['pedestrian_cyclist'].value,
                 intersection: e.row['intersection'].value,
                 issue_there: e.row['issue_there'].value,
-                location: e.row['Location'].value
+                location: e.row['geocoded_location'].value
             }
 
-            var image = '<img src=\"https://maps.googleapis.com/maps/api/streetview?size=500x500&location=' + e.row['Location'].value + '&sensor=true\" />';
+            var image = '<img src=\"https://maps.googleapis.com/maps/api/streetview?size=500x500&location=' + e.row['geocoded_location'].value + '&sensor=true\" />';
 
             var html = _.template(
                 '<p style="float: right" id="close"><strong>[X]</strong></p>' +
@@ -333,8 +333,8 @@ var MapsLib = {
                 '<p><%= name %> said:</p>' +
                 '<blockquote><%= issue_there %></blockquote>' +
                 '<img src=\"http://maps.googleapis.com/maps/api/streetview?size=500x500&location=' +
-                e.row['Location'].value + '&fov=90&heading=235&pitch=10&sensor=false\" />' +
-                '<p><a href="https://maps.google.com/maps?q=&layer=c&cbll=' + e.row['Location'].value + '&cbp=11,0,0,0,0" target="_blank">Explore in Google StreetView</a></p>', fusionTableObject);
+                e.row['geocoded_location'].value + '&fov=90&heading=235&pitch=10&sensor=false\" />' +
+                '<p><a href="https://maps.google.com/maps?q=&layer=c&cbll=' + e.row['geocoded_location'].value + '&cbp=11,0,0,0,0" target="_blank">Explore in Google StreetView</a></p>', fusionTableObject);
 
             jqueryNoConflict('#content-background').css({'opacity' : '0.7'}).fadeIn('fast');
             jqueryNoConflict('#content-display').html(html).center().fadeIn('slow');
@@ -388,10 +388,10 @@ var MapsLib = {
 }
 
 jQuery.fn.center = function () {
-	this.css('position','absolute');
-	this.css('top', ( jqueryNoConflict(window).height() - this.height() ) / 4+jqueryNoConflict(window).scrollTop() + 'px');
-	this.css('left', ( jqueryNoConflict(window).width() - this.width() ) / 2+jqueryNoConflict(window).scrollLeft() + 'px');
-	return this;
+    this.css('position','absolute');
+    this.css('top', ( jqueryNoConflict(window).height() - this.height() ) / 4+jqueryNoConflict(window).scrollTop() + 'px');
+    this.css('left', ( jqueryNoConflict(window).width() - this.width() ) / 2+jqueryNoConflict(window).scrollLeft() + 'px');
+    return this;
 }
 
 function roundDecimal(string) {
