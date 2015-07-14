@@ -10,9 +10,7 @@ body.minimal .data-container h2 { margin-bottom: 2%; }
 
 body.minimal .data-container #content-article { background-color: #732e00; color: #ffffff; }
 
-.title-card { background-color: #732E00; padding: 15px 0 15px 0;}
-
-.title-card img { width: 50%; margin: 0 25% 0 25%; }
+.title-card { background-color: #732E00; padding: 15px 0 15px 0; width: 100%; margin: 0 40%;}
 
 body.minimal .data-container .data-visuals .submission img { width: 90%; margin: 0 5% 0 5%; }
 
