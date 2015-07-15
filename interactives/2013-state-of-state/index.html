@@ -16,7 +16,7 @@
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="Exploring themes in Gov. Brown's State of the State" />
     <meta property="og:image" content="http://www.scpr.org/assets/kpcc-twitter-logo-f43790c570b1b6c6890ce868e0c654b8.png" />
-    <meta property="og:url" content="#" />
+    <meta property="og:url" content="http://projects.scpr.org/interactives/2013-state-of-state/" />
     <meta property="og:description" content="The interactive word cloud below highlights key words and themes that Democratic Gov. Jerry Brown stressed in his third annual State of the State address on Thursday. The size of the word indicates the frequency with which the word appeared in Brown's speech. When clicked you will be able to read passages from his speech that contain the word." />
     <!-- end meta -->
 
@@ -82,7 +82,7 @@
 
     <!-- begin chartbeat -->
     <script type="text/javascript">
-        var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
+        var _sf_async_config = { uid: 33583, domain: 'firetracker.scpr.org', useCanonical:true };
         (function() {
             function loadChartbeat() {
                 window._sf_endpt = (new Date()).getTime();
@@ -100,25 +100,23 @@
 
     <!-- begin google analytics -->
     <script type="text/javascript">
-        var hostName = 'projects.scpr.org';
-        var _gaq = _gaq || [];
-        _gaq.push(
-            ['_setAccount', 'UA-624724-1'],
-            ['_setDomainName', hostName],
-            ['_setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
-            ['_setCustomVar', 7, 'PageType', 'Story', 3],
-            ['_trackPageview'],
-            ['b._setAccount', 'UA-18188937-11'],
-            ['b._setDomainName', hostName],
-            ['b._setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
-            ['b._setCustomVar', 7, 'PageType', 'Story', 3],
-            ['b._trackPageview']
-        );
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        // tracker for scpr ga account
+        ga('create', 'UA-624724-1', 'auto', {'allowLinker': true});
+
+        // tracker for npr digital services station analytics
+        ga('create', 'UA-18188937-11', 'auto', {'name': 'nprDsTracker'}, {'allowLinker': true});
+
+        ga('require', 'linker'); // require plugin for cross-domain tracking
+        ga('require', 'displayfeatures'); // require plugin for doubleclick display ad features
+        ga('linker:autoLink', ['scprcontribute.publicradio.org']); //set linked domain
+        ga('set', 'dimension6', 'Southern California Public Radio');
+        ga('set', 'dimension7', 'Story');
+        ga('send', 'pageview');
+        ga('nprDsTracker.send', 'pageview');
     </script>
     <!-- end google analytics -->
 
