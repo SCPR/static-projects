@@ -80,6 +80,35 @@
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
         <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
         
+
+    <style type="text/css">
+        #table-container {
+            /*background: #ffffff;*/
+            padding: 20px 10px 20px 10px;
+            font-family: "proxima-nova", "helvetica neue", helvetica, arial, sans-serif;
+        }
+    </style>
+
+    <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/jquery.tablesorter.js"></script>
+    <!--
+    <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/jquery.tablesorter.pager.js"></script>
+    -->
+    <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/jquery.tablesorter.multipagefilter.js"></script>
+    <script type="text/javascript">
+        /* For picking out bits from the query string */
+        var getParameterByName = function(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(window.location.href);
+            if(results == null){
+                return "";
+            } else {
+                return decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+        };
+    </script>
+
         <!-- end base scripts -->
 
     </head>
@@ -177,60 +206,208 @@
         </div>
     </div>
 
-    <!-- begin compare calculated_rgpcd -->
+    <!-- begin reduction target -->
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h3>City Of San Bernardino</h3>
         </div>
     </div>
     <div class="row calculated-last-year">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <p>The State Water Resources Control Board has proposed regulations to achieve a 25 percent reduction in water use statewide. The City Of San Bernardino is required to cut water use by</p>
-        </div>
         <div class="_data_figure col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <dl>
+                <dd>The State Water Resources Control Board has approved regulations to achieve a 25 percent reduction in water use statewide, and the City Of San Bernardino is required to cut water use by</dd>
                 <dt class="text-center"><span class="decrease-accent">28.0%</span></dt>
-                <dd>This is based on a June 11 revision tied to an <a href="http://projects.scpr.org/applications/monthly-water-use/region/south-coast/reduction-comparison/">average July through Sept. 2014 daily per capita residential water use rate of </a> 131.10 gallons that places water agencies into <a href="http://www.waterboards.ca.gov/water_issues/programs/conservation_portal/docs/supplier_tiers.pdf">nine tiers of reduction targets</a>.</dd>
             </dl>
         </div>
     </div>
-    <!-- end compare calculated_rgpcd -->
+    <!-- end reduction target -->
+
+    <!-- begin reduction progress -->
+    <div class="row chart">
+        <div class="_data_figure hidden-xs col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <dd>The reduction target is based on a June 11 revision tied to an <a href="http://projects.scpr.org/applications/monthly-water-use/region/south-coast/reduction-comparison/">average July through Sept. 2014 daily per capita residential water use rate of</a> 131.10 gallons that places water agencies into <a href="http://www.waterboards.ca.gov/water_issues/programs/conservation_portal/docs/supplier_tiers.pdf">nine tiers of reduction targets</a>.</dd>
+            <dd>To see if the City Of San Bernardino meets a 28.0% reduction target, residential water consumption between June 1, 2015 and Feb. 29, 2016 will be compared to the same time period beginning in 2013. You can track the City Of San Bernardino's progress so far by comparing the current use against the reduction threshold, which is 28.0% less than the baseline use figure.</dd>
+
+            <!--
+            <div id="reduction-progress" class="ct-chart ct-double-octave"></div>
+            <div id="chart-legend-bar">
+                <table width = "100%">
+                    <tbody>
+                        <tr>
+                            <td class="current-use">Current Use</td>
+                            <td class="threshold-use">Reduction Threshold</td>
+                            <td class="baseline-use">Baseline Use</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            -->
+
+        </div>
+    </div>
+    <!-- end reduction progress -->
 
     <!-- begin compare calculated_rgpcd -->
-    
-        <div class="row calculated-last-year">
-            <div class="_data_figure col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <dl>
-                    <dt class="text-center">86.2</dt>
-                    <dd>The May 2015 daily per capita residential water use rate according to <a href="http://www.swrcb.ca.gov/waterrights/water_issues/programs/drought/conservation_reporting_info.shtml">data submitted</a> to the <a href="http://www.waterboards.ca.gov/">State Water Resources Control Board.</a></dd>
-                </dl>
-            </div>
+    <div class="row calculated-last-year">
+        <div class="_data_figure col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <dl>
+                <dd>The <a href="http://www.waterboards.ca.gov/">State Water Resources Control Board.</a> also collects a figure that represents the average daily water use of each residential customer for a given water agency. Comparing May 2015 &mdash; the latest monthly data available &mdash; to April 2015, average daily per capita residential water use for the City Of San Bernardino <span class='decrease-accent'>decreased</span>.</dd>
+            </dl>
         </div>
-    
+        <div class="_data_figure col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <dl>
+                <dt class="text-center water-use-accent">86.2</dt>
+                <dd class="text-center">average daily gallons <br /> per resident <br /> for May 2015</dd>
+            </dl>
+        </div>
+        <div class="_data_figure col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <dl>
+                <dt class="text-center water-use-accent">97.3</dt>
+                <dd class="text-center">average daily gallons <br /> per resident <br /> for April 2015</dd>
+            </dl>
+        </div>
+    </div>
     <!-- end compare calculated_rgpcd -->
 
     <!-- begin compare state average rgpcd -->
     <div class="row calculated-last-year">
         <div class="_data_figure col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <dl>
-                <dt class="text-center"><span class='decrease-accent'>-1.45%</span></dt>
-                <dd>How much <span><span class='decrease-accent'>less</span></span> water residential customers the City Of San Bernardino used in May 2015 when compared to the statewide average daily per capita residential water use rate of 87.47 gallons. The City Of San Bernardino serves a total population of 198163, and residential customers account for about 54.46% of the water used.</dd>
+                <dd>Residential customers in the City Of San Bernardino used <span><span class='decrease-accent'>-1.45%</span> <span class='decrease-accent'>less</span></span> water in May 2015 when compared to the statewide average daily per capita residential water use of 87.47 gallons.</dd>
+                <dt class="text-center"></dt>
             </dl>
         </div>
     </div>
     <!-- end compare state average rgpcd -->
 
-    <!-- begin charts -->
-    <div class="row chart">
-        <div class="_data_figure hidden-xs col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    
+        <!-- begin charts -->
+        <div class="row chart">
+            <div class="_data_figure hidden-xs col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <dl>
+                    <!--
+                    <dt class="text-center"><span class='decrease-accent'>Decreased</span></dt>
+                    -->
+                    <dd>Here's a view of average daily per capita residential water use over the past 12 months. Water use by this agency's residential customers has <span class='decrease-accent'>decreased</span> by -65.63%, going from an average of 250.8 gallons used by each resident per day to 86.2.</dd>
+                </dl>
+            </div>
+            <div id="per-capita-use" class="ct-chart ct-double-octave"></div>
+        </div>
+        <!-- end charts -->
+    
+
+    <div class="row">
+        <div class="_data_figure col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h6 class="text-center">The City Of San Bernardino has been reporting selected enforcement statistics to the State Water Resources Control Board</h6>
             <dl>
-                <dt class="text-center"><span class='decrease-accent'>Decreased</span></dt>
-                <dd>Over the past 12 months, water use by this agency's residential customers has <span class='decrease-accent'>decreased</span> by -65.63%, going from 250.8 residential gallons used daily per capita to 86.2 residential gallons used daily per capita.</dd>
+                <dd>This table displays selected enforcement statistics from  through  reported by <a href="http://projects.scpr.org/applications/monthly-water-use/region//"></a> water agencies to the <a href="http://www.waterboards.ca.gov/waterrights/water_issues/programs/drought/conservation_reporting_info.shtml">State Water Resources Control Board</a>. See how other agencies in the  compare.</dd>
             </dl>
-            <div class="ct-chart ct-double-octave"></div>
+            <div id="table-container">
+                <div id="table_fu">
+                    <div id="controls" class="row">
+                        <div class="filter col-xs-12 col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                            <form class="form-inline" >
+                                <input type="text" class="search form-control" placeholder="Search this table...">
+                            </form>
+                        </div>
+                        <!--
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 pager">
+                            <form class="form-inline">
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <p class="text-center"><span class="glyphicon glyphicon-fast-backward first"></span>
+                                    <span class="glyphicon glyphicon-backward prev"></span>
+                                    <span class="pagedisplay"></span>
+                                    <span class="glyphicon glyphicon-forward next"></span>
+                                    <span class="glyphicon glyphicon-fast-forward last"></span></p>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <select class="pagenav form-control"></select>
+                                </div>
+                                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                                    <select class="pagesize form-control"></select>
+                                </div>
+                            </form>
+                        </div>
+                        -->
+                    </div>
+                    <div class="clear"></div>
+                    <table id="data" class="kpcc-table tabular table">
+                        <thead>
+                            <tr>
+                                <th class="text-center" style="cursor: pointer;">Month</th>
+                                <th class="text-center" style="cursor: pointer;">Watering Days</th>
+                                <th class="text-center" style="cursor: pointer;">Complaints</th>
+                                <th class="text-center" style="cursor: pointer;">Follow-up Actions</th>
+                                <th class="text-center" style="cursor: pointer;">Warnings Issued</th>
+                                <th class="text-center" style="cursor: pointer;">Penalties Assessed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                <tr>
+                                    <td class="text-center"><mark>Month</mark>March 2015</td>
+                                    
+                                        <td class="text-center"><mark>Watering Days</mark>n/a</td>
+                                    
+                                    
+                                        <td class="text-center"><mark>Complaints Received</mark>n/a</td>
+                                    
+                                    
+                                        <td class="text-center"><mark>Follow-up Actions</mark>n/a</td>
+                                    
+                                    
+                                        <td class="text-center"><mark>Warnings Issued</mark>n/a</td>
+                                    
+                                    
+                                        <td class="text-center"><mark>Penalties Assessed</mark>n/a</td>
+                                    
+                                </tr>
+                            
+                                <tr>
+                                    <td class="text-center"><mark>Month</mark>April 2015</td>
+                                    
+                                        <td class="text-center"><mark>Watering Days</mark>4</td>
+                                    
+                                    
+                                        <td class="text-center"><mark>Complaints Received</mark>148</td>
+                                    
+                                    
+                                        <td class="text-center"><mark>Follow-up Actions</mark>97</td>
+                                    
+                                    
+                                        <td class="text-center"><mark>Warnings Issued</mark>54</td>
+                                    
+                                    
+                                        <td class="text-center"><mark>Penalties Assessed</mark>n/a</td>
+                                    
+                                </tr>
+                            
+                                <tr>
+                                    <td class="text-center"><mark>Month</mark>May 2015</td>
+                                    
+                                        <td class="text-center"><mark>Watering Days</mark>4</td>
+                                    
+                                    
+                                        <td class="text-center"><mark>Complaints Received</mark>92</td>
+                                    
+                                    
+                                        <td class="text-center"><mark>Follow-up Actions</mark>82</td>
+                                    
+                                    
+                                        <td class="text-center"><mark>Warnings Issued</mark>31</td>
+                                    
+                                    
+                                        <td class="text-center"><mark>Penalties Assessed</mark>n/a</td>
+                                    
+                                </tr>
+                            
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- end charts -->
 
     
 
@@ -248,24 +425,25 @@
                     </div>
                 
                     <div class="icons col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <img class="placemark" src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/images/sprinkler.png" />
+                        <p class="text-center">Repair broken sprinklers</p>
+                    </div>
+                
+                    <div class="icons col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <img class="placemark" src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/images/cactus.png" />
+                        <p class="text-center">Plant California Friendly plants</p>
+                    </div>
+                
+                    <div class="icons col-xs-12 col-sm-6 col-md-3 col-lg-3">
                         <img class="placemark" src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/images/tap-water.png" />
                         <p class="text-center">Capture tap water</p>
-                    </div>
-                
-                    <div class="icons col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                        <img class="placemark" src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/images/leak.png" />
-                        <p class="text-center">Repair leaks</p>
-                    </div>
-                
-                    <div class="icons col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                        <img class="placemark" src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/images/tap-water.png" />
-                        <p class="text-center">Turn the water off while brushing your teeth</p>
                     </div>
                 
         </div>
     </div>
 
     <p class="lead"><strong>About the data</strong>: This data is for urban water suppliers and is based on the the most recent reports submitted to the <a href="http://www.waterboards.ca.gov/waterrights/">State Water Resources Control Board</a>. Since the gallons of water used per person per day measurement does not take into account rainfall, temperature, humidity and population density, the State Water Resources Control Board discourages comparisons between water suppliers.</p>
+
 </div>
 
             </div>
@@ -309,12 +487,19 @@
     <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/chartist.min.js"></script>
     <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/_application.js"></script>
     <script>
-        var chartAxisLabels = ["May 2015", "Apr 2015", "Mar 2015", "Feb 2015", "Jan 2015", "Dec 2014", "Nov 2014", "Oct 2014", "Sep 2014", "Aug 2014", "Jul 2014", "Jun 2014"]
-        var data = {
-            // a labels array that can contain any sort of values
-            labels: chartAxisLabels,
 
-            // our series array that contains series objects or in this case series data arrays
+        var sorting_array = [[1, 1]];
+        var headers_object = {
+            0: {sorter: true},
+            1: {sorter: true},
+            2: {sorter: true},
+            3: {sorter: true},
+            4: {sorter: true},
+        };
+
+        var per_capita_labels = ["May 2015", "Apr 2015", "Mar 2015", "Feb 2015", "Jan 2015", "Dec 2014", "Nov 2014", "Oct 2014", "Sep 2014", "Aug 2014", "Jul 2014", "Jun 2014"];
+        var per_capita_data = {
+            labels: per_capita_labels,
             series: [
             //{
                 //name: "2013",
@@ -325,8 +510,29 @@
                 data: [86.2, 97.3, 84.9, 93.6, 80.1, 66.8, 114.1, 122.2, 126.9, 121.2, 145.0, 250.8]
             }]
         };
+
+        var reduction_labels = ["Jun"];
+        // var reduction_data = {
+        //     labels: reduction_labels,
+        //     series: [
+        //     {
+        //         name: "actual",
+        //         data: [425000000]
+        //     },
+        //     {
+        //         name: "dividing_line",
+        //         data: [1180489232.1599998]
+        //     },
+        //     {
+        //         name: "baseline",
+        //         data: [1639568378.0]
+        //     }]
+        // }
+
         $(document).ready(function(){
-            fn.drawUsageOverTimeChart(chartAxisLabels, data);
+            fn.drawUsageOverTimeChart(per_capita_labels, per_capita_data, "#per-capita-use");
+            fn.drawProgressTowardReductionTargetChart(reduction_labels, reduction_data, "#reduction-progress")
+            fn.createReductionComparisonTable(sorting_array, headers_object);
         });
     </script>
 

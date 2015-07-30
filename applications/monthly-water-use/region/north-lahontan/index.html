@@ -69,6 +69,26 @@
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 
+    <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/jquery.tablesorter.js"></script>
+    <!--
+    <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/jquery.tablesorter.pager.js"></script>
+    -->
+    <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/jquery.tablesorter.multipagefilter.js"></script>
+    <script type="text/javascript">
+        /* For picking out bits from the query string */
+        var getParameterByName = function(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(window.location.href);
+            if(results == null){
+                return "";
+            } else {
+                return decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+        };
+    </script>
+
         <!-- end base scripts -->
 
     </head>
@@ -273,6 +293,102 @@
         </div>
     
 
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div id="table-container">
+                <div id="table_fu">
+                    <div id="controls" class="row">
+                        <div class="filter col-xs-12 col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                            <form class="form-inline" >
+                                <input type="text" class="search form-control" placeholder="Filter list of North Lahontan agencies...">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <table id="data" class="kpcc-table tabular table">
+                        <thead>
+                            <tr>
+                                <th style="cursor: pointer;">Water Agency</th>
+                                <th class="text-center" style="cursor: pointer;">May 2015<br />gallons</th>
+                                <th class="text-center" style="cursor: pointer;">May 2013<br />gallons</th>
+                                <th class="text-center" style="cursor: pointer;">Change from<br />May 2013</th>
+                                <th class="text-center" style="cursor: pointer;">Reduction Target</th>
+                                <th class="text-center" style="cursor: pointer;">Achieved Target</th>
+                                <th class="text-center" style="cursor: pointer;">Reduction Tier</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-susanville/" target="blank">City Of Susanville</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>72.88<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>95.61<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-23.77%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: red';>&#x2718;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/north-tahoe-public-utility-district/" target="blank">North Tahoe Public Utility District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>26.04<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>41.33<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-36.98%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/south-tahoe-public-utilities-district/" target="blank">South Tahoe Public Utilities District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>129.10<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>198.20<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-34.86%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>20%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>5</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/tahoe-city-public-utilities-district/" target="blank">Tahoe City Public Utilities District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>24.31<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>40.16<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-39.46%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>20%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>5</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/truckee-donner-public-utilities-district/" target="blank">Truckee-Donner Public Utilities District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>90.55<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>181.16<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-50.02%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
+                                        
+                                    </tr>
+                                
+                            
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
             </div>
             <div class="row data-comments">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -313,9 +429,20 @@
         
     <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/_application.js"></script>
     <script>
+        var sorting_array = [[3, 0], [0, 0]];
+        var headers_object = {
+            0: {sorter: true},
+            1: {sorter: true},
+            2: {sorter: true},
+            3: {sorter: true},
+            4: {sorter: true},
+            5: {sorter: true},
+            6: {sorter: true}
+        };
         $(document).ready(function(){
             fn.enableSelectMenu();
             fn.enableComparisonCharts();
+            fn.createReductionComparisonTable(sorting_array, headers_object);
         });
     </script>
 

@@ -98,6 +98,10 @@ body.minimal .data-container a.btn-primary:hover {
     color: rgba(227, 26, 28, 1.0);
 }
 
+.water-use-accent {
+    color: rgba(31, 120, 180, 1.0);
+}
+
 /* conservation methods */
 .icon-display {
     margin: 5px 0 0 0;
@@ -1132,3 +1136,21 @@ span.show {
 #table-container table.kpcc-table th, #table-container table.kpcc-table td {
     text-align: center;
 }
+
+
+
+
+#chart-legend-bar .current-use {
+    background-color: rgba(31, 120, 180, 1.0); color: #ffffff; font-weight: bold; width: 33%; text-align: center;
+}
+#chart-legend-bar .threshold-use {
+    background-color: rgba(51, 160, 44, 1.0); color: #ffffff; font-weight: bold; width: 34%; text-align: center;
+}
+#chart-legend-bar .baseline-use {
+    background-color: rgba(227, 26, 28, 1.0); color: #ffffff; font-weight: bold; width: 33%; text-align: center;
+}
+
+
+
+
+

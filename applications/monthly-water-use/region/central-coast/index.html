@@ -69,6 +69,26 @@
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 
+    <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/jquery.tablesorter.js"></script>
+    <!--
+    <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/jquery.tablesorter.pager.js"></script>
+    -->
+    <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/jquery.tablesorter.multipagefilter.js"></script>
+    <script type="text/javascript">
+        /* For picking out bits from the query string */
+        var getParameterByName = function(name) {
+            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+            var regexS = "[\\?&]" + name + "=([^&#]*)";
+            var regex = new RegExp(regexS);
+            var results = regex.exec(window.location.href);
+            if(results == null){
+                return "";
+            } else {
+                return decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+        };
+    </script>
+
         <!-- end base scripts -->
 
     </head>
@@ -537,6 +557,390 @@
         </div>
     
 
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div id="table-container">
+                <div id="table_fu">
+                    <div id="controls" class="row">
+                        <div class="filter col-xs-12 col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                            <form class="form-inline" >
+                                <input type="text" class="search form-control" placeholder="Filter list of Central Coast agencies...">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <table id="data" class="kpcc-table tabular table">
+                        <thead>
+                            <tr>
+                                <th style="cursor: pointer;">Water Agency</th>
+                                <th class="text-center" style="cursor: pointer;">May 2015<br />gallons</th>
+                                <th class="text-center" style="cursor: pointer;">May 2013<br />gallons</th>
+                                <th class="text-center" style="cursor: pointer;">Change from<br />May 2013</th>
+                                <th class="text-center" style="cursor: pointer;">Reduction Target</th>
+                                <th class="text-center" style="cursor: pointer;">Achieved Target</th>
+                                <th class="text-center" style="cursor: pointer;">Reduction Tier</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/alco-water-service/" target="blank">Alco Water Service</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>103.29<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>140.60<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-26.54%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>24%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>6</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/atascadero-mutual-water-company/" target="blank">Atascadero Mutual Water Company</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>132.67<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>204.05<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-34.98%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-king-city/" target="blank">California Water Service Company King City</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>43.70<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>58.23<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-24.96%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>12%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>3</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-salinas-district/" target="blank">California Water Service Company Salinas District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>432.24<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>644.50<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-32.93%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>16%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>4</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-american-water-company-monterey-district/" target="blank">California-American Water Company Monterey District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>278.09<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>372.63<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-25.37%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>8%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>2</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/carpinteria-valley-water-district/" target="blank">Carpinteria Valley Water District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>116.75<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>159.96<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-27.01%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>20%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>5</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-arroyo-grande/" target="blank">City Of Arroyo Grande</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>71.30<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>97.72<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-27.04%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: #8F8F00; font-size: 14px;'>&#x2794;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-gilroy/" target="blank">City Of Gilroy</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>264.49<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>310.33<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-14.77%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>24%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: red';>&#x2718;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>6</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-greenfield/" target="blank">City Of Greenfield</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>46.99<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>65.14<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-27.86%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>16%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>4</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-hollister/" target="blank">City Of Hollister</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>75.20<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>103.12<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-27.08%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>20%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>5</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-lompoc/" target="blank">City Of Lompoc</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>127.40<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>149.10<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-14.55%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>12%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>3</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-morgan-hill/" target="blank">City Of Morgan Hill</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>192.31<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>307.18<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-37.39%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-morro-bay/" target="blank">City Of Morro Bay</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>29.89<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>36.93<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-19.05%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>12%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>3</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-paso-robles/" target="blank">City Of Paso Robles</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>165.40<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>238.90<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-30.76%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-pismo-beach/" target="blank">City Of Pismo Beach</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>51.40<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>62.52<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-17.78%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>24%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: red';>&#x2718;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>6</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-san-luis-obispo/" target="blank">City Of San Luis Obispo</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>137.54<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>184.14<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-25.31%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>12%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>3</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-santa-barbara/" target="blank">City Of Santa Barbara</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>280.06<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>447.27<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-37.38%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>12%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>3</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-santa-cruz/" target="blank">City Of Santa Cruz</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>213.00<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>328.10<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-35.08%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>8%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>2</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-santa-maria/" target="blank">City Of Santa Maria</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>359.09<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>427.19<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-15.94%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>16%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: #8F8F00; font-size: 14px;'>&#x2794;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>4</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-soledad/" target="blank">City Of Soledad</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>56.07<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>76.28<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-26.50%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>24%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>6</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-watsonville/" target="blank">City Of Watsonville</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>209.76<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>271.01<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-22.60%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>20%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>5</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/golden-state-water-company-orcutt/" target="blank">Golden State Water Company Orcutt</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>172.90<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>268.73<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-35.66%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>32%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>8</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/goleta-water-district/" target="blank">Goleta Water District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>343.45<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>473.79<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-27.51%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>12%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>3</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/marina-coast-water-district/" target="blank">Marina Coast Water District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>90.90<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>147.10<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-38.21%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>12%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>3</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/nipomo-community-services-district/" target="blank">Nipomo Community Services District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>59.70<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>86.48<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-30.97%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/san-lorenzo-valley-water-district/" target="blank">San Lorenzo Valley Water District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>38.73<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>67.90<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-42.96%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>12%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>3</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/scotts-valley-water-district/" target="blank">Scotts Valley Water District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>30.28<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>49.63<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-38.99%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>16%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>4</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/soquel-creek-water-district/" target="blank">Soquel Creek Water District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>86.93<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>137.86<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-36.94%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>8%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>2</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/sunnyslope-county-water-district/" target="blank">Sunnyslope County Water District</a></td>
+                                        <td class="text-center"><mark>May 2015 gallons</mark><span>62.48<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>May 2013 gallons</mark><span>88.05<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />May 2013</mark><span class='decrease-accent'>-29.05%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
+                                        
+                                    </tr>
+                                
+                            
+                        </tbody>
+                        <tfoot></tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
             </div>
             <div class="row data-comments">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -577,9 +981,20 @@
         
     <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/_application.js"></script>
     <script>
+        var sorting_array = [[3, 0], [0, 0]];
+        var headers_object = {
+            0: {sorter: true},
+            1: {sorter: true},
+            2: {sorter: true},
+            3: {sorter: true},
+            4: {sorter: true},
+            5: {sorter: true},
+            6: {sorter: true}
+        };
         $(document).ready(function(){
             fn.enableSelectMenu();
             fn.enableComparisonCharts();
+            fn.createReductionComparisonTable(sorting_array, headers_object);
         });
     </script>
 

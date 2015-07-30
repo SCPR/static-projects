@@ -34,20 +34,33 @@
     stroke-width: 4px;
 }
 
+.ct-chart .ct-bar {
+    fill: none;
+    stroke-width: 25px;
+}
+
 .ct-chart .ct-series.ct-series-a .ct-bar, .ct-chart .ct-series.ct-series-a .ct-line, .ct-chart .ct-series.ct-series-a .ct-point, .ct-chart .ct-series.ct-series-a .ct-slice.ct-donut {
-    stroke: rgba(31, 120, 180, .7);
+    stroke: rgba(31, 120, 180, 1.0);
 }
 
 .ct-chart .ct-series.ct-series-a .ct-area, .ct-chart .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
-    fill: rgba(31, 120, 180, .7);
+    fill: rgba(31, 120, 180, 1.0);
 }
 
 .ct-chart .ct-series.ct-series-b .ct-bar, .ct-chart .ct-series.ct-series-b .ct-line, .ct-chart .ct-series.ct-series-b .ct-point, .ct-chart .ct-series.ct-series-b .ct-slice.ct-donut {
-    stroke: rgba(255, 197, 31, .7);
+    stroke: rgba(51, 160, 44, 1.0);
 }
 
 .ct-chart .ct-series.ct-series-b .ct-area, .ct-chart .ct-series.ct-series-b .ct-slice:not(.ct-donut) {
-    fill: rgba(255, 197, 31, .7);
+    fill: rgba(51, 160, 44, 1.0);
+}
+
+.ct-chart .ct-series.ct-series-c .ct-bar, .ct-chart .ct-series.ct-series-c .ct-line, .ct-chart .ct-series.ct-series-c .ct-point, .ct-chart .ct-series.ct-series-c .ct-slice.ct-donut {
+    stroke: rgba(227, 26, 28, 1.0);
+}
+
+.ct-chart .ct-series .ct-series-c .ct-area, .ct-chart .ct-series.ct-series-c .ct-slice:not(.ct-donut) {
+    fill: rgba(227, 26, 28, 1.0);
 }
 
 .tooltip {
