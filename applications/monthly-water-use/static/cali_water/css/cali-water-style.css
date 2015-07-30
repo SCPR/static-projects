@@ -102,6 +102,10 @@ body.minimal .data-container a.btn-primary:hover {
     color: rgba(31, 120, 180, 1.0);
 }
 
+.eighty-percent-accent {
+    color: #8F8F00;
+}
+
 /* conservation methods */
 .icon-display {
     margin: 5px 0 0 0;
