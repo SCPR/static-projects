@@ -1,13 +1,13 @@
 window.appConfig = {
 
     // general configs
-    open_about_this: true,
+    open_about_this: false,
     comments: false,
     is_mobile: null,
-    project_root: "http://projects.scpr.org/maps/homeless-rv-map/",
+    project_root: "http://projects.scpr.org/maps/graffiti-map/",
     embed_this: true,
     is_embedded: null,
     embed_width: "100%",
     embed_height: "1000px",
-    twitter_share_text: "More homeless people are sleeping in RVs and campers. See where in @KPCC's interactive chart",
+    twitter_share_text: "Watch a month in graffiti across Los Angeles in @KPCC's GIF",
 };
