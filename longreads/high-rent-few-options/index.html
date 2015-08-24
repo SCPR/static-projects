@@ -68,15 +68,10 @@
     <!-- begin body -->
     <body>
 
-
         <!-- ======================================================================================================= -->
         <!-- The jPlayer div must not be hidden. Keep it at the root of the body element to avoid any such problems. -->
-            <div id="jquery_jplayer_1" class="cp-jplayer"></div>
-            <div id="jquery_jplayer_2" class="cp-jplayer"></div>
-            <div id="jquery_jplayer_3" class="cp-jplayer"></div>
-            <div id="jquery_jplayer_10" class="cp-jplayer"></div>
+            <div id="jquery_jplayer_10" class="jp-jplayer"></div>
         <!-- ======================================================================================================= -->
-
 
         <header class="masthead">
                 <h1>high rent, <span>few options</span></h1>
@@ -108,35 +103,35 @@
                 </div><!--/ .tertiary -->
         </header><!--/ .masthead -->
 
-    <!--   Lead Audio ================================================================================================================================================ -->
-                        <aside class="audio radio">
-                            <div id="jp_container_10" class="jp-audio bound">
-                                <div class="jp-type-single">
-                                    <div class="jp-gui jp-interface clearfix">
+    <!-- lead audio -->
+    <aside class="audio radio">
+        <div id="jp_container_10" class="jp-audio bound">
+            <div class="jp-type-single">
+                <div class="jp-gui jp-interface clearfix">
+                    <ul class="jp-controls clearfix">
+                        <li><a href="javascript:;" class="jp-play track-event" data-bar-id="#play-bar-2" data-ga-category="Audio" data-ga-action="Play" data-ga-label="Radio Segment">play<span></span></a></li>
+                        <li><a href="javascript:;" class="jp-pause">pause<span></span><span class="last"></span></a></li>
+                    </ul>
+                    <div class="jp-progress clearfix">
+                        <div class="jp-bar" id="play-bar-2">
+                            <div class="jp-seek-bar">
+                                <div class="jp-play-bar"></div>
+                            </div>
+                        </div>
+                        <div class="jp-current-time"></div>
+                        <div class="duration">/ 04:10</div>
+                    </div><!--/ .jp-progress -->
+                    <div class="jp-title">
+                        <!-- if no javascript -->
+                        <noscript>Please enable JavaScript to view this interactive.</noscript>
+                        <p>Hear the full audio for this story</p>
+                    </div><!--/ .jp-title -->
+                </div><!--/ .jp-gui -->
+            </div><!--/ .jp-type-single -->
+        </div><!--/ #jp_container_10 -->
+    </aside><!--/ .radio -->
+    <!-- = -->
 
-                                                <ul class="jp-controls clearfix">
-                                                    <li><a href="javascript:;" class="jp-play track-event" data-bar-id="#play-bar-2" data-ga-category="Audio" data-ga-action="Play" data-ga-label="Radio Segment">play<span></span></a></li>
-                                                    <li><a href="javascript:;" class="jp-pause">pause<span></span><span class="last"></span></a></li>
-                                                </ul><!--/ .jp-controls -->
-                                                <div class="jp-progress clearfix">
-                                                    <div class="jp-bar" id="play-bar-2"><div class="jp-seek-bar"><div class="jp-play-bar"></div></div></div>
-                                                    <div class="jp-current-time"></div>
-                                                    <div class="duration">/ 04:10</div>
-                                                </div><!--/ .jp-progress -->
-                                                <div class="jp-title">
-
-                                                    <!-- if no javascript -->
-                                                     <noscript>Please enable JavaScript to view this interactive.</noscript>
-
-                                                    <p>Hear the full audio for this story</p>
-                                                </div><!--/ .jp-title -->
-
-                                    </div><!--/ .jp-gui -->
-                                </div><!--/ .jp-type-single -->
-                            </div><!--/ #jp_container_10 -->
-                        </aside><!--/ .radio -->
-
-    <!-- ======================================================================================================================================= -->
 
         <article class="essay essay-pt1">
 
@@ -558,28 +553,6 @@
             ga('nprDsTracker.send', 'pageview');
         </script>
         <!-- end google analytics -->
-
-        <!-- no more webtrends stats
-        <script src="http://media.scpr.org/assets/scripts/webtrends.v2.js"></script>
-        <script>
-            //<![CDATA[
-                var _tag=new WebTrends();
-                _tag.dcsGetId();
-            //]]>
-        </script>
-        <script>
-            //<![CDATA[
-                _tag.dcsCustom=function(){
-                    // Add custom parameters here.
-                    //_tag.DCSext.param_name=param_value;
-                }
-            _tag.dcsCollect();
-            //]]>
-        </script>
-        <noscript>
-            <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsyqctzwuz5bdsebpmwhwe8w_2p8d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.3.0&amp;WT.dcssip=www.scpr.org"/></div>
-        </noscript>
-        end webtrends stats -->
 
         <!-- begin comscore stats -->
         <script>

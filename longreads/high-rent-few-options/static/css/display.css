@@ -2894,7 +2894,7 @@ object, embed {
 						    =================================================================================== */
 /* membership appeal */
 .membership {
-	background: #2EA2CC url(http://scpr.org/assets/i/backdrop-bluecity-6ddd071b98630d55756f85133c35fdcb.jpg) no-repeat center top;
+	background: #2EA2CC;
 	background-size: auto 100%;
 	box-shadow: 0 -8px 0 rgba(0, 0, 0, 0.13);
 	color: #FFF;
@@ -2945,7 +2945,7 @@ object, embed {
 				white-space: nowrap;
 				text-indent: 100%;
 				overflow: hidden;
-				background: url(http://scpr.org/assets/i/logo-kpcc-white-393f92727b141b5076010397da329aef.png) no-repeat;
+				/*background: url(http://scpr.org/assets/i/logo-kpcc-white-393f92727b141b5076010397da329aef.png) no-repeat;*/
 				background-size: 100%;
 			}
 
