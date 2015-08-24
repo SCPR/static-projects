@@ -23,8 +23,7 @@ $(document).ready(function() {
         solution:"html, flash",
         supplied: "mp3",
         swfPath: "static/js/Jplayer.swf",
-        errorAlerts: true,
-        wmode: 'window'
+        wmode: "window"
     });
 
     $("a.jp-play").click(function(){

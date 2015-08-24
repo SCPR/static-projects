@@ -18,8 +18,8 @@ $(document).ready(function() {
             cssSelectorAncestor: "#jp_container_" + location,
             solution:"html, flash",
             supplied: "mp3",
-            swfPath: "static/js",
-            preload: "none"
+            swfPath: "static/js/Jplayer.swf",
+            wmode: "window"
         }).bind($.jPlayer.event.play, function(){
             $(this).jPlayer("pauseOthers");
         });
