@@ -83,29 +83,18 @@
         },
 
         events: {
-            "click a.search": "getSearchTerm",
+
         },
 
-        render: function(view_object){
-            $(view_object.container).html(_.template(this.template));
-            view_object.collection.forEach(function(model, index){
+        calculate_data_fields: function(collection){
+            collection.forEach(function(model, index){
                 var _this = model.attributes;
                 _this.time = moment.utc(_this.time).toDate();
             });
+            return collection;
+        },
 
-            // var _2015_start_time = moment("2015-01-03T00:00:00Z");
-            // var _2015_end_time = moment("2015-08-30T00:00:00Z");
-            // var _2015_data = view_object.collection.filtered(_2015_start_time, _2015_end_time);
-            // var _2015_collection = new App.Collections.DataEvents(_2015_data);
-            // var _2015_chart_data_series = _2015_collection.pluck("Nino34_sst");
-
-            // var _1997_start_time = moment("1997-01-03T00:00:00Z");
-            // var _1997_end_time = moment("1997-08-30T00:00:00Z");
-            // var _1997_data = view_object.collection.filtered(_1997_start_time, _1997_end_time);
-            // var _1997_collection = new App.Collections.DataEvents(_1997_data);
-            // var _1997_chart_data_series = _1997_collection.pluck("Nino34_sst");
-
-            // var chart_categories = _2015_collection.pluck("time");
+        build_data_series: function(collection){
 
             var series_data = [];
 
@@ -143,7 +132,7 @@
             _.each(years, function(item, index){
                 var start_time = moment(item + "-01-01T00:00:00Z");
                 var end_time = moment(item + "-12-31T00:00:00Z");
-                var _data = view_object.collection.filtered(start_time, end_time);
+                var _data = collection.filtered(start_time, end_time);
                 var _collection = new App.Collections.DataEvents(_data);
                 var _chart_data_series = _collection.invoke("pick", ["time", "Nino34_ssta"]);
                 var chart_data = [];
@@ -161,20 +150,36 @@
 
                 if (item === 1992 || item === 1997 || item === 1998 || item === 2014 || item === 2015){
                     see_this = true;
-                    color = "#fe0001";
                 } else if (item === 1993 || item === 2002 || item === 2003 || item === 2009 || item === 2010){
                     see_this = true;
-                    color = "#fe9999";
                 } else {
-                    see_this = true;
-                    color = "#96c3ef";
+                    see_this = false;
                 }
 
                 series_data[index] = {
                     name: item,
                     data: chart_data,
                     visible: see_this,
-                    color: color,
+                    color: "#7cb5ec",
+                    zones: [{
+                        value: 0,
+                        color: "#7cb5ec"
+                    }, {
+                        value: 0.5,
+                        color: "#feb24c"
+                    }, {
+                        value: 1.0,
+                        color: "#fc4e2a"
+                    }, {
+                        value: 1.5,
+                        color: "#fc4e2a"
+                    }, {
+                        value: 2.0,
+                        color: "#e31a1c"
+                    }, {
+                        value: 3.0,
+                        color: "#b10026"
+                    }],
                     marker: {
                         symbol: "circle"
                     }
@@ -182,9 +187,17 @@
 
             });
 
-            var cloneToolTip = null;
+            return series_data;
 
-            var cloneToolCount = 0;
+        },
+
+        render: function(view_object){
+
+            $(view_object.container).html(_.template(this.template));
+
+            this.calculate_data_fields(view_object.collection);
+
+            var cloneToolTip = null;
 
             var chart_options = {
 
@@ -207,17 +220,18 @@
                     type: "datetime",
 
                     dateTimeLabelFormats: {
-                        month: '%b \'%y',
+                        week: '%b \'%y',
                     },
 
                     title: {
-                        text: "Date"
+                        text: "Year"
                     }
                 },
 
                 yAxis: {
+                    tickInterval: .5,
                     title: {
-                        text: "Temperature °C"
+                        text: "Deviation from surface temperature baseline"
                     },
                     plotLines: [{
                         value: 0,
@@ -230,11 +244,10 @@
                     series: {
                         allowPointSelect: true,
                         connectNulls: true,
-                        cursor: 'pointer',
+                        cursor: "pointer",
                         point: {
                             events: {
                                 click: function(){
-                                    cloneToolCount = cloneToolCount + 1;
                                     if (cloneToolTip){
                                         chart.container.firstChild.removeChild(cloneToolTip);
                                     };
@@ -249,10 +262,8 @@
                 tooltip: {
                     backgroundColor: "rgba(255, 255, 255, 1.0)",
                     borderColor: "#000000",
-                    // valueSuffix: "°C",
-                    // xDateFormat: "%b %d, %Y",
                     formatter: function(){
-                        var output = "<strong>" + Highcharts.dateFormat("%b %d, %Y", this.x) + "</strong><br />" + this.y + " °C";
+                        var output = "<strong>" + Highcharts.dateFormat("%b %d, %Y", this.x) + "</strong><br />" + this.y + " from baseline";
                         return output;
                     }
                 },
@@ -264,9 +275,11 @@
                     borderWidth: 0
                 },
 
-                series: series_data
+                series: null
 
             };
+
+            chart_options.series = this.build_data_series(view_object.collection);
 
             var chart = new Highcharts.Chart(chart_options);
 
