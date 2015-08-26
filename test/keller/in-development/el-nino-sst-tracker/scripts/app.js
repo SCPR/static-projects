@@ -1,0 +1,275 @@
+    App.Models.DataEvent = Backbone.Model.extend({
+        defaults: {
+            time: null,
+            Nino34_sst: null,
+            Nino34_ssta: null,
+        }
+    });
+
+    App.Collections.DataEvents = Backbone.Collection.extend({
+        model: App.Models.DataEvent,
+        url: "http://oceanview.pfeg.noaa.gov/erddap/tabledap/ncepNinoSSTwk.json?time,Nino34_sst,Nino34_ssta&time>=1990-01-03T00:00:00Z",
+        sync: function (method, collection, options){
+            options.dataType = "jsonp";
+            options.jsonp = ".jsonp";
+            options.cache = "true";
+            options.jsonpCallback = "functionname";
+            return Backbone.sync(method, collection, options);
+        },
+        parse: function (response){
+            var obj = response.table.rows;
+            return _.map(obj, function (value, key){
+                return _.object(["time", "Nino34_sst", "Nino34_ssta"], value)
+            });
+        },
+        filtered: function (start_date, end_date){
+            var filtered_data = this.models.filter(function(model){
+                return (
+                    model.get("time") > start_date &&
+                    model.get("time") <= end_date
+                )
+            });
+            return filtered_data
+        }
+    });
+
+    App.Router = Backbone.Router.extend({
+
+        initialize: function(){
+            this.applicationWrapper = new App.Views.ApplicationWrapper();
+            return this.applicationWrapper;
+        },
+
+        routes: {
+            "": "fetchData",
+        },
+
+        fetchData: function(){
+            var _this = this;
+            var applicationCollection = new App.Collections.DataEvents();
+            applicationCollection.fetch({
+                async: true
+            });
+            var checkExist = setInterval(function() {
+                if (applicationCollection.length > 0){
+                    clearInterval(checkExist);
+                    _this.renderApplicationVisuals(applicationCollection);
+                }
+            }, 500);
+        },
+
+        renderApplicationVisuals: function(application_collection){
+            if (this.applicationVisuals){
+                this.applicationVisuals.remove();
+            };
+            this.applicationVisuals = new App.Views.ApplicationVisuals({
+                collection: application_collection,
+                container: ".data-visuals"
+            });
+            return this.applicationVisuals;
+        },
+
+    });
+
+    App.Views.ApplicationVisuals = Backbone.View.extend({
+
+        template: template("templates/data-visuals.html"),
+
+        el: ".data-visuals",
+
+        initialize: function(object){
+            this.view_object = object;
+            this.render(this.view_object);
+        },
+
+        events: {
+            "click a.search": "getSearchTerm",
+        },
+
+        render: function(view_object){
+            $(view_object.container).html(_.template(this.template));
+            view_object.collection.forEach(function(model, index){
+                var _this = model.attributes;
+                _this.time = moment.utc(_this.time).toDate();
+            });
+
+            // var _2015_start_time = moment("2015-01-03T00:00:00Z");
+            // var _2015_end_time = moment("2015-08-30T00:00:00Z");
+            // var _2015_data = view_object.collection.filtered(_2015_start_time, _2015_end_time);
+            // var _2015_collection = new App.Collections.DataEvents(_2015_data);
+            // var _2015_chart_data_series = _2015_collection.pluck("Nino34_sst");
+
+            // var _1997_start_time = moment("1997-01-03T00:00:00Z");
+            // var _1997_end_time = moment("1997-08-30T00:00:00Z");
+            // var _1997_data = view_object.collection.filtered(_1997_start_time, _1997_end_time);
+            // var _1997_collection = new App.Collections.DataEvents(_1997_data);
+            // var _1997_chart_data_series = _1997_collection.pluck("Nino34_sst");
+
+            // var chart_categories = _2015_collection.pluck("time");
+
+            var series_data = [];
+
+            var seriesCounter = 0;
+
+            var years = [
+                // 1990,
+                // 1991,
+                1992,
+                1993,
+                1994,
+                1995,
+                1996,
+                1997,
+                1998,
+                1999,
+                2000,
+                2001,
+                2002,
+                2003,
+                2004,
+                2005,
+                2006,
+                2007,
+                2008,
+                2009,
+                2010,
+                2011,
+                2012,
+                2013,
+                2014,
+                2015,
+            ];
+
+            _.each(years, function(item, index){
+                var start_time = moment(item + "-01-01T00:00:00Z");
+                var end_time = moment(item + "-12-31T00:00:00Z");
+                var _data = view_object.collection.filtered(start_time, end_time);
+                var _collection = new App.Collections.DataEvents(_data);
+                var _chart_data_series = _collection.invoke("pick", ["time", "Nino34_ssta"]);
+                var chart_data = [];
+                _.each(_chart_data_series, function(item, index){
+                    var year = item.time.getFullYear();
+                    var month = item.time.getMonth();
+                    var day = item.time.getDate();
+                    chart_data[index] = [
+                        Date.UTC(year, month, day),
+                        item.Nino34_ssta,
+                    ]
+                });
+
+                var see_this;
+
+                if (item === 1992 || item === 1997 || item === 1998 || item === 2014 || item === 2015){
+                    see_this = true;
+                    color = "#fe0001";
+                } else if (item === 1993 || item === 2002 || item === 2003 || item === 2009 || item === 2010){
+                    see_this = true;
+                    color = "#fe9999";
+                } else {
+                    see_this = true;
+                    color = "#96c3ef";
+                }
+
+                series_data[index] = {
+                    name: item,
+                    data: chart_data,
+                    visible: see_this,
+                    color: color,
+                    marker: {
+                        symbol: "circle"
+                    }
+                };
+
+            });
+
+            var cloneToolTip = null;
+
+            var cloneToolCount = 0;
+
+            var chart_options = {
+
+                chart: {
+                    renderTo: "content-chart-container",
+                    backgroundColor: null
+                },
+
+                title: {
+                    text: "Nino3.4 sea surface temperature anomalies",
+                    x: -20 //center
+                },
+
+                subtitle: {
+                    text: "Source: National Oceanic and Atmospheric Administration",
+                    x: -20
+                },
+
+                xAxis: {
+                    type: "datetime",
+
+                    dateTimeLabelFormats: {
+                        month: '%b \'%y',
+                    },
+
+                    title: {
+                        text: "Date"
+                    }
+                },
+
+                yAxis: {
+                    title: {
+                        text: "Temperature °C"
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 2,
+                        color: "#808080"
+                    }]
+                },
+
+                plotOptions: {
+                    series: {
+                        allowPointSelect: true,
+                        connectNulls: true,
+                        cursor: 'pointer',
+                        point: {
+                            events: {
+                                click: function(){
+                                    cloneToolCount = cloneToolCount + 1;
+                                    if (cloneToolTip){
+                                        chart.container.firstChild.removeChild(cloneToolTip);
+                                    };
+                                    cloneToolTip = this.series.chart.tooltip.label.element.cloneNode(true);
+                                    chart.container.firstChild.appendChild(cloneToolTip);
+                                }
+                            }
+                        }
+                    }
+                },
+
+                tooltip: {
+                    backgroundColor: "rgba(255, 255, 255, 1.0)",
+                    borderColor: "#000000",
+                    // valueSuffix: "°C",
+                    // xDateFormat: "%b %d, %Y",
+                    formatter: function(){
+                        var output = "<strong>" + Highcharts.dateFormat("%b %d, %Y", this.x) + "</strong><br />" + this.y + " °C";
+                        return output;
+                    }
+                },
+
+                legend: {
+                    layout: "vertical",
+                    align: "right",
+                    verticalAlign: "middle",
+                    borderWidth: 0
+                },
+
+                series: series_data
+
+            };
+
+            var chart = new Highcharts.Chart(chart_options);
+
+        },
+
+    });
