@@ -176,7 +176,7 @@ var fn = {
 
             reverseData: false,
 
-            horizontalBars: true,
+            horizontalBars: false,
 
             // line chart points
             showPoint: true,
@@ -202,7 +202,7 @@ var fn = {
                 showGrid: true,
 
                 // and also don't show the label
-                showLabel: false,
+                showLabel: true,
 
                 labelInterpolationFnc: function(value) {
                     return value;
@@ -247,7 +247,6 @@ var fn = {
             var value = parseFloat($(this).attr("ct:value")).toFixed(2);
 
             var text = fn.millify(value);
-
 
             $tooltip.text(text + " gallons");
 
