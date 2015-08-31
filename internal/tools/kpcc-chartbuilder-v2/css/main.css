@@ -1804,12 +1804,45 @@ svg.renderer-svg tspan {
 }
 .chartbuilder-editor .data-input {
   font-size: 1em;
-  border: 1px solid #e2e2e2;
   margin: 0;
+  position: relative;
 }
 .chartbuilder-editor .data-input textarea {
   font-family: Monaco, Lucida Console, monspace;
   height: 20em;
+  height: 12em;
+}
+.chartbuilder-editor .data-input input[type="file"] {
+  pointer-events: none;
+  height: 12em;
+  position: relative;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  z-index: -1;
+}
+.chartbuilder-editor .data-input .file-drop {
+  pointer-events: none;
+  height: 12em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  background-color: #f1f1f1;
+  width: 100%;
+  text-align: center;
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.chartbuilder-editor .data-input .file-drop p {
+  font-size: 2em;
+  margin-top: 2em;
+}
+.chartbuilder-editor .data-input.dropping input[type="file"] {
+  pointer-events: all;
+  z-index: 1;
+}
+.chartbuilder-editor .data-input.dropping .file-drop {
+  z-index: 2;
 }
 .chartbuilder-editor .data-input .cb-alert {
   font-size: 1.2em;
