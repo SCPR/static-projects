@@ -4,7 +4,7 @@ window.appConfig = {
     open_about_this: true,
     comments: false,
     is_mobile: null,
-    project_root: "http://projects.scpr.org/",
+    project_root: "http://projects.scpr.org/maps/lead-remediation-efforts-by-los-angeles/",
     embed_this: false,
     is_embedded: null,
     embed_width: "100%",
