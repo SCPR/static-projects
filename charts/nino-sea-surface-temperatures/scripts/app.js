@@ -250,7 +250,7 @@
                 yAxis: {
                     tickInterval: .5,
                     title: {
-                        text: "Deviation from surface temperature baseline"
+                        text: "Deviation from sea surface temperature baseline"
                     },
                     plotLines: [{
                         value: 0,
