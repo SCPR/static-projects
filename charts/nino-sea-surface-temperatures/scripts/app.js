@@ -42,6 +42,7 @@
 
         routes: {
             "": "fetchData",
+            ":compare-ninos": "compareNinos",
         },
 
         fetchData: function(){
@@ -54,6 +55,28 @@
                 if (applicationCollection.length > 0){
                     clearInterval(checkExist);
                     _this.renderApplicationVisuals(applicationCollection);
+                }
+            }, 500);
+        },
+
+        compareNinos: function(){
+            $(".data-details").empty();
+            var _this = this;
+            var applicationCollection = new App.Collections.DataEvents();
+            applicationCollection.fetch({
+                async: true
+            });
+            var checkExist = setInterval(function() {
+                if (applicationCollection.length > 0){
+                    clearInterval(checkExist);
+                    if (this.applicationComparison){
+                        this.applicationComparison.remove();
+                    };
+                    this.applicationComparison = new App.Views.ApplicationComparison({
+                        collection: applicationCollection,
+                        container: ".data-visuals"
+                    });
+                    return this.applicationComparison;
                 }
             }, 500);
         },
@@ -80,10 +103,6 @@
         initialize: function(object){
             this.view_object = object;
             this.render(this.view_object);
-        },
-
-        events: {
-
         },
 
         calculate_data_fields: function(collection){
@@ -139,7 +158,7 @@
                 _.each(_chart_data_series, function(item, index){
                     var year = item.time.getFullYear();
                     var month = item.time.getMonth();
-                    var day = item.time.getDate();
+                    var day = item.time.getDate() + 1;
                     chart_data[index] = [
                         Date.UTC(year, month, day),
                         item.Nino34_ssta,
@@ -264,6 +283,168 @@
                     borderColor: "#000000",
                     formatter: function(){
                         var output = "<strong>" + Highcharts.dateFormat("%b %d, %Y", this.x) + "</strong><br />" + this.y + "°C from baseline";
+                        return output;
+                    }
+                },
+
+                legend: {
+                    layout: "vertical",
+                    align: "right",
+                    verticalAlign: "middle",
+                    borderWidth: 0
+                },
+
+                series: null
+
+            };
+
+            chart_options.series = this.build_data_series(view_object.collection);
+
+            var chart = new Highcharts.Chart(chart_options);
+
+        },
+
+    });
+
+    App.Views.ApplicationComparison = Backbone.View.extend({
+
+        template: template("templates/data-visuals.html"),
+
+        el: ".data-visuals",
+
+        initialize: function(object){
+            this.view_object = object;
+            this.render(this.view_object);
+        },
+
+        calculate_data_fields: function(collection){
+            collection.forEach(function(model, index){
+                var _this = model.attributes;
+                _this.time = moment.utc(_this.time).toDate();
+            });
+            return collection;
+        },
+
+        build_data_series: function(collection){
+
+            var series_data = [];
+
+            var years = [
+                1997,
+                2015,
+            ];
+
+            _.each(years, function(item, index){
+                var start_time = moment(item + "-01-01T00:00:00Z");
+                var end_time = moment(item + "-12-31T00:00:00Z");
+                var _data = collection.filtered(start_time, end_time);
+                var _collection = new App.Collections.DataEvents(_data);
+                var _chart_data_series = _collection.invoke("pick", ["time", "Nino34_ssta"]);
+                var chart_data = [];
+                _.each(_chart_data_series, function(item, index){
+                    var year = item.time.getFullYear();
+                    var month = item.time.getMonth();
+                    var day = item.time.getDate();
+                    chart_data[index] = [
+                        Date.UTC(2015, month, day),
+                        item.Nino34_ssta,
+                    ]
+                });
+
+                if (item === 1997){
+                    this_color = "#7cb5ec";
+                } else {
+                    this_color = "#b10026";
+                }
+
+                series_data[index] = {
+                    name: item,
+                    data: chart_data,
+                    color: this_color,
+                    marker: {
+                        symbol: "circle"
+                    }
+                };
+
+            });
+
+            return series_data;
+
+        },
+
+        render: function(view_object){
+
+            $(view_object.container).html(_.template(this.template));
+
+            this.calculate_data_fields(view_object.collection);
+
+            var cloneToolTip = null;
+
+            var chart_options = {
+
+                chart: {
+                    renderTo: "content-chart-container",
+                    backgroundColor: null
+                },
+
+                title: {
+                    text: "Niño 3.4 sea surface temperature anomalies (1997 vs. 2015)",
+                    x: -20 //center
+                },
+
+                subtitle: {
+                    text: "Source: NOAA's Environmental Research Division's Data Access Program weekly Niño sea surface temperature anomalies.",
+                    x: -20
+                },
+
+                xAxis: {
+                    type: "datetime",
+
+                    dateTimeLabelFormats: {
+                        week: '%b',
+                    },
+
+                    title: {
+                        text: "Year"
+                    }
+                },
+
+                yAxis: {
+                    tickInterval: .5,
+                    title: {
+                        text: "Deviation from surface temperature baseline"
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 2,
+                        color: "#808080"
+                    }]
+                },
+
+                plotOptions: {
+                    series: {
+                        allowPointSelect: true,
+                        connectNulls: true,
+                        cursor: "pointer",
+                        point: {
+                            events: {
+                                click: function(){
+                                    if (cloneToolTip){
+                                        chart.container.firstChild.removeChild(cloneToolTip);
+                                    };
+                                    cloneToolTip = this.series.chart.tooltip.label.element.cloneNode(true);
+                                    chart.container.firstChild.appendChild(cloneToolTip);
+                                }
+                            }
+                        }
+                    }
+                },
+
+                tooltip: {
+                    backgroundColor: "rgba(255, 255, 255, 1.0)",
+                    borderColor: "#000000",
+                    formatter: function(){
+                        var output = "<strong>" + Highcharts.dateFormat("%b %d", this.x) + "</strong><br />" + this.y + "°C from baseline";
                         return output;
                     }
                 },
