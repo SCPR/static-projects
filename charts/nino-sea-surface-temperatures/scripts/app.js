@@ -207,12 +207,12 @@
                 },
 
                 title: {
-                    text: "Nino3.4 sea surface temperature anomalies",
+                    text: "Niño 3.4 sea surface temperature anomalies",
                     x: -20 //center
                 },
 
                 subtitle: {
-                    text: "Source: National Oceanic and Atmospheric Administration",
+                    text: "Source: NOAA's Environmental Research Division's Data Access Program weekly Niño sea surface temperature anomalies.",
                     x: -20
                 },
 
@@ -263,7 +263,7 @@
                     backgroundColor: "rgba(255, 255, 255, 1.0)",
                     borderColor: "#000000",
                     formatter: function(){
-                        var output = "<strong>" + Highcharts.dateFormat("%b %d, %Y", this.x) + "</strong><br />" + this.y + " from baseline";
+                        var output = "<strong>" + Highcharts.dateFormat("%b %d, %Y", this.x) + "</strong><br />" + this.y + "°C from baseline";
                         return output;
                     }
                 },
