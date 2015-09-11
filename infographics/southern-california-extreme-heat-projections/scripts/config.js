@@ -1,7 +1,7 @@
 window.appConfig = {
 
     // general configs
-    open_about_this: false,
+    open_about_this: true,
     comments: false,
     is_mobile: null,
     project_root: "http://projects.scpr.org/infographics/southern-california-extreme-heat-projections/",
