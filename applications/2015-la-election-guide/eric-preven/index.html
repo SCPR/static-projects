@@ -16,7 +16,7 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="format-detection" content="telephone=no"/>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        
+
         <meta name="description" content="" />
         <meta name="keywords" content="" />
         <meta name="author" content="89.3 KPCC" />
@@ -40,7 +40,7 @@
         <!-- end meta -->
 
         <!-- begin css -->
-        
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="http://projects.scpr.org/static/static-files/v3-dependencies/css/jquery-ui.1.10.3.css" rel="stylesheet" type="text/css" media="all" />
     <link href="http://projects.scpr.org/static/static-files/css/jquery-alerts/jquery.alerts.css" rel="stylesheet" type="text/css" media="all" />
@@ -62,7 +62,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="//use.typekit.net/vtu6xsq.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-        
+        <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
         <!-- end base scripts -->
 
     </head>
@@ -73,10 +74,10 @@
 
         <div class="container data-container">
             <div class="row data-details">
-                
+
             </div>
             <div class="row data-visuals">
-                
+
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <h3>City Council District 2 candidate</h3>
         <div class="row" id="representative-container">
@@ -92,41 +93,41 @@
                 <div style="width:50%;float:left;">
                     <h6>Biographical Highlights</h6>
                     <ul>
-                        
-                            
+
+
                                 <li>Occupation: Writer/Producer/Consultant</li>
-                            
+
                                 <li>29 year Valley Resident of Studio City</li>
-                            
+
                                 <li>Two Decades of WGA and ATAS membership</li>
-                            
+
                                 <li>Participated in the last three years of weekly Los Angeles County board meetings (163)</li>
-                            
-                        
+
+
                     </ul>
                 </div>
                 <div style="width:50%;float:left;">
                     <h6>Top Priorities if Elected</h6>
                     <ul>
-                        
-                            
+
+
                                 <li>Helping Valley Residents get City Services, especially Reducing Crime</li>
-                            
+
                                 <li>Reducing Traffic by Increasing Citywide Light Rail and Doubling Valley Bus Service</li>
-                            
+
                                 <li>Expanded opportunities for civic participation &amp; engagement, as well as Government Ethics Reform</li>
-                            
-                        
+
+
                     </ul>
                 </div>
                 <div class="row" style="clear:left;">
-                    
+
                         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
                             <p><span class="glyphicon glyphicon-link"></span>&nbsp;&nbsp;<a href="http://www.smartvoter.org/2015/03/03/ca/la/vote/preven_e/" target="_blank"> More at SmartVoter.org</a></p>
                         </div>
-                    
-                    
-                    
+
+
+
                 </div>
             </div>
         </div>
@@ -149,7 +150,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/underscore-min.js"></script>
         <script src="http://projects.scpr.org/static/static-files/v3-dependencies/scripts/backbone-min-v1.0.js"></script>
-        
+
     <script>
         window.appConfig = {"embed_this": true, "project_root": "http://projects.scpr.org/static/applications/2015-la-election-guide/", "embed_height": "2080px", "open_about_this": true, "data_url": null, "is_embedded": false, "data_source": null, "is_mobile": false, "comments": false, "embed_width": "100%", "spreadsheet_key": null};
         window.appConfig.open_about_this = false;
@@ -178,29 +179,27 @@
 
         <!-- begin google analytics -->
         <script type="text/javascript">
-            var hostName = 'projects.scpr.org';
-            var _gaq = _gaq || [];
-            _gaq.push(
-                ['_setAccount', 'UA-624724-1'],
-                ['_setDomainName', hostName],
-                ['_setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
-                ['_setCustomVar', 7, 'PageType', 'Story', 3],
-                ['_trackPageview'],
-                ['b._setAccount', 'UA-18188937-11'],
-                ['b._setDomainName', hostName],
-                ['b._setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
-                ['b._setCustomVar', 7, 'PageType', 'Story', 3],
-                ['b._trackPageview']
-            );
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            // tracker for scpr ga account
+            ga('create', 'UA-624724-1', 'auto', {'allowLinker': true});
+
+            // tracker for npr digital services station analytics
+            ga('create', 'UA-18188937-11', 'auto', {'name': 'nprDsTracker'}, {'allowLinker': true});
+
+            ga('require', 'linker'); // require plugin for cross-domain tracking
+            ga('require', 'displayfeatures'); // require plugin for doubleclick display ad features
+            ga('linker:autoLink', ['scprcontribute.publicradio.org']); //set linked domain
+            ga('set', 'dimension6', 'Southern California Public Radio');
+            ga('set', 'dimension7', 'Story');
+            ga('send', 'pageview');
+            ga('nprDsTracker.send', 'pageview');
         </script>
         <!-- end google analytics -->
 
-        <!-- begin webtrends stats -->
+        <!-- no more webtrends stats
         <script src="http://media.scpr.org/assets/scripts/webtrends.v2.js"></script>
         <script>
             //<![CDATA[
@@ -220,7 +219,7 @@
         <noscript>
             <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsyqctzwuz5bdsebpmwhwe8w_2p8d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.3.0&amp;WT.dcssip=www.scpr.org"/></div>
         </noscript>
-        <!-- end webtrends stats -->
+        end webtrends stats -->
 
         <!-- begin comscore stats -->
         <script>

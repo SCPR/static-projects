@@ -18,7 +18,7 @@
         <meta name="format-detection" content="telephone=no"/>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
         
-        <meta name="description" content="Sacramento River residential customers decreased daily water use in April 2015 to an average of 103.43 gallons in the  hydrologic region compared to April 2013. Based on data from 42 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate." />
+        <meta name="description" content="Sacramento River residential customers decreased daily water use in July 2015 to an average of 153.42 gallons in the  hydrologic region compared to July 2013. Based on data from 43 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate." />
         <meta name="keywords" content="drought, state water resources control board, california" />
         <meta name="author" content="89.3 KPCC" />
         <meta property="og:title" content="Water use in California's Sacramento River hydrologic region" />
@@ -27,14 +27,14 @@
         <meta property="og:image" content="http://a.scpr.org/i/f44ef3b9a8278abb79b6bbb3caf882c7/87989-full.jpg" />
         <meta property="og:image:width" content="1024" />
         <meta property="og:image:height" content="683" />
-        <meta property="og:url" content="http://projects.scpr.org/static/applications/monthly-water-use/region/sacramento-river" />
-        <meta property="og:description" content="Sacramento River residential customers decreased daily water use in April 2015 to an average of 103.43 gallons in the  hydrologic region compared to April 2013. Based on data from 42 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate." />
+        <meta property="og:url" content="http://projects.scpr.org/static/applications/monthly-water-use/region/sacramento-river/report" />
+        <meta property="og:description" content="Sacramento River residential customers decreased daily water use in July 2015 to an average of 153.42 gallons in the  hydrologic region compared to July 2013. Based on data from 43 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate." />
         <meta name="twitter:card" content="summary"/>
-        <meta name="twitter:url" content="http://projects.scpr.org/static/applications/monthly-water-use/region/sacramento-river"/>
+        <meta name="twitter:url" content="http://projects.scpr.org/static/applications/monthly-water-use/region/sacramento-river/report"/>
         <meta name="twitter:domain" content="http://projects.scpr.org/"/>
         <meta name="twitter:site" content="KPCC"/>
         <meta name="twitter:title" content="Water use in California's Sacramento River hydrologic region"/>
-        <meta name="twitter:description" content="Sacramento River residential customers decreased daily water use in April 2015 to an average of 103.43 gallons in the  hydrologic region compared to April 2013. Based on data from 42 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate."/>
+        <meta name="twitter:description" content="Sacramento River residential customers decreased daily water use in July 2015 to an average of 153.42 gallons in the  hydrologic region compared to July 2013. Based on data from 43 agencies, the distribution chart below shows how each performed in terms of daily per person residential use rate."/>
         <meta name="twitter:image:src" content="http://a.scpr.org/i/f44ef3b9a8278abb79b6bbb3caf882c7/87989-full.jpg">
         <link rel="shortcut icon" href="http://media.scpr.org/favicon.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="http://media.scpr.org/assets/images/icon.png">
@@ -48,117 +48,6 @@
         <link href="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/css/main-foundation-style-v3.css" media="screen" rel="stylesheet" type="text/css" />
         
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
-
-    <style type="text/css">
-
-        /* table styles */
-        .data-container table { width: 100%; height: auto; }
-        .data-container table.table-striped thead th { background-color: #2B2B2B; color: #fdfdfd; }
-        .data-container table.table-striped tbody > tr:nth-child(even) > td,
-        .data-container table.table-striped tbody > tr:nth-child(even) > th { background-color: #aaaaaa; }
-        .data-container table.table-striped tbody > tr:nth-child(odd) > td,
-        .data-container table.table-striped tbody > tr:nth-child(odd) > th { background-color: #fdfdfd; }
-
-        /* tablestacker styles */
-        #table-container {
-            background: #ffffff;
-            padding: 20px 10px 20px 10px;
-            font-family: "proxima-nova", "helvetica neue", helvetica, arial, sans-serif;
-        }
-
-        #table-container .kpcc-table th {
-            color: #B24401;
-            text-transform: uppercase;
-            background: #f5f5f5;
-            text-align: left;
-            vertical-align: middle;
-            font-weight: 500;
-            /*border-top: 1px solid #f17b21;*/
-            /*border-bottom: 1px solid rgba(0, 0, 0, 0.4);*/
-            /*font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif;*/
-            /*font-weight: 700;*/
-            /*vertical-align: bottom;*/
-            /*font-size: 0.6875em;*/
-            /*padding: 20px 14px 9px 5px;*/
-            /*line-height: 1;*/
-            /*color: rgba(0, 0, 0, 0.4);*/
-            /*box-shadow: inset 0 -4px 0 #e8e8e8;*/
-         }
-
-        #table-container .kpcc-table td { text-align: left; vertical-align: middle; font-weight: 500; line-height: 1.1; padding: 10px 14px 10px 5px; vertical-align: top; border-bottom: 1px solid rgba(0, 0, 0, 0.1);}
-        #table-container .kpcc-table td mark { text-transform: uppercase; color: #B24401; background: none; margin-bottom: 4px; font-weight: 700; display: none; }
-        #table-container .kpcc-table tr td:first-child { }
-        #table-container .kpcc-table tr td:first-child mark { display: none; }
-        #table-container .kpcc-table tr td:last-child { box-shadow: none; }
-
-        #table_fu input[type="text"] {
-            display: inline-block;
-            height: 40px;
-            padding: 4px 6px;
-            margin-bottom: 10px;
-            font-size: 14px;
-            line-height: 20px;
-            color: #555555;
-            font-weight: 700;
-            vertical-align: middle;
-            -webkit-border-radius: 4px;
-            -moz-border-radius: 4px;
-            border-radius: 4px;
-        }
-
-        #table-container #table_fu #controls { height: auto; clear: both; display: block; overflow: visible; margin: 10px 0 15px 0; }
-
-        #table-container #table_fu #controls #filter,
-        #table-container #table_fu #controls #pager { margin: 5px auto 25px auto; }
-
-        @media screen and (max-width: 595px) {
-            #table-container #table_fu #controls { font-size: 140%; }
-            #table-container .kpcc-table { border-top: 3px solid #f17b21; border-bottom: 3px solid black; width: 100%; font-size: 160%; }
-            #table-container .kpcc-table thead { display: none; }
-            #table-container .kpcc-table tbody, #table-container .kpcc-table tr, #table-container .kpcc-table td { width: 100%; }
-            #table-container .kpcc-table td { box-shadow: none; display: block; width: 100%; padding: 7px 10px 7px 10px; font-size: 110%; border-bottom-color: #cfcfcf; }
-            #table-container .kpcc-table td mark { display: block; }
-            #table-container .kpcc-table tr td:first-child { font-size: 1.25em; background: #f5f5f5; font-weight: 700; border-bottom-color: gray; padding-top: 15px; }
-            #table-container .kpcc-table tr td:nth-child(2) { padding-top: 12px; }
-            #table-container .kpcc-table tr td:last-child { padding-bottom: 20px; border-bottom: 1px solid black; }
-        }
-
-        @media (min-width: 596px) {
-            #table-container #table_fu #controls { font-size: 110%; }
-            #table-container .kpcc-table { font-size: 110%; }
-            #table-container .kpcc-table th { font-size: 70%; }
-        }
-
-        @media (min-width: 640px) {
-            #table-container #table_fu #controls { font-size: 120%; }
-            #table-container .kpcc-table { font-size: 120%; }
-            #table-container .kpcc-table th { font-size: 85%; }
-        }
-
-        @media (min-width: 768px) {
-            #table-container #table_fu #controls { font-size: 130%; }
-            #table-container .kpcc-table { font-size: 130%; }
-            #table-container .kpcc-table th { font-size: 95%; }
-        }
-
-        @media (min-width: 992px) {
-            #table-container #table_fu #controls { font-size: 140%; }
-            #table-container .kpcc-table { font-size: 140%; }
-            #table-container .kpcc-table th { font-size: 105%; }
-        }
-
-        #table-container #table_fu div.bullet-graph-wrap { position: relative; width: 100%; height: 21px; top: 0; left: 0; margin: 0; padding: 0; }
-        #table-container #table_fu div.bullet-graph-box1 { position: absolute; height: 20px; width: 30%; left: 0; background-color: #eeeeee; z-index: 1; font-size: 0; }
-        #table-container #table_fu div.bullet-graph-box2 { position: absolute; height: 20px; width: 30%; left: 30%; background-color: #dddddd; z-index: 1; font-size: 0; border:1px solid #CCC; }
-        #table-container #table_fu div.bullet-graph-box3 { position: absolute; height: 20px; width: 30%; left: 60%; background-color: #bbbbbb; z-index: 1; font-size: 0; }
-        #table-container #table_fu div.bullet-graph-box4 { position: absolute; height: 20px; width: 10%; left: 90%; background-color: #bbbbbb; z-index: 1; font-size: 0; }
-        #table-container #table_fu div.bullet-graph-target { position: absolute; height: 21px; width: 2px; left: 32px; top: 0; background-color: #cc0000; z-index: 7; font-size: 0; }
-        #table-container #table_fu div.bullet-graph-actual { position: absolute; height: 8px; left: 0px; top: 7px; background-color: #000000; font-size: 0; z-index: 5; font-size: 0; }
-
-        #table-container table.kpcc-table th, #table-container table.kpcc-table td {
-            text-align: center;
-        }
-    </style>
 
         <link href="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/css/cali-water-style.css" media="screen" rel="stylesheet" type="text/css" />
         <!-- end css -->
@@ -176,6 +65,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="//use.typekit.net/vtu6xsq.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+        <script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
         
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 
@@ -229,7 +119,7 @@
                                     <div class="share-links clearfix">
                                         <script>function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
                                             <a class="facebook icon" href="https://www.facebook.com/sharer/sharer.php?u=http://projects.scpr.org/static/applications/monthly-water-use" onClick="return fbs_click()" target="_blank" title="Share This on Facebook"></a>
-                                            <a class="twitter icon" href="http://twitter.com/share?text=Water use in California's Sacramento River hydrologic region&url=http://projects.scpr.org/static/applications/monthly-water-use/region/sacramento-river"></a>
+                                            <a class="twitter icon" href="http://twitter.com/share?text=Water use in California's Sacramento River hydrologic region&url=http://projects.scpr.org/static/applications/monthly-water-use/region/sacramento-river/report"></a>
                                     </div>
                                     <b>Share this</b>
                                 </li>
@@ -257,8 +147,8 @@
                 <h1>Where is California water use decreasing?</h1>
             </div>
             <div class="about collapse">
-                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/''>Chris Keller</a></span> | <span class="pubdate">Updated June 2, 2015</span></p>
-                <p>With the help of a wetter and cooler month than two years ago, California’s urban water agencies cut their use 13.5 percent in April this year, according to new data released by the State Water Resources Control Board.</p><p>That’s an improvement over the three previous months’ efforts at saving water. But regulators characterize cumulative savings by city dwellers at just 9 percent during the first 11 months of tracking urban use, less than halfway to the governor’s conservation goal.</p><p>In April, the South Coast region — which includes much of coastal Southern California and San Diego County — saved 8.7 percent compared to its used two years ago during the same month, slightly less than the state average. Some regional highlights:</p><p>The city of Los Angeles saved 10 percent, with an average of 75 gallons used per person per day. Long Beach saved 6 percent compared to two years earlier, but averaged 65 gallons a person a day.</p><p>Regulators acknowledged ongoing challenges in analyzing data, 11 months into mandatory water use reporting. More than half of water suppliers have revised the data on water use they’ve submitted to the state, which in some cases could change the  percentage by which they are required to reduce under new rules that took effect Monday.</p><p>The State Water Board is currently reviewing new data submitted by over 200 urban water suppliers. The revised data, if accepted, will change the conservation standard for some water suppliers. The board expects to publish the final conservation standards for all 411 urban water suppliers by the end of the week.</p>
+                <p><span class="credits">Produced by <a href='http://www.scpr.org/about/people/staff/molly-peterson'>Molly Peterson</a>, <a href='http://www.scpr.org/about/people/staff/aaron-mendelson'>Aaron Mendelson</a> &amp; <a href='http://www.scpr.org/about/people/staff/chris-keller/''>Chris Keller</a></span> | <span class="pubdate">Updated July 30, 2015</span></p>
+                <p></p>
             </div>
             <div class="sources collapse">
                 <p>
@@ -383,13 +273,15 @@
                     
                         <option value="http://projects.scpr.org/applications/monthly-water-use/san-juan-water-district/">San Juan Water District</option>
                     
+                        <option value="http://projects.scpr.org/applications/monthly-water-use/south-feather-water-and-power-agency/">South Feather Water And Power Agency</option>
+                    
                 </select>
             </div>
         </div>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <p class="lead small"><strong>About the data</strong>: These charts show the daily per capita residential water use rate in California as calculated by the <a href="http://www.waterboards.ca.gov/waterrights/water_issues/programs/drought/docs/ws_tools/guidance_estimate_res_gpcd.pdf">State Water Resources Control Board</a>. The charts cover the April 2015 reporting period, and compared to the baseline measure from the same month in 2013. Since the per capita measure (which reflects gallons of water used per resident per day) does not take into account rainfall, temperature, humidity and population density, the State Water Resources Control Board discourages comparisons between water suppliers.</p>
+    <p class="lead small"><strong>About the data</strong>: These charts show the daily per capita residential water use rate in California as calculated by the <a href="http://www.waterboards.ca.gov/waterrights/water_issues/programs/drought/docs/ws_tools/guidance_estimate_res_gpcd.pdf">State Water Resources Control Board</a>. The charts cover the July 2015 reporting period, and are compared to the previous month unless specified. Since the per capita measure (which reflects gallons of water used per resident per day) does not take into account rainfall, temperature, humidity and population density, the State Water Resources Control Board discourages comparisons between water suppliers.</p>
 </div>
 
 
@@ -400,384 +292,385 @@
             </div>
             <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
                 <h3><a href="http://projects.scpr.org/applications/monthly-water-use/region/sacramento-river/">Sacramento River</a></h3>
-                <p>Daily per capita residential water use <span class='increase-accent'>increased</span> in April 2015 to an average of 103.43 gallons in the <a href="../monthly-water-use/region/sacramento-river">Sacramento River</a> hydrologic region. That number is compared to the March 2015 daily per capita residential water use of 101.25. <a href="http://projects.scpr.org/applications/monthly-water-use/region/sacramento-river/reduction-comparison/">Click here</a> to see proposed reductions for this region. Use the chart below to see how the 42 agencies in this region performed.</p>
+                <p>Daily per capita residential water use <span class='increase-accent'>increased</span> in July 2015 to an average of 153.42 gallons for the 43 agencies in the <a href="../monthly-water-use/region/sacramento-river">Sacramento River</a> hydrologic region. That number is compared to the June 2015 daily per capita residential water use of 138.91. <span class="coal-chart-sentence show">Use the chart below to see how the 43 agencies in this region performed.</span><span class="data-point-sentence hidden">Here are some statistics for the 43 agencies in this region.</span> <a href="http://projects.scpr.org/applications/monthly-water-use/region/sacramento-river/enforcement-comparison/">Click here</a> to see enforcement statistics for water agencies in this region. <a href="http://projects.scpr.org/applications/monthly-water-use/region/sacramento-river/reduction-comparison/">Click here</a> to see reduction targets for water agencies in this region. </p>
 
-                <!--
-                    based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
+                <section class="coal-chart-container show">
 
-                    formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
+                    <!--
+                        based on census reporter distribution "circles on a line" charts by Ryan Pitts, Joe Germuska, Ian Dees and Sara Schnadt. example here: http://censusreporter.org/data/distribution/?table=B25064&geo_ids=860|16000US0644000
 
-                    styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
-                -->
+                        formula to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/js/comparisons.js#L703
 
-                <section class="coal-chart-container">
+                        styles to arrive at the circles on a line: https://github.com/censusreporter/censusreporter/blob/47ee559d3939ec00d2e39e1f540b277bc50bbff8/censusreporter/apps/census/static/css/charts.css#L450
+                    -->
+
                     <ul class="coal-chart">
                         
-                            <li id="bella-vista-water-district" class="chart-point" style="left: 67.03%;">
+                            <li id="bella-vista-water-district" class="chart-point" style="left: 73.27%;">
                                 <span class="point" data-index="bella-vista-water-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/bella-vista-water-district/">Bella Vista Water District</a></span><br />
-                                        <span class="value text-center">145.80</span>
+                                        <span class="value text-center">318.30 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="california-water-service-company-chico-district" class="chart-point" style="left: 44.24%;">
+                            <li id="california-water-service-company-chico-district" class="chart-point" style="left: 18.97%;">
                                 <span class="point" data-index="california-water-service-company-chico-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-chico-district/">California Water Service Company Chico District</a></span><br />
-                                        <span class="value text-center">118.30</span>
+                                        <span class="value text-center">147.70 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="california-water-service-company-marysville" class="chart-point" style="left: 13.59%;">
+                            <li id="california-water-service-company-marysville" class="chart-point" style="left: 8.66%;">
                                 <span class="point" data-index="california-water-service-company-marysville">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-marysville/">California Water Service Company Marysville</a></span><br />
-                                        <span class="value text-center">81.30</span>
+                                        <span class="value text-center">115.30 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="california-water-service-company-oroville" class="chart-point" style="left: 8.2%;">
+                            <li id="california-water-service-company-oroville" class="chart-point" style="left: 12.51%;">
                                 <span class="point" data-index="california-water-service-company-oroville">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-oroville/">California Water Service Company Oroville</a></span><br />
-                                        <span class="value text-center">74.80</span>
+                                        <span class="value text-center">127.40 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="california-water-service-company-willows" class="chart-point" style="left: 24.77%;">
+                            <li id="california-water-service-company-willows" class="chart-point" style="left: 14.67%;">
                                 <span class="point" data-index="california-water-service-company-willows">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-willows/">California Water Service Company Willows</a></span><br />
-                                        <span class="value text-center">94.80</span>
+                                        <span class="value text-center">134.20 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="california-american-water-company-sacramento-district" class="chart-point" style="left: 12.68%;">
+                            <li id="california-american-water-company-sacramento-district" class="chart-point" style="left: 5.44%;">
                                 <span class="point" data-index="california-american-water-company-sacramento-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/california-american-water-company-sacramento-district/">California-American Water Company Sacramento District</a></span><br />
-                                        <span class="value text-center">80.20</span>
+                                        <span class="value text-center">105.20 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="carmichael-water-district" class="chart-point" style="left: 50.7%;">
+                            <li id="carmichael-water-district" class="chart-point" style="left: 33.32%;">
                                 <span class="point" data-index="carmichael-water-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/carmichael-water-district/">Carmichael Water District</a></span><br />
-                                        <span class="value text-center">126.10</span>
+                                        <span class="value text-center">192.80 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="citrus-heights-water-district" class="chart-point" style="left: 42.83%;">
+                            <li id="citrus-heights-water-district" class="chart-point" style="left: 27.88%;">
                                 <span class="point" data-index="citrus-heights-water-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/citrus-heights-water-district/">Citrus Heights Water District</a></span><br />
-                                        <span class="value text-center">116.60</span>
+                                        <span class="value text-center">175.70 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-anderson" class="chart-point" style="left: 20.3%;">
+                            <li id="city-of-anderson" class="chart-point" style="left: 22.79%;">
                                 <span class="point" data-index="city-of-anderson">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-anderson/">City Of Anderson</a></span><br />
-                                        <span class="value text-center">89.40</span>
+                                        <span class="value text-center">159.70 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-california-water-service-company-dixon" class="chart-point" style="left: 24.28%;">
+                            <li id="city-of-california-water-service-company-dixon" class="chart-point" style="left: 7.29%;">
                                 <span class="point" data-index="city-of-california-water-service-company-dixon">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-california-water-service-company-dixon/">City Of California Water Service Company Dixon</a></span><br />
-                                        <span class="value text-center">94.20</span>
+                                        <span class="value text-center">111.00 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-davis" class="chart-point" style="left: 17.81%;">
+                            <li id="city-of-davis" class="chart-point" style="left: 7.96%;">
                                 <span class="point" data-index="city-of-davis">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-davis/">City Of Davis</a></span><br />
-                                        <span class="value text-center">86.40</span>
+                                        <span class="value text-center">113.10 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-fairfield" class="chart-point" style="left: 4.64%;">
+                            <li id="city-of-fairfield" class="chart-point" style="left: 11.3%;">
                                 <span class="point" data-index="city-of-fairfield">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-fairfield/">City Of Fairfield</a></span><br />
-                                        <span class="value text-center">70.50</span>
+                                        <span class="value text-center">123.60 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-folsom" class="chart-point" style="left: 61.06%;">
+                            <li id="city-of-folsom" class="chart-point" style="left: 33.99%;">
                                 <span class="point" data-index="city-of-folsom">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-folsom/">City Of Folsom</a></span><br />
-                                        <span class="value text-center">138.60</span>
+                                        <span class="value text-center">194.90 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-galt" class="chart-point" style="left: 32.97%;">
+                            <li id="city-of-galt" class="chart-point" style="left: 24.89%;">
                                 <span class="point" data-index="city-of-galt">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-galt/">City Of Galt</a></span><br />
-                                        <span class="value text-center">104.70</span>
+                                        <span class="value text-center">166.30 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-lincoln" class="chart-point" style="left: 33.8%;">
+                            <li id="city-of-lincoln" class="chart-point" style="left: 17.15%;">
                                 <span class="point" data-index="city-of-lincoln">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-lincoln/">City Of Lincoln</a></span><br />
-                                        <span class="value text-center">105.70</span>
+                                        <span class="value text-center">142.00 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-red-bluff" class="chart-point" style="left: 87.66%;">
+                            <li id="city-of-red-bluff" class="chart-point" style="left: 29.03%;">
                                 <span class="point" data-index="city-of-red-bluff">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-red-bluff/">City Of Red Bluff</a></span><br />
-                                        <span class="value text-center">170.70</span>
+                                        <span class="value text-center">179.30 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-redding" class="chart-point" style="left: 58.08%;">
+                            <li id="city-of-redding" class="chart-point" style="left: 38.1%;">
                                 <span class="point" data-index="city-of-redding">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-redding/">City Of Redding</a></span><br />
-                                        <span class="value text-center">135.00</span>
+                                        <span class="value text-center">207.80 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-rio-vista" class="chart-point" style="left: 80.86%;">
+                            <li id="city-of-rio-vista" class="chart-point" style="left: 25.08%;">
                                 <span class="point" data-index="city-of-rio-vista">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-rio-vista/">City Of Rio Vista</a></span><br />
-                                        <span class="value text-center">162.50</span>
+                                        <span class="value text-center">166.90 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-roseville" class="chart-point" style="left: 11.68%;">
+                            <li id="city-of-roseville" class="chart-point" style="left: 9.93%;">
                                 <span class="point" data-index="city-of-roseville">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-roseville/">City Of Roseville</a></span><br />
-                                        <span class="value text-center">79.00</span>
+                                        <span class="value text-center">119.30 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-sacramento" class="chart-point" style="left: 17.4%;">
+                            <li id="city-of-sacramento" class="chart-point" style="left: 15.69%;">
                                 <span class="point" data-index="city-of-sacramento">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-sacramento/">City Of Sacramento</a></span><br />
-                                        <span class="value text-center">85.90</span>
+                                        <span class="value text-center">137.40 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-shasta-lake" class="chart-point" style="left: 14.33%;">
+                            <li id="city-of-shasta-lake" class="chart-point" style="left: 21.83%;">
                                 <span class="point" data-index="city-of-shasta-lake">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-shasta-lake/">City Of Shasta Lake</a></span><br />
-                                        <span class="value text-center">82.20</span>
+                                        <span class="value text-center">156.70 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-vacaville" class="chart-point" style="left: 52.69%;">
+                            <li id="city-of-vacaville" class="chart-point" style="left: 19.7%;">
                                 <span class="point" data-index="city-of-vacaville">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-vacaville/">City Of Vacaville</a></span><br />
-                                        <span class="value text-center">128.50</span>
+                                        <span class="value text-center">150.00 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-west-sacramento" class="chart-point" style="left: 29.08%;">
+                            <li id="city-of-west-sacramento" class="chart-point" style="left: 9.13%;">
                                 <span class="point" data-index="city-of-west-sacramento">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-west-sacramento/">City Of West Sacramento</a></span><br />
-                                        <span class="value text-center">100.00</span>
+                                        <span class="value text-center">116.80 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-woodland" class="chart-point" style="left: 0.0%;">
+                            <li id="city-of-woodland" class="chart-point" style="left: 4.2%;">
                                 <span class="point" data-index="city-of-woodland">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-woodland/">City Of Woodland</a></span><br />
-                                        <span class="value text-center">64.90</span>
+                                        <span class="value text-center">101.30 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="city-of-yuba-city" class="chart-point" style="left: 48.3%;">
+                            <li id="city-of-yuba-city" class="chart-point" style="left: 18.81%;">
                                 <span class="point" data-index="city-of-yuba-city">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/city-of-yuba-city/">City Of Yuba City</a></span><br />
-                                        <span class="value text-center">123.20</span>
+                                        <span class="value text-center">147.20 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="del-oro-water-company" class="chart-point" style="left: 5.72%;">
+                            <li id="del-oro-water-company" class="chart-point" style="left: 0.0%;">
                                 <span class="point" data-index="del-oro-water-company">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/del-oro-water-company/">Del Oro Water Company</a></span><br />
-                                        <span class="value text-center">71.80</span>
+                                        <span class="value text-center">88.10 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="el-dorado-irrigation-district" class="chart-point" style="left: 31.15%;">
+                            <li id="el-dorado-irrigation-district" class="chart-point" style="left: 46.05%;">
                                 <span class="point" data-index="el-dorado-irrigation-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/el-dorado-irrigation-district/">El Dorado Irrigation District</a></span><br />
-                                        <span class="value text-center">102.50</span>
+                                        <span class="value text-center">232.80 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="elk-grove-water-service" class="chart-point" style="left: 16.49%;">
+                            <li id="elk-grove-water-service" class="chart-point" style="left: 8.27%;">
                                 <span class="point" data-index="elk-grove-water-service">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/elk-grove-water-service/">Elk Grove Water Service</a></span><br />
-                                        <span class="value text-center">84.80</span>
+                                        <span class="value text-center">114.10 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="fair-oaks-water-district" class="chart-point" style="left: 58.99%;">
+                            <li id="fair-oaks-water-district" class="chart-point" style="left: 44.08%;">
                                 <span class="point" data-index="fair-oaks-water-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/fair-oaks-water-district/">Fair Oaks Water District</a></span><br />
-                                        <span class="value text-center">136.10</span>
+                                        <span class="value text-center">226.60 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="fruitridge-vista-water-company" class="chart-point" style="left: 30.32%;">
+                            <li id="fruitridge-vista-water-company" class="chart-point" style="left: 24.98%;">
                                 <span class="point" data-index="fruitridge-vista-water-company">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/fruitridge-vista-water-company/">Fruitridge Vista Water Company</a></span><br />
-                                        <span class="value text-center">101.50</span>
+                                        <span class="value text-center">166.60 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="georgetown-divide-public-utilities-district" class="chart-point" style="left: 2.65%;">
+                            <li id="georgetown-divide-public-utilities-district" class="chart-point" style="left: 14.83%;">
                                 <span class="point" data-index="georgetown-divide-public-utilities-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/georgetown-divide-public-utilities-district/">Georgetown Divide Public Utilities District</a></span><br />
-                                        <span class="value text-center">68.10</span>
+                                        <span class="value text-center">134.70 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="golden-state-water-company-cordova" class="chart-point" style="left: 47.8%;">
+                            <li id="golden-state-water-company-cordova" class="chart-point" style="left: 25.02%;">
                                 <span class="point" data-index="golden-state-water-company-cordova">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/golden-state-water-company-cordova/">Golden State Water Company Cordova</a></span><br />
-                                        <span class="value text-center">122.60</span>
+                                        <span class="value text-center">166.70 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="linda-county-water-district" class="chart-point" style="left: 49.79%;">
+                            <li id="linda-county-water-district" class="chart-point" style="left: 19.83%;">
                                 <span class="point" data-index="linda-county-water-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/linda-county-water-district/">Linda County Water District</a></span><br />
-                                        <span class="value text-center">125.00</span>
+                                        <span class="value text-center">150.40 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="nevada-irrigation-district" class="chart-point" style="left: 31.32%;">
+                            <li id="nevada-irrigation-district" class="chart-point" style="left: 32.5%;">
                                 <span class="point" data-index="nevada-irrigation-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/nevada-irrigation-district/">Nevada Irrigation District</a></span><br />
-                                        <span class="value text-center">102.70</span>
+                                        <span class="value text-center">190.20 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="olivehurst-public-utility-district" class="chart-point" style="left: 44.24%;">
+                            <li id="olivehurst-public-utility-district" class="chart-point" style="left: 30.17%;">
                                 <span class="point" data-index="olivehurst-public-utility-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/olivehurst-public-utility-district/">Olivehurst Public Utility District</a></span><br />
-                                        <span class="value text-center">118.30</span>
+                                        <span class="value text-center">182.90 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="orange-vale-water-company" class="chart-point" style="left: 77.38%;">
+                            <li id="orange-vale-water-company" class="chart-point" style="left: 57.19%;">
                                 <span class="point" data-index="orange-vale-water-company">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/orange-vale-water-company/">Orange Vale Water Company</a></span><br />
-                                        <span class="value text-center">158.30</span>
+                                        <span class="value text-center">267.80 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="paradise-irrigation-district" class="chart-point" style="left: 44.74%;">
+                            <li id="paradise-irrigation-district" class="chart-point" style="left: 31.73%;">
                                 <span class="point" data-index="paradise-irrigation-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/paradise-irrigation-district/">Paradise Irrigation District</a></span><br />
-                                        <span class="value text-center">118.90</span>
+                                        <span class="value text-center">187.80 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="placer-county-water-agency" class="chart-point" style="left: 72.66%;">
+                            <li id="placer-county-water-agency" class="chart-point" style="left: 30.49%;">
                                 <span class="point" data-index="placer-county-water-agency">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/placer-county-water-agency/">Placer County Water Agency</a></span><br />
-                                        <span class="value text-center">152.60</span>
+                                        <span class="value text-center">183.90 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="rio-linda-elverta-community-water-district" class="chart-point" style="left: 62.8%;">
+                            <li id="rio-linda-elverta-community-water-district" class="chart-point" style="left: 45.04%;">
                                 <span class="point" data-index="rio-linda-elverta-community-water-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/rio-linda-elverta-community-water-district/">Rio Linda - Elverta Community Water District</a></span><br />
-                                        <span class="value text-center">140.70</span>
+                                        <span class="value text-center">229.60 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="sacramento-county-water-agency" class="chart-point" style="left: 43.91%;">
+                            <li id="sacramento-county-water-agency" class="chart-point" style="left: 12.32%;">
                                 <span class="point" data-index="sacramento-county-water-agency">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/sacramento-county-water-agency/">Sacramento County Water Agency</a></span><br />
-                                        <span class="value text-center">117.90</span>
+                                        <span class="value text-center">126.80 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
-                            <li id="sacramento-suburban-water-district" class="chart-point" style="left: 18.48%;">
+                            <li id="sacramento-suburban-water-district" class="chart-point" style="left: 14.1%;">
                                 <span class="point" data-index="sacramento-suburban-water-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/sacramento-suburban-water-district/">Sacramento Suburban Water District</a></span><br />
-                                        <span class="value text-center">87.20</span>
+                                        <span class="value text-center">132.40 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
@@ -786,23 +679,32 @@
                                 <span class="point" data-index="san-juan-water-district">
                                     <span class="hovercard">
                                         <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/san-juan-water-district/">San Juan Water District</a></span><br />
-                                        <span class="value text-center">185.60</span>
+                                        <span class="value text-center">402.30 <br />residential gallons <br /> used daily per capita</span>
+                                    </span>
+                                </span>
+                            </li>
+                        
+                            <li id="south-feather-water-and-power-agency" class="chart-point" style="left: 63.88%;">
+                                <span class="point" data-index="south-feather-water-and-power-agency">
+                                    <span class="hovercard">
+                                        <span class="text-center"><a class="label-title" href="http://projects.scpr.org/applications/monthly-water-use/south-feather-water-and-power-agency/">South Feather Water And Power Agency</a></span><br />
+                                        <span class="value text-center">288.80 <br />residential gallons <br /> used daily per capita</span>
                                     </span>
                                 </span>
                             </li>
                         
                         <li class="tick-mark tick-mark-min" style="left: 0.0%;">
-                            <span class="text-center"><b>Min</b> <br /> 64.90</span>
+                            <span class="text-center"><b>Min</b> <br /> 88.10</span>
                         </li>
 
-                        <li class="tick-mark tick-mark-median" style="left: 33.8%;">
-                            <span class="text-center"><b>Median</b> <br /> 105.70</span>
+                        <li class="tick-mark tick-mark-median" style="left: 22.79%;">
+                            <span class="text-center"><b>Median</b> <br /> 159.70</span>
                         </li>
-                        <li class="tick-mark tick-mark-average" style="left: 31.92%;">
-                            <span class="text-center"><b>Average</b> <br /> 103.43</span>
+                        <li class="tick-mark tick-mark-average" style="left: 20.79%;">
+                            <span class="text-center"><b>Average</b> <br /> 153.42</span>
                         </li>
                         <li class="tick-mark tick-mark-max" style="left: 100.0%;">
-                            <span class="text-center"><b>Max</b> <br /> 185.60</span>
+                            <span class="text-center"><b>Max</b> <br /> 402.30</span>
                         </li>
                     </ul>
                 </section>
@@ -812,6 +714,9 @@
 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <p>In order to achieve a 25 percent reduction in water use statewide, the <a href="http://www.waterboards.ca.gov/">State Water Resources Control Board</a> approved water use reduction targets for each urban water agency in the state.<p>
+            <p>The table below shows how many of the 43 agencies in the <a href="http://projects.scpr.org/applications/monthly-water-use/region/sacramento-river/">Sacramento River</a> hydrologic region <span class='decrease-accent'>met</span>, <span class='increase-accent'>failed to meet</span> and <span class='eighty-percent-accent'>came within 95 percent</span> of their reduction targets.</p>
+            <p>Progress toward meeting the reduction targets are based on comparing residential water consumption between June 1, 2015 and Feb. 29, 2016 to the same time period beginning in 2013. The percent change is calculated between current use and the 2013 baseline and compared to the reduction target.</p>
             <div id="table-container">
                 <div id="table_fu">
                     <div id="controls" class="row">
@@ -826,558 +731,531 @@
                         <thead>
                             <tr>
                                 <th style="cursor: pointer;">Water Agency</th>
-                                <th class="text-center" style="cursor: pointer;">April 2015</th>
-                                <th class="text-center" style="cursor: pointer;">April 2013</th>
-                                <th class="text-center" style="cursor: pointer;">Change from April 2013</th>
+                                <th class="text-center" style="cursor: pointer;">July 2015<br />gallons</th>
+                                <th class="text-center" style="cursor: pointer;">July 2013<br />gallons</th>
+                                <th class="text-center" style="cursor: pointer;">Change from<br />July 2013</th>
+                                <th class="text-center" style="cursor: pointer;">Reduction Target</th>
+                                <th class="text-center" style="cursor: pointer;">Achieved Target</th>
+                                <th class="text-center" style="cursor: pointer;">Reduction Tier</th>
                             </tr>
                         </thead>
                         <tbody>
                             
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/bella-vista-water-district/" target="blank">Bella Vista Water District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>145.80</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/bella-vista-water-district/">Bella Vista Water District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>325.53<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>767.38<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-57.58%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-chico-district/" target="blank">California Water Service Company Chico District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>118.30</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-chico-district/">California Water Service Company Chico District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>650.07<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>1.168<br />billion</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-44.34%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>32%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>8</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-marysville/" target="blank">California Water Service Company Marysville</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>81.30</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-marysville/">California Water Service Company Marysville</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>63.31<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>94.24<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-32.81%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>24%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>6</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-oroville/" target="blank">California Water Service Company Oroville</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>74.80</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-oroville/">California Water Service Company Oroville</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>103.36<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>152.17<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-32.08%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-willows/" target="blank">California Water Service Company Willows</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>94.80</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-water-service-company-willows/">California Water Service Company Willows</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>40.47<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>65.24<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-37.96%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-american-water-company-sacramento-district/" target="blank">California-American Water Company Sacramento District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>80.20</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/california-american-water-company-sacramento-district/">California-American Water Company Sacramento District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>842.33<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>1.529<br />billion</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-44.89%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>20%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>5</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/carmichael-water-district/" target="blank">Carmichael Water District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>126.10</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/carmichael-water-district/">Carmichael Water District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>287.66<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>470.97<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-38.92%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/citrus-heights-water-district/" target="blank">Citrus Heights Water District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>116.60</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/citrus-heights-water-district/">Citrus Heights Water District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>386.13<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>670.93<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-42.45%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>32%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>8</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-anderson/" target="blank">City Of Anderson</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>89.40</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-anderson/">City Of Anderson</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>88.61<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>127.00<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-30.23%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: #8F8F00; font-size: 14px;'>&#x2794;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-california-water-service-company-dixon/" target="blank">City Of California Water Service Company Dixon</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>94.20</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-california-water-service-company-dixon/">City Of California Water Service Company Dixon</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>38.35<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>60.58<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-36.69%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-davis/" target="blank">City Of Davis</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>86.40</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-davis/">City Of Davis</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>342.30<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>502.10<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-31.83%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-fairfield/" target="blank">City Of Fairfield</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>70.50</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-fairfield/">City Of Fairfield</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>615.00<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>849.00<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-27.56%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>20%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>5</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-folsom/" target="blank">City Of Folsom</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>138.60</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-folsom/">City Of Folsom</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>638.34<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>949.53<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-32.77%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>32%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>8</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-galt/" target="blank">City Of Galt</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>104.70</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-galt/">City Of Galt</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>156.50<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>252.40<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-38.00%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>32%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>8</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-lincoln/" target="blank">City Of Lincoln</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>105.70</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-lincoln/">City Of Lincoln</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>292.45<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>474.30<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-38.34%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>32%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>8</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-red-bluff/" target="blank">City Of Red Bluff</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>170.70</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-red-bluff/">City Of Red Bluff</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>117.86<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>161.49<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-27.02%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: red';>&#x2718;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-redding/" target="blank">City Of Redding</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>135.00</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-redding/">City Of Redding</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>871.51<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>1.292<br />billion</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-32.55%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: #8F8F00; font-size: 14px;'>&#x2794;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-rio-vista/" target="blank">City Of Rio Vista</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>162.50</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-rio-vista/">City Of Rio Vista</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>61.52<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>105.59<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-41.73%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-roseville/" target="blank">City Of Roseville</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>79.00</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-roseville/">City Of Roseville</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>892.83<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>1.469<br />billion</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-39.22%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-sacramento/" target="blank">City Of Sacramento</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>85.90</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-sacramento/">City Of Sacramento</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>3.099<br />billion</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>4.766<br />billion</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-34.98%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-shasta-lake/" target="blank">City Of Shasta Lake</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>82.20</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-shasta-lake/">City Of Shasta Lake</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>64.06<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>103.09<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-37.86%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-vacaville/" target="blank">City Of Vacaville</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>128.50</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-vacaville/">City Of Vacaville</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>459.12<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>748.15<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-38.63%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>32%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>8</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-west-sacramento/" target="blank">City Of West Sacramento</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>100.00</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-west-sacramento/">City Of West Sacramento</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>353.87<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>488.78<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-27.60%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: #8F8F00; font-size: 14px;'>&#x2794;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-woodland/" target="blank">City Of Woodland</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>64.90</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-woodland/">City Of Woodland</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>300.48<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>544.26<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-44.79%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>24%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>6</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-yuba-city/" target="blank">City Of Yuba City</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>123.20</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/city-of-yuba-city/">City Of Yuba City</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>472.80<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>703.93<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-32.83%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>32%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>8</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/del-oro-water-company/" target="blank">Del Oro Water Company</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>71.80</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/del-oro-water-company/">Del Oro Water Company</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>31.60<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>49.18<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-35.75%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>24%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>6</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/el-dorado-irrigation-district/" target="blank">El Dorado Irrigation District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>102.50</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/el-dorado-irrigation-district/">El Dorado Irrigation District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>1.258<br />billion</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>1.903<br />billion</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-33.90%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/elk-grove-water-service/" target="blank">Elk Grove Water Service</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>84.80</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/elk-grove-water-service/">Elk Grove Water Service</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>198.31<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>333.46<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-40.53%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>28%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>7</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/fair-oaks-water-district/" target="blank">Fair Oaks Water District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>136.10</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/fair-oaks-water-district/">Fair Oaks Water District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>339.29<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>567.52<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-40.21%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/fruitridge-vista-water-company/" target="blank">Fruitridge Vista Water Company</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>101.50</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/fruitridge-vista-water-company/">Fruitridge Vista Water Company</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>111.84<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>185.49<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-39.71%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/georgetown-divide-public-utilities-district/" target="blank">Georgetown Divide Public Utilities District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>68.10</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/georgetown-divide-public-utilities-district/">Georgetown Divide Public Utilities District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>56.43<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>94.86<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-40.51%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>32%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>8</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/golden-state-water-company-cordova/" target="blank">Golden State Water Company Cordova</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>122.60</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/golden-state-water-company-cordova/">Golden State Water Company Cordova</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>408.91<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>675.10<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-39.43%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/linda-county-water-district/" target="blank">Linda County Water District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>125.00</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/linda-county-water-district/">Linda County Water District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>97.44<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>167.96<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-41.99%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>32%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>8</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/nevada-irrigation-district/" target="blank">Nevada Irrigation District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>102.70</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/nevada-irrigation-district/">Nevada Irrigation District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>315.87<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>493.90<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-36.05%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/olivehurst-public-utility-district/" target="blank">Olivehurst Public Utility District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>118.30</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/olivehurst-public-utility-district/">Olivehurst Public Utility District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>126.40<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>193.10<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-34.54%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: #8F8F00; font-size: 14px;'>&#x2794;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/orange-vale-water-company/" target="blank">Orange Vale Water Company</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>158.30</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/orange-vale-water-company/">Orange Vale Water Company</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>137.88<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>240.19<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-42.60%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/paradise-irrigation-district/" target="blank">Paradise Irrigation District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>118.90</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/paradise-irrigation-district/">Paradise Irrigation District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>174.20<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>327.50<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-46.81%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/placer-county-water-agency/" target="blank">Placer County Water Agency</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>152.60</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/placer-county-water-agency/">Placer County Water Agency</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>852.65<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>1.377<br />billion</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-38.09%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>32%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>8</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/rio-linda-elverta-community-water-district/" target="blank">Rio Linda - Elverta Community Water District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>140.70</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/rio-linda-elverta-community-water-district/">Rio Linda - Elverta Community Water District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>87.01<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>149.40<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-41.76%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/sacramento-county-water-agency/" target="blank">Sacramento County Water Agency</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>117.90</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/sacramento-county-water-agency/">Sacramento County Water Agency</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>1.022<br />billion</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>1.761<br />billion</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-41.95%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>32%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>8</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/sacramento-suburban-water-district/" target="blank">Sacramento Suburban Water District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>87.20</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/sacramento-suburban-water-district/">Sacramento Suburban Water District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>1.025<br />billion</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>1.788<br />billion</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-42.69%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>32%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>8</td>
                                         
-
-
                                     </tr>
                                 
                                     <tr>
-                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/san-juan-water-district/" target="blank">San Juan Water District</a></td>
-                                        <td class="text-center"><mark>April 2015</mark>185.60</td>
-
-
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/san-juan-water-district/">San Juan Water District</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>430.02<br />million</span></td>
                                         
-                                            <td class="text-center"><mark>April 2013</mark>n/a</td>
-                                            <td class="text-center"><mark>Change from April 2013</mark>n/a</td>
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>729.01<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-41.01%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: green';>&#x2714;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
                                         
-
-
+                                    </tr>
+                                
+                                    <tr>
+                                        <td><mark>Water Agency</mark><a href="http://projects.scpr.org/applications/monthly-water-use/south-feather-water-and-power-agency/">South Feather Water And Power Agency</a></td>
+                                        <td class="text-center"><mark>July 2015 gallons</mark><span>204.00<br />million</span></td>
+                                        
+                                            <td class="text-center"><mark>July 2013 gallons</mark><span>280.00<br />million</span></td>
+                                            <td class="text-center"><mark>Change from<br />July 2013</mark><span class='decrease-accent'>-27.14%</span></td>
+                                            <td class="text-center"><mark>Reduction Target</mark>36%</td>
+                                            <td class="text-center"><mark>Achieved Target</mark><span style='color: red';>&#x2718;</span></td>
+                                            <td class="text-center"><mark>Reduction Tier</mark>9</td>
+                                        
                                     </tr>
                                 
                             
@@ -1422,29 +1300,28 @@
     <script>
         window.appConfig = {"embed_this": false, "project_root": "http://projects.scpr.org/applications/monthly-water-use/", "embed_height": "2080px", "open_about_this": false, "is_embedded": false, "is_mobile": false, "comments": false, "embed_width": "100%"};
         window.appConfig.embed_this = true;
-        window.appConfig.project_root = window.appConfig.project_root + "region/sacramento-river";
+        window.appConfig.project_root = window.appConfig.project_root + "region/sacramento-river/report";
     </script>
 
         <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/_application_wrapper_0.5.js"></script>
         
     <script src="http://projects.scpr.org/applications/monthly-water-use/static/cali_water/scripts/_application.js"></script>
     <script>
-
-        var sorting_array = [[1, 1], [0, 0]];
-
+        var sorting_array = [[3, 0], [0, 0]];
         var headers_object = {
             0: {sorter: true},
             1: {sorter: true},
             2: {sorter: true},
-            3: {sorter: true}
+            3: {sorter: true},
+            4: {sorter: true},
+            5: {sorter: true},
+            6: {sorter: true}
         };
-
         $(document).ready(function(){
             fn.enableSelectMenu();
             fn.enableComparisonCharts();
             fn.createReductionComparisonTable(sorting_array, headers_object);
         });
-
     </script>
 
         <!-- end scripts -->
@@ -1469,49 +1346,25 @@
 
         <!-- begin google analytics -->
         <script type="text/javascript">
-            var hostName = 'projects.scpr.org';
-            var _gaq = _gaq || [];
-            _gaq.push(
-                ['_setAccount', 'UA-624724-1'],
-                ['_setDomainName', hostName],
-                ['_setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
-                ['_setCustomVar', 7, 'PageType', 'Story', 3],
-                ['_trackPageview'],
-                ['b._setAccount', 'UA-18188937-11'],
-                ['b._setDomainName', hostName],
-                ['b._setCustomVar', 6, 'Station', 'Southern California Public Radio', 2],
-                ['b._setCustomVar', 7, 'PageType', 'Story', 3],
-                ['b._trackPageview']
-            );
-            (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            // tracker for scpr ga account
+            ga('create', 'UA-624724-1', 'auto', {'allowLinker': true});
+
+            // tracker for npr digital services station analytics
+            ga('create', 'UA-18188937-11', 'auto', {'name': 'nprDsTracker'}, {'allowLinker': true});
+
+            ga('require', 'linker'); // require plugin for cross-domain tracking
+            ga('require', 'displayfeatures'); // require plugin for doubleclick display ad features
+            ga('linker:autoLink', ['scprcontribute.publicradio.org']); //set linked domain
+            ga('set', 'dimension6', 'Southern California Public Radio');
+            ga('set', 'dimension7', 'Story');
+            ga('send', 'pageview');
+            ga('nprDsTracker.send', 'pageview');
         </script>
         <!-- end google analytics -->
-
-        <!-- begin webtrends stats -->
-        <script src="http://media.scpr.org/assets/scripts/webtrends.v2.js"></script>
-        <script>
-            //<![CDATA[
-                var _tag=new WebTrends();
-                _tag.dcsGetId();
-            //]]>
-        </script>
-        <script>
-            //<![CDATA[
-                _tag.dcsCustom=function(){
-                    // Add custom parameters here.
-                    //_tag.DCSext.param_name=param_value;
-                }
-            _tag.dcsCollect();
-            //]]>
-        </script>
-        <noscript>
-            <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsyqctzwuz5bdsebpmwhwe8w_2p8d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.3.0&amp;WT.dcssip=www.scpr.org"/></div>
-        </noscript>
-        <!-- end webtrends stats -->
 
         <!-- begin comscore stats -->
         <script>

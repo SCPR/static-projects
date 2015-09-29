@@ -73,7 +73,7 @@ var fn = {
         }
     },
 
-    drawUsageOverTimeChart: function(chartAxisLabels, data){
+    drawUsageOverTimeChart: function(chartAxisLabels, data, selector){
 
         // we are setting a few options for our chart and override the defaults
         var options = {
@@ -121,6 +121,8 @@ var fn = {
                 // lets offset the chart a bit from the labels
                 offset: 70,
 
+                showGrid: false,
+
                 // the label interpolation function enables you to modify the values
                 // used for the labels on each axis. here we are converting the
                 // values into million pound.
@@ -133,11 +135,11 @@ var fn = {
         // create a new line chart object where as first parameter we pass in a selector
         // that is resolving to our chart container element. the second parameter
         // is the actual data object.
-        new Chartist.Line(".ct-chart", data, options);
+        new Chartist.Line(selector, data, options);
 
-        var $chart = $(".ct-chart");
+        var $chart = $(selector);
 
-        var $tooltip = $("<div class='tooltip tooltip-hidden'></div>").appendTo($(".ct-chart"));
+        var $tooltip = $("<div class='tooltip tooltip-hidden'></div>").appendTo($(selector));
 
         $(document).on("mouseenter", ".ct-point", function() {
 
@@ -145,7 +147,9 @@ var fn = {
 
             var value = parseFloat($(this).attr("ct:value")).toFixed(2);
 
-            $tooltip.text(seriesName + ": " + value + " rgpcd");
+            //$tooltip.text(seriesName + ": " + value + " rgpcd");
+
+            $tooltip.text(value + " rgpcd");
 
             $tooltip.removeClass("tooltip-hidden");
         });
@@ -161,6 +165,122 @@ var fn = {
             });
         });
 
+    },
+
+    drawProgressTowardReductionTargetChart: function(chartAxisLabels, data, selector){
+
+        // we are setting a few options for our chart and override the defaults
+        var options = {
+
+            seriesBarDistance: 30,
+
+            reverseData: false,
+
+            horizontalBars: false,
+
+            // line chart points
+            showPoint: true,
+
+            // line smoothing
+            lineSmooth: true,
+
+            // overriding the natural low of the chart
+            low: 0,
+
+            // overriding the natural high of the chart allows you to zoom
+            high: null,
+
+            // x-axis specific configuration
+            axisX: {
+
+                labelOffset: {
+                    x: 60,
+                    y: 10
+                },
+
+                // we can disable the grid for this axis
+                showGrid: true,
+
+                // and also don't show the label
+                showLabel: true,
+
+                labelInterpolationFnc: function(value) {
+                    return value;
+                }
+            },
+
+            // y-axis specific configuration
+            axisY: {
+
+                // lets offset the chart a bit from the labels
+                offset: 0,
+
+                // we can disable the grid for this axis
+                showGrid: true,
+
+                // and also don't show the label
+                showLabel: true,
+
+                // the label interpolation function enables you to modify the values
+                // used for the labels on each axis. here we are converting the
+                // values into million pound.
+                // labelInterpolationFnc: function(value) {
+                //     return value + " rgpcd";
+                // }
+            }
+        };
+
+        // create a new line chart object where as first parameter we pass in a selector
+        // that is resolving to our chart container element. the second parameter
+        // is the actual data object.
+
+        new Chartist.Bar(selector, data, options);
+
+        var $chart = $(selector);
+
+        var $tooltip = $("<div class='tooltip tooltip-hidden'></div>").appendTo($(selector));
+
+        $(document).on("mouseenter", ".ct-bar", function() {
+
+            var seriesName = $(this).parent().attr('ct:series-name');
+
+            var value = parseFloat($(this).attr("ct:value")).toFixed(2);
+
+            var text = fn.millify(value);
+
+            $tooltip.text(text + " gallons");
+
+            $tooltip.removeClass("tooltip-hidden");
+        });
+
+        $(document).on("mouseleave", ".ct-bar", function() {
+            $tooltip.addClass("tooltip-hidden");
+        });
+
+        $(document).on("mousemove", ".ct-bar", function(event) {
+            $tooltip.css({
+                left: (event.offsetX || event.originalEvent.layerX) - $tooltip.width() / 2,
+                top: (event.offsetY || event.originalEvent.layerY) - $tooltip.height() - 20
+            });
+        });
+
+    },
+
+    millify: function(n){
+        var millnames = ["", "thousand", "million", "billion", "trillion"];
+        var n = parseFloat(n)
+        millidx = Math.max(0, Math.min(millnames.length - 1, parseInt(Math.floor(Math.log10(Math.abs(n))/3))))
+        if (millnames[millidx] === "billion"){
+            var figure = Number(Math.round(n / 10000000 + "e3") + "e-3");
+            output = figure + " " + millnames[millidx];
+        } else if (millnames[millidx] === "million") {
+            var figure = Number(Math.round(n / 1000000 + "e2") + "e-2");
+            output = figure + " " + millnames[millidx];
+        } else {
+            var figure = Number(Math.round(n / 1000000 + "e2") + "e-2");
+            output = figure + " " + millnames[millidx];
+        }
+        return output;
     },
 
     createReductionComparisonTable: function(sorting_array, headers_object){

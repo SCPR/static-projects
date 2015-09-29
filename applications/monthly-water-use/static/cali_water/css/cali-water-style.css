@@ -98,6 +98,14 @@ body.minimal .data-container a.btn-primary:hover {
     color: rgba(227, 26, 28, 1.0);
 }
 
+.water-use-accent {
+    color: rgba(31, 120, 180, 1.0);
+}
+
+.eighty-percent-accent {
+    color: #8F8F00;
+}
+
 /* conservation methods */
 .icon-display {
     margin: 5px 0 0 0;
@@ -549,6 +557,7 @@ section.display ol li dl {
         margin: 0 3% 5px 3%;
         height: auto;
         font-size: 465%;
+        line-height: 50px;
     }
 
     ._data_figure dd {
@@ -556,6 +565,10 @@ section.display ol li dl {
         margin: 0 3% 10px 3%;
         height: auto;
         font-size: 150%;
+    }
+
+    ._data_figure dd.accent-text {
+        line-height: 5px;
     }
 
     .icon-display {
@@ -631,6 +644,7 @@ section.display ol li dl {
         margin: 0 3% 5px 3%;
         height: auto;
         font-size: 500%;
+        line-height: 50px;
     }
 
     ._data_figure dd {
@@ -638,6 +652,10 @@ section.display ol li dl {
         margin: 0 3% 10px 3%;
         height: auto;
         font-size: 150%;
+    }
+
+    ._data_figure dd.accent-text {
+        line-height: 5px;
     }
 
     .icon-display {
@@ -720,10 +738,15 @@ section.display ol li dl {
     ._data_figure dt {
         height: auto;
         font-size: 600%;
+        line-height: 65px;
     }
 
     ._data_figure dd {
         font-size: 150%;
+    }
+
+    ._data_figure dd.accent-text {
+        line-height: 5px;
     }
 
     .icon-display {
@@ -788,10 +811,15 @@ section.display ol li dl {
     ._data_figure dt {
         height: auto;
         font-size: 650%;
+        line-height: 70px;
     }
 
     ._data_figure dd {
         font-size: 150%;
+    }
+
+    ._data_figure dd.accent-text {
+        line-height: 5px;
     }
 
     .icon-display {
@@ -856,10 +884,15 @@ section.display ol li dl {
     ._data_figure dt {
         height: auto;
         font-size: 650%;
+        line-height: 70px;
     }
 
     ._data_figure dd {
         font-size: 150%;
+    }
+
+    ._data_figure dd.accent-text {
+        line-height: 5px;
     }
 
     .icon-display {
@@ -924,10 +957,15 @@ section.display ol li dl {
     ._data_figure dt {
         height: auto;
         font-size: 700%;
+        line-height: 85px;
     }
 
     ._data_figure dd {
         font-size: 150%;
+    }
+
+    ._data_figure dd.accent-text {
+        line-height: 5px;
     }
 
     .icon-display .placemark {
@@ -984,10 +1022,15 @@ section.display ol li dl {
     ._data_figure dt {
         height: auto;
         font-size: 700%;
+        line-height: 85px;
     }
 
     ._data_figure dd {
         font-size: 150%;
+    }
+
+    ._data_figure dd.accent-text {
+        line-height: 5px;
     }
 
     .icon-display .placemark {
@@ -1129,6 +1172,12 @@ span.show {
 #table-container #table_fu div.bullet-graph-target { position: absolute; height: 21px; width: 2px; left: 32px; top: 0; background-color: #cc0000; z-index: 7; font-size: 0; }
 #table-container #table_fu div.bullet-graph-actual { position: absolute; height: 8px; left: 0px; top: 7px; background-color: #000000; font-size: 0; z-index: 5; font-size: 0; }
 
-#table-container table.kpcc-table th, #table-container table.kpcc-table td {
-    text-align: center;
-}
+#table-container table.kpcc-table th, #table-container table.kpcc-table td { text-align: center; }
+
+/* monthly targeted use */
+#chart-legend-bar .block-container { margin: 10px 20px 0 0; display: inline-block;}
+#chart-legend-bar .block-container mark { background: none; line-height: 25px; }
+#chart-legend-bar .block { width: 25px; height: 25px; margin: 0px 10px 0 0; float: left; display: block; }
+#chart-legend-bar .current-use { background-color: rgba(31, 120, 180, 1.0); }
+#chart-legend-bar .threshold-use { background-color: rgba(51, 160, 44, 1.0); }
+#chart-legend-bar .baseline-use { background-color: rgba(227, 26, 28, 1.0); }

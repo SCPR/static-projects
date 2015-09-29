@@ -1,0 +1,93 @@
+body.minimal .data-container { max-width: 100%; margin: 0 auto; }
+
+.data-container .data-visuals .jumbotron { width: 100%; height: auto; margin: 10px 0% 10px 0%; }
+
+
+
+
+
+
+
+
+
+
+.content-map-data { width: 100%; min-height: 150px; height: auto; padding: 5px 0 5px; z-index: 100; background: #ffffff; }
+.content-legend-data { width: 94%; margin: 5px 3% 5px 3%; }
+.content-legend-data ul { width: 100%; height: auto; }
+.content-legend-data li { /*float: left; width: 20%;*/ font-weight: bold; }
+#data-legend td { width: 14.287%; text-align: center; }
+.data-container .data-visuals #content-map-canvas { height: 1100px; margin: 0 0 10px 0; }
+.fixed { position: fixed; top: 2%; margin: 0; background: rgba(240, 248, 255, 0.8); padding: 10px 0 10px 0; }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    .data-container .data-visuals #content-map-canvas { height: 600px; margin: 0 0 10px 0; }
+    body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
+    body.minimal .data-container h2 { font-size: 240%; }
+    body.minimal .data-container h3 { font-size: 210%; }
+    body.minimal .data-container h4 { font-size: 180%; }
+    body.minimal .data-container h5 { font-size: 150%; }
+    body.minimal .data-container h6 { font-size: 130%; }
+    body.minimal .data-container p { font-size: 110%; }
+}
+
+@media (max-width: 480px) {
+    .data-container .data-visuals #content-map-canvas { height: 600px; margin: 0 0 10px 0; }
+    body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
+    body.minimal .data-container h2 { font-size: 240%; }
+    body.minimal .data-container h3 { font-size: 210%; }
+    body.minimal .data-container h4 { font-size: 180%; }
+    body.minimal .data-container h5 { font-size: 150%; }
+    body.minimal .data-container h6 { font-size: 130%; }
+    body.minimal .data-container p { font-size: 110%; }
+}
+
+@media (min-width: 481px) {
+    body.minimal h1 { font-size: 420%; font-weight: bold;}
+    body.minimal h2 { font-size: 380%; }
+    body.minimal h3 { font-size: 340%; }
+    body.minimal h4 { font-size: 300%; }
+    body.minimal h5 { font-size: 260%; }
+    body.minimal h6 { font-size: 220%; }
+    body.minimal p { font-size: 120%; }
+    body.minimal a.btn-primary { font-size: 120%; }
+    body.minimal .kicker { font-size: 130%; }
+    body.minimal .small-writing { font-size: 120%; }
+    body.minimal .sky-writing { font-size: 500%; color: #EC7C04; }
+    body.minimal .jumbotron p { font-size: 70%; font-weight: normal; }
+    body.minimal table { font-size: 130%; }
+    body.minimal ul li { font-size: 130%; }
+}
+
+@media (min-width: 767px) {
+    body.minimal h1 { font-size: 460%; font-weight: bold;}
+    body.minimal h2 { font-size: 400%;}
+    body.minimal h3 { font-size: 340%;}
+    body.minimal h4 { font-size: 280%;}
+    body.minimal h5 { font-size: 220%;}
+    body.minimal h6 { font-size: 160%;}
+    body.minimal p { font-size: 130%;}
+    body.minimal a.btn-primary { font-size: 140%;}
+    body.minimal .kicker { font-size: 150%;}
+    body.minimal .small-writing { font-size: 130%;}
+    body.minimal .sky-writing { font-size: 600%; color: #EC7C04;}
+    body.minimal .jumbotron p { font-size: 80%; font-weight: normal;}
+    body.minimal table { font-size: 140%;}
+    body.minimal ul li { font-size: 140%;}
+}
+
+@media (min-width: 992px) {
+    body.minimal h1 { font-size: 480%; font-weight: bold;}
+    body.minimal h2 { font-size: 420%;}
+    body.minimal h3 { font-size: 360%;}
+    body.minimal h4 { font-size: 300%;}
+    body.minimal h5 { font-size: 240%;}
+    body.minimal h6 { font-size: 180%;}
+    body.minimal p { font-size: 130%;}
+    body.minimal a.btn-primary { font-size: 140%;}
+    body.minimal .kicker { font-size: 150%;}
+    body.minimal .small-writing { font-size: 130%;}
+    body.minimal .sky-writing { font-size: 600%; color: #EC7C04;}
+    body.minimal .jumbotron p { font-size: 80%; font-weight: normal;}
+    body.minimal table { font-size: 140%;}
+    body.minimal ul li { font-size: 140%;}
+}

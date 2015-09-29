@@ -51,17 +51,17 @@ jqueryNoConflict(document).ready(function() {
 
     });
 
-	jqueryNoConflict('#content-background').click(function(){
-		jqueryNoConflict('#content-background').fadeOut('slow');
-		jqueryNoConflict('#content-display').fadeOut('slow');
-	});
+    jqueryNoConflict('#content-background').click(function(){
+        jqueryNoConflict('#content-background').fadeOut('slow');
+        jqueryNoConflict('#content-display').fadeOut('slow');
+    });
 
-	jqueryNoConflict(document).keydown(function(e){
-		if(e.keyCode==27) {
-			jqueryNoConflict('#content-background').fadeOut('slow');
-			jqueryNoConflict('#content-display').fadeOut('slow');
-		}
-	});
+    jqueryNoConflict(document).keydown(function(e){
+        if(e.keyCode==27) {
+            jqueryNoConflict('#content-background').fadeOut('slow');
+            jqueryNoConflict('#content-display').fadeOut('slow');
+        }
+    });
 });
 
     // when user submit button is clicked

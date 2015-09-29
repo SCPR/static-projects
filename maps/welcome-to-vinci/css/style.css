@@ -1,0 +1,114 @@
+body.minimal .data-container { max-width: 100%; margin: 0 auto; }
+
+body.minimal .data-container .data-visuals { min-height: 600px; height: auto; padding-bottom: 25px; margin: 20px auto 5px auto; }
+
+body.minimal .data-container .data-visuals .row { margin: 15px 0 25px 0; }
+
+body.minimal .data-container .data-visuals .submission { background: #ffffff; padding: 15px 0 15px 0; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+
+body.minimal .data-container h2 { margin-bottom: 2%; }
+
+body.minimal .data-container #content-article { background-color: #732e00; color: #ffffff; }
+
+/*.title-card { background-color: #732E00; padding: 15px 0 15px 0; width: auto; margin: 0 40%;}*/
+
+.title-card { background-color: #732E00; padding: 15px 0 15px 0; width: 100%;}
+
+.title-card img { width: 24%; height: auto; margin: 0 38% 0 38%; }
+
+body.minimal .data-container .data-visuals .submission img { width: 90%; margin: 0 5% 0 5%; }
+
+body.minimal .data-container .data-visuals .submission img.double { margin-bottom: 15px; }
+
+body.minimal .data-container .quote p { font-size: 200%; margin: 30px 0 10px 0; }
+
+.btn-primary,
+.btn-primary:focus,
+.btn-primary:active { background: #732E00; border: #732E00 solid .1em; color: #fffdb6; }
+.btn-primary:hover { background: #732E00; border: #732E00 solid .1em; color: #fffdb6; }
+
+.data-container .data-visuals #content-map-canvas { height: 1100px; margin: 0 0 10px 0; }
+
+body.minimal .data-container p { font-size: 170%; font-weight: 600; }
+
+body.minimal .data-container a.btn-primary { font-size: 185%; }
+
+body.minimal .data-container .pubdate { color: #ffffff; }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    .data-container .data-visuals #content-map-canvas { height: 600px; margin: 0 0 10px 0; }
+    body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
+    body.minimal .data-container h2 { font-size: 240%; }
+    body.minimal .data-container h3 { font-size: 210%; }
+    body.minimal .data-container h4 { font-size: 180%; }
+    body.minimal .data-container h5 { font-size: 150%; }
+    body.minimal .data-container h6 { font-size: 130%; }
+    body.minimal .data-container p { font-size: 110%; }
+    body.minimal .data-container .quote p { font-size: 110%; }
+}
+
+@media (max-width: 480px) {
+    .data-container .data-visuals #content-map-canvas { height: 600px; margin: 0 0 10px 0; }
+    body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
+    body.minimal .data-container h2 { font-size: 240%; }
+    body.minimal .data-container h3 { font-size: 210%; }
+    body.minimal .data-container h4 { font-size: 180%; }
+    body.minimal .data-container h5 { font-size: 150%; }
+    body.minimal .data-container h6 { font-size: 130%; }
+    body.minimal .data-container p { font-size: 110%; }
+    body.minimal .data-container .quote p { font-size: 110%; }
+}
+
+@media (min-width: 481px) {
+    body.minimal h1 { font-size: 420%; font-weight: bold;}
+    body.minimal h2 { font-size: 380%; }
+    body.minimal h3 { font-size: 340%; }
+    body.minimal h4 { font-size: 300%; }
+    body.minimal h5 { font-size: 260%; }
+    body.minimal h6 { font-size: 220%; }
+    body.minimal p { font-size: 120%; }
+    body.minimal .data-container .quote p { font-size: 120%; }
+    body.minimal a.btn-primary { font-size: 120%; }
+    body.minimal .kicker { font-size: 130%; }
+    body.minimal .small-writing { font-size: 120%; }
+    body.minimal .sky-writing { font-size: 500%; color: #EC7C04; }
+    body.minimal .jumbotron p { font-size: 70%; font-weight: normal; }
+    body.minimal table { font-size: 130%; }
+    body.minimal ul li { font-size: 130%; }
+}
+
+@media (min-width: 767px) {
+    body.minimal h1 { font-size: 460%; font-weight: bold;}
+    body.minimal h2 { font-size: 400%;}
+    body.minimal h3 { font-size: 340%;}
+    body.minimal h4 { font-size: 280%;}
+    body.minimal h5 { font-size: 220%;}
+    body.minimal h6 { font-size: 160%;}
+    body.minimal p { font-size: 130%;}
+    body.minimal .data-container .quote p { font-size: 130%;}
+    body.minimal a.btn-primary { font-size: 140%;}
+    body.minimal .kicker { font-size: 150%;}
+    body.minimal .small-writing { font-size: 130%;}
+    body.minimal .sky-writing { font-size: 600%; color: #EC7C04;}
+    body.minimal .jumbotron p { font-size: 80%; font-weight: normal;}
+    body.minimal table { font-size: 140%;}
+    body.minimal ul li { font-size: 140%;}
+}
+
+@media (min-width: 992px) {
+    body.minimal h1 { font-size: 480%; font-weight: bold;}
+    body.minimal h2 { font-size: 420%;}
+    body.minimal h3 { font-size: 360%;}
+    body.minimal h4 { font-size: 300%;}
+    body.minimal h5 { font-size: 240%;}
+    body.minimal h6 { font-size: 180%;}
+    body.minimal p { font-size: 130%;}
+    body.minimal .data-container .quote p { font-size: 160%;}
+    body.minimal a.btn-primary { font-size: 140%;}
+    body.minimal .kicker { font-size: 150%;}
+    body.minimal .small-writing { font-size: 130%;}
+    body.minimal .sky-writing { font-size: 600%; color: #EC7C04;}
+    body.minimal .jumbotron p { font-size: 80%; font-weight: normal;}
+    body.minimal table { font-size: 140%;}
+    body.minimal ul li { font-size: 140%;}
+}

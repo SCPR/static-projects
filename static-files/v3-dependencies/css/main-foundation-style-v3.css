@@ -279,3 +279,5 @@ body.minimal #popup_prompt { margin: .5em 0em }
 #table-container #table_fu div.bullet-graph-box4 { position: absolute; height: 20px; width: 10%; left: 90%; background-color: #bbbbbb; z-index: 1; font-size: 0; }
 #table-container #table_fu div.bullet-graph-target { position: absolute; height: 21px; width: 2px; left: 32px; top: 0; background-color: #cc0000; z-index: 7; font-size: 0; }
 #table-container #table_fu div.bullet-graph-actual { position: absolute; height: 8px; left: 0px; top: 7px; background-color: #000000; font-size: 0; z-index: 5; font-size: 0; }
+
+#app-sunset-message { background-color: #F87E21; text-align: center; font-size: 110%; }
