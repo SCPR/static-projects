@@ -200,7 +200,7 @@
                     {opt: "Officer Said Vehicle Used as Weapon", opt_field: "vehicle_as_weapon"},
                     {opt: "Chase or Pursuit Occurred", opt_field: "pursuit_occurred"},
                     {opt: "Signs of Drug/Alcohol Impairment", opt_field: "person_intoxicated"},
-                    {opt: "Signs of Mental Illnes", opt_field: "person_mentally_ill"},
+                    {opt: "Signs of Mental Illness", opt_field: "person_mentally_ill"},
                 ]}
             ];
             this.render();
