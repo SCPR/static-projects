@@ -165,7 +165,7 @@
                 proper: "Incident",
                 radio_buttons: [],
                 checkboxes: [
-                    {opt: "Officer Defense Of Civillians", opt_field: "officer_defense_of_civillians"},
+                    {opt: "Officer Defense Of Civilians", opt_field: "officer_defense_of_civillians"},
                     {opt: "Car Stop", opt_field: "car_stop"},
                 ]}, {
                 type: "peoples",
