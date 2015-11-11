@@ -589,17 +589,21 @@
             autoBlur: false,
             smoothPlayBar: true,
             keyEnabled: true,
-            remainingDuration: true,
+            remainingDuration: false,
             toggleDuration: true
           });
 
           $(".story-audio-1").click( function() {
             $("#jquery_jplayer_1").jPlayer("play");
             $(this).addClass("now-playing");
+            $(".jp-audio").addClass("now-playing");
           });
           $(".volume button").click( function() {
             $(this).addClass("hidden");
             $(this).siblings().removeClass("hidden");
+          });
+          $(".jp-stop").click( function() {
+            $(".jp-audio").removeClass("now-playing");
           });
         });
       </script>
