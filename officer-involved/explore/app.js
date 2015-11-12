@@ -165,7 +165,9 @@
                 proper: "Incident",
                 radio_buttons: [],
                 checkboxes: [
-                    {opt: "Officer Defense Of Civilians", opt_field: "officer_defense_of_civillians"},
+                    {opt: "Officer Self Defense", opt_field: "officer_self_defense"},
+                    {opt: "Officer Defense Of Other Officers", opt_field: "officer_defense_of_officers"},
+                    {opt: "Officer Defense Of Civilians", opt_field: "officer_defense_of_civilians"},
                     {opt: "Car Stop", opt_field: "car_stop"},
                 ]}, {
                 type: "peoples",
@@ -177,19 +179,31 @@
                         buttons: [
                             {opt: "Fatal", opt_field: "fatal"},
                             {opt: "Non-fatal", opt_field: "nonfatal_calc"},
-                        ]}, {
+                        ]
+                    }, {
                         field_name: "armed_non",
                         group_name: "Weapon",
                         buttons: [
                             {opt: "Unarmed", opt_field: "person_unarmed"},
                             {opt: "Firearm", opt_field: "armed_with_firearm_calc"},
                             {opt: "Other Weapon", opt_field: "armed_with_other_calc"},
-                        ]}, {
+                        ]
+                    }, {
                         field_name: "gender",
                         group_name: "Gender",
                         buttons: [
                             {opt: "Female", opt_field: "person_female"},
                             {opt: "Male", opt_field: "person_male"},
+                        ]
+                    }, {
+                        field_name: "person_ethnicity",
+                        group_name: "Race/Ethnicity",
+                        buttons: [
+                            {opt: "Latino", opt_field: "latino"},
+                            {opt: "Black", opt_field: "black"},
+                            {opt: "White", opt_field: "caucasian"},
+                            {opt: "Asian", opt_field: "asian"},
+                            {opt: "Other", opt_field: "other"},
                         ]
                     }
                 ],
@@ -229,16 +243,35 @@
                     };
                 };
                 // push ethnicities to view object
-                if (_this.person_ethnicity != null || _this.person_ethnicity != undefined){
-                    if (_this.person_ethnicity === "HISPANIC/LATIN AMERICAN"){
-                        model.set("person_ethnicity", "hispanic");
-                    } else if (_this.person_ethnicity === "MIDDLE EASTERN"){
-                        model.set("person_ethnicity", "middle-eastern");
+                model.set("no_ethnicity", true);
+                if (_this.fatal === true){
+                    if (_this.person_ethnicity != null || _this.person_ethnicity != undefined){
+                        if (_this.person_ethnicity === "BLACK"){
+                            model.set("person_ethnicity", "black");
+                            model.set("black", true);
+                        } else if (_this.person_ethnicity === "HISPANIC/LATIN AMERICAN"){
+                            model.set("person_ethnicity", "latino");
+                            model.set("latino", true);
+                        } else if (_this.person_ethnicity === "MIDDLE EASTERN"){
+                            model.set("person_ethnicity", "middle-eastern");
+                            model.set("other", true);
+                        } else if (_this.person_ethnicity === "ASIAN"){
+                            model.set("person_ethnicity", "asian");
+                            model.set("asian", true);
+                        } else if (_this.person_ethnicity === "CAUCASIAN"){
+                            model.set("person_ethnicity", "caucasian");
+                            model.set("caucasian", true);
+                        } else {
+                            model.set("person_ethnicity", _this.person_ethnicity.toLowerCase());
+                            model.set("other", true);
+                        };
+                        view_object.ethnicities.push(_this.person_ethnicity);
                     } else {
-                        model.set("person_ethnicity", _this.person_ethnicity.toLowerCase());
-                    };
-                    view_object.ethnicities.push(_this.person_ethnicity);
+                        model.set("person_ethnicity", "n/a");
+                        model.set("other", true);
+                    }
                 };
+
             });
             view_object.relevant_incidents.forEach(function(model, index){
                 var _this = model.attributes;
@@ -353,9 +386,19 @@
             _.each(this.view_object.obj.active_checkboxes.peoples, function(item, index, list){
                 return people_filters[item] = true;
             });
+
+
+            // console.log(people_filters);
+
+
             this.view_object.obj.filtered.people = new App.Collections.Peoples();
             var people_filters_empty = _.isEmpty(people_filters);
             var incident_filters_empty = _.isEmpty(incident_filters);
+
+
+            // console.log(this.view_object.obj.init.people);
+
+
             if (people_filters_empty === true && incident_filters_empty === true){
                 this.view_object.obj.filtered.people = this.view_object.obj.init.people;
             } else if (people_filters_empty === false && incident_filters_empty === true){
@@ -410,8 +453,23 @@
                 var $this = $(this);
                 if($this.is(":checked")){
                     var filter_id = $this.attr("id");
-                    var filter_type = $this.attr("class");
-                    filters[filter_type].push(filter_id)
+                    var filter_type = $this.attr("class").split(" ")[0];
+
+                    // $this.parent().css("background", "#203047");
+
+                    if (filter_id === "fatal"){
+                        $("label.display-until-toggle").addClass("invisible");
+                        $("span.hidden-until-toggle").removeClass("invisible");
+                        filters[filter_type].push(filter_id);
+                    } else if (filter_id === "nonfatal_calc"){
+                        $("span.hidden-until-toggle").addClass("invisible");
+                        $("label.display-until-toggle").removeClass("invisible");
+                        $("input:radio[name='person_ethnicity']").attr("checked", false);
+                        filters[filter_type].push("no_ethnicity");
+                        filters[filter_type].push(filter_id);
+                    } else {
+                        filters[filter_type].push(filter_id);
+                    };
                 };
             });
             $("input:checkbox").each(function(){
