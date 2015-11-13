@@ -188,8 +188,6 @@
 
   <script src="../scripts/vendor.js"></script>
   <script src="../scripts/explore.js"></script>
-
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone-min.js"></script>
@@ -207,16 +205,33 @@
             <fieldset>
               <legend class="form__legend"><@= filters[1].proper @> Filters</legend>
               <div class="singlecol__half">
-              <@ _.each(filters[1].radio_buttons, function(item){ @>
-                <div class="radio">
-                  <label class="form__group-name"><@= item.group_name @>:</label>
-                  <@ _.each(item.buttons, function(button){ @>
-                    <label class="radio-inline" for="<@= button.opt_field @>">
-                      <input type="radio" class="<@= filters[1].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>">
-                      <span><@= button.opt @></span>
-                    </label>
-                    <@ }); @>
-                </div>
+                  <@ _.each(filters[1].radio_buttons, function(item){ @>
+                    <@ if (item.field_name === "person_ethnicity"){ @>
+                        <div class="radio <@= item.field_name @>">
+                          <label class="form__group-name"><@= item.group_name @>:</label>
+                          <label class="display-until-toggle radio-inline">
+                            <span>Available for fatal shootings</span>
+                          </label>
+                          <span class="hidden-until-toggle invisible">
+                          <@ _.each(item.buttons, function(button){ @>
+                            <label class="radio-inline" for="<@= button.opt_field @>">
+                              <input type="radio" class="<@= filters[1].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>">
+                              <span><@= button.opt @></span>
+                            </label>
+                          <@ }); @>
+                          </span>
+                        </div>
+                    <@ } else { @>
+                        <div class="radio <@= item.field_name @>">
+                          <label class="form__group-name"><@= item.group_name @>:</label>
+                          <@ _.each(item.buttons, function(button){ @>
+                            <label class="radio-inline" for="<@= button.opt_field @>">
+                              <input type="radio" class="<@= filters[1].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>">
+                              <span><@= button.opt @></span>
+                            </label>
+                            <@ }); @>
+                        </div>
+                    <@ }; @>
                 <@ }); @>
               </div>
               <div class="singlecol__half">
@@ -241,7 +256,7 @@
             <fieldset>
               <legend class="form__legend"><@= filters[0].proper @> Filters</legend>
               <@ _.each(filters[0].radio_buttons, function(item){ @>
-                <div class="radio">
+                <div class="radio field_name">
                   <@ _.each(item.buttons, function(button){ @>
                     <label class="radio-inline" for="<@= button.opt_field @>">
                       <input type="radio" class="<@= filters[0].type @>" id="<@= button.opt_field @>" name="<@= item.field_name @>" value="<@= button.opt @>"> <@= button.opt @>
