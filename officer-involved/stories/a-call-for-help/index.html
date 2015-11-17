@@ -624,6 +624,34 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
+          $("#jquery_jplayer_1").jPlayer({    
+            ready: function () {   
+              $(this).jPlayer("setMedia", {    
+                title: "Mental illness",   
+                m4a: "http://media.scpr.org/audio/upload/2015/11/09/OIS_mental-health.m4a"   
+              });    
+            },   
+            play: function() { // To avoid multiple jPlayers playing together.   
+              $(this).jPlayer("pauseOthers");    
+            },   
+            cssSelectorAncestor: "#jp_container_1",    
+            swfPath: "../../scripts",    
+            wmode: "window",   
+            supplied: "m4a",   
+            autoBlur: false,   
+            smoothPlayBar: true,   
+            keyEnabled: true,    
+            remainingDuration: false,    
+            toggleDuration: true   
+          });    
+
+          $(".story-audio-1").click( function() {    
+            $("#jquery_jplayer_2").jPlayer("stop");    
+            $("#jquery_jplayer_1").jPlayer("play");    
+            $(this).addClass("now-playing");   
+            $("#jp_container_1").addClass("now-playing");    
+          });
+          
           $("#jquery_jplayer_2").jPlayer({
             ready: function () {
               $(this).jPlayer("setMedia", {
