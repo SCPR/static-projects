@@ -31,7 +31,7 @@
     <script src="https://use.typekit.net/fok5vpj.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
-
+  
   <body class="theme--light typography--feature">
 
   <header class="header header--dark header--top">
@@ -74,7 +74,7 @@
       <hr class="rule rule--dark">
     </div>
     <div class="bound bound--story-wide align--center">
-      <p class="story-body__inagural">Jazmyne Eng worried a lot about being harmed  by others – a perpetual symptom of her schizophrenia.</p>
+      <p class="story-body__inagural">Jazmyne Eng worried a lot about being harmed  by others – a perpetual symptom of her schizophrenia.</p>
     </div>
     <div class="bound bound--story-wide">
       <aside class="asset asset--audio story-audio-1">
@@ -199,7 +199,7 @@
       <p class="story-body">In Jazmyne Eng’s shooting, a sheriff’s department panel assigned to review the officers’ actions didn’t like what it saw. It was concerned with Vance’s “perceived need to protect the life of others” over “the reverence for human life” &mdash; Eng’s.
       </p><p class="story-body">The department’s oversight body had similar concerns.</p>
       <p class="story-body">In an unusually detailed report, officials with the Office of Independent Review argued Vance had many options other than his gun to try to subdue the diminutive woman.</p>
-      <aside class="appeal appeal--right">
+      <aside class="appeal appeal--right">  
         <h4 class="appeal__heading">
           <img src="../../images/icon_voicemail.svg" alt="Voicemail">
           We want to hear from you
@@ -228,7 +228,7 @@
     </div>
     <div class="bound bound--story-med">
       <blockquote class="story-body__pullquote">
-        <p>… what you have is a showdown between one person who’s armed with a weapon – a gun usually – and one person who’s disobeying them.</p>
+        <p>… what you have is a showdown between one person who’s armed with a weapon – a gun usually – and one person who’s disobeying them.</p>
       </blockquote>
     </div>
     <div class="bound bound--story">
@@ -266,7 +266,7 @@
     </div>
     <div class="bound bound--story-med">
       <blockquote class="story-body__pullquote">
-        <p>I’m thanking the Lord every day. The wrong move – or something could have gone the wrong way &mdash; and I wouldn’t be here today.</p>
+        <p>I’m thanking the Lord every day. The wrong move – or something could have gone the wrong way &mdash; and I wouldn’t be here today.</p>
       </blockquote>
     </div>
     <div class="bound bound--story">
@@ -624,34 +624,34 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
-          $("#jquery_jplayer_1").jPlayer({
-            ready: function () {
-              $(this).jPlayer("setMedia", {
-                title: "Mental illness",
-                m4a: "http://media.scpr.org/audio/upload/2015/11/09/OIS_mental-health.m4a"
-              });
-            },
-            play: function() { // To avoid multiple jPlayers playing together.
-              $(this).jPlayer("pauseOthers");
-            },
-            cssSelectorAncestor: "#jp_container_1",
-            swfPath: "../../scripts",
-            wmode: "window",
-            supplied: "m4a",
-            autoBlur: false,
-            smoothPlayBar: true,
-            keyEnabled: true,
-            remainingDuration: false,
-            toggleDuration: true
-          });
+          $("#jquery_jplayer_1").jPlayer({    
+            ready: function () {   
+              $(this).jPlayer("setMedia", {    
+                title: "Mental illness",   
+                m4a: "http://media.scpr.org/audio/upload/2015/11/09/OIS_mental-health.m4a"   
+              });    
+            },   
+            play: function() { // To avoid multiple jPlayers playing together.   
+              $(this).jPlayer("pauseOthers");    
+            },   
+            cssSelectorAncestor: "#jp_container_1",    
+            swfPath: "../../scripts",    
+            wmode: "window",   
+            supplied: "m4a",   
+            autoBlur: false,   
+            smoothPlayBar: true,   
+            keyEnabled: true,    
+            remainingDuration: false,    
+            toggleDuration: true   
+          });    
 
-          $(".story-audio-1").click( function() {
-            $("#jquery_jplayer_2").jPlayer("stop");
-            $("#jquery_jplayer_1").jPlayer("play");
-            $(this).addClass("now-playing");
-            $("#jp_container_1").addClass("now-playing");
+          $(".story-audio-1").click( function() {    
+            $("#jquery_jplayer_2").jPlayer("stop");    
+            $("#jquery_jplayer_1").jPlayer("play");    
+            $(this).addClass("now-playing");   
+            $("#jp_container_1").addClass("now-playing");    
           });
-
+          
           $("#jquery_jplayer_2").jPlayer({
             ready: function () {
               $(this).jPlayer("setMedia", {
@@ -690,3 +690,5 @@
           });
         });
       </script>
+
+
