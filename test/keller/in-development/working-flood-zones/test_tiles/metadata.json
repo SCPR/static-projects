@@ -1,0 +1,8 @@
+{
+    "center": "-120.1575,37.5402,7", 
+    "format": "pbf", 
+    "json": "{\"vector_layers\":[{\"id\":\"100_500_smaller\",\"description\":\"\",\"fields\":{\"FLD_AR_ID\":\"String\",\"FLD_ZONE\":\"String\",\"SFHA_TF\":\"String\",\"SHAPE_Area\":\"Number\",\"SHAPE_Leng\":\"Number\",\"ZONE_SUBTY\":\"String\"}}]}", 
+    "minzoom": "0", 
+    "maxzoom": "12", 
+    "name": "california_flood_zones"
+}
