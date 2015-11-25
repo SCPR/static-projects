@@ -262,11 +262,9 @@
             this.view_object.map.addLayer(this.view_object.stamenToner);
             this.view_object.map.on('click', this.onMapClick);
 
-            this.CaliforniaCountyBoundaries = new L.TileLayer('http://archives.chrislkeller.com/map-tiles/california-county-boundaries/{z}/{x}/{y}.png');
+            var my_test = new L.TileLayer("test_tiles/{z}/{x}/{y}.png");
 
-            // var my_test = new L.TileLayer("test_tiles/{z}/{x}/{y}.png");
-
-            this.view_object.map.addLayer(this.CaliforniaCountyBoundaries);
+            this.view_object.map.addLayer(my_test);
 
             // this.set_topo_layer();
         },
