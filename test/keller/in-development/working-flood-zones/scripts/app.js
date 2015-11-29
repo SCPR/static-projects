@@ -82,7 +82,7 @@
             this.view_object.stamenToner = L.tileLayer("http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
                 attribution: "Map tiles by <a href='http://stamen.com' target='_blank'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0' target='_blank'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://openstreetmap.org' target='_blank'>OpenStreetMap</a> contributors, <a href='http://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>",
                 subdomains: "abcd",
-                minZoom: 0,
+                minZoom: 6,
                 maxZoom: 8
             });
 
@@ -256,24 +256,30 @@
                 scrollWheelZoom: false,
                 zoomControl: true,
                 minZoom: 6,
-                maxZoom: 16
+                maxZoom: 8
             });
             this.view_object.map.setView(this.view_object.center, this.view_object.initialZoom);
             this.view_object.map.addLayer(this.view_object.stamenToner);
             this.view_object.map.on('click', this.onMapClick);
 
-            var my_test = new L.TileLayer("test_tiles/{z}/{x}/{y}.png");
+            // var my_test = new L.tileLayer("https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}", {
+            //     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            //     subdomains: ["a","b","c","d"],
+            //     mapId: "kpccdatadesk.824a5d5d",
+            //     token: "pk.eyJ1Ijoia3BjY2RhdGFkZXNrIiwiYSI6ImNpaGZmYXdoazA0ZXN0amo3d2p6c3VqajgifQ.Gu3jxyXHhhUZTNdSE1NmVg"
+            // });
 
-            this.view_object.map.addLayer(my_test);
+            // this.view_object.map.addLayer(my_test);
 
             // this.set_topo_layer();
+
         },
 
         set_topo_layer: function(){
             this.topoLayer = new L.TopoJSON();
             this.topoLayer.addData(this.view_object.geo_data);
-            // this.topoLayer.addTo(this.view_object.map);
-            // this.topoLayer.eachLayer(this.style);
+            this.topoLayer.addTo(this.view_object.map);
+            this.topoLayer.eachLayer(this.style);
         },
 
         style: function (layer){
