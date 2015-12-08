@@ -1,18 +1,5 @@
-    // App.Models.FloodZone = Backbone.Model.extend({
-    //     defaults: {
-    //         properties: null,
-    //     },
-    // });
-
-    // App.Collections.FloodZones = Backbone.Collection.extend({
-    //     model: App.Models.FloodZone,
-    //     url: "data/flood_zone_100.json",
-    // });
-
     App.Router = Backbone.Router.extend({
-
         initialize: function(){
-
             L.TopoJSON = L.GeoJSON.extend({
                 addData: function(jsonData){
                     if (jsonData.type === "Topology"){
@@ -25,7 +12,6 @@
                     }
                 }
             });
-
             this.applicationWrapper = new App.Views.ApplicationWrapper();
             return this.applicationWrapper;
         },
@@ -35,24 +21,19 @@
         },
 
         fetchData: function(){
+            $(".data-visuals").html(template("templates/data-loading.html"));
+            var array_of_flood_facts = [
+                "In the past five years, all 50 states have experienced flooding.",
+                "Flood insurance claims average more than $3 billion per year.",
+                "A \"100-year flood\" doesn't necessarily happen once every century. It has a one percent chance of happening in any given year, even if there was a flood last year.",
+                "Areas that have recently experienced wildfires are especially at risk of flooding and mudflows for up to five years after.",
+                "Don't know what to put in your emergency kit? Start with a three-day supply of food and water, a flashlight and a battery-powered or handcrank radio.",
+            ];
+            var idx = Math.floor(array_of_flood_facts.length * Math.random());
 
-            // var _this = this;
-            // var application_collection = new App.Collections.FloodZones();
-            // application_collection.fetch({
-            //     async: false
-            // });
-
-            // $.getJSON("data/flood_zone_100_500.json", this.render_application_visuals);
-
-            $.getJSON("data/flood_zone_100.json", this.render_application_visuals);
-
-            // var checkExist = setInterval(function() {
-            //     if (application_collection.length > 0){
-            //         clearInterval(checkExist);
-            //         _this.render_application_visuals(application_collection);
-            //     }
-            // }, 500);
-
+            $(".rando-fact").text(array_of_flood_facts[idx]);
+            $.getJSON("data/flood_zone_100_500.json", this.render_application_visuals);
+            // $.getJSON("data/flood_zone_100.json", this.render_application_visuals);
         },
 
         render_application_visuals: function(data){
@@ -64,7 +45,6 @@
             });
             return this.application_visuals;
         },
-
     });
 
     App.Views.ApplicationVisuals = Backbone.View.extend({
@@ -83,9 +63,8 @@
                 attribution: "Map tiles by <a href='http://stamen.com' target='_blank'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0' target='_blank'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://openstreetmap.org' target='_blank'>OpenStreetMap</a> contributors, <a href='http://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>",
                 subdomains: "abcd",
                 minZoom: 6,
-                maxZoom: 8
+                maxZoom: 14
             });
-
             if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
                 this.view_object.initialZoom = 8;
             } else {
@@ -117,7 +96,7 @@
                     $("button#submit").trigger("click");
                 }, null);
             } else {
-                alert("Sorry, we could not find your location.");
+                warningAlert("Sorry", "We could not find your location.");
             }
         },
 
@@ -153,7 +132,7 @@
             var longitude = $("input[id='longitudeSearch']").val();
             var accuracy = $("input[id='accuracySearch']").val();
             if (latitude === '' && longitude === ''){
-                alert('Please enter an address or search by location')
+                warningAlert("Sorry", "Please enter an address or search by location");
             } else {
                 if (this.view_object.map.hasLayer(this.userLayer)){
                     this.view_object.map.removeLayer(this.userLayer);
@@ -165,26 +144,14 @@
         },
 
         findFeatureForLatLng: function(latitude, longitude){
-
             var user_is_at = {
                 lng: longitude,
                 lat: latitude
             };
-
-            console.log(user_is_at);
-
             this.ww = Wherewolf();
-
             this.ww.addAll(this.view_object.geo_data);
-
             var districts = this.ww.find(user_is_at);
-
-            if (districts._100_only === null){
-                alert("You might be safe");
-            } else {
-                alert("RUN FOR THE HILLS!!! FLOOD ZONE!!!");
-            };
-
+            return districts;
         },
 
         resetUserView: function(){
@@ -224,31 +191,27 @@
             this.userLayer.addLayer(this.userLocationMarker);
             this.userLayer.addTo(this.view_object.map);
             this.view_object.map.fitBounds(this.userRadius.getBounds());
-            this.findFeatureForLatLng(parseFloat(latitude), parseFloat(longitude));
+            this.view_object.search_result = this.findFeatureForLatLng(parseFloat(latitude), parseFloat(longitude));
+            $.fn.jAlert.defaults.backgroundColor = "white";
+            if (this.view_object.search_result["100_500_smaller.shp"] === null){
+                successAlert("<strong>You're not in a flood zone</strong>", "But that doesn't mean that your area can't flood. FEMA estimates that a third of Federal Disaster Assistance goes to people outside of high-risk flood zones. <a href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>Here's how FEMA recommends you stay safe in a flood</a>.");
+            } else {
+                errorAlert("<strong>You're in a flood zone</strong>", "Flood insurance is typically required for homeowners in these areas, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>.");
+            };
         },
 
-        onMapClick: function(e){
-
-            console.log(e.latlng.lat, e.latlng.lng);
-
-            /*
-            var popup = L.popup();
-            popup
-                .setLatLng(e.latlng)
-                .setContent("</div>You clicked the map at " + e.latlng.toString())
-                .openOn(this.view_object.map);
-            */
-
-            //$("#theform").show();
-
-            //$("input[id='pin-q-15f9abb472d4']").val(e.latlng.lat);
-            //$("input[id='pin-q-7defd64f7f1f']").val(e.latlng.lng);
-
-            //formopen = true;
-
-            //$("#form-name").focus();
-
-        },
+        // onMapClick: function(e){
+        //     console.log(e.latlng.lat, e.latlng.lng);
+        //     var popup = L.popup();
+        //     popup
+        //         .setLatLng(e.latlng)
+        //         .setContent("</div>You clicked the map at " + e.latlng.toString())
+        //         .openOn(this.view_object.map);
+        //     $("#theform").show();
+        //     $("input[id='pin-q-15f9abb472d4']").val(e.latlng.lat);
+        //     $("input[id='pin-q-7defd64f7f1f']").val(e.latlng.lng);
+        //     $("#form-name").focus();
+        // },
 
         render: function(){
             $(this.el).html(this.template);
@@ -256,22 +219,21 @@
                 scrollWheelZoom: false,
                 zoomControl: true,
                 minZoom: 6,
-                maxZoom: 8
+                maxZoom: 14
             });
             this.view_object.map.setView(this.view_object.center, this.view_object.initialZoom);
             this.view_object.map.addLayer(this.view_object.stamenToner);
-            this.view_object.map.on('click', this.onMapClick);
 
+            // this.view_object.map.on("click", this.onMapClick);
             // var my_test = new L.tileLayer("https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}", {
             //     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
             //     subdomains: ["a","b","c","d"],
             //     mapId: "kpccdatadesk.824a5d5d",
             //     token: "pk.eyJ1Ijoia3BjY2RhdGFkZXNrIiwiYSI6ImNpaGZmYXdoazA0ZXN0amo3d2p6c3VqajgifQ.Gu3jxyXHhhUZTNdSE1NmVg"
             // });
-
             // this.view_object.map.addLayer(my_test);
 
-            // this.set_topo_layer();
+            this.set_topo_layer();
 
         },
 

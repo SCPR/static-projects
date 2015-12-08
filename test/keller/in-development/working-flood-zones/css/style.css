@@ -28,6 +28,8 @@
 
 .data-container .data-visuals .jumbotron #reset { width: 98%; height: 50px; margin: 10px 1% 0 1%; }
 
+.data-container .data-visuals .data-loading { width: 40%; height: 100px; margin: 20px 30% 0 30%; padding: 0px; text-align: center; color: #333333; }
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
     .data-container .data-visuals #content-map-canvas {  height: 600px; margin: 0 0 10px 0;  }
     body.minimal .data-container h1 {  font-size: 270%; font-weight: bold;  }
