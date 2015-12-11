@@ -18,6 +18,11 @@
     overflow: hidden;
  }
 
+.rando-fact {
+    font-size: 100%;
+}
+
+
 .data-container .data-visuals .jumbotron a { font-weight: 700; }
 
 .data-container .data-visuals .jumbotron #action-controls { width: 100%; height: auto; margin: 10px 0 0 0; }

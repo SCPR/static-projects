@@ -27,12 +27,12 @@
                 "Flood insurance claims average more than $3 billion per year.",
                 "A \"100-year flood\" doesn't necessarily happen once every century. It has a one percent chance of happening in any given year, even if there was a flood last year.",
                 "Areas that have recently experienced wildfires are especially at risk of flooding and mudflows for up to five years after.",
-                "Don't know what to put in your emergency kit? Start with a three-day supply of food and water, a flashlight and a battery-powered or handcrank radio.",
+                "Not sure what to put in your emergency kit? Start with a three-day supply of food and water, a flashlight and a battery-powered or handcrank radio.",
             ];
             var idx = Math.floor(array_of_flood_facts.length * Math.random());
 
             $(".rando-fact").text(array_of_flood_facts[idx]);
-            $.getJSON("data/flood_zone_100_500.json", this.render_application_visuals);
+            $.getJSON("data/flood_zone_100.json", this.render_application_visuals);
             // $.getJSON("data/flood_zone_100.json", this.render_application_visuals);
         },
 
@@ -63,7 +63,7 @@
                 attribution: "Map tiles by <a href='http://stamen.com' target='_blank'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0' target='_blank'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://openstreetmap.org' target='_blank'>OpenStreetMap</a> contributors, <a href='http://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>",
                 subdomains: "abcd",
                 minZoom: 6,
-                maxZoom: 14
+                maxZoom: 15
             });
             if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
                 this.view_object.initialZoom = 8;
@@ -219,7 +219,7 @@
                 scrollWheelZoom: false,
                 zoomControl: true,
                 minZoom: 6,
-                maxZoom: 14
+                maxZoom: 15
             });
             this.view_object.map.setView(this.view_object.center, this.view_object.initialZoom);
             this.view_object.map.addLayer(this.view_object.stamenToner);
@@ -247,10 +247,10 @@
         style: function (layer){
             layer.setStyle({
                 fillColor: "#f07a30",
-                fillOpacity: .8,
+                fillOpacity: .85,
                 color: '#000000',
-                weight: .8,
-                opacity: .8
+                weight: .85,
+                opacity: .85
             });
         },
     });
