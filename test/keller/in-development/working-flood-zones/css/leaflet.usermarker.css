@@ -14,7 +14,7 @@
 }
 @-webkit-keyframes leaflet-usermarker-pulsate {
     from {
-        -webkit-transform: scale(0.5);a
+        -webkit-transform: scale(0.5);
         opacity: 1.0;
     }
     95% {
