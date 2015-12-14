@@ -8,6 +8,10 @@ window.appConfig = {
     embed_this: true,
     is_embedded: null,
     embed_width: "100%",
+<<<<<<< HEAD:maps/flood-map/scripts/config.js
+    embed_height: "950px",
+=======
     embed_height: "1000px",
+>>>>>>> master:maps/california-flood-zones/scripts/config.js
     twitter_share_text: "Explore flood zones in Southern California in @KPCC's interactive map",
 };
