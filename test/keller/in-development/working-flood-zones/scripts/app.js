@@ -230,8 +230,12 @@
                 lng: longitude,
                 lat: latitude
             };
-            var in_cali = in_cali_wherewolf.find(user_here);
-            var is_empty = _.isEmpty(in_cali);
+
+            // var in_cali = in_cali_wherewolf.find(user_here);
+            // var is_empty = _.isEmpty(in_cali);
+
+            var is_empty = false;
+
             if (is_empty === true){
                 return false;
             } else {
