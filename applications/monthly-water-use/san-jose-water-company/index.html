@@ -272,7 +272,7 @@
                 <h4 class="text-center">Average daily water use of each residential customer</h4>
                 <dl>
                     <dt></dt>
-                    <dd>The <a href="http://www.waterboards.ca.gov/">State Water Resources Control Board</a> also collects a figure that represents the average daily water use of each residential customer for a given water agency. Comparing Oct. 2015 &mdash; the latest monthly data available &mdash; to Oct. 2015, average daily per capita residential water use for the San Jose Water Company <span class='decrease-accent'>decreased</span>.</dd>
+                    <dd>The <a href="http://www.waterboards.ca.gov/">State Water Resources Control Board</a> also collects a figure that represents the average daily water use of each residential customer for a given water agency. Comparing Oct. 2015 &mdash; the latest monthly data available &mdash; to Sept. 2015, average daily per capita residential water use for the San Jose Water Company <span class='decrease-accent'>decreased</span>.</dd>
                 </dl>
             </div>
             <div class="_data_figure col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -283,8 +283,8 @@
             </div>
             <div class="_data_figure col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 <dl>
-                    <dt class="text-center water-use-accent">71.56</dt>
-                    <dd class="text-center">average daily gallons <br /> per resident <br /> for Oct. 2015</dd>
+                    <dt class="text-center water-use-accent">76.19</dt>
+                    <dd class="text-center">average daily gallons <br /> per resident <br /> for Sept. 2015</dd>
                 </dl>
             </div>
         </div>
@@ -312,7 +312,7 @@
                     <!--
                     <dt class="text-center"><span class='decrease-accent'>Decreased</span></dt>
                     -->
-                    <dd>Here's a view of average daily per capita residential water use over the past 34 months. Water use by this agency's residential customers has <span class='decrease-accent'>decreased</span> by -33.56%, going from an average of 107.71 gallons used by each resident per day to 71.56.</dd>
+                    <dd>Here's a view of average daily per capita residential water use over the past 17 months. Water use by this agency's residential customers has <span class='decrease-accent'>decreased</span> by -33.56%, going from an average of 107.71 gallons used by each resident per day to 71.56.</dd>
                 </dl>
             </div>
             <div id="per-capita-use" class="ct-chart ct-double-octave"></div>
@@ -539,18 +539,18 @@
             <h4 class="text-center">Here are some ways you can help conserve water</h4>
                 
                     <div class="icons col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                        <img class="placemark" src="http://projects.scpr.org/applications/monthly-water-use/static/monthly_water_reports/images/broom.png" />
+                        <p class="text-center">Use a broom to clean the driveway or sidewalk</p>
+                    </div>
+                
+                    <div class="icons col-xs-12 col-sm-6 col-md-3 col-lg-3">
                         <img class="placemark" src="http://projects.scpr.org/applications/monthly-water-use/static/monthly_water_reports/images/washer.png" />
                         <p class="text-center">Wash only full loads</p>
                     </div>
                 
                     <div class="icons col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                        <img class="placemark" src="http://projects.scpr.org/applications/monthly-water-use/static/monthly_water_reports/images/wash-bucket.png" />
-                        <p class="text-center">Wash cars with a bucket and sponge</p>
-                    </div>
-                
-                    <div class="icons col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                        <img class="placemark" src="http://projects.scpr.org/applications/monthly-water-use/static/monthly_water_reports/images/broom.png" />
-                        <p class="text-center">Use a broom to clean the driveway or sidewalk</p>
+                        <img class="placemark" src="http://projects.scpr.org/applications/monthly-water-use/static/monthly_water_reports/images/tap-water.png" />
+                        <p class="text-center">Capture tap water</p>
                     </div>
                 
                     <div class="icons col-xs-12 col-sm-6 col-md-3 col-lg-3">
@@ -615,17 +615,17 @@
             4: {sorter: true},
         };
 
-        var per_capita_labels = ["Oct 2015", "Oct 2015", "Sep 2015", "Sep 2015", "Aug 2015", "Aug 2015", "Jul 2015", "Jul 2015", "Jun 2015", "Jun 2015", "May 2015", "May 2015", "Apr 2015", "Apr 2015", "Mar 2015", "Mar 2015", "Feb 2015", "Feb 2015", "Jan 2015", "Jan 2015", "Dec 2014", "Dec 2014", "Nov 2014", "Nov 2014", "Oct 2014", "Oct 2014", "Sep 2014", "Sep 2014", "Aug 2014", "Aug 2014", "Jul 2014", "Jul 2014", "Jun 2014", "Jun 2014"];
+        var per_capita_labels = ["Oct 2015", "Sep 2015", "Aug 2015", "Jul 2015", "Jun 2015", "May 2015", "Apr 2015", "Mar 2015", "Feb 2015", "Jan 2015", "Dec 2014", "Nov 2014", "Oct 2014", "Sep 2014", "Aug 2014", "Jul 2014", "Jun 2014"];
         var per_capita_data = {
             labels: per_capita_labels,
             series: [
             //{
                 //name: "2013",
-                //data: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
+                //data: [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None]
             //},
             {
                 name: "2014",
-                data: [71.5601173021, 71.5601173021, 76.1939393939, 76.1939393939, 76.4138155751, 76.4138155751, 75.1547735419, 75.1547735419, 75.2865319865, 75.2865319865, 76.247637667, 76.247637667, 68.1851851852, 68.1851851852, 66.2137504073, 66.2137504073, 59.3434343434, 59.3434343434, 57.7745193874, 57.7745193874, 52.5969371131, 52.5969371131, 66.8888888889, 66.8888888889, 83.6396220267, 83.6396220267, 94.6060606061, 94.6060606061, 108.383012431, 108.383012431, 114.216084528, 114.216084528, 107.705723906, 107.705723906]
+                data: [71.5601173021, 76.1939393939, 76.4138155751, 75.1547735419, 75.2865319865, 76.247637667, 68.1851851852, 66.2137504073, 59.3434343434, 57.7745193874, 52.5969371131, 66.8888888889, 83.6396220267, 94.6060606061, 108.383012431, 114.216084528, 107.705723906]
             }]
         };
 
