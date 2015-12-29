@@ -1,0 +1,12 @@
+<div class="row precinct-data" id="precinct_<%= precinct %>">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <h6>Precinct: <%= precinct %></h6>
+        <ul class="list-inline">
+            <li><strong>Registered voters</strong>: <%= total_registration %></li>
+            <li><strong>Ballots cast</strong>: <%= total_votes %></li>
+            <li><strong>Voter turnout</strong>: <%= turnout %>%</li>
+        </ul>
+        <div id="census_profile"></div>
+    </div>
+</div>
+<hr />
