@@ -1,7 +1,7 @@
 (function(){
 
     window.appConfig = {
-        testing: false,
+        testing: true,
         project_root: "http://projects.scpr.org/internal/tools/",
         open_about_this: false,
         comments: false,
