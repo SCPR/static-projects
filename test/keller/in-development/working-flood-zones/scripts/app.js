@@ -26,12 +26,18 @@
             var array_of_flood_facts = [
                 "In the past five years, all 50 states have experienced flooding.",
                 "Flood insurance claims average more than $3 billion per year.",
+                "Flood insurance doesn't cover damage from landslides and other \"earth movements.\" Damage from mudflows – defined as rivers of liquid and flowing mud on the surface of normally dry land – would usually be covered.",
                 "A \"100-year flood\" doesn't necessarily happen once every century. It has a one percent chance of happening in any given year, even if there was a flood last year.",
                 "Areas that have recently experienced wildfires are especially at risk of flooding and mudflows for up to five years after.",
                 "Not sure what to put in your emergency kit? Start with a three-day supply of food and water, a flashlight and a battery-powered or handcrank radio.",
             ];
-            var idx = Math.floor(array_of_flood_facts.length * Math.random());
-            $(".rando-fact").text(array_of_flood_facts[idx]);
+
+            $(".rando-fact").text(array_of_flood_facts[3]);
+
+            setInterval(function(){
+                var idx = Math.floor(array_of_flood_facts.length * Math.random());
+                $(".rando-fact").text(array_of_flood_facts[idx]);
+            }, 3700);
             // $.getJSON("data/flood_zone_100.json", this.render_application_visuals);
             $.getJSON("data/flood_zone_100_500.json", this.render_application_visuals);
         },
