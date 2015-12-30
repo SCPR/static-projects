@@ -1,8 +1,6 @@
     App.Router = Backbone.Router.extend({
         initialize: function(){
-
             $.fn.jAlert.defaults.backgroundColor = "white";
-
             L.TopoJSON = L.GeoJSON.extend({
                 addData: function(jsonData){
                     if (jsonData.type === "Topology"){
@@ -20,7 +18,7 @@
         },
 
         routes: {
-            "": "fetchData",
+            "": "fetchData"
         },
 
         fetchData: function(){
@@ -34,7 +32,8 @@
             ];
             var idx = Math.floor(array_of_flood_facts.length * Math.random());
             $(".rando-fact").text(array_of_flood_facts[idx]);
-            $.getJSON("data/flood_zone_100.json", this.render_application_visuals);
+            // $.getJSON("data/flood_zone_100.json", this.render_application_visuals);
+            $.getJSON("data/flood_zone_100_500.json", this.render_application_visuals);
         },
 
         render_application_visuals: function(data){
@@ -42,10 +41,10 @@
                 this.application_visuals.remove();
             };
             this.application_visuals = new App.Views.ApplicationVisuals({
-                geo_data: data,
+                geo_data: data
             });
             return this.application_visuals;
-        },
+        }
     });
 
     App.Views.ApplicationVisuals = Backbone.View.extend({
@@ -74,6 +73,7 @@
             this.view_object.center = new L.LatLng(34.061841979429445, -118.26370239257812);
             this.view_object.wherewolf = Wherewolf();
             this.view_object.wherewolf.addAll(this.view_object.geo_data);
+            this.view_object.cali_wherewolf = Wherewolf();
             this.render();
         },
 
@@ -83,7 +83,7 @@
             "focusin #addressSearch": "addressSearch",
             "keyup #addressSearch" : "enterKeyPressedEventHandler",
             "click button#submit": "navigate",
-            "click button#reset": "resetUserView"
+            "click button#reset": "resetUserView",
         },
 
         render: function(){
@@ -111,23 +111,55 @@
         },
 
         findMe: function(){
+            var locationOptions = {
+                enableHighAccuracy: true,
+                maximumAge: 30000,
+                timeout: 10000
+            };
             $("#form-controls").addClass("hidden");
             $(".findMe").css("font-weight", "700");
             $("img.findMe").css("opacity", "1.0");
             $(".searchMe").css("font-weight", "100");
             $("img.searchMe").css("opacity", "0.3");
-            // refactor to function
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    $("input[id='latitudeSearch']").val(position.coords.latitude);
-                    $("input[id='longitudeSearch']").val(position.coords.longitude);
-                    $("input[id='accuracySearch']").val(position.coords.accuracy);
-                    $("button#submit").trigger("click");
-                }, null);
+                navigator.geolocation.getCurrentPosition(this.locationSuccess, this.locationError, locationOptions);
             } else {
-                warningAlert("Sorry", "We could not find your location.");
+                warningAlert("Sorry", "Your browser lacks geolocation capabilities.");
             };
-            // refactor to function
+        },
+
+        locationSuccess: function(position){
+            $("input[id='latitudeSearch']").val(position.coords.latitude);
+            $("input[id='longitudeSearch']").val(position.coords.longitude);
+            $("button#submit").trigger("click");
+        },
+
+        locationError: function(error){
+            if (error.code === 1){
+                $.jAlert({
+                    "replaceOtherAlerts": true,
+                    "closeOnClick": true,
+                    "theme": "yellow",
+                    "title": "<strong>Sorry. " + error.message + "</strong>",
+                    "content": "The user denied use of location services or your privacy settings do not allow this application to determine your current location."
+                  });
+            } else if (error.code === 2){
+                $.jAlert({
+                    "replaceOtherAlerts": true,
+                    "closeOnClick": true,
+                    "theme": "yellow",
+                    "title": "<strong>Sorry. " + error.message + "</strong>",
+                    "content": "We could not find your location."
+                  });
+            } else if (error.code === 3){
+                $.jAlert({
+                    "replaceOtherAlerts": true,
+                    "closeOnClick": true,
+                    "theme": "yellow",
+                    "title": "<strong>Sorry. " + error.message + "</strong>",
+                    "content": "An attempt to locate your position timed out. Please refresh the page and try again."
+                  });
+            };
         },
 
         addressSearch: function(event){
@@ -138,7 +170,6 @@
         },
 
         enterKeyPressedEventHandler: function(event){
-            event.preventDefault();
             if(event.keyCode === 13){
                 this.navigate();
             };
@@ -147,15 +178,17 @@
         navigate: function(){
             var latitude = $("input[id='latitudeSearch']").val();
             var longitude = $("input[id='longitudeSearch']").val();
-            var accuracy = $("input[id='accuracySearch']").val();
             if (latitude === "" && longitude === ""){
                 warningAlert("Sorry", "Please enter an address or search by location");
             } else {
-                if (this.view_object.map.hasLayer(this.userLayer)){
-                    this.view_object.map.removeLayer(this.userLayer);
-                    this.addUserLayerToMap(latitude, longitude, accuracy);
+                this.view_object.userLayerPresent = this.view_object.map.hasLayer(this.userLayer);
+                if (this.view_object.userLayerPresent === false){
+                    this.addUserLayerToMap(latitude, longitude);
+                    this.raiseFloodZoneAlert(latitude, longitude);
                 } else {
-                    this.addUserLayerToMap(latitude, longitude, accuracy);
+                    this.view_object.map.removeLayer(this.userLayer);
+                    this.addUserLayerToMap(latitude, longitude);
+                    this.raiseFloodZoneAlert(latitude, longitude);
                 }
             };
         },
@@ -176,20 +209,16 @@
             }
             $("input[id='addressSearch']").val('');
             $("input[id='latitudeSearch']").val('');
-            $("input[id='latitudeSearch']").val('');
             $("input[id='longitudeSearch']").val('');
-            $("input[id='accuracySearch']").val('');
             this.view_object.map.setView(this.view_object.center, this.view_object.initialZoom);
         },
         // refactor this function because it is too busy
 
-        // refactor this function because it is too busy
-        addUserLayerToMap: function(latitude, longitude, accuracy){
+        addUserLayerToMap: function(latitude, longitude){
             this.userLocationCenter = new L.LatLng(latitude, longitude);
             this.userLocationMarker = L.userMarker([latitude, longitude], {
                 pulsing: true,
-                smallIcon: true,
-                accuracy: accuracy
+                smallIcon: true
             });
             this.userRadius = L.circle([latitude, longitude], 20, {
                 clickable: false,
@@ -199,48 +228,80 @@
                 fillColor: '#ec792b',
                 fillOpacity: 0.3
             });
+            this.userLayer = new L.layerGroup();
+            this.userLayer.addLayer(this.userLocationMarker);
+            this.userLayer.addTo(this.view_object.map);
+            this.view_object.map.fitBounds(this.userRadius.getBounds());
+        },
+
+        raiseFloodZoneAlert: function(latitude, longitude){
             this.view_object.layer = this.findFeatureForLatLng(parseFloat(latitude), parseFloat(longitude));
             if (this.view_object.layer === false){
-                warningAlert("Sorry", "We're only equipped to find flood zones in California.");
+                $.jAlert({
+                    "replaceOtherAlerts": true,
+                    "closeOnClick": true,
+                    "theme": "yellow",
+                    "title": "<strong>Sorry</strong>",
+                    "content": "We're only equipped to find flood zones in California."
+                  });
                 $("button#reset").trigger("click");
             } else {
                 $("#reset").removeClass("hidden");
-                this.userLayer = new L.layerGroup();
-                this.userLayer.addLayer(this.userLocationMarker);
-                this.userLayer.addTo(this.view_object.map);
-                this.view_object.map.fitBounds(this.userRadius.getBounds());
-                if (this.view_object.layer.zones._100_year_zone === null){
-                    successAlert("<strong>You're not in a flood zone</strong>", "But that doesn't mean that your area can't flood. FEMA estimates that a third of Federal Disaster Assistance goes to people outside of high-risk flood zones. <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>Here's how FEMA recommends you stay safe in a flood</a>.");
-                } else if (this.view_object.layer.zones._100_year_zone === undefined){
-                    warningAlert("Sorry", "We were unable to complete your search.");
+                if (this.view_object.layer.zones._flood_zones === null){
+                    $.jAlert({
+                        "replaceOtherAlerts": true,
+                        "closeOnClick": true,
+                        "theme": "green",
+                        "title": "<strong>You're not in a flood zone</strong>",
+                        "content": "But that doesn't mean that your area can't flood. FEMA estimates that a third of Federal Disaster Assistance goes to people outside of high-risk flood zones. <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>Here's how FEMA recommends you stay safe in a flood</a>."
+                      });
+                } else if (this.view_object.layer.zones._flood_zones === undefined){
+                    $.jAlert({
+                        "replaceOtherAlerts": true,
+                        "closeOnClick": true,
+                        "theme": "yellow",
+                        "title": "<strong>Sorry</strong>",
+                        "content": "We were unable to complete your search."
+                      });
                 } else {
-                    errorAlert("<strong>You're in a flood zone</strong>", "Flood insurance is typically required for homeowners in these areas, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>.");
-                    this.set_topo_layer(this.view_object.layer.zones._100_year_zone)
+                    $.jAlert({
+                        "replaceOtherAlerts": true,
+                        "closeOnClick": true,
+                        "theme": "red",
+                        "title": "<strong>You're in a flood zone</strong>",
+                        "content": "Flood insurance is typically required for homeowners in these areas, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>."
+                      });
+                    this.set_topo_layer(this.view_object.layer.zones._flood_zones)
                 };
             };
         },
-        // refactor this function because it is too busy
 
         findFeatureForLatLng: function(latitude, longitude){
-            var in_cali_wherewolf = Wherewolf();
-            $.getJSON("data/ca_counties.json", function(california_data){
-                in_cali_wherewolf.addAll(california_data);
-            });
             var user_here = {
                 lng: longitude,
                 lat: latitude
             };
-
-            // var in_cali = in_cali_wherewolf.find(user_here);
-            // var is_empty = _.isEmpty(in_cali);
-
-            var is_empty = false;
-
-            if (is_empty === true){
-                return false;
-            } else {
-                var zones = this.view_object.wherewolf.find(user_here, {wholeFeature: true});
+            var _this = this;
+            var proceed = null;
+            $.ajax({
+                async: false,
+                url: "data/ca_counties.json",
+                dataType: "json",
+                success: function(data){
+                    _this.view_object.cali_wherewolf.addAll(data);
+                    var in_cali = _this.view_object.cali_wherewolf.find(user_here, {wholeFeature: true});
+                    if (in_cali.counties === null || in_cali.counties === undefined){
+                        proceed = false;
+                    } else {
+                        proceed = true;
+                    };
+                }
+            });
+            if (proceed === true){
+                var zones = _this.view_object.wherewolf.find(user_here, {wholeFeature: true});
                 return {"zones": zones, "user_here": user_here};
+            } else {
+                return false;
             };
         },
 
@@ -272,5 +333,5 @@
                 weight: .85,
                 opacity: .85
             });
-        },
+        }
     });

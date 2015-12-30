@@ -66,7 +66,7 @@
         },
 
         events: {
-            "click li.projects-embed a": "renderEmbedBox",
+            "click li.projects-embed a": "renderEmbedBox"
         },
 
         renderEmbedBox: function(){
@@ -130,7 +130,7 @@
         window.app = new App.Router();
         Backbone.history.start({
             root: window.appConfig.project_root,
-            pushState: false,
+            pushState: false
         });
     });
 
