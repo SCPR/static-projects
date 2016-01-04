@@ -1,0 +1,120 @@
+/* basic structure */
+.data-container .data-visuals { margin: 0px; }
+
+.data-container .data-visuals #content-map-canvas { width: 100%; height: 600px; margin: 0px; cursor: pointer; }
+
+.data-legend { width: 100%; height: auto; margin: 10px 0 5px 0; }
+
+.data-container .data-visuals .jumbotron { width: 100%; height: auto; background: rgba(240, 248, 255, 1.0); margin: 10px 0% 10px 0%; padding: 10px 0 10px 0; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; -khtml-border-radius: 0; overflow: hidden; }
+
+.rando-fact { font-size: 100%; }
+
+.data-container .data-visuals .jumbotron a { font-weight: 700; }
+
+.data-container .data-visuals .jumbotron #action-controls { width: 100%; height: auto; margin: 10px 0 0 0; }
+
+.data-container .data-visuals .jumbotron #form-controls,
+.data-container .data-visuals .jumbotron #reset { height: auto; margin: 0 10px 0 10px; }
+
+.data-container .data-visuals .jumbotron #form-controls button,
+.data-container .data-visuals .jumbotron #reset button { height: 50px; margin: 10px 0px 0 0px; }
+
+.data-container .data-visuals .data-loading { width: 40%; height: 100px; margin: 20px 30% 0 30%; padding: 0px; text-align: center; color: #333333; }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    .data-container .data-visuals #content-map-canvas { height: 600px; margin: 0 0 10px 0; }
+    body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
+    body.minimal .data-container h2 { font-size: 240%; }
+    body.minimal .data-container h3 { font-size: 210%; }
+    body.minimal .data-container h4 { font-size: 180%; }
+    body.minimal .data-container h5 { font-size: 150%; }
+    body.minimal .data-container h6 { font-size: 130%; }
+    body.minimal .data-container p { font-size: 110%; }
+}
+
+@media (max-width: 480px) {
+    .data-container .data-visuals #content-map-canvas { height: 600px; margin: 0 0 10px 0; }
+    body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
+    body.minimal .data-container h2 { font-size: 240%; }
+    body.minimal .data-container h3 { font-size: 210%; }
+    body.minimal .data-container h4 { font-size: 180%; }
+    body.minimal .data-container h5 { font-size: 150%; }
+    body.minimal .data-container h6 { font-size: 130%; }
+    body.minimal .data-container p { font-size: 110%; }
+}
+
+@media (max-width: 491px) {
+    .data-container .data-visuals .jumbotron a { font-size: 90%; }
+    .data-container .data-visuals .jumbotron .placemark { width: 20px; vertical-align: middle; }
+}
+
+@media (min-width: 481px) {
+    body.minimal h1 { font-size: 420%; font-weight: bold; }
+    body.minimal h2 { font-size: 380%; }
+    body.minimal h3 { font-size: 340%; }
+    body.minimal h4 { font-size: 300%; }
+    body.minimal h5 { font-size: 260%; }
+    body.minimal h6 { font-size: 220%; }
+    body.minimal p { font-size: 120%; }
+    body.minimal a.btn-primary { font-size: 120%; }
+    body.minimal .kicker { font-size: 130%; }
+    body.minimal .small-writing { font-size: 120%; }
+    body.minimal .sky-writing { font-size: 500%; color: #EC7C04; }
+    body.minimal .jumbotron p { font-size: 70%; font-weight: normal; }
+    body.minimal table { font-size: 130%; }
+    body.minimal ul li { font-size: 130%; }
+}
+
+@media (min-width: 491px) {
+    .data-container .data-visuals .jumbotron .placemark { width: 25px; }
+}
+
+@media (min-width: 567px) {
+    .data-container .data-visuals .jumbotron a { font-size: 120%; }
+    .data-container .data-visuals .jumbotron .placemark { width: 25px; vertical-align: text-bottom; }
+}
+
+@media (min-width: 767px) {
+    body.minimal h1 { font-size: 460%; font-weight: bold; }
+    body.minimal h2 { font-size: 400%; }
+    body.minimal h3 { font-size: 340%; }
+    body.minimal h4 { font-size: 280%; }
+    body.minimal h5 { font-size: 220%; }
+    body.minimal h6 { font-size: 160%; }
+    body.minimal p { font-size: 130%; }
+    body.minimal a.btn-primary { font-size: 140%; }
+    body.minimal .kicker { font-size: 150%; }
+    body.minimal .small-writing { font-size: 130%; }
+    body.minimal .sky-writing { font-size: 600%; color: #EC7C04; }
+    body.minimal .jumbotron p { font-size: 80%; font-weight: normal; }
+    body.minimal table { font-size: 140%; }
+    body.minimal ul li { font-size: 140%; }
+}
+
+@media (min-width: 768px) {
+    .data-container .data-visuals .jumbotron a { font-size: 150%; }
+    .data-container .data-visuals .jumbotron .placemark { width: 35px; vertical-align: text-bottom; }
+}
+
+@media (min-width: 830px) {
+    .data-container .data-visuals .jumbotron .placemark { width: 40px; vertical-align: text-bottom; }
+}
+
+@media (min-width: 992px) {
+    .data-container .data-visuals .jumbotron a { font-size: 175%; }
+    .data-container .data-visuals .jumbotron .placemark { width: 50px; vertical-align: text-bottom; }
+    body.minimal h1 { font-size: 480%; font-weight: bold; }
+    body.minimal h2 { font-size: 420%; }
+    body.minimal h3 { font-size: 360%; }
+    body.minimal h4 { font-size: 300%; }
+    body.minimal h5 { font-size: 240%; }
+    body.minimal h6 { font-size: 180%; }
+    body.minimal p { font-size: 130%; }
+    body.minimal a.btn-primary { font-size: 140%; }
+    body.minimal .kicker { font-size: 150%; }
+    body.minimal .small-writing { font-size: 130%; }
+    body.minimal .sky-writing { font-size: 600%; color: #EC7C04; }
+    body.minimal .jumbotron p { font-size: 80%; font-weight: normal; }
+    body.minimal table { font-size: 140%; }
+    body.minimal ul li { font-size: 140%; }
+ }

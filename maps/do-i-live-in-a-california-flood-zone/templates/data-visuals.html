@@ -1,0 +1,39 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="jumbotron">
+        <noscript>Please enable JavaScript to view this interactive.</noscript>
+        <div id="action-controls" class="row">
+            <div id="address-search" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center">
+                <img class="placemark searchMe" src="images/icon_home.png" />
+                <a class="searchMe" href="javascript:void(0)">Use my address</a>
+            </div>
+            <div id="location-search" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-center hide-ie-9">
+                <img class="placemark findMe" src="images/icon_marker.png" />
+                <a class="findMe" href="javascript:void(0)">Use my location</a>
+            </div>
+        </div>
+        <form id="submission-form" class="form-inline" role="form">
+            <div class="row hidden">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <input type="text" class="form-control" name="lat" id="latitudeSearch">
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                    <input type="text" class="form-control" name="lng" id="longitudeSearch">
+                </div>
+            </div>
+            <div id="form-controls" class="row hidden">
+                <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center submit">
+                    <input autofocus type="text" class="form-control" id="addressSearch" placeholder="Start typing your address...">
+                    <button type="button" class="btn btn-primary pull-left btn-group btn-group-justified" id="submit">Search</button>
+                </div>
+            </div>
+            <div id="reset" class="row hidden">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                    <button type="button" class="btn btn-primary pull-right btn-group btn-group-justified" id="reset">Reset map</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="content-map-container">
+        <div id="content-map-canvas" class="initial"></div>
+    </div>
+</div>
