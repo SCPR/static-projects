@@ -2,14 +2,16 @@
 
     window.appConfig = {
         testing: false,
-        project_root: "http://projects.scpr.org/internal/tools/",
+        project_root: "http://projects.scpr.org/internal/tools/2012-general-election-voter-turnout-patterns/san-diego-county/",
         open_about_this: false,
         comments: false,
         embed_this: false,
         embed_width: "100%",
         embed_height: "850px",
         twitter_share_text: "This application can be used to identify 2012 general election voter turnout across the state of California",
-        initial_zoom: 10
+        initial_zoom: 10,
+        lat: 33.0282031989584,
+        lng: -116.770207444568
     };
 
     window.App = {
@@ -40,11 +42,11 @@
         initialize: function(){
 
             // checks for testing environment
-            if (window.appConfig.testing === true){
-                window.wrapperTemplatePath = "/2kpcc/static-projects/static-files/v3-dependencies/templates/"
-            } else {
+            if (window.location.href.indexOf("http://projects.scpr.org/") > -1){
                 window.wrapperTemplatePath = "http://projects.scpr.org/static-files/v3-dependencies/templates/"
-            }
+            } else {
+                window.wrapperTemplatePath = "/2kpcc/static-projects/static-files/v3-dependencies/templates/"
+            };
 
             // checks embed settings
             if (window.appConfig.embed_this != true){

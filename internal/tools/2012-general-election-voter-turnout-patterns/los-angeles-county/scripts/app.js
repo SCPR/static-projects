@@ -88,7 +88,7 @@
                  subdomains: ['otile1','otile2','otile3','otile4']
             });
 
-            this.center = new L.LatLng(34.1980014782273, -118.261016969704);
+            this.center = new L.LatLng(window.appConfig.lat, window.appConfig.lng);
             this.geojsonOne = L.geoJson(electionResults, {
                 filter: this.filterFeatures,
                 style: this.styleFeatures,
@@ -105,8 +105,6 @@
         },
 
         styleFeatures: function (feature){
-
-            console.log(feature);
 
             var layerColor;
 
