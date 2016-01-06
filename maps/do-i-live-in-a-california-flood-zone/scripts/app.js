@@ -39,7 +39,8 @@
                 $(".rando-fact").text(array_of_flood_facts[idx]);
             }, 3700);
             // $.getJSON("data/flood_zone_100.json", this.render_application_visuals);
-            $.getJSON("data/flood_zone_100_500.json", this.render_application_visuals);
+            // $.getJSON("data/flood_zone_100_500.json", this.render_application_visuals);
+            $.getJSON("data/100.json", this.render_application_visuals);
         },
 
         render_application_visuals: function(data){
