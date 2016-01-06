@@ -1,0 +1,18 @@
+body.minimal .data-container { max-width: 100%; margin: 0 auto; }
+body.minimal .data-container a.btn-primary { color: #ffffff; }
+.data-container .data-visuals #content-map-container { width: 100%; height: 1000px; }
+.data-container .data-visuals #content-map-legend table {margin-bottom: 0px;}
+.data-container .data-visuals #content-map-legend td { width: 33%; color: #ffffff; font-weight: bold; }
+.data-container .data-visuals #content-map-legend td.base-style { color: #ffffff; background: rgb(190,174,212); }
+.data-container .data-visuals #content-map-legend td.shriver-style { color: #ffffff; background: rgba(200,61,45,0.8); }
+.data-container .data-visuals #content-map-legend td.kuehl-style { color: #ffffff; background: rgba(13,87,160,0.8); }
+.data-container .data-visuals #content-map-canvas { width: 100%; height: 1000px; margin: 0 0 0 0; z-index: 10; }
+.data-container .data-visuals #data-point-display { width: 100%; height: 535px; overflow-x: hidden; overflow-y: scroll; }
+
+a.highTurnoutPrecincts, a.lowTurnoutPrecincts, a.resetMap { color: #ffffff; font-weight: bold; }
+a.lowTurnoutPrecincts { background: rgba(200,61,45,0.8); border: rgba(200,61,45,0.8) solid .1em;}
+a.highTurnoutPrecincts { background: rgba(13,87,160,0.8); border: rgba(13,87,160,0.8) solid .1em;}
+a.resetMap { background: rgba(217,71,1,0.8); border: rgba(217,71,1,0.8) solid .1em;}
+
+a.btn-primary:hover { color: #ffffff; background: rgba(0,0,0,0.8);}
+.precinct-data { padding: 5px; background: #ffffff; cursor: pointer; }
