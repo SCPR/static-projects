@@ -100,6 +100,7 @@
         events: {
             "click a.resetMap": "resetMap",
             "click a.lowTurnoutPrecincts": "lowTurnoutMap",
+            "click a.midTurnoutPrecincts": "midTurnoutMap",
             "click a.highTurnoutPrecincts": "highTurnoutMap",
             "click .precinct-data": "thisPrecinct",
         },
@@ -186,6 +187,16 @@
             );
             $("a.lowTurnoutPrecincts").css(
                 "background", "rgba(200,61,45,0.8)"
+            );
+        },
+
+        midTurnoutMap: function(e){
+            this.changeLayerStylesForWinner("middle");
+            $(e.currentTarget).css(
+                "background", "rgb(190,174,212)"
+            );
+            $("a.midTurnoutPrecincts").css(
+                "background", "rgb(190,174,212)"
             );
         },
 
