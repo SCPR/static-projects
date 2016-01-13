@@ -1,9 +1,10 @@
     App.Router = Backbone.Router.extend({
         initialize: function(){
             $.fn.jAlert.defaults.backgroundColor = "white";
-
-            window.flood_topos = {};
-
+            window.config = {};
+            window.config.lat = 34.061841979429445
+            window.config.lng = -118.26370239257812
+            window.config.zoom = 8
             L.TopoJSON = L.GeoJSON.extend({
                 addData: function(jsonData){
                     if (jsonData.type === "Topology"){
@@ -21,7 +22,15 @@
         },
 
         routes: {
-            "": "fetchData"
+            "": "fetchData",
+            "display/lat=:latitude&lng=:longitude&zoom=:zoomLevel(/)": "renderCustomView"
+        },
+
+        renderCustomView: function(lat, lng, zoom){
+            window.config.lat = parseFloat(lat);
+            window.config.lng = parseFloat(lng);
+            window.config.zoom = parseInt(zoom);
+            this.fetchData();
         },
 
         fetchData: function(){
@@ -43,33 +52,30 @@
             }, 3700);
 
             $.getJSON("data/100.json", function(data){
-                window.flood_topos._100_year_flood = data;
+                window.config._100_year_flood = data;
             });
 
             $.getJSON("data/500.json", function(data){
-                window.flood_topos._500_year_flood = data;
+                window.config._500_year_flood = data;
             });
 
             var _this = this;
             var checkExist = setInterval(function() {
-                var _100 = _.has(window.flood_topos, "_100_year_flood");
-                var _500 = _.has(window.flood_topos, "_500_year_flood");
+                var _100 = _.has(window.config, "_100_year_flood");
+                var _500 = _.has(window.config, "_500_year_flood");
                 if (_100 === true && _500 === true){
                     clearInterval(checkExist);
-                    _this.render_application_visuals(window.flood_topos);
+                    _this.render_application_visuals(window.config);
                 }
             }, 500);
 
         },
 
-        render_application_visuals: function(data){
+        render_application_visuals: function(config){
             if (this.application_visuals){
                 this.application_visuals.remove();
             };
-            this.application_visuals = new App.Views.ApplicationVisuals({
-                _100_year_flood: data._100_year_flood,
-                _500_year_flood: data._500_year_flood
-            });
+            this.application_visuals = new App.Views.ApplicationVisuals(config);
             return this.application_visuals;
         }
     });
@@ -93,11 +99,11 @@
                 maxZoom: 15
             });
             if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
-                this.view_object.initialZoom = 8;
+                this.view_object.zoom = 8;
             } else {
-                this.view_object.initialZoom = 8;
-            }
-            this.view_object.center = new L.LatLng(34.061841979429445, -118.26370239257812);
+                this.view_object.zoom = this.view_object.zoom;
+            };
+            this.view_object.center = new L.LatLng(this.view_object.lat, this.view_object.lng);
             this.view_object._100_wherewolf = Wherewolf();
             this.view_object._500_wherewolf = Wherewolf();
             this.view_object.cali_wherewolf = Wherewolf();
@@ -123,7 +129,7 @@
                 minZoom: 6,
                 maxZoom: 15
             });
-            this.view_object.map.setView(this.view_object.center, this.view_object.initialZoom);
+            this.view_object.map.setView(this.view_object.center, this.view_object.zoom);
             this.view_object.map.addLayer(this.view_object.stamenToner);
             // this.view_object.map.on("click", this.onMapClick);
         },
@@ -239,7 +245,7 @@
             $("input[id='addressSearch']").val('');
             $("input[id='latitudeSearch']").val('');
             $("input[id='longitudeSearch']").val('');
-            this.view_object.map.setView(this.view_object.center, this.view_object.initialZoom);
+            this.view_object.map.setView(this.view_object.center, this.view_object.zoom);
         },
         // refactor this function because it is too busy
 
@@ -265,11 +271,9 @@
 
         raiseFloodZoneAlert: function(latitude, longitude){
             this.view_object.layer = this.findFeatureForLatLng(parseFloat(latitude), parseFloat(longitude));
-
             var _100_null = _.isNull(this.view_object.layer._100_zones._flood_zones);
             var _100_undefined = _.isUndefined(this.view_object.layer._100_zones._flood_zones);
             var _100_value = _.isObject(this.view_object.layer._100_zones._flood_zones)
-
             var _500_null = _.isNull(this.view_object.layer._500_zones._flood_zones);
             var _500_undefined = _.isUndefined(this.view_object.layer._500_zones._flood_zones);
             var _500_value = _.isObject(this.view_object.layer._500_zones._flood_zones)
