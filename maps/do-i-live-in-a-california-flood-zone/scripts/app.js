@@ -30,8 +30,7 @@
             var lat = parseFloat(lat);
             var lng = parseFloat(lng);
             var zoom = parseInt(zoom);
-
-            if (zoom <= 1 || zoom >= 16){
+            if (zoom <= 1 || zoom >= 21){
                 $.jAlert({
                     "replaceOtherAlerts": true,
                     "closeOnClick": true,
@@ -95,9 +94,9 @@
         },
 
         render_application_visuals: function(config){
-            if (this.application_visuals){
-                this.application_visuals.remove();
-            };
+            // if (this.application_visuals){
+            //     this.application_visuals.remove();
+            // };
             this.application_visuals = new App.Views.ApplicationVisuals(config);
             return this.application_visuals;
         }
@@ -154,7 +153,7 @@
             });
             this.view_object.map.setView(this.view_object.center, this.view_object.zoom);
             this.view_object.map.addLayer(this.view_object.stamenToner);
-            // this.view_object.map.on("click", this.onMapClick);
+            this.view_object.map.on("click", this.onMapClick);
         },
 
         searchMe: function(){
@@ -290,6 +289,12 @@
             this.userLayer.addLayer(this.userLocationMarker);
             this.userLayer.addTo(this.view_object.map);
             this.view_object.map.fitBounds(this.userRadius.getBounds());
+
+            // window.app.navigate("#display/" + "lat=" + latitude + "&lng=" + longitude + "&zoom=20", {
+            //     trigger: true,
+            //     replace: true,
+            // });
+
         },
 
         raiseFloodZoneAlert: function(latitude, longitude){
@@ -300,7 +305,6 @@
             var _500_null = _.isNull(this.view_object.layer._500_zones._flood_zones);
             var _500_undefined = _.isUndefined(this.view_object.layer._500_zones._flood_zones);
             var _500_value = _.isObject(this.view_object.layer._500_zones._flood_zones)
-
             if (this.view_object.layer === false){
                 $.jAlert({
                     "replaceOtherAlerts": true,
