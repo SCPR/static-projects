@@ -2,9 +2,6 @@
         initialize: function(){
             $.fn.jAlert.defaults.backgroundColor = "white";
             window.config = {};
-            window.config.lat = 34.061841979429445
-            window.config.lng = -118.26370239257812
-            window.config.zoom = 8
             L.TopoJSON = L.GeoJSON.extend({
                 addData: function(jsonData){
                     if (jsonData.type === "Topology"){
@@ -22,14 +19,30 @@
         },
 
         routes: {
-            "": "fetchData",
-            "display/lat=:latitude&lng=:longitude&zoom=:zoomLevel(/)": "renderCustomView"
+            "": "renderInitialView",
+            "lat=:latitude&lng=:longitude&zoom=:zoomLevel(/)": "renderCustomView"
+        },
+
+        renderInitialView: function(){
+            window.config.initialUrl = window.appConfig.project_root;
+            window.config.type = "initial"
+            window.config.lat = 34.061841979429445
+            window.config.lng = -118.26370239257812
+            window.config.zoom = 8
+            this.fetchData();
         },
 
         renderCustomView: function(lat, lng, zoom){
             var lat = parseFloat(lat);
             var lng = parseFloat(lng);
             var zoom = parseInt(zoom);
+
+            if (zoom === 20){
+                window.config.type = "user";
+            } else {
+                window.config.type = "initial";
+            };
+
             if (zoom <= 1 || zoom >= 21){
                 $.jAlert({
                     "replaceOtherAlerts": true,
@@ -38,7 +51,6 @@
                     "title": "<strong>Invalid zoom level</strong>",
                     "content": "Zoom level should be between 1 and 15. Please try again."
                   });
-
             } else if (lat > 90 || lat < -90 && lng > 180 || lng < -180){
                 $.jAlert({
                     "replaceOtherAlerts": true,
@@ -65,22 +77,17 @@
                 "Areas that have recently experienced wildfires are especially at risk of flooding and mudflows for up to five years after.",
                 "Not sure what to put in your emergency kit? Start with a three-day supply of food and water, a flashlight and a battery-powered or handcrank radio.",
             ];
-
             $(".rando-fact").text(array_of_flood_facts[3]);
-
             setInterval(function(){
                 var idx = Math.floor(array_of_flood_facts.length * Math.random());
                 $(".rando-fact").text(array_of_flood_facts[idx]);
             }, 3700);
-
             $.getJSON("data/100.json", function(data){
                 window.config._100_year_flood = data;
             });
-
             $.getJSON("data/500.json", function(data){
                 window.config._500_year_flood = data;
             });
-
             var _this = this;
             var checkExist = setInterval(function() {
                 var _100 = _.has(window.config, "_100_year_flood");
@@ -90,13 +97,9 @@
                     _this.render_application_visuals(window.config);
                 }
             }, 500);
-
         },
 
         render_application_visuals: function(config){
-            // if (this.application_visuals){
-            //     this.application_visuals.remove();
-            // };
             this.application_visuals = new App.Views.ApplicationVisuals(config);
             return this.application_visuals;
         }
@@ -153,7 +156,12 @@
             });
             this.view_object.map.setView(this.view_object.center, this.view_object.zoom);
             this.view_object.map.addLayer(this.view_object.stamenToner);
-            this.view_object.map.on("click", this.onMapClick);
+            if (this.view_object.type === "user"){
+                $("input[id='latitudeSearch']").val(this.view_object.lat);
+                $("input[id='longitudeSearch']").val(this.view_object.lng);
+                this.navigate();
+            };
+            // this.view_object.map.on("click", this.onMapClick);
         },
 
         searchMe: function(){
@@ -242,11 +250,22 @@
                 if (this.view_object.userLayerPresent === false){
                     this.addUserLayerToMap(latitude, longitude);
                     this.raiseFloodZoneAlert(latitude, longitude);
+                    window.app.navigate("#lat=" + latitude + "&lng=" + longitude + "&zoom=20/", {
+                        trigger: false,
+                        replace: true,
+                    });
                 } else {
                     this.view_object.map.removeLayer(this.userLayer);
                     this.addUserLayerToMap(latitude, longitude);
                     this.raiseFloodZoneAlert(latitude, longitude);
-                }
+                    window.app.navigate("#lat=" + latitude + "&lng=" + longitude + "&zoom=20/", {
+                        trigger: false,
+                        replace: true,
+                    });
+                };
+                this_url = encodeURIComponent(window.appConfig.project_root + "#lat=" + latitude + "&lng=" + longitude + "&zoom=20/");
+                $(".facebook").attr("href", "https://www.facebook.com/sharer/sharer.php?u=" + this_url);
+                $(".twitter").attr("href", "http://twitter.com/share?text=Do you live in a flood zone? Check using @KPCC's interactive map.&amp;url=" + this_url);
             };
         },
 
@@ -268,6 +287,10 @@
             $("input[id='latitudeSearch']").val('');
             $("input[id='longitudeSearch']").val('');
             this.view_object.map.setView(this.view_object.center, this.view_object.zoom);
+            window.app.navigate("", {
+                trigger: true,
+                replace: true,
+            });
         },
         // refactor this function because it is too busy
 
@@ -289,12 +312,6 @@
             this.userLayer.addLayer(this.userLocationMarker);
             this.userLayer.addTo(this.view_object.map);
             this.view_object.map.fitBounds(this.userRadius.getBounds());
-
-            // window.app.navigate("#display/" + "lat=" + latitude + "&lng=" + longitude + "&zoom=20", {
-            //     trigger: true,
-            //     replace: true,
-            // });
-
         },
 
         raiseFloodZoneAlert: function(latitude, longitude){
