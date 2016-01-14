@@ -316,12 +316,6 @@
 
         raiseFloodZoneAlert: function(latitude, longitude){
             this.view_object.layer = this.findFeatureForLatLng(parseFloat(latitude), parseFloat(longitude));
-            var _100_null = _.isNull(this.view_object.layer._100_zones._flood_zones);
-            var _100_undefined = _.isUndefined(this.view_object.layer._100_zones._flood_zones);
-            var _100_value = _.isObject(this.view_object.layer._100_zones._flood_zones)
-            var _500_null = _.isNull(this.view_object.layer._500_zones._flood_zones);
-            var _500_undefined = _.isUndefined(this.view_object.layer._500_zones._flood_zones);
-            var _500_value = _.isObject(this.view_object.layer._500_zones._flood_zones)
             if (this.view_object.layer === false){
                 $.jAlert({
                     "replaceOtherAlerts": true,
@@ -332,6 +326,12 @@
                   });
                 $("button#reset").trigger("click");
             } else {
+                var _100_null = _.isNull(this.view_object.layer._100_zones._flood_zones);
+                var _100_undefined = _.isUndefined(this.view_object.layer._100_zones._flood_zones);
+                var _100_value = _.isObject(this.view_object.layer._100_zones._flood_zones)
+                var _500_null = _.isNull(this.view_object.layer._500_zones._flood_zones);
+                var _500_undefined = _.isUndefined(this.view_object.layer._500_zones._flood_zones);
+                var _500_value = _.isObject(this.view_object.layer._500_zones._flood_zones)
                 $("#reset").removeClass("hidden");
                 if (_100_null === true && _500_null === true){
                     $.jAlert({
