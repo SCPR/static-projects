@@ -27,10 +27,33 @@
         },
 
         renderCustomView: function(lat, lng, zoom){
-            window.config.lat = parseFloat(lat);
-            window.config.lng = parseFloat(lng);
-            window.config.zoom = parseInt(zoom);
-            this.fetchData();
+            var lat = parseFloat(lat);
+            var lng = parseFloat(lng);
+            var zoom = parseInt(zoom);
+
+            if (zoom <= 1 || zoom >= 16){
+                $.jAlert({
+                    "replaceOtherAlerts": true,
+                    "closeOnClick": true,
+                    "theme": "yellow",
+                    "title": "<strong>Invalid zoom level</strong>",
+                    "content": "Zoom level should be between 1 and 15. Please try again."
+                  });
+
+            } else if (lat > 90 || lat < -90 && lng > 180 || lng < -180){
+                $.jAlert({
+                    "replaceOtherAlerts": true,
+                    "closeOnClick": true,
+                    "theme": "yellow",
+                    "title": "<strong>Invalid coordinates</strong>",
+                    "content": "Latitude coordinates should be between -90 and 90, and longitude coordinates should be between -180 and 180. Please try again."
+                  });
+            } else {
+                window.config.lat = lat;
+                window.config.lng = lng;
+                window.config.zoom = zoom;
+                this.fetchData();
+            };
         },
 
         fetchData: function(){
@@ -95,7 +118,7 @@
             this.view_object.stamenToner = L.tileLayer("http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
                 attribution: "Map tiles by <a href='http://stamen.com' target='_blank'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0' target='_blank'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://openstreetmap.org' target='_blank'>OpenStreetMap</a> contributors, <a href='http://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>",
                 subdomains: "abcd",
-                minZoom: 6,
+                minZoom: 1,
                 maxZoom: 15
             });
             if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
@@ -310,29 +333,33 @@
                         $.jAlert({
                             "replaceOtherAlerts": true,
                             "closeOnClick": true,
-                            "theme": "red",
+                            "theme": "black",
                             "title": "<strong>You're in a 100-year and 500-year flood zone</strong>",
                             "content": "Flood insurance is typically required for homeowners in a 100-year flood zone, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>."
                           });
+                        this.view_object.layer._100_zones._flood_zones.name = "_100_zone"
                         this.set_topo_layer(this.view_object.layer._100_zones._flood_zones);
+                        this.view_object.layer._500_zones._flood_zones.name = "_500_zone"
                         this.set_topo_layer(this.view_object.layer._500_zones._flood_zones);
                     } else if (_100_value === true && _500_value === false){
                         $.jAlert({
                             "replaceOtherAlerts": true,
                             "closeOnClick": true,
-                            "theme": "red",
+                            "theme": "black",
                             "title": "<strong>You're in a 100-year flood zone</strong>",
                             "content": "Flood insurance is typically required for homeowners in these areas, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>."
                           });
+                        this.view_object.layer._100_zones._flood_zones.name = "_100_zone"
                         this.set_topo_layer(this.view_object.layer._100_zones._flood_zones);
                     } else if (_100_value === false && _500_value === true){
                         $.jAlert({
                             "replaceOtherAlerts": true,
                             "closeOnClick": true,
-                            "theme": "yellow",
+                            "theme": "black",
                             "title": "<strong>You're in a 500-year flood zone</strong>",
                             "content": "Flood insurance isn't required for in these areas, which have a 0.2 percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). That may seem low, but the risks are real. Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>."
                         });
+                        this.view_object.layer._500_zones._flood_zones.name = "_500_zone"
                         this.set_topo_layer(this.view_object.layer._500_zones._flood_zones);
                     } else {
                         $.jAlert({
@@ -391,19 +418,23 @@
         // },
 
         set_topo_layer: function(geo_data){
+            console.log(geo_data.name);
             this.topoLayer = new L.TopoJSON();
             this.topoLayer.addData(geo_data);
-            this.topoLayer.eachLayer(this.style);
-            this.topoLayer.addTo(this.view_object.map);
-        },
-
-        style: function (layer){
-            layer.setStyle({
-                fillColor: "#f07a30",
-                fillOpacity: .85,
-                color: '#000000',
-                weight: .85,
-                opacity: .85
+            if (geo_data.name === "_100_zone"){
+                var thisFillColor = "#f07a30";
+            } else if (geo_data.name === "_500_zone"){
+                var thisFillColor = "#30a6f0";
+            };
+            this.topoLayer.eachLayer(function (layer){
+                layer.setStyle({
+                    fillColor: thisFillColor,
+                    fillOpacity: .85,
+                    color: '#000000',
+                    weight: .85,
+                    opacity: .85
+                });
             });
+            this.topoLayer.addTo(this.view_object.map);
         }
     });
