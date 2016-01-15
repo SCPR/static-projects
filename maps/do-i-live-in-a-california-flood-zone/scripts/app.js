@@ -2,9 +2,6 @@
         initialize: function(){
             $.fn.jAlert.defaults.backgroundColor = "white";
             window.config = {};
-            window.config.lat = 34.061841979429445
-            window.config.lng = -118.26370239257812
-            window.config.zoom = 8
             L.TopoJSON = L.GeoJSON.extend({
                 addData: function(jsonData){
                     if (jsonData.type === "Topology"){
@@ -22,15 +19,52 @@
         },
 
         routes: {
-            "": "fetchData",
-            "display/lat=:latitude&lng=:longitude&zoom=:zoomLevel(/)": "renderCustomView"
+            "": "renderInitialView",
+            "lat=:latitude&lng=:longitude&zoom=:zoomLevel(/)": "renderCustomView"
+        },
+
+        renderInitialView: function(){
+            window.config.initialUrl = window.appConfig.project_root;
+            window.config.type = "initial"
+            window.config.lat = 34.061841979429445
+            window.config.lng = -118.26370239257812
+            window.config.zoom = 8
+            this.fetchData();
         },
 
         renderCustomView: function(lat, lng, zoom){
-            window.config.lat = parseFloat(lat);
-            window.config.lng = parseFloat(lng);
-            window.config.zoom = parseInt(zoom);
-            this.fetchData();
+            var lat = parseFloat(lat);
+            var lng = parseFloat(lng);
+            var zoom = parseInt(zoom);
+
+            if (zoom === 20){
+                window.config.type = "user";
+            } else {
+                window.config.type = "initial";
+            };
+
+            if (zoom <= 1 || zoom >= 21){
+                $.jAlert({
+                    "replaceOtherAlerts": true,
+                    "closeOnClick": true,
+                    "theme": "yellow",
+                    "title": "<strong>Invalid zoom level</strong>",
+                    "content": "Zoom level should be between 1 and 15. Please try again."
+                  });
+            } else if (lat > 90 || lat < -90 && lng > 180 || lng < -180){
+                $.jAlert({
+                    "replaceOtherAlerts": true,
+                    "closeOnClick": true,
+                    "theme": "yellow",
+                    "title": "<strong>Invalid coordinates</strong>",
+                    "content": "Latitude coordinates should be between -90 and 90, and longitude coordinates should be between -180 and 180. Please try again."
+                  });
+            } else {
+                window.config.lat = lat;
+                window.config.lng = lng;
+                window.config.zoom = zoom;
+                this.fetchData();
+            };
         },
 
         fetchData: function(){
@@ -43,22 +77,17 @@
                 "Areas that have recently experienced wildfires are especially at risk of flooding and mudflows for up to five years after.",
                 "Not sure what to put in your emergency kit? Start with a three-day supply of food and water, a flashlight and a battery-powered or handcrank radio.",
             ];
-
             $(".rando-fact").text(array_of_flood_facts[3]);
-
             setInterval(function(){
                 var idx = Math.floor(array_of_flood_facts.length * Math.random());
                 $(".rando-fact").text(array_of_flood_facts[idx]);
             }, 3700);
-
             $.getJSON("data/100.json", function(data){
                 window.config._100_year_flood = data;
             });
-
             $.getJSON("data/500.json", function(data){
                 window.config._500_year_flood = data;
             });
-
             var _this = this;
             var checkExist = setInterval(function() {
                 var _100 = _.has(window.config, "_100_year_flood");
@@ -68,13 +97,9 @@
                     _this.render_application_visuals(window.config);
                 }
             }, 500);
-
         },
 
         render_application_visuals: function(config){
-            if (this.application_visuals){
-                this.application_visuals.remove();
-            };
             this.application_visuals = new App.Views.ApplicationVisuals(config);
             return this.application_visuals;
         }
@@ -95,7 +120,7 @@
             this.view_object.stamenToner = L.tileLayer("http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png", {
                 attribution: "Map tiles by <a href='http://stamen.com' target='_blank'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0' target='_blank'>CC BY 3.0</a> &mdash; Map data &copy; <a href='http://openstreetmap.org' target='_blank'>OpenStreetMap</a> contributors, <a href='http://creativecommons.org/licenses/by-sa/2.0/' target='_blank'>CC-BY-SA</a>",
                 subdomains: "abcd",
-                minZoom: 6,
+                minZoom: 1,
                 maxZoom: 15
             });
             if (navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i)) {
@@ -131,6 +156,11 @@
             });
             this.view_object.map.setView(this.view_object.center, this.view_object.zoom);
             this.view_object.map.addLayer(this.view_object.stamenToner);
+            if (this.view_object.type === "user"){
+                $("input[id='latitudeSearch']").val(this.view_object.lat);
+                $("input[id='longitudeSearch']").val(this.view_object.lng);
+                this.navigate();
+            };
             // this.view_object.map.on("click", this.onMapClick);
         },
 
@@ -220,11 +250,22 @@
                 if (this.view_object.userLayerPresent === false){
                     this.addUserLayerToMap(latitude, longitude);
                     this.raiseFloodZoneAlert(latitude, longitude);
+                    window.app.navigate("#lat=" + latitude + "&lng=" + longitude + "&zoom=20/", {
+                        trigger: false,
+                        replace: true,
+                    });
                 } else {
                     this.view_object.map.removeLayer(this.userLayer);
                     this.addUserLayerToMap(latitude, longitude);
                     this.raiseFloodZoneAlert(latitude, longitude);
-                }
+                    window.app.navigate("#lat=" + latitude + "&lng=" + longitude + "&zoom=20/", {
+                        trigger: false,
+                        replace: true,
+                    });
+                };
+                this_url = encodeURIComponent(window.appConfig.project_root + "#lat=" + latitude + "&lng=" + longitude + "&zoom=20/");
+                $(".facebook").attr("href", "https://www.facebook.com/sharer/sharer.php?u=" + this_url);
+                $(".twitter").attr("href", "http://twitter.com/share?text=Do you live in a flood zone? Check using @KPCC's interactive map.&amp;url=" + this_url);
             };
         },
 
@@ -246,6 +287,10 @@
             $("input[id='latitudeSearch']").val('');
             $("input[id='longitudeSearch']").val('');
             this.view_object.map.setView(this.view_object.center, this.view_object.zoom);
+            window.app.navigate("", {
+                trigger: true,
+                replace: true,
+            });
         },
         // refactor this function because it is too busy
 
@@ -271,13 +316,6 @@
 
         raiseFloodZoneAlert: function(latitude, longitude){
             this.view_object.layer = this.findFeatureForLatLng(parseFloat(latitude), parseFloat(longitude));
-            var _100_null = _.isNull(this.view_object.layer._100_zones._flood_zones);
-            var _100_undefined = _.isUndefined(this.view_object.layer._100_zones._flood_zones);
-            var _100_value = _.isObject(this.view_object.layer._100_zones._flood_zones)
-            var _500_null = _.isNull(this.view_object.layer._500_zones._flood_zones);
-            var _500_undefined = _.isUndefined(this.view_object.layer._500_zones._flood_zones);
-            var _500_value = _.isObject(this.view_object.layer._500_zones._flood_zones)
-
             if (this.view_object.layer === false){
                 $.jAlert({
                     "replaceOtherAlerts": true,
@@ -288,6 +326,12 @@
                   });
                 $("button#reset").trigger("click");
             } else {
+                var _100_null = _.isNull(this.view_object.layer._100_zones._flood_zones);
+                var _100_undefined = _.isUndefined(this.view_object.layer._100_zones._flood_zones);
+                var _100_value = _.isObject(this.view_object.layer._100_zones._flood_zones)
+                var _500_null = _.isNull(this.view_object.layer._500_zones._flood_zones);
+                var _500_undefined = _.isUndefined(this.view_object.layer._500_zones._flood_zones);
+                var _500_value = _.isObject(this.view_object.layer._500_zones._flood_zones)
                 $("#reset").removeClass("hidden");
                 if (_100_null === true && _500_null === true){
                     $.jAlert({
@@ -310,29 +354,33 @@
                         $.jAlert({
                             "replaceOtherAlerts": true,
                             "closeOnClick": true,
-                            "theme": "red",
+                            "theme": "black",
                             "title": "<strong>You're in a 100-year and 500-year flood zone</strong>",
                             "content": "Flood insurance is typically required for homeowners in a 100-year flood zone, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>."
                           });
+                        this.view_object.layer._100_zones._flood_zones.name = "_100_zone"
                         this.set_topo_layer(this.view_object.layer._100_zones._flood_zones);
+                        this.view_object.layer._500_zones._flood_zones.name = "_500_zone"
                         this.set_topo_layer(this.view_object.layer._500_zones._flood_zones);
                     } else if (_100_value === true && _500_value === false){
                         $.jAlert({
                             "replaceOtherAlerts": true,
                             "closeOnClick": true,
-                            "theme": "red",
+                            "theme": "black",
                             "title": "<strong>You're in a 100-year flood zone</strong>",
                             "content": "Flood insurance is typically required for homeowners in these areas, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>."
                           });
+                        this.view_object.layer._100_zones._flood_zones.name = "_100_zone"
                         this.set_topo_layer(this.view_object.layer._100_zones._flood_zones);
                     } else if (_100_value === false && _500_value === true){
                         $.jAlert({
                             "replaceOtherAlerts": true,
                             "closeOnClick": true,
-                            "theme": "yellow",
+                            "theme": "black",
                             "title": "<strong>You're in a 500-year flood zone</strong>",
                             "content": "Flood insurance isn't required for in these areas, which have a 0.2 percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). That may seem low, but the risks are real. Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>."
                         });
+                        this.view_object.layer._500_zones._flood_zones.name = "_500_zone"
                         this.set_topo_layer(this.view_object.layer._500_zones._flood_zones);
                     } else {
                         $.jAlert({
@@ -391,19 +439,23 @@
         // },
 
         set_topo_layer: function(geo_data){
+            console.log(geo_data.name);
             this.topoLayer = new L.TopoJSON();
             this.topoLayer.addData(geo_data);
-            this.topoLayer.eachLayer(this.style);
-            this.topoLayer.addTo(this.view_object.map);
-        },
-
-        style: function (layer){
-            layer.setStyle({
-                fillColor: "#f07a30",
-                fillOpacity: .85,
-                color: '#000000',
-                weight: .85,
-                opacity: .85
+            if (geo_data.name === "_100_zone"){
+                var thisFillColor = "#f07a30";
+            } else if (geo_data.name === "_500_zone"){
+                var thisFillColor = "#30a6f0";
+            };
+            this.topoLayer.eachLayer(function (layer){
+                layer.setStyle({
+                    fillColor: thisFillColor,
+                    fillOpacity: .85,
+                    color: '#000000',
+                    weight: .85,
+                    opacity: .85
+                });
             });
+            this.topoLayer.addTo(this.view_object.map);
         }
     });
