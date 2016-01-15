@@ -1,0 +1,49 @@
+<% _.each(collection, function(item){ %>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="<%= item[0].slug %>" class="elements row">
+            <h3><%= item[0].category %></h3>
+            <% _.each(item, function(model){ %>
+                <div class="nominee-container col-12 col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="info-block">
+                        <img id="<%= model.category %>" src="<%= model.movieimage %>" alt="<%= model.nominee %>" />
+                        <h5 class="text-center"><%= model.nominee %></h5>
+                        <% if (model.movie.length) { %>
+                            <p class="text-center"><%= model.movie %></p>
+                        <% } else {%>
+                            <p class="text-center">&nbsp;</p>
+                        <% } %>
+                        <% if (model.awardswon.length) { %>
+                            <p><strong>Awards won:</strong> <span class="italics"><%= model.awardswon %></span></p>
+                        <% } else {%>
+                            <p class="text-center">&nbsp;</p>
+                        <% } %>
+                        <% if (model.prediction.length) { %>
+                            <p><%= model.prediction %> - <span class="italics">
+                                <% if (model.predictionlink.length) { %>
+                                    <a href="<%= model.predictionlink %>" target="_blank"><%= model.predictionsource %></a></span></p>
+                                <% } else {%>
+                                    <%= model.predictionsource %></span></p>
+                                <% } %>
+                        <% } else {%>
+                            <p class="text-center">&nbsp;</p>
+                        <% } %>
+                        <ul class="list-inline">
+                            <% if (model.kpccinterview.length) { %>
+                                <li><a href="<%= model.kpccinterview %>" target="_blank"><%= model.kpccsource %></a></li>
+                            <% } %>
+                            <% if (model.imdbpage.length) { %>
+                                <li><a href="<%= model.imdbpage %>" target="_blank">IMDB</a></li>
+                            <% } %>
+                            <% if (model.trailer.length) { %>
+                                <li><a href="<%= model.trailer %>" target="_blank">Trailer</a></li>
+                            <% } %>
+                            <% if (model.officialsite.length) { %>
+                                <li><a href="<%= model.officialsite %>" target="_blank">Official Site</a></li>
+                            <% } %>
+                        </p>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+<% }); %>
