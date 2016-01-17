@@ -5,12 +5,20 @@
             <% _.each(item, function(model){ %>
                 <div class="nominee-container col-12 col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="info-block">
-                        <img id="<%= model.category %>" src="<%= model.movieimage %>" alt="<%= model.nominee %>" />
-                        <h5 class="text-center"><%= model.nominee %></h5>
+                        <div class="image-block">
+                            <img id="<%= model.category %>" src="<%= model.movieimage %>" alt="<%= model.nominee %>" />
+                        </div>
+                        <% if (model.movie.length === undefined) { %>
+                            <% if (model.officialsite.length) { %>
+                                <h5 class="text-center"><a href="<%= model.officialsite %>" target="_blank"><%= model.nominee %></a></h5>
+                            <% } %>
+                        <% } else { %>
+                            <h5 class="text-center"><%= model.nominee %></h5>
+                        <% } %>
                         <% if (model.movie.length) { %>
-                            <p class="text-center"><%= model.movie %></p>
-                        <% } else {%>
-                            <p class="text-center">&nbsp;</p>
+                            <% if (model.officialsite.length) { %>
+                                <p class="text-center"><a href="<%= model.officialsite %>" target="_blank"><%= model.movie %></a></p>
+                            <% } %>
                         <% } %>
                         <% if (model.awardswon.length) { %>
                             <p><strong>Awards won:</strong> <span class="italics"><%= model.awardswon %></span></p>
@@ -37,10 +45,7 @@
                             <% if (model.trailer.length) { %>
                                 <li><a href="<%= model.trailer %>" target="_blank">Trailer</a></li>
                             <% } %>
-                            <% if (model.officialsite.length) { %>
-                                <li><a href="<%= model.officialsite %>" target="_blank">Official Site</a></li>
-                            <% } %>
-                        </p>
+                        </ul>
                     </div>
                 </div>
             <% }); %>

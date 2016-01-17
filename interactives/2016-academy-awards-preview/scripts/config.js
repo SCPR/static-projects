@@ -11,5 +11,5 @@ window.appConfig = {
     embed_height: "1650px",
     twitter_share_text: "Who will take home the coveted Oscars for best picture, director, actor and actress and supporting actor and actress at the 2016 Academy Awards?",
     data_source: "flat-file",
-    data_url: "data/2016oscars.json",
+    data_url: "data/2016_oscars.json",
 };
