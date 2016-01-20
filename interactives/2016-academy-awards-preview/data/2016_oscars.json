@@ -6,16 +6,15 @@
     "imdbpage": "http://www.imdb.com/title/tt1596363/?ref_=nv_sr_1",
     "nominee": "The Big Short",
     "movieimage": "http://a.scpr.org/i/d43d5131391bb971a392734f3d230bd1/117151-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "The Hollywood Reporter",
     "movie": 0,
     "officialsite": "http://www.thebigshortmovie.com/",
-    "prediction": 0,
+    "prediction": "The best picture race is likely between Spotlight and The Big Short, with The Revenant as possible spoiler.",
     "slug": "best-picture",
     "kpccsource": "Take Two",
     "kpccinterview": "http://www.scpr.org/programs/take-two/2015/12/23/45682/adam-mckay-on-the-balance-between-comedy-and-trage/",
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=vgqG3ITMv1Q",
-    "": 0
+    "predictionlink": "http://www.hollywoodreporter.com/race/oscar-nominations-a-new-race-855839",
+    "trailer": "https://www.youtube.com/watch?v=vgqG3ITMv1Q"
   },
   {
     "orderid": 2,
@@ -24,16 +23,15 @@
     "imdbpage": "http://www.imdb.com/title/tt3682448/?ref_=nv_sr_1",
     "nominee": "Bridge of Spies",
     "movieimage": "http://a.scpr.org/i/92fc536b429ced984d6c1547d5fdee9a/117152-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "The Hollywood Reporter",
     "movie": 0,
     "officialsite": "http://ownbridgeofspies.com/",
-    "prediction": 0,
+    "prediction": "One would have had to regard Bridge of Spies, with its six noms ... as a more serious threat if its director, Steven Spielberg, had landed a nom.",
     "slug": "best-picture",
     "kpccsource": 0,
     "kpccinterview": 0,
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=E_iB3KAxEYY",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=E_iB3KAxEYY"
   },
   {
     "orderid": 3,
@@ -50,8 +48,7 @@
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/11/03/45058/SaoirseRonanfearswhenfilmingBrooklyn/",
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=15syDwC000k",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=15syDwC000k"
   },
   {
     "orderid": 4,
@@ -68,8 +65,7 @@
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2016/01/12/45903/george-miller-is-surprised-by-mad-max-reception/",
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=hEJnMQG9ev8",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=hEJnMQG9ev8"
   },
   {
     "orderid": 5,
@@ -78,16 +74,15 @@
     "imdbpage": "http://www.imdb.com/title/tt3659388/?ref_=nv_sr_1",
     "nominee": "The Martian",
     "movieimage": "http://a.scpr.org/i/15bc70e92d05340ec8650e9e851b9c38/112517-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "The Hollywood Reporter",
     "movie": 0,
     "officialsite": "http://www.foxmovies.com/movies/the-martian",
-    "prediction": 0,
+    "prediction": "The Martian, which was snubbed by SAG, probably was critically wounded ... by the shocking omission of its director, Ridley Scott.",
     "slug": "best-picture",
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/10/05/44707/director-ridley-scott-says-the-martian-isnt-scienc/",
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=ej3ioOneTy8",
-    "": 0
+    "predictionlink": "http://www.hollywoodreporter.com/race/oscar-nominations-a-new-race-855839",
+    "trailer": "https://www.youtube.com/watch?v=ej3ioOneTy8"
   },
   {
     "orderid": 6,
@@ -96,16 +91,15 @@
     "imdbpage": "http://www.imdb.com/title/tt1663202/?ref_=nv_sr_1",
     "nominee": "The Revenant",
     "movieimage": "http://a.scpr.org/i/018544ea4da3ff0ce58cb7ba79062eeb/117074-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "Gold Derby",
     "movie": 0,
     "officialsite": "http://www.foxmovies.com/movies/the-revenant",
-    "prediction": 0,
+    "prediction": "While Spotlight has the edge, the Revenant has a good shot at being a spoiler, according to Gold Derby.",
     "slug": "best-picture",
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/12/22/45672/inarritu-says-never-again-of-his-frontier-odyssey/",
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=LoebZZ8K5N0",
-    "": 0
+    "predictionlink": "http://www.goldderby.com/stats/experts/oscars-2015/best-picture.html",
+    "trailer": "https://www.youtube.com/watch?v=LoebZZ8K5N0"
   },
   {
     "orderid": 7,
@@ -122,26 +116,24 @@
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/10/20/44888/how-director-lenny-abrahamson-used-his-own-experie/",
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=E_Ci-pAL4eE",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=E_Ci-pAL4eE"
   },
   {
     "orderid": 8,
     "category": "Best Picture",
-    "awardswon": "AFI",
+    "awardswon": "Critics’ Choice, AFI",
     "imdbpage": "http://www.imdb.com/title/tt1895587/?ref_=nv_sr_1",
     "nominee": "Spotlight",
     "movieimage": "http://a.scpr.org/i/cfcf37249aa4aa5908f166710cb9249c/117155-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "Variety",
     "movie": 0,
     "officialsite": "http://spotlightthefilm.com/",
-    "prediction": 0,
+    "prediction": "Variety picks Spotlight as the frontrunner here.",
     "slug": "best-picture",
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/09/06/44385/telluride-film-fest-michael-keaton-director-tom-mc/",
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=yXymzwz0V2g",
-    "": 0
+    "predictionlink": "http://variety.com/2015/film/in-contention/oscars-predictions-best-picture-1201601053/",
+    "trailer": "https://www.youtube.com/watch?v=yXymzwz0V2g"
   },
   {
     "orderid": 9,
@@ -150,16 +142,15 @@
     "imdbpage": "http://www.imdb.com/name/nm0186505/?ref_=nv_sr_1",
     "nominee": "Bryan Cranston",
     "movieimage": "http://a.scpr.org/i/ec763b9bb7ac330de7b35aa90b2f00f4/114736-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "Variety",
     "movie": "Trumbo",
     "officialsite": "http://www.bleeckerstreetmedia.com/trumbo",
-    "prediction": 0,
+    "prediction": "Cranston is the most likely spoiler for DiCaprio, according to Variety.",
     "slug": "best-actor",
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/11/04/45084/bryan-cranston-on-1950s-hollywood-blacklisting-and/",
-    "predictionlink": 0,
-    "trailer": "https://vimeo.com/136153757",
-    "": 0
+    "predictionlink": "http://variety.com/2015/film/in-contention/oscars-predictions-best-actor-1201601070/",
+    "trailer": "https://vimeo.com/136153757"
   },
   {
     "orderid": 10,
@@ -176,26 +167,24 @@
     "kpccsource": 0,
     "kpccinterview": 0,
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=ej3ioOneTy8",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=ej3ioOneTy8"
   },
   {
     "orderid": 11,
     "category": "Best Actor",
-    "awardswon": "Golden Globe (Drama)",
+    "awardswon": "Golden Globe (Drama), Critics’ Choice",
     "imdbpage": "http://www.imdb.com/name/nm0000138/?ref_=nv_sr_2",
     "nominee": "Leonardo DiCaprio",
     "movieimage": "http://a.scpr.org/i/7ca2df19a621a1625614c48fdc2760e0/117156-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "Entertainment Weekly",
     "movie": "The Revenant",
     "officialsite": "http://www.foxmovies.com/movies/the-revenant",
-    "prediction": 0,
+    "prediction": "DiCaprio gave an incredible performance, and after his Golden Globes win, he’s emerged as a heavy favorite.",
     "slug": "best-actor",
     "kpccsource": 0,
     "kpccinterview": 0,
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=LoebZZ8K5N0",
-    "": 0
+    "predictionlink": "http://www.ew.com/article/2016/01/14/oscars-2016-plotlines",
+    "trailer": "https://www.youtube.com/watch?v=LoebZZ8K5N0"
   },
   {
     "orderid": 12,
@@ -212,8 +201,7 @@
     "kpccsource": 0,
     "kpccinterview": 0,
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=9XEh7arNSms",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=9XEh7arNSms"
   },
   {
     "orderid": 13,
@@ -230,8 +218,7 @@
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/11/25/45357/eddie-redmayne-takes-a-leap-with-his-role-in-the-d/",
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=v3qEphMRGIc",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=v3qEphMRGIc"
   },
   {
     "orderid": 14,
@@ -240,34 +227,32 @@
     "imdbpage": "http://www.imdb.com/name/nm0000949/?ref_=nv_sr_1",
     "nominee": "Cate Blanchett",
     "movieimage": "http://a.scpr.org/i/ffe79078a8f07545a3be94a2c984576b/105077-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "The Hollywood Reporter",
     "movie": "Carol",
     "officialsite": "http://carolfilm.com/",
-    "prediction": 0,
+    "prediction": "It's hard to imagine Carol's Cate Blanchett returning to the podium for a third time so soon after her second, just two years ago.",
     "slug": "best-actress",
     "kpccsource": 0,
-    "kpccinterview": 0,
+    "kpccinterview": "http://www.hollywoodreporter.com/race/oscar-nominations-a-new-race-855839",
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=H4z7Px68ywk",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=H4z7Px68ywk"
   },
   {
     "orderid": 15,
     "category": "Best Actress",
-    "awardswon": "Golden Globe (Drama)",
+    "awardswon": "Golden Globe (Drama), Critics’ Choice",
     "imdbpage": "http://www.imdb.com/name/nm0488953/?ref_=nv_sr_1",
     "nominee": "Brie Larson",
     "movieimage": "http://a.scpr.org/i/9ac9a11bf98f4e020c183362722bf74c/117160-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "Variety",
     "movie": "Room",
     "officialsite": "http://roomthemovie.com/#/",
-    "prediction": 0,
+    "prediction": "Larson is the favorite, according to Variety.",
     "slug": "best-actress",
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/10/12/44804/brie-larson-mines-her-own-life-for-room/",
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=E_Ci-pAL4eE",
-    "": 0
+    "predictionlink": "http://variety.com/2015/film/in-contention/oscars-predictions-best-actress-1201601073/",
+    "trailer": "https://www.youtube.com/watch?v=E_Ci-pAL4eE"
   },
   {
     "orderid": 16,
@@ -284,8 +269,7 @@
     "kpccsource": 0,
     "kpccinterview": 0,
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=uR-2TiQVY-k",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=uR-2TiQVY-k"
   },
   {
     "orderid": 17,
@@ -294,16 +278,15 @@
     "imdbpage": "http://www.imdb.com/name/nm0001648/?ref_=nv_sr_1",
     "nominee": "Charlotte Rampling",
     "movieimage": "http://a.scpr.org/i/14e15e706cb0d7b8f13b3436e440ac3a/116109-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "Variety",
     "movie": "45 Years",
     "officialsite": "http://www.45yearsfilm.com/trailer",
-    "prediction": 0,
+    "prediction": "Rampling is a longshot, according to Variety.",
     "slug": "best-actress",
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/12/21/45658/45-years-charlotte-rampling-and-tom-courtenay-refl/",
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=qXAnjA9tAnQ&feature=youtu.be",
-    "": 0
+    "predictionlink": "http://variety.com/2015/film/in-contention/oscars-predictions-best-actress-1201601073/",
+    "trailer": "https://www.youtube.com/watch?v=qXAnjA9tAnQ&feature=youtu.be"
   },
   {
     "orderid": 18,
@@ -320,8 +303,7 @@
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/11/03/45058/SaoirseRonanfearswhenfilmingBrooklyn/",
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=15syDwC000k",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=15syDwC000k"
   },
   {
     "orderid": 19,
@@ -338,26 +320,24 @@
     "kpccsource": "Take Two",
     "kpccinterview": "http://www.scpr.org/programs/take-two/2015/12/23/45682/adam-mckay-on-the-balance-between-comedy-and-trage/",
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=vgqG3ITMv1Q",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=vgqG3ITMv1Q"
   },
   {
     "orderid": 20,
     "category": "Best Director",
-    "awardswon": 0,
+    "awardswon": "Critics’ Choice",
     "imdbpage": "http://www.imdb.com/name/nm0004306/?ref_=nv_sr_1",
     "nominee": "George Miller",
     "movieimage": "http://a.scpr.org/i/a0a4d2926ea84b0160c4fec4b6b6d97c/105050-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "Variety",
     "movie": "Mad Max: Fury Road",
     "officialsite": "http://www.madmaxmovie.com/",
-    "prediction": 0,
+    "prediction": "Miller is the frontrunner, according to Variety, returning to the Mad Max franchise decades later.",
     "slug": "best-director",
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2016/01/12/45903/george-miller-is-surprised-by-mad-max-reception/",
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=hEJnMQG9ev8",
-    "": 0
+    "predictionlink": "http://variety.com/2015/film/in-contention/oscars-predictions-best-director-1201601063/",
+    "trailer": "https://www.youtube.com/watch?v=hEJnMQG9ev8"
   },
   {
     "orderid": 21,
@@ -374,8 +354,7 @@
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/12/22/45672/inarritu-says-never-again-of-his-frontier-odyssey/",
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=LoebZZ8K5N0",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=LoebZZ8K5N0"
   },
   {
     "orderid": 22,
@@ -392,8 +371,7 @@
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/10/20/44888/how-director-lenny-abrahamson-used-his-own-experie/",
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=E_Ci-pAL4eE",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=E_Ci-pAL4eE"
   },
   {
     "orderid": 23,
@@ -410,13 +388,12 @@
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/09/06/44385/telluride-film-fest-michael-keaton-director-tom-mc/",
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=yXymzwz0V2g",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=yXymzwz0V2g"
   },
   {
     "orderid": 24,
     "category": "Best Supporting Actor",
-    "awardswon": 0,
+    "awardswon": "Critics’ Choice (Comedy)",
     "imdbpage": "http://www.imdb.com/name/nm0000288/?ref_=nv_sr_1",
     "nominee": "Christian Bale",
     "movieimage": "http://a.scpr.org/i/450d16b800238fa9ef40a14f638ad33b/117150-full.jpg",
@@ -428,8 +405,7 @@
     "kpccsource": 0,
     "kpccinterview": 0,
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=vgqG3ITMv1Q",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=vgqG3ITMv1Q"
   },
   {
     "orderid": 25,
@@ -446,8 +422,7 @@
     "kpccsource": 0,
     "kpccinterview": 0,
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=LoebZZ8K5N0",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=LoebZZ8K5N0"
   },
   {
     "orderid": 26,
@@ -456,16 +431,15 @@
     "imdbpage": "http://www.imdb.com/name/nm0749263/?ref_=nv_sr_1",
     "nominee": "Mark Ruffalo",
     "movieimage": "http://a.scpr.org/i/aab51b0156350cdb9e97c7aa2b3dd56a/117158-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "The Hollywood Reporter",
     "movie": "Spotlight",
     "officialsite": "http://spotlightthefilm.com/",
-    "prediction": 0,
+    "prediction": "Spotlight's Mark Ruffalo is beloved and greatly helped by the absence from this category of any of his other many co-stars who were vying for spots.",
     "slug": "best-supporting-actor",
     "kpccsource": 0,
     "kpccinterview": 0,
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=yXymzwz0V2g",
-    "": 0
+    "predictionlink": "http://www.hollywoodreporter.com/race/oscar-nominations-a-new-race-855839",
+    "trailer": "https://www.youtube.com/watch?v=yXymzwz0V2g"
   },
   {
     "orderid": 27,
@@ -482,26 +456,24 @@
     "kpccsource": 0,
     "kpccinterview": 0,
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=E_iB3KAxEYY",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=E_iB3KAxEYY"
   },
   {
     "orderid": 28,
     "category": "Best Supporting Actor",
-    "awardswon": "Golden Globe",
+    "awardswon": "Golden Globe, Critics’ Choice",
     "imdbpage": "http://www.imdb.com/name/nm0000230/?ref_=nv_sr_1",
     "nominee": "Sylvester Stallone",
     "movieimage": "http://a.scpr.org/i/71f2e542b69054063a38d28d25906569/114939-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "Variety",
     "movie": "Creed",
     "officialsite": "http://creedthemovie.com/",
-    "prediction": 0,
+    "prediction": "The original",
     "slug": "best-supporting-actor",
     "kpccsource": 0,
     "kpccinterview": 0,
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=JQ9OhBYjTds",
-    "": 0
+    "predictionlink": "http://variety.com/2015/film/in-contention/oscars-predictions-best-supporting-actor-1201601052/",
+    "trailer": "https://www.youtube.com/watch?v=JQ9OhBYjTds"
   },
   {
     "orderid": 29,
@@ -510,16 +482,15 @@
     "imdbpage": "http://www.imdb.com/name/nm0000492/?ref_=nv_sr_1",
     "nominee": "Jennifer Jason Leigh",
     "movieimage": "http://a.scpr.org/i/ec449c0f63cfbd85d553d9c3191eaafc/117224-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "The Hollywood Reporter",
     "movie": "The Hateful Eight",
     "officialsite": "http://thehatefuleight.com/",
-    "prediction": 0,
+    "prediction": "Leigh ... may be hurt by the divisive nature of her film and the fact that The Weinstein Co. also is pushing Mara in this category.",
     "slug": "best-supporting-actress",
     "kpccsource": 0,
     "kpccinterview": 0,
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=gnRbXn4-Yis",
-    "": 0
+    "predictionlink": "http://www.hollywoodreporter.com/race/oscar-nominations-a-new-race-855839",
+    "trailer": "https://www.youtube.com/watch?v=gnRbXn4-Yis"
   },
   {
     "orderid": 30,
@@ -528,16 +499,15 @@
     "imdbpage": "http://www.imdb.com/name/nm1913734/?ref_=nv_sr_1",
     "nominee": "Rooney Mara",
     "movieimage": "http://a.scpr.org/i/50c57728140228a58be2900bd5fb396a/111203-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "Gold Derby",
     "movie": "Carol",
     "officialsite": "http://carolfilm.com/",
-    "prediction": 0,
+    "prediction": "Mara is neck-and-neck with Vikander in the Best Supporting Actress race, according to Gold Derby.",
     "slug": "best-supporting-actress",
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2015/11/30/45390/rooney-mara-initially-said-no-to-appearing-in-caro/",
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=H4z7Px68ywk",
-    "": 0
+    "predictionlink": "http://www.goldderby.com/stats/experts/oscars-2015/best-supp.-actress.html",
+    "trailer": "https://www.youtube.com/watch?v=H4z7Px68ywk"
   },
   {
     "orderid": 31,
@@ -546,34 +516,32 @@
     "imdbpage": "http://www.imdb.com/name/nm1046097/?ref_=nv_sr_2",
     "nominee": "Rachel McAdams",
     "movieimage": "http://a.scpr.org/i/ec26bab6fd0f44c5b6a9928a7f0ee165/117157-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "Variety",
     "movie": "Spotlight",
     "officialsite": "http://spotlightthefilm.com/",
-    "prediction": 0,
+    "prediction": "McAdams is the longshot in this category, according to Variety.",
     "slug": "best-supporting-actress",
     "kpccsource": 0,
     "kpccinterview": 0,
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=yXymzwz0V2g",
-    "": 0
+    "predictionlink": "http://variety.com/2015/film/in-contention/oscars-predictions-best-supporting-actress-1201601054/",
+    "trailer": "https://www.youtube.com/watch?v=yXymzwz0V2g"
   },
   {
     "orderid": 32,
     "category": "Best Supporting Actress",
-    "awardswon": 0,
+    "awardswon": "Critics’ Choice",
     "imdbpage": "http://www.imdb.com/name/nm2539953/?ref_=nv_sr_1",
     "nominee": "Alicia Vikander",
     "movieimage": "http://a.scpr.org/i/74e7d5b34b2e4f832675e454b91a6528/117059-full.jpg",
-    "predictionsource": 0,
+    "predictionsource": "Variety",
     "movie": "The Danish Girl",
     "officialsite": "http://www.focusfeatures.com/the_danish_girl",
-    "prediction": 0,
+    "prediction": "Vikander is the frontrunner here, according to Variety.",
     "slug": "best-supporting-actress",
     "kpccsource": "The Frame",
     "kpccinterview": "http://www.scpr.org/programs/the-frame/2016/01/14/45866/alicia-vikander-planned-law-school-before-acting/",
-    "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=v3qEphMRGIc",
-    "": 0
+    "predictionlink": "http://variety.com/2015/film/in-contention/oscars-predictions-best-supporting-actress-1201601054/",
+    "trailer": "https://www.youtube.com/watch?v=v3qEphMRGIc"
   },
   {
     "orderid": 33,
@@ -590,7 +558,6 @@
     "kpccsource": 0,
     "kpccinterview": 0,
     "predictionlink": 0,
-    "trailer": "https://www.youtube.com/watch?v=9XEh7arNSms",
-    "": 0
+    "trailer": "https://www.youtube.com/watch?v=9XEh7arNSms"
   }
 ]
