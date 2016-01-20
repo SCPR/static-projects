@@ -36,22 +36,19 @@
             var lat = parseFloat(lat);
             var lng = parseFloat(lng);
             var zoom = parseInt(zoom);
-
-            if (zoom === 20){
-                window.config.type = "user";
-            } else {
-                window.config.type = "initial";
-            };
-
-            if (zoom <= 1 || zoom >= 21){
+            if(zoom !== zoom) {
                 $.jAlert({
                     "replaceOtherAlerts": true,
                     "closeOnClick": true,
                     "theme": "yellow",
                     "title": "<strong>Invalid zoom level</strong>",
-                    "content": "Zoom level should be between 1 and 15. Please try again."
+                    "content": "Zoom level should be between 1 and 15. We've adjusted the zoom paramenter in the URL you are trying to access."
                   });
-            } else if (lat > 90 || lat < -90 && lng > 180 || lng < -180){
+                window.app.navigate("", {
+                    trigger: true,
+                    replace: true,
+                });
+            } else if(lat !== lat || lng !== lng) {
                 $.jAlert({
                     "replaceOtherAlerts": true,
                     "closeOnClick": true,
@@ -59,11 +56,39 @@
                     "title": "<strong>Invalid coordinates</strong>",
                     "content": "Latitude coordinates should be between -90 and 90, and longitude coordinates should be between -180 and 180. Please try again."
                   });
+                window.app.navigate("", {
+                    trigger: true,
+                    replace: true,
+                });
             } else {
-                window.config.lat = lat;
-                window.config.lng = lng;
-                window.config.zoom = zoom;
-                this.fetchData();
+                if (zoom === 20){
+                    window.config.type = "user";
+                } else {
+                    window.config.type = "initial";
+                };
+
+                if (zoom <= 1 || zoom >= 21){
+                    $.jAlert({
+                        "replaceOtherAlerts": true,
+                        "closeOnClick": true,
+                        "theme": "yellow",
+                        "title": "<strong>Invalid zoom level</strong>",
+                        "content": "Zoom level should be between 1 and 15. Please try again."
+                      });
+                } else if (lat > 90 || lat < -90 && lng > 180 || lng < -180){
+                    $.jAlert({
+                        "replaceOtherAlerts": true,
+                        "closeOnClick": true,
+                        "theme": "yellow",
+                        "title": "<strong>Invalid coordinates</strong>",
+                        "content": "Latitude coordinates should be between -90 and 90, and longitude coordinates should be between -180 and 180. Please try again."
+                      });
+                } else {
+                    window.config.lat = lat;
+                    window.config.lng = lng;
+                    window.config.zoom = zoom;
+                    this.fetchData();
+                };
             };
         },
 

@@ -1,6 +1,7 @@
 .elements { margin-bottom: 5px; }
 .nominee-container { height: auto; }
-.nominee-container img { width: 92%; margin: 0 4% 0 4%; }
+.nominee-container .image-block { position: relative; background-color: #000000; height: 150px; padding: 2px 0 2px 0; overflow: hidden; }
+.nominee-container .image-block img { width: 92%; margin: auto 4% auto 4%; position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0; }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
     body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
