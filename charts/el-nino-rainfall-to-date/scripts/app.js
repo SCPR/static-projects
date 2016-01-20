@@ -29,9 +29,11 @@
 $.get('nino_to_date.csv', function(csv) {
 $('#container').highcharts({
                     chart: {
-/*                        marginRight: 150,    */
+                        backgroundColor: null,
                         type: 'spline',
-                        spacingTop: 29
+                        spacingTop: 29,
+                        spacingRight: 15,
+                        spacingLeft: 15
                     },
                     colors: ['#31ABD4', '#898989', '#F87E21'],
                     data: {
@@ -49,30 +51,36 @@ $('#container').highcharts({
                             },
                     xAxis: {
                         labels: {
+                            y: 28,
                             style: {
-                                fontSize: 15,
-                                fontFamily: 'Arial'
+                                fontSize: 17,
+                                fontFamily: 'Arial',
+                                color: '#363636'
                             }},
                         type: 'datetime',
-                            dateTimeLabelFormats: { // don't display the dummy year
-                            month: '%b',
-                            //year: '%b'
+                            dateTimeLabelFormats: {
+                                day: '%e.',
+                                week: '%b %e ',
+                                month: '%b',
                             },
                         },
                     yAxis: {
                         labels: {
                             style: {
                                 fontSize: 15,
-                                fontFamily: 'Arial'
+                                fontFamily: 'Arial',
+                                color: '#363636'
                             }},
                         title: {
                             text: 'Percent of normal rainfall',
                             style: {
-                                fontSize: 15
+                                fontSize: 15,
+                                color: '#363636'
                             }
                         },
                         endOnTick:false,
-                        max: 155
+                        max: 155,
+                        gridLineColor: '#B5BEC0'
                         },
                     tooltip: {
                         formatter: function() {
@@ -93,7 +101,7 @@ $('#container').highcharts({
                             }
                         },
                         series: {
-                            lineWidth: 3.8,
+                            lineWidth: 4.5,
                             states: {
                                 hover: {
                                     enabled: false
