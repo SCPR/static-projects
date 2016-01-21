@@ -146,6 +146,7 @@
                 2013,
                 2014,
                 2015,
+                2016,
             ];
 
             _.each(years, function(item, index){
@@ -167,7 +168,7 @@
 
                 var see_this;
 
-                if (item === 1992 || item === 1997 || item === 1998 || item === 2014 || item === 2015){
+                if (item === 1992 || item === 1997 || item === 1998 || item === 2014 || item === 2015 || item === 2016){
                     see_this = true;
                 } else if (item === 1993 || item === 2002 || item === 2003 || item === 2009 || item === 2010){
                     see_this = true;
@@ -332,6 +333,7 @@
             var years = [
                 1997,
                 2015,
+                2016
             ];
 
             _.each(years, function(item, index){
