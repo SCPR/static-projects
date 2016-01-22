@@ -8,6 +8,6 @@ window.appConfig = {
     embed_this: true,
     is_embedded: null,
     embed_width: "100%",
-    embed_height: "1350px",
+    embed_height: "770px",
     twitter_share_text: "How much rain has SoCal gotten this year? Explore the issue in @KPCC's interactive chart.",
 };

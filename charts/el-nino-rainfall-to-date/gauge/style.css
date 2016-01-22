@@ -1,5 +1,6 @@
 body{
-    background-color: #E8E8E8;
+    background-color: transparent;
+
 }
 
 #thediv{
@@ -18,4 +19,14 @@ body{
 #p2{
     text-align: left;
     font-size: 12px;
+}
+
+a {
+    outline: none;
+    color: #31ABD4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
