@@ -1,0 +1,21 @@
+body{
+    background-color: #E8E8E8;
+}
+
+#thediv{
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 25px;
+    color: #007397;
+    text-align: center;
+}
+
+#fillgauge1{
+    display: block;
+    margin: auto;
+}
+
+#p2{
+    text-align: left;
+    font-size: 12px;
+}
