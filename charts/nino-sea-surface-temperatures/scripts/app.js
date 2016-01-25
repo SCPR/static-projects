@@ -332,6 +332,7 @@
 
             var years = [
                 1997,
+                1998,
                 2015,
                 2016
             ];
@@ -355,8 +356,12 @@
 
                 if (item === 1997){
                     this_color = "#7cb5ec";
-                } else {
+                } else if (item === 1998){
+                    this_color = "#567ea5";
+                } else if (item === 2015){
                     this_color = "#b10026";
+                } else {
+                    this_color = "#7b001a";
                 }
 
                 series_data[index] = {
