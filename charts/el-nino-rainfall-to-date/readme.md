@@ -14,3 +14,7 @@ Should you want to embed it, here's a possible iframe for you:
 ```
 
 We're trying to keep these updated throughout the winter storm season. Questions, comments, criticism to amendelson AT scpr DOT org
+
+The weather stations we're tracking are the ones in the green box below:
+
+![](socal_weather_stations.png)
