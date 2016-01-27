@@ -107,10 +107,10 @@
                 var idx = Math.floor(array_of_flood_facts.length * Math.random());
                 $(".rando-fact").text(array_of_flood_facts[idx]);
             }, 3700);
-            $.getJSON("data/100.json", function(data){
+            $.getJSON("data/100_with_prelim.json", function(data){
                 window.config._100_year_flood = data;
             });
-            $.getJSON("data/500.json", function(data){
+            $.getJSON("data/500_with_prelim.json", function(data){
                 window.config._500_year_flood = data;
             });
             var _this = this;
@@ -381,7 +381,7 @@
                             "closeOnClick": true,
                             "theme": "black",
                             "title": "<strong>You're in a 100-year and 500-year flood zone</strong>",
-                            "content": "Flood insurance is typically required for homeowners in a 100-year flood zone, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>."
+                            "content": "Flood insurance is typically required for homeowners in a 100-year flood zone, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>. Check with FEMA for an official determination."
                           });
                         this.view_object.layer._100_zones._flood_zones.name = "_100_zone"
                         this.set_topo_layer(this.view_object.layer._100_zones._flood_zones);
@@ -393,7 +393,7 @@
                             "closeOnClick": true,
                             "theme": "black",
                             "title": "<strong>You're in a 100-year flood zone</strong>",
-                            "content": "Flood insurance is typically required for homeowners in these areas, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>."
+                            "content": "Flood insurance is typically required for homeowners in these areas, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>. Check with FEMA for an official determination."
                           });
                         this.view_object.layer._100_zones._flood_zones.name = "_100_zone"
                         this.set_topo_layer(this.view_object.layer._100_zones._flood_zones);
@@ -403,7 +403,7 @@
                             "closeOnClick": true,
                             "theme": "black",
                             "title": "<strong>You're in a 500-year flood zone</strong>",
-                            "content": "Flood insurance isn't required for in these areas, which have a 0.2 percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). That may seem low, but the risks are real. Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>."
+                            "content": "Flood insurance isn't required for in these areas, which have a 0.2 percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). That may seem low, but the risks are real. Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>. Check with FEMA for an official determination."
                         });
                         this.view_object.layer._500_zones._flood_zones.name = "_500_zone"
                         this.set_topo_layer(this.view_object.layer._500_zones._flood_zones);
