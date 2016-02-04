@@ -2,22 +2,23 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>SoCal rainfall</title>
+    <title>Gauge: How does this year's rainfall stack up? | scpr.org</title>
     <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
     <script src="liquidFillGauge.js" language="JavaScript"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
         .liquidFillGaugeText { font-family: Arial; font-weight: bold; }
     </style>
+    <base target="_blank" />
 </head>
 <body>
 <div id="thediv">
     <a href="http://projects.scpr.org/charts/el-nino-rainfall-to-date/" target="_blank">
     <svg id="fillgauge1" height="275"></svg>
     </a>
-    <p id='p1'>Percent of normal SoCal rainfall, through February 1, 2016</p>
-    <p id='p2'>This number tracks rainfall at 20 Southern California weather stations from October to March, when the region gets most of its rain. A number above 100 means it's been an above-average year for rain.</p>
-    <p id='p2'><a href="http://projects.scpr.org/charts/el-nino-rainfall-to-date/">Click here to learn more</a>. Created with assistance from David Pierce at the Scripps Institute.</p>
+    <p id='p1'>Percent of a normal winter's accumulation, so far</p>
+    <p id='p2'>This number tracks precipitation at 20 Southern California weather stations from October to March, when the region gets most of its moisture. A number above 100 means it's been an above-average six months for rain. It was last updated February 1, 2016.</p>
+    <p id='p2'><a href="http://projects.scpr.org/charts/el-nino-rainfall-to-date/">Click here to learn more</a>. Created <a href="http://www.scpr.org">by KPCC</a> with assistance from David Pierce at the Scripps Institution of Oceanography.</p>
 </div>
 <!--
 <svg id="fillgauge2" width="19%" height="200" onclick="gauge2.update(NewValue());"></svg>
