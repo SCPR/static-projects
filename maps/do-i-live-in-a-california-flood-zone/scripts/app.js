@@ -6,8 +6,7 @@
             window.config.prelim_counties = [
                 "Humboldt County",
                 "Placer County",
-                "San Francisco County",
-                "San Mateo County"
+                "San Francisco County"
             ];
 
             L.TopoJSON = L.GeoJSON.extend({
@@ -368,14 +367,23 @@
                 var _500_value = _.isObject(this.view_object.layer._500_zones._flood_zones)
                 $("#reset").removeClass("hidden");
                 if (_100_null === true && _500_null === true){
-                    $.jAlert({
-                        "replaceOtherAlerts": true,
-                        "closeOnClick": true,
-                        "theme": "green",
-                        "title": "<strong>You're not in a flood zone</strong>",
-                        "content": "But that doesn't mean that your area can't flood. FEMA estimates that a third of Federal Disaster Assistance goes to people outside of high-risk flood zones. <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>Here's how FEMA recommends you stay safe in a flood</a>."
-                      });
-                } else if (_100_undefined === true && _500_undefined === true){
+                var _no_zone_alert_content;
+                        if (prelim_county === true){
+                            _no_zone_alert_content = "But that doesn't mean that your area can't flood, and flood maps in this area are still preliminary. FEMA estimates that a third of Federal Disaster Assistance goes to people outside of high-risk flood zones. <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>Here's how FEMA recommends you stay safe in a flood</a>.";
+                        } else {
+                            _no_zone_alert_content = "But that doesn't mean that your area can't flood. FEMA estimates that a third of Federal Disaster Assistance goes to people outside of high-risk flood zones. <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>Here's how FEMA recommends you stay safe in a flood</a>.";
+                        };
+                        $.jAlert({
+                            "replaceOtherAlerts": true,
+                            "closeOnClick": true,
+                            "theme": "black",
+                            "title": "<strong>You're not in a flood zone</strong>",
+                            "content": _no_zone_alert_content
+                        });
+                    }
+
+
+                 else if (_100_undefined === true && _500_undefined === true){
                     $.jAlert({
                         "replaceOtherAlerts": true,
                         "closeOnClick": true,
