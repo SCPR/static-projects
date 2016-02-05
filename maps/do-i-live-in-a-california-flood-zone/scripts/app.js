@@ -2,6 +2,13 @@
         initialize: function(){
             $.fn.jAlert.defaults.backgroundColor = "white";
             window.config = {};
+
+            window.config.prelim_counties = [
+                "Humboldt County",
+                "Placer County",
+                "San Francisco County"
+            ];
+
             L.TopoJSON = L.GeoJSON.extend({
                 addData: function(jsonData){
                     if (jsonData.type === "Topology"){
@@ -107,10 +114,10 @@
                 var idx = Math.floor(array_of_flood_facts.length * Math.random());
                 $(".rando-fact").text(array_of_flood_facts[idx]);
             }, 3700);
-            $.getJSON("data/100.json", function(data){
+            $.getJSON("data/100_with_prelim.json", function(data){
                 window.config._100_year_flood = data;
             });
-            $.getJSON("data/500.json", function(data){
+            $.getJSON("data/500_with_prelim.json", function(data){
                 window.config._500_year_flood = data;
             });
             var _this = this;
@@ -341,6 +348,7 @@
 
         raiseFloodZoneAlert: function(latitude, longitude){
             this.view_object.layer = this.findFeatureForLatLng(parseFloat(latitude), parseFloat(longitude));
+            var prelim_county = _.contains(window.config.prelim_counties, this.view_object.layer.county_name);
             if (this.view_object.layer === false){
                 $.jAlert({
                     "replaceOtherAlerts": true,
@@ -359,14 +367,21 @@
                 var _500_value = _.isObject(this.view_object.layer._500_zones._flood_zones)
                 $("#reset").removeClass("hidden");
                 if (_100_null === true && _500_null === true){
+                    var _no_zone_alert_content;
+                    if (prelim_county === true){
+                        _no_zone_alert_content = "But that doesn't mean that your area can't flood, and flood maps in this area are still preliminary. FEMA estimates that a third of Federal Disaster Assistance goes to people outside of high-risk flood zones. <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>Here's how FEMA recommends you stay safe in a flood</a>.";
+                    } else {
+                        _no_zone_alert_content = "But that doesn't mean that your area can't flood. FEMA estimates that a third of Federal Disaster Assistance goes to people outside of high-risk flood zones. <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>Here's how FEMA recommends you stay safe in a flood</a>.";
+                    };
                     $.jAlert({
                         "replaceOtherAlerts": true,
                         "closeOnClick": true,
-                        "theme": "green",
+                        "theme": "black",
                         "title": "<strong>You're not in a flood zone</strong>",
-                        "content": "But that doesn't mean that your area can't flood. FEMA estimates that a third of Federal Disaster Assistance goes to people outside of high-risk flood zones. <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>Here's how FEMA recommends you stay safe in a flood</a>."
-                      });
-                } else if (_100_undefined === true && _500_undefined === true){
+                        "content": _no_zone_alert_content
+                    });
+                    }
+                 else if (_100_undefined === true && _500_undefined === true){
                     $.jAlert({
                         "replaceOtherAlerts": true,
                         "closeOnClick": true,
@@ -381,29 +396,41 @@
                             "closeOnClick": true,
                             "theme": "black",
                             "title": "<strong>You're in a 100-year and 500-year flood zone</strong>",
-                            "content": "Flood insurance is typically required for homeowners in a 100-year flood zone, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>."
+                            "content": "Flood insurance is typically required for homeowners in a 100-year flood zone, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>. Check with FEMA for an official determination."
                           });
                         this.view_object.layer._100_zones._flood_zones.name = "_100_zone"
                         this.set_topo_layer(this.view_object.layer._100_zones._flood_zones);
                         this.view_object.layer._500_zones._flood_zones.name = "_500_zone"
                         this.set_topo_layer(this.view_object.layer._500_zones._flood_zones);
                     } else if (_100_value === true && _500_value === false){
+                        var _100_alert_content;
+                        if (prelim_county === true){
+                            _100_alert_content = "Flood insurance is typically required for homeowners in these areas, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). However, in this county, digital flood maps are preliminary and could change. Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>. Check with FEMA for an official determination.";
+                        } else {
+                            _100_alert_content = "Flood insurance is typically required for homeowners in these areas, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>. Check with FEMA for an official determination.";
+                        };
                         $.jAlert({
                             "replaceOtherAlerts": true,
                             "closeOnClick": true,
                             "theme": "black",
                             "title": "<strong>You're in a 100-year flood zone</strong>",
-                            "content": "Flood insurance is typically required for homeowners in these areas, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>."
-                          });
+                            "content": _100_alert_content
+                        });
                         this.view_object.layer._100_zones._flood_zones.name = "_100_zone"
                         this.set_topo_layer(this.view_object.layer._100_zones._flood_zones);
                     } else if (_100_value === false && _500_value === true){
+                        var _500_alert_content;
+                        if (prelim_county === true){
+                            _500_alert_content = "Flood insurance isn't required for in these areas, which have a 0.2 percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). That may seem low, but the risks are real. Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>. Note that, in this county, digital flood maps are preliminary and could change. Check with FEMA for an official determination.";
+                        } else {
+                            _500_alert_content = "Flood insurance isn't required for in these areas, which have a 0.2 percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). That may seem low, but the risks are real. Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>. Check with FEMA for an official determination.";
+                        };
                         $.jAlert({
                             "replaceOtherAlerts": true,
                             "closeOnClick": true,
                             "theme": "black",
                             "title": "<strong>You're in a 500-year flood zone</strong>",
-                            "content": "Flood insurance isn't required for in these areas, which have a 0.2 percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). That may seem low, but the risks are real. Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>."
+                            "content": _500_alert_content
                         });
                         this.view_object.layer._500_zones._flood_zones.name = "_500_zone"
                         this.set_topo_layer(this.view_object.layer._500_zones._flood_zones);
@@ -427,6 +454,7 @@
             };
             var _this = this;
             var proceed = null;
+            var county_name = null;
             $.ajax({
                 async: false,
                 url: "data/ca_counties.json",
@@ -437,6 +465,7 @@
                     if (in_cali.counties === null || in_cali.counties === undefined){
                         proceed = false;
                     } else {
+                        county_name = in_cali.counties.properties.fullName;
                         proceed = true;
                     };
                 }
@@ -444,7 +473,7 @@
             if (proceed === true){
                 var _100_zones = _this.view_object._100_wherewolf.find(user_here, {wholeFeature: true});
                 var _500_zones = _this.view_object._500_wherewolf.find(user_here, {wholeFeature: true});
-                return {"_100_zones": _100_zones, "_500_zones": _500_zones, "user_here": user_here};
+                return {"_100_zones": _100_zones, "_500_zones": _500_zones, "user_here": user_here, "county_name": county_name};
             } else {
                 return false;
             };
@@ -464,7 +493,6 @@
         // },
 
         set_topo_layer: function(geo_data){
-            console.log(geo_data.name);
             this.topoLayer = new L.TopoJSON();
             this.topoLayer.addData(geo_data);
             if (geo_data.name === "_100_zone"){
