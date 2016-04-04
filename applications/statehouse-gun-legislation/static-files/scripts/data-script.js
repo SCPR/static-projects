@@ -8,13 +8,7 @@
 
         // initialize our tabletop object
         initializeTabletopDataSource: function(){
-            Tabletop.init({
-                key: '0Aq8qwSArzKP9dGlidnhTaEJuWXRQTWNjQWtIVjdXOFE',
-                callback: fn.getIdOfBillContainer,
-                parseNumbers: true,
-                simpleSheet: false,
-                debug: false
-            });
+            $.getJSON("static-files/data/overview_of_statehouse_gun_legislation_array.json", fn.getIdOfBillContainer);
         },
 
         // get the id of a bill container on click
@@ -26,7 +20,6 @@
                     fn.compareBillIdToTabletopData(data, fn.targetBillId);
                     contentDisplay.scrollIntoView(true);
                 });
-
             });
         },
 
@@ -82,13 +75,14 @@
         },
 
         // run the comparsion on actual bill and target bill
-        compareBillIdToTabletopData: function(data, TestBillId){
-            for(var i=0; i<data.working_data.elements.length; i++){
-                var formattedTableTopTitle = data.working_data.elements[i].shorttitle;
-                var formattedTableTopSummaryText = data.working_data.elements[i].juliessummary;
-                var formattedTableTopLegislationStatus = data.working_data.elements[i].legislationstatus;
-                var formattedTableTopBillId = data.working_data.elements[i].billid.replace(/\s/g, "%20");
-                if (TestBillId === formattedTableTopBillId){
+        compareBillIdToTabletopData: function(data, billId){
+            billId = billId.replace("%20", " ");
+            for(var i=0; i<data.length; i++){
+                var formattedTableTopTitle = data[i].short_title;
+                var formattedTableTopSummaryText = data[i].julies_summary;
+                var formattedTableTopLegislationStatus = data[i].legislation_status;
+                var formattedTableTopBillId = data[i].bill_id.replace(/"\s"/g, "%20");
+                if (billId === formattedTableTopBillId){
                     fn.writeTableTopData('#reporter-title', formattedTableTopTitle);
                     fn.writeTableTopData('#reporter-summary', formattedTableTopSummaryText);
                     fn.writeTableTopData('#legislation-status', formattedTableTopLegislationStatus);
@@ -169,7 +163,7 @@
 
     // embed function
     function embedBox() {
-        var embed_url = 'http://projects.scpr.org/maps/election-day-voting-issues/iframe.html';
+        var embed_url = 'http://projects.scpr.org/applications/statehouse-gun-legislation/iframe.html';
         jAlert('<h4>Embed this on your site or blog</h4>' +
         '<span>Copy the code below and paste to source of your page: <br /><br /> &lt;iframe src=\"'+ embed_url +'\" width=\"620px\" height=\"820px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
     }
