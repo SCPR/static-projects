@@ -47,15 +47,15 @@ App.Router = Backbone.Router.extend({
     },
 
     indexView: function(){
-
         var string = "This Works";
         console.log(string);
         console.log(string.toProperCase());
         console.log(string.slugifyString());
         console.log(string.splitOnCapitalLetter());
-
-
     },
+
+
+
 
     fetchData: function(){
         var _this = this;
