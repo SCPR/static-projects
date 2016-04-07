@@ -568,7 +568,7 @@ section.display ol li dl {
     }
 
     ._data_figure dd.accent-text {
-        line-height: 5px;
+        /*line-height: 5px;*/
     }
 
     .icon-display {
