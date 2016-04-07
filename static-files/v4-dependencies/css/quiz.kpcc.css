@@ -1,0 +1,125 @@
+$font-stack: 'Alight Sans', sans-serif;
+$question-font: 'Balto', sans-serif;
+$blue: #bfd1df;
+
+// Container for generated quiz
+.quiz-container {
+  font-family: $font-stack;
+  color: #4C4E4D;
+  padding-top: 20px;
+}
+
+// Text for each question
+.qq-question {
+  font-family: $question-font;
+  font-weight: bold;
+  color: #4C4E4D;
+  font-size: 100px;
+  margin: 0% auto;
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+
+// Description for each question
+.qq-description {
+  font-family: $font-stack;
+  padding: 20px 30px 0px 30px;
+}
+
+// Answer options for each question
+ul.answers > li {
+  list-style-type: none;
+  font-family: $font-stack;
+  padding: 0px 0px 0px 10px;
+  font-size: 100px;
+
+  &:before {
+    font-family: $question-font;
+    font-weight: bold;
+    color: #4c4e4d;
+    background-color: $blue;
+    width: 25px;
+    padding: 2px 0px;
+  }
+  &:hover {
+    background-color: #f1f3f2;
+  }
+}
+
+// Buttons
+.qq-button {
+  font-family: $font-stack;
+  color: #4c4e4d;
+  background-color: #f1f3f2;
+  &:hover {
+    background-color: $blue !important;
+  }
+}
+
+// Highlights selected answer
+.selected {
+  background-color: #f7f7f7;
+}
+
+// Submit button color when an answer is selected
+.submit-highlight {
+  background-color: #cacbcc;
+}
+
+// Checking selected answer
+.answer p:first-child {
+  font-family: $question-font;
+  border-top: 1px solid #4c4e4d !important;
+}
+
+// Social media buttons on final scorecard
+#social-media {
+  ul {
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+
+      &:before {
+        background-color:transparent !important;
+        // display: none;
+      }
+
+      a {
+        text-decoration: none;
+        svg {
+          fill: #4c4e4d;
+          &:hover {
+            fill: #fff200;
+          }
+          path:hover {
+            fill: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Style for scorecard's final score
+.scorecard p:nth-child(2) {
+  font-family: $question-font;
+}
+
+// Hyperlinks
+.answer a {
+  color: #6d98a8;
+  text-decoration: none;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  &:hover {
+    text-decoration:underline;
+  }
+}
+
+// Flowchart selection
+.flowchart-selected {
+  background-color: $blue !important;
+}

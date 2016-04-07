@@ -1,0 +1,177 @@
+/* standard styles */
+body.embedded {background: none;}
+body.embedded .data-container {max-width: 1110px; margin: 0 auto;}
+
+/* standard header */
+body.embedded header .navbar-default {background: #ffffff; box-shadow: 0 0 8px rgba(0,0,0,0.7); height: 74px; margin: 0 0 25px 0;}
+body.embedded header h3#site-title a {background-image: url('http://projects.scpr.org/static-files/images/main/logo-masthead.png'); width: 181px; height: 42px; display: block; text-indent: -9999px; width: 180px; height: 42px; margin-top: 15px;}
+body.embedded .header-links {margin: 5px 0;}
+body.embedded .header-links li {border-right: 1px solid #e9e9e9; display: block; float: left; list-style: none; padding: 8px 18px 0;}
+body.embedded .header-links li:last-child {border: 0; padding-right: 0;}
+body.embedded .header-links a {color: #454545; padding: 0 0 0 0;}
+body.embedded .header-links b {display: block; font-size: 12px;}
+body.embedded .header-links a.icon {display: block; text-indent: -9999px;}
+body.embedded .header-links a.icon:hover {opacity: 0.7;}
+body.embedded .header-links a.pledge-now {background:url('http://projects.scpr.org/static-files/images/template-icons/ico-pledge.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
+body.embedded .header-links .share-links {width: 63px; margin: 0 auto;}
+body.embedded .header-links a.facebook {background:url('http://projects.scpr.org/static-files/images/template-icons/ico-facebook.png') no-repeat 0 0; display: block; float: left; margin: 0 10px 1px 0; width: 22px; height: 22px;}
+body.embedded .header-links a.twitter {background:url('http://projects.scpr.org/static-files/images/template-icons/ico-twitter.png') no-repeat 0 0; display: block; float: left; width: 31px; height: 22px;}
+body.embedded .header-links a.embed-this {background:url('http://projects.scpr.org/static-files/images/template-icons/ico-embed.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
+body.embedded .header-links a.projects-home {background:url('http://projects.scpr.org/static-files/images/template-icons/ico-home.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 22px;}
+
+/* standard footer */
+body.embedded footer {text-align: center; padding: 10px 0;}
+body.embedded footer ul {margin: 0; list-style: none;}
+body.embedded footer ul li, footer ul li a {color: #999; font-size:11px;}
+body.embedded footer ul li a:hover {color: #666;}
+body.embedded footer ul li {display: inline-block; padding: 0 10px 0 0; margin: 0 0 0 10px; border-right: 1px solid #999;}
+body.embedded footer ul li h3#site-title a {background-image: url('http://www.scpr.org/assets/logo-masthead.png'); width: 181px; height: 42px; display: block; text-indent: -9999px; width: 180px; height: 28px; margin-top: 15px;}
+body.embedded footer ul li:first-child {margin-left: 0;}
+body.embedded footer ul li:last-child {padding-right: 0; border-right: none;}
+
+/* main typography */
+body.embedded {font: 100%/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;}
+body.embedded .data-container .kicker {text-transform: uppercase; font-weight: bold;}
+body.embedded .data-container .credits {font-style: italic; display: inline;}
+body.embedded .data-container .pubdate {color: #b94a48; font-style: italic; display: inline;}
+body.embedded .data-container blockquote {padding: 0 0 0 15px; margin: 0 0 20px; border-left: 3px solid #2B2B2B;}
+body.embedded .data-container .lowercase {text-transform: lowercase;}
+body.embedded .data-container .center-text, {text-align:center;}
+body.embedded .data-container .right-align {text-align: right;}
+body.embedded .data-container .left-align {text-align: left;}
+body.embedded .data-container .underline {text-decoration: underline;}
+body.embedded .data-container .italics {font-style: italic;}
+
+@media (max-width: 480px) {
+    body.embedded .data-container h1 {font-size: 370%; font-weight: bold;}
+    body.embedded .data-container h2 {font-size: 320%;}
+    body.embedded .data-container h3 {font-size: 280%;}
+    body.embedded .data-container h4 {font-size: 240%;}
+    body.embedded .data-container h5 {font-size: 200%;}
+    body.embedded .data-container h6 {font-size: 180%;}
+    body.embedded .data-container p {font-size: 130%;}
+    body.embedded .data-container a.btn-primary {font-size: 120%;}
+    body.embedded .data-container .kicker {font-size: 110%;}
+    body.embedded .data-container .small-writing {font-size: 120%;}
+    body.embedded .data-container .sky-writing {font-size: 450%; color: #EC7C04;}
+    body.embedded .data-container .jumbotron p {font-size: 70%; font-weight: normal;}
+    body.embedded .data-container table {font-size: 130%;}
+    body.embedded .data-container ul li {font-size: 130%;}
+}
+
+@media (min-width: 481px) {
+    body.embedded .data-container h1 {font-size: 420%; font-weight: bold;}
+    body.embedded .data-container h2 {font-size: 380%;}
+    body.embedded .data-container h3 {font-size: 340%;}
+    body.embedded .data-container h4 {font-size: 300%;}
+    body.embedded .data-container h5 {font-size: 260%;}
+    body.embedded .data-container h6 {font-size: 220%;}
+    body.embedded .data-container p {font-size: 130%;}
+    body.embedded .data-container a.btn-primary {font-size: 120%;}
+    body.embedded .data-container .kicker {font-size: 130%;}
+    body.embedded .data-container .small-writing {font-size: 120%;}
+    body.embedded .data-container .sky-writing {font-size: 500%; color: #EC7C04;}
+    body.embedded .data-container .jumbotron p {font-size: 70%; font-weight: normal;}
+    body.embedded .data-container table {font-size: 130%;}
+    body.embedded .data-container ul li {font-size: 130%;}
+}
+
+@media (min-width: 768px) {
+    body.embedded .data-container h1 {font-size: 460%; font-weight: bold;}
+    body.embedded .data-container h2 {font-size: 400%;}
+    body.embedded .data-container h3 {font-size: 340%;}
+    body.embedded .data-container h4 {font-size: 280%;}
+    body.embedded .data-container h5 {font-size: 220%;}
+    body.embedded .data-container h6 {font-size: 160%;}
+    body.embedded .data-container p {font-size: 150%;}
+    body.embedded .data-container a.btn-primary {font-size: 140%;}
+    body.embedded .data-container .kicker {font-size: 150%;}
+    body.embedded .data-container .small-writing {font-size: 130%;}
+    body.embedded .data-container .sky-writing {font-size: 600%; color: #EC7C04;}
+    body.embedded .data-container .jumbotron p {font-size: 80%; font-weight: normal;}
+    body.embedded .data-container table {font-size: 140%;}
+    body.embedded .data-container ul li {font-size: 140%;}
+}
+
+@media (min-width: 992px) {
+    body.embedded .data-container h1 {font-size: 480%; font-weight: bold;}
+    body.embedded .data-container h2 {font-size: 420%;}
+    body.embedded .data-container h3 {font-size: 360%;}
+    body.embedded .data-container h4 {font-size: 300%;}
+    body.embedded .data-container h5 {font-size: 240%;}
+    body.embedded .data-container h6 {font-size: 180%;}
+    body.embedded .data-container p {font-size: 150%;}
+    body.embedded .data-container a.btn-primary {font-size: 140%;}
+    body.embedded .data-container .kicker {font-size: 150%;}
+    body.embedded .data-container .small-writing {font-size: 130%;}
+    body.embedded .data-container .sky-writing {font-size: 600%; color: #EC7C04;}
+    body.embedded .data-container .jumbotron p {font-size: 80%; font-weight: normal;}
+    body.embedded .data-container table {font-size: 140%;}
+    body.embedded .data-container ul li {font-size: 140%;}
+}
+
+/* structure for data and display elements */
+.data-container .data-details {margin: 10px auto 5px auto;}
+.data-container .data-visuals {margin: 10px auto 5px auto;}
+.data-container .data-visuals .jumbotron {width: 96%; height: auto; background: rgba(240, 248, 255, 1.0); margin: 10px 2% 10px 2%; padding: 10px 0 10px 0; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; -khtml-border-radius: 0;}
+.data-container .data-visuals .jumbotron p {margin: 0 1em 0 1em;}
+.data-container .data-visuals #content-action-bar {width: 100%; height: auto; text-align: center; margin: 15px auto 15px auto;}
+.data-container .data-visuals #content-side-bar {width: 100%; height: auto; margin: 10px auto 15px auto;}
+.data-container .data-details .content-image img, .data-container .data-visuals .content-image img {width: 100%; margin: 10px 0 10px 0;}
+.data-container .data-visuals #content-map-canvas {width: 100%; height: 1000px; margin: 10px 0 10px 0; z-index: 10;}
+.data-container .data-visuals #content-map-canvas img {max-width: none;}
+.data-container table {width: 100%; height: auto;}
+.data-container table.table-striped thead th {background-color: #2B2B2B; color: #fdfdfd;}
+.data-container table.table-striped tbody > tr:nth-child(even) > td,
+.data-container table.table-striped tbody > tr:nth-child(even) > th {background-color: #aaaaaa;}
+.data-container table.table-striped tbody > tr:nth-child(odd) > td,
+.data-container table.table-striped tbody > tr:nth-child(odd) > th {background-color: #fdfdfd;}
+
+@media (max-width: 480px) {
+    #content-map-canvas {width: 100%; height: 500px; margin: 0 0 0 0;}
+    #content-display {max-width: 80%; display: none; position: fixed; left: 10%; top: 20%;}
+}
+
+@media (min-width: 481px) {
+    #content-map-canvas {width: 100%; height: 500px; margin: 0 0 0 0;}
+    #content-display {max-width: 80%; display: none; position: fixed; left: 10%; top: 20%;}
+}
+
+@media (min-width: 768px) {
+    #content-map-canvas {width: 100%; height: 500px; margin: 0 0 0 0;}
+    #content-display {max-width: 80%; display: none; position: fixed; left: 10%; top: 20%;}
+}
+
+@media (min-width: 992px) {
+    #content-map-canvas {width: 100%; height: 500px; margin: 0 0 0 0;}
+    #content-display {max-width: 40%; display: none; position: fixed; left: 30%; top: 20%;}
+    #content-map-canvas {width: 100%; height: 500px; margin: 0 0 0 0;}
+    #content-display {max-width: 40%; display: none; position: fixed; left: 30%; top: 20%;}
+}
+
+/* styles for public insight network bug */
+.pij {background: url("http://www.scpr.org/assets/icons/pij-query-56685e16f420acef267891071f085e8f.png") no-repeat 0 4px; padding-left: 30px; font-weight: 800;}
+.pij a {font-weight: normal;}
+
+/* bootstrap overrides */
+a {color: #007FA6;}
+.btn {padding: 0px 0px; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; -khtml-border-radius: 0;}
+.btn-primary {background: rgba(0, 127, 166, 1.0); border-color: rgba(0, 127, 166, 1.0);}
+.btn-primary:hover {background: rgba(0, 127, 166, .6); border-color: rgba(0, 127, 166, .6); color: #2B2B2B;}
+
+/* modal content display */
+#content-background {display: none; position: fixed; height: 100%; width: 100%; top: 0; left: 0; background: #000000; z-index: 1000; }
+#content-display {display: none; position: fixed; left: 30%; top: 20%; width: 100%; max-width: 40%; height: auto; background: #fdfdfd; z-index: 1003; color: #2b2b2b; padding: 2%; -moz-border-radius: 2%; -webkit-border-radius: 2%; border-radius: 2%; -khtml-border-radius: 2%;}
+#content-display #close {margin: 0; cursor: pointer;}
+#content-display img {width: 80%; margin: 0 10% 15px 10%;}
+
+/* for legend area */
+.content-legend {position: absolute; top: 0px; right: 15px; z-index: 100; margin: 10px 0 0 0;}
+.content-legend table {width: 100%; height: auto;}
+.content-legend th {color: #fff; background-color: #aaa; padding: 5px 5px; border-top: 4px solid #555; font-weight: bold}
+.content-legend td {padding: 5%; text-align: center; color: #ffffff; font-size: 12px;}
+.content-legend li {display: inline; height: 25px; list-style-type: none; padding: 10px 10px 10px 40px;}
+
+/* user submit forms */
+#data-user-submit .ss-form {width: 90%; margin: 0 5% 0 5%;}
+#data-user-submit {width: 100%; height: 100%; margin: 10px 0; display: none;}
