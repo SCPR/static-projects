@@ -9,5 +9,5 @@ window.appConfig = {
     is_embedded: null,
     embed_width: "100%",
     embed_height: "1000px",
-    twitter_share_text: "Where LA's bus shelters have—and haven't—been installed. Explore @KPCC's map",
+    twitter_share_text: "LA's missing bus shelters. Explore @KPCC's map",
 };
