@@ -43,21 +43,14 @@ App.Router = Backbone.Router.extend({
 
     routes: {
         "": "indexView",
-        ":phrase_to_query": "test"
+        ":phrase": "fetchData"
     },
 
     indexView: function(){
-
-        var string = "This Works";
-        console.log(string);
-        console.log(string.toProperCase());
-        console.log(string.slugifyString());
-        console.log(string.splitOnCapitalLetter());
-
-
+        this.fetchData(null);
     },
 
-    fetchData: function(){
+    fetchData: function(phrase){
         var _this = this;
         var legislators = new App.Collections.Legislators();
         legislators.fetch({
@@ -66,22 +59,18 @@ App.Router = Backbone.Router.extend({
         var checkExist = setInterval(function() {
             if (legislators.length > 0){
                 clearInterval(checkExist);
-                _this.render_application_visuals(legislators);
+                _this.render_application_visuals(legislators, phrase);
             }
         }, 500);
     },
 
-    test: function(phrase){
-        console.log(phrase);
-    },
-
-    render_application_visuals: function(data){
+    render_application_visuals: function(legislators, phrase){
         if (this.application_visuals){
             this.application_visuals.remove();
         };
         this.application_visuals = new App.Views.ApplicationVisuals({
-            data: data,
-            phrase: "san+bernardino",
+            data: legislators,
+            phrase: phrase,
         });
         return this.application_visuals;
     },
@@ -98,18 +87,14 @@ App.Views.ApplicationVisuals = Backbone.View.extend({
     el: ".data-visuals",
 
     initialize: function(object){
-
         this.view_object = object;
-
-        this.view_object.api_urls = this.construct_capitol_words_query(this.view_object.phrase);
-
-        this.view_object.data.phrases = this.return_json(this.view_object.api_urls.phrases);
-
-        this.view_object.data.instances = this.return_json(this.view_object.api_urls.instances);
-
-        this.render();
+        if (this.view_object.phrase != null){
+            this.view_object.api_urls = this.construct_capitol_words_query(this.view_object.phrase);
+            this.view_object.data.phrases = this.return_json(this.view_object.api_urls.phrases);
+            this.view_object.data.instances = this.return_json(this.view_object.api_urls.instances);
+            this.render();
+        };
     },
-
 
     // construct the url to query for data
     construct_capitol_words_query: function(phrase){
@@ -129,30 +114,39 @@ App.Views.ApplicationVisuals = Backbone.View.extend({
     },
 
     events: {
-        // "click a.findMe": "findMe",
-        // "click a.searchMe": "searchMe",
         "keyup :input": "term_search",
         "click button#submit": "navigate",
-        // "click button#reset": "resetUserView"
     },
 
     term_search: function(e){
         var input_value = $("input[id='term_search']").val();
-        this.view_object.phrase = window.slugifyString(input_value)
+        this.view_object.phrase = input_value.slugifyString()
+
+        // console.log(string.toProperCase());
+        // console.log(string.slugifyString());
+        // console.log(string.splitOnCapitalLetter());
+
+
         if(e.keyCode != 13) {
             return false;
-        } else if (e.keyCode === 13 && this.view_object.phrase === "" && this.view_object.phrase=== "") {
+        } else if (e.keyCode === 13 && this.view_object.phrase === "" || this.view_object.phrase === null) {
             return false;
         } else {
             this.navigate();
         }
+
+
     },
 
     navigate: function(){
-        window.app.navigate("#" + this.view_object.phrase, {
-            trigger: true,
-            replace: false,
-        });
+
+        console.log(this.view_object);
+
+        // window.app.navigate("#" + this.view_object.phrase, {
+        //     trigger: true,
+        //     replace: false,
+        // });
+
     },
 
     return_json: function(url){
@@ -183,6 +177,7 @@ App.Views.ApplicationVisuals = Backbone.View.extend({
                 "party": "D"
             };
         };
+
         var gops = _.where(this.view_object.data.instances, {party: "R"});
         if(gops.length === 0){
             gops[0] = {
@@ -190,13 +185,14 @@ App.Views.ApplicationVisuals = Backbone.View.extend({
                 "party": "R"
             };
         };
+
         var overall_instances = dems[0].count + gops[0].count;
 
         $("#total-overall-instances").html("Found " + overall_instances + " instances. ");
         $("#total-democrat-instances").html("Mentioned " + dems[0].count + " times by California Democrats. ");
         $("#total-republican-instances").html("Mentioned " + gops[0].count + " times by California Republicans.");
         $("#phrase-headline").html("<h1 class='centered'><span id='display-phrase'>" + this.view_object.phrase.phraseToProperCase() + "</span></h1>");
+
+
     },
-
-
 });

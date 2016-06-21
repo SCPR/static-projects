@@ -30,7 +30,7 @@
             if (window.location.href.indexOf("http://projects.scpr.org/") > -1){
                 window.wrapperTemplatePath = "http://projects.scpr.org/static-files/v3-dependencies/templates/"
             } else {
-                window.wrapperTemplatePath = "/2kpcc/static-projects/static-files/v3-dependencies/templates/"
+                window.wrapperTemplatePath = "/2kpcc/_projects/static-projects/static-files/v3-dependencies/templates/"
             };
 
             // sets window size
@@ -74,55 +74,56 @@
         },
 
         render: function(){
-            $(".kpcc-header").html(_.template(template(window.wrapperTemplatePath + "kpcc-header.html"), {
-                "encoded_share_url": encodeURIComponent(window.appConfig.project_root),
-                "twitter_share_text": window.appConfig.twitter_share_text
-            }));
 
-            $(".data-details").html(_.template(template("templates/data-details.html")));
+            // $(".kpcc-header").html(_.template(template(window.wrapperTemplatePath + "kpcc-header.html"), {
+            //     "encoded_share_url": encodeURIComponent(window.appConfig.project_root),
+            //     "twitter_share_text": window.appConfig.twitter_share_text
+            // }));
 
-            $(".kpcc-footer").html(_.template(template(window.wrapperTemplatePath + "kpcc-footer.html")));
+            // $(".data-details").html(_.template(template("templates/data-details.html")));
 
-            if (window.appConfig.open_about_this === true){
-                $(".text").collapse("show");
-            };
+            // $(".kpcc-footer").html(_.template(template(window.wrapperTemplatePath + "kpcc-footer.html")));
 
-            if (window.appConfig.embed_this === false){
-                $("li.projects-embed").addClass("hidden");
-            }
+            // if (window.appConfig.open_about_this === true){
+            //     $(".text").collapse("show");
+            // };
 
-            if (window.appConfig.is_embedded === true){
-                $(".data-comments").remove();
-                $(".buttons a:last").before("<a class='btn btn-primary' href='" + window.appConfig.project_root + "' target='_blank'><span class='glyphicon glyphicon-resize-full'></span> New window</a>");
-            }
+            // if (window.appConfig.embed_this === false){
+            //     $("li.projects-embed").addClass("hidden");
+            // }
 
-            $(".text").on("shown.bs.collapse", function(){
-                $("span.text")
-                    .removeClass("glyphicon-chevron-down")
-                    .addClass("glyphicon-chevron-up")
-                    .css("height", "auto");
-            });
+            // if (window.appConfig.is_embedded === true){
+            //     $(".data-comments").remove();
+            //     $(".buttons a:last").before("<a class='btn btn-primary' href='" + window.appConfig.project_root + "' target='_blank'><span class='glyphicon glyphicon-resize-full'></span> New window</a>");
+            // }
 
-            $(".text").on("hidden.bs.collapse", function(){
-                $("span.text")
-                    .removeClass("glyphicon-chevron-up")
-                    .addClass("glyphicon-chevron-down")
-                    .css("height", "auto");
-            });
+            // $(".text").on("shown.bs.collapse", function(){
+            //     $("span.text")
+            //         .removeClass("glyphicon-chevron-down")
+            //         .addClass("glyphicon-chevron-up")
+            //         .css("height", "auto");
+            // });
 
-            $(".about").on("shown.bs.collapse", function(){
-                $("span.about")
-                    .removeClass("glyphicon-chevron-down")
-                    .addClass("glyphicon-chevron-up")
-                    .css("height", "auto");
-            });
+            // $(".text").on("hidden.bs.collapse", function(){
+            //     $("span.text")
+            //         .removeClass("glyphicon-chevron-up")
+            //         .addClass("glyphicon-chevron-down")
+            //         .css("height", "auto");
+            // });
 
-            $(".about").on("hidden.bs.collapse", function(){
-                $("span.about")
-                    .removeClass("glyphicon-chevron-up")
-                    .addClass("glyphicon-chevron-down")
-                    .css("height", "auto");
-            });
+            // $(".about").on("shown.bs.collapse", function(){
+            //     $("span.about")
+            //         .removeClass("glyphicon-chevron-down")
+            //         .addClass("glyphicon-chevron-up")
+            //         .css("height", "auto");
+            // });
+
+            // $(".about").on("hidden.bs.collapse", function(){
+            //     $("span.about")
+            //         .removeClass("glyphicon-chevron-up")
+            //         .addClass("glyphicon-chevron-down")
+            //         .css("height", "auto");
+            // });
         }
     });
 
