@@ -12,7 +12,7 @@ Creating one of these is pretty simple to do on a Mac.
 
 2. Choose the CA/NV 'domain' and the latest run. 
 
-3. Zoom in on the general area of the fire and where the smoke disperses for the best visual
+3. Zoom in on the general area of the fire and where the smoke disperses for the best visual.
 
 4. I'd advise slowing down the playback by one notch, which can be done with the gray minus button above the map.
 
@@ -22,8 +22,8 @@ Creating one of these is pretty simple to do on a Mac.
 
 7. Hit play in the browser. Let it run and stop the screen recording when done.
 
-8. Convert the video to a GIF [using this tool](http://ezgif.com/video-to-gif). You can edit the start and end points at that site. I recommend a lower FPS for a smaller file.
+8. Convert the video to a GIF [using this tool](http://ezgif.com/video-to-gif). You can edit the start and end points at that site. I recommend a lower FPS for a smaller file. You can also resize the GIF, to make smaller for social, [elsewhere on that site](http://ezgif.com/resize). 
 
-9. You can also resize the GIF, to make smaller for social, [elsewhere on that site](http://ezgif.com/resize). 
+9. Post the gif online, through our projects page or a service such as giphy.
 
 10. Make a note of the time in text next to where you embed the GIF. **Very important**: the time is in UTC, and can be converted to the current California time [here](http://www.worldtimeserver.com/convert_time_in_UTC.aspx). We are several hours behind, so the differences can cahnge the context enormously.
