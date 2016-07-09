@@ -1,75 +1,85 @@
 <!DOCTYPE html>
-<head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
-    <meta name="twitter:card" content="player">
-    <meta name="twitter:site" content="@KPCC">
-    <meta name="twitter:title" content="Local Voices">
-    <meta name="twitter:description" content="I had to look at my 7 year old in the rearview mirror as he asked me, 'Mom what if I get shot for no reason.">
-    <meta name="twitter:image:src" content="https://s3-us-west-1.amazonaws.com/scpr-projects/i_had_to_look_at/i_had_to_look_at.jpg?4362984378">
-    <meta name="twitter:player" content="https://s3-us-west-1.amazonaws.com/scpr-projects/i_had_to_look_at/container.html">
-    <meta name="twitter:player:width" content="1024">
-    <meta name="twitter:player:height" content="512">
-    <meta name="twitter:player:stream" content="https://s3-us-west-1.amazonaws.com/scpr-projects/i_had_to_look_at/i_had_to_look_at.mp3">
-    <meta name="twitter:player:stream:content_type" content="audio/mpeg">
-</head>
-<html>
-    <body>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+        <meta name="twitter:card" content="player">
+        <meta name="twitter:site" content="@KPCC">
+        <meta name="twitter:title" content="Local Voices">
+        <meta name="twitter:description" content="I had to look at my 7 year old in the rearview mirror as he asked me, 'Mom what if I get shot for no reason.">
+        <meta name="twitter:image:src" content="https://s3-us-west-1.amazonaws.com/scpr-projects/i_had_to_look_at/i_had_to_look_at.jpg?4362984378">
+        <meta name="twitter:player" content="https://s3-us-west-1.amazonaws.com/scpr-projects/i_had_to_look_at/container.html">
+        <meta name="twitter:player:width" content="1024">
+        <meta name="twitter:player:height" content="512">
+        <meta name="twitter:player:stream" content="https://s3-us-west-1.amazonaws.com/scpr-projects/i_had_to_look_at/i_had_to_look_at.mp3">
+        <meta name="twitter:player:stream:content_type" content="audio/mpeg">
 
-        <!-- begin chartbeat -->
-        <script type="text/javascript">
-            var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
-            (function() {
-                function loadChartbeat() {
-                    window._sf_endpt = (new Date()).getTime();
-                    var e = document.createElement('script');
-                    e.setAttribute('language', 'javascript');
-                    e.setAttribute('type', 'text/javascript');
-                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
-                    document.body.appendChild(e);
-                };
-                var oldonload = window.onload;
-                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
-            })();
-        </script>
-        <!-- end chartbeat -->
+        <style type="text/css">
+            #audio-container { width: 100%; height: 270px; }
+        </style>
 
-        <!-- begin google analytics -->
-        <script type="text/javascript">
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            // tracker for scpr ga account
-            ga('create', 'UA-624724-1', 'auto', {'allowLinker': true});
+    </head>
+    <html>
+        <body>
+            <div id="audio-container"></div>
+            <script type="text/javascript" src="http://projects.scpr.org/static-files/v3-dependencies/scripts/pym.js"></script>
+            <script>
+                var pymParent = new pym.Parent("audio-container", "https://s3-us-west-1.amazonaws.com/scpr-projects/i_had_to_look_at/container.html", {});
+            </script>
 
-            // tracker for npr digital services station analytics
-            ga('create', 'UA-18188937-11', 'auto', {'name': 'nprDsTracker'}, {'allowLinker': true});
+            <!-- begin chartbeat -->
+            <script type="text/javascript">
+                var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
+                (function() {
+                    function loadChartbeat() {
+                        window._sf_endpt = (new Date()).getTime();
+                        var e = document.createElement('script');
+                        e.setAttribute('language', 'javascript');
+                        e.setAttribute('type', 'text/javascript');
+                        e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+                        document.body.appendChild(e);
+                    };
+                    var oldonload = window.onload;
+                    window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+                })();
+            </script>
+            <!-- end chartbeat -->
 
-            ga('require', 'linker'); // require plugin for cross-domain tracking
-            ga('require', 'displayfeatures'); // require plugin for doubleclick display ad features
-            ga('linker:autoLink', ['scprcontribute.publicradio.org']); //set linked domain
-            ga('set', 'dimension6', 'Southern California Public Radio');
-            ga('set', 'dimension7', 'Story');
-            ga('send', 'pageview');
-            ga('nprDsTracker.send', 'pageview');
-        </script>
-        <!-- end google analytics -->
+            <!-- begin google analytics -->
+            <script type="text/javascript">
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        <!-- begin comscore stats -->
-        <script>
-            var _comscore = _comscore || [];
-            _comscore.push({ c1: "2", c2: "6035974", c3: "", c4: "" });
-            (function() {
-            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
-            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
-            el.parentNode.insertBefore(s, el);
-            })();
-        </script>
-        <noscript>
-            <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035974&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
-        </noscript>
-        <!-- end comscore stats -->
+                // tracker for scpr ga account
+                ga('create', 'UA-624724-1', 'auto', {'allowLinker': true});
 
-    </body>
-</html>
+                // tracker for npr digital services station analytics
+                ga('create', 'UA-18188937-11', 'auto', {'name': 'nprDsTracker'}, {'allowLinker': true});
 
+                ga('require', 'linker'); // require plugin for cross-domain tracking
+                ga('require', 'displayfeatures'); // require plugin for doubleclick display ad features
+                ga('linker:autoLink', ['scprcontribute.publicradio.org']); //set linked domain
+                ga('set', 'dimension6', 'Southern California Public Radio');
+                ga('set', 'dimension7', 'Story');
+                ga('send', 'pageview');
+                ga('nprDsTracker.send', 'pageview');
+            </script>
+            <!-- end google analytics -->
+
+            <!-- begin comscore stats -->
+            <script>
+                var _comscore = _comscore || [];
+                _comscore.push({ c1: "2", c2: "6035974", c3: "", c4: "" });
+                (function() {
+                var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+                s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+                el.parentNode.insertBefore(s, el);
+                })();
+            </script>
+            <noscript>
+                <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035974&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
+            </noscript>
+            <!-- end comscore stats -->
+
+        </body>
+    </html>
