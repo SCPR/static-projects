@@ -1,1 +1,26 @@
-body.minimal {font: 170%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;color: #2B2B2B;-webkit-font-smoothing: antialiased;font-weight: normal;}
+body.minimal {font: 170%/1.5 "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #2B2B2B; -webkit-font-smoothing: antialiased; font-weight: normal;}
+
+.tik-tok-container.tt-bg-color,
+.tik-tok-container .tt-bg-color { background-color: #ccedf8; }
+
+.tik-tok-container .tt-header-color { background-color: #31abd4; }
+
+.tik-tok-container .tt-header .tt-label { margin: 0 60px 30px 60px; text-align: left; font: 20px/1.5 "Arial Bold", sans-serif; text-transform: uppercase; }
+
+.tik-tok-container .tt-header .tt-title { margin: 0 60px 0 60px; text-align: left; font: 50px/56px Arial, sans-serif; }
+
+/*.tik-tok-container .tt-groups { position: relative; z-index: 10; padding-top: 0; }
+
+.tik-tok-container .tt-spine-end.tt-spine-top { padding-top: 0; }*/
+
+.tik-tok-container .tt-entry .tt-entry-source { margin-bottom: 40px; }
+
+.tik-tok-container .tt-entry .tt-entry-date { margin-bottom: 1em; font-size: 85%; color: #007397; text-transform: uppercase; }
+
+.tik-tok-container .tt-entry .tt-entry-title { padding: 0; margin: 0 0 20px 0; font-size: 175%; font-weight: normal; color: #212121; }
+
+.tik-tok-container .tt-entry .tt-entry-body { margin-bottom: 0; font: 100%/23px Arial, sans-serif; color: #363636; }
+
+.tik-tok-container .tt-spine-color { font-family: "Arial Bold", sans-serif; color: #ffffff; background-color: #007397; }
+
+.tik-tok-container .tt-progress-bar .tt-progress { background-color: #007397; }

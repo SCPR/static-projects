@@ -6,8 +6,8 @@
  */
 .tik-tok-container {
   position: relative;
-  width: 100%;
-  max-width: 56%;
+  width: 95%;
+  max-width: 70em;
   margin: 0 auto 2em auto;
   font-family: Lato, Helvetica, Arial, sans-serif;
   color: #565656;
@@ -15,7 +15,7 @@
 }
 .tik-tok-container.tt-bg-color,
 .tik-tok-container .tt-bg-color {
-  background-color: #F87E21;
+  background-color: #ff6666;
 }
 .tik-tok-container div,
 .tik-tok-container span,
@@ -41,12 +41,12 @@
   text-align: center;
 }
 .tik-tok-container .tt-header .tt-label {
-  margin-bottom: 0.5em;
-  font-size: 155%;
+  margin-bottom: 1em;
+  font-size: 1.25em;
 }
 .tik-tok-container .tt-header .tt-title {
-  margin-bottom: 5px;
-  font-size: 260%;
+  margin-bottom: 0.5em;
+  font-size: 2em;
 }
 .tik-tok-container .tt-header-color {
   color: #ffffff;
@@ -54,7 +54,7 @@
 }
 .tik-tok-container .tt-spine-color {
   color: #232323;
-  background-color: #D15904;
+  background-color: #ffcc00;
 }
 .tik-tok-container .tt-spine-background {
   position: absolute;
@@ -129,7 +129,7 @@
 .tik-tok-container .tt-entry .tt-entry-date {
   margin-bottom: 1em;
   font-size: 0.85em;
-  color: #F87E21;
+  color: #ff6666;
   text-transform: uppercase;
 }
 .tik-tok-container .tt-entry .tt-entry-link {
@@ -252,7 +252,7 @@
   position: relative;
   width: 0;
   height: 100%;
-  background-color: #F87E21;
+  background-color: #ffcc00;
   -webkit-transition: width 200ms linear;
           transition: width 200ms linear;
 }
