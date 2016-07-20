@@ -39,7 +39,7 @@
                 if ($(".vco-menubar").length > 0){
                     clearInterval(checkExist);
                     $(".vco-menubar").append(
-                        "<span class='vco-menubar-button change-form'><a href='https://docs.google.com/forms/d/e/1FAIpQLSc2xebXbNvVdk8f8MvPuG9tMzYgdKu-oz-TFZ6lNqOWfOG0jg/viewform' target='blank'>Tell Us: Where Have You Seen Change?</a></span>"
+                        "<span class='vco-menubar-button change-form'><a href='https://docs.google.com/forms/d/e/1FAIpQLSc2xebXbNvVdk8f8MvPuG9tMzYgdKu-oz-TFZ6lNqOWfOG0jg/viewform' target='blank'>Report changes you see</a></span>"
                     );
 
                     // $(document).on("click",".change-form", function(){
