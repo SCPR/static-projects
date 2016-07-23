@@ -9,5 +9,5 @@ window.appConfig = {
     is_embedded: null,
     embed_width: "100%",
     embed_height: "750px",
-    twitter_share_text: "This animated image shows the project path of smoke from the San Gabriel Complex Fire.",
+    twitter_share_text: "This animated image shows the projected path of smoke from the San Gabriel Complex Fire.",
 };
