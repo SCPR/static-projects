@@ -1,5 +1,5 @@
 ###Making a GIF from the US Forest Service's smoke projections
-The United States Forest Service projects the future path of smoke—which can be important information during fire season. The agency's model, known as the BlueSky Modeling Framework, incorporates information about fires, fuel loadings, consumption, emissions, plume height and smoke trajectory.
+The United States Forest Service projects the future path of smoke – which can be important information during fire season. The agency's model, known as the BlueSky Modeling Framework, incorporates information about fires, fuel loadings, consumption, emissions, plume height and smoke trajectory.
 
 While only projections ([read more about the project here](http://viewer.smoke.airfire.org/run/standard/CANSAC-2km/2016062400/)), the 'runs' are a neat visual tool and are regularly updated.
 
@@ -26,4 +26,4 @@ Creating one of these is pretty simple to do on a Mac.
 
 9. Post the gif online, through our projects page or a service such as giphy.
 
-10. Make a note of the time in text next to where you embed the GIF. **Very important**: the time is in UTC, and can be converted to the current California time [here](http://www.worldtimeserver.com/convert_time_in_UTC.aspx). We are several hours behind, so the differences can cahnge the context enormously.
+10. Make a note of the time in text next to where you embed the GIF.
