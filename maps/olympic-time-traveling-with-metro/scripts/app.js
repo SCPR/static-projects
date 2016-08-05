@@ -1,6 +1,3 @@
-
-
-
     App.Router = Backbone.Router.extend({
         initialize: function(){
             this.applicationWrapper = new App.Views.ApplicationWrapper();
@@ -35,22 +32,5 @@
             window.onresize = function(event) {
                 storymap.updateDisplay();
             }
-            var checkExist = setInterval(function() {
-                if ($(".vco-menubar").length > 0){
-                    clearInterval(checkExist);
-                    $(".vco-menubar").append(
-                        "<span class='vco-menubar-button change-form'><a href='https://docs.google.com/forms/d/e/1FAIpQLSc2xebXbNvVdk8f8MvPuG9tMzYgdKu-oz-TFZ6lNqOWfOG0jg/viewform' target='blank'>Report changes you see</a></span>"
-                    );
-
-                    // $(document).on("click",".change-form", function(){
-                    //     $("#data-user-submit").center().fadeIn('slow');
-                    // });
-
-                    // $(document).on("click","#close", function(){
-                    //     $("#data-user-submit").fadeOut('slow');
-                    // });
-
-                }
-            }, 1500);
         },
     });
