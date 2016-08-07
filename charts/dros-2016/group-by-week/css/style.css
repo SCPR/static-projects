@@ -38,51 +38,6 @@
     opacity: .9;
 }
 
-/* blue line */
-.ct-chart .ct-series.ct-series-a .ct-bar, .ct-chart .ct-series.ct-series-a .ct-line, .ct-chart .ct-series.ct-series-a .ct-point, .ct-chart .ct-series.ct-series-a .ct-slice.ct-donut {
-    stroke: #0072bb;
-}
-
-.ct-chart .ct-series.ct-series-a .ct-area, .ct-chart .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
-    fill: #0072bb;
-}
-
-/*gold line*/
-.ct-chart .ct-series.ct-series-b .ct-bar, .ct-chart .ct-series.ct-series-b .ct-line, .ct-chart .ct-series.ct-series-b .ct-point, .ct-chart .ct-series.ct-series-b .ct-slice.ct-donut {
-    stroke: #ffb715;
-}
-
-.ct-chart .ct-series.ct-series-b .ct-area, .ct-chart .ct-series.ct-series-b .ct-slice:not(.ct-donut) {
-    fill: #ffb715;
-}
-
-/*expo line*/
-.ct-chart .ct-series.ct-series-c .ct-bar, .ct-chart .ct-series.ct-series-c .ct-line, .ct-chart .ct-series.ct-series-c .ct-point, .ct-chart .ct-series.ct-series-c .ct-slice.ct-donut {
-    stroke: #01a4e5;
-}
-
-.ct-chart .ct-series.ct-series-c .ct-area, .ct-chart .ct-series.ct-series-c .ct-slice:not(.ct-donut) {
-    fill: #01a4e5;
-}
-
-/*red purple line*/
-.ct-chart .ct-series.ct-series-d .ct-bar, .ct-chart .ct-series.ct-series-d .ct-line, .ct-chart .ct-series.ct-series-d .ct-point, .ct-chart .ct-series.ct-series-d .ct-slice.ct-donut {
-    stroke: #ea1d24;
-}
-
-.ct-chart .ct-series.ct-series-d .ct-area, .ct-chart .ct-series.ct-series-d .ct-slice:not(.ct-donut) {
-    fill: #ea1d24;
-}
-
-/*green line*/
-.ct-chart .ct-series.ct-series-e .ct-bar, .ct-chart .ct-series.ct-series-e .ct-line, .ct-chart .ct-series.ct-series-e .ct-point, .ct-chart .ct-series.ct-series-e .ct-slice.ct-donut {
-    stroke: #6cc06b;
-}
-
-.ct-chart .ct-series.ct-series-e .ct-area, .ct-chart .ct-series.ct-series-e .ct-slice:not(.ct-donut) {
-    fill: #6cc06b;
-}
-
 .tooltip {
   position: absolute;
   z-index: 1;

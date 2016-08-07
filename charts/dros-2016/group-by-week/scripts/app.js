@@ -54,24 +54,32 @@ $(function () {
         },
         xAxis: {
             type: 'datetime',
+            dateTimeLabelFormats: {
+                    day: '%e.',
+                    week: '%b %e ',
+                    month: '%b',
+                },
             labels: {
                 overflow: 'justify',
                 style: {
                         fontSize: 15,
-                }
+                },
             },
             plotLines: [{
               color: 'rgba(34,38,40,.45)',
               width: 2.5,
+              zIndex: 2,
               value: Date.UTC(2016, 5, 6, 0, 0, 0) // True date is June 12 but occured week beginning June 6
                 },
                 {
               color: 'rgba(34,38,40,.45)',
               width: 2.5,
+              zIndex: 2,
               value: Date.UTC(2016, 6, 4, 0, 0, 0) // True date is July 7 but occured week of july 4
                 },{
               color: 'rgba(34,38,40,.45)',
               width: 2.5,
+              zIndex: 2,
               value: Date.UTC(2016, 5, 27, 0, 0, 0) // True date is July 1 but occured week beinning June 27
                 }
 
@@ -104,10 +112,10 @@ $(function () {
         },
         plotOptions: {
             spline: {
-                lineWidth: 2.5,
+                lineWidth: 3.5,
                 states: {
                     hover: {
-                        lineWidth: 3,
+                        lineWidth: 3.75,
                         halo: {
               size: 0
             }
@@ -208,7 +216,9 @@ $(function () {
 24978,
 24398,
 24766],
-color: 'rgba(209,89,4,.8)'
+color: 'rgba(209,89,4,.9)',
+              zIndex: 1,
+
 
         },
         //{
