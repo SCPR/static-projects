@@ -34,6 +34,7 @@ $(function() {
             numericSymbols: null
         },
         chart: {
+            //edit chart spacing
         style: {
             fontFamily: 'helvetica',
             fontSize: 14,
@@ -158,7 +159,7 @@ $(function () {
     anchorX: 'left',
     anchorY: 'top',
     color: '#B123FF',
-    xValue: Date.UTC(2016, 6, 4, 7, 0, 0),
+    xValue: Date.UTC(2016, 6, 3, 11, 0, 0),
     yValue: 17725,
         title: {
         text: 'Dallas',
@@ -215,7 +216,8 @@ $(function () {
 21785,
 24978,
 24398,
-24766],
+24766,
+null], //week of null data to extend chart slightly to allow for more space for Dallas annotation
 color: 'rgba(209,89,4,.9)',
               zIndex: 1,
 
