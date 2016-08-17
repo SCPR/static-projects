@@ -1,7 +1,7 @@
 window.appConfig = {
 
     // general configs
-    open_about_this: null,
+    open_about_this: true,
     comments: false,
     is_mobile: null,
     project_root: "http://projects.scpr.org/maps/2016-blue-cut-fire-smoke",
