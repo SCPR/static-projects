@@ -1,3 +1,5 @@
+a { color: #007397; }
+
 /* basic structure */
 body.minimal .data-container .data-visuals {
     min-height: 600px;
@@ -99,7 +101,7 @@ body.minimal .data-container a.btn-primary:hover {
 }
 
 .water-use-accent {
-    color: rgba(31, 120, 180, 1.0);
+    color: #007397;
 }
 
 .eighty-percent-accent {
@@ -1026,7 +1028,7 @@ section.display ol li dl {
     }
 
     ._data_figure dd {
-        font-size: 150%;
+        font-size: 190%;
     }
 
     ._data_figure dd.accent-text {
@@ -1178,6 +1180,6 @@ span.show {
 #chart-legend-bar .block-container { margin: 10px 20px 0 0; display: inline-block;}
 #chart-legend-bar .block-container mark { background: none; line-height: 25px; }
 #chart-legend-bar .block { width: 25px; height: 25px; margin: 0px 10px 0 0; float: left; display: block; }
-#chart-legend-bar .current-use { background-color: rgba(31, 120, 180, 1.0); }
+#chart-legend-bar .current-use { background-color: #007397; }
 #chart-legend-bar .threshold-use { background-color: rgba(51, 160, 44, 1.0); }
 #chart-legend-bar .baseline-use { background-color: rgba(227, 26, 28, 1.0); }

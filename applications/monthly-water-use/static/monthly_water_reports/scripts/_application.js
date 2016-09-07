@@ -36,23 +36,18 @@ var fn = {
         */
 
         var comparison = {};
-
         comparison.coalCharts = $(".coal-chart");
-
         comparison.coalChartPoints = $(".coal-chart .point");
-
         comparison.coalCharts.on("mouseover", ".point", function(e) {
             var chosenIndex = $(this).data("index"),
                 filteredPoints = comparison.coalChartPoints.filter("[data-index=" + chosenIndex + "]");
             filteredPoints.addClass("hovered");
             filteredPoints.children("span").css("display", "block");
         });
-
         comparison.coalCharts.on("mouseout", ".point", function(e) {
             comparison.coalChartPoints.removeClass("hovered");
             comparison.coalChartPoints.children("span").removeAttr("style");
         });
-
         comparison.coalCharts.on("click", ".point", function(e) {
             // allow clicking on the hovercard link
             if (e.target.tagName == "A") return;
@@ -60,7 +55,6 @@ var fn = {
             comparison.toggleSelectedDistributionPoints($(this).data("index"));
             //comparison.trackEvent('Distribution View', 'Click to toggle point highlight', '');
         });
-
         comparison.toggleSelectedDistributionPoints = function(chosenIndex){
             var filteredPoints = comparison.coalChartPoints.filter("[data-index=" + chosenIndex + "]");
             if (!filteredPoints.hasClass("selected")){
@@ -73,99 +67,119 @@ var fn = {
         }
     },
 
-    drawUsageOverTimeChart: function(chartAxisLabels, data, selector){
+    drawYearBySparkLine: function(year, data, options){
+        var element = "_" + year + "-sparkline";
+        $("li." + element).sparkline(data, options);
+    },
 
-        // we are setting a few options for our chart and override the defaults
+    compareHorizontalBarChart: function(chartAxisLabels, data, selector, high, month_comparison_name){
         var options = {
-
-            seriesBarDistance: 15,
-
+            seriesBarDistance: 10,
             reverseData: true,
-
             horizontalBars: true,
-
-            // line chart points
-            showPoint: true,
-
-            // line smoothing
-            lineSmooth: true,
-
-            // overriding the natural low of the chart
-            low: 0,
-
-            // overriding the natural high of the chart allows you to zoom
-            high: undefined,
-
-            // x-axis specific configuration
+            fullWidth: true,
             axisX: {
-
                 labelOffset: {
-                    x: 0,
+                    x: -10,
                     y: 10
                 },
-
-                // we can disable the grid for this axis
+                type: Chartist.AutoScaleAxis,
+                low: 0,
+                high: high,
+                scaleMinSpace: 75,
                 showGrid: true,
-
-                // and also don't show the label
                 showLabel: true,
-
                 labelInterpolationFnc: function(value) {
                     return value;
                 }
             },
-
-            // y-axis specific configuration
             axisY: {
-
-                // lets offset the chart a bit from the labels
-                offset: 70,
-
+                labelOffset: {
+                    x: 0,
+                    y: 10
+                },
                 showGrid: false,
-
-                // the label interpolation function enables you to modify the values
-                // used for the labels on each axis. here we are converting the
-                // values into million pound.
                 labelInterpolationFnc: function(value) {
-                    return value + " rgpcd";
+                    return month_comparison_name + " " + value;
+                }
+            },
+        };
+        new Chartist.Bar(selector, data, options);
+        var $chart = $(selector);
+        // var $tooltip = $("<div class='tooltip tooltip-hidden'></div>").appendTo($(selector));
+        // $(document).on("mouseenter", ".ct-point", function() {
+        //     var seriesName = $(this).parent().attr('ct:series-name');
+        //     var value = parseFloat($(this).attr("ct:value")).toFixed(2);
+        //     $tooltip.text(value + " rgpcd");
+        //     $tooltip.removeClass("tooltip-hidden");
+        // });
+        // $(document).on("mouseleave", ".ct-point", function() {
+        //     $tooltip.addClass("tooltip-hidden");
+        // });
+        // $(document).on("mousemove", ".ct-point", function(event) {
+        //     $tooltip.css({
+        //         left: (event.offsetX || event.originalEvent.layerX) - $tooltip.width() / 2,
+        //         top: (event.offsetY || event.originalEvent.layerY) - $tooltip.height() - 20
+        //     });
+        // });
+    },
+
+    compareHorizontalLineChart: function(chartAxisLabels, data, selector){
+
+        // we are setting a few options for our chart and override the defaults
+        var options = {
+            seriesBarDistance: 10,
+            reverseData: false,
+            showPoint: true,
+            lineSmooth: true,
+            fullWidth: true,
+            low: 0,
+            axisX: {
+                labelOffset: {
+                    x: -10,
+                    y: 10
+                },
+                showGrid: true,
+                labelInterpolationFnc: function(value) {
+                    return value;
+                }
+            },
+            axisY: {
+                onlyInteger: true,
+                labelOffset: {
+                    x: 0,
+                    y: 0
+                },
+                showGrid: true,
+                labelInterpolationFnc: function(value) {
+                    return value;
                 }
             }
         };
-
-        // create a new line chart object where as first parameter we pass in a selector
-        // that is resolving to our chart container element. the second parameter
-        // is the actual data object.
         new Chartist.Line(selector, data, options);
-
         var $chart = $(selector);
-
         var $tooltip = $("<div class='tooltip tooltip-hidden'></div>").appendTo($(selector));
-
         $(document).on("mouseenter", ".ct-point", function() {
-
             var seriesName = $(this).parent().attr('ct:series-name');
-
             var value = parseFloat($(this).attr("ct:value")).toFixed(2);
-
-            //$tooltip.text(seriesName + ": " + value + " rgpcd");
-
-            $tooltip.text(value + " rgpcd");
-
+            $tooltip.text(seriesName + ": " + value + " million gallons");
             $tooltip.removeClass("tooltip-hidden");
         });
-
         $(document).on("mouseleave", ".ct-point", function() {
             $tooltip.addClass("tooltip-hidden");
         });
-
         $(document).on("mousemove", ".ct-point", function(event) {
             $tooltip.css({
                 left: (event.offsetX || event.originalEvent.layerX) - $tooltip.width() / 2,
                 top: (event.offsetY || event.originalEvent.layerY) - $tooltip.height() - 20
             });
         });
-
     },
+
+
+
+
+
 
     drawProgressTowardReductionTargetChart: function(chartAxisLabels, data, selector){
 
