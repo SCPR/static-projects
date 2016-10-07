@@ -1,0 +1,53 @@
+.col-md-6{
+    padding-bottom: 30px
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
+    body.minimal .data-container h2 { font-size: 240%; }
+    body.minimal .data-container h3 { font-size: 210%; }
+    body.minimal .data-container h4 { font-size: 180%; }
+    body.minimal .data-container h5 { font-size: 150%; }
+    body.minimal .data-container h6 { font-size: 130%; }
+    body.minimal .data-container p { font-size: 110%; }
+}
+
+@media (max-width: 480px) {
+    body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
+    body.minimal .data-container h2 { font-size: 240%; }
+    body.minimal .data-container h3 { font-size: 210%; }
+    body.minimal .data-container h4 { font-size: 180%; }
+    body.minimal .data-container h5 { font-size: 150%; }
+    body.minimal .data-container h6 { font-size: 130%; }
+    body.minimal .data-container p { font-size: 110%; }
+}
+
+@media (min-width: 481px) {
+    body.minimal h1 { font-size: 420%; font-weight: bold;}
+    body.minimal h2 { font-size: 380%; }
+    body.minimal h3 { font-size: 340%; }
+    body.minimal h4 { font-size: 300%; }
+    body.minimal h5 { font-size: 260%; }
+    body.minimal h6 { font-size: 220%; }
+    body.minimal p { font-size: 120%; }
+}
+
+@media (min-width: 767px) {
+    body.minimal h1 { font-size: 460%; font-weight: bold;}
+    body.minimal h2 { font-size: 400%;}
+    body.minimal h3 { font-size: 340%;}
+    body.minimal h4 { font-size: 280%;}
+    body.minimal h5 { font-size: 220%;}
+    body.minimal h6 { font-size: 160%;}
+    body.minimal p { font-size: 130%;}
+}
+
+@media (min-width: 992px) {
+    body.minimal h1 { font-size: 480%; font-weight: bold;}
+    body.minimal h2 { font-size: 420%;}
+    body.minimal h3 { font-size: 360%;}
+    body.minimal h4 { font-size: 300%;}
+    body.minimal h5 { font-size: 240%;}
+    body.minimal h6 { font-size: 180%;}
+    body.minimal p { font-size: 130%;}
+}
