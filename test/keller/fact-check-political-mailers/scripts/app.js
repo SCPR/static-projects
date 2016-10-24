@@ -42,6 +42,14 @@
         },
 
         renderApplicationVisuals: function(container, doc_id){
+
+            if (this.applicationVisuals){
+                this.applicationVisuals.remove();
+
+                $(".data-container").append("<div class='row data-visuals'>");
+
+            };
+
             this.applicationVisuals = new App.Views.ApplicationVisuals({
                 document_id: doc_id,
                 container: container
