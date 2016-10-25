@@ -1,5 +1,5 @@
 window.appConfig = {
-    open_about_this: false,
+    open_about_this: true,
     comments: false,
     is_mobile: null,
     project_root: "http://projects.scpr.org/applications/fact-check-political-mailers/",
