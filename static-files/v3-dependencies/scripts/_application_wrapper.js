@@ -30,7 +30,7 @@
             if (window.location.href.indexOf("http://projects.scpr.org/") > -1){
                 window.wrapperTemplatePath = "http://projects.scpr.org/static-files/v3-dependencies/templates/"
             } else {
-                window.wrapperTemplatePath = "/2kpcc/_projects/static_project/static-files/v3-dependencies/templates/"
+                window.wrapperTemplatePath = "/2kpcc/_projects/static_projects/static-files/v3-dependencies/templates/"
             };
 
             // sets window size
