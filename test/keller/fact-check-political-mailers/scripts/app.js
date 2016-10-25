@@ -32,24 +32,21 @@
 
         routes: {
             "": "indexView",
-            "search": "renderSearchView",
-            "search?=embed/": "renderSearchView",
-            "document/:docId/": "renderApplicationData",
+            ":docId/": "documentView",
         },
 
         indexView: function(){
-            this.renderApplicationVisuals(".data-visuals", "3131720-Oppose-Proposition-56");
+            window.app.navigate("3131720-Oppose-Proposition-56" + "/", {
+                trigger: true,
+                replace: false,
+            });
+        },
+
+        documentView: function(docId){
+            this.renderApplicationVisuals(".data-visuals", docId);
         },
 
         renderApplicationVisuals: function(container, doc_id){
-
-            if (this.applicationVisuals){
-                this.applicationVisuals.remove();
-
-                $(".data-container").append("<div class='row data-visuals'>");
-
-            };
-
             this.applicationVisuals = new App.Views.ApplicationVisuals({
                 document_id: doc_id,
                 container: container
@@ -57,25 +54,6 @@
             return this.applicationVisuals;
         },
 
-        renderApplicationData: function(docId){
-            this.renderApplicationVisuals(".data-visuals", docId);
-        },
-
-        renderSearchView: function(){
-            $(".data-visuals").html(
-                "<div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>" +
-                    "<div id='DC-search-projectid-29637-who-mailed-it' class='DC-search-container'></div>" +
-                "</div>"
-            );
-            dc.embed.load('http://www.documentcloud.org/search/embed/', {
-                q: "projectid: 29637-who-mailed-it",
-                container: "#DC-search-projectid-29637-who-mailed-it",
-                order: "title",
-                per_page: 6,
-                search_bar: true,
-                organization: 97
-            });
-        }
     });
 
     App.Views.ApplicationVisuals = Backbone.View.extend({
@@ -94,6 +72,7 @@
 
         events: {
             "change #create-document-instance": "evaluateSelectedDocument",
+            // "click #note-navigation-links li a": "popNoteDisplay"
         },
 
         evaluateSelectedDocument: function(e){
@@ -104,18 +83,59 @@
             var docUrl = "//www.documentcloud.org/documents/" + docId + ".js";
             var docContainer = "#DV-viewer-" + docId;
             $("#document-container").html("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
-            window.app.navigate("#document/" + docId + "/", {
+            window.app.navigate("#" + docId + "/", {
                 trigger: true,
                 replace: false,
             });
         },
 
-        checkForNewContainer: function(docDiv, docUrl, docContainer){
+        getDocumentNotes: function(docId){
+            var apiPrefix = "https://www.documentcloud.org/api/documents/";
+            $.getJSON(apiPrefix + docId + ".json", this.populateDocumentNotes);
+        },
+
+        populateDocumentNotes: function(data){
+            var documentDescription;
+            var documentSource;
+            if (data.document.description){
+                documentDescription = "<p><em><strong>About this</strong></em>: " + data.document.description + "</p>";
+            } else {
+                documentDescription = ""
+            };
+            if (data.document.description){
+                documentSource = "<p><em><strong>Source</strong></em>: " + data.document.source + "</p>";
+            } else {
+                documentSource = ""
+            };
+            var title = data.document.title;
+            $('#document-meta-data').html(
+                "<h6>" + data.document.title + "</h6>" +
+                documentDescription + "" +
+                documentSource
+            );
+            // for(var i=0; i<data.document.annotations.length; i++){
+            //     $("ul#note-navigation-links").append(
+            //         "<li><a href='#" + data.document.id + "#document/p" + data.document.annotations[i].page + "/a" +
+            //         data.document.annotations[i].id + "'>" + data.document.annotations[i].title + "</a></li>"
+            //     );
+            // };
+        },
+
+        // popNoteDisplay: function(e){
+        //     console.log("clicked");
+        // },
+
+        render: function(viewObject){
+            $(viewObject.container).html(this.template({
+                collection: window.documentsCollection.toJSON()
+            }));
+            $("#create-document-instance").val(viewObject.document_id);
+            var docDiv = "DV-viewer-" + viewObject.document_id;
+            var docUrl = "//www.documentcloud.org/documents/" + viewObject.document_id + ".js";
+            var docContainer = "#DV-viewer-" + viewObject.document_id;
             $(".progress-list").removeClass("hidden");
-            $("#document-container").append("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
             var sidebarParam;
             var docHeightParam;
-            // set params for mobile devices
             if (navigator.userAgent.match(/(iPad)/i)) {
                 sidebarParam = false;
                 docHeightParam = 720;
@@ -126,75 +146,19 @@
                 sidebarParam = false;
                 docHeightParam = 1020;
             };
-            var initialWidth = $("#document-container").width();
+            var initialWidth = $("#document-container").width() + 20;
+            $("#document-container").append("<div id=\"" + docDiv + "\" class=\"DV-container\"></div>");
             DV.load(docUrl, {
                 width: initialWidth,
                 height: docHeightParam,
                 sidebar: sidebarParam,
-                text: true,
-                pdf: true,
+                text: false,
+                pdf: false,
                 container: docContainer
             });
             var docId = docDiv.replace("DV-viewer-", "");
             this.getDocumentNotes(docId);
-        },
-
-        getDocumentNotes: function(docId){
-            var apiPrefix = "https://www.documentcloud.org/api/documents/";
-            $.getJSON(apiPrefix + docId + ".json", this.populateDocumentNotes);
-        },
-
-        populateDocumentNotes: function(data){
-
-            console.log(data.document);
-
-            var documentDescription;
-            var documentSource;
-
-            if (data.document.description){
-                documentDescription = "<p><em><strong>About this</strong></em>: " + data.document.description + "</p>";
-            } else {
-                documentDescription = "<p></p>"
-            };
-
-            if (data.document.description){
-                documentSource = "<p><em><strong>Source</strong></em>: " + data.document.source + "</p>";
-            } else {
-                documentSource = "<p></p>"
-            };
-
-            var title = data.document.title;
-
-            var split_title = title.split("Email");
-
-            parsed_date = moment(split_title[0]).format('MMMM D, YYYY');
-
-            split_title[0] = parsed_date;
-
-            $('#document-meta-data').html(
-                "<h6>" + data.document.title + "</h6>" +
-                documentDescription + "<br />" +
-                documentSource
-            );
-
-            for(var i=0; i<data.document.annotations.length; i++){
-                $("ul#note-navigation-links").append(
-                    "<li><a href='#document/p" + data.document.annotations[i].page + "/a" +
-                    data.document.annotations[i].id + "'>" + data.document.annotations[i].title + "</a></li>"
-                );
-            };
-
             $(".progress-list").addClass("hidden");
-        },
 
-        render: function(viewObject){
-            $(viewObject.container).html(this.template({
-                collection: window.documentsCollection.toJSON()
-            }));
-            $("#create-document-instance").val(viewObject.document_id);
-            var docDiv = "DV-viewer-" + viewObject.document_id;
-            var docUrl = "//www.documentcloud.org/documents/" + viewObject.document_id + ".js";
-            var docContainer = "#DV-viewer-" + viewObject.document_id;
-            this.checkForNewContainer(docDiv, docUrl, docContainer);
         }
     });
