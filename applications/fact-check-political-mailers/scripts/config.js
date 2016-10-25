@@ -7,5 +7,5 @@ window.appConfig = {
     is_embedded: false,
     embed_width: "100%",
     embed_height: "750px",
-    twitter_share_text: "",
+    twitter_share_text: "#WhoMailedIt: @KPCC's fact-check of political mailers",
 };
