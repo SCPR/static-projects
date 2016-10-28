@@ -15,26 +15,32 @@ select {width: 100%; margin: 0 0 0 0; font-weight: 500;}
 
 @media (max-width: 491px) {
     select {font-size: 70%;}
+    #document-container p { font-size: 100%; }
 }
 
 @media (min-width: 491px) {
     select {font-size: 70%;}
+    #document-container p { font-size: 100%; }
 }
 
 @media (min-width: 567px) {
     select {font-size: 90%;}
+    #document-container p { font-size: 110%; }
 }
 
 @media (min-width: 768px) {
     select {font-size: 90%;}
+    #document-container p { font-size: 110%; }
 }
 
 @media (min-width: 830px) {
     select {font-size: 90%;}
+    #document-container p { font-size: 130%; }
 }
 
 @media (min-width: 992px) {
     select {font-size: 100%;}
+    #document-container p { font-size: 130%; }
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
