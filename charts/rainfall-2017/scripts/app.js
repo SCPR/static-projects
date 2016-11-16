@@ -26,7 +26,7 @@
         },
 
         drawChart: function () {
-$.get('/data/rainfall-2016-11-16.csv', function(csv) {
+$.get('charts/rainfall-2017/data/rainfall-2016-11-16.csv', function(csv) {
 $('#container').highcharts({
                     chart: {
                         backgroundColor: null,
