@@ -30,7 +30,11 @@
 -->
 
 <script language="JavaScript">
+    var percent = 3.9
 
+d3.csv("https://s3-us-west-1.amazonaws.com/scpr-projects/rainfall_2017/rainfall.csv", function(data){
+    var max = d3.max(data, function(d) { return +d['2016-2017'];} );
+    console.log(max)
 
     var config4 = liquidFillGaugeDefaultSettings();
     config4.circleThickness = 0.04;
@@ -49,7 +53,12 @@
     config4.waveCount = 2;
 
 
-    var gauge1 = loadLiquidFillGauge("fillgauge1", 3.9, config4);
+    var gauge1 = loadLiquidFillGauge("fillgauge1", max, config4);
+
+
+})
+
+
 /*
     var config1 = liquidFillGaugeDefaultSettings();
 
@@ -125,17 +134,19 @@
         }
     }
 
-/*  RETURN TO THIS to get the pct to auto-generate
-d3.csv("nino_to_date.csv", function(d) {
+
+/*  RETURN TO THIS to get the pct to auto-generate w d3.csv
+d3.csv("https://s3-us-west-1.amazonaws.com/scpr-projects/rainfall_2017/rainfall.csv", function(d) {
   return {
-    year: d.day_of_water_year, // convert "Year" column to Date
-    make: d.pct_of_normal_total,
-    model: d.water_year,
+    nums: +d['2016-2017'], // convert current water yr column to nums
   };
+
 }, function(error, rows) {
   console.log(rows);
+
 });
 */
+
 </script>
 
         <script type="text/javascript">
