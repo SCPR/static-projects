@@ -1,0 +1,29 @@
+.jumbotron { width: 100%; height: 645px; min-height: 445px; max-height: 445px; background: rgba(240, 248, 255, 1.0); margin: 0 0 10px 0; padding: 10px 0 10px 0; /*overflow: hidden;*/ }
+
+.jumbotron .action-controls { width: 100%; height: auto; margin-top: 40px; }
+
+.jumbotron .action-controls .flex-container { display: -webkit-flex; display: flex; -webkit-justify-content: center; justify-content: center; height: 100px; }
+
+.jumbotron .action-controls .flex-item { height: 50px; margin: 10px; }
+
+.jumbotron .action-controls .flex-item img.placemark { width: 75px; vertical-align: text-bottom; }
+
+.jumbotron .action-controls .flex-item a { font-weight: 700; font-size: 275%; }
+
+.jumbotron .action-controls .flex-item a:hover { text-decoration: none; }
+
+.jumbotron .data-loading { width: 40%; height: 100px; margin: 20px 30% 0 30%; padding: 0px; text-align: center; color: #333333; }
+
+.form-inline .form-control { display: inline-block; width: 100%; vertical-align: middle; }
+
+.jumbotron #form-controls,
+.jumbotron #reset { height: auto; margin: 0 10px 0 10px; }
+
+.jumbotron #form-controls button,
+.jumbotron #reset button { height: 50px; margin: 10px 0px 0 0px; }
+
+.rep-display { margin-top: 45px; }
+
+.rep-display p, .rep-display a { font-weight: 500; font-size: 130%; color: #333333; text-decoration: underline; }
+
+.rep-display .flex-container { align-items: baseline; }

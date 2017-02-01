@@ -1,0 +1,267 @@
+/* structural */
+body { max-width: 100%; height: 555px; max-height: 555px; min-height: 555px; }
+
+body { background-color: #ffffff; font-family: "proxima-nova-condensed", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-size: 100%; font-weight: normal; }
+
+.ledger { max-width: 100%; height: 555px; max-height: 555px; min-height: 555px; position: relative; }
+
+.ledger header { height: 40px; background: #000; }
+
+.ledger header.overline { height: 35px; padding-top: 1%; }
+
+.ledger .contributors {height: 280px; min-height: 240px; background: #e6e6e6; position: relative; z-index: 10;}
+
+.ledger .contributors .support,
+.ledger .contributors .oppose { width: 50%; min-height: 225px; height: auto; display: inline-block; position: relative; z-index: 10; }
+
+.ledger .contributors .oppose { position: absolute; right: 0; top: 0; }
+
+.ledger aside.totals { background: none; width: 100%; height: 85px; border-bottom: .1em solid #999999; position: relative; }
+
+.ledger .chart-container { width: 200px; height: 110px; margin: 0 0 0 -100px; position: absolute; bottom: 0; left: 50%; z-index: 100; }
+
+.ledger .chart-container svg { background: none; z-index: 100; }
+
+.ledger footer { width: 100%; height: 100px; background: #ffffff; margin-top: 20px; border-bottom: 5px solid #000; position: relative; z-index: 10; }
+
+/* display of line-item contributions */
+.ledger section.display ol { width: 100%; padding-top: 2%; padding-bottom: 2%; }
+
+.ledger section.display ol li { width: 96%; min-height: 1.5em; color: #000; margin: 0 2% .5% 2%; border-bottom: 1px solid #000; }
+
+.ledger section.display ol li:last-child { border-bottom: 0px solid #000; }
+
+.ledger section.display ol li dl { position: relative; width: 100%; }
+
+.ledger .contributors .support section.display ol li dl dt { width: 75%; float: left; }
+
+.ledger .contributors .support section.display ol li dl dd { width: 20%; float: right; }
+
+.ledger .contributors .oppose section.display ol li dl dt { width: 75%; text-align: right; float: right; }
+
+.ledger .contributors .oppose section.display ol li dl dd { min-width: 100px; width: 20%; float: left; }
+
+/* total contributions */
+.ledger aside.totals .support-total,
+.ledger aside.totals .oppose-total { background: none; min-width: 147px; width: 10%; min-height: 25px; height: auto; margin: 25px 0 0 0; }
+
+.ledger aside.totals .support-total { float: left; margin-right: 0; }
+.ledger aside.totals .oppose-total { float: right; margin-left: 0; }
+
+.ledger aside.totals .support-total dl,
+.ledger aside.totals .oppose-total dl { background: none; }
+
+.ledger aside.totals div dl { width: 100%; }
+
+/* footer */
+.rule-style-left,
+.rule-style-right { max-width: 655px; width: 35.2%; height: 1px; background: #000000; margin-top: 50px; }
+
+.rule-style-left { float: left; }
+
+.rule-style-right { float: right; }
+
+footer .text { width: 49%; margin-left: 0%; float: left; color: #999999; }
+
+footer .text ol { width: 100%; padding: 2% 0% 2% 0%; }
+
+footer .text ol li { width: 100%; min-height: 1.5em; margin: 0 0 .5% 2%; }
+
+footer .text ol li dl { position: relative; width: 100%; }
+
+footer .text ol li dl dt { min-width: 90px; margin-right: 5%; text-align: left; float: left; text-transform: uppercase; }
+
+footer .text ol li dl dd { min-width: 75%; }
+
+footer .logo { width: 49%; margin-right: 1%; float: right; }
+
+footer .logo img { float: right; width: 120px; }
+
+/* typography */
+.bold-accent { color: yellow; text-transform: uppercase; }
+
+.align-left { text-align: left; }
+
+.align-right { text-align: right; }
+
+.align-center { text-align: center; }
+
+.support-accent { color: #f4f30f; font-size: 125%; font-family: "proxima-nova-condensed", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 400; }
+
+.oppose-accent { color: #3bdaef; font-size: 125%; font-family: "proxima-nova-condensed", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 400; }
+
+.ledger { color: #ffffff; }
+
+.ledger aside.totals { color: #000; }
+
+.ledger header h1 { padding: 0 2% 0 2%; font-size: 100%; font-family: "proxima-nova-condensed", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; text-transform: uppercase; }
+
+.ledger .contributors .support section.display h1,
+.ledger .contributors .oppose section.display h1 { font-size: 75%; font-weight: 700; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; text-transform: uppercase; }
+
+.ledger .contributors .support section.display h1 { color: #000000; background: #f4f30f; padding: 1% 0 1% 2%; }
+
+.ledger .contributors .oppose section.display h1 { color: #000000; background: #3bdaef; padding: 1% 2% 1% 0; }
+
+.ledger section.display ol li dl { font-size: 80%; }
+
+.ledger .contributors .support section.display ol li dl dt { text-align: left; }
+
+.ledger .contributors .support section.display ol li dl dd { text-align: right; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 700; }
+
+.ledger .contributors .oppose section.display ol li dl dd { text-align: left; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 700; }
+
+.ledger aside.totals div dl dt { text-align: center; color: #999999; font-size: 75%; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; font-weight: 700; text-transform: uppercase; }
+
+.ledger aside.totals div dl dd { text-align: center; color: #000; font-size: 125%; font-weight: 700; }
+
+footer .text { font-size: 75%; font-family: "proxima-nova", "Avenir Next", "Avenir", "Lucida Grande", "Corbel", "Tahoma", Arial, sans-serif; }
+
+@media all and (max-width: 994px) {
+    .rule-style-left,
+    .rule-style-right { width: 25.2%; }
+}
+
+@media all and (max-width: 840px) {
+    .ledger .contributors { height: 280px; }
+    .ledger .contributors .support section.display ol li dl dt,
+    .ledger .contributors .oppose section.display ol li dl dt { width: 65%; }
+    .ledger .contributors .support section.display ol li dl dd,
+    .ledger .contributors .oppose section.display ol li dl dd { width: 35%; }
+    .support-accent, .oppose-accent { font-size: 120%; }
+    .ledger header h1 { font-size: 95%; }
+    .ledger .contributors .support section.display h1,
+    .ledger .contributors .oppose section.display h1 { font-size: 70%; }
+    .ledger section.display ol li dl { font-size: 75%; }
+    .ledger aside.totals div dl dt { font-size: 70%; }
+    .ledger aside.totals div dl dd { font-size: 120%; }
+    footer .text { font-size: 70%; }
+}
+
+@media all and (max-width: 635px) {
+    .ledger header.overline { height: 50px; padding-top: 2%; }
+}
+
+@media all and (max-width: 595px) {
+    .ledger .contributors { height: 280px; }
+    .ledger .contributors .support section.display ol li dl dt,
+    .ledger .contributors .oppose section.display ol li dl dt { width: 60%; }
+    .ledger .contributors .support section.display ol li dl dd,
+    .ledger .contributors .oppose section.display ol li dl dd { width: 40%; }
+    .rule-style-left,
+    .rule-style-right { width: 20%; }
+}
+
+@media all and (max-width: 555px) {
+    .ledger .contributors { height: 290px; }
+    .ledger .chart-container { height: 105px; }
+    .ledger footer { height: 85px; }
+    .ledger section.display ol li dl { font-size: 75%; }
+}
+
+@media all and (max-width: 520px) {
+    .ledger .contributors { height: 305px; }
+    .ledger .contributors .support section.display ol li dl dt,
+    .ledger .contributors .oppose section.display ol li dl dt { width: 55%; }
+    .ledger .contributors .support section.display ol li dl dd,
+    .ledger .contributors .oppose section.display ol li dl dd { width: 45%; }
+}
+
+@media all and (max-width: 490px) {
+    .rule-style-left,
+    .rule-style-right { display: none; }
+    .ledger .contributors .support section.display ol li dl dt,
+    .ledger .contributors .oppose section.display ol li dl dt { width: 45%; }
+    .ledger .contributors .support section.display ol li dl dd,
+    .ledger .contributors .oppose section.display ol li dl dd { width: 50%; }
+    .ledger footer { height: 75px; }
+    .support-accent, .oppose-accent { font-size: 115%; }
+    .ledger header h1 { font-size: 90%; }
+    .ledger .contributors .support section.display h1,
+    .ledger .contributors .oppose section.display h1 { font-size: 65%; }
+    .ledger section.display ol li dl { font-size: 70%; }
+    .ledger aside.totals div dl dt { font-size: 70%; }
+    .ledger aside.totals div dl dd { font-size: 120%; }
+    .ledger footer .text { font-size: 65%; }
+}
+
+@media all and (max-width: 450px) {
+    .ledger .contributors { height: 320px; }
+    .ledger aside.totals div dl dt { font-size: 55%; }
+    .ledger aside.totals div dl dd { font-size: 105%; }
+    .ledger .chart-container { width: 160px; height: 80px; margin: -2% 0 0 -80px; }
+}
+
+@media all and (max-width: 420px) {
+    .ledger .contributors { height: 300px; }
+    .ledger section.display ol li dl { font-size: 65%; }
+}
+
+@media all and (max-width: 395px) {
+    .ledger .contributors { height: 340px; }
+    .ledger footer { height: 55px; }
+}
+
+@media all and (max-width: 380px) {
+    .ledger header { height: 25px; }
+    .ledger .contributors { height: 265px; }
+    .ledger aside.totals { height: 85px; }
+    .ledger footer { height: 65px; margin-top: 30px; }
+    .ledger .contributors .support section.display ol li dl dt { width: 100%; text-align: left; }
+    .ledger .contributors .oppose section.display ol li dl dt { width: 100%; text-align: right; }
+    .ledger .contributors .support section.display ol li dl dd { width: 100%; text-align: left; }
+    .ledger .contributors .oppose section.display ol li dl dd { width: 100%; text-align: right; }
+    .support-accent, .oppose-accent { font-size: 105%; }
+    .ledger header h1 { font-size: 80%; }
+    .ledger .contributors .support section.display h1,
+    .ledger .contributors .oppose section.display h1 { font-size: 65%; }
+    .ledger aside.totals .support-total,
+    .ledger aside.totals .oppose-total { min-width: 0px; width: 25%; min-height: 25px; height: auto; margin: 15px 0 0 0; }
+    .ledger aside.totals div dl dt { font-size: 60%; }
+    .ledger aside.totals div dl dd { font-size: 90%; }
+
+}
+
+@media all and (max-width: 330px) {
+    .ledger .contributors { height: 305px; }
+    .ledger section.display ol li dl { font-size: 75%; }
+    .ledger footer { height: 75px; margin-top: 20px; }
+}
+
+@media all and (max-width: 295px) {
+    .ledger .contributors { height: 305px; }
+    .ledger aside.totals div dl dt { font-size: 55%; }
+    .ledger aside.totals div dl dd { font-size: 80%; }
+    .ledger footer { height: 110px; margin-top: 5px; }
+    .ledger footer .text { width: 90%; margin: 0 0 0 10%; color: #999999; font-size: 60%; }
+    .ledger footer .text ol li { text-align: center; }
+    .ledger footer .logo { width: 100%; float: none; }
+    .ledger footer .logo img { float: none; width: 48%; margin: 0 26% 0 26%; }
+}
+
+@media all and (max-width: 265px) {
+    .ledger header.overline { height: 65px; padding-top: 2%; }
+    .ledger header h1 { font-size: 80%; }
+    .support-accent, .oppose-accent { font-size: 85%; }
+    .ledger .contributors { height: 320px; }
+    .ledger section.display ol li dl { font-size: 68%; }
+    .ledger aside.totals { height: 60px; }
+    .ledger aside.totals .support-total,
+    .ledger aside.totals .oppose-total { min-width: 0px; width: 50%; min-height: 10px; height: 10px; margin: 15px 0 0 0; }
+    .ledger aside.totals div dl dt { font-size: 60%; }
+    .ledger aside.totals div dl dd { font-size: 105%; }
+    .ledger footer { height: 110px; margin-top: 5px;}
+    .ledger footer .text { width: 90%; margin: 0 0 0 10%; color: #999999; }
+    .ledger footer .text ol li { text-align: center; }
+    .ledger footer .logo { width: 100%; float: none; }
+    .ledger footer .logo img { float: none; width: 48%; margin: 0 26% 0 26%; }
+    .ledger .chart-container { display: none; }
+}
+
+@media all and (max-width: 250px) {
+    .ledger header.overline { height: 45px; padding-top: 2%; }
+    .ledger header h1 { font-size: 65%; }
+    .support-accent, .oppose-accent { font-size: 75%; }
+    .ledger .contributors .support section.display h1,
+    .ledger .contributors .oppose section.display h1 { font-size: 45%; }
+}
