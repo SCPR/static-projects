@@ -27,6 +27,8 @@
 
         initialize: function(config){
 
+            $.fn.jAlert.defaults.backgroundColor = "white";
+
             // sets window size
             config.windowSize = $(window).width();
 
@@ -93,7 +95,21 @@
 
         renderEmbedBox: function(){
             var _config = window.appConfig.config_object;
-            alert("<h4>Embed this on your site or blog</h4><span>Copy this code and paste to source of your page. You may need to adjust the height parameter.<br /><br /><textarea>&lt;iframe src='" + _config.app_root + "?=embed/' width='" + _config.embed_width + "' height='" + _config.embed_height + "' style='margin: 0 0 0 0;' scrolling='no' frameborder='0'&gt;&lt;/iframe></textarea>");
+            var alert_size;
+            if (_config.is_mobile === true) {
+                alert_size = "small"
+            } else {
+                alert_size = "md";
+            };
+            $.jAlert({
+                "replaceOtherAlerts": true,
+                "closeOnClick": true,
+                "theme": "black",
+                "title": "<strong>Embed this on your site or blog</strong>",
+                "content": "Copy this code and paste to source of your page. You may need to adjust the height parameter.<br /><br /><textarea>&lt;iframe src='" + _config.app_root + "?=embed/' width='" + _config.embed_width + "' height='" + _config.embed_height + "' style='margin: 0 0 0 0;' scrolling='no' frameborder='0'&gt;&lt;/iframe></textarea>",
+                "autofocus": "textarea",
+                "size": "md"
+              });
         },
 
         render: function(config){
@@ -125,6 +141,7 @@
             $(".about").on("hidden.bs.collapse", function(){
                 $("span.about")
                     .removeClass("glyphicon-chevron-up")
+                    .removeClass("collapse")
                     .addClass("glyphicon-chevron-down")
                     .css("height", "auto");
             });

@@ -582,3 +582,17 @@ body.ja_blur > *:not(.ja_wrap)
 {
     margin: 40px 0px;
 }
+
+
+.ja_title {
+    text-align: center;
+}
+
+.ja_body {
+    font-size: 150%;
+}
+
+.ja_body textarea {
+  height: 75px;
+  width: 100%;
+}
