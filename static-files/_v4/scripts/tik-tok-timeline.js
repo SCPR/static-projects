@@ -241,6 +241,7 @@
          _: _,
          groups: this.groups,
          title: this.options.title,
+         kicker: this.options.kicker,
          tiktok: this
        });
 
