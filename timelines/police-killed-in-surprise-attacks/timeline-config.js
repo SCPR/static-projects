@@ -2,7 +2,7 @@ $.get("police-ambush-killings-data.csv", function(csv) {
     var tikTok = new TikTok({
         el: "#tik-tok-instance",
         projecturl: null,
-        kicker: null,
+        kicker: "Timeline",
         title: "Police killed in surprise attacks in the U.S. and its territories",
         credits: null,
         published: null,
