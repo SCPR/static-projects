@@ -9,8 +9,8 @@
       bottom: 44,
       left: 40
     };
-    width = (window.innerWidth * .431 - margin.left - margin.right);
-    height = width * .66;
+    width = (window.innerWidth * .45 - margin.left - margin.right);
+    height = 190;
     data = [];
     circle = null;
     caption = null;
@@ -176,3 +176,5 @@
   });
 
 }).call(this);
+
+
