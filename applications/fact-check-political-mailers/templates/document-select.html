@@ -1,0 +1,24 @@
+<div class="row data-legend">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="jumbotron">
+            <noscript>Please enable JavaScript to view this interactive.</noscript>
+            <div id="content-action-bar">
+                <select id="create-document-instance">
+                    <option disabled selected value> -- Select a political mailer -- </option>
+                    <% _.each(collection, function(model) { %>
+                        <option value="<%= model.id %>"><%= model.title %></option>
+                    <% }); %>
+                </select>
+            </div>
+            <div class="progress progress-striped progress-list active hidden" style="margin-top: 15px;">
+                <div class="progress-bar"  role="progressbar" aria-valuenow="100" style="width: 100%;"></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div id="document-meta-data"></div>
+                    <div id="document-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

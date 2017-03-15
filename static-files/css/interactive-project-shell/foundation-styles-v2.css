@@ -157,3 +157,5 @@ a {color: #4B58A6;}
     .ad.pencil a img.mobile {display:block;}
     .ad.pencil a img.desktop {display:none;}
 }
+
+#app-sunset-message { background-color: #F87E21; text-align: center; font-size: 110%; }

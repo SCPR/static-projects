@@ -1,3 +1,40 @@
+.monthlist { width: 100%; }
+.monthlist li { position: relative; display: block; height: 30px; margin-bottom: 10px; }
+.monthlist .data-label { position: relative; z-index: 99; color: #ffffff; width: 100%; line-height: 2.0em; font-size: 100%; padding: 0 0 0 5px; text-align: left; }
+.monthlist .figure { display: block; position: relative; z-index: 99; color: #ffffff; width: 100%; line-height: 2.0em; font-size: 100%; padding: 0 5px 0 0; text-align: right; }
+.monthlist .index { display: block; position: absolute; top: 0; left: 0; height: 100%; background: #007397; text-indent: -9999px; overflow: hidden; line-height: 2em; border-top: 0.1em solid #000000; border-bottom: 0.1em solid #000000; }
+
+.yearlist-data-label { position: relative; z-index: 99; color: #000000; width: 100%; line-height: 2.0em; font-size: 175%; padding: 0 0 0 5px; font-weight: 700; }
+.yearlist { width: 100%; margin: 0 0 20px 0; }
+.yearlist li { position: relative; display: block; height: 30px; margin-bottom: 10px; }
+.yearlist .data-label { display: block; position: relative; z-index: 99; color: #ffffff; width: 100%; line-height: 2.0em; font-size: 100%; padding: 0 0 0 5px; text-align: left; }
+.yearlist ._no-data .data-label { display: block; position: relative; z-index: 99; color: #000000; width: 100%; line-height: 2.0em; font-size: 100%; padding: 0 0 0 5px; text-align: left; }
+.yearlist .figure { display: block; position: relative; z-index: 99; color: #ffffff; width: 100%; line-height: 2.0em; font-size: 100%; padding: 0 5px 0 0; text-align: right; }
+.yearlist .index { display: block; position: absolute; top: 0; left: 0; height: 100%; background: #007397; text-indent: -9999px; overflow: hidden; line-height: 2em; border-top: 0.1em solid #000000; border-bottom: 0.1em solid #000000; }
+
+.monthlist ._2013 .index, .yearlist ._2013 .index { background: #007397; }
+.monthlist ._2014 .index, .yearlist ._2014 .index { background: #007397; }
+.monthlist ._2015 .index, .yearlist ._2015 .index { background: #007397; }
+.monthlist ._2016 .index, .yearlist ._2016 .index { background: #007397; }
+.monthlist ._no-data .index, .yearlist ._no-data .index { background: #ffffff; }
+
+/* TIMELINE CHARTS */
+.comparison { font-size: 120%; height: 70px; width: 100%; margin: 0px 0 0px 0; }
+
+.comparison.header { font-size: 120%; height: 50px; width: 100%; margin: 0px 0 0px 0; }
+
+.comparison li.month-label { line-height: 3em; width: 10%; }
+
+.comparison .header .label { font-size: 175%; color: #000000;}
+
+.comparison li { position: relative; float: left; width: 19%; margin: 0 .5%; height: 50px; }
+
+.comparison li a { display: block; height: 100%; background: #363636; }
+
+.comparison li .label { display: block; position: absolute; z-index: 999; bottom: 0.5em; left: 0; color: #fff; width: 100%; height: 1em; line-height: 1em; text-align: center; }
+
+.comparison li a .count { display: block; position: absolute; bottom: 0; left: 0; height: 0; width: 100%; background: #007397; text-indent: -9999px; overflow: hidden; }
+
 .ct-chart .ct-label, .ct-chart .ct-label.ct-horizontal {
     display: block;
     width: 100%;
@@ -15,7 +52,8 @@
     height: 100%;
     fill: rgba(43, 43, 43, .7);
     color: rgba(43, 43, 43, .7);
-    font-size: 1.2rem;
+    /*padding-top: 17%;*/
+    /*font-size: 3em;*/
     font-weight: 700;
     text-align: right;
 }
@@ -36,15 +74,15 @@
 
 .ct-chart .ct-bar {
     fill: none;
-    stroke-width: 25px;
+    /*stroke-width: 25px;*/
 }
 
 .ct-chart .ct-series.ct-series-a .ct-bar, .ct-chart .ct-series.ct-series-a .ct-line, .ct-chart .ct-series.ct-series-a .ct-point, .ct-chart .ct-series.ct-series-a .ct-slice.ct-donut {
-    stroke: rgba(31, 120, 180, 1.0);
+    stroke: #007397;
 }
 
 .ct-chart .ct-series.ct-series-a .ct-area, .ct-chart .ct-series.ct-series-a .ct-slice:not(.ct-donut) {
-    fill: rgba(31, 120, 180, 1.0);
+    fill: #007397;
 }
 
 .ct-chart .ct-series.ct-series-b .ct-bar, .ct-chart .ct-series.ct-series-b .ct-line, .ct-chart .ct-series.ct-series-b .ct-point, .ct-chart .ct-series.ct-series-b .ct-slice.ct-donut {

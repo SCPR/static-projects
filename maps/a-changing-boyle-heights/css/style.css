@@ -1,0 +1,73 @@
+#story-map-container { z-index: 0; }
+
+.change-form a { color: #737373; }
+
+.change-form a:hover { color: #ffffff; text-decoration: none; }
+
+.vco-storymap h1, .vco-storymap h2, .vco-storymap h3, .vco-storymap h4, .vco-storymap h5, .vco-storymap h6 {
+    font-family: 'PT Sans Narrow',sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 46px;
+}
+
+/*#content-background { display: none; position: fixed; height: 100%; width: 100%; top: 0; left: 0; background: #000000; z-index: 1; }
+
+#data-user-submit { display: none; position: fixed; top: 0; left: 0; background: #f7f7f7; z-index: 10; height: auto; max-width: 30%; color: #2b2b2b; padding: 2%; -moz-border-radius: 2%; -webkit-border-radius: 2%; border-radius: 2%; -khtml-border-radius: 2%; }
+
+#close { margin: 0; cursor: pointer; }*/
+
+body.minimal .data-container {  max-width: 100%; margin: 0 auto; }
+
+body.minimal .data-container h2 {  margin-bottom: 5%; }
+
+@media screen and (min-width: 1630px) and (max-width: 3000px) {
+    body.minimal .data-container h2 {  font-size: 350%; line-height: 100%; }
+    body.minimal .data-container p {  font-size: 150%; line-height: 125%; }
+ }
+
+@media screen and (min-width: 1546px) and (max-width: 1629px) {
+    body.minimal .data-container h2 {  font-size: 330%; line-height: 100%; }
+    body.minimal .data-container p {  font-size: 140%; line-height: 125%; }
+ }
+
+@media screen and (min-width: 1400px) and (max-width: 1545px) {
+    body.minimal .data-container h2 {  font-size: 310%; line-height: 100%; }
+    body.minimal .data-container p {  font-size: 130%; line-height: 125%; }
+ }
+
+@media screen and (min-width: 1101px) and (max-width: 1399px) {
+    body.minimal .data-container h2 {  font-size: 300%; line-height: 100%; }
+    body.minimal .data-container p {  font-size: 120%; line-height: 125%; }
+ }
+
+@media screen and (min-width: 1021px) and (max-width: 1100px) {
+    body.minimal .data-container h2 {  font-size: 290%; line-height: 100%; }
+    body.minimal .data-container p {  font-size: 110%; line-height: 125%; }
+ }
+
+@media screen and (min-width: 880px) and (max-width: 1020px) {
+    body.minimal .data-container h2 {  font-size: 280%; line-height: 100%; }
+    body.minimal .data-container p {  font-size: 100%; line-height: 125%; }
+ }
+
+@media screen and (min-width: 680px) and (max-width: 879px) {
+    body.minimal .data-container h2 {  font-size: 250%; line-height: 100%; }
+    body.minimal .data-container p {  font-size: 95%; line-height: 125%; }
+ }
+
+@media screen and (min-width: 530px) and (max-width:679px) {
+    body.minimal .data-container h2 {  font-size: 280%; line-height: 100%; }
+    body.minimal .data-container p {  font-size: 95%; line-height: 125%; }
+ }
+
+@media screen and (max-width:529px) {
+    body.minimal .data-container h2 {  font-size: 190%; line-height: 100%; }
+    body.minimal .data-container p {  font-size: 77%; line-height: 125%; }
+ }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+    body.minimal .data-container h2 {  font-size: 250%; line-height: 100%; }
+    body.minimal .data-container p {  font-size: 95%; line-height: 125%; }
+ }

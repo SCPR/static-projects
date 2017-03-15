@@ -1,0 +1,89 @@
+.data-container .data-visuals #content-action-bar { width: 100%; height: 80px; text-align: left; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px; z-index: 1;  margin: 15px auto 15px auto; background: rgba(240, 248, 255, 1.0); }
+
+#image-container { margin-top: 50px; }
+
+.quote { background: url(i/ephemera-quote-blue-open.png) no-repeat 0 0, url(i/ephemera-quote-blue-close.png) no-repeat bottom right; background-size: 120px 60px, 120px 60px; padding-top: 8%; padding-left: 0%; padding-bottom: 0%; margin-top: 5%; margin-left: 0%; }
+
+.quote p { margin: 5px 15px 5px 15px; }
+
+select { width: 80%; margin: 15px 10% 0 10%; font-size: 21px; }
+
+.fixed { position: fixed; top: 2%; margin: 0; background: rgba(241, 122, 49, 0.6); padding: 10px 0 10px 0; }
+
+.img { text-align: center; }
+
+.placemark { height: auto; }
+
+/* headlines for Large desktop */
+@media (min-width: 1200px) {
+    .placemark { height: 150%; }
+}
+
+/* headlines, photos for Large desktop */
+@media (max-width: 1000px) {
+    .placemark { height: 150%; }
+}
+
+/* headlines, photos for Large desktop */
+@media (max-width: 767px) {
+    .placemark { height: 350%; }
+}
+
+/* headlines for Portrait tablet to landscape and desktop */
+@media (min-width: 486px) and (max-width: 979px) {
+    .placemark { height: 150%; }
+}
+
+/* headlines for Landscape phones and down */
+@media (max-width: 485px) {
+    .placemark { height: 150%; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* buttons nav */
+.label { color: #27aad6; }
+
+.list-inline>li { display: inline-block; padding-right: 5px; padding-left: 5px; font-size: 28px; line-height: 32px; font-style: normal; font-weight: 500; color: #898989; }
+
+.results h4 { font-size: 12px; text-align: right; margin-right: 2% }
+
+.results .measure-hack { min-height: 260px; }
+
+.results .results-block .dashboard-hack { -webkit-flex-wrap: wrap; flex-wrap: wrap; }
+
+.results .results-block .dashboard-hack .candidate-name { width: 73%; margin-left: 2% }
+
+.results .results-block .dashboard-hack .votepct { width: 24%; margin-right: 1% }
+
+.dashboard .results .results-block header { width: 100%; height: auto; padding-top: 16px; padding-bottom: 16px; margin-bottom: 32px; background-color: #f6f6f6; -webkit-flex-wrap: wrap; flex-wrap: wrap; }
+
+.dashboard .results .results-block header .race-title { width: 100%; float: left; text-align: left; margin-left: 2%; font-size: 18px; line-height: 22px; font-style: normal; font-weight: 500; color: #003a5c; text-transform: uppercase; }
+
+.dashboard .results .results-block header .geography { width: 100%; float: left; text-align: left; text-align: left; margin-left: 2%; font-size: 16px; line-height: 26px; font-style: normal; font-weight: 400; color: #000000; max-width: 100%; margin-right: 0; }
+
+.dashboard .results .results-block header .precincts-reporting { width: 100%; float: left; text-align: left; text-align: left; margin-left: 2%; font-size: 16px; line-height: 26px; font-style: normal; font-weight: 400; color: #898989; max-width: 100%; margin-right: 0; }
+
+.dashboard li { font-size: 18px; line-height: 26px; font-style: normal; font-weight: 400; color: #898989; }
+
+
+
+
+.response { height: auto; margin-bottom: 15px; padding: 15px 0 5px 0; }
+.response img { width: 92%; margin: 20px 4% 10px 4%; vertical-align: middle; }
+.candidate-container .vote-indicator { margin-top: 20px; text-align: center; }
+.candidate-container .undecided { margin-top: 40px; color: black; font-weight: bold; font-size: 64px; text-align: center; }
+.candidate-container .likely_no { margin-top: 40px; color: red; font-weight: bold; font-size: 64px; text-align: center; }
+.candidate-container .likely_yes { margin-top: 40px; color: green; font-weight: bold; font-size: 64px; text-align: center; }
+.candidate-container .awaiting_response { margin-top: 40px; color: black; font-weight: bold; font-size: 64px; text-align: center; }

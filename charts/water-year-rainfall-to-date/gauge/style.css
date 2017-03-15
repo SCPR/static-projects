@@ -1,0 +1,32 @@
+body{
+    background-color: white;
+
+}
+
+#thediv{
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 25px;
+    color: #007397;
+    text-align: center;
+}
+
+#fillgauge1{
+    display: block;
+    margin: auto;
+}
+
+#p2{
+    text-align: left;
+    font-size: 12px;
+}
+
+a {
+    outline: none;
+    color: #31ABD4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

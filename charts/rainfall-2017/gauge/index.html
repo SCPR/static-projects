@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Gauge: How does this year's rainfall stack up? | scpr.org</title>
+    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    <script src="liquidFillGauge.js" language="JavaScript"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+        .liquidFillGaugeText { font-family: Arial; font-weight: bold; }
+    </style>
+    <base target="_blank" />
+</head>
+<body>
+<div id="thediv">
+    <a href="http://projects.scpr.org/charts/rainfall-2017/" target="_blank">
+    <svg id="fillgauge1" height="275"></svg>
+    </a>
+    <p id='p1'>Percent of a normal year's accumulation</p>
+    <p id='p2'>This number tracks precipitation at 20 Southern California weather stations from October 2016 through September 2017, the period climatologists consider the 'water year'. A number above 100 means it's been an above-average year for rain. <a href="http://projects.scpr.org/charts/rainfall-2017/">Click here to learn more</a>.</p>
+</div>
+
+<!--
+<svg id="fillgauge2" width="19%" height="200" onclick="gauge2.update(NewValue());"></svg>
+<svg id="fillgauge3" width="19%" height="200" onclick="gauge3.update(NewValue());"></svg>
+<svg id="fillgauge4" width="19%" height="200" onclick="gauge4.update(NewValue());"></svg>
+<svg id="fillgauge5" width="19%" height="200"></svg>
+<svg id="fillgauge6" width="19%" height="200" onclick="gauge6.update(NewValue());"></svg>
+-->
+
+<script language="JavaScript">
+    var percent = 3.9
+
+d3.csv("https://s3-us-west-1.amazonaws.com/scpr-projects/rainfall_2017/rainfall.csv", function(data){
+    var max = d3.max(data, function(d) { return +d['2016-2017'];} );
+    console.log(max)
+
+    var config4 = liquidFillGaugeDefaultSettings();
+    config4.circleThickness = 0.04;
+    config4.circleColor = "#007397";
+    config4.textColor = "#007397";
+    config4.waveTextColor = "#31ABD4";
+    config4.waveColor = "#007397";
+    config4.textVertPosition = 0.75;
+    config4.waveAnimateTime = 1000;
+    config4.waveHeight = 0.05;
+    config4.waveAnimate = true;
+    config4.waveRise = false;
+    config4.waveHeightScaling = true;
+    config4.waveOffset = 0.25;
+    config4.textSize = 0.89;
+    config4.waveCount = 2;
+
+
+    var gauge1 = loadLiquidFillGauge("fillgauge1", max, config4);
+
+
+})
+
+
+/*
+    var config1 = liquidFillGaugeDefaultSettings();
+
+    config1.circleColor = "#808015";
+    config1.textColor = "#FF4444";
+    config1.waveTextColor = "#FFAAAA";
+    config1.waveColor = "#FFDDDD";
+    config1.circleThickness = 0.2;
+    config1.textVertPosition = 0.2;
+    config1.waveAnimateTime = 1000;
+/*
+    var gauge2= loadLiquidFillGauge("fillgauge2", 28, config1);
+    var config2 = liquidFillGaugeDefaultSettings();
+    config2.circleColor = "#D4AB6A";
+    config2.textColor = "#553300";
+    config2.waveTextColor = "#805615";
+    config2.waveColor = "#AA7D39";
+    config2.circleThickness = 0.1;
+    config2.circleFillGap = 0.2;
+    config2.textVertPosition = 0.8;
+    config2.waveAnimateTime = 2000;
+    config2.waveHeight = 0.3;
+    config2.waveCount = 1;
+    var gauge3 = loadLiquidFillGauge("fillgauge3", 60.1, config2);
+    var config3 = liquidFillGaugeDefaultSettings();
+    config3.textVertPosition = 0.8;
+    config3.waveAnimateTime = 5000;
+    config3.waveHeight = 0.15;
+    config3.waveAnimate = false;
+    config3.waveOffset = 0.25;
+    config3.valueCountUp = false;
+    config3.displayPercent = false;
+    var gauge4 = loadLiquidFillGauge("fillgauge4", 50, config3);
+    var config4 = liquidFillGaugeDefaultSettings();
+    config4.circleThickness = 0.15;
+    config4.circleColor = "#808015";
+    config4.textColor = "#555500";
+    config4.waveTextColor = "#FFFFAA";
+    config4.waveColor = "#AAAA39";
+    config4.textVertPosition = 0.8;
+    config4.waveAnimateTime = 1000;
+    config4.waveHeight = 0.05;
+    config4.waveAnimate = true;
+    config4.waveRise = false;
+    config4.waveHeightScaling = false;
+    config4.waveOffset = 0.25;
+    config4.textSize = 0.75;
+    config4.waveCount = 3;
+    var gauge5 = loadLiquidFillGauge("fillgauge5", 60.44, config4);
+    var config5 = liquidFillGaugeDefaultSettings();
+    config5.circleThickness = 0.4;
+    config5.circleColor = "#6DA398";
+    config5.textColor = "#0E5144";
+    config5.waveTextColor = "#6DA398";
+    config5.waveColor = "#246D5F";
+    config5.textVertPosition = 0.52;
+    config5.waveAnimateTime = 5000;
+    config5.waveHeight = 0;
+    config5.waveAnimate = false;
+    config5.waveCount = 2;
+    config5.waveOffset = 0.25;
+    config5.textSize = 1.2;
+    config5.minValue = 30;
+    config5.maxValue = 150
+    config5.displayPercent = false;
+    var gauge6 = loadLiquidFillGauge("fillgauge6", 120, config5);
+*/
+    function NewValue(){
+        if(Math.random() > .5){
+            return Math.round(Math.random()*100);
+        } else {
+            return (Math.random()*100).toFixed(1);
+        }
+    }
+
+
+/*  RETURN TO THIS to get the pct to auto-generate w d3.csv
+d3.csv("https://s3-us-west-1.amazonaws.com/scpr-projects/rainfall_2017/rainfall.csv", function(d) {
+  return {
+    nums: +d['2016-2017'], // convert current water yr column to nums
+  };
+
+}, function(error, rows) {
+  console.log(rows);
+
+});
+*/
+
+</script>
+
+        <script type="text/javascript">
+            var _sf_async_config = { uid: 33583, domain: 'projects.scpr.org', useCanonical:true };
+            (function() {
+                function loadChartbeat() {
+                    window._sf_endpt = (new Date()).getTime();
+                    var e = document.createElement('script');
+                    e.setAttribute('language', 'javascript');
+                    e.setAttribute('type', 'text/javascript');
+                    e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+                    document.body.appendChild(e);
+                };
+                var oldonload = window.onload;
+                window.onload = (typeof window.onload != 'function') ? loadChartbeat : function() { oldonload(); loadChartbeat(); };
+            })();
+        </script>
+        <!-- end chartbeat -->
+
+        <!-- begin google analytics -->
+        <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            // tracker for scpr ga account
+            ga('create', 'UA-624724-1', 'auto', {'allowLinker': true});
+
+            // tracker for npr digital services station analytics
+            ga('create', 'UA-18188937-11', 'auto', {'name': 'nprDsTracker'}, {'allowLinker': true});
+
+            ga('require', 'linker'); // require plugin for cross-domain tracking
+            ga('require', 'displayfeatures'); // require plugin for doubleclick display ad features
+            ga('linker:autoLink', ['scprcontribute.publicradio.org']); //set linked domain
+            ga('set', 'dimension6', 'Southern California Public Radio');
+            ga('set', 'dimension7', 'Story');
+            ga('send', 'pageview');
+            ga('nprDsTracker.send', 'pageview');
+        </script>
+        <!-- end google analytics -->
+
+        <!-- no more webtrends stats
+        <script src="http://media.scpr.org/assets/scripts/webtrends.v2.js"></script>
+        <script>
+            //<![CDATA[
+                var _tag=new WebTrends();
+                _tag.dcsGetId();
+            //]]>
+        </script>
+        <script>
+            //<![CDATA[
+                _tag.dcsCustom=function(){
+                    // Add custom parameters here.
+                    //_tag.DCSext.param_name=param_value;
+                }
+            _tag.dcsCollect();
+            //]]>
+        </script>
+        <noscript>
+            <div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsyqctzwuz5bdsebpmwhwe8w_2p8d/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=9.3.0&amp;WT.dcssip=www.scpr.org"/></div>
+        </noscript>
+        end webtrends stats -->
+
+        <!-- begin comscore stats -->
+        <script>
+            var _comscore = _comscore || [];
+            _comscore.push({ c1: "2", c2: "6035974", c3: "", c4: "" });
+            (function() {
+            var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+            el.parentNode.insertBefore(s, el);
+            })();
+        </script>
+        <noscript>
+            <img src="http://b.scorecardresearch.com/p?c1=2&c2=6035974&c3=&c4=&c5=&c6=&c15=&cv=2.0&cj=1" />
+        </noscript>
+
+
+</body>
+</html>

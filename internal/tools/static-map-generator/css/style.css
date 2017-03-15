@@ -5,6 +5,13 @@
 .data-container .data-visuals #content-map-canvas { height: 600px; margin: 0 0 10px 0; }
 .data-container .data-visuals #content-map-image img {width: 100%; }
 
+
+#panel { width: 200px; font-family: Arial, sans-serif; font-size: 13px; float: right; margin: 10px; }
+#color-palette { clear: both; }
+.color-button { width: 14px; height: 14px; font-size: 0; margin: 2px; float: left; cursor: pointer; }
+#delete-button { margin-top: 5px; }
+
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
     body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
     body.minimal .data-container h2 { font-size: 240%; }

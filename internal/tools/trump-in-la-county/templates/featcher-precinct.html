@@ -1,0 +1,21 @@
+<div class="row precinct-data" id="precinct_<%= assem_dist %>">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <p>Of the <strong><%= precinct_quantity %> precincts</strong> in <strong>Assembly District <%= assem_dist %></strong>, Donald J. Trump led in <strong><%= winners.donald_trump.length %> precincts</strong>.</p>
+        <p>Trump finished with <strong><%= window.addCommas(total.trump) %> votes</strong> compared to Hillary Clinton's <strong><%= window.addCommas(total.clinton) %> votes</strong>.</p>
+        <p><strong>Turnout was <%= window.percentifyValue(total.turnout) %> percent</strong> based on <strong><%= window.addCommas(total.ballots_cast) %> ballots cast</strong> by <strong><%= window.addCommas(total.registration) %> registered voters</strong>.</p>
+        <p>According to 2014 five-year American Community Survey Data, <strong>Assembly District <%= assem_dist %></strong> demographics breakdown as follows:</p>
+        <table>
+            <thead>
+                <tr>
+                    <% _.each(census_data, function(value, key, list){ %><th><%= key %></th><%}); %>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <% _.each(census_data, function(value, key, list){ %><th><%= window.addCommas(value) %></th><%}); %>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<hr />

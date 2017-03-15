@@ -147,6 +147,7 @@
                 2014,
                 2015,
                 2016,
+                2017,
             ];
 
             _.each(years, function(item, index){
@@ -168,9 +169,9 @@
 
                 var see_this;
 
-                if (item === 1992 || item === 1997 || item === 1998 || item === 2014 || item === 2015 || item === 2016){
+                if (item === 2014 || item === 2015 || item === 2016 || item === 2017){
                     see_this = true;
-                } else if (item === 1993 || item === 2002 || item === 2003 || item === 2009 || item === 2010){
+                } else if (item === 2002 || item === 2003 || item === 2009 || item === 2010){
                     see_this = true;
                 } else {
                     see_this = false;
@@ -334,7 +335,8 @@
                 1997,
                 1998,
                 2015,
-                2016
+                2016,
+                2017
             ];
 
             _.each(years, function(item, index){

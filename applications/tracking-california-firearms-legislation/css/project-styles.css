@@ -1,0 +1,20 @@
+.bill-container .vote-indicator {margin-top: 20px; text-align: center;}
+.bill-container .undecided {margin-top: 40px; color: black; font-weight: bold; font-size: 64px; text-align: center;}
+.bill-container .gov_veto {margin-top: 40px; color: red; font-weight: bold; font-size: 64px; text-align: center;}
+.bill-container .gov_signed {margin-top: 0px;color: green;font-weight: bold;font-size: 64px;text-align: center;}
+.bill-container .awaiting_response {margin-top: 0px;color: black;font-weight: bold;font-size: 64px;text-align: center;}
+
+/* headlines for large desktop */
+@media (min-width: 1200px) {
+    #data-container img {}
+}
+
+/* headlines for portrait tablet to landscape and desktop */
+@media (min-width: 486px) and (max-width: 979px) {
+    #data-container img {}
+}
+
+/* headlines for landscape phones and down */
+@media (max-width: 485px) {
+    #data-container img {}
+}
