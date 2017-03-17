@@ -9,7 +9,7 @@
       bottom: 44,
       left: 40
     };
-    width = (window.innerWidth * .45 - margin.left - margin.right);
+    width = (window.innerWidth * .441 - margin.left - margin.right);
     height = 190;
     data = [];
     circle = null;
