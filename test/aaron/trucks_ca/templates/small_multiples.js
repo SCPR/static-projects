@@ -9,7 +9,7 @@
       bottom: 44,
       left: 40
     };
-    width = (window.innerWidth * .45 - margin.left - margin.right);
+    width = (window.innerWidth * .320 - margin.left - margin.right);
     height = 190;
     data = [];
     circle = null;
@@ -172,7 +172,7 @@
       data = transformData(rawData);
       plotData("#vis", data, plot);
     };
-    queue().defer(d3.tsv, "data/cnty_share_d3_last_decade.tsv").await(display);
+    queue().defer(d3.tsv, "data/cnty_share_d3.tsv").await(display);
   });
 
 }).call(this);
