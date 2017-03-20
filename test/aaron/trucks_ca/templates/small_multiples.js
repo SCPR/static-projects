@@ -172,7 +172,7 @@
       data = transformData(rawData);
       plotData("#vis", data, plot);
     };
-    queue().defer(d3.tsv, "data/cnty_share_d3.tsv").await(display);
+    queue().defer(d3.tsv, "data/cnty_share_d3_55_counties.tsv").await(display);
   });
 
 }).call(this);

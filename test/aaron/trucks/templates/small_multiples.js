@@ -15,12 +15,12 @@
       width = (window.innerWidth * .431 - margin.left - margin.right);
       height = 190;      }
     else {
-      width = (window.innerWidth * .441 - margin.left - margin.right);
+      width = (window.innerWidth * .471 - margin.left - margin.right);
       height = 195;
           }
-    
 
-    
+
+
     data = [];
     circle = null;
     caption = null;
