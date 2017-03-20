@@ -25,7 +25,7 @@ svg {
 
 @media only screen and (max-width: 400px) {
     svg {
-        font-size: 11px;
+        font-size: 10px;
     }
     text.title {
         font-size: 12px;
