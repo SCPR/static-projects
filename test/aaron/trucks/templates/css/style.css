@@ -25,10 +25,16 @@ svg {
 
 @media only screen and (max-width: 400px) {
     svg {
-        font-size: 10px;
+        font-size: 11px;
     }
     text.title {
         font-size: 12px;
+    }
+    text.static_year{
+        font-size:9.5px;
+    }
+    text.year{
+        font-size:9.5px;
     }
 }
 
