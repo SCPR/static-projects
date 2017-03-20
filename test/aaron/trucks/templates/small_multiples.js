@@ -1,6 +1,8 @@
 (function() {
   var SmallMultiples, plotData, transformData;
 
+  var breakPoint = 400;
+
   SmallMultiples = function() {
     var area, bisect, caption, chart, circle, curYear, data, format, height, line, margin, mousemove, mouseout, mouseover, setupScales, width, xScale, xValue, yAxis, yScale, yValue;
     margin = {
@@ -9,8 +11,16 @@
       bottom: 44,
       left: 40
     };
-    width = (window.innerWidth * .441 - margin.left - margin.right);
-    height = 190;
+    if(window.innerWidth < breakPoint) {
+      width = (window.innerWidth * .431 - margin.left - margin.right);
+      height = 190;      }
+    else {
+      width = (window.innerWidth * .441 - margin.left - margin.right);
+      height = 195;
+          }
+    
+
+    
     data = [];
     circle = null;
     caption = null;
