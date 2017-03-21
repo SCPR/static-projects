@@ -16,7 +16,7 @@
       height = 190;      }
     else {
       width = (window.innerWidth * .2345 - margin.left - margin.right);
-      height = 420;
+      height = 370;
           }
 
 
