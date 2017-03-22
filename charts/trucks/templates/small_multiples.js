@@ -13,10 +13,10 @@
     };
     if(window.innerWidth < breakPoint) {
       width = (window.innerWidth * .431 - margin.left - margin.right);
-      height = 190;      }
+      height = 180;      }
     else {
       width = (window.innerWidth * .2345 - margin.left - margin.right);
-      height = 370;
+      height = 350;
           }
 
 
