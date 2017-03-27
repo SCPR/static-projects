@@ -79,7 +79,7 @@ $('#container').highcharts({
                             }
                         },
                         endOnTick:false,
-                        max: 125,
+                        max: 135,
                         gridLineColor: '#B5BEC0'
                         },
                     tooltip: {
