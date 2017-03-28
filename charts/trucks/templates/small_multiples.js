@@ -5,18 +5,37 @@
 
   SmallMultiples = function() {
     var area, bisect, caption, chart, circle, curYear, data, format, height, line, margin, mousemove, mouseout, mouseover, setupScales, width, xScale, xValue, yAxis, yScale, yValue;
+/*
     margin = {
       top: 10,
       right: 15,
       bottom: 44,
       left: 40
     };
+*/
+    if(window.innerWidth < breakPoint) {
+            margin = {
+      top: 7,
+      right: 18,
+      bottom: 44,
+      left: 25
+    };
+}
+else{
+        margin = {
+      top: 10,
+      right: 15,
+      bottom: 44,
+      left: 40
+    };
+}
+
     if(window.innerWidth < breakPoint) {
       width = (window.innerWidth * .431 - margin.left - margin.right);
-      height = 155;      }
+      height = 145;      }
     else {
       width = (window.innerWidth * .2345 - margin.left - margin.right);
-      height = 385;
+      height = 355;
           }
 
 
