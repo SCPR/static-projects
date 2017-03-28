@@ -17,6 +17,10 @@
 
 }
 
+text.caption {
+    font-weight: bold;
+}
+
 svg {
   font-size: 13px;
 }
