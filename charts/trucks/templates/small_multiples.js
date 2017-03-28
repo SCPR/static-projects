@@ -32,7 +32,7 @@ else{
 
     if(window.innerWidth < breakPoint) {
       width = (window.innerWidth * .431 - margin.left - margin.right);
-      height = 145;      }
+      height = 155;      }
     else {
       width = (window.innerWidth * .2345 - margin.left - margin.right);
       height = 355;
@@ -117,7 +117,7 @@ else{
         });
 
         circle = lines.append("circle").attr("r", 2.2).attr("opacity", 0).style("pointer-events", "none");
-        caption = lines.append("text").attr("class", "caption").attr("text-anchor", "middle").style("pointer-events", "none").attr("dy", -8);
+        caption = lines.append("text").attr("class", "caption").attr("text-anchor", "middle").style("pointer-events", "none").attr("dy", -11);
         curYear = lines.append("text").attr("class", "year").attr("text-anchor", "middle").style("pointer-events", "none").attr("dy", 13).attr("y", height);
         return g.append("g").attr("class", "y axis").call(yAxis);
       });
