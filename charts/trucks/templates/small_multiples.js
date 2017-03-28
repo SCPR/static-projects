@@ -35,7 +35,7 @@ else{
       height = 150;      }
     else {
       width = (window.innerWidth * .2345 - margin.left - margin.right);
-      height = 360;
+      height = 355;
           }
 
 
