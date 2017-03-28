@@ -71,7 +71,7 @@ else{
       var extentX, maxY;
       maxY = d3.max(data, function(c) {
         return d3.max(c.values, function(d) {
-          return yValue(d) -3;
+          return yValue(d) -2.1;
         });
       });
       maxY = maxY + (maxY * 1 / 4);
