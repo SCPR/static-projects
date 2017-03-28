@@ -17,7 +17,7 @@
             margin = {
       top: 7,
       right: 18,
-      bottom: 44,
+      bottom: 46,
       left: 25
     };
 }
@@ -25,17 +25,17 @@ else{
         margin = {
       top: 10,
       right: 15,
-      bottom: 44,
+      bottom: 62,
       left: 40
     };
 }
 
     if(window.innerWidth < breakPoint) {
-      width = (window.innerWidth * .431 - margin.left - margin.right);
-      height = 150;      }
+      width = (window.innerWidth * .301 - margin.left - margin.right);
+      height = 145;      }
     else {
-      width = (window.innerWidth * .3145 - margin.left - margin.right);
-      height = 245;
+      width = (window.innerWidth * .1905 - margin.left - margin.right);
+      height = 265;
           }
 
 
@@ -71,7 +71,7 @@ else{
       var extentX, maxY;
       maxY = d3.max(data, function(c) {
         return d3.max(c.values, function(d) {
-          return yValue(d);
+          return yValue(d) -3;
         });
       });
       maxY = maxY + (maxY * 1 / 4);
