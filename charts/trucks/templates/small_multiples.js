@@ -23,19 +23,19 @@
 }
 else{
         margin = {
-      top: 15,
+      top: 10,
       right: 15,
-      bottom: 50,
+      bottom: 44,
       left: 40
     };
 }
 
     if(window.innerWidth < breakPoint) {
       width = (window.innerWidth * .431 - margin.left - margin.right);
-      height = 148;      }
+      height = 150;      }
     else {
       width = (window.innerWidth * .2345 - margin.left - margin.right);
-      height = 375;
+      height = 360;
           }
 
 
