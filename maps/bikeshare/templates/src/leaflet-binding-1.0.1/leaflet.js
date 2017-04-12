@@ -1474,7 +1474,8 @@ var dataframe = (function() {
       // is no way for htmlwidgets to pass initial params to initialize()
       var map = L.map(el, {
         center: [51.505, -0.09],
-        zoom: 13
+        zoom: 13,
+        minZoom: 11,
       });
 
       preventUnintendedZoomOnScroll(map);

@@ -397,6 +397,8 @@
 .leaflet-popup-content {
 	margin: 13px 19px;
 	line-height: 1.4;
+    font: Helvetica ,Arial,sans-serif;
+    font-size:13px;
 	}
 .leaflet-popup-content p {
 	margin: 18px 0;
