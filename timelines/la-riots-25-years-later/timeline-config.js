@@ -10,8 +10,8 @@ $.get("la-riots-25-years-later.csv", function(csv) {
         readmoreurl: null,
         sources: null,
         entries: csv,
-        descending: true,
-        groupBy: "years",
-        dateDisplay: "YYYY"
+        descending: false,
+        groupBy: "months",
+        dateDisplay: "MMMM D, YYYY"
     });
 });
