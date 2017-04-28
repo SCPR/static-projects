@@ -9,7 +9,7 @@ $.get("la-riots-25-years-later.csv", function(csv) {
         text: null,
         readmoreurl: null,
         sources: null,
-        entries: csv,als
+        entries: csv,
         descending: false,
         groupBy: "months",
         dateDisplay: "MMMM D, YYYY"
