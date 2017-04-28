@@ -3,13 +3,13 @@ $.get("la-riots-25-years-later.csv", function(csv) {
         el: "#tik-tok-instance",
         projecturl: null,
         kicker: "Public Safety",
-        title: "Timeline: The LA Riots, then and now",
+        title: "Timeline: Rodney King and the LA Riots",
         credits: "Associated Press",
         published: null,
         text: null,
         readmoreurl: null,
         sources: null,
-        entries: csv,
+        entries: csv,als
         descending: false,
         groupBy: "months",
         dateDisplay: "MMMM D, YYYY"
