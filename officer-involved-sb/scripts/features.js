@@ -1,0 +1,1 @@
+$(document).ready(function(){if($(".header--top").length){new Waypoint.Inview({element:$(".header--top"),exited:function(e){$(".header--fixed").addClass("active")},enter:function(e){$(".header--fixed").removeClass("active")}})}});
