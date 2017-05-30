@@ -1,4 +1,4 @@
-$.get("single-payer-california.csv", function(csv) {
+$.get("single-payer.csv", function(csv) {
     var tikTok = new TikTok({
         el: "#tik-tok-instance",
         projecturl: null,
