@@ -184,6 +184,23 @@ HTMLWidgets.widget({
             .html(function(d) { return "<pre>" + d.name + "<br>" + format(d.value) +
                 " " + options.units + "</pre>"; });
 
+var breakPoint = 475;
+
+    if(window.innerWidth < breakPoint) {
+              node.append("text")
+            .attr("x", -6)
+            .attr("y", function(d) { return d.dy / 2; })
+            .attr("dy", ".35em")
+            .attr("text-anchor", "end")
+            .attr("transform", null)
+            .text(function(d) { return d.name; })
+            .style("font-size", "8px")
+            .style("font-family", options.fontFamily ? options.fontFamily : "inherit")
+            .filter(function(d) { return d.x < width / 2 || !options.sinksRight; })
+            .attr("x", 6 + sankey.nodeWidth())
+            .attr("text-anchor", "start");
+        }
+    else {
         node.append("text")
             .attr("x", -6)
             .attr("y", function(d) { return d.dy / 2; })
@@ -191,12 +208,27 @@ HTMLWidgets.widget({
             .attr("text-anchor", "end")
             .attr("transform", null)
             .text(function(d) { return d.name; })
-            .style("font-size", options.fontSize + "px")
+            .style("font-size", "14px")
             .style("font-family", options.fontFamily ? options.fontFamily : "inherit")
             .filter(function(d) { return d.x < width / 2 || !options.sinksRight; })
             .attr("x", 6 + sankey.nodeWidth())
             .attr("text-anchor", "start");
 
+          }
+
+/*        node.append("text")
+            .attr("x", -6)
+            .attr("y", function(d) { return d.dy / 2; })
+            .attr("dy", ".35em")
+            .attr("text-anchor", "end")
+            .attr("transform", null)
+            .text(function(d) { return d.name; })
+            .style("font-size", "14px")
+            .style("font-family", options.fontFamily ? options.fontFamily : "inherit")
+            .filter(function(d) { return d.x < width / 2 || !options.sinksRight; })
+            .attr("x", 6 + sankey.nodeWidth())
+            .attr("text-anchor", "start");
+*/
 
         // adjust viewBox to fit the bounds of our tree
         var s = d3.select(svg.node().parentNode);
