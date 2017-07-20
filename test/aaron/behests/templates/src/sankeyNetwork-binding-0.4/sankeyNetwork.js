@@ -200,6 +200,13 @@ var breakPoint = 475;
             .attr("x", 6 + sankey.nodeWidth())
             .attr("text-anchor", "start");
         }
+
+/*
+.attr("transform", function(d) {
+                return "rotate(-65)"
+                })
+*/
+
     else {
         node.append("text")
             .attr("x", -6)
