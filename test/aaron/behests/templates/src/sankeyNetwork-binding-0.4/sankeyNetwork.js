@@ -72,7 +72,7 @@ HTMLWidgets.widget({
           if (d.group){
 //            return color(d.group.replace(/ .*/, ""));
 //          } else {
-            return "#3CB371";
+            return "#30abd0";
           }
         }
 
@@ -80,7 +80,7 @@ HTMLWidgets.widget({
           if (d.group){
             return color(d.group.replace(/ .*/, ""));
           } else {
-            return "#3CB371";
+            return "#30abd0";
           }
         }
 
