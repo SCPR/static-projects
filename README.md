@@ -56,6 +56,18 @@ Will result in the following URIs, immediately when deployed:
     - /static/graph-project/graphs.css
     - /static/graph-project/
     - /static/graph-project/graph.html
+    
+### Embedding Checklist
+The list below is needed for the embed to work in AMP pages.
+
+1. All URLs in `index.html` have the `https://` protocol
+2. Make sure that the Backbone router has the following route in the routes object:
+`"*notFound": "renderApplicationVisuals"`
+3. When inserting into outpost, make sure the iframe is in the outermost level and not nested into another element, e.g.
+This: `<iframe></iframe>`
+Instead of this: `<p><iframe></iframe></p>`
+4. Specify a width and height, and if responsiveness is needed, apply a percentage width in the style property, e.g.
+`<iframe src="example-url" width="636" height"1300" style="width=100%"></iframe>`
 
 ### Fresh Prince Lyrics
 ```
