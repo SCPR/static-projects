@@ -1,0 +1,69 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div id="content-map-container">
+        <div id="content-map-legend">
+            <table cellspacing="0" cellpadding="1" border="0">
+                <tbody>
+                    <tr>
+                        <!-- <td class="lower-tier"><span class="legend-text">&nbsp; Majority pays less than 30%</span></td>
+                        <td class="higher-tier"><span class="legend-text">&nbsp; Majority pays more than 30%</span></td> -->
+                        <td class="lower-tier"><span class="legend-text">&nbsp; Less than 30%</span></td>
+                        <td class="middle-tier"><span class="legend-text">&nbsp; 30% to 39%</span></td>
+                        <td class="higher-tier"><span class="legend-text">&nbsp; 40% or more</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="content-map-canvas" class="initial"></div>
+        <div id="content-map-explainer">
+            <div class="controls">
+                <form class="filters">
+                    <div class="geography-browser">
+                        <div id="main-controls" class="control stacked location">
+                            <div class="pairing text">
+                                <h2 class="data-h2">Use <a class="findMe" href="javascript:void(0)">your location</a> or find an address</h2>
+                                <input type="text" id="addressSearch" placeholder="Start typing your address...">
+                                <div id="location-awareness-input">
+                                    <input type="text" class="no-show" name="lat" id="latitudeSearch">
+                                    <input type="text" class="no-show" name="lng" id="longitudeSearch">
+                                    <input type="text" class="no-show" name="acc" id="accuracySearch">
+                                </div>
+                            </div>
+                            <div class="pairing radius">
+                                <label for="radius">Search Radius</label>
+                                <select name="search-radius" id="search-radius">
+                                    <option value='400'>2 blocks</option>
+                                    <option value='805'>1/2 mile</option>
+                                    <option value='1610'>1 mile</option>
+                                    <option value="3220">2 miles</option>
+                                    <option value="8047">5 miles</option>
+                                    <option value="16093">10 miles</option>
+                                </select>
+                            </div>
+                            <div class="control submit clearfix">
+                                <button type="button" id="submit">Submit</button>
+                            </div>
+                        </div>
+<!--                             <div id="data-toggles">
+                            <div class="control toggle response_7345004f6c9f">
+                                <input type="checkbox" id="response_7345004f6c9f" name="response_7345004f6c9f" value="hidden">
+                                <label for="response_7345004f6c9f">Show audience anecdotes</label>
+                            </div>
+                        </div> -->
+                    </div>
+                </form>
+            </div>
+            <div class="data-display clearfix"></div>
+            <div id="content-map-data">
+                <div id="data-point-sentence"></div>
+                <div id="data-point-display"></div>
+                <div id="data-point-caveat"></div>
+                <div id="pin-query-response"></div>
+                <div class="control reset clearfix no-show-this">
+                    <button type="button" id="reset">Reset map</button>
+                </div>
+            </div>
+        </div>
+        <div id="content-map-methodology">
+            <p><strong>About the data</strong>: <p>Renter data for <a href="http://www.census.gov/geo/reference/zctas.html">Zip Code Tabulation Areas</a> in Los Angeles, Orange, Riverside, San Bernardino and Ventura counties via <a href="http://censusreporter.org/">Census Reporter</a> and based on <a href="http://www.census.gov/acs/www/data_documentation/2012_release/">American Community Survey 2012 5-year estimates</a>. ZCTAs for which the coefficient variable for the estimated number of renters is more than 10 percent are not displayed. Number of renters is based on occupied housing units from <a href="http://censusreporter.org/data/table/?table=B25003&amp;geo_ids=860|05000US06037">ACS Table B25003</a>. Median monthly rent is based on renter-occupied housing units paying cash rent from <a href="http://censusreporter.org/data/table/?table=B25064&amp;geo_ids=860|05000US06037">ACS Table B25064</a>. Median annual income is based on occupied housing units from the past 12 months and displayed in 2012 inflation-adjusted dollars from <a href="http://censusreporter.org/data/table/?table=B25119&amp;geo_ids=860|05000US06037">ACS Table B25119</a>. Median rent burden is based on renter-occupied housing units paying cash rent from the past 12 months from <a href="http://censusreporter.org/data/table/?table=B25071&amp;geo_ids=860|05000US06037">ACS Table B25071</a>. Household rent burden as a percentage of its income is based on renter-occupied housing units from the past 12 months from <a href="http://censusreporter.org/data/table/?table=B25070&amp;geo_ids=860|05000US06037">ACS Table B25070</a>. GIS data for Zip Code Tabulation Areas via the L.A. Times <a href="http://boundaries.latimes.com/sets/">Mapping L.A. Boundaries API</a>.</p>
+        </div>
+    </div>

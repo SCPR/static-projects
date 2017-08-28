@@ -1,0 +1,94 @@
+<script id="featcherGraphs" type="text/template">
+    <ul class='chartlist'>
+        <li>
+            <a href='javascript:void(0)'>More than 50% of income</a>
+            <% if (la_area_rent_rent_gt_50_cv > 0.60) { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_gt_50_pct) %>% †</span>
+            <% } else { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_gt_50_pct) %>% </span>
+            <% } %>
+            <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_gt_50_pct) %>%'>&nbsp;</span>
+        </li>
+        <li>
+        <a href='javascript:void(0)'>40 to 49.9%</a>
+            <% if (la_area_rent_rent_40_to_49_9_cv > 0.60) { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_40_to_49_9_pct) %>% †</span>
+            <% } else { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_40_to_49_9_pct) %>% </span>
+            <% } %>
+            <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_40_to_49_9_pct) %>%'>&nbsp;</span>
+        </li>
+        <li>
+            <a href='javascript:void(0)'>35 to 39.9%</a>
+            <% if (la_area_rent_rent_35_to_39_9_cv > 0.60) { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_35_to_39_9_pct) %>% †</span>
+            <% } else { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_35_to_39_9_pct) %>%</span>
+            <% } %>
+            <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_35_to_39_9_pct) %>%'>&nbsp;</span>
+        </li>
+        <li>
+            <a href='javascript:void(0)'>30 to 34.9%</a>
+            <% if (la_area_rent_rent_30_to_34_9_cv > 0.60) { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_30_to_34_9_pct) %>% †</span>
+            <% } else { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_30_to_34_9_pct) %>%</span>
+            <% } %>
+            <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_30_to_34_9_pct) %>%'>&nbsp;</span>
+        </li>
+        <li>
+            <a href='javascript:void(0)'>25 to 29.9%</a>
+            <% if (la_area_rent_rent_25_to_29_9_cv > 0.60) { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_25_to_29_9_pct) %>% †</span>
+            <% } else { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_25_to_29_9_pct) %>%</span>
+            <% } %>
+            <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_25_to_29_9_pct) %>%'>&nbsp;</span>
+        </li>
+        <li>
+            <a href='javascript:void(0)'>20 to 24.9%</a>
+            <% if (la_area_rent_rent_20_to_24_9_cv > 0.60) { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_20_to_24_9_pct) %>% †</span>
+            <% } else { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_20_to_24_9_pct) %>%</span>
+            <% } %>
+            <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_20_to_24_9_pct) %>%'>&nbsp;</span>
+        </li>
+        <li>
+            <a href='javascript:void(0)'>15 to 19.9%</a>
+            <% if (la_area_rent_rent_15_to_19_9_cv > 0.60) { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_15_to_19_9_pct) %>% †</span>
+            <% } else { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_15_to_19_9_pct) %>%</span>
+            <% } %>
+            <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_15_to_19_9_pct) %>%'>&nbsp;</span>
+        </li>
+        <li>
+            <a href='javascript:void(0)'>10 to 14.9%</a>
+            <% if (la_area_rent_rent_10_to_14_9_cv > 0.60) { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_10_to_14_9_pct) %>% †</span>
+            <% } else { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_10_to_14_9_pct) %>%</span>
+            <% } %>
+            <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_10_to_14_9_pct) %>%'>&nbsp;</span>
+        </li>
+        <li>
+            <a href='javascript:void(0)'>Less than 10 %</a>
+            <% if (la_area_rent_rent_lt_10_cv > 0.60) { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_lt_10_pct) %>% †</span>
+            <% } else { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_lt_10_pct) %>%</span>
+            <% } %>
+            <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_lt_10_pct) %>%'>&nbsp;</span>
+        </li>
+        <li>
+            <a href='javascript:void(0)'>Not calculated</a>
+            <% if (la_area_rent_rent_not_computed_cv > 0.60) { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_not_computed_pct) %>% †</span>
+            <% } else { %>
+                <span class='count'><%= this.percentifyValue(la_area_rent_rent_not_computed_pct) %>%</span>
+            <% } %>
+            <span class='index' style='width: <%= this.percentifyValue(la_area_rent_rent_not_computed_pct) %>%'>&nbsp;</span>
+        </li>
+    </ul>
+</script>

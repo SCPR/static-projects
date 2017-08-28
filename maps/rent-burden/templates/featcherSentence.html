@@ -1,0 +1,28 @@
+<script id="featcherSentence" type="text/template">
+    <div id='zip_<%= name %>'>
+        <h2>Displaying data for ZCTA <%= name %></h2>
+        <h4>Renters occupy an estimated <span class='gt-30pct'><%= this.addCommas(la_area_rent_rent_total) %> </span> households in <%= la_area_rent_county_proper %> County's <a href='http://censusreporter.org/profiles/86000US<%= name %>-<%= name %>/'><%= name %></a> Zip Code Tabulation Area (<a href='http://www.census.gov/geo/reference/zctas.html' target='_blank'>ZCTA</a>), according to American Community Survey data.</h4>
+        <% if (la_area_rent_median_gross_rent != null ) { %>
+            <% if (la_area_rent_median_gross_rent_cv > 0.60) { %>
+                <h4><strong>Median monthly rent</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_gross_rent) %> †</span></h4>
+            <% } else { %>
+                <h4><strong>Median monthly rent</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_gross_rent) %></span></h4>
+            <% } %>
+        <% } %>
+        <% if (la_area_rent_median_household_income_renter != null ) { %>
+            <% if (la_area_rent_median_household_income_renter_cv > 0.60) { %>
+                <h4><strong>Median annual income</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_household_income_renter) %> †</span></h4>
+            <% } else { %>
+                <h4><strong>Median annual income</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_household_income_renter) %></span></h4>
+            <% } %>
+        <% } %>
+        <% if (la_area_rent_median_gross_rent_pct != null ) { %>
+            <% if (la_area_rent_median_gross_rent_cv > 0.60) { %>
+                <h4><strong>Median rent burden</strong>: <span class='gt-30pct'><%= this.toFixed(la_area_rent_median_gross_rent_pct) %>% †</span></h4>
+            <% } else { %>
+                <h4><strong>Median rent burden</strong>: <span class='gt-30pct'><%= this.toFixed(la_area_rent_median_gross_rent_pct) %>%</span></h4>
+            <% } %>
+        <% } %>
+        <h4>Here's the breakdown of this area's household rent burden as a percentage of its income:</h4>
+    </div>
+</script>
