@@ -29,6 +29,8 @@
             // sets template path
             if (window.location.href.indexOf("https://projects.scpr.org/") > -1) {
                 window.wrapperTemplatePath = "https://projects.scpr.org/static-files/v3-dependencies/templates/"
+            } else if (window.location.href.indexOf("http://projects.scpr.org/") > -1) {
+                window.wrapperTemplatePath = "http://projects.scpr.org/static-files/v3-dependencies/templates/"
             }
             else {
                 window.wrapperTemplatePath = "/static-projects/static-files/v3-dependencies/templates/"
@@ -42,7 +44,7 @@
 
             // sets embed options
             if (window.location.href.indexOf("embed") > -1){
-                window.appConfig.open_about_this = false;
+                window.appConfig.open_about_this = true;
                 window.appConfig.comments = false;
                 window.appConfig.is_embedded = true;
             };
@@ -51,7 +53,7 @@
             window.appConfig.is_mobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) || (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/) || (window.appConfig.windowSize < 568));
 
             if (window.appConfig.is_mobile) {
-                window.appConfig.open_about_this = false;
+                window.appConfig.open_about_this = true;
                 window.appConfig.comments = false;
                 window.appConfig.initial_map_zoom = 9;
             };

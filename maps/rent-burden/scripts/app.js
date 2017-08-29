@@ -144,36 +144,36 @@
             this.markerGroup = new L.layerGroup();
             window.featcherSentence = _.template(
                 "<div id='zip_<%= name %>'>"+
-                    "<h2 class='data-h2'>ZCTA <%= name %></h2>"+
+                    "<h2 class='data-h2'>Zip Code <%= name %></h2>"+
+                    "<% if (la_area_rent_median_gross_rent_pct != null ) { %>"+
+                        "<% if (la_area_rent_median_gross_rent_cv > 0.30) { %>"+
+                            "<h3><%= this.toFixed(la_area_rent_median_gross_rent_pct) %>% of income†</h3>"+
+                        "<% } else { %>"+
+                            "<h3><%= this.toFixed(la_area_rent_median_gross_rent_pct) %>% of income</h3>"+
+                        "<% } %>"+
+                    "<% } %>"+
                     "<h4><strong>Total households that rent</strong>: <span class='gt-30pct'><%= this.addCommas(la_area_rent_rent_total) %> </span></h4>"+
                     "<% if (la_area_rent_median_gross_rent != null ) { %>"+
-                        "<% if (la_area_rent_median_gross_rent_cv > 0.60) { %>"+
+                        "<% if (la_area_rent_median_gross_rent_cv > 0.30) { %>"+
                             "<h4><strong>Median monthly rent</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_gross_rent) %> †</span></h4>"+
                         "<% } else { %>"+
                             "<h4><strong>Median monthly rent</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_gross_rent) %></span></h4>"+
                         "<% } %>"+
                     "<% } %>"+
                     "<% if (la_area_rent_median_household_income_renter != null ) { %>"+
-                        "<% if (la_area_rent_median_household_income_renter_cv > 0.60) { %>"+
+                        "<% if (la_area_rent_median_household_income_renter_cv > 0.30) { %>"+
                             "<h4><strong>Median annual income(e)</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_household_income_renter) %> †</span></h4>"+
                         "<% } else { %>"+
                             "<h4><strong>Median annual income</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_household_income_renter) %></span></h4>"+
                         "<% } %>"+
                     "<% } %>"+
-                    "<% if (la_area_rent_median_gross_rent_pct != null ) { %>"+
-                        "<% if (la_area_rent_median_gross_rent_cv > 0.60) { %>"+
-                            "<h4><strong>Median rent burden</strong>: <span class='gt-30pct'><%= this.toFixed(la_area_rent_median_gross_rent_pct) %>% †</span></h4>"+
-                        "<% } else { %>"+
-                            "<h4><strong>Median rent burden</strong>: <span class='gt-30pct'><%= this.toFixed(la_area_rent_median_gross_rent_pct) %>%</span></h4>"+
-                        "<% } %>"+
-                    "<% } %>"+
-                    "<h4><strong>Detailed breakdown</strong>:</h4>"+
+                    "<h4 class='data-charts'>Detailed breakdown</h4>"+
                 "</div>");
             window.featcherGraphs = _.template(
                 "<ul class='chartlist'>"+
                     "<li>"+
                         "<a href='javascript:void(0)'>More than 50% of income</a>"+
-                        "<% if (la_area_rent_rent_gt_50_cv > 0.60) { %>"+
+                        "<% if (la_area_rent_rent_gt_50_cv > 0.30) { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_gt_50_pct) %>% †</span>"+
                         "<% } else { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_gt_50_pct) %>% </span>"+
@@ -182,7 +182,7 @@
                     "</li>"+
                     "<li>"+
                     "<a href='javascript:void(0)'>40 to 49.9%</a>"+
-                        "<% if (la_area_rent_rent_40_to_49_9_cv > 0.60) { %>"+
+                        "<% if (la_area_rent_rent_40_to_49_9_cv > 0.30) { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_40_to_49_9_pct) %>% †</span>"+
                         "<% } else { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_40_to_49_9_pct) %>% </span>"+
@@ -191,7 +191,7 @@
                     "</li>"+
                     "<li>"+
                         "<a href='javascript:void(0)'>35 to 39.9%</a>"+
-                        "<% if (la_area_rent_rent_35_to_39_9_cv > 0.60) { %>"+
+                        "<% if (la_area_rent_rent_35_to_39_9_cv > 0.30) { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_35_to_39_9_pct) %>% †</span>"+
                         "<% } else { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_35_to_39_9_pct) %>%</span>"+
@@ -200,7 +200,7 @@
                     "</li>"+
                     "<li>"+
                         "<a href='javascript:void(0)'>30 to 34.9%</a>"+
-                        "<% if (la_area_rent_rent_30_to_34_9_cv > 0.60) { %>"+
+                        "<% if (la_area_rent_rent_30_to_34_9_cv > 0.30) { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_30_to_34_9_pct) %>% †</span>"+
                         "<% } else { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_30_to_34_9_pct) %>%</span>"+
@@ -209,7 +209,7 @@
                     "</li>"+
                     "<li>"+
                         "<a href='javascript:void(0)'>25 to 29.9%</a>"+
-                        "<% if (la_area_rent_rent_25_to_29_9_cv > 0.60) { %>"+
+                        "<% if (la_area_rent_rent_25_to_29_9_cv > 0.30) { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_25_to_29_9_pct) %>% †</span>"+
                         "<% } else { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_25_to_29_9_pct) %>%</span>"+
@@ -218,7 +218,7 @@
                     "</li>"+
                     "<li>"+
                         "<a href='javascript:void(0)'>20 to 24.9%</a>"+
-                        "<% if (la_area_rent_rent_20_to_24_9_cv > 0.60) { %>"+
+                        "<% if (la_area_rent_rent_20_to_24_9_cv > 0.30) { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_20_to_24_9_pct) %>% †</span>"+
                         "<% } else { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_20_to_24_9_pct) %>%</span>"+
@@ -227,7 +227,7 @@
                     "</li>"+
                     "<li>"+
                         "<a href='javascript:void(0)'>15 to 19.9%</a>"+
-                        "<% if (la_area_rent_rent_15_to_19_9_cv > 0.60) { %>"+
+                        "<% if (la_area_rent_rent_15_to_19_9_cv > 0.30) { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_15_to_19_9_pct) %>% †</span>"+
                         "<% } else { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_15_to_19_9_pct) %>%</span>"+
@@ -236,7 +236,7 @@
                     "</li>"+
                     "<li>"+
                         "<a href='javascript:void(0)'>10 to 14.9%</a>"+
-                        "<% if (la_area_rent_rent_10_to_14_9_cv > 0.60) { %>"+
+                        "<% if (la_area_rent_rent_10_to_14_9_cv > 0.30) { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_10_to_14_9_pct) %>% †</span>"+
                         "<% } else { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_10_to_14_9_pct) %>%</span>"+
@@ -245,7 +245,7 @@
                     "</li>"+
                     "<li>"+
                         "<a href='javascript:void(0)'>Less than 10 %</a>"+
-                        "<% if (la_area_rent_rent_lt_10_cv > 0.60) { %>"+
+                        "<% if (la_area_rent_rent_lt_10_cv > 0.30) { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_lt_10_pct) %>% †</span>"+
                         "<% } else { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_lt_10_pct) %>%</span>"+
@@ -254,7 +254,7 @@
                     "</li>"+
                     "<li>"+
                         "<a href='javascript:void(0)'>Not calculated</a>"+
-                        "<% if (la_area_rent_rent_not_computed_cv > 0.60) { %>"+
+                        "<% if (la_area_rent_rent_not_computed_cv > 0.30) { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_not_computed_pct) %>% †</span>"+
                         "<% } else { %>"+
                             "<span class='count'><%= this.percentifyValue(la_area_rent_rent_not_computed_pct) %>%</span>"+
@@ -319,9 +319,9 @@
             });
             this.view_object.map.setView(this.view_object.center, this.view_object.zoom);
             this.view_object.map.addLayer(this.view_object.stamenTerrain);
-            this.view_object.map.addControl(L.control.zoom({
-                position: 'topright'
-            }));
+            // this.view_object.map.addControl(L.control.zoom({
+            //     position: 'topright'
+            // }));
             // this.view_object.map = this.map;
             this.view_object.geojsonOne.addTo(this.view_object.map);
             this.view_object.geojsonTwo.addTo(this.view_object.map);
@@ -479,7 +479,7 @@
                 $("#data-point-sentence").html(window.featcherSentence(feature.properties));
                 $("#data-point-display").html(window.featcherGraphs(feature.properties));
                 $("#data-point-caveat").html(
-                    "<p class='content-map-methodology gt-30pct'>† - Margin of error is too large to make this a reliable estimate.</p>"
+                    "<p class='content-map-methodology gt-30pct'>† - Reliability of estimate may be low, based on margin of error</p>"
                 );
                 $("#pin-query-response").empty();
             });
@@ -488,34 +488,141 @@
         // onEachFeature: function (feature, layer) {
         //     $("div.reset").show();
         //     var zip = feature.properties;
+        //     if (zip.la_area_rent_median_gross_rent != null ) {
+        //         if (zip.la_area_rent_median_gross_rent_cv > 0.60) {
+        //             var median_rent = '<h4><strong>Median monthly rent</strong>: $' +window.addCommas(zip.la_area_rent_median_gross_rent) +'<span class="gt-30pct">†</span></h4>'
+        //         } else {
+        //             var median_rent = '<h4><strong>Median monthly rent</strong>: $' +window.addCommas(zip.la_area_rent_median_gross_rent) +'</h4>'
+        //         }
+        //     }
+        //     if (zip.la_area_rent_median_household_income_renter != null ) {
+        //         if (zip.la_area_rent_median_household_income_renter_cv > 0.60) {
+        //             var median_annual_income = '<h4><strong>Median annual income</strong>: $' +window.addCommas(zip.la_area_rent_median_household_income_renter)+ '<span class="gt-30pct">†</span</h4>'
+        //         } else {
+        //             var median_annual_income = '<h4><strong>Median annual income</strong>: $' +window.addCommas(zip.la_area_rent_median_household_income_renter)+ '</h4>'
+        //         }
+        //     }
+        //     if (zip.la_area_rent_median_gross_rent_pct != null ) {
+        //         if (zip.la_area_rent_median_gross_rent_cv > 0.60) {
+        //             var median_rent_burden = '<h2 class="data-h2">' +window.toFixed(zip.la_area_rent_median_gross_rent_pct)+ '% of income†</h2>'
+        //         } else {
+        //             var median_rent_burden = '<h2 class="data-h2">' +window.toFixed(zip.la_area_rent_median_gross_rent_pct)+ '% of income</h2>'
+        //         }
+        //     }
+        //     if (zip.la_area_rent_rent_gt_50_cv > 0.60) {
+        //         var gt_50 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_gt_50_pct)+ '% †</span>'
+        //     } else {
+        //         var gt_50 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_gt_50_pct)+ '% </span>'
+        //     }
+        //     if (zip.la_area_rent_rent_40_to_49_9_cv > 0.60) {
+        //         var from40_49 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_40_to_49_9_pct)+ '% †</span>'
+        //     } else {
+        //         var from40_49 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_40_to_49_9_pct)+ '% </span>'
+        //     }
+        //     if (zip.la_area_rent_rent_35_to_39_9_cv > 0.60) {
+        //         var from35_39 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_35_to_39_9_pct)+ '% †</span>'
+        //     } else {
+        //         var from35_39 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_35_to_39_9_pct)+ '% </span>'
+        //     }
+        //     if (zip.la_area_rent_rent_30_to_34_9_cv > 0.60) {
+        //         var from30_34 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_30_to_34_9_pct)+ '% †</span>'
+        //     } else {
+        //         var from30_34 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_30_to_34_9_pct)+ '% </span>'
+        //     }
+        //     if (zip.la_area_rent_rent_25_to_29_9_cv > 0.60) {
+        //         var from25_29 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_25_to_29_9_pct)+ '% †</span>'
+        //     } else {
+        //         var from25_29 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_25_to_29_9_pct)+ '% </span>'
+        //     }
+        //     if (zip.la_area_rent_rent_20_to_24_9_cv > 0.60) {
+        //         var from20_24 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_20_to_24_9_pct)+ '% †</span>'
+        //     } else {
+        //         var from20_24 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_20_to_24_9_pct)+ '% </span>'
+        //     }
+        //     if (zip.la_area_rent_rent_15_to_19_9_cv > 0.60) {
+        //         var from15_19 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_15_to_19_9_pct)+ '% †</span>'
+        //     } else {
+        //         var from15_19 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_15_to_19_9_pct)+ '% </span>'
+        //     }
+        //     if (zip.la_area_rent_rent_10_to_14_9_cv > 0.60) {
+        //         var from10_14 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_10_to_14_9_pct)+ '% †</span>'
+        //     } else {
+        //         var from10_14 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_10_to_14_9_pct)+ '% </span>'
+        //     }
+        //     if (zip.la_area_rent_rent_lt_10_cv > 0.60) {
+        //         var lt_10 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_lt_10_pct)+ '% †</span>'
+        //     } else {
+        //         var lt_10 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_lt_10_pct)+ '% </span>'
+        //     }
+        //     if (zip.la_area_rent_rent_not_computed_cv > 0.60) {
+        //         var not_computed = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_not_computed_pct)+ '% †</span>'
+        //     } else {
+        //         var not_computed = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_not_computed_pct)+ '% </span>'
+        //     }
         //     layer.bindPopup(
-        //         '<div id="zip_'+zip.name+'">'+
-        //                 '<h2>Displaying data for ZCTA '+zip.name+'</h2>'
-                    //     <h4>Renters occupy an estimated <span class='gt-30pct'><%= this.addCommas(la_area_rent_rent_total) %> </span> households in <%= la_area_rent_county_proper %> County's <a href='http://censusreporter.org/profiles/86000US<%= name %>-<%= name %>/'><%= name %></a> Zip Code Tabulation Area (<a href='http://www.census.gov/geo/reference/zctas.html' target='_blank'>ZCTA</a>), according to American Community Survey data.</h4>
-                    //     <% if (la_area_rent_median_gross_rent != null ) { %>
-                    //         <% if (la_area_rent_median_gross_rent_cv > 0.60) { %>
-                    //             <h4><strong>Median monthly rent</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_gross_rent) %> †</span></h4>
-                    //         <% } else { %>
-                    //             <h4><strong>Median monthly rent</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_gross_rent) %></span></h4>
-                    //         <% } %>
-                    //     <% } %>
-                    //     <% if (la_area_rent_median_household_income_renter != null ) { %>
-                    //         <% if (la_area_rent_median_household_income_renter_cv > 0.60) { %>
-                    //             <h4><strong>Median annual income</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_household_income_renter) %> †</span></h4>
-                    //         <% } else { %>
-                    //             <h4><strong>Median annual income</strong>: <span class='gt-30pct'>$<%= this.addCommas(la_area_rent_median_household_income_renter) %></span></h4>
-                    //         <% } %>
-                    //     <% } %>
-                    //     <% if (la_area_rent_median_gross_rent_pct != null ) { %>
-                    //         <% if (la_area_rent_median_gross_rent_cv > 0.60) { %>
-                    //             <h4><strong>Median rent burden</strong>: <span class='gt-30pct'><%= this.toFixed(la_area_rent_median_gross_rent_pct) %>% †</span></h4>
-                    //         <% } else { %>
-                    //             <h4><strong>Median rent burden</strong>: <span class='gt-30pct'><%= this.toFixed(la_area_rent_median_gross_rent_pct) %>%</span></h4>
-                    //         <% } %>
-                    //     <% } %>
-                    //     <h4>Here's the breakdown of this area's household rent burden as a percentage of its income:</h4>
-                    // </div>
-        //         );
+        //         '<div class="data-sentence">'+
+        //         '<div id="zip_'+zip.name+'">Zip code: '+zip.name+
+        //             median_rent_burden+
+        //             '<hr style="width:50%;" />'+
+        //             '<h4><strong>Total households that rent</strong>: <span class="gt-30pct">' +window.addCommas(zip.la_area_rent_rent_total)+'</span></h4>'+
+        //             median_rent+
+        //             median_annual_income+
+        //             '<h4 class="data-charts">Detailed breakdown</h4>'+
+        //         '</div></div>'+
+        //         '<div class="data-display">'+
+        //         '<ul class="chartlist">'+
+        //             '<li>'+
+        //                 '<a href="javascript:void(0)">More than 50% of income</a>'+
+        //                 gt_50+
+        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_gt_50_pct)+ '%">&nbsp;</span>'+
+        //             '</li>'+
+        //             '<li>'+
+        //                 '<a href="javascript:void(0)">40 to 49.9%</a>'+
+        //                 from40_49+
+        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_40_to_49_9_pct)+ '%">&nbsp;</span>'+
+        //             '</li>'+
+        //             '<li>'+
+        //                 '<a href="javascript:void(0)">35 to 39.9%</a>'+
+        //                 from35_39+
+        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_35_to_39_9_pct)+ '%">&nbsp;</span>'+
+        //             '</li>'+
+        //             '<li>'+
+        //                 '<a href="javascript:void(0)">30 to 34.9%</a>'+
+        //                 from30_34+
+        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_30_to_34_9_pct)+ '%">&nbsp;</span>'+
+        //             '</li>'+
+        //             '<li>'+
+        //                 '<a href="javascript:void(0)">25 to 29.9%</a>'+
+        //                 from25_29+
+        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_25_to_29_9_pct)+ '%">&nbsp;</span>'+
+        //             '</li>'+
+        //             '<li>'+
+        //                 '<a href="javascript:void(0)">20 to 24.9%</a>'+
+        //                 from20_24+
+        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_20_to_24_9_pct)+ '%">&nbsp;</span>'+
+        //             '</li>'+
+        //             '<li>'+
+        //                 '<a href="javascript:void(0)">15 to 19.9%</a>'+
+        //                 from15_19+
+        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_15_to_19_9_pct)+ '%">&nbsp;</span>'+
+        //             '</li>'+
+        //             '<li>'+
+        //                 '<a href="javascript:void(0)">10 to 14.9%</a>'+
+        //                 from10_14+
+        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_10_to_14_9_pct)+ '%">&nbsp;</span>'+
+        //             '</li>'+
+        //             '<li>'+
+        //                 '<a href="javascript:void(0)">Less than 10 %</a>'+
+        //                 lt_10+
+        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_lt_10_pct)+ '%">&nbsp;</span>'+
+        //             '</li>'+
+        //             '<li>'+
+        //                 '<a href="javascript:void(0)">Not calculated</a>'+
+        //                 not_computed+
+        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_not_computed_pct)+ '%">&nbsp;</span>'+
+        //             '</li>'+
+        //         '</ul></div>'
+        //     );
         // },
 
         resetUserView: function(){
@@ -718,41 +825,23 @@
                 $("#data-point-sentence").html(window.featcherSentence(value[0].feature.properties));
                 $("#data-point-display").html(window.featcherGraphs(value[0].feature.properties));
                 $("#data-point-caveat").html(
-                    "<p class='content-map-methodology gt-30pct'>† - Margin of error is too large to make this a reliable estimate.</p>"
+                    "<p class='content-map-methodology gt-30pct'>† - Reliability of estimate may be low, based on margin of error</p>"
                 );
             } else {
                 $("#data-point-sentence").html(
                     "<h2>We couldn't find data for this ZCTA</h2>");
             }
-            // var user_here = {
-            //     lng: longitude,
-            //     lat: latitude
-            // };
-            // var _this = this;
-            // var proceed = null;
-            // var county_name = null;
-            // $.ajax({
-            //     async: false,
-            //     url: "data/ca_counties.json",
-            //     dataType: "json",
-            //     success: function(data){
-            //         _this.view_object.cali_wherewolf.addAll(data);
-            //         var in_cali = _this.view_object.cali_wherewolf.find(user_here, {wholeFeature: true});
-            //         if (in_cali.counties === null || in_cali.counties === undefined){
-            //             proceed = false;
-            //         } else {
-            //             county_name = in_cali.counties.properties.fullName;
-            //             proceed = true;
-            //         };
-            //     }
-            // });
-            // if (proceed === true){
-            //     var _100_zones = _this.view_object._100_wherewolf.find(user_here, {wholeFeature: true});
-            //     var _500_zones = _this.view_object._500_wherewolf.find(user_here, {wholeFeature: true});
-            //     return {"_100_zones": _100_zones, "_500_zones": _500_zones, "user_here": user_here, "county_name": county_name};
+            // if (value != undefined){
+            //     $("#data-point-sentence").html(window.featcherSentence(value[0].feature.properties));
+            //     $("#data-point-display").html(window.featcherGraphs(value[0].feature.properties));
+            //     $("#data-point-caveat").html(
+            //         "<p class='content-map-methodology gt-30pct'>† - Margin of error is too large to make this a reliable estimate.</p>"
+            //     );
             // } else {
-            //     return false;
-            // };
+            //     $("#data-point-sentence").html(
+            //         "<h2>We couldn't find data for this ZCTA</h2>");
+            // }
+
         },
 
 
