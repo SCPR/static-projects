@@ -28,95 +28,9 @@
         routes: {
             "": "fetchData",
             "*notFound": "fetchData"
-            // "lat=:latitude&lng=:longitude&zoom=:zoomLevel(/)": "renderCustomView"
         },
 
-        // renderInitialView: function(){
-        //     window.config.initialUrl = window.appConfig.project_root;
-        //     window.config.type = "initial"
-        //     window.config.lat = 34.061841979429445
-        //     window.config.lng = -118.26370239257812
-        //     window.config.zoom = 8
-        //     this.fetchData();
-        // },
-
-        // renderCustomView: function(lat, lng, zoom){
-        //     var lat = parseFloat(lat);
-        //     var lng = parseFloat(lng);
-        //     var zoom = parseInt(zoom);
-        //     if(zoom !== zoom) {
-        //         $.jAlert({
-        //             "replaceOtherAlerts": true,
-        //             "closeOnClick": true,
-        //             "theme": "yellow",
-        //             "title": "<strong>Invalid zoom level</strong>",
-        //             "content": "Zoom level should be between 1 and 15. We've adjusted the zoom paramenter in the URL you are trying to access."
-        //           });
-        //         window.app.navigate("", {
-        //             trigger: true,
-        //             replace: true,
-        //         });
-        //     } else if(lat !== lat || lng !== lng) {
-        //         $.jAlert({
-        //             "replaceOtherAlerts": true,
-        //             "closeOnClick": true,
-        //             "theme": "yellow",
-        //             "title": "<strong>Invalid coordinates</strong>",
-        //             "content": "Latitude coordinates should be between -90 and 90, and longitude coordinates should be between -180 and 180. Please try again."
-        //           });
-        //         window.app.navigate("", {
-        //             trigger: true,
-        //             replace: true,
-        //         });
-        //     } else {
-        //         if (zoom === 20){
-        //             window.config.type = "user";
-        //         } else {
-        //             window.config.type = "initial";
-        //         };
-
-        //         if (zoom <= 1 || zoom >= 21){
-        //             $.jAlert({
-        //                 "replaceOtherAlerts": true,
-        //                 "closeOnClick": true,
-        //                 "theme": "yellow",
-        //                 "title": "<strong>Invalid zoom level</strong>",
-        //                 "content": "Zoom level should be between 1 and 15. Please try again."
-        //               });
-        //         } else if (lat > 90 || lat < -90 && lng > 180 || lng < -180){
-        //             $.jAlert({
-        //                 "replaceOtherAlerts": true,
-        //                 "closeOnClick": true,
-        //                 "theme": "yellow",
-        //                 "title": "<strong>Invalid coordinates</strong>",
-        //                 "content": "Latitude coordinates should be between -90 and 90, and longitude coordinates should be between -180 and 180. Please try again."
-        //               });
-        //         } else {
-        //             window.config.lat = lat;
-        //             window.config.lng = lng;
-        //             window.config.zoom = zoom;
-        //             this.fetchData();
-        //         };
-        //     };
-        // },
-
         fetchData: function(){
-            // $(".data-visuals").html(template("templates/data-loading.html"));
-            // $.getJSON("data/zcta-county-data-one.json", function(data){
-            //     window.config._geojsonOne = data;
-            // });
-            // $.getJSON("data/zcta-county-data-two.json", function(data){
-            //     window.config._geojsonTwo = data;
-            // });
-            // var _this = this;
-            // var checkExist = setInterval(function() {
-            //     var _One = _.has(window.config, "_geojsonOne");
-            //     var _Two = _.has(window.config, "_geojsonTwo");
-            //     if (_One === true && _Two === true){
-            //         clearInterval(checkExist);
-            //         _this.render_application_visuals(window.config);
-            //     }
-            // }, 500);
             this.render_application_visuals(window.config);
         },
 
@@ -144,7 +58,7 @@
             this.markerGroup = new L.layerGroup();
             window.featcherSentence = _.template(
                 "<div id='zip_<%= name %>'>"+
-                    "<h2 class='data-h2'>Zip Code <%= name %></h2>"+
+                    "<h2 class='data-h2'>ZCTA <%= name %></h2>"+
                     "<% if (la_area_rent_median_gross_rent_pct != null ) { %>"+
                         "<% if (la_area_rent_median_gross_rent_cv > 0.30) { %>"+
                             "<h3><%= this.toFixed(la_area_rent_median_gross_rent_pct) %>% of income†</h3>"+
@@ -319,24 +233,9 @@
             });
             this.view_object.map.setView(this.view_object.center, this.view_object.zoom);
             this.view_object.map.addLayer(this.view_object.stamenTerrain);
-            // this.view_object.map.addControl(L.control.zoom({
-            //     position: 'topright'
-            // }));
-            // this.view_object.map = this.map;
             this.view_object.geojsonOne.addTo(this.view_object.map);
             this.view_object.geojsonTwo.addTo(this.view_object.map);
         },
-
-        // searchMe: function(){
-        //     $("#form-controls").removeClass("hidden");
-        //     $(".searchMe").css("font-weight", "700");
-        //     $("img.searchMe").css("opacity", "1.0");
-        //     $(".findMe").css("font-weight", "100");
-        //     $("img.findMe").css("opacity", "0.3");
-        //     $("input[id='addressSearch']").val("");
-        //     $("input[id='latitudeSearch']").val("");
-        //     $("input[id='longitudeSearch']").val("");
-        // },
 
         findMe: function(){
             if (navigator.geolocation) {
@@ -350,40 +249,6 @@
                 alert("Sorry, we could not find your location.");
             }
         },
-
-        // locationSuccess: function(position){
-        //     $("input[id='latitudeSearch']").val(position.coords.latitude);
-        //     $("input[id='longitudeSearch']").val(position.coords.longitude);
-        //     $("button#submit").trigger("click");
-        // },
-
-        // locationError: function(error){
-        //     if (error.code === 1){
-        //         $.jAlert({
-        //             "replaceOtherAlerts": true,
-        //             "closeOnClick": true,
-        //             "theme": "yellow",
-        //             "title": "<strong>Sorry. " + error.message + "</strong>",
-        //             "content": "The user denied use of location services or your privacy settings do not allow this application to determine your current location."
-        //           });
-        //     } else if (error.code === 2){
-        //         $.jAlert({
-        //             "replaceOtherAlerts": true,
-        //             "closeOnClick": true,
-        //             "theme": "yellow",
-        //             "title": "<strong>Sorry. " + error.message + "</strong>",
-        //             "content": "We could not find your location."
-        //           });
-        //     } else if (error.code === 3){
-        //         $.jAlert({
-        //             "replaceOtherAlerts": true,
-        //             "closeOnClick": true,
-        //             "theme": "yellow",
-        //             "title": "<strong>Sorry. " + error.message + "</strong>",
-        //             "content": "An attempt to locate your position timed out. Please refresh the page and try again."
-        //           });
-        //     };
-        // },
 
         addressSearch: function(e){
             $("input[id='addressSearch']").geocomplete({
@@ -400,12 +265,6 @@
             }
         },
 
-        // enterKeyPressedEventHandler: function(event){
-        //     if(event.keyCode === 13){
-        //         this.navigate();
-        //     };
-        // },
-
         navigate: function(){
             var latitude = $("input[id='latitudeSearch']").val();
             var longitude = $("input[id='longitudeSearch']").val();
@@ -414,34 +273,12 @@
             if (latitude === '' && longitude === ''){
                 alert('Please enter an address or search by location')
             } else {
+                if (this.view_object.map.hasLayer(this.userLayer)){
+                    this.view_object.map.removeLayer(this.userLayer);
+                }
+                this.markerGroup.clearLayers();
                 this.addUserLayerToMap(latitude, longitude, accuracy, searchRadius);
             }
-            // var latitude = $("input[id='latitudeSearch']").val();
-            // var longitude = $("input[id='longitudeSearch']").val();
-            // if (latitude === "" && longitude === ""){
-            //     warningAlert("Sorry", "Please enter an address or search by location");
-            // } else {
-            //     this.view_object.userLayerPresent = this.view_object.map.hasLayer(this.userLayer);
-            //     if (this.view_object.userLayerPresent === false){
-            //         this.addUserLayerToMap(latitude, longitude);
-            //         // this.raiseFloodZoneAlert(latitude, longitude);
-            //         window.app.navigate("#lat=" + latitude + "&lng=" + longitude + "&zoom=20/", {
-            //             trigger: false,
-            //             replace: true,
-            //         });
-            //     } else {
-            //         this.view_object.map.removeLayer(this.userLayer);
-            //         this.addUserLayerToMap(latitude, longitude);
-            //         // this.raiseFloodZoneAlert(latitude, longitude);
-            //         window.app.navigate("#lat=" + latitude + "&lng=" + longitude + "&zoom=20/", {
-            //             trigger: false,
-            //             replace: true,
-            //         });
-            //     };
-            //     this_url = encodeURIComponent(window.appConfig.project_root + "#lat=" + latitude + "&lng=" + longitude + "&zoom=20/");
-            //     $(".facebook").attr("href", "https://www.facebook.com/sharer/sharer.php?u=" + this_url);
-            //     $(".twitter").attr("href", "http://twitter.com/share?text=Do you live in a flood zone? Check using @KPCC's interactive map.&amp;url=" + this_url);
-            // };
         },
 
         filterFeatures: function(feature, layer) {
@@ -454,7 +291,6 @@
 
         styleFeatures: function (feature) {
             var layer_color;
-            // if (feature.properties.la_area_rent_rent_gt30_pct >= 0.50){
             if (parseFloat(feature.properties.la_area_rent_median_gross_rent_pct) >= 40){
                 layer_color = '#023747'; //#007397
             } else if (parseFloat(feature.properties.la_area_rent_median_gross_rent_pct) < 30){
@@ -474,7 +310,6 @@
 
         onEachFeature: function(feature, layer) {
             layer.on('click', function (e) {
-                // $("#main-controls").hide(); ###
                 $("div.reset").show();
                 $("#data-point-sentence").html(window.featcherSentence(feature.properties));
                 $("#data-point-display").html(window.featcherGraphs(feature.properties));
@@ -484,146 +319,6 @@
                 $("#pin-query-response").empty();
             });
         },
-
-        // onEachFeature: function (feature, layer) {
-        //     $("div.reset").show();
-        //     var zip = feature.properties;
-        //     if (zip.la_area_rent_median_gross_rent != null ) {
-        //         if (zip.la_area_rent_median_gross_rent_cv > 0.60) {
-        //             var median_rent = '<h4><strong>Median monthly rent</strong>: $' +window.addCommas(zip.la_area_rent_median_gross_rent) +'<span class="gt-30pct">†</span></h4>'
-        //         } else {
-        //             var median_rent = '<h4><strong>Median monthly rent</strong>: $' +window.addCommas(zip.la_area_rent_median_gross_rent) +'</h4>'
-        //         }
-        //     }
-        //     if (zip.la_area_rent_median_household_income_renter != null ) {
-        //         if (zip.la_area_rent_median_household_income_renter_cv > 0.60) {
-        //             var median_annual_income = '<h4><strong>Median annual income</strong>: $' +window.addCommas(zip.la_area_rent_median_household_income_renter)+ '<span class="gt-30pct">†</span</h4>'
-        //         } else {
-        //             var median_annual_income = '<h4><strong>Median annual income</strong>: $' +window.addCommas(zip.la_area_rent_median_household_income_renter)+ '</h4>'
-        //         }
-        //     }
-        //     if (zip.la_area_rent_median_gross_rent_pct != null ) {
-        //         if (zip.la_area_rent_median_gross_rent_cv > 0.60) {
-        //             var median_rent_burden = '<h2 class="data-h2">' +window.toFixed(zip.la_area_rent_median_gross_rent_pct)+ '% of income†</h2>'
-        //         } else {
-        //             var median_rent_burden = '<h2 class="data-h2">' +window.toFixed(zip.la_area_rent_median_gross_rent_pct)+ '% of income</h2>'
-        //         }
-        //     }
-        //     if (zip.la_area_rent_rent_gt_50_cv > 0.60) {
-        //         var gt_50 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_gt_50_pct)+ '% †</span>'
-        //     } else {
-        //         var gt_50 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_gt_50_pct)+ '% </span>'
-        //     }
-        //     if (zip.la_area_rent_rent_40_to_49_9_cv > 0.60) {
-        //         var from40_49 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_40_to_49_9_pct)+ '% †</span>'
-        //     } else {
-        //         var from40_49 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_40_to_49_9_pct)+ '% </span>'
-        //     }
-        //     if (zip.la_area_rent_rent_35_to_39_9_cv > 0.60) {
-        //         var from35_39 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_35_to_39_9_pct)+ '% †</span>'
-        //     } else {
-        //         var from35_39 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_35_to_39_9_pct)+ '% </span>'
-        //     }
-        //     if (zip.la_area_rent_rent_30_to_34_9_cv > 0.60) {
-        //         var from30_34 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_30_to_34_9_pct)+ '% †</span>'
-        //     } else {
-        //         var from30_34 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_30_to_34_9_pct)+ '% </span>'
-        //     }
-        //     if (zip.la_area_rent_rent_25_to_29_9_cv > 0.60) {
-        //         var from25_29 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_25_to_29_9_pct)+ '% †</span>'
-        //     } else {
-        //         var from25_29 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_25_to_29_9_pct)+ '% </span>'
-        //     }
-        //     if (zip.la_area_rent_rent_20_to_24_9_cv > 0.60) {
-        //         var from20_24 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_20_to_24_9_pct)+ '% †</span>'
-        //     } else {
-        //         var from20_24 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_20_to_24_9_pct)+ '% </span>'
-        //     }
-        //     if (zip.la_area_rent_rent_15_to_19_9_cv > 0.60) {
-        //         var from15_19 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_15_to_19_9_pct)+ '% †</span>'
-        //     } else {
-        //         var from15_19 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_15_to_19_9_pct)+ '% </span>'
-        //     }
-        //     if (zip.la_area_rent_rent_10_to_14_9_cv > 0.60) {
-        //         var from10_14 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_10_to_14_9_pct)+ '% †</span>'
-        //     } else {
-        //         var from10_14 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_10_to_14_9_pct)+ '% </span>'
-        //     }
-        //     if (zip.la_area_rent_rent_lt_10_cv > 0.60) {
-        //         var lt_10 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_lt_10_pct)+ '% †</span>'
-        //     } else {
-        //         var lt_10 = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_lt_10_pct)+ '% </span>'
-        //     }
-        //     if (zip.la_area_rent_rent_not_computed_cv > 0.60) {
-        //         var not_computed = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_not_computed_pct)+ '% †</span>'
-        //     } else {
-        //         var not_computed = '<span class="count">' +window.percentifyValue(zip.la_area_rent_rent_not_computed_pct)+ '% </span>'
-        //     }
-        //     layer.bindPopup(
-        //         '<div class="data-sentence">'+
-        //         '<div id="zip_'+zip.name+'">Zip code: '+zip.name+
-        //             median_rent_burden+
-        //             '<hr style="width:50%;" />'+
-        //             '<h4><strong>Total households that rent</strong>: <span class="gt-30pct">' +window.addCommas(zip.la_area_rent_rent_total)+'</span></h4>'+
-        //             median_rent+
-        //             median_annual_income+
-        //             '<h4 class="data-charts">Detailed breakdown</h4>'+
-        //         '</div></div>'+
-        //         '<div class="data-display">'+
-        //         '<ul class="chartlist">'+
-        //             '<li>'+
-        //                 '<a href="javascript:void(0)">More than 50% of income</a>'+
-        //                 gt_50+
-        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_gt_50_pct)+ '%">&nbsp;</span>'+
-        //             '</li>'+
-        //             '<li>'+
-        //                 '<a href="javascript:void(0)">40 to 49.9%</a>'+
-        //                 from40_49+
-        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_40_to_49_9_pct)+ '%">&nbsp;</span>'+
-        //             '</li>'+
-        //             '<li>'+
-        //                 '<a href="javascript:void(0)">35 to 39.9%</a>'+
-        //                 from35_39+
-        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_35_to_39_9_pct)+ '%">&nbsp;</span>'+
-        //             '</li>'+
-        //             '<li>'+
-        //                 '<a href="javascript:void(0)">30 to 34.9%</a>'+
-        //                 from30_34+
-        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_30_to_34_9_pct)+ '%">&nbsp;</span>'+
-        //             '</li>'+
-        //             '<li>'+
-        //                 '<a href="javascript:void(0)">25 to 29.9%</a>'+
-        //                 from25_29+
-        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_25_to_29_9_pct)+ '%">&nbsp;</span>'+
-        //             '</li>'+
-        //             '<li>'+
-        //                 '<a href="javascript:void(0)">20 to 24.9%</a>'+
-        //                 from20_24+
-        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_20_to_24_9_pct)+ '%">&nbsp;</span>'+
-        //             '</li>'+
-        //             '<li>'+
-        //                 '<a href="javascript:void(0)">15 to 19.9%</a>'+
-        //                 from15_19+
-        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_15_to_19_9_pct)+ '%">&nbsp;</span>'+
-        //             '</li>'+
-        //             '<li>'+
-        //                 '<a href="javascript:void(0)">10 to 14.9%</a>'+
-        //                 from10_14+
-        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_10_to_14_9_pct)+ '%">&nbsp;</span>'+
-        //             '</li>'+
-        //             '<li>'+
-        //                 '<a href="javascript:void(0)">Less than 10 %</a>'+
-        //                 lt_10+
-        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_lt_10_pct)+ '%">&nbsp;</span>'+
-        //             '</li>'+
-        //             '<li>'+
-        //                 '<a href="javascript:void(0)">Not calculated</a>'+
-        //                 not_computed+
-        //                 '<span class="index" style="width: ' +window.percentifyValue(zip.la_area_rent_rent_not_computed_pct)+ '%">&nbsp;</span>'+
-        //             '</li>'+
-        //         '</ul></div>'
-        //     );
-        // },
 
         resetUserView: function(){
             $("select[id='search-radius']").val(
@@ -648,28 +343,7 @@
 
             this.markerGroup.clearLayers();
             this.view_object.map.setView(this.view_object.center, this.view_object.zoom);
-            // $("#reset").addClass("hidden");
-            // $("#form-controls").addClass("hidden");
-            // $(".searchMe").css("font-weight", "700");
-            // $("img.searchMe").css("opacity", "1.0");
-            // $(".findMe").css("font-weight", "700");
-            // $("img.findMe").css("opacity", "1.0");
-            // if (this.view_object.map.hasLayer(this.userLayer)){
-            //     this.view_object.map.removeLayer(this.userLayer);
-            // };
-            // if (this.view_object.map.hasLayer(this.topoLayer)){
-            //     this.view_object.map.removeLayer(this.topoLayer);
-            // }
-            // $("input[id='addressSearch']").val('');
-            // $("input[id='latitudeSearch']").val('');
-            // $("input[id='longitudeSearch']").val('');
-            // this.view_object.map.setView(this.view_object.center, this.view_object.zoom);
-            // window.app.navigate("", {
-            //     trigger: true,
-            //     replace: true,
-            // });
         },
-        // refactor this function because it is too busy
 
         addUserLayerToMap: function(latitude, longitude, accuracy, searchRadius){
             // $("#main-controls").hide(); ###
