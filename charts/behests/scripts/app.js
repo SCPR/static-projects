@@ -5,6 +5,7 @@
         },
         routes: {
             "": "renderApplicationVisuals",
+            "*notFound": "renderApplicationVisuals"
         },
         renderApplicationVisuals: function(){
             if (this.applicationVisuals){

@@ -56,30 +56,42 @@ Will result in the following URIs, immediately when deployed:
     - /static/graph-project/graphs.css
     - /static/graph-project/
     - /static/graph-project/graph.html
+    
+### Embedding Checklist
+The list below is needed for the embed to work in AMP pages.
+
+1. All URLs in `index.html` have the `https://` protocol
+2. Make sure that the Backbone router has the following route in the routes object:
+`"*notFound": "renderApplicationVisuals"`
+3. When inserting into outpost, make sure the iframe is in the outermost level and not nested into another element, e.g.
+This: `<iframe></iframe>`
+Instead of this: `<p><iframe></iframe></p>`
+4. Specify a width and height, and if responsiveness is needed, apply a percentage width in the style property, e.g.
+`<iframe src="example-url" width="636" height"1300" style="width=100%"></iframe>`
 
 ### Fresh Prince Lyrics
 ```
 Now this is the story all about how
 My life got flipped, turned upside down
-And I'd like to take a minute just sit right there
-I'll tell you how I became the prince of a town called Bel-air
+And I'd like to take a minute, just sit right there
+I'll tell you how I became the prince of a town called Bel-Air
 
-In west Philadelphia born and raised
+In West Philadelphia born and raised
 On the playground where I spent most of my days
-Chilling out, maxing, relaxing all cool
-And all shooting some b-ball outside of the school
+Chillin' out, maxin', relaxin' all cool
+And all shootin' some b-ball outside of the school
 When a couple of guys, they were up to no good
-Started making trouble in my neighbourhood
+Started making trouble in my neighborhood
 I got in one little fight and my mom got scared
-And said "You're moving with your auntie and uncle in Bel-air"
+And said "You're moving with your auntie and uncle in Bel-Air"
 
-I whistled for a cab and when it came near the
-License plate said "fresh" and had a dice in the mirror
+I whistled for a cab and when it came near
+The license plate said "Fresh" and it had dice in the mirror
 If anything I could say that this cab was rare
-But I thought nah, forget it, yo homes to Bel-air!
+But I thought nah, forget it, yo holmes to Bel-Air!
 
 I pulled up to a house about seven or eight
-And I yelled to the cabby "Yo, homes smell you later!"
+And I yelled to the cabbie "Yo, holmes, smell you later!"
 Looked at my kingdom I was finally there
-To sit on my throne as the prince of Bel-air
+To sit on my throne as the Prince of Bel-Air
 ```
