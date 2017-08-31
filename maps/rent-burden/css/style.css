@@ -1,7 +1,7 @@
 /* basic structure */
 .data-container .data-visuals { margin: 0px; }
 
-.data-container .data-visuals #content-map-canvas { float: right; width: 74%; height: 600px; margin: 0px; cursor: pointer; }
+.data-container .data-visuals #content-map-canvas { float: right; width: 100%; height: 600px; margin: 0px; cursor: pointer; }
 
 .data-legend { width: 100%; height: auto; margin: 10px 0 5px 0; }
 
@@ -22,25 +22,36 @@
 .data-container .data-visuals .data-loading { width: 40%; height: 100px; margin: 20px 30% 0 30%; padding: 0px; text-align: center; color: #333333; }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
-    /*.data-container .data-visuals #content-map-canvas { height: 600px; margin: 0 0 10px 0; }*/
+    .data-container .data-visuals #content-map-canvas { float: none; height: 525px; width: 100vw; margin-left: -15px; }
     body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
     body.minimal .data-container h2 { font-size: 240%; }
-    body.minimal .data-container h3 { font-size: 210%; }
+    body.minimal .data-container h3 { font-size: 100%; }
     body.minimal .data-container h4 { font-size: 180%; }
     body.minimal .data-container h5 { font-size: 150%; }
     body.minimal .data-container h6 { font-size: 130%; }
     body.minimal .data-container p { font-size: 110%; }
+    /*body.minimal .data-container { padding-left: 0; padding-right: 0; }*/
+    .data-visuals .data-container .content-map-container { padding: 0; }
+    .data-controls { padding-right:15px; padding-left: 15px; }
+    body.minimal { overflow-x: hidden }
 }
 
 @media (max-width: 480px) {
-    /*.data-container .data-visuals #content-map-canvas { height: 600px; margin: 0 0 10px 0; }*/
+    .data-container .data-visuals #content-map-canvas {  float: none; height: 525px; width: 100vw; margin-left: -15px; }
     body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
     body.minimal .data-container h2 { font-size: 240%; }
-    body.minimal .data-container h3 { font-size: 210%; }
+    body.minimal .data-container h3 { font-size: 100%; }
     body.minimal .data-container h4 { font-size: 180%; }
     body.minimal .data-container h5 { font-size: 150%; }
     body.minimal .data-container h6 { font-size: 130%; }
     body.minimal .data-container p { font-size: 110%; }
+    /*body.minimal .data-container { padding-left: 0; padding-right: 0; }*/
+    .data-visuals .data-container .content-map-container { padding: 0; }
+    #content-map-container { padding: 0; }
+    .data-controls { padding-right:15px; padding-left: 15px; }
+    body.minimal { overflow-x: hidden }
+    .data-sentence h3 { font-size: 20px; line-height: 20px; text-align: center; color: #D15904; margin: 5px 0; }
+    body.minimal .data-container .data-display ul li { font-size: 100%; }
 }
 
 @media (max-width: 491px) {
@@ -51,7 +62,7 @@
 @media (min-width: 481px) {
     body.minimal h1 { font-size: 420%; font-weight: bold; }
     body.minimal h2 { font-size: 380%; }
-    body.minimal h3 { font-size: 340%; }
+    body.minimal h3 { font-size: 100%; }
     body.minimal h4 { font-size: 300%; }
     body.minimal h5 { font-size: 260%; }
     body.minimal h6 { font-size: 220%; }
@@ -62,7 +73,7 @@
     body.minimal .sky-writing { font-size: 500%; color: #EC7C04; }
     body.minimal .jumbotron p { font-size: 70%; font-weight: normal; }
     body.minimal table { font-size: 130%; }
-    body.minimal ul li { font-size: 130%; }
+    body.minimal .data-container .data-display ul li { font-size: 100%; }
     .leaflet-container ul li { font-size: 100%; }
 }
 
@@ -78,7 +89,7 @@
 @media (min-width: 767px) {
     body.minimal h1 { font-size: 460%; font-weight: bold; }
     body.minimal h2 { font-size: 400%; }
-    body.minimal h3 { font-size: 340%; }
+    body.minimal h3 { font-size: 100%; }
     body.minimal h4 { font-size: 280%; }
     body.minimal h5 { font-size: 220%; }
     body.minimal h6 { font-size: 160%; }
@@ -107,7 +118,7 @@
     .data-container .data-visuals .jumbotron .placemark { width: 50px; vertical-align: text-bottom; }
     body.minimal h1 { font-size: 480%; font-weight: bold; }
     body.minimal h2 { font-size: 420%; }
-    body.minimal h3 { font-size: 360%; }
+    body.minimal h3 { font-size: 100%; }
     body.minimal h4 { font-size: 300%; }
     body.minimal h5 { font-size: 240%; }
     body.minimal h6 { font-size: 180%; }
@@ -144,11 +155,11 @@
 #content-map-legend td.lower-tier { border-left: 22px solid #CCEDF8; }
 #content-map-legend td.middle-tier { border-left: 22px solid #31ABD4; }
 #content-map-legend td.higher-tier { border-left: 22px solid #023747; }
-#content-map-methodology { float: right; width: 74%; height: auto; margin: 15px 0 15px 0; font-size: 0.8125em; line-height: 1.2; font-family: Georgia, serif; font-weight: 400; }
+#content-map-methodology { float: right; height: auto; margin: 15px 0 15px 0; font-size: 0.8125em; line-height: 1.2; font-family: Georgia, serif; font-weight: 400; }
 #content-map-methodology p { color:#666;line-height:1.4em; }
 .info { padding: 6px 8px; font: 14px/16px Arial, Helvetica, sans-serif; background: white; background: rgba(255,255,255,0.8); box-shadow: 0 0 15px rgba(0,0,0,0.2); border-radius: 5px; }
 .info h4 { margin: 0 0 5px; color: #777; }
-.legend { line-height: 18px; color: #555; }
+.legend { line-height: 18px; color: #555; /*bottom: 30px; */}
 .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
 
 /* typography */
@@ -157,8 +168,10 @@
 #content-map-explainer h1 { font-size: 30px; line-height: 28px; margin: 0 0 10px 0; }
 .data-container .data-h2 { font-size: 24px; line-height: 24px; margin: 0 0 5px 0; text-align: center; }
 #data-point-sentence h2 { font-size: 24px; line-height: 24px; margin: 0 0 5px 0; color:#000; text-align: center; }
-.data-container h2 { font-size: 24px; line-height: 24px; margin: 0 0 5px 0; color: #D15904; text-align: center; }
+.data-sentence h2 { font-size: 24px; line-height: 24px; margin: 0 0 5px 0; color:#000; text-align: center; }
+.data-container h2 { font-size: 24px; line-height: 24px; margin: 0 0 5px 0; text-align: center; }
 #data-point-sentence h3 { font-size: 20px; line-height: 20px; text-align: center; color: #D15904; margin: 5px 0; }
+body.minimal .data-container .data-sentence h3 { font-size: 20px; line-height: 20px; text-align: center; color: #D15904; margin: 5px 0; }
 #content-map-explainer .leaflet-popup-content h2 { font-size: 24px; line-height: 24px; margin: 0 0 5px 0; color: #D15904; font-size: 1.25em !important; text-align: center; /*margin :10px !important; padding-top: 8px;*/ }
 #content-map-explainer h3 { font-size: 20px; line-height: 20px; margin: 0 0 5px 0; }
 #content-map-explainer h4 { font-size: 16px; line-height: 20px; margin: 0 0 5px 0; }
@@ -175,38 +188,39 @@
 #content-map-container .data-charts { text-align:center; margin: 10px 0 2px 0; }*/
 
 /* popup charts */
-/*#content-map-container .data-display .chartlist { width: 100%; border-top: 1px solid #EEE; margin: 0px; -webkit-padding-start: 0px; }
+.data-display ul { -webkit-padding-start: 0px; }
+#content-map-container .data-display .chartlist { width: 100%; border-top: 1px solid #EEE; margin: 0px; -webkit-padding-start: 0px; }
 #content-map-container .data-display .chartlist li { width: 100%; height: 25px; position: relative; display: block; border-bottom: 1px solid #EEE; _zoom: 1; }
 #content-map-container .data-display .chartlist li a { display: block; padding: 0.4em 4.5em 0.4em 0.5em; position: relative; z-index: 2; text-decoration: none; font-weight: bold; color: #2f2f2f; cursor: default; }
 #content-map-container .data-display .chartlist .count { display: block; position: absolute; top: 0; right: 0; margin: 0 0.3em; text-align: right; color: #d94701; font-weight: bold; font-size: 1em; line-height: 2em; }
 #content-map-container .data-display .chartlist .index { display: block; position: absolute; top: 0; left: 0; height: 100%; background: #fdbe85; text-indent: -9999px; overflow: hidden; line-height: 2em; }
 #content-map-container .data-display .chartlist li:hover { background: #efefef; }
-#content-map-container .data-display .data-charts { text-align:center; margin: 3px 0;}*/
+#content-map-container .data-display .data-charts { text-align:center; margin: 3px 0;}
 
 /* location search */
 #content-map-container .controls form { margin: 0 6.59842519685%;}
-#content-map-container .controls .geography-browser {padding: 0 5% 0 5%; width: 100%; border-bottom: 1px solid rgba(0, 0, 0, 0.15); }
+#content-map-container .controls .geography-browser {padding: 0 5% 0 5%; width: 100%; }
 #content-map-container .controls .control { margin-bottom: 8px }
 #content-map-container .controls .control label,
-#content-map-container .controls .control input { font-weight: 700; color: #000; font-size: 0.75em; font-family: "proxima-nova",  "Avenir Next",  "Avenir",  "Lucida Grande",  "Corbel",  "Tahoma",  Arial,  sans-serif; }
+#content-map-container .controls .control input { font-weight: 700; color: #000; font-family: "proxima-nova",  "Avenir Next",  "Avenir",  "Lucida Grande",  "Corbel",  "Tahoma",  Arial,  sans-serif; }
 #content-map-container .controls .control input { color: #000 }
 #content-map-container .controls .control input[type="checkbox"] { border: 1px solid blue; -webkit-appearance: checkbox; }
 #content-map-container .controls .control p { margin-bottom: 8px }
 #content-map-container .controls .control p label,
 #content-map-container .controls .control p input { display: inline-block }
-#content-map-container .controls .control.stacked { padding-top: 8px }
+/*#content-map-container .controls .control.stacked { padding-top: 8px }*/
 #content-map-container .controls .control.stacked p input { border: none; background: none; padding: 0; width: 5em; }
 #content-map-container .controls .control.stacked label { font-size: 0.6875em; text-transform: uppercase; color: #7e7e7e; }
 #content-map-container .controls .control.toggle { background: #ecd2a2; padding: 1px 0% 4px 0%; margin-right: -10%; width: 100%; position: relative; }
 #content-map-container .controls #data-toggles {margin: 15px 0 15px 0;}
 #content-map-container .controls .toggle label { font-size: 0.6875em; text-transform: uppercase; color: #7e7e7e; line-height: 1em; display: block; margin: 5px 0 3px 19px; text-indent: 25px;}
 #content-map-container .controls .toggle input { position: absolute; top: 6px; left: 5%; text-indent: 15px;}
-#content-map-container .controls .control.location { padding-top: 15px }
-#content-map-container .controls .control.location .pairing.text { margin-bottom: 8px }
+/*#content-map-container .controls .control.location { padding-top: 15px }*/
+#content-map-container .controls .control.location .pairing.text { margin: 8px 0; width: 60%; float: left; }
 #content-map-container .controls .control.location .pairing.text label { display: block; margin-bottom: 5px; }
-#content-map-container .controls .control.location input[type="text"] { display: block; border: 1px solid gray; box-sizing: border-box; -moz-box-sizing: border-box; padding: 3px; width: 100%; font-weight: normal; }
+#content-map-container .controls .control.location input[type="text"] { display: block; border: 1px solid gray; box-sizing: border-box; -moz-box-sizing: border-box; padding: 4px; width: 100%; font-weight: normal; }
 #content-map-container .control.submit,
-#content-map-container .control.reset { padding: 8px 0 8px 0; margin: 10px 0 0 0; }
+#content-map-container .control.reset { padding: 7px 0; margin-left: 25px; float:left; width:35%; }
 #content-map-container .control.submit button,
 #content-map-container .control.reset button { display: block; padding: 6px 9px; cursor: pointer; width: 100%; text-align: center; border: none; background: #D15904; color: white; /*font-family: "proxima-nova",  "Avenir Next",  "Avenir",  "Lucida Grande",  "Corbel",  "Tahoma",  Arial,  sans-serif;; font-weight: 700; */ font-size: 0.9375em; text-transform: uppercase; }
 #content-map-container .control.submit button:hover,
@@ -270,7 +284,7 @@
     #content-map-container { height: auto; }
     #content-map-explainer { float: none; height: auto; min-height: 920px; width: 100%; }
     .data-container .data-visuals #content-map-canvas { float: none; height: 600px; width: 100%; }
-    #content-map-legend { float: none; width:100%; }
+    #content-map-legend { float: none; width:85%; }
     #content-map-methodology { float: none; width: 100%; }
     #content-map-container .data-h2 { font-size: 16px; line-height: 16px; margin: 0 0 5px 0; text-align: center; }
     #content-map-container h4 { font-size: 14px; line-height: 18px; margin: 0 0 5px 0; }
@@ -279,14 +293,17 @@
     #content-map-methodology p { font-size: 13px; line-height: 17px; margin: 0 0 5px 0; }
     #content-map-container .chartlist .count, #content-map-data .chartlist li a { font-size: 0.7em; line-height: 2em; }
     #content-map-container .controls .toggle label { font-size: 0.65em;}
+    #content-map-container .control.submit { margin-left: 10px; }
+    #content-map-container .controls form { margin: 0; }
+    #content-map-container .controls .geography-browser { padding: 0; }
 }
 
 @media screen and (max-width:679px) {
     .row-pt1-d.map-row { padding :0 10px; }
     #content-map-container { height: auto; }
     #content-map-explainer { float: none; height: auto; min-height: 1040px; width: 100%; }
-    .data-container .data-visuals #content-map-canvas { float: none; height: 600px; width: 100%; }
-    #content-map-legend { float: none; width:100%; }
+    .data-container .data-visuals #content-map-canvas { float: none; height: 525px; width: 100vw; margin-left: -15px; }
+    #content-map-legend { float: none; width:85%; margin: auto; }
     #content-map-methodology { float: none; width: 100%; }
     #content-map-container .data-h2 { font-size: 14px; line-height: 18px; margin: 0 0 5px 0; text-align: center; }
     #content-map-container h4 { font-size: 12px; line-height: 16px; margin: 0 0 5px 0; }
@@ -295,12 +312,17 @@
     #content-map-methodology p { font-size: 12px; line-height: 16px; margin: 0 0 5px 0; }
     #content-map-container .chartlist .count, #content-map-data .chartlist li a { font-size: 0.7em; line-height: 2em; }
     #content-map-container .controls .toggle label { font-size: 0.65em;}
+    .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 { padding-right: 0px; padding-left: 0px; }
+    .data-controls { padding-right:15px; padding-left: 15px; }
+    #content-map-container .control.submit { margin-left: 10px; }
+    #content-map-container .controls form { margin: 0; }
+    #content-map-container .controls .geography-browser { padding: 0; }
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
     #content-map-container { height: auto; }
     #content-map-explainer { float: none; height: 1120px; width: 94%; margin: 0 3% 0 3%; }
-    .data-container .data-visuals #content-map-canvas { float: none; height: 600px; width: 94%; margin: 0 3% 0 3%; }
+    .data-container .data-visuals #content-map-canvas { float: none; height: 525px; width: 100vw; }
     #content-map-data { font-size: 0.7em; line-height: 2em; }
     #content-map-container .data-h2 { font-size: 14px; line-height: 18px; margin: 0 0 5px 0; text-align: center; }
     #content-map-container h4 { font-size: 12px; line-height: 16px; margin: 0 0 5px 0; }
@@ -309,6 +331,12 @@
     #content-map-methodology p { font-size: 12px; line-height: 16px; margin: 0 0 5px 0; }
     #content-map-container .chartlist .count, #content-map-data .chartlist li a { font-size: 0.7em; line-height: 2em; }
     #content-map-container .controls .toggle label { font-size: 0.65em;}
+    .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 { padding-right: 0px; padding-left: 0px; }
+    .data-controls { padding-right:15px; padding-left: 15px; }
+    #content-map-container { padding: 0; }
+    #content-map-container .control.submit { margin-left: 10px; }
+    #content-map-container .controls form { margin: 0; }
+    #content-map-container .controls .geography-browser { padding: 0; }
 }
 
 @-moz-keyframes leaflet-usermarker-pulsate {
