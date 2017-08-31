@@ -3,24 +3,6 @@
             $.fn.jAlert.defaults.backgroundColor = "white";
             window.config = {};
 
-            window.config.prelim_counties = [
-                "Humboldt County",
-                "Placer County",
-                "San Francisco County"
-            ];
-
-            L.TopoJSON = L.GeoJSON.extend({
-                addData: function(jsonData){
-                    if (jsonData.type === "Topology"){
-                        for (key in jsonData.objects){
-                            geojson = topojson.feature(jsonData, jsonData.objects[key]);
-                            L.GeoJSON.prototype.addData.call(this, geojson);
-                        }
-                    } else {
-                        L.GeoJSON.prototype.addData.call(this, jsonData);
-                    }
-                }
-            });
             this.applicationWrapper = new App.Views.ApplicationWrapper();
             return this.applicationWrapper;
         },
@@ -56,6 +38,7 @@
         initialize: function(object){
             this.view_object = object;
             this.markerGroup = new L.layerGroup();
+            this.layerGroup = new L.layerGroup();
             window.featcherSentence = _.template(
                 "<div id='zip_<%= name %>'>"+
                     "<h2 class='data-h2'>ZCTA <%= name %></h2>"+
@@ -200,17 +183,30 @@
                 this.view_object.zoom = 9;
             };
             this.view_object.center = new L.LatLng(34.000304, -118.238039);
-            this.view_object.geojsonOne = L.geoJson(zipCodeRentOne, {
+            this.view_object.geojson = L.geoJson(zipCodeRent, {
                 filter: this.filterFeatures,
                 style: this.styleFeatures,
                 onEachFeature: this.onEachFeature
             });
-            this.view_object.geojsonTwo = L.geoJson(zipCodeRentTwo, {
-                filter: this.filterFeatures,
-                style: this.styleFeatures,
-                onEachFeature: this.onEachFeature
+            this.view_object.legend = L.control({
+                position: 'topright'
             });
-            this.view_object.geoJsonLayers = [this.view_object.geojsonOne, this.view_object.geojsonTwo];
+            getColor = function(d) {
+                return d == "Less than 30%" ? "#CCEDF8" :
+                       d == "30% to 39%"    ? "#31ABD4" :
+                                              "#023747";
+            };
+            this.view_object.legend.onAdd = function (map) {
+                var div = L.DomUtil.create('div', 'info legend'),
+                    labels = ["Less than 30%", "30% to 39%", "40% or more"];
+                div.innerHTML += '<strong>Income spent on rent:</strong><br>'
+                for (var i = 0; i < labels.length; i++) {
+                    div.innerHTML +=
+                        '<i style="background:' + getColor(labels[i]) + '"></i> ' +
+                        labels[i] + (labels[i + 1] ? '<br>' : '');
+                }
+                return div;
+            };
             this.render(this.view_object);
         },
 
@@ -218,23 +214,26 @@
             "click a.findMe": "findMe",
             "keyup :input": "addressSearch",
             "click button#submit": "navigate",
-            "click button#reset": "resetUserView",
-            "change #search-radius": "navigate",
+            // "click button#reset": "resetUserView",
+            // "change #search-radius": "navigate",
             // "click [type='checkbox']": "getCheckboxIds",
         },
 
         render: function(){
             $(this.el).html(this.template);
             this.view_object.map = L.map("content-map-canvas", {
-                scrollWheelZoom: false,
-                // zoomControl: true,
+                scrollWheelZoom: true,
+                zoomControl: false,
                 minZoom: 6,
                 maxZoom: 15
             });
+            L.control.zoom({
+                position:'bottomleft'
+                }).addTo(this.view_object.map);
             this.view_object.map.setView(this.view_object.center, this.view_object.zoom);
             this.view_object.map.addLayer(this.view_object.stamenTerrain);
-            this.view_object.geojsonOne.addTo(this.view_object.map);
-            this.view_object.geojsonTwo.addTo(this.view_object.map);
+            this.view_object.geojson.addTo(this.view_object.map);
+            this.view_object.legend.addTo(this.view_object.map);
         },
 
         findMe: function(){
@@ -269,14 +268,10 @@
             var latitude = $("input[id='latitudeSearch']").val();
             var longitude = $("input[id='longitudeSearch']").val();
             var accuracy = $("input[id='accuracySearch']").val();
-            var searchRadius = $("select[id='search-radius']").val();
+            var searchRadius = 400; // $("select[id='search-radius']").val();
             if (latitude === '' && longitude === ''){
                 alert('Please enter an address or search by location')
             } else {
-                if (this.view_object.map.hasLayer(this.userLayer)){
-                    this.view_object.map.removeLayer(this.userLayer);
-                }
-                this.markerGroup.clearLayers();
                 this.addUserLayerToMap(latitude, longitude, accuracy, searchRadius);
             }
         },
@@ -309,14 +304,19 @@
         },
 
         onEachFeature: function(feature, layer) {
-            layer.on('click', function (e) {
-                $("div.reset").show();
-                $("#data-point-sentence").html(window.featcherSentence(feature.properties));
-                $("#data-point-display").html(window.featcherGraphs(feature.properties));
-                $("#data-point-caveat").html(
-                    "<p class='content-map-methodology gt-30pct'>† - Reliability of estimate may be low, based on margin of error</p>"
+            var popup = L.popup()
+                .setContent('<div class="data-sentence">' +
+                    window.featcherSentence(feature.properties) +
+                    '</div>' +
+                    '<div class="data-display">' +
+                    window.featcherGraphs(feature.properties) +
+                    '</div>'
                 );
-                $("#pin-query-response").empty();
+            layer.bindPopup(popup);
+            layer.on('click', function (e) {
+                var bounds = layer.getBounds();
+                var latLng = bounds.getCenter();
+                layer.openPopup(latLng);
             });
         },
 
@@ -329,8 +329,6 @@
             $("input[id='latitudeSearch']").val('');
             $("input[id='longitudeSearch']").val('');
             $("input[id='accuracySearch']").val('');
-            // $("#main-controls").show(); ###
-            $("div.reset").hide();
             $("#data-point-sentence").empty();
             $("#data-point-display").empty();
             $("#data-point-caveat").empty();
@@ -346,209 +344,25 @@
         },
 
         addUserLayerToMap: function(latitude, longitude, accuracy, searchRadius){
-            // $("#main-controls").hide(); ###
-            $("div.reset").show();
-            this.userLocationCenter = new L.LatLng(latitude, longitude);
-            this.userLocationMarker = L.userMarker([latitude, longitude], {
-                pulsing: true,
-                smallIcon: true,
-                accuracy: accuracy
-            });
-            this.userRadius = L.circle([latitude, longitude], searchRadius, {
-                clickable: false,
-                opacity: 0.3,
-                weight: 1,
-                color: '#000000',
-                fillColor: '#ffffff',
-                fillOpacity: 0.3
-            });
-            this.userLayer = new L.layerGroup();
-            this.userLayer.addLayer(this.userLocationMarker).addLayer(this.userRadius);
-            this.userLayer.addTo(this.view_object.map);
-            // this.map.fitBounds(this.userRadius.getBounds());
-            this.view_object.map.setView(this.userLocationMarker.getLatLng(),13)
             this.findFeatureForLatLng(latitude, longitude);
-            // this.userLocationCenter = new L.LatLng(latitude, longitude);
-            // this.userLocationMarker = L.userMarker([latitude, longitude], {
-            //     pulsing: true,
-            //     smallIcon: true
-            // });
-            // this.userRadius = L.circle([latitude, longitude], 20, {
-            //     clickable: false,
-            //     opacity: 0.3,
-            //     weight: 1,
-            //     color: '#ec792b',
-            //     fillColor: '#ec792b',
-            //     fillOpacity: 0.3
-            // });
-            // this.userLayer = new L.layerGroup();
-            // this.userLayer.addLayer(this.userLocationMarker);
-            // this.userLayer.addTo(this.view_object.map);
-            // this.view_object.map.fitBounds(this.userRadius.getBounds());
         },
-
-        // raiseFloodZoneAlert: function(latitude, longitude){
-        //     this.view_object.layer = this.findFeatureForLatLng(parseFloat(latitude), parseFloat(longitude));
-        //     var prelim_county = _.contains(window.config.prelim_counties, this.view_object.layer.county_name);
-        //     if (this.view_object.layer === false){
-        //         $.jAlert({
-        //             "replaceOtherAlerts": true,
-        //             "closeOnClick": true,
-        //             "theme": "yellow",
-        //             "title": "<strong>Sorry</strong>",
-        //             "content": "We're only equipped to find flood zones in California."
-        //           });
-        //         $("button#reset").trigger("click");
-        //     } else {
-        //         var _100_null = _.isNull(this.view_object.layer._100_zones._flood_zones);
-        //         var _100_undefined = _.isUndefined(this.view_object.layer._100_zones._flood_zones);
-        //         var _100_value = _.isObject(this.view_object.layer._100_zones._flood_zones)
-        //         var _500_null = _.isNull(this.view_object.layer._500_zones._flood_zones);
-        //         var _500_undefined = _.isUndefined(this.view_object.layer._500_zones._flood_zones);
-        //         var _500_value = _.isObject(this.view_object.layer._500_zones._flood_zones)
-        //         $("#reset").removeClass("hidden");
-        //         if (_100_null === true && _500_null === true){
-        //             var _no_zone_alert_content;
-        //             if (prelim_county === true){
-        //                 _no_zone_alert_content = "But that doesn't mean that your area can't flood, and flood maps in this area are still preliminary. FEMA estimates that a third of Federal Disaster Assistance goes to people outside of high-risk flood zones. <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>Here's how FEMA recommends you stay safe in a flood</a>. Check with FEMA for an official determination.";
-        //             } else {
-        //                 _no_zone_alert_content = "But that doesn't mean that your area can't flood. FEMA estimates that a third of Federal Disaster Assistance goes to people outside of high-risk flood zones. <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>Here's how FEMA recommends you stay safe in a flood</a>. Check with FEMA for an official determination.";
-        //             };
-        //             $.jAlert({
-        //                 "replaceOtherAlerts": true,
-        //                 "closeOnClick": true,
-        //                 "theme": "black",
-        //                 "title": "<strong>You're not in a flood zone</strong>",
-        //                 "content": _no_zone_alert_content
-        //             });
-        //             }
-        //          else if (_100_undefined === true && _500_undefined === true){
-        //             $.jAlert({
-        //                 "replaceOtherAlerts": true,
-        //                 "closeOnClick": true,
-        //                 "theme": "yellow",
-        //                 "title": "<strong>Sorry</strong>",
-        //                 "content": "We were unable to complete your search."
-        //               });
-        //         } else {
-        //             if (_100_value === true && _500_value === true){
-        //                 $.jAlert({
-        //                     "replaceOtherAlerts": true,
-        //                     "closeOnClick": true,
-        //                     "theme": "black",
-        //                     "title": "<strong>You're in a 100-year and 500-year flood zone</strong>",
-        //                     "content": "Flood insurance is typically required for homeowners in a 100-year flood zone, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>. Check with FEMA for an official determination."
-        //                   });
-        //                 this.view_object.layer._100_zones._flood_zones.name = "_100_zone"
-        //                 this.set_topo_layer(this.view_object.layer._100_zones._flood_zones);
-        //                 this.view_object.layer._500_zones._flood_zones.name = "_500_zone"
-        //                 this.set_topo_layer(this.view_object.layer._500_zones._flood_zones);
-        //             } else if (_100_value === true && _500_value === false){
-        //                 var _100_alert_content;
-        //                 if (prelim_county === true){
-        //                     _100_alert_content = "Flood insurance is typically required for homeowners in these areas, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). However, in this county, digital flood maps are preliminary and could change. Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>. Check with FEMA for an official determination.";
-        //                 } else {
-        //                     _100_alert_content = "Flood insurance is typically required for homeowners in these areas, which have a one percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>. Check with FEMA for an official determination.";
-        //                 };
-        //                 $.jAlert({
-        //                     "replaceOtherAlerts": true,
-        //                     "closeOnClick": true,
-        //                     "theme": "black",
-        //                     "title": "<strong>You're in a 100-year flood zone</strong>",
-        //                     "content": _100_alert_content
-        //                 });
-        //                 this.view_object.layer._100_zones._flood_zones.name = "_100_zone"
-        //                 this.set_topo_layer(this.view_object.layer._100_zones._flood_zones);
-        //             } else if (_100_value === false && _500_value === true){
-        //                 var _500_alert_content;
-        //                 if (prelim_county === true){
-        //                     _500_alert_content = "Flood insurance isn't required for in these areas, which have a 0.2 percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). That may seem low, but the risks are real. Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>. Note that, in this county, digital flood maps are preliminary and could change. Check with FEMA for an official determination.";
-        //                 } else {
-        //                     _500_alert_content = "Flood insurance isn't required for in these areas, which have a 0.2 percent annual chance of flooding (<a href='http://pubs.usgs.gov/gip/106/pdf/100-year-flood-handout-042610.pdf'>here's what that means</a>). That may seem low, but the risks are real. Here are FEMA's <a target='blank' href='http://www.fema.gov/media-library-data/1410529949526-528efb43b7b4e62726c47de7abf40bf0/FloodPreparationSafetyBrochure_F684_062014.pdf'>tips for preparing and making your emergency plan</a>. Check with FEMA for an official determination.";
-        //                 };
-        //                 $.jAlert({
-        //                     "replaceOtherAlerts": true,
-        //                     "closeOnClick": true,
-        //                     "theme": "black",
-        //                     "title": "<strong>You're in a 500-year flood zone</strong>",
-        //                     "content": _500_alert_content
-        //                 });
-        //                 this.view_object.layer._500_zones._flood_zones.name = "_500_zone"
-        //                 this.set_topo_layer(this.view_object.layer._500_zones._flood_zones);
-        //             } else {
-        //                 $.jAlert({
-        //                     "replaceOtherAlerts": true,
-        //                     "closeOnClick": true,
-        //                     "theme": "yellow",
-        //                     "title": "<strong>Sorry</strong>",
-        //                     "content": "We were unable to complete your search."
-        //                   });
-        //             };
-        //         };
-        //     };
-        // },
 
         findFeatureForLatLng: function(latitude, longitude){
             var value;
-            for (var i=0; i<this.view_object.geoJsonLayers.length; i++){
-                if (leafletPip.pointInLayer([longitude, latitude], this.view_object.geoJsonLayers[i]).length != 0){
-                    value = leafletPip.pointInLayer([longitude, latitude], this.view_object.geoJsonLayers[i]);
-                }
+            if (leafletPip.pointInLayer([longitude, latitude], this.view_object.geojson).length != 0){
+                value = leafletPip.pointInLayer([longitude, latitude], this.view_object.geojson);
             }
             if (value != undefined){
-                $("#data-point-sentence").html(window.featcherSentence(value[0].feature.properties));
-                $("#data-point-display").html(window.featcherGraphs(value[0].feature.properties));
-                $("#data-point-caveat").html(
-                    "<p class='content-map-methodology gt-30pct'>† - Reliability of estimate may be low, based on margin of error</p>"
-                );
+                var layer = this.view_object.geojson.getLayer(value[0]._leaflet_id);
+                var bounds = layer.getBounds();
+                var latLng = bounds.getCenter();
+                this.view_object.map.setView(latLng, 11, {
+                    animate: true
+                });
+                layer.openPopup(latLng);
             } else {
-                $("#data-point-sentence").html(
-                    "<h2>We couldn't find data for this ZCTA</h2>");
+                alert("We couldn't find data for this zip code tabulation area");
             }
-            // if (value != undefined){
-            //     $("#data-point-sentence").html(window.featcherSentence(value[0].feature.properties));
-            //     $("#data-point-display").html(window.featcherGraphs(value[0].feature.properties));
-            //     $("#data-point-caveat").html(
-            //         "<p class='content-map-methodology gt-30pct'>† - Margin of error is too large to make this a reliable estimate.</p>"
-            //     );
-            // } else {
-            //     $("#data-point-sentence").html(
-            //         "<h2>We couldn't find data for this ZCTA</h2>");
-            // }
-
         },
 
-
-        // onMapClick: function(e){
-        //     console.log(e.latlng.lat, e.latlng.lng);
-        //     var popup = L.popup();
-        //     popup
-        //         .setLatLng(e.latlng)
-        //         .setContent("</div>You clicked the map at " + e.latlng.toString())
-        //         .openOn(this.view_object.map);
-        //     $("#theform").show();
-        //     $("input[id='pin-q-15f9abb472d4']").val(e.latlng.lat);
-        //     $("input[id='pin-q-7defd64f7f1f']").val(e.latlng.lng);
-        //     $("#form-name").focus();
-        // },
-
-        // set_topo_layer: function(geo_data){
-        //     this.topoLayer = new L.TopoJSON();
-        //     this.topoLayer.addData(geo_data);
-        //     if (geo_data.name === "_100_zone"){
-        //         var thisFillColor = "#f07a30";
-        //     } else if (geo_data.name === "_500_zone"){
-        //         var thisFillColor = "#30a6f0";
-        //     };
-        //     this.topoLayer.eachLayer(function (layer){
-        //         layer.setStyle({
-        //             fillColor: thisFillColor,
-        //             fillOpacity: .85,
-        //             color: '#000000',
-        //             weight: .85,
-        //             opacity: .85
-        //         });
-        //     });
-        //     this.topoLayer.addTo(this.view_object.map);
-        // }
     });
