@@ -1,4 +1,4 @@
-###Making a GIF from the US Forest Service's smoke projections
+# Making a GIF from the US Forest Service's smoke projections
 The United States Forest Service projects the future path of smoke – which can be important information during fire season. The agency's model, known as the BlueSky Modeling Framework, incorporates information about fires, fuel loadings, consumption, emissions, plume height and smoke trajectory.
 
 While only projections ([read more about the project here](http://viewer.smoke.airfire.org/run/standard/CANSAC-2km/2016062400/)), the 'runs' are a neat visual tool and are regularly updated.
@@ -7,7 +7,7 @@ During the June, 2016 San Gabriel Complex Fire, [we created a GIF of the project
 
 Creating one of these is pretty simple to do on a Mac. 
 
-###10 steps
+# 10 steps
 1. First, go to the BlueSky page at this URL: [http://viewer.smoke.airfire.org/websky/v1/](http://viewer.smoke.airfire.org/websky/v1/)
 
 2. Choose the CA/NV 'domain' and the latest run. 
