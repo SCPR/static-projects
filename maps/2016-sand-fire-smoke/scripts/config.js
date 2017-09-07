@@ -4,7 +4,7 @@ window.appConfig = {
     open_about_this: true,
     comments: false,
     is_mobile: null,
-    project_root: "http://projects.scpr.org/maps/2016-sand-fire-smoke/",
+    project_root: "https://projects.scpr.org/maps/2016-sand-fire-smoke/",
     embed_this: true,
     is_embedded: null,
     embed_width: "100%",

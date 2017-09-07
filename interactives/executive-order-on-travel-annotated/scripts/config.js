@@ -4,7 +4,7 @@ window.appConfig = {
     open_about_this: true,
     comments: false,
     is_mobile: null,
-    project_root: "http://projects.scpr.org/interactives/executive-order-on-travel-annotated/",
+    project_root: "https://projects.scpr.org/interactives/executive-order-on-travel-annotated/",
     embed_this: false,
     is_embedded: null,
     embed_width: "100%",

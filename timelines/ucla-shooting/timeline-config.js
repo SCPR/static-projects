@@ -22,7 +22,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/ucla-shooting/",
+    projectDirectory: "https://projects.scpr.org/timelines/ucla-shooting/",
 
     // newest or oldest
     defaultDirection: "newest",

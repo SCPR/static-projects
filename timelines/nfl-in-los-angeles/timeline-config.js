@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/nfl-in-los-angeles/",
+    projectDirectory: "https://projects.scpr.org/timelines/nfl-in-los-angeles/",
 
     // newest or oldest
     defaultDirection: "newest",

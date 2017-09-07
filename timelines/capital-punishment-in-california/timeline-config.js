@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/capital-punishment-in-california",
+    projectDirectory: "https://projects.scpr.org/timelines/capital-punishment-in-california",
 
     // newest or oldest
     defaultDirection: "newest",

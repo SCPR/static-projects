@@ -188,7 +188,7 @@ function toggleDisplays(){
 };
 
 function renderEmbedBox(){
-    jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page. You may need to adjust the height parameter. <br /><br /> &lt;iframe src=\"http://projects.scpr.org/interactives/cheer-on-womens-world-cup-teams\" width=\"100%\" height=\"1055px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
+    jAlert('<h4>Embed this on your site or blog</h4>' + '<span>Copy this code and paste to source of your page. You may need to adjust the height parameter. <br /><br /> &lt;iframe src=\"https://projects.scpr.org/interactives/cheer-on-womens-world-cup-teams\" width=\"100%\" height=\"1055px\" style=\"margin: 0 auto;\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
 };
 
 function resetApplication(){

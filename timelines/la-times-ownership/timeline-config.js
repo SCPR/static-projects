@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/la-times-ownership/",
+    projectDirectory: "https://projects.scpr.org/timelines/la-times-ownership/",
 
     // newest or oldest
     defaultDirection: "newest",

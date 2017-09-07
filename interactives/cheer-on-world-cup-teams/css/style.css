@@ -1,6 +1,6 @@
 /* header */
 body.minimal header { background: #ffffff; width: 100%; height: 70px; margin: 0 0 5px 0; }
-body.minimal header h3#site-title a { background-image: url('http://projects.scpr.org/static-files/images/main/logo-masthead.png'); width: 181px; height: 42px; display: block; text-indent: -9999px; margin-top: 15px; }
+body.minimal header h3#site-title a { background-image: url('https://projects.scpr.org/static-files/images/main/logo-masthead.png'); width: 181px; height: 42px; display: block; text-indent: -9999px; margin-top: 15px; }
 body.minimal .header-links {margin: 14px 0 10px 0; height: 60px;}
 body.minimal .header-links li {border-right: 1px solid #e9e9e9; display: block; float: left; list-style: none; padding: 8px 10px;}
 body.minimal .header-links li:last-child {border: 0; padding-right: 0;}
@@ -8,9 +8,9 @@ body.minimal .header-links a {color: #454545; padding: 0 0 0 0;}
 body.minimal .header-links b {display: block; font-size: 12px;}
 body.minimal .header-links a.icon {display: block; text-indent: -9999px;}
 body.minimal .header-links a.icon:hover {opacity: 0.7;}
-body.minimal .header-links a.facebook {background:url('http://projects.scpr.org/static-files/images/template-icons/ico-facebook.png') no-repeat 0 0; display: block; margin: 0 10px 1px 0; width: 22px; height: 24px;}
-body.minimal .header-links a.twitter {background:url('http://projects.scpr.org/static-files/images/template-icons/ico-twitter.png') no-repeat 0 0; display: block; width: 31px; height: 25px;}
-body.minimal .header-links a.embed-this {background:url('http://projects.scpr.org/static-files/images/template-icons/ico-embed.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 25px;}
+body.minimal .header-links a.facebook {background:url('https://projects.scpr.org/static-files/images/template-icons/ico-facebook.png') no-repeat 0 0; display: block; margin: 0 10px 1px 0; width: 22px; height: 24px;}
+body.minimal .header-links a.twitter {background:url('https://projects.scpr.org/static-files/images/template-icons/ico-twitter.png') no-repeat 0 0; display: block; width: 31px; height: 25px;}
+body.minimal .header-links a.embed-this {background:url('https://projects.scpr.org/static-files/images/template-icons/ico-embed.png') no-repeat 0 0; margin: 0 auto; width: 31px; height: 25px;}
 
 /* content structure */
 #project-container { width: 100%; max-width: 538px; height: 1100px; background: #3d3d3d; margin: 0 auto 0 auto; }

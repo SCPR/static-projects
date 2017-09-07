@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/kelly-thomas/",
+    projectDirectory: "https://projects.scpr.org/timelines/kelly-thomas/",
 
     // newest or oldest
     defaultDirection: "newest",

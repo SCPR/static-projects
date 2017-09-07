@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: 'http://projects.scpr.org/timelines/moments-in-giants-dodgers-rivalry/',
+    projectDirectory: 'https://projects.scpr.org/timelines/moments-in-giants-dodgers-rivalry/',
 
     // newest or oldest
     defaultDirection: 'oldest',

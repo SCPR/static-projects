@@ -266,7 +266,7 @@ function drawHighchart(){
 
 // embed function
 function embedBox() {
-    var embed_url = 'http://projects.scpr.org/maps/flu-clinics/iframe.html';
+    var embed_url = 'https://projects.scpr.org/maps/flu-clinics/iframe.html';
 
     jAlert('<strong>To embed this visualization your blog or site, just copy this code:<br></strong>&lt;iframe src=\"'+ embed_url +'\" width=\"540px\" height=\"600px\" style=\"margin: 0 auto;\" scrolling=\"no\" frameborder=\"no\"&gt;&lt;/iframe>', 'Share or Embed');
 }

@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/rent-stablization-in-southern-california/",
+    projectDirectory: "https://projects.scpr.org/timelines/rent-stablization-in-southern-california/",
 
     // newest or oldest
     defaultDirection: "oldest",

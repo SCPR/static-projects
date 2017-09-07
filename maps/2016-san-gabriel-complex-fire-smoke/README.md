@@ -3,7 +3,7 @@ The United States Forest Service projects the future path of smoke – which can
 
 While only projections ([read more about the project here](http://viewer.smoke.airfire.org/run/standard/CANSAC-2km/2016062400/)), the 'runs' are a neat visual tool and are regularly updated.
 
-During the June, 2016 San Gabriel Complex Fire, [we created a GIF of the projections](http://projects.scpr.org/maps/2016-san-gabriel-complex-fire-smoke/), to show the path of the smoke.
+During the June, 2016 San Gabriel Complex Fire, [we created a GIF of the projections](https://projects.scpr.org/maps/2016-san-gabriel-complex-fire-smoke/), to show the path of the smoke.
 
 Creating one of these is pretty simple to do on a Mac. 
 

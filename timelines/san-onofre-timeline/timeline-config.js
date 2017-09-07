@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/san-onofre-timeline/",
+    projectDirectory: "https://projects.scpr.org/timelines/san-onofre-timeline/",
 
     // newest or oldest
     defaultDirection: "newest",

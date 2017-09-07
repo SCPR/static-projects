@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/sequestration-cuts/",
+    projectDirectory: "https://projects.scpr.org/timelines/sequestration-cuts/",
 
     // newest or oldest
     defaultDirection: "oldest",

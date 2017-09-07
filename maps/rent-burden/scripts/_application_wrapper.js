@@ -29,8 +29,8 @@
             // sets template path
             if (window.location.href.indexOf("https://projects.scpr.org/") > -1) {
                 window.wrapperTemplatePath = "https://projects.scpr.org/static-files/v3-dependencies/templates/"
-            } else if (window.location.href.indexOf("http://projects.scpr.org/") > -1) {
-                window.wrapperTemplatePath = "http://projects.scpr.org/static-files/v3-dependencies/templates/"
+            } else if (window.location.href.indexOf("https://projects.scpr.org/") > -1) {
+                window.wrapperTemplatePath = "https://projects.scpr.org/static-files/v3-dependencies/templates/"
             }
             else {
                 window.wrapperTemplatePath = "/static-projects/static-files/v3-dependencies/templates/"

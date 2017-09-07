@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/inaugurations-to-remember/",
+    projectDirectory: "https://projects.scpr.org/timelines/inaugurations-to-remember/",
 
     // newest or oldest
     defaultDirection: "newest",

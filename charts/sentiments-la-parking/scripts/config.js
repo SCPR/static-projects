@@ -4,7 +4,7 @@ window.appConfig = {
     open_about_this: true,
     comments: false,
     is_mobile: null,
-    project_root: "http://projects.scpr.org/charts/sentiments-la-parking/",
+    project_root: "https://projects.scpr.org/charts/sentiments-la-parking/",
     embed_this: false,
     is_embedded: null,
     embed_width: "100%",
