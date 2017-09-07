@@ -34,7 +34,7 @@
                 window.wrapperTemplatePath = "https://projects.scpr.org/static-files/v3-dependencies/templates/"
             }
             else {
-                window.wrapperTemplatePath = "/2kpcc/static-projects/static-files/v3-dependencies/templates/"
+                window.wrapperTemplatePath = "/static-files/v3-dependencies/templates/"
             };
 
             // sets window size
