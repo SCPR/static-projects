@@ -3,7 +3,7 @@ The United States Forest Service projects the future path of smoke – which can
 
 It's like a weather forecast ... for smoke.
 
-While only projections ([read more about the project here](http://viewer.smoke.airfire.org/run/standard/CANSAC-2km/2016062400/)), the 'runs' are a neat visual tool and are regularly updated.
+While only projections ([read more about the project here](https://www.airfire.org/bluesky/)), the 'runs' are a neat visual tool and are regularly updated.
 
 During the June, 2016 San Gabriel Complex Fire, [we created a GIF of the projections](https://projects.scpr.org/maps/2016-san-gabriel-complex-fire-smoke/), to show the path of the smoke.
 
@@ -26,6 +26,6 @@ Creating one of these is pretty simple to do on a Mac.
 
 8. Convert the video to a GIF [using this tool](http://ezgif.com/video-to-gif). You can edit the start and end points at that site. I recommend a lower FPS for a smaller file. You can also resize the GIF, to make smaller for social, [elsewhere on that site](http://ezgif.com/resize). 
 
-9. Post the gif online, through our projects page or a service such as giphy.
+9. Post the gif online, through our projects page or a service such as Giphy.
 
-10. **Important**: Make a note of the time in text next to where you embed the GIF, and that it is a projection.
+10. **Important**: Make a note of the time in text next to where you embed the GIF, and that it is a projection. Credit the USFS.
