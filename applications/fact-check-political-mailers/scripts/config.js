@@ -2,7 +2,7 @@ window.appConfig = {
     open_about_this: true,
     comments: false,
     is_mobile: null,
-    project_root: "http://projects.scpr.org/applications/fact-check-political-mailers/",
+    project_root: "https://projects.scpr.org/applications/fact-check-political-mailers/",
     embed_this: false,
     is_embedded: false,
     embed_width: "100%",

@@ -4,7 +4,7 @@ window.appConfig = {
     open_about_this: true,
     comments: true,
     is_mobile: null,
-    project_root: "http://projects.scpr.org/interactives/2013-academy-awards-preview/",
+    project_root: "https://projects.scpr.org/interactives/2013-academy-awards-preview/",
     embed_this: true,
     is_embedded: null,
     embed_width: "100%",

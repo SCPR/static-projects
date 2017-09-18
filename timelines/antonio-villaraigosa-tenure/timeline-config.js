@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/antonio-villaraigosa-tenure/",
+    projectDirectory: "https://projects.scpr.org/timelines/antonio-villaraigosa-tenure/",
 
     // newest or oldest
     defaultDirection: "newest",

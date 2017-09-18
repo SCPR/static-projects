@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/san-bernardino-shootings/",
+    projectDirectory: "https://projects.scpr.org/timelines/san-bernardino-shootings/",
 
     // newest or oldest
     defaultDirection: "newest",

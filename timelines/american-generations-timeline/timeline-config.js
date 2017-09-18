@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/american-generations-timeline",
+    projectDirectory: "https://projects.scpr.org/timelines/american-generations-timeline",
 
     // newest or oldest
     defaultDirection: "oldest",

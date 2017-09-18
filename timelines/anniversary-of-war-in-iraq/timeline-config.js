@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/anniversary-of-war-in-iraq/",
+    projectDirectory: "https://projects.scpr.org/timelines/anniversary-of-war-in-iraq/",
 
     // newest or oldest
     defaultDirection: "newest",

@@ -16,7 +16,7 @@ jqueryNoConflict(document).ready(function() {
 var appConfig = {
     openAboutThis: true,
     embed_this: true,
-    embed_url_root: 'http://projects.scpr.org/interactives/2015-inaugural-address/',
+    embed_url_root: 'https://projects.scpr.org/interactives/2015-inaugural-address/',
     docDiv: "DV-viewer-1390043-governor-brown-sworn-in-delivers-inaugural-address",
     docUrl: "//www.documentcloud.org/documents/1390043-governor-brown-sworn-in-delivers-inaugural-address.js",
     docContainer: "#DV-viewer-1390043-governor-brown-sworn-in-delivers-inaugural-address"
@@ -176,7 +176,7 @@ var fn = {
 // begin template rendering object
 var initializeTemplates = {
     renderStaticTemplates: function(){
-        var proxyPrefix = 'http://projects.scpr.org/static-files/v3-dependencies/templates/';
+        var proxyPrefix = 'https://projects.scpr.org/static-files/v3-dependencies/templates/';
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-header.handlebars', '.kpcc-header');
         renderHandlebarsTemplate(proxyPrefix + 'kpcc-footer.handlebars', '.kpcc-footer');
         renderHandlebarsTemplate('templates/data-share.handlebars', '.data-share');

@@ -453,7 +453,7 @@
         openAboutThis: true,
         comments: true,
         embed_this: true,
-        embed_url_root: 'http://projects.scpr.org/applications/lausd-2014-2015-school-by-school-budgets/?=embed/',
+        embed_url_root: 'https://projects.scpr.org/applications/lausd-2014-2015-school-by-school-budgets/?=embed/',
         embed_width: "100%",
         embed_height: "850px"
     };
@@ -465,7 +465,7 @@
     $(function(){
         window.router = new App.Router();
         Backbone.history.start({
-            root: 'http://projects.scpr.org/applications/lausd-2014-2015-school-by-school-budgets',
+            root: 'https://projects.scpr.org/applications/lausd-2014-2015-school-by-school-budgets',
             pushState: false,
         });
 

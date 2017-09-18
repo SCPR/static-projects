@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/sheriff-lee-baca/",
+    projectDirectory: "https://projects.scpr.org/timelines/sheriff-lee-baca/",
 
     // newest or oldest
     defaultDirection: "newest",

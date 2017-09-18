@@ -38,7 +38,7 @@ var MapsLib = {
 
     searchRadius: 8047,
 
-    addrMarkerImage: 'http://projects.scpr.org/static-files/images/maps-icons-collection/blue-pushpin.png',
+    addrMarkerImage: 'https://projects.scpr.org/static-files/images/maps-icons-collection/blue-pushpin.png',
 
     currentPinpoint: null,
 

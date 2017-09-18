@@ -23,13 +23,13 @@
 <a name="overview"></a>
 #### Overview
 
-With a little practice - and some web development tools in place - you can create and deploy a [topical timeline ](http://projects.scpr.org/timelines/life-of-nelson-mandela/) for [scpr.org](http://www.scpr.org/) using a Google Spreadsheet, a HTML index file and a JavaScript configuration file.
+With a little practice - and some web development tools in place - you can create and deploy a [topical timeline ](https://projects.scpr.org/timelines/life-of-nelson-mandela/) for [scpr.org](http://www.scpr.org/) using a Google Spreadsheet, a HTML index file and a JavaScript configuration file.
 
 Roughly 95 percent of the content preparation takes place in the Google spreadsheet using a handy [template](https://docs.google.com/spreadsheet/ccc?key=0An8W63YKWOsxdEVHUDliRmZFMC1ZOWZhVUZFMEp6TUE&usp=drive_web#gid=0) that will get you started. The rest of the work involves changing some configuration settings in a JavaScript file. Don't worry - you got this.
 
 That said, the remaining 5 percent involves gettting your machine setup with the tools and scripts necessary to make the 95 percent flow smoothly. *Probably a poor way to explain things, but you get the idea*
 
-Follow the steps below -- or [here](http://projects.scpr.org/timelines/README.html) -- to build, deploy and publish your very own timeline. And you'll want to check out the [tool we made](https://github.com/SCPR/timeline-data-generator) that queries KPCC's [content API](https://github.com/SCPR/api-docs) to create a csv file that can be used to kickstart a timeline.
+Follow the steps below -- or [here](https://projects.scpr.org/timelines/README.html) -- to build, deploy and publish your very own timeline. And you'll want to check out the [tool we made](https://github.com/SCPR/timeline-data-generator) that queries KPCC's [content API](https://github.com/SCPR/api-docs) to create a csv file that can be used to kickstart a timeline.
 
 <a name="configuring-your-machine"></a>
 #### Configuring your machine
@@ -123,7 +123,7 @@ This assumes you've already got a topic in mind and a data source, and you're fa
     * **projecturl**
         * **Type**: url
         * **Description**: This is the URL where the timeline will be visible on the web. If you don't know this, Chris K., Eric Z. or Brian F. can help you.
-        * **Example**: ```http://projects.scpr.org/timelines/life-of-nelson-mandela/```
+        * **Example**: ```https://projects.scpr.org/timelines/life-of-nelson-mandela/```
     * **kicker**
         * **Type**: text
         * **Description**: Projects have a "kicker" headline element that describes the topic of the project. This will usually be something like "Politics," "Crime," "Education".
@@ -200,7 +200,7 @@ Configuring means we fill out a pre-compiled script with information about our t
                 embedThis: true,
 
                 // url of the timeline
-                projectDirectory: 'http://projects.scpr.org/timelines/timeline-template/',
+                projectDirectory: 'https://projects.scpr.org/timelines/timeline-template/',
 
                 // newest or oldest
                 defaultDirection: 'newest',
@@ -255,7 +255,7 @@ Configuring means we fill out a pre-compiled script with information about our t
 
         * **projectDirectory:**
             * **Description**: url of the timeline
-            * **Default value**: ```'http://projects.scpr.org/timelines/timeline-template/'```
+            * **Default value**: ```'https://projects.scpr.org/timelines/timeline-template/'```
             * **Options**: n/a
 
         * **projectDirectory:**
@@ -373,11 +373,11 @@ Right now, Chris K. and Eric Z. can handle this part of the processs. Brian F. h
 
 When it comes time to add the timeline to a news story or blog post, and provided you made it embeddable, just visit the timeline and click the "Embed This" button in the top right corner. An alert will pop up and give you the iframe code.
 
-        <iframe src="http://projects.scpr.org/timelines/life-of-nelson-mandela" width="100%" height="850px" style="margin: 0 auto;" frameborder="no"></iframe>
+        <iframe src="https://projects.scpr.org/timelines/life-of-nelson-mandela" width="100%" height="850px" style="margin: 0 auto;" frameborder="no"></iframe>
 
 Or if you know the timeline URL, just add it to iframe html.
 
-        <iframe src="http://projects.scpr.org/timelines/life-of-nelson-mandela" width="100%" height="850px" style="margin: 0 auto;" frameborder="no"></iframe>
+        <iframe src="https://projects.scpr.org/timelines/life-of-nelson-mandela" width="100%" height="850px" style="margin: 0 auto;" frameborder="no"></iframe>
 
 <a name="technical-requirements"></a>
 #### Technical Requirements
@@ -422,4 +422,4 @@ The process is similar to the one outline in the [deployment](#deployment) secti
 * [Handlebars.js](http://handlebarsjs.com/)
 
 * [Isotope](http://isotope.metafizzy.co/)
-    * [License for Isotope](http://projects.scpr.org/static-files/scripts/isotope_commercial_license/isotope-commercial-license.txt) purchased by [Chris Keller](http://www.scpr.org/about/people/staff/chris-keller)
+    * [License for Isotope](https://projects.scpr.org/static-files/scripts/isotope_commercial_license/isotope-commercial-license.txt) purchased by [Chris Keller](http://www.scpr.org/about/people/staff/chris-keller)

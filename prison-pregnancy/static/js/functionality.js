@@ -26,10 +26,10 @@ $(document).ready(function() {
         return;
     };
 
-    js_audioPlayer("http://projects.scpr.org/prison-pregnancy/media/audio/collage_zodiacal.mp3", 1);
-    js_audioPlayer("http://projects.scpr.org/prison-pregnancy/media/audio/collage_bray.mp3", 2);
-    js_audioPlayer("http://projects.scpr.org/prison-pregnancy/media/audio/collage_bass.mp3", 3);
-    js_audioPlayer("http://projects.scpr.org/prison-pregnancy/media/audio/pregnant-prisoners-full.mp3", 10);
+    js_audioPlayer("https://projects.scpr.org/prison-pregnancy/media/audio/collage_zodiacal.mp3", 1);
+    js_audioPlayer("https://projects.scpr.org/prison-pregnancy/media/audio/collage_bray.mp3", 2);
+    js_audioPlayer("https://projects.scpr.org/prison-pregnancy/media/audio/collage_bass.mp3", 3);
+    js_audioPlayer("https://projects.scpr.org/prison-pregnancy/media/audio/pregnant-prisoners-full.mp3", 10);
 
 
     $(".radio .jp-play").click(function() {

@@ -4,7 +4,7 @@ window.appConfig = {
     open_about_this: true,
     comments: true,
     is_mobile: null,
-    project_root: "http://projects.scpr.org/maps/turf-removal-in-southern-california",
+    project_root: "https://projects.scpr.org/maps/turf-removal-in-southern-california",
     embed_this: true,
     is_embedded: false,
     embed_width: "100%",

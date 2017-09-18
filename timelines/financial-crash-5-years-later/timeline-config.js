@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/financial-crash-5-years-later/",
+    projectDirectory: "https://projects.scpr.org/timelines/financial-crash-5-years-later/",
 
     // newest or oldest
     defaultDirection: "oldest",

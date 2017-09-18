@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/charles-drew-university/",
+    projectDirectory: "https://projects.scpr.org/timelines/charles-drew-university/",
 
     // newest or oldest
     defaultDirection: "newest",

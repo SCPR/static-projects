@@ -2,7 +2,7 @@ var pinFn = pinFn || {};
 
 function loadmedia(){
     $("#jquery_jplayer_10").jPlayer("setMedia", {
-        mp3: "http://projects.scpr.org/longreads/high-rent-few-options/media/audio/rent.mp3"
+        mp3: "https://projects.scpr.org/longreads/high-rent-few-options/media/audio/rent.mp3"
     });
 };
 

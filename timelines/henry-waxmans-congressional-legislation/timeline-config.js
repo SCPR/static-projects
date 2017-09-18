@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/henry-waxmans-congressional-legislation/",
+    projectDirectory: "https://projects.scpr.org/timelines/henry-waxmans-congressional-legislation/",
 
     // newest or oldest
     defaultDirection: "newest",

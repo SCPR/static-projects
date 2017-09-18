@@ -2,7 +2,7 @@
 
     window.appConfig = {
         testing: false,
-        project_root: "http://projects.scpr.org/internal/tools/2012-general-election-voter-turnout-patterns/tulare-county/",
+        project_root: "https://projects.scpr.org/internal/tools/2012-general-election-voter-turnout-patterns/tulare-county/",
         open_about_this: false,
         comments: false,
         embed_this: false,
@@ -42,8 +42,8 @@
         initialize: function(){
 
             // checks for testing environment
-            if (window.location.href.indexOf("http://projects.scpr.org/") > -1){
-                window.wrapperTemplatePath = "http://projects.scpr.org/static-files/v3-dependencies/templates/"
+            if (window.location.href.indexOf("https://projects.scpr.org/") > -1){
+                window.wrapperTemplatePath = "https://projects.scpr.org/static-files/v3-dependencies/templates/"
             } else {
                 window.wrapperTemplatePath = "/2kpcc/static-projects/static-files/v3-dependencies/templates/"
             };

@@ -21,7 +21,7 @@ var kpccTimelineConfig = {
     embedThis: true,
 
     // url of the timeline
-    projectDirectory: "http://projects.scpr.org/timelines/timeline-template/",
+    projectDirectory: "https://projects.scpr.org/timelines/timeline-template/",
 
     // newest or oldest
     defaultDirection: "newest",
