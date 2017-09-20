@@ -1,0 +1,77 @@
+.bigger{
+      width: 100%;
+      height: 1000px;
+}
+
+.container {
+  width: 100%;
+}
+
+.chart {
+  float: left;
+  padding-right: 0px;
+  padding-top:0;
+  background-color:transparent;
+
+}
+
+text.caption {
+    font-weight: bold;
+}
+
+svg {
+  font-size: 13px;
+}
+
+@media only screen and (max-width: 400px) {
+    svg {
+        font-size: 11px;
+    }
+    text.title {
+        font-size: 12px;
+    }
+    text.static_year{
+        font-size:9.5px;
+    }
+    text.year{
+        font-size:9.5px;
+    }
+}
+
+.background {
+  fill: none;
+}
+
+.area {
+  fill: #31ABD4;
+  opacity: 0.9;
+
+}
+
+.line {
+  fill: none;
+  stroke: #222628;
+  stroke-width: 3.9px;
+  opacity: 1;
+}
+
+.title {
+  font-size: 14px;
+}
+
+.axis line, .grid line {
+  stroke-width: .5px;
+  shape-rendering: crispEdges;
+  stroke: #fff;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.axis path {
+  display: none;
+}
+
+.hidden {
+  display:none;
+  opacity: 0.0;
+}
