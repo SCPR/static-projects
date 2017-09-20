@@ -31,8 +31,8 @@ else{
 }
 
     if(window.innerWidth < breakPoint) {
-      width = (window.innerWidth * .285 - margin.left - margin.right);
-      height = 150;      }
+      width = (window.innerWidth * .265 - margin.left - margin.right);
+      height = 130;      }
     else {
       width = (window.innerWidth * .3005 - margin.left - margin.right);
       height = 150;
