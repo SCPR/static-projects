@@ -15,8 +15,8 @@
 
 		var iframe,
 			AXO;
-		
-		// All hail Google http://j.mp/iKMI19
+
+		// All hail Google https://j.mp/iKMI19
 		// Behold, an iframe proxy without annoying clicky noises.
 		if ( "ActiveXObject" in win ) {
 			AXO = new ActiveXObject( "htmlfile" );
@@ -31,7 +31,7 @@
 		}
 
 		iframe.src = checkBaseURL(proxyURL) + "?url=" + encode(redirectURL) + "&css=" + encode(checkBaseURL(url));
-		
+
 		function checkFrameName() {
 			var cssText;
 
@@ -46,8 +46,8 @@
 				iframe.parentNode.removeChild(iframe);
 				iframe = null;
 
-			
-				// Per http://j.mp/kn9EPh, not taking any chances. Flushing the ActiveXObject
+
+				// Per https://j.mp/kn9EPh, not taking any chances. Flushing the ActiveXObject
 				if (AXO) {
 					AXO = null;
 
@@ -62,7 +62,7 @@
 				win.setTimeout(checkFrameName, 100);
 			}
 		}
-		
+
 		win.setTimeout(checkFrameName, 500);
 	}
 
@@ -74,10 +74,10 @@
 
 		return href;
 	}
-	
+
 	function checkRedirectURL() {
 		// IE6 & IE7 don't build out absolute urls in <link /> attributes.
-		// So respond.proxy.gif remains relative instead of http://example.com/respond.proxy.gif.
+		// So respond.proxy.gif remains relative instead of https://example.com/respond.proxy.gif.
 		// This trickery resolves that issue.
 		if (~ !redirectURL.indexOf(location.host)) {
 
@@ -94,12 +94,12 @@
 			fakeLink = null;
 		}
 	}
-	
+
 	function buildUrls(){
 		var links = doc.getElementsByTagName( "link" );
-		
+
 		for( var i = 0, linkl = links.length; i < linkl; i++ ){
-			
+
 			var thislink	= links[i],
 				href		= links[i].href,
 				extreg		= (/^([a-zA-Z:]*\/\/(www\.)?)/).test( href ),
@@ -107,18 +107,18 @@
 
 			//make sure it's an external stylesheet
 			if( thislink.rel.indexOf( "stylesheet" ) >= 0 && ext ){
-				(function( link ){			
+				(function( link ){
 					fakejax( href, function( css ){
 						link.styleSheet.rawCssText = css;
 						respond.update();
 					} );
 				})( thislink );
-			}	
+			}
 		}
 
-		
+
 	}
-	
+
 	if( !respond.mediaQueriesSupported ){
 		checkRedirectURL();
 		buildUrls();
