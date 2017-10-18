@@ -26,7 +26,7 @@
         },
 
         drawChart: function () {
-$.get('https://s3-us-west-1.amazonaws.com/scpr-projects/rainfall_2018/rainfall.csv', function(csv) {
+$.get('https://s3-us-west-1.amazonaws.com/scpr-projects/rainfall_2017/rainfall.csv', function(csv) {
 $('#container').highcharts({
                     chart: {
                         backgroundColor: null,
