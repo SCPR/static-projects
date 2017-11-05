@@ -3,7 +3,7 @@
 }
 
 body.minimal .data-container p{
-    font-size:160%;
+    font-size:175%;
 }
 
 #special_a {
@@ -12,12 +12,13 @@ body.minimal .data-container p{
 }
 
 #svg_txt{
-        font-size:160%;
+        font-size:175%;
 }
 
 a svg {
   display: inline-block;
    vertical-align: middle;
+   padding-right: 3px
 }
 
 
@@ -40,7 +41,7 @@ a svg {
     body.minimal .data-container h4 { font-size: 180%; }
     body.minimal .data-container h5 { font-size: 150%; }
     body.minimal .data-container h6 { font-size: 130%; }
-    body.minimal .data-container p { font-size: 110%; }
+    body.minimal .data-container p #svg_txt { font-size: 110%; }
 }
 
 @media (min-width: 481px) {
