@@ -11,9 +11,11 @@ body.minimal .data-container p{
   display: inline-block;
 }
 
+
 #svg_txt{
         font-size:175%;
 }
+
 
 a svg {
   display: inline-block;
@@ -23,6 +25,22 @@ a svg {
 
 
 
+
+
+
+@media only screen and (min-device-width : 321px) and (max-device-width : 568px) {
+    #svg_txt { font-size: 130%; }
+}
+
+@media (max-width: 480px) {
+    #svg_txt { font-size: 130%; }
+
+}
+
+@media (max-width: 320px) {
+    #svg_txt { font-size: 90%; }
+
+}
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
     body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
@@ -35,13 +53,13 @@ a svg {
 }
 
 @media (max-width: 480px) {
-    body.minimal .data-container h1 { font-size: 270%; font-weight: bold; }
+    body.minimal .data-container h1 { font-size: 305%; font-weight: bold; }
     body.minimal .data-container h2 { font-size: 240%; }
     body.minimal .data-container h3 { font-size: 210%; }
     body.minimal .data-container h4 { font-size: 180%; }
     body.minimal .data-container h5 { font-size: 150%; }
     body.minimal .data-container h6 { font-size: 130%; }
-    body.minimal .data-container p #svg_txt { font-size: 110%; }
+    body.minimal .data-container p { font-size: 130%; }
 }
 
 @media (min-width: 481px) {
@@ -51,7 +69,7 @@ a svg {
     body.minimal h4 { font-size: 300%; }
     body.minimal h5 { font-size: 260%; }
     body.minimal h6 { font-size: 220%; }
-    body.minimal p { font-size: 120%; }
+    body.minimal p { font-size: 130%; }
 }
 
 @media (min-width: 767px) {

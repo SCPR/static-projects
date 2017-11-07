@@ -9,5 +9,5 @@ window.appConfig = {
     is_embedded: null,
     embed_width: "100%",
     embed_height: "770px",
-    twitter_share_text: "When will Trump visit California?",
+    twitter_share_text: "When will Donald Trump visit California?",
 };
