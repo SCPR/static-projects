@@ -1,0 +1,27 @@
+.box {
+        display: inline-block;
+        padding: none;
+        margin: none;
+        border: none;
+        width: 100%;
+
+}
+
+body{
+    margin: 0px;
+}
+
+iframe {
+    margin: none;
+    padding: none;
+}
+
+
+
+.descrip {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:10px;
+    padding-left: 30px;
+    padding-right: 7px;
+    padding-top: 4px;
+}
