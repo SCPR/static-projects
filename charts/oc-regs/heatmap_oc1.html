@@ -21,7 +21,7 @@
 }
 
 
-@media (max-width: 350px) {
+@media (max-width: 380px) {
     .axis text { font-size: 7px; }
 }
 
@@ -44,7 +44,7 @@
   var breakPoint2 = 380;
 
 console.log(window.innerWidth)
-
+/*
 if(window.innerWidth > breakPoint) {
     var itemSize = 25,
       cellSize = itemSize - 1,
@@ -63,7 +63,7 @@ else{
       height = 340 - margin.top - margin.bottom;
 
 }
-
+*/
 
 
   var formatDate = d3.time.format("%Y-%m-%d");
@@ -153,7 +153,7 @@ else{
 /* SECOND ONE */
 
 
-if(window.innerWidth > breakPoint) {
+if(window.innerWidth >= breakPoint) {
     var itemSize = 25,
       cellSize = itemSize - 1,
       margin = {top: 115, right: 0, bottom: 20, left: 112};
@@ -162,14 +162,23 @@ if(window.innerWidth > breakPoint) {
       height = 540 - margin.top - margin.bottom;
 
 }
-else{
-    var itemSize = 15,
+else if (window.innerWidth < breakPoint & window.innerWidth > breakPoint2){
+    var itemSize = 14,
       cellSize = itemSize - 1,
       margin = {top: 115, right: 0, bottom: 20, left: 112};
 
   var width = 182 - margin.right - margin.left,
       height = 370 - margin.top - margin.bottom;
+} else{
+    var itemSize = 9,
+      cellSize = itemSize - 1,
+      margin = {top: 75, right: 0, bottom: 0, left: 132};
+
+      var width = 182 - margin.right - margin.left,
+      height = 227 - margin.top - margin.bottom;
+
 }
+
 
   var formatDate = d3.time.format("%Y-%m-%d");
 
