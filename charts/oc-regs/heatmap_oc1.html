@@ -5,6 +5,7 @@
   .axis line {
     fill: none;
     stroke: black;
+    stroke-opacity:0.55;
     shape-rendering: crispEdges;
   }
 
@@ -21,7 +22,7 @@
 
 
 @media (max-width: 350px) {
-    .axis text { font-size: 8px; }
+    .axis text { font-size: 7px; }
 }
 
 
@@ -40,6 +41,8 @@
 <script>
 
   var breakPoint = 495;
+  var breakPoint2 = 380;
+
 console.log(window.innerWidth)
 
 if(window.innerWidth > breakPoint) {
@@ -57,7 +60,7 @@ else{
       margin = {top: 115, right: 0, bottom: 20, left: 112};
 
   var width = 130 - margin.right - margin.left,
-      height = 540 - margin.top - margin.bottom;
+      height = 340 - margin.top - margin.bottom;
 
 }
 
@@ -165,7 +168,7 @@ else{
       margin = {top: 115, right: 0, bottom: 20, left: 112};
 
   var width = 182 - margin.right - margin.left,
-      height = 540 - margin.top - margin.bottom;
+      height = 370 - margin.top - margin.bottom;
 }
 
   var formatDate = d3.time.format("%Y-%m-%d");
