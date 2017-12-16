@@ -46,7 +46,7 @@ $('#container').highcharts({
                     legend: {
                                 itemStyle: {
                                     fontFamily: 'Arial',
-                                    fontSize: 16
+                                    fontSize: 17
                                 }
                             },
                     xAxis: {
@@ -67,19 +67,19 @@ $('#container').highcharts({
                     yAxis: {
                         labels: {
                             style: {
-                                fontSize: 15,
+                                fontSize: 16,
                                 fontFamily: 'Arial',
                                 color: '#363636'
                             }},
                         title: {
                             text: 'Percent of normal rainfall',
                             style: {
-                                fontSize: 15,
+                                fontSize: 16,
                                 color: '#363636'
                             }
                         },
                         endOnTick:false,
-                        max: 135,
+                        max: 100,
                         gridLineColor: '#B5BEC0'
                         },
                     tooltip: {
