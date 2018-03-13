@@ -27,9 +27,14 @@
 var today = new Date();
 var date2 = new Date("1/20/2017");
 var timeDiff = Math.abs(date2.getTime() - today.getTime());
-var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24) - 1);
-//document.write('<br>Donald J. Trump has been President for ' + diffDays + " and still hasn't visited California");
-document.getElementById("message").innerHTML = 'Donald J. Trump has been President for <span id = "color">' + diffDays + " days</span> — and still hasn't visited California. In March, he will.";
+//var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24) - 1);
+var diffDays = 417;
+
+/* document.getElementById("message").innerHTML = 'Donald J. Trump has been President for <span id = "color">' + diffDays + " days</span> — and still hasn't visited California. In March, he will.";
+*/
+
+document.getElementById("message").innerHTML = 'Trump waited <span id = "color">' + diffDays + " days</span> to visit California – longer than any president in decades";
+
 
         },
 
