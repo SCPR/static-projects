@@ -4,6 +4,13 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
+a{
+    color: #d7dae0;
+}
+
+
+
 body {
   margin: 0;
 }
@@ -2267,4 +2274,7 @@ svg.renderer-svg tspan {
     display: block;
     width: 100%;
   }
+}
+#header{
+    margin-bottom: 110px;
 }
