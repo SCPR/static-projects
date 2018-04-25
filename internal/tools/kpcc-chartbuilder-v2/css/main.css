@@ -9,6 +9,9 @@ a{
     color: #d7dae0;
 }
 
+a:visited {
+    color: #d7dae0;
+}
 
 
 body {
