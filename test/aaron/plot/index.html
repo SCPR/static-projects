@@ -91,7 +91,7 @@ text{
 }
 
 .barsEndlineText{
-    font-size: 2vw;
+    font-size: 1.7vw;
 }
 
 #title{
@@ -99,6 +99,11 @@ text{
     font-size: 3vw;
     opacity: .55;
     margin: 0 0 0 0;
+}
+
+.footnoteText{
+    font: Arial;
+    font-size: 1.4vw;
 }
 
 </style>
@@ -134,12 +139,12 @@ text{
 <script>
 
 // Set the dimensions of the canvas / graph
-var margin = {top: 30, right: 20, bottom: 35, left: 50},
+var margin = {top: 30, right: 20, bottom: 45, left: 50},
 //     width = 800 - margin.left - margin.right,
 //    height = 570 - margin.top - margin.bottom;
 
 width = (window.innerWidth * .931 - margin.left - margin.right);
-      height = 545 - margin.top - margin.bottom;
+      height = 505 - margin.top - margin.bottom;
 
 // Parse the date / time
 // var parseDate = d3.time.format("%y").parse;
@@ -256,9 +261,16 @@ line.append('text')
              //.attr("x", x(2010))
              //.attr("y", ".35em")
              .attr("opacity", .55)
-             .text('Lottery funding formula changes')
+             .text('Lottery funding formula changes');
 
-;
+    svg.append("g")
+      .append("text")
+      .attr('class', 'footnoteText')
+      .text("Data via California Lottery, dollars adjusted for inflation")
+      .attr('text-anchor', 'end')
+      .attr("x", x(2017))
+      .attr("y", height + 40)
+      .attr("fill", "black");
 
 
 });
