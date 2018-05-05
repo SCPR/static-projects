@@ -113,7 +113,7 @@ text{
     <input name="updateButton"
            type="button"
            class = "btn"
-           value="Watch lottery revenues grow"
+           value="Animate lottery revenues"
            onclick="updateData()"/>
 </div>
 
@@ -121,7 +121,7 @@ text{
     <input name="updateButton2"
            type="button"
            class = "btn2"
-           value="Watch education funding grow"
+           value="Animate education funding"
            onclick="updateData2()"/>
 </div>
 
@@ -159,16 +159,22 @@ var xAxis = d3.svg.axis().scale(x).tickFormat(d3.format("d"))
 
 var yAxis = d3.svg.axis().scale(y)
     .orient("left").ticks(5)
-    .tickFormat(function(d){return d/1000000000 + " Billion"});;
+    .tickFormat(function(d){return "$" + d/1000000000 + " Billion"});
+
+
+
+
 
 // Define the line
 var valueline = d3.svg.line()
     .x(function(d) { return x(d.fy); })
-    .y(function(d) { return y(d.dollars_2017); });
+    .y(function(d) { return y(d.dollars_2017); })
+    .interpolate("monotone");
 
 var valueline2 = d3.svg.line()
     .x(function(d) { return x(d.fy); })
-    .y(function(d) { return y(d.contrib_in_2017_dollars); });
+    .y(function(d) { return y(d.contrib_in_2017_dollars); })
+        .interpolate("monotone");
 
 
 // Adds the svg canvas
@@ -222,6 +228,7 @@ d3.csv("revenue_by_fy.csv", function(error, data) {
 
 svg.append("g")
     .attr("class", "y axis")
+    .attr("id", "yid")
     //.attr("transform", "translate(0," + height + ")")
     .call(yAxis)
   .selectAll("text")
@@ -229,7 +236,10 @@ svg.append("g")
     .attr("y", -15)
     //.attr("dy", ".35em")
     .attr("transform", "rotate(-90)")
-    .style("text-anchor", "start");
+    .style("text-anchor", "middle");
+
+d3.select('#yid .tick:first-child').remove();
+
 
 /*
 svg.append("text")
@@ -254,6 +264,20 @@ line.append("line")
               .attr("z-index", -1)
               .attr("stroke-dasharray", "15,15")
 
+/*
+line.append("line")
+              .attr("x1", x(2017))
+              .attr("x2", x(2017))
+              .attr("y1", y(1514174388))
+              .attr("y2", y(6107022080))
+              .attr("stroke-width", 3)
+              .attr("opacity", .5)
+              .attr("stroke", "black")
+              .attr("z-index", -1)
+              .attr("stroke")
+*/
+
+
 line.append('text')
              .attr('class', 'barsEndlineText')
              .attr('text-anchor', 'end')
@@ -266,7 +290,7 @@ line.append('text')
     svg.append("g")
       .append("text")
       .attr('class', 'footnoteText')
-      .text("Data via California Lottery, dollars adjusted for inflation")
+      .text("Data via California Lottery, dollar amounts adjusted for inflation")
       .attr('text-anchor', 'end')
       .attr("x", x(2017))
       .attr("y", height + 40)
@@ -310,6 +334,7 @@ function updateData() {
                 d3.selectAll(".line")
                   // Set the line pattern to be an long line followed by an equally long gap
                   .attr("d", valueline(data))
+
                   .attr("stroke-dasharray", totalLength * 2 + " " + totalLength)
                   // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
                   .attr("stroke-dashoffset", totalLength)
