@@ -1,0 +1,178 @@
+body { font: 12px Arial;
+}
+
+path {
+    stroke: #F3AA27;
+    stroke-width: 9;
+    fill: none;
+}
+
+path.line-launder  {
+    stroke: #F3AA27;
+    stroke-width: 5;
+    fill: none;
+
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+#option {
+    float: left;
+    padding-bottom: 0px;
+
+}
+
+#option2 {
+    float: left;
+    padding-bottom: 0px;
+}
+
+.btn, .btn2, .btn3{
+    text-align:center;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: #FFF;
+    padding: 5px 20px;
+    /*display: inline-flex;*/
+    white-space: nowrap;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+/*    margin: 10px 0px 5px 10px;*/
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.btn:hover {
+    background: #a9710a;
+}
+
+.btn2:hover {
+    background: #d70f41;
+}
+
+.btn3:hover {
+    background: #363636;
+}
+
+input.btn{
+    background-color: #F3AA27;
+    width: 95%;
+    border: none;
+    margin-right: 10px;
+}
+/*
+input.btn2{
+    background: #F3567C;
+    width: 95%;
+    border: none;
+}
+*/
+input.btn3{
+    background: #898989;
+    width: 13%;
+    border: none;
+
+}
+
+text{
+    font: Arial;
+    font-size: 2.3vw;
+    opacity: .55;
+}
+
+.idLine{
+    font: Arial;
+    font-size: 2.3vw;
+    opacity: 1;
+}
+
+.barsEndlineText{
+    font-size: 2vw;
+}
+
+#title{
+    font: Arial;
+    font-size: 3.2vw;
+    opacity: .55;
+    margin: 0 0 0 0;
+}
+
+.footnoteText{
+    font: Arial;
+    font-size: 1.7vw;
+}
+
+@media only screen and (max-width: 520px) {
+.btn, .btn2, .btn3{
+    text-align:center;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 2.2vw;
+    color: #FFF;
+    padding: 4px 20px;
+    display: inline-block;
+    white-space: nowrap;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 5px 0px 5px 5px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+
+input.btn{
+    background-color: #F3AA27;
+    width: 90%;
+    border: none;
+}
+
+input.btn2{
+    background: #F3567C;
+    width: 90%;
+    border: none;
+}
+
+input.btn3{
+    background: #898989;
+    width: 12%;
+    border: none;
+    padding: 4px 8px;
+}
+
+text{
+    font: Arial;
+    font-size: 2.9vw;
+    opacity: .55;
+}
+
+.barsEndlineText{
+    font-size: 2.9vw;
+}
+
+#title{
+    font: Arial;
+    font-size: 3.1vw;
+    opacity: .55;
+    margin: 0 0 0 0;
+}
+
+.footnoteText{
+    font: Arial;
+    font-size: 2.4vw;
+}

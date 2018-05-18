@@ -3,120 +3,21 @@
 
 <!DOCTYPE html>
 <meta charset="utf-8">
-<style> /* set the CSS */
+<head>
 
-body { font: 12px Arial;
-    max-width: 900px;
-}
+<link rel="stylesheet" type="text/css" href="style/style.css">
 
-path {
-    stroke: #F3AA27;
-    stroke-width: 9;
-    fill: none;
-}
-
-.axis path,
-.axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
-
-#option {
-    float: left;
-    padding-bottom: 0px;
-
-}
-
-#option2 {
-    float: left;
-    padding-bottom: 0px;
-}
-
-.btn, .btn2, .btn3{
-    text-align:center;
-    text-decoration: none;
-    font-family: sans-serif;
-    font-size: 2vw;
-    color: #FFF;
-    padding: 5px 20px;
-    display: inline-block;
-    white-space: nowrap;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    margin: 10px 0px 5px 25px;
-    -webkit-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-}
-
-.btn:hover {
-    background: #a9710a;
-}
-
-.btn2:hover {
-    background: #d70f41;
-}
-
-.btn3:hover {
-    background: #363636;
-}
-
-input.btn{
-    background-color: #F3AA27;
-    width: 95%;
-    border: none;
-}
-
-input.btn2{
-    background: #F3567C;
-    width: 95%;
-    border: none;
-}
-
-input.btn3{
-    background: #898989;
-    width: 12%;
-    border: none;
-}
-
-text{
-    font: Arial;
-    font-size: 2vw;
-    opacity: .55;
-}
-
-.barsEndlineText{
-    font-size: 1.7vw;
-}
-
-#title{
-    font: Arial;
-    font-size: 3vw;
-    opacity: .55;
-    margin: 0 0 0 0;
-}
-
-.footnoteText{
-    font: Arial;
-    font-size: 1.4vw;
-}
-
-</style>
+</head>
 <body>
-<p id=title>Lottery revenue shot up after law changed, money for schools didn't</p>
+<!--<p id=title>Lottery revenue shot up after law changed, money for schools didn't</p>-->
 <div id="option">
     <input name="updateButton"
            type="button"
            class = "btn"
-           value="Animate lottery revenues"
+           value="Animate California Lottery finances"
            onclick="updateData()"/>
 </div>
-
+<!--
 <div id="option2">
     <input name="updateButton2"
            type="button"
@@ -124,6 +25,7 @@ text{
            value="Animate education funding"
            onclick="updateData2()"/>
 </div>
+-->
 
 <div id="option3">
     <input name="updateButton3"
@@ -134,12 +36,12 @@ text{
 </div>
 
 <!-- load the d3.js library -->
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="script/d3.v3.min.js"></script>
 
 <script>
 
 // Set the dimensions of the canvas / graph
-var margin = {top: 30, right: 20, bottom: 45, left: 50},
+var margin = {top: 30, right: 20, bottom: 45, left: 30},
 //     width = 800 - margin.left - margin.right,
 //    height = 570 - margin.top - margin.bottom;
 
@@ -187,7 +89,7 @@ var svg = d3.select("body")
               "translate(" + margin.left + "," + margin.top + ")");
 
 // Get the data
-d3.csv("revenue_by_fy.csv", function(error, data) {
+d3.csv("data/revenue_by_fy.csv", function(error, data) {
     data.forEach(function(d) {
         d.fy = +d.fy;
         d.dollars_2017 = +d.dollars_2017;
@@ -241,16 +143,6 @@ svg.append("g")
 d3.select('#yid .tick:first-child').remove();
 
 
-/*
-svg.append("text")
-    .attr("class", "y label")
-    .attr("text-anchor", "middle")
-    .attr("x", -250)
-    .attr("dy", "-1.75em")
-    .attr("transform", "rotate(-90)")
-    .text("California Lottery revenue");
-*/
-
 var line = svg.append("g")
 
 line.append("line")
@@ -263,20 +155,6 @@ line.append("line")
               .attr("stroke", "black")
               .attr("z-index", -1)
               .attr("stroke-dasharray", "15,15")
-
-/*
-line.append("line")
-              .attr("x1", x(2017))
-              .attr("x2", x(2017))
-              .attr("y1", y(1514174388))
-              .attr("y2", y(6107022080))
-              .attr("stroke-width", 3)
-              .attr("opacity", .5)
-              .attr("stroke", "black")
-              .attr("z-index", -1)
-              .attr("stroke")
-*/
-
 
 line.append('text')
              .attr('class', 'barsEndlineText')
@@ -297,13 +175,32 @@ line.append('text')
       .attr("fill", "black");
 
 
+    svg.append("g")
+      .append("text")
+      .attr('class', 'idLine')
+      .text("Lottery revenue")
+      .attr('text-anchor', 'middle')
+      .attr("x", x(2006))
+      .attr("y", y(4300929287 + 130000000))
+      .attr("fill", "#F3AA27");
+
+    svg.append("g")
+      .append("text")
+      .attr('class', 'idLine')
+      .text("Money for schools")
+      .attr('text-anchor', 'middle')
+      .attr("x", x(2006))
+      .attr("y", y(1545214631 + 134000000))
+      .attr("fill", "#F3567C");
+
+
 });
 
 // ** Update data section (Called from the onclick)
 function updateData() {
 
     // Get the data again
-    d3.csv("revenue_by_fy2.csv", function(error, data) {
+    d3.csv("data/revenue_by_fy2.csv", function(error, data) {
         data.forEach(function(d) {
             d.fy = +d.fy;
             d.dollars_2017 = +d.dollars_2017;
@@ -329,30 +226,50 @@ function updateData() {
                 d3.select(".line").style("opacity","1").style("stroke-width",9);
 
                 // First work our the total length of the line
-                var totalLength = d3.select(".line").node().getTotalLength();
+                var totalLength1 = d3.select(".line").node().getTotalLength();
 
                 d3.selectAll(".line")
                   // Set the line pattern to be an long line followed by an equally long gap
                   .attr("d", valueline(data))
 
-                  .attr("stroke-dasharray", totalLength * 2 + " " + totalLength)
+                  .attr("stroke-dasharray", totalLength1 * 2 + " " + totalLength1)
                   // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
-                  .attr("stroke-dashoffset", totalLength)
+                  .attr("stroke-dashoffset", totalLength1)
                   // Then the following lines transition the line so that the gap is hidden...
                   .transition()
                   .duration(3000)
-                  .ease("linear") //Try linear, quad, bounce... see other examples here - http://bl.ocks.org/hunzy/9929724
+                  .ease("quad") //Try linear, quad, bounce... see other examples here - http://bl.ocks.org/hunzy/9929724
                   .attr("stroke-dashoffset", 0);
+                  console.log(totalLength1)
+
+
+                d3.selectAll(".line2").style("opacity","1");
+
+                // Then highlight the main line to be fully visable and give it a thicker stroke
+                d3.select(".line2").style("opacity","1").style("stroke-width",9);
+
+                // First work our the total length of the line
+                var totalLength2 = d3.select(".line2").node().getTotalLength();
+
+                d3.selectAll(".line2")
+                  // Set the line pattern to be an long line followed by an equally long gap
+                  .attr("d", valueline2(data))
+                  .attr("stroke-dasharray", totalLength2 * 2 + " " + totalLength2)
+                  // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
+                  .attr("stroke-dashoffset", totalLength2)
+                  // Then the following lines transition the line so that the gap is hidden...
+                  .transition()
+                  .duration((3000 * (totalLength1 / totalLength2)))
+                  .ease("quad") //Try linear, quad, bounce... see other examples here - http://bl.ocks.org/hunzy/9929724
+                  .attr("stroke-dashoffset", 0);
+                console.log(totalLength2)
+
 
 
     });
 
-}
-
-function updateData2() {
-
     // Get the data again
-    d3.csv("revenue_by_fy2.csv", function(error, data) {
+/*    d3.csv("data/revenue_by_fy2.csv", function(error, data) {
         data.forEach(function(d) {
             d.fy = +d.fy;
             d.dollars_2017 = +d.dollars_2017;
@@ -364,13 +281,27 @@ function updateData2() {
         //y.domain([0, d3.max(data, function(d) { return d.dollars_2017; })]);
         y.domain([0,7000000000]);
 
-    // Select the section we want to apply our changes to
-    // var svg = d3.select("body").transition();
 
-    // Make the changes
-//        svg.select(".line")   // change the line
-//            .duration(750)
-//            .attr("d", valueline(data));
+
+    });
+*/
+}
+
+/*
+function updateData2() {
+
+    // Get the data again
+    d3.csv("data/revenue_by_fy2.csv", function(error, data) {
+        data.forEach(function(d) {
+            d.fy = +d.fy;
+            d.dollars_2017 = +d.dollars_2017;
+        });
+
+        // Scale the range of the data again
+        //x.domain(d3.extent(data, function(d) { return d.fy; }));
+        x.domain([1996,2017]);
+        //y.domain([0, d3.max(data, function(d) { return d.dollars_2017; })]);
+        y.domain([0,7000000000]);
 
                 d3.selectAll(".line2").style("opacity","1");
 
@@ -396,72 +327,6 @@ function updateData2() {
     });
 
 }
-
-
-/*        function updateDataorig() {
-
-                // Look at what button was clicked
-                // if(whichline == 0 ){
-
-                // First set all the lines to be invisible
-                d3.selectAll(".line").style("opacity","0");
-
-                // Then highlight the main line to be fully visable and give it a thicker stroke
-                d3.select(".line").style("opacity","1").style("stroke-width",4);
-
-                // First work our the total length of the line
-                var totalLength = d3.select(".line").node().getTotalLength();
-
-                d3.selectAll(".line")
-                  // Set the line pattern to be an long line followed by an equally long gap
-                  .attr("stroke-dasharray", totalLength + " " + totalLength)
-                  // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
-                  .attr("stroke-dashoffset", totalLength)
-                  // Then the following lines transition the line so that the gap is hidden...
-                  .transition()
-                  .duration(2000)
-                  .ease("quad") //Try linear, quad, bounce... see other examples here - http://bl.ocks.org/hunzy/9929724
-                  .attr("stroke-dashoffset", 0);
-
-              }
-
-
-
-
-
-
-// ** Update data section (Called from the onclick)
-function updateData2orig() {
-
-    // Get the data again
-    d3.csv("revenue_by_fy2.csv", function(error, data) {
-        data.forEach(function(d) {
-            d.fy = +d.fy;
-            d.contrib_in_2017_dollars = +d.contrib_in_2017_dollars;
-        });
-
-        // Scale the range of the data again
-        //x.domain(d3.extent(data, function(d) { return d.fy; }));
-        x.domain([1996,2017]);
-        //y.domain([0, d3.max(data, function(d) { return d.dollars_2017; })]);
-        y.domain([0,7000000000]);
-
-
-    var svg = d3.select("body").transition();
-
-        svg.select(".line2")   // change the line
-            .duration(750)
-            .attr("d", valueline2(data));
-
-        svg.select(".x.axis") // change the x axis
-            .duration(750)
-            .call(xAxis);
-        svg.select(".y.axis") // change the y axis
-            .duration(750)
-            .call(yAxis);
-
-    });
-}
 */
 
 function updateData3() {
@@ -469,7 +334,7 @@ function updateData3() {
 
 
 // Get the data
-d3.csv("revenue_by_fy.csv", function(error, data) {
+d3.csv("data/revenue_by_fy.csv", function(error, data) {
     data.forEach(function(d) {
         d.fy = +d.fy;
         d.dollars_2017 = +d.dollars_2017;
@@ -482,13 +347,6 @@ d3.csv("revenue_by_fy.csv", function(error, data) {
         .data([data])
         .attr("class", "line")
         .attr("d", valueline(data));
-
-    // Add the valueline again.
-//    svg.append("path")
-//        .data([data])
-//        .attr("class", "line")
-//        .style("stroke", "#F3567C")
-//        .attr("d", valueline);
 
     d3.selectAll(".line2").remove()
     svg.append("path")
