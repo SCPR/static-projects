@@ -154,7 +154,7 @@ line.append("line")
               .attr("opacity", .5)
               .attr("stroke", "black")
               .attr("z-index", -1)
-              .attr("stroke-dasharray", "15,15")
+              .attr("stroke-dasharray", "15,15");
 
 line.append('text')
              .attr('class', 'barsEndlineText')
@@ -181,7 +181,7 @@ line.append('text')
       .text("Lottery revenue")
       .attr('text-anchor', 'middle')
       .attr("x", x(2006))
-      .attr("y", y(4300929287 + 130000000))
+      .attr("y", y(4389560788 + 130000000))
       .attr("fill", "#F3AA27");
 
     svg.append("g")
@@ -190,7 +190,7 @@ line.append('text')
       .text("Money for schools")
       .attr('text-anchor', 'middle')
       .attr("x", x(2006))
-      .attr("y", y(1545214631 + 134000000))
+      .attr("y", y(1545214631 + 144000000))
       .attr("fill", "#F3567C");
 
 
@@ -200,7 +200,7 @@ line.append('text')
 function updateData() {
 
     // Get the data again
-    d3.csv("data/revenue_by_fy2.csv", function(error, data) {
+    d3.csv("data/revenue_by_fy_2.csv", function(error, data) {
         data.forEach(function(d) {
             d.fy = +d.fy;
             d.dollars_2017 = +d.dollars_2017;
