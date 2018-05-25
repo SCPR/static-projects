@@ -89,7 +89,7 @@ var svg = d3.select("body")
               "translate(" + margin.left + "," + margin.top + ")");
 
 // Get the data
-d3.csv("data/revenue_by_fy.csv", function(error, data) {
+d3.csv("data/revenue_by_fy_to_96.csv", function(error, data) {
     data.forEach(function(d) {
         d.fy = +d.fy;
         d.dollars_2017 = +d.dollars_2017;
@@ -97,7 +97,7 @@ d3.csv("data/revenue_by_fy.csv", function(error, data) {
     });
 
     // Scale the range of the data
-    x.domain([1996,2017])
+    x.domain([1996,2018])
     //x.domain(d3.extent(data, function(d) { return d.fy; }));
     y.domain([0,7000000000]);
     //y.domain([0, d3.max(data, function(d) { return d.dollars_2017; })]);
@@ -168,9 +168,9 @@ line.append('text')
     svg.append("g")
       .append("text")
       .attr('class', 'footnoteText')
-      .text("Data via California Lottery, dollar amounts adjusted for inflation")
+      .text("Data via California Lottery, including 2017-18 projection; dollar amounts adjusted for inflation")
       .attr('text-anchor', 'end')
-      .attr("x", x(2017))
+      .attr("x", x(2018))
       .attr("y", height + 40)
       .attr("fill", "black");
 
@@ -181,7 +181,7 @@ line.append('text')
       .text("Lottery revenue")
       .attr('text-anchor', 'middle')
       .attr("x", x(2006))
-      .attr("y", y(4389560788 + 130000000))
+      .attr("y", y(4389560788 + 140000000))
       .attr("fill", "#F3AA27");
 
     svg.append("g")
@@ -190,7 +190,7 @@ line.append('text')
       .text("Money for schools")
       .attr('text-anchor', 'middle')
       .attr("x", x(2006))
-      .attr("y", y(1545214631 + 144000000))
+      .attr("y", y(1545214631 + 152000000))
       .attr("fill", "#F3567C");
 
 
@@ -200,7 +200,7 @@ line.append('text')
 function updateData() {
 
     // Get the data again
-    d3.csv("data/revenue_by_fy_2.csv", function(error, data) {
+    d3.csv("data/revenue_by_fy_2_backup_to_96.csv", function(error, data) {
         data.forEach(function(d) {
             d.fy = +d.fy;
             d.dollars_2017 = +d.dollars_2017;
@@ -208,7 +208,7 @@ function updateData() {
 
         // Scale the range of the data again
         //x.domain(d3.extent(data, function(d) { return d.fy; }));
-        x.domain([1996,2017]);
+        x.domain([1996,2018]);
         //y.domain([0, d3.max(data, function(d) { return d.dollars_2017; })]);
         y.domain([0,7000000000]);
 
@@ -334,7 +334,7 @@ function updateData3() {
 
 
 // Get the data
-d3.csv("data/revenue_by_fy.csv", function(error, data) {
+d3.csv("data/revenue_by_fy_to_96.csv", function(error, data) {
     data.forEach(function(d) {
         d.fy = +d.fy;
         d.dollars_2017 = +d.dollars_2017;

@@ -192,7 +192,7 @@ var svg = d3.select("body")
               "translate(" + margin.left + "," + margin.top + ")");
 
 // Get the data
-d3.csv("data/sharefy.csv", function(error, data) {
+d3.csv("data/share_by_fy.csv", function(error, data) {
     data.forEach(function(d) {
         d.fy = +d.fy;
         d.share = +d.share;
@@ -238,7 +238,7 @@ svg.append("g")
     svg.append("g")
       .append("text")
       .attr('class', 'footnoteText')
-      .text("Via California Lottery's Comprehensive Annual Financial Reports")
+      .text("Data via California Lottery, including 2017-18 projection")
       .attr('text-anchor', 'end')
       .attr("x", x(2017))
       .attr("y", height + 40)
