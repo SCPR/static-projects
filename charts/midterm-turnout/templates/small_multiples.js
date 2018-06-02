@@ -100,7 +100,14 @@ else{
         });
 
         lines.append("text").attr("class", "title").attr("text-anchor", "middle").attr("y", height).attr("dy", margin.bottom / 2 + 5).attr("x", width / 2).text(function(c) {
+          //console.log(c.values[1].reg);
           return c.key;
+
+        });
+                lines.append("text").attr("class", "title").attr("text-anchor", "middle").attr("y", height).attr("dy", margin.bottom / 2 + 21).attr("x", width / 2).text(function(c) {
+          //console.log(c.values[1].reg);
+          return c.values[1].reg + " voters";
+
         });
         lines.append("text").attr("class", "static_year").attr("text-anchor", "start").style("pointer-events", "none").attr("dy", 13).attr("y", height).attr("x", 0).text(function(c) {
           return xValue(c.values[0]).getFullYear();
@@ -179,7 +186,11 @@ else{
       return d3.ascending(a.date, b.date);
     }).entries(rawData);
     return nest;
+
+
   };
+
+
 
   plotData = function(selector, data, plot) {
     return d3.select(selector).datum(data).call(plot);
@@ -197,7 +208,7 @@ else{
       data = transformData(rawData);
       plotData("#vis", data, plot);
     };
-    queue().defer(d3.csv, "data/turnout_midterms.csv").await(display);
+    queue().defer(d3.csv, "data/turnout_reg.csv").await(display);
   });
 
 }).call(this);
