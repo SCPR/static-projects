@@ -1,0 +1,365 @@
+<!-- combine this: http://bl.ocks.org/d3noob/7030f35b72de721622b8 -->
+<!-- and then this: https://bl.ocks.org/mbostock/5649592 -->
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<!--<p id=title>Lottery revenue shot up after law changed, money for schools didn't</p>-->
+<div id="option">
+    <input name="updateButton"
+           type="button"
+           class = "btn"
+           value="Animate California Lottery finances"
+           onclick="updateData()"/>
+</div>
+<!--
+<div id="option2">
+    <input name="updateButton2"
+           type="button"
+           class = "btn2"
+           value="Animate education funding"
+           onclick="updateData2()"/>
+</div>
+-->
+
+<div id="option3">
+    <input name="updateButton3"
+           type="button"
+           class = "btn3"
+           value="Clear"
+           onclick="updateData3()"/>
+</div>
+
+<!-- load the d3.js library -->
+<script src="script/d3.v3.min.js"></script>
+
+<script>
+
+// Set the dimensions of the canvas / graph
+var margin = {top: 30, right: 20, bottom: 45, left: 30},
+//     width = 800 - margin.left - margin.right,
+//    height = 570 - margin.top - margin.bottom;
+
+width = (window.innerWidth * .931 - margin.left - margin.right);
+      height = 505 - margin.top - margin.bottom;
+
+// Parse the date / time
+// var parseDate = d3.time.format("%y").parse;
+
+// Set the ranges
+var x = d3.scale.linear().range([0, width]);
+var y = d3.scale.linear().range([height, 0]);
+
+// Define the axes
+var xAxis = d3.svg.axis().scale(x).tickFormat(d3.format("d"))
+    .orient("bottom").ticks(5);
+
+var yAxis = d3.svg.axis().scale(y)
+    .orient("left").ticks(5)
+    .tickFormat(function(d){return "$" + d/1000000000 + " Billion"});
+
+
+
+
+
+// Define the line
+var valueline = d3.svg.line()
+    .x(function(d) { return x(d.fy); })
+    .y(function(d) { return y(d.dollars_2017); })
+    .interpolate("monotone");
+
+var valueline2 = d3.svg.line()
+    .x(function(d) { return x(d.fy); })
+    .y(function(d) { return y(d.contrib_in_2017_dollars); })
+        .interpolate("monotone");
+
+
+// Adds the svg canvas
+var svg = d3.select("body")
+    .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+
+// Get the data
+d3.csv("data/revenue_by_fy_to_96.csv", function(error, data) {
+    data.forEach(function(d) {
+        d.fy = +d.fy;
+        d.dollars_2017 = +d.dollars_2017;
+        d.contrib_in_2017_dollars = +d.contrib_in_2017_dollars;
+    });
+
+    // Scale the range of the data
+    x.domain([1996,2018])
+    //x.domain(d3.extent(data, function(d) { return d.fy; }));
+    y.domain([0,7000000000]);
+    //y.domain([0, d3.max(data, function(d) { return d.dollars_2017; })]);
+
+    // Add the valueline path.
+    svg.append("path")
+        .data([data])
+        .attr("class", "line")
+        .attr("d", valueline(data));
+
+    // Add the valueline again.
+    svg.append("path")
+        .data([data])
+        .attr("class", "line2")
+        .style("stroke", "#F3567C")
+        .attr("d", valueline2);
+
+
+    // Add the X Axis
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+    // Add the Y Axis
+/*    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+*/
+
+svg.append("g")
+    .attr("class", "y axis")
+    .attr("id", "yid")
+    //.attr("transform", "translate(0," + height + ")")
+    .call(yAxis)
+  .selectAll("text")
+    .attr("x", -15)
+    .attr("y", -15)
+    //.attr("dy", ".35em")
+    .attr("transform", "rotate(-90)")
+    .style("text-anchor", "middle");
+
+d3.select('#yid .tick:first-child').remove();
+
+
+var line = svg.append("g")
+
+line.append("line")
+              .attr("x1", x(2010))
+              .attr("x2", x(2010))
+              .attr("y1", 0)
+              .attr("y2", height)
+              .attr("stroke-width", 3)
+              .attr("opacity", .5)
+              .attr("stroke", "black")
+              .attr("z-index", -1)
+              .attr("stroke-dasharray", "15,15");
+
+line.append('text')
+             .attr('class', 'barsEndlineText')
+             .attr('text-anchor', 'end')
+             .attr("transform", "translate(" + ((x(2010) - 8)) + ", 3) rotate(-90)")
+             //.attr("x", x(2010))
+             //.attr("y", ".35em")
+             .attr("opacity", .55)
+             .text('Lottery funding formula changes');
+
+    svg.append("g")
+      .append("text")
+      .attr('class', 'footnoteText')
+      .text("Data via California Lottery, including 2017-18 projection; dollar amounts adjusted for inflation")
+      .attr('text-anchor', 'end')
+      .attr("x", x(2018))
+      .attr("y", height + 40)
+      .attr("fill", "black");
+
+
+    svg.append("g")
+      .append("text")
+      .attr('class', 'idLine')
+      .text("Lottery revenue")
+      .attr('text-anchor', 'middle')
+      .attr("x", x(2006))
+      .attr("y", y(4389560788 + 140000000))
+      .attr("fill", "#F3AA27");
+
+    svg.append("g")
+      .append("text")
+      .attr('class', 'idLine')
+      .text("Money for schools")
+      .attr('text-anchor', 'middle')
+      .attr("x", x(2006))
+      .attr("y", y(1545214631 + 152000000))
+      .attr("fill", "#F3567C");
+
+
+});
+
+// ** Update data section (Called from the onclick)
+function updateData() {
+
+    // Get the data again
+    d3.csv("data/revenue_by_fy_2_backup_to_96.csv", function(error, data) {
+        data.forEach(function(d) {
+            d.fy = +d.fy;
+            d.dollars_2017 = +d.dollars_2017;
+        });
+
+        // Scale the range of the data again
+        //x.domain(d3.extent(data, function(d) { return d.fy; }));
+        x.domain([1996,2018]);
+        //y.domain([0, d3.max(data, function(d) { return d.dollars_2017; })]);
+        y.domain([0,7000000000]);
+
+    // Select the section we want to apply our changes to
+    // var svg = d3.select("body").transition();
+
+    // Make the changes
+//        svg.select(".line")   // change the line
+//            .duration(750)
+//            .attr("d", valueline(data));
+
+                d3.selectAll(".line").style("opacity","1");
+
+                // Then highlight the main line to be fully visable and give it a thicker stroke
+                d3.select(".line").style("opacity","1").style("stroke-width",9);
+
+                // First work our the total length of the line
+                var totalLength1 = d3.select(".line").node().getTotalLength();
+
+                d3.selectAll(".line")
+                  // Set the line pattern to be an long line followed by an equally long gap
+                  .attr("d", valueline(data))
+
+                  .attr("stroke-dasharray", totalLength1 * 2 + " " + totalLength1)
+                  // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
+                  .attr("stroke-dashoffset", totalLength1)
+                  // Then the following lines transition the line so that the gap is hidden...
+                  .transition()
+                  .duration(3000)
+                  .ease("quad") //Try linear, quad, bounce... see other examples here - http://bl.ocks.org/hunzy/9929724
+                  .attr("stroke-dashoffset", 0);
+                  console.log(totalLength1)
+
+
+                d3.selectAll(".line2").style("opacity","1");
+
+                // Then highlight the main line to be fully visable and give it a thicker stroke
+                d3.select(".line2").style("opacity","1").style("stroke-width",9);
+
+                // First work our the total length of the line
+                var totalLength2 = d3.select(".line2").node().getTotalLength();
+
+                d3.selectAll(".line2")
+                  // Set the line pattern to be an long line followed by an equally long gap
+                  .attr("d", valueline2(data))
+                  .attr("stroke-dasharray", totalLength2 * 2 + " " + totalLength2)
+                  // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
+                  .attr("stroke-dashoffset", totalLength2)
+                  // Then the following lines transition the line so that the gap is hidden...
+                  .transition()
+                  .duration((3000 * (totalLength1 / totalLength2)))
+                  .ease("quad") //Try linear, quad, bounce... see other examples here - http://bl.ocks.org/hunzy/9929724
+                  .attr("stroke-dashoffset", 0);
+                console.log(totalLength2)
+
+
+
+    });
+
+    // Get the data again
+/*    d3.csv("data/revenue_by_fy2.csv", function(error, data) {
+        data.forEach(function(d) {
+            d.fy = +d.fy;
+            d.dollars_2017 = +d.dollars_2017;
+        });
+
+        // Scale the range of the data again
+        //x.domain(d3.extent(data, function(d) { return d.fy; }));
+        x.domain([1996,2017]);
+        //y.domain([0, d3.max(data, function(d) { return d.dollars_2017; })]);
+        y.domain([0,7000000000]);
+
+
+
+    });
+*/
+}
+
+/*
+function updateData2() {
+
+    // Get the data again
+    d3.csv("data/revenue_by_fy2.csv", function(error, data) {
+        data.forEach(function(d) {
+            d.fy = +d.fy;
+            d.dollars_2017 = +d.dollars_2017;
+        });
+
+        // Scale the range of the data again
+        //x.domain(d3.extent(data, function(d) { return d.fy; }));
+        x.domain([1996,2017]);
+        //y.domain([0, d3.max(data, function(d) { return d.dollars_2017; })]);
+        y.domain([0,7000000000]);
+
+                d3.selectAll(".line2").style("opacity","1");
+
+                // Then highlight the main line to be fully visable and give it a thicker stroke
+                d3.select(".line2").style("opacity","1").style("stroke-width",9);
+
+                // First work our the total length of the line
+                var totalLength = d3.select(".line2").node().getTotalLength();
+
+                d3.selectAll(".line2")
+                  // Set the line pattern to be an long line followed by an equally long gap
+                  .attr("d", valueline2(data))
+                  .attr("stroke-dasharray", totalLength * 2 + " " + totalLength)
+                  // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
+                  .attr("stroke-dashoffset", totalLength)
+                  // Then the following lines transition the line so that the gap is hidden...
+                  .transition()
+                  .duration(3000)
+                  .ease("linear") //Try linear, quad, bounce... see other examples here - http://bl.ocks.org/hunzy/9929724
+                  .attr("stroke-dashoffset", 0);
+
+
+    });
+
+}
+*/
+
+function updateData3() {
+
+
+
+// Get the data
+d3.csv("data/revenue_by_fy_to_96.csv", function(error, data) {
+    data.forEach(function(d) {
+        d.fy = +d.fy;
+        d.dollars_2017 = +d.dollars_2017;
+        d.contrib_in_2017_dollars = +d.contrib_in_2017_dollars;
+    });
+
+    // Add the valueline path.
+    d3.selectAll(".line").remove()
+    svg.append("path")
+        .data([data])
+        .attr("class", "line")
+        .attr("d", valueline(data));
+
+    d3.selectAll(".line2").remove()
+    svg.append("path")
+        .data([data])
+        .attr("class", "line2")
+        .style("stroke", "#F3567C")
+        .attr("d", valueline2(data));
+
+
+
+
+})};
+
+</script>
+</body>

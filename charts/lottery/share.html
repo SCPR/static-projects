@@ -1,0 +1,276 @@
+<!-- combine this: http://bl.ocks.org/d3noob/7030f35b72de721622b8 -->
+<!-- and then this: https://bl.ocks.org/mbostock/5649592 -->
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style> /* set the CSS */
+/*
+body { font: 12px Arial;
+    max-width: 900px;
+}
+
+path {
+    stroke: #F3AA27;
+    stroke-width: 5;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+#option {
+    float: left;
+    padding-bottom: 0px;
+
+}
+
+#option2 {
+    float: left;
+    padding-bottom: 0px;
+}
+
+.btn, .btn2, .btn3{
+    text-align:center;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 2vw;
+    color: #FFF;
+    padding: 5px 20px;
+    display: inline-block;
+    white-space: nowrap;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin: 10px 0px 5px 25px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background: #a9710a;
+}
+
+.btn2:hover {
+    background: #d70f41;
+}
+
+.btn3:hover {
+    background: #363636;
+}
+
+input.btn{
+    background-color: #F3AA27;
+    width: 95%;
+    border: none;
+}
+
+input.btn2{
+    background: #F3567C;
+    width: 95%;
+    border: none;
+}
+
+input.btn3{
+    background: #898989;
+    width: 12%;
+    border: none;
+}
+
+text{
+    font: Arial;
+    font-size: 2vw;
+    opacity: .55;
+}
+
+.barsEndlineText{
+    font-size: 1.7vw;
+}
+
+#title{
+    font: Arial;
+    font-size: 3vw;
+    opacity: .55;
+    margin: 0 0 0 0;
+}
+
+.footnoteText{
+    font: Arial;
+    font-size: 1.7vw;
+}
+
+@media only screen and (max-width: 480px) {
+
+text{
+    font: Arial;
+    font-size: 2.9vw;
+    opacity: .55;
+}
+
+.barsEndlineText{
+    font-size: 2.9vw;
+}
+
+#title{
+    font: Arial;
+    font-size: 3.1vw;
+    opacity: .55;
+    margin: 0 0 0 0;
+}
+
+.footnoteText{
+    font: Arial;
+    font-size: 2.4vw;
+}
+
+/*
+</style>
+<head>
+
+<link rel="stylesheet" type="text/css" href="style/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<!--<p id=title>The share of lottery revenue going towards schools has fallen</p>-->
+
+<!-- load the d3.js library -->
+<div id = main>
+<script src="script/d3.v3.min.js"></script>
+
+<script>
+
+// Set the dimensions of the canvas / graph
+var margin = {top: 30, right: 20, bottom: 45, left: 30},
+//     width = 800 - margin.left - margin.right,
+//    height = 570 - margin.top - margin.bottom;
+
+width = (window.innerWidth * .931 - margin.left - margin.right);
+      height = 355 - margin.top - margin.bottom;
+
+// Parse the date / time
+//var parseDate = d3.time.format("%y").parse;
+//var parsedDate = parseDate("9/1/17");
+//console.log(parsedDate);
+
+// Set the ranges
+var x = d3.scale.linear().range([0, width]);
+var y = d3.scale.linear().range([height, 0]);
+
+// Define the axes
+//var xAxis = d3.svg.axis().scale(x).tickFormat(d3.format("d"))
+//    .orient("bottom").ticks(5);
+
+var xAxis = d3.svg.axis().scale(x).tickFormat(d3.format("d"))
+    .orient("bottom").ticks(5);
+
+//var formatComma = d3.format(",")
+
+var yAxis = d3.svg.axis().scale(y)
+    .orient("left").ticks(3)
+    .tickFormat(function(d){return d + "%"});
+
+// Define the line
+var valueline = d3.svg.line()
+    .x(function(d) { return x(d.fy); })
+    .y(function(d) { return y(d.share); })
+    .interpolate("monotone");
+
+// Adds the svg canvas
+var svg = d3.select("body")
+    .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+
+// Get the data
+d3.csv("data/share_by_fy.csv", function(error, data) {
+    data.forEach(function(d) {
+        d.fy = +d.fy;
+        d.share = +d.share;
+    });
+
+    // Scale the range of the data
+    //x.domain([1996,2017])
+    x.domain(d3.extent(data, function(d) { return d.fy; }));
+    y.domain([22, d3.max(data, function(d) { return d.share; })]);
+
+    // Add the valueline path.
+    svg.append("path")
+        .data([data])
+        .attr("class", "line")
+        .attr("d", valueline(data));
+
+    // Add the X Axis
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+    // Add the Y Axis
+/*    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+*/
+
+svg.append("g")
+    .attr("class", "y axis")
+    .attr("id", "yid")
+    //.attr("transform", "translate(0," + height + ")")
+    .call(yAxis)
+  .selectAll("text")
+    .attr("x", -15)
+    .attr("y", -15)
+    //.attr("dy", ".35em")
+    .attr("transform", "rotate(-90)")
+    .style("text-anchor", "start");
+
+//d3.select('#yid .tick:first-child').remove();
+
+    svg.append("g")
+      .append("text")
+      .attr('class', 'footnoteText')
+      .text("Data via California Lottery, including 2017-18 projection")
+      .attr('text-anchor', 'end')
+      .attr("x", x(2017))
+      .attr("y", height + 40)
+      .attr("fill", "black");
+
+var line = svg.append("g")
+
+line.append("line")
+              .attr("x1", x(2010))
+              .attr("x2", x(2010))
+              .attr("y1", 0)
+              .attr("y2", height)
+              .attr("stroke-width", 3)
+              .attr("opacity", .5)
+              .attr("stroke", "black")
+              .attr("z-index", -1)
+              .attr("stroke-dasharray", "15,15")
+
+
+line.append('text')
+             .attr('class', 'barsEndlineText')
+             .attr('text-anchor', 'end')
+             .attr("transform", "translate(" + ((x(2010) - 8)) + ", 3) rotate(-90)")
+             //.attr("x", x(2010))
+             .attr("opacity", .55)
+              .attr("x", -70)
+
+             .text('Lottery funding formula changes');
+
+});
+
+</script>
+</div>
+</body>
