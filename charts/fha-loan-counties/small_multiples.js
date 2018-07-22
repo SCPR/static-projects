@@ -62,7 +62,7 @@ else{
     }).y0(height).y1(function(d) {
       return yScale(yValue(d));
     });
-    line = d3.svg.line().x(function(d) {
+    line = d3.svg.line().interpolate("monotone").x(function(d) {
       return xScale(xValue(d));
     }).y(function(d) {
       return yScale(yValue(d));
@@ -76,7 +76,7 @@ else{
         });
       });
       maxY = maxY + (maxY * 1 / 4);
-      yScale.domain([16, 44]);
+      yScale.domain([17, 41]);
       extentX = d3.extent(data[0].values, function(d) {
         return xValue(d);
       });
