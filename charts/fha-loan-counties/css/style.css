@@ -37,6 +37,9 @@ svg {
     text.year{
         font-size:9.5px;
     }
+    text{
+        font-size:10px;
+    }
 }
 
 .background {
