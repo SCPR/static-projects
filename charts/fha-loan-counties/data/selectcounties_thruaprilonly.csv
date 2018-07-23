@@ -1,4 +1,4 @@
-year,down_payment_src,category,county_year_total,num,n
+year,down_payment_src,category,county_year_total,ct,n
 1/1/11,Relative,Alameda,2958,696,23.52941176
 1/1/11,Relative,Fresno,3851,1044,27.1098416
 1/1/11,Relative,Los Angeles,20684,5289,25.57048927
@@ -41,9 +41,9 @@ year,down_payment_src,category,county_year_total,num,n
 1/1/17,Relative,Orange,2701,931,34.46871529
 1/1/17,Relative,Sacramento,5146,1519,29.51807229
 1/1/17,Relative,San Diego,4292,1300,30.2889096
-1/1/18,Relative,Alameda,241,81,33.60995851
-1/1/18,Relative,Fresno,980,313,31.93877551
-1/1/18,Relative,Los Angeles,4018,1527,38.00398208
-1/1/18,Relative,Orange,794,282,35.5163728
-1/1/18,Relative,Sacramento,1751,575,32.83837807
-1/1/18,Relative,San Diego,1329,422,31.75319789
+1/1/18,Relative,Alameda,195,66,33.84615385
+1/1/18,Relative,Fresno,774,250,32.2997416
+1/1/18,Relative,Los Angeles,3108,1180,37.96653797
+1/1/18,Relative,Orange,636,220,34.59119497
+1/1/18,Relative,Sacramento,1393,461,33.09404164
+1/1/18,Relative,San Diego,1041,332,31.89241114
