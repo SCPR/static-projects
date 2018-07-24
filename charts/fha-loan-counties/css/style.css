@@ -1,7 +1,4 @@
-.bigger{
-      width: 100%;
-      height: 1000px;
-}
+
 
 .container {
   width: 100%;
@@ -61,6 +58,7 @@ svg {
 
 .title {
   font-size: 14px;
+  font-weight:bold;
 }
 
 .axis line, .grid line {

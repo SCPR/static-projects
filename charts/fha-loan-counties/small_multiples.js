@@ -110,7 +110,7 @@ else{
 
         formatDate = d3.time.format("%y")
 
-        lines.append("text").attr("class", "title").attr("text-anchor", "middle").attr("y", height).attr("dy", margin.bottom / 2 + 8).attr("x", width / 2).text(function(c) {
+        lines.append("text").attr("class", "title").attr("text-anchor", "middle").attr("y", height).attr("dy", margin.bottom / 2 + 10).attr("x", width / 2).text(function(c) {
           return c.key;
         });
         lines.append("text").attr("class", "static_year").attr("text-anchor", "start").style("pointer-events", "none").attr("dy", 13).attr("y", height).attr("x", 0).text(function(c) {
