@@ -1,0 +1,25 @@
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon_line-donate" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-1056.000000, -4275.000000)" id="footer">
+            <g transform="translate(0.000000, 4230.000000)">
+                <g id="Group-8" transform="translate(1045.000000, 36.000000)">
+                    <g id="Group-2" transform="translate(12.000000, 8.000000)">
+                        <g id="Group-6">
+                            <g id="Group" transform="translate(7.420635, 9.224638)" stroke="#FFFFFF">
+                                <ellipse id="Oval" cx="4.38492063" cy="4.47463768" rx="4.04761905" ry="4.13043478"></ellipse>
+                                <path d="M2.6984127,4.47463768 L6.07142857,4.47463768" id="Shape"></path>
+                                <path d="M4.38492063,6.19565217 L4.38492063,2.75362319" id="Shape"></path>
+                            </g>
+                            <path d="M14.1605952,8.14865942 C14.3703968,7.5173913 14.4904762,6.88130435 14.4904762,6.25141304 C14.4904762,1.42086957 8.14178571,0.478442029 7.41388889,5.30898551 C6.68531746,0.478442029 0.337301587,1.04913043 0.337301587,6.25141304 C0.337301587,10.4479348 4.94146825,14.4117754 6.72242063,15.7878986" id="Shape" stroke="#FFFFFF"></path>
+                            <rect id="Rectangle-path" x="0" y="0" width="16.1904762" height="16.5217391"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+

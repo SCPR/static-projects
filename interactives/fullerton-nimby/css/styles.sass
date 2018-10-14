@@ -1,0 +1,582 @@
+@import "base"
+@import "_variables"
+
+// fonts
+
+$sans: "Roboto", Helvetica Neue, sans-serif
+$serif: "Abril Fatface", Georgia, serif
+
+// colors
+
+$accessdarkblue: #2166ac
+$lightblue: #4393c3
+
+
+// kpcc
+
+$medblue: #007397
+$deepblue: #003B5B
+$gold: #F3AA27
+$socalorange: #F87E21
+$pink: #F3567C
+$peach: #FC9A61
+$deeporange: #D15904
+
+$palegray: #F6F6F6
+$lightgray: #E8E8E8
+$medgray: #898989
+$darkgray: #363636
+$nearblack: #212121
+$white: #fff
+
+// darks
+
+$black33: #212121
+$black50: #323232
+$black66: #424242
+$black121: #797979
+$black215: #d7d7d7
+$black235: #ebebeb
+$black245: #f5f5f5
+
+body
+  font-family: $sans
+  //background-color: $nearblack
+
+a
+  color: $white
+
+p
+  line-height: 1.4
+  font-size: 1.8rem
+  padding-bottom: 15px
+
+.hero
+  background: $deepblue url('../images/fence.png') no-repeat
+  background-size: cover
+  background-position: 0 10vh
+  height: 50vh
+
+.header
+  width: 500px
+  //min-height: 50vh
+  //padding-bottom: 20px
+  text-align: center
+  margin: 50px auto
+  line-height: 1.3
+  color: $nearblack
+  @media(max-width: 500px)
+    width: 95%
+  img
+    width: 200px
+    padding: 10px
+  h1
+    font-weight: 700
+
+.lead-art
+  width: 100%
+  height: 100vh
+  display: flex
+  margin-top: 15px
+  justify-content: center
+  align-items: center
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
+  // background-attachment: fixed
+  @media(max-width: 800px)
+    background-size: contain
+    height: 66vw
+
+
+#section-divider-1
+  background-image: url('../images/site-aerial.jpg')
+
+#section-divider-2
+  background-image: url('../images/gamble-outside-dinner.jpg')
+
+
+.cutline
+  padding: 10px 0 15px 5px
+  font-size: 1.5rem
+  @media(max-width: 650px)
+    width: 95%
+
+.content-well
+  width: 650px
+  margin: 0 auto
+  padding-top: 50px
+  @media(max-width: 500px)
+    width: 95%
+
+*
+  box-sizing: border-box
+  &:before, &:after
+    box-sizing: border-box
+
+.clearfix
+  &:before
+    content: " "
+    // display: table
+  &:after
+    content: " "
+    // display: table
+    clear: both
+  *zoom: 1
+
+// body
+//   background-color: #D6E1E5
+//   color: #6B7072
+//   font-size: 100%
+//   margin-bottom: 10em
+//   @media only screen and (min-width: 700px)
+//     font-size: 110%
+//   @media only screen and (min-width: 800px)
+//     font-size: 120%
+
+.chapter
+  width: 650px
+  margin: 0 auto
+  margin-top: 25px
+  @media(max-width: 650px)
+    width: 95%
+    padding: 10px 10px 10px 0
+
+.chapter-num
+  color: $nearblack
+  font-size: 1.7rem
+  font-weight: 700
+  letter-spacing: 1px
+  text-transform: uppercase
+  width: 200px
+  display: inline
+  border-bottom: 2px solid $nearblack
+
+.chapters
+  h1, h2, p
+    // padding: 0 50px
+    line-height: 1.3
+    margin: 0 auto
+    width: 650px
+    @media(max-width: 500px)
+      width: 95%
+  h1, h2
+    font-weight: 300
+    font-size: 250%
+    line-height: 1.5
+  h1
+    margin-top: 1.5em
+    margin-bottom: 1.5em
+  h2
+    margin-bottom: 0.6em
+    padding-top: 25px
+    //padding: 8px
+    // background-color: $deepblue
+    // color: $white
+    // display: inline
+    // // color: $palegray
+
+.subhed
+  font-size: 1.7rem
+  font-weight: 700
+  margin-top: 25px
+
+/* Progress bar menu */
+
+.progressbar
+  //display: none
+  visibility: hidden
+  margin: 4em 0
+  @media only screen and (min-width: 650px)
+    display: block
+  .shim
+    display: none
+    width: 100%
+  .holder
+    position: relative
+    font-size: 85%
+    padding: 1.8em 0 0 0
+    background-color: $deepblue
+    //box-shadow: 0 0.5em 1.5em #D6E1E5
+    @media (min-width: 750px)
+      font-size: 90%
+    @media (min-width: 900px)
+      font-size: 95%
+    .bar
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 8px
+      background-color: $white
+      .indicator
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        background-color: $gold
+    .labels
+      max-width: 1280px
+      margin: 0 auto
+      padding: 0 2em
+      text-align: center
+      font-size: 2rem
+      i
+        display: block
+        position: relative
+        float: left
+        cursor: pointer
+        &::before
+          position: absolute
+          bottom: 6px
+          left: 50%
+          display: block
+          content: ''
+          width: 1.6rem
+          height: 1.6rem
+          border-radius: 50%
+          border: solid 3px $deepblue
+          background-color: $palegray
+          -webkit-transform: translateX(-50%) translateY(50%)
+          transform: translateX(-50%) translateY(50%)
+          transition: border-color 100ms ease-in, background-color 150ms ease-in
+          @media(max-width:760px)
+            bottom: 70px
+        &::after
+          display: block
+          content: attr(data-label)
+          position: relative
+          top: 0
+          padding-bottom: 1.8em
+          font-weight: 400
+          color: $palegray
+          transition: color 150ms ease-in, top 100ms ease-out
+          @media(max-width:760px)
+            padding-bottom: 0
+            top: -100px
+        &:hover::before, &:focus::before
+          background-color: $palegray
+        &:hover::after, &:focus::after
+          top: -.2em
+        &.read
+          &::before
+            border-color: $gold
+          &:hover::before, &:focus::before
+            background-color: $gold
+        &.reading
+          &::after
+            color: $white
+          &:hover::after, &:focus::after
+            top: -5px
+  &.fixed
+    .holder
+      position: fixed
+      display: block
+      visibility: visible
+      top: 0
+      left: 0
+      width: 100%
+      z-index: 101
+      @media(max-width:760px)
+        height: 20px
+    .shim
+      display: block
+
+
+/* Audio players */
+
+.audio-box
+  display: block
+  width: 650px
+  margin: 0 auto
+  padding-bottom: 30px
+  // float: left
+  // padding-right: 0
+  // margin: 40px 50px 30px 0 !important
+  // border-bottom: 1px solid $white
+  @media(max-width: 650px)
+    width: 95%
+
+.audio-player-container
+  // width: 300px
+  float: left
+  padding-right: 0
+  margin: 40px 50px 30px 0 !important
+  border-bottom: 1px solid $white
+  @media all and (max-width: 600px)
+    //float: none
+    margin: 20px auto !important
+    width: 100%
+
+.audio-img-container
+  width: 100%
+  margin: 25px
+
+
+.audio-img
+  width: 102%
+  // border-radius: 50%
+  padding-top: 15px
+
+.audio-detail
+  //width: 280px
+  //text-align: center
+  //text-transform: uppercase
+  padding: 25px 15px 15px 0px
+  font-size: 1.7rem
+  //float: left
+
+
+.waveform
+  clear: both
+  width: 100%
+//   @media(max-width:650px)
+//     width: 300px
+//     overflow: hidden
+//
+// wave
+//   overflow: hidden !important
+//   width: 100%
+
+.waveform-caption, .audio-caption
+  width: 100%
+  //height: 190px
+  // text-align: right
+  //float: right
+  min-height: 150px
+  font-size: 2rem
+  padding: 10px 15px 15px 15px
+  margin: 0 15px
+  line-height: 1.4
+  word-wrap: break-word
+  // border-top: 5px solid #F3AA27
+  @media all and (max-width: 800px)
+    float: none
+    margin: 0
+    font-size: 1.6rem
+    padding: 0 0 0 15px
+  .fa
+    //float: left
+    text-align: center
+    padding-right: 10px
+
+.sound, .playing, .volume, .pause
+  // width: 100%
+  text-align: center
+  font-size: 25px
+  padding-top: 15px
+  &:hover
+    cursor: pointer
+
+/* shows pause button */
+.volume
+  &::before
+    content: '\f04c'
+    // content: '\f026'
+    font-family: 'fontawesome'
+
+.pause
+  padding: 6px
+  border: 2px solid $nearblack
+  width: 100px
+  margin: 10px auto
+
+// .pause, .volume
+//   float: right
+//   padding: 6px
+//   margin-right: 15px
+//   border: 2px solid $nearblack
+
+.sound-toggle
+  float: right
+  clear: both
+  padding: 10px
+  border: 2px solid $nearblack
+  font-family: $sans
+  text-transform: uppercase
+  &:hover
+    background-color: $nearblack
+    color: $white
+    cursor: pointer
+
+.off
+  background-color: $white
+  color: $nearblack
+  &:after
+    content: '\f026'
+    padding: 10px
+    font-family: 'fontawesome'
+
+.on
+  background-color: $nearblack
+  color: $white
+  &:after
+    content: '\f028'
+    padding: 10px
+    font-family: 'fontawesome'
+
+
+// .pause
+  // color: $white
+  // background-color: $nearblack
+  // width: 25px
+  // height: 25px
+  // &::before
+  //   content: '\f04c'
+  //   font-family: 'fontawesome'
+
+
+.audio-box-mobile
+  display: none
+  min-width: 320px
+  margin: 50px auto
+  .speaker-mug
+    width: 100%
+    img
+      width: 95%
+  audio
+    width: 95%
+  @media all and (max-width: 770px)
+    display: block
+
+/* Expander for footnotes */
+
+.text-link
+  border-bottom: 3px solid $nearblack
+  &:after
+    color: $nearblack
+    padding-left: 3px
+    content: '\f0a7'
+    font-family: 'fontawesome'
+  &:hover
+    cursor: pointer
+
+.expander-content
+  background-color: $palegray
+  padding: 20px
+  font-size: 20px
+  line-height: 150%
+  position: relative
+  padding-top: 45px !important
+  margin: 10px 0
+  .fa
+    text-align: right
+
+
+.expander-hidden
+  display: none
+
+
+.expander-close
+  cursor: pointer
+  &:before
+    position: absolute
+    top: 10px
+    right: 20px
+    font-family: 'fontawesome'
+    content: '\f057'
+    color: $nearblack
+    // padding: 25px
+    font-size: 20px
+
+/* Images */
+
+.image-block-wide
+  margin: 4.8rem auto
+
+.image-block
+  width: 100%
+  img
+    margin-bottom: 0.3rem
+    width: 100%
+
+/* Footer */
+
+footer
+  width: 100%
+  //height: 100px
+  bottom: 0
+  left: 0
+  margin-top: 50px
+  padding: 25px
+  background-color: $nearblack
+
+.social-links
+  // width: 300px
+  position: relative
+  @media(max-width: 910px)
+    display: block
+  img
+    display: inline-block
+    vertical-align: top
+    @media(max-width: 910px)
+      display: block
+      margin: 10px auto
+
+.social-account
+  width: 130px
+  display: inline-block
+  clear: both
+  text-align: center
+  color: $white
+  padding: 10px
+  border: 2px solid $white
+  text-transform: uppercase
+  font-size: 1.3rem
+  margin: 8px 8px 0 8px
+  @media(max-width: 910px)
+    display: block
+    margin: 10px auto
+  &:hover
+    cursor: pointer
+
+#laist-twitter
+  color: $white
+  &:before
+    padding-right: 8px
+    font-size: 1.6rem
+    content: '\f099'
+    font-family: 'fontawesome'
+
+#laist-facebook
+  color: $white
+  &:before
+    padding-right: 8px
+    font-size: 1.6rem
+    content: '\f082'
+    font-family: 'fontawesome'
+
+#laist-instagram
+  color: $white
+  &:before
+    padding-right: 8px
+    font-size: 1.6rem
+    content: '\f16d'
+    font-family: 'fontawesome'
+
+.cta-donate
+  font-weight: 400
+
+#donate
+  width: 200px
+  float: right
+  background-color: $medblue
+  text-align: center
+  margin: 5px auto
+  padding: 10px
+  font-size: 1.5rem
+  font-weight: 400
+  color: $white
+  @media(max-width: 910px)
+    margin: 10px auto
+    float: none
+  a
+    text-decoration: none
+    color: $white
+
+.copyright
+  color: $white
+  padding-top: 15px
+
+// .interview
+//   padding-left: 35px
