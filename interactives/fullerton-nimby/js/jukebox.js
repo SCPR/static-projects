@@ -2,8 +2,8 @@
 // JUKEBOX SCRIPT
 const audio = [
       {
-        "id":"1-1", // the standoff
-        "filename": "/fullerton-nimby/audio/audio-1-1.mp3",
+        "id":"1-1", // the standoff  
+        "filename": "../audio/audio-1-1.mp3",
         "captions": {
               "0": "Homelessness has reached crisis levels in many Southern California communities. And everybody wants a solution.",
               "6": "But what happens when the solution includes housing the homeless in your neighborhood?",
@@ -44,7 +44,7 @@ const audio = [
       },
       {
         "id":"1-2", // the tour
-        "filename": "/fullerton-nimby/audio/audio-2-1.mp3",
+        "filename": "../audio/audio-2-1.mp3",
         "captions": {
               "0": "I meet a small group in front of Fullerton city hall to take a tour of permanent supportive housing for homeless people.",
               "8": "We're visiting projects similar to one proposed in Fullerton by an organization called Pathways of Hope. Some of the neighbors leading opposition to the project are here. So is Councilman Jesus Silva, he's leading the tour. ",
@@ -81,7 +81,7 @@ const audio = [
       },
       {
         "id":"1-3", // Fullerton's homeless
-        "filename": "/fullerton-nimby/audio/audio-3-1.mp3",
+        "filename": "../audio/audio-3-1.mp3",
         "captions": {
           "0": "If you want to know about being homeless in Fullerton, Curtis Gamble is your guy. ",
           "4": "That bench right there, that's where I used to stay at, No. 3.",
@@ -126,7 +126,7 @@ const audio = [
        },
       {
         "id":"1-4", // homelessness 101
-        "filename": "/fullerton-nimby/audio/audio-4-1.mp3",
+        "filename": "../audio/audio-4-1.mp3",
         "captions": {
           "0": "Thanks everyone for being here, I'm David Gillanders, executive director of Pathways of Hope.",
           "4": "This is David emceeing the first community meeting about his organization's proposal to build 60 units of permanent supportive housing for Fullerton's chronically homeless. Permanent supportive housing includes rental assistance and social services.",
@@ -161,7 +161,7 @@ const audio = [
       },
       {
         "id":"1-5", // there goes the neighbohood
-        "filename": "/fullerton-nimby/audio/audio-5-1.mp3",
+        "filename": "../audio/audio-5-1.mp3",
         "captions": {
           "0": "So I looked at the map. Yeah I was just looking at it.",
           "3": "I meet my colleague Matt at a Starbucks in Anaheim just off the I-5 freeway. We’re here on a mission: to find out how neighbors feel about living near an apartment complex for formerly homeless people with mental illness. ",
