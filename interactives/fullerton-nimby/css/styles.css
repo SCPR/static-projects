@@ -301,7 +301,7 @@ p {
   width: 650px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
   .chapters h1, .chapters h2, .chapters p {
     width: 95%;
   }
