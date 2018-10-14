@@ -824,3 +824,7 @@ footer {
     padding: 10px;
   }
 }
+
+.audio-player {
+  width: 100%;
+}
