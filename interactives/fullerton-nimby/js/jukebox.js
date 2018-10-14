@@ -2,7 +2,7 @@
 // JUKEBOX SCRIPT
 const audio = [
       {
-        "id":"1-1", // It's a solution
+        "id":"1-1", // the standoff
         "filename": "/fullerton-nimby/audio/audio-1-1.mp3",
         "captions": {
               "0": "Homelessness has reached crisis levels in many Southern California communities. And everybody wants a solution.",
@@ -125,7 +125,7 @@ const audio = [
         }
        },
       {
-        "id":"1-4", // It's not souplessness/homelessness PR
+        "id":"1-4", // homelessness 101
         "filename": "/fullerton-nimby/audio/audio-4-1.mp3",
         "captions": {
           "0": "Thanks everyone for being here, I'm David Gillanders, executive director of Pathways of Hope.",
@@ -160,7 +160,7 @@ const audio = [
         }
       },
       {
-        "id":"1-5", // There goes the neighbohood
+        "id":"1-5", // there goes the neighbohood
         "filename": "/fullerton-nimby/audio/audio-5-1.mp3",
         "captions": {
           "0": "So I looked at the map. Yeah I was just looking at it.",

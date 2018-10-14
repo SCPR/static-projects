@@ -44,7 +44,9 @@ body
   //background-color: $nearblack
 
 a
-  color: $white
+  color: $nearblack
+  text-decoration: underline
+  font-weight: 400
 
 p
   line-height: 1.4
@@ -86,7 +88,7 @@ p
   // background-attachment: fixed
   @media(max-width: 800px)
     background-size: contain
-    height: 66vw
+    height: 72vw
 
 
 #section-divider-1
@@ -97,7 +99,7 @@ p
 
 
 .cutline
-  padding: 10px 0 15px 5px
+  padding: 10px 0 10px 3px
   font-size: 1.5rem
   @media(max-width: 650px)
     width: 95%
@@ -105,7 +107,6 @@ p
 .content-well
   width: 650px
   margin: 0 auto
-  padding-top: 50px
   @media(max-width: 500px)
     width: 95%
 
@@ -123,16 +124,6 @@ p
     // display: table
     clear: both
   *zoom: 1
-
-// body
-//   background-color: #D6E1E5
-//   color: #6B7072
-//   font-size: 100%
-//   margin-bottom: 10em
-//   @media only screen and (min-width: 700px)
-//     font-size: 110%
-//   @media only screen and (min-width: 800px)
-//     font-size: 120%
 
 .chapter
   width: 650px
@@ -186,9 +177,9 @@ p
 .progressbar
   //display: none
   visibility: hidden
-  margin: 4em 0
-  @media only screen and (min-width: 650px)
-    display: block
+  //margin: 4em 0
+  // @media only screen and (min-width: 650px)
+  //   display: block
   .shim
     display: none
     width: 100%
@@ -199,7 +190,7 @@ p
     background-color: $deepblue
     //box-shadow: 0 0.5em 1.5em #D6E1E5
     @media (min-width: 750px)
-      font-size: 90%
+      font-size: 85%
     @media (min-width: 900px)
       font-size: 95%
     .bar
@@ -240,8 +231,8 @@ p
           -webkit-transform: translateX(-50%) translateY(50%)
           transform: translateX(-50%) translateY(50%)
           transition: border-color 100ms ease-in, background-color 150ms ease-in
-          @media(max-width:760px)
-            bottom: 70px
+          // @media(max-width:760px)
+          //   bottom: 70px
         &::after
           display: block
           content: attr(data-label)
@@ -252,8 +243,7 @@ p
           color: $palegray
           transition: color 150ms ease-in, top 100ms ease-out
           @media(max-width:760px)
-            padding-bottom: 0
-            top: -100px
+            font-size: 1.2rem
         &:hover::before, &:focus::before
           background-color: $palegray
         &:hover::after, &:focus::after
@@ -277,8 +267,8 @@ p
       left: 0
       width: 100%
       z-index: 101
-      @media(max-width:760px)
-        height: 20px
+      // @media(max-width:760px)
+      //   height: 20px
     .shim
       display: block
 
@@ -580,3 +570,37 @@ footer
 
 // .interview
 //   padding-left: 35px
+
+.social-btns
+  text-align: center
+  padding-bottom: 25px
+
+.share
+  text-align: center
+  font-size: 2.8rem
+  cursor: pointer
+  display: inline
+  margin: 5px
+  padding-top: 5px
+
+#fb-share
+  &:before
+    font-family: 'fontawesome'
+    content: '\f082'
+
+#twitter-share
+  &:before
+    font-family: 'fontawesome'
+    content: '\f081'
+
+.credits
+  width: 650px
+  margin: 0 auto
+  margin-top: 25px
+  padding-top: 25px
+  line-height: 1.6
+  font-size: 1.5rem
+  border-top: 1px dotted $nearblack
+  @media(max-width: 650px)
+    width: 95%
+    padding: 10px

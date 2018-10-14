@@ -142,7 +142,9 @@ body {
 }
 
 a {
-  color: #fff;
+  color: #212121;
+  text-decoration: underline;
+  font-weight: 400;
 }
 
 p {
@@ -196,7 +198,7 @@ p {
 @media (max-width: 800px) {
   .lead-art {
     background-size: contain;
-    height: 66vw;
+    height: 72vw;
   }
 }
 
@@ -209,7 +211,7 @@ p {
 }
 
 .cutline {
-  padding: 10px 0 15px 5px;
+  padding: 10px 0 10px 3px;
   font-size: 1.5rem;
 }
 
@@ -222,7 +224,6 @@ p {
 .content-well {
   width: 650px;
   margin: 0 auto;
-  padding-top: 50px;
 }
 
 @media (max-width: 500px) {
@@ -313,13 +314,6 @@ p {
 /* Progress bar menu */
 .progressbar {
   visibility: hidden;
-  margin: 4em 0;
-}
-
-@media only screen and (min-width: 650px) {
-  .progressbar {
-    display: block;
-  }
 }
 
 .progressbar .shim {
@@ -336,7 +330,7 @@ p {
 
 @media (min-width: 750px) {
   .progressbar .holder {
-    font-size: 90%;
+    font-size: 85%;
   }
 }
 
@@ -394,12 +388,6 @@ p {
   transition: border-color 100ms ease-in, background-color 150ms ease-in;
 }
 
-@media (max-width: 760px) {
-  .progressbar .holder .labels i::before {
-    bottom: 70px;
-  }
-}
-
 .progressbar .holder .labels i::after {
   display: block;
   content: attr(data-label);
@@ -413,8 +401,7 @@ p {
 
 @media (max-width: 760px) {
   .progressbar .holder .labels i::after {
-    padding-bottom: 0;
-    top: -100px;
+    font-size: 1.2rem;
   }
 }
 
@@ -450,12 +437,6 @@ p {
   left: 0;
   width: 100%;
   z-index: 101;
-}
-
-@media (max-width: 760px) {
-  .progressbar.fixed .holder {
-    height: 20px;
-  }
 }
 
 .progressbar.fixed .shim {
@@ -800,4 +781,45 @@ footer {
 .copyright {
   color: #fff;
   padding-top: 15px;
+}
+
+.social-btns {
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.share {
+  text-align: center;
+  font-size: 2.8rem;
+  cursor: pointer;
+  display: inline;
+  margin: 5px;
+  padding-top: 5px;
+}
+
+#fb-share:before {
+  font-family: 'fontawesome';
+  content: '\f082';
+}
+
+#twitter-share:before {
+  font-family: 'fontawesome';
+  content: '\f081';
+}
+
+.credits {
+  width: 650px;
+  margin: 0 auto;
+  margin-top: 25px;
+  padding-top: 25px;
+  line-height: 1.6;
+  font-size: 1.5rem;
+  border-top: 1px dotted #212121;
+}
+
+@media (max-width: 650px) {
+  .credits {
+    width: 95%;
+    padding: 10px;
+  }
 }

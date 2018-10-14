@@ -53,7 +53,7 @@ $(document).ready(function(){
   function setIndicatorX(){
     const point = points.eq(0);
     const xpos = point.offset().left + (point.width() / 2);
-    //indicator.css('left', xpos+'px');
+    // indicator.css('left', xpos+'px');
   }
   setIndicatorX();
   $(window).resize(function(){ setIndicatorX(); });
@@ -155,27 +155,3 @@ $(document).ready(function(){
 	});
 
 });
-
-  // // Add smooth scrolling to all links
-  // $("a").on('click', function(event) {
-  //
-  //   // Make sure this.hash has a value before overriding default behavior
-  //   if (this.hash !== "") {
-  //     // Prevent default anchor click behavior
-  //     event.preventDefault();
-  //
-  //     // Store hash
-  //     const hash = this.hash;
-  //
-  //     // Using $'s animate() method to add smooth page scroll
-  //     // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-  //     $('html, body').animate({
-  //       scrollTop: $(hash).offset().top
-  //     }, 800, function(){
-  //
-  //       // Add hash (#) to URL when done scrolling (default click behavior)
-  //       window.location.hash = hash;
-  //     });
-  //   } // End if
-  // });
-// });
