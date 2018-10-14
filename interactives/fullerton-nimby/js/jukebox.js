@@ -162,13 +162,6 @@ const audio = [
       },
       {
         "id":"1-5", // there goes the neighbohood
-        "filename": "/interactives/fullerton-nimby/audio/audio-5-1.mp3",
-        "captions": {
-          "0": "So I looked at the map. Yeah I was just looking at it.",
-          "3": "I meet my colleague Matt at a Starbucks in Anaheim just off the I-5 freeway. We’re here on a mission: to find out how neighbors feel about living near an apartment complex for formerly homeless people with mental illness. ",
-          "14": "Neighbors fought this development for years before it finally opened in 2008. The model is known as permanent supportive housing, which means tenants get rental assistance and social services like counseling.",
-          "25": "Advocates for the homeless and city leaders say this is the only way we're going to solve our homeless problem in Southern California is to get people housed. So we're going to split up and talk to the neighbors and see what people have to say.",
-          "38": "Aid":"1-5", // There goes the neighbohood
         "filename": "/fullerton-nimby/audio/audio-5-1.mp3",
         "captions": {
           "0": "So I looked at the map. Yeah I was just looking at it.",
