@@ -3,7 +3,7 @@
 const audio = [
       {
         "id":"1-1", // the standoff
-        "filename": "/interactives/fullerton-nimby/audio/audio-1-1.mp3",
+        "filename": "/interactives/interactives/fullerton-nimby/audio/audio-1-1.mp3",
         "captions": {
               "0": "Homelessness has reached crisis levels in many Southern California communities. And everybody wants a solution.",
               "6": "But what happens when the solution includes housing the homeless in your neighborhood?",
@@ -46,7 +46,7 @@ const audio = [
       },
       {
         "id":"1-2", // the tour
-        "filename": "/interactives/fullerton-nimby/audio/audio-2-1.mp3",
+        "filename": "/interactives/interactives/fullerton-nimby/audio/audio-2-1.mp3",
         "captions": {
               "0": "I meet a small group in front of Fullerton city hall to take a tour of permanent supportive housing for homeless people.",
               "8": "We're visiting projects similar to one proposed in Fullerton by an organization called Pathways of Hope. Some of the neighbors leading opposition to the project are here. So is Councilman Jesus Silva. He's leading the tour.",
@@ -89,46 +89,46 @@ const audio = [
           "4": "That bench right there, that's where I used to stay at, No. 3.",
           "7": "Curtis is giving me a tour of the train and bus depot in downtown Fullerton. He slept on a bench here for eight years after he lost his job as a bus driver.",
           "15": "Then he won a legal settlement with the city in 2016 over Fullerton's failure to zone for a potential homeless shelter. He used his share of the cash settlement to get an apartment.",
-          "23": "One other thing, I don't want to forget to show you the most important thing.",
-          "26": "The bus depot is where a good number of the city's homeless population sleeps, hangs out, panhandles.",
-          "32": "Can you give me like 2, 3 dollars please?",
+          "24": "One other thing, I don't want to forget to show you the most important thing.",
+          "27": "The bus depot is where a good number of the city's homeless population sleeps, hangs out, panhandles.",
+          "33": "Can you give me like $2, $3 please?",
           "35": "I don't think I have it.",
-          "36": "A woman, whom Curtis knows – he knows everyone around here – approaches him and asks for money. Then, when she sees my microphone, she launches into a monologue that I have a hard time understanding.",
-          "47": "I called the Trump Tower and they tried to sell me boys and girl scout cookies.",
-          "56": "Curtis eventually shoos her away. He wants to show me something.",
-          "60": "I think it was about right here, where Kelly came and he was sitting when the police started talking to him.",
-          "": "Kelly is Kelly Thomas. He was 37, living on Fullerton's streets, when he died at the hands of Fullerton police officers in 2011.",
-          "68": "A security camera caught his encounter with police on tape - telling them he couldn't breathe as they pinned him down, begging for his life, calling out for his dad.",
+          "37": "A woman, whom Curtis knows – he knows everyone around here – approaches him and asks for money. Then, when she sees my microphone, she launches into a monologue that I have a hard time understanding.",
+          "48": "I called the Trump Tower and they tried to sell me Boys and Girl scout cookies.",
+          "55": "Curtis eventually shoos her away. He wants to show me something.",
+          "58": "I think it was about right here, where Kelly came and he was sitting when the police started talking to him.",
+          "60": "Kelly is Kelly Thomas. He was 37, living on Fullerton's streets, when he died at the hands of Fullerton police officers in 2011.",
+          "69": "A security camera caught his encounter with police on tape - telling them he couldn't breathe as they pinned him down, begging for his life, calling out for his dad.",
           "78": "The footage, which you can find on the internet, is extremely disturbing.  Here’s a small sample of audio from that fatal encounter:",
-          "85": "Please, I can't breathe! Put your hands behind your back! Help! Help!",
+          "85": "Please, I can't breathe! Put your hands behind your back! OK! Help! Help!",
           "90": "Officers charged in Kelly's death were found not guilty. There were big protests. The police chief resigned. Three city council members were recalled. And Kelly's parents won multi-million dollar settlements.",
           "102": "What the whole, terrible incident – and the fall out – didn't do is anything to reduce the number of people like Kelly, who was schizophrenic, living on the streets. ",
-          "110": "You eating tonight Robert? Alright...",
+          "111": "You eating tonight Robert? Alright...",
           "113": "A few blocks away, volunteers serve up spaghetti at First Christian Church for anyone who needs a meal. Jacquie Nolan greets people as they walk into the church cafeteria.",
           "122": "How many people do you usually feed here?",
           "124": "Between 100 and 120. And every night of the week there's a meal somewhere in Fullerton.",
-          "126": "You guys want some dinner? You guys want some dinner?",
+          "128": "You guys want some dinner? You guys want some dinner?",
           "133": "Curtis keeps track of the time, day and location of all the free meals in Orange County in a one-page, homeless resource guide. He also notes places you can take a shower and get help finding housing. He carries copies of the guide with him to hand out.",
           "146": "What Curtis does – it’s part of the triage going on all over Southern California, a region facing a big crisis in homelessness. But no one thinks it’s the solution.",
           "156": "After dinner, I talk to Jason Nielsen. His plummet into homelessness started when his stressful, graveyard-shift job, and loud roommates got to be too much.",
           "165": "He went off all his mental health medications, thinking that would help calm his anxiety.",
-          "169": "When you're under a lot of distress, and stress, you do things you normally wouldn't do.",
+          "170": "When you're under a lot of distress, and stress, you do things you normally wouldn't do.",
           "175": "He filtered in and out of shelters, crashed with a relative, slept in his car. This went on for several years.",
           "181": "Just weeks ago, Jason moved into his own apartment in a permanent supportive housing complex. It's in an industrial part of Fullerton.",
           "189": "That complex was originally supposed to be built in the same neighborhood that is fighting off a similar proposal now. And, yes, they fought the earlier proposal too.",
-          "197": "Because of delays, the apartments Jason lives in now took five years to build and cost a million dollars more than planned. A lot of that's public funds, by the way. ",
+          "197": "Because of delays, the apartments Jason now lives in took five years to build and cost a million dollars more than planned. A lot of that's public funds, by the way. ",
           "207": "Jason is the type of person permanent supportive housing is intended to help -- homeless for more than a year, struggling with mental illness.",
           "214": "Does it feel good to have a place?",
-          "216": "Yes, yes it does. It gives you a starting point where you can rebuild your life.",
+          "216": "Yes it does, very good. It gives you a starting point where you can rebuild your life.",
           "222": "Jason heads back to his apartment, one of the lucky ones.",
           "225": "Fullerton has actually done more than many Southern California cities to address homelessness. And still, a recent count found 230 people sleeping outside in the city. Experts say there's just not enough land to build supportive housing only in urban areas where no one else lives.",
           "242": "Neighborhoods may have to step up, or they'll continue to have neighbors who sleep in their parks.",
-          "246": "Covering Orange County, I'm Jill Replogle."
+          "247": "Covering Orange County, I'm Jill Replogle."
         }
        },
       {
         "id":"1-4", // homelessness 101
-        "filename": "/fullerton-nimby/audio/audio-4-1.mp3",
+        "filename": "/interactives/fullerton-nimby/audio/audio-4-1.mp3",
         "captions": {
           "0": "Thanks everyone for being here, I'm David Gillanders, executive director of Pathways of Hope.",
           "4": "This is David emceeing the first community meeting about his organization's proposal to build 60 units of permanent supportive housing for Fullerton's chronically homeless. Permanent supportive housing includes rental assistance and social services.",
@@ -163,7 +163,7 @@ const audio = [
       },
       {
         "id":"1-5", // there goes the neighbohood
-        "filename": "/fullerton-nimby/audio/audio-5-1.mp3",
+        "filename": "/interactives/fullerton-nimby/audio/audio-5-1.mp3",
         "captions": {
           "0": "So I looked at the map. Yeah I was just looking at it.",
           "3": "I meet my colleague Matt at a Starbucks in Anaheim just off the I-5 freeway. We’re here on a mission: To find out how neighbors feel about living near an apartment complex for formerly homeless people with mental illness. ",
