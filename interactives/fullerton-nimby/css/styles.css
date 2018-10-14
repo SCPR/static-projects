@@ -280,7 +280,7 @@ p {
   }
 }
 
-.chapter:first-child {
+#chapter-1 {
   margin-top: -35px;
 }
 
