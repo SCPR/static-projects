@@ -3,7 +3,7 @@
 const audio = [
       {
         "id":"1-1", // the standoff
-        "filename": "/interactives/interactives/fullerton-nimby/audio/audio-1-1.mp3",
+        "filename": "/interactives/fullerton-nimby/audio/audio-1-1.mp3",
         "captions": {
               "0": "Homelessness has reached crisis levels in many Southern California communities. And everybody wants a solution.",
               "6": "But what happens when the solution includes housing the homeless in your neighborhood?",
@@ -46,7 +46,7 @@ const audio = [
       },
       {
         "id":"1-2", // the tour
-        "filename": "/interactives/interactives/fullerton-nimby/audio/audio-2-1.mp3",
+        "filename": "/interactives/fullerton-nimby/audio/audio-2-1.mp3",
         "captions": {
               "0": "I meet a small group in front of Fullerton city hall to take a tour of permanent supportive housing for homeless people.",
               "8": "We're visiting projects similar to one proposed in Fullerton by an organization called Pathways of Hope. Some of the neighbors leading opposition to the project are here. So is Councilman Jesus Silva. He's leading the tour.",
