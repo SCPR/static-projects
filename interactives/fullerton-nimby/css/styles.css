@@ -183,7 +183,7 @@ p {
 
 @media (max-width: 650px) {
   .header img {
-    width: 95%;
+    width: 150px;
   }
 }
 
