@@ -15,6 +15,8 @@ p {
 
 video {
   width: 100%;
+  position: relative;
+  z-index: 3000;
 }
 
 .about-ca-dream {
@@ -23,12 +25,12 @@ video {
 }
 
 .project-partners {
-  width: 650px;
+  width: 750px;
   margin: 0 auto;
 }
 
 .project-partners img {
-  width: 120px;
+  width: 100px;
   display: inline-block;
   margin: 20px;
 }
@@ -313,6 +315,35 @@ video {
   transform: translate(0, 0);
 }
 
+.history-story-promo {
+  background-color: #007397;
+  padding: 15px;
+  color: #fff;
+  text-align: center;
+  float: right;
+  width: 200px;
+  font-size: 1.2rem;
+}
+
+.history-story-promo:hover {
+  cursor: pointer;
+}
+
+.history-story-promo a {
+  text-decoration: underline;
+}
+
+.read-more {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.read-more:after {
+  font-family: 'fontawesome';
+  content: '\f0a9';
+  text-decoration: none;
+}
+
 .content-section {
   background-color: #fff;
   width: 100%;
@@ -395,12 +426,8 @@ video {
   font-weight: 700;
 }
 
-.block-image {
-  width: 1100px;
-}
-
 .the-block {
-  width: 1300px;
+  width: 1500px;
   float: left;
   height: auto;
   margin-left: -50px;
@@ -408,6 +435,15 @@ video {
 
 .the-block .cutline {
   margin: -30px 0 0 60px;
+}
+
+.block-image {
+  width: 1150px;
+  z-index: 1001;
+}
+
+.block-image:hover {
+  cursor: pointer;
 }
 
 .block-chatter, .neighbors-chatter {
@@ -472,14 +508,14 @@ video {
 }
 
 .selected-house {
-  background-color: #212121;
+  fill: #007397;
 }
 
 .tooltip {
   position: relative;
-  width: 200px;
-  margin: -410px 0 40px 0px;
-  padding: 40px;
+  width: 350px;
+  margin: -410px 0 0px 105px;
+  padding: 40px 40px 40px 100px;
   height: auto;
   color: #212121;
   float: right;
@@ -497,6 +533,11 @@ video {
 .cta {
   padding: 20px 20px 20px 5px;
   font-weight: 700;
+}
+
+.property-type {
+  padding-top: 15px;
+  text-transform: uppercase;
 }
 
 [data-tooltip] {
@@ -561,7 +602,7 @@ video {
   width: 100%;
   padding: 10px;
   background-color: #ffbc00;
-  font-size: 1.4rem;
+  font-size: 1rem;
   display: inline;
 }
 
@@ -614,17 +655,36 @@ video {
   font-family: "Lato", Helvetica Neue, sans-serif;
 }
 
-.visuals-container {
-  position: absolute;
+.visuals-container-show-onload {
+  position: fixed;
+  z-index: 1000;
   width: 1000px;
   margin: 40px;
   top: 20px;
   right: 20px;
-  display: none;
+  visibility: visible;
+}
+
+.visuals-container-show-onload img {
+  width: 100%;
+}
+
+.visuals-container {
+  position: fixed;
+  z-index: 1000;
+  width: 1000px;
+  margin: 40px;
+  top: 20px;
+  right: 20px;
+  visibility: hidden;
 }
 
 .visuals-container img {
   width: 100%;
+}
+
+.is-visible {
+  visibility: visible;
 }
 
 .cont-reading {
@@ -660,6 +720,46 @@ video {
   margin: 15px;
   border: 1px solid #F6F6F6;
   float: left;
+}
+
+.legend label {
+  display: block;
+  float: left;
+  height: 15px;
+  width: 16%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #212121;
+}
+
+.legend span {
+  border: 1px solid #F6F6F6;
+  display: block;
+  float: left;
+  height: 15px;
+  width: 15%;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #212121;
+}
+
+#legend {
+  width: 400px;
+  background-color: #fff;
+  border: 1px solid #F6F6F6;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  right: 60px;
+  z-index: 10001;
+}
+
+#legend small {
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  padding-bottom: 10px;
 }
 
 /* Audio players */
