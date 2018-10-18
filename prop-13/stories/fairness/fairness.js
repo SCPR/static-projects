@@ -1,5 +1,22 @@
 $(document).ready(function(){
 
+
+  const targetOffset1 = $("#anchor-point-1").offset().top;
+  const targetOffset2 = $("#anchor-point-2").offset().top;
+  const targetOffset3 = $("#fairness-section-2").offset().top;
+
+  const $w = $(window).scroll(function() {
+
+    const scrollTop = $(window).scrollTop();
+    $('.visuals-container').addClass('is-visible',scrollTop >= $('#fairness-section-1').offset().top - 150);
+
+    if (($w.scrollTop() + $(window).height()) > targetOffset3) {
+      $('.visuals-container img').attr("src","../fairness/images/fairness-don-home.jpg");
+    } else {
+      $('.visuals-container img').attr("src","../fairness/images/fairness-jas-portrait.jpg");
+    }
+  });
+
   // var targetOffset = $("#anchor-point-1").offset().top;
   //
   // var $w = $(window).scroll(function() {

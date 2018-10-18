@@ -1,13 +1,13 @@
 const neighborhood = [
   {"id":0,"sqft":2000,"beds_baths":"4 bed, 4 bath","type":"Triplex","occupancy":"Owner-occupied","market_value":"$915,000","assessed_value":"$259,096","property_taxes":"$5,010","property_tax_rate":"0.55%"},
-  {"id":1,"sqft":"n/a","beds_baths":"n/a","type":"Multiple single-family homes","occupancy":"Rented","market_value":"n/a","assessed_value":"$673,107","property_taxes":"$10,427","property_tax_rate":"n/a"},
+  {"id":1,"sqft":"n/a","beds_baths":"n/a beds, n/a baths","type":"Multiple single-family homes","occupancy":"Rented","market_value":"n/a","assessed_value":"$673,107","property_taxes":"$10,427","property_tax_rate":"n/a"},
   {"id":2,"sqft":991,"beds_baths":"2 bed, 1 bath","type":"Single-family home","occupancy":"Owner-occupied","market_value":"$694,000","assessed_value":"$384,343","property_taxes":"$6,222","property_tax_rate":"0.90%"},
   {"id":3,"sqft":1832,"beds_baths":"4 bed, 3 bath","type":"Single-family home","occupancy":"Owner-occupied","market_value":"$842,000","assessed_value":"$332,861","property_taxes":"$5,528","property_tax_rate":"0.66%"},
   {"id":4,"sqft":1172,"beds_baths":"4 bed, 1.5 bath","type":"Single-family home","occupancy":"Rented","market_value":"$696,000","assessed_value":"$39,081","property_taxes":"$1,660","property_tax_rate":"0.24%"},
   {"id":5,"sqft":865,"beds_baths":"2 bed, 1 bath","type":"Single-family home","occupancy":"Owner-occupied","market_value":"$705,000","assessed_value":"$111,436","property_taxes":"$3,274","property_tax_rate":"0.46%"},
   {"id":6,"sqft":2151,"beds_baths":"3 bed, 3 bath","type":"Single-family home","occupancy":"Owner-occupied","market_value":"$850,000","assessed_value":"$682,914","property_taxes":"$10,249","property_tax_rate":"1.21%"},
-  {"id":7,"sqft":"n/a","beds_baths":"n/a","type":"Triplex","occupancy":"Rented","market_value":"n/a","assessed_value":"$111,437","property_taxes":"$3,113","property_tax_rate":"n/a"},
-  {"id":8,"sqft":4547,"beds_baths":"Fourplex","type":"Fourplex","occupancy":"Rented","market_value":"n/a","assessed_value":"$303,918","property_taxes":"$6,020","property_tax_rate":"n/a"},
+  {"id":7,"sqft":"n/a","beds_baths":"n/a beds, n/a baths","type":"Triplex","occupancy":"Rented","market_value":"n/a","assessed_value":"$111,437","property_taxes":"$3,113","property_tax_rate":"n/a"},
+  {"id":8,"sqft":4547,"beds_baths":"n/a beds, n/a baths","type":"Fourplex","occupancy":"Rented","market_value":"n/a","assessed_value":"$303,918","property_taxes":"$6,020","property_tax_rate":"n/a"},
   {"id":9,"sqft":1000,"beds_baths":"2 bed, 1 bath","type":"Single-family home","occupancy":"Rented","market_value":"$728,000","assessed_value":"$282,934","property_taxes":"$4,949","property_tax_rate":"0.68%"},
   {"id":10,"sqft":855,"beds_baths":"2 bed, 1 bath","type":"Single-family home","occupancy":"Owner-occupied","market_value":"$728,000","assessed_value":"$755,000","property_taxes":"$11,221","property_tax_rate":"1.54%"},
   {"id":11,"sqft":1962,"beds_baths":"4 bed, 3 bath","type":"Single-family home","occupancy":"Rented","market_value":"$901,000","assessed_value":"$454,209","property_taxes":"$7,324","property_tax_rate":"0.81%"},
@@ -15,9 +15,9 @@ const neighborhood = [
   {"id":13,"sqft":1446,"beds_baths":"2 bed, 1 bath","type":"Single-family home","occupancy":"Owner-occupied","market_value":"$773,000","assessed_value":"$53,192","property_taxes":"$1,812","property_tax_rate":"0.23%"},
   {"id":14,"sqft":1276,"beds_baths":"4 bed, 2 bath","type":"Single-family home","occupancy":"Rented","market_value":"$743,000","assessed_value":"$394,823","property_taxes":"$6,458","property_tax_rate":"0.87%"},
   {"id":15,"sqft":1137,"beds_baths":"2 bed, 1 bath","type":"Single-family home","occupancy":"Owner-occupied","market_value":"$730,000","assessed_value":"$541,061","property_taxes":"$8,336","property_tax_rate":"1.14%"},
-  {"id":16,"sqft":2490,"beds_baths":"n/a","type":"Triplex","occupancy":"Rented","market_value":"$877,000","assessed_value":"$633,743","property_taxes":"$10,212","property_tax_rate":"1.16%"},
+  {"id":16,"sqft":2490,"beds_baths":"n/a beds, n/a baths","type":"Triplex","occupancy":"Rented","market_value":"$877,000","assessed_value":"$633,743","property_taxes":"$10,212","property_tax_rate":"1.16%"},
   {"id":17,"sqft":1190,"beds_baths":"2 bed, 1 bath","type":"Single-family home","occupancy":"Owner-occupied","market_value":"$736,000","assessed_value":"$107,858","property_taxes":"$2,494","property_tax_rate":"0.34%"},
-  {"id":18,"sqft":"n/a","beds_baths":"n/a","type":"Apartment building","occupancy":"Rented","market_value":"n/a","assessed_value":"$649,262","property_taxes":"$12,803","property_tax_rate":"n/a"},
+  {"id":18,"sqft":"n/a","beds_baths":"n/a beds, n/a baths","type":"Apartment building","occupancy":"Rented","market_value":"n/a","assessed_value":"$649,262","property_taxes":"$12,803","property_tax_rate":"n/a"},
   {"id":19,"sqft":2038,"beds_baths":"3 bed, 2 bath","type":"Duplex","occupancy":"Rented","market_value":"$811,000","assessed_value":"$187,446","property_taxes":"$3,871","property_tax_rate":"0.48%"},
   {"id":20,"sqft":2017,"beds_baths":"4 bed, 3 bath","type":"Triplex","occupancy":"Rented","market_value":"$886,000","assessed_value":"$357,026","property_taxes":"$6,470","property_tax_rate":"0.73%"},
   {"id":21,"sqft":820,"beds_baths":"2 bed, 1 bath","type":"Single-family home","occupancy":"Rented","market_value":"$657,000","assessed_value":"$117,949","property_taxes":"$2,724","property_tax_rate":"0.41%"},
@@ -34,7 +34,7 @@ const neighborhood = [
   {"id":32,"sqft":2496,"beds_baths":"5 bed, 2 bath","type":"Duplex","occupancy":"Rented","market_value":"$876,000","assessed_value":"$62,320","property_taxes":"$2,282","property_tax_rate":"0.26%"},
   {"id":33,"sqft":2028,"beds_baths":"4 bed, 3 bath","type":"Single-family home","occupancy":"Rented","market_value":"$882,000","assessed_value":"$238,093","property_taxes":"$4,344","property_tax_rate":"0.49%"},
   {"id":34,"sqft":1028,"beds_baths":"2 bed, 2 bath","type":"Single-family home","occupancy":"Owner-occupied","market_value":"$722,000","assessed_value":"$339,521","property_taxes":"$5,608","property_tax_rate":"0.78%"},
-  {"id":35,"sqft":1520,"beds_baths":"n/a","type":"Duplex","occupancy":"Rented","market_value":"$768,000","assessed_value":"$238,370","property_taxes":"$4,558","property_tax_rate":"0.59%"},
+  {"id":35,"sqft":1520,"beds_baths":"n/a beds, n/a baths","type":"Duplex","occupancy":"Rented","market_value":"$768,000","assessed_value":"$238,370","property_taxes":"$4,558","property_tax_rate":"0.59%"},
   {"id":36,"sqft":1228,"beds_baths":"3 bed, 2 bath","type":"Single-family home","occupancy":"Owner-occupied","market_value":"$737,000","assessed_value":"$145,289","property_taxes":"$2,804","property_tax_rate":"0.38%"},
   {"id":37,"sqft":825,"beds_baths":"2 bed, 1 bath","type":"Single-family home","occupancy":"Rented","market_value":"$630,000","assessed_value":"$591,494","property_taxes":"$9,110","property_tax_rate":"1.45%"},
   {"id":38,"sqft":1998,"beds_baths":"5 bed, 2 bath","type":"Duplex","occupancy":"Owner-occupied","market_value":"$801,000","assessed_value":"$128,968","property_taxes":"$3,043","property_tax_rate":"0.38%"},
@@ -49,59 +49,78 @@ const neighborhood = [
 
 $(document).ready(function(){
 
-  function showTooltip(evt, text) {
-    let tooltip = document.getElementById("tooltip");
-    tooltip.innerHTML = text;
-    tooltip.style.display = "block";
-    tooltip.style.left = evt.pageX + 10 + 'px';
-    tooltip.style.top = evt.pageY + 10 + 'px';
-  }
+  $('#houses rect, #houses polygon, #houses line').click(function(){
+    const activeHouse = $(this).attr('data-name');
+    console.log(activeHouse)
 
-  function hideTooltip() {
-    var tooltip = document.getElementById("tooltip");
-    tooltip.style.display = "none";
-  }
+    // $('#houses rect, #houses polygon, #houses line').removeClass('selected-house');
+    $(this).addClass('selected-house')
 
-  $('.house').mouseover(function(event){ //when hover starts
-
-    $('.house').removeClass('selected-house');
-    $(this).addClass('selected-house');
-
-		//Get the ID of the current tooltip
-		const activeTooltip = $(this).attr('data-house');
-
-		//Fill in with data from JSON array
-    $('.property-type span').html(neighborhood[activeTooltip].type);
-    $('.size span').html(neighborhood[activeTooltip].beds_baths);
-    $('.sqft span').html(addCommas(neighborhood[activeTooltip].sqft));
-    $('.occupancy span').html(neighborhood[activeTooltip].occupancy);
-    $('.tax-rate span').html(neighborhood[activeTooltip].property_tax_rate);
-    $('.taxes-paid span').html(neighborhood[activeTooltip].property_taxes);
-		$('.market-value span').html(neighborhood[activeTooltip].market_value);
-    $('.assessed-value span').html(neighborhood[activeTooltip].assessed_value);
-
-    $('.tooltip').css('left',event.pageX);
-    $('.tooltip').css('top',event.pageY);
-    $('.tooltip').show();
-    $('.tooltip').css("position", 'absolute');
+    	//Fill in with data from JSON array
+      $('.property-type span').html(neighborhood[activeHouse].type);
+      $('.size span').html(neighborhood[activeHouse].beds_baths);
+      $('.sqft span').html(addCommas(neighborhood[activeHouse].sqft));
+      $('.occupancy span').html(neighborhood[activeHouse].occupancy);
+      $('.tax-rate span').html(neighborhood[activeHouse].property_tax_rate);
+      $('.taxes-paid span').html(neighborhood[activeHouse].property_taxes);
+  		$('.market-value span').html(neighborhood[activeHouse].market_value);
+      $('.assessed-value span').html(neighborhood[activeHouse].assessed_value);
   });
+});
 
-  const offsetBlock = $(".the-block").offset().top;
+  // function showTooltip(evt, text) {
+  //   let tooltip = document.getElementById("tooltip");
+  //   tooltip.innerHTML = text;
+  //   tooltip.style.display = "block";
+  //   tooltip.style.left = evt.pageX + 10 + 'px';
+  //   tooltip.style.top = evt.pageY + 10 + 'px';
+  // }
+  //
+  // function hideTooltip() {
+  //   var tooltip = document.getElementById("tooltip");
+  //   tooltip.style.display = "none";
+  // }
 
-  $(window).scroll(function() {
-    const scrollTopBlock = $(window).scrollTop();
-    const neighborhoodSection = $('.the-block').offset().top - $('#the-neighborhood').outerHeight();
-
-    // Pin block graphic div on scroll
-    if (scrollTopBlock > offsetBlock) {
-      $(".the-block").addClass("sticky");
-    } else {
-      $(".the-block").removeClass("sticky");
-    }
-
-
-    if($(this).scrollTop() >= neighborhoodSection && $(".the-block").hasClass("fixed")){
-       $(".the-block").removeClass("sticky");
+  // $('.house').mouseover(function(event){ //when hover starts
+  //
+  //   $('.house').removeClass('selected-house');
+  //   $(this).addClass('selected-house');
+  //
+	// 	//Get the ID of the current tooltip
+	// 	const activeTooltip = $(this).attr('data-house');
+  //
+	// 	//Fill in with data from JSON array
+  //   $('.property-type span').html(neighborhood[activeTooltip].type);
+  //   $('.size span').html(neighborhood[activeTooltip].beds_baths);
+  //   $('.sqft span').html(addCommas(neighborhood[activeTooltip].sqft));
+  //   $('.occupancy span').html(neighborhood[activeTooltip].occupancy);
+  //   $('.tax-rate span').html(neighborhood[activeTooltip].property_tax_rate);
+  //   $('.taxes-paid span').html(neighborhood[activeTooltip].property_taxes);
+	// 	$('.market-value span').html(neighborhood[activeTooltip].market_value);
+  //   $('.assessed-value span').html(neighborhood[activeTooltip].assessed_value);
+  //
+  //   $('.tooltip').css('left',event.pageX);
+  //   $('.tooltip').css('top',event.pageY);
+  //   $('.tooltip').show();
+  //   $('.tooltip').css("position", 'absolute');
+  // });
+  //
+  // const offsetBlock = $(".the-block").offset().top;
+  //
+  // $(window).scroll(function() {
+  //   const scrollTopBlock = $(window).scrollTop();
+  //   const neighborhoodSection = $('.the-block').offset().top - $('#the-neighborhood').outerHeight();
+  //
+  //   // Pin block graphic div on scroll
+  //   if (scrollTopBlock > offsetBlock) {
+  //     $(".the-block").addClass("sticky");
+  //   } else {
+  //     $(".the-block").removeClass("sticky");
+  //   }
+  //
+  //
+  //   if($(this).scrollTop() >= neighborhoodSection && $(".the-block").hasClass("fixed")){
+  //      $(".the-block").removeClass("sticky");
 
     // Remove "swtich candidate" div from view when bottom of page is reached
     // if ($('body').height() <= ($(window).height() + $(window).scrollTop())) {
@@ -110,5 +129,5 @@ $(document).ready(function(){
     //   $(".switch-container").show();
     // }
 
-  });
-});
+  // });
+// });

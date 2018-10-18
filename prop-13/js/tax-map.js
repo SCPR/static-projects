@@ -17,7 +17,6 @@ map.touchZoomRotate.disableRotation();
 const geocoder = new MapboxGeocoder({accessToken: mapboxgl.accessToken});
 map.addControl(geocoder, 'top-left');
 
-// map.addControl(geocoder);
 
 map.on('load', function() {
 
@@ -62,7 +61,7 @@ map.on('load', function() {
           visibility: 'visible',
         },
         'paint': {
-            'fill-opacity': 0.8,
+            'fill-opacity': 0.75,
             'fill-outline-color': '#fff',
             'fill-color': [
                 'interpolate',
