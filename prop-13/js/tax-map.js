@@ -51,7 +51,7 @@ map.on('load', function() {
         closeOnClick: false,
       });
 
-      map.addSource('tracts', { type: 'geojson', data: '../data/filtered-tracts.json' });
+      map.addSource('tracts', { type: 'geojson', data: '../prop-13/data/filtered-tracts.json' });
 
       map.addLayer({
         id: "tracts",
