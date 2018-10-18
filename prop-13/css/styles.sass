@@ -1,0 +1,862 @@
+@import "_variables"
+
+// fonts
+
+$sans: 'Lato', Helvetica Neue, sans-serif
+$serif: 'Alegreya', Georgia, serif
+
+// colors
+
+// kpcc
+
+$medblue: #007397
+$deepblue: #003B5B
+$gold: #ffbc00
+// $gold: #F3AA27
+$socalorange: #F87E21
+$pink: #F3567C
+$peach: #FC9A61
+$deeporange: #D15904
+
+$palegray: #F6F6F6
+$lightgray: #E8E8E8
+$medgray: #898989
+$darkgray: #363636
+$nearblack: #212121
+$white: #fff
+
+// darks
+
+$black33: #212121
+$black50: #323232
+$black66: #424242
+$black121: #797979
+$black215: #d7d7d7
+$black235: #ebebeb
+$black245: #f5f5f5
+
+// charts
+
+$chartBlue: #329ce8
+$chartRed: #e34e36
+$chartOrange: #ff8f24
+$chartYellow: #fec44f
+$chartGreen: #52b033
+$chartPurple: #8554bf
+$chartLightBlue: #6dccf2
+$chartGray: #c9c9c9
+$chartCopy: #333333
+$chartText: #848484
+$tableBar: #efebde
+
+
+body
+  font-family: $sans
+  margin: 0
+  padding: 0
+  //background-color: $nearblack
+
+a
+  color: $nearblack
+  text-decoration: underline
+
+p
+  line-height: 1.4
+
+video
+  width: 100%
+
+.about-ca-dream
+  width: 650px
+  margin: 0 auto
+
+.project-partners
+  width: 650px
+  margin: 0 auto
+  img
+    width: 120px
+    display: inline-block
+    margin: 20px
+
+.page-intro
+  .top
+    // min-height: 100vh
+    background-size: cover
+    background-position: center
+    position: relative
+    background: url('')
+    &::after
+      content: ""
+      position: absolute
+      z-index: 1
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      background: rgba(0, 0, 0, 0.4)
+  &.half-height .top
+    min-height: 50vh
+  header
+    z-index: 2
+    color: #fff
+    width: calc(66.6666666667% - 66.6666666667px)
+    float: left
+    margin-left: 40px
+    left: calc(16.6666666667% - 46.6666666667px + 40px)
+    position: relative
+    position: absolute
+    top: 50%
+    -webkit-transform: translateY(-50%)
+    transform: translateY(-50%)
+    text-align: center
+    img
+      width: 250px
+  .pre-heading
+    letter-spacing: .07em
+    font-size: 1.1rem
+    text-transform: uppercase
+  .heading
+    width: 650px
+    text-align: center
+    font-size: 2rem
+    margin: 0 auto
+    text-transform: uppercase
+    word-spacing: 5px
+    letter-spacing: 1px
+  .sub-heading
+    font-size: 48px
+    margin: 0.3em 0 0
+    margin: 0
+    color: #c7c7c7
+  &.large-heading header
+    .heading, .sub-heading
+      font-size: 60px
+  .discover
+    position: absolute
+    bottom: 20px
+    right: 10%
+    z-index: 3
+    color: $nearblack
+    cursor: pointer
+    -webkit-transition: opacity 200ms
+    transition: opacity 200ms
+    &:hover
+      opacity: 0.8
+    svg
+      display: block
+      width: 20px
+      height: 20px
+      -webkit-transition: -webkit-transform 200ms
+      transition: -webkit-transform 200ms
+      transition: transform 200ms
+      transition: transform 200ms, -webkit-transform 200ms
+    &:hover svg
+      -webkit-transform: translateY(4px)
+      transform: translateY(4px)
+  .shape
+    position: absolute
+    z-index: 2
+    left: 0
+    bottom: -1px
+    width: 100%
+    height: 9vw
+  .content
+    padding: 130px 0 60px
+    background-color: $gold
+    color: $nearblack
+    &::after
+      clear: both
+      content: ""
+      display: block
+  &.half-height .content
+    padding: 60px 0
+  &.centred-content .content
+    text-align: center
+  .button-holder
+    clear: both
+    float: left
+    width: 100%
+    margin-top: 60px
+    text-align: center
+
+@media only screen and (max-width: 768px)
+  .page-intro header
+    width: calc(83.3333333333% - 73.3333333333px)
+    float: left
+    margin-left: 40px
+    left: calc(8.3333333333% - 43.3333333333px + 40px)
+    position: relative
+    position: absolute
+
+@media only screen and (max-width: 414px)
+  .page-intro header
+    width: calc(100% - 80px)
+    float: left
+    margin-left: 40px
+    left: calc(0% - 40px + 40px)
+    position: relative
+    position: absolute
+
+@media only screen and (min-width: 1800px)
+  .page-intro .pre-heading
+    font-size: 16px
+
+@media only screen and (min-width: 1800px)
+  .page-intro
+    .heading, .sub-heading
+      font-size: 58px
+
+@media only screen and (max-width: 768px)
+  .page-intro
+    .heading, .sub-heading
+      font-size: 38px
+
+@media only screen and (max-width: 414px)
+  .page-intro
+    .heading, .sub-heading
+      font-size: 28px
+
+@media only screen and (min-width: 1800px)
+  .page-intro.large-heading header
+    .heading, .sub-heading
+      font-size: 80px
+
+@media only screen and (max-width: 768px)
+  .page-intro.large-heading header
+    .heading, .sub-heading
+      font-size: 38px
+
+@media only screen and (max-width: 414px)
+  .page-intro.large-heading header
+    .heading, .sub-heading
+      font-size: 28px
+
+@media (max-width: 1400px)
+  .page-intro .discover
+    right: 20px
+
+@media (max-width: 1200px)
+  .page-intro .discover
+    right: 50%
+    bottom: 80px
+    -webkit-transform: translateX(50%)
+    transform: translateX(50%)
+    color: #fff !important
+
+@media only screen and (max-width: 1024px)
+  .page-intro .content
+    padding: 60px 0
+
+.text
+  margin: 115px 0
+  &::after
+    clear: both
+    content: ""
+    display: block
+  &.center
+    text-align: center
+
+.text-block
+  width: 650px
+  margin: 0 auto
+  margin-top: 45px
+  // width: calc(50% - 60px)
+  // // float: left
+  // margin: 40px 0 0 0px
+  // left: calc(25% - 50px + 40px)
+  // position: relative
+  font-size: 1.4rem
+  font-family: $sans
+
+@media (max-width: 1200px)
+  .text-block
+    width: calc(66.6666666667% - 66.6666666667px)
+    float: left
+    margin-left: 40px
+    left: calc(16.6666666667% - 46.6666666667px + 40px)
+    position: relative
+
+@media only screen and (max-width: 768px)
+  .text-block
+    width: calc(100% - 80px)
+    float: left
+    margin-left: 40px
+    left: calc(0% - 40px + 40px)
+    position: relative
+    font-size: 1.4rem
+
+.scroll-transition
+  opacity: 0
+  -webkit-transform: translate(0, 15px)
+  transform: translate(0, 15px)
+  -webkit-transition: opacity 1.25s ease-in-out, -webkit-transform 1.25s ease-in-out
+  transition: opacity 1.25s ease-in-out, -webkit-transform 1.25s ease-in-out
+  transition: opacity 1.25s ease-in-out, transform 1.25s ease-in-out
+  transition: opacity 1.25s ease-in-out, transform 1.25s ease-in-out, -webkit-transform 1.25s ease-in-out
+  &.visible
+    opacity: 1
+    -webkit-transform: translate(0, 0)
+    transform: translate(0, 0)
+
+.content-section
+  background-color: $white
+  width: 100%
+  padding: 100px 0 10px 0
+  p
+    font-size: 1.2rem !important
+  .title
+    font-size: 2rem
+    line-height: 1.2
+    color: $nearblack
+    font-weight: 700
+    font-family: $serif
+    text-align: center
+  .subhed
+    font-size: 1.4rem
+    line-height: 1.2
+    color: $nearblack
+    font-weight: 700
+    font-family: $serif
+    text-align: center
+  .author
+    font-size: 1.1rem
+    line-height: 1.2
+    color: $nearblack
+    padding-top: 15px
+    font-weight: 700
+    font-family: $sans
+    text-align: left
+
+
+/* Graphics */
+
+.graphic-section
+  width: 100%
+  padding: 100px 0 10px 0
+  clear: both
+
+.graphic
+  width: 420px
+  margin: 15px 30px
+  //padding-top: 35px
+  float: left
+
+.graphic-subhead
+  font-size: 1.1rem
+  line-height: 1.2
+  color: $nearblack
+  padding-top: 15px
+  font-weight: 700
+  font-family: $sans
+
+.graphic-header
+  font-size: 2rem
+  line-height: 1.2
+  color: $nearblack
+  font-weight: 700
+  font-family: $serif
+
+.graphic-chatter
+  font-size: 1.2rem
+
+.label
+  padding: 10px
+  background-color: $gold
+  text-transform: uppercase
+  text-align: center
+  display: inline
+  margin: 5px
+  font-weight: 700
+
+.block-image
+  width: 1100px
+
+.the-block
+  // background-color: #dadbdc
+  width: 1300px
+  float: left
+  height: auto
+  margin-left: -50px
+  .cutline
+    margin: -30px 0 0 60px
+
+.block-chatter, .neighbors-chatter
+  width: 650px
+  margin: 0 auto
+  line-height: 1.2
+  font-size: 1.2rem
+  margin-top: 35px
+  clear: both
+
+.sticky
+  position: fixed
+  top: 0
+
+.houses-container
+  position: absolute
+  z-index: 1
+  margin: 15px
+  border-left: 20px solid $white
+  border-right: 20px solid $white
+
+.house
+  background-color: $palegray
+  display: inline-block
+  text-align: center
+  padding-top: 5px
+  &:before
+    content: '\f015'
+    font-family: 'fontawesome'
+    font-size: 1.9rem
+  &:hover
+    background-color: $nearblack
+    cursor: pointer
+    color: $palegray
+
+.north-block, .south-block
+  //margin-top: 35px
+  padding: 25px 0 0 20px
+
+.north-block
+  .house
+    width: 40px
+    height: 40px
+    margin: 16px
+
+.south-block
+  border-top: 20px solid $white
+  .house
+    width: 40px
+    height: 40px
+    margin: 7px
+
+.selected-house
+  background-color: $nearblack
+
+.tooltip
+  position: relative
+  width: 200px
+  margin: -410px 0 40px 0px
+  padding: 40px
+  height: auto
+  color: $nearblack
+  // background-color: $white
+  float: right
+  // left: 20px
+  // bottom: 20px
+  // padding: 10px
+  z-index: 101
+  // display: none
+  span
+    font-weight: 700
+  p
+    padding-bottom: 5px
+
+.cta
+  padding: 20px 20px 20px 5px
+  font-weight: 700
+
+[data-tooltip]
+  position: relative
+  &:before, &:after
+    display: none
+    position: absolute
+    top: 0
+  &:before
+    border-left: 7px solid transparent
+    border-right: 7px solid transparent
+    content: ""
+    left: 20px
+    margin-top: 1em
+  &:after
+    background-color: $medblue
+    border-radius: 7px
+    color: $white
+    content: attr('data-tooltip')
+    // content: attr(data-tooltip-label) "\a" attr(data-tooltip-message)
+    left: 0
+    margin-top: 1.5em
+    padding: 5px 15px
+    white-space: pre-wrap
+    width: 100px
+  &:hover
+    &:after, &:before
+      display: block
+
+.meet-the-neighbors
+  margin: 0 auto
+  width: 1500px
+
+.neighbor-nav
+  width: 400px
+  margin: 45px 25px
+  display: inline-block
+  vertical-align: top
+  .story-topic
+    letter-spacing: .07em
+    font-size: 1.1rem
+    text-transform: uppercase !important
+
+.about-the-story
+  line-height: 1.2
+  font-size: 1.1rem
+  padding-bottom: 10px
+
+.read-more-btn
+  width: 100%
+  padding: 10px
+  background-color: $gold
+  // color: $white
+  font-size: 1.4rem
+  display: inline
+  &:hover
+    background-color: $medgray
+    cursor: pointer
+    color: $white
+  &:after
+    font-family: 'fontawesome'
+    content: '\f0a9'
+
+/* Story sections */
+
+.story-section
+  width: 100%
+  padding: 10px
+  clear: both
+
+.story
+  width: 470px
+  margin: 15px 30px
+  //padding-top: 35px
+  float: left
+
+.story-subhed
+  font-size: 1.5rem
+  line-height: 1.2
+  color: $nearblack
+  //padding-top: 15px
+  font-weight: 700
+  font-family: $serif
+
+.story-header
+  font-size: 2rem
+  line-height: 1.2
+  color: $nearblack
+  font-weight: 700
+  font-family: $serif
+
+.story-author
+  font-size: 1.1rem
+  line-height: 1.2
+  color: $nearblack
+  padding-top: 15px
+  font-weight: 700
+  font-family: $sans
+  // text-align: left
+
+.visuals-container
+  position: absolute
+  width: 1000px
+  margin: 40px
+  top: 20px
+  right: 20px
+  display: none
+  img
+    width: 100%
+
+.cont-reading
+  background-color: $nearblack
+  color: $white
+  margin: 0 auto
+  width: 250px
+  letter-spacing: 2px
+  padding: 10px
+  text-transform: uppercase
+  // display: inline
+  text-align: center
+  &:after
+    font-family: 'fontawesome'
+    content: '\f0a7'
+
+// .text-list
+//   margin: 115px 0
+//   text-align: center
+//   &::after
+//     clear: both
+//     content: ""
+//     display: block
+//   h1
+//     text-transform: uppercase
+//     font-size: 13px
+//     letter-spacing: 0.07em
+//   ul
+//     list-style: none
+//     font-size: 32px
+//
+// @media only screen and (max-width: 768px)
+//   .text-list ul
+//     font-size: 26px
+//
+// @media only screen and (max-width: 414px)
+//   .text-list ul
+//     font-size: 22px
+
+// .hero
+//   background: $deepblue url('../images/fence.png') no-repeat
+//   background-size: cover
+//   background-position: 0 10vh
+//   height: 50vh
+//
+// .header
+//   width: 500px
+//   //min-height: 50vh
+//   //padding-bottom: 20px
+//   text-align: center
+//   margin: 50px auto
+//   line-height: 1.3
+//   color: $nearblack
+//   @media(max-width: 500px)
+//     width: 95%
+//   img
+//     width: 200px
+//     padding: 10px
+//   h1
+//     font-weight: 700
+
+// .lead-art
+//   width: 100%
+//   height: 100vh
+//   display: flex
+//   margin-top: 15px
+//   justify-content: center
+//   align-items: center
+//   background-size: cover
+//   background-position: center center
+//   background-repeat: no-repeat
+//   // background-attachment: fixed
+//   @media(max-width: 800px)
+//     background-size: contain
+//     height: 66vw
+
+
+// .content-well
+//   width: 650px
+//   margin: 0 auto
+//   padding-top: 50px
+//   @media(max-width: 650px)
+//     width: 95%
+
+/* Maps */
+
+#geocoder
+  position: absolute !important
+  top: 10px !important
+  left: 10px !important
+
+.map
+  background-color: $white
+
+#tax-map
+  width: 1100px
+  height: 800px
+  margin: 15px
+  border: 1px solid $palegray
+  //background-color: $medgray
+  float: left
+
+/* Audio players */
+
+.audio-box
+  display: block
+  width: 650px
+  margin: 0 auto
+  padding-bottom: 30px
+  @media(max-width: 650px)
+    width: 95%
+
+.audio-player-container
+  float: left
+  padding-right: 0
+  margin: 40px 50px 30px 0 !important
+  border-bottom: 1px solid $white
+  @media all and (max-width: 600px)
+    margin: 20px auto !important
+    width: 100%
+
+.audio-img-container
+  width: 100%
+  margin: 25px
+
+.audio-img
+  width: 102%
+  padding-top: 15px
+
+.audio-detail
+  padding: 25px 15px 15px 0px
+  font-size: 1.7rem
+
+.waveform
+  clear: both
+  width: 100%
+
+.waveform-caption, .audio-caption
+  width: 100%
+  //height: 190px
+  // text-align: right
+  //float: right
+  min-height: 150px
+  font-size: 2rem
+  padding: 10px 15px 15px 15px
+  margin: 0 15px
+  line-height: 1.4
+  word-wrap: break-word
+  @media all and (max-width: 800px)
+    float: none
+    margin: 0
+    font-size: 1.6rem
+    padding: 0 0 0 15px
+  .fa
+    //float: left
+    text-align: center
+    padding-right: 10px
+
+.sound, .playing, .volume, .pause
+  // width: 100%
+  text-align: center
+  font-size: 25px
+  padding-top: 15px
+  &:hover
+    cursor: pointer
+
+/* shows pause button */
+.volume
+  &::before
+    content: '\f04c'
+    // content: '\f026'
+    font-family: 'fontawesome'
+
+.pause
+  padding: 6px
+  border: 2px solid $nearblack
+  width: 100px
+  margin: 10px auto
+
+// .pause, .volume
+//   float: right
+//   padding: 6px
+//   margin-right: 15px
+//   border: 2px solid $nearblack
+
+.sound-toggle
+  float: right
+  clear: both
+  padding: 10px
+  border: 2px solid $nearblack
+  font-family: $sans
+  text-transform: uppercase
+  &:hover
+    background-color: $nearblack
+    color: $white
+    cursor: pointer
+
+.off
+  background-color: $white
+  color: $nearblack
+  &:after
+    content: '\f026'
+    padding: 10px
+    font-family: 'fontawesome'
+
+.on
+  background-color: $nearblack
+  color: $white
+  &:after
+    content: '\f028'
+    padding: 10px
+    font-family: 'fontawesome'
+
+
+// .pause
+  // color: $white
+  // background-color: $nearblack
+  // width: 25px
+  // height: 25px
+  // &::before
+  //   content: '\f04c'
+  //   font-family: 'fontawesome'
+
+
+.audio-box-mobile
+  display: none
+  min-width: 320px
+  margin: 50px auto
+  .speaker-mug
+    width: 100%
+    img
+      width: 95%
+  audio
+    width: 95%
+  @media all and (max-width: 770px)
+    display: block
+
+// /* Expander for footnotes */
+//
+// .text-link
+//   border-bottom: 3px solid $nearblack
+//   &:after
+//     color: $nearblack
+//     padding-left: 3px
+//     content: '\f0a7'
+//     font-family: 'fontawesome'
+//   &:hover
+//     cursor: pointer
+//
+// .expander-content
+//   background-color: $palegray
+//   padding: 20px
+//   font-size: 20px
+//   line-height: 150%
+//   position: relative
+//   padding-top: 45px !important
+//   margin: 10px 0
+//   .fa
+//     text-align: right
+//
+// .expander-hidden
+//   display: none
+//
+// .expander-close
+//   cursor: pointer
+//   &:before
+//     position: absolute
+//     top: 10px
+//     right: 20px
+//     font-family: 'fontawesome'
+//     content: '\f057'
+//     color: $nearblack
+//     // padding: 25px
+//     font-size: 20px
+
+/* Images */
+
+.image-block-wide
+  margin: 4.8rem auto
+
+.image-block
+  width: 100%
+  img
+    margin-bottom: 0.3rem
+    width: 100%
+
+.inline-image
+  width: 300px
+  float: right
+  margin-left: 15px
+
+.cutline
+  padding: 10px 0
+  font-size: 1rem
+  font-family: $sans
+  color: $medgray
+  @media(max-width: 650px)
+    width: 95%
