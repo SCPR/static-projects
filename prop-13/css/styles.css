@@ -11,6 +11,7 @@ a {
 
 p {
   line-height: 1.4;
+  font-size: 1.2rem;
 }
 
 video {
@@ -19,20 +20,38 @@ video {
   z-index: 3000;
 }
 
+.story-video {
+  background-color: #fff;
+  padding: 10px 0;
+}
+
+.no-padding {
+  padding-top: 0;
+}
+
+#partners {
+  float: left;
+  width: 300px;
+  margin: 25px;
+  padding: 15px;
+}
+
 .about-ca-dream {
-  width: 650px;
+  width: 300px;
   margin: 0 auto;
 }
 
+.about-ca-dream p {
+  font-size: 1rem;
+}
+
 .project-partners {
-  width: 650px;
+  width: 300px;
   margin: 0 auto;
 }
 
 .project-partners img {
-  width: 100px;
-  display: inline-block;
-  margin: 10px;
+  margin: 10px 10px 10px 0;
 }
 
 .page-intro .top {
@@ -74,7 +93,7 @@ video {
 }
 
 .page-intro header img {
-  width: 250px;
+  width: 150px;
 }
 
 .page-intro .pre-heading {
@@ -86,7 +105,7 @@ video {
 .page-intro .heading {
   width: 650px;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.4rem;
   margin: 0 auto;
   text-transform: uppercase;
   word-spacing: 5px;
@@ -145,7 +164,7 @@ video {
 
 .page-intro .content {
   padding: 130px 0 60px;
-  background-color: #ffbc00;
+  background-color: #ffd766;
   color: #212121;
 }
 
@@ -316,21 +335,22 @@ video {
   transform: translate(0, 0);
 }
 
-.history-story-promo {
+.promo {
   background-color: #007397;
-  padding: 15px;
+  padding: 10px;
+  margin: 15px 0 0 15px;
   color: #fff;
   text-align: center;
   float: right;
-  width: 200px;
+  width: 180px;
   font-size: 1.2rem;
 }
 
-.history-story-promo:hover {
+.promo:hover {
   cursor: pointer;
 }
 
-.history-story-promo a {
+.promo a {
   text-decoration: underline;
 }
 
@@ -592,10 +612,24 @@ video {
   padding-bottom: 15px;
 }
 
+@media (max-width: 1500px) {
+  .meet-the-neighbors {
+    width: 100%;
+    margin: 25px;
+  }
+}
+
 #the-neighbors {
   background-color: #fff;
   position: relative;
   z-index: 4000;
+}
+
+@media (max-width: 1500px) {
+  #the-neighbors {
+    margin: 0 auto;
+    width: 100%;
+  }
 }
 
 .neighbor-nav {
@@ -603,6 +637,30 @@ video {
   margin: 45px 25px;
   display: inline-block;
   vertical-align: top;
+}
+
+@media (max-width: 1500px) {
+  .neighbor-nav {
+    width: 250px;
+  }
+}
+
+@media (max-width: 650px) {
+  .neighbor-nav {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .neighbor-nav img {
+    width: 250px;
+  }
+}
+
+@media (max-width: 650px) {
+  .neighbor-nav img {
+    width: 95%;
+  }
 }
 
 .neighbor-nav .story-topic {
@@ -617,10 +675,16 @@ video {
   padding-bottom: 10px;
 }
 
+@media (max-width: 650px) {
+  .about-the-story {
+    width: 95%;
+  }
+}
+
 .read-more-btn {
   width: 100%;
   padding: 10px;
-  background-color: #ffbc00;
+  background-color: #ffd766;
   font-size: 1rem;
   display: inline;
 }
@@ -643,14 +707,39 @@ video {
   clear: both;
 }
 
+@media (max-width: 1615px) {
+  .story-section {
+    width: 650px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .story-section {
+    width: 95%;
+  }
+}
+
 .story {
   width: 470px;
   margin: 15px 30px;
   float: left;
 }
 
+@media (max-width: 1615px) {
+  .story {
+    width: 100%;
+    float: none;
+    margin: 0;
+  }
+}
+
+.story p {
+  font-size: 1.2rem;
+}
+
 .story-subhed {
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
   line-height: 1.2;
   color: #212121;
   font-weight: 700;
@@ -669,23 +758,9 @@ video {
   font-size: 1.1rem;
   line-height: 1.2;
   color: #212121;
-  padding-top: 15px;
+  padding: 25px 0 15px 0;
   font-weight: 700;
   font-family: "Lato", Helvetica Neue, sans-serif;
-}
-
-.visuals-container-show-onload {
-  position: fixed;
-  z-index: 1000;
-  width: 1000px;
-  margin: 40px;
-  top: 20px;
-  right: 20px;
-  visibility: visible;
-}
-
-.visuals-container-show-onload img {
-  width: 100%;
 }
 
 .visuals-container {
@@ -700,6 +775,18 @@ video {
 
 .visuals-container img {
   width: 100%;
+  border: 1px solid #F6F6F6;
+}
+
+@media (max-width: 1615px) {
+  .visuals-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
 }
 
 .is-visible {
@@ -853,7 +940,7 @@ video {
   margin: 0;
   text-transform: uppercase;
   padding: 10px;
-  background-color: #00314D;
+  background-color: #007397;
   color: #fff;
   letter-spacing: 1.5px;
   display: inline-block;
@@ -862,17 +949,6 @@ video {
 
 .modal p {
   padding: 20px;
-}
-
-.modal .credits {
-  list-style: none;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
-.modal .credits span {
-  font-size: 1rem;
-  font-weight: 400;
 }
 
 #close {
@@ -884,7 +960,7 @@ video {
   height: 30px;
   font-size: 1rem;
   font-weight: 700;
-  color: #00314D;
+  color: #007397;
   background-color: #fff;
   border: 0;
   cursor: pointer;
@@ -911,11 +987,17 @@ footer {
   width: 100%;
   bottom: 0;
   left: 0;
-  padding: 25px;
+  padding: 25px 0 0 25px;
   background-color: #212121;
   color: #fff;
   position: relative;
   z-index: 4000;
+}
+
+@media (max-width: 650px) {
+  footer {
+    padding: 10px;
+  }
 }
 
 .social-links {
@@ -1010,6 +1092,12 @@ footer {
   padding: 10px;
 }
 
+@media (max-width: 650px) {
+  .credits:first-child {
+    padding: 0;
+  }
+}
+
 .credits a {
   text-decoration: underline;
   color: #fff;
@@ -1028,22 +1116,40 @@ footer {
 
 /* Social media */
 .social-btns {
-  text-align: center;
+  text-align: left;
   padding-bottom: 25px;
 }
 
 .share {
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 2rem;
   cursor: pointer;
   display: inline;
   margin: 5px;
   padding-top: 5px;
 }
 
+#fb-share {
+  color: #3B5998;
+}
+
+#fb-share:hover {
+  color: #898989;
+  cursor: pointer;
+}
+
 #fb-share:before {
   font-family: 'fontawesome';
   content: '\f082';
+}
+
+#twitter-share {
+  color: #00C6FF;
+}
+
+#twitter-share:hover {
+  color: #898989;
+  cursor: pointer;
 }
 
 #twitter-share:before {
@@ -1054,9 +1160,10 @@ footer {
 /* Audio players */
 .audio-box {
   display: block;
-  width: 650px;
-  margin: 0 auto;
-  padding-bottom: 30px;
+  width: 400px;
+  padding: 30px 0;
+  border-top: 1px solid #898989;
+  border-bottom: 1px solid #898989;
 }
 
 @media (max-width: 650px) {
@@ -1101,8 +1208,9 @@ footer {
 
 .waveform-caption, .audio-caption {
   width: 100%;
-  min-height: 150px;
-  font-size: 2rem;
+  min-height: 80px;
+  font-size: 1.3rem;
+  font-weight: 700;
   padding: 10px 15px 15px 15px;
   margin: 0 15px;
   line-height: 1.4;
@@ -1228,7 +1336,7 @@ footer {
 }
 
 .cutline {
-  padding: 10px 0;
+  padding: 0 10px 10px 5px;
   font-size: 1rem !important;
   font-family: "Lato", Helvetica Neue, sans-serif;
   color: #898989;

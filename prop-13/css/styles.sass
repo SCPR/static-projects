@@ -62,23 +62,40 @@ a
 
 p
   line-height: 1.4
+  font-size: 1.2rem
 
 video
   width: 100%
   position: relative
   z-index: 3000
 
+.story-video
+  background-color: $white
+  padding: 10px 0
+
+.no-padding
+  padding-top: 0
+
+#partners
+  float: left
+  width: 300px
+  margin: 25px
+  padding: 15px
+
 .about-ca-dream
-  width: 650px
+  width: 300px
   margin: 0 auto
+  p
+    font-size: 1rem
 
 .project-partners
-  width: 650px
+  width: 300px
   margin: 0 auto
   img
-    width: 100px
-    display: inline-block
-    margin: 10px
+    // width: 250px
+    //height: 30px
+    //display: inline-block
+    margin: 10px 10px 10px 0
 
 .page-intro
   .top
@@ -113,7 +130,7 @@ video
     transform: translateY(-50%)
     text-align: center
     img
-      width: 250px
+      width: 150px
   .pre-heading
     letter-spacing: .07em
     font-size: 1.1rem
@@ -121,7 +138,7 @@ video
   .heading
     width: 650px
     text-align: center
-    font-size: 2rem
+    font-size: 2.4rem
     margin: 0 auto
     text-transform: uppercase
     word-spacing: 5px
@@ -165,7 +182,7 @@ video
     height: 9vw
   .content
     padding: 130px 0 60px
-    background-color: $gold
+    background-color: lighten($gold, 20%)
     color: $nearblack
     &::after
       clear: both
@@ -301,13 +318,14 @@ video
     -webkit-transform: translate(0, 0)
     transform: translate(0, 0)
 
-.history-story-promo
+.promo
   background-color: $medblue
-  padding: 15px
+  padding: 10px
+  margin: 15px 0 0 15px
   color: $white
   text-align: center
   float: right
-  width: 200px
+  width: 180px
   // height: 250px
   font-size: 1.2rem
   &:hover
@@ -528,17 +546,33 @@ video
   width: 1500px
   //border-bottom: 1px solid $medgray
   padding-bottom: 15px
+  @media(max-width: 1500px)
+    width: 100%
+    margin: 25px
 
 #the-neighbors
   background-color: $white
   position: relative
   z-index: 4000
+  @media(max-width: 1500px)
+    margin: 0 auto
+    width: 100%
+
 
 .neighbor-nav
   width: 400px
   margin: 45px 25px
   display: inline-block
   vertical-align: top
+  @media(max-width: 1500px)
+    width: 250px
+  @media(max-width: 650px)
+    width: 90%
+  img
+    @media(max-width: 1500px)
+      width: 250px
+    @media(max-width: 650px)
+      width: 95%
   .story-topic
     letter-spacing: .07em
     font-size: 1.1rem
@@ -548,11 +582,13 @@ video
   line-height: 1.2
   font-size: 1.1rem
   padding-bottom: 10px
+  @media(max-width: 650px)
+    width: 95%
 
 .read-more-btn
   width: 100%
   padding: 10px
-  background-color: $gold
+  background-color: lighten($gold, 20%)
   // color: $white
   font-size: 1rem
   display: inline
@@ -570,15 +606,27 @@ video
   width: 100%
   padding: 10px
   clear: both
+  @media(max-width: 1615px)
+    width: 650px
+    margin: 0 auto
+  @media(max-width: 650px)
+    width: 95%
 
 .story
   width: 470px
   margin: 15px 30px
   //padding-top: 35px
   float: left
+  @media(max-width: 1615px)
+    width: 100%
+    float: none
+    margin: 0
+  p
+    font-size: 1.2rem
+
 
 .story-subhed
-  font-size: 1.5rem
+  font-size: 1.5rem !important
   line-height: 1.2
   color: $nearblack
   //padding-top: 15px
@@ -596,21 +644,10 @@ video
   font-size: 1.1rem
   line-height: 1.2
   color: $nearblack
-  padding-top: 15px
+  padding: 25px 0 15px 0
   font-weight: 700
   font-family: $sans
   // text-align: left
-
-.visuals-container-show-onload
-  position: fixed
-  z-index: 1000
-  width: 1000px
-  margin: 40px
-  top: 20px
-  right: 20px
-  visibility: visible
-  img
-    width: 100%
 
 .visuals-container
   position: fixed
@@ -622,6 +659,14 @@ video
   visibility: hidden
   img
     width: 100%
+    border: 1px solid $palegray
+  @media(max-width: 1615px)
+    position: relative
+    width: 100%
+    margin: 0 auto
+    top: 0
+    right: 0
+    margin: 0
 
 .is-visible
   visibility: visible
@@ -820,20 +865,20 @@ video
     margin: 0
     text-transform: uppercase
     padding: 10px
-    background-color: $vgpblue
+    background-color: $medblue
     color: $white
     letter-spacing: 1.5px
     display: inline-block
     margin-top: 15px
   p
     padding: 20px
-  .credits
-    list-style: none
-    font-weight: 700
-    line-height: 1.5
-    span
-      font-size: 1rem
-      font-weight: 400
+  // .credits
+  //   list-style: none
+  //   font-weight: 700
+  //   line-height: 1.5
+  //   span
+  //     font-size: 1rem
+  //     font-weight: 400
 
 #close
   position: absolute
@@ -844,7 +889,7 @@ video
   height: 30px
   font-size: 1rem
   font-weight: 700
-  color: $vgpblue
+  color: $medblue
   background-color: $white
   border: 0
   //color: $white
@@ -870,12 +915,14 @@ footer
   bottom: 0
   left: 0
   //margin-top: 50px
-  padding: 25px
+  padding: 25px 0 0 25px
   // min-height: 300px
   background-color: $nearblack
   color: $white
   position: relative
   z-index: 4000
+  @media(max-width: 650px)
+    padding: 10px
 
 .social-links
   width: 300px
@@ -940,6 +987,8 @@ footer
   &:first-child
     font-size: 0.8rem
     padding: 10px
+    @media(max-width: 650px)
+      padding: 0
   a
     text-decoration: underline
     color: $white
@@ -967,23 +1016,31 @@ footer
 /* Social media */
 
 .social-btns
-  text-align: center
+  text-align: left
   padding-bottom: 25px
 
 .share
   text-align: center
-  font-size: 2.8rem
+  font-size: 2rem
   cursor: pointer
   display: inline
   margin: 5px
   padding-top: 5px
 
 #fb-share
+  color: #3B5998
+  &:hover
+    color: $medgray
+    cursor: pointer
   &:before
     font-family: 'fontawesome'
     content: '\f082'
 
 #twitter-share
+  color: #00C6FF
+  &:hover
+    color: $medgray
+    cursor: pointer
   &:before
     font-family: 'fontawesome'
     content: '\f081'
@@ -992,9 +1049,11 @@ footer
 
 .audio-box
   display: block
-  width: 650px
-  margin: 0 auto
-  padding-bottom: 30px
+  width: 400px
+  // margin: 0 auto
+  padding: 30px 0
+  border-top: 1px solid $medgray
+  border-bottom: 1px solid $medgray
   @media(max-width: 650px)
     width: 95%
 
@@ -1028,8 +1087,9 @@ footer
   //height: 190px
   // text-align: right
   //float: right
-  min-height: 150px
-  font-size: 2rem
+  min-height: 80px
+  font-size: 1.3rem
+  font-weight: 700
   padding: 10px 15px 15px 15px
   margin: 0 15px
   line-height: 1.4
@@ -1178,7 +1238,7 @@ footer
   margin-left: 15px
 
 .cutline
-  padding: 10px 0
+  padding: 0 10px 10px 5px
   font-size: 1rem !important
   font-family: $sans
   color: $medgray

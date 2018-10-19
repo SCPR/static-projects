@@ -15,51 +15,51 @@ $.each($('video'), function() {
 
 $(document).ready(function(){
 
-  const offsetTop = $(".scroll-transition").offset().top - 200;
+  // const offsetTop = $(".scroll-transition").offset().top - 200;
+  //
+  // $(window).scroll(function() {
+  //   const scrollTop = $(window).scrollTop();
+  //
+  //   // Animation on scroll
+  //   if (scrollTop > offsetTop) {
+  //     $(".scroll-transition").addClass("visible");
+  //   } else {
+  //     $(".scroll-transition").removeClass("visible");
+  //   }
 
-  $(window).scroll(function() {
-    const scrollTop = $(window).scrollTop();
-
-    // Animation on scroll
-    if (scrollTop > offsetTop) {
-      $(".scroll-transition").addClass("visible");
-    } else {
-      $(".scroll-transition").removeClass("visible");
-    }
-
-  });
+});
 
 
-  // // Toggle menu dropdown
+  // Toggle menu dropdown
   // $('.menu').click(function(){
   //   $('.menu-dropdown').slideToggle('slow');
   // });
-  //
-  // // Show about this project modal
-  // $("#about, #mobile-about").click(function(){
-  //   $(".mask").addClass("active");
-  // });
-  //
-  // $("#mobile-about").click(function(){
-  //   $('.menu-dropdown').slideToggle('slow');
-  //   $(".mask").addClass("active");
-  // });
-  //
-  // // Close modal
-  // function closeModal(){
-  //   $(".mask").removeClass("active");
-  // }
-  //
-  // // Keyboard functions to close modal
-  // $("#close, .mask").click(function(){
-  //   closeModal();
-  // });
-  //
-  // $(document).keyup(function(e) {
-  //   if (e.keyCode == 27) {
-  //     closeModal();
-  //   }
-  // });
+
+  // Show Prop. 13 basics modal
+  $(".basics-story-promo").click(function(){
+    $(".mask").addClass("active");
+  });
+
+  $(".basics-story-promo").click(function(){
+    //$('.menu-dropdown').slideToggle('slow');
+    $(".mask").addClass("active");
+  });
+
+  // Close modal
+  function closeModal(){
+    $(".mask").removeClass("active");
+  }
+
+  // Keyboard functions to close modal
+  $("#close, .mask").click(function(){
+    closeModal();
+  });
+
+  $(document).keyup(function(e) {
+    if (e.keyCode == 27) {
+      closeModal();
+    }
+  });
 
 
   // Add smooth scrolling to all links
@@ -84,4 +84,3 @@ $(document).ready(function(){
       });
     } // End if
   });
-});
