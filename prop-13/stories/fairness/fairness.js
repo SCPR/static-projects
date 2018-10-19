@@ -24,10 +24,16 @@ $(document).ready(function(){
         $('#cutline-don-home').show();
       }
 
+      // if (($w.scrollTop() + $(window).height()) > targetOffset3) {
+      //   $('.visuals-container img').attr("src","../fairness/images/fairness-jas-portrait-2.jpg");
+      //   $('.scroll-cutline').hide();
+      //   $('#cutline-jas-portrait-2').show();
+      // }
+
       if (($w.scrollTop() + $(window).height()) > targetOffset3) {
-        $('.visuals-container img').attr("src","../fairness/images/fairness-jas-portrait-2.jpg");
+        $('.visuals-container img').attr("src","../fairness/images/scenes-garages.jpg");
         $('.scroll-cutline').hide();
-        $('#cutline-jas-portrait-2').show();
+        $('#cutline-scenes-garages').show();
       }
 
       if (($w.scrollTop() + $(window).height()) > targetOffset4) {
