@@ -4,7 +4,7 @@ $(document).ready(function(){
   const targetOffset1 = $("#anchor-point-1").offset().top;
   const targetOffset2 = $("#anchor-point-2").offset().top;
   const targetOffset3 = $("#fairness-section-2").offset().top;
-  const targetOffset3 = $("#fairness-section-3").offset().top;
+  //const targetOffset4 = $("#fairness-section-3").offset().top;
 
   const $w = $(window).scroll(function() {
 
@@ -13,7 +13,7 @@ $(document).ready(function(){
 
     if (($w.scrollTop() + $(window).height()) > targetOffset3) {
       $('.visuals-container img').attr("src","../fairness/images/fairness-don-home.jpg");
-    } else if (($w.scrollTop() + $(window).height()) > targetOffset3) {
+    } else {
       $('.visuals-container img').attr("src","../fairness/images/fairness-jas-portrait.jpg");
     }
   });

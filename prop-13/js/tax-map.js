@@ -98,7 +98,7 @@ map.on('load', function() {
     map.on('click', 'tracts', function (e) {
       const feature = e.features[0];
       let html = `
-          <strong>Census tract no. ${feature.properties.CensusTract}</strong><br/>
+          <strong>Census tract no. ${feature.properties.GEOID}</strong><br/>
           Located in ${feature.properties.CountyName}<br/><br/>
 
           What homeowners paid under Prop 13: <strong>$${addCommas(feature.properties.TotalTaxesPaid)}</strong><br/><br/>

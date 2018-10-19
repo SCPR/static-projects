@@ -138,7 +138,7 @@ video
     position: absolute
     bottom: 20px
     right: 10%
-    z-index: 3
+    z-index: 4001
     color: $nearblack
     cursor: pointer
     -webkit-transition: opacity 200ms
@@ -529,6 +529,11 @@ video
   //border-bottom: 1px solid $medgray
   padding-bottom: 15px
 
+#the-neighbors
+  background-color: $white
+  position: relative
+  z-index: 4000
+
 .neighbor-nav
   width: 400px
   margin: 45px 25px
@@ -864,11 +869,13 @@ footer
   //height: 100px
   bottom: 0
   left: 0
-  margin-top: 50px
+  //margin-top: 50px
   padding: 25px
   // min-height: 300px
   background-color: $nearblack
   color: $white
+  position: relative
+  z-index: 4000
 
 .social-links
   width: 300px
