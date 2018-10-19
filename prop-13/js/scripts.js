@@ -29,6 +29,39 @@ $(document).ready(function(){
 
   });
 
+
+  // // Toggle menu dropdown
+  // $('.menu').click(function(){
+  //   $('.menu-dropdown').slideToggle('slow');
+  // });
+  //
+  // // Show about this project modal
+  // $("#about, #mobile-about").click(function(){
+  //   $(".mask").addClass("active");
+  // });
+  //
+  // $("#mobile-about").click(function(){
+  //   $('.menu-dropdown').slideToggle('slow');
+  //   $(".mask").addClass("active");
+  // });
+  //
+  // // Close modal
+  // function closeModal(){
+  //   $(".mask").removeClass("active");
+  // }
+  //
+  // // Keyboard functions to close modal
+  // $("#close, .mask").click(function(){
+  //   closeModal();
+  // });
+  //
+  // $(document).keyup(function(e) {
+  //   if (e.keyCode == 27) {
+  //     closeModal();
+  //   }
+  // });
+
+
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
 
