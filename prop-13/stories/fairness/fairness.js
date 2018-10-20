@@ -1,5 +1,5 @@
 // Responsive video/GIFs
-if ($(window).width() > 800){
+if ($(window).width() > 1920){
 
   $('.video-gif').hide();
   $('.video-wrapper').show();
@@ -11,7 +11,7 @@ if ($(window).width() > 800){
     //const videoSize = elSize > 800 ? 'large' : 'small';
     const videoName = $(this).attr('data-videoname');
 
-    $(this).children('.mp4-source').attr('src', `../fairness/videos/${videoName}-large.mp4`);
+    $(this).children('.mp4-source').attr('src', `../fairness/video/${videoName}-large.mp4`);
     // $(this).children('.webm-source').attr('src', `../../../../prop-13/video/${videoName}-${videoSize}.webm`);
 
     $(this)[0].load();
@@ -27,7 +27,7 @@ if ($(window).width() > 800){
 
     const gifName = $(this).attr('data-gifname');
 
-    $(this).attr('src', `../fairness/videos/${gifName}.gif`);
+    $(this).attr('src', `../fairness/video/${gifName}.gif`);
 
   });
 
