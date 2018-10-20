@@ -1184,9 +1184,15 @@ footer {
   border-bottom: 1px solid #898989;
 }
 
+@media (max-width: 1615px) {
+  .audio-box {
+    width: 650px;
+  }
+}
+
 @media (max-width: 650px) {
   .audio-box {
-    width: 95%;
+    width: 100%;
   }
 }
 
