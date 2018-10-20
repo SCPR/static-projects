@@ -35,12 +35,12 @@ $(document).ready(function(){
   //   $('.menu-dropdown').slideToggle('slow');
   // });
 
-  // Show Prop. 13 basics modal
-  $(".basics-story-promo").click(function(){
+  // Show glossary modal
+  $(".glossary-btn").click(function(){
     $(".mask").addClass("active");
   });
 
-  $(".basics-story-promo").click(function(){
+  $(".glossary-btn").click(function(){
     //$('.menu-dropdown').slideToggle('slow');
     $(".mask").addClass("active");
   });

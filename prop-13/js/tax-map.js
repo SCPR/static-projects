@@ -20,32 +20,6 @@ map.addControl(geocoder, 'top-left');
 
 map.on('load', function() {
 
-  // After the map style has loaded on the page, add a source layer and default
-  // styling for a single point.
-    map.addSource('single-point', {
-        "type": "geojson",
-        "data": {
-            "type": "FeatureCollection",
-            "features": []
-        }
-    });
-
-    map.addLayer({
-        "id": "point",
-        "source": "single-point",
-        "type": "circle",
-        "paint": {
-            "circle-radius": 10,
-            "circle-color": "#007cbf"
-        }
-    });
-
-    // Listen for the `result` event from the MapboxGeocoder that is triggered when a user
-    // makes a selection and add a symbol that matches the result.
-    geocoder.on('result', function(ev) {
-        map.getSource('single-point').setData(ev.result.geometry);
-    });
-
       const popup = new mapboxgl.Popup({
         closeButton: true,
         closeOnClick: false,
@@ -67,17 +41,13 @@ map.on('load', function() {
                 'interpolate',
                 ['linear'],
                 ['get', 'Prop13Savings'],
-                -15000000,'#ffffe0',
-                -10000000, '#ffd59b',
-                -5000000, '#ffa474',
-                5000000, '#f47461',
-                10000000, '#db4551',
-                20000000, '#8b0000'
+                -15000000,'#fff6cd',
+                -1000000, '#f6e0b1',
+                1000000, '#a27299',
+                3000000, '#794c8a',
+                60000000, '#271642',
+                20000000, '#212121'
             ],
-            // 'fill-color': {
-            //  property: 'Prop13Savings',
-            //  stops: [[-15000000,"#ffffe0"],[-10000000,"#ffd59b"],[-5000000,"#ffa474"],[5000000,"#f47461"],[10000000,"#db4551"],[20000000,"#8b0000"]],
-            // }
         },
     });
 
@@ -87,29 +57,55 @@ map.on('load', function() {
       type: "fill",
       source: 'tracts',
       "paint": {
-        "fill-outline-color": "#484896",
-        "fill-color": "#6e599f",
+        "fill-outline-color": "#212121",
+        "fill-color": "#797979",
         "fill-opacity": 0.75
       },
       "filter": ["in", "GEOID", ""]
     });
 
+    // After the map style has loaded on the page, add a source layer and default
+    // styling for a single point.
+      map.addSource('single-point', {
+          "type": "geojson",
+          "data": {
+              "type": "FeatureCollection",
+              "features": []
+          }
+      });
+
+      map.addLayer({
+          "id": "point",
+          "source": "single-point",
+          "type": "circle",
+          "paint": {
+              "circle-radius": 10,
+              "circle-color": "#007cbf"
+          }
+      });
+
+      // Listen for the `result` event from the MapboxGeocoder that is triggered when a user
+      // makes a selection and add a symbol that matches the result.
+      geocoder.on('result', function(ev) {
+          map.getSource('single-point').setData(ev.result.geometry);
+      });
+
 
     map.on('click', 'tracts', function (e) {
       const feature = e.features[0];
       let html = `
-          <strong>Census tract no. ${feature.properties.GEOID}</strong><br/>
+
+
+          Total property taxes: <strong>$${addCommas(feature.properties.TotalTaxesPaid)}</strong><br/>
+          Tax savings/revenue lost per home: <strong>$${addCommas(feature.properties.SavingsPerUnit)}</strong><br/>
+
+          Effective tax rate: <strong>${feature.properties.EffectiveTaxRate}%</strong><br/><br/>
+
+          Census tract ${feature.properties.GEOID}><br/>
           Located in ${feature.properties.CountyName}<br/><br/>
 
-          What homeowners paid under Prop 13: <strong>$${addCommas(feature.properties.TotalTaxesPaid)}</strong><br/><br/>
-
-          Tax savings per home: <strong>$${addCommas(feature.properties.SavingsPerUnit)}</strong><br/>
-          Total tax savings under Prop. 13: <strong>$${addCommas(feature.properties.Prop13Savings)}</strong><br/><br/>
-
           Avg. assessed value: <strong>$${addCommas(feature.properties.AverageAdjustedAssessedValue)}</strong><br/>
-          Avg. market value: <strong>$${addCommas(feature.properties.AverageMarketValue)}</strong><br/><br/>
-
-          Effective tax rate: <strong>${feature.properties.EffectiveTaxRate}</strong><br/>
+          Avg. market value: <strong>$${addCommas(feature.properties.AverageMarketValue)}</strong>
       `;
 
         new mapboxgl.Popup()
