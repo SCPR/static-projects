@@ -94,16 +94,18 @@
         </div>
 
         <div class="content">
-          <div id="partners">
-            <div class="about-ca-dream">
-              <p><a href="https://calmatters.org/articles/category/projects/california-dream/" target="_blank"><em>The California Dream series</a> is a statewide media collaboration of CALmatters, KPBS, KPCC, KQED and Capital Public Radio with support from the Corporation for Public Broadcasting and the James Irvine Foundation.</em></p>
-            </div>
+
+          <div class="partners">
+
             <div class="project-partners">
               <img src="images/partner-calmatters.png" alt="CALmatters" width="230px">
               <img src="images/partner-kpbs.png" alt="KPBS" width="100px">
               <img src="images/partner-kpcc.png" alt="KPCC" width="220px">
               <img src="images/partner-kqed.png" alt="KQED" width="150px">
               <img src="images/partner-capradio.png" alt="Capital Public Radio" width="220px">
+            </div>
+            <div class="about-ca-dream">
+              <p><a href="https://calmatters.org/articles/category/projects/california-dream/" target="_blank"><em>The California Dream series</a> is a statewide media collaboration of CALmatters, KPBS, KPCC, KQED and Capital Public Radio with support from the Corporation for Public Broadcasting and the James Irvine Foundation.</em></p>
             </div>
           </div>
 
@@ -127,13 +129,13 @@
             <p>So did Prop. 13 save the California dream or spoil it? To answer this question, we focused on a single block in a middle-class neighborhood in North Oakland.</p>
 
             <p>That&rsquo;s where we found stories you could hear on almost any block, almost anywhere in the state. </p>
-          </div>
+
         </div>
 
       </section>
 
       <section class="graphic-section" id="map">
-        <div class="graphic">
+        <div class="graphic" id="map-text">
             <div class="graphic-header">Which parts of California benefit most from Prop. 13?</div>
             <div class="graphic-subhead">Matt Levin/CALmatters <br/> Dana Amihere/KPCC</div>
             <div class="graphic-chatter">
@@ -154,6 +156,13 @@
           </div>
 
           <div id="map-container">
+            <div class="zoom-controls">
+              <div class="cta">Click a locale to auto-zoom map: </div>
+              <div class="zoom-btn" data-city="SF">S.F. Bay Area</div>
+              <div class="zoom-btn" data-city="LA">Los Angeles</div>
+              <div class="zoom-btn" data-city="Sac">Sacramento</div>
+              <div class="zoom-btn" data-city="SD">San Diego</div>
+            </div>
             <div id='tax-map'>
               <div id='legend'>
                 <small>Total tax savings/revenue lost under Prop. 13</small>
@@ -173,7 +182,6 @@
                 </nav>
               </div>
             </div>
-            <div id='geocoder' class='geocoder'></div>
           </div>
 
       </section>
@@ -198,25 +206,25 @@
             <p>This is a middle-class street on a middle-class block in a middle-class neighborhood in North Oakland. The sidewalks are cracked. Overgrown trees stretch across the road. Some residents are wealthy, some are not. Kids and parents and grandparents and dogs walk up and down this street everyday.</p>
 
             <p>We chose this block not because of any unique features it possesses or noteworthy people that call it home. We chose it for its relative normalcy and for its ability to help understand the subtle impacts of Prop. 13 on the California dream.</p>
-          </div>
 
-          <div class="block-chatter">
             <p>Every house on this block has at least one thing in common: They’re all worth a lot of money. The median property value was three quarters of a million dollars last year. The cheapest property &mdash; a 2 bed, 1 bath 825-square-foot bungalow &mdash; was worth $630,000 in 2017. </p>
 
             <p>In most states, the property tax you pay depends on how much your house is worth now. The nicer the home, the more you pay. But because of Prop. 13, property taxes in California are pegged to the value of a house when it was purchased.</p>
 
-            <p>That’s why owners on this block pay such wildly different property taxes for very similar properties. Decades-long owners of a 1,300 square foot home on one end of the block paid $1,168 in property taxes last year. New homeowners with a smaller home on the other end of the block paid almost ten times that amount. Two very similar homes, two incredibly different property tax bills. </p>
+            <p>That’s why owners on this block pay such wildly different property taxes for very similar properties. Decades-long owners of a 1,300 square foot home on one end of the block paid $1,168 in property taxes last year. New homeowners with a smaller home on the other end of the block paid almost 10 times that amount. Two very similar homes, two incredibly different property tax bills. </p>
 
-            <p>Why does that matter? Critics of Prop. 13 say it starves local governments of much needed revenue. Cumulatively, the 41 properties we’ve mapped on this block paid $201,753 in property taxes last year. That money went into a variety of local government services, including schools, public transportation, and parks. If Prop. 13 hadn’t passed and California properties were taxed at market value, these 41 homes would pay an additional $130,000.</p>
+            <p>Why does that matter? Critics of Prop. 13 say it starves local governments of much needed revenue. Cumulatively, the 41 properties we’ve mapped on this block paid $201,753 in property taxes last year. That money went into a variety of local government services, including schools, public transportation and parks. If Prop. 13 hadn’t passed and California properties were taxed at market value, these 41 homes would pay an additional $130,000.</p>
 
-            <p>As defenders of Prop. 13 are quick to point out, one local government’s lost revenue is another taxpayer’s savings. Without Prop. 13, many of the homeowners on the block would see their property taxes rise upwards of $5,000 a year. That includes a handful of  seniors who have owned property on the block for decades. </p>
+            <p>As defenders of Prop. 13 are quick to point out, one local government’s lost revenue is another taxpayer’s savings. Without Prop. 13, many of the homeowners on the block would see their property taxes rise upwards of $5,000 a year. That includes a handful of seniors who have owned property on the block for decades. </p>
 
             <a href="methodology/"><div class="methodology-btn">Sources &amp; methodology &nbsp; <span class="read-more"></span></div></a>
+            <p class="cutline" id="illo-cutline">(Illustration by Mika Mingasson for California Dream)</p>
 
         </div>
-        <div class="the-block">
+
           <div class="block-image">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 858.95 335.44">
+
+            <svg id="block-illo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 858.95 335.44">
               <defs>
                 <style>
                 .cls-1,.cls-4{fill:none;}
@@ -226,92 +234,96 @@
                 .cls-5{fill:#6d6e71;}
                 .selected-house{fill:#007397;background-color:#007397;}
                 </style>
-                <clipPath id="clip-path" transform="translate(23.12 -83.62)">
-                  <rect class="cls-1" x="0.33" y="107" width="780" height="297.33"/></clipPath></defs>
-                  <title>PropertyMap</title>
-                  <g id="Layer_1" data-name="Layer 1">
-                    <image transform="translate(23.12 39.81) scale(0.24)" xlink:href=""/>
+                  <clipPath id="clip-path" transform="translate(23.12 -83.62)">
+                    <rect class="cls-1" x="0.33" y="107" width="780" height="297.33"/></clipPath></defs>
+                    <title>PropertyMap</title>
+                    <g id="Layer_1" data-name="Layer 1">
+                      <image transform="translate(23.12 39.81) scale(0.24)" xlink:href=""/>
+                    </g>
+                    <g data-name="Layer 2">
+                    <g class="cls-2" id="houses">
+                      <rect class="cls-3" x="23.45" y="23.38" width="792" height="297.33"/>
+                      <line class="cls-4" x1="0.78" y1="242.72" x2="840.78" y2="94.05"/>
+                      <line class="cls-4" x1="711.45" y1="0.72" x2="765.45" y2="334.72"/>
+                      <line class="cls-4" x1="20.78" y1="39.38" x2="97.45" y2="330.72"/>
+                      <line class="cls-4" x1="3.45" y1="86.72" x2="270.12" y2="18.72"/>
+                      <line class="cls-4" x1="318.78" y1="325.38" x2="858.12" y2="224.05"/>
+                      <rect id="_44" data-name="44" class="cls-5" x="67.22" y="250.53" width="23.53" height="32.26" transform="translate(-32.11 -60.54) rotate(-12.35)"/>
+                      <rect id="_45" data-name="45" class="cls-5" x="82.82" y="332.21" width="22.06" height="33.08" transform="translate(-39.58 -60.33) rotate(-10.63)"/>
+                      <rect id="_42" data-name="42" class="cls-5" x="106.33" y="321.23" width="15.96" height="38.11" transform="matrix(0.98, -0.18, 0.18, 0.98, -37.67, -56.7)"/>
+                      <rect id="_33" data-name="33" class="cls-5" x="231.25" y="297.63" width="18.06" height="33.74" transform="translate(-30.76 -33.91) rotate(-10.63)"/>
+                      <rect id="_31" data-name="31" class="cls-5" x="251.84" y="291.08" width="18.06" height="32.03" transform="translate(-29.04 -30.24) rotate(-10.63)"/>
+                      <rect id="_28" data-name="28" class="cls-5" x="295.59" y="282.14" width="21.77" height="35.82" transform="translate(-26.96 -21.95) rotate(-10.63)"/>
+                      <rect id="_26" data-name="26" class="cls-5" x="318.81" y="279.43" width="11.91" height="27.74" transform="translate(-25.4 -18.7) rotate(-10.63)"/>
+                      <rect id="_24" data-name="24" class="cls-5" x="334.55" y="278.32" width="11.91" height="26.27" transform="translate(-24.79 -15.83) rotate(-10.63)"/>
+                      <rect id="_22" data-name="22" class="cls-5" x="351.17" y="273.61" width="19.59" height="33.7" transform="translate(-24.25 -12.07) rotate(-10.63)"/>
+                      <rect id="_17" data-name="17" class="cls-5" x="439.43" y="261.41" width="18.34" height="33.7" transform="translate(-20.5 3.88) rotate(-10.63)"/>
+                      <rect id="_15" data-name="15" class="cls-5" x="465.39" y="253.26" width="15.93" height="33.7" transform="translate(-18.57 8.31) rotate(-10.63)"/>
+                      <rect id="_14" data-name="14" class="cls-5" x="489.26" y="252.15" width="15.93" height="39.8" transform="translate(-18.52 12.74) rotate(-10.63)"/>
+                      <rect id="_12" data-name="12" class="cls-5" x="510.33" y="246.74" width="17.53" height="33.28" transform="matrix(0.98, -0.18, 0.18, 0.98, -16.55, 16.63)"/>
+                      <rect id="_10" data-name="10" class="cls-5" x="530.57" y="246.23" width="13.89" height="30.09" transform="translate(-15.84 19.99) rotate(-10.63)"/>
+                      <rect id="_9" data-name="9" class="cls-5" x="545.74" y="242.8" width="13.73" height="30.53" transform="translate(-14.99 22.71) rotate(-10.63)"/>
+                      <rect id="_5" data-name="5" class="cls-5" x="595.88" y="236.83" width="15.4" height="32.11" transform="translate(-1.52 -14.05) rotate(-6.46)"/>
+                      <rect id="_3" data-name="3" class="cls-5" x="615.2" y="232.77" width="18.52" height="35.76" transform="translate(-1.13 -11.71) rotate(-6.46)"/>
+                      <rect id="_1" data-name="1" class="cls-5" x="634.09" y="230.19" width="25.57" height="16.82" transform="translate(-7.08 24.78) rotate(-9.36)"/>
+                      <rect id="_0" data-name="0" class="cls-5" x="672.41" y="225.53" width="16.02" height="26.2" transform="translate(-6.63 30.23) rotate(-9.36)"/>
+                      <rect id="_7" data-name="7" class="cls-5" x="564.39" y="238.56" width="25.77" height="35.63" transform="translate(-4.59 -8.83) rotate(-7.24)"/>
+                      <polygon id="_21" data-name="21" class="cls-5" points="432.47 231.15 430.28 219.49 418.43 221.71 416.49 211.36 404.82 213.54 408.93 235.46 409.01 235.44 409.03 235.54 432.47 231.15"/>
+                      <polygon id="_19" data-name="19" class="cls-5" points="453.96 202.63 450.66 185.05 431.22 188.69 434.52 206.28 434.55 206.28 436.46 216.47 450.22 213.89 448.31 203.69 453.96 202.63"/>
+                      <polygon id="_29" data-name="29" class="cls-5" points="319.13 233.94 312.9 200.71 293.22 204.4 294.43 210.84 294.41 210.84 300.64 244.07 306.29 243.01 305.08 236.58 319.13 233.94"/>
+                      <rect id="_41" data-name="41" class="cls-5" x="124.66" y="321.6" width="13.98" height="26.09" transform="translate(-36.33 -53.6) rotate(-10.63)"/>
+                      <rect id="_39" data-name="39" class="cls-5" x="143.08" y="316.48" width="24.58" height="22.59" transform="translate(-34.66 -49.34) rotate(-10.63)"/>
+                      <polygon id="_35" data-name="35" class="cls-5" points="244.09 234.04 241.15 218.39 221.49 222.08 224.43 237.73 224.44 237.73 229.27 263.51 241.14 261.28 236.31 235.5 244.09 234.04"/>
+                      <polygon id="_37" data-name="37" class="cls-5" points="200.73 241.42 203.27 254.91 222.75 251.25 217.94 225.64 192.49 230.41 194.76 242.54 200.73 241.42"/>
+                      <rect id="_40" data-name="40" class="cls-5" x="132.33" y="245.36" width="14.99" height="25.94" transform="translate(-28.92 -47.72) rotate(-12.35)"/>
+                      <rect id="_38" data-name="38" class="cls-5" x="161.31" y="238.15" width="16.99" height="25.94" transform="translate(-26.68 -41.47) rotate(-12.35)"/><g id="_36" data-name="36">
+                      <rect class="cls-5" x="177.47" y="216.15" width="19.91" height="31.21" transform="translate(-22.13 -38.15) rotate(-12.35)"/>
+                      <rect class="cls-5" x="180.82" y="232.03" width="10.5" height="31.21" transform="translate(-25.56 -38.07) rotate(-12.35)"/>
+                    </g>
+                      <rect id="_43" data-name="43" class="cls-5" x="97.59" y="244.15" width="17.16" height="32.39" transform="matrix(0.99, -0.11, 0.11, 0.99, -3.68, -71)"/>
+                      <polygon id="_34" data-name="34" class="cls-5" points="231.37 132.38 249.37 128.63 254.12 156.38 246.62 157.63 248.37 168.38 238.37 170.38 231.37 132.38"/>
+                      <polygon id="_30" data-name="30" class="cls-5" points="290.87 128.38 300.37 125.89 302.37 133.13 309.87 131.38 316.37 161.26 298.87 165.13 290.87 128.38"/>
+                      <polygon id="_32" data-name="32" class="cls-5" points="260.87 136.38 277.37 132.38 285.87 166.63 269.37 171.13 260.87 136.38"/>
+                      <polygon id="_18" data-name="18" class="cls-5" points="410.62 103.39 464.62 92.14 472.37 130.38 418.12 140.63 410.62 103.39"/>
+                      <polygon id="_8" data-name="8" class="cls-5" points="556.99 60.13 593.62 54.63 600.74 104.26 584.37 106.89 579.12 78.76 559.62 81.64 556.99 60.13"/>
+                      <rect id="_6" data-name="6" class="cls-5" x="581.36" y="162.36" width="13.2" height="34.22" transform="translate(4.34 -3.04) rotate(-7.72)"/>
+                      <rect id="_11" data-name="11" class="cls-5" x="518.06" y="143.64" width="15.64" height="36.06" transform="translate(6.17 -11.54) rotate(-7.72)"/>
+                      <rect id="_13" data-name="13" class="cls-5" x="484.31" y="168.97" width="15.64" height="41.9" transform="translate(-2.41 4.84) rotate(-10.01)"/>
+                      <rect id="_16" data-name="16" class="cls-5" x="448.6" y="176.66" width="17.98" height="39.66" transform="translate(-4.08 -1.07) rotate(-10.01)"/>
+                      <rect id="_20" data-name="20" class="cls-5" x="359.8" y="193.82" width="15.47" height="36.89" transform="translate(-14.3 1.56) rotate(-12.58)"/>
+                      <rect id="_23" data-name="23" class="cls-5" x="332.33" y="198.25" width="20.06" height="31.93" transform="translate(-9.52 -19.31) rotate(-10.24)"/>
+                      <rect id="_25" data-name="25" class="cls-5" x="314.27" y="209.58" width="10.23" height="28.58" transform="translate(-16.46 -12.28) rotate(-12.01)"/>
+                      <rect id="_27" data-name="27" class="cls-5" x="296.63" y="210.91" width="13.09" height="30.85" transform="translate(-17.33 -15.6) rotate(-12.01)"/>
+                      <rect id="_4" data-name="4" class="cls-5" x="598" y="155.22" width="13.2" height="38.18" transform="translate(5.19 -0.85) rotate(-7.72)"/>
+                      <rect id="_2" data-name="2" class="cls-5" x="616.43" y="156.75" width="15.06" height="33.5" transform="translate(5.47 1.74) rotate(-7.72)"/>
+
+                    </g>
                   </g>
-                  <g data-name="Layer 2">
-                  <g class="cls-2" id="houses">
-                    <rect class="cls-3" x="23.45" y="23.38" width="792" height="297.33"/>
-                    <line class="cls-4" x1="0.78" y1="242.72" x2="840.78" y2="94.05"/>
-                    <line class="cls-4" x1="711.45" y1="0.72" x2="765.45" y2="334.72"/>
-                    <line class="cls-4" x1="20.78" y1="39.38" x2="97.45" y2="330.72"/>
-                    <line class="cls-4" x1="3.45" y1="86.72" x2="270.12" y2="18.72"/>
-                    <line class="cls-4" x1="318.78" y1="325.38" x2="858.12" y2="224.05"/>
-                    <rect id="_44" data-name="44" class="cls-5" x="67.22" y="250.53" width="23.53" height="32.26" transform="translate(-32.11 -60.54) rotate(-12.35)"/>
-                    <rect id="_45" data-name="45" class="cls-5" x="82.82" y="332.21" width="22.06" height="33.08" transform="translate(-39.58 -60.33) rotate(-10.63)"/>
-                    <rect id="_42" data-name="42" class="cls-5" x="106.33" y="321.23" width="15.96" height="38.11" transform="matrix(0.98, -0.18, 0.18, 0.98, -37.67, -56.7)"/>
-                    <rect id="_33" data-name="33" class="cls-5" x="231.25" y="297.63" width="18.06" height="33.74" transform="translate(-30.76 -33.91) rotate(-10.63)"/>
-                    <rect id="_31" data-name="31" class="cls-5" x="251.84" y="291.08" width="18.06" height="32.03" transform="translate(-29.04 -30.24) rotate(-10.63)"/>
-                    <rect id="_28" data-name="28" class="cls-5" x="295.59" y="282.14" width="21.77" height="35.82" transform="translate(-26.96 -21.95) rotate(-10.63)"/>
-                    <rect id="_26" data-name="26" class="cls-5" x="318.81" y="279.43" width="11.91" height="27.74" transform="translate(-25.4 -18.7) rotate(-10.63)"/>
-                    <rect id="_24" data-name="24" class="cls-5" x="334.55" y="278.32" width="11.91" height="26.27" transform="translate(-24.79 -15.83) rotate(-10.63)"/>
-                    <rect id="_22" data-name="22" class="cls-5" x="351.17" y="273.61" width="19.59" height="33.7" transform="translate(-24.25 -12.07) rotate(-10.63)"/>
-                    <rect id="_17" data-name="17" class="cls-5" x="439.43" y="261.41" width="18.34" height="33.7" transform="translate(-20.5 3.88) rotate(-10.63)"/>
-                    <rect id="_15" data-name="15" class="cls-5" x="465.39" y="253.26" width="15.93" height="33.7" transform="translate(-18.57 8.31) rotate(-10.63)"/>
-                    <rect id="_14" data-name="14" class="cls-5" x="489.26" y="252.15" width="15.93" height="39.8" transform="translate(-18.52 12.74) rotate(-10.63)"/>
-                    <rect id="_12" data-name="12" class="cls-5" x="510.33" y="246.74" width="17.53" height="33.28" transform="matrix(0.98, -0.18, 0.18, 0.98, -16.55, 16.63)"/>
-                    <rect id="_10" data-name="10" class="cls-5" x="530.57" y="246.23" width="13.89" height="30.09" transform="translate(-15.84 19.99) rotate(-10.63)"/>
-                    <rect id="_9" data-name="9" class="cls-5" x="545.74" y="242.8" width="13.73" height="30.53" transform="translate(-14.99 22.71) rotate(-10.63)"/>
-                    <rect id="_5" data-name="5" class="cls-5" x="595.88" y="236.83" width="15.4" height="32.11" transform="translate(-1.52 -14.05) rotate(-6.46)"/>
-                    <rect id="_3" data-name="3" class="cls-5" x="615.2" y="232.77" width="18.52" height="35.76" transform="translate(-1.13 -11.71) rotate(-6.46)"/>
-                    <rect id="_1" data-name="1" class="cls-5" x="634.09" y="230.19" width="25.57" height="16.82" transform="translate(-7.08 24.78) rotate(-9.36)"/>
-                    <rect id="_0" data-name="0" class="cls-5" x="672.41" y="225.53" width="16.02" height="26.2" transform="translate(-6.63 30.23) rotate(-9.36)"/>
-                    <rect id="_7" data-name="7" class="cls-5" x="564.39" y="238.56" width="25.77" height="35.63" transform="translate(-4.59 -8.83) rotate(-7.24)"/>
-                    <polygon id="_21" data-name="21" class="cls-5" points="432.47 231.15 430.28 219.49 418.43 221.71 416.49 211.36 404.82 213.54 408.93 235.46 409.01 235.44 409.03 235.54 432.47 231.15"/>
-                    <polygon id="_19" data-name="19" class="cls-5" points="453.96 202.63 450.66 185.05 431.22 188.69 434.52 206.28 434.55 206.28 436.46 216.47 450.22 213.89 448.31 203.69 453.96 202.63"/>
-                    <polygon id="_29" data-name="29" class="cls-5" points="319.13 233.94 312.9 200.71 293.22 204.4 294.43 210.84 294.41 210.84 300.64 244.07 306.29 243.01 305.08 236.58 319.13 233.94"/>
-                    <rect id="_41" data-name="41" class="cls-5" x="124.66" y="321.6" width="13.98" height="26.09" transform="translate(-36.33 -53.6) rotate(-10.63)"/>
-                    <rect id="_39" data-name="39" class="cls-5" x="143.08" y="316.48" width="24.58" height="22.59" transform="translate(-34.66 -49.34) rotate(-10.63)"/>
-                    <polygon id="_35" data-name="35" class="cls-5" points="244.09 234.04 241.15 218.39 221.49 222.08 224.43 237.73 224.44 237.73 229.27 263.51 241.14 261.28 236.31 235.5 244.09 234.04"/>
-                    <polygon id="_37" data-name="37" class="cls-5" points="200.73 241.42 203.27 254.91 222.75 251.25 217.94 225.64 192.49 230.41 194.76 242.54 200.73 241.42"/>
-                    <rect id="_40" data-name="40" class="cls-5" x="132.33" y="245.36" width="14.99" height="25.94" transform="translate(-28.92 -47.72) rotate(-12.35)"/>
-                    <rect id="_38" data-name="38" class="cls-5" x="161.31" y="238.15" width="16.99" height="25.94" transform="translate(-26.68 -41.47) rotate(-12.35)"/><g id="_36" data-name="36">
-                    <rect class="cls-5" x="177.47" y="216.15" width="19.91" height="31.21" transform="translate(-22.13 -38.15) rotate(-12.35)"/>
-                    <rect class="cls-5" x="180.82" y="232.03" width="10.5" height="31.21" transform="translate(-25.56 -38.07) rotate(-12.35)"/>
-                  </g>
-                    <rect id="_43" data-name="43" class="cls-5" x="97.59" y="244.15" width="17.16" height="32.39" transform="matrix(0.99, -0.11, 0.11, 0.99, -3.68, -71)"/>
-                    <polygon id="_34" data-name="34" class="cls-5" points="231.37 132.38 249.37 128.63 254.12 156.38 246.62 157.63 248.37 168.38 238.37 170.38 231.37 132.38"/>
-                    <polygon id="_30" data-name="30" class="cls-5" points="290.87 128.38 300.37 125.89 302.37 133.13 309.87 131.38 316.37 161.26 298.87 165.13 290.87 128.38"/>
-                    <polygon id="_32" data-name="32" class="cls-5" points="260.87 136.38 277.37 132.38 285.87 166.63 269.37 171.13 260.87 136.38"/>
-                    <polygon id="_18" data-name="18" class="cls-5" points="410.62 103.39 464.62 92.14 472.37 130.38 418.12 140.63 410.62 103.39"/>
-                    <polygon id="_8" data-name="8" class="cls-5" points="556.99 60.13 593.62 54.63 600.74 104.26 584.37 106.89 579.12 78.76 559.62 81.64 556.99 60.13"/>
-                    <rect id="_6" data-name="6" class="cls-5" x="581.36" y="162.36" width="13.2" height="34.22" transform="translate(4.34 -3.04) rotate(-7.72)"/>
-                    <rect id="_11" data-name="11" class="cls-5" x="518.06" y="143.64" width="15.64" height="36.06" transform="translate(6.17 -11.54) rotate(-7.72)"/>
-                    <rect id="_13" data-name="13" class="cls-5" x="484.31" y="168.97" width="15.64" height="41.9" transform="translate(-2.41 4.84) rotate(-10.01)"/>
-                    <rect id="_16" data-name="16" class="cls-5" x="448.6" y="176.66" width="17.98" height="39.66" transform="translate(-4.08 -1.07) rotate(-10.01)"/>
-                    <rect id="_20" data-name="20" class="cls-5" x="359.8" y="193.82" width="15.47" height="36.89" transform="translate(-14.3 1.56) rotate(-12.58)"/>
-                    <rect id="_23" data-name="23" class="cls-5" x="332.33" y="198.25" width="20.06" height="31.93" transform="translate(-9.52 -19.31) rotate(-10.24)"/>
-                    <rect id="_25" data-name="25" class="cls-5" x="314.27" y="209.58" width="10.23" height="28.58" transform="translate(-16.46 -12.28) rotate(-12.01)"/>
-                    <rect id="_27" data-name="27" class="cls-5" x="296.63" y="210.91" width="13.09" height="30.85" transform="translate(-17.33 -15.6) rotate(-12.01)"/>
-                    <rect id="_4" data-name="4" class="cls-5" x="598" y="155.22" width="13.2" height="38.18" transform="translate(5.19 -0.85) rotate(-7.72)"/>
-                    <rect id="_2" data-name="2" class="cls-5" x="616.43" y="156.75" width="15.06" height="33.5" transform="translate(5.47 1.74) rotate(-7.72)"/>
-                  </g>
-                </g>
+
               </svg>
 
-            <p class="cutline">(Mika Mingasson for California Dream)</p>
+              <div class="tooltip">
+                <div class="label">The neighborhood</div>
+
+                <div class="cta">Click the map to view property details.</div>
+
+                <div class="property-type"><span>House type</span></div><br/>
+
+                <div class="size"> <span>House beds/baths</span></div>
+                <div class="sqft"><span>--</span> sq.ft.</div>
+
+                <div class="occupancy"><span>Occupancy</span></div><br/>
+                <div class="taxes-paid">Property taxes paid under Prop. 13: <span>--</span></div><br/>
+                <div class="market-value">Market value: <span>--</span></div>
+                <div class="assessed-value">Assessed value: <span>--</span></div><br/>
+                <div class="tax-rate">Effective property tax rate: <span>--</span></div>
+
+              </div>
+
           </div>
-          <div class="tooltip">
-            <div class="label">The neighborhood</div>
-            <div class="cta">Click the map to view property details.</div>
-
-            <div class="property-type"><span>House type</span></div><br/>
-
-            <div class="size"> <span>House beds/baths</span></div>
-            <div class="sqft"><span>--</span> sq.ft.</div>
-
-            <div class="occupancy"><span>Occupancy</span></div><br/>
-            <div class="taxes-paid">Property taxes paid under Prop. 13: <span>--</span></div><br/>
-            <div class="market-value">Market value: <span>--</span></div>
-            <div class="assessed-value">Assessed value: <span>--</span></div><br/>
-            <div class="tax-rate">Effective property tax rate: <span>--</span></div>
-          </div>
-        </div>
 
       </section>
+
 
         <section class="graphic-section" id="the-neighbors">
 

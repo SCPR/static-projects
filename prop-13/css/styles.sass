@@ -78,30 +78,53 @@ video
 .no-padding
   padding-top: 0
 
-#partners
-  float: left
+.partners
+  // float: left
+  // display: inline-block
   width: 300px
   margin: 25px
-  padding: 15px
+  padding: 15px 50px 15px 15px
+  float: left
+  @media(max-width: 1200px)
+    // display: inline
+    margin: 0 auto
+    width: 450px
+    float: none
+    padding: 0
+  @media(max-width: 700px)
+    width: 80%
+
+#partners-desktop
+  display: block
+  @media(max-width: 1200px)
+    display: none
+
+#partners-mobile
+  display: none
+  @media(max-width: 1200px)
+    display: block
+    padding-bottom: 15px
 
 .about-ca-dream
-  width: 300px
+  width: 250px
   margin: 0 auto
+  @media(max-width: 1200px)
+    margin: 0 auto
+    width: 100%
   p
     font-size: 1rem
 
 .project-partners
-  width: 300px
+  width: 250px
   margin: 0 auto
   img
-    // width: 250px
-    //height: 30px
-    //display: inline-block
     margin: 10px 10px 10px 0
 
+
 .page-intro
+  background-color: lighten($gold, 20%)
   .top
-    // min-height: 100vh
+    // min-height: 60vh
     background-size: cover
     background-position: center
     position: relative
@@ -126,13 +149,17 @@ video
     left: calc(16.6666666667% - 46.6666666667px + 40px)
     position: relative
     position: absolute
-    z-index: 3001
+    z-index: 4001
     top: 50%
     -webkit-transform: translateY(-50%)
     transform: translateY(-50%)
     text-align: center
+    @media(max-width:570px)
+      top: 50%
     img
       width: 150px
+      @media (max-width: 400px)
+        width: 100px
   .pre-heading
     letter-spacing: .07em
     font-size: 1.1rem
@@ -145,7 +172,8 @@ video
     text-transform: uppercase
     word-spacing: 5px
     letter-spacing: 1px
-    @media(max-width:650px)
+    @media(max-width:965px)
+      font-size: 1.9rem
       width: 100%
   .sub-heading
     font-size: 48px
@@ -184,10 +212,17 @@ video
     bottom: -1px
     width: 100%
     height: 9vw
+    @media(max-width: 575px)
+      display: none
   .content
-    padding: 130px 0 60px
+    width: 1100px
+    margin: 0 auto
+    clear: both
+    //padding: 130px 0 60px
     background-color: lighten($gold, 20%)
     color: $nearblack
+    @media(max-width: 1200px)
+      width: 100%
     &::after
       clear: both
       content: ""
@@ -212,7 +247,7 @@ video
     position: relative
     position: absolute
 
-@media only screen and (max-width: 414px)
+@media only screen and (max-width: 965px)
   .page-intro header
     width: calc(100% - 80px)
     float: left
@@ -221,39 +256,53 @@ video
     position: relative
     position: absolute
 
-@media only screen and (min-width: 1800px)
-  .page-intro .pre-heading
-    font-size: 16px
+// @media only screen and (min-width: 1800px)
+//   .page-intro .pre-heading
+//     font-size: 16px
 
-@media only screen and (min-width: 1800px)
-  .page-intro
-    .heading, .sub-heading
-      font-size: 58px
+// @media only screen and (min-width: 1800px)
+//   .page-intro
+//     .heading, .sub-heading
+//       font-size: 58px
 
-@media only screen and (max-width: 768px)
+@media (max-width: 768px)
   .page-intro
-    .heading, .sub-heading
-      font-size: 38px
-
-@media only screen and (max-width: 414px)
-  .page-intro
-    .heading, .sub-heading
+    .heading
       font-size: 28px
 
-@media only screen and (min-width: 1800px)
-  .page-intro.large-heading header
-    .heading, .sub-heading
-      font-size: 80px
+@media (max-width: 700px)
+  .page-intro
+    .heading
+      font-size: 25px !important
+    .pre-heading
+      display: none
 
-@media only screen and (max-width: 768px)
-  .page-intro.large-heading header
-    .heading, .sub-heading
-      font-size: 38px
+@media (max-width: 400px)
+  .page-intro
+    .heading
+      font-size: 17px !important
 
-@media only screen and (max-width: 414px)
-  .page-intro.large-heading header
-    .heading, .sub-heading
-      font-size: 28px
+// @media only screen and (max-width: 414px)
+//   .page-intro
+//     .heading
+//       font-size: 20px
+//     .sub-heading
+//       font-size: 10px !important
+//
+// @media only screen and (min-width: 1800px)
+//   .page-intro.large-heading header
+//     .heading, .sub-heading
+//       font-size: 80px
+
+// @media only screen and (max-width: 768px)
+//   .page-intro.large-heading header
+//     .heading, .sub-heading
+//       font-size: 38px
+//
+// @media only screen and (max-width: 414px)
+//   .page-intro.large-heading header
+//     .heading, .sub-heading
+//       font-size: 28px
 
 @media (max-width: 1400px)
   .page-intro .discover
@@ -282,8 +331,9 @@ video
 
 .text-block
   width: 650px
-  margin: 0 auto
+  // margin: 0 auto
   margin-top: 45px
+  display: inline-block
   // width: calc(50% - 60px)
   // // float: left
   // margin: 40px 0 0 0px
@@ -325,13 +375,17 @@ video
 .promo
   background-color: $medblue
   padding: 10px
-  margin: 15px 0 0 15px
+  margin: 15px 15px 0 15px
   color: $white
   text-align: center
   float: right
   width: 180px
   // height: 250px
   font-size: 1.2rem
+  @media(max-width: 500px)
+    float: none
+    width: 90%
+    margin: 0
   &:hover
     cursor: pointer
   a
@@ -352,6 +406,7 @@ video
   padding: 30px 0 10px 0
   p
     font-size: 1.2rem
+    padding: 10px
   .title
     font-size: 2rem
     line-height: 1.2
@@ -382,11 +437,14 @@ video
   width: 100%
   padding: 50px 0 10px 0
   clear: both
+  @media(max-width: 650px)
+    width: 95%
+    padding: 15px
 
 .graphic
   width: 420px
   margin: 15px 30px
-  //padding-top: 35px
+  padding-top: 15px
   float: left
 
 .graphic-subhead
@@ -397,12 +455,14 @@ video
   font-weight: 700
   font-family: $sans
 
+
 .graphic-header
   font-size: 2rem
   line-height: 1.2
   color: $nearblack
   font-weight: 700
   font-family: $serif
+  padding: 25px 0 0 0px
 
 .graphic-chatter
   font-size: 1.2rem
@@ -420,21 +480,20 @@ video
   letter-spacing: 2px
   font-weight: 400
 
-.the-block
-  // background-color: #dadbdc
-  width: 1500px
-  float: left
-  height: auto
-  margin: 20px 0 0 -50px
-  .cutline
-    margin: -10px 0 0 60px
-    font-size: 1rem
+// .the-block
+//   width: 1500px
+//   height: auto
+//   .cutline
+//     margin: 10px 0 0 60px
+//     font-size: 1rem
 
-.block-image
-  width: 1150px
-  z-index: 1001
-  &:hover
-    cursor: pointer
+// .block-image
+//   width: 1150px
+//   z-index: 1001
+//   @media(max-width: 1350px)
+//     width: 50%
+//   &:hover
+//     cursor: pointer
 
 .block-chatter, .neighbors-chatter
   width: 650px
@@ -443,6 +502,9 @@ video
   font-size: 1.2rem
   margin-top: 35px
   clear: both
+  @media(max-width: 650px)
+    width: 95%
+    padding: 15px
   a
     text-decoration: none
 
@@ -491,20 +553,48 @@ video
 .selected-house
   fill: $medblue
 
+
+.block-image
+  //width: 800px
+  // margin: 25px
+  display: flex
+  align-items: center
+  justify-content: center
+  min-height: 400px
+  @media(max-width: 1500px)
+    align-items: left
+    justify-content: left
+    //height: 355px
+  @media(max-width: 765px)
+    display: none
+  svg
+    width: 100%
+    @media(max-width: 1500px)
+      width: 70%
+    @media(max-width: 1200px)
+      width: 60%
+    //@media(max-width: 900px)
+      // width: 300%
+      // height: 500px
+      // -webkit-transform: rotate(90deg)
+      // -moz-transform: rotate(90deg)
+      // -o-transform: rotate(90deg)
+      // -ms-transform: rotate(90deg)
+      // transform: rotate(90deg)
+
+#illo-cutline
+  padding: 30px 0 0 0
+  @media(max-width: 765px)
+    display: none
+
 .tooltip
-  position: relative
   width: 350px
-  margin: -475px 0 0px 105px
-  padding: 40px 40px 40px 100px
-  height: auto
+  display: block
   color: $nearblack
-  // background-color: $white
-  float: right
-  // left: 20px
-  // bottom: 20px
-  // padding: 10px
   z-index: 101
-  // display: none
+  @media(max-width: 890px)
+    //display: none
+    clear: both
   span
     font-weight: 700
   p
@@ -517,33 +607,6 @@ video
 .property-type
   padding-top: 15px
   text-transform: uppercase
-
-[data-tooltip]
-  position: relative
-  &:before, &:after
-    display: none
-    position: absolute
-    top: 0
-  &:before
-    border-left: 7px solid transparent
-    border-right: 7px solid transparent
-    content: ""
-    left: 20px
-    margin-top: 1em
-  &:after
-    background-color: $medblue
-    border-radius: 7px
-    color: $white
-    content: attr('data-tooltip')
-    // content: attr(data-tooltip-label) "\a" attr(data-tooltip-message)
-    left: 0
-    margin-top: 1.5em
-    padding: 5px 15px
-    white-space: pre-wrap
-    width: 100px
-  &:hover
-    &:after, &:before
-      display: block
 
 .meet-the-neighbors
   margin: 0 auto
@@ -562,7 +625,6 @@ video
     margin: 0 auto
     width: 100%
 
-
 .neighbor-nav
   width: 400px
   margin: 45px 25px
@@ -570,6 +632,7 @@ video
   vertical-align: top
   @media(max-width: 1500px)
     width: 250px
+    margin: 15px
   @media(max-width: 650px)
     width: 90%
   img
@@ -689,83 +752,25 @@ video
     font-family: 'fontawesome'
     content: '\f0a7'
 
-// .text-list
-//   margin: 115px 0
-//   text-align: center
-//   &::after
-//     clear: both
-//     content: ""
-//     display: block
-//   h1
-//     text-transform: uppercase
-//     font-size: 13px
-//     letter-spacing: 0.07em
-//   ul
-//     list-style: none
-//     font-size: 32px
-//
-// @media only screen and (max-width: 768px)
-//   .text-list ul
-//     font-size: 26px
-//
-// @media only screen and (max-width: 414px)
-//   .text-list ul
-//     font-size: 22px
-
-// .hero
-//   background: $deepblue url('../images/fence.png') no-repeat
-//   background-size: cover
-//   background-position: 0 10vh
-//   height: 50vh
-//
-// .header
-//   width: 500px
-//   //min-height: 50vh
-//   //padding-bottom: 20px
-//   text-align: center
-//   margin: 50px auto
-//   line-height: 1.3
-//   color: $nearblack
-//   @media(max-width: 500px)
-//     width: 95%
-//   img
-//     width: 200px
-//     padding: 10px
-//   h1
-//     font-weight: 700
-
-// .lead-art
-//   width: 100%
-//   height: 100vh
-//   display: flex
-//   margin-top: 15px
-//   justify-content: center
-//   align-items: center
-//   background-size: cover
-//   background-position: center center
-//   background-repeat: no-repeat
-//   // background-attachment: fixed
-//   @media(max-width: 800px)
-//     background-size: contain
-//     height: 66vw
-
-
-// .content-well
-//   width: 650px
-//   margin: 0 auto
-//   padding-top: 50px
-//   @media(max-width: 650px)
-//     width: 95%
 
 /* Maps */
 
-#geocoder
-  position: absolute !important
-  top: 10px !important
-  left: 10px !important
 
-.map
+#map-text
   background-color: $white
+  padding-bottom: 50px
+  @media(max-width: 1630px)
+    margin: 0 auto !important
+    width: 650px
+    float: none
+  @media(max-width: 650px)
+    padding: 10px 20px 35px 10px
+    margin: 10px
+    width: 100%
+
+#map-container
+  @media(max-width: 1630px)
+    padding: 35px 0 !important
 
 #tax-map
   width: 1100px
@@ -774,6 +779,14 @@ video
   border: 1px solid $palegray
   //background-color: $medgray
   float: left
+  @media(max-width: 1630px)
+    float: none
+    width: 100%
+    margin: 0 20px 0 0
+    height: 600px
+  @media(max-width: 650px)
+    width: 100%
+    margin: 0 20px 0 0
 
 .legend label
   display: block
@@ -783,36 +796,66 @@ video
   text-align: center
   font-size: 0.8rem
   color: $nearblack
+  @media(max-width: 850px)
+    width: 14%
+    font-size: 0.6rem
 
 .legend span
     border: 1px solid $palegray
     display: block
     float: left
     height: 15px
-    width: 15%
+    width: 16%
     text-align: center
     font-size: 0.8rem
     color: $nearblack
+    @media(max-width: 850px)
+      width: 14%
 
 #legend
-  width: 400px
+  width: 375px
   background-color: $white
   border: 1px solid $palegray
   padding: 10px
   position: absolute
   text-align: center
   top: 10px
-  right: 60px
+  left: 10px
+  //right: 60px
   z-index: 2001
+  @media(max-width: 850px)
+    width: 245px
+    top: 5px
+    left: 5px
   small
-    font-weight: 400
-    font-size: 1.1rem
+    font-weight: 700
+    font-size: 1rem
     line-height: 1.2
     padding-bottom: 10px
+    text-align: center
 
 .mapboxgl-popup-content
   font-size: 0.9rem
   line-height: 1.2
+
+.zoom-controls
+  margin: 25px auto
+  width: 650px
+  @media(max-width: 650px)
+    width: 100%
+  .zoom-btn
+    width: 100px
+    text-align: center
+    color: $white
+    font-weight: 700
+    display: inline-block
+    margin: 5px
+    padding: 10px
+    background-color: $nearblack
+    &:hover
+      cursor: pointer
+      background-color: $medgray
+
 
 
 /* Methodology modal */
@@ -828,6 +871,9 @@ video
   display: inline
   font-size: 1.1rem
   text-align: center
+  @media(max-width: 500px)
+    display: block
+    margin: 8px
   &:hover
     background-color: $medgray
     cursor: pointer

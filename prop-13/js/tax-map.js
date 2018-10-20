@@ -9,13 +9,37 @@ const map = new mapboxgl.Map({
   center: [-122.27466,37.80341]
 });
 
+$('.zoom-btn[data-city="SF"]').click(function(){
+   map.flyTo({center: [-122.27466,37.80341]});
+});
 
-map.addControl(new mapboxgl.NavigationControl());
-map.dragRotate.disable();
-map.touchZoomRotate.disableRotation();
+$('.zoom-btn[data-city="LA"]').click(function(){
+   map.flyTo({center: [-118.24363,34.24368]});
+});
+
+$('.zoom-btn[data-city="Sac"]').click(function(){
+   map.flyTo({center: [-121.4944,38.58157]});
+});
+
+$('.zoom-btn[data-city="SD"]').click(function(){
+   map.flyTo({center: [-117.15726,32.71533]});
+});
 
 const geocoder = new MapboxGeocoder({accessToken: mapboxgl.accessToken});
-map.addControl(geocoder, 'top-left');
+
+  if ($(window).width() > 800){
+      map.addControl(geocoder, 'top-right');
+  } else {
+    map.addControl(geocoder, 'bottom-left');
+  }
+
+
+// map.addControl(new mapboxgl.NavigationControl({position: 'bottom-left'}));
+const controls = new mapboxgl.NavigationControl();
+map.addControl(controls,'bottom-left');
+
+map.dragRotate.disable();
+map.touchZoomRotate.disableRotation();
 
 
 map.on('load', function() {
