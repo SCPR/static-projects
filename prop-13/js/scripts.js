@@ -7,7 +7,7 @@
     const videoSize = elSize > 800 ? 'large' : 'small';
     const videoName = $(this).attr('data-videoname');
 
-    // $(this).children('.webm-source').attr('src', `../video/${videoName}-${videoSize}.webm`);
+    $(this).children('.webm-source').attr('src', `../video/${videoName}-${videoSize}.webm`);
     $(this).children('.mp4-source').attr('src', `../prop-13/video/${videoName}-${videoSize}.mp4`);
 
 
