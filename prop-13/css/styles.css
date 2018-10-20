@@ -25,6 +25,10 @@ video {
   padding: 10px 0;
 }
 
+.video-gif {
+  width: 100%;
+}
+
 .no-padding {
   padding-top: 0;
 }
