@@ -14,6 +14,19 @@
 
 });
 
+// // Show loading animation.
+// var playPromise = video.play();
+//
+// if (playPromise !== undefined) {
+//   playPromise.then(_ => {
+//     // Automatic playback started!
+//     // Show playing UI.
+//   })
+//   .catch(error => {
+//     // Auto-play was prevented
+//     // Show paused UI.
+//   });
+// }
 
 $(document).ready(function(){
 
