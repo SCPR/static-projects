@@ -1,5 +1,5 @@
 // Responsive video/GIFs
-if ($(window).width() > 1920){
+if ($(window).width() > 800){
 
   $('.video-gif').hide();
   $('.video-wrapper').show();
