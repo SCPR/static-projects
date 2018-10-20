@@ -101,7 +101,7 @@ map.on('load', function() {
 
           Effective tax rate: <strong>${feature.properties.EffectiveTaxRate}%</strong><br/><br/>
 
-          Census tract ${feature.properties.GEOID}><br/>
+          Census tract ${feature.properties.GEOID}<br/>
           Located in ${feature.properties.CountyName}<br/><br/>
 
           Avg. assessed value: <strong>$${addCommas(feature.properties.AverageAdjustedAssessedValue)}</strong><br/>

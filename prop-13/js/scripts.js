@@ -5,8 +5,8 @@ $.each($('video'), function() {
     const videoSize = elSize > 800 ? 'large' : 'small';
     const videoName = $(this).attr('data-videoName');
 
-    $(this).children('.mp4-source').attr('src', `../../../../prop-13/video/${videoName}-${videoSize}.mp4`);
-    $(this).children('.webm-source').attr('src', `../../../../prop-13/video/${videoName}-${videoSize}.webm`);
+    $(this).children('.mp4-source').attr('src', `../../prop-13/video/${videoName}-${videoSize}.mp4`);
+    // $(this).children('.webm-source').attr('src', `../../../../prop-13/video/${videoName}-${videoSize}.webm`);
 
     $(this)[0].load();
 
