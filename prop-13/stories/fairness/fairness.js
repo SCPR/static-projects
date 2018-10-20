@@ -11,7 +11,7 @@ if ($(window).width() > 800){
     //const videoSize = elSize > 800 ? 'large' : 'small';
     const videoName = $(this).attr('data-videoname');
 
-    $(this).children('.mp4-source').attr('src', `../prop-13/stories/fairness/videos/${videoName}-large.mp4`);
+    $(this).children('.mp4-source').attr('src', `../videos/${videoName}-large.mp4`);
     // $(this).children('.webm-source').attr('src', `../../../../prop-13/video/${videoName}-${videoSize}.webm`);
 
     $(this)[0].load();
@@ -25,9 +25,9 @@ if ($(window).width() > 800){
 
   $.each($('.video-gif img'), function() {
 
-    const videoName = $(this).attr('data-gifname');
+    const gifName = $(this).attr('data-gifname');
 
-    $(this).attr('src', `../prop-13/stories/fairness/videos/${videoName}.gif`);
+    $(this).attr('src', `../videos/${gifName}.gif`);
 
   });
 
