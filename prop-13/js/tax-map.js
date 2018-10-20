@@ -96,7 +96,7 @@ map.on('load', function() {
       let html = `
 
 
-          Total property taxes: <strong>$${addCommas(feature.properties.TotalTaxesPaid)}</strong><br/>
+          Total property taxes paid: <strong>$${addCommas(feature.properties.TotalTaxesPaid)}</strong><br/>
           Tax savings/revenue lost per home: <strong>$${addCommas(feature.properties.SavingsPerUnit)}</strong><br/>
 
           Effective tax rate: <strong>${feature.properties.EffectiveTaxRate}%</strong><br/><br/>
