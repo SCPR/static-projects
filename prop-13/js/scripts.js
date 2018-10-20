@@ -1,37 +1,35 @@
 // Responsive video/GIFs
-if ($(window).width() > 800){
-
-  $('.video-gif').hide();
-  $('.video-wrapper').show();
+// if ($(window).width() > 800){
+//
+//   $('.video-gif').hide();
+//   $('.video-wrapper').show();
 
   $.each($('video'), function() {
 
     const elSize = $(this).width();
 
-    //const videoSize = elSize > 800 ? 'large' : 'small';
+    const videoSize = elSize > 800 ? 'large' : 'small';
     const videoName = $(this).attr('data-videoname');
 
-    $(this).children('.mp4-source').attr('src', `../video/${videoName}-large.mp4`);
-    $(this).children('.webm-source').attr('src', `../video/${videoName}-large.webm`);
+    $(this).children('.mp4-source').attr('src', `../fairness/video/${videoName}-${videoSize}.mp4`);
+    $(this).children('.webm-source').attr('src', `../fairness/video/${videoName}-${videoSize}.webm`);
 
     $(this)[0].load();
 
-  });
-
-} else {
-
-  $('.video-wrapper').hide();
-  $('.video-gif').show();
-
-  $.each($('.video-gif'), function() {
-
-    const gifName = $(this).attr('data-gifname');
-
-    $(this).attr('src', `../video/${gifName}.gif`);
-
-  });
-
-}
+// } else {
+//
+//   $('.video-wrapper').hide();
+//   $('.video-gif').show();
+//
+//   $.each($('.video-gif'), function() {
+//
+//     const gifName = $(this).attr('data-gifname');
+//
+//     $(this).attr('src', `../video/${gifName}.gif`);
+//
+//   });
+//
+// }
 
 
 $(document).ready(function(){
