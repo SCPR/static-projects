@@ -1,8 +1,4 @@
-// Responsive video/GIFs
-// if ($(window).width() > 800){
-//
-//   $('.video-gif').hide();
-//   $('.video-wrapper').show();
+// Responsive videos
 
   $.each($('video'), function() {
 
@@ -16,20 +12,7 @@
 
     $(this)[0].load();
 
-// } else {
-//
-//   $('.video-wrapper').hide();
-//   $('.video-gif').show();
-//
-//   $.each($('.video-gif'), function() {
-//
-//     const gifName = $(this).attr('data-gifname');
-//
-//     $(this).attr('src', `../video/${gifName}.gif`);
-//
-//   });
-//
-// }
+});
 
 
 $(document).ready(function(){
