@@ -60,18 +60,4 @@ $(document).ready(function(){
     $('.visuals-container').addClass('is-visible');
   }
 
-
-   $.each($('video'), function() {
-       const elSize = $(this).width();
-
-       const videoSize = elSize > 800 ? 'large' : 'small';
-       const videoName = $(this).attr('data-videoName');
-
-       $(this).children('.mp4-source').attr('src', `../../../../video/${videoName}-${videoSize}.mp4`);
-       $(this).children('.webm-source').attr('src', `../../../../video/${videoName}-${videoSize}.webm`);
-
-       $(this)[0].load();
-
-     });
-
 });
