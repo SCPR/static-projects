@@ -1,16 +1,38 @@
-// Responsive videoSize
-$.each($('video'), function() {
+// Responsive video/GIFs
+if ($(window).width() > 800){
+
+  $('.video-gif').hide();
+  $('.video-wrapper').show();
+
+  $.each($('video'), function() {
+
     const elSize = $(this).width();
 
-    const videoSize = elSize > 800 ? 'large' : 'small';
-    const videoName = $(this).attr('data-videoName');
+    //const videoSize = elSize > 800 ? 'large' : 'small';
+    const videoName = $(this).attr('data-videoname');
 
-    $(this).children('.mp4-source').attr('src', `../prop-13/stories/fairness/videos/${videoName}-${videoSize}.mp4`);
+    $(this).children('.mp4-source').attr('src', `../prop-13/stories/fairness/videos/${videoName}-large.mp4`);
     // $(this).children('.webm-source').attr('src', `../../../../prop-13/video/${videoName}-${videoSize}.webm`);
 
     $(this)[0].load();
 
   });
+
+} else {
+
+  $('.video-wrapper').hide();
+  $('.video-gif').show();
+
+  $.each($('.video-gif img'), function() {
+
+    const videoName = $(this).attr('data-gifname');
+
+    $(this).attr('src', `../prop-13/stories/fairness/videos/${videoName}.gif`);
+
+  });
+
+}
+
 
 $(document).ready(function(){
 
