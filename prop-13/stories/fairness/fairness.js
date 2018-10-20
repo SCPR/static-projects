@@ -12,7 +12,7 @@ if ($(window).width() > 800){
     const videoName = $(this).attr('data-videoname');
 
     $(this).children('.mp4-source').attr('src', `../fairness/video/${videoName}-large.mp4`);
-    $(this).children('.webm-source').attr('src', `../fairness/video/${videoName}-large..webm`);
+    $(this).children('.webm-source').attr('src', `../fairness/video/${videoName}-large.webm`);
 
     $(this)[0].load();
 
