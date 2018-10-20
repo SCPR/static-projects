@@ -25,8 +25,8 @@ video {
   padding: 10px 0;
 }
 
-.video-gif {
-  width: 100%;
+.story-video:first-child {
+  padding-top: 0;
 }
 
 .no-padding {
@@ -851,7 +851,7 @@ video {
   margin: 40px;
   top: 20px;
   right: 20px;
-  visibility: hidden;
+  display: none;
 }
 
 .visuals-container img {
@@ -871,7 +871,7 @@ video {
 }
 
 .is-visible {
-  visibility: visible;
+  display: block;
 }
 
 .cont-reading {

@@ -31,13 +31,13 @@ $(document).ready(function(){
       if (($w.scrollTop() + $(window).height()) > targetOffset1) {
         $('.visuals-container img').attr("src","../fairness/images/fairness-jas-portrait.jpg");
         $('.scroll-cutline').hide();
-        $('#cutline-jas-portrait').show();
+        $('#cutline-fairness-jas-portrait').show();
       }
 
       if (($w.scrollTop() + $(window).height()) > targetOffset2) {
         $('.visuals-container img').attr("src","../fairness/images/fairness-don-home.jpg");
         $('.scroll-cutline').hide();
-        $('#cutline-don-home').show();
+        $('#cutline-fairness-don-home').show();
       }
 
       // if (($w.scrollTop() + $(window).height()) > targetOffset3) {
@@ -49,13 +49,13 @@ $(document).ready(function(){
       if (($w.scrollTop() + $(window).height()) > targetOffset3) {
         $('.visuals-container img').attr("src","../fairness/images/scenes-garages.jpg");
         $('.scroll-cutline').hide();
-        $('#cutline-scenes-garages').show();
+        $('#cutline-fairness-scenes-garages').show();
       }
 
       if (($w.scrollTop() + $(window).height()) > targetOffset4) {
         $('.visuals-container img').attr("src","../fairness/images/fairness-stephanie-portrait.jpg");
         $('.scroll-cutline').hide();
-        $('#cutline-stephanie-portrait').show();
+        $('#cutline-fairness-stephanie-portrait').show();
       }
     });
   } else {

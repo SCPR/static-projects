@@ -71,9 +71,8 @@ video
 .story-video
   background-color: $white
   padding: 10px 0
-
-.video-gif
-  width: 100%
+  &:first-child
+    padding-top: 0
 
 .no-padding
   padding-top: 0
@@ -723,7 +722,7 @@ video
   margin: 40px
   top: 20px
   right: 20px
-  visibility: hidden
+  display: none
   img
     width: 100%
     border: 1px solid $palegray
@@ -736,7 +735,7 @@ video
     margin: 0
 
 .is-visible
-  visibility: visible
+  display: block
 
 .cont-reading
   background-color: $nearblack

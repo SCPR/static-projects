@@ -4,26 +4,26 @@
 
   	  <!-- custom metadata -->
 
-      <meta content="California dream, KQED, KPCC, Capital Public Radio, KPBS, CALmatters, California, housing, high prices, Propsition 13, Prop. 13, homeowner, ballot measure, housing, property tax, fairness, unfair, business, housing shortage, housing supply, Proposition 5, Prop. 5, split roll, education, spending, revenue, tax, taxes, savings, Howard Jarvis, Howard Jarvis Tax Foundation, tax revolt, tax reform, gentrification, Jas Johl, Don Weinger, Darrell Brown, Sarah Woodson, Charles Woodson, Michelle Krasowki, Timothy Mom, Noah Kinner, Ken Wilkens" name="keywords" />
+      <meta content="California dream, KQED, KPCC, Capital Public Radio, KPBS, CALmatters, California, housing, high prices, Propsition 13, Prop. 13, homeowner, ballot measure, housing, property tax, fairness, unfair, business, housing shortage, housing supply, Proposition 5, Prop. 5, split roll, education, spending, revenue, tax, taxes, savings, Howard Jarvis, Howard Jarvis Tax Foundation, tax revolt, tax reform, gentrification, Jas Johl, Don Weinger, Darrell Brown, Sarah Woodson, Charles Woodson, Michelle Krasowski, Timothy Mom, Noah Kinner, Ken Wilkens" name="keywords" />
 
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-      <meta content="As California home prices reach staggering new highs, the growing disparity between the property taxes newer and older homeowners pay on similarly valued property has renewed a problematic question: Is Prop. 13 fair?" name="description" />
+      <meta content="Four decades after the passage of Prop. 13, reformers want large companies with decades-old property valuations to be taxed on what their buildings are worth today." name="description" />
 
       <title>The block that Prop. 13 built: Similar homes, different taxes</title>
       <meta property="og:url" content="http://projects.scpr.org/prop-13/stories/fairness" />
-      <meta property="og:title" content="The block that Prop. 13 built: Similar homes, different taxes"/>
-      <meta property="og:description" content="As California home prices reach staggering new highs, the growing disparity between the property taxes newer and older homeowners pay on similarly valued property has renewed a problematic question: Is Prop. 13 fair?" name="description"/>
-      <meta property="og:image" content="http://projects.scpr.org/prop-13/stories/fairness/images/_share.jpg"/>
+      <meta property="og:title" content="The block that Prop. 13 built: Should businesses pay more?"/>
+      <meta property="og:description" content="Four decades after the passage of Prop. 13, reformers want large companies with decades-old property valuations to be taxed on what their buildings are worth today." name="description"/>
+      <meta property="og:image" content="http://projects.scpr.org/prop-13/stories/business/images/_biz-share.jpg"/>
       <meta property="og:image:height" content="630"/>
       <meta property="og:image:width" content="1200"/>
       <meta property="og:type" content="article" />
       <meta property="article:author" content="https://www.facebook.com/groups/cadream" />
       <meta property="article:publisher" content="https://www.facebook.com/groups/cadream" />
       <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:image" content="http://projects.scpr.org/prop-13/stories/fairness/images/_share.jpg">
+      <meta name="twitter:image" content="http://projects.scpr.org/prop-13/stories/business/images/_biz-share.jpg">
       <meta name="twitter:image:alt" content="">
       <meta name="twitter:site" content="" />
       <meta name="twitter:creator" content="" />
@@ -34,6 +34,7 @@
 
       <!-- stylesheets -->
       <link rel="stylesheet" href="../../css/styles.css"/>
+      <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
 
       <!-- Google Analytics -->
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-585PL29');</script>
@@ -45,22 +46,22 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-585PL29" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="fullscreen-video-block">
-      <div class="video-trigger" id="trigger-fairness-jas-door"></div>
+      <div class="video-trigger" id="trigger-biz-noah-door"></div>
       <div class="video-wrapper">
-          <video class="story-video no-padding" id="video-fairness-jas-door" muted preload="auto" controls="false" loop="loop" poster="images/_fairness-jas-door.jpg" data-videoname="fairness-jas-door">
+          <video class="story-video" id="video-biz-noah-door" autoplay muted preload="auto" loop="loop" poster="images/_biz-noah-door.jpg" data-videoname="biz-noah-door">
             <source class="webm-source" src="" type="video/webm">
             <source class="mp4-source" src="" type="video/mp4">
             I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
             </video>
-          </div>
-          <p class="cutline">(Sean Havey for California Dream)</p>
+        </div>
+        <p class="cutline">(Sean Havey for California Dream)</p>
       </div>
 
-      <section class="story-section" id="fairness-section-1">
+      <section class="story-section" id="business-section-1">
         <div class="story">
-            <div class="story-header">Similar homes, different taxes</div>
-            <div class="story-subhed">Is Prop. 13 fair to new homeowners?</div>
-            <div class="story-author">Matt Levin/CALmatters</div>
+            <div class="story-header">Should businesses pay more?</div>
+            <div class="story-subhed">In 2020, California voters could raise property tax bills for their business-owning neighbors.</div>
+            <div class="story-author">David Wagner/KPCC</div>
 
             <div class="social-btns clearfix">
               <div class="share facebook-btn" id="fb-share"></div>
@@ -68,41 +69,43 @@
               <br/><span>#CADream</span>
             </div>
 
-              <p>Like so many younger Californians, Jas Johl struggled to buy her first house.  </p>
+              <p>But a planned initiative could strip away one major aspect of Prop. 13. It would increase tax assessments on many businesses while leaving taxes on homes untouched. </p>
 
-              <p>During a year-long hunt for something in her budget, she placed bids on about 10 houses in the Bay Area. She was outbid with all-cash offers nearly every time. </p>
+              <p>A progressive group, including housing advocates and teachers unions, has submitted enough signatures to qualify the measure for the November 2020 ballot. It's known as &ldquo;split roll,&rdquo; because it would split homes and businesses onto separate tax rolls. </p>
 
-              <p>Johl, who works for the tech giant Salesforce, finally found a place in a neighborhood in North Oakland in 2016. It was pricey &mdash; $850,000 &mdash;but she thought it was a pretty good bargain for the area. </p>
+              <p>Owners holding more than $2 million in commercial property would no longer be taxed based on the original price they paid for their property. Instead, they would pay based on the property&rsquo;s regularly re-assessed market value.</p>
 
-              <p>She also knew that a hefty property tax bill would accompany the price tag. And because Johl was a new homeowner, she&rsquo;d be paying a lot more than many of her neighbors.</p>
 
-              <p>&ldquo;I was expecting it, but I wasn&rsquo;t expecting how much it would be I guess,&rdquo; says Johl. </p>
+              <p>&ldquo;This would generate over $10 billion a year for our schools and local communities, without having to continue to increase taxes on individuals,&rdquo; says Ben Grieff, campaign director for Evolve California, one of the groups pushing for the <a href="https://www.oag.ca.gov/system/files/initiatives/pdfs/17-0055%20%28Funding%20for%20Schools%20and%20Communities%29_2.pdf" target="_blank">split roll measure</a>. </p>
 
-              <p>Johl paid nearly $13,000 in property taxes last year. It put a crimp in her budget &mdash; she rents out a room to help her afford her mortgage. But she was OK with paying that much because she knew the local schools needed tax dollars. </p>
+            </div>
 
-              <p>&ldquo;I feel like it&rsquo;s just the price I pay for living here,&rdquo; says Johl. </p>
+            </section>
 
-              <p>Just around the corner, less than 300 feet from Johl&rsquo;s house, is a duplex owned by Don Weinger.</p>
+            <section class="story-section">
 
               <div class="visuals-container">
-                <img src="../../stories/fairness/images/fairness-jas-portrait.jpg" alt="">
-                <p class="cutline scroll-cutline" id="cutline-jas-portrait">(Sean Havey for California Dream)</p>
+                <img src="../../stories/business/images/biz-noah-portrait.jpg" alt="">
+                <p class="cutline scroll-cutline" id="cutline-biz-noah-portrait">(Sean Havey for California Dream)</p>
               </div>
 
-              <p>The properties are about the same square size &mdash; Johl&rsquo;s house is 1,400 square feet, Weinger&rsquo;s is 1,600 including the downstairs rental unit. The real estate listing site Zillow estimates both houses are worth around $900,000. </p>
+            <div class="story">
 
-              <p>But because of Proposition 13, Weinger&rsquo;s property taxes are 40 percent lower than Johl&rsquo;s &mdash; he paid a little over $7,000 last year.</p>
+              <p>On this block in North Oakland, Prop. 13 has impacted business owners in some of the same ways it has affected homeowners. Newer entrepreneurs can end up paying much more in property tax than established business owners, in part because those who&rsquo;ve owned property the longest benefit the most. </p>
 
-              <p>That&rsquo;s because Weinger bought his house in 2002, for $365,000. Under Prop. 13, homeowners pay property taxes based on the original purchase price, not the current market value. </p>
+
+              <p class="story-subhed">The challenges of running a new business in a hot market </p>
+
+              <p>Noah Kinner owns a gym at the end of the block. It&rsquo;s in an industrial building that once housed a biker bar. This is Kinner&rsquo;s second gym location, and his first time owning commercial property. He says many of the people who come here to work out live close by. </p>
 
             </div>
 
           </section>
 
           <div class="fullscreen-video-block" id="anchor-point-1">
-            <div class="video-trigger" id="trigger-fairness-don-door"></div>
+            <div class="video-trigger" id="trigger-biz-noah-opening-gym"></div>
             <div class="video-wrapper">
-                <video class="story-video" id="video-fairness-don-door" muted preload="auto" controls="false" loop="loop" poster="images/_fairness-don-door.jpg" data-videoname="fairness-don-door">
+                <video class="story-video" id="video-biz-noah-opening-gym" autoplay muted preload="auto" loop="loop" poster="images/_biz-noah-opening-gym.jpg" data-videoname="biz-noah-opening-gym">
                   <source class="webm-source" src="" type="video/webm">
                   <source class="mp4-source" src="" type="video/mp4">
                   I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
@@ -111,133 +114,122 @@
               <p class="cutline">(Sean Havey for California Dream)</p>
             </div>
 
-          <section class="story-section" id="fairness-section-2">
+          <section class="story-section" id="business-section-2">
             <div class="story">
-              <p>Weinger and Johl were unaware that they were paying wildly different property taxes than their neighbors. Weinger, a speech pathologist for the Oakland Unified School District, says he couldn&rsquo;t really afford to pay property taxes on what his duplex is currently worth. But at the same time, he&rsquo;s not sure that his discount is fair. </p>
 
-              <p>&ldquo;I absolutely sympathize,&rdquo; says Weinger. &ldquo;I&rsquo;m happy to benefit from [Prop. 13], but I don&rsquo;t think it&rsquo;s good for California as a whole.&rdquo;</p>
+              <p>As long as the market value of Kinner&rsquo;s building stays below $2 million, he would not be subject to the proposed split roll changes. But the way Oakland prices keep rising, he wonders how long he&rsquo;d be able to qualify as an exempt small business.</p>
 
-              <div class="audio-box" snd="1-1">
+              <p>&quot;I know the value of the building has appreciated significantly since we bought it,&rdquo; Kinner says. &ldquo;But that doesn't translate into anything for me and my day-to-day business.&quot;</p>
+
+              <p>Under Prop. 13, Kinner&rsquo;s property tax bill works pretty much the same way it does for his neighbors who own homes. It&rsquo;s based on the price he paid for the building back in 2015 &mdash; not its market value today. </p>
+
+            </div>
+
+            </section>
+
+            <section class="story-section" id="anchor-point-2">
+
+              <div class="visuals-container">
+                <img src="../../stories/business/images/biz-noah-working-at-table.jpg" alt="">
+                <p class="cutline scroll-cutline" id="cutline-biz-noah-working-at-table">(Sean Havey for California Dream)</p>
+              </div>
+
+              <div class="story">
+
+              <p>Considering all the other costs associated with running his gym, Kinner appreciates the stability.</p>
+
+              <p>If he lost that predictability, he says, staying open would be trickier. &ldquo;If every year my valuation &mdash; like the Bay Area &mdash; is exceeding the rate that I'm able to grow my business, then I'm just incentivized to sell.&rdquo; </p>
+
+              <p class="story-subhed">Why supporters are for split roll </p>
+
+              <p>The idea of taxing commercial property differently than homes appeals to many Californians. Oakland resident Samuel Drew, who lives near the gym, likes the idea of keeping Prop. 13 in place for homeowners. But he says many businesses don&rsquo;t need it. </p>
+
+              <p>&quot;I think it's good for working people, to lower their taxes,&rdquo; Drew says. &ldquo;But when you're making millions and billions, it just doesn't hit me as fair.&quot;</p>
+
+              <div class="audio-box" snd="1-5">
                 <div class="speaker">
-                  <!-- <img class="audio-img" src="images/door.jpg" alt=""/>
-                  <p class="cutline">Most of the apartments at Fullerton Heights are for formerly homeless individuals, but 12 are for low-income residents. A Community of Friends, which runs Fullerton Heights, got 189 applications for those 12 units, highlighting the demand for affordable housing in the city. (Jill Replogle/KPCC)</p> -->
 
                   <div class="pause clearfix"><i class="fa fa-play" aria-hidden="true"></i></div>
                 </div>
 
                 <div class="wavesurfer">
-                  <div id="w1-1" class="waveform"></div>
+                  <div id="w1-5" class="waveform"></div>
                 </div>
                 <div class="audio-caption">
-                  Jas Johl is proud of her new home.
+                  Noah Kinner runs a gym on the corner. It’s a big, gray, industrial space.
                 </div>
               </div>
 
-              <p>Weinger&rsquo;s property tax bill is by no means an outlier in this neighborhood. One decades-long owner of a 1,300-square-foot home up the street paid only $1,168 in taxes last year. Zillow estimates that house to be worth more than $700,000. Several other longtime homeowners who no longer live in the neighborhood but instead rent their properties are paying less than $2,000 in property taxes.
+              <p>However, statewide support for split roll has been declining, according to polling from the Public Policy Institute of California (PPIC). Sixty percent of likely voters were in favor of split roll back in 2012. That support has <a href="http://www.ppic.org/press-release/newsom-villaraigosa-virtual-tie-feinstein-leads-de-leon-double-digits/" target="_blank">dropped to 46 percent</a> today.</p>
 
-              <p>&ldquo;How strict the assessment limits are is what makes California unique,&rdquo; says Richard Auxier, a research associate with the Washington, D.C.-based Tax Policy Center. &ldquo;You could have two neighbors earning the same amount of income, in roughly the same value home. And one is paying exponentially more in taxes.&rdquo; </p>
+              <p>PPIC president Mark Baldassare says public support is likely to dip when the economy is strong and the state&rsquo;s budget is healthy. </p>
 
-              <p>When voters passed Prop. 13 in 1978, part of the rationale was to protect older homeowners from rising property taxes they couldn&rsquo;t afford. Defenders of Prop. 13 argue that it&rsquo;s still an essential tool to preserve neighborhood stability. </p>
+              <p>&ldquo;I think that many voters look to the split roll as a possibility to help the state out of a financial crisis,&rdquo; Baldassare says. &ldquo;But we're not in a financial crisis at the moment.&rdquo;</p>
 
-              <p>&ldquo;It allows people to remain in their homes who otherwise might be driven out by taxes,&rdquo; says David Kline, a spokesman for the <a href="http://www.caltax.org/" target="_blank">California Taxpayers Association</a>. &ldquo;The low-income homeowner is the most at risk of not being able to afford escalating property taxes. It&rsquo;s the biggest help to those at risk.&rdquo;</p>
+              <p>Perhaps the biggest selling point for proponents of split roll is how much it would raise in new tax revenue. A <a href="https://dornsife.usc.edu/assets/sites/242/docs/Getting_Real_About_Reform_2017_Update.pdf" target="_blank">USC study</a> found that it could bring in an additional $11.4 billion per year statewide.</p>
 
-              <p>But as California home prices reach staggering new highs, the growing disparity between what newer and older homeowners pay on similarly valued property has renewed a problematic question: Is Prop. 13 fair?
+              <p>&quot;That could pay for a lot of services, healthcare workers and teachers,&rdquo; says USC researcher and study co-author Jennifer Ito. Alameda County alone would take in about $550 million more each year, she says. &ldquo;Every county in California would get additional revenue to go toward our local government and schools.&rdquo; </p>
 
-          </div>
-
-        </section>
-
-        <section class="story-section" id="anchor-point-2">
-
-          <div class="visuals-container">
-            <img src="../../stories/fairness/images/fairness-don-home.jpg" alt="">
-            <p class="cutline scroll-cutline" id="cutline-don-home">(Sean Havey for California Dream)</p>
-          </div>
-
-          <div class="story">
-
-              <p class="story-subhed">Who benefits from Prop. 13?</p>
-
-              <p>Overall, polling suggests Californians like Prop. 13, at least in theory. <a href="http://www.ppic.org/publication/proposition-13-40-years-later/" target="_blank"></a>About 57 percent</a> of Californians say Prop. 13 has been mostly good for the state, according to a Public Policy Institute of California survey conducted in March.</p>
-
-              <p>But voters are more conflicted about how Prop. 13 treats newer and older homeowners. Only <a href="https://calmatters.org/articles/california-proposition-13-approval-rating/" target="_blank">41 percent</a> of Californians believe someone who recently bought a home should pay higher property taxes than someone who bought an identical home decades ago. </p>
-
-              <p>California isn&rsquo;t the only place that provides major property tax breaks to longtime homeowners. Many other states limit how much local governments can tax homes, especially for low-income or senior homeowners.</p>
-
-              <p>But property tax relief in other states is typically more tailored to vulnerable populations than it is here, says Auxier. Prop. 13 provides benefits to anyone fortunate enough to own a home, regardless of their income.</p>
-
-              <p>&ldquo;This version of property tax relief is very poorly targeted,&rdquo; says Auxier. &ldquo;The problem is that it does nothing but reward homeowners who have been in their homes a long time, no matter who those homeowners are.&rdquo; </p>
-
-              <p>Because homeownership is generally correlated with higher incomes, and because Prop. 13 provides more benefits in the long term to more expensive homes, the vast majority of tax relief goes to higher-income households. </p>
-
-              <p>The nonpartisan Legislative Analyst&rsquo;s Office <a href="https://lao.ca.gov/publications/report/3497#Do_Proposition_13.2019s_Benefits_for_Property_Owners_Vary_With_Income.3F" target="_blank">estimates</a> that roughly 50 percent of the tax savings provided by Prop. 13 goes to households that make over $120,000. Those estimates don&rsquo;t take into account any tax benefit landlords may pass on to renters, however. </p>
-
-
-              <p>Defenders of Prop. 13 say that&rsquo;s the wrong way of looking at who is benefiting most from the measure.</p>
-
-              <p>In gentrifying neighborhoods like this one in North Oakland, some of the biggest beneficiaries of Prop. 13 are not higher-income households, but middle-class families who bought decades earlier when houses in the area were much more affordable. </p>
+              <p>Split roll backers question why Prop. 13 lets large, older corporations benefit from much lower tax assessments than newer companies right next door. </p>
 
           </section>
 
           <section class="story-section" id="anchor-point-3">
 
             <div class="visuals-container">
-              <img src="../../stories/fairness/images/scenes-garages.jpg" alt="">
-              <p class="cutline scroll-cutline" id="cutline-scenes-garages">(Sean Havey for California Dream)</p>
+              <img src="../../stories/business/images/biz-timothy-portrait.jpg" alt="">
+              <p class="cutline scroll-cutline" id="cutline-biz-timothy-portrait">(Sean Havey for California Dream)</p>
             </div>
 
             <div class="story">
 
-              <p>That&rsquo;s part of the reason why Johl feels mostly OK about paying higher property taxes than some of her neighbors.
+              <p>For instance, Intel owns a plot of land in the heart of Silicon Valley with an assessed value of about $2.50 per square foot. Meanwhile, just across the street, a professional office center is sitting on land with a recently assessed value of about $126 per square foot. </p>
 
-              <p>&ldquo;I don&rsquo;t think it would be fair to ask a family down the street who bought their house 20 years ago to pay more,&rdquo; says Johl. &ldquo;Because how would you know if they could afford it?&rdquo;</p>
 
-              <p>Auxier concedes that some truly middle-class families from traditionally marginalized communities may benefit from Prop. 13. But he stresses that it&rsquo;s more an exception to the rule, and to remember the costs associated with that benefit.</p>
+              <p class="story-subhed">Split roll critics say employers already pay enough</p>
 
-              <p>&ldquo;Those are tax dollars that aren&rsquo;t going to education programs or health care programs that could help other parts of those communities that don&rsquo;t own incredibly expensive homes,&rdquo; says Auxier.</p>
+              <p>But taxpayer groups say split roll would only make the cost of doing business in California more burdensome. </p>
 
-              <p class="story-subhed">Certainty for new homeowners, but at a cost</p>
+              <p>&ldquo;If you talk to business owners and ask them if they're getting a pretty good deal on taxes in California, they will unanimously say no,&rdquo; says David Kline with the <a href="http://www.caltax.org/about/staff.html" target="_blank">California Taxpayers Association.</a></p>
 
-              <p>New homeowners like Johl may be paying way more in property taxes this year than their neighbors. But Prop. 13 provides a great deal of certainty for her going forward. Regardless of how much her home&rsquo;s value rises, Johl knows her property tax base will not increase more than 2 percent per year.  </p>
+              <p>Business groups often describe property taxes as one bright spot for companies in a state that otherwise levies some of the highest taxes in the country. </p>
 
-              <p>&ldquo;Prop. 13 provides certainty for every property owner,&rdquo; says Kline. &ldquo;So when you buy your property you know exactly what your tax is going to be that year and what it&rsquo;s going to be for years to come. And you can put those numbers in your budget and know what your bills will be going forward.&rdquo; </p>
+              <p>A <a href="https://lao.ca.gov/BallotAnalysis/Initiative/2017-055" target="_blank">2018 split roll analysis</a> from the California Legislative Analyst&rsquo;s Office concluded that raising business taxes relative to other states could &ldquo;influence some businesses' decisions about whether to expand in or move to California.&rdquo; But overall effects on the health of the state&rsquo;s economy would be uncertain, according to the report. </p>
 
-              <p>Critics say those savings are mitigated by other taxes state and local governments levy to make up for lost property tax revenue. California has some of the highest income and sales taxes in the country.</p>
-
-              <p class="story-subhed">The Prop. 13 poster child who loathes it</p>
-
-              <p>In 1988, Stephanie Nordlinger became a first-time homeowner. She bought a small house in the Los Angeles neighborhood of Baldwin Hills for $170,000.</p>
-
-              <p>Nordlinger, an attorney, was never a fan of Prop. 13. When it passed, she feared that government services like parks and schools would suffer. But she also thought it was fundamentally wrong that she was paying more in property taxes than richer residents of the city, just because of when she bought. </p>
+            </div>
 
           </section>
 
-          <section class="story-section" id="anchor-point-4">
-
-            <div class="visuals-container">
-              <img src="../../stories/fairness/images/fairness-stephanie-portrait.jpg" alt="">
-              <p class="cutline scroll-cutline" id="cutline-stephanie-portrait">Stephanie Nordlinger’s challenge to Proposition 13 went all the way to the Supreme Court. She’s pictured here in the backyard of her home. (Adriene Hill/California Dream)</p>
+          <div class="fullscreen-video-block" id="anchor-point-4">
+            <div class="video-trigger" id="trigger-biz-timothy-door"></div>
+            <div class="video-wrapper">
+                <video class="story-video" id="video-biz-timothy-door" autoplay muted preload="auto" loop="loop" poster="images/_biz-timothy-door.jpg" data-videoname="biz-timothy-door">
+                  <source class="webm-source" src="" type="video/webm">
+                  <source class="mp4-source" src="" type="video/mp4">
+                  I'm sorry; your browser doesn't support HTML5 video in WebM with VP8/VP9 or MP4 with H.264.
+                  </video>
+              </div>
+              <p class="cutline">(Sean Havey for California Dream)</p>
             </div>
 
+          <section class="story-section">
             <div class="story">
 
-              <p>After Nordlinger got her first property tax bill, she sued on the grounds that Prop. 13 violated the 14th amendment: Equal protection under the law. </p>
+              <p>Kline says if split roll passes, it&rsquo;s not clear other taxes would come down. </p>
 
-              <p>&ldquo;Someone is paying a lot more than another for getting the same services from government agencies,&rdquo; says Nordlinger. &ldquo;It&rsquo;s not fair. It&rsquo;s clearly not fair.&rdquo; </p>
+              <p>&ldquo;This particular initiative doesn't have any tax cuts to the sales tax or income tax to mitigate the problem,&rdquo; he says. &ldquo;It just has a punitive tax specifically targeted at California employers.&rdquo;  </p>
 
-              <p><a href="https://www.oyez.org/cases/1991/90-1912" target="_blank">Nordlinger&rsquo;s case</a> went all the way to the U.S. Supreme Court. While multiple justices expressed concern that Prop. 13 was unwise policy, Nordlinger lost her case.</p>
+              <p>Prop. 13 has benefited some long-term property owners in this rapidly changing Oakland neighborhood. </p>
 
-              <p>Thirty years later, still at her Baldwin Hills home, Nordlinger is in many ways a poster child for the type of Californian Prop. 13 defenders say the initiative helps the most. </p>
+              <p>Just down the street from Kinner&rsquo;s gym, there&rsquo;s a donut shop. Cambodian immigrant Timothy Mom has been running it since 1990. He rents the space, but he pays property taxes to his landlord as part of his lease agreement. Mom says that bill comes out to about $135 a month. </p>
 
-              <p>She&rsquo;s a senior citizen on a limited income. Her house is valued around $900,000, but she pays just $3,400 in property taxes. She benefits enormously from Prop. 13.</p>
+              <p>He says that he&rsquo;d have a much harder time starting his donut shop in this neighborhood today, especially if his taxes were tied to current property prices.</p>
 
-              <p>But Nordlinger&rsquo;s attitude toward the initiative hasn&rsquo;t changed. She would welcome being taxed at a rate the new homeowners down the street are taxed, if it meant local government services would improve.</p>
+              <p>&quot;Right now, it's very expensive to open a new business,&rdquo; Mom says. &ldquo;I believe that.&quot;  </p>
 
-              <p>&ldquo;When I was a kid, California was on top,&rdquo; says Nordlinger. &ldquo;Some parts of California are perfect, and very nice, and as good as anything in the world. But other parts of California are just not what they should be.&rdquo; </p>
+          </div>
 
-            </div>
-
-      </section>
+        </section>
 
 
         <section class="graphic-section" id="the-neighbors">
@@ -266,9 +258,9 @@
             </div></a>
 
             <a href="stories/prop-5"><div class="neighbor-nav">
-              <p class="story-topic">Prop 5</p>
+              <p class="story-topic">Prop. 5</p>
               <img src="../../../prop-13/images/_prop-5-story-thumb.jpg" alt="Meet Ken">
-              <p class="about-the-story">On this block, Ken is a big Prop, 13 beneficiary. And he’d win again if Prop. 5 passes, letting him take his tax benefit with him if he ever moves.</p>
+              <p class="about-the-story">On this block, Ken is a big Prop. 13 beneficiary. And he’d win again if Prop. 5 passes, letting him take his tax benefit with him if he ever moves.</p>
               <div class="read-more-btn">Meet Ken &nbsp;</div>
             </div></a>
 
@@ -312,11 +304,13 @@
     <!-- scripts -->
 
     <script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
     <script type="text/javascript" src="../../js/wavesurfer.js"></script>
     <script type="text/javascript" src="../../js/jukebox.js"></script>
     <script type="text/javascript" src="../../js/modernizr-custom.js"></script>
     <script type="text/javascript" src="../../js/video.js"></script>
-    <script type="text/javascript" src="fairness.js"></script>
+    <!-- <script type="text/javascript" src="revenue-map.js"></script> -->
+    <script type="text/javascript" src="business.js"></script>
 
     <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 
@@ -324,7 +318,7 @@
       // Facebook
       window.fbAsyncInit = function() {
         FB.init({
-          appId            : '1866747600266711',
+          appId            : '883507005176874',
           autoLogAppEvents : true,
           xfbml            : true,
           version          : 'v3.1'
@@ -344,7 +338,7 @@
         FB.ui({
           method: 'share',
           display: 'popup',
-          href: 'http://projects.scpr.org/prop-13/stories/fairness',
+          href: 'http://projects.scpr.org/prop-13/stories/business',
         }, function(response){});
       }
     </script>
@@ -352,8 +346,8 @@
     <script>
       // Twitter web intent
       document.getElementById('twitter-share').onclick = function() {
-        const url = "http://projects.scpr.org/prop-13/stories/fairness";
-        const text = "Jas and Don live just around the corner from each other. Their houses are worth about the same amount of money, but she pays far more in taxes then he does. Is Prop. 13 fair? #CADream";
+        const url = "http://projects.scpr.org/prop-13/stories/business";
+        const text = "A ballot initiative planned for 2020 could strip away one major aspect of Prop. 13. It would increase tax assessments on many businesses while leaving taxes on homes untouched. #CADream";
         window.open('http://twitter.com/share?url='+encodeURIComponent(url)+'&text='+encodeURIComponent(text), '', 'left=0,top=0,width=550,height=450,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
       }
     </script>
