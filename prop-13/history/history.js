@@ -11,7 +11,7 @@ $(document).ready(function(){
     const $w = $(window).scroll(function() {
 
       const scrollTop = $(window).scrollTop();
-      //$('.visuals-container').addClass('is-visible',scrollTop >= $('body').offset().top);
+      $('.visuals-container').addClass('is-visible',scrollTop >= $('#history-section-1').offset().top);
 
       if (($w.scrollTop() + $(window).height()) > targetOffset1) {
         $('.visuals-container img').attr("src","../history/images/history-jon-coupal.jpg");

@@ -103,8 +103,16 @@ video {
   margin: 10px 10px 10px 0;
 }
 
+.prop-in-a-box {
+  width: 650px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
 .page-intro {
   background-color: #ffd766;
+  z-index: 3000;
+  position: relative;
 }
 
 .page-intro .top {
