@@ -858,6 +858,7 @@ video {
 
 .visuals-container img {
   width: 100%;
+  max-height: 650px;
   border: 1px solid #F6F6F6;
 }
 
