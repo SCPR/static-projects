@@ -59,7 +59,7 @@ map.on('load', function() {
           visibility: 'visible',
         },
         'paint': {
-            'fill-opacity': 0.85,
+            'fill-opacity': 0.75,
             'fill-outline-color': '#fff',
             'fill-color': [
                 'interpolate',
