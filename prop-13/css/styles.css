@@ -23,10 +23,12 @@ video {
 .story-video {
   background-color: #fff;
   padding: 10px 0;
+  margin-top: 10px;
 }
 
 .story-video:first-child {
   padding-top: 0;
+  margin-top: 0px;
 }
 
 .no-padding {
