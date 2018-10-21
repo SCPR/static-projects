@@ -46,11 +46,6 @@ $(document).ready(function(){
         $('#cutline-biz-timothy-portrait').show();
       }
 
-      // if (($w.scrollTop() + $(window).height()) > targetOffset4) {
-      //   $('.visuals-container img').attr("src","../business/images/business-stephanie-portrait.jpg");
-      //   $('.scroll-cutline').hide();
-      //   $('#cutline-stephanie-portrait').show();
-      // }
     });
   } else {
     $('.visuals-container').addClass('is-visible');

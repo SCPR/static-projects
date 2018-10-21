@@ -40,12 +40,6 @@ $(document).ready(function(){
         $('#cutline-fairness-don-home').show();
       }
 
-      // if (($w.scrollTop() + $(window).height()) > targetOffset3) {
-      //   $('.visuals-container img').attr("src","../fairness/images/fairness-jas-portrait-2.jpg");
-      //   $('.scroll-cutline').hide();
-      //   $('#cutline-jas-portrait-2').show();
-      // }
-
       if (($w.scrollTop() + $(window).height()) > targetOffset3) {
         $('.visuals-container img').attr("src","../fairness/images/scenes-garages.jpg");
         $('.scroll-cutline').hide();

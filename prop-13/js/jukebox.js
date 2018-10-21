@@ -43,7 +43,7 @@ const audio = [
          }
       },
       {
-        "id":"1-2", // Education
+        "id":"2-1", // Education
         "filename": "audio/education.mp3",
         "captions": {
           "0":"When Sarah and Charles Woodson moved to this middle-class North Oakland neighborhood their son was just a baby.",
@@ -52,7 +52,7 @@ const audio = [
           "13":"Sarah and Charles didn’t think too much of it, until their son turned four and they couldn’t avoid the question.",
           "17":"We talked a lot about public schools in Oakland, what our options were.",
           "26":"They were loaded conversations. Charles grew up in Oakland and went to a public elementary school here. He has bad memories. ",
-          "32":"It was the ‘80s, a few years after Proposition 13 passed.",
+          "32":"It was the 80s, a few years after Proposition 13 passed.",
           "35":"We didn’t have any money! ",
           "37":"Michael Kirst is President of the State Board of Education - he was president back when Prop. 13 passed in 1978, too.",
           "44":"He says before Prop. 13 school districts were funded mostly by local property taxes. When Prop. 13 slashed property tax revenue,",
@@ -82,7 +82,7 @@ const audio = [
         }
       },
       {
-        "id":"1-3", // Housing shortage
+        "id":"3-1", // Housing shortage
         "filename": "audio/housing-shortage.mp3",
         "captions": {
           "0":"Michelle Krasowski is the most chipper victim of California’s housing shortage I’ve ever met.",
@@ -124,7 +124,7 @@ const audio = [
         }
       },
       {
-        "id":"1-4", // Prop. 5
+        "id":"4-1", // Prop. 5
         "filename": "audio/prop-5.mp3",
         "captions": {
           "0":"Election night, June 1978. In Los Angeles, anti-tax crusader Howard Jarvis revelled in the overwhelming passage of Proposition 13.",
@@ -136,7 +136,7 @@ const audio = [
           "43":"I imagine if you bought this in 1976 you’ve done pretty well. ",
           "46":"Actually it cost less than this car. ",
           "49":"Is that right? ",
-          "50":"This car cost 21-thousand I think. And it was less than that. I never dreamed that a house would sold for over a million in this neighborhood. But they do. But they do.",
+          "50":"This car cost $21,000 I think. And it was less than that. I never dreamed that a house would sold for over a million in this neighborhood. But they do. But they do.",
           "62":"Because of Prop. 13, Ken’s property taxes are kept relatively low. And Proposition 5 on the November ballot would expand Prop. 13 by allowing homeowners 55 and older to take that lower tax bill and apply it to a new home in any California county.",
           "79":"It’s an idea that appeals to realtors like Linda Eisenman. ",
           "82":"My territory is primarily North Orange County which is Brea, Placentia, Fullerton and actually adjacent counties.",
@@ -161,7 +161,7 @@ const audio = [
         }
       },
       {
-        "id":"1-5", // Business
+        "id":"5-1", // Business
         "filename": "audio/business.mp3",
         "captions": {
           "0":"Noah Kinner runs a gym on the corner. It’s a big, gray, industrial space.",
@@ -202,7 +202,7 @@ const audio = [
         }
       },
       {
-        "id":"1-6", // History
+        "id":"6-1", // History
         "filename": "audio/history.mp3",
         "captions": {
           "0":"Back in the 1970s, California home prices nearly tripled. And property taxes soared right along with them.",
@@ -243,158 +243,158 @@ const audio = [
       }
     ];
 
-// Volume is off to start
-const volume = false;
+    // Volume is off to start
+    const volume = false;
 
-// Hold on the wavesurfer player objects
-const wavesurferPlayers = []; // Jukebox
+    // Hold on the wavesurfer player objects
+    const wavesurferPlayers = []; // Jukebox
 
-// Check to see which waveform is in view
-function checkWaveformPositions(){
-  // Check each wave form
-  $(".waveform").each(function(index){
+    // Check to see which waveform is in view
+    function checkWaveformPositions(){
+      // Check each wave form
+      $(".waveform").each(function(index){
 
-    // Status of each audio
-    isPlaying = wavesurferPlayers[index].isPlaying();
-    volume = wavesurferPlayers[index].getVolume();
+        // Status of each audio
+        isPlaying = wavesurferPlayers[index].isPlaying();
+        volume = wavesurferPlayers[index].getVolume();
 
-    // Numbers for math we use to find window location
-    const waveOffsetTop  = $(this).offset().top;
-    const windowTop = $(window).scrollTop();
-    const windowHeight = $(window).height();
-    const ourOffset = (waveOffsetTop - windowTop);
+        // Numbers for math we use to find window location
+        const waveOffsetTop  = $(this).offset().top;
+        const windowTop = $(window).scrollTop();
+        const windowHeight = $(window).height();
+        const ourOffset = (waveOffsetTop - windowTop);
 
-    // If in view...
-    if ( ourOffset < windowHeight && ourOffset > 0 ){
-      if ( !isPlaying && volume === 0){ // If it's not playing, play
-        wavesurferPlayers[index].play();
-      }
-    } else { // if not in view...
-      wavesurferPlayers[index].pause();
-      wavesurferPlayers[index].setVolume(0);
-    }
+        // If in view...
+        if ( ourOffset < windowHeight && ourOffset > 0 ){
+          if ( !isPlaying && volume === 0){ // If it's not playing, play
+            wavesurferPlayers[index].play();
+          }
+        } else { // if not in view...
+          wavesurferPlayers[index].pause();
+          wavesurferPlayers[index].setVolume(0);
+        }
 
-    // Make sure play/pause is showing correct text
-    if ( wavesurferPlayers[index].isPlaying() ){
-      $('.pause').html('<i class="fa fa-pause" aria-hidden="true"></i>');
-    } else {
-      // $('.pause').html('<i class="fa fa-pause" aria-hidden="true"></i>');
-    }
-    // if ( wavesurferPlayers[index].isPlaying() ){
-    //   $('.pause').html('<i class="fa fa-pause" aria-hidden="true"></i>');
-    // } else {
-    //   $('.pause').html('<i class="fa fa-play" aria-hidden="true"></i>');
-    // }
-  }); // .each waveform
-} // checkWaveformPositions()
+        // Make sure play/pause is showing correct text
+        if ( wavesurferPlayers[index].isPlaying() ){
+          $('.pause').html('<i class="fa fa-pause" aria-hidden="true"></i>');
+        } else {
+          // $('.pause').html('<i class="fa fa-pause" aria-hidden="true"></i>');
+        }
+        // if ( wavesurferPlayers[index].isPlaying() ){
+        //   $('.pause').html('<i class="fa fa-pause" aria-hidden="true"></i>');
+        // } else {
+        //   $('.pause').html('<i class="fa fa-play" aria-hidden="true"></i>');
+        // }
+      }); // .each waveform
+    } // checkWaveformPositions()
 
-// All scroll events go in here
-// $(window).scroll(function(){
-//   // On scroll check location of all waveform players
-//   checkWaveformPositions();
-// });
+    // All scroll events go in here
+    // $(window).scroll(function(){
+    //   // On scroll check location of all waveform players
+    //   checkWaveformPositions();
+    // });
 
 
-$(document).ready(function() {
-  // $('.pause').hide(); // Hide the .play classed buttons
+    $(document).ready(function() {
+      // $('.pause').hide(); // Hide the .play classed buttons
 
-  // Initialize audio players with captions
-  // Go through each class and create a player for each corresponding class item
-  $('.waveform').each(function(index){
+      // Initialize audio players with captions
+      // Go through each class and create a player for each corresponding class item
+      $('.waveform').each(function(index){
 
-      // Chapter and index id
-      const chapter = $(this).attr('id').replace("w","").split("-")[0];
-      const i = $(this).attr('id').split("-")[1];
+          // Chapter and index id
+          const chapter = $(this).attr('id').replace("w","").split("-")[0];
+          const i = $(this).attr('id').split("-")[1];
 
-      console.log(i);
+          console.log(i);
 
-      var audioIndex;
+          var audioIndex;
 
-      audio.forEach(function(currentValue, index, array) {
-        //console.log(currentValue, index, array);
-        if ( chapter+"-"+i === currentValue.id){
-          audioIndex = index;
+          audio.forEach(function(currentValue, index, array) {
+            //console.log(currentValue, index, array);
+            if ( chapter+"-"+i === currentValue.id){
+              audioIndex = index;
+            }
+          });
+
+          // Create a waveform player for each div
+          const wavesurfer = WaveSurfer.create({
+              container: '#'+$(this).attr('id'), // Example: 1-3
+              waveColor: '#a9a9a9',
+              progressColor: '#F3AA27',
+              height: 60
+          });
+
+          // Load the mp3
+          wavesurfer.load(audio[audioIndex].filename);
+
+          // If audio is playing...
+          wavesurfer.on('audioprocess', function (progress) {
+            const thisSecond = Math.floor(progress); // current marker
+            //console.log(thisSecond);
+            // If there's a caption at this index
+            if (audio[audioIndex].captions[thisSecond]) {
+              const currentCaption = audio[audioIndex].captions[thisSecond];
+              // Put that caption in the following div
+              $("div[snd='"+chapter+"-"+i+"'] .audio-caption").text(currentCaption);
+            }
+          });
+          wavesurferPlayers.push(wavesurfer); // Push to the jukebox
+      }); // on ready .each waveform
+
+      // When you click the volume button...
+      $('.sound-toggle').click(function(){
+        // Get the index for this sound file,
+        const i = parseInt($(this).parent().parent().attr('snd').split("-")[1])-1;
+        wavesurferPlayers[i].setVolume(1);
+        $(this).toggleClass('off on');
+        $(this).text($(this).text() == 'sound on' ? 'sound off' : 'sound on');
+        if ($(this).hasClass('off')){
+          wavesurferPlayers[i].setVolume(1);
+        } else {
+          wavesurferPlayers[i].setVolume(0);
+        }
+        // Hide the volume button
+        // $(this).hide();
+        //$('.volume').html('<i class="fa fa-volume-up" aria-hidden="true"></i>');
+        // Show the pause button, which also plays
+        $(this).siblings('.pause').show();
+      });
+
+      // When you click the pause button to play/pause...
+      $('.pause').click(function(){
+        //$('.sound-toggle').addClass('enable-btn');
+
+        // Get the index for this sound file,
+        const i = parseInt($(this).parent().parent().attr('snd').split("-")[1])-1;
+
+        // Toggle
+        wavesurferPlayers[i].setVolume(1);
+        wavesurferPlayers[i].playPause();
+        // if (wavesurferPlayers[i].getVolume() ===  1){
+        //   wavesurferPlayers[i].setVolume(0);
+        //   wavesurferPlayers[i].pause();
+        // } else {
+        //   wavesurferPlayers[i].setVolume(1);
+        //   wavesurferPlayers[i].play();
+        // }
+        if (wavesurferPlayers[i].isPlaying()){
+          $(this).html('<i class="fa fa-pause" aria-hidden="true"></i>');
+           // wavesurferPlayers[i].pause();
+           wavesurferPlayers[i].setVolume(1);
+        } else {
+          $(this).html('<i class="fa fa-play" aria-hidden="true"></i>');
+          // wavesurferPlayers[i].play();
+          wavesurferPlayers[i].setVolume(1);
         }
       });
-
-      // Create a waveform player for each div
-      const wavesurfer = WaveSurfer.create({
-          container: '#'+$(this).attr('id'), // Example: 1-3
-          waveColor: '#a9a9a9',
-          progressColor: '#F3AA27',
-          height: 60
-      });
-
-      // Load the mp3
-      wavesurfer.load(audio[audioIndex].filename);
-
-      // If audio is playing...
-      wavesurfer.on('audioprocess', function (progress) {
-        const thisSecond = Math.floor(progress); // current marker
-        //console.log(thisSecond);
-        // If there's a caption at this index
-        if (audio[audioIndex].captions[thisSecond]) {
-          const currentCaption = audio[audioIndex].captions[thisSecond];
-          // Put that caption in the following div
-          $("div[snd='"+chapter+"-"+i+"'] .audio-caption").text(currentCaption);
-        }
-      });
-      wavesurferPlayers.push(wavesurfer); // Push to the jukebox
-  }); // on ready .each waveform
-
-  // When you click the volume button...
-  $('.sound-toggle').click(function(){
-    // Get the index for this sound file,
-    const i = parseInt($(this).parent().parent().attr('snd').split("-")[1])-1;
-    wavesurferPlayers[i].setVolume(1);
-    $(this).toggleClass('off on');
-    $(this).text($(this).text() == 'sound on' ? 'sound off' : 'sound on');
-    if ($(this).hasClass('off')){
-      wavesurferPlayers[i].setVolume(1);
-    } else {
-      wavesurferPlayers[i].setVolume(0);
-    }
-    // Hide the volume button
-    // $(this).hide();
-    //$('.volume').html('<i class="fa fa-volume-up" aria-hidden="true"></i>');
-    // Show the pause button, which also plays
-    $(this).siblings('.pause').show();
-  });
-
-  // When you click the pause button to play/pause...
-  $('.pause').click(function(){
-    //$('.sound-toggle').addClass('enable-btn');
-
-    // Get the index for this sound file,
-    const i = parseInt($(this).parent().parent().attr('snd').split("-")[1])-1;
-
-    // Toggle
-    wavesurferPlayers[i].setVolume(1);
-    wavesurferPlayers[i].playPause();
-    // if (wavesurferPlayers[i].getVolume() ===  1){
-    //   wavesurferPlayers[i].setVolume(0);
-    //   wavesurferPlayers[i].pause();
-    // } else {
-    //   wavesurferPlayers[i].setVolume(1);
-    //   wavesurferPlayers[i].play();
-    // }
-    if (wavesurferPlayers[i].isPlaying()){
-      $(this).html('<i class="fa fa-pause" aria-hidden="true"></i>');
-       // wavesurferPlayers[i].pause();
-       wavesurferPlayers[i].setVolume(1);
-    } else {
-      $(this).html('<i class="fa fa-play" aria-hidden="true"></i>');
-      // wavesurferPlayers[i].play();
-      wavesurferPlayers[i].setVolume(1);
-    }
-  });
-  // $('.sound-toggle').click(function(){
-  //   $(this).toggleClass('off on');
-  //   $(this).text($(this).text() == 'sound on' ? 'sound off' : 'sound on');
-  //   if ($(this).hasClass('off')){
-  //     wavesurferPlayers[i].setVolume(1);
-  //   } else {
-  //     wavesurferPlayers[i].setVolume(0);
-  //   }
-  // });
-});
+      // $('.sound-toggle').click(function(){
+      //   $(this).toggleClass('off on');
+      //   $(this).text($(this).text() == 'sound on' ? 'sound off' : 'sound on');
+      //   if ($(this).hasClass('off')){
+      //     wavesurferPlayers[i].setVolume(1);
+      //   } else {
+      //     wavesurferPlayers[i].setVolume(0);
+      //   }
+      // });
+    });
