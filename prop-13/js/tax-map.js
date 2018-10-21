@@ -62,11 +62,11 @@ map.on('load', function() {
             'fill-opacity': 0.75,
             'fill-outline-color': '#fff',
             'fill-color': [
-                'interpolate',
+                'interpolate-lab',
                 ['linear'],
                 ['get', 'Prop13Savings'],
                 -15000000,'#fff6cd',
-                -10000000,'#ff0000',
+                -10000000, '#f6e0b1',
                 1000000, '#a27299',
                 3000000, '#794c8a',
                 6000000, '#271642',
