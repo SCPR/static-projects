@@ -3,8 +3,8 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoia3BjY2RhdGFkZXNrIiwiYSI6ImNqbmFsZ2YwNzF4engzc
 const map = new mapboxgl.Map({
   container: "revenue-map",
   style: "mapbox://styles/mapbox/light-v9",
-  zoom: 9,
-  center: [-118.24363,34.24368]
+  zoom: 4.5,
+  center: [-119.44944,37.16611]
 });
 
 const controls = new mapboxgl.NavigationControl();
@@ -21,7 +21,7 @@ map.on('load', function() {
         closeOnClick: false,
       });
 
-      map.addSource('counties', { type: 'geojson', data: '../../prop-13/business/data/ca-counties.geojson' });
+      map.addSource('counties', { type: 'geojson', data: 'counties.geojson' });
 
       map.addLayer({
         id: "counties",
@@ -33,16 +33,17 @@ map.on('load', function() {
         'paint': {
             'fill-opacity': 0.75,
             'fill-outline-color': '#fff',
+            'fill-color': '#a27299',
             // 'fill-color': [
             //     'interpolate',
             //     ['linear'],
-            //     ['get', 'Prop13Savings'],
-            //     -15000000,'#fff6cd',
-            //     -10000000, '#f6e0b1',
-            //     1000000, '#a27299',
-            //     3000000, '#794c8a',
-            //     6000000, '#271642',
-            //     20000000, '#212121'
+            //     ['get', 'estimatedRevenue'],
+            //     100,'#fff6cd',
+            //     300, '#f6e0b1',
+            //     500, '#a27299',
+            //     700, '#794c8a',
+            //     900, '#271642',
+            //     1000, '#212121'
             // ],
         },
     });
@@ -57,7 +58,7 @@ map.on('load', function() {
         "fill-color": "#797979",
         "fill-opacity": 0.75
       },
-      "filter": ["in", "GEOID", ""]
+      "filter": ["in", "CA_counties_GEOID", ""]
     });
 
 
@@ -65,7 +66,7 @@ map.on('load', function() {
       const feature = e.features[0];
       let html = `
 
-          <strong>${feature.properties.county} County</strong><br/>
+          <strong>${feature.properties.CA_counties_NAMELSAD}</strong><br/>
           Estimated revenue gains per capita: <strong>$${feature.properties.estimatedRevenue}</strong>
 
       `;
@@ -80,12 +81,12 @@ map.on('load', function() {
       var features = map.queryRenderedFeatures(bbox, { layers: ['counties'] });
 
       // Run through the selected features and set a filter
-      // to match features with unique council district numbers to activate
+      // to match features in order to activate
       // the `countiesHighlighted` layer.
       var filter = features.reduce(function(memo, feature) {
-          memo.push(feature.properties.TRACTCE);
+          memo.push(feature.CA_counties_GEOID);
           return memo;
-      }, ['in', 'GEOID']);
+      }, ['in', 'CA_counties_GEOID']);
 
       map.setFilter("countiesHighlighted", filter);
     });
