@@ -61,7 +61,7 @@ map.on('load', function() {
         'paint': {
             'fill-opacity': 0.75,
             'fill-outline-color': '#fff',
-            'fill-color': [
+            // 'fill-color': [
                 // 'interpolate',
                 // ['linear'],
             //     ['get', 'Prop13Savings'],
@@ -71,7 +71,7 @@ map.on('load', function() {
             //     3000000, '#794c8a',
             //     6000000, '#271642',
             //     20000000, '#212121'
-            // ],
+            // ],    
             "fill-color": [
               "step",["get","Prop13Savings"],"#fff6cd",-15000000,"#f6e0b1",-10000000,"#a27299",1000000,"#794c8a",3000000,"#271642",6000000,"#212121"],
         },
