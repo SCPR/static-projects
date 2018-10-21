@@ -33,10 +33,10 @@ $(document).ready(function(){
 
 
 
-  // Toggle menu dropdown
-  // $('.menu').click(function(){
-  //   $('.menu-dropdown').slideToggle('slow');
-  // });
+  //Toggle menu dropdown
+  $('.menu').click(function(){
+    $('.menu-dropdown').slideToggle('slow');
+  });
 
   // Show glossary modal
   $(".glossary-btn").click(function(){

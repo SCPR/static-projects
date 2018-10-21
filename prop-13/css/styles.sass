@@ -135,7 +135,6 @@ video
     width: 95%
     padding: 10px
 
-
 .page-intro
   background-color: lighten($gold, 20%)
   z-index: 3000
@@ -391,6 +390,74 @@ video
     opacity: 1
     -webkit-transform: translate(0, 0)
     transform: translate(0, 0)
+
+
+#top-bar
+  position: fixed
+  top: 0
+  left: 0
+  background-color: $nearblack
+  color: $white
+  width: 100%
+  padding: 10px 0
+  display: none
+  z-index: 101
+  img
+    padding: 0 10px
+    width: 250px
+    @media(max-width: 400px)
+      width: 185px
+  @media(max-width: 1400px)
+    display: block
+  &.race-page-top-bar
+    @media(max-width: 1400px)
+      display: none
+    @media(max-width: 600px)
+      display: block
+
+.menu
+  color: $white
+  border: 1px solid $white
+  border-radius: 5%
+  padding: 5px
+  font-size: 0.9rem
+  position: absolute
+  top: 5px
+  right: 10px
+  width: 60px
+  &:before
+    content: '\f0c9'
+    font-family: 'fontawesome'
+  &:hover
+    background-color: $white
+    color: $medgray
+    cursor: pointer
+
+.menu-dropdown
+  position: absolute
+  z-index: 999
+  width: 100%
+  top: 42px
+  right: 0
+  display: none
+  background-color: $nearblack
+  color: $white
+  .menu-item
+    margin-bottom: 4px
+    padding: 10px
+    border-top: 1px solid $white
+    &.hover
+      background-color: $nearblack
+      cursor: pointer
+    &.selected-menu
+      background-color: $nearblack
+  a:link, a:visited, a:active
+    color: $white
+    text-decoration: none
+    border-bottom: 1px solid $white
+    &.hover
+      background-color: $nearblack
+
 
 .promo
   background-color: $medblue

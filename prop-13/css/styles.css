@@ -433,6 +433,106 @@ video {
   transform: translate(0, 0);
 }
 
+#top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #212121;
+  color: #fff;
+  width: 100%;
+  padding: 10px 0;
+  display: none;
+  z-index: 101;
+}
+
+#top-bar img {
+  padding: 0 10px;
+  width: 250px;
+}
+
+@media (max-width: 400px) {
+  #top-bar img {
+    width: 185px;
+  }
+}
+
+@media (max-width: 1400px) {
+  #top-bar {
+    display: block;
+  }
+}
+
+@media (max-width: 1400px) {
+  #top-bar.race-page-top-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #top-bar.race-page-top-bar {
+    display: block;
+  }
+}
+
+.menu {
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5%;
+  padding: 5px;
+  font-size: 0.9rem;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 60px;
+}
+
+.menu:before {
+  content: '\f0c9';
+  font-family: 'fontawesome';
+}
+
+.menu:hover {
+  background-color: #fff;
+  color: #898989;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  top: 42px;
+  right: 0;
+  display: none;
+  background-color: #212121;
+  color: #fff;
+}
+
+.menu-dropdown .menu-item {
+  margin-bottom: 4px;
+  padding: 10px;
+  border-top: 1px solid #fff;
+}
+
+.menu-dropdown .menu-item.hover {
+  background-color: #212121;
+  cursor: pointer;
+}
+
+.menu-dropdown .menu-item.selected-menu {
+  background-color: #212121;
+}
+
+.menu-dropdown a:link, .menu-dropdown a:visited, .menu-dropdown a:active {
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+}
+
+.menu-dropdown a:link.hover, .menu-dropdown a:visited.hover, .menu-dropdown a:active.hover {
+  background-color: #212121;
+}
+
 .promo {
   background-color: #007397;
   padding: 10px;
