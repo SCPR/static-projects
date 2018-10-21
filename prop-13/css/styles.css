@@ -1073,6 +1073,10 @@ video {
   }
 }
 
+#cutline-revenue-map {
+  background-color: #fff;
+}
+
 .is-visible {
   display: block;
 }
