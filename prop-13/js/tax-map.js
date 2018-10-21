@@ -59,7 +59,7 @@ map.on('load', function() {
           visibility: 'visible',
         },
         'paint': {
-            'fill-opacity': 0.75,
+            'fill-opacity': 0.85,
             'fill-outline-color': '#fff',
             // 'fill-color': [
                 // 'interpolate',
@@ -73,7 +73,14 @@ map.on('load', function() {
             //     20000000, '#212121'
             // ],
             "fill-color": [
-              "step",["get","Prop13Savings"],"#b35806",-15000000,"#f1a340",-10000000,"#fee0b6",1000000,"#f7f7f7",3000000,"#d8daeb",6000000,"#998ec3",20000000,"#542788"],
+              "step",["get","Prop13Savings"],
+              "#b35806",-15000000,
+              "#f1a340",-10000000,
+              "#fee0b6",1000000,
+              "#998ec3",3000000,
+              "#794c8a",6000000,
+              "#542788",9000000,
+              "#271642",20000000],
         },
     });
 
