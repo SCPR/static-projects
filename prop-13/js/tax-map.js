@@ -120,7 +120,7 @@ map.on('load', function() {
       let html = `
 
 
-          Total property taxes paid: <strong>$${addCommas(feature.properties.TotalTaxesPaid)}</strong><br/>
+          Total tax savings/revenue lost under Prop. 13: <strong>$${addCommas(feature.properties.Prop13Savings)}</strong><br/>
           Tax savings/revenue lost per home: <strong>$${addCommas(feature.properties.SavingsPerUnit)}</strong><br/>
 
           Effective tax rate: <strong>${feature.properties.EffectiveTaxRate}%</strong><br/><br/>
