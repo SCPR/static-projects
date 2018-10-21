@@ -32,26 +32,28 @@ $(document).ready(function(){
         $('.visuals-container img').attr("src","../business/images/biz-noah-portrait.jpg");
         $('.scroll-cutline').hide();
         $('#cutline-biz-noah-portrait').show();
-        $('#revenue-map').css('display','none');
+        $('.map-container').css('display','none');
       }
 
       if (($w.scrollTop() + $(window).height()) > targetOffset2) {
         $('.visuals-container img').attr("src","../business/images/biz-noah-working-at-table.jpg");
         $('.scroll-cutline').hide();
         $('#cutline-biz-noah-working-at-table').show();
-        $('#revenue-map').css('display','none');
+        $('.map-container').css('display','none');
       }
 
       if (($w.scrollTop() + $(window).height()) > targetOffset3) {
-        $('#revenue-map').show();
+        $('.map-container').show();
         $('.cutline').hide();
+        $('.visuals-container').hide();
+        $('#cutline-revenue-map').show();
       }
 
       if (($w.scrollTop() + $(window).height()) > targetOffset4) {
         $('.visuals-container img').attr("src","../business/images/biz-timothy-portrait.jpg");
         $('.scroll-cutline').hide();
         $('#cutline-biz-timothy-portrait').show();
-        $('#revenue-map').css('display','none');
+        $('.map-container').css('display','none');
       }
 
     });
