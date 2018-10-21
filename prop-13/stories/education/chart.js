@@ -24,7 +24,7 @@ chart.append('text').html('Per pupil spending 1969-2015').attr('x', 200);
 
 // Load the data and draw a chart
 let spending, tipBox;
-d3.json('prop-13/stories/education/spending.json', d => {
+d3.json('../spending.json', d => {
   spending = d;
 
   chart.selectAll()
