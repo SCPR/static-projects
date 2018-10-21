@@ -16,6 +16,11 @@ $.each($('video'), function() {
 
 $(document).ready(function(){
 
+  //Toggle menu dropdown
+  $('.menu').click(function(){
+    $('.menu-dropdown').slideToggle('slow');
+  });
+
   if ($(window).width() > 1615){
 
     const targetOffset1 = $("#shortage-section-1").offset().top;

@@ -16,6 +16,11 @@ $.each($('video'), function() {
 
 $(document).ready(function(){
 
+  //Toggle menu dropdown
+  $('.menu').click(function(){
+    $('.menu-dropdown').slideToggle('slow');
+  });
+
   if ($(window).width() > 1615){
 
     const targetOffset1 = $("#prop-5-section-1").offset().top;
