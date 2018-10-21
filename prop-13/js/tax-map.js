@@ -62,8 +62,9 @@ map.on('load', function() {
             'fill-opacity': 0.75,
             'fill-outline-color': '#fff',
             'fill-color': [
-                'interpolate-lab',
-                ['linear'],
+                // 'interpolate',
+                // ['linear'],
+                'step',
                 ['get', 'Prop13Savings'],
                 -15000000,'#fff6cd',
                 -10000000, '#f6e0b1',
