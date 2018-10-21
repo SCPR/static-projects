@@ -441,6 +441,7 @@ video {
 
 #top-bar img {
   padding: 0 10px;
+  width: 70px;
 }
 
 @media (max-width: 1400px) {
@@ -468,9 +469,9 @@ video {
   padding: 5px;
   font-size: 0.9rem;
   position: absolute;
-  top: 5px;
+  top: 15px;
   right: 10px;
-  width: 70px;
+  width: 65px;
 }
 
 .menu:before {
@@ -480,7 +481,7 @@ video {
 
 .menu:hover {
   background-color: #fff;
-  color: #898989;
+  color: #212121;
   cursor: pointer;
 }
 
