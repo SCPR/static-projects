@@ -125,12 +125,16 @@ video
   width: 650px
   margin: 0 auto
   padding: 15px 0
+  @media(max-width:650px)
+    width: 95%
+    padding: 10px
 
 
 .page-intro
   background-color: lighten($gold, 20%)
   z-index: 3000
   position: relative
+  padding-bottom: 15px
   .top
     // min-height: 60vh
     background-size: cover

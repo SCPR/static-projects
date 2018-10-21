@@ -14,15 +14,15 @@ $(document).ready(function(){
       $('.visuals-container').addClass('is-visible',scrollTop >= $('#history-section-1').offset().top);
 
       if (($w.scrollTop() + $(window).height()) > targetOffset1) {
-        $('.visuals-container img').attr("src","../history/images/history-jon-coupal.jpg");
-        $('.scroll-cutline').hide();
-        $('#cutline-history-jon-coupal').show();
-      }
-
-      if (($w.scrollTop() + $(window).height()) > targetOffset2) {
         $('.visuals-container img').attr("src","../history/images/history-jarvis-gann-win.jpg");
         $('.scroll-cutline').hide();
         $('#cutline-history-jarvis-gann-win').show();
+      }
+
+      if (($w.scrollTop() + $(window).height()) > targetOffset2) {
+        $('.visuals-container img').attr("src","../history/images/history-jon-coupal.jpg");
+        $('.scroll-cutline').hide();
+        $('#cutline-history-jon-coupal').show();
       }
 
     });

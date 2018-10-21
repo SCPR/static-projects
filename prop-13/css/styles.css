@@ -109,10 +109,18 @@ video {
   padding: 15px 0;
 }
 
+@media (max-width: 650px) {
+  .prop-in-a-box {
+    width: 95%;
+    padding: 10px;
+  }
+}
+
 .page-intro {
   background-color: #ffd766;
   z-index: 3000;
   position: relative;
+  padding-bottom: 15px;
 }
 
 .page-intro .top {
