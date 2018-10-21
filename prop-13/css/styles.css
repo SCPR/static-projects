@@ -441,19 +441,11 @@ video {
   color: #fff;
   width: 100%;
   padding: 10px 0;
-  display: none;
-  z-index: 101;
+  z-index: 5000;
 }
 
 #top-bar img {
   padding: 0 10px;
-  width: 250px;
-}
-
-@media (max-width: 400px) {
-  #top-bar img {
-    width: 185px;
-  }
 }
 
 @media (max-width: 1400px) {
@@ -483,7 +475,7 @@ video {
   position: absolute;
   top: 5px;
   right: 10px;
-  width: 60px;
+  width: 70px;
 }
 
 .menu:before {
