@@ -7,8 +7,8 @@ $.each($('video'), function() {
   const videoSize = elSize > 800 ? 'large' : 'small';
   const videoName = $(this).attr('data-videoname');
 
-  $(this).children('.mp4-source').attr('src', `../fairness/video/${videoName}-${videoSize}.mp4`);
-  $(this).children('.webm-source').attr('src', `../fairness/video/${videoName}-${videoSize}.webm`);
+  $(this).children('.mp4-source').attr('src', `../prop-5/video/${videoName}-${videoSize}.mp4`);
+  $(this).children('.webm-source').attr('src', `../prop-5/video/${videoName}-${videoSize}.webm`);
 
   $(this)[0].load();
 
@@ -18,39 +18,34 @@ $(document).ready(function(){
 
   if ($(window).width() > 1615){
 
-    const targetOffset1 = $("#fairness-section-1").offset().top;
-    const targetOffset2 = $("#fairness-section-2").offset().top;
-    const targetOffset3 = $("#anchor-point-3").offset().top;
-    const targetOffset4 = $("#anchor-point-4").offset().top;
+    const targetOffset1 = $("#prop-5-section-1").offset().top;
+    //const targetOffset2 = $("#prop-5-section-2").offset().top;
+    const targetOffset3 = $("#anchor-point-2").offset().top;
+    const targetOffset4 = $("#anchor-point-3").offset().top;
 
     const $w = $(window).scroll(function() {
 
       const scrollTop = $(window).scrollTop();
-      $('.visuals-container').addClass('is-visible',scrollTop >= $('#fairness-section-1').offset().top - 150);
+      $('.visuals-container').addClass('is-visible',scrollTop >= $('#prop-5-section-1').offset().top - 150);
 
       if (($w.scrollTop() + $(window).height()) > targetOffset1) {
-        $('.visuals-container img').attr("src","../fairness/images/fairness-jas-portrait.jpg");
+        $('.visuals-container img').attr("src","../prop-5/images/prop-5-ken-sitting.jpg");
         $('.scroll-cutline').hide();
-        $('#cutline-fairness-jas-portrait').show();
-      }
-
-      if (($w.scrollTop() + $(window).height()) > targetOffset2) {
-        $('.visuals-container img').attr("src","../fairness/images/fairness-don-home.jpg");
-        $('.scroll-cutline').hide();
-        $('#cutline-fairness-don-home').show();
+        $('#cutline-prop-5-ken-sitting').show();
       }
 
       if (($w.scrollTop() + $(window).height()) > targetOffset3) {
-        $('.visuals-container img').attr("src","../fairness/images/scenes-garages.jpg");
+        $('.visuals-container img').attr("src","../prop-5/images/scenes-power-lines-overhead.jpg");
         $('.scroll-cutline').hide();
-        $('#cutline-fairness-scenes-garages').show();
+        $('#cutline-scenes-power-lines-overhead').show();
       }
 
       if (($w.scrollTop() + $(window).height()) > targetOffset4) {
-        $('.visuals-container img').attr("src","../fairness/images/fairness-stephanie-portrait.jpg");
+        $('.visuals-container img').attr("src","../prop-5/images/scenes-three-plants.jpg");
         $('.scroll-cutline').hide();
-        $('#cutline-fairness-stephanie-portrait').show();
+        $('#cutline-scenes-three-plants').show();
       }
+
     });
   } else {
     $('.visuals-container').addClass('is-visible');
