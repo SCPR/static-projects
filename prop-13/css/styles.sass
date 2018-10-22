@@ -851,11 +851,11 @@ video
   // display: none
   @media(max-width: 1615px)
     position: relative
-    width: 650px
+    width: 600px
     height: 400px
     margin: 0 auto
     top: 0
-    right: 0
+    left: 0
     margin: 0
   @media(max-width: 700px)
     position: relative
@@ -895,10 +895,17 @@ video
 
 #cutline-revenue-map
   background-color: $white
+  right: 10px
+  top: 10px
+  width: 300px
+  z-index: 2500
+  padding: 15px
+  position: absolute
   @media(max-width: 1615px)
     display: none
 
 #cutline-revenue-map-mobile
+  width: 100%
   display: none
   @media(max-width: 1615px)
     display: block

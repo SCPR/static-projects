@@ -1028,11 +1028,11 @@ video {
 @media (max-width: 1615px) {
   #revenue-map {
     position: relative;
-    width: 650px;
+    width: 600px;
     height: 400px;
     margin: 0 auto;
     top: 0;
-    right: 0;
+    left: 0;
     margin: 0;
   }
 }
@@ -1105,6 +1105,12 @@ video {
 
 #cutline-revenue-map {
   background-color: #fff;
+  right: 10px;
+  top: 10px;
+  width: 300px;
+  z-index: 2500;
+  padding: 15px;
+  position: absolute;
 }
 
 @media (max-width: 1615px) {
@@ -1114,6 +1120,7 @@ video {
 }
 
 #cutline-revenue-map-mobile {
+  width: 100%;
   display: none;
 }
 
