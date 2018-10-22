@@ -50,7 +50,6 @@ $(document).ready(function(){
       if (($w.scrollTop() + $(window).height()) > targetOffset3) {
         $('.map-container').show();
         $('.cutline').hide();
-        //$('.visuals-container').hide();
         $('#cutline-revenue-map').show();
       }
 

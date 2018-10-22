@@ -133,7 +133,7 @@ video
   padding-top: 115px
   @media(max-width:650px)
     width: 95%
-    padding: 45px 10px 10px 10px
+    padding: 65px 10px 10px 10px
 
 .dateline
   font-size: 1rem
@@ -841,11 +841,12 @@ video
 #revenue-map
   position: fixed
   z-index: 2000
-  width: 900px
+  width: 930px
   height: 670px
-  margin: 40px
+  //margin: 40px
   top: 13px
-  right: 0px
+  right: 68px
+  padding-top: 35px
   // display: none
   @media(max-width: 1615px)
     position: relative
@@ -865,6 +866,13 @@ video
   @media(max-width: 450px)
     width: 310px
     height: 200px
+
+.map-container
+  background-color: $white
+  padding: 20px
+
+.mapboxgl-map
+  background-color: $white
 
 .mapboxgl-canvas
   width: 900px
@@ -886,6 +894,13 @@ video
 
 #cutline-revenue-map
   background-color: $white
+  @media(max-width: 1615px)
+    display: none
+
+#cutline-revenue-map-mobile
+  display: none
+  @media(max-width: 1615px)
+    display: block
 
 
 #spending-chart
@@ -1052,7 +1067,7 @@ video
     width: 100%
     margin: 0 20px 0 0
 
-.legend label
+#tax-map .legend label
   display: block
   float: left
   height: 15px
@@ -1064,7 +1079,7 @@ video
     width: 14%
     font-size: 0.6rem
 
-.legend span
+#tax-map .legend span
     border: 1px solid $palegray
     display: block
     float: left
@@ -1097,6 +1112,52 @@ video
     line-height: 1.2
     padding-bottom: 10px
     text-align: center
+
+#revenue-map-legend
+ width: 300px
+ background-color: $white
+ border: 1px solid $palegray
+ padding: 10px
+ position: absolute
+ text-align: center
+ bottom: 5px
+ left: 5px
+ //right: 60px
+ z-index: 2001
+ small
+   font-weight: 700
+   font-size: 1rem
+   line-height: 1.2
+   padding-bottom: 10px
+   text-align: center
+ @media(max-width: 850px)
+   // width: 245px
+   bottom: 5px
+   left: 5px
+
+#revenue-map .legend label
+  display: block
+  float: left
+  height: 15px
+  width: 22%
+  text-align: center
+  font-size: 0.8rem
+  color: $nearblack
+  @media(max-width: 850px)
+    width: 20%
+    font-size: 0.6rem
+
+#revenue-map .legend span
+    border: 1px solid $palegray
+    display: block
+    float: left
+    height: 15px
+    width: 22%
+    text-align: center
+    font-size: 0.8rem
+    color: $nearblack
+    @media(max-width: 850px)
+      width: 20%
 
 .mapboxgl-popup-content
   font-size: 0.9rem
@@ -1576,131 +1637,126 @@ footer
   @media(max-width: 650px)
     width: 95%
 
-/* Photo grid */
+#demographics-chart
+  background-color: $white
+  position: fixed
+  z-index: 2000
+  width: 915px
+  height: 670px
+  margin: 20px 40px 40px 40px
+  top: 13px
+  right: 0px
+  padding: 15px 15px 15px 0
+  @media(max-width: 1615px)
+    position: relative
+    width: 850px
+    height: auto
+    // height: 430px
+    margin: 0 auto
+    top: 0
+    right: 0
+    margin: 0
+  @media(max-width: 700px)
+    position: relative
+    width: 650px
+    height: auto
+    // height: 300px
+  @media(max-width: 500px)
+    width: 400px
+    height: auto
+    // height: 280px
+  @media(max-width: 450px)
+    width: 310px
+    height: auto
+    // height: 200px
 
-main
-	margin: 55px 0
-	.cutline
-		grid-column: span 6
+.demo-chart
+  width: 300px
+  display: inline-block
+  vertical-align: top
+  @media(max-width: 700px)
+    width: 100%
 
-.grid-title
-	font-size: 3rem
-	padding-bottom: 25px
-	font-family: $sans
-	font-weight: 700
-	line-height: 1.2
+.bar
+  height: 20px
+  margin: 5px 15px 15px 0px
+  background-color: $medblue
+  position: relative
+  font-size: 0.8rem
+  display: inline-block
+  &:before
+    content: attr(data-num) '' '%'
+    position: absolute
+    bottom: 5px
+    font-weight: 400
+    font-size: 0.8rem
+    right: 5px
+    width: 100%
+    top: 2px
+    text-align: right
+    color: $white
 
-.grid-summary
-	padding-bottom: 25px
-	font-size: 1.7rem
-	line-height: 1.3
+.bar-group
+  margin: 30px 0 20px 0
+  padding: 0
 
-.grid-quote
-	padding-bottom: 25px
-	font-size: 3.1rem
-	line-height: 1.3
-	font-family: $sans
-	@media (max-width: 620px)
-		font-size: 2.1rem
+.bar-label
+  font-size: 0.8rem
+  padding: 4px
+  display: inline-block
+  vertical-align: top
+  width: 90px
+  text-align: right
 
-@media (min-width: 1080px)
-	main
-		display: grid
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
-	.info1
-		grid-column: span 2
-		grid-definition-column: span 2
-		grid-row: span 2
-		grid-definition-row: span 2
-		grid-definition-row: span 2
-		border: 2px solid $white
-	.info2
-		grid-column: span 3
-		grid-definition-column: span 3
-		border: 2px solid $white
-	.figure1
-		grid-column: span 3
-		grid-definition-column: span 3
-		grid-row: span 2
-		grid-definition-row: span 2
-	.figure6
-		grid-column: span 2
-		grid-definition-column: span 2
-	.figure7
-		grid-column: span 3
-		grid-definition-column: span 3
+.chart-label
+  font-size: 1rem
+  padding: 9px 0 10px 0
+  font-weight: 700
 
-.figure2.collage1
-	grid-row: span 2
-	grid-definition-row: span 2
-	grid-column: span 2
-	grid-definition-column: span 2
+.small-num:before
+  content: attr(data-num) '' '%'
+  color: $nearblack
+  right: -22px
+  float: right
+  top: 3px
+  font-weight: 700
+  position: relative
+  font-size: 0.8rem
 
-.figure3.collage1
-	grid-row: span 2
-	grid-definition-row: span 2
-	grid-column: span 3
-	grid-definition-column: span 3
-
-.figure1.collage1
-	grid-column: span 2
-	grid-definition-column: span 2
-
-.figure6.collage1
-	grid-column: span 3
-	grid-definition-column: span 3
-
-.info2.collage1
-	grid-column: span 3
-	grid-definition-column: span 3
-	grid-row: span 1
-	grid-definition-row: span 1
-
-.info2.collage3
-	grid-column: span 2
-	grid-definition-column: span 2
-	grid-row: span 1
-	grid-definition-row: span 1
-
-.figure4.collage3
-	grid-column: span 2
-	grid-definition-column: span 2
-
-.figure1.collage3
-	grid-column: span 2
-	grid-definition-column: span 2
-
-.figure2.collage3
-	grid-column: span 3
-	grid-definition-column: span 3
-
-.figure3.collage3
-	grid-column: span 3
-	grid-definition-column: span 3
-
-.info1.collage3
-	grid-column: span 2
-	grid-definition-column: span 2
-
-.info2.collage3
-	grid-column: span 2
-	grid-definition-column: span 2
-
-.figure6.collage3
-	grid-row: span 2
-	grid-definition-row: span 2
-	grid-column: span 2
-	grid-definition-column: span 2
-
-
-.figure-img
-	display: block
-	width: 100%
-	height: 100%
-	object-fit: cover
-	border: 2px solid $white
-
-.info2
-  padding: 40px
-  background-color: #212121
-  color: white
+// .slide
+//   width: 95%
+//   margin: 0 auto
+//   display: none
+//
+// .active-slide
+//   display: block
+//   position: relative
+//
+// .slide-wrapper
+//   width: 90%
+//   margin: 20px 0 0 11%
+//
+// .line-arrow
+//   position: absolute
+//   overflow: hidden
+//   display: inline-block
+//   font-size: 16px
+//   /*set the size for arrow
+//   width: 2em
+//   height: 2em
+//   top: 40%
+//   &.left
+//     border-top: 6px solid #333
+//     border-left: 6px solid #333
+//     transform: rotate(-54deg) skew(-20deg)
+//     left: 1%
+//   &.right
+//     border-top: 6px solid #333
+//     border-right: 6px solid #333
+//     transform: rotate(54deg) skew(20deg)
+//     right: 1%
+//   &:active, &.active
+//     border-width: 2px
+//   &:hover
+//     cursor: pointer
+//     opacity: 0.5

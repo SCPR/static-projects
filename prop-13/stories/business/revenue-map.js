@@ -8,7 +8,7 @@ const map = new mapboxgl.Map({
 });
 
 const controls = new mapboxgl.NavigationControl();
-map.addControl(controls,'bottom-left');
+map.addControl(controls,'bottom-right');
 
 map.dragRotate.disable();
 map.touchZoomRotate.disableRotation();
@@ -21,7 +21,7 @@ map.on('load', function() {
         closeOnClick: false,
       });
 
-      map.addSource('counties', { type: 'geojson', data: 'counties.geojson' });
+      map.addSource('counties', { type: 'geojson', data: 'counties-per-capita-join.geojson' });
 
       map.addLayer({
         id: "counties",
@@ -31,20 +31,17 @@ map.on('load', function() {
           visibility: 'visible',
         },
         'paint': {
-            'fill-opacity': 0.75,
-            'fill-outline-color': '#fff',
-            'fill-color': '#a27299',
-            // 'fill-color': [
-            //     'interpolate',
-            //     ['linear'],
-            //     ['get', 'estimatedRevenue'],
-            //     100,'#fff6cd',
-            //     300, '#f6e0b1',
-            //     500, '#a27299',
-            //     700, '#794c8a',
-            //     900, '#271642',
-            //     1000, '#212121'
-            // ],
+          'fill-opacity': 0.95,
+          'fill-outline-color': '#fff',
+          'fill-color': {
+              property: 'per_capita_estimatedRevenue',
+              stops: [
+                [100, '#d9f0d3'],
+                [300, '#acd39e'],
+                [500, '#5aae61'],
+                [1000, '#1b7837'],
+              ]
+          },
         },
     });
 
@@ -58,7 +55,7 @@ map.on('load', function() {
         "fill-color": "#797979",
         "fill-opacity": 0.75
       },
-      "filter": ["in", "CA_counties_GEOID", ""]
+      "filter": ["in", "GEOID", ""]
     });
 
 
@@ -66,8 +63,8 @@ map.on('load', function() {
       const feature = e.features[0];
       let html = `
 
-          <strong>${feature.properties.CA_counties_NAMELSAD}</strong><br/>
-          Estimated revenue gains per capita: <strong>$${feature.properties.estimatedRevenue}</strong>
+          <strong>${feature.properties.NAMELSAD}</strong><br/>
+          Estimated revenue gains per capita: <strong>$${feature.properties.per_capita_estimatedRevenue}</strong>
 
       `;
 
@@ -84,9 +81,9 @@ map.on('load', function() {
       // to match features in order to activate
       // the `countiesHighlighted` layer.
       var filter = features.reduce(function(memo, feature) {
-          memo.push(feature.CA_counties_GEOID);
+          memo.push(feature.GEOID);
           return memo;
-      }, ['in', 'CA_counties_GEOID']);
+      }, ['in', 'GEOID']);
 
       map.setFilter("countiesHighlighted", filter);
     });

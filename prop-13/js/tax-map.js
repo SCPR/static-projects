@@ -61,17 +61,28 @@ map.on('load', function() {
         'paint': {
             'fill-opacity': 0.75,
             'fill-outline-color': '#fff',
-            'fill-color': [
-                'interpolate',
-                ['linear'],
-                ['get', 'Prop13Savings'],
-                -15000000,'#fff6cd',
-                -10000000, '#f6e0b1',
-                1000000, '#a27299',
-                3000000, '#794c8a',
-                6000000, '#271642',
-                20000000, '#212121'
-            ],
+            'fill-color': {
+                property: 'Prop13Savings',
+                stops: [
+                  [-15000000,'#fff6cd'],
+                  [-10000000, '#f6e0b1'],
+                  [1000000, '#a27299'],
+                  [3000000, '#794c8a'],
+                  [6000000, '#271642'],
+                  [20000000, '#212121']
+                ]
+            },
+            // 'fill-color': [
+            //     'interpolate',
+            //     ['linear'],
+            //     ['get', 'Prop13Savings'],
+            //     -15000000,'#fff6cd',
+            //     -10000000, '#f6e0b1',
+            //     1000000, '#a27299',
+            //     3000000, '#794c8a',
+            //     6000000, '#271642',
+            //     20000000, '#212121'
+            // ],
         //     "fill-color": [
         //       "step",["get","Prop13Savings"],
         //       "#b35806",-15000000,
