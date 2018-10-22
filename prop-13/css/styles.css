@@ -487,7 +487,7 @@ video {
 
 .menu-dropdown {
   position: absolute;
-  z-index: 6001;
+  z-index: 6500;
   width: 100%;
   top: 50px;
   right: 0;
