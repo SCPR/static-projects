@@ -306,7 +306,7 @@ const audio = [
           const chapter = $(this).attr('id').replace("w","").split("-")[0];
           const i = $(this).attr('id').split("-")[1];
 
-          console.log(i);
+          // console.log(i);
 
           var audioIndex;
 

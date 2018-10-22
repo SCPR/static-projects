@@ -32,7 +32,7 @@ map.on('load', function() {
         },
         'paint': {
           'fill-opacity': 0.95,
-          'fill-outline-color': '#fff',
+          'fill-outline-color': '#212121',
           'fill-color': {
               property: 'per_capita_estimatedRevenue',
               stops: [
