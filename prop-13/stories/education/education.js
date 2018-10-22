@@ -24,7 +24,8 @@ $(document).ready(function(){
   if ($(window).width() > 1615){
 
     const targetOffset1 = $("#education-section-1").offset().top;
-    const targetOffset2 = $("#anchor-point-2").offset().top;
+    const targetOffset2 = $("#education-section-2").offset().top;
+    //const targetOffset2 = $("#anchor-point-2").offset().top;
     const targetOffset3 = $("#anchor-point-3").offset().top;
 
     const $w = $(window).scroll(function() {

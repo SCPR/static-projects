@@ -127,6 +127,12 @@ video {
   }
 }
 
+.dateline {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 700;
+}
+
 .page-intro {
   background-color: #ffd766;
   z-index: 3000;
@@ -677,6 +683,19 @@ video {
   text-decoration: none;
 }
 
+@media (max-width: 765px) {
+  .the-neighborhood .subhed {
+    text-align: left;
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 765px) {
+  .the-neighborhood-2 {
+    margin-top: -65px !important;
+  }
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -789,6 +808,7 @@ video {
 
 @media (max-width: 890px) {
   .tooltip {
+    margin-left: -20px;
     clear: both;
   }
 }
@@ -927,7 +947,7 @@ video {
 
 .story {
   width: 470px;
-  margin: 15px 30px;
+  margin: -35px 30px 15px 30px;
   float: left;
 }
 
