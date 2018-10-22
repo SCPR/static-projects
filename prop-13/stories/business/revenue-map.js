@@ -21,7 +21,7 @@ map.on('load', function() {
         closeOnClick: false,
       });
 
-      map.addSource('counties', { type: 'geojson', data: '../counties-per-capita-join.geojson' });
+      map.addSource('counties', { type: 'geojson', data: '..stories/business/counties-per-capita-join.geojson' });
 
       map.addLayer({
         id: "counties",
