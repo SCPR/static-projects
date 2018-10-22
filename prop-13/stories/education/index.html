@@ -183,8 +183,9 @@
             <section class="story-section" id="anchor-point-2">
 
               <div class="chart-container">
-                <div class="chart-wrapper" id="spending-chart"></div>
-                <p class="cutline" id="cutline-spending-chart">Source: National Center for Education Statistics</p>
+                <div class="chart-wrapper" id="spending-chart">
+                  <p class="cutline" id="cutline-spending-chart">Source: National Center for Education Statistics</p>
+                </div>
               </div>
 
               <div class="story">
@@ -340,12 +341,13 @@
     <!-- scripts -->
 
     <script type="text/javascript" src="../../js/jquery-1.7.2.min.js"></script>
+    <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
     <script type="text/javascript" src="../../js/wavesurfer.js"></script>
     <script type="text/javascript" src="../../js/jukebox.js"></script>
     <script type="text/javascript" src="../../js/modernizr-custom.js"></script>
     <script type="text/javascript" src="../../js/video.js"></script>
     <script type="text/javascript" src="education.js"></script>
-    <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
+
 
     <script type="text/javascript">
         d3.csv('spending.csv', function(error, data) {
