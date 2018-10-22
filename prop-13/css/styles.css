@@ -997,10 +997,10 @@ video {
 #revenue-map {
   position: fixed;
   z-index: 2000;
-  width: 1040px;
+  width: 900px;
   height: 670px;
   margin: 40px;
-  top: 20px;
+  top: 13px;
   right: 0px;
 }
 
@@ -1039,8 +1039,8 @@ video {
 }
 
 .mapboxgl-canvas {
-  width: 1000px;
-  height: 670px;
+  width: 900px;
+  height: 600px;
 }
 
 @media (max-width: 1615px) {
