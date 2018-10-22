@@ -1402,7 +1402,11 @@ video {
   background-color: #898989;
 }
 
-/* Methodology modal */
+/* Methodology */
+.disclaimer {
+  font-size: 1rem;
+}
+
 #methodology {
   padding-top: 30px 10px 10px 10px !important;
   margin: 10px;
