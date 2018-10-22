@@ -1077,6 +1077,10 @@ video {
   background-color: #fff;
 }
 
+.chart-container {
+  display: none;
+}
+
 #spending-chart {
   position: fixed;
   z-index: 6000;
