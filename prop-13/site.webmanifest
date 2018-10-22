@@ -1,6 +1,6 @@
 {
-    "name": "The block that Prop. 13 built",
-    "short_name": "The block that Prop. 13 built",
+    "name": "The block Prop. 13 built",
+    "short_name": "The block Prop. 13 built",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -8,8 +8,8 @@
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
+            "src": "/android-chrome-384x384.png",
+            "sizes": "384x384",
             "type": "image/png"
         }
     ],
