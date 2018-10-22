@@ -436,7 +436,7 @@ video {
   color: #fff;
   width: 100%;
   padding: 5px 0;
-  z-index: 5000;
+  z-index: 6500;
 }
 
 #top-bar img {
@@ -1092,7 +1092,7 @@ video {
   #spending-chart {
     position: relative;
     width: 650px;
-    height: 400px;
+    height: 430px;
     margin: 0 auto;
     top: 0;
     right: 0;
