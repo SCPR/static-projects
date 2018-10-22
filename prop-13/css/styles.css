@@ -117,7 +117,7 @@ video {
 .prop-in-a-box {
   width: 650px;
   margin: 0 auto;
-  padding: 35px 0;
+  padding-top: 115px;
 }
 
 @media (max-width: 650px) {
@@ -1232,6 +1232,10 @@ video {
   opacity: 0.5;
 }
 
+#cutline-spending-chart {
+  padding-top: 30px;
+}
+
 .is-visible {
   display: block;
 }
@@ -1399,8 +1403,20 @@ video {
 }
 
 /* Methodology modal */
-#methodology img {
-  width: 100%;
+#methodology {
+  padding-top: 30px 10px 10px 10px !important;
+  margin: 10px;
+  width: 650px;
+  margin: 0 auto;
+  font-size: 1.4rem;
+  font-family: "Lato", Helvetica Neue, sans-serif;
+}
+
+@media (max-width: 650px) {
+  #methodology {
+    width: 95%;
+    padding-top: 150px 10px 10px 10px !important;
+  }
 }
 
 .methodology-btn, .glossary-btn {
