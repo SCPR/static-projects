@@ -1,84 +1,201 @@
-// Define margins, dimensions, and some line colors
-const margin = {top: 40, right: 120, bottom: 30, left: 40};
-const width = 800 - margin.left - margin.right;
-const height = 400 - margin.top - margin.bottom;
+const commas = d3.format(',');
 
-// Define the scales and tell D3 how to draw the line
-const x =  d3.scaleBand().rangeRound([0, width]).padding(1);
-// const x = d3.scaleLinear().domain([1910, 2010]).range([0, width]);
-const y = d3.scaleLinear().domain([0, 12000]).range([height, 0]);
-const line = d3.line().x(d => x(d.year)).y(d => y(d.perStudent));
+function makeLineChart(dataset, xName, yObjs, axisLabels) {
+    var chartObj = {};
+    var color = d3.scale.category10();
+    chartObj.xAxisLabel = axisLabels.xAxis;
+    chartObj.yAxisLabel = axisLabels.yAxis;
+    /*
+     yObjsects format:
+     {y1:{column:'',name:'name',color:'color'},y2}
+     */
 
-const chart = d3.select('svg').append('g')
-  .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+    chartObj.data = dataset;
+    chartObj.margin = {top: 15, right: 60, bottom: 30, left: 50};
+    chartObj.width = 650 - chartObj.margin.left - chartObj.margin.right;
+    chartObj.height = 480 - chartObj.margin.top - chartObj.margin.bottom;
 
-const tooltip = d3.select('#spending-chart');
-const tooltipLine = chart.append('line');
+// So we can pass the x and y as strings when creating the function
+    chartObj.xFunct = function(d){return d[xName]};
 
-// Add the axes and a title
-const xAxis = d3.axisBottom(x).tickFormat(d3.format('.4'));
-const yAxis = d3.axisLeft(y).tickFormat(d3.format('.2s'));
-chart.append('g').call(yAxis);
-chart.append('g').attr('transform', 'translate(0,' + height + ')').call(xAxis);
-chart.append('text').html('Per pupil spending 1969-2015').attr('x', 200);
+// For each yObjs argument, create a yFunction
+    function getYFn(column) {
+        return function (d) {
+            return d[column];
+        };
+    }
 
-// Load the data and draw a chart
-let spending, tipBox;
-d3.json('../spending.json', d => {
-  spending = d;
+// Object instead of array
+    chartObj.yFuncts = [];
+    for (var y  in yObjs) {
+        yObjs[y].name = y;
+        yObjs[y].yFunct = getYFn(yObjs[y].column); //Need this  list for the ymax function
+        chartObj.yFuncts.push(yObjs[y].yFunct);
+    }
 
-  chart.selectAll()
-    .data(spending).enter()
-    .append('path')
-    .attr('fill', 'none')
-    .attr('stroke', d => d.color)
-    .attr('stroke-width', 2)
-    .datum(d => d.data)
-    .attr('d', line);
+//Formatter functions for the axes
 
-  chart.selectAll()
-    .data(spending).enter()
-    .append('text')
-    .html(d => d.name)
-    .attr('fill', d => d.color)
-    .attr('alignment-baseline', 'middle')
-    .attr('x', width)
-    .attr('dx', '.5em')
-    .attr('y', d => y(d.data));
+    chartObj.formatAsNumber = d3.format(".0f");
+    chartObj.formatAsDecimal = d3.format(".2f");
+    chartObj.formatAsCurrency = d3.format("$,.2");
+    chartObj.formatAsFloat = function (d) {
+        if (d % 1 !== 0) {
+            return d3.format(",.2")(d);
+        } else {
+            return d3.format(".0f")(d);
+        }
 
-  tipBox = chart.append('rect')
-    .attr('width', width)
-    .attr('height', height)
-    .attr('opacity', 0)
-    .on('mousemove', drawTooltip)
-    .on('mouseout', removeTooltip);
-})
+    };
 
-function removeTooltip() {
-  if (tooltip) tooltip.style('display', 'none');
-  if (tooltipLine) tooltipLine.attr('stroke', 'none');
-}
+    chartObj.xFormatter = chartObj.formatAsNumber;
+    chartObj.yFormatter = chartObj.formatAsCurrency;
 
-function drawTooltip() {
-  const year = Math.floor((x.invert(d3.mouse(tipBox.node())[0]) + 5) / 10) * 10;
+    chartObj.bisectYear = d3.bisector(chartObj.xFunct).left; //< Can be overridden in definition
 
-  spending.sort((a, b) => {
-    return b.data.find(h => h.year == year).perStudent - a.data.find(h => h.year == year).perStudent;
-  })
+//Create scale functions
+    chartObj.xScale = d3.scale.linear().range([0, chartObj.width]).domain(d3.extent(chartObj.data, chartObj.xFunct)); //< Can be overridden in definition
 
-  tooltipLine.attr('stroke', 'black')
-    .attr('x1', x(year))
-    .attr('x2', x(year))
-    .attr('y1', 0)
-    .attr('y2', height);
+// Get the max of every yFunct
+    chartObj.max = function (fn) {
+        return d3.max(chartObj.data, fn);
+    };
+    chartObj.yScale = d3.scale.linear().range([chartObj.height, 0]).domain([0, d3.max(chartObj.yFuncts.map(chartObj.max))]);
 
-  tooltip.html(year)
-    .style('display', 'block')
-    .style('left', d3.event.pageX + 20)
-    .style('top', d3.event.pageY - 20)
-    .selectAll()
-    .data(spending).enter()
-    .append('div')
-    .style('color', d => d.color)
-    .html(d => d.name + ': ' + d.data.find(h => h.year == year).perStudent);
+    chartObj.formatAsYear = d3.format("");
+
+//Create axis
+    chartObj.xAxis = d3.svg.axis().scale(chartObj.xScale).orient("bottom").tickFormat(chartObj.xFormatter).ticks(4); //< Can be overridden in definition
+
+    chartObj.yAxis = d3.svg.axis().scale(chartObj.yScale).orient("left").tickFormat(chartObj.yFormatter).ticks(8); //< Can be overridden in definition
+
+
+// Build line building functions
+    function getYScaleFn(yObj) {
+        return function (d) {
+            return chartObj.yScale(yObjs[yObj].yFunct(d));
+        };
+    }
+    for (var yObj in yObjs) {
+        yObjs[yObj].line = d3.svg.line().interpolate("cardinal").x(function (d) {
+            return chartObj.xScale(chartObj.xFunct(d));
+        }).y(getYScaleFn(yObj));
+    }
+
+
+    chartObj.svg;
+
+// Change chart size according to window size
+    chartObj.update_svg_size = function () {
+        chartObj.width = parseInt(chartObj.chartDiv.style("width"), 10) - (chartObj.margin.left + chartObj.margin.right);
+
+        chartObj.height = parseInt(chartObj.chartDiv.style("height"), 10) - (chartObj.margin.top + chartObj.margin.bottom);
+
+        /* Update the range of the scale with new width/height */
+        chartObj.xScale.range([0, chartObj.width]);
+        chartObj.yScale.range([chartObj.height, 0]);
+
+        if (!chartObj.svg) {return false;}
+
+        /* Else Update the axis with the new scale */
+        chartObj.svg.select('.x.axis').attr("transform", "translate(0," + chartObj.height + ")").call(chartObj.xAxis);
+        chartObj.svg.select('.x.axis .label').attr("x", chartObj.width / 2);
+
+        chartObj.svg.select('.y.axis').call(chartObj.yAxis);
+        chartObj.svg.select('.y.axis .label').attr("x", -chartObj.height / 2);
+
+        /* Force D3 to recalculate and update the line */
+        for (var y  in yObjs) {
+            yObjs[y].path.attr("d", yObjs[y].line);
+        }
+
+
+        d3.selectAll(".focus.line").attr("y2", chartObj.height);
+
+        chartObj.chartDiv.select('svg').attr("width", chartObj.width + (chartObj.margin.left + chartObj.margin.right)).attr("height", chartObj.height + (chartObj.margin.top + chartObj.margin.bottom));
+
+        chartObj.svg.select(".overlay").attr("width", chartObj.width).attr("height", chartObj.height);
+        return chartObj;
+    };
+
+    chartObj.bind = function (selector) {
+        chartObj.mainDiv = d3.select(selector);
+        // Add all the divs to make it centered and responsive
+        chartObj.mainDiv.append("div").attr("class", "inner-wrapper").append("div").attr("class", "outer-box").append("div").attr("class", "inner-box");
+        chartSelector = selector + " .inner-box";
+        chartObj.chartDiv = d3.select(chartSelector);
+        d3.select(window).on('resize.' + chartSelector, chartObj.update_svg_size);
+        chartObj.update_svg_size();
+        return chartObj;
+    };
+
+// Render the chart
+    chartObj.render = function () {
+        //Create SVG element
+        chartObj.svg = chartObj.chartDiv.append("svg").attr("class", "chart-area").attr("width", chartObj.width + (chartObj.margin.left + chartObj.margin.right)).attr("height", chartObj.height + (chartObj.margin.top + chartObj.margin.bottom)).append("g").attr("transform", "translate(" + chartObj.margin.left + "," + chartObj.margin.top + ")");
+
+        // Draw Lines
+        for (var y  in yObjs) {
+            yObjs[y].path = chartObj.svg.append("path").datum(chartObj.data).attr("class", "line").attr("d", yObjs[y].line).style("stroke", color(y)).attr("data-series", y).on("mouseover", function () {
+                focus.style("display", null);
+            }).on("mouseout", function () {
+                focus.transition().delay(700).style("display", "none");
+            }).on("mousemove", mousemove);
+        }
+
+
+        // Draw Axis
+        chartObj.svg.append("g").attr("class", "x axis").attr("transform", "translate(0," + chartObj.height + ")").call(chartObj.xAxis).append("text").attr("class", "label").attr("x", chartObj.width / 2).attr("y", 30).style("text-anchor", "middle").text(chartObj.xAxisLabel);
+
+        chartObj.svg.append("g").attr("class", "y axis").call(chartObj.yAxis).append("text").attr("class", "label").attr("transform", "rotate(-90)").attr("y", -42).attr("x", -chartObj.height / 2).attr("dy", ".71em").style("text-anchor", "middle").text(chartObj.yAxisLabel);
+
+        //Draw tooltips
+        var focus = chartObj.svg.append("g").attr("class", "focus").style("display", "none");
+
+        for (var y  in yObjs) {
+            yObjs[y].tooltip = focus.append("g");
+            yObjs[y].tooltip.append("circle").attr("r", 5);
+            yObjs[y].tooltip.append("rect").attr("x", 8).attr("y","-5").attr("width",22).attr("height",'0.75em');
+            yObjs[y].tooltip.append("text").attr("x", 9).attr("dy", ".35em");
+        }
+
+        // Year label
+        focus.append("text").attr("class", "focus year").attr("x", 9).attr("y", 7);
+        // Focus line
+        focus.append("line").attr("class", "focus line").attr("y1", 0).attr("y2", chartObj.height);
+
+        //Draw legend
+        var legend = chartObj.mainDiv.append('div').attr("class", "legend");
+        for (var y  in yObjs) {
+            series = legend.append('div');
+            series.append('div').attr("class", "series-marker").style("background-color", color(y));
+            series.append('p').text(y);
+            yObjs[y].legend = series;
+        }
+
+        // Overlay to capture hover
+        chartObj.svg.append("rect").attr("class", "overlay").attr("width", chartObj.width).attr("height", chartObj.height).on("mouseover", function () {
+            focus.style("display", null);
+        }).on("mouseout", function () {
+            focus.style("display", "none");
+        }).on("mousemove", mousemove);
+
+        return chartObj;
+        function mousemove() {
+            var x0 = chartObj.xScale.invert(d3.mouse(this)[0]), i = chartObj.bisectYear(dataset, x0, 1), d0 = chartObj.data[i - 1], d1 = chartObj.data[i];
+            try {
+                var d = x0 - chartObj.xFunct(d0) > chartObj.xFunct(d1) - x0 ? d1 : d0;
+            } catch (e) { return;}
+            minY = chartObj.height;
+            for (var y  in yObjs) {
+                yObjs[y].tooltip.attr("transform", "translate(" + chartObj.xScale(chartObj.xFunct(d)) + "," + chartObj.yScale(yObjs[y].yFunct(d)) + ")");
+                yObjs[y].tooltip.select("text").text(chartObj.yFormatter(yObjs[y].yFunct(d)));
+                minY = Math.min(minY, chartObj.yScale(yObjs[y].yFunct(d)));
+            }
+
+            focus.select(".focus.line").attr("transform", "translate(" + chartObj.xScale(chartObj.xFunct(d)) + ")").attr("y1", minY);
+            focus.select(".focus.year").text("School year: " + chartObj.xFormatter(chartObj.xFunct(d)) + "-" + chartObj.xFormatter(chartObj.xFunct(d)+1));
+        }
+
+    };
+    return chartObj;
 }

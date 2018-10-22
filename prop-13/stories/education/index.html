@@ -61,7 +61,7 @@
         <a href="../business"><div class="menu-item">Business</div></a>
         <a href="../history"><div class="menu-item">Prop 13 and its history</div></a>
       </div>
-    </div> 
+    </div>
 
     <div class="fullscreen-video-block">
       <div class="video-trigger" id="trigger-edu-woodsons-swings"></div>
@@ -176,18 +176,18 @@
 
               <p>&ldquo;One might say it was ironic,&rdquo; says Bill Koski, who directs Stanford Law School&rsquo;s <a href="https://law.stanford.edu/youth-and-education-law-project/" target="_blank">Youth and Education Law Project</a>. &ldquo;We saw this equalization, but we also saw a relative decrease in school district revenues, especially compared to the rest of the United States.&rdquo; </p>
 
-            <!-- </div>
+            </div>
 
             </section>
 
             <section class="story-section" id="anchor-point-2">
 
               <div class="chart-container">
-                <div id="spending-chart"></div>
-                <p class="cutline" id="cutline-spending-chart"> Source: <a href=""target="_blank"></a></p>
+                <div class="chart-wrapper" id="spending-chart"></div>
+                <p class="cutline" id="cutline-spending-chart">Source: National Center for Education Statistics</p>
               </div>
 
-              <div class="story"> -->
+              <div class="story">
 
               <p>When adjusted for inflation, California spent about $7,400 per pupil in 1977, about $1,000 above the national average, according to data collected by the National Center for Education Statistics. By 1983, California&rsquo;s per pupil spending had dropped to $6,700, dipping below the national average, where it has generally stayed. </p>
 
@@ -345,7 +345,25 @@
     <script type="text/javascript" src="../../js/modernizr-custom.js"></script>
     <script type="text/javascript" src="../../js/video.js"></script>
     <script type="text/javascript" src="education.js"></script>
-    <script type="text/javascript" src="d3.js"></script>
+    <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        d3.csv('spending.csv', function(error, data) {
+        data.forEach(function (d) {
+            d.year = +d.year;
+            d.california = +d.california;
+            d.us = +d.us;
+        });
+
+        var chart = makeLineChart(data, 'year', {
+            'California': {column: 'california'},
+            'U.S.': {column: 'us'},
+        }, {xAxis: '', yAxis: ''});
+        chart.bind("#spending-chart");
+        chart.render();
+
+      });
+    </script>
     <script type="text/javascript" src="chart.js"></script>
 
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>

@@ -24,7 +24,7 @@ $(document).ready(function(){
   if ($(window).width() > 1615){
 
     const targetOffset1 = $("#education-section-1").offset().top;
-    //const targetOffset2 = $("#anchor-point-2").offset().top;
+    const targetOffset2 = $("#anchor-point-2").offset().top;
     const targetOffset3 = $("#anchor-point-3").offset().top;
 
     const $w = $(window).scroll(function() {
@@ -39,11 +39,11 @@ $(document).ready(function(){
         $('.chart-container').css('display','none');
       }
 
-      // if (($w.scrollTop() + $(window).height()) > targetOffset2) {
-      //   $('.visuals-container').hide();
-      //   $('#cutline-spending-chart').show();
-      //   $('.chart-container').show();
-      // }
+      if (($w.scrollTop() + $(window).height()) > targetOffset2) {
+        //$('.visuals-container').hide();
+        $('#cutline-spending-chart').show();
+        $('.chart-container').show();
+      }
 
       if (($w.scrollTop() + $(window).height()) > targetOffset3) {
         $('.visuals-container img').attr("src","../education/images/scenes-basketball-hoop.jpg");
