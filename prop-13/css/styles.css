@@ -865,7 +865,7 @@ video {
 
 @media (max-width: 1500px) {
   .neighbor-nav {
-    width: 250px;
+    width: 300px;
     margin: 15px;
   }
 }
@@ -878,7 +878,7 @@ video {
 
 @media (max-width: 1500px) {
   .neighbor-nav img {
-    width: 250px;
+    width: 300px;
   }
 }
 
