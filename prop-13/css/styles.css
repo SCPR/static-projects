@@ -613,7 +613,7 @@ video {
 @media (max-width: 650px) {
   .graphic-section {
     width: 95%;
-    padding: 15px;
+    padding: 15px 0 15px 15px;
   }
 }
 
@@ -639,7 +639,7 @@ video {
   color: #212121;
   font-weight: 700;
   font-family: "Alegreya", Georgia, serif;
-  padding: 25px 0 0 0px;
+  padding: 25px 0 0 0;
 }
 
 .graphic-chatter {
@@ -865,20 +865,32 @@ video {
 
 @media (max-width: 1500px) {
   .neighbor-nav {
-    width: 300px;
-    margin: 15px;
+    max-width: 300px;
+    margin: 15px 5px 15px 15px;
+  }
+}
+
+@media (max-width: 850px) {
+  .neighbor-nav {
+    width: 40%;
   }
 }
 
 @media (max-width: 650px) {
   .neighbor-nav {
-    width: 90%;
+    width: 95%;
   }
 }
 
 @media (max-width: 1500px) {
   .neighbor-nav img {
     width: 300px;
+  }
+}
+
+@media (max-width: 850px) {
+  .neighbor-nav img {
+    width: 90%;
   }
 }
 
@@ -928,7 +940,7 @@ video {
 /* Story sections */
 .story-section {
   width: 100%;
-  padding: 10px 0;
+  padding: 10px;
   clear: both;
 }
 
@@ -1327,7 +1339,7 @@ video {
   #map-text {
     padding: 10px 20px 35px 10px;
     margin: 10px;
-    width: 100%;
+    width: 95%;
   }
 }
 
@@ -1348,7 +1360,7 @@ video {
 @media (max-width: 1630px) {
   #tax-map {
     float: none;
-    width: 100%;
+    width: 95%;
     margin: 0 20px 0 0;
     height: 600px;
   }
@@ -1356,7 +1368,7 @@ video {
 
 @media (max-width: 650px) {
   #tax-map {
-    width: 100%;
+    width: 95%;
     margin: 0 20px 0 0;
   }
 }
@@ -1669,7 +1681,7 @@ footer {
   width: 100%;
   bottom: 0;
   left: 0;
-  padding: 25px 0 0 0;
+  padding-top: 25px;
   background-color: #212121;
   color: #fff;
   position: relative;

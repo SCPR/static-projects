@@ -530,7 +530,7 @@ video
   clear: both
   @media(max-width: 650px)
     width: 95%
-    padding: 15px
+    padding: 15px 0 15px 15px
 
 .graphic
   width: 420px
@@ -553,7 +553,7 @@ video
   color: $nearblack
   font-weight: 700
   font-family: $serif
-  padding: 25px 0 0 0px
+  padding: 25px 0 0 0
 
 .graphic-chatter
   font-size: 1.2rem
@@ -733,13 +733,17 @@ video
   display: inline-block
   vertical-align: top
   @media(max-width: 1500px)
-    width: 300px
-    margin: 15px
+    max-width: 300px
+    margin: 15px 5px 15px 15px
+  @media(max-width: 850px)
+    width: 40%
   @media(max-width: 650px)
-    width: 90%
+    width: 95%
   img
     @media(max-width: 1500px)
       width: 300px
+    @media(max-width: 850px)
+      width: 90%
     @media(max-width: 650px)
       width: 95%
   .story-topic
@@ -773,7 +777,7 @@ video
 
 .story-section
   width: 100%
-  padding: 10px 0
+  padding: 10px
   clear: both
   @media(max-width: 1615px)
     width: 650px
@@ -1053,7 +1057,7 @@ video
   @media(max-width: 650px)
     padding: 10px 20px 35px 10px
     margin: 10px
-    width: 100%
+    width: 95%
 
 #map-container
   @media(max-width: 1630px)
@@ -1068,11 +1072,11 @@ video
   float: left
   @media(max-width: 1630px)
     float: none
-    width: 100%
+    width: 95%
     margin: 0 20px 0 0
     height: 600px
   @media(max-width: 650px)
-    width: 100%
+    width: 95%
     margin: 0 20px 0 0
 
 #tax-map .legend label
@@ -1311,7 +1315,7 @@ footer
   bottom: 0
   left: 0
   //margin-top: 50px
-  padding: 25px 0 0 0
+  padding-top: 25px
   // min-height: 300px
   background-color: $nearblack
   color: $white
