@@ -427,7 +427,7 @@ video
   font-size: 0.9rem
   position: absolute
   top: 12px
-  right: 10px
+  right: 15px
   width: 65px
   &:before
     content: '\f0c9'
@@ -505,6 +505,8 @@ video
     font-weight: 700
     font-family: $serif
     text-align: center
+    @media(max-width: 650px)
+      text-align: left
   .subhed
     font-size: 1.4rem
     line-height: 1.2
@@ -1059,9 +1061,9 @@ video
     margin: 10px
     width: 95%
 
-#map-container
-  @media(max-width: 1630px)
-    padding: 35px 0 !important
+// #map-container
+//   @media(max-width: 1630px)
+//     padding: 35px 0 !important
 
 #tax-map
   width: 1100px

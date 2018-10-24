@@ -476,7 +476,7 @@ video {
   font-size: 0.9rem;
   position: absolute;
   top: 12px;
-  right: 10px;
+  right: 15px;
   width: 65px;
 }
 
@@ -582,6 +582,12 @@ video {
   font-weight: 700;
   font-family: "Alegreya", Georgia, serif;
   text-align: center;
+}
+
+@media (max-width: 650px) {
+  .content-section .title {
+    text-align: left;
+  }
 }
 
 .content-section .subhed {
@@ -1340,12 +1346,6 @@ video {
     padding: 10px 20px 35px 10px;
     margin: 10px;
     width: 95%;
-  }
-}
-
-@media (max-width: 1630px) {
-  #map-container {
-    padding: 35px 0 !important;
   }
 }
 
