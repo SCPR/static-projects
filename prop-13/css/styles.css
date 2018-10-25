@@ -845,6 +845,13 @@ video {
 
 @media (max-width: 1500px) {
   .meet-the-neighbors {
+    width: 650px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 700px) {
+  .meet-the-neighbors {
     width: 100%;
   }
 }
