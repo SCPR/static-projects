@@ -722,7 +722,7 @@ video
     margin: 0 auto
   @media(max-width: 700px)
     width: 100%
-    
+
 #the-neighbors
   background-color: $white
   position: relative
@@ -928,14 +928,14 @@ video
   width: 1040px
   height: 670px
   margin: 40px
-  top: 13px
+  top: 8px
   right: 0px
   padding-bottom: 15px
   // display: none
   @media(max-width: 1615px)
     position: relative
     width: 650px
-    height: 430px
+    height: auto
     margin: 0 auto
     top: 0
     right: 0
@@ -943,13 +943,13 @@ video
   @media(max-width: 700px)
     position: relative
     width: 450px
-    height: 300px
+    // height: 370px
   @media(max-width: 500px)
     width: 400px
-    height: 280px
+    // height: 350px
   @media(max-width: 450px)
     width: 310px
-    height: 200px
+    // height: 270px
 
 .chart-wrapper
   max-width: 950px
@@ -1032,6 +1032,14 @@ video
 
 #cutline-spending-chart
   padding-top: 30px
+  @media(max-width: 1615px)
+    display: none
+
+#cutline-spending-chart-mobile
+  width: 100%
+  display: none
+  @media(max-width: 1615px)
+    display: block
 
 .is-visible
   display: block

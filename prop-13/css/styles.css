@@ -1168,7 +1168,7 @@ video {
   width: 1040px;
   height: 670px;
   margin: 40px;
-  top: 13px;
+  top: 8px;
   right: 0px;
   padding-bottom: 15px;
 }
@@ -1177,7 +1177,7 @@ video {
   #spending-chart {
     position: relative;
     width: 650px;
-    height: 430px;
+    height: auto;
     margin: 0 auto;
     top: 0;
     right: 0;
@@ -1189,21 +1189,18 @@ video {
   #spending-chart {
     position: relative;
     width: 450px;
-    height: 300px;
   }
 }
 
 @media (max-width: 500px) {
   #spending-chart {
     width: 400px;
-    height: 280px;
   }
 }
 
 @media (max-width: 450px) {
   #spending-chart {
     width: 310px;
-    height: 200px;
   }
 }
 
@@ -1319,6 +1316,23 @@ video {
 
 #cutline-spending-chart {
   padding-top: 30px;
+}
+
+@media (max-width: 1615px) {
+  #cutline-spending-chart {
+    display: none;
+  }
+}
+
+#cutline-spending-chart-mobile {
+  width: 100%;
+  display: none;
+}
+
+@media (max-width: 1615px) {
+  #cutline-spending-chart-mobile {
+    display: block;
+  }
 }
 
 .is-visible {
