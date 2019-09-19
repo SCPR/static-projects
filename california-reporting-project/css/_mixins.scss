@@ -1,0 +1,45 @@
+//typography
+@mixin type($size, $line, $margin: 1.2rem) {
+	font-size: $size;
+	line-height: $line;
+	margin-bottom: $margin;
+}
+
+
+//before and after element setup
+@mixin psuedoElement($width, $height, $position: relative, $content: '') {
+	content: $content;
+	display: block;
+	width: $width;
+	height: $height;
+	position: $position;
+}
+
+
+//rotation
+@mixin rotate($deg) {
+  -webkit-transform: rotate($deg);
+  -moz-transform: rotate($deg);
+  transform: rotate($deg);
+}
+
+
+//gradient radius
+@mixin linear-gradient($from, $to) {
+	background-color: $to;
+	background-image: -moz-linear-gradient($from, $to);
+	background-image: -o-linear-gradient($from, $to);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1, $to));
+	background-image: -webkit-linear-gradient($from, $to);
+	background-image: -ms-linear-gradient($from, $to);
+	background-image: linear-gradient($from, $to);
+}
+
+
+//transition
+@mixin transition($property, $time, $ease: ease-out) {
+	-webkit-transtion: $property $time $ease;
+	-moz-transition: $property $time $ease;
+	-o-transition: $property $time $ease;
+	transition: $property $time $ease;
+}

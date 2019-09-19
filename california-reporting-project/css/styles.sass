@@ -1,0 +1,577 @@
+
+// fonts
+
+$sans: 'Hind', Arial, sans-serif
+$serif: 'Playfair Display', Georgia, serif
+
+// colors
+
+// kpcc
+
+$medblue: #007397
+$deepblue: #003B5B
+// $gold: #F3AA27
+$socalorange: #F87E21
+$pink: #F3567C
+$peach: #FC9A61
+$deeporange: #D15904
+
+$palegray: #F6F6F6
+$lightgray: #E8E8E8
+$medgray: #898989
+$darkgray: #363636
+$nearblack: #212121
+$white: #fff
+
+// darks
+
+$black33: #212121
+$black50: #323232
+$black66: #424242
+$black121: #797979
+$black215: #d7d7d7
+$black235: #ebebeb
+$black245: #f5f5f5
+
+// project palette
+
+$sky: #cae4d8
+// $gold: #dcae1d
+$gold: #d6a549
+$cerulean: #00303f
+$mist: #7a9d96
+
+
+body
+  font-family: $sans
+  margin: 0
+  padding: 0
+  font-weight: 400
+
+a
+  text-decoration: underline
+  color: $nearblack
+
+p
+  line-height: 1.4
+  font-size: 1.3rem
+
+ul
+  list-style: none
+  padding-inline-start: 25px
+  line-height: 1.4
+  font-size: 1.3rem
+  li.bullet
+    padding-bottom: 15px
+    list-style: disc
+
+/* header nav */
+
+.navbar
+  height: 55px
+  width: 100%
+  top: 0
+  left: 0
+  position: fixed
+  background-color: $nearblack
+  color: $white
+  display: inline-block
+  border-bottom: 1px solid $black66
+  z-index: 1001
+  a
+    color: $white
+    text-decoration: none
+  span
+    padding-top: 10px
+    font-size: 1.2rem
+
+.nav-logo
+  // width: 30px
+  height: 40px
+  margin: 10px 0 0 10px
+  text-decoration: none
+  display: inline-flex
+  // border: 1px solid $white
+
+.nav-logo span
+  font-size: 1rem
+  @media(max-width: 900px)
+    display: none
+
+
+.nav-links-list
+  width: 500px
+  float: right
+  font-size: 1.2rem
+  list-style-type: none
+  display: flex
+  flex-direction: row
+  justify-content: flex-end
+  > a
+    text-decoration: none !important
+    color: $white
+  @media(max-width: 900px)
+    display: none
+
+.nav-link
+  margin-right: 30px
+
+.menu
+  color: $white
+  border: 1px solid $white
+  border-radius: 5%
+  padding: 3px 5px
+  font-size: 0.9rem
+  position: absolute
+  top: 12px
+  right: 10px
+  width: 55px
+  display: none
+  @media(max-width: 900px)
+    display: block
+  &:before
+    content: '\f0c9'
+    font-family: 'fontawesome'
+  &:hover
+    background-color: $white
+    color: $nearblack
+    cursor: pointer
+
+.menu-dropdown
+  position: absolute
+  z-index: 3001
+  width: 100%
+  top: 50px
+  right: 0
+  display: none
+  background-color: $nearblack
+  color: $white
+  .menu-item
+    // margin-bottom: 4px
+    padding: 10px
+    border-top: 1px solid $white
+    &:hover
+      background-color: $white
+      cursor: pointer
+      color: $nearblack
+    &.selected-menu
+      background-color: $nearblack
+  a:link, a:visited, a:active
+    color: $white
+    text-decoration: none
+    border-bottom: 1px solid $white
+    &:hover
+      background-color: $nearblack
+
+/* intro */
+
+.clearfix
+  clear: both
+
+.top-container
+  width: 700px
+  margin: 0 auto
+  @media(max-width: 700px)
+    width: 95%
+
+section
+  padding-top: 30px
+
+#intro
+  width: 100%
+  top: 65px
+  // background-image: url('../images/police-line-screened.jpg')
+  // background-repeat: no-repeat
+  // background-size: cover
+  padding-bottom: 80px
+
+.intro-text
+  font-weight: 900
+  text-transform: uppercase
+  padding: 50px 0 0 50px
+  // width: 70%
+  // margin: 0 auto
+  // padding: 20px 160px
+  float: left
+  color: $white
+  font-size: 4.2rem
+  line-height: 0.9
+  @media(max-width: 800px)
+    padding: 20px
+
+.gold
+  color: $gold
+
+.intro-subtext
+  font-weight: 600
+  text-transform: uppercase
+  // width: 70%
+  color: $white
+  font-size: 2.2rem
+  letter-spacing: 3px
+  line-height: 0.8 !important
+
+.logo
+  color: $white
+  margin-left: 60px
+  padding-top: 100px
+  float: left
+  img
+    width: 500px
+    margin: 0 auto
+    @media(max-width: 600px)
+      width: 85%
+    // @media(max-width: 400px)
+    //   width: 260px
+  @media(max-width: 800px)
+    margin: 20px
+
+/* social-promo */
+
+#social-promo
+  width: 100%
+  height: 150px
+  background-color: $gold
+  color: $white
+  text-align: center
+  padding: 20px 0
+  font-size: 1.7rem
+  @media(max-width: 600px)
+    font-size: 1.4rem
+  > a
+    color: $white !important
+
+#twitter
+  color: $white
+  &:before
+    padding-right: 8px
+    font-size: 3rem
+    content: '\f099'
+    font-family: 'fontawesome'
+    @media(max-width: 600px)
+      font-size: 2rem
+
+/* about */
+
+.section-header
+  width: 200px
+  margin: 25px auto
+  color: $nearblack
+  padding: 15px 0 0 0
+  h2
+    text-align: center
+    font-weight: 900
+    font-size: 1.9rem
+    border-top: 3px solid $nearblack
+    border-bottom: 3px solid $nearblack
+    padding-top: 5px
+    line-height: 1.4
+
+.text-block
+  width: 650px
+  margin: 0 auto
+  font-family: $sans
+  font-weight: 400
+  @media(max-width: 650px)
+    width: 95%
+    padding: 12px
+    margin: 0
+
+.white
+  color: $white
+
+.pull-text
+  width: 650px
+  margin: 0 auto
+  padding: 20px 0 20px 0
+  border-top: 1px solid #ccc
+  border-bottom: 1px solid #ccc
+  @media(max-width: 650px)
+    width: 95%
+    padding: 12px
+    margin: 0
+  > p
+    font-size: 2rem
+    color: $gold
+    font-weight: 700
+  > .attribution
+    font-size: 1rem
+    text-align: right !important
+
+
+/* partners */
+
+#partners-grid
+  width: 800px
+  margin: 10px auto
+  display: flex
+  flex-wrap: wrap
+  @media screen and (max-width: 800px)
+    width: 100%
+  > a
+    display: inline-block
+    margin-bottom: 8px
+    margin: 0 8px
+    text-decoration: none
+    color: $nearblack
+    width: calc(33% - 12px)
+    &:nth-of-type(2n)
+      margin: 0 8px
+    &:nth-of-type(4n)
+      margin: 0
+    @media screen and (max-width: 830px)
+      width: calc(50% - 15px)
+      &:nth-of-type(2n)
+        margin: 0 8px
+      &:nth-of-type(4n)
+        margin: 0
+    @media screen and (max-width: 600px)
+      width: 95%
+      &:nth-of-type(2n)
+        margin-right: 8px
+      &:nth-of-type(4n)
+        margin-right: 0
+    &:nth-of-type(2n)
+      margin: 0 6px
+    figure
+      overflow: hidden
+    figcaption
+      // margin-top: 5px
+      line-height: 1.3
+      font-size: 1.2rem
+      h4
+        margin: 5px 0 12px 0
+    img
+      border: 1px solid #eee
+      max-width: 99%
+      height: auto
+      display: block
+      transition: transform 0.2s ease-in-out
+      // &:hover
+      //   transform: scale(1.15)
+
+
+/* faqs */
+
+.accordion
+  width: 700px
+  color: $nearblack
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1)
+  font-weight: 100
+  letter-spacing: 0.035em
+  font-size: 14px
+  margin: 0 auto
+  list-style: none !important
+  @media screen and (max-width: 700px)
+    width: 95%
+    padding: 10px
+  ul > li
+    margin-bottom: 8px
+    &:first-child h3
+      // border-top: 1px solid $nearblack
+  h3
+    cursor: pointer
+    background-color: $sky
+    padding: 1.2rem 1rem 1rem 1.2rem
+    margin: 0
+    display: block
+    font-weight: 100
+    letter-spacing: 0.035em
+    position: relative
+    font-size: 1.2rem
+    font-weight: 700
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1)
+    border-radius: 3px
+    &:hover, &.closed
+      color: $lightgray
+      background-color: $nearblack
+    &:hover .arrow
+      border-top: 2px solid $white
+      border-right: 2px solid $white
+  ul ul
+    display: none
+    height: 100%
+    margin-bottom: -7px
+    li
+      background-color: $white
+      padding: 1rem 1.8rem
+      color: $nearblack
+      p
+        opacity: 0
+        transition: all 0.5s
+        -webkit-transform: translatey(-20px)
+        transform: translatey(-20px)
+    &.open p
+      opacity: 1
+      -webkit-transform: translatey(0px)
+      transform: translatey(0px)
+  .arrow
+    display: inline-block
+    width: 18px
+    height: 18px
+    border-top: 2px solid $nearblack
+    border-right: 2px solid $nearblack
+    -webkit-transform: rotate(135deg)
+    transform: rotate(135deg)
+    -webkit-transform-origin: center
+    transform-origin: center
+    float: right
+    margin: 0 8px 0 25px
+    transition: -webkit-transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1)
+    transition: transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1)
+    transition: transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1), -webkit-transform 600ms cubic-bezier(0.175, 0.885, 0.32, 1)
+    &.closed
+      margin-top: 4px
+      -webkit-transform: rotate(-45deg)
+      transform: rotate(-45deg)
+      border-top: 2px solid $white
+      border-right: 2px solid $white
+
+/* footer */
+
+footer
+  min-height: 200px
+  background-color: $nearblack
+  color: $white
+  margin-top: 50px
+
+.footer-tagline
+  padding: 50px 50px 0 50px
+  width: 450px
+  font-size: 1.1rem
+
+.photo-credit
+  font-size: 1rem
+  color: $black121
+  padding: 30px 0 10px 50px
+  font-style: italic
+
+/* charts */
+
+.bar-chart
+  width: 600px
+  margin-top: 25px
+  display: inline-block
+  vertical-align: top
+  @media (max-width: 600px)
+    width: 90%
+
+.bar
+  height: 30px
+  background-color: $medblue
+  margin: 5px 15px 15px 0px
+  position: relative
+  font-size: 1.4rem
+  display: inline-block
+  &:before
+    content: attr(data-num)
+    position: absolute
+    // bottom: 5px
+    font-weight: 400
+    font-size: 1.1rem
+    right: 5px
+    width: 100%
+    top: 1px
+    text-align: right
+    color: #fff
+  @media (max-width: 600px)
+    display: block
+
+// .edu
+//   background-color: $medblue
+//
+// .law
+//   background-color: lighten($medblue, 5%)
+//
+// .other
+//   background-color: lighten($medblue, 15%)
+
+.provided
+  background-color: #006114
+
+.pending, .litigation
+  background-color: $gold
+
+.denial
+  background-color: #b7172f
+
+.bar-group
+  margin: 30px 0 20px 0
+  padding: 0
+
+.bar-label
+  font-size: 1.1rem
+  line-height: 1.3
+  padding: 4px 4px 15px 0px
+  display: inline-block
+  vertical-align: top
+  width: 220px
+  text-align: right
+  @media (max-width: 600px)
+    width: 100%
+    text-align: left
+
+// .response-breakdown .bar-label
+//   width: 100%
+//   text-align: left
+//   padding: 0
+
+.chart-label
+  font-size: 1.5rem
+  padding: 9px 0 10px 0
+  font-weight: 700
+
+.small-num:before
+  content: attr(data-num)
+  color: #212121
+  right: -20px
+  float: right
+  top: 1px
+  position: relative
+  font-size: 1.1rem
+
+.note
+  font-size: 1rem
+
+.dot
+  display: inline-block
+  width: 10px
+  height: 10px
+  border-radius: 50%
+  margin-right: 3px
+
+.red-dot
+  background-color: #b7172f
+
+.gold-dot
+  background-color: $gold
+
+.green-dot
+  background-color: #006114
+
+.blue-dot
+  background-color: $medblue
+
+/* headlines */
+
+.headline-block
+  padding-bottom: 25px
+
+.news-outlet
+  // background-color: $gold
+  color: $gold
+  // padding: 4px 6px
+  letter-spacing: 1px
+  font-weight: 700
+  display: inline
+  font-size: 0.9rem
+  text-transform: uppercase
+
+.headline
+  padding-top: 10px
+  font-weight: 700
+  font-size: 1.5rem
+  line-height: 1.3
+
+.date
+  font-size: 1.1rem
