@@ -47,7 +47,7 @@
 	############################################################################################################## */
 
 .masthead {
-	background: #000 url(https://a.scpr.org/i/e7f3cff2fff52abde4c77f6883e4001a/70389-full.jpg) no-repeat top center;
+	background: #000 url(/legacy/assethost/i/e7f3cff2fff52abde4c77f6883e4001a/70389-full.jpg) no-repeat top center;
 	background-size: 100%; /* gets fiddled width as we go ABOVE and BELOW certain critical widths (read on...) */
     height:419px;
 		box-shadow: inset 0 -75px 0 rgba(0,0,0,0.5);
